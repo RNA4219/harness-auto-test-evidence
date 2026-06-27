@@ -1,0 +1,124 @@
+{
+  "feature_spec": {
+    "feature_id": "HATE-SPECIFICATION-GATE",
+    "title": "HATE specification manual black-box gate",
+    "summary": "Gate review for accepting docs/process/SPECIFICATION.md as the QEG + workflow-cookbook style specification for harness-auto-test-evidence.",
+    "actors": ["maintainer", "implementation_agent", "reviewer"],
+    "acceptance_criteria": [
+      "README links to SPECIFICATION.md",
+      "SPECIFICATION.md covers QEG export, workflow-cookbook artifacts, Shipyard-cp advisory evidence, DQ, AETE, fixture, schema, and acceptance",
+      "QEG / workflow-cookbook / Shipyard-cp responsibilities are not reimplemented by HATE",
+      "Manual black-box gate produces a Go/No-Go decision"
+    ],
+    "business_rules": [
+      "HATE is an optional evidence producer / normalizer, not the release Gate authority",
+      "Shipyard-cp publish approval is not overridden by HATE",
+      "Coverage alone does not decide release readiness"
+    ],
+    "changed_areas": [
+      "README.md",
+      "docs/process/SPECIFICATION.md",
+      "docs/process/SPECIFICATION_SHIPYARD_DRAFT.md"
+    ],
+    "devices": ["docs-review"],
+    "source_refs": [
+      {"id": "SRC-README-SPEC", "kind": "spec", "path": "README.md", "startLine": 40, "endLine": 45},
+      {"id": "SRC-SPEC-QEG", "kind": "spec", "path": "docs/process/SPECIFICATION.md", "startLine": 246, "endLine": 298},
+      {"id": "SRC-SPEC-WORKFLOW", "kind": "spec", "path": "docs/process/SPECIFICATION.md", "startLine": 868, "endLine": 932},
+      {"id": "SRC-SPEC-SHIPYARD", "kind": "spec", "path": "docs/process/SPECIFICATION.md", "startLine": 933, "endLine": 994}
+    ],
+    "assumptions": [
+      {
+        "id": "ASM-GATE-001",
+        "text": "This gate evaluates specification readiness, not runtime implementation readiness.",
+        "severity": "medium",
+        "impact_on_coverage": "Schema and fixture execution remain follow-up implementation tasks."
+      }
+    ]
+  },
+  "observation_set": [
+    {
+      "id": "OBS-SPEC-001",
+      "title": "README links to SPECIFICATION.md",
+      "view": "black",
+      "techniques": ["traceability"],
+      "rationale": "The specification must be discoverable from the repository entrypoint.",
+      "source_refs": ["SRC-README-SPEC"]
+    },
+    {
+      "id": "OBS-SPEC-003",
+      "title": "QEG boundary is explicit",
+      "view": "black",
+      "techniques": ["decision_table"],
+      "rationale": "HATE must not reimplement QEG Gate policy, waiver, approval, retention, or schema migration.",
+      "source_refs": ["SRC-SPEC-QEG"]
+    },
+    {
+      "id": "OBS-SPEC-005",
+      "title": "Shipyard-cp integration is advisory",
+      "view": "black",
+      "techniques": ["state_transition"],
+      "rationale": "HATE evidence must not override Shipyard-cp publish approval.",
+      "source_refs": ["SRC-SPEC-SHIPYARD"]
+    }
+  ],
+  "risk_register": [
+    {
+      "id": "RISK-SPEC-005",
+      "scenario": "DQ, soft_gap, risk debt, and manual-bb bridge are confused during implementation.",
+      "risk_score": 58,
+      "priority": "P1",
+      "rationale": "The specification separates the contracts, but fixtures are still follow-up work."
+    },
+    {
+      "id": "RISK-SPEC-006",
+      "scenario": "Schema and fixture bodies are not yet implemented.",
+      "risk_score": 45,
+      "priority": "P2",
+      "rationale": "Acceptable for a specification gate, but not sufficient for runtime readiness."
+    }
+  ],
+  "manual_case_set": [
+    {
+      "tc_id": "TC-SPEC-001",
+      "title": "README links to the specification",
+      "priority": "P1",
+      "primary_view": "black",
+      "techniques": ["traceability"],
+      "preconditions": ["README.md exists"],
+      "steps": ["Inspect README references and workflow order"],
+      "expected_results": ["SPECIFICATION.md is linked and appears in the workflow order"],
+      "oracle": {"type": "specified", "refs": ["SRC-README-SPEC"]},
+      "estimate_minutes": 4,
+      "trace_to": ["OBS-SPEC-001"],
+      "result": "pass"
+    },
+    {
+      "tc_id": "TC-SPEC-004",
+      "title": "Shipyard-cp evidence remains advisory",
+      "priority": "P1",
+      "primary_view": "black",
+      "techniques": ["state_transition"],
+      "preconditions": ["SPECIFICATION.md exists"],
+      "steps": ["Inspect Shipyard-cp connection section"],
+      "expected_results": ["The section states HATE does not replace Shipyard-cp state machine or publish approval"],
+      "oracle": {"type": "specified", "refs": ["SRC-SPEC-SHIPYARD"]},
+      "estimate_minutes": 8,
+      "trace_to": ["OBS-SPEC-005", "RISK-SPEC-005"],
+      "result": "pass"
+    }
+  ],
+  "gate_decision": {
+    "feature_id": "HATE-SPECIFICATION-GATE",
+    "status": "go",
+    "profile": "standard",
+    "reasons": [
+      "README links to SPECIFICATION.md.",
+      "SPECIFICATION.md covers QEG export, workflow-cookbook, Shipyard-cp, DQ, AETE, schema, fixture, and acceptance contracts.",
+      "P1/P2 manual document review cases pass for specification readiness."
+    ],
+    "blocking_risks": [],
+    "waivers": [],
+    "residual_risks": ["RISK-SPEC-005", "RISK-SPEC-006"]
+  }
+}
