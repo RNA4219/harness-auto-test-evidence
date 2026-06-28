@@ -3,8 +3,9 @@
 - Run: `1001` attempt `1`
 - Repository: `RNA4219/sample`
 - Commit: `0123456789abcdef0123456789abcdef01234567`
-- Test result: 1 passed, 0 failed
-- Coverage sample: `src/auth.py` has 2 covered lines and 1 uncovered line
+- Test result: 2 passed, 0 failed
+- Coverage sample: `src/auth.py` has 5 covered lines and 1 uncovered line
 - Precheck: eligible for optional QEG evidence export in P0b
+- Generated artifacts: artifact-readme
 
-This fixture is intentionally small and public-safe. It exists to lock the HATE/v1 schema shape before converter logic is added.
+This summary is public-safe and generated from local P0a inputs.

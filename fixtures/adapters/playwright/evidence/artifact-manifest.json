@@ -1,0 +1,97 @@
+{
+  "schema_version": "HATE/v1",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+  "created_at": "2026-06-28T00:01:00Z",
+  "artifacts": [
+    {
+      "artifact_id": "artifact-playwright-trace",
+      "kind": "trace",
+      "adapter": "playwright",
+      "artifact_role": "trace",
+      "path": "playwright-results/login/trace.trace",
+      "sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 100,
+      "classification": "public",
+      "redaction_status": "not_required",
+      "safe_for_summary": true,
+      "public_exposure": "summary",
+      "security_checks": {
+        "path_exists": "pass",
+        "secret_scan": "pass",
+        "pii_scan": "pass",
+        "mime_extension_scan": "pass",
+        "archive_scan": "not_applicable",
+        "path_traversal_scan": "pass",
+        "symlink_scan": "pass"
+      }
+    },
+    {
+      "artifact_id": "artifact-playwright-screenshot",
+      "kind": "screenshot",
+      "adapter": "playwright",
+      "artifact_role": "screenshot",
+      "path": "playwright-results/login/screenshot.png",
+      "sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "size_bytes": 200,
+      "classification": "public",
+      "redaction_status": "not_required",
+      "safe_for_summary": true,
+      "public_exposure": "summary",
+      "security_checks": {
+        "path_exists": "pass",
+        "secret_scan": "pass",
+        "pii_scan": "pass",
+        "mime_extension_scan": "pass",
+        "archive_scan": "not_applicable",
+        "path_traversal_scan": "pass",
+        "symlink_scan": "pass"
+      }
+    },
+    {
+      "artifact_id": "artifact-playwright-video",
+      "kind": "video",
+      "adapter": "playwright",
+      "artifact_role": "video",
+      "path": "playwright-results/login/video.webm",
+      "sha256": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "size_bytes": 300,
+      "classification": "public",
+      "redaction_status": "not_required",
+      "safe_for_summary": true,
+      "public_exposure": "summary",
+      "security_checks": {
+        "path_exists": "pass",
+        "secret_scan": "pass",
+        "pii_scan": "pass",
+        "mime_extension_scan": "pass",
+        "archive_scan": "not_applicable",
+        "path_traversal_scan": "pass",
+        "symlink_scan": "pass"
+      }
+    },
+    {
+      "artifact_id": "artifact-playwright-log",
+      "kind": "other",
+      "adapter": "playwright",
+      "artifact_role": "log",
+      "path": "playwright-results/login/browser.log",
+      "sha256": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "size_bytes": 400,
+      "classification": "public",
+      "redaction_status": "not_required",
+      "safe_for_summary": true,
+      "public_exposure": "summary",
+      "security_checks": {
+        "path_exists": "pass",
+        "secret_scan": "pass",
+        "pii_scan": "pass",
+        "mime_extension_scan": "pass",
+        "archive_scan": "not_applicable",
+        "path_traversal_scan": "pass",
+        "symlink_scan": "pass"
+      }
+    }
+  ]
+}

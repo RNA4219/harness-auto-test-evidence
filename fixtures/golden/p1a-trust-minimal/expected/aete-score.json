@@ -1,0 +1,69 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "aete_score",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "rubric_version": "aete-rubric-2026-06-28",
+  "profile_version": "hate-profile-default-2026-06-28",
+  "profile": "default",
+  "calibration_status": "uncalibrated",
+  "score_confidence": "high",
+  "subject": {
+    "subject_type": "run",
+    "subject_id": "run:1001:1"
+  },
+  "dimensions": {
+    "provenance_integrity": 3,
+    "determinism_flakiness": 3,
+    "traceability_lineage": 3,
+    "oracle_strength": 3,
+    "change_relevance": 5,
+    "coverage_adequacy": 3,
+    "cross_signal_corroboration": 3,
+    "freshness_profile_conformance": 3
+  },
+  "weighted_score": 0.65,
+  "reason_refs": [
+    {
+      "dimension": "provenance_integrity",
+      "reason_ref": "reason:provenance_integrity:3"
+    },
+    {
+      "dimension": "determinism_flakiness",
+      "reason_ref": "reason:determinism_flakiness:3"
+    },
+    {
+      "dimension": "traceability_lineage",
+      "reason_ref": "reason:traceability_lineage:3"
+    },
+    {
+      "dimension": "oracle_strength",
+      "reason_ref": "reason:oracle_strength:3"
+    },
+    {
+      "dimension": "change_relevance",
+      "reason_ref": "reason:change_relevance:5"
+    },
+    {
+      "dimension": "coverage_adequacy",
+      "reason_ref": "reason:coverage_adequacy:3"
+    },
+    {
+      "dimension": "cross_signal_corroboration",
+      "reason_ref": "reason:cross_signal_corroboration:3"
+    },
+    {
+      "dimension": "freshness_profile_conformance",
+      "reason_ref": "reason:freshness_profile_conformance:3"
+    }
+  ],
+  "source_refs": [
+    "fixture:/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixture:/p0b-qeg-minimal/expected/qeg-export-report.json"
+  ],
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

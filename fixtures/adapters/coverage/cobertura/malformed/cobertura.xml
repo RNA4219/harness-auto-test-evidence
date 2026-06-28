@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<coverage>
+  <packages>
+    <package name="src.auth">
+      <classes>
+        <class name="Broken" filename="src/auth/broken.py">
+          <lines><line number="10" hits="1"/></lines>
+        </class>
+      </classes>
+    </package>

@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "enterprise_risk_debt_register",
+  "run_id": "1001",
+  "items": [],
+  "summary": {
+    "open_count": 0,
+    "closed_count": 0
+  },
+  "publish_gate_override": false
+}

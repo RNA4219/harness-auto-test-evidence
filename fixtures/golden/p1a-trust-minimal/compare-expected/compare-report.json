@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "compare_report",
+  "base_ref": "fixtures/golden/p1a-trust-minimal/replay-expected",
+  "head_ref": "fixtures/golden/p1a-trust-minimal/replay-expected",
+  "trust_delta": 0.0,
+  "doctor_finding_delta": 0,
+  "retry_aggregate_delta": 0,
+  "dimension_delta": {
+    "provenance_integrity": 0,
+    "determinism_flakiness": 0,
+    "traceability_lineage": 0,
+    "oracle_strength": 0,
+    "change_relevance": 0,
+    "coverage_adequacy": 0,
+    "cross_signal_corroboration": 0,
+    "freshness_profile_conformance": 0
+  },
+  "regression": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

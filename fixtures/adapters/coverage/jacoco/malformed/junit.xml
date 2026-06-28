@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="coverage" tests="1" failures="0" errors="0">
+  <testcase classname="com.example.AuthServiceTest" name="login" file="src/test/AuthServiceTest.java" time="0.1"/>
+</testsuite>

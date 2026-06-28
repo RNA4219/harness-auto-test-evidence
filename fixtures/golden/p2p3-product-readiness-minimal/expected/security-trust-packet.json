@@ -1,0 +1,287 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "security_trust_packet",
+  "run_id": "1001",
+  "source_contract": "SECURITY_REVIEW_TRUST_CONTRACT.md",
+  "scope": [
+    "local_cli",
+    "artifact_generation",
+    "hosted_read_model_contract",
+    "enterprise_connector_contract"
+  ],
+  "security_review_record": {
+    "review_id": "SEC-REV-20260629-001",
+    "customer_id": "fixture-customer",
+    "scope": [
+      "hosted_read_model",
+      "artifact_storage",
+      "github_action",
+      "enterprise_connectors"
+    ],
+    "requested_at": "2026-06-29T00:00:00Z",
+    "status": "conditional",
+    "trust_packet_refs": [
+      "data-flow.md",
+      "security-controls.json",
+      "privacy-summary.md",
+      "subprocessors.md",
+      "sbom.json",
+      "vulnerability-report.json",
+      "pen-test-summary.md",
+      "attestation-summary.json",
+      "deletion-export-policy.md",
+      "support-security-escalation.md"
+    ],
+    "control_mappings": [
+      "Access control",
+      "Data protection",
+      "Change management",
+      "Incident management",
+      "Vulnerability management",
+      "Logging / monitoring",
+      "Supplier management",
+      "Business continuity",
+      "Evidence integrity",
+      "Secure development"
+    ],
+    "open_findings": [
+      {
+        "finding_id": "SEC-FIXTURE-HIGH-001",
+        "severity": "high",
+        "status": "tracked",
+        "owner": "RNA4219",
+        "due_date": "2026-07-28",
+        "affected_surface": "hosted_read_model_contract",
+        "customer_exposure": "none_fixture_only",
+        "mitigation": "Keep hosted runtime claims disabled until runtime evidence exists.",
+        "source_refs": [
+          "MANUAL_BB_GATE_FULL_IMPLEMENTATION.md"
+        ]
+      }
+    ],
+    "assumptions": [
+      "Local artifact packet does not claim hosted SaaS runtime availability."
+    ],
+    "expiry_at": "2026-12-29T00:00:00Z",
+    "owner": "RNA4219"
+  },
+  "trust_packet_refs": [
+    "data-flow.md",
+    "security-controls.json",
+    "privacy-summary.md",
+    "subprocessors.md",
+    "sbom.json",
+    "vulnerability-report.json",
+    "pen-test-summary.md",
+    "attestation-summary.json",
+    "deletion-export-policy.md",
+    "support-security-escalation.md"
+  ],
+  "data_flow": {
+    "inputs": [
+      "qeg-bundle.json",
+      "aete-score.json",
+      "workflow-evidence.jsonl"
+    ],
+    "storage": [
+      "local output directory",
+      "optional hosted read model cache"
+    ],
+    "outputs": [
+      "product-readiness-report.json",
+      "security-trust-packet.json"
+    ],
+    "external_transfers": [
+      "optional enterprise connector dry-run only"
+    ],
+    "raw_artifact_exported": false
+  },
+  "control_mapping": [
+    {
+      "control_area": "Access control",
+      "source_refs": [
+        "SECURITY_REVIEW_TRUST_CONTRACT.md"
+      ],
+      "evidence_refs": [
+        "rbac-matrix-report.json",
+        "audit-event-log.json"
+      ]
+    },
+    {
+      "control_area": "Data protection",
+      "source_refs": [
+        "PRIVACY_QUARANTINE_CONTRACT.md"
+      ],
+      "evidence_refs": [
+        "privacy-quarantine-report.json",
+        "retention-governance-report.json"
+      ]
+    },
+    {
+      "control_area": "Change management",
+      "source_refs": [
+        "SECURITY_REVIEW_TRUST_CONTRACT.md"
+      ],
+      "evidence_refs": [
+        "release-migration-report.json"
+      ]
+    },
+    {
+      "control_area": "Incident management",
+      "source_refs": [
+        "SLO_INCIDENT_RESPONSE_CONTRACT.md"
+      ],
+      "evidence_refs": [
+        "incident-slo-report.json"
+      ]
+    },
+    {
+      "control_area": "Vulnerability management",
+      "source_refs": [
+        "SECURITY_REVIEW_TRUST_CONTRACT.md"
+      ],
+      "evidence_refs": [
+        "security-trust-packet.json"
+      ]
+    },
+    {
+      "control_area": "Logging / monitoring",
+      "source_refs": [
+        "ENTERPRISE_DOMAIN_MODEL.md"
+      ],
+      "evidence_refs": [
+        "audit-event-log.json"
+      ]
+    },
+    {
+      "control_area": "Supplier management",
+      "source_refs": [
+        "SECURITY_REVIEW_TRUST_CONTRACT.md"
+      ],
+      "evidence_refs": [
+        "identity-connector-report.json",
+        "enterprise-connector-report.json"
+      ]
+    },
+    {
+      "control_area": "Business continuity",
+      "source_refs": [
+        "DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md"
+      ],
+      "evidence_refs": [
+        "residency-deployment-report.json"
+      ]
+    },
+    {
+      "control_area": "Evidence integrity",
+      "source_refs": [
+        "SECURITY_REVIEW_TRUST_CONTRACT.md"
+      ],
+      "evidence_refs": [
+        "attestation-report.json",
+        "domain-model-report.json"
+      ]
+    },
+    {
+      "control_area": "Secure development",
+      "source_refs": [
+        "ADAPTER_SDK_CONTRACT.md"
+      ],
+      "evidence_refs": [
+        "adapter-conformance-report.json"
+      ]
+    }
+  ],
+  "privacy_summary": {
+    "classification_refs": [
+      "domain-model-report.json",
+      "retention-governance-report.json"
+    ],
+    "redaction_refs": [
+      "support-diagnostic-bundle.json"
+    ],
+    "quarantine_refs": [
+      "privacy-quarantine-report.json"
+    ],
+    "contains_customer_code": false,
+    "contains_secret": false,
+    "contains_pii": false,
+    "contains_unsafe_artifact": false
+  },
+  "sbom": {
+    "format": "fixture-sbom",
+    "components": [
+      {
+        "name": "harness-auto-test-evidence",
+        "type": "application",
+        "version": "0.1.0-fixture"
+      },
+      {
+        "name": "python-stdlib",
+        "type": "runtime",
+        "version": "fixture"
+      }
+    ],
+    "third_party_runtime_dependencies": [],
+    "freshness_status": "fixture_current"
+  },
+  "vulnerability_report": {
+    "open_findings": [
+      {
+        "finding_id": "VULN-FIXTURE-MEDIUM-001",
+        "severity": "medium",
+        "status": "tracked",
+        "owner": "RNA4219",
+        "due_date": "2026-07-28",
+        "affected_surface": "dependency_scanning_fixture",
+        "customer_exposure": "none_fixture_only",
+        "mitigation": "Run dependency scan before release candidate packaging."
+      }
+    ],
+    "critical_open_count": 0,
+    "high_open_count": 0,
+    "freshness_status": "fixture_current",
+    "connected_to_incident_response": true,
+    "connected_to_release_policy": true
+  },
+  "subprocessors": [
+    {
+      "name": "GitHub Actions",
+      "purpose": "optional CI execution",
+      "configured": false,
+      "customer_data_sent": false
+    },
+    {
+      "name": "DashScope GLM",
+      "purpose": "optional delegated implementation",
+      "configured": false,
+      "customer_data_sent": false
+    }
+  ],
+  "freshness": {
+    "data_flow": "fixture_current",
+    "security_controls": "fixture_current",
+    "sbom": "fixture_current",
+    "vulnerability_report": "fixture_current",
+    "subprocessors": "fixture_current",
+    "privacy_summary": "fixture_current"
+  },
+  "attestation_summary": {
+    "source_ref": "attestation-report.json",
+    "signed": false,
+    "provenance_available": true
+  },
+  "deletion_export_policy_ref": "retention-governance-report.json",
+  "support_security_escalation_ref": "incident-slo-report.json",
+  "contains_customer_code": false,
+  "contains_secret": false,
+  "contains_pii": false,
+  "contains_unsafe_artifact": false,
+  "qeg_gate_policy_override": false,
+  "qeg_waiver_override": false,
+  "qeg_approval_override": false,
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

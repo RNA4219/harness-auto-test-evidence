@@ -1,0 +1,12 @@
+{
+  "ci_provider": "generic_ci",
+  "repository": "RNA4219/generic-sample",
+  "workflow": "generic-ci.yml",
+  "job": "windows-py311",
+  "event_name": "schedule",
+  "run_id": "generic-2003",
+  "run_attempt": 1,
+  "commit_sha": "4444444444444444444444444444444444444444",
+  "started_at": "2026-06-28T02:20:00Z",
+  "finished_at": "2026-06-28T02:21:00Z"
+}

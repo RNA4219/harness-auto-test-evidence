@@ -1,0 +1,111 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "shipyard_run_evidence",
+  "record_id": "shipyard-p0b-qeg-export-20260628",
+  "run_id": "shipyard-hate-p0b-qeg-20260628",
+  "run_attempt": 1,
+  "commit_sha": "local-working-tree",
+  "created_at": "2026-06-28T00:00:00Z",
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "redaction_status": "not_required",
+  "payload": {
+    "shipyard_stage": "acceptance",
+    "task_id": "HATE-MVP-005-P0B-QEG-EXPORT",
+    "task_title": "P0b QEG optional evidence export implementation",
+    "shipyard_flow": [
+      "plan",
+      "dev",
+      "acceptance"
+    ],
+    "implementation_scope": {
+      "in": [
+        "hate export qeg CLI",
+        "qeg-bundle.json generation",
+        "evidence-map.json generation",
+        "diff-risk-test.json fixture copy",
+        "qeg-export-report.json generation",
+        "qeg-export-summary.md generation",
+        "risk-debt-register.json generation",
+        "manual-bb-bridge-requests.jsonl generation",
+        "P0b minimal fixture",
+        "hidden missing-execution gap detection",
+        "missing-source-ref edge test",
+        "missing-required-artifact edge test",
+        "unsafe-artifact-required quarantine test"
+      ],
+      "out": [
+        "SARIF adapter",
+        "Playwright artifact ingest",
+        "QEG gate verdict",
+        "release approval",
+        "Shipyard publish approval"
+      ]
+    },
+    "commands": [
+      {
+        "command": "uv run pytest",
+        "result": "pass",
+        "summary": "12 tests passed"
+      },
+      {
+        "command": "uv run python -m hate export qeg --fixture fixtures/golden/p0b-qeg-minimal/input --out C:\\tmp\\hate-p0b-acceptance",
+        "result": "pass",
+        "summary": "export_status=partial, exit_code=0, completeness.score=0.9, missing_executions=1"
+      },
+      {
+        "command": "uv run pytest tests/test_p0b.py",
+        "result": "pass",
+        "summary": "6 P0b tests passed, including missing sourceRef and unsafe artifact edge cases"
+      },
+      {
+        "command": "uv run python -m compileall src tests",
+        "result": "pass",
+        "summary": "src and tests compiled"
+      },
+      {
+        "command": "git diff --check",
+        "result": "pass",
+        "summary": "no whitespace errors; LF to CRLF warnings only"
+      }
+    ],
+    "generated_artifacts": [
+      "src/hate/p0b.py",
+      "tests/test_p0b.py",
+      "fixtures/golden/p0b-qeg-minimal/input/diff-risk-test.json",
+      "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json",
+      "fixtures/golden/p0b-qeg-minimal/expected/evidence-map.json",
+      "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json",
+      "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-summary.md",
+      "fixtures/golden/p0b-qeg-minimal/expected/risk-debt-register.json",
+      "fixtures/golden/p0b-qeg-minimal/expected/manual-bb-bridge-requests.jsonl"
+    ],
+    "acceptance": {
+      "p0b_core_qeg_export": "pass",
+      "p0b_edge_hardening": "pass",
+      "export_status": "partial",
+      "partial_reason": "fixture intentionally contains one high-risk missing execution obligation",
+      "hidden_gap_policy": "pass",
+      "risk_debt_bridge": "pass",
+      "manual_bb_bridge": "pass",
+      "unsafe_artifact_quarantine": "pass",
+      "publish_gate_override": false,
+      "release_gate_override": false
+    },
+    "next_phase": {
+      "phase": "P1a trust hardening",
+      "tasks": [
+        "AETE score generation",
+        "profile and calibration metadata",
+        "canonical test identity hardening",
+        "replay/compare/explain/recommend/doctor commands"
+      ]
+    },
+    "notes": [
+      "This is local advisory Shipyard evidence, not a live shipyard-cp runtime dispatch.",
+      "The partial export is expected for the minimal fixture because the missing execution gap is intentionally visible.",
+      "HATE does not implement QEG gate, release approval, or Shipyard publish approval."
+    ]
+  }
+}

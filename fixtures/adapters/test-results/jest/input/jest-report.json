@@ -1,0 +1,112 @@
+{
+  "numFailedTestSuites": 0,
+  "numFailedTests": 1,
+  "numPassedTestSuites": 2,
+  "numPassedTests": 5,
+  "numPendingTestSuites": 0,
+  "numPendingTests": 0,
+  "numRuntimeErrorTestSuites": 0,
+  "numTotalTestSuites": 2,
+  "numTotalTests": 6,
+  "openHandles": [],
+  "snapshot": {
+    "didUpdate": false,
+    "failure": false,
+    "matched": 2,
+    "total": 3,
+    "unchecked": 0,
+    "uncheckedKeys": [],
+    "updated": 0,
+    "added": 0
+  },
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Calculator", "add"],
+          "failureMessages": [],
+          "fullName": "Calculator add should add two numbers",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "should add two numbers",
+          "duration": 5
+        },
+        {
+          "ancestorTitles": ["Calculator", "subtract"],
+          "failureMessages": [],
+          "fullName": "Calculator subtract should subtract two numbers",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "should subtract two numbers",
+          "duration": 3
+        },
+        {
+          "ancestorTitles": ["Calculator", "snapshot"],
+          "failureMessages": ["Snapshot mismatch"],
+          "fullName": "Calculator snapshot should match snapshot",
+          "location": { "line": 45, "column": 5 },
+          "numPassingAsserts": 0,
+          "status": "failed",
+          "title": "should match snapshot",
+          "duration": 10
+        }
+      ],
+      "failureMessage": null,
+      "name": "src/__tests__/calculator.test.js",
+      "numFailingTests": 1,
+      "numPassingTests": 2,
+      "numPendingTests": 0,
+      "perTestDuration": 6,
+      "startTime": 2026.0,
+      "status": "failed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["UserService", "create"],
+          "failureMessages": [],
+          "fullName": "UserService create should create user",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "should create user",
+          "duration": 8
+        },
+        {
+          "ancestorTitles": ["UserService", "delete"],
+          "failureMessages": [],
+          "fullName": "UserService delete should delete user",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "should delete user",
+          "duration": 4
+        },
+        {
+          "ancestorTitles": ["UserService", "update"],
+          "failureMessages": [],
+          "fullName": "UserService update should update user",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "should update user",
+          "duration": 6
+        }
+      ],
+      "failureMessage": null,
+      "name": "src/__tests__/user.test.js",
+      "numFailingTests": 0,
+      "numPassingTests": 3,
+      "numPendingTests": 0,
+      "perTestDuration": 6,
+      "startTime": 2026.1,
+      "status": "passed",
+      "summary": ""
+    }
+  ],
+  "wasInterrupted": false,
+  "coverageMap": {}
+}

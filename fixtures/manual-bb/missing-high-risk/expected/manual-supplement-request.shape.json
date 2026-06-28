@@ -1,0 +1,36 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "manual_bb_bridge_request",
+  "contract_type": "manual_supplement_request",
+  "request_id_prefix": "manual-bb:1001:1:risk-db-high:",
+  "source_run_id": "1001",
+  "risk_id": "risk-db-high",
+  "risk_title": "Database connection module changed",
+  "request_type": "missing_execution_review",
+  "gap_type": "no_execution",
+  "status": "open",
+  "recommended_manual_layer": "manual-scripted",
+  "changed_entity_id": "changed-src-db",
+  "expected_test_ref": "tests/test_db.py::test_connection",
+  "required_oracle_refs": [
+    "src/db.py#L5-L10",
+    "tests/test_db.py::test_connection"
+  ],
+  "evidence_refs": [
+    "qeg-export-report.json",
+    "risk-debt-register.json"
+  ],
+  "manual_case_seed": {
+    "primary_view": "black",
+    "techniques": [
+      "regression",
+      "risk_based"
+    ],
+    "oracle_type": "specified"
+  },
+  "handoff_policy": {
+    "target_suite_id": "manual-bb-harness",
+    "does_not_override_qeg_verdict": true,
+    "manual_execution_evidence_required_for_mitigation": true
+  }
+}

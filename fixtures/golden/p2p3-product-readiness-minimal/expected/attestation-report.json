@@ -1,0 +1,60 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "attestation_report",
+  "run_id": "1001",
+  "attestation_mode": "optional_unsigned_fixture",
+  "attestation_status": "unsigned_optional",
+  "subject_refs": [
+    "qeg-bundle.json",
+    "aete-score.json",
+    "requirement-evidence-alignment.json"
+  ],
+  "subjects": [
+    {
+      "subject_ref": "qeg-bundle.json",
+      "subject_kind": "canonical_bundle",
+      "digest": "sha256:b19b70b3f1eb031ecf75f8165b4681e7df3cbe017ff91347d75507e1268b7f0e",
+      "immutable": true
+    },
+    {
+      "subject_ref": "aete-score.json",
+      "subject_kind": "trust_score",
+      "digest": "sha256:0d8978ccf32f0a606f80fee95be594a7387a4aba5d9e2cb01d3160f32f8fab30",
+      "immutable": true
+    },
+    {
+      "subject_ref": "requirement-evidence-alignment.json",
+      "subject_kind": "workflow_alignment",
+      "digest": "sha256:2efa45d61ac2e0bc08290ebfe2f19765922dd11ecca844c3e24a06035f9ae88a",
+      "immutable": true
+    }
+  ],
+  "subject_digest": "sha256:591e4f1f84768931f4cf529d556143ff4b3c27c5676ba81cefc47dbc220c3827",
+  "provenance": {
+    "builder": "harness-auto-test-evidence",
+    "builder_version": "0.1.0-fixture",
+    "build_type": "local_canonical_replay",
+    "run_id": "1001",
+    "source_bundle_ref": "qeg-bundle.json",
+    "source_alignment_ref": "requirement-evidence-alignment.json",
+    "source_trust_ref": "aete-score.json"
+  },
+  "signing": {
+    "configured": false,
+    "signature_ref": "",
+    "verification_status": "not_requested"
+  },
+  "release_refs": {
+    "release_candidate_ref": "",
+    "shipyard_evidence_ref": "shipyard-run-evidence.json",
+    "compliance_pack_ref": "audit-assurance-pack.json"
+  },
+  "immutability": {
+    "canonical_bundle_immutable": true,
+    "derived_attestation_mutates_canonical": false
+  },
+  "local_first_precheck_dependency": false,
+  "canonical_decision_unchanged": true,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

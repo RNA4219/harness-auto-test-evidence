@@ -1,0 +1,32 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "doctor_report",
+  "taxonomy_version_prefix": "doctor-taxonomy-",
+  "required_finding_fields": [
+    "finding_id",
+    "finding_code",
+    "taxonomy_version",
+    "category",
+    "severity",
+    "blocking",
+    "message",
+    "remediation",
+    "source_refs"
+  ],
+  "known_codes": [
+    "HATE-DOC-QEG-001",
+    "HATE-DOC-ART-001",
+    "HATE-DOC-PATH-001",
+    "HATE-DOC-SCH-001",
+    "HATE-DOC-PROF-001",
+    "HATE-DOC-ADP-001",
+    "HATE-DOC-UNK-001"
+  ],
+  "required_summary_fields": [
+    "finding_count",
+    "blocking_categories",
+    "by_category",
+    "by_severity",
+    "taxonomy_version"
+  ]
+}

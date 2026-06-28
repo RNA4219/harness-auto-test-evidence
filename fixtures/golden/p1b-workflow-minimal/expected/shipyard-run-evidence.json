@@ -1,0 +1,42 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "shipyard_run_evidence",
+  "task_id": "HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "mode": "local_advisory_evidence",
+  "shipyard_stage": "acceptance",
+  "attached_artifacts": [
+    "requirement-evidence-alignment.json",
+    "workflow-task-seed.json",
+    "workflow-acceptance-record.json",
+    "workflow-evidence.jsonl",
+    "workflow-docs-stale.json",
+    "workflow-birdseye-map.json"
+  ],
+  "aete_summary": {
+    "weighted_score": 0.65,
+    "score_confidence": "high",
+    "calibration_status": "uncalibrated"
+  },
+  "dq_summary": {
+    "gate_verdict": "go",
+    "unverified_acceptance_count": 0,
+    "doctor_finding_count": 0
+  },
+  "boundaries": [
+    "HATE does not implement Shipyard worker dispatch.",
+    "HATE does not implement Shipyard state transitions.",
+    "HATE does not approve Shipyard publish gates."
+  ],
+  "source_refs": [
+    "fixture:/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixture:/p0b-qeg-minimal/expected/qeg-export-report.json",
+    "fixture:/p1a-trust-minimal/expected/aete-score.json"
+  ],
+  "shipyard_state_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

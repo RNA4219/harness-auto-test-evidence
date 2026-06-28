@@ -1,0 +1,45 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "profile_report",
+  "required_fields": [
+    "profile_version",
+    "profile",
+    "inherits",
+    "effective_chain",
+    "inheritance_graph",
+    "rules",
+    "rule_sources",
+    "rule_diffs",
+    "drift_checks",
+    "profile_hash",
+    "qeg_gate_policy",
+    "release_gate_override",
+    "publish_gate_override"
+  ],
+  "profiles": {
+    "default": {
+      "inherits": ["default"],
+      "unsafe_artifact_policy": "quarantine"
+    },
+    "strict": {
+      "inherits": ["default", "strict"],
+      "unsafe_artifact_policy": "soft_gap"
+    },
+    "release": {
+      "inherits": ["default", "strict", "release"],
+      "unsafe_artifact_policy": "hard_dq"
+    },
+    "experimental": {
+      "inherits": ["default", "experimental"],
+      "unsafe_artifact_policy": "observe"
+    }
+  },
+  "required_drift_checks": [
+    "profile-chain-known",
+    "effective-rules-complete",
+    "qeg-gate-boundary"
+  ],
+  "qeg_gate_policy": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

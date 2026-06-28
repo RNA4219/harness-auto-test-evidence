@@ -1,0 +1,9 @@
+{
+  "provider": "generic-ci",
+  "repository": "RNA4219/generic-sample",
+  "workflow": "generic-ci.yml",
+  "run_id": "generic-2002",
+  "run_attempt": 1,
+  "started_at": "2026-06-28T02:10:00Z",
+  "commit_sha": "3333333333333333333333333333333333333333"
+}

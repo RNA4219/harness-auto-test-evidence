@@ -1,0 +1,49 @@
+{
+  "schema_version": "RanD/v1",
+  "packet_id": "rand-packet-hate-p1b-001",
+  "source_tool": "RanD KanoMode",
+  "requirements": [
+    {
+      "requirement_id": "REQ-RAND-AUTH-EVIDENCE",
+      "statement": "Authentication evidence must connect requirement, risk, test, and CI execution.",
+      "gate_verdict": "go",
+      "testability": "high",
+      "implementation_alignment": "implemented",
+      "kpis": [
+        {
+          "kpi_id": "KPI-AUTH-COVERAGE",
+          "target": "Auth changed path has execution and coverage evidence"
+        }
+      ],
+      "acceptance_criteria": [
+        {
+          "acceptance_id": "AC-AUTH-EXECUTION",
+          "statement": "Required auth execution evidence is present"
+        }
+      ],
+      "risk_refs": ["risk-auth-high"],
+      "source_refs": ["docs/process/RAND_KANO_MODE_REQUIREMENTS_QUALITY_AUDIT.md"]
+    },
+    {
+      "requirement_id": "REQ-RAND-DB-EVIDENCE",
+      "statement": "Database connection risk must remain visible when required execution is missing.",
+      "gate_verdict": "conditional_go",
+      "testability": "high",
+      "implementation_alignment": "partial",
+      "kpis": [
+        {
+          "kpi_id": "KPI-DB-GAP-VISIBILITY",
+          "target": "Missing high-risk execution is visible as risk debt and manual bridge"
+        }
+      ],
+      "acceptance_criteria": [
+        {
+          "acceptance_id": "AC-DB-MANUAL-BRIDGE",
+          "statement": "Manual bridge request is generated for unresolved DB execution gap"
+        }
+      ],
+      "risk_refs": ["risk-db-high"],
+      "source_refs": ["docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_AUDIT.md"]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "accessibility_localization_report",
+  "run_id": "1001",
+  "surfaces": [
+    {
+      "surface": "cli_summary",
+      "target": "text",
+      "violations": [],
+      "color_only_status": false
+    },
+    {
+      "surface": "customer_docs",
+      "target": "wcag-structure",
+      "violations": [],
+      "color_only_status": false
+    }
+  ],
+  "message_catalog": [
+    {
+      "message_id": "product.readiness.status",
+      "stable_identifier": true,
+      "locale_fallback": "en"
+    }
+  ],
+  "translated_schema_fields": false,
+  "publish_gate_override": false
+}

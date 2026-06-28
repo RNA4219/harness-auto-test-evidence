@@ -28,6 +28,8 @@ reason を再実装しない。
 | `README.md` | repo 入口と責務境界 | 1 |
 | `docs/process/BLUEPRINT.md` | 背景、Scope、I/O、実装フェーズ | 1 |
 | `docs/process/SPECIFICATION.md` | 実装契約、データ契約、QEG / Workflow 接続 | 1 |
+| `docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md` | フル実装に必要な不足仕様の解消正本 | 1 |
+| `docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md` | コード・schema・fixture・test・docsへ落とす実装タスク正本 | 1 |
 | `docs/process/GUARDRAILS.md` | 禁止事項、責務分離、安全制約 | 1 |
 | `docs/process/EVALUATION.md` | 受入条件、KPI、テスト観点 | 1 |
 | `docs/process/RUNBOOK.md` | 実行手順、受理前確認、ロールバック | 2 |
@@ -131,6 +133,11 @@ HATE は QEG へ渡す前段であり、QEG の verdict を先取りしない。
 | HATE-FR-015 | shipyard-cp run / audit refs へ `shipyard-run-evidence.json` を添付可能にする | P1b |
 | HATE-FR-016 | workflow-cookbook 接続 artifact を生成する | P1b |
 | HATE-FR-017 | Allure / ReportPortal / Codecov / SonarQube export を non-gating optional として扱う | P2 |
+
+フル実装時の詳細な不足解消、adapter別の入力/出力/fixture、profile差分、
+hosted API、RBAC/audit、external export、QEG live連携、dashboard、release candidate pack は
+`FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md` を正本とする。実装作業の粒度、affected paths、
+acceptance は `IMPLEMENTATION_TASK_BREAKDOWN.md` を正本とする。
 
 ## 7. 非機能要件
 
@@ -535,12 +542,12 @@ cell:
 
 ### 22.1 CI Context
 
-P0a では `github-context.json` を最小入力とする。CI provider が GitHub Actions 以外の場合も、
-HATE 内では次の canonical shape に変換する。
+P0a では `github-context.json`、`ci-context.json`、`generic-ci-context.json` の順に
+CI context を解決する。GitHub Actions 以外の場合も、HATE 内では次の canonical shape に変換する。
 
 ```yaml
 ci_context:
-  provider: github_actions | generic_ci
+  provider: github-actions | generic-ci
   repository: string
   workflow: string
   job: string

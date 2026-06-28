@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "version": "7.6.1",
+    "branch_coverage": true,
+    "show_contexts": true,
+    "format": 4
+  },
+  "files": {
+    "src/parser.py": {
+      "executed_lines": [10, 11, 12, 20, 21, 30, 31],
+      "summary": {
+        "covered_lines": 7,
+        "num_statements": 10,
+        "percent_covered": 70.0,
+        "missing_lines": 3,
+        "excluded_lines": 0
+      },
+      "contexts": {
+        "10": ["tests/unit/test_parser.py::test_parse_valid", "tests/unit/test_parser.py::test_parse_edge_cases"],
+        "11": ["tests/unit/test_parser.py::test_parse_valid"],
+        "12": ["tests/unit/test_parser.py::test_parse_valid"],
+        "20": ["tests/unit/test_parser.py::test_parse_edge_cases"],
+        "21": ["tests/unit/test_parser.py::test_parse_edge_cases"],
+        "30": ["tests/integration/test_api.py::test_endpoint_health"],
+        "31": ["tests/integration/test_api.py::test_endpoint_health"]
+      }
+    },
+    "src/utils.py": {
+      "executed_lines": [5, 6, 7, 15, 16],
+      "summary": {
+        "covered_lines": 5,
+        "num_statements": 8,
+        "percent_covered": 62.5,
+        "missing_lines": 3,
+        "excluded_lines": 0
+      },
+      "contexts": {
+        "5": ["tests/unit/test_parser.py::test_parse_valid"],
+        "6": ["tests/unit/test_parser.py::test_parse_valid", "tests/unit/test_parser.py::test_parse_edge_cases"],
+        "7": ["tests/unit/test_parser.py::test_parse_valid"],
+        "15": ["tests/unit/test_parser.py::test_parse_edge_cases"],
+        "16": ["tests/unit/test_parser.py::test_parse_edge_cases"]
+      }
+    }
+  },
+  "totals": {
+    "covered_lines": 12,
+    "num_statements": 18,
+    "percent_covered": 66.67,
+    "missing_lines": 6,
+    "excluded_lines": 0
+  }
+}

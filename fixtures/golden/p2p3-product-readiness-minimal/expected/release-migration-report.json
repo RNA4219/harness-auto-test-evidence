@@ -1,0 +1,25 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "release_migration_report",
+  "run_id": "1001",
+  "release_channel": "local",
+  "release_gates": [
+    "schema-compatible",
+    "fixture-reproducible",
+    "no-release-override"
+  ],
+  "migration_artifacts": [
+    "product-readiness-report.json",
+    "customer-docs-index.json"
+  ],
+  "rollback_policy": "restore previous artifact bundle and schema version",
+  "compatibility_matrix": [
+    {
+      "from": "HATE/v1",
+      "to": "HATE/v1",
+      "breaking": false
+    }
+  ],
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

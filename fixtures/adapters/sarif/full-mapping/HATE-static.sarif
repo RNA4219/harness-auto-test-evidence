@@ -1,0 +1,72 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "semgrep",
+          "rules": [
+            {
+              "id": "WARN001",
+              "name": "Warning Rule",
+              "shortDescription": {
+                "text": "short warning"
+              },
+              "fullDescription": {
+                "text": "full warning description"
+              },
+              "helpUri": "https://example.invalid/rules/WARN001"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "WARN001",
+          "level": "warning",
+          "message": {
+            "text": "source-backed static finding"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/db.py"
+                },
+                "region": {
+                  "startLine": 5,
+                  "endLine": 6,
+                  "startColumn": 3,
+                  "endColumn": 12
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "abc123"
+          }
+        },
+        {
+          "ruleId": "WARN001",
+          "level": "note",
+          "message": {
+            "text": "outside changed range"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/db.py"
+                },
+                "region": {
+                  "startLine": 50,
+                  "endLine": 50
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

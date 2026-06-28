@@ -1,0 +1,11 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "artifact-symlink-trace",
+      "kind": "trace",
+      "path": "artifacts/link-target.txt",
+      "classification": "public",
+      "symlink": true
+    }
+  ]
+}

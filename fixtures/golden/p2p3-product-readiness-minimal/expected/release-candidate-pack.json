@@ -1,0 +1,169 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "release_candidate_pack",
+  "run_id": "1001",
+  "release_candidate_id": "rc-1001-fixture",
+  "channel": "preview",
+  "required_reports": [
+    "product-readiness-report.json",
+    "domain-model-report.json",
+    "rbac-matrix-report.json",
+    "audit-event-log.json",
+    "retention-governance-report.json",
+    "identity-connector-report.json",
+    "enterprise-connector-report.json",
+    "security-trust-packet.json",
+    "residency-deployment-report.json",
+    "commercial-contract-report.json",
+    "audit-assurance-pack.json",
+    "governance-portfolio-report.json"
+  ],
+  "included_reports": [
+    "audit-assurance-pack.json",
+    "audit-event-log.json",
+    "commercial-contract-report.json",
+    "domain-model-report.json",
+    "enterprise-connector-report.json",
+    "governance-portfolio-report.json",
+    "identity-connector-report.json",
+    "product-readiness-report.json",
+    "rbac-matrix-report.json",
+    "residency-deployment-report.json",
+    "retention-governance-report.json",
+    "security-trust-packet.json"
+  ],
+  "missing_required_reports": [],
+  "release_gates": [
+    {
+      "gate_id": "RG-1",
+      "name": "Schema",
+      "status": "pass",
+      "evidence_refs": [
+        "product-readiness-report.json"
+      ],
+      "release_approval_substitute": false
+    },
+    {
+      "gate_id": "RG-2",
+      "name": "Fixture",
+      "status": "pass",
+      "evidence_refs": [
+        "audit-assurance-pack.json"
+      ],
+      "release_approval_substitute": false
+    },
+    {
+      "gate_id": "RG-3",
+      "name": "Adapter",
+      "status": "pass",
+      "evidence_refs": [
+        "rbac-matrix-report.json"
+      ],
+      "release_approval_substitute": false
+    },
+    {
+      "gate_id": "RG-4",
+      "name": "Replay",
+      "status": "pass",
+      "evidence_refs": [
+        "audit-assurance-pack.json"
+      ],
+      "release_approval_substitute": false
+    },
+    {
+      "gate_id": "RG-5",
+      "name": "QEG",
+      "status": "pass",
+      "evidence_refs": [
+        "product-readiness-report.json"
+      ],
+      "release_approval_substitute": false
+    },
+    {
+      "gate_id": "RG-6",
+      "name": "Security",
+      "status": "pass",
+      "evidence_refs": [
+        "security-trust-packet.json",
+        "privacy-quarantine-report.json"
+      ],
+      "release_approval_substitute": false
+    },
+    {
+      "gate_id": "RG-7",
+      "name": "Docs",
+      "status": "pass",
+      "evidence_refs": [
+        "customer-docs-index.json",
+        "commercial-contract-report.json"
+      ],
+      "release_approval_substitute": false
+    },
+    {
+      "gate_id": "RG-8",
+      "name": "Rollback",
+      "status": "pass",
+      "evidence_refs": [
+        "release-migration-report.json"
+      ],
+      "release_approval_substitute": false
+    }
+  ],
+  "compatibility_matrix": {
+    "cli_version": "0.1.0-fixture",
+    "schema_versions": [
+      "HATE/v1"
+    ],
+    "adapter_sdk_versions": [
+      "1.x-fixture"
+    ],
+    "qeg_export_versions": [
+      "QEG/v1"
+    ],
+    "profile_versions": [
+      "default/v1"
+    ],
+    "supported_until": "2026-12-31"
+  },
+  "release_notes": {
+    "summary": "Local artifact release candidate fixture.",
+    "breaking_changes": [],
+    "deprecated_fields": [],
+    "migration_steps": [],
+    "known_issues": [
+      "Hosted runtime evidence is not claimed by this release candidate."
+    ],
+    "security_notes": [
+      "Security trust packet fixture is included."
+    ],
+    "artifact_safety_changes": [
+      "Unsafe artifacts remain excluded from public outputs."
+    ],
+    "qeg_compatibility": "QEG/v1 fixture compatible",
+    "rollback_instructions": "Restore previous artifact bundle; canonical bundles are immutable."
+  },
+  "rollback": {
+    "canonical_bundle_immutable": true,
+    "old_bundle_destroyed": false,
+    "unsupported_future_schema_safe_reject": true,
+    "migration_dry_run_available": true,
+    "rollback_note_ref": "release-migration-report.json"
+  },
+  "summary": {
+    "required_report_count": 12,
+    "included_required_report_count": 12,
+    "missing_required_report_count": 0,
+    "release_gate_pass_count": 8,
+    "release_gate_count": 8,
+    "release_ready": true
+  },
+  "source_refs": [
+    "RELEASE_MIGRATION_POLICY.md",
+    "IMPLEMENTATION_ROADMAP_CHECKLIST.md",
+    "product-readiness-report.json"
+  ],
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

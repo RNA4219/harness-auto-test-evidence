@@ -1,0 +1,95 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "pr_annotation_export",
+  "run_id": "1001",
+  "annotations": [
+    {
+      "annotation_id": "pr-annotation:1001:risk-auth-high:src/auth.py:10",
+      "annotation_level": "warning",
+      "path": "src/auth.py",
+      "start_line": 10,
+      "end_line": 20,
+      "start_column": 1,
+      "end_column": 1,
+      "risk_id": "risk-auth-high",
+      "risk_label": "Authentication logic changed",
+      "severity": "high",
+      "message": "HATE warning: high risk risk-auth-high touches this changed path. Required evidence is linked.",
+      "raw_details": {
+        "risk_node_id": "risk:risk-auth-high",
+        "changed_code_node_id": "changed_code:src/auth.py#L10-L20",
+        "required_test_refs": [
+          "junit:tests/test_auth.py::test_login"
+        ],
+        "execution_evidence_refs": [
+          "execution:1001:f577f8ac1efa67ea"
+        ],
+        "coverage_refs": [
+          "src/auth.py"
+        ],
+        "remediation": "Review high-risk changed path and restore missing evidence before relying on this annotation as release approval."
+      },
+      "aete_summary": {
+        "weighted_score": 0.65,
+        "score_confidence": "high"
+      },
+      "dq_summary": {
+        "unverified_acceptance_count": 0
+      },
+      "source_refs": [
+        "fixture:/diff-risk-test.json"
+      ],
+      "publish_gate_override": false,
+      "release_gate_override": false
+    },
+    {
+      "annotation_id": "pr-annotation:1001:risk-db-high:src/db.py:5",
+      "annotation_level": "warning",
+      "path": "src/db.py",
+      "start_line": 5,
+      "end_line": 10,
+      "start_column": 1,
+      "end_column": 1,
+      "risk_id": "risk-db-high",
+      "risk_label": "Database connection module changed",
+      "severity": "high",
+      "message": "HATE warning: high risk risk-db-high touches this changed path. Required evidence is linked.",
+      "raw_details": {
+        "risk_node_id": "risk:risk-db-high",
+        "changed_code_node_id": "changed_code:src/db.py#L5-L10",
+        "required_test_refs": [
+          "junit:tests/test_db.py::test_connection"
+        ],
+        "execution_evidence_refs": [
+          "execution:1001:32d9b797e7024544"
+        ],
+        "coverage_refs": [
+          "src/db.py"
+        ],
+        "remediation": "Review high-risk changed path and restore missing evidence before relying on this annotation as release approval."
+      },
+      "aete_summary": {
+        "weighted_score": 0.65,
+        "score_confidence": "high"
+      },
+      "dq_summary": {
+        "unverified_acceptance_count": 0
+      },
+      "source_refs": [
+        "fixture:/diff-risk-test.json"
+      ],
+      "publish_gate_override": false,
+      "release_gate_override": false
+    }
+  ],
+  "summary": {
+    "annotation_count": 2,
+    "high_risk_count": 2,
+    "failure_annotation_count": 0,
+    "warning_annotation_count": 2
+  },
+  "github_pr_annotation_compatible": true,
+  "annotation_source": "canonical_qeg_bundle",
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

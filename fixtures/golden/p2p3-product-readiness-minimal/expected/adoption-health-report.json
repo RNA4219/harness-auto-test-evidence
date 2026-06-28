@@ -1,0 +1,58 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "adoption_health_report",
+  "run_id": "1001",
+  "stages": [
+    {
+      "stage": "Discover",
+      "owner": "RNA4219",
+      "status": "tracked",
+      "milestone": "discover-fixture",
+      "next_action": "review evidence refs"
+    },
+    {
+      "stage": "Prove",
+      "owner": "RNA4219",
+      "status": "tracked",
+      "milestone": "prove-fixture",
+      "next_action": "review evidence refs"
+    },
+    {
+      "stage": "Integrate",
+      "owner": "RNA4219",
+      "status": "tracked",
+      "milestone": "integrate-fixture",
+      "next_action": "review evidence refs"
+    },
+    {
+      "stage": "Govern",
+      "owner": "RNA4219",
+      "status": "tracked",
+      "milestone": "govern-fixture",
+      "next_action": "review evidence refs"
+    },
+    {
+      "stage": "Scale",
+      "owner": "RNA4219",
+      "status": "tracked",
+      "milestone": "scale-fixture",
+      "next_action": "review evidence refs"
+    },
+    {
+      "stage": "Renew",
+      "owner": "RNA4219",
+      "status": "tracked",
+      "milestone": "renew-fixture",
+      "next_action": "review evidence refs"
+    }
+  ],
+  "adoption_gaps": [
+    {
+      "gap_id": "adoption:hosted-runtime",
+      "status": "not_in_local_scope",
+      "renewal_readiness": "not_applicable"
+    }
+  ],
+  "precheck_decision_override": false,
+  "publish_gate_override": false
+}

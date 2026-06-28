@@ -14,16 +14,12 @@
           "properties": {
             "validated_artifacts": {
               "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["path", "sha256"],
-                "additionalProperties": true
-              }
+              "items": { "type": "string" }
             },
             "validation_result": { "enum": ["pass", "fail", "partial"] },
             "source_refs": {
               "type": "array",
-              "items": { "type": "object", "additionalProperties": true }
+              "items": { "type": "string" }
             }
           },
           "additionalProperties": true

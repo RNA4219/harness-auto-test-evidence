@@ -1,0 +1,93 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "shipyard_run_evidence",
+  "record_id": "shipyard-p1b-workflow-mapping-20260628",
+  "run_id": "shipyard-hate-p1b-workflow-20260628",
+  "run_attempt": 1,
+  "commit_sha": "local-working-tree",
+  "created_at": "2026-06-28T00:00:00Z",
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "redaction_status": "not_required",
+  "payload": {
+    "shipyard_stage": "acceptance",
+    "task_id": "HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+    "task_title": "P1b RanD, Shipyard, and workflow-cookbook advisory artifact mapping",
+    "shipyard_flow": [
+      "plan",
+      "dev",
+      "acceptance"
+    ],
+    "implementation_scope": {
+      "in": [
+        "hate workflow map CLI",
+        "requirement-evidence-alignment.json generation",
+        "workflow-task-seed.json generation",
+        "workflow-acceptance-record.json generation",
+        "workflow-evidence.jsonl generation",
+        "workflow-docs-stale.json generation",
+        "workflow-birdseye-map.json generation",
+        "shipyard-run-evidence.json generation",
+        "RanD verdict override prevention",
+        "Shipyard state and publish override prevention",
+        "workflow-cookbook checker reimplementation prevention"
+      ],
+      "out": [
+        "RanD Requirement Definition Gate verdict",
+        "Shipyard runtime dispatch",
+        "Shipyard state machine",
+        "Shipyard publish approval",
+        "workflow-cookbook checker or Birdseye generator"
+      ]
+    },
+    "commands": [
+      {
+        "command": "uv run pytest tests/test_p1b.py",
+        "result": "pass",
+        "summary": "2 P1b tests passed"
+      },
+      {
+        "command": "uv run python -m hate workflow map --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --trust fixtures/golden/p1a-trust-minimal/expected --out fixtures/golden/p1b-workflow-minimal/expected",
+        "result": "pass",
+        "summary": "workflow_status=conditional, task_id=HATE-MVP-007-P1B-WORKFLOW-MAPPING"
+      }
+    ],
+    "generated_artifacts": [
+      "src/hate/p1b.py",
+      "src/hate/cli.py",
+      "tests/test_p1b.py",
+      "fixtures/golden/p1b-workflow-minimal/README.md",
+      "fixtures/golden/p1b-workflow-minimal/expected/requirement-evidence-alignment.json",
+      "fixtures/golden/p1b-workflow-minimal/expected/workflow-task-seed.json",
+      "fixtures/golden/p1b-workflow-minimal/expected/workflow-acceptance-record.json",
+      "fixtures/golden/p1b-workflow-minimal/expected/workflow-evidence.jsonl",
+      "fixtures/golden/p1b-workflow-minimal/expected/workflow-docs-stale.json",
+      "fixtures/golden/p1b-workflow-minimal/expected/workflow-birdseye-map.json",
+      "fixtures/golden/p1b-workflow-minimal/expected/shipyard-run-evidence.json"
+    ],
+    "acceptance": {
+      "p1b_r2e_alignment": "pass",
+      "p1b_shipyard_advisory": "pass",
+      "p1b_workflow_traceability": "pass",
+      "p1b_docs_stale_material": "pass",
+      "p1b_birdseye_material": "pass",
+      "workflow_status": "conditional",
+      "conditional_reason": "The fixture intentionally preserves the P0b missing execution gap as unverified acceptance and manual-bb bridge debt.",
+      "publish_gate_override": false,
+      "release_gate_override": false,
+      "shipyard_state_override": false
+    },
+    "next_phase": {
+      "phase": "P2/P3 product readiness",
+      "tasks": [
+        "product readiness and hosted read model artifacts",
+        "enterprise metrics and governance artifacts"
+      ]
+    },
+    "notes": [
+      "This is local advisory Shipyard evidence, not a live shipyard-cp runtime dispatch.",
+      "HATE preserves RanD, Shipyard, workflow-cookbook, and manual-bb gate authorities.",
+      "Full implementation completion remains No-Go until P2/P3 artifacts are implemented and verified."
+    ]
+  }
+}

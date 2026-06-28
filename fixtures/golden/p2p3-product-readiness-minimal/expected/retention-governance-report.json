@@ -1,0 +1,160 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "retention_governance_report",
+  "run_id": "1001",
+  "policy_scope": "metadata_policy_not_system_of_record",
+  "classification_policies": [
+    {
+      "classification": "public",
+      "retention_days": 180,
+      "summary_allowed": true,
+      "export_allowed": true,
+      "diagnostic_allowed": true,
+      "delete_action": "metadata_delete_request",
+      "legal_hold_action": "block_delete_retain_metadata",
+      "final_retention_control": "delegated_to_qeg_or_connected_storage"
+    },
+    {
+      "classification": "internal",
+      "retention_days": 90,
+      "summary_allowed": "conditional",
+      "export_allowed": "conditional",
+      "diagnostic_allowed": true,
+      "delete_action": "metadata_delete_request",
+      "legal_hold_action": "block_delete_retain_metadata",
+      "final_retention_control": "delegated_to_qeg_or_connected_storage"
+    },
+    {
+      "classification": "confidential",
+      "retention_days": 30,
+      "summary_allowed": false,
+      "export_allowed": false,
+      "diagnostic_allowed": false,
+      "delete_action": "metadata_delete_request",
+      "legal_hold_action": "block_delete_retain_metadata",
+      "final_retention_control": "delegated_to_qeg_or_connected_storage"
+    },
+    {
+      "classification": "restricted",
+      "retention_days": 0,
+      "summary_allowed": false,
+      "export_allowed": false,
+      "diagnostic_allowed": false,
+      "delete_action": "quarantine_metadata_only",
+      "legal_hold_action": "block_delete_retain_metadata",
+      "final_retention_control": "delegated_to_qeg_or_connected_storage"
+    }
+  ],
+  "artifact_actions": [
+    {
+      "artifact_ref": "fixture:/p0a/HATE-run.json",
+      "artifact_kind": "HATE-run",
+      "classification": "public",
+      "retention_days": 30,
+      "legal_hold": false,
+      "delete_allowed": true,
+      "export_allowed": true,
+      "diagnostic_allowed": true,
+      "raw_artifact_included_in_export": false,
+      "canonical_bundle_mutated": false
+    },
+    {
+      "artifact_ref": "fixture:/p0a/HATE-test-results.ndjson",
+      "artifact_kind": "HATE-test-results",
+      "classification": "public",
+      "retention_days": 30,
+      "legal_hold": false,
+      "delete_allowed": true,
+      "export_allowed": true,
+      "diagnostic_allowed": true,
+      "raw_artifact_included_in_export": false,
+      "canonical_bundle_mutated": false
+    },
+    {
+      "artifact_ref": "fixture:/p0a/HATE-coverage.ndjson",
+      "artifact_kind": "HATE-coverage",
+      "classification": "public",
+      "retention_days": 30,
+      "legal_hold": false,
+      "delete_allowed": true,
+      "export_allowed": true,
+      "diagnostic_allowed": true,
+      "raw_artifact_included_in_export": false,
+      "canonical_bundle_mutated": false
+    },
+    {
+      "artifact_ref": "fixture:/p0a/precheck-decision.json",
+      "artifact_kind": "precheck-decision",
+      "classification": "public",
+      "retention_days": 30,
+      "legal_hold": false,
+      "delete_allowed": true,
+      "export_allowed": true,
+      "diagnostic_allowed": true,
+      "raw_artifact_included_in_export": false,
+      "canonical_bundle_mutated": false
+    }
+  ],
+  "request_fixtures": [
+    {
+      "request_id": "req_export_internal_summary",
+      "request_type": "customer_export",
+      "classification": "internal",
+      "decision": "allow_metadata_only",
+      "raw_artifact_included": false,
+      "source_refs": [
+        "artifact-budget-report.json"
+      ]
+    },
+    {
+      "request_id": "req_delete_restricted_quarantine",
+      "request_type": "customer_delete",
+      "classification": "restricted",
+      "decision": "defer_to_system_of_record",
+      "raw_artifact_deleted_by_hate": false,
+      "quarantine_metadata_retained": true,
+      "source_refs": [
+        "privacy-quarantine-report.json"
+      ]
+    },
+    {
+      "request_id": "req_legal_hold_trace",
+      "request_type": "legal_hold",
+      "classification": "confidential",
+      "decision": "hold_metadata_and_block_delete",
+      "delete_allowed_while_on_hold": false,
+      "source_refs": [
+        "domain-model-report.json"
+      ]
+    }
+  ],
+  "legal_hold": {
+    "supported": true,
+    "delete_allowed_while_on_hold": false,
+    "canonical_bundle_mutated": false,
+    "qeg_retention_reimplemented": false
+  },
+  "customer_export_delete": {
+    "export_metadata_only": true,
+    "delete_request_records_metadata": true,
+    "raw_artifact_deletion_delegated": true,
+    "system_of_record": "QEG or connected storage policy"
+  },
+  "summary": {
+    "classification_count": 4,
+    "artifact_action_count": 4,
+    "request_fixture_count": 3,
+    "restricted_quarantine_count": 0,
+    "legal_hold_blocks_delete": true
+  },
+  "source_refs": [
+    "docs/process/ENTERPRISE_DOMAIN_MODEL.md",
+    "docs/process/PRIVACY_QUARANTINE_CONTRACT.md",
+    "artifact-budget-report.json",
+    "domain-model-report.json"
+  ],
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

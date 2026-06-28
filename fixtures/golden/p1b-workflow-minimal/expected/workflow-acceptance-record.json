@@ -1,0 +1,51 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "workflow_acceptance",
+  "acceptance_id": "AC-HATE-P1B-WORKFLOW-MAPPING",
+  "task_id": "HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+  "run_id": "1001",
+  "scope": "P1b downstream advisory artifact generation",
+  "acceptance_criteria": [
+    "RanD requirement verdicts are preserved as advisory inputs.",
+    "Shipyard run evidence is generated without state-machine or publish overrides.",
+    "Workflow Task Seed, Acceptance, Evidence, Docs Stale, and Birdseye artifacts are linked."
+  ],
+  "checks": [
+    {
+      "check_id": "p1b-rand-verdict-preserved",
+      "status": "pass",
+      "source_refs": [
+        "requirement-evidence-alignment.json"
+      ]
+    },
+    {
+      "check_id": "p1b-shipyard-advisory-only",
+      "status": "pass",
+      "source_refs": [
+        "shipyard-run-evidence.json"
+      ]
+    },
+    {
+      "check_id": "p1b-workflow-traceability",
+      "status": "pass",
+      "source_refs": [
+        "workflow-task-seed.json",
+        "workflow-evidence.jsonl"
+      ]
+    },
+    {
+      "check_id": "p1b-manual-gap-visible",
+      "status": "pass",
+      "source_refs": [
+        "requirement-evidence-alignment.json"
+      ]
+    }
+  ],
+  "verdict": "accepted",
+  "source_refs": [
+    "requirement-evidence-alignment.json",
+    "workflow-task-seed.json"
+  ],
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

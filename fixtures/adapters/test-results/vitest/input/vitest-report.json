@@ -1,0 +1,87 @@
+{
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["utils", "formatDate"],
+          "fullName": "utils formatDate should format date correctly",
+          "status": "passed",
+          "title": "should format date correctly",
+          "duration": 5,
+          "failureMessages": [],
+          "location": { "line": 10, "column": 1 }
+        },
+        {
+          "ancestorTitles": ["utils", "formatDate"],
+          "fullName": "utils formatDate should handle null input",
+          "status": "failed",
+          "title": "should handle null input",
+          "duration": 15,
+          "failureMessages": ["TypeError: Cannot read property 'format' of null"],
+          "location": { "line": 25, "column": 1 }
+        },
+        {
+          "ancestorTitles": ["api", "fetchData"],
+          "fullName": "api fetchData should return data on success",
+          "status": "passed",
+          "title": "should return data on success",
+          "duration": 8,
+          "failureMessages": [],
+          "location": { "line": 5, "column": 1 }
+        },
+        {
+          "ancestorTitles": ["api", "fetchData"],
+          "fullName": "api fetchData should retry on failure",
+          "status": "passed",
+          "title": "should retry on failure",
+          "duration": 12,
+          "meta": { "retryCount": 3, "flaky": true },
+          "failureMessages": [],
+          "location": { "line": 15, "column": 1 }
+        }
+      ],
+      "name": "src/__tests__/utils.test.ts",
+      "startTime": 2026.0,
+      "endTime": 2026.5,
+      "status": "failed",
+      "message": "",
+      "duration": 40
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["components", "Button"],
+          "fullName": "components Button should render correctly",
+          "status": "passed",
+          "title": "should render correctly",
+          "duration": 3,
+          "failureMessages": [],
+          "location": { "line": 8, "column": 1 }
+        },
+        {
+          "ancestorTitles": ["components", "Button"],
+          "fullName": "components Button should handle click events",
+          "status": "passed",
+          "title": "should handle click events",
+          "duration": 2,
+          "failureMessages": [],
+          "location": { "line": 20, "column": 1 }
+        }
+      ],
+      "name": "src/__tests__/components.test.ts",
+      "startTime": 2026.5,
+      "endTime": 2026.8,
+      "status": "passed",
+      "message": "",
+      "duration": 30
+    }
+  ],
+  "success": false,
+  "numTotalTests": 6,
+  "numPassedTests": 5,
+  "numFailedTests": 1,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "numSkippedTests": 0,
+  "startTime": 2026.0
+}

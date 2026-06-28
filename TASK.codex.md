@@ -24,12 +24,18 @@ langs: [multi]
 `workflow-cookbook` 様式に沿って、`harness-auto-test-evidence` の実装に入れる
 最小文書構造とタスク分解を作成し、MVP 実装に直結する状態を作る。
 
+現在の実装作業の正本分解は `docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md` とし、
+仕様不足の解消正本は `docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md` とする。
+本ファイルは初期 seed と履歴として残し、実装時の完了判定は新しい2文書を優先する。
+
 ## Scope
 
 - In
-  - `README.md`
-  - `docs/process/BLUEPRINT.md`
-  - `docs/process/GUARDRAILS.md`
+- `README.md`
+- `docs/process/BLUEPRINT.md`
+- `docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md`
+- `docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md`
+- `docs/process/GUARDRAILS.md`
   - `docs/process/RUNBOOK.md`
   - `docs/process/EVALUATION.md`
   - `docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md`

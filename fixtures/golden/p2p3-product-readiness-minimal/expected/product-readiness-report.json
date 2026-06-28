@@ -1,0 +1,155 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "product_readiness_report",
+  "run_id": "1001",
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "task_id": "HATE-MVP-008-P2P3-PRODUCT-READINESS",
+  "product_readiness_gates": [
+    {
+      "gate_id": "PRG-0",
+      "name": "Prototype",
+      "status": "pass",
+      "evidence_refs": [
+        "P0a golden fixture is executable."
+      ],
+      "source_refs": [
+        "product-readiness-report.json"
+      ]
+    },
+    {
+      "gate_id": "PRG-1",
+      "name": "Internal Alpha",
+      "status": "covered_by_fixture",
+      "evidence_refs": [
+        "P0b QEG export fixture is executable."
+      ],
+      "source_refs": [
+        "product-readiness-report.json"
+      ]
+    },
+    {
+      "gate_id": "PRG-2",
+      "name": "Private Beta",
+      "status": "covered_by_fixture",
+      "evidence_refs": [
+        "Adapter conformance report is generated."
+      ],
+      "source_refs": [
+        "product-readiness-report.json"
+      ]
+    },
+    {
+      "gate_id": "PRG-3",
+      "name": "Team GA",
+      "status": "covered_by_fixture",
+      "evidence_refs": [
+        "QEG export, doctor, summary, and docs evidence are linked."
+      ],
+      "source_refs": [
+        "product-readiness-report.json"
+      ]
+    },
+    {
+      "gate_id": "PRG-4",
+      "name": "Enterprise Ready",
+      "status": "covered_by_artifact",
+      "evidence_refs": [
+        "RBAC/read model/support/customer docs artifacts are present."
+      ],
+      "source_refs": [
+        "product-readiness-report.json"
+      ]
+    },
+    {
+      "gate_id": "PRG-5",
+      "name": "Regulated Ready",
+      "status": "covered_by_artifact",
+      "evidence_refs": [
+        "Trust, privacy, audit, and assurance artifacts are present."
+      ],
+      "source_refs": [
+        "product-readiness-report.json"
+      ]
+    },
+    {
+      "gate_id": "PRG-6",
+      "name": "Enterprise Product Ready",
+      "status": "covered_by_artifact",
+      "evidence_refs": [
+        "Enterprise metrics and governance reports are present."
+      ],
+      "source_refs": [
+        "product-readiness-report.json"
+      ]
+    }
+  ],
+  "metric_refs": [
+    "enterprise-metrics-report.json"
+  ],
+  "artifact_refs": [
+    "dashboard-report.html",
+    "dashboard-view-model.json",
+    "pr-annotation-export.json",
+    "artifact-budget-report.json",
+    "attestation-report.json",
+    "external-export-report.json",
+    "product-error-catalog.json",
+    "enterprise-risk-debt-register.json",
+    "privacy-quarantine-report.json",
+    "hosted-read-model-index.json",
+    "domain-model-report.json",
+    "rbac-matrix-report.json",
+    "identity-connector-report.json",
+    "enterprise-connector-report.json",
+    "audit-event-log.json",
+    "retention-governance-report.json",
+    "release-migration-report.json",
+    "entitlement-usage-report.json",
+    "enterprise-metrics-report.json",
+    "customer-docs-index.json",
+    "incident-slo-report.json",
+    "adoption-health-report.json",
+    "security-trust-packet.json",
+    "residency-deployment-report.json",
+    "roadmap-decision-record.json",
+    "accessibility-localization-report.json",
+    "commercial-contract-report.json",
+    "audit-assurance-pack.json",
+    "support-diagnostic-bundle.json",
+    "privacy-telemetry-report.json",
+    "governance-portfolio-report.json",
+    "release-candidate-pack.json"
+  ],
+  "evidence_summary": {
+    "aete_weighted_score": 0.65,
+    "doctor_findings": 0,
+    "workflow_verdict": "accepted",
+    "unverified_acceptance_count": 0,
+    "missing_input_artifacts": []
+  },
+  "summary": {
+    "overall_status": "go",
+    "prg_coverage": "7/7",
+    "metric_count": 7,
+    "required_artifact_count": 32,
+    "live_saas_required": false,
+    "degraded_by_input_artifacts": false,
+    "degraded_by_doctor_findings": false,
+    "degraded_by_unverified_acceptance": false
+  },
+  "boundaries": {
+    "local_first_precheck_dependency": false,
+    "qeg_gate_override": false,
+    "release_gate_override": false,
+    "publish_gate_override": false,
+    "hosted_saas_claim": false
+  },
+  "source_refs": [
+    "fixture:/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixture:/p1a-trust-minimal/expected/aete-score.json",
+    "fixture:/p1b-workflow-minimal/expected/requirement-evidence-alignment.json"
+  ],
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

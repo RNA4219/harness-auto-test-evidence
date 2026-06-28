@@ -1,0 +1,46 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "hosted_read_model_index",
+  "run_id": "1001",
+  "views": [
+    {
+      "view": "runs",
+      "source_artifact": "qeg-bundle.json",
+      "stale_cache_policy": "rebuild_from_canonical_bundle"
+    },
+    {
+      "view": "evidence",
+      "source_artifact": "workflow-evidence.jsonl",
+      "stale_cache_policy": "rebuild_from_canonical_bundle"
+    },
+    {
+      "view": "risk_debt",
+      "source_artifact": "requirement-evidence-alignment.json",
+      "stale_cache_policy": "rebuild_from_canonical_bundle"
+    },
+    {
+      "view": "product_readiness",
+      "source_artifact": "product-readiness-report.json",
+      "stale_cache_policy": "rebuild_from_canonical_bundle"
+    },
+    {
+      "view": "dashboard",
+      "source_artifact": "dashboard-report.html",
+      "stale_cache_policy": "rebuild_from_canonical_bundle"
+    }
+  ],
+  "rbac": [
+    "admin",
+    "maintainer",
+    "developer",
+    "auditor",
+    "viewer"
+  ],
+  "source_refs": [
+    "fixture:/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixture:/p1a-trust-minimal/expected/aete-score.json",
+    "fixture:/p1b-workflow-minimal/expected/requirement-evidence-alignment.json"
+  ],
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

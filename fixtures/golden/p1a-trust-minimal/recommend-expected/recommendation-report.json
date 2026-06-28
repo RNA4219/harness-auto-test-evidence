@@ -1,0 +1,37 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "recommendation_report",
+  "gap_id": "missing_execution",
+  "bundle_ref": "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json",
+  "report_ref": "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json",
+  "recommendations": [
+    {
+      "recommendation_id": "recommend:missing_execution:1",
+      "gap_id": "missing_execution",
+      "risk_id": "risk-db-high",
+      "expected_test_ref": "tests/test_db.py::test_connection",
+      "recommended_actions": [
+        "Add or restore automated execution evidence for the expected test.",
+        "If automation is not available, create a manual-bb bridge review.",
+        "Keep the risk debt open until evidence is attached."
+      ],
+      "recommended_test_layer": "unit",
+      "recommended_manual_layer": "manual-scripted",
+      "source_refs": [
+        "qeg-export-report.json",
+        "risk-debt-register.json",
+        "manual-bb-bridge-requests.jsonl"
+      ],
+      "related_source_refs": [
+        "fixture:/diff-risk-test.json",
+        "src/db.py#L5-L10"
+      ]
+    }
+  ],
+  "source_refs": [
+    "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json"
+  ],
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "enterprise_connector_report",
+  "run_id": "1001",
+  "mode": "dry_run_contract_fixture",
+  "connectors": [
+    {
+      "connector_id": "siem",
+      "display_name": "SIEM export",
+      "connector_type": "enterprise_export",
+      "payload_kind": "audit_events",
+      "purpose": "security_monitoring",
+      "live_runtime_implemented": false,
+      "dry_run_supported": true,
+      "optional_enterprise_connector": true,
+      "configured": false,
+      "failure_policy": "non_gating_warning",
+      "canonical_bundle_mutated": false
+    },
+    {
+      "connector_id": "warehouse",
+      "display_name": "Data warehouse export",
+      "connector_type": "enterprise_export",
+      "payload_kind": "aggregate_metrics",
+      "purpose": "analytics",
+      "live_runtime_implemented": false,
+      "dry_run_supported": true,
+      "optional_enterprise_connector": true,
+      "configured": false,
+      "failure_policy": "non_gating_warning",
+      "canonical_bundle_mutated": false
+    },
+    {
+      "connector_id": "ticketing",
+      "display_name": "Ticketing sync",
+      "connector_type": "enterprise_export",
+      "payload_kind": "incident_and_risk_debt",
+      "purpose": "support_workflow",
+      "live_runtime_implemented": false,
+      "dry_run_supported": true,
+      "optional_enterprise_connector": true,
+      "configured": false,
+      "failure_policy": "non_gating_warning",
+      "canonical_bundle_mutated": false
+    }
+  ],
+  "failure_fixtures": [
+    {
+      "connector_id": "siem",
+      "simulated_failure": "connector_unavailable",
+      "stable_warning_code": "HATE-EXP-001",
+      "severity": "warning",
+      "non_gating": true,
+      "local_artifacts_preserved": true,
+      "qeg_export_preserved": true,
+      "canonical_decision_unchanged": true
+    },
+    {
+      "connector_id": "warehouse",
+      "simulated_failure": "connector_unavailable",
+      "stable_warning_code": "HATE-EXP-001",
+      "severity": "warning",
+      "non_gating": true,
+      "local_artifacts_preserved": true,
+      "qeg_export_preserved": true,
+      "canonical_decision_unchanged": true
+    },
+    {
+      "connector_id": "ticketing",
+      "simulated_failure": "connector_unavailable",
+      "stable_warning_code": "HATE-EXP-001",
+      "severity": "warning",
+      "non_gating": true,
+      "local_artifacts_preserved": true,
+      "qeg_export_preserved": true,
+      "canonical_decision_unchanged": true
+    }
+  ],
+  "payload_safety": {
+    "raw_artifact_content_included": false,
+    "customer_code_included": false,
+    "connector_token_included": false,
+    "pii_included": false,
+    "unsafe_artifact_exported": false
+  },
+  "fallback_policy": {
+    "connector_failure_non_gating": true,
+    "local_artifacts_preserved": true,
+    "qeg_export_preserved": true,
+    "retry_allowed": true,
+    "manual_replay_available": true
+  },
+  "summary": {
+    "connector_count": 3,
+    "configured_count": 0,
+    "dry_run_count": 3,
+    "failure_fixture_count": 3
+  },
+  "source_refs": [
+    "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md",
+    "docs/process/DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md",
+    "audit-event-log.json",
+    "enterprise-metrics-report.json",
+    "incident-slo-report.json"
+  ],
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

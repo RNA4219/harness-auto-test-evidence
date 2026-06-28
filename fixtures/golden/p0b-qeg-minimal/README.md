@@ -21,7 +21,8 @@ status: active
 - High-risk changed path: `src/auth.py` (authentication module)
 - Required test: `test_login` (present in P0a output)
 - Evidence: execution present, coverage present
-- Gap: one high-risk changed path with no execution evidence (`src/db.py`)
+- Evidence: DB connection execution evidence is present for `src/db.py`
+- Gap: none in the default release/UAT fixture. Missing-execution behavior is covered by dedicated negative tests.
 
 ## Expected Output
 

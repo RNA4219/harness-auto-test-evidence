@@ -1,0 +1,1 @@
+fixture marks this ref as a symlink without requiring filesystem symlink privileges

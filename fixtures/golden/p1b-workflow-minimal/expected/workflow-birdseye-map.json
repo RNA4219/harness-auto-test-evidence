@@ -1,0 +1,55 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "workflow_birdseye_map",
+  "run_id": "1001",
+  "nodes": [
+    {
+      "id": "doc:blueprint",
+      "kind": "doc",
+      "label": "BLUEPRINT",
+      "ref": "docs/process/BLUEPRINT.md"
+    },
+    {
+      "id": "artifact:qeg",
+      "kind": "artifact",
+      "label": "QEG bundle",
+      "ref": "qeg-bundle.json"
+    },
+    {
+      "id": "artifact:aete",
+      "kind": "artifact",
+      "label": "AETE score",
+      "ref": "aete-score.json"
+    },
+    {
+      "id": "artifact:p1b",
+      "kind": "artifact",
+      "label": "P1b workflow mapping",
+      "ref": "workflow-task-seed.json"
+    }
+  ],
+  "edges": [
+    {
+      "from": "doc:blueprint",
+      "to": "artifact:qeg",
+      "kind": "specifies"
+    },
+    {
+      "from": "artifact:qeg",
+      "to": "artifact:aete",
+      "kind": "feeds"
+    },
+    {
+      "from": "artifact:aete",
+      "to": "artifact:p1b",
+      "kind": "feeds"
+    }
+  ],
+  "source_refs": [
+    "fixture:/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixture:/p0b-qeg-minimal/expected/qeg-export-report.json",
+    "fixture:/p1a-trust-minimal/expected/aete-score.json"
+  ],
+  "birdseye_generator_reimplemented": false,
+  "publish_gate_override": false
+}

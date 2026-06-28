@@ -1,0 +1,25 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "doctor_report",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "findings": [
+    {
+      "finding_id": "doctor:qeg_fixture:1",
+      "category": "qeg_fixture",
+      "severity": "high",
+      "message": "test not found in execution results",
+      "source_refs": [
+        "qeg-export-report.json"
+      ]
+    }
+  ],
+  "summary": {
+    "finding_count": 1,
+    "blocking_categories": [
+      "qeg_fixture"
+    ]
+  },
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

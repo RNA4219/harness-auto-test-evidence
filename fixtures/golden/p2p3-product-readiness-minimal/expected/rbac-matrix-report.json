@@ -1,0 +1,1209 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "rbac_matrix_report",
+  "run_id": "1001",
+  "roles": [
+    "admin",
+    "maintainer",
+    "developer",
+    "auditor",
+    "viewer",
+    "service_account",
+    "security_reviewer"
+  ],
+  "resources": [
+    {
+      "resource": "product-readiness",
+      "actions": [
+        "read"
+      ]
+    },
+    {
+      "resource": "runs",
+      "actions": [
+        "read"
+      ]
+    },
+    {
+      "resource": "bundles",
+      "actions": [
+        "read"
+      ]
+    },
+    {
+      "resource": "evidence",
+      "actions": [
+        "read"
+      ]
+    },
+    {
+      "resource": "risk-debt",
+      "actions": [
+        "read"
+      ]
+    },
+    {
+      "resource": "profiles",
+      "actions": [
+        "read",
+        "write",
+        "approve"
+      ]
+    },
+    {
+      "resource": "adapters",
+      "actions": [
+        "read",
+        "write"
+      ]
+    },
+    {
+      "resource": "artifacts",
+      "actions": [
+        "read_summary",
+        "read_raw",
+        "export"
+      ]
+    },
+    {
+      "resource": "audit-events",
+      "actions": [
+        "read",
+        "append"
+      ]
+    },
+    {
+      "resource": "quarantine",
+      "actions": [
+        "read",
+        "release"
+      ]
+    },
+    {
+      "resource": "rbac",
+      "actions": [
+        "read",
+        "write"
+      ]
+    },
+    {
+      "resource": "retention",
+      "actions": [
+        "read",
+        "write"
+      ]
+    }
+  ],
+  "matrix": [
+    {
+      "role": "admin",
+      "resource": "product-readiness",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "runs",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "bundles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "evidence",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "risk-debt",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "profiles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "profiles",
+      "action": "write",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "profiles",
+      "action": "approve",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "adapters",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "adapters",
+      "action": "write",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "artifacts",
+      "action": "read_summary",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "artifacts",
+      "action": "read_raw",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "artifacts",
+      "action": "export",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "audit-events",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "audit-events",
+      "action": "append",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "quarantine",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "quarantine",
+      "action": "release",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "rbac",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "rbac",
+      "action": "write",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "retention",
+      "action": "read",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "admin",
+      "resource": "retention",
+      "action": "write",
+      "decision": "allow",
+      "reason": "admin wildcard within HATE control plane; QEG approval remains external"
+    },
+    {
+      "role": "maintainer",
+      "resource": "product-readiness",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "runs",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "bundles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "evidence",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "risk-debt",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "profiles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "profiles",
+      "action": "write",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "profiles",
+      "action": "approve",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "maintainer",
+      "resource": "adapters",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "adapters",
+      "action": "write",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "artifacts",
+      "action": "read_summary",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "artifacts",
+      "action": "read_raw",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "artifacts",
+      "action": "export",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "audit-events",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "audit-events",
+      "action": "append",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "maintainer",
+      "resource": "quarantine",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "quarantine",
+      "action": "release",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "maintainer",
+      "resource": "rbac",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "maintainer",
+      "resource": "rbac",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "maintainer",
+      "resource": "retention",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "maintainer",
+      "resource": "retention",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "product-readiness",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "developer",
+      "resource": "runs",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "developer",
+      "resource": "bundles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "developer",
+      "resource": "evidence",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "developer",
+      "resource": "risk-debt",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "developer",
+      "resource": "profiles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "developer",
+      "resource": "profiles",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "profiles",
+      "action": "approve",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "adapters",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "developer",
+      "resource": "adapters",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "artifacts",
+      "action": "read_summary",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "developer",
+      "resource": "artifacts",
+      "action": "read_raw",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "artifacts",
+      "action": "export",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "audit-events",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "audit-events",
+      "action": "append",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "quarantine",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "quarantine",
+      "action": "release",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "rbac",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "rbac",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "retention",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "developer",
+      "resource": "retention",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "auditor",
+      "resource": "product-readiness",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "runs",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "bundles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "evidence",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "risk-debt",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "profiles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "profiles",
+      "action": "write",
+      "decision": "deny",
+      "reason": "auditor is read-only"
+    },
+    {
+      "role": "auditor",
+      "resource": "profiles",
+      "action": "approve",
+      "decision": "deny",
+      "reason": "auditor is read-only"
+    },
+    {
+      "role": "auditor",
+      "resource": "adapters",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "adapters",
+      "action": "write",
+      "decision": "deny",
+      "reason": "auditor is read-only"
+    },
+    {
+      "role": "auditor",
+      "resource": "artifacts",
+      "action": "read_summary",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "artifacts",
+      "action": "read_raw",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "artifacts",
+      "action": "export",
+      "decision": "deny",
+      "reason": "auditor is read-only"
+    },
+    {
+      "role": "auditor",
+      "resource": "audit-events",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "audit-events",
+      "action": "append",
+      "decision": "deny",
+      "reason": "auditor is read-only"
+    },
+    {
+      "role": "auditor",
+      "resource": "quarantine",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "quarantine",
+      "action": "release",
+      "decision": "deny",
+      "reason": "auditor is read-only"
+    },
+    {
+      "role": "auditor",
+      "resource": "rbac",
+      "action": "read",
+      "decision": "deny",
+      "reason": "auditor is read-only"
+    },
+    {
+      "role": "auditor",
+      "resource": "rbac",
+      "action": "write",
+      "decision": "deny",
+      "reason": "auditor is read-only"
+    },
+    {
+      "role": "auditor",
+      "resource": "retention",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "auditor",
+      "resource": "retention",
+      "action": "write",
+      "decision": "deny",
+      "reason": "auditor is read-only"
+    },
+    {
+      "role": "viewer",
+      "resource": "product-readiness",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "viewer",
+      "resource": "runs",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "viewer",
+      "resource": "bundles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "viewer",
+      "resource": "evidence",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "viewer",
+      "resource": "risk-debt",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "profiles",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "profiles",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "profiles",
+      "action": "approve",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "adapters",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "adapters",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "artifacts",
+      "action": "read_summary",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "artifacts",
+      "action": "read_raw",
+      "decision": "deny",
+      "reason": "viewer cannot access raw artifacts or exports"
+    },
+    {
+      "role": "viewer",
+      "resource": "artifacts",
+      "action": "export",
+      "decision": "deny",
+      "reason": "viewer cannot access raw artifacts or exports"
+    },
+    {
+      "role": "viewer",
+      "resource": "audit-events",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "audit-events",
+      "action": "append",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "quarantine",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "quarantine",
+      "action": "release",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "rbac",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "rbac",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "retention",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "viewer",
+      "resource": "retention",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "product-readiness",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "service_account",
+      "resource": "runs",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "service_account",
+      "resource": "bundles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "service_account",
+      "resource": "evidence",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "service_account",
+      "resource": "risk-debt",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "service_account",
+      "resource": "profiles",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "profiles",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "profiles",
+      "action": "approve",
+      "decision": "deny",
+      "reason": "service account cannot replace human approval"
+    },
+    {
+      "role": "service_account",
+      "resource": "adapters",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "adapters",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "artifacts",
+      "action": "read_summary",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "service_account",
+      "resource": "artifacts",
+      "action": "read_raw",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "artifacts",
+      "action": "export",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "audit-events",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "audit-events",
+      "action": "append",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "service_account",
+      "resource": "quarantine",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "quarantine",
+      "action": "release",
+      "decision": "deny",
+      "reason": "service account cannot replace human approval"
+    },
+    {
+      "role": "service_account",
+      "resource": "rbac",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "rbac",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "retention",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "service_account",
+      "resource": "retention",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "product-readiness",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "runs",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "bundles",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "evidence",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "risk-debt",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "profiles",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "profiles",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "profiles",
+      "action": "approve",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "adapters",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "adapters",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "artifacts",
+      "action": "read_summary",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "artifacts",
+      "action": "read_raw",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "artifacts",
+      "action": "export",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "audit-events",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "audit-events",
+      "action": "append",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "quarantine",
+      "action": "read",
+      "decision": "allow",
+      "reason": "explicit role permission"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "quarantine",
+      "action": "release",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "rbac",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "rbac",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "retention",
+      "action": "read",
+      "decision": "deny",
+      "reason": "default deny"
+    },
+    {
+      "role": "security_reviewer",
+      "resource": "retention",
+      "action": "write",
+      "decision": "deny",
+      "reason": "default deny"
+    }
+  ],
+  "invariants": {
+    "auditor_read_only": true,
+    "viewer_raw_artifact_denied": true,
+    "developer_audit_log_denied": true,
+    "service_account_human_approval_substitute": false,
+    "qeg_approval_not_reimplemented": true,
+    "least_privilege_default_deny": true
+  },
+  "read_model_mapping": [
+    {
+      "read_model_resource": "runs",
+      "permission": "runs:read",
+      "viewer_allowed": true,
+      "developer_allowed": true,
+      "auditor_allowed": true
+    },
+    {
+      "read_model_resource": "bundles",
+      "permission": "bundles:read",
+      "viewer_allowed": true,
+      "developer_allowed": true,
+      "auditor_allowed": true
+    },
+    {
+      "read_model_resource": "evidence",
+      "permission": "evidence:read",
+      "viewer_allowed": true,
+      "developer_allowed": true,
+      "auditor_allowed": true
+    },
+    {
+      "read_model_resource": "artifacts",
+      "permission": "artifacts:read_raw",
+      "viewer_allowed": false,
+      "developer_allowed": false,
+      "auditor_allowed": true
+    },
+    {
+      "read_model_resource": "risk-debt",
+      "permission": "risk-debt:read",
+      "viewer_allowed": false,
+      "developer_allowed": true,
+      "auditor_allowed": true
+    },
+    {
+      "read_model_resource": "profiles",
+      "permission": "profiles:read",
+      "viewer_allowed": false,
+      "developer_allowed": true,
+      "auditor_allowed": true
+    },
+    {
+      "read_model_resource": "adapters",
+      "permission": "adapters:read",
+      "viewer_allowed": false,
+      "developer_allowed": true,
+      "auditor_allowed": true
+    },
+    {
+      "read_model_resource": "audit-events",
+      "permission": "audit-events:read",
+      "viewer_allowed": false,
+      "developer_allowed": false,
+      "auditor_allowed": true
+    },
+    {
+      "read_model_resource": "product-readiness",
+      "permission": "product-readiness:read",
+      "viewer_allowed": true,
+      "developer_allowed": true,
+      "auditor_allowed": true
+    }
+  ],
+  "source_refs": [
+    "docs/process/ENTERPRISE_DOMAIN_MODEL.md",
+    "docs/process/HOSTED_READ_MODEL_API.md"
+  ],
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

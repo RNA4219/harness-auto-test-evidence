@@ -1,0 +1,69 @@
+{
+  "schema_version": "HATE/v1",
+  "run_id": "1001",
+  "entries": [
+    {
+      "original": "fixture:/diff-risk-test.json",
+      "normalized": "fixture:/diff-risk-test.json",
+      "root_kind": "workspace",
+      "resolution_status": "resolved",
+      "source_refs": [
+        "fixture:/diff-risk-test.json"
+      ]
+    },
+    {
+      "original": "fixture:/p0a/HATE-coverage.ndjson",
+      "normalized": "fixture:/p0a/HATE-coverage.ndjson",
+      "root_kind": "workspace",
+      "resolution_status": "resolved",
+      "source_refs": [
+        "fixture:/p0a/HATE-coverage.ndjson"
+      ]
+    },
+    {
+      "original": "fixture:/p0a/HATE-run.json",
+      "normalized": "fixture:/p0a/HATE-run.json",
+      "root_kind": "workspace",
+      "resolution_status": "resolved",
+      "source_refs": [
+        "fixture:/p0a/HATE-run.json"
+      ]
+    },
+    {
+      "original": "fixture:/p0a/HATE-test-results.ndjson",
+      "normalized": "fixture:/p0a/HATE-test-results.ndjson",
+      "root_kind": "workspace",
+      "resolution_status": "resolved",
+      "source_refs": [
+        "fixture:/p0a/HATE-test-results.ndjson"
+      ]
+    },
+    {
+      "original": "fixture:/p0a/precheck-decision.json",
+      "normalized": "fixture:/p0a/precheck-decision.json",
+      "root_kind": "workspace",
+      "resolution_status": "resolved",
+      "source_refs": [
+        "fixture:/p0a/precheck-decision.json"
+      ]
+    },
+    {
+      "original": "src/auth.py#L10-L20",
+      "normalized": "src/auth.py#L10-L20",
+      "root_kind": "package",
+      "resolution_status": "resolved",
+      "source_refs": [
+        "src/auth.py#L10-L20"
+      ]
+    },
+    {
+      "original": "src/db.py#L5-L10",
+      "normalized": "src/db.py#L5-L10",
+      "root_kind": "package",
+      "resolution_status": "resolved",
+      "source_refs": [
+        "src/db.py#L5-L10"
+      ]
+    }
+  ]
+}

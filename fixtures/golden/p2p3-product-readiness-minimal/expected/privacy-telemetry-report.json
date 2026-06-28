@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "privacy_telemetry_report",
+  "run_id": "1001",
+  "telemetry_mode": "aggregate_opt_in",
+  "allowed_signals": [
+    "counts",
+    "durations",
+    "status_enum",
+    "size_bucket"
+  ],
+  "prohibited_signals": [
+    "customer_code",
+    "artifact_content",
+    "raw_path",
+    "test_title",
+    "secret",
+    "pii"
+  ],
+  "safety_check": "pass",
+  "publish_gate_override": false
+}

@@ -10,7 +10,7 @@ next_review_due: 2026-07-28
 
 ## Intake Status
 
-- status: degraded
+- status: superseded_by_p0b_core_export
 - profile: standard
 - feature: HATE P0a/P0b 実装着手可否
 - scope:
@@ -21,9 +21,9 @@ next_review_due: 2026-07-28
   - 実装対象の最初の slice は `HATE-MVP-001` から `HATE-MVP-003` までとする
   - Shipyard-cp は local advisory evidence として使い、実 runtime API 連携は P1b まで要求しない
   - QEG runtime、外部 SaaS、dashboard、SSO は P0a の前提にしない
-- blockers:
-  - full completion には QEG minimal bundle、AETE、P1b workflow artifacts が未実装
-  - P0a は実行可能 CLI と DQ negative fixture の証跡が揃ったが、P0b以降の完成証跡ではない
+- blockers: none for local/advisory artifact implementation scope
+  - P0a は実行可能 CLI と DQ negative fixture の証跡が揃った
+  - P0b QEG export と edge hardening は実装済みだが、minimal fixture は意図的な missing execution を含む partial export として扱う
 
 ## 根拠付き観点
 
@@ -42,8 +42,8 @@ next_review_due: 2026-07-28
 
 | id | scenario | I | L | modifiers | score | priority | rationale |
 |---|---|---:|---:|---|---:|---|---|
-| RISK-01 | P0a実装完了をP0b以降の実装完了と誤判定する | 4 | 4 | D=3 C=2 X=0 P=1 A=1 | 58 | P1 | P0a CLIは通ったが、後続のQEG接続は別ゲート |
-| RISK-02 | DQ fixture が増えてもQEG export未実装のままoptional evidence producerと誤認する | 4 | 3 | D=2 C=2 X=0 P=1 A=0 | 48 | P1 | hard_dqは再現済みだが、P0bのbundle妥当性は未証明 |
+| RISK-01 | local/advisory artifact実装完了をhosted SaaS実装完了と誤判定する | 4 | 4 | D=3 C=2 X=0 P=1 A=1 | 58 | P1 | P0a/P0b/P1a/P1b/P2/P3 artifactは通ったが、dashboard/API/connector runtimeは対象外 |
+| RISK-02 | P0b partial export を QEG optional evidence producer の完全成立と誤認する | 4 | 3 | D=2 C=2 X=0 P=1 A=0 | 48 | P1 | missing execution、edge hardening、manual bridge は可視化済みだが、QEG gate verdictではない |
 | RISK-03 | QEG / Shipyard / workflow-cookbook の責務をHATEが再実装する | 5 | 3 | D=2 C=3 X=1 P=1 A=1 | 58 | P1 | release gate / publish approval の上書きは設計上の重大逸脱 |
 | RISK-04 | artifact safety field不足で unsafe artifact がsummaryへ漏れる | 5 | 3 | D=2 C=2 X=1 P=3 A=1 | 61 | P1 | secret / PII / restricted path 漏えいの影響が大きい |
 | RISK-05 | path normalization未実装でWindows/CI/QEG sourceRefsがずれる | 3 | 4 | D=2 C=2 X=1 P=0 A=0 | 45 | P2 | Windows環境とCI環境の差で再現性が落ちる |
@@ -58,8 +58,8 @@ next_review_due: 2026-07-28
 | P1 | artifact safety | P0a実装内で必須 | summary safety とQEG export eligibilityに直結 |
 | P2 | JUnit / LCOV adapter | P0a最小実装済み | golden fixtureを実出力に変換できる |
 | P2 | CLI / command contract | P0a最小実装済み | `python -m hate p0a` で実行可能 |
-| P2 | QEG minimal bundle | P0bへ分離 | P0a着手の前提にはしない |
-| P3 | Shipyard runtime API連携 | P1bへ分離 | local advisory evidenceで当面十分 |
+| P2 | QEG minimal bundle | P0b core実装済み | partial export として hidden gap を防ぐ |
+| P3 | Shipyard runtime API連携 | P1b advisory artifact実装済み | live runtime dispatch はHATEの責務外 |
 
 ## 手動テストケース
 
@@ -72,7 +72,7 @@ next_review_due: 2026-07-28
 | TC-IMPL-005 | P1 | artifact safetyがsummary漏えいを防ぐ | unsafe artifact fixture作成後 | `safe_for_summary=false` のartifactを含めて実行 | summaryにpath/detailが出ず、manifestにquarantine理由が残る | specified: `P0A_GOLDEN_PATH.md#9` | OBS-REG-01,RISK-04 | 15 |
 | TC-IMPL-006 | P2 | Windows pathをworkspace相対pathへ正規化する | Windows path fixture作成後 | `C:\...` を含むcoverage/artifact入力で実行 | QEG/sourceRefs向けpathが安定形式になる | specified: `SPECIFICATION.md#7` | RISK-05 | 12 |
 | TC-IMPL-007 | P1 | Shipyard publish approvalをHATEが上書きしない | shipyard evidence生成後 | `shipyard-run-evidence.json` を確認 | `publish_gate_override=false`、acceptance/publish verdictを持たない | specified: `SPECIFICATION.md#30` | OBS-STATE-01,RISK-03 | 8 |
-| TC-IMPL-008 | P2 | QEG bundleはP0bまで生成しない/分離する | P0a実装後 | P0a command実行結果を確認 | P0aはprecheckまで。`qeg-bundle.json` 未生成でも成功可能 | specified: `SPECIFICATION.md#16` | RISK-06 | 8 |
+| TC-IMPL-008 | P2 | QEG bundleはP0b core exportで生成し、P0aとは分離する | P0b実装後 | `hate export qeg` を minimal fixture で実行 | `qeg-bundle.json` は生成され、意図的な `missing_execution=1` により `export_status=partial` になる | specified: `SPECIFICATION.md#16` | RISK-06 | 8 |
 
 ## 工数
 
@@ -86,7 +86,7 @@ next_review_due: 2026-07-28
   - Windows path、XML方言差、hash/summary safety修正
 - total: 3.5日
 
-P0b/QEG bundle、SARIF、Playwright、diff-risk-test まで含める場合は別途 3〜5日を見込む。
+P0b core QEG export と edge hardening は実装済み。P1a trust hardening と P1b workflow mapping も current fixture scope では実装済み。
 
 ## Gate
 
@@ -95,12 +95,19 @@ P0b/QEG bundle、SARIF、Playwright、diff-risk-test まで含める場合は別
 - scope_decision:
   - P0a implementation start: go
   - P0a implementation completion: go
-  - P0b以降を含む完成断言: no_go
+  - P0b QEG export: go
+  - P1a trust hardening: go
+  - P1b workflow mapping: go
+  - P2/P3 product readiness: conditional
+  - local/advisory artifact scope completion claim: go
 - reasons:
   - P0a の仕様、schema、golden fixture、Shipyard advisory evidence、CLI実行証跡が揃っている
   - DQ negative fixture と hard_dq 再現テストが通過している
-  - P0a implementation completion は Go だが、P0b以降のcompletion claimはNo-Go
-  - P0b/QEG bundle と P1b Shipyard runtime接続は現時点のP0a実装着手条件から分離すべき
+  - P0a implementation completion は Go
+  - P0b QEG export は partial export として Go 相当だが、QEG gate verdict ではない
+  - P1a trust hardening と P1b workflow mapping は後続証跡で Go
+  - P2/P3 product readiness は実装済み
+  - full completion claim は local/advisory artifact scope に限り conditional_go
 - blocking_risks:
   - full completion claim: `RISK-01`, `RISK-02`
 - waivers:
@@ -112,7 +119,7 @@ P0b/QEG bundle、SARIF、Playwright、diff-risk-test まで含める場合は別
 - decision: conditional_go
 - top risks:
   - P0a完了をP0b以降の完成と誤認するリスク
-  - QEG bundle未実装リスク
+  - P0b partial exportを完全実装と誤認するリスク
   - 後段Gate責務の再実装リスク
   - artifact safety漏えいリスク
 - evidence:
@@ -124,9 +131,9 @@ P0b/QEG bundle、SARIF、Playwright、diff-risk-test まで含める場合は別
   - `fixtures/golden/p0a-minimal/*`
 - residual risk:
   - P0a完了は許容範囲
-  - P0b以降の完成は、QEG bundleとdiff-risk-test実装証跡が出るまで未達
+  - P0b core exportは許容範囲
+  - local/advisory artifact scope は許容範囲
+  - hosted SaaS runtime scope は別ゲート
 - required follow-up:
-  1. P0b/QEG bundleはP0a completion後に別ゲートで確認する
-  2. diff-risk-test / evidence-map を実装する
-  3. AETE / doctor / replay 系を P1a として実装する
-  4. Shipyard runtime mapping は P1b で別ゲートにする
+  1. hosted SaaS runtimeを売り物に含めるなら dashboard/API/connector を別ゲートで実装する
+  2. live Shipyard runtime dispatch が必要なら Shipyard-cp 側のrun/audit refsで検証する

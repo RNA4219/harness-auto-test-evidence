@@ -1,0 +1,25 @@
+{
+  "schema_version": "HATE/v1",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "aggregates": [
+    {
+      "aggregation_key": "test:f577f8ac1efa67ea:1",
+      "test_node_id": "test:f577f8ac1efa67ea",
+      "run_id": "1001",
+      "run_attempt": 1,
+      "raw_statuses": [
+        "passed"
+      ],
+      "aggregate_status": "stable_passed",
+      "source_refs": [
+        "qeg-bundle.json"
+      ]
+    }
+  ],
+  "summary": {
+    "aggregate_count": 1,
+    "flaky_count": 0,
+    "inconclusive_count": 0
+  }
+}

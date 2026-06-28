@@ -1,0 +1,45 @@
+{
+  "created": "2026-06-28T01:05:00Z",
+  "duration": 0.45,
+  "exitcode": 0,
+  "root": "/workspace",
+  "tests": [
+    {
+      "nodeid": "tests/unit/test_parser.py::test_parse_valid",
+      "lineno": 10,
+      "outcome": "passed",
+      "duration": 0.05
+    },
+    {
+      "nodeid": "tests/unit/test_parser.py::test_parse_edge[a]",
+      "lineno": 35,
+      "outcome": "passed",
+      "duration": 0.04,
+      "markers": ["parametrize"]
+    },
+    {
+      "nodeid": "tests/unit/test_parser.py::test_parse_edge[b]",
+      "lineno": 35,
+      "outcome": "passed",
+      "duration": 0.04,
+      "markers": ["parametrize"]
+    },
+    {
+      "nodeid": "tests/integration/test_api.py::test_retry_flaky",
+      "lineno": 15,
+      "outcome": "passed",
+      "duration": 0.08,
+      "reruns": 3,
+      "flaky": true
+    },
+    {
+      "nodeid": "tests/integration/test_api.py::test_retry_flaky",
+      "lineno": 15,
+      "outcome": "passed",
+      "duration": 0.08,
+      "retry_index": 2,
+      "reruns": 3,
+      "flaky": true
+    }
+  ]
+}

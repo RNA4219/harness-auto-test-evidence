@@ -1,0 +1,36 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "entitlement_usage_report",
+  "run_id": "1001",
+  "edition": "oss-local",
+  "entitlements": [
+    {
+      "feature": "local_precheck",
+      "status": "enabled"
+    },
+    {
+      "feature": "hosted_upload",
+      "status": "not_configured"
+    }
+  ],
+  "usage": [
+    {
+      "meter": "runs",
+      "value": 1,
+      "limit": null
+    },
+    {
+      "meter": "artifact_bytes",
+      "value": 0,
+      "limit": null
+    }
+  ],
+  "over_limit_actions": [
+    "warning",
+    "hosted_upload_block",
+    "connector_warning"
+  ],
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "publish_gate_override": false
+}

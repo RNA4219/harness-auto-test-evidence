@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<coverage>
+  <packages>
+    <package name="src.partial">
+      <classes>
+        <class name="NoLines" filename="src/partial/no_lines.py">
+          <lines/>
+        </class>
+        <class name="Useful" filename="src/partial/useful.py">
+          <lines>
+            <line number="5" hits="1"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<coverage>
+  <packages>
+    <package name="src.win">
+      <classes>
+        <class name="WinPath" filename="C:\Users\ryo-n\Codex_dev\harness-auto-test-evidence\src\win\path.py">
+          <lines>
+            <line number="42" hits="1"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

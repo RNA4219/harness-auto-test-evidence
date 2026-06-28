@@ -1,0 +1,44 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "workflow_docs_stale",
+  "status": "freshness_input_only",
+  "docs": [
+    {
+      "path": "docs/process/BLUEPRINT.md",
+      "freshness_status": "unchecked",
+      "required_action": "Pass to workflow-cookbook or memx-resolver stale checker before release use."
+    },
+    {
+      "path": "docs/process/EVALUATION.md",
+      "freshness_status": "unchecked",
+      "required_action": "Pass to workflow-cookbook or memx-resolver stale checker before release use."
+    },
+    {
+      "path": "docs/process/GUARDRAILS.md",
+      "freshness_status": "unchecked",
+      "required_action": "Pass to workflow-cookbook or memx-resolver stale checker before release use."
+    },
+    {
+      "path": "docs/process/RUNBOOK.md",
+      "freshness_status": "unchecked",
+      "required_action": "Pass to workflow-cookbook or memx-resolver stale checker before release use."
+    },
+    {
+      "path": "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json",
+      "freshness_status": "unchecked",
+      "required_action": "Pass to workflow-cookbook or memx-resolver stale checker before release use."
+    },
+    {
+      "path": "fixtures/golden/p1a-trust-minimal/expected/aete-score.json",
+      "freshness_status": "unchecked",
+      "required_action": "Pass to workflow-cookbook or memx-resolver stale checker before release use."
+    }
+  ],
+  "source_refs": [
+    "fixture:/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixture:/p0b-qeg-minimal/expected/qeg-export-report.json",
+    "fixture:/p1a-trust-minimal/expected/aete-score.json"
+  ],
+  "checker_reimplemented": false,
+  "publish_gate_override": false
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "portfolio_health_report",
+  "run_id": "1001",
+  "portfolio_items": [
+    {
+      "tier": "Core Evidence",
+      "stage": "implemented",
+      "owner": "RNA4219",
+      "acceptance_refs": [
+        "P0a",
+        "P0b"
+      ],
+      "p0_dependency_leak": false
+    },
+    {
+      "tier": "Trust Hardening",
+      "stage": "implemented",
+      "owner": "RNA4219",
+      "acceptance_refs": [
+        "P1a"
+      ],
+      "p0_dependency_leak": false
+    },
+    {
+      "tier": "Workflow Integration",
+      "stage": "implemented",
+      "owner": "RNA4219",
+      "acceptance_refs": [
+        "P1b"
+      ],
+      "p0_dependency_leak": false
+    },
+    {
+      "tier": "Enterprise Adoption",
+      "stage": "artifact_ready",
+      "owner": "RNA4219",
+      "acceptance_refs": [
+        "P2",
+        "P3"
+      ],
+      "p0_dependency_leak": false
+    }
+  ],
+  "summary": {
+    "owner_missing": 0,
+    "p0_dependency_leak": 0,
+    "wip_limit_exceeded": false
+  },
+  "publish_gate_override": false
+}

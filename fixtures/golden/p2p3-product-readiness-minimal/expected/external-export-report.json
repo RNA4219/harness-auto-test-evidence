@@ -1,0 +1,153 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "external_export_report",
+  "run_id": "1001",
+  "export_scope": "optional_non_gating",
+  "providers": [
+    {
+      "provider_id": "allure",
+      "display_name": "Allure",
+      "enabled": false,
+      "status": "skipped_not_configured",
+      "payload_kind": "allure-results",
+      "transport": "local_file_bundle",
+      "source_refs": [
+        "qeg-bundle.json",
+        "product-readiness-report.json"
+      ],
+      "derived_from_canonical_bundle": true,
+      "unsafe_artifacts_excluded": true,
+      "failure_policy": "non_gating_warning",
+      "failure_code": "",
+      "remediation": "Configure Allure connector credentials before attempting live export.",
+      "canonical_decision_unchanged": true,
+      "precheck_decision_override": false,
+      "qeg_verdict_override": false,
+      "publish_gate_override": false,
+      "release_gate_override": false
+    },
+    {
+      "provider_id": "reportportal",
+      "display_name": "ReportPortal",
+      "enabled": false,
+      "status": "skipped_not_configured",
+      "payload_kind": "launch_payload",
+      "transport": "http_api",
+      "source_refs": [
+        "qeg-bundle.json",
+        "product-readiness-report.json"
+      ],
+      "derived_from_canonical_bundle": true,
+      "unsafe_artifacts_excluded": true,
+      "failure_policy": "non_gating_warning",
+      "failure_code": "",
+      "remediation": "Configure ReportPortal connector credentials before attempting live export.",
+      "canonical_decision_unchanged": true,
+      "precheck_decision_override": false,
+      "qeg_verdict_override": false,
+      "publish_gate_override": false,
+      "release_gate_override": false
+    },
+    {
+      "provider_id": "codecov",
+      "display_name": "Codecov",
+      "enabled": false,
+      "status": "skipped_not_configured",
+      "payload_kind": "coverage_upload",
+      "transport": "http_api",
+      "source_refs": [
+        "qeg-bundle.json",
+        "product-readiness-report.json"
+      ],
+      "derived_from_canonical_bundle": true,
+      "unsafe_artifacts_excluded": true,
+      "failure_policy": "non_gating_warning",
+      "failure_code": "",
+      "remediation": "Configure Codecov connector credentials before attempting live export.",
+      "canonical_decision_unchanged": true,
+      "precheck_decision_override": false,
+      "qeg_verdict_override": false,
+      "publish_gate_override": false,
+      "release_gate_override": false
+    },
+    {
+      "provider_id": "sonarqube",
+      "display_name": "SonarQube",
+      "enabled": false,
+      "status": "skipped_not_configured",
+      "payload_kind": "issues_and_coverage",
+      "transport": "http_api",
+      "source_refs": [
+        "qeg-bundle.json",
+        "product-readiness-report.json"
+      ],
+      "derived_from_canonical_bundle": true,
+      "unsafe_artifacts_excluded": true,
+      "failure_policy": "non_gating_warning",
+      "failure_code": "",
+      "remediation": "Configure SonarQube connector credentials before attempting live export.",
+      "canonical_decision_unchanged": true,
+      "precheck_decision_override": false,
+      "qeg_verdict_override": false,
+      "publish_gate_override": false,
+      "release_gate_override": false
+    }
+  ],
+  "failure_fixtures": [
+    {
+      "provider_id": "allure",
+      "simulated_failure": "connector_unavailable",
+      "stable_error_code": "HATE-EXP-001",
+      "severity": "warning",
+      "non_gating": true,
+      "canonical_decision_unchanged": true
+    },
+    {
+      "provider_id": "reportportal",
+      "simulated_failure": "connector_unavailable",
+      "stable_error_code": "HATE-EXP-001",
+      "severity": "warning",
+      "non_gating": true,
+      "canonical_decision_unchanged": true
+    },
+    {
+      "provider_id": "codecov",
+      "simulated_failure": "connector_unavailable",
+      "stable_error_code": "HATE-EXP-001",
+      "severity": "warning",
+      "non_gating": true,
+      "canonical_decision_unchanged": true
+    },
+    {
+      "provider_id": "sonarqube",
+      "simulated_failure": "connector_unavailable",
+      "stable_error_code": "HATE-EXP-001",
+      "severity": "warning",
+      "non_gating": true,
+      "canonical_decision_unchanged": true
+    }
+  ],
+  "summary": {
+    "provider_count": 4,
+    "enabled_count": 0,
+    "skipped_count": 4,
+    "failure_fixture_count": 4,
+    "unverified_acceptance_count": 0
+  },
+  "boundaries": {
+    "external_export_is_consumer": true,
+    "canonical_bundle_mutated": false,
+    "precheck_decision_override": false,
+    "qeg_verdict_override": false,
+    "product_status_override": false,
+    "publish_gate_override": false,
+    "release_gate_override": false
+  },
+  "source_refs": [
+    "qeg-bundle.json",
+    "requirement-evidence-alignment.json"
+  ],
+  "canonical_decision_unchanged": true,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

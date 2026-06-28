@@ -1,0 +1,43 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "incident_slo_report",
+  "run_id": "1001",
+  "slo_targets": [
+    {
+      "surface": "local_cli",
+      "availability_target": "best_effort"
+    },
+    {
+      "surface": "hosted_api",
+      "availability_target": "not_configured"
+    }
+  ],
+  "incident_classes": [
+    "data_exposure",
+    "wrong_eligibility",
+    "evidence_corruption",
+    "hosted_outage",
+    "connector_degradation",
+    "schema_adapter_regression"
+  ],
+  "fixture_incidents": [
+    {
+      "incident_id": "INC-FIXTURE-SEV2-001",
+      "severity": "sev2",
+      "class": "wrong_eligibility",
+      "owner": "RNA4219",
+      "timeline": [
+        {
+          "event": "detected",
+          "at": "fixture-time"
+        }
+      ],
+      "containment": "keep release_gate_override=false",
+      "evidence_refs": [
+        "doctor-report.json",
+        "product-readiness-report.json"
+      ]
+    }
+  ],
+  "publish_gate_override": false
+}

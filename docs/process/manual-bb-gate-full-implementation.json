@@ -4,14 +4,15 @@
   "feature_id": "HATE-FULL-IMPLEMENTATION-GATE",
   "title": "HATE full implementation readiness gate",
   "profile": "standard",
-  "status": "no_go",
+  "status": "conditional_go",
   "scope_decision": {
     "p0a_implementation_start": "go",
     "p0a_implementation_completion": "go",
-    "p0b_implementation_completion": "no_go",
-    "p1a_p1b_implementation_completion": "no_go",
-    "p2_p3_full_product_implementation_completion": "no_go",
-    "full_implementation_claim": "no_go"
+    "p0b_implementation_completion": "go",
+    "p1a_implementation_completion": "go",
+    "p1b_implementation_completion": "go",
+    "p2_p3_full_product_implementation_completion": "conditional_go",
+    "full_implementation_claim": "conditional_go"
   },
   "source_refs": [
     {
@@ -43,38 +44,50 @@
       "id": "SHIPYARD-AUDIT",
       "kind": "ops",
       "path": "docs/process/SPECIFICATION_SHIPYARD_AUDIT.md"
+    },
+    {
+      "id": "P0B-EVIDENCE",
+      "kind": "auto_test",
+      "path": "docs/process/shipyard-run-evidence-p0b-qeg-export.json"
+    },
+    {
+      "id": "P1A-EVIDENCE",
+      "kind": "auto_test",
+      "path": "docs/process/shipyard-run-evidence-p1a-trust-minimal.json"
+    },
+    {
+      "id": "P1B-EVIDENCE",
+      "kind": "auto_test",
+      "path": "docs/process/shipyard-run-evidence-p1b-workflow-mapping.json"
+    },
+    {
+      "id": "P2P3-EVIDENCE",
+      "kind": "auto_test",
+      "path": "docs/process/shipyard-run-evidence-p2p3-product-readiness.json"
     }
   ],
-  "blocking_risks": [
+  "blocking_risks": [],
+  "residual_risks": [
     {
       "id": "RISK-FULL-01",
-      "scenario": "P0a preparation evidence is mistaken for full implementation evidence.",
-      "priority": "P0"
-    },
-    {
-      "id": "RISK-FULL-02",
-      "scenario": "DQ, adapter failure, and exit code behavior are not executable.",
-      "priority": "P0"
-    },
-    {
-      "id": "RISK-FULL-03",
-      "scenario": "QEG bundle is missing, so HATE is not yet a proven optional evidence producer.",
+      "scenario": "Local advisory artifact readiness is mistaken for hosted SaaS runtime availability.",
       "priority": "P0"
     }
   ],
   "reasons": [
     "P0a executable CLI, minimal adapters, DQ negative fixtures, and execution evidence exist.",
-    "QEG bundle, AETE, and workflow artifacts are still missing.",
-    "P0b and later phases are mostly documented contracts without generated artifacts or validation logs.",
-    "P2/P3 product readiness requires artifact and metric evidence that does not exist yet."
+    "P0b QEG export and edge hardening exist with visible missing execution gap, risk debt, and manual-bb bridge.",
+    "P1a implementation exists with AETE score, doctor report, artifact resolver map, identity, retry aggregation, replay, compare, explain, recommendation, and adapter conformance artifacts.",
+    "P1b implementation exists with RanD alignment, Shipyard advisory evidence, workflow task seed, acceptance record, evidence JSONL, docs stale input, and Birdseye map artifacts.",
+    "P2/P3 implementation exists with product readiness, hosted read model index, enterprise metrics, customer docs, support diagnostic, privacy telemetry, and governance portfolio artifacts.",
+    "Current product readiness is conditional because the golden fixture preserves a doctor finding and unverified acceptance instead of hiding them.",
+    "The conditional_go verdict is limited to local/advisory artifact implementation scope and does not claim hosted SaaS runtime availability."
   ],
   "minimum_go_conditions": [
     "P0a CLI generates all required outputs from the golden fixture.",
     "DQ negative fixtures reproduce expected decision and exit code.",
-    "P0b qeg-bundle, evidence-map, and diff-risk-test are generated and validated.",
-    "P1a AETE/profile/path/replay fixtures pass.",
-    "P1b workflow, Shipyard, and RanD mapping artifacts are generated.",
-    "If P2/P3 are included in the full claim, product-readiness-report and PRG metrics are generated."
+    "Product-readiness-report and PRG metrics are generated.",
+    "Release and publish gate override fields remain false."
   ],
   "waivers": [],
   "confidence": "high"

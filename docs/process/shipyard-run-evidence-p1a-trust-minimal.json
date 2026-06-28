@@ -1,0 +1,132 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "shipyard_run_evidence",
+  "record_id": "shipyard-p1a-trust-minimal-20260628",
+  "run_id": "shipyard-hate-p1a-trust-20260628",
+  "run_attempt": 1,
+  "commit_sha": "local-working-tree",
+  "created_at": "2026-06-28T00:00:00Z",
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "redaction_status": "not_required",
+  "payload": {
+    "shipyard_stage": "acceptance",
+    "task_id": "HATE-MVP-006-P1A-TRUST-MINIMAL",
+    "task_title": "P1a AETE trust score and doctor report minimal implementation",
+    "shipyard_flow": [
+      "plan",
+      "dev",
+      "acceptance"
+    ],
+    "implementation_scope": {
+      "in": [
+        "hate trust evaluate CLI",
+        "aete-score.json generation",
+        "artifact-resolver-map.json generation",
+        "doctor-report.json generation",
+        "canonical-identity-index.json generation",
+        "retry-aggregation.json generation",
+        "replay-report.json deterministic recalculation",
+        "compare-report.json trust delta",
+        "explain-report.json source-backed reason tree",
+        "recommendation-report.json next actions",
+        "adapter-capability-manifest.json generation",
+        "adapter-conformance-report.json matrix",
+        "trust-summary.md generation",
+        "P1a minimal fixture",
+        "release_gate_override=false",
+        "publish_gate_override=false"
+      ],
+      "out": [
+        "QEG gate verdict",
+        "release approval",
+        "Shipyard publish approval"
+      ]
+    },
+    "commands": [
+      {
+        "command": "uv run pytest tests/test_p1a.py",
+        "result": "pass",
+        "summary": "9 P1a tests passed"
+      },
+      {
+        "command": "uv run python -m hate trust evaluate --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --out fixtures/golden/p1a-trust-minimal/expected",
+        "result": "pass",
+        "summary": "trust_status=partial, weighted_score=0.6, score_confidence=medium, doctor_findings=1"
+      },
+      {
+        "command": "uv run python -m hate replay --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --out fixtures/golden/p1a-trust-minimal/replay-expected",
+        "result": "pass",
+        "summary": "deterministic replay-report.json generated"
+      },
+      {
+        "command": "uv run python -m hate compare --base fixtures/golden/p1a-trust-minimal/replay-expected --head fixtures/golden/p1a-trust-minimal/replay-expected --out fixtures/golden/p1a-trust-minimal/compare-expected",
+        "result": "pass",
+        "summary": "compare_status=stable, trust_delta=0"
+      },
+      {
+        "command": "uv run python -m hate explain --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --out fixtures/golden/p1a-trust-minimal/explain-expected --mode why-soft-gap",
+        "result": "pass",
+        "summary": "explain_status=success, reason_count=1"
+      },
+      {
+        "command": "uv run python -m hate recommend --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --out fixtures/golden/p1a-trust-minimal/recommend-expected --gap missing_execution",
+        "result": "pass",
+        "summary": "recommend_status=success, recommendation_count=1"
+      },
+      {
+        "command": "uv run python -m hate doctor --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --out fixtures/golden/p1a-trust-minimal/doctor-expected",
+        "result": "pass",
+        "summary": "doctor_status=partial, conformance_status=pass"
+      }
+    ],
+    "generated_artifacts": [
+      "src/hate/p1a.py",
+      "src/hate/cli.py",
+      "tests/test_p1a.py",
+      "fixtures/golden/p1a-trust-minimal/README.md",
+      "fixtures/golden/p1a-trust-minimal/expected/aete-score.json",
+      "fixtures/golden/p1a-trust-minimal/expected/artifact-resolver-map.json",
+      "fixtures/golden/p1a-trust-minimal/expected/doctor-report.json",
+      "fixtures/golden/p1a-trust-minimal/expected/adapter-capability-manifest.json",
+      "fixtures/golden/p1a-trust-minimal/expected/adapter-conformance-report.json",
+      "fixtures/golden/p1a-trust-minimal/expected/canonical-identity-index.json",
+      "fixtures/golden/p1a-trust-minimal/expected/retry-aggregation.json",
+      "fixtures/golden/p1a-trust-minimal/expected/trust-summary.md",
+      "fixtures/golden/p1a-trust-minimal/replay-expected/replay-report.json",
+      "fixtures/golden/p1a-trust-minimal/compare-expected/compare-report.json",
+      "fixtures/golden/p1a-trust-minimal/explain-expected/explain-report.json",
+      "fixtures/golden/p1a-trust-minimal/recommend-expected/recommendation-report.json",
+      "fixtures/golden/p1a-trust-minimal/doctor-expected/doctor-report.json",
+      "fixtures/golden/p1a-trust-minimal/doctor-expected/adapter-conformance-report.json"
+    ],
+    "acceptance": {
+      "p1a_aete_minimal": "pass",
+      "p1a_doctor_minimal": "pass",
+      "p1a_identity_minimal": "pass",
+      "p1a_retry_minimal": "pass",
+      "p1a_replay_minimal": "pass",
+      "p1a_compare_minimal": "pass",
+      "p1a_explain_minimal": "pass",
+      "p1a_recommend_minimal": "pass",
+      "p1a_doctor_matrix": "pass",
+      "p1a_adapter_conformance": "pass",
+      "trust_status": "partial",
+      "partial_reason": "P1a remains advisory because the fixture intentionally contains a visible QEG missing execution gap",
+      "publish_gate_override": false,
+      "release_gate_override": false
+    },
+    "next_phase": {
+      "phase": "P1b workflow/RanD/Shipyard mapping",
+      "tasks": [
+        "P1b workflow/RanD/Shipyard mapping artifacts"
+      ]
+    },
+    "notes": [
+      "This is local advisory Shipyard evidence, not a live shipyard-cp runtime dispatch.",
+      "AETE score is advisory trust evidence and is not a release approval.",
+      "HATE does not implement QEG gate, release approval, or Shipyard publish approval."
+    ]
+  }
+}

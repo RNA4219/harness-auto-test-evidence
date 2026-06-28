@@ -8,7 +8,11 @@
   "scope_decision": {
     "p0a_implementation_start": "go",
     "p0a_implementation_completion": "go",
-    "p0b_and_later_completion_claim": "no_go"
+    "p0b_qeg_export": "go",
+    "p1a_trust_hardening": "go",
+    "p1b_workflow_mapping": "go",
+    "p2_p3_product_readiness": "conditional_go",
+    "local_advisory_artifact_scope_completion_claim": "conditional_go"
   },
   "source_refs": [
     {
@@ -40,6 +44,21 @@
       "id": "P0A-SCHEMA",
       "kind": "auto_test",
       "path": "schemas/HATE/v1"
+    },
+    {
+      "id": "P1A-EVIDENCE",
+      "kind": "auto_test",
+      "path": "docs/process/shipyard-run-evidence-p1a-trust-minimal.json"
+    },
+    {
+      "id": "P1B-EVIDENCE",
+      "kind": "auto_test",
+      "path": "docs/process/shipyard-run-evidence-p1b-workflow-mapping.json"
+    },
+    {
+      "id": "P2P3-EVIDENCE",
+      "kind": "auto_test",
+      "path": "docs/process/shipyard-run-evidence-p2p3-product-readiness.json"
     }
   ],
   "assumptions": [
@@ -47,30 +66,33 @@
       "id": "ASM-IMPL-001",
       "text": "Initial implementation scope is HATE-MVP-001 through HATE-MVP-003.",
       "severity": "medium",
-      "impact_on_coverage": "P0b/QEG bundle is excluded from the first implementation gate."
+      "impact_on_coverage": "P0b QEG export is now covered by a partial-export gate; P1a/P1b are covered by later advisory gates."
     },
     {
       "id": "ASM-IMPL-002",
-      "text": "Shipyard-cp runtime API integration is deferred to P1b.",
+      "text": "Shipyard-cp runtime API integration is not implemented by HATE.",
       "severity": "medium",
-      "impact_on_coverage": "Local advisory evidence is sufficient for P0a implementation start."
+      "impact_on_coverage": "P1b emits local advisory evidence and does not dispatch live Shipyard runtime state."
     }
   ],
   "reasons": [
     "P0a specification, schemas, golden fixture, executable CLI, and Shipyard advisory evidence exist.",
     "P0a DQ negative fixtures reproduce expected hard_dq behavior.",
     "P0a implementation completion is Go for the local-first slice.",
-    "P0b/QEG bundle and Shipyard runtime integration must not be claimed complete yet."
+    "P0b QEG export exists as a partial export with visible missing execution, risk debt, and manual-bb bridge.",
+    "P1a trust hardening and P1b workflow mapping exist as advisory evidence.",
+    "P2/P3 product readiness exists as advisory evidence and downgrades to conditional when doctor findings or unverified acceptance remain.",
+    "Hosted SaaS runtime availability must not be claimed from local artifacts."
   ],
   "blocking_risks": [
     {
       "id": "RISK-01",
-      "scenario": "P0a implementation completion is mistaken for P0b or full implementation completion.",
+      "scenario": "Local advisory artifact implementation completion is mistaken for hosted SaaS runtime availability.",
       "priority": "P1"
     },
     {
       "id": "RISK-02",
-      "scenario": "QEG bundle gaps are hidden by a passing P0a precheck.",
+      "scenario": "P0b partial export gaps are mistaken for complete QEG coverage.",
       "priority": "P1"
     }
   ],
@@ -79,15 +101,13 @@
       "id": "WV-IMPL-001",
       "owner": "RNA4219",
       "scope": "Shipyard runtime API integration",
-      "containment": "Use local advisory shipyard-run-evidence until P1b.",
-      "due_phase": "P1b"
+      "containment": "Use local advisory shipyard-run-evidence and verify live runtime refs in Shipyard-cp if needed.",
+      "due_phase": "external_shipyard_runtime"
     }
   ],
   "required_follow_up": [
-    "Run a separate P0b gate before claiming QEG bundle completion.",
-    "Implement qeg-bundle, evidence-map, and diff-risk-test.",
-    "Implement P1a AETE, doctor, replay, compare, explain, and recommend outputs.",
-    "Keep Shipyard runtime API mapping separated until P1b."
+    "Implement dashboard/API/connector runtime before claiming hosted SaaS availability.",
+    "Keep live Shipyard runtime dispatch outside HATE unless Shipyard-cp owns the run/audit refs."
   ],
   "confidence": "medium"
 }

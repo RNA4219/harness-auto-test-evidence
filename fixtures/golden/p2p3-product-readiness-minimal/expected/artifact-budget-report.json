@@ -1,0 +1,82 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "artifact_budget_report",
+  "run_id": "1001",
+  "budget_policy": {
+    "max_artifact_size_bytes": 10000000,
+    "max_total_size_bytes": 100000000,
+    "default_retention_days": 30,
+    "public_exposure_allowed": [
+      "none"
+    ]
+  },
+  "artifacts": [
+    {
+      "artifact_ref": "fixture:/p0a/HATE-run.json",
+      "kind": "HATE-run",
+      "size_bytes": 0,
+      "retention": "profile_default",
+      "retention_days": 30,
+      "storage_class": "local-fixture",
+      "public_exposure": "none",
+      "over_limit": false,
+      "over_limit_reasons": [],
+      "budget_action": "within_budget"
+    },
+    {
+      "artifact_ref": "fixture:/p0a/HATE-test-results.ndjson",
+      "kind": "HATE-test-results",
+      "size_bytes": 0,
+      "retention": "profile_default",
+      "retention_days": 30,
+      "storage_class": "local-fixture",
+      "public_exposure": "none",
+      "over_limit": false,
+      "over_limit_reasons": [],
+      "budget_action": "within_budget"
+    },
+    {
+      "artifact_ref": "fixture:/p0a/HATE-coverage.ndjson",
+      "kind": "HATE-coverage",
+      "size_bytes": 0,
+      "retention": "profile_default",
+      "retention_days": 30,
+      "storage_class": "local-fixture",
+      "public_exposure": "none",
+      "over_limit": false,
+      "over_limit_reasons": [],
+      "budget_action": "within_budget"
+    },
+    {
+      "artifact_ref": "fixture:/p0a/precheck-decision.json",
+      "kind": "precheck-decision",
+      "size_bytes": 0,
+      "retention": "profile_default",
+      "retention_days": 30,
+      "storage_class": "local-fixture",
+      "public_exposure": "none",
+      "over_limit": false,
+      "over_limit_reasons": [],
+      "budget_action": "within_budget"
+    }
+  ],
+  "summary": {
+    "artifact_count": 4,
+    "total_size_bytes": 0,
+    "total_over_limit": false,
+    "over_limit_count": 0,
+    "by_kind": {
+      "HATE-run": 1,
+      "HATE-test-results": 1,
+      "HATE-coverage": 1,
+      "precheck-decision": 1
+    },
+    "by_public_exposure": {
+      "none": 4
+    }
+  },
+  "canonical_decision_unchanged": true,
+  "evidence_dropped_for_budget": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

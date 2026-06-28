@@ -1,0 +1,173 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "audit_event_log",
+  "run_id": "1001",
+  "append_only": true,
+  "safe_to_share": true,
+  "redaction_status": "redacted",
+  "source_contracts": [
+    "ENTERPRISE_DOMAIN_MODEL.md",
+    "AUDIT_FIXTURE_ASSURANCE_CONTRACT.md"
+  ],
+  "input_refs": [
+    "qeg-bundle.json",
+    "domain-model-report.json",
+    "rbac-matrix-report.json"
+  ],
+  "expected_output_refs": [
+    "audit-event-log.json",
+    "audit-assurance-pack.json"
+  ],
+  "verification_commands": [
+    "uv run pytest tests/test_p2p3.py -q",
+    "uv run python -m hate product readiness ..."
+  ],
+  "events": [
+    {
+      "event_id": "aud_20260629_0001",
+      "sequence": 1,
+      "event_type": "bundle.created",
+      "run_id": "1001",
+      "actor": "service_account:ci",
+      "occurred_at": "2026-06-29T00:01:00Z",
+      "fields": {
+        "bundle_id": "sha256:b19b70b3f1eb031ecf75f8165b4681e7df3cbe017ff91347d75507e1268b7f0e",
+        "run_id": "1001",
+        "commit_sha": "unknown",
+        "profile_hash": "sha256:fixture-profile"
+      },
+      "append_only": true,
+      "safe_to_share": true
+    },
+    {
+      "event_id": "aud_20260629_0002",
+      "sequence": 2,
+      "event_type": "bundle.exported",
+      "run_id": "1001",
+      "actor": "service_account:ci",
+      "occurred_at": "2026-06-29T00:02:00Z",
+      "fields": {
+        "bundle_id": "sha256:b19b70b3f1eb031ecf75f8165b4681e7df3cbe017ff91347d75507e1268b7f0e",
+        "target": "qeg",
+        "status": "success"
+      },
+      "append_only": true,
+      "safe_to_share": true
+    },
+    {
+      "event_id": "aud_20260629_0003",
+      "sequence": 3,
+      "event_type": "profile.changed",
+      "run_id": "1001",
+      "actor": "user:maintainer-fixture",
+      "occurred_at": "2026-06-29T00:03:00Z",
+      "fields": {
+        "profile_id": "profile_fixture_default",
+        "before_hash": "sha256:fixture-profile-prev",
+        "after_hash": "sha256:fixture-profile",
+        "actor": "user:maintainer-fixture"
+      },
+      "append_only": true,
+      "safe_to_share": true
+    },
+    {
+      "event_id": "aud_20260629_0004",
+      "sequence": 4,
+      "event_type": "adapter.changed",
+      "run_id": "1001",
+      "actor": "user:maintainer-fixture",
+      "occurred_at": "2026-06-29T00:04:00Z",
+      "fields": {
+        "adapter_id": "adapter_junit_v1",
+        "version": "v1",
+        "actor": "user:maintainer-fixture"
+      },
+      "append_only": true,
+      "safe_to_share": true
+    },
+    {
+      "event_id": "aud_20260629_0005",
+      "sequence": 5,
+      "event_type": "artifact.accessed",
+      "run_id": "1001",
+      "actor": "user:auditor-fixture",
+      "occurred_at": "2026-06-29T00:05:00Z",
+      "fields": {
+        "artifact_id": "art_summary_product_readiness",
+        "actor": "user:auditor-fixture",
+        "reason": "audit walkthrough fixture"
+      },
+      "append_only": true,
+      "safe_to_share": true
+    },
+    {
+      "event_id": "aud_20260629_0006",
+      "sequence": 6,
+      "event_type": "artifact.quarantined",
+      "run_id": "1001",
+      "actor": "service_account:safety-fixture",
+      "occurred_at": "2026-06-29T00:06:00Z",
+      "fields": {
+        "artifact_id": "art_unsafe_fixture",
+        "reason": "unsafe reference pattern",
+        "detector": "privacy_quarantine_fixture"
+      },
+      "append_only": true,
+      "safe_to_share": true
+    },
+    {
+      "event_id": "aud_20260629_0007",
+      "sequence": 7,
+      "event_type": "riskdebt.created",
+      "run_id": "1001",
+      "actor": "service_account:workflow-fixture",
+      "occurred_at": "2026-06-29T00:07:00Z",
+      "fields": {
+        "risk_id": "risk:manual-bridge-fixture",
+        "source_refs": [
+          "requirement-evidence-alignment.json"
+        ],
+        "owner": "RNA4219"
+      },
+      "append_only": true,
+      "safe_to_share": true
+    },
+    {
+      "event_id": "aud_20260629_0008",
+      "sequence": 8,
+      "event_type": "diagnostic.generated",
+      "run_id": "1001",
+      "actor": "user:support-fixture",
+      "occurred_at": "2026-06-29T00:08:00Z",
+      "fields": {
+        "bundle_id": "sha256:b19b70b3f1eb031ecf75f8165b4681e7df3cbe017ff91347d75507e1268b7f0e",
+        "requester": "user:support-fixture",
+        "redaction_status": "redacted"
+      },
+      "append_only": true,
+      "safe_to_share": true
+    }
+  ],
+  "summary": {
+    "event_count": 8,
+    "required_event_count": 8,
+    "missing_required_events": [],
+    "sequence_monotonic": true,
+    "append_only": true
+  },
+  "access_policy": {
+    "auditor_read_allowed": true,
+    "viewer_read_allowed": false,
+    "developer_read_allowed": false,
+    "raw_artifact_included": false
+  },
+  "immutability": {
+    "event_ids_stable": true,
+    "rewrite_allowed": false,
+    "delete_allowed": false
+  },
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

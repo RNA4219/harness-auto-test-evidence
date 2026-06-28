@@ -1,0 +1,16 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "privacy_quarantine_report",
+  "run_id": "1001",
+  "classification_policy": "fixture-safe",
+  "quarantined_artifacts": [],
+  "output_policy": {
+    "summary_excludes_unsafe": true,
+    "qeg_export_excludes_unsafe": true,
+    "diagnostic_bundle_excludes_unsafe": true
+  },
+  "summary": {
+    "unsafe_count": 0
+  },
+  "publish_gate_override": false
+}

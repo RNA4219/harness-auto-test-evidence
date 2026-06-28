@@ -13,6 +13,15 @@ next_review_due: 2026-07-28
 ### 共通
 
 - `BLUEPRINT.md` の In/Out と実装の実体が一致している
+- フル実装の不足仕様は `FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md` を正本とし、
+  adapter、profile、schema、storage、hosted API、dashboard、RBAC/audit、
+  external export、QEG live連携、release candidate pack の仕様が閉じている
+- 実装作業の粒度は `IMPLEMENTATION_TASK_BREAKDOWN.md` を正本とし、
+  code / schema / fixture / test / docs が揃うまで `implemented` または
+  `accepted` と表現しない
+- 仕様書、fixture、advisory artifact だけで実装完了を主張しない。
+  各 phase の完了主張は `FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md` の
+  「完了主張ルール」に従う
 - 全 JSON / NDJSON record が共通 envelope（`schema_version`, `record_type`, `record_id`, `run_id`, `run_attempt`, `commit_sha`, `created_at`, `source_tool`, `source_version`, `sha256`, `redaction_status`, `payload`）を持つ
 - DQ ルール（最低 HATE-DQ-01, 02, 03, 05, 07, 10, 15）を実装し、`hard_dq` / `soft_gap` の severity と HATE precheck / QEG export への影響が再現可能
 - adapter / AETE profile の既定 `dq.enabled` に HATE-DQ-01, 02, 03, 05, 07, 10, 15 が含まれている

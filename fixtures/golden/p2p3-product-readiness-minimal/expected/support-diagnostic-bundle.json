@@ -1,0 +1,108 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "support_diagnostic_bundle",
+  "run_id": "1001",
+  "support_use": "initial_triage_and_reproduction",
+  "hate_version": "0.1.0",
+  "schema_registry_version": "HATE/v1",
+  "profile": {
+    "profile_name": "fixture-default",
+    "profile_hash": "sha256:fixture-profile",
+    "source_ref": "profile-policy.json"
+  },
+  "sanitized_command": {
+    "command": "hate product readiness",
+    "args": [
+      "--bundle",
+      "<qeg-bundle>",
+      "--trust",
+      "<trust-dir>",
+      "--workflow",
+      "<workflow-dir>",
+      "--out",
+      "<output-dir>"
+    ],
+    "full_environment_variables_included": false
+  },
+  "included_refs": [
+    {
+      "artifact_ref": "doctor-report.json",
+      "classification": "summary",
+      "raw_content_included": false
+    },
+    {
+      "artifact_ref": "adapter-conformance-report.json",
+      "classification": "summary",
+      "raw_content_included": false
+    },
+    {
+      "artifact_ref": "product-readiness-report.json",
+      "classification": "summary",
+      "raw_content_included": false
+    },
+    {
+      "artifact_ref": "product-error-catalog.json",
+      "classification": "summary",
+      "raw_content_included": false
+    }
+  ],
+  "excluded": [
+    "customer_source_code",
+    "raw_artifact_content",
+    "secret",
+    "pii",
+    "unsafe_artifact",
+    "customer_private_url",
+    "full_environment"
+  ],
+  "redaction_rule_version": "support-diagnostic-redaction/v1",
+  "safety_checks": {
+    "contains_customer_code": false,
+    "contains_raw_artifact_content": false,
+    "contains_secret": false,
+    "contains_pii": false,
+    "contains_unsafe_artifact": false,
+    "contains_customer_private_url": false,
+    "full_environment_variables_included": false,
+    "safe_for_support_share": true
+  },
+  "adapter_registry_summary": {
+    "adapter_conformance_status": "pass",
+    "source_ref": "adapter-conformance-report.json"
+  },
+  "capability_manifest_summary": {
+    "external_export_optional": true,
+    "live_saas_required": false,
+    "source_ref": "adapter-capability-manifest.json"
+  },
+  "dq_summary": {
+    "missing_input_artifact_count": 0,
+    "missing_input_artifacts": [],
+    "doctor_finding_count": 0
+  },
+  "doctor_summary": {
+    "finding_count": 0,
+    "blocking_categories": []
+  },
+  "error_records": [],
+  "qeg_compatibility_summary": {
+    "canonical_bundle_required": true,
+    "canonical_source_preserved": true,
+    "qeg_verdict_override": false
+  },
+  "synthetic_fixture": {
+    "available": true,
+    "source_ref": "fixtures/golden/p2p3-product-readiness-minimal/expected"
+  },
+  "environment_policy": {
+    "local_absolute_paths_included": false,
+    "external_connector_tokens_included": false,
+    "raw_urls_included": false
+  },
+  "doctor_finding_count": 0,
+  "safe_to_share": true,
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

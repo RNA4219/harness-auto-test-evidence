@@ -1,0 +1,13 @@
+{
+  "repository": "RNA4219/sample",
+  "workflow": "jest-ci.yml",
+  "job": "jest-test",
+  "event_name": "push",
+  "run_id": "4002",
+  "run_attempt": 1,
+  "commit_sha": "jest123jest456jest123jest456jest123jest456jest123jest",
+  "started_at": "2026-06-28T03:00:00Z",
+  "finished_at": "2026-06-28T03:02:30Z",
+  "actor": "jest-runner",
+  "ref": "refs/heads/main"
+}

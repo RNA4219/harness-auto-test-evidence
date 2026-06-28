@@ -1,0 +1,244 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "residency_deployment_report",
+  "run_id": "1001",
+  "deployment_modes": [
+    {
+      "mode": "local_only",
+      "data_plane": "customer_machine",
+      "control_plane": "none",
+      "owner": "customer",
+      "canonical_replay_preserved": true,
+      "p0a_local_first_preserved": true,
+      "evidence_eligibility_depends_on_region": false,
+      "residual_risk": "customer_controlled"
+    },
+    {
+      "mode": "ci_attached",
+      "data_plane": "ci_workspace_artifact_store",
+      "control_plane": "hate_cli_action",
+      "owner": "customer",
+      "canonical_replay_preserved": true,
+      "p0a_local_first_preserved": true,
+      "evidence_eligibility_depends_on_region": false,
+      "residual_risk": "customer_controlled"
+    },
+    {
+      "mode": "hosted_read_model",
+      "data_plane": "customer_approved_bundle_refs",
+      "control_plane": "hosted_dashboard_api",
+      "owner": "shared",
+      "canonical_replay_preserved": true,
+      "p0a_local_first_preserved": true,
+      "evidence_eligibility_depends_on_region": false,
+      "residual_risk": "hosted_optional"
+    },
+    {
+      "mode": "private_tenant",
+      "data_plane": "dedicated_tenant_storage",
+      "control_plane": "managed_hosted_control",
+      "owner": "provider",
+      "canonical_replay_preserved": true,
+      "p0a_local_first_preserved": true,
+      "evidence_eligibility_depends_on_region": false,
+      "residual_risk": "hosted_optional"
+    },
+    {
+      "mode": "customer_managed",
+      "data_plane": "customer_cloud_storage",
+      "control_plane": "limited_managed_control",
+      "owner": "customer",
+      "canonical_replay_preserved": true,
+      "p0a_local_first_preserved": true,
+      "evidence_eligibility_depends_on_region": false,
+      "residual_risk": "customer_controlled"
+    },
+    {
+      "mode": "air_gapped_export",
+      "data_plane": "offline_bundle",
+      "control_plane": "offline_validation",
+      "owner": "customer",
+      "canonical_replay_preserved": true,
+      "p0a_local_first_preserved": true,
+      "evidence_eligibility_depends_on_region": false,
+      "residual_risk": "customer_controlled"
+    }
+  ],
+  "residency_profile": {
+    "profile_id": "residency-fixture-001",
+    "deployment_mode": "hosted_read_model",
+    "allowed_regions": [
+      "us",
+      "eu",
+      "jp"
+    ],
+    "disallowed_regions": [],
+    "data_classes": {
+      "canonical_bundle": "customer_controlled",
+      "read_model": "hosted_allowed",
+      "artifact_content": "not_uploaded",
+      "telemetry": "aggregate_only"
+    },
+    "key_management": {
+      "mode": "customer_managed",
+      "rotation_days": 90
+    },
+    "network": {
+      "public_ingress": false,
+      "private_link": true,
+      "ip_allowlist": true
+    }
+  },
+  "data_class_routing": [
+    {
+      "class": "canonical_bundle",
+      "default_route": "customer_controlled",
+      "allowed_modes": [
+        "local_only",
+        "ci_attached",
+        "hosted_read_model",
+        "private_tenant",
+        "customer_managed",
+        "air_gapped_export"
+      ],
+      "raw_content_hosted": false
+    },
+    {
+      "class": "read_model",
+      "default_route": "hosted_if_enabled",
+      "allowed_modes": [
+        "hosted_read_model",
+        "private_tenant",
+        "customer_managed"
+      ],
+      "rebuildable_from_canonical": true
+    },
+    {
+      "class": "artifact_content",
+      "default_route": "local_or_customer_storage",
+      "allowed_modes": [
+        "local_only",
+        "ci_attached",
+        "customer_managed",
+        "air_gapped_export"
+      ],
+      "hosted_default": false
+    },
+    {
+      "class": "artifact_metadata",
+      "default_route": "hosted_if_enabled",
+      "allowed_modes": [
+        "local_only",
+        "ci_attached",
+        "hosted_read_model",
+        "private_tenant",
+        "customer_managed",
+        "air_gapped_export"
+      ],
+      "hash_size_classification_only": true
+    },
+    {
+      "class": "telemetry",
+      "default_route": "off_or_aggregate",
+      "allowed_modes": [
+        "local_only",
+        "ci_attached",
+        "hosted_read_model",
+        "private_tenant",
+        "customer_managed",
+        "air_gapped_export"
+      ],
+      "prohibited_signals_blocked": true
+    },
+    {
+      "class": "support_bundle",
+      "default_route": "explicit_export",
+      "allowed_modes": [
+        "local_only",
+        "customer_managed",
+        "air_gapped_export"
+      ],
+      "privacy_checks_required": true
+    },
+    {
+      "class": "audit_log",
+      "default_route": "tenant_or_org_scope",
+      "allowed_modes": [
+        "local_only",
+        "ci_attached",
+        "hosted_read_model",
+        "private_tenant",
+        "customer_managed",
+        "air_gapped_export"
+      ],
+      "append_only": true
+    },
+    {
+      "class": "security_review_packet",
+      "default_route": "redacted_export",
+      "allowed_modes": [
+        "local_only",
+        "ci_attached",
+        "hosted_read_model",
+        "private_tenant",
+        "customer_managed",
+        "air_gapped_export"
+      ],
+      "customer_code_included": false
+    }
+  ],
+  "connectivity_controls": {
+    "private_networking_supported": true,
+    "egress_allowlist_required_for_connectors": true,
+    "ingress_requires_rbac_and_network_policy": true,
+    "artifact_fetch_ssrf_metadata_ip_block": true,
+    "connector_scoped_credentials": true,
+    "air_gapped_export_has_checksum_and_offline_docs": true
+  },
+  "backup_recovery": [
+    {
+      "asset": "hosted_read_model",
+      "backup": "rebuild_from_canonical_bundle",
+      "recovery_expectation": "rebuild_preferred"
+    },
+    {
+      "asset": "entitlement_manifest",
+      "backup": "tenant_config",
+      "recovery_expectation": "restore_with_audit_event"
+    },
+    {
+      "asset": "audit_metadata",
+      "backup": "immutable_append_only_target",
+      "recovery_expectation": "restore_without_rewriting_record_ids"
+    },
+    {
+      "asset": "customer_docs_index",
+      "backup": "repo_release_artifact",
+      "recovery_expectation": "regenerate_from_docs_source"
+    },
+    {
+      "asset": "trust_packet_index",
+      "backup": "release_artifact",
+      "recovery_expectation": "regenerate_from_source_contracts"
+    },
+    {
+      "asset": "telemetry_aggregate",
+      "backup": "optional",
+      "recovery_expectation": "loss_does_not_affect_evidence"
+    }
+  ],
+  "summary": {
+    "deployment_mode_count": 6,
+    "hosted_read_model_rebuildable": true,
+    "customer_source_code_hosted_by_default": false,
+    "unsafe_artifact_hosted_by_default": false,
+    "air_gapped_supported": true
+  },
+  "source_refs": [
+    "DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md"
+  ],
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

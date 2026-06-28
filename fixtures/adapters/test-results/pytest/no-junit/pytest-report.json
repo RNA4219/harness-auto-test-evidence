@@ -1,0 +1,80 @@
+{
+  "created": "2026-06-28T01:02:00Z",
+  "duration": 0.234,
+  "exitcode": 0,
+  "root": "/workspace",
+  "tests": [
+    {
+      "nodeid": "tests/unit/test_parser.py::test_parse_valid",
+      "lineno": 10,
+      "outcome": "passed",
+      "duration": 0.05,
+      "setup_duration": 0.01,
+      "call_duration": 0.05,
+      "teardown_duration": 0.0,
+      "user_properties": {},
+      "markers": ["unit", "fast"]
+    },
+    {
+      "nodeid": "tests/unit/test_parser.py::test_parse_malformed",
+      "lineno": 25,
+      "outcome": "failed",
+      "duration": 0.12,
+      "setup_duration": 0.02,
+      "call_duration": 0.10,
+      "teardown_duration": 0.0,
+      "setup": {
+        "outcome": "passed",
+        "duration": 0.02,
+        "crash": null
+      },
+      "call": {
+        "outcome": "failed",
+        "duration": 0.10,
+        "crash": {
+          "path": "tests/unit/test_parser.py",
+          "lineno": 30,
+          "message": "AssertionError: expected 'valid' got 'invalid'"
+        }
+      },
+      "teardown": {
+        "outcome": "passed",
+        "duration": 0.0,
+        "crash": null
+      }
+    },
+    {
+      "nodeid": "tests/integration/test_api.py::test_endpoint_health",
+      "lineno": 5,
+      "outcome": "passed",
+      "duration": 0.08,
+      "xfail": false,
+      "markers": ["integration"]
+    },
+    {
+      "nodeid": "tests/integration/test_api.py::test_endpoint_retry",
+      "lineno": 15,
+      "outcome": "passed",
+      "duration": 0.06,
+      "reruns": 2,
+      "retry_index": 1,
+      "xfail": false,
+      "flaky": true,
+      "markers": ["integration", "flaky"]
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "xfailed": 0,
+    "xpassed": 0,
+    "error": 0,
+    "reruns": 2
+  },
+  "collect": {
+    "errors": [],
+    "warnings": []
+  }
+}

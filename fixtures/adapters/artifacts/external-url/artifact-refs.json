@@ -1,0 +1,10 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "artifact-external-trace",
+      "kind": "trace",
+      "path": "https://example.invalid/private/trace.zip",
+      "classification": "public"
+    }
+  ]
+}

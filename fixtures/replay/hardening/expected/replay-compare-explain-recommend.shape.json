@@ -1,0 +1,47 @@
+{
+  "replay_report": {
+    "record_type": "replay_report",
+    "required_fields": [
+      "recalculation_hash",
+      "deterministic_inputs",
+      "deterministic",
+      "release_gate_override",
+      "publish_gate_override"
+    ],
+    "deterministic_input_keys": [
+      "aete_score",
+      "aete_signal_report",
+      "profile_report",
+      "artifact_resolver_map",
+      "doctor_report",
+      "adapter_conformance_report",
+      "canonical_identity_index",
+      "retry_aggregation"
+    ]
+  },
+  "compare_report": {
+    "record_type": "compare_report",
+    "required_delta_fields": [
+      "dimension_delta",
+      "signal_delta",
+      "resolver_unsafe_delta",
+      "identity_duplicate_delta",
+      "profile_hash_changed"
+    ]
+  },
+  "explain_report": {
+    "record_type": "explain_report",
+    "required_summary_fields": [
+      "reason_count",
+      "traceability_complete"
+    ]
+  },
+  "recommendation_report": {
+    "record_type": "recommendation_report",
+    "required_summary_fields": [
+      "recommendation_count",
+      "traceability_complete",
+      "manual_bridge_recommendation_count"
+    ]
+  }
+}

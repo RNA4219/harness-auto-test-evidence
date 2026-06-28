@@ -9,7 +9,7 @@
       "artifact_id": "artifact-readme",
       "kind": "other",
       "path": "fixtures/golden/p0a-minimal/input/artifacts/README.txt",
-      "sha256": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "sha256": "sha256:3bae03a735e6b079d7f826d3c104d0ee290bebdcf38ec0da951f487ecbc6d562",
       "size_bytes": 56,
       "classification": "public",
       "redaction_status": "not_required",

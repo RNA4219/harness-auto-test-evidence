@@ -1,0 +1,34 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "canonical_identity_index",
+  "required_identity_fields": [
+    "identity_id",
+    "test_node_id",
+    "canonical_test_id",
+    "normalized_canonical_test_id",
+    "identity_components",
+    "aliases",
+    "source_refs"
+  ],
+  "required_component_fields": [
+    "framework",
+    "package",
+    "file",
+    "classname",
+    "name",
+    "parameters",
+    "matrix"
+  ],
+  "alias_reasons": [
+    "rename",
+    "parameter_change",
+    "framework_migration",
+    "path_normalization"
+  ],
+  "matrix_affects_logical_id": false,
+  "summary_fields": [
+    "identity_count",
+    "duplicate_normalized_ids",
+    "has_duplicates"
+  ]
+}

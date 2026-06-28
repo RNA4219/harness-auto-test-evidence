@@ -1,0 +1,10 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "artifact-traversal",
+      "kind": "trace",
+      "path": "../private/trace.zip",
+      "classification": "public"
+    }
+  ]
+}

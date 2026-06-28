@@ -1,0 +1,13 @@
+{
+  "created": "2026-06-28T01:02:00Z",
+  "tests": [
+    {
+      "nodeid": "tests/test_broken.py",
+      "outcome": "passed"
+    },
+    {
+      "missing_field": true
+    },
+    "not_a_valid_structure"
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "enterprise_domain_model",
+  "run_id": "1001",
+  "source_ref": "docs/process/ENTERPRISE_DOMAIN_MODEL.md",
+  "hosted_service_required": false,
+  "local_first_preserved": true,
+  "entities": [
+    {
+      "kind": "organization",
+      "id": "org_local",
+      "p0_p1_requirement": "optional",
+      "stable_id": true,
+      "attributes": {
+        "local_scope": true,
+        "hosted_required": false
+      }
+    },
+    {
+      "kind": "workspace",
+      "id": "wsp_local",
+      "p0_p1_requirement": "optional",
+      "stable_id": true,
+      "attributes": {
+        "parent": "org_local",
+        "local_scope": true
+      }
+    },
+    {
+      "kind": "project",
+      "id": "prj_hate",
+      "p0_p1_requirement": "optional",
+      "stable_id": true,
+      "attributes": {
+        "parent": "wsp_local",
+        "qeg_connection_optional": true
+      }
+    },
+    {
+      "kind": "repository",
+      "id": "repo_local",
+      "p0_p1_requirement": "required",
+      "stable_id": true,
+      "attributes": {
+        "repo_ref": "local/repository",
+        "commit_sha": "unknown"
+      }
+    },
+    {
+      "kind": "run",
+      "id": "run_1001",
+      "p0_p1_requirement": "required",
+      "stable_id": true,
+      "attributes": {
+        "run_id": "1001",
+        "retry_scope": "attempt"
+      }
+    },
+    {
+      "kind": "attempt",
+      "id": "attempt_1001_1",
+      "p0_p1_requirement": "required",
+      "stable_id": true,
+      "attributes": {
+        "run_id": "1001",
+        "attempt_index": 1
+      }
+    },
+    {
+      "kind": "evidence_bundle",
+      "id": "bundle_b19b70b3f1eb031ecf75f8165b4681e7df3cbe017ff91347d75507e1268b7f0e",
+      "p0_p1_requirement": "required",
+      "stable_id": true,
+      "attributes": {
+        "digest": "sha256:b19b70b3f1eb031ecf75f8165b4681e7df3cbe017ff91347d75507e1268b7f0e",
+        "immutable": true
+      }
+    },
+    {
+      "kind": "profile",
+      "id": "profile_fixture_default",
+      "p0_p1_requirement": "required",
+      "stable_id": true,
+      "attributes": {
+        "versioned": true,
+        "approval_substitute": false
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "org_local",
+      "to": "wsp_local",
+      "kind": "contains"
+    },
+    {
+      "from": "wsp_local",
+      "to": "prj_hate",
+      "kind": "contains"
+    },
+    {
+      "from": "prj_hate",
+      "to": "repo_local",
+      "kind": "contains"
+    },
+    {
+      "from": "repo_local",
+      "to": "run_1001",
+      "kind": "produces"
+    },
+    {
+      "from": "run_1001",
+      "to": "attempt_1001_1",
+      "kind": "has_attempt"
+    },
+    {
+      "from": "attempt_1001_1",
+      "to": "bundle_b19b70b3f1eb031ecf75f8165b4681e7df3cbe017ff91347d75507e1268b7f0e",
+      "kind": "produces"
+    },
+    {
+      "from": "prj_hate",
+      "to": "profile_fixture_default",
+      "kind": "uses_profile"
+    }
+  ],
+  "scope_boundaries": {
+    "organization": {
+      "mix_artifacts_across_orgs": false,
+      "mix_audit_across_orgs": false
+    },
+    "workspace": {
+      "separates_departments": true
+    },
+    "project": {
+      "quality_unit": "product_or_repo_group"
+    },
+    "repository": {
+      "source_control_boundary": true
+    },
+    "run_attempt": {
+      "retry_reproducibility_boundary": true
+    },
+    "local_mapping": {
+      "organization_optional": true,
+      "workspace_optional": true,
+      "project_optional": true,
+      "default_scope": "local"
+    }
+  },
+  "role_model": [
+    {
+      "role": "admin",
+      "read_only": false,
+      "may_replace_qeg_approval": false
+    },
+    {
+      "role": "maintainer",
+      "read_only": false,
+      "may_change_org_retention": false
+    },
+    {
+      "role": "developer",
+      "read_only": false,
+      "may_change_profile_approval": false
+    },
+    {
+      "role": "auditor",
+      "read_only": true,
+      "may_mutate_artifact": false
+    },
+    {
+      "role": "viewer",
+      "read_only": true,
+      "may_access_raw_artifact": false
+    },
+    {
+      "role": "service_account",
+      "read_only": false,
+      "may_replace_human_approval": false
+    }
+  ],
+  "classification_policy": [
+    {
+      "classification": "public",
+      "summary_allowed": true,
+      "export_allowed": true,
+      "diagnostic_allowed": true,
+      "default_retention_days": 180
+    },
+    {
+      "classification": "internal",
+      "summary_allowed": "conditional",
+      "export_allowed": "conditional",
+      "diagnostic_allowed": true,
+      "default_retention_days": 90
+    },
+    {
+      "classification": "confidential",
+      "summary_allowed": false,
+      "export_allowed": false,
+      "diagnostic_allowed": false,
+      "default_retention_days": 30
+    },
+    {
+      "classification": "restricted",
+      "summary_allowed": false,
+      "export_allowed": false,
+      "diagnostic_allowed": false,
+      "default_retention_days": 0,
+      "quarantine_required": true
+    }
+  ],
+  "retention_links": [
+    {
+      "artifact_kind": "canonical_json",
+      "classification": "public",
+      "retention_days": 180
+    },
+    {
+      "artifact_kind": "coverage",
+      "classification": "internal",
+      "retention_days": 90
+    },
+    {
+      "artifact_kind": "trace_screenshot_video",
+      "classification": "confidential",
+      "retention_days": 30
+    },
+    {
+      "artifact_kind": "diagnostic_bundle",
+      "classification": "internal",
+      "retention_days": 14
+    },
+    {
+      "artifact_kind": "quarantine_metadata",
+      "classification": "restricted",
+      "retention_days": 365
+    }
+  ],
+  "audit_event_contract": {
+    "append_only": true,
+    "required_events": [
+      "bundle.created",
+      "bundle.exported",
+      "profile.changed",
+      "adapter.changed",
+      "artifact.accessed",
+      "artifact.quarantined",
+      "riskdebt.created",
+      "diagnostic.generated"
+    ],
+    "qeg_approval_substitute": false
+  },
+  "read_model_contract": {
+    "derived_from_canonical_bundle": true,
+    "canonical_source_preserved": true,
+    "stale_cache_policy": "rebuild_from_canonical_bundle",
+    "qeg_verdict_override": false,
+    "precheck_decision_override": false
+  },
+  "acceptance": {
+    "p0_p1_local_bundle_without_org": true,
+    "hosted_read_model_rebuildable_from_bundle": true,
+    "scope_boundaries_explicit": true,
+    "auditor_read_only": true,
+    "service_account_human_approval_substitute": false,
+    "artifact_classification_controls_outputs": true,
+    "retention_linked_to_artifact_kind_and_classification": true,
+    "audit_events_append_only": true
+  },
+  "source_refs": [
+    "qeg-bundle.json",
+    "product-readiness-report.json",
+    "docs/process/ENTERPRISE_DOMAIN_MODEL.md"
+  ],
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<report name="jacoco">
+  <package name="com/example/auth">
+    <sourcefile name="AuthService.java">
+      <line nr="12" mi="0" ci="1" mb="0" cb="0"/>
+      <line nr="13" mi="1" ci="0" mb="1" cb="0"/>
+    </sourcefile>
+  </package>
+</report>

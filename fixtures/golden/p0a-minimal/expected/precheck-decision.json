@@ -7,8 +7,8 @@
   "commit_sha": "0123456789abcdef0123456789abcdef01234567",
   "created_at": "2026-06-28T00:01:00Z",
   "source_tool": "harness-auto-test-evidence",
-  "source_version": "0.0.0-fixture",
-  "sha256": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "source_version": "0.1.0",
+  "sha256": "sha256:97c8db766468cd9dc027d6479e1f763024042f1777199a5471bc15ca8736ceaf",
   "redaction_status": "not_required",
   "payload": {
     "decision": "eligible",
@@ -16,7 +16,7 @@
     "dq_hits": [],
     "soft_gaps": [],
     "reasons": [
-      "Minimal P0a fixture satisfies HATE/v1 schema bootstrap contracts.",
+      "Minimal P0a inputs satisfy HATE/v1 schema bootstrap contracts.",
       "QEG export is allowed as optional evidence and scheduled for P0b bundling."
     ],
     "qeg_export_allowed": true,

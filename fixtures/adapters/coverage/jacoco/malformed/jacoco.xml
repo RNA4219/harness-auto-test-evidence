@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<report name="jacoco">
+  <package name="com/example/auth">
+    <sourcefile name="Broken.java">
+      <line nr="12" mi="0" ci="1" mb="0" cb="0"/>
+    </sourcefile>
+  </package>

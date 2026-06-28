@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="generic-ci-tests" tests="1" failures="0" errors="0" skipped="0" time="0.5">
+  <testcase classname="tests.test_generic" name="test_generic_context" file="tests/test_generic.py" time="0.5"/>
+</testsuite>

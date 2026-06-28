@@ -1,0 +1,10 @@
+{
+  "testResults": [
+    {
+      "assertionResults": [
+        "not_an_object"
+      ],
+      "name": "src/__tests__/broken.test.ts"
+    }
+  ]
+}

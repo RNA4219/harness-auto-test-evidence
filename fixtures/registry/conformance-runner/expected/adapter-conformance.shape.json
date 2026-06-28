@@ -1,0 +1,25 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "adapter_conformance",
+  "required_top_level_fields": [
+    "adapter_registry",
+    "adapter_results",
+    "checks",
+    "summary"
+  ],
+  "required_adapter_result_fields": [
+    "adapter_id",
+    "adapter_type",
+    "fixture_results",
+    "conformance_status",
+    "known_limits",
+    "source_refs"
+  ],
+  "required_fixture_ids": [
+    "manifest-required-fields",
+    "capability-fields",
+    "profile-support"
+  ],
+  "minimum_fixture_results_per_adapter": 3,
+  "expected_status": "pass"
+}

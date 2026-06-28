@@ -1,0 +1,36 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "explain_report",
+  "mode": "why-soft-gap",
+  "bundle_ref": "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json",
+  "report_ref": "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json",
+  "reason_tree": [
+    {
+      "reason_id": "reason:soft_gap:1",
+      "category": "missing_execution",
+      "summary": "test not found in execution results",
+      "risk_id": "risk-db-high",
+      "expected_test_ref": "tests/test_db.py::test_connection",
+      "evidence_status": "missing",
+      "source_refs": [
+        "qeg-export-report.json"
+      ],
+      "children": [
+        {
+          "reason_id": "reason:soft_gap:1:risk",
+          "summary": "High-risk changed path requires execution evidence.",
+          "source_refs": [
+            "fixture:/diff-risk-test.json",
+            "src/db.py#L5-L10"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_refs": [
+    "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json"
+  ],
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

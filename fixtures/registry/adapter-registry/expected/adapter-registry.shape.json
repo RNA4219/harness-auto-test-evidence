@@ -1,0 +1,37 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "adapter_registry",
+  "minimum_adapter_count": 16,
+  "required_adapter_ids": [
+    "context-github-actions",
+    "context-generic-ci",
+    "test-result-junit",
+    "test-result-pytest-json",
+    "test-result-vitest-json",
+    "test-result-jest-json",
+    "coverage-lcov",
+    "coverage-cobertura",
+    "coverage-jacoco",
+    "coverage-coveragepy-json",
+    "static-sarif",
+    "artifact-manifest",
+    "browser-playwright-artifacts",
+    "contract-pact",
+    "mutation-stryker",
+    "export-qeg-bundle"
+  ],
+  "required_manifest_fields": [
+    "adapter_id",
+    "name",
+    "version",
+    "adapter_type",
+    "input_formats",
+    "output_record_types",
+    "capabilities",
+    "fixtures",
+    "profile_support"
+  ],
+  "required_summary": {
+    "all_have_required_manifest_fields": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "repository": "RNA4219/sample",
+  "workflow": "pytest-ci.yml",
+  "job": "pytest-test",
+  "event_name": "push",
+  "run_id": "2001",
+  "run_attempt": 1,
+  "commit_sha": "abc123def456abc123def456abc123def4567890",
+  "base_sha": "base123base456base123base456base123base4567890",
+  "started_at": "2026-06-28T01:00:00Z",
+  "finished_at": "2026-06-28T01:02:00Z",
+  "actor": "pytest-runner",
+  "ref": "refs/heads/main"
+}

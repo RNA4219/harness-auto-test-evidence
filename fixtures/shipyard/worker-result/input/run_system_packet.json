@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "mode": "advisory",
+  "run": {
+    "run_ref": "agent-taskstate:run:job_hate_p1b_004_acceptance",
+    "task_ref": "agent-taskstate:task:HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+    "job_ref": "shipyard-cp:worker_job:claude_code:job_hate_p1b_004_acceptance",
+    "task_id": "HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+    "job_id": "job_hate_p1b_004_acceptance",
+    "stage": "acceptance",
+    "worker_type": "claude_code",
+    "result_status": "succeeded"
+  },
+  "contract_refs": {
+    "intent_contract_ref": "agent-protocols:intent_contract:HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+    "task_seed_ref": "agent-protocols:task_seed:job_hate_p1b_004_acceptance",
+    "acceptance_ref": "agent-protocols:acceptance:job_hate_p1b_004_acceptance",
+    "evidence_ref": "agent-protocols:evidence:job_hate_p1b_004_acceptance-succeeded"
+  },
+  "agent_protocols": {
+    "flow": "IntentContract -> TaskSeed -> Acceptance -> PublishGate -> Evidence",
+    "evidence_candidate": {
+      "kind": "Evidence",
+      "state": "Published",
+      "taskSeedId": "agent-protocols:task_seed:job_hate_p1b_004_acceptance",
+      "inputHash": "input-hash-p1b-004",
+      "outputHash": "output-hash-p1b-004",
+      "runtimeMs": 7320,
+      "exitCode": 0
+    }
+  },
+  "agent_taskstate": {
+    "task_ref": "agent-taskstate:task:HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+    "run_ref": "agent-taskstate:run:job_hate_p1b_004_acceptance",
+    "current_state": "accepted",
+    "context_bundle_ref": "agent-taskstate:context_bundle:hate-p1b-004",
+    "resolver_refs": {
+      "docs": [
+        "memx-resolver:doc:workflow-cookbook:RUN_SYSTEM_INTEGRATION"
+      ]
+    },
+    "external_refs": [
+      {
+        "system": "shipyard-cp",
+        "ref": "run:shipyard-hate-p1b-004"
+      }
+    ]
+  },
+  "agent_gatefield": {
+    "profile": "standard",
+    "decision_input": {
+      "run_id": "job_hate_p1b_004_acceptance",
+      "artifact_count": 2,
+      "test_summary": {
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "not_run": 0
+      },
+      "requested_escalation_count": 0,
+      "side_effects": [],
+      "has_patch": false,
+      "has_branch": false,
+      "worker_status": "succeeded"
+    }
+  },
+  "agent_state_gate": {
+    "assessment_input": {
+      "run_ref": "agent-taskstate:run:job_hate_p1b_004_acceptance",
+      "task_ref": "agent-taskstate:task:HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+      "evidence_refs": [
+        "agent-protocols:evidence:job_hate_p1b_004_acceptance-succeeded"
+      ],
+      "context_bundle_ref": "agent-taskstate:context_bundle:hate-p1b-004",
+      "expected_verdicts": [
+        "allow",
+        "revise",
+        "needs_approval",
+        "require_human",
+        "stale_blocked",
+        "deny"
+      ]
+    }
+  },
+  "invariants": [
+    "shipyard-cp remains the Run state-machine owner and records this packet as advisory evidence until enforce mode is explicitly enabled."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "workflow_task_seed",
+  "task_id": "HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+  "title": "P1b RanD/Shipyard/workflow advisory artifact mapping",
+  "objective": "Attach HATE P0b/P1a evidence to downstream workflow surfaces without taking over their gates.",
+  "run_id": "1001",
+  "stage_flow": [
+    "plan",
+    "dev",
+    "acceptance",
+    "integrate"
+  ],
+  "local_commands": [
+    "uv run python -m hate workflow map --bundle <qeg-bundle.json> --report <qeg-export-report.json> --trust <trust-dir> --out <out-dir>",
+    "uv run pytest"
+  ],
+  "acceptance_refs": [
+    "AC-HATE-P1B-WORKFLOW-MAPPING"
+  ],
+  "evidence_refs": [
+    "requirement-evidence-alignment.json",
+    "workflow-acceptance-record.json",
+    "workflow-evidence.jsonl",
+    "shipyard-run-evidence.json"
+  ],
+  "known_gaps": [],
+  "source_refs": [
+    "fixture:/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixture:/p0b-qeg-minimal/expected/qeg-export-report.json",
+    "fixture:/p1a-trust-minimal/expected/aete-score.json"
+  ],
+  "publish_gate_override": false
+}

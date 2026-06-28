@@ -1,0 +1,64 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "product_metrics_report",
+  "run_id": "1001",
+  "metrics": [
+    {
+      "metric_id": "time_to_first_evidence",
+      "value": "fixture_reproducible",
+      "source_refs": [
+        "P0A_GOLDEN_PATH.md"
+      ]
+    },
+    {
+      "metric_id": "evidence_eligibility_rate",
+      "value": "tracked",
+      "source_refs": [
+        "qeg-export-report.json"
+      ]
+    },
+    {
+      "metric_id": "high_risk_evidence_coverage",
+      "value": "partial",
+      "source_refs": [
+        "requirement-evidence-alignment.json"
+      ]
+    },
+    {
+      "metric_id": "adapter_conformance_rate",
+      "value": "pass",
+      "source_refs": [
+        "adapter-conformance-report.json"
+      ]
+    },
+    {
+      "metric_id": "trust_score",
+      "value": 0.65,
+      "source_refs": [
+        "aete-score.json"
+      ]
+    },
+    {
+      "metric_id": "doctor_finding_count",
+      "value": 0,
+      "source_refs": [
+        "doctor-report.json"
+      ]
+    },
+    {
+      "metric_id": "unverified_acceptance_count",
+      "value": 0,
+      "source_refs": [
+        "requirement-evidence-alignment.json"
+      ]
+    }
+  ],
+  "privacy_boundary": {
+    "contains_customer_code": false,
+    "contains_raw_artifact": false,
+    "contains_secret": false,
+    "contains_pii": false
+  },
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

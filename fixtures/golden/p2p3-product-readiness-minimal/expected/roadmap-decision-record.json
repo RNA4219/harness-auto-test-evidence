@@ -1,0 +1,37 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "roadmap_decision_record",
+  "run_id": "1001",
+  "roadmap_items": [
+    {
+      "item_id": "roadmap:hosted-runtime",
+      "status": "planned",
+      "personas": [
+        "Platform Admin"
+      ],
+      "acceptance_refs": [
+        "AC-HATE-P3-ENTERPRISE"
+      ],
+      "source_refs": [
+        "ENTERPRISE_PRODUCT_REQUIREMENTS.md"
+      ]
+    },
+    {
+      "item_id": "roadmap:local-artifacts",
+      "status": "implemented",
+      "personas": [
+        "Developer",
+        "QA Lead"
+      ],
+      "acceptance_refs": [
+        "AC-HATE-P3-ENTERPRISE"
+      ],
+      "source_refs": [
+        "product-readiness-report.json"
+      ]
+    }
+  ],
+  "decision_rationale": "Local artifact readiness is implemented before hosted runtime expansion.",
+  "customer_facing_available_claim": false,
+  "publish_gate_override": false
+}

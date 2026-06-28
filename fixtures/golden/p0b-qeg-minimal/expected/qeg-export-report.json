@@ -7,7 +7,7 @@
   "export_status": "success",
   "completeness": {
     "score": 1.0,
-    "partial": true,
+    "partial": false,
     "parserFailures": [],
     "unsupportedClaims": [],
     "excludedArtifacts": []
@@ -16,8 +16,8 @@
   "missing_execution": [],
   "excludedArtifacts": [],
   "source_refs": [
-    "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\precheck-decision.json",
-    "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\diff-risk-test.json"
+    "fixture:/p0a/precheck-decision.json",
+    "fixture:/diff-risk-test.json"
   ],
   "publish_gate_override": false
 }

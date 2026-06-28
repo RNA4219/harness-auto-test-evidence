@@ -1,0 +1,59 @@
+{
+  "job_id": "job_hate_p1b_004_acceptance",
+  "typed_ref": "shipyard-cp:worker_result:claude_code:job_hate_p1b_004_acceptance",
+  "status": "succeeded",
+  "summary": "P1b workflow mapping artifacts generated and accepted.",
+  "artifacts": [
+    {
+      "artifact_id": "artifact:p1b:workflow-evidence",
+      "kind": "json",
+      "uri": "workspace:/fixtures/golden/p1b-workflow-minimal/expected/workflow-evidence.jsonl"
+    },
+    {
+      "artifact_id": "artifact:p1b:shipyard-run-evidence",
+      "kind": "json",
+      "uri": "workspace:/fixtures/golden/p1b-workflow-minimal/expected/shipyard-run-evidence.json"
+    }
+  ],
+  "test_results": [
+    {
+      "name": "uv run pytest tests/test_p1b.py",
+      "status": "passed",
+      "duration_ms": 520
+    }
+  ],
+  "verdict": {
+    "status": "accept",
+    "summary": "P1b advisory artifacts accepted.",
+    "checklist_completed": true
+  },
+  "requested_escalations": [],
+  "retry_count": 0,
+  "resolver_refs": {
+    "docs": [
+      "memx-resolver:doc:workflow-cookbook:RUN_SYSTEM_INTEGRATION"
+    ]
+  },
+  "external_refs": [
+    {
+      "system": "shipyard-cp",
+      "ref": "run:shipyard-hate-p1b-004"
+    }
+  ],
+  "context_bundle_ref": "agent-taskstate:context_bundle:hate-p1b-004",
+  "usage": {
+    "runtime_ms": 7320,
+    "exit_code": 0,
+    "litellm": {
+      "model": "glm-5",
+      "provider": "dashscope",
+      "input_tokens": 1200,
+      "output_tokens": 450,
+      "fallback_used": false
+    }
+  },
+  "metadata": {
+    "worker_backend": "glm",
+    "shipyard_stage": "acceptance"
+  }
+}

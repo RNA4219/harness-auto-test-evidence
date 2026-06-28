@@ -1,0 +1,56 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "customer_docs_index",
+  "docs": [
+    {
+      "doc_id": "doc:quickstart",
+      "title": "Quickstart",
+      "freshness_status": "source_linked",
+      "verification_status": "artifact_referenced"
+    },
+    {
+      "doc_id": "doc:concepts",
+      "title": "Concepts",
+      "freshness_status": "source_linked",
+      "verification_status": "artifact_referenced"
+    },
+    {
+      "doc_id": "doc:cli-reference",
+      "title": "CLI Reference",
+      "freshness_status": "source_linked",
+      "verification_status": "artifact_referenced"
+    },
+    {
+      "doc_id": "doc:schema-reference",
+      "title": "Schema Reference",
+      "freshness_status": "source_linked",
+      "verification_status": "artifact_referenced"
+    },
+    {
+      "doc_id": "doc:security-guide",
+      "title": "Security Guide",
+      "freshness_status": "source_linked",
+      "verification_status": "artifact_referenced"
+    },
+    {
+      "doc_id": "doc:migration-guide",
+      "title": "Migration Guide",
+      "freshness_status": "source_linked",
+      "verification_status": "artifact_referenced"
+    },
+    {
+      "doc_id": "doc:support-guide",
+      "title": "Support Guide",
+      "freshness_status": "source_linked",
+      "verification_status": "artifact_referenced"
+    },
+    {
+      "doc_id": "doc:compliance-pack",
+      "title": "Compliance Pack",
+      "freshness_status": "source_linked",
+      "verification_status": "artifact_referenced"
+    }
+  ],
+  "overclaim_guard": "Do not claim hosted SaaS availability from local artifact readiness.",
+  "publish_gate_override": false
+}

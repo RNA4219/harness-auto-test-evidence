@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/v1",
+  "run_id": "1001",
+  "identities": [
+    {
+      "test_node_id": "test:f577f8ac1efa67ea",
+      "canonical_test_id": "junit:tests/test_auth.py::test_login",
+      "identity_components": {
+        "framework": "junit",
+        "file": "tests/test_auth.py",
+        "classname": "",
+        "name": "test_login",
+        "parameters": {},
+        "matrix": {}
+      },
+      "aliases": [],
+      "source_refs": [
+        "fixture:/p0a/HATE-test-results.ndjson"
+      ]
+    }
+  ]
+}

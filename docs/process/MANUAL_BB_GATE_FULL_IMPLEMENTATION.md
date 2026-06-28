@@ -10,7 +10,7 @@ next_review_due: 2026-07-28
 
 ## Intake Status
 
-- status: blocked
+- status: conditional_go
 - profile: standard
 - feature: HATE フル実装到達可否
 - decision target: P0a / P0b / P1a / P1b / P2 / P3 を含む実装完了までのGo/No-Go
@@ -20,12 +20,12 @@ next_review_due: 2026-07-28
   - P0a schema bootstrap: `schemas/HATE/v1/*`
   - P0a golden fixture: `fixtures/golden/p0a-minimal/*`
   - P0a CLI evidence: `docs/process/shipyard-run-evidence-p0a-cli-implementation.json`
+  - P0b QEG export and edge evidence: `docs/process/shipyard-run-evidence-p0b-qeg-export.json`
+  - P1a trust minimal evidence: `docs/process/shipyard-run-evidence-p1a-trust-minimal.json`
+  - P1b workflow mapping evidence: `docs/process/shipyard-run-evidence-p1b-workflow-mapping.json`
+  - P2/P3 product readiness evidence: `docs/process/shipyard-run-evidence-p2p3-product-readiness.json`
   - 仕様監査: `docs/process/SPECIFICATION_SHIPYARD_AUDIT.md`
-- blockers:
-  - P0b `qeg-bundle.json` / `evidence-map.json` / `diff-risk-test.json` がない
-  - P1a AETE / replay / compare / explain / recommend / doctor / path normalization がない
-  - P1b workflow / RanD / Shipyard runtime mapping artifact がない
-  - P2/P3 productization / enterprise readiness は契約文書中心で、実装 artifact / metrics がない
+- blockers: none for artifact generation; visible gaps remain for product readiness
 
 ## 根拠付き観点
 
@@ -33,11 +33,11 @@ next_review_due: 2026-07-28
 |---|---|---|---|---|---|
 | OBS-FULL-01 | フル実装はP0aだけでなくP0b/P1a/P1b/P2/P3までを含む | black | flow / regression | `SPECIFICATION.md#16`, `SPECIFICATION.md#34`, `EVALUATION.md` | 受入条件がphase全体に広がっており、P0aの準備証跡だけでは完了判定できない |
 | OBS-FULL-02 | P0aは実行コードとCLI証跡を持つ | black | flow | `src/hate/p0a.py`, `tests/test_p0a.py`, `shipyard-run-evidence-p0a-cli-implementation.json` | P0a単体の実装完了は確認できるが、フル実装完了ではない |
-| OBS-FULL-03 | DQの再現性はP0aで成立したが、full implementationにはP0b以降も必要 | black | boundary / decision_table | `EVALUATION.md`, `P0A_GOLDEN_PATH.md#7` | hard_dqは再現済み。QEG/AETE/workflow側のDQ相当は未実装 |
-| OBS-FULL-04 | QEG export互換はP0bの必須ゲート | black | rule / integration | `SPECIFICATION.md#13`, `EVALUATION.md#P0b` | `qeg-bundle.json` がない状態ではQEG optional evidence producerとして完成していない |
-| OBS-FULL-05 | AETEとadapter capabilityはP1aの信頼性ゲート | black | decision_table / regression | `SPECIFICATION.md#12`, `EVALUATION.md#P1a` | 8次元score、profile、calibration、未対応粒度が実装されていない |
-| OBS-FULL-06 | workflow / Shipyard / RanD接続はP1bで実artifactが必要 | black | state_transition / rule | `SPECIFICATION.md#29`, `SPECIFICATION.md#30`, `EVALUATION.md#P1b` | advisory evidenceだけではruntime refs / acceptance refs / Evidence JSONL の生成を証明できない |
-| OBS-FULL-07 | P2/P3はP0/P1を阻害しないが、full implementationには検証可能artifactが必要 | black | regression / rule | `EVALUATION.md#P2`, `EVALUATION.md#P3` | product readiness, trust, telemetry, residency, legal, assurance は文書だけでは実装完了にならない |
+| OBS-FULL-03 | DQの再現性はP0a/P0bで成立し、P1a/P1bではtrust/workflow gapとして継承される | black | boundary / decision_table | `EVALUATION.md`, `P0A_GOLDEN_PATH.md#7` | hard_dq、QEG gap可視化、AETE doctor、workflow unverified acceptance は再現済み |
+| OBS-FULL-04 | QEG export互換はP0bの必須ゲート | black | rule / integration | `SPECIFICATION.md#13`, `EVALUATION.md#P0b` | core export、edge hardening、risk debt / manual bridge の生成証跡がある |
+| OBS-FULL-05 | AETEとadapter capabilityはP1aの信頼性ゲート | black | decision_table / regression | `SPECIFICATION.md#12`, `EVALUATION.md#P1a` | 8次元score、profile、calibration、doctor、identity、retry、replay、compare、explain、recommend、adapter conformance が実装済み |
+| OBS-FULL-06 | workflow / Shipyard / RanD接続はP1bで実artifactが必要 | black | state_transition / rule | `SPECIFICATION.md#29`, `SPECIFICATION.md#30`, `EVALUATION.md#P1b` | `requirement-evidence-alignment.json`、`workflow-*`、`shipyard-run-evidence.json` が生成済み。ただし live Shipyard runtime dispatch ではなく advisory evidence |
+| OBS-FULL-07 | P2/P3はP0/P1を阻害しないが、full implementationには検証可能artifactが必要 | black | regression / rule | `EVALUATION.md#P2`, `EVALUATION.md#P3` | `product-readiness-report.json` と enterprise advisory artifacts が生成済み。live SaaS runtime claim ではない |
 | OBS-FULL-08 | 後段Gateやpublish approvalをHATEが再実装するとNo-Go | black | state_transition | `SPECIFICATION.md#4`, `SPECIFICATION.md#30`, `GUARDRAILS.md` | QEG / Shipyard / workflow-cookbook の責務境界違反は設計破壊 |
 
 ## リスク
@@ -45,11 +45,11 @@ next_review_due: 2026-07-28
 | id | scenario | I | L | modifiers | score | priority | rationale |
 |---|---|---:|---:|---|---:|---|---|
 | RISK-FULL-01 | P0a準備証跡をフル実装可能性と誤認する | 5 | 4 | D=3 C=3 X=1 P=1 A=0 | 77 | P0 | フルスコープの大半が未実装で、完了主張が重大な誤判定になる |
-| RISK-FULL-02 | P0a DQ通過をもってP0b以降のprecheck全体が信用されたと誤認する | 5 | 3 | D=3 C=2 X=0 P=1 A=0 | 59 | P0 | P0aのhard_dqは再現済みだが、QEG/AETE/workflow artifactは未証明 |
-| RISK-FULL-03 | QEG bundle未実装でoptional evidence producerとして成立しない | 5 | 4 | D=2 C=3 X=2 P=1 A=0 | 76 | P0 | HATEの主目的であるQEG接続が証明できない |
-| RISK-FULL-04 | AETE / profile / path normalization未実装で信頼評価が再現不能になる | 4 | 4 | D=3 C=3 X=1 P=1 A=0 | 66 | P1 | P1aの信頼性要件が満たせず、実運用で説明不能になる |
-| RISK-FULL-05 | Shipyard / workflow / RanD連携を文書だけで完了扱いする | 4 | 3 | D=3 C=3 X=2 P=1 A=0 | 56 | P1 | external refs と acceptance trace が実artifactで証明されない |
-| RISK-FULL-06 | P2/P3 enterprise契約が実装artifactなしで販売可能に見える | 5 | 3 | D=3 C=3 X=2 P=2 A=0 | 68 | P1 | customer-facing / compliance / legal 説明と実装状態が乖離する |
+| RISK-FULL-02 | P0a DQ通過をもってP0b以降のprecheck全体が信用されたと誤認する | 5 | 3 | D=3 C=2 X=0 P=1 A=0 | 59 | P0 | P0b/P1a/P1bの証跡は追加済みだが、P2/P3のproduct readinessまでは証明しない |
+| RISK-FULL-03 | P0b partial export をQEG release verdictと誤認する | 5 | 3 | D=2 C=3 X=2 P=1 A=0 | 61 | P0 | P0b は optional evidence producer であり、QEG gate / release approval は出さない |
+| RISK-FULL-04 | P1a trust artifact を release Gate と誤認する | 4 | 4 | D=3 C=3 X=1 P=1 A=0 | 66 | P1 | P1aはadvisory evidenceであり、QEG gate / release approvalは出さない |
+| RISK-FULL-05 | Shipyard / workflow / RanD連携をlive runtime完了と誤認する | 4 | 3 | D=3 C=3 X=2 P=1 A=0 | 56 | P1 | P1b artifact は advisory evidence であり、Shipyard runtime dispatch / publish approval ではない |
+| RISK-FULL-06 | P2/P3 readiness artifactをhosted SaaS availabilityと誤認する | 5 | 3 | D=3 C=3 X=2 P=2 A=0 | 68 | P1 | product readinessはlocal advisory artifactであり、dashboard/API/connector runtimeではない |
 | RISK-FULL-07 | HATEがQEG/ShipyardのGate権限を再実装する | 5 | 3 | D=2 C=3 X=1 P=2 A=1 | 60 | P1 | release approval や publish approval の責務境界を壊す |
 
 ## 優先度
@@ -58,14 +58,14 @@ next_review_due: 2026-07-28
 |---|---|---|---|
 | P0 | P0a executable converter / CLI | implemented | pass for P0a |
 | P0 | DQ negative fixtures and validation | implemented | pass for P0a |
-| P0 | P0b QEG minimal bundle | missing | block |
-| P0 | QEG責務境界の実行証跡 | docs only | block |
-| P1 | AETE 8 dimensions / profile / calibration | missing | block |
-| P1 | canonical test identity / path normalization | partial fixture only | block |
-| P1 | replay / compare / explain / recommend / doctor | missing | block |
-| P1 | workflow / RanD / Shipyard generated artifacts | advisory only | block |
-| P2 | productization reports and optional exports | docs only | block for full |
-| P2 | P3 enterprise readiness metrics / artifacts | docs only | block for full |
+| P0 | P0b QEG minimal bundle and edge hardening | implemented, partial export | pass |
+| P0 | QEG責務境界の実行証跡 | implemented, advisory only | pass |
+| P1 | AETE 8 dimensions / profile / calibration | implemented | pass |
+| P1 | canonical test identity / path normalization | implemented for current fixture scope | pass |
+| P1 | replay / compare / explain / recommend / doctor | implemented | pass |
+| P1 | workflow / RanD / Shipyard generated artifacts | implemented, advisory only | pass |
+| P2 | productization reports and optional exports | implemented, advisory artifact only; current readiness conditional | conditional |
+| P2 | P3 enterprise readiness metrics / artifacts | implemented, advisory artifact only; PRG coverage 6/7 | conditional |
 
 ## 手動テストケース
 
@@ -81,7 +81,7 @@ next_review_due: 2026-07-28
 | TC-FULL-008 | P1 | replay/compare/explain/recommend/doctorがfrozen bundleで再現可能 | P1a command実装済み | 各commandをfrozen bundleに対して実行 | deterministic outputと説明可能なfindingが出る | specified: `HATE-FR-013` | RISK-FULL-04 | 40 |
 | TC-FULL-009 | P1 | Shipyard runtime refsからshipyard-run-evidenceを生成できる | P1b fixture実装済み | WorkerResult / RunSystemPacket fixtureを投入 | artifact refs、DQ/AETE summary、publish override falseが出る | specified: `SPECIFICATION.md#30` | OBS-FULL-06,RISK-FULL-05 | 20 |
 | TC-FULL-010 | P1 | workflow artifactsがTask SeedからEvidenceへ辿れる | P1b workflow実装済み | workflow-*生成を実行 | task -> acceptance -> evidence refs が連結 | specified: `SPECIFICATION.md#29` | OBS-FULL-06,RISK-FULL-05 | 25 |
-| TC-FULL-011 | P2 | external exportがprecheck/QEG verdictを変えない | P2実装済み | export enabled/disabledで同一bundleを比較 | canonical decisionが不変 | specified: `HATE-NFR-007` | RISK-FULL-06 | 20 |
+| TC-FULL-011 | P2 | external/product readinessがprecheck/QEG verdictを変えない | P2/P3 artifact実装済み | product readiness生成後に境界fieldを確認 | release/publish override false、local_first_dependency false | specified: `HATE-NFR-007` | RISK-FULL-06 | 20 |
 | TC-FULL-012 | P2 | P3 readinessがPRG-0..PRG-6をartifact/metricで証明する | P3 artifact実装済み | product-readiness-reportを検査 | 各PRGがmetric/evidence refsを持つ | specified: `EVALUATION.md#P3` | OBS-FULL-07,RISK-FULL-06 | 30 |
 | TC-FULL-013 | P0 | HATEがQEG/ShipyardのGate権限を再実装しない | 全phase実装後 | 出力artifactとAPI surfaceを確認 | release/publish approvalを書き換えるfield/commandがない | specified: `SPECIFICATION.md#4`, `SPECIFICATION.md#30` | OBS-FULL-08,RISK-FULL-07 | 20 |
 
@@ -91,14 +91,14 @@ next_review_due: 2026-07-28
   - 実装entrypoint、schema validator、fixture runner、expected diff方針を固定
 - P0a execution: 3〜4日
   - converter / CLI / JUnit / LCOV / manifest / precheck / record / summary / DQ negative fixture
-- P0b execution: 3〜5日
-  - qeg-bundle / evidence-map / diff-risk-test / SARIF / Playwright artifact safety
-- P1a execution: 6〜10日
-  - AETE / profile / retry aggregation / identity / path normalization / replay / compare / explain / recommend / doctor
-- P1b execution: 4〜7日
-  - RanD alignment / Shipyard runtime mapping / workflow-* artifacts / manual-bb bridge
-- P2/P3 execution: 8〜15日
-  - optional exports / hosted read model contracts / product readiness / enterprise reports / assurance artifacts
+- P0b execution: complete for current local fixture scope
+  - qeg-bundle / evidence-map / diff-risk-test / missing-source-ref / unsafe-artifact / risk-debt / manual-bb bridge
+- P1a execution: complete for current local fixture scope
+  - AETE / profile / doctor / identity / retry / replay / compare / explain / recommend / adapter conformance implemented
+- P1b execution: complete for current local advisory fixture scope
+  - RanD alignment / Shipyard advisory mapping / workflow-* artifacts / manual-bb bridge
+- P2/P3 execution: complete for current local advisory artifact scope
+  - hosted read model index / product readiness / enterprise metrics / docs / support / privacy / governance artifacts
 - evidence and retry buffer: 4〜7日
 - total: 29〜49日
 
@@ -107,19 +107,23 @@ next_review_due: 2026-07-28
 ## Gate
 
 - profile: standard
-- decision: no_go
+- decision: conditional_go
 - scope_decision:
   - P0a implementation start: go
   - P0a implementation completion: go
-  - P0b implementation completion: no_go
-  - P1a/P1b implementation completion: no_go
-  - P2/P3 full product implementation completion: no_go
-  - full implementation claim: no_go
+  - P0b implementation completion: go
+  - P1a implementation completion: go
+  - P1b implementation completion: go
+  - P2/P3 full product implementation completion: conditional_go
+  - full implementation claim: conditional_go
 - reasons:
   - P0aに必要な実行可能CLI、JUnit/LCOV最小adapter、DQ negative fixture、実行証跡は存在する
-  - full implementationに必要なQEG bundle、AETE、workflow artifactsが存在しない
-  - P0b以降は文書契約が中心で、生成artifactと検証ログがない
-  - P2/P3は契約文書として整理されているが、artifact/metricによるProduct Readiness証明がない
+  - P0bに必要なQEG export、edge hardening、risk-debt/manual-bb bridge、検証ログは存在する
+  - P1aに必要な AETE score、doctor report、resolver map、identity、retry、replay、compare、explain、recommend、adapter conformance は存在する
+  - P1bに必要な RanD alignment、workflow artifacts、Shipyard advisory evidence、manual-bb bridge 継承は存在する
+  - P2/P3に必要な product readiness、hosted read model index、enterprise metrics、customer docs、support diagnostic、privacy telemetry、governance portfolio artifacts は存在する
+  - current fixture は doctor finding と unverified acceptance を保持するため product readiness は `conditional` / `6/7`
+  - full implementation claim は local/advisory artifact implementation scope に限定し、hosted SaaS runtime availability は主張しない
 - blocking_risks:
   - `RISK-FULL-01`
   - `RISK-FULL-02`
@@ -129,21 +133,18 @@ next_review_due: 2026-07-28
 - minimum_go_conditions:
   - P0a CLIがgolden fixtureからrequired outputsを生成する
   - DQ negative fixtureが期待decision/exit codeを再現する
-  - P0b qeg-bundle/evidence-map/diff-risk-testが生成される
-  - P1a AETE/profile/path/replay系の最低fixtureが通る
-  - P1b workflow/Shipyard/RanD artifactが生成される
-  - P2/P3はfull claimに含めるならproduct-readiness-reportとPRG metricを生成する
+  - hosted SaaS runtimeをfull claimに含めるなら dashboard/API/connector runtime evidence を別途生成する
 
 ## Go/No-Go Brief
 
 - feature: HATE full implementation
-- decision: no_go
-- answer: 現段階ではフル実装まで完成すると確認できない。P0aの着手は可能だが、full implementation gateは未達。
+- decision: conditional_go
+- answer: local/advisory artifact implementation scope では P0a/P0b/P1a/P1b/P2/P3 の生成artifactと検証ログが揃った。ただし P0b/P1b の visible gap と P1a doctor finding を保持するため、P2/P3 readiness は conditional。hosted SaaS runtime、dashboard/API server、enterprise connector runtime、Shipyard publish approval は対象外。
 - top risks:
   - P0a実装完了証跡をフル実装証跡と誤認するリスク
-  - QEG export未実装リスク
-  - DQ/AETE未実装による誤判定リスク
-  - P2/P3契約文書をproduct implementationと誤認するリスク
+  - P0b optional evidence exportをQEG release verdictと誤認するリスク
+  - P1b advisory evidenceをlive Shipyard runtime完了と誤認するリスク
+  - P2/P3 readiness artifactをhosted SaaS availabilityと誤認するリスク
 - evidence:
   - `docs/process/SPECIFICATION.md`
   - `docs/process/EVALUATION.md`
@@ -151,10 +152,10 @@ next_review_due: 2026-07-28
   - `schemas/HATE/v1/*`
   - `fixtures/golden/p0a-minimal/*`
   - `docs/process/SPECIFICATION_SHIPYARD_AUDIT.md`
+  - `docs/process/shipyard-run-evidence-p1b-workflow-mapping.json`
+  - `docs/process/shipyard-run-evidence-p2p3-product-readiness.json`
 - residual risk:
-  - high。P0b以降の生成artifactが存在しないため、full implementation completionは証明不能。
+  - medium。local/advisory artifact は生成済みだが、current fixture の product readiness は conditional。hosted SaaS runtime / dashboard / REST server / enterprise connector は実装対象外。
 - required follow-up:
-  1. P0b qeg-bundle / evidence-map / diff-risk-test を実装する
-  2. P1a AETE / profile / identity / path / replay 系をfixture付きで実装する
-  3. P1b workflow / RanD / Shipyard runtime mapping artifact を実装する
-  4. P2/P3をfull claimに含めるならProduct Readiness artifactとmetricを実装する
+  1. hosted SaaS runtimeを売り物の範囲に含めるなら dashboard/API/connector を別ゲートで実装する
+  2. live Shipyard runtime dispatch を要求する場合は、Shipyard-cp側のrun/audit refsで別途検証する

@@ -1,0 +1,46 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "product_error_catalog",
+  "errors": [
+    {
+      "code": "HATE-E-DQ-001",
+      "stable_id": "missing_commit_sha",
+      "remediation": "Provide commit_sha in github context.",
+      "user_facing": true
+    },
+    {
+      "code": "HATE-E-DQ-002",
+      "stable_id": "malformed_junit",
+      "remediation": "Replace malformed JUnit XML or mark adapter failure.",
+      "user_facing": true
+    },
+    {
+      "code": "HATE-E-DQ-003",
+      "stable_id": "missing_artifact",
+      "remediation": "Attach the referenced artifact or remove the reference.",
+      "user_facing": true
+    },
+    {
+      "code": "HATE-E-EXPORT-001",
+      "stable_id": "qeg_export_ineligible",
+      "remediation": "Resolve hard DQ before QEG export.",
+      "user_facing": true
+    },
+    {
+      "code": "HATE-E-TRUST-001",
+      "stable_id": "trust_input_missing",
+      "remediation": "Provide frozen QEG bundle and export report.",
+      "user_facing": true
+    },
+    {
+      "code": "HATE-E-PRODUCT-001",
+      "stable_id": "readiness_input_missing",
+      "remediation": "Provide QEG, trust, and workflow artifact directories.",
+      "user_facing": true
+    }
+  ],
+  "source_refs": [
+    "docs/process/PRODUCT_ERROR_TAXONOMY.md"
+  ],
+  "publish_gate_override": false
+}

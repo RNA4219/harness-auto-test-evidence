@@ -1,0 +1,51 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "requirement_alignment",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "requirements": [
+    {
+      "requirement_id": "REQ-HATE-P1B-WORKFLOW-INTEGRATION",
+      "statement": "Generate advisory RanD alignment, Shipyard evidence, and workflow-cookbook mapping artifacts without overriding upstream gates.",
+      "gate_verdict": "go",
+      "testability": "high",
+      "implementation_alignment": "implemented",
+      "evidence_coverage": "covered",
+      "supported_evidence_refs": [
+        "qeg-bundle.json",
+        "qeg-export-report.json",
+        "aete-score.json",
+        "doctor-report.json"
+      ],
+      "unverified_acceptance": [],
+      "source_refs": [
+        "fixture:/p0b-qeg-minimal/expected/qeg-bundle.json",
+        "fixture:/p0b-qeg-minimal/expected/qeg-export-report.json",
+        "fixture:/p1a-trust-minimal/expected/aete-score.json"
+      ]
+    }
+  ],
+  "manual_bb_bridge": [],
+  "summary": {
+    "requirement_count": 1,
+    "gate_verdict": "go",
+    "aete_weighted_score": 0.65,
+    "doctor_finding_count": 0,
+    "unverified_acceptance_count": 0
+  },
+  "boundary": {
+    "rand_verdict_override": false,
+    "manual_bb_gate_override": false,
+    "publish_gate_override": false,
+    "release_gate_override": false
+  },
+  "source_refs": [
+    "fixture:/p0b-qeg-minimal/expected/qeg-bundle.json",
+    "fixture:/p0b-qeg-minimal/expected/qeg-export-report.json",
+    "fixture:/p1a-trust-minimal/expected/aete-score.json"
+  ],
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

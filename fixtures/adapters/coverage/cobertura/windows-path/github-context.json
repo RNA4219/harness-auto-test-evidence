@@ -1,0 +1,14 @@
+{
+  "repository": "RNA4219/sample",
+  "workflow": "ci.yml",
+  "job": "coverage",
+  "event_name": "pull_request",
+  "run_id": "2004",
+  "run_attempt": 1,
+  "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+  "base_sha": "abcdefabcdefabcdefabcdefabcdefabcdefabcd",
+  "started_at": "2026-06-28T00:00:00Z",
+  "finished_at": "2026-06-28T00:02:00Z",
+  "actor": "codex-ci",
+  "ref": "refs/pull/1/merge"
+}

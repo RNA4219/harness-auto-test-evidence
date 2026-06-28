@@ -15,7 +15,6 @@
             "workflow",
             "job",
             "event_name",
-            "base_sha",
             "started_at",
             "finished_at",
             "ci"
@@ -32,7 +31,7 @@
               "type": "object",
               "required": ["provider", "run_id", "run_attempt"],
               "properties": {
-                "provider": { "enum": ["github_actions", "generic_ci"] },
+                "provider": { "enum": ["github-actions", "generic-ci"] },
                 "run_id": { "type": "string", "minLength": 1 },
                 "run_attempt": { "type": "integer", "minimum": 1 }
               },

@@ -1,0 +1,13 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "doctor_report",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "findings": [],
+  "summary": {
+    "finding_count": 0,
+    "blocking_categories": []
+  },
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

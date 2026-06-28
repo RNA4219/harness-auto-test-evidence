@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<report name="jacoco">
+  <package name="com/example/partial">
+    <sourcefile name="Empty.java"/>
+    <sourcefile name="Useful.java">
+      <line nr="7" mi="0" ci="1" mb="0" cb="0"/>
+    </sourcefile>
+  </package>
+</report>

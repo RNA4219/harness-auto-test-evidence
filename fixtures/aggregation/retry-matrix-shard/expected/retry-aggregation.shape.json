@@ -1,0 +1,41 @@
+{
+  "schema_version": "HATE/v1",
+  "required_aggregate_fields": [
+    "aggregation_key",
+    "test_node_id",
+    "normalized_canonical_test_id",
+    "matrix",
+    "matrix_group",
+    "run_id",
+    "run_attempt",
+    "retry_attempts",
+    "shards",
+    "raw_statuses",
+    "aggregate_status",
+    "source_refs"
+  ],
+  "required_retry_attempt_fields": [
+    "execution_node_id",
+    "retry_index",
+    "status"
+  ],
+  "required_shard_fields": [
+    "observed",
+    "expected_count",
+    "missing"
+  ],
+  "aggregate_statuses": [
+    "stable_passed",
+    "flaky_passed",
+    "flaky_failed",
+    "failed",
+    "inconclusive"
+  ],
+  "required_summary_fields": [
+    "aggregate_count",
+    "flaky_count",
+    "inconclusive_count",
+    "matrix_group_count",
+    "missing_shard_count"
+  ]
+}

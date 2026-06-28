@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="coverage" tests="1" failures="0" errors="0">
+  <testcase classname="tests.test_windows" name="test_windows" file="tests/test_windows.py" time="0.1"/>
+</testsuite>

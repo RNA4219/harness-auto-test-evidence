@@ -1,0 +1,14 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "replay_report",
+  "profile": "default",
+  "bundle_ref": "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json",
+  "report_ref": "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json",
+  "recalculation_hash": "aba5ab50641e2cb605378ec2610aecca7b8a6832ea0674ce87c9a8354b586f22",
+  "weighted_score": 0.6,
+  "doctor_findings": 1,
+  "retry_aggregate_count": 1,
+  "deterministic": true,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

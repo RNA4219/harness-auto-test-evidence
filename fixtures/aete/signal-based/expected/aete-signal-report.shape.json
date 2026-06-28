@@ -1,0 +1,27 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "aete_signal_report",
+  "required_dimensions": [
+    "provenance_integrity",
+    "determinism_flakiness",
+    "traceability_lineage",
+    "oracle_strength",
+    "change_relevance",
+    "coverage_adequacy",
+    "cross_signal_corroboration",
+    "freshness_profile_conformance"
+  ],
+  "required_signal_fields": [
+    "signal_id",
+    "dimension",
+    "score",
+    "observed",
+    "rationale",
+    "source_refs"
+  ],
+  "allowed_scores": [0, 1, 3, 5],
+  "reason_ref_prefix": "signal:",
+  "deterministic": true,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

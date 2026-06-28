@@ -17,9 +17,14 @@ next_review_due: 2026-07-28
 ## 1. 実装フロー（最短）
 
 1. `BLUEPRINT.md` で In/Out と I/O を固定
-2. `TASK.codex.md` の順番で Task を実装
-3. 各 Task ごとに `record.json` 互換の検証メモを残す
-4. `EVALUATION.md` の受入項目を満たして完了判定
+2. `FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md` で仕様不足が閉じていることを確認
+3. `IMPLEMENTATION_TASK_BREAKDOWN.md` の順番で Task を実装
+4. `IMPLEMENTATION_ROADMAP_CHECKLIST.md` で現在の milestone / next sprint を確認
+5. 各 Task ごとに `record.json` 互換の検証メモを残す
+6. `EVALUATION.md` の受入項目を満たして完了判定
+
+`TASK.codex.md` は初期 seed として参照する。現在の実装粒度、affected paths、
+acceptance、Done 条件は `IMPLEMENTATION_TASK_BREAKDOWN.md` を優先する。
 
 ## 2. ローカル実行（準備）
 
@@ -87,10 +92,80 @@ P0a は Python 標準ライブラリのみで動く local-first CLI として実
   - `fixtures/golden/p0a-minimal/dq-01-sha-missing`
   - `fixtures/golden/p0a-minimal/dq-02-junit-malformed`
   - `fixtures/golden/p0a-minimal/dq-03-artifact-missing`
+  - `dq-control.json` による HATE-DQ-005 / HATE-DQ-007 / HATE-DQ-010 の fixture control
   - `fixtures/golden/p0a-minimal/dq-08-coverage-only`
   - `fixtures/golden/p0a-minimal/dq-15-record-missing`
+- P0a generic CI context adapter:
+  - `github-context.json` がない入力でも `ci-context.json` または `generic-ci-context.json` を run context として使える
+  - provider は `generic-ci` に正規化し、`HATE-run.json.payload.ci.provider` に残す
+  - `uv run python -m hate p0a --input fixtures/adapters/ci/generic/input --out C:\tmp\hate-generic-ci-check --source-version generic-ci-test`
+  - `generic-ci-context.json` alias: `fixtures/adapters/ci/generic/generic-file-name`
+  - required field 欠落は input error: `fixtures/adapters/ci/generic/missing-required`
+  - `record.json.payload.source_refs` は実際に読んだ context file を参照し、GitHub context を捏造しない
+- P0a pytest adapter (no junit.xml):
+  - pytest-report.json alone is eligible if it produces test results
+  - `uv run python -m hate p0a --input fixtures/adapters/test-results/pytest/no-junit --out C:\tmp\hate-pytest-check --source-version pytest-test`
+  - flaky / retry_index attributes preserved in HATE-test-results.ndjson
+- P0a vitest adapter (no junit.xml):
+  - vitest-report.json alone is eligible if it produces test results
+  - `uv run python -m hate p0a --input fixtures/adapters/test-results/vitest/no-junit --out C:\tmp\hate-vitest-check --source-version vitest-test`
+  - flaky attribute preserved in HATE-test-results.ndjson
+- P0a jest adapter (no junit.xml):
+  - jest-report.json alone is eligible if it produces test results
+  - `uv run python -m hate p0a --input fixtures/adapters/test-results/jest/no-junit --out C:\tmp\hate-jest-check --source-version jest-test`
+  - failure_type: snapshot_mismatch preserved in HATE-test-results.ndjson
+- P0a coverage.py adapter:
+  - coverage.json with show_contexts=true is eligible
+  - contexts must be array of objects with test_id field
+  - `uv run python -m hate p0a --input fixtures/adapters/coveragepy/input --out C:\tmp\hate-coveragepy-check --source-version coveragepy-test`
+  - show_contexts=false is hard DQ (HATE-DQ-002): `fixtures/adapters/coveragepy/missing-context`
+  - partial contexts (show_contexts=true, some lines missing context) is eligible: `fixtures/adapters/coveragepy/partial`
+- P0a Cobertura adapter:
+  - `uv run python -m hate p0a --input fixtures/adapters/coverage/cobertura/input --out C:\tmp\hate-cobertura-check --source-version cobertura-test`
+  - `filename` がない class は package/name から stable POSIX path に補完する
+  - partial coverage は parseable な line が残っていれば eligible: `fixtures/adapters/coverage/cobertura/partial`
+  - malformed XML は hard DQ (HATE-DQ-002): `fixtures/adapters/coverage/cobertura/malformed`
+  - Windows absolute path は public output で workspace-relative POSIX path に正規化する: `fixtures/adapters/coverage/cobertura/windows-path`
+- P0a JaCoCo adapter:
+  - `uv run python -m hate p0a --input fixtures/adapters/coverage/jacoco/input --out C:\tmp\hate-jacoco-check --source-version jacoco-test`
+  - package/sourcefile から workspace-relative POSIX path を生成する
+  - partial coverage は parseable な sourcefile が残っていれば eligible: `fixtures/adapters/coverage/jacoco/partial`
+  - malformed XML は hard DQ (HATE-DQ-002): `fixtures/adapters/coverage/jacoco/malformed`
+  - Windows absolute path は public output で workspace-relative POSIX path に正規化する: `fixtures/adapters/coverage/jacoco/windows-path`
+- P0a artifact safety engine:
+  - safe artifact: `uv run python -m hate p0a --input fixtures/adapters/artifacts/safe --out C:\tmp\hate-artifact-safe --source-version artifact-test`
+  - secret artifact: `uv run python -m hate p0a --input fixtures/adapters/artifacts/secret --out C:\tmp\hate-artifact-secret --source-version artifact-test`
+  - external URL ref: `uv run python -m hate p0a --input fixtures/adapters/artifacts/external-url --out C:\tmp\hate-artifact-url --source-version artifact-test`
+  - path traversal ref: `uv run python -m hate p0a --input fixtures/adapters/artifacts/path-traversal --out C:\tmp\hate-artifact-traversal --source-version artifact-test`
+  - symlink ref: `uv run python -m hate p0a --input fixtures/adapters/artifacts/symlink --out C:\tmp\hate-artifact-symlink --source-version artifact-test`
+  - archive artifact: `uv run python -m hate p0a --input fixtures/adapters/artifacts/archive --out C:\tmp\hate-artifact-archive --source-version artifact-test`
+  - `artifact-manifest.json` は `security_checks` を安定出力する
+  - unsafe artifact は `safe_for_summary=false`, `public_exposure=none`
+  - `quarantine-report.json` は P0a で生成し、理由を `secret`, `external_url`, `path_traversal`, `symlink`, `unsafe_archive` などで分類する
+  - summary は secret value、external URL、path traversal raw path を出さない
+  - P0b は unsafe required artifact を `excludedArtifacts` と `evidence-map.gaps.unsafe_artifacts` に残す
+- P0a schema validation:
+  - P0a は生成直後に `schemas/HATE/v1` の producer schema で自己検証する
+  - 対象は `HATE-run.json`, `HATE-test-results.ndjson`, `HATE-coverage.ndjson`, `artifact-manifest.json`, `precheck-decision.json`, `record.json`
+  - schema invalid は `HATE-DQ-015` として `precheck-decision.json` に残る
+  - invalid decision enum と required envelope field 欠損は regression test で固定する
+  - unknown field は `SCHEMA_REGISTRY_CONTRACT.md` の P0a policy に従い preserve し、summary 成功根拠にはしない
+- P0a profile-aware precheck:
+  - default profile: `uv run python -m hate p0a --profile default --input fixtures/golden/p0a-minimal/input --out C:\tmp\hate-profile-default --source-version profile-test`
+  - strict profile: `uv run python -m hate p0a --profile strict --input fixtures/golden/p0a-minimal/input --out C:\tmp\hate-profile-strict --source-version profile-test`
+  - release profile: `uv run python -m hate p0a --profile release --input fixtures/golden/p0a-minimal/input --out C:\tmp\hate-profile-release --source-version profile-test`
+  - experimental profile: `uv run python -m hate p0a --profile experimental --input fixtures/golden/p0a-minimal/input --out C:\tmp\hate-profile-experimental --source-version profile-test`
+  - `profile-report.json` は profile、継承chain、rules、checks、decision_impact を出す
+  - strict は unsafe artifact を soft gap として `conditional` にできる
+  - release は unsafe artifact を `HATE-DQ-018` として hard DQ にできる
+  - profile判定は HATE evidence eligibility であり、QEG release Gate policy ではない
 - compile check:
   - `uv run python -m compileall src tests`
+- HATE 自身の自動検収:
+  - `uv run pytest tests/test_acceptance_pipeline.py`
+  - P0a -> P0b -> P1a -> P1b -> P2/P3 を CLI で一気通貫し、advisory 境界、readiness 降格、絶対パス漏れなし、golden fixture 非汚染を確認する
+- CI:
+  - `.github/workflows/ci.yml` が `uv run python -m compileall src tests` と `uv run pytest` を実行する
 
 P0a CLI は次を生成する。
 
@@ -104,20 +179,73 @@ P0a CLI は次を生成する。
 
 `gate-decision.json` は互換 alias であり、新規 P0a 実装では生成しない。
 
+P0a schema / source ref constraints:
+
+- 共通 envelope record は生成直後に最小 schema validation を行う
+- `record.json` の `source_refs` は `fixture:/` または `workspace:/` 形式へ正規化し、
+  ローカル絶対パスを public-safe output に出さない
+- DQ 005 / 007 / 010 は現時点では `dq-control.json` による local fixture control として再現する。
+  実 CI 由来の flaky baseline / diff-risk / SARIF ingest は後続 adapter 拡張で扱う
+
 ## 4. ローカル実行（P0b QEG Export）
 
 P0b は P0a 出力から QEG optional evidence bundle を生成する local-first CLI。
+現行 minimal fixture は high-risk path の execution evidence を含むため、期待される
+export status は `success`、exit code は 0 とする。missing execution が再発した場合は
+hidden gap にせず `partial` へ降格し、risk debt / manual-bb bridge へ接続する。
 
 - テスト:
   - `uv run pytest tests/test_p0b.py`
 - P0b export golden path:
   - `uv run python -m hate export qeg --fixture fixtures/golden/p0b-qeg-minimal/input --out fixtures/golden/p0b-qeg-minimal/expected`
+- P0b SARIF full finding mapping:
+  - SARIF fixture: `fixtures/adapters/sarif/full-mapping/HATE-static.sarif`
+  - `HATE-static.sarif` がある場合、QEG bundle に `finding` node を生成する
+  - finding data は rule id/name/description/help URI、level/severity、location range、fingerprints、message を保持する
+  - changed code range と finding location が重なる場合だけ `touches` edge を作る
+  - `evidence-map.json` は `findings` と `links.touches` に同じ対応を出す
+- P0b Playwright artifact evidence:
+  - Playwright fixture: `fixtures/adapters/playwright/evidence`
+  - test result の `artifacts` が trace / screenshot / video / log を参照する場合、QEG bundle の `evidence_artifact` node に `adapter=playwright` と `artifact_role` を残す
+  - `test -> artifact` と `execution -> artifact` の `evidenced_by` edge を生成する
+  - `evidence-map.json` の `evidence` と `links.evidenced_by` に Playwright artifact role を残す
+  - unsafe artifact は既存 safety engine に従い `excludedArtifacts` / `gaps.unsafe_artifacts` へ送る
+- P0b Pact contract evidence:
+  - Pact fixture: `fixtures/adapters/pact/contract-evidence/HATE-contract.ndjson`
+  - optional input `p0a/HATE-contract.ndjson` がある場合、QEG bundle に `contract_evidence` node を生成する
+  - `required_contract_refs` が passed contract を指す場合は `supports` edge、failed contract を指す場合は `contradicts` edge を生成する
+  - failed required contract は `unsupportedClaims` / `contract_failures` に残し、export status を `partial` にする
+  - `evidence-map.json` は `contracts` と `links.contradicts` に同じ対応を出す
+- P0b Stryker mutation evidence:
+  - Stryker fixture: `fixtures/adapters/stryker/mutation-evidence/HATE-mutation.ndjson`
+  - optional input `p0a/HATE-mutation.ndjson` がある場合、QEG bundle に `mutation_evidence` node を生成する
+  - `required_mutation_refs` が killed / timeout mutant を指す場合は `supports` edge を生成する
+  - survived / no_coverage mutant は `contradicts` edge、`unsupportedClaims`、`mutation_gaps` に残し、export status を `partial` にする
+  - `evidence-map.json` は `mutations` と `links.contradicts` に同じ対応を出す
+- P0b QEG schema compatibility:
+  - local schema: `schemas/HATE/v1/qeg-bundle.schema.json`
+  - P0b export は生成した `qeg-bundle.json` を schema validation し、`qeg-export-report.json.qeg_schema_compatibility` に結果を残す
+  - valid bundle は `valid=true`, `errors=[]`
+  - required metadata / node / edge / completeness 欠損は compatibility error として検出する
+- P0b risk debt lifecycle:
+  - lifecycle fixture: `fixtures/adapters/risk-debt/lifecycle/risk-debt-lifecycle.json`
+  - optional input `risk-debt-lifecycle.json` がある場合、生成する `risk-debt-register.json` に status / owner / age / evidence refs を引き継ぐ
+  - current missing execution は lifecycle item と risk_id/debt_type または debt_id で照合する
+  - historical mitigated / stale items は `items` / `debts` に残し、`summary.by_status` に集計する
+  - HATE は acknowledged / mitigated / stale を waiver や release approval として扱わない
+- P0b manual-bb bridge contract:
+  - contract fixture: `fixtures/manual-bb/missing-high-risk/expected/manual-supplement-request.shape.json`
+  - high-risk missing execution は `manual-bb-bridge-requests.jsonl` に `contract_type=manual_supplement_request` として出力する
+  - request は `gap_type=no_execution`, `recommended_manual_layer=manual-scripted`, `source_refs`, `required_oracle_refs`, `manual_case_seed` を持つ
+  - `handoff_policy.does_not_override_qeg_verdict=true` を維持し、manual request を waiver や release approval として扱わない
 - P0b 生成物:
   - `qeg-bundle.json` - nodes/edges/completeness を含む QEG graph bundle
-  - `evidence-map.json` - requirements/risks/tests/evidence/links/gaps の内部表現
+  - `evidence-map.json` - requirements/risks/tests/evidence/findings/links/gaps の内部表現
   - `diff-risk-test.json` - changed_entities/risks/test_obligations の mapping (コピー)
-  - `qeg-export-report.json` - completeness/unsupportedClaims/missing_execution/excludedArtifacts
+  - `qeg-export-report.json` - completeness/qeg_schema_compatibility/unsupportedClaims/missing_execution/excludedArtifacts
   - `qeg-export-summary.md` - public-safe summary (publish_gate_override=false)
+  - `risk-debt-register.json` - missing_execution の継続追跡
+  - `manual-bb-bridge-requests.jsonl` - manual-bb 補完要求
 
 P0b contract constraints:
 
@@ -129,6 +257,9 @@ P0b contract constraints:
   - `coverage:<path_hash>` - coverage evidence node
   - `changed_code:<path>#L<start>-L<end>` - changed code region
   - `risk:<risk-id>` - risk node
+  - `finding:<finding-id>` - SARIF finding node
+  - `contract:<contract-id>` - Pact contract evidence node
+  - `mutation:<mutation-id>` - Stryker mutation evidence node
   - `hate_precheck:<run_id>:<attempt>` - gate verdict node
 - Edge kinds: `touches`, `requires_test`, `evidenced_by`, `supports`, `decides`
 - Completeness calculation:
@@ -136,8 +267,347 @@ P0b contract constraints:
   - -0.20 per missing artifact
   - -0.15 per parser failure
   - -0.10 per unsupported high-risk claim
+  - -0.10 when required sourceRefs are missing
+  - -0.10 when artifact safety excludes required evidence
   - floor at 0.0
 - `hard_dq` precheck decision prevents QEG export
+- minimal fixture の `missing_execution=0` は期待値。`completeness.score=1.0`,
+  `completeness.partial=false`, `export_status=success` であることを確認する。
+- P0b edge hardening:
+  - missing sourceRefs は `unsupportedClaims` に出す
+  - missing required P0a artifact は export failure として exit 2
+  - unsafe required artifact は quarantine し、`excludedArtifacts` / `gaps.unsafe_artifacts` に出す
+  - Playwright trace/screenshot/video/log は test / execution / artifact 間の `evidenced_by` edge で追跡する
+  - failed required Pact contract は `contract_failures` と `links.contradicts` で追跡する
+  - survived / no_coverage Stryker mutant は `mutation_gaps` と `links.contradicts` で追跡する
+  - QEG bundle schema compatibility は `qeg_schema_compatibility.valid` で確認する
+  - high-risk missing execution は lifecycle付き `risk-debt-register.json` と `manual-bb-bridge-requests.jsonl` に接続する
+  - manual-bb bridge request は `source_refs` / `required_oracle_refs` / `manual_case_seed.oracle` で traceability を持つ
+
+## 4.1 ローカル実行（P1a Trust Minimal）
+
+P1a trust minimal は frozen P0b bundle から AETE score、artifact resolver map、
+doctor report、public-safe summary を生成する。AETE は release Gate ではなく、
+`release_gate_override=false` と `publish_gate_override=false` を常に維持する。
+
+- テスト:
+  - `uv run pytest tests/test_p1a.py`
+- P1a trust golden path:
+  - `uv run python -m hate trust evaluate --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --out fixtures/golden/p1a-trust-minimal/expected`
+- P1a 生成物:
+  - `aete-score.json` - 8 dimensions / reason_refs / profile / calibration metadata
+  - `artifact-resolver-map.json` - sourceRefs の正規化結果
+  - `doctor-report.json` - qeg_fixture / artifact_safety / path などの findings
+  - `adapter-registry.json` - implemented adapter manifests / capability / fixtures / profile support
+  - `adapter-capability-manifest.json` - P1a upstream QEG bundle adapter compatibility manifest
+  - `adapter-conformance-report.json` - registry coverage and adapter conformance checks
+  - `canonical-identity-index.json` - canonical test identity と alias 入口
+  - `retry-aggregation.json` - matrix / retry 集約の最小結果
+  - `trust-summary.md` - public-safe trust summary
+- P1a adapter registry:
+  - fixture: `fixtures/registry/adapter-registry/expected/adapter-registry.shape.json`
+  - `context`, `test-result`, `coverage`, `static`, `artifact`, `contract`, `mutation`, `export` adapters を一覧化する
+  - each manifest includes adapter_id / name / version / adapter_type / input_formats / output_record_types / capabilities / fixtures / profile_support
+  - conformance report includes `adapter_registry.adapter_ids` and `summary.adapter_count`
+- P1a adapter conformance runner:
+  - fixture: `fixtures/registry/conformance-runner/expected/adapter-conformance.shape.json`
+  - `adapter-conformance-report.json.adapter_results[]` は adapter ごとの結果を持つ
+  - each adapter result includes `fixture_results[]` for `manifest-required-fields`, `capability-fields`, and `profile-support`
+  - `summary.adapter_result_count` must match `adapter_registry.adapter_count`
+  - `summary.fixture_result_count` must be at least three times the adapter count
+- P1a profile inheritance:
+  - fixture: `fixtures/profile/inheritance/expected/profile-report.shape.json`
+  - `profile-report.json` is emitted by P0a precheck, P1a trust evaluate, and P1a doctor
+  - `inherits` / `effective_chain` expose deterministic chains such as `default -> strict -> release`
+  - `rule_sources` and `rule_diffs` show which profile introduced or overrode each effective rule
+  - `drift_checks` must pass and `qeg_gate_policy=false`, `release_gate_override=false`, `publish_gate_override=false`
+  - `aete-score.json.profile_version` must match `profile-report.json.profile_version`
+- P1a signal-based AETE scoring:
+  - fixture: `fixtures/aete/signal-based/expected/aete-signal-report.shape.json`
+  - `aete-signal-report.json` contains one signal per AETE dimension
+  - `aete-score.json.dimension_signals` mirrors the signal report
+  - each `reason_refs[]` entry points to a `signal:<dimension>:<score>` id
+  - score values remain discrete: `0`, `1`, `3`, or `5`
+  - missing execution / unsupported claims must lower the relevant dimensions through explicit observed signals
+- P1a canonical identity hardening:
+  - fixture: `fixtures/identity/canonical/expected/canonical-identity-index.shape.json`
+  - `canonical-identity-index.json` includes `identity_id`, `normalized_canonical_test_id`, `identity_components`, aliases, and duplicate summary
+  - identity components split framework / package / file / classname / name / parameters / matrix
+  - parameters may affect the normalized logical id through a stable hash
+  - matrix values stay in `identity_components.matrix` and must not change the logical test name
+  - path normalization aliases use `reason=path_normalization`
+- P1a retry / matrix / shard aggregation:
+  - fixture: `fixtures/aggregation/retry-matrix-shard/expected/retry-aggregation.shape.json`
+  - aggregation key uses normalized canonical identity, matrix group, and run attempt
+  - retry attempts are ordered by `retry_index`
+  - pass-after-fail becomes `flaky_passed`; fail-after-pass becomes `flaky_failed`
+  - missing shard evidence sets `aggregate_status=inconclusive`
+  - summary includes `matrix_group_count` and `missing_shard_count`
+- P1a artifact resolver:
+  - fixture: `fixtures/resolver/artifact-paths/expected/artifact-resolver-map.shape.json`
+  - `artifact-resolver-map.json.entries[]` includes both `source_ref` and `artifact_path` entries
+  - artifact path entries preserve artifact id, kind, role, sha256, normalized path, root kind, and resolution status
+  - URLs and traversal paths are `unsafe` and become doctor `path` findings
+  - summary includes entry, unsafe, unresolved, artifact path, and source ref counts
+- P1a replay / compare / explain / recommend hardening:
+  - fixture: `fixtures/replay/hardening/expected/replay-compare-explain-recommend.shape.json`
+  - `replay-report.json.deterministic_inputs` hashes AETE, signal, profile, resolver, doctor, conformance, identity, and retry artifacts
+  - `compare-report.json` includes `signal_delta`, `resolver_unsafe_delta`, `identity_duplicate_delta`, and `profile_hash_changed`
+  - `explain-report.json.summary.traceability_complete` must be true for generated reason trees
+  - `recommendation-report.json.summary` includes recommendation count, traceability status, and manual bridge recommendation count
+- P1a doctor finding taxonomy:
+  - fixture: `fixtures/doctor/taxonomy/expected/doctor-report.shape.json`
+  - every doctor finding includes `finding_code`, `taxonomy_version`, `blocking`, `remediation`, and source refs
+  - known taxonomy codes include `HATE-DOC-QEG-001`, `HATE-DOC-ART-001`, and `HATE-DOC-PATH-001`
+  - summary includes `by_category`, `by_severity`, and `taxonomy_version`
+- P1a replay:
+  - `uv run python -m hate replay --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --out fixtures/golden/p1a-trust-minimal/replay-expected`
+- P1a compare:
+  - `uv run python -m hate compare --base fixtures/golden/p1a-trust-minimal/replay-expected --head fixtures/golden/p1a-trust-minimal/replay-expected --out fixtures/golden/p1a-trust-minimal/compare-expected`
+- P1a explain:
+  - `uv run python -m hate explain --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --out fixtures/golden/p1a-trust-minimal/explain-expected --mode why-soft-gap`
+- P1a recommend:
+  - `uv run python -m hate recommend --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --out fixtures/golden/p1a-trust-minimal/recommend-expected --gap missing_execution`
+
+P1a minimal constraints:
+
+- AETE dimension は 0 / 1 / 3 / 5 の離散値だけを使う
+- `calibration_status=uncalibrated` を release approval と誤認させない
+- sourceRefs にローカル絶対パスを漏らさない
+- P1a minimal は advisory evidence であり、release approval として扱わない
+
+## 4.2 ローカル実行（P1b Workflow Mapping）
+
+P1b workflow mapping は frozen P0b bundle と P1a trust artifacts を、
+RanD / Shipyard-cp / workflow-cookbook へ渡せる advisory artifact に変換する。
+HATE は RanD Requirement Definition Gate、Shipyard runtime dispatch、
+Shipyard publish approval、workflow-cookbook checker を再実装しない。
+
+- テスト:
+  - `uv run pytest tests/test_p1b.py`
+- P1b workflow golden path:
+  - `uv run python -m hate workflow map --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --trust fixtures/golden/p1a-trust-minimal/expected --out fixtures/golden/p1b-workflow-minimal/expected`
+- P1b RanD requirements packet ingest:
+  - `uv run python -m hate workflow map --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --trust fixtures/golden/p1a-trust-minimal/expected --rand-requirements fixtures/rand/requirements-packet/input/requirements_packet.json --out .uat-p1b001/out`
+  - `requirement-evidence-alignment.json` の `rand.requirements_packet_ingested=true`、
+    `rand.packet_id=rand-packet-hate-p1b-001`、`summary.rand_requirement_count=2` を確認する
+  - RanD packet の `gate_verdict`, `kpis`, `acceptance_criteria`, `risk_refs`,
+    `source_refs` は requirement 単位で保持され、`upstream_gate_verdict` としても残る
+  - `requirements[*].trace_links` は QEG bundle の `touches` / `requires_test` /
+    `evidenced_by` / `supports` edge から、requirement -> risk -> changed code ->
+    test -> execution -> coverage を辿れる形で保持する
+  - `summary.trace_link_count` と `summary.fully_linked_requirement_count` により、
+    requirement-risk-test-evidence link の生成数を確認する
+  - RanD packet に `conditional_go` が含まれる場合、HATE は `workflow_status=conditional`
+    とし、`go` に丸めない
+- P1b RanD audit no-overwrite:
+  - `uv run python -m hate workflow map --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --trust fixtures/golden/p1a-trust-minimal/expected --rand-audit fixtures/rand/audit-no-overwrite/input/audit_packet.json --out .uat-p1b002/out`
+  - `requirement-evidence-alignment.json` の `rand_audit.audit_packet_ingested=true`、
+    `rand_audit.overall_assessment=no_go`、`summary.gate_verdict=no_go` を確認する
+  - `rand_audit.requirement_verdicts[*].upstream_gate_verdict` は audit packet の
+    `gate_verdict` と同一でなければならない
+  - `boundary.rand_verdict_override=false`、`boundary.rand_audit_overwrite=false`、
+    `shipyard-run-evidence.json.publish_gate_override=false` を維持する
+- P1b Shipyard WorkerResult / RunSystemPacket ingest:
+  - `uv run python -m hate workflow map --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --trust fixtures/golden/p1a-trust-minimal/expected --shipyard-worker-result fixtures/shipyard/worker-result/input/worker_result.json --shipyard-run-system-packet fixtures/shipyard/worker-result/input/run_system_packet.json --out .uat-p1b004/out`
+  - `shipyard-run-evidence.json.shipyard_inputs.worker_result_ingested=true` と
+    `shipyard_inputs.run_system_packet_ingested=true` を確認する
+  - `shipyard_refs.worker_result.typed_ref`、`shipyard_refs.run_system_packet.run_ref`、
+    `job_ref`、`contract_refs.evidence_ref`、`audit_refs` を保持する
+  - HATE は Shipyard の state machine owner ではないため、
+    `shipyard_state_override=false`、`publish_gate_override=false`、`shipyard_inputs.advisory_only=true`
+    を維持する
+- P1b Shipyard no-overwrite negative fixture:
+  - `uv run python -m hate workflow map --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --report fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json --trust fixtures/golden/p1a-trust-minimal/expected --shipyard-worker-result fixtures/shipyard/no-overwrite/input/worker_result.json --shipyard-run-system-packet fixtures/shipyard/no-overwrite/input/run_system_packet.json --out .uat-p1b005/out`
+  - 入力に `mode=enforce`、`stage=publish`、publish requested / approved 風の refs があっても、
+    HATE 出力の `publish_gate_override=false`、`release_gate_override=false`、
+    `shipyard_state_override=false` を維持する
+  - `shipyard_refs` には入力refsを保持するが、HATEは Shipyard publish approval を発行しない
+- P1b 生成物:
+  - `requirement-evidence-alignment.json` - requirement / acceptance / risk / gate_verdict と HATE evidence の結線
+  - `workflow-task-seed.json` - HATE-MVP-* と acceptance refs の Task Seed 互換素材
+  - `workflow-acceptance-record.json` - acceptance record 互換の checks / verdict
+  - `workflow-evidence.jsonl` - QEG / AETE / alignment / Shipyard advisory evidence
+  - `workflow-docs-stale.json` - docs / schema / fixture freshness checker へ渡す素材
+  - `workflow-birdseye-map.json` - docs / artifacts / workflow 依存候補
+  - `workflow-cookbook-evidence-map.json` - Task Seed / Acceptance / Evidence /
+    Birdseye / Docs Stale を workflow-cookbook surface へ結線する索引
+  - `shipyard-run-evidence.json` - Shipyard run / audit に添付可能な advisory packet
+
+P1b minimal constraints:
+
+- `publish_gate_override=false`, `release_gate_override=false`,
+  `shipyard_state_override=false` を維持する
+- RanD `no_go` / `conditional_go` を HATE 側で `go` に変換しない
+- workflow-cookbook の checker / plugin host / Birdseye generator を再実装しない
+- `workflow-cookbook-evidence-map.json.workflow_cookbook.*_reimplemented=false` を維持し、
+  workflow-cookbook へ渡す入力索引だけを生成する
+- `risk-db-high` の execution evidence は現行 minimal fixture で充足済み。
+  missing execution が再発した場合は `unverified_acceptance` と manual-bb bridge として残す
+
+## 4.3 ローカル実行（P2/P3 Product Readiness）
+
+P2/P3 product readiness は P0b/P1a/P1b の canonical artifacts から、
+product readiness と enterprise readiness の advisory artifact を生成する。
+これは hosted SaaS runtime、dashboard frontend、REST server、enterprise connector
+の起動証跡ではない。
+
+- テスト:
+  - `uv run pytest tests/test_p2p3.py`
+- P2/P3 readiness golden path:
+  - `uv run python -m hate product readiness --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --trust fixtures/golden/p1a-trust-minimal/expected --workflow fixtures/golden/p1b-workflow-minimal/expected --out fixtures/golden/p2p3-product-readiness-minimal/expected`
+- P2 local store / history index:
+  - `uv run python -m hate store ingest --store .hate --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --readiness fixtures/golden/p2p3-product-readiness-minimal/expected`
+  - `uv run python -m hate store history --store .hate`
+  - `uv run python -m hate store query --store .hate --resource bundle --run-id 1001`
+  - `uv run python -m hate store query --store .hate --resource risk-debt`
+  - store は `.hate/history-index.json` と `.hate/runs/<run_id>/store-manifest.json` を生成し、
+    run / bundle / product readiness / risk debt を再読込できる
+  - store query は `canonical_source_preserved=true`、`stale_cache=false`、
+    `publish_gate_override=false`、`release_gate_override=false` を維持する
+- P2/P3 生成物:
+  - `product-readiness-report.json` - PRG-0..PRG-6 coverage と境界field
+  - `dashboard-report.html` - canonical artifacts から派生する静的 dashboard surface
+  - `dashboard-view-model.json` - overview / risk matrix / evidence map /
+    artifact budget / readiness trend の必須view model
+  - `pr-annotation-export.json` - changed high-risk path 単位の GitHub PR annotation 互換 export
+  - `artifact-budget-report.json` - artifact 容量 / retention / storage class /
+    public exposure / limit policy / over-limit action
+  - `attestation-report.json` - optional signed evidence / attestation 素材
+    subject digest / provenance / signing state / release refs を含む
+  - `external-export-report.json` - Allure / ReportPortal / Codecov /
+    SonarQube の optional exporter payload と non-gating failure policy
+  - `product-error-catalog.json` - stable user-facing error code と remediation
+  - `enterprise-risk-debt-register.json` - owner / age / sourceRefs 付き risk debt
+  - `privacy-quarantine-report.json` - unsafe artifact quarantine と output policy
+  - `hosted-read-model-index.json` - canonical bundle から再構築できるread model index
+  - `domain-model-report.json` - org / workspace / project / repo / run /
+    attempt / bundle / profile の enterprise domain model
+  - `rbac-matrix-report.json` - role / resource / action の allow/deny matrix と
+    hosted read model resource mapping
+  - `identity-connector-report.json` - SSO / SCIM optional connector dry-run contract
+  - `enterprise-connector-report.json` - SIEM / warehouse / ticketing optional connector dry-run contract
+  - `audit-event-log.json` - required audit events の append-only synthetic log
+  - `retention-governance-report.json` - classification-linked retention /
+    legal hold / customer export / delete request policy
+  - `release-migration-report.json` - release gate / migration / rollback / compatibility
+  - `entitlement-usage-report.json` - edition / usage / over-limit と非上書き保証
+  - `enterprise-metrics-report.json` - product metrics とprivacy boundary
+  - `customer-docs-index.json` - required docs / freshness / verification index
+  - `incident-slo-report.json` - severity / class / timeline / evidence refs
+  - `adoption-health-report.json` - adoption stage / milestone / renewal readiness
+  - `security-trust-packet.json` - controls / SBOM / vulnerability / subprocessor
+  - `residency-deployment-report.json` - deployment mode / data class routing / recovery
+  - `roadmap-decision-record.json` - roadmap status / customer-facing claim guard
+  - `accessibility-localization-report.json` - accessibility / localization stable id
+  - `commercial-contract-report.json` - commitment / contract exception / unsupported claim
+  - `audit-assurance-pack.json` - assurance expected output / evidence room index
+  - `support-diagnostic-bundle.json` - support向けsafe-to-share diagnostic bundle
+  - `privacy-telemetry-report.json` - allowed/prohibited telemetry signal
+  - `governance-portfolio-report.json` - portfolio tier / owner / P0 dependency leak
+  - `release-candidate-pack.json` - P3 required reports / RG-1..RG-8 /
+    compatibility / rollback evidence
+  - `shipyard-run-evidence.json` - P2/P3 advisory Shipyard evidence
+- Hosted read model query:
+  - `uv run python -m hate product query --readiness fixtures/golden/p2p3-product-readiness-minimal/expected --resource product-readiness --request-id req_local`
+  - filter / stale / pagination: `uv run python -m hate product query --readiness fixtures/golden/p2p3-product-readiness-minimal/expected --resource risk-debt --role auditor --filter status=open --stale-cache --cursor cursor_001`
+  - RBAC error: `uv run python -m hate product query --readiness fixtures/golden/p2p3-product-readiness-minimal/expected --resource artifacts --role viewer`
+  - API envelope は `schema_version`, `request_id`, `data`, `errors`, `pagination.next_cursor`,
+    `source.bundle_id`, `source.record_id`, `source.generated_at` を保持する
+  - forbidden resource は stable error `HATE-E-PRODUCT-QUERY-403`、unknown resource は
+    `HATE-E-PRODUCT-QUERY-404` を返し、`remediation` を含む
+- Hosted read model REST server:
+  - `uv run python -m hate product serve --readiness fixtures/golden/p2p3-product-readiness-minimal/expected --host 127.0.0.1 --port 8765`
+  - `GET /v1/product-readiness` は `HOSTED_READ_MODEL_API.md` の response envelope を返す
+  - `GET /v1/risk-debt?role=auditor&filter.status=open&stale_cache=true&cursor=next_1` は
+    filter と stale marker と pagination cursor を envelope に残す
+  - `GET /v1/artifacts?role=viewer` は HTTP 403 と `HATE-E-PRODUCT-QUERY-403` を返す
+
+P2/P3 minimal constraints:
+
+- `publish_gate_override=false`, `release_gate_override=false` を維持する
+- `product-readiness-report.json` は `hosted_saas_claim=false` を明示する
+- `dashboard-view-model.json.required_views` は `overview`, `risk_matrix`,
+  `evidence_map`, `artifact_budget`, `readiness_trend` を含み、canonical artifact から再構築できる
+- `pr-annotation-export.json.annotations[]` は `annotation_level`, `path`,
+  `start_line`, `end_line`, `message`, `raw_details.required_test_refs`,
+  `raw_details.execution_evidence_refs`, `raw_details.coverage_refs` を持つ
+- PR annotation は advisory export であり、`publish_gate_override=false` と
+  `release_gate_override=false` を維持する
+- `artifact-budget-report.json` は `budget_policy`, `summary.by_kind`,
+  `summary.by_public_exposure`, `retention_days`, `over_limit_reasons`,
+  `budget_action` を出す。over-limit は evidence を隠さず
+  `warn_only_do_not_drop_evidence` として扱う
+- artifact budget は canonical decision を変更せず、
+  `canonical_decision_unchanged=true`, `evidence_dropped_for_budget=false` を維持する
+- `attestation-report.json` は `subjects[*].digest`, `provenance`, `signing`,
+  `release_refs`, `immutability` を持つ。署名未設定でも `attestation_status=unsigned_optional`
+  とし、local-first precheck や canonical decision を変えない
+- `external-export-report.json` は `allure`, `reportportal`, `codecov`, `sonarqube`
+  の provider id を持ち、各 provider は `failure_policy=non_gating_warning` を維持する
+- external export failure fixture は `stable_error_code=HATE-EXP-001`,
+  `non_gating=true`, `canonical_decision_unchanged=true` を持ち、precheck / QEG /
+  product status / publish / release gate を上書きしない
+- product readiness は固定 `go` ではない。入力 artifact 欠損がある場合は `hold`、
+  doctor finding または unverified acceptance が残る場合は `conditional` に降格する
+- 現行 golden fixture は high-risk execution evidence と doctor finding 0 を保持するため、
+  `product_status=go`, `prg_coverage=7/7` を期待値とする
+- `hate product query` と `hate product serve` は `HOSTED_READ_MODEL_API.md` の response envelope を返す
+- `domain-model-report.json` は P0/P1 local bundle が org / workspace / hosted
+  service なしで成立すること、hosted read model が canonical bundle から再構築できること、
+  auditor read-only、service account が human approval を代替しないこと、
+  artifact classification が summary / export / diagnostic 可否に効くことを示す
+- `rbac-matrix-report.json` は admin / maintainer / developer / auditor / viewer /
+  service_account / security_reviewer の role を持ち、viewer raw artifact deny、
+  developer audit log deny、auditor read-only、service account approval非代替を
+  invariant として検証できる
+- `hate product query` / `serve` の forbidden response は `rbac-matrix-report.json`
+  と同じ read model resource mapping に従う
+- `identity-connector-report.json` は SSO / SCIM を optional enterprise connector
+  として dry-runし、未設定でも `non_gating=true`、`credentials_present_in_fixture=false`、
+  `contains_connector_token=false`、`external_network_required=false` を維持する
+- `enterprise-connector-report.json` は SIEM / warehouse / ticketing を optional
+  connector として dry-runし、failure fixture は `HATE-EXP-001`,
+  `non_gating=true`, `local_artifacts_preserved=true`, `qeg_export_preserved=true`
+  を維持する。payload は raw artifact、customer code、connector token、PII、
+  unsafe artifact を含まない
+- `security-trust-packet.json` は security review record、trust packet refs、
+  data flow、control mapping、privacy summary、SBOM、vulnerability report、
+  subprocessor、freshness、attestation summary を含み、critical/high vulnerability
+  owner/due/mitigation、customer source code/secret/PII/unsafe artifact 非混入、
+  QEG Gate policy / waiver / approval 非上書きを検証できる
+- `residency-deployment-report.json` は local_only / ci_attached /
+  hosted_read_model / private_tenant / customer_managed / air_gapped_export の
+  data plane / control plane / owner、residency profile、data class routing、
+  connectivity controls、backup / recovery を持ち、region / deployment mode が
+  evidence eligibility や local-first precheck を変えないことを示す
+- `commercial-contract-report.json` は commercial commitment register、
+  procurement response、contract exception、commercial risk、safety boundary を持つ。
+  planned / unsupported capability は available と表現せず、例外は owner / expiry /
+  risk / workaround / linked roadmap item を持ち、precheck / QEG verdict を変えない
+- `audit-assurance-pack.json` は audit fixture manifest、auditor walkthrough、
+  expected output index、verification log、evidence room index、audit finding register、
+  assurance summary を持つ。open finding と limitation を隠さず、customer code /
+  secret / PII / unsafe artifact を含まず、precheck / QEG verdict を変えない
+- `release-candidate-pack.json` は P3 required reports をすべて含み、
+  `missing_required_reports=[]`、RG-1..RG-8 all pass、compatibility matrix、
+  release notes、rollback instructions、unsupported future schema safe reject を持つ。
+  release approval を代替せず、precheck / QEG verdict / publish gate を変えない
+- `audit-event-log.json` は `bundle.created`, `bundle.exported`, `profile.changed`,
+  `adapter.changed`, `artifact.accessed`, `artifact.quarantined`, `riskdebt.created`,
+  `diagnostic.generated` を含み、各eventのrequired fields、sequence monotonic、
+  append-only、safe-to-share、QEG/precheck非上書きを検証できる
+- `retention-governance-report.json` は classification ごとの retention、
+  legal hold 時の delete block、customer export の metadata-only 方針、
+  customer delete の system-of-record 委譲、QEG retention 非再実装を検証できる
+- `support-diagnostic-bundle.json` は `hate_version`, `schema_registry_version`,
+  sanitized command, profile, adapter registry summary, capability summary, DQ summary,
+  doctor summary, error records, QEG compatibility summary を持つ
+- support diagnostic bundle は `safety_checks` と `environment_policy` で customer code、
+  raw artifact、secret、PII、unsafe artifact、customer private URL、full environment、
+  external connector token を含まないことを明示する
+- telemetry / diagnostic bundle は customer code、raw artifact、secret、PII を含まない
+- P2/P3 productization は P0a/P0b local-first loop の必須依存にならない
 
 ## 5. 受理前確認
 
@@ -248,6 +718,10 @@ P0b contract constraints:
   対応しているか
 - support diagnostic bundle が secret / PII / unsafe artifact を含まず、
   version、schema、profile、adapter、DQ、doctor 結果を説明できるか
+- tests は golden fixture を直接 test-output で汚さず、`tmp_path` にコピー / 出力して実行する。
+  golden `expected` を更新する場合だけ Runbook の golden path command を明示的に実行する
+- HATE 自身の検収は `tests/test_acceptance_pipeline.py` を正本とし、CLI pipeline が壊れる、
+  product readiness が欠損時に `hold` へ降格しない、または source refs にローカル絶対パスが漏れる場合は失敗させる
 
 ## 5. ロールバック方針（文書中心）
 
@@ -257,5 +731,9 @@ P0b contract constraints:
 
 ## 6. 最新メモ
 
-- 直近: 2026-06-27 `workflow-cookbook` の書式で実装準備文書を追加
-- 次点: Task ベース実装へ移行
+- 直近: 2026-06-28 P0a/P0b/P1a/P1b/P2/P3 の local/advisory artifact 実装を現行化
+- 直近: 2026-06-28 DQ 005/007/010 の fixture control、最小 schema validation、
+  stable source refs、P2/P3 readiness 降格、pytest tmp output 分離を追加
+- 直近: 2026-06-28 HATE 自身の E2E 自動検収 `tests/test_acceptance_pipeline.py` と
+  GitHub Actions CI `.github/workflows/ci.yml` を追加
+- 次点: 実 CI 由来の flaky baseline / SARIF / diff-risk adapter と hosted runtime は別ゲートで扱う

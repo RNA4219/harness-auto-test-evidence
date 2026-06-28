@@ -1,0 +1,46 @@
+{
+  "schema_version": "HATE/v1",
+  "adapter_id": "hate-p0b-qeg-bundle",
+  "adapter_version": "0.1.0",
+  "kind": "upstream",
+  "input_formats": [
+    "qeg-bundle.json",
+    "qeg-export-report.json"
+  ],
+  "output_record_types": [
+    "aete_score",
+    "doctor_report",
+    "artifact_resolution",
+    "adapter_conformance",
+    "replay_report",
+    "compare_report",
+    "explain_report",
+    "recommendation_report"
+  ],
+  "capability": {
+    "execution_result": true,
+    "retry": true,
+    "matrix": false,
+    "flaky_history": false,
+    "coverage_context": true,
+    "artifact_hash": true,
+    "source_refs": true,
+    "redaction": true
+  },
+  "known_limits": [
+    "matrix values are preserved only when present in upstream records",
+    "flaky history requires a future baseline-history-index input"
+  ],
+  "conformance_fixtures": [
+    "qeg_fixture",
+    "path",
+    "artifact_safety",
+    "schema",
+    "profile"
+  ],
+  "profile_support": {
+    "default": "supported",
+    "strict": "partial",
+    "release": "partial"
+  }
+}

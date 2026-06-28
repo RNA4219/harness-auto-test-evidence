@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "version": "7.6.1",
+    "show_contexts": false,
+    "format": 4
+  },
+  "files": {
+    "src/parser.py": {
+      "executed_lines": [10, 11, 12, 20, 21, 30, 31],
+      "summary": {
+        "covered_lines": 7,
+        "num_statements": 10,
+        "percent_covered": 70.0
+      }
+    }
+  },
+  "totals": {
+    "covered_lines": 7,
+    "num_statements": 10,
+    "percent_covered": 70.0
+  }
+}

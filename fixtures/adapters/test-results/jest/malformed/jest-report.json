@@ -1,0 +1,9 @@
+{
+  "numFailedTestSuites": 0,
+  "testResults": [
+    {
+      "assertionResults": null,
+      "name": "src/__tests__/broken.test.js"
+    }
+  ]
+}

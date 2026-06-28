@@ -1,0 +1,246 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "commercial_contract_report",
+  "run_id": "1001",
+  "source_contract": "LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md",
+  "commercial_commitment_register": [
+    {
+      "commitment_id": "COM-LOCAL-ARTIFACTS-001",
+      "customer_segment": "enterprise",
+      "source_refs": [
+        "product-readiness-report.json",
+        "audit-assurance-pack.json"
+      ],
+      "commitment_text": "Local canonical evidence artifacts can be regenerated from fixture inputs.",
+      "capability_refs": [
+        "local_precheck",
+        "product_readiness_artifacts"
+      ],
+      "source_contracts": [
+        "LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md",
+        "AUDIT_FIXTURE_ASSURANCE_CONTRACT.md"
+      ],
+      "status": "implemented",
+      "owner": "RNA4219",
+      "verification_refs": [
+        "tests/test_p2p3.py",
+        "product-readiness-report.json"
+      ],
+      "expiry_at": "2026-12-31",
+      "notes": [
+        "Does not imply hosted SaaS runtime availability."
+      ]
+    },
+    {
+      "commitment_id": "COM-HOSTED-RUNTIME-001",
+      "customer_segment": "enterprise",
+      "source_refs": [
+        "roadmap-decision-record.json"
+      ],
+      "commitment_text": "Hosted runtime and admin console remain planned until runtime evidence exists.",
+      "capability_refs": [
+        "hosted_runtime",
+        "admin_console"
+      ],
+      "source_contracts": [
+        "LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md",
+        "HOSTED_READ_MODEL_API.md"
+      ],
+      "status": "proposed",
+      "owner": "RNA4219",
+      "verification_refs": [
+        "roadmap-decision-record.json"
+      ],
+      "expiry_at": "2026-12-31",
+      "notes": [
+        "Must not be represented as available in procurement responses."
+      ]
+    },
+    {
+      "commitment_id": "COM-UNSUPPORTED-RUNTIME-CLAIM-001",
+      "customer_segment": "regulated",
+      "source_refs": [
+        "roadmap-decision-record.json"
+      ],
+      "commitment_text": "Full hosted SaaS runtime evidence is not available in the local artifact fixture.",
+      "capability_refs": [
+        "hosted_saas_runtime"
+      ],
+      "source_contracts": [
+        "LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md"
+      ],
+      "status": "unsupported",
+      "owner": "RNA4219",
+      "verification_refs": [
+        "roadmap-decision-record.json"
+      ],
+      "expiry_at": "2026-12-31",
+      "notes": [
+        "Use local artifacts or require a separate hosted runtime gate."
+      ]
+    }
+  ],
+  "commitments": [
+    {
+      "commitment_id": "COM-LOCAL-ARTIFACTS-001",
+      "customer_segment": "enterprise",
+      "source_refs": [
+        "product-readiness-report.json",
+        "audit-assurance-pack.json"
+      ],
+      "commitment_text": "Local canonical evidence artifacts can be regenerated from fixture inputs.",
+      "capability_refs": [
+        "local_precheck",
+        "product_readiness_artifacts"
+      ],
+      "source_contracts": [
+        "LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md",
+        "AUDIT_FIXTURE_ASSURANCE_CONTRACT.md"
+      ],
+      "status": "implemented",
+      "owner": "RNA4219",
+      "verification_refs": [
+        "tests/test_p2p3.py",
+        "product-readiness-report.json"
+      ],
+      "expiry_at": "2026-12-31",
+      "notes": [
+        "Does not imply hosted SaaS runtime availability."
+      ]
+    },
+    {
+      "commitment_id": "COM-HOSTED-RUNTIME-001",
+      "customer_segment": "enterprise",
+      "source_refs": [
+        "roadmap-decision-record.json"
+      ],
+      "commitment_text": "Hosted runtime and admin console remain planned until runtime evidence exists.",
+      "capability_refs": [
+        "hosted_runtime",
+        "admin_console"
+      ],
+      "source_contracts": [
+        "LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md",
+        "HOSTED_READ_MODEL_API.md"
+      ],
+      "status": "proposed",
+      "owner": "RNA4219",
+      "verification_refs": [
+        "roadmap-decision-record.json"
+      ],
+      "expiry_at": "2026-12-31",
+      "notes": [
+        "Must not be represented as available in procurement responses."
+      ]
+    },
+    {
+      "commitment_id": "COM-UNSUPPORTED-RUNTIME-CLAIM-001",
+      "customer_segment": "regulated",
+      "source_refs": [
+        "roadmap-decision-record.json"
+      ],
+      "commitment_text": "Full hosted SaaS runtime evidence is not available in the local artifact fixture.",
+      "capability_refs": [
+        "hosted_saas_runtime"
+      ],
+      "source_contracts": [
+        "LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md"
+      ],
+      "status": "unsupported",
+      "owner": "RNA4219",
+      "verification_refs": [
+        "roadmap-decision-record.json"
+      ],
+      "expiry_at": "2026-12-31",
+      "notes": [
+        "Use local artifacts or require a separate hosted runtime gate."
+      ]
+    }
+  ],
+  "procurement_response_index": [
+    {
+      "question_id": "rfp:local-evidence",
+      "response_status": "implemented",
+      "available_claim": true,
+      "verification_refs": [
+        "product-readiness-report.json"
+      ]
+    },
+    {
+      "question_id": "rfp:hosted-runtime",
+      "response_status": "planned",
+      "available_claim": false,
+      "verification_refs": [
+        "roadmap-decision-record.json"
+      ]
+    },
+    {
+      "question_id": "rfp:unsupported-regulated-hosting",
+      "response_status": "unsupported",
+      "available_claim": false,
+      "verification_refs": [
+        "contract-exception-register"
+      ]
+    }
+  ],
+  "contract_exceptions": [
+    {
+      "exception_id": "EXC-HOSTED-RUNTIME-001",
+      "exception_type": "unsupported_feature",
+      "owner": "RNA4219",
+      "status": "open",
+      "expiry_at": "2026-12-31",
+      "risk": "overcommit_risk",
+      "workaround": "Use local artifact readiness and hosted read model contract until runtime evidence exists.",
+      "linked_roadmap_item": "roadmap:hosted-runtime",
+      "source_contracts": [
+        "LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md"
+      ]
+    },
+    {
+      "exception_id": "EXC-RETENTION-LEGAL-HOLD-001",
+      "exception_type": "retention_exception",
+      "owner": "RNA4219",
+      "status": "tracked",
+      "expiry_at": "2026-12-31",
+      "risk": "residency_gap",
+      "workaround": "Apply retention-governance metadata and delegate final retention to QEG or connected storage.",
+      "linked_roadmap_item": "roadmap:regulated-retention",
+      "source_contracts": [
+        "LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md",
+        "DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md"
+      ]
+    }
+  ],
+  "commercial_risks": [
+    {
+      "risk": "overcommit_risk",
+      "trigger": "planned or unsupported capability requested as available",
+      "output": "contract exception + roadmap decision"
+    },
+    {
+      "risk": "residency_gap",
+      "trigger": "deployment or retention requirement exceeds fixture scope",
+      "output": "residency exception"
+    }
+  ],
+  "safety": {
+    "contains_customer_source_code": false,
+    "contains_secret": false,
+    "contains_pii": false,
+    "contains_unsafe_artifact": false
+  },
+  "summary": {
+    "commitment_count": 3,
+    "implemented_count": 1,
+    "planned_count": 1,
+    "unsupported_count": 1,
+    "contract_exception_count": 2,
+    "unsupported_available_claims": 0
+  },
+  "unsupported_available_claims": 0,
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

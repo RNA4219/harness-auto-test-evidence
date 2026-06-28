@@ -1,0 +1,123 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "identity_connector_report",
+  "run_id": "1001",
+  "mode": "dry_run_contract_fixture",
+  "connectors": [
+    {
+      "connector_id": "sso",
+      "display_name": "SAML/OIDC SSO",
+      "connector_type": "identity",
+      "live_runtime_implemented": false,
+      "dry_run_supported": true,
+      "optional_enterprise_connector": true,
+      "mapped_roles": [
+        "admin",
+        "maintainer",
+        "developer",
+        "auditor",
+        "viewer"
+      ],
+      "failure_policy": "non_gating_warning",
+      "canonical_bundle_mutated": false
+    },
+    {
+      "connector_id": "scim",
+      "display_name": "SCIM provisioning",
+      "connector_type": "identity",
+      "live_runtime_implemented": false,
+      "dry_run_supported": true,
+      "optional_enterprise_connector": true,
+      "mapped_roles": [
+        "admin",
+        "maintainer",
+        "developer",
+        "auditor",
+        "viewer",
+        "service_account"
+      ],
+      "failure_policy": "non_gating_warning",
+      "canonical_bundle_mutated": false
+    }
+  ],
+  "dry_run_results": [
+    {
+      "connector_id": "sso",
+      "status": "skipped_not_configured",
+      "non_gating": true,
+      "stable_warning_code": "HATE-EXP-001",
+      "credentials_required_for_live": true,
+      "credentials_present_in_fixture": false
+    },
+    {
+      "connector_id": "scim",
+      "status": "skipped_not_configured",
+      "non_gating": true,
+      "stable_warning_code": "HATE-EXP-001",
+      "credentials_required_for_live": true,
+      "credentials_present_in_fixture": false
+    }
+  ],
+  "identity_mapping": {
+    "source_subjects": [
+      "sso:group/platform-admins",
+      "scim:user/auditor-fixture"
+    ],
+    "role_binding_preview": [
+      {
+        "subject": "sso:group/platform-admins",
+        "role": "admin",
+        "scope": "org_local"
+      },
+      {
+        "subject": "scim:user/auditor-fixture",
+        "role": "auditor",
+        "scope": "prj_hate"
+      }
+    ],
+    "unknown_subject_default": "deny",
+    "service_account_human_approval_substitute": false
+  },
+  "rbac_integration": {
+    "source_ref": "rbac-matrix-report.json",
+    "known_roles": [
+      "admin",
+      "maintainer",
+      "developer",
+      "auditor",
+      "viewer",
+      "service_account",
+      "security_reviewer"
+    ],
+    "auditor_read_only_preserved": true,
+    "viewer_raw_artifact_denied_preserved": true
+  },
+  "safety": {
+    "contains_connector_token": false,
+    "contains_customer_private_url": false,
+    "contains_idp_metadata": false,
+    "external_network_required": false,
+    "safe_to_share": true
+  },
+  "edition_boundary": {
+    "local_required": false,
+    "team_required": false,
+    "enterprise_available": true,
+    "regulated_available": true
+  },
+  "summary": {
+    "connector_count": 2,
+    "configured_count": 0,
+    "dry_run_count": 2,
+    "non_gating_failure_count": 2
+  },
+  "source_refs": [
+    "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md",
+    "docs/process/PACKAGING_ENTITLEMENT_CONTRACT.md",
+    "rbac-matrix-report.json"
+  ],
+  "precheck_decision_override": false,
+  "qeg_verdict_override": false,
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

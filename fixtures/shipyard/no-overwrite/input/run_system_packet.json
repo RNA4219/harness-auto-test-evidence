@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "mode": "enforce",
+  "run": {
+    "run_ref": "agent-taskstate:run:job_hate_p1b_005_publish",
+    "task_ref": "agent-taskstate:task:HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+    "job_ref": "shipyard-cp:worker_job:claude_code:job_hate_p1b_005_publish",
+    "task_id": "HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+    "job_id": "job_hate_p1b_005_publish",
+    "stage": "publish",
+    "worker_type": "claude_code",
+    "result_status": "succeeded"
+  },
+  "contract_refs": {
+    "intent_contract_ref": "agent-protocols:intent_contract:HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+    "task_seed_ref": "agent-protocols:task_seed:job_hate_p1b_005_publish",
+    "acceptance_ref": "agent-protocols:acceptance:job_hate_p1b_005_publish",
+    "evidence_ref": "agent-protocols:evidence:job_hate_p1b_005_publish-succeeded"
+  },
+  "agent_protocols": {
+    "flow": "IntentContract -> TaskSeed -> Acceptance -> PublishGate -> Evidence",
+    "evidence_candidate": {
+      "kind": "Evidence",
+      "state": "Published",
+      "taskSeedId": "agent-protocols:task_seed:job_hate_p1b_005_publish",
+      "inputHash": "input-hash-p1b-005",
+      "outputHash": "output-hash-p1b-005",
+      "runtimeMs": 1000,
+      "exitCode": 0
+    }
+  },
+  "agent_taskstate": {
+    "task_ref": "agent-taskstate:task:HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+    "run_ref": "agent-taskstate:run:job_hate_p1b_005_publish",
+    "current_state": "published",
+    "external_refs": [
+      {
+        "system": "shipyard-cp",
+        "ref": "publish:approved"
+      }
+    ]
+  },
+  "agent_gatefield": {
+    "profile": "standard",
+    "decision_input": {
+      "run_id": "job_hate_p1b_005_publish",
+      "artifact_count": 1,
+      "test_summary": {
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0,
+        "not_run": 0
+      },
+      "requested_escalation_count": 0,
+      "side_effects": [],
+      "has_patch": false,
+      "has_branch": false,
+      "worker_status": "succeeded"
+    }
+  },
+  "agent_state_gate": {
+    "assessment_input": {
+      "run_ref": "agent-taskstate:run:job_hate_p1b_005_publish",
+      "task_ref": "agent-taskstate:task:HATE-MVP-007-P1B-WORKFLOW-MAPPING",
+      "evidence_refs": [
+        "agent-protocols:evidence:job_hate_p1b_005_publish-succeeded"
+      ],
+      "expected_verdicts": [
+        "allow",
+        "revise",
+        "needs_approval",
+        "require_human",
+        "stale_blocked",
+        "deny"
+      ]
+    }
+  },
+  "invariants": [
+    "Only shipyard-cp may apply publish approval or state transitions."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "adapter_conformance",
+  "run_id": "1001",
+  "adapter_id": "hate-p0b-qeg-bundle",
+  "checks": [
+    {
+      "check_id": "adapter-capability-source-refs",
+      "category": "adapter",
+      "status": "pass",
+      "source_refs": [
+        "adapter-capability-manifest.json"
+      ]
+    },
+    {
+      "check_id": "doctor-qeg-fixture",
+      "category": "qeg_fixture",
+      "status": "covered",
+      "source_refs": [
+        "doctor-report.json"
+      ]
+    },
+    {
+      "check_id": "doctor-path",
+      "category": "path",
+      "status": "pass",
+      "source_refs": [
+        "artifact-resolver-map.json"
+      ]
+    },
+    {
+      "check_id": "doctor-artifact-safety",
+      "category": "artifact_safety",
+      "status": "pass",
+      "source_refs": [
+        "doctor-report.json"
+      ]
+    },
+    {
+      "check_id": "schema-required-records",
+      "category": "schema",
+      "status": "pass",
+      "source_refs": [
+        "aete-score.json",
+        "doctor-report.json"
+      ]
+    },
+    {
+      "check_id": "profile-release-boundary",
+      "category": "profile",
+      "status": "pass",
+      "source_refs": [
+        "aete-score.json"
+      ]
+    }
+  ],
+  "summary": {
+    "overall_status": "pass",
+    "check_count": 6,
+    "covered_categories": [
+      "adapter",
+      "artifact_safety",
+      "path",
+      "profile",
+      "qeg_fixture",
+      "schema"
+    ]
+  },
+  "release_gate_override": false,
+  "publish_gate_override": false
+}

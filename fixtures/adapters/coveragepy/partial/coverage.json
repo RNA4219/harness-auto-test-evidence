@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "version": "7.6.1",
+    "show_contexts": true,
+    "format": 4
+  },
+  "files": {
+    "src/parser.py": {
+      "executed_lines": [10, 11, 12, 20, 21, 30, 31],
+      "summary": {
+        "covered_lines": 7,
+        "num_statements": 10,
+        "percent_covered": 70.0
+      },
+      "contexts": {
+        "10": ["tests/unit/test_parser.py::test_parse_valid"],
+        "11": ["tests/unit/test_parser.py::test_parse_valid"],
+        "20": [],
+        "21": ["tests/unit/test_parser.py::test_parse_edge_cases"],
+        "30": null
+      }
+    }
+  }
+}

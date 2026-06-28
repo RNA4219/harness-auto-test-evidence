@@ -1,0 +1,28 @@
+{
+  "created": "2026-06-28T04:00:00Z",
+  "duration": 0.15,
+  "exitcode": 0,
+  "root": "/workspace",
+  "tests": [
+    {
+      "nodeid": "tests/unit/test_parser.py::test_parse_valid",
+      "lineno": 10,
+      "outcome": "passed",
+      "duration": 0.05,
+      "markers": ["unit"]
+    },
+    {
+      "nodeid": "tests/unit/test_parser.py::test_parse_edge_cases",
+      "lineno": 21,
+      "outcome": "passed",
+      "duration": 0.03,
+      "markers": ["unit"]
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0
+  }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<report name="jacoco">
+  <package name="com/example/win">
+    <sourcefile name="C:\Users\ryo-n\Codex_dev\harness-auto-test-evidence\src\main\java\com\example\win\WinPath.java">
+      <line nr="55" mi="0" ci="1" mb="0" cb="0"/>
+    </sourcefile>
+  </package>
+</report>
