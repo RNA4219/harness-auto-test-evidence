@@ -1,0 +1,93 @@
+{
+  "schema_version": "manual-bb/v1",
+  "artifact_type": "gate_decision",
+  "feature_id": "HATE-IMPLEMENTATION-GATE",
+  "title": "HATE P0a/P0b implementation readiness gate",
+  "profile": "standard",
+  "status": "conditional_go",
+  "scope_decision": {
+    "p0a_implementation_start": "go",
+    "p0a_implementation_completion": "go",
+    "p0b_and_later_completion_claim": "no_go"
+  },
+  "source_refs": [
+    {
+      "id": "SPEC",
+      "kind": "spec",
+      "path": "docs/process/SPECIFICATION.md"
+    },
+    {
+      "id": "P0A",
+      "kind": "spec",
+      "path": "docs/process/P0A_GOLDEN_PATH.md"
+    },
+    {
+      "id": "EVAL",
+      "kind": "ac",
+      "path": "docs/process/EVALUATION.md"
+    },
+    {
+      "id": "SHIPYARD-AUDIT",
+      "kind": "ops",
+      "path": "docs/process/SPECIFICATION_SHIPYARD_AUDIT.md"
+    },
+    {
+      "id": "P0A-FIXTURE",
+      "kind": "auto_test",
+      "path": "fixtures/golden/p0a-minimal"
+    },
+    {
+      "id": "P0A-SCHEMA",
+      "kind": "auto_test",
+      "path": "schemas/HATE/v1"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "ASM-IMPL-001",
+      "text": "Initial implementation scope is HATE-MVP-001 through HATE-MVP-003.",
+      "severity": "medium",
+      "impact_on_coverage": "P0b/QEG bundle is excluded from the first implementation gate."
+    },
+    {
+      "id": "ASM-IMPL-002",
+      "text": "Shipyard-cp runtime API integration is deferred to P1b.",
+      "severity": "medium",
+      "impact_on_coverage": "Local advisory evidence is sufficient for P0a implementation start."
+    }
+  ],
+  "reasons": [
+    "P0a specification, schemas, golden fixture, executable CLI, and Shipyard advisory evidence exist.",
+    "P0a DQ negative fixtures reproduce expected hard_dq behavior.",
+    "P0a implementation completion is Go for the local-first slice.",
+    "P0b/QEG bundle and Shipyard runtime integration must not be claimed complete yet."
+  ],
+  "blocking_risks": [
+    {
+      "id": "RISK-01",
+      "scenario": "P0a implementation completion is mistaken for P0b or full implementation completion.",
+      "priority": "P1"
+    },
+    {
+      "id": "RISK-02",
+      "scenario": "QEG bundle gaps are hidden by a passing P0a precheck.",
+      "priority": "P1"
+    }
+  ],
+  "waivers": [
+    {
+      "id": "WV-IMPL-001",
+      "owner": "RNA4219",
+      "scope": "Shipyard runtime API integration",
+      "containment": "Use local advisory shipyard-run-evidence until P1b.",
+      "due_phase": "P1b"
+    }
+  ],
+  "required_follow_up": [
+    "Run a separate P0b gate before claiming QEG bundle completion.",
+    "Implement qeg-bundle, evidence-map, and diff-risk-test.",
+    "Implement P1a AETE, doctor, replay, compare, explain, and recommend outputs.",
+    "Keep Shipyard runtime API mapping separated until P1b."
+  ],
+  "confidence": "medium"
+}

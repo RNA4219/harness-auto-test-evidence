@@ -1,0 +1,81 @@
+{
+  "schema_version": "manual-bb/v1",
+  "artifact_type": "gate_decision",
+  "feature_id": "HATE-FULL-IMPLEMENTATION-GATE",
+  "title": "HATE full implementation readiness gate",
+  "profile": "standard",
+  "status": "no_go",
+  "scope_decision": {
+    "p0a_implementation_start": "go",
+    "p0a_implementation_completion": "go",
+    "p0b_implementation_completion": "no_go",
+    "p1a_p1b_implementation_completion": "no_go",
+    "p2_p3_full_product_implementation_completion": "no_go",
+    "full_implementation_claim": "no_go"
+  },
+  "source_refs": [
+    {
+      "id": "SPEC",
+      "kind": "spec",
+      "path": "docs/process/SPECIFICATION.md"
+    },
+    {
+      "id": "EVAL",
+      "kind": "ac",
+      "path": "docs/process/EVALUATION.md"
+    },
+    {
+      "id": "P0A",
+      "kind": "spec",
+      "path": "docs/process/P0A_GOLDEN_PATH.md"
+    },
+    {
+      "id": "SCHEMAS",
+      "kind": "auto_test",
+      "path": "schemas/HATE/v1"
+    },
+    {
+      "id": "P0A-FIXTURE",
+      "kind": "auto_test",
+      "path": "fixtures/golden/p0a-minimal"
+    },
+    {
+      "id": "SHIPYARD-AUDIT",
+      "kind": "ops",
+      "path": "docs/process/SPECIFICATION_SHIPYARD_AUDIT.md"
+    }
+  ],
+  "blocking_risks": [
+    {
+      "id": "RISK-FULL-01",
+      "scenario": "P0a preparation evidence is mistaken for full implementation evidence.",
+      "priority": "P0"
+    },
+    {
+      "id": "RISK-FULL-02",
+      "scenario": "DQ, adapter failure, and exit code behavior are not executable.",
+      "priority": "P0"
+    },
+    {
+      "id": "RISK-FULL-03",
+      "scenario": "QEG bundle is missing, so HATE is not yet a proven optional evidence producer.",
+      "priority": "P0"
+    }
+  ],
+  "reasons": [
+    "P0a executable CLI, minimal adapters, DQ negative fixtures, and execution evidence exist.",
+    "QEG bundle, AETE, and workflow artifacts are still missing.",
+    "P0b and later phases are mostly documented contracts without generated artifacts or validation logs.",
+    "P2/P3 product readiness requires artifact and metric evidence that does not exist yet."
+  ],
+  "minimum_go_conditions": [
+    "P0a CLI generates all required outputs from the golden fixture.",
+    "DQ negative fixtures reproduce expected decision and exit code.",
+    "P0b qeg-bundle, evidence-map, and diff-risk-test are generated and validated.",
+    "P1a AETE/profile/path/replay fixtures pass.",
+    "P1b workflow, Shipyard, and RanD mapping artifacts are generated.",
+    "If P2/P3 are included in the full claim, product-readiness-report and PRG metrics are generated."
+  ],
+  "waivers": [],
+  "confidence": "high"
+}

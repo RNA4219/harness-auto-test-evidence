@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0",
+  "document_id": "HATE-FULL-IMPLEMENTATION-SPEC-READINESS-20260628",
+  "summary": "7要件監査。go=7, conditional_go=0, no_go=0.すべてgo。維持推奨。",
+  "requirements": [
+    {
+      "requirement_id": "REQ-HATE-BOUNDARY-NO-REIMPLEMENTATION",
+      "original_text": "The specification must forbid HATE from reimplementing QEG, RanD, Shipyard, workflow-cookbook, or manual-bb gate authority.",
+      "kano_estimate": "must_be",
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-readiness-no-rei",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/GUARDRAILS.md#原則",
+          "summary": "Guardrails and full implementation contracts preserve gate ownership and forbid publish or verdict override.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "Implementation may later drift from boundary"
+      ],
+      "issues": [],
+      "suggested_action": "Add conformance tests during implementation.",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P0A-LOCAL-FIRST",
+      "original_text": "P0a local-first precheck specification must define artifacts, DQ, summary safety, and quickstart acceptance.",
+      "kano_estimate": "must_be",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-readiness-p0a",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/P0A_GOLDEN_PATH.md",
+          "summary": "P0a specifies required inputs, outputs, decision contract, DQ coverage, artifact manifest, summary safety, and quickstart acceptance.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "P0a implementation can still fail if converter is not built"
+      ],
+      "issues": [],
+      "suggested_action": "Proceed to implementation task HATE-MVP-001..004.",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P0B-QEG-EXPORT",
+      "original_text": "P0b QEG export specification must define qeg-bundle, evidence-map, diff-risk-test, completeness rules, fixtures, failure behavior, CLI, and responsibility boundary.",
+      "kano_estimate": "must_be",
+      "confidence": 0.91,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-readiness-p0b",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md",
+          "summary": "The dense P0b contract closes the previous Kano No-Go by defining export inputs, outputs, node/edge rules, gap handling, fixtures, CLI and Shipyard acceptance.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "Actual qeg-bundle implementation is still not complete"
+      ],
+      "issues": [],
+      "suggested_action": "Use P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md as the worker contract for HATE-MVP-005 and HATE-MVP-006.",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P1A-TRUST-HARDENING",
+      "original_text": "P1a trust hardening specification must define AETE, adapter capability, canonical identity, retry aggregation, path resolver, replay/compare/explain/recommend/doctor, fixture tree, and failure taxonomy.",
+      "kano_estimate": "performance",
+      "confidence": 0.89,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-readiness-p1a",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md",
+          "summary": "The dense P1a contract closes the previous Kano No-Go by defining schema, scoring rules, command outputs, fixture tree, failure taxonomy, and Shipyard acceptance.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "Trust hardening implementation remains substantial"
+      ],
+      "issues": [],
+      "suggested_action": "Use P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md as the worker contract for HATE-MVP-007..009.",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P1B-WORKFLOW-INTEGRATION",
+      "original_text": "P1b specification must define RanD alignment, Shipyard evidence, workflow artifacts, and manual-bb bridge without reimplementing upstream gates.",
+      "kano_estimate": "performance",
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-readiness-p1b",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md#3-shipyard-task-packet",
+          "summary": "The full implementation draft defines P1b artifacts and No-Go triggers while preserving upstream verdicts.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "Generated integration artifacts do not exist yet"
+      ],
+      "issues": [],
+      "suggested_action": "Implement P1b after P0b/P1a artifacts stabilize.",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P2P3-PRODUCT-READINESS",
+      "original_text": "P2/P3 readiness specification must define product and enterprise artifacts while keeping them separate from P0/P1 local-first gates.",
+      "kano_estimate": "attractive",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-readiness-p2p3",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/EVALUATION.md#p3--enterprise-product-readiness",
+          "summary": "P2/P3 readiness is described as derived reports and PRG metrics, not a dependency for P0/P1 evidence eligibility.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "Product readiness artifacts remain future work"
+      ],
+      "issues": [],
+      "suggested_action": "Keep P2/P3 as later Shipyard task packets and avoid earlier completion claims.",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "REQ-HATE-SPEC-READINESS-BOUNDARY",
+      "original_text": "The specification must separate full implementation spec readiness from implementation completion and preserve No-Go completion gates.",
+      "kano_estimate": "must_be",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-readiness-bounda",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md",
+          "summary": "Readiness criteria define how RanD evaluates spec completeness without converting it into implementation completion claim.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "Spec readiness could be mistaken for implementation completion"
+      ],
+      "issues": [],
+      "suggested_action": "Use readiness Go only for specification completion; keep manual-bb implementation gate separate.",
+      "gate_verdict": "go"
+    }
+  ],
+  "gate_summary": {
+    "go": 7,
+    "conditional_go": 0,
+    "no_go": 0,
+    "total": 7,
+    "verdict_distribution": {
+      "go": [
+        "REQ-HATE-BOUNDARY-NO-REIMPLEMENTATION",
+        "REQ-HATE-P0A-LOCAL-FIRST",
+        "REQ-HATE-P0B-QEG-EXPORT",
+        "REQ-HATE-P1A-TRUST-HARDENING",
+        "REQ-HATE-P1B-WORKFLOW-INTEGRATION",
+        "REQ-HATE-P2P3-PRODUCT-READINESS",
+        "REQ-HATE-SPEC-READINESS-BOUNDARY"
+      ]
+    },
+    "overall_assessment": "go",
+    "overall_reason": "すべてgo。維持推奨。"
+  },
+  "source_refs": {
+    "audited_document": "docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md",
+    "external_evidence": [],
+    "implementation_evidence": [
+      "docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md",
+      "docs/process/P0A_GOLDEN_PATH.md",
+      "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md",
+      "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md",
+      "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md#3-shipyard-task-packet",
+      "docs/process/EVALUATION.md#p3--enterprise-product-readiness",
+      "docs/process/GUARDRAILS.md#原則"
+    ]
+  },
+  "assumptions": [
+    "This audit evaluates specification readiness, not implementation completion.",
+    "Implementation completion remains governed by manual-bb and generated artifact evidence.",
+    "Kano estimates are requirement-quality hypotheses, not formal survey results."
+  ]
+}

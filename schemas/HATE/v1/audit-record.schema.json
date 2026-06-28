@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/audit-record.schema.json",
+  "title": "HATE v1 Audit Record",
+  "allOf": [
+    { "$ref": "common-envelope.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": { "const": "audit_record" },
+        "payload": {
+          "type": "object",
+          "required": ["validated_artifacts", "validation_result", "source_refs"],
+          "properties": {
+            "validated_artifacts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["path", "sha256"],
+                "additionalProperties": true
+              }
+            },
+            "validation_result": { "enum": ["pass", "fail", "partial"] },
+            "source_refs": {
+              "type": "array",
+              "items": { "type": "object", "additionalProperties": true }
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

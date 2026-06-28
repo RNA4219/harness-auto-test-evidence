@@ -1,0 +1,20 @@
+[project]
+name = "harness-auto-test-evidence"
+version = "0.1.0"
+description = "Local-first auto-test evidence normalizer for HATE P0a golden path."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+hate = "hate.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hate"]

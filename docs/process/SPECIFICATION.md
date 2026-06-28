@@ -33,7 +33,20 @@ reason を再実装しない。
 | `docs/process/RUNBOOK.md` | 実行手順、受理前確認、ロールバック | 2 |
 | `docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md` | Task Seed / Acceptance / Evidence / Birdseye 接続 | 2 |
 | `docs/process/P0A_GOLDEN_PATH.md` | P0a golden fixture と最小実行契約 | 2 |
+| `docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md` | P0b QEG export 実装契約 | 2 |
+| `docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md` | P1a trust hardening 実装契約 | 2 |
+| `docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md` | フル実装仕様 readiness 判定境界 | 2 |
 | `docs/process/SCHEMA_REGISTRY_CONTRACT.md` | HATE/v1 schema と互換性方針 | 2 |
+| `docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md` | Shipyard-cp フル実装 task / gate ドラフト | 2 |
+| `docs/process/SPECIFICATION_SHIPYARD_AUDIT.md` | Shipyard worker draft の監査証跡 | 2 |
+| `docs/process/SPECIFICATION_COMPLETION_AUDIT.md` | Shipyard-cp 仕様書完成監査 | 2 |
+| `docs/process/shipyard-run-evidence-p0a-cli-implementation.json` | Shipyard-cp P0a CLI 実装証跡 | 2 |
+| `docs/process/shipyard-run-evidence-p0a-dq-fixtures.json` | Shipyard-cp P0a DQ fixture 実装証跡 | 2 |
+| `docs/process/MANUAL_BB_GATE_FULL_IMPLEMENTATION.md` | フル実装 completion claim の manual-bb gate | 2 |
+| `docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_AUDIT.md` | RanD KanoMode によるフル実装要求監査 | 2 |
+| `docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_READINESS_GO.md` | RanD KanoMode によるフル実装仕様 readiness Go 証跡 | 2 |
+| `docs/process/RAND_KANO_MODE_REQUIREMENTS_QUALITY_AUDIT.md` | RanD KanoMode による要件定義品質監査 | 2 |
+| `docs/process/RAND_KANO_MODE_IDEA_QUALITY_AUDIT.md` | RanD KanoMode によるアイデア品質監査 | 2 |
 | `docs/process/PRODUCT_ERROR_TAXONOMY.md` | stable error code / DQ / remediation | 2 |
 | `docs/research/deep-research-report.md` | 設計根拠、AETE モデル、候補 adapter | 3 |
 | `quality-evidence-graph/schemas/*.schema.json` | QEG 受け入れ schema | 外部正本 |
@@ -246,6 +259,8 @@ calibration_status: uncalibrated | calibrated | provisional
 ## 13. QEG Export Contract
 
 `qeg-bundle.json` は QEG の `qeg.bundle.schema.json` に従い、最低限次を持つ。
+P0b の実装単位、fixture、failure behavior、Shipyard acceptance は
+`P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md` を補助正本とする。
 
 ```yaml
 metadata:
@@ -753,6 +768,9 @@ adapter:
 
 adapter は HATE precheck decision や QEG verdict を直接決めない。adapter の責務は
 parse、normalize、capability reporting、diagnostics の出力までである。
+P1a の AETE、adapter capability、canonical identity、retry aggregation、path resolver、
+replay / compare / explain / recommend / doctor は
+`P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md` を補助正本とする。
 
 ### 26.1 Adapter Failure Policy
 
@@ -992,6 +1010,18 @@ source_refs: array
 draft worker が生成した文書は、直接正本にせず、HATE maintainer が `SPECIFICATION.md` へ
 統合してから正本扱いにする。
 
+### 30.4 Full Implementation Draft Workflow
+
+フル実装の worker-facing task / artifact / acceptance / No-Go trigger は
+`SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md` を参照する。本仕様書では
+そのドラフトを補助正本として扱い、次の境界を固定する。
+
+- 仕様書完成 claim と実装完成 claim を分離する
+- `MANUAL_BB_GATE_FULL_IMPLEMENTATION.md` が `full implementation claim=no_go` の間は、
+  実装完了や product readiness 完了を主張しない
+- P0a〜P3 の各 phase は Shipyard task packet と acceptance evidence を持つ
+- Shipyard の state machine / worker dispatch / publish approval を HATE が再実装しない
+
 ## 31. Manual-bb Bridge
 
 HATE は自動テスト証跡で埋められない high-risk gap を manual-bb-test-harness へ渡す。
@@ -1107,5 +1137,11 @@ quarantine_item:
 - `P0A_GOLDEN_PATH.md` の required inputs / outputs / decision enum と一致する
 - QEG schema の required field と `qeg-bundle.json` 契約が一致する
 - Shipyard-cp 接続が advisory evidence であり、state machine / publish approval を代替しない
+- Shipyard-cp フル実装ドラフトが P0a〜P3 の task / artifact / acceptance / No-Go trigger を定義している
+- Shipyard worker draft が監査され、監査所見の closed/open が `SPECIFICATION_SHIPYARD_AUDIT.md` に残っている
+- manual-bb full implementation gate が仕様書完成 claim と実装完成 claim を分離している
+- RanD KanoMode audit の `requirements_audit_packet.gate_summary.overall_assessment` を上書きせず、No-Go 要件を implementation blocker として保持している
+- フル実装仕様 readiness と実装 completion の判定境界が `FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md` に明示されている
+- RanD KanoMode readiness audit が `overall_assessment=go` となり、Go の対象が仕様書 readiness であることを明示している
 - DQ / AETE / risk debt / manual-bb bridge / privacy quarantine の境界が明示されている
 - 実装順序が Task Seed 化できる粒度まで分かれている

@@ -1,0 +1,47 @@
+{
+  "schema_version": "HATE/v1",
+  "registry_version": "2026-06-28-p0a",
+  "records": [
+    {
+      "record_type": "run",
+      "schema": "schemas/HATE/v1/run.schema.json",
+      "phase": "P0a"
+    },
+    {
+      "record_type": "test_result",
+      "schema": "schemas/HATE/v1/test-result.schema.json",
+      "phase": "P0a"
+    },
+    {
+      "record_type": "coverage_slice",
+      "schema": "schemas/HATE/v1/coverage-slice.schema.json",
+      "phase": "P0a"
+    },
+    {
+      "record_type": "precheck_decision",
+      "schema": "schemas/HATE/v1/precheck-decision.schema.json",
+      "phase": "P0a"
+    },
+    {
+      "record_type": "audit_record",
+      "schema": "schemas/HATE/v1/audit-record.schema.json",
+      "phase": "P0a"
+    }
+  ],
+  "bundles": [
+    {
+      "artifact": "artifact-manifest.json",
+      "schema": "schemas/HATE/v1/artifact-manifest.schema.json",
+      "phase": "P0a"
+    }
+  ],
+  "compatibility": {
+    "unknown_field_policy": "preserve_without_summary",
+    "qeg_export": "P0b"
+  },
+  "deprecated_fields": [],
+  "qeg_export": {
+    "status": "planned",
+    "first_phase": "P0b"
+  }
+}

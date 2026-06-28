@@ -1,0 +1,215 @@
+{
+  "schema_version": "1.0",
+  "document_id": "HATE-FULL-IMPLEMENTATION-SPEC-20260628",
+  "summary": "6要件監査。go=0, conditional_go=4, no_go=2.2件no_goあり。要件改訂後に再監査推奨。",
+  "requirements": [
+    {
+      "requirement_id": "REQ-HATE-BOUNDARY-NO-REIMPLEMENTATION",
+      "original_text": "HATE must not reimplement downstream or upstream gate authorities; it only produces evidence and alignment artifacts.",
+      "kano_estimate": "must_be",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-boundary-no",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/GUARDRAILS.md#原則",
+          "summary": "Boundary rules prevent HATE from overwriting QEG Gate, RanD requirement verdict, Shipyard publish approval, workflow checker, or manual-bb execution.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "medium",
+      "risks": [
+        "Gate responsibility drift can invalidate the architecture"
+      ],
+      "issues": [
+        "Spec boundary exists, but executable negative checks are not implemented yet"
+      ],
+      "suggested_action": "Add conformance tests that fail on publish_gate_override or upstream verdict overwrite.",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P0A-LOCAL-FIRST",
+      "original_text": "P0a local-first precheck must generate HATE-run, test results, coverage, manifest, precheck decision, record, and summary without external SaaS.",
+      "kano_estimate": "must_be",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p0a-local-f",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#16-phase-contract",
+          "summary": "P0a requires executable converter/CLI, golden outputs, decision enum, DQ fixture, and public-safe summary.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "medium",
+      "risks": [
+        "Schema/fixture preparation can be mistaken for executable implementation"
+      ],
+      "issues": [
+        "Executable converter/CLI is not implemented yet",
+        "DQ negative fixture is not complete"
+      ],
+      "suggested_action": "Implement P0a converter/CLI and DQ negative fixtures before completion claim.",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P0B-QEG-EXPORT",
+      "original_text": "P0b must generate qeg-bundle.json and related evidence mapping compatible with QEG minimal fixtures.",
+      "kano_estimate": "must_be",
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p0b-qeg-exp",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#13-qeg-export-contract",
+          "summary": "P0b requires qeg-bundle, evidence-map, diff-risk-test, sourceRefs, and QEG compatibility validation.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "low",
+      "risks": [
+        "HATE cannot be considered a proven QEG optional evidence producer without this"
+      ],
+      "issues": [
+        "qeg-bundle.json schema and fixture are not implemented",
+        "evidence-map and diff-risk-test artifacts are missing"
+      ],
+      "suggested_action": "Keep full implementation gate No-Go until P0b bundle and validation exist.",
+      "gate_verdict": "no_go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P1A-TRUST-HARDENING",
+      "original_text": "P1a must implement AETE, adapter capability, deterministic aggregation, canonical identity, path normalization, replay/compare/explain/recommend/doctor.",
+      "kano_estimate": "performance",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p1a-trust-h",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#12-aete-contract",
+          "summary": "P1a requires AETE 8 dimensions, profile/calibration metadata, identity, path normalization, replay, compare, explain, recommend, and doctor.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "low",
+      "risks": [
+        "Trust score and gap explanation remain non-reproducible"
+      ],
+      "issues": [
+        "AETE and replay command family are not implemented"
+      ],
+      "suggested_action": "Split P1a into trust scoring, normalization, and replay/explain task packets.",
+      "gate_verdict": "no_go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P1B-WORKFLOW-INTEGRATION",
+      "original_text": "P1b must generate RanD alignment, Shipyard evidence, workflow artifacts, and manual-bb bridge without reimplementing upstream gates.",
+      "kano_estimate": "performance",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p1b-rand-sh",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md#3-shipyard-task-packet",
+          "summary": "P1b requires requirement-evidence-alignment, shipyard-run-evidence, workflow-* artifacts, and manual-bb bridge while preserving upstream verdicts.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "medium",
+      "risks": [
+        "External workflow traceability remains document-only"
+      ],
+      "issues": [
+        "Only advisory Shipyard spec evidence exists",
+        "RanD alignment artifact is not generated yet"
+      ],
+      "suggested_action": "Use this Kano audit packet as first RanD fixture and implement requirement-evidence-alignment next.",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "REQ-HATE-P2P3-PRODUCT-READINESS",
+      "original_text": "P2/P3 product and enterprise readiness must be derived from canonical bundle and verified with artifact/metric evidence.",
+      "kano_estimate": "attractive",
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p2-p3-produ",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/EVALUATION.md#p3--enterprise-product-readiness",
+          "summary": "P2/P3 require optional exports, read model, trust packet, telemetry, residency, legal, assurance, and PRG metrics as generated artifacts.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "unknown",
+      "risks": [
+        "Product readiness can be overstated before artifact evidence exists"
+      ],
+      "issues": [
+        "P2/P3 are currently contract documents, not generated readiness artifacts"
+      ],
+      "suggested_action": "Keep P2/P3 out of earlier Go claims; require product-readiness-report before full claim.",
+      "gate_verdict": "conditional_go"
+    }
+  ],
+  "gate_summary": {
+    "go": 0,
+    "conditional_go": 4,
+    "no_go": 2,
+    "total": 6,
+    "verdict_distribution": {
+      "conditional_go": [
+        "REQ-HATE-BOUNDARY-NO-REIMPLEMENTATION",
+        "REQ-HATE-P0A-LOCAL-FIRST",
+        "REQ-HATE-P1B-WORKFLOW-INTEGRATION",
+        "REQ-HATE-P2P3-PRODUCT-READINESS"
+      ],
+      "no_go": [
+        "REQ-HATE-P0B-QEG-EXPORT",
+        "REQ-HATE-P1A-TRUST-HARDENING"
+      ]
+    },
+    "overall_assessment": "no_go",
+    "overall_reason": "2件no_goあり。要件改訂後に再監査推奨。"
+  },
+  "source_refs": {
+    "audited_document": "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md",
+    "external_evidence": [],
+    "implementation_evidence": [
+      "docs/process/SPECIFICATION.md#16-phase-contract",
+      "docs/process/SPECIFICATION.md#13-qeg-export-contract",
+      "docs/process/SPECIFICATION.md#12-aete-contract",
+      "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md#3-shipyard-task-packet",
+      "docs/process/EVALUATION.md#p3--enterprise-product-readiness",
+      "docs/process/GUARDRAILS.md#原則"
+    ]
+  },
+  "assumptions": [
+    "This is a local artifact-backed Kano audit using HATE source documents as primary evidence.",
+    "Kano estimates are requirement-quality hypotheses, not formal customer survey results.",
+    "Implementation alignment is based on current worktree artifacts, not future intent."
+  ]
+}

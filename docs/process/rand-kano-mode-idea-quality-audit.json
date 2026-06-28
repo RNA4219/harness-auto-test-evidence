@@ -1,0 +1,266 @@
+{
+  "schema_version": "1.0",
+  "document_id": "HATE-IDEA-QUALITY-20260628",
+  "summary": "8要件監査。go=4, conditional_go=4, no_go=0.4件conditional_goあり。補強後に再監査推奨。",
+  "requirements": [
+    {
+      "requirement_id": "IDEA-QUAL-001",
+      "original_text": "自動テスト証跡をrelease判断へ使える形に構造化するpainは明確である",
+      "kano_estimate": "must_be",
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-idea-pain-001",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/BLUEPRINT.md#1-purpose",
+          "summary": "CI証跡、coverage、SARIF、artifact、diff/risk/testの関係をQEG optional evidenceへ変換する構想は、品質判断の説明責任に直結する。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "既存CIレポートとの差分価値を短いデモで示せないと、導入優先度が下がる"
+      ],
+      "issues": [],
+      "suggested_action": "最初のデモは『CIログでは分からないrelease riskがHATEで説明できる』一点に絞る。",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "IDEA-QUAL-002",
+      "original_text": "HATEの差別化はQEG前段のevidence normalizerであり、gate本体を再実装しない点にある",
+      "kano_estimate": "performance",
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-idea-differentia",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#4-scope",
+          "summary": "QEG、manual-bb、workflow-cookbook、Shipyardとの責務境界を明確にし、既存ツールを置換しない構想になっている。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "境界が伝わらないと『また別の品質ゲートツール』に見える"
+      ],
+      "issues": [],
+      "suggested_action": "one-linerを『CI evidence normalizer for QEG, not another gate』に固定し、README先頭へ反映する。",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "IDEA-QUAL-003",
+      "original_text": "P0a golden pathはアイデアの検証wedgeとして適切である",
+      "kano_estimate": "must_be",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-idea-wedge-001",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/P0A_GOLDEN_PATH.md#1-purpose",
+          "summary": "local-first、fixture、precheck-decision、own-output validationを最小単位にしており、早期に価値検証しやすい。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "P0aがQEG連携やenterprise要件に引っ張られるとwedgeが鈍る"
+      ],
+      "issues": [],
+      "suggested_action": "P0aは30秒以内のlocal proofに閉じ、P0b以降の価値は別デモに分ける。",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "IDEA-QUAL-004",
+      "original_text": "説明可能なAETE/DQ/risk debtは魅力品質になり得るが、must-be化はまだ早い",
+      "kano_estimate": "attractive",
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-idea-kano-deligh",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#11-dq-contract",
+          "summary": "AETE score、DQ、soft gap、recommend/doctorは強い魅力要素だが、初期導入では証跡の正規化が先に価値を持つ。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "medium",
+      "risks": [
+        "高度な説明機能が先行すると、基礎の証跡収集が遅れる"
+      ],
+      "issues": [
+        "魅力品質をP0必須にするとMVPが重くなる"
+      ],
+      "suggested_action": "AETE explain/recommendはP1a以降に維持し、P0a/P0bのmust-beから外す。",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "IDEA-QUAL-005",
+      "original_text": "ターゲットユーザーの実証シグナルは不足している",
+      "kano_estimate": "performance",
+      "confidence": 0.62,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-idea-user-signal",
+          "source_type": "gap_analysis",
+          "source_tier": "user_signal",
+          "source_ref": "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md#2-product-definition",
+          "summary": "ICP/personaは定義済みだが、QA lead、release manager、platform engineerが実際にどの証跡不足で困っているかの外部/実導入証跡は薄い。",
+          "weight": 0.7,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "medium",
+      "risks": [
+        "本当のmust-beを外す、または使われないdelighterを作る"
+      ],
+      "issues": [
+        "Kano分類の根拠が内部仮説に寄っている",
+        "購買者と日次利用者の価値差分が未検証"
+      ],
+      "suggested_action": "persona別に5つのproblem statementを集め、P0aデモ後にmust_be/performance/attractiveを再分類する。",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "IDEA-QUAL-006",
+      "original_text": "既存CI/品質SaaSとの差分ポジションは有望だが、買い手向けの比較表現が必要である",
+      "kano_estimate": "performance",
+      "confidence": 0.74,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-idea-market-posi",
+          "source_type": "compare",
+          "source_tier": "comparison",
+          "source_ref": "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md#5-product-requirements",
+          "summary": "Allure、ReportPortal、Codecov、SonarQube等はoptional exportとして扱われ、HATEはcanonical evidence bundleに寄せている。差分自体はあるが、補完/非代替関係を買い手向けに一枚で説明する資料はまだ薄い。",
+          "weight": 0.75,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "medium",
+      "risks": [
+        "既存ツールで十分と判断される"
+      ],
+      "issues": [
+        "代替/補完関係の買い手向け説明が弱いと市場上の位置がぼやける"
+      ],
+      "suggested_action": "既存ツールとの補完/非代替関係を『reporting』『coverage』『quality gate』『evidence graph feed』の4軸で1枚化する。",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "IDEA-QUAL-007",
+      "original_text": "技術的実現性は段階化されており、過剰なbig-bang実装を避けられている",
+      "kano_estimate": "must_be",
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-idea-feasibility",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md#3-task-packet",
+          "summary": "P0a/P0b/P1a/P1b/P2/P3に分かれ、schema、fixture、run evidence、Shipyard task packetがある。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "artifact種類とadapter数が増えると実装面積が急拡大する"
+      ],
+      "issues": [],
+      "suggested_action": "adapter追加はcapability manifestとgolden fixtureがあるものだけに制限する。",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "IDEA-QUAL-008",
+      "original_text": "enterprise product化の絵はあるが、最初の支払い理由はまだ尖らせる余地がある",
+      "kano_estimate": "performance",
+      "confidence": 0.66,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-idea-commercial-",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md#7-edition-and-packaging",
+          "summary": "enterprise requirements、edition、adoption、trust packetなどはあるが、初期購買トリガーは『release evidence不足』へ絞る必要がある。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "medium",
+      "risks": [
+        "プロダクト構想としては大きいが、最初の売れる理由が散る"
+      ],
+      "issues": [
+        "エンタープライズ化要件が多く、初期価値の焦点を薄める恐れ"
+      ],
+      "suggested_action": "最初のcommercial hypothesisを『監査/リリースレビューでCI証跡説明に時間がかかるチーム』に限定する。",
+      "gate_verdict": "conditional_go"
+    }
+  ],
+  "gate_summary": {
+    "go": 4,
+    "conditional_go": 4,
+    "no_go": 0,
+    "total": 8,
+    "verdict_distribution": {
+      "go": [
+        "IDEA-QUAL-001",
+        "IDEA-QUAL-002",
+        "IDEA-QUAL-003",
+        "IDEA-QUAL-007"
+      ],
+      "conditional_go": [
+        "IDEA-QUAL-004",
+        "IDEA-QUAL-005",
+        "IDEA-QUAL-006",
+        "IDEA-QUAL-008"
+      ]
+    },
+    "overall_assessment": "conditional_go",
+    "overall_reason": "4件conditional_goあり。補強後に再監査推奨。"
+  },
+  "source_refs": {
+    "audited_document": "docs/process/BLUEPRINT.md; docs/process/SPECIFICATION.md; docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md; docs/process/P0A_GOLDEN_PATH.md",
+    "external_evidence": [
+      "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md#2-product-definition",
+      "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md#5-product-requirements"
+    ],
+    "implementation_evidence": [
+      "docs/process/BLUEPRINT.md#1-purpose",
+      "docs/process/SPECIFICATION.md#4-scope",
+      "docs/process/P0A_GOLDEN_PATH.md#1-purpose",
+      "docs/process/SPECIFICATION.md#11-dq-contract",
+      "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md#3-task-packet",
+      "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md#7-edition-and-packaging"
+    ]
+  },
+  "assumptions": [
+    "この監査はアイデア品質を対象とし、要件定義品質、実装完了、release gate通過を意味しない",
+    "Kano分類はローカル文書内の証跡から推定し、外部市場調査は未実施として扱う",
+    "implementation_alignmentはアイデアを検証するためのP0a/P0b実装可能性として推定する"
+  ]
+}

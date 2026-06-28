@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/coverage-slice.schema.json",
+  "title": "HATE v1 Coverage Slice Record",
+  "allOf": [
+    { "$ref": "common-envelope.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": { "const": "coverage_slice" },
+        "payload": {
+          "type": "object",
+          "required": ["format", "file", "line_hits", "branch_hits", "contexts"],
+          "properties": {
+            "format": { "enum": ["lcov", "cobertura", "jacoco", "coverage.py"] },
+            "file": { "type": "string", "minLength": 1 },
+            "line_hits": {
+              "type": "object",
+              "additionalProperties": { "type": "integer", "minimum": 0 }
+            },
+            "branch_hits": {
+              "type": "array",
+              "items": { "type": "object", "additionalProperties": true }
+            },
+            "contexts": {
+              "type": "array",
+              "items": { "type": "object", "additionalProperties": true }
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

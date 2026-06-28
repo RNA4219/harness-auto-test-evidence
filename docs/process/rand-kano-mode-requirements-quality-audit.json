@@ -1,0 +1,266 @@
+{
+  "schema_version": "1.0",
+  "document_id": "HATE-REQ-QUALITY-20260628",
+  "summary": "8要件監査。go=4, conditional_go=4, no_go=0.4件conditional_goあり。補強後に再監査推奨。",
+  "requirements": [
+    {
+      "requirement_id": "REQ-QUAL-001",
+      "original_text": "HATEの中核課題、ICP、persona、価値仮説が要件定義内で識別できる",
+      "kano_estimate": "must_be",
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-core-val",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md#2-product-definition",
+          "summary": "BLUEPRINTとENTERPRISE_PRODUCT_REQUIREMENTSに、品質証跡ハーネス、ICP、persona、product surfaceが定義されている。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "medium",
+      "risks": [
+        "内部仮説だけでmust-beを固定すると、実際の購買/運用摩擦を取り逃がす"
+      ],
+      "issues": [
+        "顧客インタビュー、導入済み利用者、外部ユーザーシグナルへのトレースは限定的"
+      ],
+      "suggested_action": "ICP/personaごとに1件以上の外部または実導入由来のpain evidenceを追加し、PRD/ENRへsource_refを付ける。",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "REQ-QUAL-002",
+      "original_text": "HATE/QEG/RanD/Shipyard/manual-bb/workflow-cookbookの責務境界が明確である",
+      "kano_estimate": "must_be",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-scope-bo",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/BLUEPRINT.md#2-scope",
+          "summary": "Scope In/Out、正本関係、連携先ごとの再実装禁止が明示されている。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "境界文書更新漏れが起きると責務分離が崩れる"
+      ],
+      "issues": [],
+      "suggested_action": "維持。仕様変更時はSPECIFICATION.mdの正本表とBLUEPRINT Scopeを同時更新する。",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "REQ-QUAL-003",
+      "original_text": "受入条件はphase別に観測可能だが、項目数が多く実行計画へ圧縮する必要がある",
+      "kano_estimate": "performance",
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-acceptan",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/EVALUATION.md#3-acceptance-criteria",
+          "summary": "EVALUATIONにP0a/P0b/P1a/P1b/P2/P3のACとチェックリストがある。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "medium",
+      "risks": [
+        "受入条件スプロールにより、最小Go条件とnice-to-haveが混ざる"
+      ],
+      "issues": [
+        "ACの総量が多く、Shipyard taskやmanual-bb caseへ圧縮しないと実行順が曖昧になりやすい"
+      ],
+      "suggested_action": "P0/P1のACをrelease-blocking、advisory、deferredへ分割し、manual-bb最小ケースへ写像する。",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "REQ-QUAL-004",
+      "original_text": "P0a/P0b/P1a/P1b/P2/P3の優先順位とWIP統制が定義されている",
+      "kano_estimate": "performance",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-portfoli",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md#3-portfolio-policy",
+          "summary": "REQUIREMENTS_PORTFOLIO_OPERATING_MODELでtier/stage/WIP/health reportを定義し、P0a/P0bを優先する原則がある。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "複数phaseを同時に進めるとP0/P1の完了定義がぼやける"
+      ],
+      "issues": [],
+      "suggested_action": "維持。Shipyard task packetではP0a/P0bをpublish blocking、P2/P3をnon-blockingに固定する。",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "REQ-QUAL-005",
+      "original_text": "Kano/顧客価値分類に使える外部ユーザー証跡は不足している",
+      "kano_estimate": "performance",
+      "confidence": 0.68,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-kano-cus",
+          "source_type": "gap_analysis",
+          "source_tier": "user_signal",
+          "source_ref": "docs/process/BLUEPRINT.md#8-agent-tools-interoperability",
+          "summary": "RanD/KanoModeの接続点はあるが、現時点の要件定義は内部仕様・設計仮説が中心である。",
+          "weight": 0.7,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "medium",
+      "risks": [
+        "attractive要件をmust-be化する、または本当のmust-beを見落とす"
+      ],
+      "issues": [
+        "must-be/performance/attractiveの分類を裏付ける外部ユーザーシグナルが薄い",
+        "Kano Modeの入力としては一次資料偏重で、顧客反応の反証可能性が低い"
+      ],
+      "suggested_action": "ICP別にuser_signal evidenceを追加し、各PRDをmust_be/performance/attractive/indifferentへ再分類する。",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "REQ-QUAL-006",
+      "original_text": "P2/P3 productizationがP0/P1の必須依存にならないよう分離されている",
+      "kano_estimate": "must_be",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-producti",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#7-non-functional-requirements",
+          "summary": "P0a/P0bを先に成立させ、Allure/ReportPortal/Codecov/SonarQubeなどはnon-gating optionalとして扱う。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "optional exportがprecheckやQEG verdictを変えると責務境界が崩れる"
+      ],
+      "issues": [],
+      "suggested_action": "維持。optional exportはcanonical bundle派生かつnon-gatingであることをテストにも反映する。",
+      "gate_verdict": "go"
+    },
+    {
+      "requirement_id": "REQ-QUAL-007",
+      "original_text": "KPIとSLOは定義されているが、一部はbaselineと計測開始条件が未固定である",
+      "kano_estimate": "performance",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-kpi-meas",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/EVALUATION.md#4-kpi-and-quality-metrics",
+          "summary": "EVALUATIONとENTERPRISE_PRODUCT_REQUIREMENTSに性能、品質、導入、信頼性の指標がある。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "medium",
+      "implementation_alignment": "medium",
+      "risks": [
+        "KPIが観測不能だとacceptanceは書けてもGo/No-Goの客観性が落ちる"
+      ],
+      "issues": [
+        "標準PR 5分、P0a 30秒などの閾値はあるが、pilot baselineや測定母集団が未確定の指標が残る"
+      ],
+      "suggested_action": "各KPIにmeasurement event、sample unit、baseline owner、first measurement milestoneを追加する。",
+      "gate_verdict": "conditional_go"
+    },
+    {
+      "requirement_id": "REQ-QUAL-008",
+      "original_text": "RanD/Shipyard/workflow-cookbook/manual-bbへ渡す下流artifact契約が定義されている",
+      "kano_estimate": "performance",
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-handoff-",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md#1-purpose",
+          "summary": "requirements audit、shipyard run evidence、workflow artifacts、manual-bb gateの接続が文書化されている。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "testability": "high",
+      "implementation_alignment": "high",
+      "risks": [
+        "artifact contractと実装出力のschema drift"
+      ],
+      "issues": [],
+      "suggested_action": "維持。各artifactにschema_version/source_refs/assumptions/confidenceを必須化する。",
+      "gate_verdict": "go"
+    }
+  ],
+  "gate_summary": {
+    "go": 4,
+    "conditional_go": 4,
+    "no_go": 0,
+    "total": 8,
+    "verdict_distribution": {
+      "conditional_go": [
+        "REQ-QUAL-001",
+        "REQ-QUAL-003",
+        "REQ-QUAL-005",
+        "REQ-QUAL-007"
+      ],
+      "go": [
+        "REQ-QUAL-002",
+        "REQ-QUAL-004",
+        "REQ-QUAL-006",
+        "REQ-QUAL-008"
+      ]
+    },
+    "overall_assessment": "conditional_go",
+    "overall_reason": "4件conditional_goあり。補強後に再監査推奨。"
+  },
+  "source_refs": {
+    "audited_document": "docs/process/BLUEPRINT.md; docs/process/EVALUATION.md; docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md; docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md",
+    "external_evidence": [
+      "docs/process/BLUEPRINT.md#8-agent-tools-interoperability"
+    ],
+    "implementation_evidence": [
+      "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md#2-product-definition",
+      "docs/process/BLUEPRINT.md#2-scope",
+      "docs/process/EVALUATION.md#3-acceptance-criteria",
+      "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md#3-portfolio-policy",
+      "docs/process/SPECIFICATION.md#7-non-functional-requirements",
+      "docs/process/EVALUATION.md#4-kpi-and-quality-metrics",
+      "docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md#1-purpose"
+    ]
+  },
+  "assumptions": [
+    "この監査は要件定義品質を対象とし、実装完了やrelease gate通過を意味しない",
+    "外部顧客証跡はローカル文書内に確認できる範囲で評価する",
+    "implementation_alignmentは仕様書、受入条件、Shipyard/manual-bb/RanD接続証跡から推定する"
+  ]
+}

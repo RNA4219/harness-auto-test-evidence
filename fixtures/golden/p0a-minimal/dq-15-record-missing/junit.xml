@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" errors="0" skipped="0" time="0.123">
+  <testsuite name="pytest" tests="1" failures="0" errors="0" skipped="0" time="0.123">
+    <testcase classname="tests.test_auth" name="test_login" file="tests/test_auth.py" time="0.123" />
+  </testsuite>
+</testsuites>

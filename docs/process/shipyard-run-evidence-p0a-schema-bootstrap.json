@@ -1,0 +1,81 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "shipyard_run_evidence",
+  "record_id": "shipyard-hate-p0a-schema-bootstrap-20260628",
+  "run_id": "shipyard-hate-p0a-schema-bootstrap-20260628",
+  "run_attempt": 1,
+  "commit_sha": "1537c6a",
+  "created_at": "2026-06-28T00:10:00Z",
+  "source_tool": "shipyard-cp",
+  "source_version": "advisory-local",
+  "shipyard": {
+    "task_id": "HATE-MVP-001",
+    "run_id": "shipyard-hate-p0a-schema-bootstrap-20260628",
+    "stage": "dev",
+    "worker_result_ref": "docs/process/SPECIFICATION_SHIPYARD_DRAFT.md",
+    "run_system_packet_ref": "docs/process/shipyard-run-evidence-p0a-schema-bootstrap.json",
+    "audit_refs": [
+      "docs/process/SPECIFICATION_SHIPYARD_AUDIT.md"
+    ],
+    "title": "P0a schema bootstrap",
+    "base_commit": "1537c6a",
+    "worker": "codex-main",
+    "flow": [
+      "plan",
+      "dev",
+      "acceptance",
+      "integrate",
+      "publish"
+    ],
+    "current_stage": "dev",
+    "control_plane_scope": "local advisory evidence only",
+    "state_machine_reimplemented": false,
+    "publish_gate_override": false
+  },
+  "hate": {
+    "bundle_ref": "fixtures/golden/p0a-minimal/expected",
+    "precheck_decision_ref": "fixtures/golden/p0a-minimal/expected/precheck-decision.json",
+    "qeg_bundle_ref": null,
+    "aete_summary_ref": null,
+    "dq_summary_ref": null,
+    "artifact_manifest_ref": "fixtures/golden/p0a-minimal/expected/artifact-manifest.json"
+  },
+  "outputs": {
+    "schema_registry": "schemas/HATE/v1/schema-registry.json",
+    "schemas": [
+      "schemas/HATE/v1/common-envelope.schema.json",
+      "schemas/HATE/v1/run.schema.json",
+      "schemas/HATE/v1/test-result.schema.json",
+      "schemas/HATE/v1/coverage-slice.schema.json",
+      "schemas/HATE/v1/artifact-manifest.schema.json",
+      "schemas/HATE/v1/precheck-decision.schema.json",
+      "schemas/HATE/v1/audit-record.schema.json"
+    ],
+    "golden_fixture": "fixtures/golden/p0a-minimal",
+    "expected_outputs": [
+      "fixtures/golden/p0a-minimal/expected/HATE-run.json",
+      "fixtures/golden/p0a-minimal/expected/HATE-test-results.ndjson",
+      "fixtures/golden/p0a-minimal/expected/HATE-coverage.ndjson",
+      "fixtures/golden/p0a-minimal/expected/artifact-manifest.json",
+      "fixtures/golden/p0a-minimal/expected/precheck-decision.json",
+      "fixtures/golden/p0a-minimal/expected/record.json",
+      "fixtures/golden/p0a-minimal/expected/summary.md"
+    ]
+  },
+  "advisory_verdict": {
+    "evidence_eligible": true,
+    "manual_review_recommended": false,
+    "qeg_export_allowed": true,
+    "publish_gate_override": false,
+    "next_stage": "acceptance"
+  },
+  "source_refs": [
+    "docs/process/SPECIFICATION.md#30-shipyard-cp-接続仕様",
+    "C:/Users/ryo-n/Codex_dev/Agent_tools/shipyard-cp/docs/cli-usage.md"
+  ],
+  "notes": [
+    "This file records a Shipyard-cp shaped local run for HATE development.",
+    "It does not replace Shipyard-cp task-run-gate-audit or publish approval mechanics.",
+    "Acceptance must validate JSON/NDJSON/XML/LCOV parseability before the task moves forward."
+  ]
+}

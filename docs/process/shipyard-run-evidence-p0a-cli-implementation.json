@@ -1,0 +1,83 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "shipyard_run_evidence",
+  "record_id": "shipyard-p0a-cli-implementation-20260628",
+  "run_id": "shipyard-hate-p0a-cli-20260628",
+  "run_attempt": 1,
+  "commit_sha": "local-working-tree",
+  "created_at": "2026-06-28T00:00:00Z",
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "redaction_status": "not_required",
+  "payload": {
+    "shipyard_stage": "dev",
+    "task_id": "HATE-MVP-001-003-P0A-CLI",
+    "task_title": "P0a local-first evidence normalizer CLI implementation",
+    "shipyard_flow": [
+      "plan",
+      "dev",
+      "acceptance"
+    ],
+    "implementation_scope": {
+      "in": [
+        "Python package scaffold",
+        "P0a CLI",
+        "P0a DQ negative fixtures",
+        "GitHub context ingestion",
+        "JUnit minimal normalization",
+        "LCOV minimal normalization",
+        "artifact-manifest generation",
+        "precheck-decision generation",
+        "record.json own-output validation record",
+        "public-safe summary",
+        "P0a unit tests"
+      ],
+      "out": [
+        "QEG bundle export",
+        "SARIF ingest",
+        "Playwright artifact ingest",
+        "AETE scoring",
+        "hosted dashboard",
+        "Shipyard runtime API dispatch"
+      ]
+    },
+    "commands": [
+      {
+        "command": "uv run pytest",
+        "result": "pass",
+        "summary": "6 tests passed, including DQ-001/002/003/008/015 hard_dq fixtures"
+      },
+      {
+        "command": "uv run python -m hate p0a --input fixtures/golden/p0a-minimal/input --out C:\\tmp\\hate-p0a-check --source-version dev --fixture-path-prefix fixtures/golden/p0a-minimal/input",
+        "result": "pass",
+        "summary": "decision=eligible, generated 7 P0a artifacts"
+      },
+      {
+        "command": "uv run python -m compileall src tests",
+        "result": "pass",
+        "summary": "src and tests compiled"
+      }
+    ],
+    "generated_artifacts": [
+      "pyproject.toml",
+      "src/hate/__init__.py",
+      "src/hate/__main__.py",
+      "src/hate/cli.py",
+      "src/hate/p0a.py",
+      "tests/test_p0a.py"
+    ],
+    "acceptance": {
+      "p0a_golden_path": "pass",
+      "p0a_dq_negative_fixtures": "pass",
+      "precheck_decision": "eligible",
+      "qeg_export_phase": "P0b",
+      "release_gate_override": false,
+      "publish_gate_override": false
+    },
+    "notes": [
+      "This is local advisory Shipyard evidence, not a live shipyard-cp runtime dispatch.",
+      "HATE does not implement Shipyard state machine, worker dispatch, acceptance, integrate, or publish approval."
+    ]
+  }
+}

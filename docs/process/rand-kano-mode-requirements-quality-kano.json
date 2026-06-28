@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0",
+  "mode": "kano_audit",
+  "request_id": "kano-audit-hate-requirements-quality-kano-20260628",
+  "topic": "HATE requirements definition quality audit via RanD Kano Mode",
+  "persona_modes": [
+    "researcher",
+    "qa_gatekeeper",
+    "product",
+    "enterprise_buyer"
+  ],
+  "source_summary": {
+    "total_evidence": 8,
+    "primary_source_count": 7,
+    "user_signal_count": 1,
+    "comparison_source_count": 0,
+    "freshness_window_days": 180
+  },
+  "kano_candidates": [
+    {
+      "candidate_id": "REQ-QUAL-001",
+      "statement": "HATEの中核課題、ICP、persona、価値仮説が要件定義内で識別できる",
+      "kano_type": "must_be",
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-core-val",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md#2-product-definition",
+          "summary": "BLUEPRINTとENTERPRISE_PRODUCT_REQUIREMENTSに、品質証跡ハーネス、ICP、persona、product surfaceが定義されている。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "conditional_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-QUAL-002",
+      "statement": "HATE/QEG/RanD/Shipyard/manual-bb/workflow-cookbookの責務境界が明確である",
+      "kano_type": "must_be",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-scope-bo",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/BLUEPRINT.md#2-scope",
+          "summary": "Scope In/Out、正本関係、連携先ごとの再実装禁止が明示されている。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-QUAL-003",
+      "statement": "受入条件はphase別に観測可能だが、項目数が多く実行計画へ圧縮する必要がある",
+      "kano_type": "performance",
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-acceptan",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/EVALUATION.md#3-acceptance-criteria",
+          "summary": "EVALUATIONにP0a/P0b/P1a/P1b/P2/P3のACとチェックリストがある。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "conditional_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-QUAL-004",
+      "statement": "P0a/P0b/P1a/P1b/P2/P3の優先順位とWIP統制が定義されている",
+      "kano_type": "performance",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-portfoli",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md#3-portfolio-policy",
+          "summary": "REQUIREMENTS_PORTFOLIO_OPERATING_MODELでtier/stage/WIP/health reportを定義し、P0a/P0bを優先する原則がある。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-QUAL-005",
+      "statement": "Kano/顧客価値分類に使える外部ユーザー証跡は不足している",
+      "kano_type": "performance",
+      "confidence": 0.68,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-kano-cus",
+          "source_type": "gap_analysis",
+          "source_tier": "user_signal",
+          "source_ref": "docs/process/BLUEPRINT.md#8-agent-tools-interoperability",
+          "summary": "RanD/KanoModeの接続点はあるが、現時点の要件定義は内部仕様・設計仮説が中心である。",
+          "weight": 0.7,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "conditional_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-QUAL-006",
+      "statement": "P2/P3 productizationがP0/P1の必須依存にならないよう分離されている",
+      "kano_type": "must_be",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-producti",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#7-non-functional-requirements",
+          "summary": "P0a/P0bを先に成立させ、Allure/ReportPortal/Codecov/SonarQubeなどはnon-gating optionalとして扱う。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-QUAL-007",
+      "statement": "KPIとSLOは定義されているが、一部はbaselineと計測開始条件が未固定である",
+      "kano_type": "performance",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-kpi-meas",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/EVALUATION.md#4-kpi-and-quality-metrics",
+          "summary": "EVALUATIONとENTERPRISE_PRODUCT_REQUIREMENTSに性能、品質、導入、信頼性の指標がある。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "conditional_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-QUAL-008",
+      "statement": "RanD/Shipyard/workflow-cookbook/manual-bbへ渡す下流artifact契約が定義されている",
+      "kano_type": "performance",
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-reqqual-handoff-",
+          "source_type": "doc",
+          "source_tier": "primary",
+          "source_ref": "docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md#1-purpose",
+          "summary": "requirements audit、shipyard run evidence、workflow artifacts、manual-bb gateの接続が文書化されている。",
+          "weight": 0.8,
+          "freshness_days": null,
+          "locale": "ja-JP"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    }
+  ],
+  "known_biases": [
+    "audit scope may miss undocumented requirements",
+    "implementation evidence can lag behind actual code state"
+  ]
+}

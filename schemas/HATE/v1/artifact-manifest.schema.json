@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/artifact-manifest.schema.json",
+  "title": "HATE v1 Artifact Manifest",
+  "type": "object",
+  "required": ["schema_version", "run_id", "run_attempt", "commit_sha", "artifacts"],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "run_attempt": { "type": "integer", "minimum": 1 },
+    "commit_sha": { "type": "string", "pattern": "^[A-Fa-f0-9]{7,64}$" },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "artifact_id",
+          "kind",
+          "path",
+          "sha256",
+          "size_bytes",
+          "classification",
+          "redaction_status",
+          "redaction_rule_version",
+          "safe_for_summary",
+          "public_exposure",
+          "retention",
+          "security_checks"
+        ],
+        "properties": {
+          "artifact_id": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["trace", "screenshot", "video", "log", "coverage", "static", "report", "other"] },
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^(sha256:)?[A-Fa-f0-9]{64}$" },
+          "size_bytes": { "type": "integer", "minimum": 0 },
+          "classification": { "enum": ["public", "internal", "confidential", "restricted"] },
+          "redaction_status": { "enum": ["not_required", "redacted", "pending", "failed"] },
+          "redaction_rule_version": { "type": "string", "minLength": 1 },
+          "safe_for_summary": { "type": "boolean" },
+          "public_exposure": { "enum": ["none", "summary", "artifact_url", "external"] },
+          "retention": { "type": "object" },
+          "security_checks": { "type": "object" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

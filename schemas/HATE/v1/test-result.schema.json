@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/test-result.schema.json",
+  "title": "HATE v1 Test Result Record",
+  "allOf": [
+    { "$ref": "common-envelope.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": { "const": "test_result" },
+        "payload": {
+          "type": "object",
+          "required": [
+            "canonical_test_id",
+            "framework",
+            "status",
+            "duration_ms",
+            "file",
+            "identity_components",
+            "artifacts"
+          ],
+          "properties": {
+            "canonical_test_id": { "type": "string", "minLength": 1 },
+            "framework": { "type": "string", "minLength": 1 },
+            "status": { "enum": ["passed", "failed", "skipped", "error", "flaky", "inconclusive"] },
+            "duration_ms": { "type": "integer", "minimum": 0 },
+            "retry_index": { "type": "integer", "minimum": 0 },
+            "flaky": { "type": "boolean" },
+            "file": { "type": "string", "minLength": 1 },
+            "identity_components": {
+              "type": "object",
+              "required": ["framework", "suite", "name"],
+              "additionalProperties": true
+            },
+            "aliases": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["artifact_id", "kind"],
+                "properties": {
+                  "artifact_id": { "type": "string", "minLength": 1 },
+                  "kind": { "type": "string", "minLength": 1 }
+                },
+                "additionalProperties": true
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

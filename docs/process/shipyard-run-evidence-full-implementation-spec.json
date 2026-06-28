@@ -1,0 +1,56 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "shipyard_run_evidence",
+  "record_id": "shipyard-hate-full-implementation-spec-20260628",
+  "run_id": "shipyard-hate-full-implementation-spec-20260628",
+  "run_attempt": 1,
+  "commit_sha": "1537c6a",
+  "created_at": "2026-06-28T00:30:00Z",
+  "source_tool": "shipyard-cp",
+  "source_version": "advisory-local",
+  "shipyard": {
+    "task_id": "HATE-FULL-IMPLEMENTATION-SPEC",
+    "run_id": "shipyard-hate-full-implementation-spec-20260628",
+    "stage": "acceptance",
+    "worker_result_ref": "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md",
+    "run_system_packet_ref": "docs/process/shipyard-run-evidence-full-implementation-spec.json",
+    "audit_refs": [
+      "docs/process/SPECIFICATION_SHIPYARD_AUDIT.md",
+      "docs/process/MANUAL_BB_GATE_FULL_IMPLEMENTATION.md"
+    ],
+    "flow": [
+      "plan",
+      "dev",
+      "acceptance",
+      "integrate",
+      "publish"
+    ],
+    "state_machine_reimplemented": false,
+    "publish_gate_override": false
+  },
+  "hate": {
+    "spec_ref": "docs/process/SPECIFICATION.md",
+    "full_implementation_draft_ref": "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md",
+    "manual_bb_full_gate_ref": "docs/process/MANUAL_BB_GATE_FULL_IMPLEMENTATION.md",
+    "qeg_bundle_ref": null,
+    "artifact_manifest_ref": "fixtures/golden/p0a-minimal/expected/artifact-manifest.json"
+  },
+  "advisory_verdict": {
+    "spec_completion_candidate": true,
+    "implementation_completion_claim": false,
+    "manual_review_recommended": true,
+    "publish_gate_override": false,
+    "next_stage": "integrate"
+  },
+  "source_refs": [
+    "docs/process/SPECIFICATION.md",
+    "docs/process/EVALUATION.md",
+    "docs/process/MANUAL_BB_GATE_FULL_IMPLEMENTATION.md",
+    "C:/Users/ryo-n/Codex_dev/Agent_tools/shipyard-cp/docs/cli-usage.md"
+  ],
+  "notes": [
+    "This record covers specification completion for full implementation, not implementation completion.",
+    "Manual-bb full implementation gate remains no_go for implementation completion until executable artifacts exist.",
+    "HATE does not replace Shipyard publish approval."
+  ]
+}

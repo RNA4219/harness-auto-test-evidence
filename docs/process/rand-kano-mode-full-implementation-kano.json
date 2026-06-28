@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "mode": "kano_audit",
+  "request_id": "kano-audit-hate-full-spec-kano-20260628",
+  "topic": "HATE full implementation specification Kano audit",
+  "persona_modes": [
+    "researcher",
+    "gatekeeper",
+    "product"
+  ],
+  "source_summary": {
+    "total_evidence": 6,
+    "primary_source_count": 6,
+    "user_signal_count": 0,
+    "comparison_source_count": 0,
+    "freshness_window_days": 30
+  },
+  "kano_candidates": [
+    {
+      "candidate_id": "REQ-HATE-BOUNDARY-NO-REIMPLEMENTATION",
+      "statement": "HATE must not reimplement downstream or upstream gate authorities; it only produces evidence and alignment artifacts.",
+      "kano_type": "must_be",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-boundary-no",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/GUARDRAILS.md#原則",
+          "summary": "Boundary rules prevent HATE from overwriting QEG Gate, RanD requirement verdict, Shipyard publish approval, workflow checker, or manual-bb execution.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "conditional_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-HATE-P0A-LOCAL-FIRST",
+      "statement": "P0a local-first precheck must generate HATE-run, test results, coverage, manifest, precheck decision, record, and summary without external SaaS.",
+      "kano_type": "must_be",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p0a-local-f",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#16-phase-contract",
+          "summary": "P0a requires executable converter/CLI, golden outputs, decision enum, DQ fixture, and public-safe summary.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "conditional_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-HATE-P0B-QEG-EXPORT",
+      "statement": "P0b must generate qeg-bundle.json and related evidence mapping compatible with QEG minimal fixtures.",
+      "kano_type": "must_be",
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p0b-qeg-exp",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#13-qeg-export-contract",
+          "summary": "P0b requires qeg-bundle, evidence-map, diff-risk-test, sourceRefs, and QEG compatibility validation.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "no_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-HATE-P1A-TRUST-HARDENING",
+      "statement": "P1a must implement AETE, adapter capability, deterministic aggregation, canonical identity, path normalization, replay/compare/explain/recommend/doctor.",
+      "kano_type": "performance",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p1a-trust-h",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION.md#12-aete-contract",
+          "summary": "P1a requires AETE 8 dimensions, profile/calibration metadata, identity, path normalization, replay, compare, explain, recommend, and doctor.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "no_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-HATE-P1B-WORKFLOW-INTEGRATION",
+      "statement": "P1b must generate RanD alignment, Shipyard evidence, workflow artifacts, and manual-bb bridge without reimplementing upstream gates.",
+      "kano_type": "performance",
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p1b-rand-sh",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md#3-shipyard-task-packet",
+          "summary": "P1b requires requirement-evidence-alignment, shipyard-run-evidence, workflow-* artifacts, and manual-bb bridge while preserving upstream verdicts.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "conditional_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    },
+    {
+      "candidate_id": "REQ-HATE-P2P3-PRODUCT-READINESS",
+      "statement": "P2/P3 product and enterprise readiness must be derived from canonical bundle and verified with artifact/metric evidence.",
+      "kano_type": "attractive",
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "evidence_id": "EV-AUDIT-001-hate-p2-p3-produ",
+          "source_type": "official",
+          "source_tier": "primary",
+          "source_ref": "docs/process/EVALUATION.md#p3--enterprise-product-readiness",
+          "summary": "P2/P3 require optional exports, read model, trust packet, telemetry, residency, legal, assurance, and PRG metrics as generated artifacts.",
+          "weight": 0.6,
+          "freshness_days": null,
+          "locale": "und"
+        }
+      ],
+      "persona_votes": {
+        "gatekeeper": "conditional_go"
+      },
+      "bias_note": "",
+      "kill_condition": ""
+    }
+  ],
+  "known_biases": [
+    "audit scope may miss undocumented requirements",
+    "implementation evidence can lag behind actual code state"
+  ]
+}

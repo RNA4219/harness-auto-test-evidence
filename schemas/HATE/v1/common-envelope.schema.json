@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/common-envelope.schema.json",
+  "title": "HATE v1 Common Envelope",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "record_id",
+    "run_id",
+    "run_attempt",
+    "commit_sha",
+    "created_at",
+    "source_tool",
+    "source_version",
+    "sha256",
+    "redaction_status",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "record_type": { "type": "string", "minLength": 1 },
+    "record_id": { "type": "string", "minLength": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "run_attempt": { "type": "integer", "minimum": 1 },
+    "commit_sha": { "type": "string", "pattern": "^[A-Fa-f0-9]{7,64}$" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "source_tool": { "type": "string", "minLength": 1 },
+    "source_version": { "type": "string", "minLength": 1 },
+    "sha256": { "type": "string", "pattern": "^(sha256:)?[A-Fa-f0-9]{64}$" },
+    "redaction_status": {
+      "enum": ["not_required", "redacted", "pending", "failed"]
+    },
+    "payload": { "type": "object" }
+  },
+  "additionalProperties": true
+}

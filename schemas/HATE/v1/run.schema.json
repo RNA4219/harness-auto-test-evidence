@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/run.schema.json",
+  "title": "HATE v1 Run Record",
+  "allOf": [
+    { "$ref": "common-envelope.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": { "const": "run" },
+        "payload": {
+          "type": "object",
+          "required": [
+            "repository",
+            "workflow",
+            "job",
+            "event_name",
+            "base_sha",
+            "started_at",
+            "finished_at",
+            "ci"
+          ],
+          "properties": {
+            "repository": { "type": "string", "minLength": 1 },
+            "workflow": { "type": "string", "minLength": 1 },
+            "job": { "type": "string", "minLength": 1 },
+            "event_name": { "type": "string", "minLength": 1 },
+            "base_sha": { "type": "string", "pattern": "^[A-Fa-f0-9]{7,64}$" },
+            "started_at": { "type": "string", "format": "date-time" },
+            "finished_at": { "type": "string", "format": "date-time" },
+            "ci": {
+              "type": "object",
+              "required": ["provider", "run_id", "run_attempt"],
+              "properties": {
+                "provider": { "enum": ["github_actions", "generic_ci"] },
+                "run_id": { "type": "string", "minLength": 1 },
+                "run_attempt": { "type": "integer", "minimum": 1 }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

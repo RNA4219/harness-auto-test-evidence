@@ -2,8 +2,8 @@
 intent_id: INT-HATE-001
 owner: RNA4219
 status: active
-last_reviewed_at: 2026-06-27
-next_review_due: 2026-07-27
+last_reviewed_at: 2026-06-28
+next_review_due: 2026-07-28
 ---
 
 # Runbook
@@ -30,43 +30,189 @@ next_review_due: 2026-07-27
 - shipyard-cp 接続を確認する場合は `WorkerResult` / `RunSystemPacket` の fixture を用意
 - workflow-cookbook 接続を確認する場合は Task Seed / Acceptance / Evidence /
   docs stale / Birdseye map の fixture を用意
+- Enterprise product readiness を確認する場合は `ENTERPRISE_PRODUCT_REQUIREMENTS.md` と
+  PRG-0..PRG-6 の product-readiness fixture を用意
+- Enterprise domain model を確認する場合は `ENTERPRISE_DOMAIN_MODEL.md` の
+  scope / role / retention / audit event 契約を確認する
+- user-facing failure を確認する場合は `PRODUCT_ERROR_TAXONOMY.md` の
+  error code / remediation / diagnostic bundle 契約を確認する
+- schema 互換性を確認する場合は `SCHEMA_REGISTRY_CONTRACT.md` の
+  field policy / fixture matrix / version policy を確認する
+- adapter 追加を確認する場合は `ADAPTER_SDK_CONTRACT.md` の manifest /
+  required interface / conformance report を確認する
+- risk debt を確認する場合は `RISK_DEBT_REGISTER.md` の status / aging /
+  owner / sourceRefs / recommended_actions を確認する
+- privacy / quarantine を確認する場合は `PRIVACY_QUARANTINE_CONTRACT.md` の
+  classification / safety check / output policy を確認する
+- hosted read model / API を確認する場合は `HOSTED_READ_MODEL_API.md` の
+  source artifact / RBAC / consistency rule を確認する
+- release / migration を確認する場合は `RELEASE_MIGRATION_POLICY.md` の
+  release gates / migration artifacts / rollback policy を確認する
+- packaging / entitlement を確認する場合は `PACKAGING_ENTITLEMENT_CONTRACT.md` の
+  edition / entitlement / usage meter / over-limit policy を確認する
+- customer-facing docs を確認する場合は `CUSTOMER_DOCUMENTATION_CONTRACT.md` の
+  required docs / source_contracts / freshness / verification を確認する
+- SLO / incident response を確認する場合は `SLO_INCIDENT_RESPONSE_CONTRACT.md` の
+  severity / incident class / status communication / postmortem 契約を確認する
+- customer success / adoption を確認する場合は `CUSTOMER_SUCCESS_ADOPTION_CONTRACT.md` の
+  adoption stage / success plan / adoption health / renewal readiness を確認する
+- security review / trust を確認する場合は `SECURITY_REVIEW_TRUST_CONTRACT.md` の
+  trust packet / control mapping / vulnerability handling / freshness を確認する
+- product telemetry / analytics を確認する場合は `PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md` の
+  telemetry mode / allowed signal / prohibited signal / retention を確認する
+- data residency / deployment を確認する場合は `DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md` の
+  deployment mode / residency profile / data class routing / recovery を確認する
+- product governance / roadmap を確認する場合は `PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md` の
+  roadmap item / decision record / customer request / deprecation decision を確認する
+- accessibility / localization を確認する場合は `ACCESSIBILITY_LOCALIZATION_CONTRACT.md` の
+  accessibility target / message catalog / locale fallback / stable identifier を確認する
+- legal / commercial contracting を確認する場合は `LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md` の
+  commitment register / procurement response / contract exception / commercial risk を確認する
+- audit fixture / assurance を確認する場合は `AUDIT_FIXTURE_ASSURANCE_CONTRACT.md` の
+  audit fixture / assurance pack / evidence room / audit finding を確認する
+- requirements portfolio を確認する場合は `REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md` の
+  tier / stage / WIP / dependency / portfolio health を確認する
+- P0a を確認する場合は `P0A_GOLDEN_PATH.md` と
+  `fixtures/golden/p0a-minimal` の input / expected 契約を用意
 
-## 3. 想定コマンド（実装着手後）
+## 3. ローカル実行（P0a 実装）
 
-※ 現在は設計・実装準備段階のため、実体が追加された時点で更新。
+P0a は Python 標準ライブラリのみで動く local-first CLI として実装する。
 
 - テスト:
-  - 実装言語別のデフォルトに従う（Python/TS/Go いずれか）
-- 受入検証:
-  - まず `record.json` スキーマ整合
-  - 次に `gate-decision.json` の再現性確認
-- 監査:
-  - `artifact-manifest.json` と `evidence-map.json` のノード参照整合を確認
+  - `uv run pytest`
+- P0a golden path:
+  - `uv run python -m hate p0a --input fixtures/golden/p0a-minimal/input --out C:\tmp\hate-p0a-check --source-version dev --fixture-path-prefix fixtures/golden/p0a-minimal/input`
+- P0a DQ fixtures:
+  - `fixtures/golden/p0a-minimal/dq-01-sha-missing`
+  - `fixtures/golden/p0a-minimal/dq-02-junit-malformed`
+  - `fixtures/golden/p0a-minimal/dq-03-artifact-missing`
+  - `fixtures/golden/p0a-minimal/dq-08-coverage-only`
+  - `fixtures/golden/p0a-minimal/dq-15-record-missing`
+- compile check:
+  - `uv run python -m compileall src tests`
+
+P0a CLI は次を生成する。
+
+- `HATE-run.json`
+- `HATE-test-results.ndjson`
+- `HATE-coverage.ndjson`
+- `artifact-manifest.json`
+- `precheck-decision.json`
+- `record.json`
+- `summary.md`
+
+`gate-decision.json` は互換 alias であり、新規 P0a 実装では生成しない。
 
 ## 4. 受理前確認
 
 - DQ 条件（HATE-DQ-01〜15）が未解消のまま判定に進んでいないか
 - Diff-risk-test で `changed high-risk path` と `execution` の接続欠損がないか
-- AETE スコアが計算不能なら `disqualified` 明示になるか
+- P1a 以降では AETE スコアが計算不能なら `hard_dq` または明示的な
+  `soft_gap` になるか。P0a では AETE 未実装を失敗条件にしない
+- P0a では `P0A_GOLDEN_PATH.md` の required inputs / outputs /
+  decision enum / DQ fixture / summary safety と実装結果が一致しているか
+- P1a 以降では AETE score に `rubric_version`, `profile_version`,
+  `score_confidence`, `calibration_status` が残り、未校正 score を release Gate
+  正本のように表示していないか
+- P1a 以降では test result の `canonical_test_id`, `identity_components`,
+  `aliases` により rename / parameterized test / matrix の履歴差分を説明できるか
 - HATE が QEG の Gate policy / waiver / approval / retention / immutability /
   schema migration を重複実装していないか
-- RanD の Requirement Definition Gate verdict を HATE が上書きしていないか
+- P1b 以降では RanD の Requirement Definition Gate verdict を HATE が上書きしていないか
 - `requirement-evidence-alignment.json` が requirement / acceptance / risk ごとの
   自動テスト証跡と不足理由を説明できるか
-- `shipyard-run-evidence.json` が Shipyard の run / audit refs と HATE artifact refs を
+- P1b 以降では `shipyard-run-evidence.json` が Shipyard の run / audit refs と HATE artifact refs を
   結線し、Shipyard の state machine を変更していないか
-- `workflow-task-seed.json` から HATE-MVP-* と acceptance refs を辿れるか
-- `workflow-acceptance-record.json` が acceptance record 必須 field を満たすか
-- `workflow-evidence.jsonl` が HATE artifact refs、AETE summary、DQ summary を保持するか
-- `workflow-docs-stale.json` と `workflow-birdseye-map.json` が docs freshness /
+- P1b 以降では `workflow-task-seed.json` から HATE-MVP-* と acceptance refs を辿れるか
+- P1b 以降では `workflow-acceptance-record.json` が acceptance record 必須 field を満たすか
+- P1b 以降では `workflow-evidence.jsonl` が HATE artifact refs、AETE summary、DQ summary を保持するか
+- P1b 以降では `workflow-docs-stale.json` と `workflow-birdseye-map.json` が docs freshness /
   依存候補を説明できるか
-- HATE が workflow-cookbook の checker / plugin host / Birdseye 生成器を
+- P1b 以降では HATE が workflow-cookbook の checker / plugin host / Birdseye 生成器を
   重複実装していないか
 - matrix / shard / retry aggregation が同一入力で同一結果になるか
 - coverage / SARIF / JUnit / Playwright artifact の path が QEG の sourceRefs /
   artifact metadata に渡せる形へ正規化されているか
 - HATE optional evidence を QEG minimal fixture に接続しても `validate / gate / record`
   の前提を壊さないか
+- P1a 以降では `HATE replay` が frozen bundle から同一 AETE / DQ / QEG export を
+  再計算できるか
+- P1a 以降では `HATE compare` が trust delta / DQ 増減 / risk coverage 低下を
+  差分として説明できるか
+- P1a 以降では `HATE explain` / `HATE recommend` が不足証跡の理由と次アクションを
+  sourceRefs 付きで説明できるか
+- P1a 以降では `HATE doctor` が adapter / schema / path / provenance /
+  QEG fixture の診断を summary と JSON に出せるか
+- P1a 以降では artifact resolver が summary / manifest / QEG sourceRefs の
+  artifact 参照を同じ規則で解決しているか
+- artifact safety が secret scan、MIME / 拡張子整合、archive 展開制限、
+  symlink / path traversal、外部 URL 参照の検査を通し、失敗 artifact を
+  public summary / QEG export / external export へ漏らしていないか
+- privacy / quarantine が `PRIVACY_QUARANTINE_CONTRACT.md` の classification /
+  security_checks / quarantine / output policy と一致しているか
+- P1a 以降では schema registry と adapter conformance fixtures により、
+  schema drift と adapter 最低準拠を検証できるか
+- P1a 以降では `SCHEMA_REGISTRY_CONTRACT.md` の unknown / deprecated /
+  required / optional field policy と実装結果が一致しているか
+- P1a 以降では `ADAPTER_SDK_CONTRACT.md` の adapter manifest、required interface、
+  failure contract、conformance report と実装結果が一致しているか
+- P1a 以降では `RISK_DEBT_REGISTER.md` の risk debt item、status、aging、
+  recommendation link と実装結果が一致しているか
+- P1b 以降では manual-bb bridge が high-risk gap を手動補完要求へ変換し、
+  手動テスト実施そのものを HATE が代替していないか
+- P2 以降では PR annotation / artifact budget / attestation が optional 拡張として扱われ、
+  未設定でも local-first precheck を妨げないか
+- P2/P3 以降では hosted dashboard / REST API / enterprise connector が
+  canonical bundle から派生し、HATE 独自の release approval 正本を持っていないか
+- hosted read model / API が `HOSTED_READ_MODEL_API.md` の source artifact /
+  response envelope / RBAC / stale cache policy と一致しているか
+- release / migration が `RELEASE_MIGRATION_POLICY.md` の RG-1..RG-8 /
+  compatibility matrix / rollback policy と一致しているか
+- packaging / entitlement が `PACKAGING_ENTITLEMENT_CONTRACT.md` の edition /
+  entitlement / usage meter / over-limit policy と一致し、precheck / QEG verdict を
+  変更していないか
+- customer-facing docs が `CUSTOMER_DOCUMENTATION_CONTRACT.md` の required docs /
+  source_contracts / freshness / verification と一致し、実装状態を超えて表現していないか
+- SLO / incident response が `SLO_INCIDENT_RESPONSE_CONTRACT.md` の severity /
+  incident class / containment / communication / postmortem と一致し、canonical evidence を
+  改変していないか
+- customer success / adoption が `CUSTOMER_SUCCESS_ADOPTION_CONTRACT.md` の adoption stage /
+  success plan / adoption gap / renewal readiness と一致し、precheck / QEG verdict を
+  変更していないか
+- security review / trust が `SECURITY_REVIEW_TRUST_CONTRACT.md` の trust packet /
+  control mapping / vulnerability handling / freshness と一致し、customer source code、
+  secret、PII、unsafe artifact を含んでいないか
+- product telemetry / analytics が `PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md` の telemetry mode /
+  allowed signal / prohibited signal / retention と一致し、telemetry off でも local-first
+  precheck と QEG export が動くか
+- data residency / deployment が `DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md` の deployment mode /
+  residency profile / data class routing / backup recovery と一致し、region / deployment mode で
+  precheck / QEG verdict を変更していないか
+- product governance / roadmap が `PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md` の roadmap item /
+  decision record / customer request / deprecation decision と一致し、candidate を released と
+  表現していないか
+- accessibility / localization が `ACCESSIBILITY_LOCALIZATION_CONTRACT.md` の accessibility target /
+  localization report / locale fallback と一致し、stable code / schema field / record_id を
+  翻訳で変更していないか
+- legal / commercial contracting が `LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md` の
+  commitment register / procurement response / contract exception と一致し、unsupported / planned
+  capability を available と表現していないか
+- audit fixture / assurance が `AUDIT_FIXTURE_ASSURANCE_CONTRACT.md` の fixture manifest /
+  assurance pack / evidence room と一致し、open finding や limitation を隠していないか
+- requirements portfolio が `REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md` の tier / stage /
+  WIP / dependency と一致し、P0a/P0b が P2/P3 productization に依存していないか
+- P2/P3 以降では product error code、risk debt register、privacy report、
+  support diagnostic bundle が QEG の Gate policy / waiver / approval を上書きしていないか
+- product error code が `PRODUCT_ERROR_TAXONOMY.md` の category / severity /
+  remediation / summary policy と一致しているか
+- enterprise domain model が `ENTERPRISE_DOMAIN_MODEL.md` の Organization /
+  Workspace / Project / Repository / Run / EvidenceBundle / AuditEvent 境界と一致しているか
+- P3 以降では RBAC、audit log、retention、SSO / SCIM、SIEM connector、
+  compliance pack、support SLA が `ENTERPRISE_PRODUCT_REQUIREMENTS.md` の PRG-4..PRG-6 と
+  対応しているか
+- support diagnostic bundle が secret / PII / unsafe artifact を含まず、
+  version、schema、profile、adapter、DQ、doctor 結果を説明できるか
 
 ## 5. ロールバック方針（文書中心）
 

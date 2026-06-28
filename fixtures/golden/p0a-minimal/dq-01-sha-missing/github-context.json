@@ -1,0 +1,13 @@
+{
+  "repository": "RNA4219/sample",
+  "workflow": "ci.yml",
+  "job": "test",
+  "event_name": "pull_request",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "base_sha": "abcdefabcdefabcdefabcdefabcdefabcdefabcd",
+  "started_at": "2026-06-28T00:00:00Z",
+  "finished_at": "2026-06-28T00:01:00Z",
+  "actor": "codex-ci",
+  "ref": "refs/pull/1/merge"
+}

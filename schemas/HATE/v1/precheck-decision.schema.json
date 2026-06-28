@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/precheck-decision.schema.json",
+  "title": "HATE v1 Precheck Decision Record",
+  "allOf": [
+    { "$ref": "common-envelope.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": { "const": "precheck_decision" },
+        "payload": {
+          "type": "object",
+          "required": ["decision", "exit_code", "dq_hits", "soft_gaps", "reasons", "qeg_export_allowed"],
+          "properties": {
+            "decision": { "enum": ["eligible", "conditional", "ineligible", "hard_dq"] },
+            "exit_code": { "enum": [0, 2] },
+            "dq_hits": { "type": "array", "items": { "type": "object" } },
+            "soft_gaps": { "type": "array", "items": { "type": "object" } },
+            "reasons": { "type": "array", "items": { "type": "string" } },
+            "qeg_export_allowed": { "type": "boolean" }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

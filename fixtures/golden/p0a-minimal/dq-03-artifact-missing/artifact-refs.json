@@ -1,0 +1,10 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "artifact-missing-trace",
+      "kind": "trace",
+      "path": "artifacts/missing-trace.zip",
+      "classification": "public"
+    }
+  ]
+}
