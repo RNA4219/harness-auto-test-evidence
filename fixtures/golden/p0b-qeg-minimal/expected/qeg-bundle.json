@@ -1,0 +1,342 @@
+{
+  "metadata": {
+    "qegVersion": "HATE/v1",
+    "runId": "1001",
+    "runAttempt": 1,
+    "createdAt": "2026-06-28T00:01:00Z",
+    "profile": "lean",
+    "inputArtifacts": [
+      {
+        "kind": "HATE-run",
+        "path": "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-run.json"
+      },
+      {
+        "kind": "HATE-test-results",
+        "path": "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-test-results.ndjson"
+      },
+      {
+        "kind": "HATE-coverage",
+        "path": "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-coverage.ndjson"
+      },
+      {
+        "kind": "precheck-decision",
+        "path": "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\precheck-decision.json"
+      }
+    ],
+    "debugOnly": false
+  },
+  "nodes": [
+    {
+      "id": "hate_precheck:1001:1",
+      "kind": "gate_verdict",
+      "label": "HATE P0a Precheck 1001",
+      "data": {
+        "decision": "eligible",
+        "exit_code": 0,
+        "qeg_export_allowed": true,
+        "qeg_export_phase": "P0b"
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\precheck-decision.json"
+      ]
+    },
+    {
+      "id": "run:1001:1",
+      "kind": "run",
+      "label": "CI Run 1001",
+      "data": {
+        "repository": "RNA4219/sample",
+        "workflow": "ci.yml",
+        "job": "test",
+        "event_name": "pull_request",
+        "base_sha": "abcdefabcdefabcdefabcdefabcdefabcdefabcd",
+        "started_at": "2026-06-28T00:00:00Z",
+        "finished_at": "2026-06-28T00:01:00Z",
+        "ci": {
+          "provider": "github-actions",
+          "actor": "codex-ci",
+          "ref": "refs/pull/1/merge"
+        }
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-run.json"
+      ]
+    },
+    {
+      "id": "changed_code:src/auth.py#L10-L20",
+      "kind": "changed_code",
+      "label": "Changed: src/auth.py L10-L20",
+      "data": {
+        "path": "src/auth.py",
+        "start_line": 10,
+        "end_line": 20
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\diff-risk-test.json"
+      ]
+    },
+    {
+      "id": "changed_code:src/db.py#L5-L10",
+      "kind": "changed_code",
+      "label": "Changed: src/db.py L5-L10",
+      "data": {
+        "path": "src/db.py",
+        "start_line": 5,
+        "end_line": 10
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\diff-risk-test.json"
+      ]
+    },
+    {
+      "id": "risk:risk-auth-high",
+      "kind": "risk",
+      "label": "Authentication logic changed",
+      "data": {
+        "severity": "high",
+        "required_test_layers": [
+          "unit",
+          "integration"
+        ]
+      },
+      "sourceRefs": [
+        "src/auth.py#L10-L20"
+      ]
+    },
+    {
+      "id": "risk:risk-db-high",
+      "kind": "risk",
+      "label": "Database connection module changed",
+      "data": {
+        "severity": "high",
+        "required_test_layers": [
+          "unit"
+        ]
+      },
+      "sourceRefs": [
+        "src/db.py#L5-L10"
+      ]
+    },
+    {
+      "id": "test:f577f8ac1efa67ea",
+      "kind": "test",
+      "label": "junit:tests/test_auth.py::test_login",
+      "data": {
+        "canonical_test_id": "junit:tests/test_auth.py::test_login",
+        "framework": "junit",
+        "status": "passed",
+        "file": "tests/test_auth.py",
+        "duration_ms": 123
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-test-results.ndjson"
+      ]
+    },
+    {
+      "id": "execution:1001:f577f8ac1efa67ea",
+      "kind": "execution_evidence",
+      "label": "Execution: junit:tests/test_auth.py::test_login",
+      "data": {
+        "run_id": "1001",
+        "run_attempt": 1,
+        "status": "passed",
+        "duration_ms": 123
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-test-results.ndjson"
+      ]
+    },
+    {
+      "id": "test:32d9b797e7024544",
+      "kind": "test",
+      "label": "junit:tests/test_db.py::test_connection",
+      "data": {
+        "canonical_test_id": "junit:tests/test_db.py::test_connection",
+        "framework": "junit",
+        "status": "passed",
+        "file": "tests/test_db.py",
+        "duration_ms": 45
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-test-results.ndjson"
+      ]
+    },
+    {
+      "id": "execution:1001:32d9b797e7024544",
+      "kind": "execution_evidence",
+      "label": "Execution: junit:tests/test_db.py::test_connection",
+      "data": {
+        "run_id": "1001",
+        "run_attempt": 1,
+        "status": "passed",
+        "duration_ms": 45
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-test-results.ndjson"
+      ]
+    },
+    {
+      "id": "coverage:d3b242d4cf93fa8e",
+      "kind": "coverage",
+      "label": "Coverage: src/auth.py",
+      "data": {
+        "file": "src/auth.py",
+        "format": "lcov",
+        "line_hits": {
+          "10": 1,
+          "11": 1,
+          "20": 0
+        },
+        "branch_hits": [],
+        "contexts": [
+          "junit:tests/test_auth.py::test_login"
+        ]
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-coverage.ndjson"
+      ]
+    },
+    {
+      "id": "coverage:6045026f204d0e03",
+      "kind": "coverage",
+      "label": "Coverage: src/db.py",
+      "data": {
+        "file": "src/db.py",
+        "format": "lcov",
+        "line_hits": {
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "branch_hits": [],
+        "contexts": [
+          "junit:tests/test_db.py::test_connection"
+        ]
+      },
+      "sourceRefs": [
+        "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-coverage.ndjson"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "kind": "touches",
+      "from": "changed_code:src/auth.py#L10-L20",
+      "to": "risk:risk-auth-high",
+      "traceability": {
+        "sourceRefs": [
+          "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\diff-risk-test.json"
+        ],
+        "confidence": "high",
+        "assumptions": []
+      }
+    },
+    {
+      "kind": "touches",
+      "from": "changed_code:src/db.py#L5-L10",
+      "to": "risk:risk-db-high",
+      "traceability": {
+        "sourceRefs": [
+          "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\diff-risk-test.json"
+        ],
+        "confidence": "high",
+        "assumptions": []
+      }
+    },
+    {
+      "kind": "evidenced_by",
+      "from": "test:f577f8ac1efa67ea",
+      "to": "execution:1001:f577f8ac1efa67ea",
+      "traceability": {
+        "sourceRefs": [
+          "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-test-results.ndjson"
+        ],
+        "confidence": "high",
+        "assumptions": []
+      }
+    },
+    {
+      "kind": "evidenced_by",
+      "from": "test:32d9b797e7024544",
+      "to": "execution:1001:32d9b797e7024544",
+      "traceability": {
+        "sourceRefs": [
+          "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-test-results.ndjson"
+        ],
+        "confidence": "high",
+        "assumptions": []
+      }
+    },
+    {
+      "kind": "supports",
+      "from": "coverage:d3b242d4cf93fa8e",
+      "to": "test:f577f8ac1efa67ea",
+      "traceability": {
+        "sourceRefs": [
+          "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-coverage.ndjson"
+        ],
+        "confidence": "medium",
+        "assumptions": [
+          "coverage context maps to test"
+        ]
+      }
+    },
+    {
+      "kind": "supports",
+      "from": "coverage:6045026f204d0e03",
+      "to": "test:32d9b797e7024544",
+      "traceability": {
+        "sourceRefs": [
+          "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\HATE-coverage.ndjson"
+        ],
+        "confidence": "medium",
+        "assumptions": [
+          "coverage context maps to test"
+        ]
+      }
+    },
+    {
+      "kind": "requires_test",
+      "from": "risk:risk-auth-high",
+      "to": "test:f577f8ac1efa67ea",
+      "traceability": {
+        "sourceRefs": [
+          "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\diff-risk-test.json"
+        ],
+        "confidence": "high",
+        "assumptions": []
+      }
+    },
+    {
+      "kind": "requires_test",
+      "from": "risk:risk-db-high",
+      "to": "test:32d9b797e7024544",
+      "traceability": {
+        "sourceRefs": [
+          "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\diff-risk-test.json"
+        ],
+        "confidence": "high",
+        "assumptions": []
+      }
+    },
+    {
+      "kind": "decides",
+      "from": "hate_precheck:1001:1",
+      "to": "qeg_export:1001",
+      "traceability": {
+        "sourceRefs": [
+          "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\precheck-decision.json"
+        ],
+        "confidence": "high",
+        "assumptions": []
+      }
+    }
+  ],
+  "completeness": {
+    "score": 1.0,
+    "partial": true,
+    "parserFailures": [],
+    "unsupportedClaims": [],
+    "excludedArtifacts": []
+  }
+}

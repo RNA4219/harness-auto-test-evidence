@@ -1,0 +1,27 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "run",
+  "record_id": "run-1001-attempt-1",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+  "created_at": "2026-06-28T00:01:00Z",
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "sha256": "sha256:aaaa111111111111111111111111111111111111111111111111111111111111",
+  "redaction_status": "not_required",
+  "payload": {
+    "repository": "RNA4219/sample",
+    "workflow": "ci.yml",
+    "job": "test",
+    "event_name": "pull_request",
+    "base_sha": "abcdefabcdefabcdefabcdefabcdefabcdefabcd",
+    "started_at": "2026-06-28T00:00:00Z",
+    "finished_at": "2026-06-28T00:01:00Z",
+    "ci": {
+      "provider": "github-actions",
+      "actor": "codex-ci",
+      "ref": "refs/pull/1/merge"
+    }
+  }
+}

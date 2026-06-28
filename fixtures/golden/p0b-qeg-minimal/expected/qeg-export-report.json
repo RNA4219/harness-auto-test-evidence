@@ -1,0 +1,23 @@
+{
+  "schema_version": "HATE/v1",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+  "created_at": "2026-06-28T00:01:00Z",
+  "export_status": "success",
+  "completeness": {
+    "score": 1.0,
+    "partial": true,
+    "parserFailures": [],
+    "unsupportedClaims": [],
+    "excludedArtifacts": []
+  },
+  "unsupportedClaims": [],
+  "missing_execution": [],
+  "excludedArtifacts": [],
+  "source_refs": [
+    "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\p0a\\precheck-decision.json",
+    "C:\\Users\\ryo-n\\Codex_dev\\harness-auto-test-evidence\\fixtures\\golden\\p0b-qeg-minimal\\input\\diff-risk-test.json"
+  ],
+  "publish_gate_override": false
+}

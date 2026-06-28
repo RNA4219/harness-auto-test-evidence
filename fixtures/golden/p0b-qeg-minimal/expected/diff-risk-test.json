@@ -1,0 +1,81 @@
+{
+  "schema_version": "HATE/v1",
+  "source_tool": "code-to-gate",
+  "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+  "changed_entities": [
+    {
+      "entity_id": "changed-src-auth",
+      "path": "src/auth.py",
+      "ranges": [
+        {
+          "start_line": 10,
+          "end_line": 20
+        }
+      ],
+      "risk_refs": [
+        "risk-auth-high"
+      ]
+    },
+    {
+      "entity_id": "changed-src-db",
+      "path": "src/db.py",
+      "ranges": [
+        {
+          "start_line": 5,
+          "end_line": 10
+        }
+      ],
+      "risk_refs": [
+        "risk-db-high"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "risk-auth-high",
+      "severity": "high",
+      "title": "Authentication logic changed",
+      "required_test_layers": [
+        "unit",
+        "integration"
+      ],
+      "source_refs": [
+        "src/auth.py#L10-L20"
+      ]
+    },
+    {
+      "risk_id": "risk-db-high",
+      "severity": "high",
+      "title": "Database connection module changed",
+      "required_test_layers": [
+        "unit"
+      ],
+      "source_refs": [
+        "src/db.py#L5-L10"
+      ]
+    }
+  ],
+  "test_obligations": [
+    {
+      "obligation_id": "obligation-auth",
+      "risk_id": "risk-auth-high",
+      "expected_test_refs": [
+        "tests/test_auth.py::test_login"
+      ],
+      "required_evidence_kinds": [
+        "execution",
+        "coverage"
+      ]
+    },
+    {
+      "obligation_id": "obligation-db",
+      "risk_id": "risk-db-high",
+      "expected_test_refs": [
+        "tests/test_db.py::test_connection"
+      ],
+      "required_evidence_kinds": [
+        "execution"
+      ]
+    }
+  ]
+}

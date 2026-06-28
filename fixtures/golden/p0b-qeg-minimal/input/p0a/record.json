@@ -1,0 +1,31 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "audit_record",
+  "record_id": "audit-1001-attempt-1",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+  "created_at": "2026-06-28T00:01:00Z",
+  "source_tool": "harness-auto-test-evidence",
+  "source_version": "0.1.0",
+  "sha256": "sha256:ffff111111111111111111111111111111111111111111111111111111111111",
+  "redaction_status": "not_required",
+  "payload": {
+    "validated_artifacts": [
+      "HATE-run.json",
+      "HATE-test-results.ndjson",
+      "HATE-coverage.ndjson",
+      "artifact-manifest.json",
+      "precheck-decision.json"
+    ],
+    "validation_result": "pass",
+    "source_refs": [
+      "fixtures/golden/p0b-qeg-minimal/input/p0a/HATE-run.json",
+      "fixtures/golden/p0b-qeg-minimal/input/p0a/HATE-test-results.ndjson",
+      "fixtures/golden/p0b-qeg-minimal/input/p0a/HATE-coverage.ndjson"
+    ],
+    "notes": [
+      "This record is generated from P0a output and does not contain a release Gate verdict."
+    ]
+  }
+}

@@ -6,3 +6,4 @@ __pycache__/
 .ruff_cache/
 dist/
 build/
+fixtures/golden/p0b-qeg-minimal/test-*

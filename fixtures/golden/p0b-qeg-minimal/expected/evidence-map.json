@@ -1,0 +1,96 @@
+{
+  "schema_version": "HATE/v1",
+  "run_id": "1001",
+  "run_attempt": 1,
+  "requirements": [],
+  "risks": [
+    {
+      "risk_id": "risk:risk-auth-high",
+      "label": "Authentication logic changed",
+      "severity": "high"
+    },
+    {
+      "risk_id": "risk:risk-db-high",
+      "label": "Database connection module changed",
+      "severity": "high"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "test:f577f8ac1efa67ea",
+      "canonical_test_id": "junit:tests/test_auth.py::test_login",
+      "status": "passed"
+    },
+    {
+      "test_id": "test:32d9b797e7024544",
+      "canonical_test_id": "junit:tests/test_db.py::test_connection",
+      "status": "passed"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "execution:1001:f577f8ac1efa67ea",
+      "kind": "execution_evidence",
+      "label": "Execution: junit:tests/test_auth.py::test_login"
+    },
+    {
+      "evidence_id": "execution:1001:32d9b797e7024544",
+      "kind": "execution_evidence",
+      "label": "Execution: junit:tests/test_db.py::test_connection"
+    },
+    {
+      "evidence_id": "coverage:d3b242d4cf93fa8e",
+      "kind": "coverage",
+      "label": "Coverage: src/auth.py"
+    },
+    {
+      "evidence_id": "coverage:6045026f204d0e03",
+      "kind": "coverage",
+      "label": "Coverage: src/db.py"
+    }
+  ],
+  "links": {
+    "requires_test": [
+      {
+        "from": "risk:risk-auth-high",
+        "to": "test:f577f8ac1efa67ea",
+        "confidence": "high"
+      },
+      {
+        "from": "risk:risk-db-high",
+        "to": "test:32d9b797e7024544",
+        "confidence": "high"
+      }
+    ],
+    "evidenced_by": [
+      {
+        "from": "test:f577f8ac1efa67ea",
+        "to": "execution:1001:f577f8ac1efa67ea",
+        "confidence": "high"
+      },
+      {
+        "from": "test:32d9b797e7024544",
+        "to": "execution:1001:32d9b797e7024544",
+        "confidence": "high"
+      }
+    ],
+    "supports": [
+      {
+        "from": "coverage:d3b242d4cf93fa8e",
+        "to": "test:f577f8ac1efa67ea",
+        "confidence": "medium"
+      },
+      {
+        "from": "coverage:6045026f204d0e03",
+        "to": "test:32d9b797e7024544",
+        "confidence": "medium"
+      }
+    ]
+  },
+  "gaps": {
+    "unsupported_claims": [],
+    "missing_execution": [],
+    "missing_coverage": [],
+    "unsafe_artifacts": []
+  }
+}

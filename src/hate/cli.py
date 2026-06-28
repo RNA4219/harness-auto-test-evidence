@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 from .p0a import PrecheckError, generate_p0a
+from .p0b import ExportError, export_qeg
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -24,6 +25,16 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Optional prefix used in artifact manifest paths, for stable golden fixture summaries.",
     )
+
+    # P0b export qeg subcommand
+    export = subparsers.add_parser("export", help="Export optional evidence artifacts.")
+    export_subparsers = export.add_subparsers(dest="export_command", required=True)
+
+    qeg = export_subparsers.add_parser("qeg", help="Export QEG optional evidence from P0a outputs.")
+    qeg.add_argument("--fixture", required=True, type=Path, help="Input directory containing p0a/ subfolder and diff-risk-test.json.")
+    qeg.add_argument("--out", required=True, type=Path, help="Output directory for QEG bundle.")
+    qeg.add_argument("--source-version", default=None, help="Source version for generated records.")
+
     return parser
 
 
@@ -44,6 +55,23 @@ def main(argv: list[str] | None = None) -> int:
                 print(json.dumps(exc.decision, ensure_ascii=False), file=sys.stderr)
             else:
                 print(f"HATE-E-CLI: {exc}", file=sys.stderr)
+            return exc.exit_code
+
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
+
+    if args.command == "export" and args.export_command == "qeg":
+        try:
+            result = export_qeg(
+                fixture_dir=args.fixture,
+                out_dir=args.out,
+                source_version=args.source_version,
+            )
+        except ExportError as exc:
+            if exc.report is not None and exc.out_dir is not None:
+                print(json.dumps(exc.report, ensure_ascii=False), file=sys.stderr)
+            else:
+                print(f"HATE-E-EXPORT: {exc}", file=sys.stderr)
             return exc.exit_code
 
         print(json.dumps(result, ensure_ascii=False))

@@ -104,7 +104,42 @@ P0a CLI は次を生成する。
 
 `gate-decision.json` は互換 alias であり、新規 P0a 実装では生成しない。
 
-## 4. 受理前確認
+## 4. ローカル実行（P0b QEG Export）
+
+P0b は P0a 出力から QEG optional evidence bundle を生成する local-first CLI。
+
+- テスト:
+  - `uv run pytest tests/test_p0b.py`
+- P0b export golden path:
+  - `uv run python -m hate export qeg --fixture fixtures/golden/p0b-qeg-minimal/input --out fixtures/golden/p0b-qeg-minimal/expected`
+- P0b 生成物:
+  - `qeg-bundle.json` - nodes/edges/completeness を含む QEG graph bundle
+  - `evidence-map.json` - requirements/risks/tests/evidence/links/gaps の内部表現
+  - `diff-risk-test.json` - changed_entities/risks/test_obligations の mapping (コピー)
+  - `qeg-export-report.json` - completeness/unsupportedClaims/missing_execution/excludedArtifacts
+  - `qeg-export-summary.md` - public-safe summary (publish_gate_override=false)
+
+P0b contract constraints:
+
+- `publish_gate_override` must always be `false` (HATE does not approve release)
+- `decision` states: `eligible`, `conditional`, `ineligible`, `hard_dq`
+- Node ID formats:
+  - `test:<canonical_test_id_hash>` - deterministic test node
+  - `execution:<run_id>:<hash>` - execution evidence node
+  - `coverage:<path_hash>` - coverage evidence node
+  - `changed_code:<path>#L<start>-L<end>` - changed code region
+  - `risk:<risk-id>` - risk node
+  - `hate_precheck:<run_id>:<attempt>` - gate verdict node
+- Edge kinds: `touches`, `requires_test`, `evidenced_by`, `supports`, `decides`
+- Completeness calculation:
+  - base=1.0
+  - -0.20 per missing artifact
+  - -0.15 per parser failure
+  - -0.10 per unsupported high-risk claim
+  - floor at 0.0
+- `hard_dq` precheck decision prevents QEG export
+
+## 5. 受理前確認
 
 - DQ 条件（HATE-DQ-01〜15）が未解消のまま判定に進んでいないか
 - Diff-risk-test で `changed high-risk path` と `execution` の接続欠損がないか
