@@ -5,6 +5,11 @@ description = "Local-first auto-test evidence normalizer for HATE P0a golden pat
 requires-python = ">=3.11"
 dependencies = []
 
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
 [project.scripts]
 hate = "hate.cli:main"
 
