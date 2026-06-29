@@ -1,5 +1,5 @@
 {
-  "generated_at": "bf7ab8988d12",
+  "generated_at": "d7a7889625ad",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -194,9 +194,9 @@
     "docs/process/IMPLEMENTATION_LEDGER.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.IMPLEMENTATION_LEDGER.md.json",
-      "sha256": "bfa3409cb2bd70197b08ec0f7c444654c85e1e5449d9a42ed29121498679c404",
-      "line_count": 56,
-      "size_bytes": 2532
+      "sha256": "c0109e2f6c07d18ee84c3c0d48d19d5fe4021e74bc71be24553f086ab9fc25ec",
+      "line_count": 74,
+      "size_bytes": 3552
     },
     "docs/process/IMPLEMENTATION_ROADMAP_CHECKLIST.md": {
       "role": "planning",
@@ -344,6 +344,13 @@
       "sha256": "c0eda9e5bf1386e59ff283cfdf4e8f6079f8ff73e56504aa24787dad495a235b",
       "line_count": 85,
       "size_bytes": 4141
+    },
+    "docs/process/REAL_REPO_TRIALS.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.REAL_REPO_TRIALS.md.json",
+      "sha256": "bf43635d0a1b075093222f3ea7cec9ace11844fcccb179332e26bb565726dbed",
+      "line_count": 68,
+      "size_bytes": 3114
     },
     "docs/process/REFACTORING_PLAN.md": {
       "role": "documentation",
@@ -3141,9 +3148,9 @@
     "fixtures/security/artifact-safety/hard-dq-secret-exposed.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.hard-dq-secret-exposed.json.json",
-      "sha256": "494a1338334e4f06b2bfed8814e472845cd4f0a021e8d967b77198e4889210a9",
-      "line_count": 18,
-      "size_bytes": 537
+      "sha256": "5d01f7e4eb5bcf7be3e17703c56ddf045ac7d3c9c1dd71ccce837fc744ada488",
+      "line_count": 19,
+      "size_bytes": 602
     },
     "fixtures/security/artifact-safety/hold-path-traversal.json": {
       "role": "fixture",
@@ -3155,7 +3162,7 @@
     "fixtures/security/artifact-safety/hold-webhook-url.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.hold-webhook-url.json.json",
-      "sha256": "1339a7ad8e52d1a0dc242bb20aff0b2085a1c99e3c764fb3a0d3824ba83f4f96",
+      "sha256": "f42691a4e0361223bf71182903f1af30cf1a7ca557035abd4d357b3a98deb613",
       "line_count": 17,
       "size_bytes": 766
     },
@@ -3169,9 +3176,9 @@
     "fixtures/security/artifact-safety/private-key-block/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.private-key-block.fixture.json.json",
-      "sha256": "6384efaa835de5ce24b3c9e4616d0bd4efd9a36f5ca41149028397ca3835ab6b",
+      "sha256": "44d63fc518697240342067bb73afb380105a5701d3d1003c68ce4bc3162bacc1",
       "line_count": 6,
-      "size_bytes": 210
+      "size_bytes": 230
     },
     "fixtures/security/artifact-safety/public-doc-url-allowed/fixture.json": {
       "role": "fixture",
@@ -3239,9 +3246,9 @@
     "fixtures/security/artifact-safety/test-fixture-api-key.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.test-fixture-api-key.json.json",
-      "sha256": "6bdf0de142ff9f81c262b10f4ba3de22bdb2cf6125153f8d03dd23ad6cf6e329",
+      "sha256": "fa015f50c4c7707318dd906aa9d866a7fb1c522f09d0a888e4433a017ffc568e",
       "line_count": 17,
-      "size_bytes": 610
+      "size_bytes": 624
     },
     "fixtures/security/artifact-safety/unredacted-pii/fixture.json": {
       "role": "fixture",
@@ -3281,16 +3288,16 @@
     "fixtures/security/redaction/diagnostic-bundle-raw-artifact/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.redaction.diagnostic-bundle-raw-artifact.fixture.json.json",
-      "sha256": "4ad4cb395d6701e7431f664889560ba8889bb43933f55361be66fc0c35442b0f",
+      "sha256": "c0d8fc1ad5b92da435ae9be8db1794bbbf74042dbca29a68bce81496cad80d70",
       "line_count": 13,
-      "size_bytes": 514
+      "size_bytes": 527
     },
     "fixtures/security/redaction/multiple-redactions/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.redaction.multiple-redactions.fixture.json.json",
-      "sha256": "f23f31f16c00df57b4e8b8a1fab378e7e177652d770073e2af8c70b52c6eeb6d",
+      "sha256": "3f0271bbb90954357fd94bc95bd9f7398fd05fef65309932eb974810fbc18b67",
       "line_count": 15,
-      "size_bytes": 883
+      "size_bytes": 915
     },
     "fixtures/security/redaction/path-tokenized/fixture.json": {
       "role": "fixture",
@@ -3309,9 +3316,9 @@
     "fixtures/security/redaction/private-key-redacted/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.redaction.private-key-redacted.fixture.json.json",
-      "sha256": "4ad4cb395d6701e7431f664889560ba8889bb43933f55361be66fc0c35442b0f",
+      "sha256": "c0d8fc1ad5b92da435ae9be8db1794bbbf74042dbca29a68bce81496cad80d70",
       "line_count": 13,
-      "size_bytes": 514
+      "size_bytes": 527
     },
     "fixtures/security/redaction/private-url-redacted/fixture.json": {
       "role": "fixture",
@@ -3337,9 +3344,9 @@
     "fixtures/security/redaction/raw-secret-export/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.redaction.raw-secret-export.fixture.json.json",
-      "sha256": "a7f613099f6e4e94a6c2fcf8d88eb854e773d1173138a017e2d205d9edd04ecf",
+      "sha256": "13bfe91aae9ee4ca7f363020792e807d5847eef304cf6329524a19402871732b",
       "line_count": 12,
-      "size_bytes": 544
+      "size_bytes": 529
     },
     "fixtures/security/redaction/redacted-pii-success/fixture.json": {
       "role": "fixture",
@@ -3351,9 +3358,9 @@
     "fixtures/security/redaction/redacted-secret-success/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.redaction.redacted-secret-success.fixture.json.json",
-      "sha256": "a7f613099f6e4e94a6c2fcf8d88eb854e773d1173138a017e2d205d9edd04ecf",
+      "sha256": "13bfe91aae9ee4ca7f363020792e807d5847eef304cf6329524a19402871732b",
       "line_count": 12,
-      "size_bytes": 544
+      "size_bytes": 529
     },
     "fixtures/security/redaction/reversible-redaction/fixture.json": {
       "role": "fixture",
@@ -3372,16 +3379,16 @@
     "fixtures/security/redaction/secret-redacted/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.redaction.secret-redacted.fixture.json.json",
-      "sha256": "a7f613099f6e4e94a6c2fcf8d88eb854e773d1173138a017e2d205d9edd04ecf",
+      "sha256": "13bfe91aae9ee4ca7f363020792e807d5847eef304cf6329524a19402871732b",
       "line_count": 12,
-      "size_bytes": 544
+      "size_bytes": 529
     },
     "fixtures/security/redaction/support-bundle-safe/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.security.redaction.support-bundle-safe.fixture.json.json",
-      "sha256": "f23f31f16c00df57b4e8b8a1fab378e7e177652d770073e2af8c70b52c6eeb6d",
+      "sha256": "bf7f9ddd10fcd60084b5070493b0f812faaa4a83d60b3d21bd169f0d77b033de",
       "line_count": 15,
-      "size_bytes": 883
+      "size_bytes": 892
     },
     "fixtures/security/redaction/synthetic-pii-allowed/fixture.json": {
       "role": "fixture",
@@ -4821,9 +4828,9 @@
     "src/hate/security/redaction.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.redaction.py.json",
-      "sha256": "08838effacdcd048ea8b338bf4d7f0ab2ecfa479a16249ca7e22d02fffb249ca",
-      "line_count": 372,
-      "size_bytes": 13609
+      "sha256": "59a26439e6ded600b49d38ce39f2a5a0970efef128f9932b933f12e90d035a4f",
+      "line_count": 376,
+      "size_bytes": 13659
     },
     "src/hate/security/summary_filter.py": {
       "role": "implementation",

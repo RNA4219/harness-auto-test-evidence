@@ -2,15 +2,14 @@
   "path": "fixtures/security/redaction/multiple-redactions/fixture.json",
   "role": "fixture",
   "kind": "json",
-  "sha256": "f23f31f16c00df57b4e8b8a1fab378e7e177652d770073e2af8c70b52c6eeb6d",
+  "sha256": "3f0271bbb90954357fd94bc95bd9f7398fd05fef65309932eb974810fbc18b67",
   "line_count": 15,
-  "size_bytes": 883,
+  "size_bytes": 915,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
-    "api",
     "artifact",
     "fixture",
     "security"

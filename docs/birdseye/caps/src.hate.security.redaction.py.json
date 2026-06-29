@@ -2,9 +2,9 @@
   "path": "src/hate/security/redaction.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "08838effacdcd048ea8b338bf4d7f0ab2ecfa479a16249ca7e22d02fffb249ca",
-  "line_count": 372,
-  "size_bytes": 13609,
+  "sha256": "59a26439e6ded600b49d38ce39f2a5a0970efef128f9932b933f12e90d035a4f",
+  "line_count": 376,
+  "size_bytes": 13659,
   "headings": [
     "# Re-use patterns from artifact_safety.py"
   ],

@@ -2,7 +2,7 @@
   "path": "fixtures/security/artifact-safety/hold-webhook-url.json",
   "role": "fixture",
   "kind": "json",
-  "sha256": "1339a7ad8e52d1a0dc242bb20aff0b2085a1c99e3c764fb3a0d3824ba83f4f96",
+  "sha256": "f42691a4e0361223bf71182903f1af30cf1a7ca557035abd4d357b3a98deb613",
   "line_count": 17,
   "size_bytes": 766,
   "headings": [],

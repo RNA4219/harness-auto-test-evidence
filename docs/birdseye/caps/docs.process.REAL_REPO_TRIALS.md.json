@@ -1,0 +1,22 @@
+{
+  "path": "docs/process/REAL_REPO_TRIALS.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "bf43635d0a1b075093222f3ea7cec9ace11844fcccb179332e26bb565726dbed",
+  "line_count": 68,
+  "size_bytes": 3114,
+  "headings": [
+    "# Real Repository Trial Log",
+    "## Trial 2026-06-30-01"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

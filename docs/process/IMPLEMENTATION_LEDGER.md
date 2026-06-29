@@ -21,6 +21,7 @@ GLM worker packet execution status per GLM_IMPLEMENTATION_DISPATCH_PACK.md Secti
 | GLM-W04-static-contract-mutation-corpus | pending | 0 | no | adapter-conformance-report.json | not_run | blocked by HATE-PG-001A |
 | GLM-W05-envelope-validator | pending | 0 | no | schema-validation-report.json | not_run | blocked by EPIC-001 completion |
 | GLM-W06-source-ref-validator | pending | 0 | no | schema-validation-report.json | not_run | blocked by EPIC-001 completion |
+| REAL-REPO-TRIAL-20260630-01 | go | 0 | no | docs/process/REAL_REPO_TRIALS.md | pass | HATE P0a self-application against agent-gatefield, agent-taskstate, code-to-gate, shipyard-cp, manual-bb-test-harness |
 
 ## Completed Packet Details
 
@@ -54,3 +55,20 @@ git diff --check                             # ✓ clean
 **Memory saved**: `hate-p1a-support-split-complete.md`
 
 **Next dispatch ready**: GLM-W01-adapter-sdk unblocked
+
+### REAL-REPO-TRIAL-20260630-01 (go)
+
+**Completion date**: 2026-06-30
+
+**Work performed**: HATE P0a self-application against five real local repositories.
+
+**Repositories covered**:
+- `agent-gatefield`: JUnit evidence ingested, 378 test records, P0a `eligible`
+- `agent-taskstate`: JUnit evidence ingested, 412 test records, P0a `eligible`
+- `code-to-gate`: Vitest smoke JSON evidence ingested, 54 test records, P0a `eligible`
+- `shipyard-cp`: Vitest JSON evidence ingested, 2281 test records, P0a `eligible`
+- `manual-bb-test-harness`: JUnit evidence ingested, 654 test records, P0a `eligible`
+
+**Evidence report**: `docs/process/REAL_REPO_TRIALS.md`
+
+**Operational update**: real-repository evidence generation now uses a 15 minute command timeout policy unless a narrower command is intentionally selected.
