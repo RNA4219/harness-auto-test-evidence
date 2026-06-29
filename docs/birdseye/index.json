@@ -1,5 +1,5 @@
 {
-  "generated_at": "d7a7889625ad",
+  "generated_at": "48971c643de8",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -5024,9 +5024,9 @@
     "tests/test_adapters_junit.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_adapters_junit.py.json",
-      "sha256": "ea47b6a4c1e674da905bfb06c61929302ae6e97fa6899569c4bb0b1549fd14c7",
+      "sha256": "84116cf304abfdbab452658081515968946c1807e235fe2a4042cf77173e680a",
       "line_count": 201,
-      "size_bytes": 7906
+      "size_bytes": 7867
     },
     "tests/test_adapters_static_contract_mutation.py": {
       "role": "test",

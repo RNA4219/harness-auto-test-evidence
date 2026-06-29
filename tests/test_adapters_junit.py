@@ -11,9 +11,9 @@ JUNIT_FIXTURES = ROOT / "fixtures" / "adapters" / "junit"
 
 def make_xml(root_tag="testsuite", **attrs):
     """Helper to build minimal JUnit XML strings."""
-    if root_tag == "testsuites":
-        return f'<testsuites><testsuite name="s1" {" ".join(f'{k}="{v}"' for k, v in attrs.items())}><testcase name="t1"/></testsuite></testsuites>'
     attrs_str = " ".join(f'{k}="{v}"' for k, v in attrs.items())
+    if root_tag == "testsuites":
+        return f'<testsuites><testsuite name="s1" {attrs_str}><testcase name="t1"/></testsuite></testsuites>'
     return f'<{root_tag} name="s1" {attrs_str}><testcase name="t1"/></{root_tag}>'
 
 

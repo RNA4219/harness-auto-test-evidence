@@ -2,9 +2,9 @@
   "path": "tests/test_adapters_junit.py",
   "role": "test",
   "kind": "py",
-  "sha256": "ea47b6a4c1e674da905bfb06c61929302ae6e97fa6899569c4bb0b1549fd14c7",
+  "sha256": "84116cf304abfdbab452658081515968946c1807e235fe2a4042cf77173e680a",
   "line_count": 201,
-  "size_bytes": 7906,
+  "size_bytes": 7867,
   "headings": [],
   "imports": [
     "hate.adapters.junit",
