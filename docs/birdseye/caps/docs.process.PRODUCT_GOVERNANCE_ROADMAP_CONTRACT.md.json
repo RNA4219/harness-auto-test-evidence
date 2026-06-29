@@ -1,0 +1,31 @@
+{
+  "path": "docs/process/PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "c6409ae482304d7b427b5f5cd5eaacc8551d995e9e4c5370487d52b286cfa184",
+  "line_count": 119,
+  "size_bytes": 4391,
+  "headings": [
+    "# Product Governance and Roadmap Contract",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Governance Artifacts",
+    "## 4. Roadmap Item",
+    "## 5. Prioritization Dimensions",
+    "## 6. Decision Record",
+    "## 7. Customer Request Register",
+    "## 8. Roadmap Communication",
+    "## 9. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "qeg",
+    "release",
+    "schema",
+    "security"
+  ]
+}

@@ -114,16 +114,18 @@ next_review_due: 2026-07-28
   - P0b implementation completion: go
   - P1a implementation completion: go
   - P1b implementation completion: go
-  - P2/P3 full product implementation completion: conditional_go
+  - P2/P3 advisory product artifact completion: conditional_go
+  - product-grade implementation completion: no_go
   - full implementation claim: conditional_go
 - reasons:
   - P0aに必要な実行可能CLI、JUnit/LCOV最小adapter、DQ negative fixture、実行証跡は存在する
   - P0bに必要なQEG export、edge hardening、risk-debt/manual-bb bridge、検証ログは存在する
   - P1aに必要な AETE score、doctor report、resolver map、identity、retry、replay、compare、explain、recommend、adapter conformance は存在する
   - P1bに必要な RanD alignment、workflow artifacts、Shipyard advisory evidence、manual-bb bridge 継承は存在する
-  - P2/P3に必要な product readiness、hosted read model index、enterprise metrics、customer docs、support diagnostic、privacy telemetry、governance portfolio artifacts は存在する
+  - P2/P3に必要な product readiness、hosted read model index、enterprise metrics、customer docs、support diagnostic、privacy telemetry、governance portfolio artifacts は advisory artifact として存在する
   - current fixture は doctor finding と unverified acceptance を保持するため product readiness は `conditional` / `6/7`
   - full implementation claim は local/advisory artifact implementation scope に限定し、hosted SaaS runtime availability は主張しない
+  - product-grade implementation は `PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` の adapter corpus、store replay、API、dashboard、RBAC/audit/retention、enterprise connector、support/ops evidence が未完了のため Go ではない
 - blocking_risks:
   - `RISK-FULL-01`
   - `RISK-FULL-02`
@@ -134,6 +136,7 @@ next_review_due: 2026-07-28
   - P0a CLIがgolden fixtureからrequired outputsを生成する
   - DQ negative fixtureが期待decision/exit codeを再現する
   - hosted SaaS runtimeをfull claimに含めるなら dashboard/API/connector runtime evidence を別途生成する
+  - product-ready を主張するなら `adapter-conformance-report.json`, `store-replay-report.json`, `api-contract-report.json`, `dashboard-uat-report.json`, `test-integrity-report.json`, `security-quarantine-report.json`, `enterprise-control-report.json`, `scale-performance-report.json`, `migration-compatibility-report.json`, `commercial-truthfulness-report.json`, `support-ops-report.json`, `release-candidate-pack.json` を生成する
 
 ## Go/No-Go Brief
 

@@ -1,0 +1,32 @@
+{
+  "path": "src/hate/p0a.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "94f207b29dd971a039a0ebc015d1610bf8ca02ed31947dce9d110b9de9e38fff",
+  "line_count": 224,
+  "size_bytes": 10178,
+  "headings": [],
+  "imports": [
+    ".",
+    ".p0a_support",
+    ".profile",
+    "__future__",
+    "json",
+    "pathlib",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_support.py",
+    "src/hate/profile.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

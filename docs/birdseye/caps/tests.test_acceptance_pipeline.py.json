@@ -1,0 +1,31 @@
+{
+  "path": "tests/test_acceptance_pipeline.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "6327cd62968a1f3e1fc83155cb5a41b518d46f8f2acd7cf23a206498b0503b3d",
+  "line_count": 162,
+  "size_bytes": 5461,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "json",
+    "os",
+    "pathlib",
+    "shutil",
+    "subprocess",
+    "sys",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "test",
+    "workflow"
+  ]
+}

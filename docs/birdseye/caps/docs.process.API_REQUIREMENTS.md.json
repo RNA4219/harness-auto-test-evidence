@@ -1,0 +1,38 @@
+{
+  "path": "docs/process/API_REQUIREMENTS.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "ac3d4467aa4ab37e8628214095cf218eef75cd406ec403d4b6872971cd05de2c",
+  "line_count": 189,
+  "size_bytes": 6300,
+  "headings": [
+    "# API Requirements",
+    "## 1. Purpose",
+    "## 2. API Principles",
+    "## 3. Resource Inventory",
+    "## 4. Common Request Requirements",
+    "## 5. Common Response Envelope",
+    "## 6. Endpoint Requirements",
+    "### 6.1 Runs",
+    "### 6.2 Evidence and Risks",
+    "### 6.3 Artifacts",
+    "### 6.4 Risk Debt",
+    "### 6.5 Bundle Import",
+    "## 7. Error Taxonomy",
+    "## 8. API Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

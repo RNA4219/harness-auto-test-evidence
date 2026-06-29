@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/explain-expected/explain-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f52a4cc5c7acda9a13ae229269267650d4cc7ab842a4f63b3c00f39a18ae117b",
+  "line_count": 36,
+  "size_bytes": 1172,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

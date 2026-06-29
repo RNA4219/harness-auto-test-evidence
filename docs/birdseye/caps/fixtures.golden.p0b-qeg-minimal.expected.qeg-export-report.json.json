@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "56ba132a0bb50405f5d613f9ff74e963a4b3488c83bf144f8b3d984d5951e1d8",
+  "line_count": 23,
+  "size_bytes": 592,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

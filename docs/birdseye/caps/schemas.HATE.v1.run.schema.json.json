@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/run.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "152c0d6ac1482532a47783d09acad77357849657ab77076824f290ef03408eb4",
+  "line_count": 46,
+  "size_bytes": 1624,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "workflow"
+  ]
+}

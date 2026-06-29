@@ -1,0 +1,38 @@
+{
+  "path": "docs/process/EVALUATION.md",
+  "role": "quality",
+  "kind": "md",
+  "sha256": "2396f79e54c9a0157176717604a45c48c9499be75011b714730e889fe1c6ab4c",
+  "line_count": 517,
+  "size_bytes": 39077,
+  "headings": [
+    "# Evaluation",
+    "## Acceptance Criteria",
+    "### 共通",
+    "### P0a",
+    "### P0b",
+    "### P1a",
+    "### P1b",
+    "### P2",
+    "### P3 / Enterprise Product Readiness",
+    "## KPIs",
+    "## Test Outline",
+    "## 検証チェックリスト"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

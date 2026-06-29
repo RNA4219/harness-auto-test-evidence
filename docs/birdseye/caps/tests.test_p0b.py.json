@@ -1,0 +1,32 @@
+{
+  "path": "tests/test_p0b.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "c19c98f1edc302de34160bc0160ef80ad0e4f45c0c24632cdd83364f4a21da7d",
+  "line_count": 619,
+  "size_bytes": 29029,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p0a",
+    "hate.p0b",
+    "hate.p0b_support",
+    "json",
+    "pathlib",
+    "shutil",
+    "subprocess"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p0b.py",
+    "src/hate/p0b_support.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

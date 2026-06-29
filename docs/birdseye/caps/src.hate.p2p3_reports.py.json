@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/p2p3_reports.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "bd1a84ccb47ab2a09a2e4f8360f045ccbc2cca61850fd5b2337833dc6c49f605",
+  "line_count": 430,
+  "size_bytes": 18807,
+  "headings": [],
+  "imports": [
+    ".p2p3_io",
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p2p3_io.py"
+  ],
+  "tags": [
+    "coverage",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

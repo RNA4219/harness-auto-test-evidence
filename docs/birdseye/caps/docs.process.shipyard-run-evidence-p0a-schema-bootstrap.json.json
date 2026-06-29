@@ -1,0 +1,20 @@
+{
+  "path": "docs/process/shipyard-run-evidence-p0a-schema-bootstrap.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "f9df1abcf27fc4f7ab48b037976067ae623157d60e0c6ff5d01576c9aa0aba50",
+  "line_count": 81,
+  "size_bytes": 3159,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

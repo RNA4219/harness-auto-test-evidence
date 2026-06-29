@@ -1,0 +1,37 @@
+{
+  "path": "docs/process/UI_WORKFLOW_REQUIREMENTS.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "c6ac2a7e54a6b08a8646133e755cb697513412091266a62a432cbc219dc6577a",
+  "line_count": 163,
+  "size_bytes": 4465,
+  "headings": [
+    "# UI Workflow Requirements",
+    "## 1. Purpose",
+    "## 2. Global UI Requirements",
+    "## 3. Required Views",
+    "## 4. View Requirements",
+    "### 4.1 Run Overview",
+    "### 4.2 Risk Coverage",
+    "### 4.3 Evidence Graph",
+    "### 4.4 Adapter Health",
+    "### 4.5 Artifact Safety",
+    "### 4.6 Release Pack",
+    "## 5. UI State Matrix",
+    "## 6. UI UAT"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

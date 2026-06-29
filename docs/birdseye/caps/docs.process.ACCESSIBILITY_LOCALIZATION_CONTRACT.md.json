@@ -1,0 +1,31 @@
+{
+  "path": "docs/process/ACCESSIBILITY_LOCALIZATION_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "10c91e5e7c7eaee05001e9b922dfe7f063dc7d48aad9074cf3e8d05fcb93ff74",
+  "line_count": 111,
+  "size_bytes": 4467,
+  "headings": [
+    "# Accessibility and Localization Contract",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Surfaces",
+    "## 4. Accessibility Requirements",
+    "## 5. Localization Requirements",
+    "## 6. Accessibility Report",
+    "## 7. Localization Report",
+    "## 8. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "coverage",
+    "qeg",
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

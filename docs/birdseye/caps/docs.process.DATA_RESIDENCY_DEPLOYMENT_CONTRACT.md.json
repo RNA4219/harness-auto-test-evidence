@@ -1,0 +1,32 @@
+{
+  "path": "docs/process/DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "1dfa8e96155d2f46615b9c5ef251f7386bc6b75d67e38a070ac81682ee9ccaba",
+  "line_count": 112,
+  "size_bytes": 5091,
+  "headings": [
+    "# Data Residency and Deployment Contract",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Deployment Modes",
+    "## 4. Residency Profile",
+    "## 5. Data Class Routing",
+    "## 6. Connectivity Controls",
+    "## 7. Backup / Recovery",
+    "## 8. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "enterprise",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "store"
+  ]
+}

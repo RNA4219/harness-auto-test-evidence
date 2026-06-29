@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/risk-debt-register.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c83476440fb2c91990fa6d992df118bb36f7f74e34bf8d64d420d8204cbdf3f0",
+  "line_count": 17,
+  "size_bytes": 405,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

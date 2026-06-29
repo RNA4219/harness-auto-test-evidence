@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/test-results/vitest/no-junit/vitest-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "701f6b28a1692a9cedc06f4c0e4246b7af4bce708290f6ffc04e16d6a67d4e2d",
+  "line_count": 87,
+  "size_bytes": 2794,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "fixture",
+    "test"
+  ]
+}

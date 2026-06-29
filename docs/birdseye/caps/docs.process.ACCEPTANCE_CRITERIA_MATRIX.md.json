@@ -1,0 +1,33 @@
+{
+  "path": "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md",
+  "role": "quality",
+  "kind": "md",
+  "sha256": "da5d652bc3d8788cbbe4de0a1e5d3a3919d37e836e6cd3b8cfc333dd207e1eaa",
+  "line_count": 65,
+  "size_bytes": 5073,
+  "headings": [
+    "# Acceptance Criteria Matrix",
+    "## 1. Purpose",
+    "## 2. Acceptance Matrix",
+    "## 3. Status Impact Rules",
+    "## 4. Acceptance Completion Rule"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

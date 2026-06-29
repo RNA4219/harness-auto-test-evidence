@@ -1,0 +1,21 @@
+{
+  "path": "docs/process/rand-kano-mode-full-implementation-audit.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "5f475196ad299631fc3890d81adbff5c409efd489c9f299078b42103bf0d99d4",
+  "line_count": 215,
+  "size_bytes": 9280,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

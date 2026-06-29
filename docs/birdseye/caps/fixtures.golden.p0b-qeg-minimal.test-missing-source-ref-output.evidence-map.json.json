@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/evidence-map.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fb73f026bc2ada3d93195d70e64b6dc67aa08af73c0eaa243cb2b6d62a8b0b9f",
+  "line_count": 87,
+  "size_bytes": 2134,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

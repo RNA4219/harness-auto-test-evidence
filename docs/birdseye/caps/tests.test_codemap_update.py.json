@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_codemap_update.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "3431cf143fd0f2185370e426cc44029b4a0c522ba9ef76979120e14daab4cb92",
+  "line_count": 45,
+  "size_bytes": 1898,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "importlib.util",
+    "json",
+    "pathlib",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "schema",
+    "test"
+  ]
+}

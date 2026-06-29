@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/test-results/vitest/input/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a2f83a62a124ae77f7c0081b93e273ad853a6b2292582b06d4ef7b99cd608311",
+  "line_count": 14,
+  "size_bytes": 435,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test",
+    "workflow"
+  ]
+}

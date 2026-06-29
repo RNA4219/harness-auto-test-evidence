@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/manual-bb/missing-high-risk/expected/manual-supplement-request.shape.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3efdf0388c8080a27630d87625f7e6fd7c3c8849d5f5aa150b68db657fc16cec",
+  "line_count": 36,
+  "size_bytes": 1090,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

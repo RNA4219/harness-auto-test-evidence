@@ -1,0 +1,24 @@
+{
+  "path": "docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_READINESS_GO.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "0a12142973750fd72fe6d67112f1699fb9564c42dbf8787359ef97808fa57129",
+  "line_count": 51,
+  "size_bytes": 1960,
+  "headings": [
+    "# RanD Kano Mode フル実装仕様 Readiness Go",
+    "## 1. 目的",
+    "## 2. 生成 artifact",
+    "## 3. Gate Summary",
+    "## 4. Go になった理由",
+    "## 5. 境界"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "workflow"
+  ]
+}

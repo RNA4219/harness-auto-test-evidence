@@ -1,0 +1,30 @@
+{
+  "path": "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "2d084238a9ac85b74e1a2886fe41c05f4c3f9ec7af3473a487d113dcafaab1e0",
+  "line_count": 106,
+  "size_bytes": 3719,
+  "headings": [
+    "# Scale and Performance Requirements",
+    "## 1. Purpose",
+    "## 2. Scale Targets",
+    "## 3. Performance Budgets",
+    "## 4. Large Fixture Requirements",
+    "## 5. Architecture Requirements",
+    "## 6. No-Go",
+    "## 7. Evidence Report"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "coverage",
+    "fixture",
+    "release",
+    "store",
+    "test"
+  ]
+}

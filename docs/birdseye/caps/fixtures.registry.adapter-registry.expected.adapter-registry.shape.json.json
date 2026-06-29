@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/registry/adapter-registry/expected/adapter-registry.shape.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bc528f0d124a697c15030678a2b7774c054a9b93b80e921eefb3c30569c57d11",
+  "line_count": 37,
+  "size_bytes": 879,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

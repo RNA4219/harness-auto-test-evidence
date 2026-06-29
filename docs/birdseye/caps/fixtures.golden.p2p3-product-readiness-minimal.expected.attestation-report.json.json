@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/attestation-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c820af5611cc5a53a0b995b784e2e06810ccc329c8ec1b8e8e22e3d8f8c4675e",
+  "line_count": 60,
+  "size_bytes": 2004,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

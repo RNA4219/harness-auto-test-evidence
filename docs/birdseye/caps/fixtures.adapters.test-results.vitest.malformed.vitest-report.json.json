@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/test-results/vitest/malformed/vitest-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "37caad89f7f0e38157823d7dc47ae0893db60e588022a5561a25a5905fc7d5cd",
+  "line_count": 10,
+  "size_bytes": 153,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test"
+  ]
+}

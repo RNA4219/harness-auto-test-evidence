@@ -1,0 +1,33 @@
+{
+  "path": "src/hate/p1a.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e02cace91c1312f9dc8824a517edb180c4017ff763f55558cf044bfa3a381780",
+  "line_count": 409,
+  "size_bytes": 17776,
+  "headings": [],
+  "imports": [
+    ".",
+    ".p1a_io",
+    ".p1a_support",
+    ".profile",
+    "__future__",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a_io.py",
+    "src/hate/p1a_support.py",
+    "src/hate/profile.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

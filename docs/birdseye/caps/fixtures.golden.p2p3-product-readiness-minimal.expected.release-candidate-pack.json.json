@@ -1,0 +1,23 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/release-candidate-pack.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fbfb91e419208a8fb43cd17e6627876d66f95c881beccaa79fc23f1624c3bc22",
+  "line_count": 169,
+  "size_bytes": 4671,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "store"
+  ]
+}

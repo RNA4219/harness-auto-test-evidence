@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/artifacts/archive/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6bda43fbfbe8178d0e63b3aefa3c95d12a2072f9e8bb0746334bcaf66b20ffa6",
+  "line_count": 14,
+  "size_bytes": 427,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "workflow"
+  ]
+}

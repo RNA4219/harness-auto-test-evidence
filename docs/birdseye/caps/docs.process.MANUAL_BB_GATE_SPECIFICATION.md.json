@@ -1,0 +1,32 @@
+{
+  "path": "docs/process/MANUAL_BB_GATE_SPECIFICATION.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "b83aadd22a2c389bc5e6c17cee9fd560987509d9bf278258b629c21e3a470e6d",
+  "line_count": 117,
+  "size_bytes": 10070,
+  "headings": [
+    "# Manual BB Gate: HATE 仕様書",
+    "## Intake Status",
+    "## 1. 根拠付き観点",
+    "## 2. リスク",
+    "## 3. 優先度",
+    "## 4. 手動テストケース",
+    "## 5. 工数",
+    "## 6. Gate 判定",
+    "## 7. Go/No-Go Brief"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "birdseye",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "workflow"
+  ]
+}

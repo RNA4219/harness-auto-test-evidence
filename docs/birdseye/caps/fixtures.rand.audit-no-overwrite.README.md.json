@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/rand/audit-no-overwrite/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "ecd6d976ea1417b426e76e5495a281e2cb54253d05084586413ac12c0bb63f03",
+  "line_count": 5,
+  "size_bytes": 266,
+  "headings": [
+    "# HATE-P1B-002 RanD Audit No-Overwrite Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "workflow"
+  ]
+}

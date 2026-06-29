@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/adapters/coveragepy/partial/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1d29ac70ede80d3bc2142dce0f0118a919db4b8557882b09d741be2a5083b459",
+  "line_count": 13,
+  "size_bytes": 370,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "test",
+    "workflow"
+  ]
+}

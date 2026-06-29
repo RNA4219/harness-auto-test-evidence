@@ -1,0 +1,32 @@
+{
+  "path": "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "72b4190e952c6585be93346af49055630ae85e5b3e8a40a2a4496fd3928fdcbc",
+  "line_count": 110,
+  "size_bytes": 4730,
+  "headings": [
+    "# Security Review and Trust Contract",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Trust Packet Contents",
+    "## 4. Security Review Record",
+    "## 5. Control Mapping",
+    "## 6. Vulnerability Handling",
+    "## 7. Trust Center Freshness",
+    "## 8. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

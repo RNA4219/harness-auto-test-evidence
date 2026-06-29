@@ -1,0 +1,34 @@
+{
+  "path": "docs/process/PACKAGING_ENTITLEMENT_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "7335fd888054aecf76f2c96cc08d69dcca027a866cdaf351d4cd893a1d4b3691",
+  "line_count": 122,
+  "size_bytes": 4736,
+  "headings": [
+    "# Packaging and Entitlement Contract",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Editions",
+    "## 4. Feature Boundary",
+    "## 5. Entitlement Model",
+    "## 6. Usage Meters",
+    "## 7. Over-Limit Policy",
+    "## 8. Procurement / Contract Artifacts",
+    "## 9. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "enterprise",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

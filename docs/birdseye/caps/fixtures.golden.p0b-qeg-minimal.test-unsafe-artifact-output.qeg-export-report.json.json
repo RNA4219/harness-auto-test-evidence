@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-export-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c24d3c4f6fc5133b1efe4b434eff42793765865be8e44871dfac20e39d4bfa28",
+  "line_count": 77,
+  "size_bytes": 2307,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

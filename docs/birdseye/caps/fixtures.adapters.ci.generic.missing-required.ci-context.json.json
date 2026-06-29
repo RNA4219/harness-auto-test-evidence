@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/ci/generic/missing-required/ci-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7f06902d03269835a4bd3c02504486eb358ceaf9e898ca67c4d1ae938cd739c3",
+  "line_count": 9,
+  "size_bytes": 262,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "workflow"
+  ]
+}

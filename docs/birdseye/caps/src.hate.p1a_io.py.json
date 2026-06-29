@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/p1a_io.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "5a584b297cb6a6462a70278601883e1db83e96b9652d0d959336ba73d1b09eb4",
+  "line_count": 61,
+  "size_bytes": 2264,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

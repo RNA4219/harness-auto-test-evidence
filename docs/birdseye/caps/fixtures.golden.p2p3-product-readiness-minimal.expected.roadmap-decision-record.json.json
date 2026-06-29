@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/roadmap-decision-record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "cc1e48f212bd3ba2c6c3cfbbd6452eddd00c6ddb93f133141455027742441f10",
+  "line_count": 37,
+  "size_bytes": 914,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

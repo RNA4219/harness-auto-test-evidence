@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/artifacts/external-url/artifact-refs.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7bda5a889b1d40cb59d32a7a0e95983bd20d9aa93f2372155b89d2f051ca16e3",
+  "line_count": 10,
+  "size_bytes": 210,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture"
+  ]
+}

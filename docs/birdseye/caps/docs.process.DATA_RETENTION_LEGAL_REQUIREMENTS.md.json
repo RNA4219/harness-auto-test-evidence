@@ -1,0 +1,33 @@
+{
+  "path": "docs/process/DATA_RETENTION_LEGAL_REQUIREMENTS.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "3a1e1af73db54140e2ce365d5e0533810aa6c575613a7bdba51df613ce0b6ce9",
+  "line_count": 125,
+  "size_bytes": 4487,
+  "headings": [
+    "# Data Retention and Legal Requirements",
+    "## 1. Purpose",
+    "## 2. Data Classification",
+    "## 3. Retention Requirements",
+    "## 4. Legal Hold Requirements",
+    "## 5. Customer Export and Deletion",
+    "## 6. Audit Requirements",
+    "## 7. Legal and Commercial Truthfulness",
+    "## 8. Product-Ready Gate"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "path": "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "0da2931f20dcd022ba96967d0f17d88e817a5474ac079f912b755f9e6a7eecd6",
+  "line_count": 246,
+  "size_bytes": 8191,
+  "headings": [
+    "# P0b QEG Export Implementation Contract",
+    "## 1. 目的",
+    "## 2. 入力",
+    "## 3. 出力",
+    "## 4. `qeg-bundle.json` Contract",
+    "### 4.1 Node ID Rules",
+    "### 4.2 Edge Rules",
+    "## 5. `evidence-map.json` Contract",
+    "## 6. `diff-risk-test.json` Contract",
+    "## 7. Completeness Calculation",
+    "## 8. Fixture Contract",
+    "## 9. CLI Contract",
+    "## 10. Shipyard Acceptance",
+    "## 11. Go Criteria"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/audit-assurance-pack.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "af4d21209ac31ffe4f3e9ce5ea8c2019a23282a0df55f4f181014c0eba6502da",
+  "line_count": 709,
+  "size_bytes": 19771,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

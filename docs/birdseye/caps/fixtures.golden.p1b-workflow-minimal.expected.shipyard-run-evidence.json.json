@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/golden/p1b-workflow-minimal/expected/shipyard-run-evidence.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b4ee8a9bf96bb1977fc357e8cce8be5bd137b97e88d3b245c6396358f0fb4a95",
+  "line_count": 42,
+  "size_bytes": 1336,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

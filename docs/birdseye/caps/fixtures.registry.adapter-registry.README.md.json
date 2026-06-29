@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/registry/adapter-registry/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "698a24c17948a724574150a3f365439f56fad0e3e71ba868ed3fd30172be4ef2",
+  "line_count": 7,
+  "size_bytes": 302,
+  "headings": [
+    "# HATE-P1A-001 Adapter Registry Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture"
+  ]
+}

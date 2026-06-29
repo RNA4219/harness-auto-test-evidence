@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/artifacts/path-traversal/artifact-refs.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "dda215c91cd25aa90e51d3cd02ff49368edb5bab3b7555d89d6b379fa340f421",
+  "line_count": 10,
+  "size_bytes": 184,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture"
+  ]
+}

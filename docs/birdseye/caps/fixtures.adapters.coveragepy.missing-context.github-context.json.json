@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/adapters/coveragepy/missing-context/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "58d83aec5e47e9253697dca52c7d1f3fb89a5efea44fd67d08cfb395af2f4624",
+  "line_count": 13,
+  "size_bytes": 377,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "test",
+    "workflow"
+  ]
+}

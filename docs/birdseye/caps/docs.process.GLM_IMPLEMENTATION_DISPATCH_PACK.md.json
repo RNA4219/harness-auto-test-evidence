@@ -1,0 +1,43 @@
+{
+  "path": "docs/process/GLM_IMPLEMENTATION_DISPATCH_PACK.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "fffeef5ecbb37d3a5b76d1d6218e0dd2f8bf22e5a485feb9bfaa383b871221c1",
+  "line_count": 316,
+  "size_bytes": 15448,
+  "headings": [
+    "# GLM Implementation Dispatch Pack",
+    "## 1. Purpose",
+    "## 2. Dispatch Principles",
+    "## 3. EPIC Implementation Order",
+    "## 4. Dependency Blocks",
+    "## 5. GLM Worker Packets",
+    "## 6. Packet Prompt Template",
+    "## 7. Forbidden Actions",
+    "## 8. Acceptance Commands",
+    "## 9. UAT Checks",
+    "## 10. Return Conditions",
+    "## 11. Two-Revision Loop",
+    "## 12. Codex UAT Responsibilities",
+    "## 13. Implementation Ledger Format",
+    "## 14. Initial Dispatch Queue"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "epic",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

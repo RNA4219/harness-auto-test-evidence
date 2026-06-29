@@ -1,0 +1,23 @@
+{
+  "path": "docs/process/rand-kano-mode-idea-quality-kano.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "3d0f6cdaeabe603aff1db3c0903181238fb7e3c4d103b5593b09f01830813668",
+  "line_count": 209,
+  "size_bytes": 7827,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

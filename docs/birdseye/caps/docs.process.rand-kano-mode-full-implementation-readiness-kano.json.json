@@ -1,0 +1,22 @@
+{
+  "path": "docs/process/rand-kano-mode-full-implementation-readiness-kano.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "20c2a21da57629d33e4154e51858b0c0283572d673896ea9ab1e62fee64d1eb6",
+  "line_count": 185,
+  "size_bytes": 7129,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

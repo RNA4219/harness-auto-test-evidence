@@ -1,0 +1,33 @@
+{
+  "path": "docs/process/HOSTED_READ_MODEL_API.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "eb0cfc62f4b03dbe865acae80f9e3723a69129e47813df48091383b1fcd2c459",
+  "line_count": 137,
+  "size_bytes": 4695,
+  "headings": [
+    "# Hosted Read Model and API Contract",
+    "## 1. 目的",
+    "## 2. Surfaces",
+    "## 3. Read Model Sources",
+    "## 4. API Resource Model",
+    "## 5. API Response Envelope",
+    "## 6. Consistency Rules",
+    "## 7. Authorization",
+    "## 8. API Errors",
+    "## 9. Pagination / Filtering",
+    "## 10. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "coverage",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

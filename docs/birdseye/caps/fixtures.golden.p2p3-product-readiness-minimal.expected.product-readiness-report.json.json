@@ -1,0 +1,25 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/product-readiness-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d91cd717dbad88f7108358ec04abab22545f1a97a89a6dc3e7ae3813cb9dc9db",
+  "line_count": 155,
+  "size_bytes": 4537,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

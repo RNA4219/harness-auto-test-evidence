@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/ci/generic/generic-file-name/pytest-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9561a6ff12cff64e0232450297ee66454a0480a6baa9458df8b443cac7f22435",
+  "line_count": 13,
+  "size_bytes": 248,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test"
+  ]
+}

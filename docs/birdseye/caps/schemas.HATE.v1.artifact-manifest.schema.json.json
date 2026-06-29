@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/artifact-manifest.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "9ad600b7b76ca5f6fcc661ac5baaa7d5371e972ac9df101e4e5d775032796169",
+  "line_count": 49,
+  "size_bytes": 2016,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "schema",
+    "security"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/product-error-catalog.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ad974a279a089eb0545012b8768e7a053c95444a30564a9e6aceaad654af6062",
+  "line_count": 46,
+  "size_bytes": 1351,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "workflow"
+  ]
+}

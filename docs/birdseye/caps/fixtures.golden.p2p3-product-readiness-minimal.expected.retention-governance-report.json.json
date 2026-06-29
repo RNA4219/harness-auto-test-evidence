@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/retention-governance-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "33957534dc2d3f903fff509a94883e96aeb2ad82687fd48714b1b6a5b3db26b9",
+  "line_count": 160,
+  "size_bytes": 5235,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

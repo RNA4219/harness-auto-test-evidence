@@ -14,6 +14,9 @@ next_review_due: 2026-07-28
 worker-facing task backlog である。各タスクは、コード、schema、fixture、test、docs
 が揃ったときだけ `done` にできる。
 
+50万行級の product-grade 実装へ展開する epic / worker packet の入口は
+`IMPLEMENTATION_EPIC_BREAKDOWN.md` を正本とする。
+
 ## 2. Done の共通条件
 
 全タスク共通で、以下を満たす。
@@ -25,6 +28,10 @@ worker-facing task backlog である。各タスクは、コード、schema、fi
 - `uv run python -m compileall src tests` が通る
 - README / RUNBOOK / SPECIFICATION の参照が必要に応じて更新される
 - `advisory`, `optional`, `future` の文言で実装不足を隠していない
+- `PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` が要求する completion claim taxonomy に従い、
+  docs-only / fixture-only / report-only の作業を `implemented` と呼ばない
+- `PRODUCT_REQUIREMENTS_DEFINITION.md` の requirement ID、user journey、acceptance ID の
+  いずれにも紐づかない task を product-ready work として扱わない
 
 ## 3. P0a Tasks
 
@@ -124,3 +131,58 @@ P0a/P0bの途中で先に入れてよい。
 | `blocked` | 外部依存または仕様矛盾で停止 |
 
 `implemented` 以前の状態を完了扱いしない。
+
+## 11. Product-Grade Expansion Tasks
+
+本節は `PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` を実装 work package へ落とす。
+P0a-P3 の既存 task が prototype/minimal acceptance を満たしていても、本節の task が
+未完了なら product-ready ではない。
+
+| task_id | title | affected paths | acceptance |
+|---|---|---|---|
+| HATE-PG-001 | adapter corpus and conformance expansion | `src/hate/adapters`, `fixtures/adapters`, `tests/adapters` | JUnit/pytest/Jest/Vitest/Playwright/Coverage/SARIF/Pact/Stryker の dialect/negative/conformance が report化される |
+| HATE-PG-002 | cross-record schema validator | `src/hate/schema`, `schemas/HATE/v1`, `tests/schema` | generated artifacts と invalid fixture が schema/cross-ref/hash validation を通る |
+| HATE-PG-003 | evidence graph domain implementation | `src/hate/graph`, `fixtures/graph`, `tests/graph` | requirement/risk/test/execution/artifact/coverage/finding/manual node と edge が辿れる |
+| HATE-PG-004 | artifact safety and quarantine engine | `src/hate/security`, `fixtures/security`, `tests/security` | secret/PII/path/archive/external URL/redaction の negative fixture が quarantine される |
+| HATE-PG-005 | immutable local store and replay | `src/hate/store`, `fixtures/store`, `tests/store` | atomic write、hash、history、replay、compare、migration、corruption handling が report化される |
+| HATE-PG-006 | profile policy and AETE signal engine | `src/hate/profile`, `src/hate/aete`, `fixtures/profile`, `fixtures/aete` | fixed scoreではなく signal source と reason refs から deterministic に計算される |
+| HATE-PG-007 | API read model and contract tests | `src/hate/api`, `fixtures/api`, `tests/api` | resource/filter/pagination/authz/error/staleness の contract test が通る |
+| HATE-PG-008 | dashboard view model and UI UAT | `src/hate/dashboard`, `fixtures/dashboard`, `tests/dashboard` | required views が API/read model 由来で、unsafe artifact を直接露出しない |
+| HATE-PG-009 | RBAC/audit/retention/residency controls | `src/hate/authz`, `src/hate/audit`, `src/hate/governance`, `fixtures/enterprise` | allow/deny、audit hash chain、legal hold、deployment mode fixture が通る |
+| HATE-PG-010 | enterprise connector dry-runs | `src/hate/connectors`, `fixtures/connectors`, `tests/connectors` | SSO/SCIM/SIEM/warehouse/ticket exporter failure が canonical bundle を変えない |
+| HATE-PG-011 | support/ops/migration closure | `src/hate/support`, `docs/process/RUNBOOK.md`, `fixtures/support` | diagnostic bundle、error code、migration、rollback、incident handoff が揃う |
+| HATE-PG-012 | release candidate and assurance pack | `src/hate/release`, `fixtures/release`, `tests/release` | required product reports、QEG result refs、open risk、assurance refs が pack に含まれる |
+| HATE-PG-013 | test integrity and AI-abuse detector | `src/hate/test_integrity`, `fixtures/test-integrity`, `tests/test_integrity` | strict signal gate matrix、anti-evasion rules、required fixture matrix、manual review record requirement を満たし、skip/xfail/only/todo 増加、mock abuse、assertion quality、implementation-test coupling、risk without oracle、coverage without evidence、manual review required が product readiness を降格する |
+| HATE-PG-014 | scale and performance validation | `src/hate/performance`, `fixtures/scale`, `tests/performance` | 100k test / 10M coverage / 100k artifact metadata の設計fixture、latency/memory/pagination/aggregation budget が report化される |
+| HATE-PG-015 | lifecycle migration compatibility | `src/hate/migrations`, `fixtures/migrations`, `tests/migrations` | schema/store/API/profile/adapter/view-model の before/after/rollback/deprecation fixture が通る |
+| HATE-PG-016 | commercial truthfulness gate | `src/hate/commercial`, `fixtures/commercial`, `tests/commercial` | unsupported/planned/contracted claim が実装証跡へ trace され、unsupported claim は product-ready を block する |
+
+各 `HATE-PG-*` は `PRODUCT_REQUIREMENTS_DEFINITION.md` の `FR-*`, `NFR-*`, `AC-REQ-*`
+へ trace できなければ `accepted` にできない。
+
+## 12. Product-Grade Done Rules
+
+各 `HATE-PG-*` は、以下を満たすまで `accepted` にできない。
+
+| Done evidence | Required |
+|---|---|
+| implementation code | yes |
+| schema or API contract | yes when artifact/API exists |
+| fixture input | yes |
+| machine-readable expected output | yes |
+| negative fixture | yes |
+| contract/golden/unit test | yes |
+| product error code | yes for user-facing failure |
+| runbook/admin/support docs | yes |
+| CI command evidence | yes |
+| UAT or manual-bb gate | yes for UI/release/enterprise |
+
+禁止:
+
+- `tests passed` だけで `product-ready` にする
+- report生成だけで RBAC/audit/retention を実装済みにする
+- dashboard view model だけで dashboard UI 実装済みにする
+- API schema だけで hosted API 実装済みにする
+- connector dry-run なしに enterprise connector 実装済みにする
+- release candidate pack に missing report がある状態で release-ready とする
+- test integrity signal が未実装または unresolved の状態で product-ready とする

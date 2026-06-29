@@ -1,0 +1,19 @@
+{
+  "path": "docs/process/API_OPENAPI.yaml",
+  "role": "documentation",
+  "kind": "yaml",
+  "sha256": "8b347ac414aad625003c9886e32f0e3f505e8f2237dce9d4f9786b957d37ac02",
+  "line_count": 244,
+  "size_bytes": 7607,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "coverage",
+    "qeg",
+    "schema"
+  ]
+}

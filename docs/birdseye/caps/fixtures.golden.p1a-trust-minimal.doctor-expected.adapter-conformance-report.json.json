@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/doctor-expected/adapter-conformance-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bfeb990bdbf0b93bfa542221d29be133ee837eb5c9581a7bb5c1bd60c7e784d5",
+  "line_count": 71,
+  "size_bytes": 1578,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/golden/p0a-minimal/input/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+  "line_count": 14,
+  "size_bytes": 416,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test",
+    "workflow"
+  ]
+}

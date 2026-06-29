@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/governance.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8d3d618f629912d54a4c9f1fff03a1319109cbd6b83e604ccbd68a24976c047c",
+  "line_count": 129,
+  "size_bytes": 5519,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

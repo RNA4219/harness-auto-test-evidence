@@ -1,0 +1,31 @@
+{
+  "path": "src/hate/store.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "65655f085041ac6416736365fe5a717438a4c808067449d82034cdb52f5f2d68",
+  "line_count": 215,
+  "size_bytes": 8255,
+  "headings": [],
+  "imports": [
+    ".",
+    ".p2p3_io",
+    "__future__",
+    "dataclasses",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p2p3_io.py"
+  ],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

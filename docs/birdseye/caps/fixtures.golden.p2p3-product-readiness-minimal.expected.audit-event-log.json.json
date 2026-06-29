@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/audit-event-log.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6f9ba51da7de52c274c9fffa0df58366a28ac7450e47e43dbab9a6439bc9a03b",
+  "line_count": 173,
+  "size_bytes": 5111,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

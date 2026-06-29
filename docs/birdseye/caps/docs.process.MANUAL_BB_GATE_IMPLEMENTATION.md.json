@@ -1,0 +1,33 @@
+{
+  "path": "docs/process/MANUAL_BB_GATE_IMPLEMENTATION.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "d44caa0db398fd1888a1f0d1ec8948716d12c71d4d416545f522596a6b09b6a9",
+  "line_count": 139,
+  "size_bytes": 10353,
+  "headings": [
+    "# Manual-bb 実装ゲート確認",
+    "## Intake Status",
+    "## 根拠付き観点",
+    "## リスク",
+    "## 優先度",
+    "## 手動テストケース",
+    "## 工数",
+    "## Gate",
+    "## Go/No-Go Brief"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/qeg-bundle.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "890195dd8f0192f23185cd3a3a07b3b77bcad89a5e51153f38cb1c3a1ea2ea00",
+  "line_count": 94,
+  "size_bytes": 3303,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "schema"
+  ]
+}

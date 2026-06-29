@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/test-results/pytest/retry-matrix/pytest-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "24cba12c0fbd80a5b65726135274bac5e54981a365a29261dc9f70f4d01fd72a",
+  "line_count": 45,
+  "size_bytes": 1075,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "fixture",
+    "test"
+  ]
+}

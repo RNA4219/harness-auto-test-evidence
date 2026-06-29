@@ -1,0 +1,38 @@
+{
+  "path": "docs/process/RUNBOOK.md",
+  "role": "operations",
+  "kind": "md",
+  "sha256": "161e399dc97deeb28ea97fcb43fb3ef637cc6dbf97055f31325573fc5b625c71",
+  "line_count": 739,
+  "size_bytes": 57742,
+  "headings": [
+    "# Runbook",
+    "## 0. 準備",
+    "## 1. 実装フロー（最短）",
+    "## 2. ローカル実行（準備）",
+    "## 3. ローカル実行（P0a 実装）",
+    "## 4. ローカル実行（P0b QEG Export）",
+    "## 4.1 ローカル実行（P1a Trust Minimal）",
+    "## 4.2 ローカル実行（P1b Workflow Mapping）",
+    "## 4.3 ローカル実行（P2/P3 Product Readiness）",
+    "## 5. 受理前確認",
+    "## 5. ロールバック方針（文書中心）",
+    "## 6. 最新メモ"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "birdseye",
+    "enterprise",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

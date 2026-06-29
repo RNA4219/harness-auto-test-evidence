@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/pr-annotation-export.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c950d8e1a5167f183f858d2f9477ab1d9add6c03e993eb01ac1f677eb3a87a4e",
+  "line_count": 95,
+  "size_bytes": 3155,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

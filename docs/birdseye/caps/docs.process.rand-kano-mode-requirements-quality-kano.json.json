@@ -1,0 +1,18 @@
+{
+  "path": "docs/process/rand-kano-mode-requirements-quality-kano.json",
+  "role": "requirements",
+  "kind": "json",
+  "sha256": "0b0c3840197769f4f9acaa437716a43c2fc2fd31f8353b9a897874a383bd3d67",
+  "line_count": 209,
+  "size_bytes": 7411,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "qeg",
+    "schema",
+    "workflow"
+  ]
+}

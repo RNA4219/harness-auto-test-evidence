@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/HATE-run.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ee2d4d98a1e6f5f0c06e5d1ed956c9bfe36c4ad68f7c166d70df71ead6800318",
+  "line_count": 27,
+  "size_bytes": 855,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/profile/inheritance/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "403604a02c501f9beff9e0bb52208be3fd810bf75260029c12bd753b8bfbc761",
+  "line_count": 7,
+  "size_bytes": 324,
+  "headings": [
+    "# HATE-P1A-003 Profile Inheritance Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

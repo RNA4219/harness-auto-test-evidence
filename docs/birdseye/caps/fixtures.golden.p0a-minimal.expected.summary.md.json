@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p0a-minimal/expected/summary.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "92b47b3eb5c81f2bf24a3f02b041dd4fa7133313a4e577c241cfb77847625b68",
+  "line_count": 11,
+  "size_bytes": 427,
+  "headings": [
+    "# P0a Minimal Evidence Summary"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

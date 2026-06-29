@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/coverage/jacoco/malformed/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f5e0c80b89a4c9f848099e919a5eea5ac63415d79ae90adcfc339841eb5e1f4c",
+  "line_count": 14,
+  "size_bytes": 420,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "workflow"
+  ]
+}

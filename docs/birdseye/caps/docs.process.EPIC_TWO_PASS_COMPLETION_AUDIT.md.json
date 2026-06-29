@@ -1,0 +1,38 @@
+{
+  "path": "docs/process/EPIC_TWO_PASS_COMPLETION_AUDIT.md",
+  "role": "planning",
+  "kind": "md",
+  "sha256": "c116a9b8a49a41659056b261dc6763fd5e6ae142fee1791b4f28e089ce2f1411",
+  "line_count": 119,
+  "size_bytes": 7914,
+  "headings": [
+    "# Epic Two-Pass Completion Audit",
+    "## 1. Purpose",
+    "## 2. Completion Criteria",
+    "## 3. Epic Audit Matrix",
+    "## 4. Remaining Implementation Implication",
+    "## 5. Third-Pass Review Findings",
+    "### Dependency blocks",
+    "### Re-audit triggers",
+    "### Third-pass implementation No-Go",
+    "## 6. Third-Pass Result"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "epic",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

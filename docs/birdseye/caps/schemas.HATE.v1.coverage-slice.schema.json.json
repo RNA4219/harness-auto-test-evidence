@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/coverage-slice.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "03aca8dc9609522a702647bc536ea84745e727a4edab43932e76007da5b0e731",
+  "line_count": 35,
+  "size_bytes": 1212,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "schema"
+  ]
+}

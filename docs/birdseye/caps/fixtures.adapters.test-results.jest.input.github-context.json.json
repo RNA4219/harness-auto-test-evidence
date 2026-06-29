@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/test-results/jest/input/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1b635d9a3c201d5bd72b90e82bf6a6933b04d4676e5067542f187f466273ed3c",
+  "line_count": 14,
+  "size_bytes": 419,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test",
+    "workflow"
+  ]
+}

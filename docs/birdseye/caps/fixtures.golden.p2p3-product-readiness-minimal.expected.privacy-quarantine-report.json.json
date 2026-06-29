@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/privacy-quarantine-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2610cc99fd46f8d84ad4c1d86e7d60e292afb0062bf1d2c95b20bcf507915b87",
+  "line_count": 16,
+  "size_bytes": 415,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

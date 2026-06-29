@@ -1,0 +1,27 @@
+{
+  "path": "tools/codemap/update.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "8e96303502c25e84aa8396978d0907a3c1414dbe55bd5f21a0510980b4eaaa0c",
+  "line_count": 309,
+  "size_bytes": 10319,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "argparse",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "pathlib",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "schema",
+    "store",
+    "test"
+  ]
+}

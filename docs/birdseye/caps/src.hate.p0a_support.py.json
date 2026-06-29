@@ -1,0 +1,39 @@
+{
+  "path": "src/hate/p0a_support.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "5f05192e547772e9ea5027c457d5f600e9ea8f8fa4ab07abe5530df6521c9011",
+  "line_count": 90,
+  "size_bytes": 2311,
+  "headings": [],
+  "imports": [
+    ".p0a_artifacts",
+    ".p0a_context",
+    ".p0a_coverage_adapters",
+    ".p0a_io",
+    ".p0a_records",
+    ".p0a_schema",
+    ".p0a_static",
+    ".p0a_test_adapters",
+    "__future__"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_artifacts.py",
+    "src/hate/p0a_context.py",
+    "src/hate/p0a_coverage_adapters.py",
+    "src/hate/p0a_io.py",
+    "src/hate/p0a_records.py",
+    "src/hate/p0a_schema.py",
+    "src/hate/p0a_static.py",
+    "src/hate/p0a_test_adapters.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "schema",
+    "security",
+    "test"
+  ]
+}

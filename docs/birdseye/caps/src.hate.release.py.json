@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/release.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "2bd232cd2a32906918b69a08c39eafed23e0c4fbcef01061045240115fd12ad1",
+  "line_count": 99,
+  "size_bytes": 4279,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "store"
+  ]
+}

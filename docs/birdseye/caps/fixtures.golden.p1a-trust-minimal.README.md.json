@@ -1,0 +1,23 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "0e77ec48650f3c9df829d78f37ba519eec7854581b3cfdfbf521370d61f6403a",
+  "line_count": 34,
+  "size_bytes": 1670,
+  "headings": [
+    "# P1a Trust Minimal Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

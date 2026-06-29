@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/doctor-expected/adapter-capability-manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ee49cdf9fecc6114f1842760cd9cfe2c78018ec699dc3a2b141a1865ff2cc580",
+  "line_count": 46,
+  "size_bytes": 1078,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "path": "docs/process/RAND_KANO_MODE_REQUIREMENTS_QUALITY_AUDIT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "c0eda9e5bf1386e59ff283cfdf4e8f6079f8ff73e56504aa24787dad495a235b",
+  "line_count": 85,
+  "size_bytes": 4141,
+  "headings": [
+    "# RanD Kano Mode 要件定義品質監査",
+    "## 1. 目的",
+    "## 2. 入力",
+    "## 3. RanD Kano Mode 結果",
+    "## 4. 判定",
+    "## 5. Go 項目",
+    "## 6. Conditional-Go 項目",
+    "## 7. 要件定義 Go 条件",
+    "## 8. 結論"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "qeg",
+    "release",
+    "workflow"
+  ]
+}

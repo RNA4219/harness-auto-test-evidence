@@ -1,0 +1,26 @@
+{
+  "path": "docs/process/ADAPTER_DIALECT_PARSER_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "0260f5fa2a3e1db115fcb98a32f607778d67620c8412a3d98c55988fb2a803c3",
+  "line_count": 63,
+  "size_bytes": 2494,
+  "headings": [
+    "# Adapter Dialect Parser Specification",
+    "## 1. Purpose",
+    "## 2. Dialect Matrix",
+    "## 3. Parser Output Requirements",
+    "## 4. Failure Classes",
+    "## 5. Conformance Requirement"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

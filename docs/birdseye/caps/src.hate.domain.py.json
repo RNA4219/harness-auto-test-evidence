@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/domain.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "610006a02b112343488a2149f49b515ef63896d51dbfd01a7782943f3a6ea2da",
+  "line_count": 151,
+  "size_bytes": 7301,
+  "headings": [],
+  "imports": [
+    ".p2p3_io",
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p2p3_io.py"
+  ],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

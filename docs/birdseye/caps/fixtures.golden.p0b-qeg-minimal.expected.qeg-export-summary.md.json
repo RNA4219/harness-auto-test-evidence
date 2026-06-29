@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-summary.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "ac35ce81898f52db9393ec318c7931418d481acd7aa74ecf1c953cb443e46ad0",
+  "line_count": 17,
+  "size_bytes": 416,
+  "headings": [
+    "# P0b QEG Export Summary"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

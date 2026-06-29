@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/evidence-map.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e9121a344c6af381b491f1eed15eec01abef4687111ad5415cf3f81c75bca855",
+  "line_count": 101,
+  "size_bytes": 2647,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

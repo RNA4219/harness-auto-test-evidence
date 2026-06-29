@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/shipyard-run-evidence.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "06085e7e5c1387644dc5b47c36f891e067b8aeb58688e5f32ed4c8f04b7d2e93",
+  "line_count": 56,
+  "size_bytes": 1890,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "path": "tests/test_p2p3.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "dc937f6a4050f2a22dba0ac34ca54d6bd79a81a38aa3c18b2176fd609900f941",
+  "line_count": 812,
+  "size_bytes": 45175,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p2p3",
+    "hate.store",
+    "http.server",
+    "json",
+    "pathlib",
+    "shutil",
+    "subprocess",
+    "threading",
+    "urllib.error",
+    "urllib.request"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p2p3.py",
+    "src/hate/store.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "security",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

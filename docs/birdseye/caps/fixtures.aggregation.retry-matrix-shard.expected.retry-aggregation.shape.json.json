@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/aggregation/retry-matrix-shard/expected/retry-aggregation.shape.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e159ec6278588a9dc88b008e1ecc99ccac7598973c72ea3e5159d13ec72d7454",
+  "line_count": 41,
+  "size_bytes": 823,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

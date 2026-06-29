@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/entitlement-usage-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e1f1743c52383b9a5c572548aa58c5a7994b540eafbb9da7c49153ca8b7f4982",
+  "line_count": 36,
+  "size_bytes": 717,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

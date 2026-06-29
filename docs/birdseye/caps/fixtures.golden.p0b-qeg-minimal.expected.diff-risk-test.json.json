@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/expected/diff-risk-test.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e930067936ae46d63501186d8ea9f01acf23bfca159308855411b5a26664a3a9",
+  "line_count": 81,
+  "size_bytes": 1729,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

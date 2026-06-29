@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/identity/canonical/expected/canonical-identity-index.shape.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "675f59e563a682ce20560f6d8bfc77df3ceea4e1caf0c6fc70794dbffcc3c808",
+  "line_count": 34,
+  "size_bytes": 708,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

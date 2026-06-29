@@ -1,0 +1,33 @@
+{
+  "path": "TASK.codex.md",
+  "role": "planning",
+  "kind": "md",
+  "sha256": "9bb7f339a257714c47c33696cafcc8094b4889f24031517ebf777bac79e69bd5",
+  "line_count": 327,
+  "size_bytes": 20384,
+  "headings": [
+    "# HATE 実装準備 Task Seed",
+    "## メタデータ",
+    "## Objective",
+    "## Scope",
+    "## Requirements",
+    "## Affected Paths",
+    "## Local Commands",
+    "## Plan",
+    "## Notes"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "enterprise",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

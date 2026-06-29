@@ -1,0 +1,35 @@
+{
+  "path": "docs/process/ENTERPRISE_DOMAIN_MODEL.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "87ab7f543fc6b3a90b2d7b980b5522f3674098f17d82aaa04b453afe0fe4bbe3",
+  "line_count": 189,
+  "size_bytes": 8017,
+  "headings": [
+    "# Enterprise Domain Model",
+    "## 1. 目的",
+    "## 2. Entity Overview",
+    "## 3. Relationship Model",
+    "## 4. Stable Identifiers",
+    "## 5. Tenancy and Scope",
+    "## 6. Role Model",
+    "## 7. Data Classification",
+    "## 8. Retention Model",
+    "## 9. Audit Events",
+    "## 10. Read Model Requirements",
+    "## 11. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "qeg",
+    "release",
+    "test",
+    "workflow"
+  ]
+}

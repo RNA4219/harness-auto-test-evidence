@@ -45,7 +45,7 @@ HATE は自動テスト証跡の normalizer / evaluator であり、実装作業
 | Legal / commercial contracting | Contract acceptance | `LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md` と commitment fixture |
 | Audit fixture / assurance | Audit readiness acceptance | `AUDIT_FIXTURE_ASSURANCE_CONTRACT.md` と assurance fixture |
 | Requirements portfolio | Portfolio acceptance | `REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md` と portfolio fixture |
-| Birdseye / Codemap | `docs/birdseye/index.json`, `caps/*.json` | HATE docs / schema / adapter の依存マップ |
+| Birdseye / Codemap | analysis / implementation の Birdseye 正本 | HATE 内 `docs/birdseye/index.json`, `caps/*.json`, `tools/codemap/update.py` はファイル参照用の派生 codemap |
 | workflow plugin | task/acceptance sync, docs resolve, stale check | HATE task / acceptance / docs freshness の検証 |
 
 ## 3. HATE 追加 artifact
@@ -105,7 +105,11 @@ workflow-cookbook 接続 artifact である。
     `required_action` を持つ。
 - `workflow-birdseye-map.json`
   - `node_id`, `path`, `role`, `deps_out`, `risk` を持つ。
-  - HATE 自身で Birdseye 正本を持たず、workflow-cookbook 形式へ渡す候補に留める。
+  - analysis / implementation における Birdseye 正本は `workflow-cookbook` 側に委譲する。
+  - HATE 内 `docs/birdseye/index.json` と `docs/birdseye/caps/*.json` は、HATE 自身の
+    docs / src / tests / fixtures / schemas を 1000 ファイル級でも軽量参照するための
+    file-reference codemap であり、workflow-cookbook の正本 Birdseye を置き換えない。
+  - `workflow-birdseye-map.json` は外部 workflow-cookbook 連携用の派生 artifact として扱う。
 - `product-readiness-report.json`
   - `readiness_gate`, `status`, `evidence_refs`, `metric_refs`,
     `missing_requirements`, `owner`, `next_action` を持つ。

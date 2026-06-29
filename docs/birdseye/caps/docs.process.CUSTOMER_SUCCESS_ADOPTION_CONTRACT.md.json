@@ -1,0 +1,32 @@
+{
+  "path": "docs/process/CUSTOMER_SUCCESS_ADOPTION_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "db73ab0fd316c0ba7de3dfbe01ebec5e110be95b12e4c3177032dea2f4d4bc66",
+  "line_count": 128,
+  "size_bytes": 4984,
+  "headings": [
+    "# Customer Success and Adoption Contract",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Adoption Stages",
+    "## 4. Success Plan",
+    "## 5. Adoption Health",
+    "## 6. Enablement Assets",
+    "## 7. Adoption Gap",
+    "## 8. Renewal Readiness",
+    "## 9. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "workflow"
+  ]
+}

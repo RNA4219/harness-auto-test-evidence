@@ -27,3 +27,6 @@ jobs:
 
       - name: Test
         run: uv run pytest
+
+      - name: Product-grade evidence reports
+        run: uv run python -m hate product grade-reports --docs-root docs/process --out .ci/product-grade --source-version ci

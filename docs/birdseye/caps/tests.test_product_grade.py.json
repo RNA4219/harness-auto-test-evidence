@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_product_grade.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "1c7c061bd6b11f4dd5d81a177b6dd89e3c3269d608b654a0f8119903a00ccb66",
+  "line_count": 51,
+  "size_bytes": 2080,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.product_grade",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/product_grade.py"
+  ],
+  "tags": [
+    "api",
+    "test"
+  ]
+}

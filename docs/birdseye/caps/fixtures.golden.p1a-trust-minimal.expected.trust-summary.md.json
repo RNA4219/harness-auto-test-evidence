@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/expected/trust-summary.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "cb8febd500ddd66f07bf034ba897ef52b879a3c3715006e51213fdac8239cd6e",
+  "line_count": 10,
+  "size_bytes": 275,
+  "headings": [
+    "# P1a Trust Summary"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

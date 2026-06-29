@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/external-export-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8da82852990a1448a4a0391124637ab5802573de9bfdba2b61cd5ba166828ed0",
+  "line_count": 153,
+  "size_bytes": 5042,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

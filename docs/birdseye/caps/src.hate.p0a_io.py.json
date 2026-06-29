@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/p0a_io.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "a336fa53490314a0c7efdb89f3c804600a344f4a669a8ef745e03d5a60b6c034",
+  "line_count": 66,
+  "size_bytes": 2407,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hashlib",
+    "json",
+    "pathlib",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

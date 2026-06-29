@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/adapters/playwright/evidence/artifact-manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "21df6316faca8d1cd66e820912ef6f03b79814d3409baa1499a48e9b7ad371f9",
+  "line_count": 97,
+  "size_bytes": 3261,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/test-results/pytest/malformed/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "169a4bb3e6297b4a6055a553d78e8c0e0f03cfd07c064fdfcdbf07641b22e3dc",
+  "line_count": 13,
+  "size_bytes": 364,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test",
+    "workflow"
+  ]
+}

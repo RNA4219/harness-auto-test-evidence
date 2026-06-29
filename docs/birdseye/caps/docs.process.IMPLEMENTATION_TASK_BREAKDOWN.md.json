@@ -1,0 +1,37 @@
+{
+  "path": "docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md",
+  "role": "planning",
+  "kind": "md",
+  "sha256": "0c53c97ce6aba2ee33d93e9980141fd5adc73e4959066d8845ef5b353d925df4",
+  "line_count": 188,
+  "size_bytes": 13780,
+  "headings": [
+    "# フル実装タスク分解",
+    "## 1. 目的",
+    "## 2. Done の共通条件",
+    "## 3. P0a Tasks",
+    "## 4. P0b Tasks",
+    "## 5. P1a Tasks",
+    "## 6. P1b Tasks",
+    "## 7. P2 Tasks",
+    "## 8. P3 Tasks",
+    "## 9. 実装順のロック",
+    "## 10. Completion Dashboard",
+    "## 11. Product-Grade Expansion Tasks",
+    "## 12. Product-Grade Done Rules"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "epic",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

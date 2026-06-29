@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/rbac-matrix-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "70f397f94b69aaec271abaa5540ec90b496688bfe7d2434428a3a0d1c55f47d8",
+  "line_count": 1209,
+  "size_bytes": 29698,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security"
+  ]
+}

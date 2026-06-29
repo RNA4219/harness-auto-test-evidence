@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/artifact-budget-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0ec2ba0356c2a7b7c40625b390b3c7d772af7d6db7609f4a1aad3db0ac6ea915",
+  "line_count": 82,
+  "size_bytes": 2304,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

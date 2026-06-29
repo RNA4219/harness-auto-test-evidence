@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/coveragepy/partial/coverage.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "129bb071948fe0a184ddc814c6564f52e4541360c19c6cd2d75a81c7d3a46e88",
+  "line_count": 24,
+  "size_bytes": 587,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

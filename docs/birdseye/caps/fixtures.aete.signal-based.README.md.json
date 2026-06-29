@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/aete/signal-based/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "ef45936fb1346db38e586780aa940de9278cb509d9a853ac07c82a37933f7d9b",
+  "line_count": 5,
+  "size_bytes": 239,
+  "headings": [
+    "# HATE-P1A-004 Signal-Based AETE Scoring Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

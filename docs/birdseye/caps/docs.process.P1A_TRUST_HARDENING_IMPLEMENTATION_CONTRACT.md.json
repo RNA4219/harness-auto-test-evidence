@@ -1,0 +1,39 @@
+{
+  "path": "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "9fa0a16598fc03f5a7b71c2fbe8793593abb95a3079eccce8dd7f86c8084d5ab",
+  "line_count": 257,
+  "size_bytes": 8511,
+  "headings": [
+    "# P1a Trust Hardening Implementation Contract",
+    "## 1. 目的",
+    "## 2. Scope",
+    "### In",
+    "### Out",
+    "## 3. AETE Score Contract",
+    "## 4. Scoring Rules",
+    "## 5. Adapter Capability Manifest",
+    "## 6. Canonical Test Identity",
+    "## 7. Retry / Matrix Aggregation",
+    "## 8. Path Normalization and Resolver",
+    "## 9. Command Contracts",
+    "## 10. Doctor Finding Taxonomy",
+    "## 11. Fixture Contract",
+    "## 12. Shipyard Acceptance",
+    "## 13. Go Criteria"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

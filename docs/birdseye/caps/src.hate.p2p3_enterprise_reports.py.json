@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/p2p3_enterprise_reports.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "435555406b64fa23353d997eb02a660d4bb27836c073fbaa2351afb91c478f1c",
+  "line_count": 329,
+  "size_bytes": 18156,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "store"
+  ]
+}

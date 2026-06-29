@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/authz.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "a6d4850abfa6cda4c464d04a3749f07766fb5200f2fb767e97c5c204682e2ff5",
+  "line_count": 184,
+  "size_bytes": 6445,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "release",
+    "schema",
+    "security"
+  ]
+}

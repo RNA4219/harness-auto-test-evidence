@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p1b-workflow-minimal/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "fe48c4825bd4a0e9ff28ed636521d19ed6519c243479c93ceda9d19cfe4d44fb",
+  "line_count": 9,
+  "size_bytes": 459,
+  "headings": [
+    "# P1b Workflow Minimal Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "workflow"
+  ]
+}

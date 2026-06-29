@@ -1,0 +1,35 @@
+{
+  "path": "docs/process/GUARDRAILS.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "01f8a59f8fbde5965e3dd9bc87ca71bf431805a76391852c2003937f78eb8b7e",
+  "line_count": 184,
+  "size_bytes": 12734,
+  "headings": [
+    "# Guardrails & 行動指針",
+    "## 目的",
+    "## 原則",
+    "## 実装制約",
+    "## 非機能ガード",
+    "## 例外条件",
+    "## リマインダー"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "birdseye",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

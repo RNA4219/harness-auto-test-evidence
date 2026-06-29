@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/rand/requirements-packet/input/requirements_packet.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2f6b634c0ca12e65be43b6f34d12139878a47e0d8e76be3be9972c465b773a27",
+  "line_count": 49,
+  "size_bytes": 1697,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

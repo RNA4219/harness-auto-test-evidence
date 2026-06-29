@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/coverage/cobertura/windows-path/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1ee463a7d79f60fb501334a19f54fd9eaa3075f96bbba72e163d6e798a27f70c",
+  "line_count": 14,
+  "size_bytes": 420,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "workflow"
+  ]
+}

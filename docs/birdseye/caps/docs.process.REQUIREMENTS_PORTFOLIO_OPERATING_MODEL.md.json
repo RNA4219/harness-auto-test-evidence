@@ -1,0 +1,34 @@
+{
+  "path": "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "27601cc674a54a819098481bb83dd1401dec98727baaf231bd9930897f9a1ca8",
+  "line_count": 112,
+  "size_bytes": 4983,
+  "headings": [
+    "# Requirements Portfolio Operating Model",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Portfolio Tiers",
+    "## 4. Stage Model",
+    "## 5. Portfolio Item",
+    "## 6. WIP Policy",
+    "## 7. Prioritization Rules",
+    "## 8. Portfolio Health Report",
+    "## 9. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "workflow"
+  ]
+}

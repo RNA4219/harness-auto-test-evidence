@@ -1,0 +1,16 @@
+{
+  "path": "src/hate/p0a_constants.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "7bca9e08faa6f3ad8e8a07e21b1905d4fe564ee6df113d2ff7b7f89390d83775",
+  "line_count": 3,
+  "size_bytes": 105,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

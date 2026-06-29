@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_p1a.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "676be86b4d83f16d009670319df33f083c92c10d808e51f0fda29f2f557e3ebc",
+  "line_count": 615,
+  "size_bytes": 29125,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p0b",
+    "hate.p1a",
+    "json",
+    "pathlib",
+    "shutil",
+    "subprocess"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0b.py",
+    "src/hate/p1a.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

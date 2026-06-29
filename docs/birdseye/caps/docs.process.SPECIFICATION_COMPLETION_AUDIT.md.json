@@ -1,0 +1,29 @@
+{
+  "path": "docs/process/SPECIFICATION_COMPLETION_AUDIT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "a336b9b561c183b776f2b62f83fd3e22c389a977bac627b292565be9ae89d315",
+  "line_count": 110,
+  "size_bytes": 6764,
+  "headings": [
+    "# HATE 仕様書完成監査",
+    "## 1. 目的",
+    "## 2. Shipyard Completion Run",
+    "## 3. Completion Gate 対応表",
+    "## 4. P0a 証跡更新",
+    "## 5. 実装側の残リスク",
+    "## 6. 判定"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

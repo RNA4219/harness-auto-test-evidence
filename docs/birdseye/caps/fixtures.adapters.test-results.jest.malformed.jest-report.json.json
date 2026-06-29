@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/test-results/jest/malformed/jest-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "eda23c1060e8799d021e2d773605c6d184cf31e6c0408d7fc0eb48ff0c22c7b8",
+  "line_count": 9,
+  "size_bytes": 151,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test"
+  ]
+}

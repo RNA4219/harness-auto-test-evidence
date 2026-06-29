@@ -1,0 +1,17 @@
+{
+  "path": "src/hate/__main__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "d220d88dd9a25cd0629c5176dd6532a2db1da40eb014a8e80796b0ddeb134918",
+  "line_count": 4,
+  "size_bytes": 83,
+  "headings": [],
+  "imports": [
+    ".cli"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py"
+  ],
+  "tags": []
+}

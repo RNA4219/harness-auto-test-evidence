@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/diff-risk-test.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "60e538a6ac61bcb431175626c51a22dffc765db58ef256de326b244ee208a5f2",
+  "line_count": 85,
+  "size_bytes": 1828,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

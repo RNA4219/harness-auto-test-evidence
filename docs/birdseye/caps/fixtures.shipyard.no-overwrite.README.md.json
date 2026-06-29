@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/shipyard/no-overwrite/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "4d8af5cb0b47da6c9a66ca09a055f18130fe2e2f1bb9b0dc4ec0c43d7674b200",
+  "line_count": 5,
+  "size_bytes": 285,
+  "headings": [
+    "# HATE-P1B-005 Shipyard No-Overwrite Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

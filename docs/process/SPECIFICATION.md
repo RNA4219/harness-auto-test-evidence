@@ -27,9 +27,18 @@ reason を再実装しない。
 |---|---|---:|
 | `README.md` | repo 入口と責務境界 | 1 |
 | `docs/process/BLUEPRINT.md` | 背景、Scope、I/O、実装フェーズ | 1 |
+| `docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md` | 製品要件定義、利用者、業務フロー、機能/非機能/受入/段階要件 | 1 |
+| `docs/process/USER_STORY_MAP.md` | persona / journey / story / release slice | 1 |
+| `docs/process/ACCEPTANCE_CRITERIA_MATRIX.md` | AC-REQ の positive/negative fixture、status impact、UAT owner | 1 |
+| `docs/process/API_REQUIREMENTS.md` | hosted/read-model API resource、envelope、authz、error、contract 要件 | 1 |
+| `docs/process/UI_WORKFLOW_REQUIREMENTS.md` | dashboard/admin/support UI workflow、state、UAT 要件 | 1 |
+| `docs/process/DATA_RETENTION_LEGAL_REQUIREMENTS.md` | data classification、retention、legal hold、export/delete、audit、commercial truthfulness | 1 |
+| `docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md` | large fixture、performance budget、scale No-Go | 1 |
+| `docs/process/IMPLEMENTATION_EPIC_BREAKDOWN.md` | product-grade epic、worker packet、implementation order | 1 |
 | `docs/process/SPECIFICATION.md` | 実装契約、データ契約、QEG / Workflow 接続 | 1 |
 | `docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md` | フル実装に必要な不足仕様の解消正本 | 1 |
 | `docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md` | コード・schema・fixture・test・docsへ落とす実装タスク正本 | 1 |
+| `docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` | 製品グレードの実装粒度、規模、API/UI/store/enterprise/test 完了条件 | 1 |
 | `docs/process/GUARDRAILS.md` | 禁止事項、責務分離、安全制約 | 1 |
 | `docs/process/EVALUATION.md` | 受入条件、KPI、テスト観点 | 1 |
 | `docs/process/RUNBOOK.md` | 実行手順、受理前確認、ロールバック | 2 |
@@ -1152,3 +1161,65 @@ quarantine_item:
 - RanD KanoMode readiness audit が `overall_assessment=go` となり、Go の対象が仕様書 readiness であることを明示している
 - DQ / AETE / risk debt / manual-bb bridge / privacy quarantine の境界が明示されている
 - 実装順序が Task Seed 化できる粒度まで分かれている
+- `PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` が product-grade と prototype の差分、規模レンジ、work package、No-Go、fixture/test minimum を固定している
+- 現在の実装が product-ready ではない場合、仕様書、readiness report、release candidate pack はその制限を明示し、prototype pass を product-ready と表現しない
+
+## 37. Product-Grade Specification Contract
+
+`PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` は、HATE を実利用できる製品へ進めるための
+実装粒度の正本である。`PRODUCT_REQUIREMENTS_DEFINITION.md` が製品要件と業務受入を定義し、
+`SPECIFICATION.md` が record / phase / boundary を定義し、
+`FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md` が不足解消の入口を定義するのに対し、
+product-grade spec は次を固定する。
+
+| Contract | Product-grade requirement |
+|---|---|
+| 実装規模 | adapter、fixture、schema、store、API、UI、security、enterprise、test、ops の厚みを別々に持つ |
+| 完了主張 | `specified`, `designed`, `implemented`, `verified`, `operationalized`, `product-ready` を分離する |
+| Adapter | happy path parser ではなく dialect / negative / conformance / capability / error code を要求する |
+| Evidence graph | requirement / risk / test / execution / artifact / coverage / finding / manual request の node/edge を要求する |
+| Store | immutable bundle、history index、replay、compare、migration、corruption handling を要求する |
+| API | pagination、filter、authz、error envelope、staleness、tenant scope を要求する |
+| Dashboard | API/read model consumer とし、verdict を計算しない |
+| Security | secret / PII / path / archive / external URL / redaction / summary safety を実検査する |
+| Enterprise | RBAC、audit、retention、residency、connectors、assurance、commercial truthfulness を要求する |
+| Test | unit / contract / golden / negative / property / fuzz / replay / migration / E2E / UAT を要求する |
+| Test integrity | skip/xfail/only/todo 増加、mock abuse、assertion quality、test coupling、risk without oracle、coverage without evidence、manual review required を検出する |
+
+### 37.1 Product-Ready No-Go
+
+以下のいずれかが残る場合、HATE は product-ready と主張してはならない。
+
+- local store replay がなく、出力ディレクトリの artifact だけで履歴を説明している
+- API/read model がなく、dashboard または report が canonical bundle を直接読み替えている
+- RBAC / audit / retention / quarantine / diagnostic bundle が固定値または report-only である
+- adapter 対応が 1 happy path fixture だけで、dialect / negative / conformance を持たない
+- fixture expected を手書きし、実行コードから再生成できない
+- user-facing failure に stable error code と remediation がない
+- `test_skip_detected`, `mock_abuse_detected`, `assertion_quality`, `implementation_test_coupling`, `risk_without_oracle`, `coverage_without_evidence`, `manual_review_required` の信号が未実装または未解決である
+- focused test marker、production code の test/fixture coupling、high/critical risk without oracle、coverage-only required risk、behavior-under-test mock abuse が存在する
+- `manual_review_required` を HATE が自動生成した review record で解消している
+- QEG verdict、Shipyard verdict、RanD verdict、manual-bb verdict を HATE 側で上書きしている
+- release candidate pack に open hard DQ、QEG validate failure、unsafe artifact leak、unsupported customer-facing claim が残る
+
+### 37.2 Product Implementation Evidence
+
+product-grade の進捗は、次の artifact で証明する。
+
+| Evidence | Required proof |
+|---|---|
+| `adapter-conformance-report.json` | adapterごとの fixture pass/fail、capability、known limit |
+| `schema-validation-report.json` | schema、cross-record refs、migration、invalid fixture |
+| `store-replay-report.json` | frozen bundle replay、hash、compare、corruption handling |
+| `api-contract-report.json` | resource、filter、authz、error、pagination、staleness |
+| `dashboard-uat-report.json` | required view、read model source、accessibility、unsafe artifact block |
+| `test-integrity-report.json` | skip/xfail/only/todo、mock abuse、assertion quality、test coupling、risk/oracle/coverage signal |
+| `security-quarantine-report.json` | secret/PII/path/archive/external URL/redaction の検査結果 |
+| `enterprise-control-report.json` | RBAC、audit、retention、residency、connector dry-run |
+| `scale-performance-report.json` | 100k test / 10M coverage / 100k artifact metadata の設計・実測・上限 |
+| `migration-compatibility-report.json` | schema/store/API/profile/adapter/view-model migration and rollback |
+| `commercial-truthfulness-report.json` | unsupported/planned/contracted claim と実装証跡の対応 |
+| `release-candidate-pack.json` | product-ready 判定、open risk、QEG result ref、assurance refs |
+
+これらの artifact が存在しない場合、該当領域は `specified` または `designed` までであり、
+`implemented` / `verified` / `product-ready` として扱わない。

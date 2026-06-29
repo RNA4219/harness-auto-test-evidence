@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/support-diagnostic-bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ed379b478b3ea948e5aadbe3eea4910589099b6f503f94ea468ec9c093bd6dde",
+  "line_count": 108,
+  "size_bytes": 3066,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

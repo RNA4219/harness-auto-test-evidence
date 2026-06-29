@@ -1,0 +1,15 @@
+{
+  "path": "pyproject.toml",
+  "role": "project",
+  "kind": "toml",
+  "sha256": "776c3ec187724c02ecd665d81702254056f7c83e534c8fd1d4f1e36b3c5bb259",
+  "line_count": 25,
+  "size_bytes": 504,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test"
+  ]
+}

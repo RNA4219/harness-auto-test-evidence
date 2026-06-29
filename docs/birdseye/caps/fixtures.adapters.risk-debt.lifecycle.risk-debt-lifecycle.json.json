@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/adapters/risk-debt/lifecycle/risk-debt-lifecycle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d655a10e9fb057ed90b2fab4fe37fe8c1acb88252fa0c7a069925884f8f704e7",
+  "line_count": 41,
+  "size_bytes": 1429,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

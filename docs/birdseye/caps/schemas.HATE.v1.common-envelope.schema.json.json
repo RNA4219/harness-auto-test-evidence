@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/common-envelope.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "7b6d8fc1d58ff3f3821b22880741eace83ca9cddc16c7e412dcc0293baffdab8",
+  "line_count": 37,
+  "size_bytes": 1270,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

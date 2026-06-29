@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/replay-expected/doctor-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "de8d55f5ad325902f38ff39867d55b925753be2853018629b0db7bfaf76d43e2",
+  "line_count": 25,
+  "size_bytes": 556,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

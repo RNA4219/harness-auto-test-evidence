@@ -1,0 +1,34 @@
+{
+  "path": "docs/process/USER_STORY_MAP.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "06d405e69666f0aa4d5bf8c31304bd9b7409746437dd43e3e37c67d09cc51d13",
+  "line_count": 91,
+  "size_bytes": 8083,
+  "headings": [
+    "# User Story Map",
+    "## 1. Purpose",
+    "## 2. Personas",
+    "## 3. Story Backbone",
+    "## 4. Release Slices",
+    "## 5. Story Map",
+    "## 6. Story No-Go Rules"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "security",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

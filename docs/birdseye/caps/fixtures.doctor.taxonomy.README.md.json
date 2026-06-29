@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/doctor/taxonomy/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "e1d74bcf5d4a0a2fe52c96fac18f1df7a9e19cf2fa85d5f285c48d65349f70d6",
+  "line_count": 5,
+  "size_bytes": 276,
+  "headings": [
+    "# HATE-P1A-009 Doctor Finding Taxonomy Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

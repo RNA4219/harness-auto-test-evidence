@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/shipyard/worker-result/input/run_system_packet.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4f67582862cca832265d90892252aec04a2a35f82883f7b16ee4f9fde000b50c",
+  "line_count": 88,
+  "size_bytes": 3000,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/artifacts/symlink/artifact-refs.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4638627ee133363c2aa280b5c62c37f113329553eb73920c6e6b822c839b220c",
+  "line_count": 11,
+  "size_bytes": 217,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture"
+  ]
+}

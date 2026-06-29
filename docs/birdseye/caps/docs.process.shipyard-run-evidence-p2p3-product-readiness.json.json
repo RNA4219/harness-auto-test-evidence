@@ -1,0 +1,25 @@
+{
+  "path": "docs/process/shipyard-run-evidence-p2p3-product-readiness.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "0770bd03408011521ea9b85a4b757b044ef5e96a50abeed460c163f09b616233",
+  "line_count": 156,
+  "size_bytes": 7763,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

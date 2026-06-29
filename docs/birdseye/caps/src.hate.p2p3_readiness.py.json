@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/p2p3_readiness.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "62cd04894213e639a95b69fce620649c921f1e8cbebcdc5fb089ff13c2b3834d",
+  "line_count": 201,
+  "size_bytes": 8831,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "birdseye",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

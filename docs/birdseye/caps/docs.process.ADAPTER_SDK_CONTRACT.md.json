@@ -1,0 +1,35 @@
+{
+  "path": "docs/process/ADAPTER_SDK_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "31ba92299de8415572bc631cbc74b676f7ba573352b72b2cf6d6d82f7eff163e",
+  "line_count": 141,
+  "size_bytes": 4845,
+  "headings": [
+    "# Adapter SDK Contract",
+    "## 1. 目的",
+    "## 2. Adapter Types",
+    "## 3. Adapter Manifest",
+    "## 4. Required Interface",
+    "## 5. Adapter Failure Contract",
+    "## 6. Normalization Rules",
+    "## 7. Conformance Fixtures",
+    "## 8. Conformance Report",
+    "## 9. SDK Stability",
+    "## 10. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

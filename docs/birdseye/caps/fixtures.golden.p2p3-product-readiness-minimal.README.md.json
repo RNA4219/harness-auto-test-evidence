@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "fb98b0332f2d37dc0bfa041a5487f16e2066ed68ec07c2bf0a0aebd7631bd069",
+  "line_count": 8,
+  "size_bytes": 439,
+  "headings": [
+    "# P2/P3 Product Readiness Minimal Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/test-results/pytest/no-junit/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0169d4008a9b686031d0953fb813e82cc4ddf193b3d2c12806de57cb0429f194",
+  "line_count": 14,
+  "size_bytes": 429,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test",
+    "workflow"
+  ]
+}

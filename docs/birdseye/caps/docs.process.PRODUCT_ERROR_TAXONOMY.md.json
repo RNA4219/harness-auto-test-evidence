@@ -1,0 +1,31 @@
+{
+  "path": "docs/process/PRODUCT_ERROR_TAXONOMY.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "4397ce68b06afe452052135bf8d5dcde5163227c03a6831e859d009ccc182bda",
+  "line_count": 160,
+  "size_bytes": 7512,
+  "headings": [
+    "# Product Error Taxonomy",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Error Code Format",
+    "## 4. Categories",
+    "## 5. Core Error Codes",
+    "## 6. Error Record Shape",
+    "## 7. Summary Policy",
+    "## 8. Diagnostic Bundle",
+    "## 9. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/artifact-manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1affde5a7fdd2b2b11f5a909dd26d432b347a9678d2febaa16571b58b8ca4ffd",
+  "line_count": 8,
+  "size_bytes": 192,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

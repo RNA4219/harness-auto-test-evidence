@@ -1,0 +1,23 @@
+{
+  "path": "docs/process/shipyard-run-evidence-p1b-workflow-mapping.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "394f46280cbda6ca6b62277ecb786f592c768c71f4f77ab8991b6182d7bd8a81",
+  "line_count": 93,
+  "size_bytes": 4000,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

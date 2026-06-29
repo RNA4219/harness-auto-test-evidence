@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/test-results/jest/malformed/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "53f4b7d3cfc79376917a9e16667be8d129e86b64a91af614b6bd3778e6f577a6",
+  "line_count": 13,
+  "size_bytes": 371,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test",
+    "workflow"
+  ]
+}

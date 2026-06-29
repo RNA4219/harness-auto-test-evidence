@@ -1,0 +1,21 @@
+{
+  "path": "docs/process/shipyard-run-evidence-p1a-trust-minimal.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "7d20f70ba37f17d4177526c88069f733922f57a0f0f66dc11d15a6f656faf415",
+  "line_count": 132,
+  "size_bytes": 6465,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

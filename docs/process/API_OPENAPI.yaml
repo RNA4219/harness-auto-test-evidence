@@ -1,0 +1,244 @@
+openapi: 3.1.0
+info:
+  title: HATE Product Read Model API
+  version: "0.1.0"
+  description: Read-model API for HATE canonical bundles. The API is non-authoritative for QEG verdicts.
+servers:
+  - url: https://hate.example.invalid
+paths:
+  /v1/runs:
+    get:
+      operationId: listRuns
+      parameters:
+        - $ref: "#/components/parameters/Org"
+        - $ref: "#/components/parameters/Workspace"
+        - name: repo
+          in: query
+          schema: { type: string }
+        - name: decision
+          in: query
+          schema: { type: string, enum: [eligible, conditional, ineligible, hard_dq, hold] }
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Cursor"
+      responses:
+        "200":
+          description: Runs response.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/ResponseEnvelope"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: "#/components/schemas/RunSummary" }
+  /v1/runs/{run_id}/attempts/{attempt}:
+    get:
+      operationId: getRunAttempt
+      parameters:
+        - $ref: "#/components/parameters/Org"
+        - $ref: "#/components/parameters/Workspace"
+        - name: run_id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: attempt
+          in: path
+          required: true
+          schema: { type: integer, minimum: 1 }
+      responses:
+        "200":
+          description: Run attempt response.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/ResponseEnvelope"
+                  - type: object
+                    properties:
+                      data: { $ref: "#/components/schemas/RunDetail" }
+  /v1/evidence:
+    get:
+      operationId: listEvidence
+      parameters:
+        - $ref: "#/components/parameters/Org"
+        - $ref: "#/components/parameters/Workspace"
+        - name: run_id
+          in: query
+          schema: { type: string }
+        - name: risk_id
+          in: query
+          schema: { type: string }
+        - name: kind
+          in: query
+          schema:
+            type: string
+            enum: [execution, coverage, static, contract, mutation, artifact, manual]
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Cursor"
+      responses:
+        "200":
+          description: Evidence response.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/ResponseEnvelope"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: "#/components/schemas/Evidence" }
+  /v1/risk-debt/{debt_id}:
+    patch:
+      operationId: updateRiskDebt
+      parameters:
+        - $ref: "#/components/parameters/Org"
+        - $ref: "#/components/parameters/Workspace"
+        - name: debt_id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/RiskDebtPatch" }
+      responses:
+        "200":
+          description: Updated risk debt.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ResponseEnvelope" }
+  /v1/bundles/import:
+    post:
+      operationId: importBundle
+      parameters:
+        - $ref: "#/components/parameters/Org"
+        - $ref: "#/components/parameters/Workspace"
+        - name: Idempotency-Key
+          in: header
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/BundleImportRequest" }
+      responses:
+        "202":
+          description: Import accepted or idempotently reused.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ResponseEnvelope" }
+components:
+  parameters:
+    Org:
+      name: organization_id
+      in: header
+      required: true
+      schema: { type: string }
+    Workspace:
+      name: workspace_id
+      in: header
+      required: true
+      schema: { type: string }
+    Limit:
+      name: limit
+      in: query
+      schema: { type: integer, minimum: 1, maximum: 500, default: 100 }
+    Cursor:
+      name: cursor
+      in: query
+      schema: { type: string }
+  schemas:
+    ResponseEnvelope:
+      type: object
+      required: [request_id, tenant, resource, schema_version, api_version, generated_at, staleness, data, errors]
+      properties:
+        request_id: { type: string }
+        tenant:
+          type: object
+          required: [organization_id, workspace_id]
+          properties:
+            organization_id: { type: string }
+            workspace_id: { type: string }
+        resource: { type: string }
+        schema_version: { type: string, const: HATE/v1 }
+        api_version: { type: string }
+        generated_at: { type: string, format: date-time }
+        source:
+          type: object
+          properties:
+            bundle_hash: { type: [string, "null"] }
+            run_id: { type: [string, "null"] }
+            attempt: { type: [integer, "null"] }
+        staleness:
+          type: object
+          required: [status]
+          properties:
+            status: { type: string, enum: [fresh, stale, rebuilding, unknown] }
+            reason: { type: [string, "null"] }
+        pagination:
+          type: object
+          properties:
+            limit: { type: integer }
+            cursor: { type: [string, "null"] }
+            next_cursor: { type: [string, "null"] }
+        data: {}
+        errors:
+          type: array
+          items: { $ref: "#/components/schemas/Error" }
+    Error:
+      type: object
+      required: [code, message, remediation]
+      properties:
+        code: { type: string }
+        message: { type: string }
+        remediation: { type: string }
+        source_refs:
+          type: array
+          items: { type: string }
+    RunSummary:
+      type: object
+      required: [run_id, attempt, commit_sha, decision]
+      properties:
+        run_id: { type: string }
+        attempt: { type: integer }
+        commit_sha: { type: string }
+        decision: { type: string }
+    RunDetail:
+      type: object
+      required: [summary, source_refs]
+      properties:
+        summary: { $ref: "#/components/schemas/RunSummary" }
+        source_refs:
+          type: array
+          items: { type: string }
+    Evidence:
+      type: object
+      required: [evidence_id, kind, status, source_refs]
+      properties:
+        evidence_id: { type: string }
+        kind: { type: string }
+        status: { type: string }
+        source_refs:
+          type: array
+          items: { type: string }
+    RiskDebtPatch:
+      type: object
+      required: [new_status, rationale]
+      properties:
+        new_status: { type: string, enum: [acknowledged, mitigated, stale, closed, reopened] }
+        rationale: { type: string }
+        source_refs:
+          type: array
+          items: { type: string }
+    BundleImportRequest:
+      type: object
+      required: [bundle_hash, bundle_ref, dry_run]
+      properties:
+        bundle_hash: { type: string }
+        bundle_ref: { type: string }
+        dry_run: { type: boolean }
+

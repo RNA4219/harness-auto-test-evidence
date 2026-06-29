@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/test-results/vitest/malformed/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e18846caea8e022988f90cfba711fa348642cabbe908082577b367c6fe27e097",
+  "line_count": 6,
+  "size_bytes": 130,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test"
+  ]
+}

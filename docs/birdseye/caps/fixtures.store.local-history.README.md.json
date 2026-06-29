@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/store/local-history/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "7a17b8579a0eb945104190f29ea8a3b0567fe04a25182baab56384a2484d4dd0",
+  "line_count": 13,
+  "size_bytes": 467,
+  "headings": [
+    "# HATE-P2-001 Local Store Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "qeg",
+    "store",
+    "test"
+  ]
+}

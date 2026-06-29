@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/profile.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0a0a288f292769e3a43913a1f9e97bfb41447eaa4014b6b24a1cc66ecf1717a5",
+  "line_count": 238,
+  "size_bytes": 9022,
+  "headings": [],
+  "imports": [
+    ".p0a_io",
+    "__future__",
+    "copy",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_io.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "path": "docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "cb2d7206a7aaa69910f178435bd338b14af998bd4024ed8ca3cff8c0481b2be8",
+  "line_count": 242,
+  "size_bytes": 15374,
+  "headings": [
+    "# Workflow Cookbook Integration",
+    "## 1. 目的",
+    "## 2. 接続範囲",
+    "## 3. HATE 追加 artifact",
+    "## 4. 生成規則",
+    "## 5. CLI 連携案",
+    "## 6. 責務境界",
+    "## 7. 最小 fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "birdseye",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "workflow"
+  ]
+}

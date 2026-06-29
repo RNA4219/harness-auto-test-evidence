@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/rand/audit-no-overwrite/input/audit_packet.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "74e9960d620b95335c8765608a26b1a21886732958352cea5b1c85209800a801",
+  "line_count": 52,
+  "size_bytes": 1618,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

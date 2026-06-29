@@ -1,0 +1,33 @@
+{
+  "path": "docs/process/PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "7ee57f04a61112725dac62e26b3e969971d8e13f7a50179157fa0aec5f29b33d",
+  "line_count": 121,
+  "size_bytes": 4801,
+  "headings": [
+    "# Product Telemetry and Analytics Contract",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Allowed Signals",
+    "## 4. Prohibited Signals",
+    "## 5. Telemetry Event",
+    "## 6. Consent / Configuration",
+    "## 7. Retention and Access",
+    "## 8. Analytics Outputs",
+    "## 9. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "enterprise",
+    "qeg",
+    "schema",
+    "security",
+    "test"
+  ]
+}

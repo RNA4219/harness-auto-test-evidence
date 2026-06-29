@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/precheck-decision.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4d91c348a584900d5c1e4df3df442c6309bf5aadc01067445c42a8386c77f671",
+  "line_count": 26,
+  "size_bytes": 818,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

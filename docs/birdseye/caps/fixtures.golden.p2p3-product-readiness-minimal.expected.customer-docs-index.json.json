@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/customer-docs-index.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "654ae3cca155a21304928ffa37f90681baea2ad32ed89bc8b53d05e1eaf1fbbc",
+  "line_count": 56,
+  "size_bytes": 1681,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

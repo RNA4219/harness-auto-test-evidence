@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/diff-risk-test.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b70751bf71a68b81623dd26efa82639b29b85d65501759d9b6e43b2ed00001b6",
+  "line_count": 79,
+  "size_bytes": 1688,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

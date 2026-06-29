@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c26c9b6877412765224d57265c2897a68fe45bf9105e5b212536ba17ecc85855",
+  "line_count": 283,
+  "size_bytes": 7006,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "test",
+    "workflow"
+  ]
+}

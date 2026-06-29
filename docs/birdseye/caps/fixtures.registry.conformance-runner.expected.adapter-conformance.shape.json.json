@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/registry/conformance-runner/expected/adapter-conformance.shape.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "79c2d4e59c938f00eb6e7699b46b404cd356254819522e3f81043f01218c238f",
+  "line_count": 25,
+  "size_bytes": 565,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "path": "docs/process/REFACTORING_PLAN.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "be5b41cf795f404116e2b1b7c19278f5434ed44b0e6994925b2687100dc0b59b",
+  "line_count": 170,
+  "size_bytes": 7431,
+  "headings": [
+    "# Refactoring Plan",
+    "## 1. Purpose",
+    "## 2. File Size Policy",
+    "## 3. Current Hotspots",
+    "## 4. Target Module Boundaries",
+    "### P0A adapter and coverage ingestion",
+    "### P1A trust and privacy hardening",
+    "### P0B QEG export",
+    "### P1B workflow mapping",
+    "## 5. Specification Split Policy",
+    "## 6. Refactoring Execution Order",
+    "## 7. CI Guardrail Requirement"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

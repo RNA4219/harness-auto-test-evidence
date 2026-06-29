@@ -1,0 +1,34 @@
+{
+  "path": "docs/process/RELEASE_MIGRATION_POLICY.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "b8a2b0bb8e1581ba2494a0ad685fc2cee9871a9c80f4a959150200c44249d26f",
+  "line_count": 120,
+  "size_bytes": 4161,
+  "headings": [
+    "# Release and Migration Policy",
+    "## 1. 目的",
+    "## 2. Release Channels",
+    "## 3. Versioned Surfaces",
+    "## 4. Deprecation Policy",
+    "## 5. Migration Artifacts",
+    "## 6. Release Gates",
+    "## 7. Rollback Policy",
+    "## 8. Compatibility Matrix",
+    "## 9. Release Notes Requirements",
+    "## 10. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security"
+  ]
+}

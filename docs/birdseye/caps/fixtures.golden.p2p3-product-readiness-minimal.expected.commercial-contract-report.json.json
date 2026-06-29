@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/commercial-contract-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b3defd9939d3e69edba55d2896c7287cc5b97e1561af98c20b7d6bb8646d5e23",
+  "line_count": 246,
+  "size_bytes": 7686,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

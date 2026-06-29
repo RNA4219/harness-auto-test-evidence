@@ -1,0 +1,36 @@
+{
+  "path": "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "f1435ab0ced3e1b785e02ef7a07fac775684c9463faf65b0a09a3a7f7dce20a8",
+  "line_count": 151,
+  "size_bytes": 10374,
+  "headings": [
+    "# HATE 仕様書: Shipyard-cp フル実装ドラフト",
+    "## 1. 目的",
+    "## 2. フル実装の定義",
+    "## 3. Shipyard Task Packet",
+    "## 4. Stage Gate Contract",
+    "## 5. Phase Acceptance Matrix",
+    "## 6. 実装証跡の最小コマンド契約",
+    "## 7. フル実装で許容しないショートカット",
+    "## 8. Shipyard WorkerResult 要件",
+    "## 9. Completion Definition"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "birdseye",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

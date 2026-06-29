@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/profile/inheritance/expected/profile-report.shape.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "555fe6e345ac4b6c3a0373e3977b57d924778a4bc9f62c7fc9c2ba4e87a970b5",
+  "line_count": 45,
+  "size_bytes": 1091,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

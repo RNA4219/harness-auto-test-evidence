@@ -1,0 +1,20 @@
+{
+  "path": "docs/process/rand-kano-mode-requirements-quality-audit.json",
+  "role": "requirements",
+  "kind": "json",
+  "sha256": "da714d0b1eb1b3ebacda0c456558ec08f694f105797ab591bcf75de4ba40ca51",
+  "line_count": 266,
+  "size_bytes": 11437,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

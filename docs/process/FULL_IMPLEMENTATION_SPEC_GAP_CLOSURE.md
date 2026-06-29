@@ -28,6 +28,7 @@ test、docs の5点が揃って初めて完了扱いにする。
 
 | 領域 | 既存の不足 | 本書で固定する解消内容 | 実装完了条件 |
 |---|---|---|---|
+| Requirements | 仕様やartifact名はあるが、顧客・業務・受入・段階要件が薄い | `PRODUCT_REQUIREMENTS_DEFINITION.md` でpersona、journey、FR/NFR、data/authz/ops、acceptanceを固定 | 各実装taskが requirement ID と acceptance ID へ trace される |
 | Adapter | JUnit/LCOV中心で、多形式 adapter の完了条件が薄い | adapterごとの入力、出力、失敗、fixtureを定義 | adapter manifest、parser、negative fixture、conformance report |
 | Coverage | LCOV/Cobertura/JaCoCo/coverage.py context の差が未固定 | format別 canonical payload と path normalization を定義 | 各format fixtureが `coverage_slice` に正規化される |
 | Static/SARIF | SARIF finding と risk/test/evidence の結線条件が薄い | finding node、changed_code edge、DQ-010条件を定義 | SARIF fixtureがQEG finding nodeになる |
@@ -44,6 +45,7 @@ test、docs の5点が揃って初めて完了扱いにする。
 | QEG連携 | QEG runtime接続の実行契約が未固定 | validate/import/gate/record adapterを定義 | QEG CLI/APIのdry-run fixture |
 | Shipyard/RanD/manual-bb | advisory artifactとlive連携の境界が曖昧 | live connectorとartifact connectorを分離 | upstream verdictを上書きしないtest |
 | Release/Operations | versioning、migration、incident、support artifactが散在 | release gate evidence checklistを固定 | release candidate pack生成 |
+| Product-grade depth | prototype完了と製品実装完了の境界が薄い | `PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` で規模レンジ、work package、No-Go、fixture/test minimumを固定 | product-grade evidence reports が揃うまで product-ready と主張しない |
 
 ## 3. Phase Complete の厳格定義
 
@@ -406,6 +408,7 @@ Pack No-Go:
 | 主張 | 必須根拠 |
 |---|---|
 | `specification complete` | 本書、`SPECIFICATION.md`、正本表、acceptance matrix |
+| `product-grade specified` | `PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` の work package、No-Go、fixture/test minimum、completion claim taxonomy |
 | `P0a implemented` | code + schema + fixtures + tests + runbook |
 | `P0b implemented` | QEG bundle + SARIF/Playwright + risk debt + tests |
 | `P1a implemented` | adapter registry + profile + AETE + replay/doctor tests |
@@ -415,6 +418,32 @@ Pack No-Go:
 | `release ready` | release candidate pack + QEG result + open risk review |
 
 仕様書やfixtureだけでは `implemented` と言わない。
+prototype の acceptance が通っていても、local store replay、API/read model、dashboard、
+RBAC/audit/retention、security quarantine、enterprise control、support/ops evidence が
+揃っていない場合は `product-ready` と言わない。
+
+### 13.1 Product-Grade Evidence Reports
+
+製品実装完了を主張するには、少なくとも以下の evidence report が必要である。
+
+| Report | Required source | Blocks product-ready when missing |
+|---|---|---|
+| `adapter-conformance-report.json` | adapter SDK / conformance fixture | yes |
+| `schema-validation-report.json` | schema registry / invalid fixture | yes |
+| `store-replay-report.json` | local store / frozen bundle | yes |
+| `api-contract-report.json` | hosted read model API contract tests | yes |
+| `dashboard-uat-report.json` | dashboard view model / UI UAT | yes |
+| `test-integrity-report.json` | skip/xfail/only/todo、mock abuse、assertion quality、test coupling、risk/oracle/coverage signal | yes |
+| `security-quarantine-report.json` | artifact safety / redaction / export exclusion | yes |
+| `enterprise-control-report.json` | RBAC / audit / retention / residency / connectors | yes for enterprise-ready |
+| `scale-performance-report.json` | large-run fixture / memory / latency / pagination / aggregation budgets | yes |
+| `migration-compatibility-report.json` | schema/store/API/profile/adapter/view-model migration and rollback | yes |
+| `commercial-truthfulness-report.json` | customer-facing and commercial claims mapped to implementation evidence | yes |
+| `support-ops-report.json` | error catalog / diagnostic bundle / migration / rollback | yes |
+| `release-candidate-pack.json` | all required product reports and QEG result refs | yes for release-ready |
+
+これらが生成されていない領域は、`specified` または `designed` として扱い、
+`implemented` に昇格させない。
 
 ## 14. 次に実装へ渡す順序
 
@@ -434,5 +463,7 @@ Pack No-Go:
 12. External exporters
 13. RBAC / audit / retention
 14. Release candidate pack
+15. Product-grade evidence reports and dashboard/API UAT
+16. Support/ops/migration/incident/customer-docs closure
 
 この順序を変更する場合は、`IMPLEMENTATION_TASK_BREAKDOWN.md` と `RUNBOOK.md` を同時に更新する。

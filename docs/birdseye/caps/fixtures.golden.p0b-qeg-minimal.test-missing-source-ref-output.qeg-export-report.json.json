@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-export-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3096f23b7f5cfdd2fd24607d896a8d19e23104ab75124d6fe897daaa63ede709",
+  "line_count": 49,
+  "size_bytes": 1309,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

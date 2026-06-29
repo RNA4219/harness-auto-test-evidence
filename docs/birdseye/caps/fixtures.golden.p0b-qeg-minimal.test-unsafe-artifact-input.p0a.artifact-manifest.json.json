@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/artifact-manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d101ca33da1909a46bc31822e28949af117f425a85d3a41280756ec8342e3ebe",
+  "line_count": 23,
+  "size_bytes": 668,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "security",
+    "test"
+  ]
+}

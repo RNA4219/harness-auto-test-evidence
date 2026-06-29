@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/artifacts/symlink/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7e753e3dc85dc35d15b611d3a493875a82ec9523628d9cd4cb0f0a5eeaef6f8c",
+  "line_count": 14,
+  "size_bytes": 427,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "workflow"
+  ]
+}

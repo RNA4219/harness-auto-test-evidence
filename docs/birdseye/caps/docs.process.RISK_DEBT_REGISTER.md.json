@@ -1,0 +1,33 @@
+{
+  "path": "docs/process/RISK_DEBT_REGISTER.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "c1c1bcda9202685fda570f8aac2e35b2dff3cccc30a88e7e4140b4f3736b4500",
+  "line_count": 145,
+  "size_bytes": 4875,
+  "headings": [
+    "# Risk Debt Register",
+    "## 1. 目的",
+    "## 2. 対象",
+    "## 3. Register Artifact",
+    "## 4. Risk Debt Item",
+    "## 5. Status Semantics",
+    "## 6. Aging Policy",
+    "## 7. Recommendation Link",
+    "## 8. Summary Policy",
+    "## 9. QEG / workflow / manual bridge",
+    "## 10. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

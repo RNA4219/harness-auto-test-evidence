@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/identity-connector-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "68a108304bf833cb6dfa30c4ec3407db0b77e1223f69fbef42da409f6c2756c6",
+  "line_count": 123,
+  "size_bytes": 3356,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security"
+  ]
+}

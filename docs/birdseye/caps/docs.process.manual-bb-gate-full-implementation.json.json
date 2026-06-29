@@ -1,0 +1,26 @@
+{
+  "path": "docs/process/manual-bb-gate-full-implementation.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "adc996ad67d52de95d34935db29afd1dd60c33f50fdde04875dda71fc4e1aba2",
+  "line_count": 102,
+  "size_bytes": 4347,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "birdseye",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

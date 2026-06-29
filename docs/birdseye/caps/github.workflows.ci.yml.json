@@ -1,0 +1,16 @@
+{
+  "path": ".github/workflows/ci.yml",
+  "role": "ci",
+  "kind": "yml",
+  "sha256": "c84fc9ebe7126fc41c5a0613ef04ac4ed6533c93776e35c5e010fcb8ac2704f5",
+  "line_count": 32,
+  "size_bytes": 717,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test",
+    "workflow"
+  ]
+}

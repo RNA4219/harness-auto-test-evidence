@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p1b-workflow-minimal/expected/workflow-task-seed.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "957480a309618b096057c4dac364272353aceb94d10299cbeacd2e159a6c6c94",
+  "line_count": 34,
+  "size_bytes": 1114,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

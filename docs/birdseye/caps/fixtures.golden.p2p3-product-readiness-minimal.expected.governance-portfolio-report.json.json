@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/governance-portfolio-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "cc6e17cdc08abddf8b05f87f815b39fb8b87646f1c227eea6bfe348e0ac665e3",
+  "line_count": 51,
+  "size_bytes": 1097,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

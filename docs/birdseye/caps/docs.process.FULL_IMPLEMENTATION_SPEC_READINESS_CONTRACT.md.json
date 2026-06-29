@@ -1,0 +1,29 @@
+{
+  "path": "docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "2abed10d0a91b394cbabf94a9448bc1359693117fa203bfad250de83f67930e9",
+  "line_count": 59,
+  "size_bytes": 2755,
+  "headings": [
+    "# Full Implementation Specification Readiness Contract",
+    "## 1. 目的",
+    "## 2. Readiness Criteria",
+    "## 3. RanD Audit Mapping",
+    "## 4. No-Go Preservation",
+    "## 5. Source Contracts"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

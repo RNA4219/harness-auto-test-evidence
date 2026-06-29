@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/adoption-health-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "cf6ebef029a2473808a73fce01cf153aa5a29a3a11e61a44a1d9baaa215b8deb",
+  "line_count": 58,
+  "size_bytes": 1445,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

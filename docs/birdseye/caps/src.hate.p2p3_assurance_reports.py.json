@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/p2p3_assurance_reports.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e6f89aae0ded625eb6c3f9803d6779fde192cff7e77a41767d005dfee6e9d6c9",
+  "line_count": 455,
+  "size_bytes": 21539,
+  "headings": [],
+  "imports": [
+    ".p2p3_io",
+    ".p2p3_readiness",
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p2p3_io.py",
+    "src/hate/p2p3_readiness.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

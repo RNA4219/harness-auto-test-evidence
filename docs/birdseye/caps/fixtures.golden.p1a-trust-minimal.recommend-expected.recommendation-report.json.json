@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/recommend-expected/recommendation-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1d75c46a70a270b285a9b98cb6e35c10f558e5a5a1cae086f1f1622daadd067c",
+  "line_count": 37,
+  "size_bytes": 1364,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

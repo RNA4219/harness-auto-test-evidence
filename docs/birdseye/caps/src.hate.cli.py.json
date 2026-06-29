@@ -1,0 +1,43 @@
+{
+  "path": "src/hate/cli.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "df456f2c18617c5050c427f62e08ff6dfd8fcd8f7bb724188d1afec31ea596dc",
+  "line_count": 420,
+  "size_bytes": 20607,
+  "headings": [],
+  "imports": [
+    ".p0a",
+    ".p0b",
+    ".p1a",
+    ".p1b",
+    ".p2p3",
+    ".product_grade",
+    ".store",
+    "__future__",
+    "argparse",
+    "json",
+    "pathlib",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p0b.py",
+    "src/hate/p1a.py",
+    "src/hate/p1b.py",
+    "src/hate/p2p3.py",
+    "src/hate/product_grade.py",
+    "src/hate/store.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

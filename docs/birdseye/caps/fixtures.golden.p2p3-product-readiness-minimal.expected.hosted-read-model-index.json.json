@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/hosted-read-model-index.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "96e7091bd021f7e62fcfb2fc417a37a5bb292cc9a46e3afe19d37e82800068e5",
+  "line_count": 46,
+  "size_bytes": 1313,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

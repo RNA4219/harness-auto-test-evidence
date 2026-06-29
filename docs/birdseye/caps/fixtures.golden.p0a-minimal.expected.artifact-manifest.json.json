@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p0a-minimal/expected/artifact-manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "db124ec4202d3f088f75f8caf1a28118e391baa69baa4006414c72b95b967437",
+  "line_count": 33,
+  "size_bytes": 1018,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

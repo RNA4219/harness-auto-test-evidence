@@ -1,0 +1,32 @@
+{
+  "path": "src/hate/p0a_static.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "54204e49aa32a0291c597b2056ee4f849d168b6125b6db8d2dac8318f6e7b500",
+  "line_count": 48,
+  "size_bytes": 1651,
+  "headings": [],
+  "imports": [
+    ".p0a_constants",
+    ".p0a_io",
+    "__future__",
+    "hashlib",
+    "json",
+    "mimetypes",
+    "pathlib",
+    "posixpath",
+    "re",
+    "typing",
+    "xml.etree.ElementTree"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_constants.py",
+    "src/hate/p0a_io.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "security"
+  ]
+}

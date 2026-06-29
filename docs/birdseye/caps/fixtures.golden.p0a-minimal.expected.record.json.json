@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p0a-minimal/expected/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "92f21dc37b4382ba53bdfe5a244314e3c33a4c7794b3e26ea06838c0a7d94f68",
+  "line_count": 31,
+  "size_bytes": 1013,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

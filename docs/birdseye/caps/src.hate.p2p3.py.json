@@ -1,0 +1,53 @@
+{
+  "path": "src/hate/p2p3.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "5a6b2b7af2a5fc00834745e6abe59b65fcef48919b3f36bfb063f52559bbaf3f",
+  "line_count": 333,
+  "size_bytes": 15889,
+  "headings": [],
+  "imports": [
+    ".",
+    ".audit",
+    ".authz",
+    ".connectors",
+    ".domain",
+    ".governance",
+    ".p2p3_assurance_reports",
+    ".p2p3_enterprise_reports",
+    ".p2p3_io",
+    ".p2p3_readiness",
+    ".p2p3_reports",
+    ".release",
+    "__future__",
+    "http.server",
+    "json",
+    "pathlib",
+    "typing",
+    "urllib.parse"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/audit.py",
+    "src/hate/authz.py",
+    "src/hate/connectors.py",
+    "src/hate/domain.py",
+    "src/hate/governance.py",
+    "src/hate/p2p3_assurance_reports.py",
+    "src/hate/p2p3_enterprise_reports.py",
+    "src/hate/p2p3_io.py",
+    "src/hate/p2p3_readiness.py",
+    "src/hate/p2p3_reports.py",
+    "src/hate/release.py"
+  ],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "enterprise",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/input/p0a/artifact-manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5b65ce346e0b106ce0246898736981943fb0204e077f215846eff0b09d476b2d",
+  "line_count": 8,
+  "size_bytes": 199,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

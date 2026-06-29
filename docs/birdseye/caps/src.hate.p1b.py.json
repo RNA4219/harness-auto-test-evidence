@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/p1b.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "855082aa1fd4f0f75d9ab90ce85e2cb144a678d6758b3ab191135a4c915be904",
+  "line_count": 846,
+  "size_bytes": 37521,
+  "headings": [],
+  "imports": [
+    ".",
+    "__future__",
+    "dataclasses",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "qeg",
+    "schema",
+    "workflow"
+  ]
+}

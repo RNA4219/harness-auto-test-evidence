@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/audit-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "9fe3695558429e27383333bc02fdbbc2612ecd567284d6c8ad3b33975b270a53",
+  "line_count": 30,
+  "size_bytes": 932,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

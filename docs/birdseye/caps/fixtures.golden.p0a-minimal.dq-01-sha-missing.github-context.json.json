@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/golden/p0a-minimal/dq-01-sha-missing/github-context.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f3cfe66184ccc16c7c3ce5435077f57e74520685bc5f1240a84761ff37412b1d",
+  "line_count": 13,
+  "size_bytes": 355,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test",
+    "workflow"
+  ]
+}

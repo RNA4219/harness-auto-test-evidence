@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/input/p0a/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e35bdf0708c4cbcbcb20d01d4819c26f93aa5b1b7334334d0ca44aadabbf3db0",
+  "line_count": 31,
+  "size_bytes": 1070,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

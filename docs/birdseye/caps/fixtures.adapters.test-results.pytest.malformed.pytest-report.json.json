@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/test-results/pytest/malformed/pytest-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f9edd8ac32e4456dd276116bcda0e678be26cfae58ea247fe0300cb96e3c575d",
+  "line_count": 13,
+  "size_bytes": 217,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test"
+  ]
+}

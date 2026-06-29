@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/shipyard/no-overwrite/input/run_system_packet.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b5e60021b3fe5e3236ffc21c4b75b49e0952a3af58f3a95146146d274a1d014e",
+  "line_count": 81,
+  "size_bytes": 2608,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "src/hate/product_grade.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "6498a961f7ff01237d0ab02e24b26f3ba2f23a749935e42c301ec66199485874",
+  "line_count": 179,
+  "size_bytes": 6955,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "enterprise",
+    "epic",
+    "release",
+    "schema",
+    "security",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

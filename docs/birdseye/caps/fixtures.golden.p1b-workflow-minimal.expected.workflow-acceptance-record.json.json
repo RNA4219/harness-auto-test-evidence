@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p1b-workflow-minimal/expected/workflow-acceptance-record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e02d19706dabc423481fb231eb1918f08f8c8fbd2af103d0fe85bf15e9a6f41a",
+  "line_count": 51,
+  "size_bytes": 1449,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "fixture",
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

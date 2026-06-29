@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/replay/hardening/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "1ac7780aad0e2b695e725100aa2d3af7d7caada6fb502773e8770f0d54534cec",
+  "line_count": 6,
+  "size_bytes": 332,
+  "headings": [
+    "# HATE-P1A-008 Replay / Compare / Explain / Recommend Hardening Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

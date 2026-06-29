@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/replay-expected/retry-aggregation.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1e180466020d96b81c968ea25605b2f58ed77bd5e77e08a769ebfa9efceef224",
+  "line_count": 25,
+  "size_bytes": 527,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-export-summary.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "2208c929fc4172d1b2ad6b74700564d340b2bd038b1d1b932730ff21460294cd",
+  "line_count": 17,
+  "size_bytes": 416,
+  "headings": [
+    "# P0b QEG Export Summary"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "test"
+  ]
+}

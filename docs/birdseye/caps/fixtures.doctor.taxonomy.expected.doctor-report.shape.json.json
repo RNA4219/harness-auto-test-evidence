@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/doctor/taxonomy/expected/doctor-report.shape.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "256a91946d5d738061fe1da85bf9178180814efe2c2f16608f960c40350ea0be",
+  "line_count": 32,
+  "size_bytes": 685,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

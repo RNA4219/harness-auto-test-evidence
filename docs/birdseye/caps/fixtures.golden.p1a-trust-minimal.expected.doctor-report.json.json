@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/expected/doctor-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7f660560f3033d2b0afefe55f058b339e3612f3b4bdc22480148231d6ab86d6d",
+  "line_count": 13,
+  "size_bytes": 281,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

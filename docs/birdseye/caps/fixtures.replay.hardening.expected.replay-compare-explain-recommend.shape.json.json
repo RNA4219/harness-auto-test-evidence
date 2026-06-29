@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/replay/hardening/expected/replay-compare-explain-recommend.shape.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "55c05bf59d87283618fa7d7c81f5c8353d347fd6e50802f56d5dbabd6c7c9d8c",
+  "line_count": 47,
+  "size_bytes": 1166,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "release"
+  ]
+}

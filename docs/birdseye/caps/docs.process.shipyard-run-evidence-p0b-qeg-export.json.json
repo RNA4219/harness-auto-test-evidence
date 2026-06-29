@@ -1,0 +1,21 @@
+{
+  "path": "docs/process/shipyard-run-evidence-p0b-qeg-export.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "1fd791936a7755f22e8fb7a620a91735f3de1c40e2a838abfd804102b57a9f6a",
+  "line_count": 111,
+  "size_bytes": 4190,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/expected/aete-score.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "59f44927242661aa3e481bdb867c92c7802d3d6ef604401bcf5835fd0de9f4a3",
+  "line_count": 69,
+  "size_bytes": 1991,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

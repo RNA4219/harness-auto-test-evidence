@@ -1,0 +1,2806 @@
+{
+  "generated_at": "f039abbf882a",
+  "schema_version": "HATE-birdseye/v1",
+  "nodes": {
+    ".github/workflows/ci.yml": {
+      "role": "ci",
+      "caps": "docs/birdseye/caps/github.workflows.ci.yml.json",
+      "sha256": "c84fc9ebe7126fc41c5a0613ef04ac4ed6533c93776e35c5e010fcb8ac2704f5",
+      "line_count": 32,
+      "size_bytes": 717
+    },
+    "README.md": {
+      "role": "navigation",
+      "caps": "docs/birdseye/caps/README.md.json",
+      "sha256": "0edf8b33d905a7a7f1c35e4d4eaf136f59d9ff79f2c9d8e8041aaf38057bc416",
+      "line_count": 124,
+      "size_bytes": 8011
+    },
+    "TASK.codex.md": {
+      "role": "planning",
+      "caps": "docs/birdseye/caps/TASK.codex.md.json",
+      "sha256": "9bb7f339a257714c47c33696cafcc8094b4889f24031517ebf777bac79e69bd5",
+      "line_count": 327,
+      "size_bytes": 20384
+    },
+    "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md": {
+      "role": "quality",
+      "caps": "docs/birdseye/caps/docs.process.ACCEPTANCE_CRITERIA_MATRIX.md.json",
+      "sha256": "da5d652bc3d8788cbbe4de0a1e5d3a3919d37e836e6cd3b8cfc333dd207e1eaa",
+      "line_count": 65,
+      "size_bytes": 5073
+    },
+    "docs/process/ACCESSIBILITY_LOCALIZATION_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.ACCESSIBILITY_LOCALIZATION_CONTRACT.md.json",
+      "sha256": "10c91e5e7c7eaee05001e9b922dfe7f063dc7d48aad9074cf3e8d05fcb93ff74",
+      "line_count": 111,
+      "size_bytes": 4467
+    },
+    "docs/process/ADAPTER_DIALECT_PARSER_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.ADAPTER_DIALECT_PARSER_SPEC.md.json",
+      "sha256": "0260f5fa2a3e1db115fcb98a32f607778d67620c8412a3d98c55988fb2a803c3",
+      "line_count": 63,
+      "size_bytes": 2494
+    },
+    "docs/process/ADAPTER_SDK_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.ADAPTER_SDK_CONTRACT.md.json",
+      "sha256": "31ba92299de8415572bc631cbc74b676f7ba573352b72b2cf6d6d82f7eff163e",
+      "line_count": 141,
+      "size_bytes": 4845
+    },
+    "docs/process/API_OPENAPI.yaml": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.API_OPENAPI.yaml.json",
+      "sha256": "8b347ac414aad625003c9886e32f0e3f505e8f2237dce9d4f9786b957d37ac02",
+      "line_count": 244,
+      "size_bytes": 7607
+    },
+    "docs/process/API_REQUIREMENTS.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.API_REQUIREMENTS.md.json",
+      "sha256": "ac3d4467aa4ab37e8628214095cf218eef75cd406ec403d4b6872971cd05de2c",
+      "line_count": 189,
+      "size_bytes": 6300
+    },
+    "docs/process/AUDIT_FIXTURE_ASSURANCE_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.AUDIT_FIXTURE_ASSURANCE_CONTRACT.md.json",
+      "sha256": "3a8048cf594f2d948fc3d466906c0165caa6f49f9c75eea09eea5b5abe229aca",
+      "line_count": 101,
+      "size_bytes": 4336
+    },
+    "docs/process/BLUEPRINT.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.BLUEPRINT.md.json",
+      "sha256": "bf2ce194e66b847db1897a33eade5826e641f71870849befc4bc1c79285ad26a",
+      "line_count": 557,
+      "size_bytes": 32710
+    },
+    "docs/process/CUSTOMER_DOCUMENTATION_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.CUSTOMER_DOCUMENTATION_CONTRACT.md.json",
+      "sha256": "20646124cb982fd4ccdc1ec1fc7c4383116ae1a420b64515e3ddd173e53a81fe",
+      "line_count": 112,
+      "size_bytes": 4456
+    },
+    "docs/process/CUSTOMER_SUCCESS_ADOPTION_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.CUSTOMER_SUCCESS_ADOPTION_CONTRACT.md.json",
+      "sha256": "db73ab0fd316c0ba7de3dfbe01ebec5e110be95b12e4c3177032dea2f4d4bc66",
+      "line_count": 128,
+      "size_bytes": 4984
+    },
+    "docs/process/DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md.json",
+      "sha256": "1dfa8e96155d2f46615b9c5ef251f7386bc6b75d67e38a070ac81682ee9ccaba",
+      "line_count": 112,
+      "size_bytes": 5091
+    },
+    "docs/process/DATA_RETENTION_LEGAL_REQUIREMENTS.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.DATA_RETENTION_LEGAL_REQUIREMENTS.md.json",
+      "sha256": "3a1e1af73db54140e2ce365d5e0533810aa6c575613a7bdba51df613ce0b6ce9",
+      "line_count": 125,
+      "size_bytes": 4487
+    },
+    "docs/process/ENTERPRISE_DOMAIN_MODEL.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.ENTERPRISE_DOMAIN_MODEL.md.json",
+      "sha256": "87ab7f543fc6b3a90b2d7b980b5522f3674098f17d82aaa04b453afe0fe4bbe3",
+      "line_count": 189,
+      "size_bytes": 8017
+    },
+    "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.ENTERPRISE_PRODUCT_REQUIREMENTS.md.json",
+      "sha256": "3f9a8831d4e796820e93104b7253240c24a6a28d32b730e298ac13b37bfe1e0d",
+      "line_count": 333,
+      "size_bytes": 24758
+    },
+    "docs/process/EPIC_TASK_PACKETS.md": {
+      "role": "planning",
+      "caps": "docs/birdseye/caps/docs.process.EPIC_TASK_PACKETS.md.json",
+      "sha256": "5b26b4e04aae7d59835faeb1846c890bcb7becdef722da7d707ae0b4c1d5d6fc",
+      "line_count": 810,
+      "size_bytes": 83374
+    },
+    "docs/process/EPIC_TWO_PASS_COMPLETION_AUDIT.md": {
+      "role": "planning",
+      "caps": "docs/birdseye/caps/docs.process.EPIC_TWO_PASS_COMPLETION_AUDIT.md.json",
+      "sha256": "c116a9b8a49a41659056b261dc6763fd5e6ae142fee1791b4f28e089ce2f1411",
+      "line_count": 119,
+      "size_bytes": 7914
+    },
+    "docs/process/EVALUATION.md": {
+      "role": "quality",
+      "caps": "docs/birdseye/caps/docs.process.EVALUATION.md.json",
+      "sha256": "2396f79e54c9a0157176717604a45c48c9499be75011b714730e889fe1c6ab4c",
+      "line_count": 517,
+      "size_bytes": 39077
+    },
+    "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md.json",
+      "sha256": "ddefd3390e8af70dece2a348c177314b1488b429d1dd86512fcefc11e7cd01ef",
+      "line_count": 469,
+      "size_bytes": 23317
+    },
+    "docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md.json",
+      "sha256": "2abed10d0a91b394cbabf94a9448bc1359693117fa203bfad250de83f67930e9",
+      "line_count": 59,
+      "size_bytes": 2755
+    },
+    "docs/process/GLM5_IMPLEMENTATION_PROMPT_PLAN.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.GLM5_IMPLEMENTATION_PROMPT_PLAN.md.json",
+      "sha256": "7f38a6f1cdff5629fee8baea85ce32bfd8f17c5c37719ae0f661cbab6a38304e",
+      "line_count": 246,
+      "size_bytes": 9262
+    },
+    "docs/process/GLM_IMPLEMENTATION_DISPATCH_PACK.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.GLM_IMPLEMENTATION_DISPATCH_PACK.md.json",
+      "sha256": "fffeef5ecbb37d3a5b76d1d6218e0dd2f8bf22e5a485feb9bfaa383b871221c1",
+      "line_count": 316,
+      "size_bytes": 15448
+    },
+    "docs/process/GUARDRAILS.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.GUARDRAILS.md.json",
+      "sha256": "01f8a59f8fbde5965e3dd9bc87ca71bf431805a76391852c2003937f78eb8b7e",
+      "line_count": 184,
+      "size_bytes": 12734
+    },
+    "docs/process/HOSTED_READ_MODEL_API.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.HOSTED_READ_MODEL_API.md.json",
+      "sha256": "eb0cfc62f4b03dbe865acae80f9e3723a69129e47813df48091383b1fcd2c459",
+      "line_count": 137,
+      "size_bytes": 4695
+    },
+    "docs/process/IMPLEMENTATION_EPIC_BREAKDOWN.md": {
+      "role": "planning",
+      "caps": "docs/birdseye/caps/docs.process.IMPLEMENTATION_EPIC_BREAKDOWN.md.json",
+      "sha256": "3a9608d5c67bd9b54fea31d281f0ffa658dc44d901ee6b375c221be4fc8a4d4a",
+      "line_count": 435,
+      "size_bytes": 12321
+    },
+    "docs/process/IMPLEMENTATION_ROADMAP_CHECKLIST.md": {
+      "role": "planning",
+      "caps": "docs/birdseye/caps/docs.process.IMPLEMENTATION_ROADMAP_CHECKLIST.md.json",
+      "sha256": "6edef819628fd6af6bb56cc0c4143970fc34ee86d2b1f15c3af5a9bcb3ea6b84",
+      "line_count": 324,
+      "size_bytes": 12024
+    },
+    "docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md": {
+      "role": "planning",
+      "caps": "docs/birdseye/caps/docs.process.IMPLEMENTATION_TASK_BREAKDOWN.md.json",
+      "sha256": "0c53c97ce6aba2ee33d93e9980141fd5adc73e4959066d8845ef5b353d925df4",
+      "line_count": 188,
+      "size_bytes": 13780
+    },
+    "docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md.json",
+      "sha256": "44fc2082e689e90100d4bf91576a39913886c142c77b18234dda2f4de6179ed4",
+      "line_count": 104,
+      "size_bytes": 5271
+    },
+    "docs/process/MANUAL_BB_GATE_FULL_IMPLEMENTATION.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.MANUAL_BB_GATE_FULL_IMPLEMENTATION.md.json",
+      "sha256": "25cfb16bac2bd6a4ac8e35f881adbd0cf38a44a1727a95881519a4d697b5a7d1",
+      "line_count": 164,
+      "size_bytes": 15191
+    },
+    "docs/process/MANUAL_BB_GATE_IMPLEMENTATION.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.MANUAL_BB_GATE_IMPLEMENTATION.md.json",
+      "sha256": "d44caa0db398fd1888a1f0d1ec8948716d12c71d4d416545f522596a6b09b6a9",
+      "line_count": 139,
+      "size_bytes": 10353
+    },
+    "docs/process/MANUAL_BB_GATE_SPECIFICATION.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.MANUAL_BB_GATE_SPECIFICATION.md.json",
+      "sha256": "b83aadd22a2c389bc5e6c17cee9fd560987509d9bf278258b629c21e3a470e6d",
+      "line_count": 117,
+      "size_bytes": 10070
+    },
+    "docs/process/P0A_GOLDEN_PATH.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.P0A_GOLDEN_PATH.md.json",
+      "sha256": "8d4eb9235e5434ca9b4bebe9862a7201e646234a42b77d4f15289656c139ec9c",
+      "line_count": 210,
+      "size_bytes": 6965
+    },
+    "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md.json",
+      "sha256": "0da2931f20dcd022ba96967d0f17d88e817a5474ac079f912b755f9e6a7eecd6",
+      "line_count": 246,
+      "size_bytes": 8191
+    },
+    "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md.json",
+      "sha256": "9fa0a16598fc03f5a7b71c2fbe8793593abb95a3079eccce8dd7f86c8084d5ab",
+      "line_count": 257,
+      "size_bytes": 8511
+    },
+    "docs/process/PACKAGING_ENTITLEMENT_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PACKAGING_ENTITLEMENT_CONTRACT.md.json",
+      "sha256": "7335fd888054aecf76f2c96cc08d69dcca027a866cdaf351d4cd893a1d4b3691",
+      "line_count": 122,
+      "size_bytes": 4736
+    },
+    "docs/process/PRIVACY_QUARANTINE_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRIVACY_QUARANTINE_CONTRACT.md.json",
+      "sha256": "41d593aa8342536b7829013630684120b672385f1d39dc7bd079ea6af24317f0",
+      "line_count": 129,
+      "size_bytes": 4484
+    },
+    "docs/process/PRODUCT_ERROR_TAXONOMY.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_ERROR_TAXONOMY.md.json",
+      "sha256": "4397ce68b06afe452052135bf8d5dcde5163227c03a6831e859d009ccc182bda",
+      "line_count": 160,
+      "size_bytes": 7512
+    },
+    "docs/process/PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md.json",
+      "sha256": "c6409ae482304d7b427b5f5cd5eaacc8551d995e9e4c5370487d52b286cfa184",
+      "line_count": 119,
+      "size_bytes": 4391
+    },
+    "docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_GRADE_IMPLEMENTATION_SPEC.md.json",
+      "sha256": "7b73a255ed1ba57347f5b4ecf3b67c9480b05ff6f2696b75948556385f44a611",
+      "line_count": 560,
+      "size_bytes": 28669
+    },
+    "docs/process/PRODUCT_REQUIREMENTS_500K_READINESS_AUDIT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_500K_READINESS_AUDIT.md.json",
+      "sha256": "1baca1a5bbf6729ea4adbd6df4b56022a56cce7fa47715d199178b0170e48c76",
+      "line_count": 218,
+      "size_bytes": 8208
+    },
+    "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_DEFINITION.md.json",
+      "sha256": "b7940c2f0214017ab46177e0bd461dca032ab647229b7921f244d5295f407927",
+      "line_count": 493,
+      "size_bytes": 36761
+    },
+    "docs/process/PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md.json",
+      "sha256": "7ee57f04a61112725dac62e26b3e969971d8e13f7a50179157fa0aec5f29b33d",
+      "line_count": 121,
+      "size_bytes": 4801
+    },
+    "docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_AUDIT.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.RAND_KANO_MODE_FULL_IMPLEMENTATION_AUDIT.md.json",
+      "sha256": "5406b7591674f25758d2b7fc88c8d3764ae1fad97999a29da3add64c8deb3fde",
+      "line_count": 129,
+      "size_bytes": 7222
+    },
+    "docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_READINESS_GO.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.RAND_KANO_MODE_FULL_IMPLEMENTATION_READINESS_GO.md.json",
+      "sha256": "0a12142973750fd72fe6d67112f1699fb9564c42dbf8787359ef97808fa57129",
+      "line_count": 51,
+      "size_bytes": 1960
+    },
+    "docs/process/RAND_KANO_MODE_IDEA_QUALITY_AUDIT.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.RAND_KANO_MODE_IDEA_QUALITY_AUDIT.md.json",
+      "sha256": "bc733463e3624ca46d6382a53d34d53e7701186afd553394743d08637e4728c7",
+      "line_count": 95,
+      "size_bytes": 4702
+    },
+    "docs/process/RAND_KANO_MODE_REQUIREMENTS_QUALITY_AUDIT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.RAND_KANO_MODE_REQUIREMENTS_QUALITY_AUDIT.md.json",
+      "sha256": "c0eda9e5bf1386e59ff283cfdf4e8f6079f8ff73e56504aa24787dad495a235b",
+      "line_count": 85,
+      "size_bytes": 4141
+    },
+    "docs/process/REFACTORING_PLAN.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.REFACTORING_PLAN.md.json",
+      "sha256": "be5b41cf795f404116e2b1b7c19278f5434ed44b0e6994925b2687100dc0b59b",
+      "line_count": 170,
+      "size_bytes": 7431
+    },
+    "docs/process/RELEASE_MIGRATION_POLICY.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.RELEASE_MIGRATION_POLICY.md.json",
+      "sha256": "b8a2b0bb8e1581ba2494a0ad685fc2cee9871a9c80f4a959150200c44249d26f",
+      "line_count": 120,
+      "size_bytes": 4161
+    },
+    "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md.json",
+      "sha256": "27601cc674a54a819098481bb83dd1401dec98727baaf231bd9930897f9a1ca8",
+      "line_count": 112,
+      "size_bytes": 4983
+    },
+    "docs/process/RISK_DEBT_REGISTER.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.RISK_DEBT_REGISTER.md.json",
+      "sha256": "c1c1bcda9202685fda570f8aac2e35b2dff3cccc30a88e7e4140b4f3736b4500",
+      "line_count": 145,
+      "size_bytes": 4875
+    },
+    "docs/process/RUNBOOK.md": {
+      "role": "operations",
+      "caps": "docs/birdseye/caps/docs.process.RUNBOOK.md.json",
+      "sha256": "161e399dc97deeb28ea97fcb43fb3ef637cc6dbf97055f31325573fc5b625c71",
+      "line_count": 739,
+      "size_bytes": 57742
+    },
+    "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.SCALE_PERFORMANCE_REQUIREMENTS.md.json",
+      "sha256": "2d084238a9ac85b74e1a2886fe41c05f4c3f9ec7af3473a487d113dcafaab1e0",
+      "line_count": 106,
+      "size_bytes": 3719
+    },
+    "docs/process/SCHEMA_REGISTRY_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.SCHEMA_REGISTRY_CONTRACT.md.json",
+      "sha256": "8c4f9bad0f1cee172ba2a4284dc58492ff57345fe4cd5dfc513c6b4acbcbd618",
+      "line_count": 128,
+      "size_bytes": 4441
+    },
+    "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.SECURITY_REVIEW_TRUST_CONTRACT.md.json",
+      "sha256": "72b4190e952c6585be93346af49055630ae85e5b3e8a40a2a4496fd3928fdcbc",
+      "line_count": 110,
+      "size_bytes": 4730
+    },
+    "docs/process/SLO_INCIDENT_RESPONSE_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.SLO_INCIDENT_RESPONSE_CONTRACT.md.json",
+      "sha256": "8eb9e333778c70c5fc3ac172e066bc5a9d6dee2efa7d278c084bea7cdd83653e",
+      "line_count": 151,
+      "size_bytes": 7512
+    },
+    "docs/process/SPECIFICATION.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.SPECIFICATION.md.json",
+      "sha256": "d46c7c4964a9d194f76f0e39552443fe58e4bf36859f96bc232460ca633f3b90",
+      "line_count": 1225,
+      "size_bytes": 61851
+    },
+    "docs/process/SPECIFICATION_COMPLETION_AUDIT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.SPECIFICATION_COMPLETION_AUDIT.md.json",
+      "sha256": "a336b9b561c183b776f2b62f83fd3e22c389a977bac627b292565be9ae89d315",
+      "line_count": 110,
+      "size_bytes": 6764
+    },
+    "docs/process/SPECIFICATION_SHIPYARD_AUDIT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.SPECIFICATION_SHIPYARD_AUDIT.md.json",
+      "sha256": "26efb31d370c796423be1f95355b439c69a1fe9237c991b5c4d2dd51e9d639ac",
+      "line_count": 126,
+      "size_bytes": 13199
+    },
+    "docs/process/SPECIFICATION_SHIPYARD_DRAFT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.SPECIFICATION_SHIPYARD_DRAFT.md.json",
+      "sha256": "b757c5b6d37d249813b8ad3f949cdba30f5e79b2299ff9f08791ae2c63ab79cc",
+      "line_count": 353,
+      "size_bytes": 22240
+    },
+    "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md.json",
+      "sha256": "f1435ab0ced3e1b785e02ef7a07fac775684c9463faf65b0a09a3a7f7dce20a8",
+      "line_count": 151,
+      "size_bytes": 10374
+    },
+    "docs/process/STORE_SCHEMA_REQUIREMENTS.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.STORE_SCHEMA_REQUIREMENTS.md.json",
+      "sha256": "0d9ff0cbec532c333f76fec1d160a0a491ab62a89458344262537d41611b48b3",
+      "line_count": 75,
+      "size_bytes": 2718
+    },
+    "docs/process/UI_WORKFLOW_REQUIREMENTS.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.UI_WORKFLOW_REQUIREMENTS.md.json",
+      "sha256": "c6ac2a7e54a6b08a8646133e755cb697513412091266a62a432cbc219dc6577a",
+      "line_count": 163,
+      "size_bytes": 4465
+    },
+    "docs/process/USER_STORY_MAP.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.USER_STORY_MAP.md.json",
+      "sha256": "06d405e69666f0aa4d5bf8c31304bd9b7409746437dd43e3e37c67d09cc51d13",
+      "line_count": 91,
+      "size_bytes": 8083
+    },
+    "docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.WORKFLOW_COOKBOOK_INTEGRATION.md.json",
+      "sha256": "cb2d7206a7aaa69910f178435bd338b14af998bd4024ed8ca3cff8c0481b2be8",
+      "line_count": 242,
+      "size_bytes": 15374
+    },
+    "docs/process/manual-bb-gate-full-implementation.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.manual-bb-gate-full-implementation.json.json",
+      "sha256": "adc996ad67d52de95d34935db29afd1dd60c33f50fdde04875dda71fc4e1aba2",
+      "line_count": 102,
+      "size_bytes": 4347
+    },
+    "docs/process/manual-bb-gate-implementation.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.manual-bb-gate-implementation.json.json",
+      "sha256": "bdd12f88c94e7e498fdf3e5ae9bb6cfe244ed314eaf15f703f5d2e78c9a63e31",
+      "line_count": 113,
+      "size_bytes": 3912
+    },
+    "docs/process/manual-bb-gate-specification.json": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.manual-bb-gate-specification.json.json",
+      "sha256": "0b423465a2061cd49145942cde2d94a5da18367f69256b95116a907f78c38cac",
+      "line_count": 124,
+      "size_bytes": 5230
+    },
+    "docs/process/rand-kano-mode-full-implementation-audit.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-full-implementation-audit.json.json",
+      "sha256": "5f475196ad299631fc3890d81adbff5c409efd489c9f299078b42103bf0d99d4",
+      "line_count": 215,
+      "size_bytes": 9280
+    },
+    "docs/process/rand-kano-mode-full-implementation-kano.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-full-implementation-kano.json.json",
+      "sha256": "f903f671b697119e8f0e75186a120f87c532293fad3a98d558c2d3605d419f90",
+      "line_count": 162,
+      "size_bytes": 6149
+    },
+    "docs/process/rand-kano-mode-full-implementation-readiness-audit.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-full-implementation-readiness-audit.json.json",
+      "sha256": "21b2e62cc0fc978de9482822e33e7c7bd8a95540d06412c26c2fbc48205b7d61",
+      "line_count": 226,
+      "size_bytes": 9682
+    },
+    "docs/process/rand-kano-mode-full-implementation-readiness-kano.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-full-implementation-readiness-kano.json.json",
+      "sha256": "20c2a21da57629d33e4154e51858b0c0283572d673896ea9ab1e62fee64d1eb6",
+      "line_count": 185,
+      "size_bytes": 7129
+    },
+    "docs/process/rand-kano-mode-idea-quality-audit.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-idea-quality-audit.json.json",
+      "sha256": "bf906fecb735254ad1fdcadceb496d4825245961c06601d9e02109fd43f71f1b",
+      "line_count": 266,
+      "size_bytes": 11717
+    },
+    "docs/process/rand-kano-mode-idea-quality-kano.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-idea-quality-kano.json.json",
+      "sha256": "3d0f6cdaeabe603aff1db3c0903181238fb7e3c4d103b5593b09f01830813668",
+      "line_count": 209,
+      "size_bytes": 7827
+    },
+    "docs/process/rand-kano-mode-requirements-quality-audit.json": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-requirements-quality-audit.json.json",
+      "sha256": "da714d0b1eb1b3ebacda0c456558ec08f694f105797ab591bcf75de4ba40ca51",
+      "line_count": 266,
+      "size_bytes": 11437
+    },
+    "docs/process/rand-kano-mode-requirements-quality-kano.json": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-requirements-quality-kano.json.json",
+      "sha256": "0b0c3840197769f4f9acaa437716a43c2fc2fd31f8353b9a897874a383bd3d67",
+      "line_count": 209,
+      "size_bytes": 7411
+    },
+    "docs/process/shipyard-run-evidence-full-implementation-spec.json": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-full-implementation-spec.json.json",
+      "sha256": "37a7a8769648137eb03bebdb4b3065e7e9e9dee72eacc94c34a1902585271538",
+      "line_count": 56,
+      "size_bytes": 2209
+    },
+    "docs/process/shipyard-run-evidence-p0a-cli-implementation.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p0a-cli-implementation.json.json",
+      "sha256": "129593087bb848a0f4c3326b9437f598adbf50f3e9ab64e13276558154db3cd8",
+      "line_count": 83,
+      "size_bytes": 2782
+    },
+    "docs/process/shipyard-run-evidence-p0a-dq-fixtures.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p0a-dq-fixtures.json.json",
+      "sha256": "05af5e80f73d723fb761e690840f864635201391e28ac57d5dd7e84751b70f5d",
+      "line_count": 83,
+      "size_bytes": 2690
+    },
+    "docs/process/shipyard-run-evidence-p0a-schema-bootstrap.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p0a-schema-bootstrap.json.json",
+      "sha256": "f9df1abcf27fc4f7ab48b037976067ae623157d60e0c6ff5d01576c9aa0aba50",
+      "line_count": 81,
+      "size_bytes": 3159
+    },
+    "docs/process/shipyard-run-evidence-p0b-qeg-export.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p0b-qeg-export.json.json",
+      "sha256": "1fd791936a7755f22e8fb7a620a91735f3de1c40e2a838abfd804102b57a9f6a",
+      "line_count": 111,
+      "size_bytes": 4190
+    },
+    "docs/process/shipyard-run-evidence-p1a-trust-minimal.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p1a-trust-minimal.json.json",
+      "sha256": "7d20f70ba37f17d4177526c88069f733922f57a0f0f66dc11d15a6f656faf415",
+      "line_count": 132,
+      "size_bytes": 6465
+    },
+    "docs/process/shipyard-run-evidence-p1b-workflow-mapping.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p1b-workflow-mapping.json.json",
+      "sha256": "394f46280cbda6ca6b62277ecb786f592c768c71f4f77ab8991b6182d7bd8a81",
+      "line_count": 93,
+      "size_bytes": 4000
+    },
+    "docs/process/shipyard-run-evidence-p2p3-product-readiness.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p2p3-product-readiness.json.json",
+      "sha256": "0770bd03408011521ea9b85a4b757b044ef5e96a50abeed460c163f09b616233",
+      "line_count": 156,
+      "size_bytes": 7763
+    },
+    "docs/research/deep-research-report.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.research.deep-research-report.md.json",
+      "sha256": "ce39f2806a046360a3d705e06dc28741567d5da28f4a08e7dcb14e3c4e1e2e6a",
+      "line_count": 819,
+      "size_bytes": 67848
+    },
+    "fixtures/adapters/artifacts/archive/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.archive.github-context.json.json",
+      "sha256": "6bda43fbfbe8178d0e63b3aefa3c95d12a2072f9e8bb0746334bcaf66b20ffa6",
+      "line_count": 14,
+      "size_bytes": 427
+    },
+    "fixtures/adapters/artifacts/external-url/artifact-refs.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.external-url.artifact-refs.json.json",
+      "sha256": "7bda5a889b1d40cb59d32a7a0e95983bd20d9aa93f2372155b89d2f051ca16e3",
+      "line_count": 10,
+      "size_bytes": 210
+    },
+    "fixtures/adapters/artifacts/external-url/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.external-url.github-context.json.json",
+      "sha256": "4f6303f6ef1b50e23b86df46f081d3ac74bcc0b414bc76ce0b5319e96faf485d",
+      "line_count": 14,
+      "size_bytes": 427
+    },
+    "fixtures/adapters/artifacts/path-traversal/artifact-refs.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.path-traversal.artifact-refs.json.json",
+      "sha256": "dda215c91cd25aa90e51d3cd02ff49368edb5bab3b7555d89d6b379fa340f421",
+      "line_count": 10,
+      "size_bytes": 184
+    },
+    "fixtures/adapters/artifacts/path-traversal/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.path-traversal.github-context.json.json",
+      "sha256": "89c81a1cbe9d64ab003255b70d9fbcd3a4628cfbcc870947eba34b1abe1880d9",
+      "line_count": 14,
+      "size_bytes": 427
+    },
+    "fixtures/adapters/artifacts/safe/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.safe.github-context.json.json",
+      "sha256": "74489ccb711965f47d2b71b437eeeb510f1b7373615f3ed12abf60201cde814b",
+      "line_count": 14,
+      "size_bytes": 427
+    },
+    "fixtures/adapters/artifacts/secret/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.secret.github-context.json.json",
+      "sha256": "db149a1157a46d1c12ca5a59f189a5cd750eeacf8c5afb22b146546b4a3c7428",
+      "line_count": 14,
+      "size_bytes": 427
+    },
+    "fixtures/adapters/artifacts/symlink/artifact-refs.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.symlink.artifact-refs.json.json",
+      "sha256": "4638627ee133363c2aa280b5c62c37f113329553eb73920c6e6b822c839b220c",
+      "line_count": 11,
+      "size_bytes": 217
+    },
+    "fixtures/adapters/artifacts/symlink/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.symlink.github-context.json.json",
+      "sha256": "7e753e3dc85dc35d15b611d3a493875a82ec9523628d9cd4cb0f0a5eeaef6f8c",
+      "line_count": 14,
+      "size_bytes": 427
+    },
+    "fixtures/adapters/ci/generic/generic-file-name/generic-ci-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.ci.generic.generic-file-name.generic-ci-context.json.json",
+      "sha256": "64e6596981732a17a61b48e9f8bf96addb01809981b8533d66cfdc0d63e925f3",
+      "line_count": 12,
+      "size_bytes": 363
+    },
+    "fixtures/adapters/ci/generic/generic-file-name/pytest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.ci.generic.generic-file-name.pytest-report.json.json",
+      "sha256": "9561a6ff12cff64e0232450297ee66454a0480a6baa9458df8b443cac7f22435",
+      "line_count": 13,
+      "size_bytes": 248
+    },
+    "fixtures/adapters/ci/generic/input/ci-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.ci.generic.input.ci-context.json.json",
+      "sha256": "2a804f0ef61db0572ef57528c396e2741d6650b9eafbe8578858771db9c84fd6",
+      "line_count": 15,
+      "size_bytes": 495
+    },
+    "fixtures/adapters/ci/generic/missing-required/ci-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.ci.generic.missing-required.ci-context.json.json",
+      "sha256": "7f06902d03269835a4bd3c02504486eb358ceaf9e898ca67c4d1ae938cd739c3",
+      "line_count": 9,
+      "size_bytes": 262
+    },
+    "fixtures/adapters/coverage/cobertura/input/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.cobertura.input.github-context.json.json",
+      "sha256": "6fd5e972b3c393d6c335061bd2c9040ea964a4e2d2fb8e4deb4ee9776b0c717e",
+      "line_count": 14,
+      "size_bytes": 420
+    },
+    "fixtures/adapters/coverage/cobertura/malformed/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.cobertura.malformed.github-context.json.json",
+      "sha256": "d34fbf09c22e283cb68511a124a33b7658fc7e5e8a802b5da243e3beaaed8a8f",
+      "line_count": 14,
+      "size_bytes": 420
+    },
+    "fixtures/adapters/coverage/cobertura/partial/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.cobertura.partial.github-context.json.json",
+      "sha256": "010c1c0096b5633da5f5ab7ef97e36959cef4202edcc390f6a3b295753c1e9dd",
+      "line_count": 14,
+      "size_bytes": 420
+    },
+    "fixtures/adapters/coverage/cobertura/windows-path/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.cobertura.windows-path.github-context.json.json",
+      "sha256": "1ee463a7d79f60fb501334a19f54fd9eaa3075f96bbba72e163d6e798a27f70c",
+      "line_count": 14,
+      "size_bytes": 420
+    },
+    "fixtures/adapters/coverage/jacoco/input/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.jacoco.input.github-context.json.json",
+      "sha256": "6cf2f9ca62079c0c08fc7571a0124833f72618c543c4807c7a060dc4a30e0cd4",
+      "line_count": 14,
+      "size_bytes": 420
+    },
+    "fixtures/adapters/coverage/jacoco/malformed/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.jacoco.malformed.github-context.json.json",
+      "sha256": "f5e0c80b89a4c9f848099e919a5eea5ac63415d79ae90adcfc339841eb5e1f4c",
+      "line_count": 14,
+      "size_bytes": 420
+    },
+    "fixtures/adapters/coverage/jacoco/partial/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.jacoco.partial.github-context.json.json",
+      "sha256": "c9c0c75dbae56c375747af655fbd7df455213fb4a1071117acd79c4235e9a8a4",
+      "line_count": 14,
+      "size_bytes": 420
+    },
+    "fixtures/adapters/coverage/jacoco/windows-path/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.jacoco.windows-path.github-context.json.json",
+      "sha256": "d50f8a98fef498d9f2e599185fc9b9e3a50eaf76091d7c044b1ada73f265f2e8",
+      "line_count": 14,
+      "size_bytes": 420
+    },
+    "fixtures/adapters/coveragepy/input/coverage.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.input.coverage.json.json",
+      "sha256": "421fbb72de09ef683f34b63b55f64217e0c39356e53fc40fd4f1805946628e91",
+      "line_count": 53,
+      "size_bytes": 1784
+    },
+    "fixtures/adapters/coveragepy/input/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.input.github-context.json.json",
+      "sha256": "d5a6e76f0406ff8fc18ab4faa9b4260a2ebc3b3d7ccdbecbc03d4603e7a92d0c",
+      "line_count": 14,
+      "size_bytes": 431
+    },
+    "fixtures/adapters/coveragepy/missing-context/coverage.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.missing-context.coverage.json.json",
+      "sha256": "41e3f1f8b5fb6da5354432df8281a9909491a698a9898fd36437aa53834c8e55",
+      "line_count": 22,
+      "size_bytes": 423
+    },
+    "fixtures/adapters/coveragepy/missing-context/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.missing-context.github-context.json.json",
+      "sha256": "58d83aec5e47e9253697dca52c7d1f3fb89a5efea44fd67d08cfb395af2f4624",
+      "line_count": 13,
+      "size_bytes": 377
+    },
+    "fixtures/adapters/coveragepy/partial/coverage.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.partial.coverage.json.json",
+      "sha256": "129bb071948fe0a184ddc814c6564f52e4541360c19c6cd2d75a81c7d3a46e88",
+      "line_count": 24,
+      "size_bytes": 587
+    },
+    "fixtures/adapters/coveragepy/partial/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.partial.github-context.json.json",
+      "sha256": "1d29ac70ede80d3bc2142dce0f0118a919db4b8557882b09d741be2a5083b459",
+      "line_count": 13,
+      "size_bytes": 370
+    },
+    "fixtures/adapters/coveragepy/partial/pytest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.partial.pytest-report.json.json",
+      "sha256": "e09794b2bb8c435769487922d32bd84f77697f28853584f19fd1a6c960c54f28",
+      "line_count": 28,
+      "size_bytes": 582
+    },
+    "fixtures/adapters/playwright/evidence/artifact-manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.playwright.evidence.artifact-manifest.json.json",
+      "sha256": "21df6316faca8d1cd66e820912ef6f03b79814d3409baa1499a48e9b7ad371f9",
+      "line_count": 97,
+      "size_bytes": 3261
+    },
+    "fixtures/adapters/risk-debt/lifecycle/risk-debt-lifecycle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.risk-debt.lifecycle.risk-debt-lifecycle.json.json",
+      "sha256": "d655a10e9fb057ed90b2fab4fe37fe8c1acb88252fa0c7a069925884f8f704e7",
+      "line_count": 41,
+      "size_bytes": 1429
+    },
+    "fixtures/adapters/test-results/jest/input/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.input.github-context.json.json",
+      "sha256": "1b635d9a3c201d5bd72b90e82bf6a6933b04d4676e5067542f187f466273ed3c",
+      "line_count": 14,
+      "size_bytes": 419
+    },
+    "fixtures/adapters/test-results/jest/input/jest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.input.jest-report.json.json",
+      "sha256": "7d700d28fd27a891d5713466f38449eec799959feff1be007412f410f2a8a921",
+      "line_count": 112,
+      "size_bytes": 3289
+    },
+    "fixtures/adapters/test-results/jest/malformed/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.malformed.github-context.json.json",
+      "sha256": "53f4b7d3cfc79376917a9e16667be8d129e86b64a91af614b6bd3778e6f577a6",
+      "line_count": 13,
+      "size_bytes": 371
+    },
+    "fixtures/adapters/test-results/jest/malformed/jest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.malformed.jest-report.json.json",
+      "sha256": "eda23c1060e8799d021e2d773605c6d184cf31e6c0408d7fc0eb48ff0c22c7b8",
+      "line_count": 9,
+      "size_bytes": 151
+    },
+    "fixtures/adapters/test-results/jest/no-junit/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.no-junit.github-context.json.json",
+      "sha256": "1b635d9a3c201d5bd72b90e82bf6a6933b04d4676e5067542f187f466273ed3c",
+      "line_count": 14,
+      "size_bytes": 419
+    },
+    "fixtures/adapters/test-results/jest/no-junit/jest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.no-junit.jest-report.json.json",
+      "sha256": "7d700d28fd27a891d5713466f38449eec799959feff1be007412f410f2a8a921",
+      "line_count": 112,
+      "size_bytes": 3289
+    },
+    "fixtures/adapters/test-results/pytest/input/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.input.github-context.json.json",
+      "sha256": "0169d4008a9b686031d0953fb813e82cc4ddf193b3d2c12806de57cb0429f194",
+      "line_count": 14,
+      "size_bytes": 429
+    },
+    "fixtures/adapters/test-results/pytest/input/pytest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.input.pytest-report.json.json",
+      "sha256": "99bb7688c9511b5ad409a05fbdbff0b66ef345ab5ebdd3a2fe62716e9d9ea5ee",
+      "line_count": 80,
+      "size_bytes": 1901
+    },
+    "fixtures/adapters/test-results/pytest/malformed/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.malformed.github-context.json.json",
+      "sha256": "169a4bb3e6297b4a6055a553d78e8c0e0f03cfd07c064fdfcdbf07641b22e3dc",
+      "line_count": 13,
+      "size_bytes": 364
+    },
+    "fixtures/adapters/test-results/pytest/malformed/pytest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.malformed.pytest-report.json.json",
+      "sha256": "f9edd8ac32e4456dd276116bcda0e678be26cfae58ea247fe0300cb96e3c575d",
+      "line_count": 13,
+      "size_bytes": 217
+    },
+    "fixtures/adapters/test-results/pytest/no-junit/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.no-junit.github-context.json.json",
+      "sha256": "0169d4008a9b686031d0953fb813e82cc4ddf193b3d2c12806de57cb0429f194",
+      "line_count": 14,
+      "size_bytes": 429
+    },
+    "fixtures/adapters/test-results/pytest/no-junit/pytest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.no-junit.pytest-report.json.json",
+      "sha256": "99bb7688c9511b5ad409a05fbdbff0b66ef345ab5ebdd3a2fe62716e9d9ea5ee",
+      "line_count": 80,
+      "size_bytes": 1901
+    },
+    "fixtures/adapters/test-results/pytest/retry-matrix/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.retry-matrix.github-context.json.json",
+      "sha256": "2832f7a8c3352030826f6715ad7b431b445a855f782e92916efdb4e0f7ab5311",
+      "line_count": 13,
+      "size_bytes": 364
+    },
+    "fixtures/adapters/test-results/pytest/retry-matrix/pytest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.retry-matrix.pytest-report.json.json",
+      "sha256": "24cba12c0fbd80a5b65726135274bac5e54981a365a29261dc9f70f4d01fd72a",
+      "line_count": 45,
+      "size_bytes": 1075
+    },
+    "fixtures/adapters/test-results/vitest/input/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.input.github-context.json.json",
+      "sha256": "a2f83a62a124ae77f7c0081b93e273ad853a6b2292582b06d4ef7b99cd608311",
+      "line_count": 14,
+      "size_bytes": 435
+    },
+    "fixtures/adapters/test-results/vitest/input/vitest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.input.vitest-report.json.json",
+      "sha256": "701f6b28a1692a9cedc06f4c0e4246b7af4bce708290f6ffc04e16d6a67d4e2d",
+      "line_count": 87,
+      "size_bytes": 2794
+    },
+    "fixtures/adapters/test-results/vitest/malformed/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.malformed.github-context.json.json",
+      "sha256": "e18846caea8e022988f90cfba711fa348642cabbe908082577b367c6fe27e097",
+      "line_count": 6,
+      "size_bytes": 130
+    },
+    "fixtures/adapters/test-results/vitest/malformed/vitest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.malformed.vitest-report.json.json",
+      "sha256": "37caad89f7f0e38157823d7dc47ae0893db60e588022a5561a25a5905fc7d5cd",
+      "line_count": 10,
+      "size_bytes": 153
+    },
+    "fixtures/adapters/test-results/vitest/no-junit/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.no-junit.github-context.json.json",
+      "sha256": "a2f83a62a124ae77f7c0081b93e273ad853a6b2292582b06d4ef7b99cd608311",
+      "line_count": 14,
+      "size_bytes": 435
+    },
+    "fixtures/adapters/test-results/vitest/no-junit/vitest-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.no-junit.vitest-report.json.json",
+      "sha256": "701f6b28a1692a9cedc06f4c0e4246b7af4bce708290f6ffc04e16d6a67d4e2d",
+      "line_count": 87,
+      "size_bytes": 2794
+    },
+    "fixtures/aete/signal-based/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.aete.signal-based.README.md.json",
+      "sha256": "ef45936fb1346db38e586780aa940de9278cb509d9a853ac07c82a37933f7d9b",
+      "line_count": 5,
+      "size_bytes": 239
+    },
+    "fixtures/aete/signal-based/expected/aete-signal-report.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.aete.signal-based.expected.aete-signal-report.shape.json.json",
+      "sha256": "c242de9f9220f258230260b1aa789e230a9af0ca3d5868462147689321b9a4a1",
+      "line_count": 27,
+      "size_bytes": 653
+    },
+    "fixtures/aggregation/retry-matrix-shard/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.aggregation.retry-matrix-shard.README.md.json",
+      "sha256": "412b57cbb2259a9327225b9694f9af96ace1dada001fc8e954031bd50b1aefc1",
+      "line_count": 5,
+      "size_bytes": 295
+    },
+    "fixtures/aggregation/retry-matrix-shard/expected/retry-aggregation.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.aggregation.retry-matrix-shard.expected.retry-aggregation.shape.json.json",
+      "sha256": "e159ec6278588a9dc88b008e1ecc99ccac7598973c72ea3e5159d13ec72d7454",
+      "line_count": 41,
+      "size_bytes": 823
+    },
+    "fixtures/doctor/taxonomy/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.doctor.taxonomy.README.md.json",
+      "sha256": "e1d74bcf5d4a0a2fe52c96fac18f1df7a9e19cf2fa85d5f285c48d65349f70d6",
+      "line_count": 5,
+      "size_bytes": 276
+    },
+    "fixtures/doctor/taxonomy/expected/doctor-report.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.doctor.taxonomy.expected.doctor-report.shape.json.json",
+      "sha256": "256a91946d5d738061fe1da85bf9178180814efe2c2f16608f960c40350ea0be",
+      "line_count": 32,
+      "size_bytes": 685
+    },
+    "fixtures/golden/p0a-minimal/dq-01-sha-missing/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-01-sha-missing.github-context.json.json",
+      "sha256": "f3cfe66184ccc16c7c3ce5435077f57e74520685bc5f1240a84761ff37412b1d",
+      "line_count": 13,
+      "size_bytes": 355
+    },
+    "fixtures/golden/p0a-minimal/dq-02-junit-malformed/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-02-junit-malformed.github-context.json.json",
+      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "line_count": 14,
+      "size_bytes": 416
+    },
+    "fixtures/golden/p0a-minimal/dq-03-artifact-missing/artifact-refs.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-03-artifact-missing.artifact-refs.json.json",
+      "sha256": "f1f818dd789210f0432b6741e46b47ba6117526efd67712842b9808fc3572135",
+      "line_count": 10,
+      "size_bytes": 195
+    },
+    "fixtures/golden/p0a-minimal/dq-03-artifact-missing/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-03-artifact-missing.github-context.json.json",
+      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "line_count": 14,
+      "size_bytes": 416
+    },
+    "fixtures/golden/p0a-minimal/dq-08-coverage-only/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-08-coverage-only.github-context.json.json",
+      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "line_count": 14,
+      "size_bytes": 416
+    },
+    "fixtures/golden/p0a-minimal/dq-15-record-missing/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-15-record-missing.github-context.json.json",
+      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "line_count": 14,
+      "size_bytes": 416
+    },
+    "fixtures/golden/p0a-minimal/dq-15-record-missing/record-control.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-15-record-missing.record-control.json.json",
+      "sha256": "902107f96ee8eb4b890cdc8679f2f8e609eb093772a71a819b87e7b0076b0f64",
+      "line_count": 3,
+      "size_bytes": 38
+    },
+    "fixtures/golden/p0a-minimal/expected/HATE-run.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.HATE-run.json.json",
+      "sha256": "b16a53d6ec0bec2d1b4fdfdf84cb3e458357e9f901463b5c1fc2756144f929ff",
+      "line_count": 27,
+      "size_bytes": 857
+    },
+    "fixtures/golden/p0a-minimal/expected/artifact-manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.artifact-manifest.json.json",
+      "sha256": "db124ec4202d3f088f75f8caf1a28118e391baa69baa4006414c72b95b967437",
+      "line_count": 33,
+      "size_bytes": 1018
+    },
+    "fixtures/golden/p0a-minimal/expected/precheck-decision.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.precheck-decision.json.json",
+      "sha256": "37e2220b78f081742b41bb0c045b4b2ddd6750f731140d84c571bd2d7846b02f",
+      "line_count": 26,
+      "size_bytes": 858
+    },
+    "fixtures/golden/p0a-minimal/expected/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.record.json.json",
+      "sha256": "92f21dc37b4382ba53bdfe5a244314e3c33a4c7794b3e26ea06838c0a7d94f68",
+      "line_count": 31,
+      "size_bytes": 1013
+    },
+    "fixtures/golden/p0a-minimal/expected/summary.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.summary.md.json",
+      "sha256": "92b47b3eb5c81f2bf24a3f02b041dd4fa7133313a4e577c241cfb77847625b68",
+      "line_count": 11,
+      "size_bytes": 427
+    },
+    "fixtures/golden/p0a-minimal/input/github-context.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.input.github-context.json.json",
+      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "line_count": 14,
+      "size_bytes": 416
+    },
+    "fixtures/golden/p0b-qeg-minimal/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.README.md.json",
+      "sha256": "fdef8a8820babd0678638b6eb60aeb7c602c3e75e100a6d8a2c9a79267b80f62",
+      "line_count": 32,
+      "size_bytes": 1144
+    },
+    "fixtures/golden/p0b-qeg-minimal/expected/diff-risk-test.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.expected.diff-risk-test.json.json",
+      "sha256": "e930067936ae46d63501186d8ea9f01acf23bfca159308855411b5a26664a3a9",
+      "line_count": 81,
+      "size_bytes": 1729
+    },
+    "fixtures/golden/p0b-qeg-minimal/expected/evidence-map.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.expected.evidence-map.json.json",
+      "sha256": "9c747afbb7ed96499067b1cad3b9b718ec6cf827a395602c49b8dff8133aae87",
+      "line_count": 96,
+      "size_bytes": 2405
+    },
+    "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.expected.qeg-bundle.json.json",
+      "sha256": "8541dde87928a6e0578378a0085803b4a977f86a44c12127d24d80fc3f2af3e6",
+      "line_count": 342,
+      "size_bytes": 8552
+    },
+    "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.expected.qeg-export-report.json.json",
+      "sha256": "56ba132a0bb50405f5d613f9ff74e963a4b3488c83bf144f8b3d984d5951e1d8",
+      "line_count": 23,
+      "size_bytes": 592
+    },
+    "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-summary.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.expected.qeg-export-summary.md.json",
+      "sha256": "ac35ce81898f52db9393ec318c7931418d481acd7aa74ecf1c953cb443e46ad0",
+      "line_count": 17,
+      "size_bytes": 416
+    },
+    "fixtures/golden/p0b-qeg-minimal/input/diff-risk-test.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.diff-risk-test.json.json",
+      "sha256": "cb9fa07d957fe11d07eb085642d2f0e104593ed573153f1a76eb99a39d4800d0",
+      "line_count": 59,
+      "size_bytes": 1529
+    },
+    "fixtures/golden/p0b-qeg-minimal/input/p0a/HATE-run.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.p0a.HATE-run.json.json",
+      "sha256": "ee2d4d98a1e6f5f0c06e5d1ed956c9bfe36c4ad68f7c166d70df71ead6800318",
+      "line_count": 27,
+      "size_bytes": 855
+    },
+    "fixtures/golden/p0b-qeg-minimal/input/p0a/artifact-manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.p0a.artifact-manifest.json.json",
+      "sha256": "5b65ce346e0b106ce0246898736981943fb0204e077f215846eff0b09d476b2d",
+      "line_count": 8,
+      "size_bytes": 199
+    },
+    "fixtures/golden/p0b-qeg-minimal/input/p0a/precheck-decision.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.p0a.precheck-decision.json.json",
+      "sha256": "4d91c348a584900d5c1e4df3df442c6309bf5aadc01067445c42a8386c77f671",
+      "line_count": 26,
+      "size_bytes": 818
+    },
+    "fixtures/golden/p0b-qeg-minimal/input/p0a/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.p0a.record.json.json",
+      "sha256": "e35bdf0708c4cbcbcb20d01d4819c26f93aa5b1b7334334d0ca44aadabbf3db0",
+      "line_count": 31,
+      "size_bytes": 1070
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-input/diff-risk-test.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-input.diff-risk-test.json.json",
+      "sha256": "56280678cb034eecead96e7de84c8eac027722636c5f7ca8daabb9ea33fcaa01",
+      "line_count": 59,
+      "size_bytes": 1471
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-input/p0a/artifact-manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-input.p0a.artifact-manifest.json.json",
+      "sha256": "1affde5a7fdd2b2b11f5a909dd26d432b347a9678d2febaa16571b58b8ca4ffd",
+      "line_count": 8,
+      "size_bytes": 192
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-input/p0a/precheck-decision.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-input.p0a.precheck-decision.json.json",
+      "sha256": "4d91c348a584900d5c1e4df3df442c6309bf5aadc01067445c42a8386c77f671",
+      "line_count": 26,
+      "size_bytes": 818
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-input/p0a/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-input.p0a.record.json.json",
+      "sha256": "9f0a2b215e260bc0c6b6907a0ce6ff894629a4aac21e50a4e157547ade7164de",
+      "line_count": 31,
+      "size_bytes": 1040
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/diff-risk-test.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.diff-risk-test.json.json",
+      "sha256": "b70751bf71a68b81623dd26efa82639b29b85d65501759d9b6e43b2ed00001b6",
+      "line_count": 79,
+      "size_bytes": 1688
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/HATE-run.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.HATE-run.json.json",
+      "sha256": "ee2d4d98a1e6f5f0c06e5d1ed956c9bfe36c4ad68f7c166d70df71ead6800318",
+      "line_count": 27,
+      "size_bytes": 855
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/artifact-manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.artifact-manifest.json.json",
+      "sha256": "1affde5a7fdd2b2b11f5a909dd26d432b347a9678d2febaa16571b58b8ca4ffd",
+      "line_count": 8,
+      "size_bytes": 192
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/precheck-decision.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.precheck-decision.json.json",
+      "sha256": "4d91c348a584900d5c1e4df3df442c6309bf5aadc01067445c42a8386c77f671",
+      "line_count": 26,
+      "size_bytes": 818
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.record.json.json",
+      "sha256": "9f0a2b215e260bc0c6b6907a0ce6ff894629a4aac21e50a4e157547ade7164de",
+      "line_count": 31,
+      "size_bytes": 1040
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/diff-risk-test.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.diff-risk-test.json.json",
+      "sha256": "26b5ad8542aa287bfbdde07c4a8481a84cce9cb6c75491519af2f41401280a6c",
+      "line_count": 79,
+      "size_bytes": 1690
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/evidence-map.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.evidence-map.json.json",
+      "sha256": "fb73f026bc2ada3d93195d70e64b6dc67aa08af73c0eaa243cb2b6d62a8b0b9f",
+      "line_count": 87,
+      "size_bytes": 2134
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.qeg-bundle.json.json",
+      "sha256": "c26c9b6877412765224d57265c2897a68fe45bf9105e5b212536ba17ecc85855",
+      "line_count": 283,
+      "size_bytes": 7006
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-export-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.qeg-export-report.json.json",
+      "sha256": "3096f23b7f5cfdd2fd24607d896a8d19e23104ab75124d6fe897daaa63ede709",
+      "line_count": 49,
+      "size_bytes": 1309
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-export-summary.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.qeg-export-summary.md.json",
+      "sha256": "2208c929fc4172d1b2ad6b74700564d340b2bd038b1d1b932730ff21460294cd",
+      "line_count": 17,
+      "size_bytes": 416
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/risk-debt-register.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.risk-debt-register.json.json",
+      "sha256": "c83476440fb2c91990fa6d992df118bb36f7f74e34bf8d64d420d8204cbdf3f0",
+      "line_count": 17,
+      "size_bytes": 405
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/diff-risk-test.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.diff-risk-test.json.json",
+      "sha256": "2c888962a1c21c0a88865126aa89d591a93c65791cf1303321d6a42dda429524",
+      "line_count": 85,
+      "size_bytes": 1826
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/HATE-run.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.HATE-run.json.json",
+      "sha256": "ee2d4d98a1e6f5f0c06e5d1ed956c9bfe36c4ad68f7c166d70df71ead6800318",
+      "line_count": 27,
+      "size_bytes": 855
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/artifact-manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.artifact-manifest.json.json",
+      "sha256": "d101ca33da1909a46bc31822e28949af117f425a85d3a41280756ec8342e3ebe",
+      "line_count": 23,
+      "size_bytes": 668
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/precheck-decision.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.precheck-decision.json.json",
+      "sha256": "4d91c348a584900d5c1e4df3df442c6309bf5aadc01067445c42a8386c77f671",
+      "line_count": 26,
+      "size_bytes": 818
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.record.json.json",
+      "sha256": "9f0a2b215e260bc0c6b6907a0ce6ff894629a4aac21e50a4e157547ade7164de",
+      "line_count": 31,
+      "size_bytes": 1040
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/diff-risk-test.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.diff-risk-test.json.json",
+      "sha256": "60e538a6ac61bcb431175626c51a22dffc765db58ef256de326b244ee208a5f2",
+      "line_count": 85,
+      "size_bytes": 1828
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/evidence-map.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.evidence-map.json.json",
+      "sha256": "e9121a344c6af381b491f1eed15eec01abef4687111ad5415cf3f81c75bca855",
+      "line_count": 101,
+      "size_bytes": 2647
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.qeg-bundle.json.json",
+      "sha256": "3ede2b64936ee3e47101eab541fbde20b53b43c9cbb9dc55b8d220d918b7ad2c",
+      "line_count": 299,
+      "size_bytes": 7558
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-export-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.qeg-export-report.json.json",
+      "sha256": "c24d3c4f6fc5133b1efe4b434eff42793765865be8e44871dfac20e39d4bfa28",
+      "line_count": 77,
+      "size_bytes": 2307
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-export-summary.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.qeg-export-summary.md.json",
+      "sha256": "2208c929fc4172d1b2ad6b74700564d340b2bd038b1d1b932730ff21460294cd",
+      "line_count": 17,
+      "size_bytes": 416
+    },
+    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/risk-debt-register.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.risk-debt-register.json.json",
+      "sha256": "c83476440fb2c91990fa6d992df118bb36f7f74e34bf8d64d420d8204cbdf3f0",
+      "line_count": 17,
+      "size_bytes": 405
+    },
+    "fixtures/golden/p1a-trust-minimal/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.README.md.json",
+      "sha256": "0e77ec48650f3c9df829d78f37ba519eec7854581b3cfdfbf521370d61f6403a",
+      "line_count": 34,
+      "size_bytes": 1670
+    },
+    "fixtures/golden/p1a-trust-minimal/compare-expected/compare-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.compare-expected.compare-report.json.json",
+      "sha256": "73a4635b623937ce08bf777f519d3e2dfe89ced5098dbeb04d269100c163ccad",
+      "line_count": 22,
+      "size_bytes": 676
+    },
+    "fixtures/golden/p1a-trust-minimal/doctor-expected/adapter-capability-manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.doctor-expected.adapter-capability-manifest.json.json",
+      "sha256": "ee49cdf9fecc6114f1842760cd9cfe2c78018ec699dc3a2b141a1865ff2cc580",
+      "line_count": 46,
+      "size_bytes": 1078
+    },
+    "fixtures/golden/p1a-trust-minimal/doctor-expected/adapter-conformance-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.doctor-expected.adapter-conformance-report.json.json",
+      "sha256": "bfeb990bdbf0b93bfa542221d29be133ee837eb5c9581a7bb5c1bd60c7e784d5",
+      "line_count": 71,
+      "size_bytes": 1578
+    },
+    "fixtures/golden/p1a-trust-minimal/doctor-expected/doctor-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.doctor-expected.doctor-report.json.json",
+      "sha256": "de8d55f5ad325902f38ff39867d55b925753be2853018629b0db7bfaf76d43e2",
+      "line_count": 25,
+      "size_bytes": 556
+    },
+    "fixtures/golden/p1a-trust-minimal/expected/adapter-capability-manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.adapter-capability-manifest.json.json",
+      "sha256": "ee49cdf9fecc6114f1842760cd9cfe2c78018ec699dc3a2b141a1865ff2cc580",
+      "line_count": 46,
+      "size_bytes": 1078
+    },
+    "fixtures/golden/p1a-trust-minimal/expected/adapter-conformance-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.adapter-conformance-report.json.json",
+      "sha256": "d7d82d598ec221d5ab14be09ba9e8fe243f7e275b55726a38a2a500408b3e5b1",
+      "line_count": 71,
+      "size_bytes": 1575
+    },
+    "fixtures/golden/p1a-trust-minimal/expected/aete-score.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.aete-score.json.json",
+      "sha256": "59f44927242661aa3e481bdb867c92c7802d3d6ef604401bcf5835fd0de9f4a3",
+      "line_count": 69,
+      "size_bytes": 1991
+    },
+    "fixtures/golden/p1a-trust-minimal/expected/artifact-resolver-map.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.artifact-resolver-map.json.json",
+      "sha256": "c478b061fcb3af4e64315a83da9883301c998e0da9feeeb26a6b5c418b62a1b3",
+      "line_count": 69,
+      "size_bytes": 1924
+    },
+    "fixtures/golden/p1a-trust-minimal/expected/canonical-identity-index.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.canonical-identity-index.json.json",
+      "sha256": "55dbf9b2281c33bce9c10cdbe6592d78c7c2ffd5333b0afc0efb7825e4466978",
+      "line_count": 38,
+      "size_bytes": 994
+    },
+    "fixtures/golden/p1a-trust-minimal/expected/doctor-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.doctor-report.json.json",
+      "sha256": "7f660560f3033d2b0afefe55f058b339e3612f3b4bdc22480148231d6ab86d6d",
+      "line_count": 13,
+      "size_bytes": 281
+    },
+    "fixtures/golden/p1a-trust-minimal/expected/retry-aggregation.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.retry-aggregation.json.json",
+      "sha256": "269dd2673cd6b8ef5f794e010ccfe9884112d9b26143d6c0d99c8bb5dda9dc4e",
+      "line_count": 38,
+      "size_bytes": 850
+    },
+    "fixtures/golden/p1a-trust-minimal/expected/trust-summary.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.trust-summary.md.json",
+      "sha256": "cb8febd500ddd66f07bf034ba897ef52b879a3c3715006e51213fdac8239cd6e",
+      "line_count": 10,
+      "size_bytes": 275
+    },
+    "fixtures/golden/p1a-trust-minimal/explain-expected/explain-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.explain-expected.explain-report.json.json",
+      "sha256": "f52a4cc5c7acda9a13ae229269267650d4cc7ab842a4f63b3c00f39a18ae117b",
+      "line_count": 36,
+      "size_bytes": 1172
+    },
+    "fixtures/golden/p1a-trust-minimal/recommend-expected/recommendation-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.recommend-expected.recommendation-report.json.json",
+      "sha256": "1d75c46a70a270b285a9b98cb6e35c10f558e5a5a1cae086f1f1622daadd067c",
+      "line_count": 37,
+      "size_bytes": 1364
+    },
+    "fixtures/golden/p1a-trust-minimal/replay-expected/aete-score.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.aete-score.json.json",
+      "sha256": "6687a8112093b36319f6a5991efa386fe1a790c0f1f48469117ae2c17fe70449",
+      "line_count": 69,
+      "size_bytes": 2006
+    },
+    "fixtures/golden/p1a-trust-minimal/replay-expected/artifact-resolver-map.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.artifact-resolver-map.json.json",
+      "sha256": "c478b061fcb3af4e64315a83da9883301c998e0da9feeeb26a6b5c418b62a1b3",
+      "line_count": 69,
+      "size_bytes": 1924
+    },
+    "fixtures/golden/p1a-trust-minimal/replay-expected/canonical-identity-index.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.canonical-identity-index.json.json",
+      "sha256": "f4c53ae54966969a5a5ba3f6c5f661d0e6b4b4f749df3501007eb88d45b7cda6",
+      "line_count": 22,
+      "size_bytes": 535
+    },
+    "fixtures/golden/p1a-trust-minimal/replay-expected/doctor-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.doctor-report.json.json",
+      "sha256": "de8d55f5ad325902f38ff39867d55b925753be2853018629b0db7bfaf76d43e2",
+      "line_count": 25,
+      "size_bytes": 556
+    },
+    "fixtures/golden/p1a-trust-minimal/replay-expected/replay-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.replay-report.json.json",
+      "sha256": "d4777e1f7fc02a8bdf3065e092e3890725b0e16a4f3f00fca78aba48bf4146d9",
+      "line_count": 14,
+      "size_bytes": 529
+    },
+    "fixtures/golden/p1a-trust-minimal/replay-expected/retry-aggregation.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.retry-aggregation.json.json",
+      "sha256": "1e180466020d96b81c968ea25605b2f58ed77bd5e77e08a769ebfa9efceef224",
+      "line_count": 25,
+      "size_bytes": 527
+    },
+    "fixtures/golden/p1a-trust-minimal/replay-expected/trust-summary.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.trust-summary.md.json",
+      "sha256": "4a8fd7db54809ae7cb96391589825b7fbea2584acdb817d17cf61e1bb52670b1",
+      "line_count": 10,
+      "size_bytes": 277
+    },
+    "fixtures/golden/p1b-workflow-minimal/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.README.md.json",
+      "sha256": "fe48c4825bd4a0e9ff28ed636521d19ed6519c243479c93ceda9d19cfe4d44fb",
+      "line_count": 9,
+      "size_bytes": 459
+    },
+    "fixtures/golden/p1b-workflow-minimal/expected/requirement-evidence-alignment.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.requirement-evidence-alignment.json.json",
+      "sha256": "0db92bab85de21ed93327b134da0dbbe0235f6fc82f46b7c7bb3c21f0e9e668f",
+      "line_count": 51,
+      "size_bytes": 1691
+    },
+    "fixtures/golden/p1b-workflow-minimal/expected/shipyard-run-evidence.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.shipyard-run-evidence.json.json",
+      "sha256": "b4ee8a9bf96bb1977fc357e8cce8be5bd137b97e88d3b245c6396358f0fb4a95",
+      "line_count": 42,
+      "size_bytes": 1336
+    },
+    "fixtures/golden/p1b-workflow-minimal/expected/workflow-acceptance-record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.workflow-acceptance-record.json.json",
+      "sha256": "e02d19706dabc423481fb231eb1918f08f8c8fbd2af103d0fe85bf15e9a6f41a",
+      "line_count": 51,
+      "size_bytes": 1449
+    },
+    "fixtures/golden/p1b-workflow-minimal/expected/workflow-birdseye-map.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.workflow-birdseye-map.json.json",
+      "sha256": "8f2f5e834057023c55912fc93609e51da34467f9579fb09231546fb5258a6f5d",
+      "line_count": 55,
+      "size_bytes": 1285
+    },
+    "fixtures/golden/p1b-workflow-minimal/expected/workflow-docs-stale.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.workflow-docs-stale.json.json",
+      "sha256": "ed7c532510a5440ed91760f5ef1eb1e5c1811bbc9f7460cc5c7a8250f5d1e67d",
+      "line_count": 44,
+      "size_bytes": 1699
+    },
+    "fixtures/golden/p1b-workflow-minimal/expected/workflow-task-seed.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.workflow-task-seed.json.json",
+      "sha256": "957480a309618b096057c4dac364272353aceb94d10299cbeacd2e159a6c6c94",
+      "line_count": 34,
+      "size_bytes": 1114
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.README.md.json",
+      "sha256": "fb98b0332f2d37dc0bfa041a5487f16e2066ed68ec07c2bf0a0aebd7631bd069",
+      "line_count": 8,
+      "size_bytes": 439
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/accessibility-localization-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.accessibility-localization-report.json.json",
+      "sha256": "5fa7bb9013d9dd3ffc7e05fee5a0a85b8f729727f238a6a2e4cefa57f9c829fa",
+      "line_count": 28,
+      "size_bytes": 642
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/adoption-health-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.adoption-health-report.json.json",
+      "sha256": "cf6ebef029a2473808a73fce01cf153aa5a29a3a11e61a44a1d9baaa215b8deb",
+      "line_count": 58,
+      "size_bytes": 1445
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/artifact-budget-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.artifact-budget-report.json.json",
+      "sha256": "0ec2ba0356c2a7b7c40625b390b3c7d772af7d6db7609f4a1aad3db0ac6ea915",
+      "line_count": 82,
+      "size_bytes": 2304
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/attestation-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.attestation-report.json.json",
+      "sha256": "c820af5611cc5a53a0b995b784e2e06810ccc329c8ec1b8e8e22e3d8f8c4675e",
+      "line_count": 60,
+      "size_bytes": 2004
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/audit-assurance-pack.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.audit-assurance-pack.json.json",
+      "sha256": "af4d21209ac31ffe4f3e9ce5ea8c2019a23282a0df55f4f181014c0eba6502da",
+      "line_count": 709,
+      "size_bytes": 19771
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/audit-event-log.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.audit-event-log.json.json",
+      "sha256": "6f9ba51da7de52c274c9fffa0df58366a28ac7450e47e43dbab9a6439bc9a03b",
+      "line_count": 173,
+      "size_bytes": 5111
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/commercial-contract-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.commercial-contract-report.json.json",
+      "sha256": "b3defd9939d3e69edba55d2896c7287cc5b97e1561af98c20b7d6bb8646d5e23",
+      "line_count": 246,
+      "size_bytes": 7686
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/customer-docs-index.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.customer-docs-index.json.json",
+      "sha256": "654ae3cca155a21304928ffa37f90681baea2ad32ed89bc8b53d05e1eaf1fbbc",
+      "line_count": 56,
+      "size_bytes": 1681
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/dashboard-view-model.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.dashboard-view-model.json.json",
+      "sha256": "0efc8fa7e3ed7845bab1cb26934d93cbfd25ffb5e4a5aa30aa569a44541ac40e",
+      "line_count": 103,
+      "size_bytes": 2408
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/domain-model-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.domain-model-report.json.json",
+      "sha256": "e145c6682e14a9dc58ba60b56f4ddb2c5fa0d75f3f9ad82e7522da3c745bb493",
+      "line_count": 281,
+      "size_bytes": 7106
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/enterprise-connector-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.enterprise-connector-report.json.json",
+      "sha256": "f2d633cf998c7684c2b3d9b429ddc42503269c7baa0f3a5b38127f43d2f3ba4c",
+      "line_count": 110,
+      "size_bytes": 3505
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/enterprise-metrics-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.enterprise-metrics-report.json.json",
+      "sha256": "a185d26e391d78e51adf99620a419300b56c7c3299725f490c8c4b23283c9569",
+      "line_count": 64,
+      "size_bytes": 1453
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/enterprise-risk-debt-register.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.enterprise-risk-debt-register.json.json",
+      "sha256": "78ddd6872596c03a547c0ed4b426755caf7e9de839f0065f7fa1f09e4f5e2728",
+      "line_count": 11,
+      "size_bytes": 227
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/entitlement-usage-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.entitlement-usage-report.json.json",
+      "sha256": "e1f1743c52383b9a5c572548aa58c5a7994b540eafbb9da7c49153ca8b7f4982",
+      "line_count": 36,
+      "size_bytes": 717
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/external-export-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.external-export-report.json.json",
+      "sha256": "8da82852990a1448a4a0391124637ab5802573de9bfdba2b61cd5ba166828ed0",
+      "line_count": 153,
+      "size_bytes": 5042
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/governance-portfolio-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.governance-portfolio-report.json.json",
+      "sha256": "cc6e17cdc08abddf8b05f87f815b39fb8b87646f1c227eea6bfe348e0ac665e3",
+      "line_count": 51,
+      "size_bytes": 1097
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/hosted-read-model-index.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.hosted-read-model-index.json.json",
+      "sha256": "96e7091bd021f7e62fcfb2fc417a37a5bb292cc9a46e3afe19d37e82800068e5",
+      "line_count": 46,
+      "size_bytes": 1313
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/identity-connector-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.identity-connector-report.json.json",
+      "sha256": "68a108304bf833cb6dfa30c4ec3407db0b77e1223f69fbef42da409f6c2756c6",
+      "line_count": 123,
+      "size_bytes": 3356
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/incident-slo-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.incident-slo-report.json.json",
+      "sha256": "e3eeb2a3833fa3fc0a5ddaf5fc1d35be87d59303baba0e0be0dfc29d212aefea",
+      "line_count": 43,
+      "size_bytes": 1000
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/pr-annotation-export.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.pr-annotation-export.json.json",
+      "sha256": "c950d8e1a5167f183f858d2f9477ab1d9add6c03e993eb01ac1f677eb3a87a4e",
+      "line_count": 95,
+      "size_bytes": 3155
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/privacy-quarantine-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.privacy-quarantine-report.json.json",
+      "sha256": "2610cc99fd46f8d84ad4c1d86e7d60e292afb0062bf1d2c95b20bcf507915b87",
+      "line_count": 16,
+      "size_bytes": 415
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/privacy-telemetry-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.privacy-telemetry-report.json.json",
+      "sha256": "c2a9767b6302f0280a8d66f44ac80c5d2909cebb47d90ec69b9f7941b1b2821a",
+      "line_count": 22,
+      "size_bytes": 451
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/product-error-catalog.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.product-error-catalog.json.json",
+      "sha256": "ad974a279a089eb0545012b8768e7a053c95444a30564a9e6aceaad654af6062",
+      "line_count": 46,
+      "size_bytes": 1351
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/product-readiness-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.product-readiness-report.json.json",
+      "sha256": "d91cd717dbad88f7108358ec04abab22545f1a97a89a6dc3e7ae3813cb9dc9db",
+      "line_count": 155,
+      "size_bytes": 4537
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/rbac-matrix-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.rbac-matrix-report.json.json",
+      "sha256": "70f397f94b69aaec271abaa5540ec90b496688bfe7d2434428a3a0d1c55f47d8",
+      "line_count": 1209,
+      "size_bytes": 29698
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/release-candidate-pack.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.release-candidate-pack.json.json",
+      "sha256": "fbfb91e419208a8fb43cd17e6627876d66f95c881beccaa79fc23f1624c3bc22",
+      "line_count": 169,
+      "size_bytes": 4671
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/release-migration-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.release-migration-report.json.json",
+      "sha256": "7729fcdb1667ea6344b8366b06bbfab8e9ad4906f9ab1f37a7e002791263b6c5",
+      "line_count": 25,
+      "size_bytes": 620
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/residency-deployment-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.residency-deployment-report.json.json",
+      "sha256": "7dcbddff59be35c0e9948749666fb0cafc7aea51cc2681de84e77798664a72bb",
+      "line_count": 244,
+      "size_bytes": 7104
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/retention-governance-report.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.retention-governance-report.json.json",
+      "sha256": "33957534dc2d3f903fff509a94883e96aeb2ad82687fd48714b1b6a5b3db26b9",
+      "line_count": 160,
+      "size_bytes": 5235
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/roadmap-decision-record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.roadmap-decision-record.json.json",
+      "sha256": "cc1e48f212bd3ba2c6c3cfbbd6452eddd00c6ddb93f133141455027742441f10",
+      "line_count": 37,
+      "size_bytes": 914
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/security-trust-packet.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.security-trust-packet.json.json",
+      "sha256": "e599b1beaca1ab3adb70637c1bba5121da1cee060ddf5424384053ed3ccb7f71",
+      "line_count": 287,
+      "size_bytes": 7816
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/shipyard-run-evidence.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.shipyard-run-evidence.json.json",
+      "sha256": "06085e7e5c1387644dc5b47c36f891e067b8aeb58688e5f32ed4c8f04b7d2e93",
+      "line_count": 56,
+      "size_bytes": 1890
+    },
+    "fixtures/golden/p2p3-product-readiness-minimal/expected/support-diagnostic-bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.support-diagnostic-bundle.json.json",
+      "sha256": "ed379b478b3ea948e5aadbe3eea4910589099b6f503f94ea468ec9c093bd6dde",
+      "line_count": 108,
+      "size_bytes": 3066
+    },
+    "fixtures/identity/canonical/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.identity.canonical.README.md.json",
+      "sha256": "4b8f89b6a649f10ef90e84c64e5dac39af93b9738dc6466445c16465e3b8db86",
+      "line_count": 5,
+      "size_bytes": 261
+    },
+    "fixtures/identity/canonical/expected/canonical-identity-index.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.identity.canonical.expected.canonical-identity-index.shape.json.json",
+      "sha256": "675f59e563a682ce20560f6d8bfc77df3ceea4e1caf0c6fc70794dbffcc3c808",
+      "line_count": 34,
+      "size_bytes": 708
+    },
+    "fixtures/manual-bb/missing-high-risk/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.manual-bb.missing-high-risk.README.md.json",
+      "sha256": "5ef9a97ce1dce58c31c4a39426e145b7c4048faf53fd9b7645bae782ab761abe",
+      "line_count": 8,
+      "size_bytes": 409
+    },
+    "fixtures/manual-bb/missing-high-risk/expected/manual-supplement-request.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.manual-bb.missing-high-risk.expected.manual-supplement-request.shape.json.json",
+      "sha256": "3efdf0388c8080a27630d87625f7e6fd7c3c8849d5f5aa150b68db657fc16cec",
+      "line_count": 36,
+      "size_bytes": 1090
+    },
+    "fixtures/profile/inheritance/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.profile.inheritance.README.md.json",
+      "sha256": "403604a02c501f9beff9e0bb52208be3fd810bf75260029c12bd753b8bfbc761",
+      "line_count": 7,
+      "size_bytes": 324
+    },
+    "fixtures/profile/inheritance/expected/profile-report.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.profile.inheritance.expected.profile-report.shape.json.json",
+      "sha256": "555fe6e345ac4b6c3a0373e3977b57d924778a4bc9f62c7fc9c2ba4e87a970b5",
+      "line_count": 45,
+      "size_bytes": 1091
+    },
+    "fixtures/rand/audit-no-overwrite/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.rand.audit-no-overwrite.README.md.json",
+      "sha256": "ecd6d976ea1417b426e76e5495a281e2cb54253d05084586413ac12c0bb63f03",
+      "line_count": 5,
+      "size_bytes": 266
+    },
+    "fixtures/rand/audit-no-overwrite/input/audit_packet.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.rand.audit-no-overwrite.input.audit_packet.json.json",
+      "sha256": "74e9960d620b95335c8765608a26b1a21886732958352cea5b1c85209800a801",
+      "line_count": 52,
+      "size_bytes": 1618
+    },
+    "fixtures/rand/requirements-packet/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.rand.requirements-packet.README.md.json",
+      "sha256": "c3c50ab2faa7a609ecd0b9f097d28e5cf76a7a5bb3fb9a58c31fcf18090bc6e0",
+      "line_count": 5,
+      "size_bytes": 274
+    },
+    "fixtures/rand/requirements-packet/input/requirements_packet.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.rand.requirements-packet.input.requirements_packet.json.json",
+      "sha256": "2f6b634c0ca12e65be43b6f34d12139878a47e0d8e76be3be9972c465b773a27",
+      "line_count": 49,
+      "size_bytes": 1697
+    },
+    "fixtures/registry/adapter-registry/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.registry.adapter-registry.README.md.json",
+      "sha256": "698a24c17948a724574150a3f365439f56fad0e3e71ba868ed3fd30172be4ef2",
+      "line_count": 7,
+      "size_bytes": 302
+    },
+    "fixtures/registry/adapter-registry/expected/adapter-registry.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.registry.adapter-registry.expected.adapter-registry.shape.json.json",
+      "sha256": "bc528f0d124a697c15030678a2b7774c054a9b93b80e921eefb3c30569c57d11",
+      "line_count": 37,
+      "size_bytes": 879
+    },
+    "fixtures/registry/conformance-runner/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.registry.conformance-runner.README.md.json",
+      "sha256": "f3479fe8d23a340e0574c235d341f2852776f1066912586862a207cceaec31a8",
+      "line_count": 6,
+      "size_bytes": 307
+    },
+    "fixtures/registry/conformance-runner/expected/adapter-conformance.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.registry.conformance-runner.expected.adapter-conformance.shape.json.json",
+      "sha256": "79c2d4e59c938f00eb6e7699b46b404cd356254819522e3f81043f01218c238f",
+      "line_count": 25,
+      "size_bytes": 565
+    },
+    "fixtures/replay/hardening/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.replay.hardening.README.md.json",
+      "sha256": "1ac7780aad0e2b695e725100aa2d3af7d7caada6fb502773e8770f0d54534cec",
+      "line_count": 6,
+      "size_bytes": 332
+    },
+    "fixtures/replay/hardening/expected/replay-compare-explain-recommend.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.replay.hardening.expected.replay-compare-explain-recommend.shape.json.json",
+      "sha256": "55c05bf59d87283618fa7d7c81f5c8353d347fd6e50802f56d5dbabd6c7c9d8c",
+      "line_count": 47,
+      "size_bytes": 1166
+    },
+    "fixtures/resolver/artifact-paths/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.resolver.artifact-paths.README.md.json",
+      "sha256": "e18b21cc1984e868027f8ef61a0cf6a0444d8f2cb4cdce3d921b2d3417ceba9a",
+      "line_count": 5,
+      "size_bytes": 233
+    },
+    "fixtures/resolver/artifact-paths/expected/artifact-resolver-map.shape.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.resolver.artifact-paths.expected.artifact-resolver-map.shape.json.json",
+      "sha256": "dfc2cb48cffe368ed31a5ec8826c2be184cc6fb631066119843577d0eff7f6a9",
+      "line_count": 34,
+      "size_bytes": 651
+    },
+    "fixtures/shipyard/no-overwrite/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.shipyard.no-overwrite.README.md.json",
+      "sha256": "4d8af5cb0b47da6c9a66ca09a055f18130fe2e2f1bb9b0dc4ec0c43d7674b200",
+      "line_count": 5,
+      "size_bytes": 285
+    },
+    "fixtures/shipyard/no-overwrite/input/run_system_packet.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.shipyard.no-overwrite.input.run_system_packet.json.json",
+      "sha256": "b5e60021b3fe5e3236ffc21c4b75b49e0952a3af58f3a95146146d274a1d014e",
+      "line_count": 81,
+      "size_bytes": 2608
+    },
+    "fixtures/shipyard/no-overwrite/input/worker_result.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.shipyard.no-overwrite.input.worker_result.json.json",
+      "sha256": "54b934cb2b73e217d387d5bb447ce2017d40a725169a9acad451274c1d32817b",
+      "line_count": 36,
+      "size_bytes": 958
+    },
+    "fixtures/shipyard/worker-result/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.shipyard.worker-result.README.md.json",
+      "sha256": "1ef5604491dc34c0d97e4064eb9383312f0b18d93cce7170bbb6a7ccb85d1427",
+      "line_count": 5,
+      "size_bytes": 272
+    },
+    "fixtures/shipyard/worker-result/input/run_system_packet.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.shipyard.worker-result.input.run_system_packet.json.json",
+      "sha256": "4f67582862cca832265d90892252aec04a2a35f82883f7b16ee4f9fde000b50c",
+      "line_count": 88,
+      "size_bytes": 3000
+    },
+    "fixtures/shipyard/worker-result/input/worker_result.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.shipyard.worker-result.input.worker_result.json.json",
+      "sha256": "56e8d3be3a211e3362d908e418e9d549821db2fb681b0c7dde03b8c19f9339e5",
+      "line_count": 59,
+      "size_bytes": 1604
+    },
+    "fixtures/store/local-history/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local-history.README.md.json",
+      "sha256": "7a17b8579a0eb945104190f29ea8a3b0567fe04a25182baab56384a2484d4dd0",
+      "line_count": 13,
+      "size_bytes": 467
+    },
+    "pyproject.toml": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/pyproject.toml.json",
+      "sha256": "776c3ec187724c02ecd665d81702254056f7c83e534c8fd1d4f1e36b3c5bb259",
+      "line_count": 25,
+      "size_bytes": 504
+    },
+    "schemas/HATE/v1/artifact-manifest.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.artifact-manifest.schema.json.json",
+      "sha256": "9ad600b7b76ca5f6fcc661ac5baaa7d5371e972ac9df101e4e5d775032796169",
+      "line_count": 49,
+      "size_bytes": 2016
+    },
+    "schemas/HATE/v1/audit-record.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.audit-record.schema.json.json",
+      "sha256": "9fe3695558429e27383333bc02fdbbc2612ecd567284d6c8ad3b33975b270a53",
+      "line_count": 30,
+      "size_bytes": 932
+    },
+    "schemas/HATE/v1/common-envelope.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.common-envelope.schema.json.json",
+      "sha256": "7b6d8fc1d58ff3f3821b22880741eace83ca9cddc16c7e412dcc0293baffdab8",
+      "line_count": 37,
+      "size_bytes": 1270
+    },
+    "schemas/HATE/v1/coverage-slice.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.coverage-slice.schema.json.json",
+      "sha256": "03aca8dc9609522a702647bc536ea84745e727a4edab43932e76007da5b0e731",
+      "line_count": 35,
+      "size_bytes": 1212
+    },
+    "schemas/HATE/v1/precheck-decision.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.precheck-decision.schema.json.json",
+      "sha256": "2acea629d44ee5cf3ebddb1e4b432664ef88f0f6afd61f76db267d4f716ddbeb",
+      "line_count": 27,
+      "size_bytes": 1073
+    },
+    "schemas/HATE/v1/qeg-bundle.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.qeg-bundle.schema.json.json",
+      "sha256": "890195dd8f0192f23185cd3a3a07b3b77bcad89a5e51153f38cb1c3a1ea2ea00",
+      "line_count": 94,
+      "size_bytes": 3303
+    },
+    "schemas/HATE/v1/run.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.run.schema.json.json",
+      "sha256": "152c0d6ac1482532a47783d09acad77357849657ab77076824f290ef03408eb4",
+      "line_count": 46,
+      "size_bytes": 1624
+    },
+    "schemas/HATE/v1/schema-registry.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-registry.json.json",
+      "sha256": "44dee3c95d2cbedd5c0fc3b7d20a2daab63fac13c5f5863600e174a26d57ae28",
+      "line_count": 47,
+      "size_bytes": 1157
+    },
+    "schemas/HATE/v1/test-result.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.test-result.schema.json.json",
+      "sha256": "6e4fdbc24d4faa25d9503ee41ffb0691ffe4da46df901f5f1116d388da8d665b",
+      "line_count": 57,
+      "size_bytes": 1979
+    },
+    "src/hate/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.__init__.py.json",
+      "sha256": "2fd7fd82ace11933ffd4f50b32766759c183385de747792ed31a6e911f3f6153",
+      "line_count": 5,
+      "size_bytes": 103
+    },
+    "src/hate/__main__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.__main__.py.json",
+      "sha256": "d220d88dd9a25cd0629c5176dd6532a2db1da40eb014a8e80796b0ddeb134918",
+      "line_count": 4,
+      "size_bytes": 83
+    },
+    "src/hate/audit.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.audit.py.json",
+      "sha256": "16e8c833e63f2e2e8b0fe5669165b6ce1793a45be10d4b57a59760556449ca5d",
+      "line_count": 126,
+      "size_bytes": 4838
+    },
+    "src/hate/authz.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.authz.py.json",
+      "sha256": "a6d4850abfa6cda4c464d04a3749f07766fb5200f2fb767e97c5c204682e2ff5",
+      "line_count": 184,
+      "size_bytes": 6445
+    },
+    "src/hate/cli.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.cli.py.json",
+      "sha256": "df456f2c18617c5050c427f62e08ff6dfd8fcd8f7bb724188d1afec31ea596dc",
+      "line_count": 420,
+      "size_bytes": 20607
+    },
+    "src/hate/connectors.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.py.json",
+      "sha256": "cf063f043ce31dc9a309049cf38b0553e4766751e239a44a6c7b9eae587aadbd",
+      "line_count": 163,
+      "size_bytes": 6530
+    },
+    "src/hate/domain.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.domain.py.json",
+      "sha256": "610006a02b112343488a2149f49b515ef63896d51dbfd01a7782943f3a6ea2da",
+      "line_count": 151,
+      "size_bytes": 7301
+    },
+    "src/hate/governance.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.governance.py.json",
+      "sha256": "8d3d618f629912d54a4c9f1fff03a1319109cbd6b83e604ccbd68a24976c047c",
+      "line_count": 129,
+      "size_bytes": 5519
+    },
+    "src/hate/p0a.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a.py.json",
+      "sha256": "94f207b29dd971a039a0ebc015d1610bf8ca02ed31947dce9d110b9de9e38fff",
+      "line_count": 224,
+      "size_bytes": 10178
+    },
+    "src/hate/p0a_artifacts.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_artifacts.py.json",
+      "sha256": "50f2a1138d3d1de359d62ecd3d3ce0137edeb93ae0ce80234856a22ddbd85680",
+      "line_count": 235,
+      "size_bytes": 10531
+    },
+    "src/hate/p0a_constants.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_constants.py.json",
+      "sha256": "7bca9e08faa6f3ad8e8a07e21b1905d4fe564ee6df113d2ff7b7f89390d83775",
+      "line_count": 3,
+      "size_bytes": 105
+    },
+    "src/hate/p0a_context.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_context.py.json",
+      "sha256": "7aa9b5dcc4478dc04f96e0b33a5160d0928b9758898ac0dca55435691c608ae8",
+      "line_count": 84,
+      "size_bytes": 3022
+    },
+    "src/hate/p0a_coverage_adapters.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_coverage_adapters.py.json",
+      "sha256": "0ceaa38b2056614a854f301d7de16f66d5e30b68aa2b0f440bac5bab0ae51cdf",
+      "line_count": 311,
+      "size_bytes": 11576
+    },
+    "src/hate/p0a_io.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_io.py.json",
+      "sha256": "a336fa53490314a0c7efdb89f3c804600a344f4a669a8ef745e03d5a60b6c034",
+      "line_count": 66,
+      "size_bytes": 2407
+    },
+    "src/hate/p0a_records.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_records.py.json",
+      "sha256": "76d1ecb68f0be1ccdf6319dc7c6f8318c5e85c6922f4bbba1a21380b3b39080b",
+      "line_count": 143,
+      "size_bytes": 5645
+    },
+    "src/hate/p0a_schema.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_schema.py.json",
+      "sha256": "29402072733901b77872e65abd9c578b3f465f09139b326b980a5c520dd630d8",
+      "line_count": 153,
+      "size_bytes": 6543
+    },
+    "src/hate/p0a_static.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_static.py.json",
+      "sha256": "54204e49aa32a0291c597b2056ee4f849d168b6125b6db8d2dac8318f6e7b500",
+      "line_count": 48,
+      "size_bytes": 1651
+    },
+    "src/hate/p0a_support.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_support.py.json",
+      "sha256": "5f05192e547772e9ea5027c457d5f600e9ea8f8fa4ab07abe5530df6521c9011",
+      "line_count": 90,
+      "size_bytes": 2311
+    },
+    "src/hate/p0a_test_adapters.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_test_adapters.py.json",
+      "sha256": "fb2427be3260bb9298de5074a273655ce8b0aed53c1b44cdd2a41957282e477c",
+      "line_count": 296,
+      "size_bytes": 11290
+    },
+    "src/hate/p0b.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0b.py.json",
+      "sha256": "664d600c4f20449e38c66c4fbfd7618e2a4078d8ffe4e7aa512c3f5e3f0c7e70",
+      "line_count": 854,
+      "size_bytes": 39507
+    },
+    "src/hate/p0b_support.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0b_support.py.json",
+      "sha256": "073fefd5673cb71c60841cb3b3adcb3a0209e93f88fee7eaaabc444635cd0429",
+      "line_count": 579,
+      "size_bytes": 24319
+    },
+    "src/hate/p1a.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a.py.json",
+      "sha256": "e02cace91c1312f9dc8824a517edb180c4017ff763f55558cf044bfa3a381780",
+      "line_count": 409,
+      "size_bytes": 17776
+    },
+    "src/hate/p1a_io.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_io.py.json",
+      "sha256": "5a584b297cb6a6462a70278601883e1db83e96b9652d0d959336ba73d1b09eb4",
+      "line_count": 61,
+      "size_bytes": 2264
+    },
+    "src/hate/p1a_support.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_support.py.json",
+      "sha256": "11bf2f40d8f373eb0ba40b31998ca43ebf2fb88d4cab3598581b2e426d06a013",
+      "line_count": 914,
+      "size_bytes": 42669
+    },
+    "src/hate/p1b.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1b.py.json",
+      "sha256": "855082aa1fd4f0f75d9ab90ce85e2cb144a678d6758b3ab191135a4c915be904",
+      "line_count": 846,
+      "size_bytes": 37521
+    },
+    "src/hate/p2p3.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p2p3.py.json",
+      "sha256": "5a6b2b7af2a5fc00834745e6abe59b65fcef48919b3f36bfb063f52559bbaf3f",
+      "line_count": 333,
+      "size_bytes": 15889
+    },
+    "src/hate/p2p3_assurance_reports.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p2p3_assurance_reports.py.json",
+      "sha256": "e6f89aae0ded625eb6c3f9803d6779fde192cff7e77a41767d005dfee6e9d6c9",
+      "line_count": 455,
+      "size_bytes": 21539
+    },
+    "src/hate/p2p3_enterprise_reports.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p2p3_enterprise_reports.py.json",
+      "sha256": "435555406b64fa23353d997eb02a660d4bb27836c073fbaa2351afb91c478f1c",
+      "line_count": 329,
+      "size_bytes": 18156
+    },
+    "src/hate/p2p3_io.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p2p3_io.py.json",
+      "sha256": "be6ff22c81bcd827fe591aff00297d0630270ecc85cfac4b4c53b636e88cf856",
+      "line_count": 93,
+      "size_bytes": 2756
+    },
+    "src/hate/p2p3_readiness.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p2p3_readiness.py.json",
+      "sha256": "62cd04894213e639a95b69fce620649c921f1e8cbebcdc5fb089ff13c2b3834d",
+      "line_count": 201,
+      "size_bytes": 8831
+    },
+    "src/hate/p2p3_reports.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p2p3_reports.py.json",
+      "sha256": "bd1a84ccb47ab2a09a2e4f8360f045ccbc2cca61850fd5b2337833dc6c49f605",
+      "line_count": 430,
+      "size_bytes": 18807
+    },
+    "src/hate/product_grade.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.product_grade.py.json",
+      "sha256": "6498a961f7ff01237d0ab02e24b26f3ba2f23a749935e42c301ec66199485874",
+      "line_count": 179,
+      "size_bytes": 6955
+    },
+    "src/hate/profile.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.profile.py.json",
+      "sha256": "0a0a288f292769e3a43913a1f9e97bfb41447eaa4014b6b24a1cc66ecf1717a5",
+      "line_count": 238,
+      "size_bytes": 9022
+    },
+    "src/hate/release.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.release.py.json",
+      "sha256": "2bd232cd2a32906918b69a08c39eafed23e0c4fbcef01061045240115fd12ad1",
+      "line_count": 99,
+      "size_bytes": 4279
+    },
+    "src/hate/store.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.py.json",
+      "sha256": "65655f085041ac6416736365fe5a717438a4c808067449d82034cdb52f5f2d68",
+      "line_count": 215,
+      "size_bytes": 8255
+    },
+    "tests/test_acceptance_pipeline.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_acceptance_pipeline.py.json",
+      "sha256": "6327cd62968a1f3e1fc83155cb5a41b518d46f8f2acd7cf23a206498b0503b3d",
+      "line_count": 162,
+      "size_bytes": 5461
+    },
+    "tests/test_codemap_update.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_codemap_update.py.json",
+      "sha256": "3431cf143fd0f2185370e426cc44029b4a0c522ba9ef76979120e14daab4cb92",
+      "line_count": 45,
+      "size_bytes": 1898
+    },
+    "tests/test_p0a.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p0a.py.json",
+      "sha256": "e82742b50d90265c0514a8241ebd44c8a26fe9205f2b67ea0b68ac670da30a5c",
+      "line_count": 675,
+      "size_bytes": 34100
+    },
+    "tests/test_p0b.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p0b.py.json",
+      "sha256": "c19c98f1edc302de34160bc0160ef80ad0e4f45c0c24632cdd83364f4a21da7d",
+      "line_count": 619,
+      "size_bytes": 29029
+    },
+    "tests/test_p1a.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p1a.py.json",
+      "sha256": "676be86b4d83f16d009670319df33f083c92c10d808e51f0fda29f2f557e3ebc",
+      "line_count": 615,
+      "size_bytes": 29125
+    },
+    "tests/test_p1b.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p1b.py.json",
+      "sha256": "25e83672dac4113e270e33c30852aa5192ce56cf60e3e5f74f1236ecbe9f11a4",
+      "line_count": 352,
+      "size_bytes": 19027
+    },
+    "tests/test_p2p3.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p2p3.py.json",
+      "sha256": "dc937f6a4050f2a22dba0ac34ca54d6bd79a81a38aa3c18b2176fd609900f941",
+      "line_count": 812,
+      "size_bytes": 45175
+    },
+    "tests/test_product_grade.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_product_grade.py.json",
+      "sha256": "1c7c061bd6b11f4dd5d81a177b6dd89e3c3269d608b654a0f8119903a00ccb66",
+      "line_count": 51,
+      "size_bytes": 2080
+    },
+    "tools/codemap/update.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.codemap.update.py.json",
+      "sha256": "8e96303502c25e84aa8396978d0907a3c1414dbe55bd5f21a0510980b4eaaa0c",
+      "line_count": 309,
+      "size_bytes": 10319
+    }
+  },
+  "edges": [
+    [
+      "README.md",
+      "TASK.codex.md"
+    ],
+    [
+      "README.md",
+      "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md"
+    ],
+    [
+      "README.md",
+      "docs/process/ACCESSIBILITY_LOCALIZATION_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/ADAPTER_SDK_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/API_REQUIREMENTS.md"
+    ],
+    [
+      "README.md",
+      "docs/process/AUDIT_FIXTURE_ASSURANCE_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/BLUEPRINT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/CUSTOMER_DOCUMENTATION_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/CUSTOMER_SUCCESS_ADOPTION_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/DATA_RETENTION_LEGAL_REQUIREMENTS.md"
+    ],
+    [
+      "README.md",
+      "docs/process/ENTERPRISE_DOMAIN_MODEL.md"
+    ],
+    [
+      "README.md",
+      "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md"
+    ],
+    [
+      "README.md",
+      "docs/process/EVALUATION.md"
+    ],
+    [
+      "README.md",
+      "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md"
+    ],
+    [
+      "README.md",
+      "docs/process/GLM_IMPLEMENTATION_DISPATCH_PACK.md"
+    ],
+    [
+      "README.md",
+      "docs/process/GUARDRAILS.md"
+    ],
+    [
+      "README.md",
+      "docs/process/HOSTED_READ_MODEL_API.md"
+    ],
+    [
+      "README.md",
+      "docs/process/IMPLEMENTATION_EPIC_BREAKDOWN.md"
+    ],
+    [
+      "README.md",
+      "docs/process/IMPLEMENTATION_ROADMAP_CHECKLIST.md"
+    ],
+    [
+      "README.md",
+      "docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md"
+    ],
+    [
+      "README.md",
+      "docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/P0A_GOLDEN_PATH.md"
+    ],
+    [
+      "README.md",
+      "docs/process/PACKAGING_ENTITLEMENT_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/PRIVACY_QUARANTINE_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/PRODUCT_ERROR_TAXONOMY.md"
+    ],
+    [
+      "README.md",
+      "docs/process/PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md"
+    ],
+    [
+      "README.md",
+      "docs/process/PRODUCT_REQUIREMENTS_500K_READINESS_AUDIT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md"
+    ],
+    [
+      "README.md",
+      "docs/process/PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/RELEASE_MIGRATION_POLICY.md"
+    ],
+    [
+      "README.md",
+      "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md"
+    ],
+    [
+      "README.md",
+      "docs/process/RISK_DEBT_REGISTER.md"
+    ],
+    [
+      "README.md",
+      "docs/process/RUNBOOK.md"
+    ],
+    [
+      "README.md",
+      "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md"
+    ],
+    [
+      "README.md",
+      "docs/process/SCHEMA_REGISTRY_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/SLO_INCIDENT_RESPONSE_CONTRACT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/SPECIFICATION.md"
+    ],
+    [
+      "README.md",
+      "docs/process/UI_WORKFLOW_REQUIREMENTS.md"
+    ],
+    [
+      "README.md",
+      "docs/process/USER_STORY_MAP.md"
+    ],
+    [
+      "README.md",
+      "docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md"
+    ],
+    [
+      "README.md",
+      "docs/research/deep-research-report.md"
+    ],
+    [
+      "src/hate/__main__.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "src/hate/audit.py",
+      "src/hate/p2p3_io.py"
+    ],
+    [
+      "src/hate/cli.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "src/hate/cli.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "src/hate/cli.py",
+      "src/hate/p1a.py"
+    ],
+    [
+      "src/hate/cli.py",
+      "src/hate/p1b.py"
+    ],
+    [
+      "src/hate/cli.py",
+      "src/hate/p2p3.py"
+    ],
+    [
+      "src/hate/cli.py",
+      "src/hate/product_grade.py"
+    ],
+    [
+      "src/hate/cli.py",
+      "src/hate/store.py"
+    ],
+    [
+      "src/hate/domain.py",
+      "src/hate/p2p3_io.py"
+    ],
+    [
+      "src/hate/p0a.py",
+      "src/hate/p0a_support.py"
+    ],
+    [
+      "src/hate/p0a.py",
+      "src/hate/profile.py"
+    ],
+    [
+      "src/hate/p0a_artifacts.py",
+      "src/hate/p0a_constants.py"
+    ],
+    [
+      "src/hate/p0a_artifacts.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "src/hate/p0a_context.py",
+      "src/hate/p0a_constants.py"
+    ],
+    [
+      "src/hate/p0a_context.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "src/hate/p0a_context.py",
+      "src/hate/p0a_records.py"
+    ],
+    [
+      "src/hate/p0a_coverage_adapters.py",
+      "src/hate/p0a_constants.py"
+    ],
+    [
+      "src/hate/p0a_coverage_adapters.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "src/hate/p0a_coverage_adapters.py",
+      "src/hate/p0a_records.py"
+    ],
+    [
+      "src/hate/p0a_records.py",
+      "src/hate/p0a_constants.py"
+    ],
+    [
+      "src/hate/p0a_records.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "src/hate/p0a_schema.py",
+      "src/hate/p0a_constants.py"
+    ],
+    [
+      "src/hate/p0a_schema.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "src/hate/p0a_static.py",
+      "src/hate/p0a_constants.py"
+    ],
+    [
+      "src/hate/p0a_static.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "src/hate/p0a_support.py",
+      "src/hate/p0a_artifacts.py"
+    ],
+    [
+      "src/hate/p0a_support.py",
+      "src/hate/p0a_context.py"
+    ],
+    [
+      "src/hate/p0a_support.py",
+      "src/hate/p0a_coverage_adapters.py"
+    ],
+    [
+      "src/hate/p0a_support.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "src/hate/p0a_support.py",
+      "src/hate/p0a_records.py"
+    ],
+    [
+      "src/hate/p0a_support.py",
+      "src/hate/p0a_schema.py"
+    ],
+    [
+      "src/hate/p0a_support.py",
+      "src/hate/p0a_static.py"
+    ],
+    [
+      "src/hate/p0a_support.py",
+      "src/hate/p0a_test_adapters.py"
+    ],
+    [
+      "src/hate/p0a_test_adapters.py",
+      "src/hate/p0a_constants.py"
+    ],
+    [
+      "src/hate/p0a_test_adapters.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "src/hate/p0a_test_adapters.py",
+      "src/hate/p0a_records.py"
+    ],
+    [
+      "src/hate/p0b.py",
+      "src/hate/p0b_support.py"
+    ],
+    [
+      "src/hate/p0b_support.py",
+      "src/hate/p0a_support.py"
+    ],
+    [
+      "src/hate/p1a.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a.py",
+      "src/hate/p1a_support.py"
+    ],
+    [
+      "src/hate/p1a.py",
+      "src/hate/profile.py"
+    ],
+    [
+      "src/hate/p1a_support.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/audit.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/authz.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/connectors.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/domain.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/governance.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/p2p3_assurance_reports.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/p2p3_enterprise_reports.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/p2p3_io.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/p2p3_readiness.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/p2p3_reports.py"
+    ],
+    [
+      "src/hate/p2p3.py",
+      "src/hate/release.py"
+    ],
+    [
+      "src/hate/p2p3_assurance_reports.py",
+      "src/hate/p2p3_io.py"
+    ],
+    [
+      "src/hate/p2p3_assurance_reports.py",
+      "src/hate/p2p3_readiness.py"
+    ],
+    [
+      "src/hate/p2p3_reports.py",
+      "src/hate/p2p3_io.py"
+    ],
+    [
+      "src/hate/profile.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "src/hate/store.py",
+      "src/hate/p2p3_io.py"
+    ],
+    [
+      "tests/test_p0a.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_p0a.py",
+      "src/hate/p0a_support.py"
+    ],
+    [
+      "tests/test_p0b.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_p0b.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "tests/test_p0b.py",
+      "src/hate/p0b_support.py"
+    ],
+    [
+      "tests/test_p1a.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "tests/test_p1a.py",
+      "src/hate/p1a.py"
+    ],
+    [
+      "tests/test_p1b.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "tests/test_p1b.py",
+      "src/hate/p1b.py"
+    ],
+    [
+      "tests/test_p2p3.py",
+      "src/hate/p2p3.py"
+    ],
+    [
+      "tests/test_p2p3.py",
+      "src/hate/store.py"
+    ],
+    [
+      "tests/test_product_grade.py",
+      "src/hate/product_grade.py"
+    ]
+  ]
+}

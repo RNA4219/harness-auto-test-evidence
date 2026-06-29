@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/golden/p0b-qeg-minimal/expected/evidence-map.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9c747afbb7ed96499067b1cad3b9b718ec6cf827a395602c49b8dff8133aae87",
+  "line_count": 96,
+  "size_bytes": 2405,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

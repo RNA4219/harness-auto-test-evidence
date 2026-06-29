@@ -85,9 +85,13 @@ Shipyard-cp の `plan -> dev -> acceptance -> integrate -> publish` 型で完成
   unsafe-artifact、risk debt、manual-bb bridge の edge hardening も実装済み。
 - P1a: AETE, replay, compare, explain, recommend, doctor は実装済み。
 - P1b: RanD alignment / Shipyard advisory evidence / workflow-cookbook generated artifacts は実装済み。
-- P2/P3: product readiness / enterprise metrics は実装済み。ただし current golden fixture は
+- P2/P3: product readiness / enterprise metrics の advisory artifact 生成は実装済み。ただし current golden fixture は
   doctor finding と unverified acceptance を保持するため `product_status=conditional`,
   `prg_coverage=6/7` として過大な Go を出さない。
+- Product-grade: `PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` で定義した adapter corpus、
+  local store replay、API/read model、dashboard UI、RBAC/audit/retention、
+  enterprise connector runtime、support/ops evidence は未完了であり、本監査の
+  `conditional_go` は product-ready / enterprise-ready を意味しない。
 
 これらは `SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md` の後続 task として残す。
 
@@ -103,3 +107,4 @@ HATE 仕様書は、Shipyard-cp 用の task / artifact / acceptance / No-Go trig
 - 仕様書完成: `go`
 - P0a 実装 slice: `go`
 - フル実装完了: 本監査の対象外。別ゲートでは local/advisory artifact scope として `conditional_go`
+- 製品グレード実装完了: `no_go`。`PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` の evidence reports が未生成。

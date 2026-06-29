@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/test-result.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6e4fdbc24d4faa25d9503ee41ffb0691ffe4da46df901f5f1116d388da8d665b",
+  "line_count": 57,
+  "size_bytes": 1979,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema",
+    "test"
+  ]
+}

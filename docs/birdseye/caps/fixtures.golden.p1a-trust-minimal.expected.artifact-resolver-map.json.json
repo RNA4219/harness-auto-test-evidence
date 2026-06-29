@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/expected/artifact-resolver-map.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c478b061fcb3af4e64315a83da9883301c998e0da9feeeb26a6b5c418b62a1b3",
+  "line_count": 69,
+  "size_bytes": 1924,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/connectors.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "cf063f043ce31dc9a309049cf38b0553e4766751e239a44a6c7b9eae587aadbd",
+  "line_count": 163,
+  "size_bytes": 6530,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "workflow"
+  ]
+}

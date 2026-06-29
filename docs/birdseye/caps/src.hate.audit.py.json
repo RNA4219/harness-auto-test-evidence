@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/audit.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "16e8c833e63f2e2e8b0fe5669165b6ce1793a45be10d4b57a59760556449ca5d",
+  "line_count": 126,
+  "size_bytes": 4838,
+  "headings": [],
+  "imports": [
+    ".p2p3_io",
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p2p3_io.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/enterprise-connector-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f2d633cf998c7684c2b3d9b429ddc42503269c7baa0f3a5b38127f43d2f3ba4c",
+  "line_count": 110,
+  "size_bytes": 3505,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "workflow"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/incident-slo-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e3eeb2a3833fa3fc0a5ddaf5fc1d35be87d59303baba0e0be0dfc29d212aefea",
+  "line_count": 43,
+  "size_bytes": 1000,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

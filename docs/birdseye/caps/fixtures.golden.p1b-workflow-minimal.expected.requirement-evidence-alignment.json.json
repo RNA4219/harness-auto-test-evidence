@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/golden/p1b-workflow-minimal/expected/requirement-evidence-alignment.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0db92bab85de21ed93327b134da0dbbe0235f6fc82f46b7c7bb3c21f0e9e668f",
+  "line_count": 51,
+  "size_bytes": 1691,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

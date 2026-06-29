@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/golden/p0a-minimal/dq-03-artifact-missing/artifact-refs.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f1f818dd789210f0432b6741e46b47ba6117526efd67712842b9808fc3572135",
+  "line_count": 10,
+  "size_bytes": 195,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

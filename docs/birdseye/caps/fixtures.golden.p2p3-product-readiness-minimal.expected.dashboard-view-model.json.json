@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/dashboard-view-model.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0efc8fa7e3ed7845bab1cb26934d93cbfd25ffb5e4a5aa30aa569a44541ac40e",
+  "line_count": 103,
+  "size_bytes": 2408,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "path": "docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "44fc2082e689e90100d4bf91576a39913886c142c77b18234dda2f4de6179ed4",
+  "line_count": 104,
+  "size_bytes": 5271,
+  "headings": [
+    "# Legal and Commercial Contracting Contract",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Contract Artifact Set",
+    "## 4. Commitment Register",
+    "## 5. Contract Exception",
+    "## 6. Procurement Response Rules",
+    "## 7. Commercial Risk",
+    "## 8. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "qeg",
+    "release",
+    "schema",
+    "security"
+  ]
+}

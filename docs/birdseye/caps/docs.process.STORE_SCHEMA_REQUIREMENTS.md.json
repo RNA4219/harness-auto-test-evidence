@@ -1,0 +1,28 @@
+{
+  "path": "docs/process/STORE_SCHEMA_REQUIREMENTS.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "0d9ff0cbec532c333f76fec1d160a0a491ab62a89458344262537d41611b48b3",
+  "line_count": 75,
+  "size_bytes": 2718,
+  "headings": [
+    "# Store Schema Requirements",
+    "## 1. Purpose",
+    "## 2. Logical Tables",
+    "## 3. Store Invariants",
+    "## 4. Migration Requirements",
+    "## 5. Index and Query Requirements",
+    "## 6. No-Go"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

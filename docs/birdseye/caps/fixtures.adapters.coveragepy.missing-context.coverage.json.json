@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/coveragepy/missing-context/coverage.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "41e3f1f8b5fb6da5354432df8281a9909491a698a9898fd36437aa53834c8e55",
+  "line_count": 22,
+  "size_bytes": 423,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/expected/canonical-identity-index.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "55dbf9b2281c33bce9c10cdbe6592d78c7c2ffd5333b0afc0efb7825e4466978",
+  "line_count": 38,
+  "size_bytes": 994,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

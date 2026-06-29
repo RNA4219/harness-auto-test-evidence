@@ -1,0 +1,42 @@
+{
+  "path": "docs/process/IMPLEMENTATION_ROADMAP_CHECKLIST.md",
+  "role": "planning",
+  "kind": "md",
+  "sha256": "6edef819628fd6af6bb56cc0c4143970fc34ee86d2b1f15c3af5a9bcb3ea6b84",
+  "line_count": 324,
+  "size_bytes": 12024,
+  "headings": [
+    "# 実装ロードマップ / チェックリスト",
+    "## 1. 目的",
+    "## 2. 状態凡例",
+    "## 3. Current Baseline",
+    "## 4. Milestone Roadmap",
+    "### M0: P0a Adapter Completion",
+    "### M1: P0b Evidence Graph Completion",
+    "### M2: P1a Trust Hardening Foundation",
+    "### M3: P1b External Workflow Integration",
+    "### M4: P2 Product Surface",
+    "### M5: P3 Enterprise Readiness",
+    "## 5. Next Sprint Checklist",
+    "### Sprint Goal",
+    "### Task 1: HATE-P0A-004 Cobertura / JaCoCo hardening",
+    "### Task 2: HATE-P0A-005 artifact safety engine",
+    "### Task 3: HATE-P0A-006 JSON Schema validation",
+    "### Task 4: HATE-P0A-007 profile-aware precheck",
+    "## 6. Per-Task Done Checklist",
+    "## 7. GLM Handoff Prompt"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

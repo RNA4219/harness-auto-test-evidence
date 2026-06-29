@@ -10,6 +10,7 @@ from .p0b import ExportError, export_qeg
 from .p1a import TrustError, compare_trust, doctor_trust, evaluate_trust, explain_trust, recommend_trust, replay_trust
 from .p1b import WorkflowError, generate_workflow_mapping
 from .p2p3 import ProductError, generate_product_readiness, query_product_read_model, serve_product_read_model
+from .product_grade import ProductGradeError, generate_product_grade_reports
 from .store import StoreError, ingest_local_store, query_local_store, read_history_index
 
 
@@ -130,6 +131,11 @@ def build_parser() -> argparse.ArgumentParser:
     serve.add_argument("--readiness", required=True, type=Path, help="Input P2/P3 product readiness artifact directory.")
     serve.add_argument("--host", default="127.0.0.1", help="Host to bind.")
     serve.add_argument("--port", default=8765, type=int, help="Port to bind.")
+
+    grade_reports = product_subparsers.add_parser("grade-reports", help="Generate product-grade evidence report skeletons from requirement docs.")
+    grade_reports.add_argument("--docs-root", default=Path("docs/process"), type=Path, help="Directory containing product requirements/specification docs.")
+    grade_reports.add_argument("--out", required=True, type=Path, help="Output directory for product-grade evidence reports.")
+    grade_reports.add_argument("--source-version", default=None, help="Source version for generated reports.")
 
     store = subparsers.add_parser("store", help="Ingest and query the local HATE history store.")
     store_subparsers = store.add_subparsers(dest="store_command", required=True)
@@ -346,6 +352,20 @@ def main(argv: list[str] | None = None) -> int:
             return exc.exit_code
         except KeyboardInterrupt:
             return 0
+
+    if args.command == "product" and args.product_command == "grade-reports":
+        try:
+            result = generate_product_grade_reports(
+                docs_root=args.docs_root,
+                out_dir=args.out,
+                source_version=args.source_version,
+            )
+        except ProductGradeError as exc:
+            print(f"HATE-E-PRODUCT-GRADE: {exc}", file=sys.stderr)
+            return exc.exit_code
+
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
 
     if args.command == "store" and args.store_command == "ingest":
         try:

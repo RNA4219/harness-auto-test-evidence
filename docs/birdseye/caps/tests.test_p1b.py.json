@@ -1,0 +1,32 @@
+{
+  "path": "tests/test_p1b.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "25e83672dac4113e270e33c30852aa5192ce56cf60e3e5f74f1236ecbe9f11a4",
+  "line_count": 352,
+  "size_bytes": 19027,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p0b",
+    "hate.p1b",
+    "json",
+    "pathlib",
+    "shutil",
+    "subprocess"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0b.py",
+    "src/hate/p1b.py"
+  ],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "fixture",
+    "qeg",
+    "release",
+    "test",
+    "workflow"
+  ]
+}

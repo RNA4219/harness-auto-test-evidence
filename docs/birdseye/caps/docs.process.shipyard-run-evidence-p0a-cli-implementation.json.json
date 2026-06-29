@@ -1,0 +1,21 @@
+{
+  "path": "docs/process/shipyard-run-evidence-p0a-cli-implementation.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "129593087bb848a0f4c3326b9437f598adbf50f3e9ab64e13276558154db3cd8",
+  "line_count": 83,
+  "size_bytes": 2782,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

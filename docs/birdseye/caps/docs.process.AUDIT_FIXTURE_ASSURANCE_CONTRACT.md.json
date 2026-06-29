@@ -1,0 +1,30 @@
+{
+  "path": "docs/process/AUDIT_FIXTURE_ASSURANCE_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "3a8048cf594f2d948fc3d466906c0165caa6f49f9c75eea09eea5b5abe229aca",
+  "line_count": 101,
+  "size_bytes": 4336,
+  "headings": [
+    "# Audit Fixture and Assurance Contract",
+    "## 1. 目的",
+    "## 2. 原則",
+    "## 3. Audit Fixture Set",
+    "## 4. Fixture Manifest",
+    "## 5. Assurance Pack",
+    "## 6. Evidence Room Rules",
+    "## 7. Audit Finding",
+    "## 8. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "security"
+  ]
+}

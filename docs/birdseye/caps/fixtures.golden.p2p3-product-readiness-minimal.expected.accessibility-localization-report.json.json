@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/accessibility-localization-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5fa7bb9013d9dd3ffc7e05fee5a0a85b8f729727f238a6a2e4cefa57f9c829fa",
+  "line_count": 28,
+  "size_bytes": 642,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

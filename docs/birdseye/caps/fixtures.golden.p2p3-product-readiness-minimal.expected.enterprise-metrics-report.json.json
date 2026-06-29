@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/enterprise-metrics-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a185d26e391d78e51adf99620a419300b56c7c3299725f490c8c4b23283c9569",
+  "line_count": 64,
+  "size_bytes": 1453,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

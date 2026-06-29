@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/golden/p1a-trust-minimal/compare-expected/compare-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "73a4635b623937ce08bf777f519d3e2dfe89ced5098dbeb04d269100c163ccad",
+  "line_count": 22,
+  "size_bytes": 676,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

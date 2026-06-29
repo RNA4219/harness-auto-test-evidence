@@ -1,0 +1,18 @@
+{
+  "path": "docs/process/shipyard-run-evidence-full-implementation-spec.json",
+  "role": "requirements",
+  "kind": "json",
+  "sha256": "37a7a8769648137eb03bebdb4b3065e7e9e9dee72eacc94c34a1902585271538",
+  "line_count": 56,
+  "size_bytes": 2209,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

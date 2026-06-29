@@ -1,0 +1,38 @@
+{
+  "path": "docs/process/P0A_GOLDEN_PATH.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "8d4eb9235e5434ca9b4bebe9862a7201e646234a42b77d4f15289656c139ec9c",
+  "line_count": 210,
+  "size_bytes": 6965,
+  "headings": [
+    "# P0a Golden Path Contract",
+    "## 1. 目的",
+    "## 2. Golden Fixture Tree",
+    "## 3. Required Inputs",
+    "### 3.1 GitHub Context Minimum",
+    "## 4. Required Outputs",
+    "## 5. Decision Contract",
+    "## 6. Common Envelope Contract",
+    "## 7. P0a DQ Coverage",
+    "## 8. Artifact Manifest Contract",
+    "## 9. Summary Contract",
+    "## 10. Quickstart Acceptance",
+    "## 11. Product Readiness Link"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

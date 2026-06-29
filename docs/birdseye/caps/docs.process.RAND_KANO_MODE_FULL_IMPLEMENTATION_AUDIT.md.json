@@ -1,0 +1,30 @@
+{
+  "path": "docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_AUDIT.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "5406b7591674f25758d2b7fc88c8d3764ae1fad97999a29da3add64c8deb3fde",
+  "line_count": 129,
+  "size_bytes": 7222,
+  "headings": [
+    "# RanD Kano Mode フル実装仕様監査",
+    "## 1. 目的",
+    "## 2. 実行方法",
+    "## 3. Gate Summary",
+    "## 4. Requirement Verdicts",
+    "## 5. HATE 側の扱い",
+    "## 6. Follow-up"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "test",
+    "workflow"
+  ]
+}

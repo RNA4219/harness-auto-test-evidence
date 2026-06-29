@@ -1,0 +1,35 @@
+{
+  "path": "docs/process/SCHEMA_REGISTRY_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "8c4f9bad0f1cee172ba2a4284dc58492ff57345fe4cd5dfc513c6b4acbcbd618",
+  "line_count": 128,
+  "size_bytes": 4441,
+  "headings": [
+    "# Schema Registry Contract",
+    "## 1. 目的",
+    "## 2. Scope",
+    "### In",
+    "### Out",
+    "## 3. Registry Artifact",
+    "## 4. Record Schema Matrix",
+    "## 5. Field Policy",
+    "## 6. Version Policy",
+    "## 7. Fixture Matrix",
+    "## 8. CLI / Validation",
+    "## 9. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

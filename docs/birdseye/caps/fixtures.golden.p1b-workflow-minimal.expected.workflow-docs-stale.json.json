@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p1b-workflow-minimal/expected/workflow-docs-stale.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ed7c532510a5440ed91760f5ef1eb1e5c1811bbc9f7460cc5c7a8250f5d1e67d",
+  "line_count": 44,
+  "size_bytes": 1699,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

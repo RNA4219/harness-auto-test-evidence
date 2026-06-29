@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/golden/p2p3-product-readiness-minimal/expected/residency-deployment-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7dcbddff59be35c0e9948749666fb0cafc7aea51cc2681de84e77798664a72bb",
+  "line_count": 244,
+  "size_bytes": 7104,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "store"
+  ]
+}
