@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/coverage/show-contexts-false/coverage.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3f0efb00805b2f7c74f4b4ab2af1fc5169fecc0f17203e06b52553cbe39d7734",
+  "line_count": 1,
+  "size_bytes": 48,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture"
+  ]
+}

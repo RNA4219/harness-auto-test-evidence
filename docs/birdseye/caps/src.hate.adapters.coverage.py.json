@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/adapters/coverage.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "58097e831059f0a13dd4d78f154488fb80c8ccf7e1776c74d17e0ec3d201cb20",
+  "line_count": 71,
+  "size_bytes": 3149,
+  "headings": [],
+  "imports": [
+    "..p0a_coverage_adapters",
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

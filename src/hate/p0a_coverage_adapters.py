@@ -278,7 +278,7 @@ def _parse_coveragepy_json(
         if not isinstance(contexts_data, dict):
             contexts_data = {}
         # Build unique context objects from all line contexts
-        seen_test_ids: set[str] = set()
+        seen_contexts: set[tuple[str, int]] = set()
         contexts: list[dict[str, Any]] = []
         for line_key, test_contexts in contexts_data.items():
             if test_contexts is None:
@@ -286,9 +286,11 @@ def _parse_coveragepy_json(
             if not isinstance(test_contexts, list):
                 continue
             for test_id in test_contexts:
-                if isinstance(test_id, str) and test_id and test_id not in seen_test_ids:
-                    seen_test_ids.add(test_id)
-                    contexts.append({"test_id": test_id, "line": int(line_key)})
+                if isinstance(test_id, str) and test_id:
+                    context_key = (test_id, int(line_key))
+                    if context_key not in seen_contexts:
+                        seen_contexts.add(context_key)
+                        contexts.append({"test_id": test_id, "line": int(line_key)})
         payload = {
             "format": "coverage.py",
             "file": _to_posix(file_path),

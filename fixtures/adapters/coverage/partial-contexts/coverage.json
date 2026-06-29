@@ -1,0 +1,9 @@
+{
+  "meta": {"show_contexts": true},
+  "files": {
+    "src/partial_context.py": {
+      "executed_lines": [4, 5],
+      "contexts": {"4": ["tests/test_partial.py::test_partial"]}
+    }
+  }
+}

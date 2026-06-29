@@ -1,0 +1,12 @@
+{
+  "meta": {"show_contexts": true, "branch_coverage": true},
+  "files": {
+    "src/coverage_json.py": {
+      "executed_lines": [1, 2],
+      "contexts": {
+        "1": ["tests/test_coverage_json.py::test_one"],
+        "2": ["tests/test_coverage_json.py::test_two"]
+      }
+    }
+  }
+}

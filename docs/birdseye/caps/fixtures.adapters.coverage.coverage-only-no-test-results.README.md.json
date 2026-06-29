@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/adapters/coverage/coverage-only-no-test-results/README.md",
+  "role": "fixture",
+  "kind": "md",
+  "sha256": "e2310ea10234989bb5d3c6027ccef913dc81797f6a98c1a5f3ef14542186c751",
+  "line_count": 3,
+  "size_bytes": 114,
+  "headings": [
+    "# Coverage-Only Fixture"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

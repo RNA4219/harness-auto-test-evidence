@@ -1,5 +1,5 @@
 {
-  "generated_at": "39368fa26321",
+  "generated_at": "40e24772bac5",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -723,6 +723,27 @@
       "line_count": 14,
       "size_bytes": 420
     },
+    "fixtures/adapters/coverage/contextless-lines/coverage.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.contextless-lines.coverage.json.json",
+      "sha256": "82dafd0d35cf1695a3994524cb7c936b0d98a01d1a6ac5b2ebf57d7d6eefba9b",
+      "line_count": 6,
+      "size_bytes": 122
+    },
+    "fixtures/adapters/coverage/coverage-only-no-test-results/README.md": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.coverage-only-no-test-results.README.md.json",
+      "sha256": "e2310ea10234989bb5d3c6027ccef913dc81797f6a98c1a5f3ef14542186c751",
+      "line_count": 3,
+      "size_bytes": 114
+    },
+    "fixtures/adapters/coverage/coveragepy-json/coverage.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.coveragepy-json.coverage.json.json",
+      "sha256": "d83f9152d299f8f172a6bb8df560ebd6ae5a3d47149a496577dbd8a91b570b7d",
+      "line_count": 12,
+      "size_bytes": 288
+    },
     "fixtures/adapters/coverage/jacoco/input/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coverage.jacoco.input.github-context.json.json",
@@ -750,6 +771,27 @@
       "sha256": "d50f8a98fef498d9f2e599185fc9b9e3a50eaf76091d7c044b1ada73f265f2e8",
       "line_count": 14,
       "size_bytes": 420
+    },
+    "fixtures/adapters/coverage/malformed-json/coverage.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.malformed-json.coverage.json.json",
+      "sha256": "a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c",
+      "line_count": 1,
+      "size_bytes": 2
+    },
+    "fixtures/adapters/coverage/partial-contexts/coverage.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.partial-contexts.coverage.json.json",
+      "sha256": "d4f164932f28dd2d6c2c544382b53de3ef6e0e3889fe518810ba7168ba1153b0",
+      "line_count": 9,
+      "size_bytes": 191
+    },
+    "fixtures/adapters/coverage/show-contexts-false/coverage.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.coverage.show-contexts-false.coverage.json.json",
+      "sha256": "3f0efb00805b2f7c74f4b4ab2af1fc5169fecc0f17203e06b52553cbe39d7734",
+      "line_count": 1,
+      "size_bytes": 48
     },
     "fixtures/adapters/coveragepy/input/coverage.json": {
       "role": "fixture",
@@ -2130,6 +2172,13 @@
       "line_count": 2,
       "size_bytes": 35
     },
+    "src/hate/adapters/coverage.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.adapters.coverage.py.json",
+      "sha256": "58097e831059f0a13dd4d78f154488fb80c8ccf7e1776c74d17e0ec3d201cb20",
+      "line_count": 71,
+      "size_bytes": 3149
+    },
     "src/hate/adapters/junit.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.adapters.junit.py.json",
@@ -2210,9 +2259,9 @@
     "src/hate/p0a_coverage_adapters.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_coverage_adapters.py.json",
-      "sha256": "0ceaa38b2056614a854f301d7de16f66d5e30b68aa2b0f440bac5bab0ae51cdf",
-      "line_count": 311,
-      "size_bytes": 11576
+      "sha256": "27869e2bdd010846ab7850b325526b0a7185212b487e12fcb196dcefaf54521d",
+      "line_count": 313,
+      "size_bytes": 11683
     },
     "src/hate/p0a_io.py": {
       "role": "implementation",
@@ -2388,6 +2437,13 @@
       "sha256": "ed1559aab519173293b8cc328e41f9d42fadd8a6e1d27b7cbd1cdce76e86c711",
       "line_count": 136,
       "size_bytes": 4639
+    },
+    "tests/test_adapters_coverage.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_adapters_coverage.py.json",
+      "sha256": "60955c155c9abf9fc0a9c6806bc701a8788b68d0ab49174cf5d54043bfad6c0d",
+      "line_count": 129,
+      "size_bytes": 5079
     },
     "tests/test_adapters_junit.py": {
       "role": "test",
@@ -2877,6 +2933,14 @@
     [
       "tests/test_adapter_sdk.py",
       "src/hate/adapter_sdk.py"
+    ],
+    [
+      "tests/test_adapters_coverage.py",
+      "src/hate/adapters/coverage.py"
+    ],
+    [
+      "tests/test_adapters_coverage.py",
+      "src/hate/p0a.py"
     ],
     [
       "tests/test_adapters_junit.py",

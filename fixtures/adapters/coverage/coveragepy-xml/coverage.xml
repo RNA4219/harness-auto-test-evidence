@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<coverage>
+  <packages>
+    <package name="src.coverage_xml">
+      <classes>
+        <class name="CoverageXml" filename="src/coverage_xml.py">
+          <lines><line number="3" hits="1"/></lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

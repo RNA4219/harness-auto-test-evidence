@@ -1,0 +1,29 @@
+{
+  "path": "tests/test_adapters_coverage.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "60955c155c9abf9fc0a9c6806bc701a8788b68d0ab49174cf5d54043bfad6c0d",
+  "line_count": 129,
+  "size_bytes": 5079,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.adapters.coverage",
+    "hate.p0a",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/adapters/coverage.py",
+    "src/hate/p0a.py"
+  ],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "store",
+    "test"
+  ]
+}

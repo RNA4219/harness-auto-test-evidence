@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/coverage/contextless-lines/coverage.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "82dafd0d35cf1695a3994524cb7c936b0d98a01d1a6ac5b2ebf57d7d6eefba9b",
+  "line_count": 6,
+  "size_bytes": 122,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture"
+  ]
+}

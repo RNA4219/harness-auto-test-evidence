@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/coverage/malformed-json/coverage.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c",
+  "line_count": 1,
+  "size_bytes": 2,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture"
+  ]
+}

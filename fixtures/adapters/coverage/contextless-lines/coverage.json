@@ -1,0 +1,6 @@
+{
+  "meta": {"show_contexts": true},
+  "files": {
+    "src/contextless.py": {"executed_lines": [1], "contexts": {}}
+  }
+}

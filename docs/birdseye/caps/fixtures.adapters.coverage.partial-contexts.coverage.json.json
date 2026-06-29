@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/coverage/partial-contexts/coverage.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d4f164932f28dd2d6c2c544382b53de3ef6e0e3889fe518810ba7168ba1153b0",
+  "line_count": 9,
+  "size_bytes": 191,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}
