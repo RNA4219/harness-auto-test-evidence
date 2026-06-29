@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/schema/envelope/valid-static-finding/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bf1685939018935e6ab484984ba38bcc94a69f6d4060dc4781b2d337c90dca87",
+  "line_count": 30,
+  "size_bytes": 971,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

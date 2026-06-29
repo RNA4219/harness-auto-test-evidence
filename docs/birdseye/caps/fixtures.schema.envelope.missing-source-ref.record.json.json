@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/envelope/missing-source-ref/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "49d278cbe8899ddb2dacecbc86bf32abcf09ef6488b4a414266d84bf763970d9",
+  "line_count": 29,
+  "size_bytes": 1080,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

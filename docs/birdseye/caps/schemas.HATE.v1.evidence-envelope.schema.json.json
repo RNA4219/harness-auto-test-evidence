@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/evidence-envelope.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d8538ffbb834bf3a55c75b52d390331be1091dd535e5a73ab0deda19d1b4f31e",
+  "line_count": 43,
+  "size_bytes": 1318,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

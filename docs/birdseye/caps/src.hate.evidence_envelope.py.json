@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/evidence_envelope.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "86b5a0093577c5ae3249ab6d58208e451afec4075bb9862ae47ef4269b880b89",
+  "line_count": 94,
+  "size_bytes": 2992,
+  "headings": [],
+  "imports": [
+    ".p0a_constants",
+    "__future__",
+    "datetime",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_constants.py"
+  ],
+  "tags": [
+    "coverage",
+    "schema",
+    "test"
+  ]
+}

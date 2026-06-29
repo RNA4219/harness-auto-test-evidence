@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/mutation-evidence.schema.json",
+  "title": "HATE v1 Mutation Evidence Record",
+  "allOf": [
+    { "$ref": "common-envelope.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": { "const": "mutation_evidence" },
+        "payload": {
+          "type": "object",
+          "required": ["mutation_id", "file", "line", "status", "mutator", "sourceRef"],
+          "properties": {
+            "mutation_id": { "type": "string", "minLength": 1 },
+            "file": { "type": "string", "minLength": 1 },
+            "line": { "type": "integer", "minimum": 1 },
+            "status": { "enum": ["killed", "survived", "timeout", "no_coverage", "ignored"] },
+            "mutator": { "type": "string", "minLength": 1 },
+            "covered_by": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "sourceRef": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

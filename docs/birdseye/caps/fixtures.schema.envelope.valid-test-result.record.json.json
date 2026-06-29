@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/envelope/valid-test-result/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9b397640b05d2cfe152eb1f3befd41889030bf550f57879972647cb67385b59d",
+  "line_count": 39,
+  "size_bytes": 1179,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

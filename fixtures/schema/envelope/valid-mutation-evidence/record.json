@@ -1,0 +1,30 @@
+{
+  "schema_version": "HATE/v1",
+  "record_kind": "mutation_evidence",
+  "record_type": "mutation_evidence",
+  "record_id": "mutation-evidence-1",
+  "run_id": "run-schema-1",
+  "run_attempt": 1,
+  "commit_sha": "abcdef1234567890",
+  "created_at": "2026-06-29T00:00:00Z",
+  "collected_at": "2026-06-29T00:00:00Z",
+  "source_tool": "stryker",
+  "source_version": "7.0.0",
+  "producer": "stryker-parser",
+  "parserVersion": "1.0.0",
+  "sourceRef": "mutation.json#/mutants/0",
+  "source_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "redaction_status": "not_required",
+  "normalized_path_set": ["src/calc.py"],
+  "diagnostics": [],
+  "payload": {
+    "mutation_id": "mut-calc-001",
+    "file": "src/calc.py",
+    "line": 7,
+    "status": "killed",
+    "mutator": "ArithmeticOperator",
+    "covered_by": ["tests/test_calc.py::test_add"],
+    "sourceRef": "mutation.json#/mutants/0"
+  }
+}

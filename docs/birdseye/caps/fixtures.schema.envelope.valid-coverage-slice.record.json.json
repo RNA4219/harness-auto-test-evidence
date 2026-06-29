@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/envelope/valid-coverage-slice/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "73b593ee8156e7743d2ce5d4ac8d1ea3fe0454060a4d477a0589ee7096e0a8d0",
+  "line_count": 36,
+  "size_bytes": 1017,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

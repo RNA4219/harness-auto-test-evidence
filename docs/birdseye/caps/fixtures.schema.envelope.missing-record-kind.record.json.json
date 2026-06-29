@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/schema/envelope/missing-record-kind/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7c95efae17e37bc7949706e7484ef0438584e06952d3d5cb872a018f0a03ff70",
+  "line_count": 20,
+  "size_bytes": 698,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

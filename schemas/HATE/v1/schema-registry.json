@@ -18,6 +18,21 @@
       "phase": "P0a"
     },
     {
+      "record_type": "static_finding",
+      "schema": "schemas/HATE/v1/static-finding.schema.json",
+      "phase": "P0a"
+    },
+    {
+      "record_type": "contract_evidence",
+      "schema": "schemas/HATE/v1/contract-evidence.schema.json",
+      "phase": "P0a"
+    },
+    {
+      "record_type": "mutation_evidence",
+      "schema": "schemas/HATE/v1/mutation-evidence.schema.json",
+      "phase": "P0a"
+    },
+    {
       "record_type": "precheck_decision",
       "schema": "schemas/HATE/v1/precheck-decision.schema.json",
       "phase": "P0a"

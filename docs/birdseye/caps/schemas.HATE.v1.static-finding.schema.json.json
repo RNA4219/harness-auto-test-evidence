@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/static-finding.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d08728538abb0198666383840a734fd0d4e6b4263730bef8d4b8e87175a9bfde",
+  "line_count": 28,
+  "size_bytes": 1016,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

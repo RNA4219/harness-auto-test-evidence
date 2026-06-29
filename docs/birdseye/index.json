@@ -1,5 +1,5 @@
 {
-  "generated_at": "f21544be18e3",
+  "generated_at": "4b7161cb6c3b",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -383,9 +383,9 @@
     "docs/process/SCHEMA_REGISTRY_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SCHEMA_REGISTRY_CONTRACT.md.json",
-      "sha256": "8c4f9bad0f1cee172ba2a4284dc58492ff57345fe4cd5dfc513c6b4acbcbd618",
-      "line_count": 128,
-      "size_bytes": 4441
+      "sha256": "4fde02f2dcbbcd022b06e3726ecd16d5969fa5c211928cb035dbc6eb9a18bdfa",
+      "line_count": 170,
+      "size_bytes": 6575
     },
     "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md": {
       "role": "requirements",
@@ -2074,6 +2074,83 @@
       "line_count": 34,
       "size_bytes": 651
     },
+    "fixtures/schema/envelope/invalid-timestamp/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.invalid-timestamp.record.json.json",
+      "sha256": "bb0f9e3c4042d2756cceb8a4b80e43e8ae0345a0b121c847763359d35dc32071",
+      "line_count": 30,
+      "size_bytes": 1120
+    },
+    "fixtures/schema/envelope/missing-record-kind/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.missing-record-kind.record.json.json",
+      "sha256": "7c95efae17e37bc7949706e7484ef0438584e06952d3d5cb872a018f0a03ff70",
+      "line_count": 20,
+      "size_bytes": 698
+    },
+    "fixtures/schema/envelope/missing-source-ref/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.missing-source-ref.record.json.json",
+      "sha256": "49d278cbe8899ddb2dacecbc86bf32abcf09ef6488b4a414266d84bf763970d9",
+      "line_count": 29,
+      "size_bytes": 1080
+    },
+    "fixtures/schema/envelope/record-kind-schema-mismatch/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.record-kind-schema-mismatch.record.json.json",
+      "sha256": "459a72bd0d88251fbcac99d7f5f2800c360ede0574b1825e7ad59b87d9f6513b",
+      "line_count": 30,
+      "size_bytes": 1132
+    },
+    "fixtures/schema/envelope/unknown-schema-version/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.unknown-schema-version.record.json.json",
+      "sha256": "21beeec324a4756f76dc2e6ef27c4856a45abb68edfde7b3076fd2f1b855192c",
+      "line_count": 30,
+      "size_bytes": 1123
+    },
+    "fixtures/schema/envelope/unredacted-secret/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.unredacted-secret.record.json.json",
+      "sha256": "57e5c1d2677b63b2a54d7be4bc94ebeb1e2465eeddd6596ba8521d2753924557",
+      "line_count": 30,
+      "size_bytes": 986
+    },
+    "fixtures/schema/envelope/valid-contract-evidence/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.valid-contract-evidence.record.json.json",
+      "sha256": "077e6f74edbc28a406eb63a809e0bc3052dc85ec4df91b237e4d8cc0d1ea7586",
+      "line_count": 30,
+      "size_bytes": 1007
+    },
+    "fixtures/schema/envelope/valid-coverage-slice/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.valid-coverage-slice.record.json.json",
+      "sha256": "73b593ee8156e7743d2ce5d4ac8d1ea3fe0454060a4d477a0589ee7096e0a8d0",
+      "line_count": 36,
+      "size_bytes": 1017
+    },
+    "fixtures/schema/envelope/valid-mutation-evidence/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.valid-mutation-evidence.record.json.json",
+      "sha256": "49adba9ffff06125b252894edc5304e5e9a1640f50c819c18eabc9ac8a6a1271",
+      "line_count": 30,
+      "size_bytes": 1008
+    },
+    "fixtures/schema/envelope/valid-static-finding/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.valid-static-finding.record.json.json",
+      "sha256": "bf1685939018935e6ab484984ba38bcc94a69f6d4060dc4781b2d337c90dca87",
+      "line_count": 30,
+      "size_bytes": 971
+    },
+    "fixtures/schema/envelope/valid-test-result/record.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.schema.envelope.valid-test-result.record.json.json",
+      "sha256": "9b397640b05d2cfe152eb1f3befd41889030bf550f57879972647cb67385b59d",
+      "line_count": 39,
+      "size_bytes": 1179
+    },
     "fixtures/shipyard/no-overwrite/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.shipyard.no-overwrite.README.md.json",
@@ -2165,12 +2242,33 @@
       "line_count": 37,
       "size_bytes": 1270
     },
+    "schemas/HATE/v1/contract-evidence.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.contract-evidence.schema.json.json",
+      "sha256": "be0e57b74210ee4f1a2d57a19e0e313676195ffa6becb4faeb72f2c579319d36",
+      "line_count": 29,
+      "size_bytes": 1110
+    },
     "schemas/HATE/v1/coverage-slice.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.coverage-slice.schema.json.json",
       "sha256": "03aca8dc9609522a702647bc536ea84745e727a4edab43932e76007da5b0e731",
       "line_count": 35,
       "size_bytes": 1212
+    },
+    "schemas/HATE/v1/evidence-envelope.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.evidence-envelope.schema.json.json",
+      "sha256": "d8538ffbb834bf3a55c75b52d390331be1091dd535e5a73ab0deda19d1b4f31e",
+      "line_count": 43,
+      "size_bytes": 1318
+    },
+    "schemas/HATE/v1/mutation-evidence.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.mutation-evidence.schema.json.json",
+      "sha256": "60c59f4b7aab6c462680d480dacd23382d01d356072209c03116e387342251d4",
+      "line_count": 31,
+      "size_bytes": 1127
     },
     "schemas/HATE/v1/precheck-decision.schema.json": {
       "role": "schema",
@@ -2196,9 +2294,16 @@
     "schemas/HATE/v1/schema-registry.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-registry.json.json",
-      "sha256": "44dee3c95d2cbedd5c0fc3b7d20a2daab63fac13c5f5863600e174a26d57ae28",
-      "line_count": 47,
-      "size_bytes": 1157
+      "sha256": "db2c490a14553bef2a3c55079a74a08274fc6b933f25417a97c23f45786f610d",
+      "line_count": 62,
+      "size_bytes": 1569
+    },
+    "schemas/HATE/v1/static-finding.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.static-finding.schema.json.json",
+      "sha256": "d08728538abb0198666383840a734fd0d4e6b4263730bef8d4b8e87175a9bfde",
+      "line_count": 28,
+      "size_bytes": 1016
     },
     "schemas/HATE/v1/test-result.schema.json": {
       "role": "schema",
@@ -2311,6 +2416,13 @@
       "sha256": "610006a02b112343488a2149f49b515ef63896d51dbfd01a7782943f3a6ea2da",
       "line_count": 151,
       "size_bytes": 7301
+    },
+    "src/hate/evidence_envelope.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.evidence_envelope.py.json",
+      "sha256": "86b5a0093577c5ae3249ab6d58208e451afec4075bb9862ae47ef4269b880b89",
+      "line_count": 94,
+      "size_bytes": 2992
     },
     "src/hate/governance.py": {
       "role": "implementation",
@@ -2501,6 +2613,13 @@
       "line_count": 99,
       "size_bytes": 4279
     },
+    "src/hate/schema_validator.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.schema_validator.py.json",
+      "sha256": "0ee588b79c51a6020c5e304102b9a82a375fd5183d2c3df25347c081e484241d",
+      "line_count": 174,
+      "size_bytes": 6619
+    },
     "src/hate/store.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store.py.json",
@@ -2598,6 +2717,13 @@
       "sha256": "1c7c061bd6b11f4dd5d81a177b6dd89e3c3269d608b654a0f8119903a00ccb66",
       "line_count": 51,
       "size_bytes": 2080
+    },
+    "tests/test_schema_validator.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_schema_validator.py.json",
+      "sha256": "6209cefb4ae0e086b850e07183373abd9d1123ed6eacd8e0b49577dd2bca1acf",
+      "line_count": 128,
+      "size_bytes": 4142
     },
     "tools/codemap/update.py": {
       "role": "tooling",
@@ -2829,6 +2955,10 @@
       "src/hate/p2p3_io.py"
     ],
     [
+      "src/hate/evidence_envelope.py",
+      "src/hate/p0a_constants.py"
+    ],
+    [
       "src/hate/p0a.py",
       "src/hate/p0a_support.py"
     ],
@@ -3021,6 +3151,14 @@
       "src/hate/p0a_io.py"
     ],
     [
+      "src/hate/schema_validator.py",
+      "src/hate/evidence_envelope.py"
+    ],
+    [
+      "src/hate/schema_validator.py",
+      "src/hate/p0a_schema.py"
+    ],
+    [
       "src/hate/store.py",
       "src/hate/p2p3_io.py"
     ],
@@ -3103,6 +3241,10 @@
     [
       "tests/test_product_grade.py",
       "src/hate/product_grade.py"
+    ],
+    [
+      "tests/test_schema_validator.py",
+      "src/hate/schema_validator.py"
     ]
   ]
 }

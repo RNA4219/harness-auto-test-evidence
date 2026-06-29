@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_schema_validator.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "6209cefb4ae0e086b850e07183373abd9d1123ed6eacd8e0b49577dd2bca1acf",
+  "line_count": 128,
+  "size_bytes": 4142,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "copy",
+    "hate.schema_validator",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_validator.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

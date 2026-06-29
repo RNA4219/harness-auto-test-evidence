@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/evidence-envelope.schema.json",
+  "title": "HATE v1 Evidence Envelope",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_kind",
+    "record_id",
+    "producer",
+    "parserVersion",
+    "sourceRef",
+    "source_hash",
+    "collected_at",
+    "normalized_path_set",
+    "diagnostics",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "record_kind": { "type": "string", "minLength": 1 },
+    "record_id": { "type": "string", "minLength": 1 },
+    "producer": { "type": "string", "minLength": 1 },
+    "parserVersion": { "type": "string", "minLength": 1 },
+    "sourceRef": { "type": "string", "minLength": 1 },
+    "sourceRefs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "source_hash": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" },
+    "collected_at": { "type": "string", "format": "date-time" },
+    "normalized_path_set": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": { "type": "object", "additionalProperties": true }
+    },
+    "payload": { "type": "object" }
+  },
+  "additionalProperties": true
+}

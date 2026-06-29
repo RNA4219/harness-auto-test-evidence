@@ -1,0 +1,36 @@
+{
+  "schema_version": "HATE/v1",
+  "record_kind": "coverage_slice",
+  "record_type": "coverage_slice",
+  "record_id": "coverage-slice-1",
+  "run_id": "run-schema-1",
+  "run_attempt": 1,
+  "commit_sha": "abcdef1234567890",
+  "created_at": "2026-06-29T00:00:00Z",
+  "collected_at": "2026-06-29T00:00:00Z",
+  "source_tool": "coverage.py",
+  "source_version": "7.0.0",
+  "producer": "coveragepy-json",
+  "parserVersion": "1.0.0",
+  "sourceRef": "coverage.json#/files/src/app.py",
+  "source_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "redaction_status": "not_required",
+  "normalized_path_set": ["src/app.py"],
+  "diagnostics": [],
+  "payload": {
+    "format": "coverage.py",
+    "file": "src/app.py",
+    "line_hits": {
+      "1": 1,
+      "2": 0
+    },
+    "branch_hits": [],
+    "contexts": [
+      {
+        "line": 1,
+        "contexts": ["tests/test_app.py::test_ok"]
+      }
+    ]
+  }
+}

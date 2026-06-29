@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/contract-evidence.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "be0e57b74210ee4f1a2d57a19e0e313676195ffa6becb4faeb72f2c579319d36",
+  "line_count": 29,
+  "size_bytes": 1110,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

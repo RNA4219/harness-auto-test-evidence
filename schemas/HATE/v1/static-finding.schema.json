@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/static-finding.schema.json",
+  "title": "HATE v1 Static Finding Record",
+  "allOf": [
+    { "$ref": "common-envelope.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": { "const": "static_finding" },
+        "payload": {
+          "type": "object",
+          "required": ["rule_id", "severity", "file", "line", "tool", "sourceRef"],
+          "properties": {
+            "rule_id": { "type": "string", "minLength": 1 },
+            "severity": { "enum": ["note", "warning", "error", "critical"] },
+            "file": { "type": "string", "minLength": 1 },
+            "line": { "type": "integer", "minimum": 1 },
+            "tool": { "type": "string", "minLength": 1 },
+            "message": { "type": "string" },
+            "sourceRef": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

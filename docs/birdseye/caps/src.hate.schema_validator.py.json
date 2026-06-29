@@ -1,0 +1,30 @@
+{
+  "path": "src/hate/schema_validator.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0ee588b79c51a6020c5e304102b9a82a375fd5183d2c3df25347c081e484241d",
+  "line_count": 174,
+  "size_bytes": 6619,
+  "headings": [],
+  "imports": [
+    ".evidence_envelope",
+    ".p0a_schema",
+    "__future__",
+    "dataclasses",
+    "json",
+    "pathlib",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evidence_envelope.py",
+    "src/hate/p0a_schema.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "HATE/v1",
+  "record_kind": "contract_evidence",
+  "record_type": "contract_evidence",
+  "record_id": "contract-evidence-1",
+  "run_id": "run-schema-1",
+  "run_attempt": 1,
+  "commit_sha": "abcdef1234567890",
+  "created_at": "2026-06-29T00:00:00Z",
+  "collected_at": "2026-06-29T00:00:00Z",
+  "source_tool": "pact",
+  "source_version": "4.0.0",
+  "producer": "pact-parser",
+  "parserVersion": "1.0.0",
+  "sourceRef": "pact.json#/interactions/0",
+  "source_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "redaction_status": "not_required",
+  "normalized_path_set": ["pact.json"],
+  "diagnostics": [],
+  "payload": {
+    "contract_id": "pact-auth-provider-login",
+    "provider": "auth-provider",
+    "consumer": "web-client",
+    "interaction_id": "login-success",
+    "status": "passed",
+    "required": true,
+    "sourceRef": "pact.json#/interactions/0"
+  }
+}

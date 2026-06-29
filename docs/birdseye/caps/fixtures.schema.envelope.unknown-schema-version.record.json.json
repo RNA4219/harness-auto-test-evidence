@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/envelope/unknown-schema-version/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "21beeec324a4756f76dc2e6ef27c4856a45abb68edfde7b3076fd2f1b855192c",
+  "line_count": 30,
+  "size_bytes": 1123,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

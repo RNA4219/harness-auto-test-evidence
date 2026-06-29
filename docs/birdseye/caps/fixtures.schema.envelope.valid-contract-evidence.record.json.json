@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/schema/envelope/valid-contract-evidence/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "077e6f74edbc28a406eb63a809e0bc3052dc85ec4df91b237e4d8cc0d1ea7586",
+  "line_count": 30,
+  "size_bytes": 1007,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

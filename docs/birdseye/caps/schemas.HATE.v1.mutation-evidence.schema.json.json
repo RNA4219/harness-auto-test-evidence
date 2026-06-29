@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/mutation-evidence.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "60c59f4b7aab6c462680d480dacd23382d01d356072209c03116e387342251d4",
+  "line_count": 31,
+  "size_bytes": 1127,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "schema"
+  ]
+}

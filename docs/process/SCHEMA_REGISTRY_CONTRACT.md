@@ -56,6 +56,9 @@ HATE の JSON / NDJSON / bundle / report schema を、実装者・adapter 作者
 | `run` | yes | `schemas/HATE/v1/run.schema.json` |
 | `test_result` | yes | `schemas/HATE/v1/test-result.schema.json` |
 | `coverage_slice` | yes | `schemas/HATE/v1/coverage-slice.schema.json` |
+| `static_finding` | yes | `schemas/HATE/v1/static-finding.schema.json` |
+| `contract_evidence` | yes | `schemas/HATE/v1/contract-evidence.schema.json` |
+| `mutation_evidence` | yes | `schemas/HATE/v1/mutation-evidence.schema.json` |
 | `evidence_ref` | P0b | `schemas/HATE/v1/evidence-ref.schema.json` |
 | `precheck_decision` | yes | `schemas/HATE/v1/precheck-decision.schema.json` |
 | `audit_record` | yes | `schemas/HATE/v1/audit-record.schema.json` |
@@ -117,6 +120,45 @@ HATE schema validate --bundle qeg-bundle.json
 HATE schema diff --from HATE/v1 --to HATE/v1.1
 HATE schema explain --field precheck_decision.payload.decision
 ```
+
+### 8.1 Common Envelope Validator
+
+`src/hate/schema_validator.py` は adapter output を product claim に入れる前の境界である。
+validator は `record_kind` を優先し、既存互換のため `record_type` を fallback として扱う。
+`schema_version` は `HATE/v1` のみを受理し、record schema は
+`schemas/HATE/v1/schema-registry.json` と同じ record kind matrix に従って dispatch する。
+
+Envelope record は少なくとも次を持つ。
+
+- `schema_version`
+- `record_kind` または互換 field `record_type`
+- `record_id`
+- `producer`
+- `parserVersion`
+- `sourceRef` または `sourceRefs`
+- `source_hash`
+- `collected_at` または互換 field `created_at`
+- `normalized_path_set`
+- `diagnostics`
+- `payload`
+
+拒否分類:
+
+| Code | Severity | Meaning |
+|---|---|---|
+| `missing_record_kind` | hard | `record_kind` / `record_type` がなく schema dispatch できない |
+| `unknown_record_kind` | hard | registry が知らない record kind |
+| `unknown_schema_version` | hard | `HATE/v1` 以外の schema version |
+| `missing_source_ref` | hard | sourceRef/sourceRefs が envelope と payload のどちらにもない |
+| `invalid_timestamp` | hard | collected_at/created_at がない、または ISO timestamp として読めない |
+| `record_kind_schema_mismatch` | hard | record kind と payload/schema が一致しない |
+| `schema_registry_missing_file` | hard | dispatch 先 schema file がない |
+| `schema_validation_error` | hard | JSON Schema level の検証失敗 |
+| `unredacted_secret` | hard | secret-like token が envelope/payload に残っている |
+
+`schema-validation-report.json` は `accepted` / `rejected` count、`rejection_classes`、
+`schema_versions`、record ごとの `sourceRefs` と findings を持つ。ログだけの validator は
+不合格であり、hard finding は product-ready 判定へ渡せる構造化 report として残す。
 
 ## 9. Acceptance
 

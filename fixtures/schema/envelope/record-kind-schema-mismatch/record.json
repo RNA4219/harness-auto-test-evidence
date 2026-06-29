@@ -1,0 +1,30 @@
+{
+  "schema_version": "HATE/v1",
+  "record_kind": "coverage_slice",
+  "record_type": "coverage_slice",
+  "record_id": "schema-mismatch-1",
+  "run_id": "run-schema-1",
+  "run_attempt": 1,
+  "commit_sha": "abcdef1234567890",
+  "created_at": "2026-06-29T00:00:00Z",
+  "collected_at": "2026-06-29T00:00:00Z",
+  "source_tool": "coverage.py",
+  "source_version": "7.0.0",
+  "producer": "coveragepy-json",
+  "parserVersion": "1.0.0",
+  "sourceRef": "coverage.json#/files/src/app.py",
+  "source_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "redaction_status": "not_required",
+  "normalized_path_set": ["src/app.py"],
+  "diagnostics": [],
+  "payload": {
+    "canonical_test_id": "pytest::tests/test_sample.py::test_ok",
+    "framework": "pytest",
+    "status": "passed",
+    "duration_ms": 12,
+    "file": "tests/test_sample.py",
+    "identity_components": {"framework": "pytest", "suite": "tests/test_sample.py", "name": "test_ok"},
+    "artifacts": [{"artifact_id": "pytest-report", "kind": "test-report"}]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/schema/envelope/valid-mutation-evidence/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "49adba9ffff06125b252894edc5304e5e9a1640f50c819c18eabc9ac8a6a1271",
+  "line_count": 30,
+  "size_bytes": 1008,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

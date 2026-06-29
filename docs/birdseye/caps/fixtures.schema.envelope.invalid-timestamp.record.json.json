@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/envelope/invalid-timestamp/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bb0f9e3c4042d2756cceb8a4b80e43e8ae0345a0b121c847763359d35dc32071",
+  "line_count": 30,
+  "size_bytes": 1120,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

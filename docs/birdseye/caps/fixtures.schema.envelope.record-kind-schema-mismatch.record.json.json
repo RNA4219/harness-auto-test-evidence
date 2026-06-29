@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/schema/envelope/record-kind-schema-mismatch/record.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "459a72bd0d88251fbcac99d7f5f2800c360ede0574b1825e7ad59b87d9f6513b",
+  "line_count": 30,
+  "size_bytes": 1132,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}
