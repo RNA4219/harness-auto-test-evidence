@@ -1,0 +1,6 @@
+<testsuites>
+  <testsuite name="auth.test.js" tests="2">
+    <testcase classname="auth.test.js" name="auth signs in" time="0.008"/>
+    <testcase classname="auth.test.js" name="todo resets password" time="0"><skipped message="todo"/></testcase>
+  </testsuite>
+</testsuites>

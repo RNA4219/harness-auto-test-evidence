@@ -1,0 +1,3 @@
+<testsuite name="GradleSuite" tests="1">
+  <testcase classname="org.example.gradle.PaymentSpec" name="calculates tax" time="0.021"/>
+</testsuite>

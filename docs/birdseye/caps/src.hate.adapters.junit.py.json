@@ -1,0 +1,19 @@
+{
+  "path": "src/hate/adapters/junit.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "edf2eee2f0645f2f4ea0a6add9382180be47980cad35f4db2217c74d5e7f3553",
+  "line_count": 8,
+  "size_bytes": 153,
+  "headings": [],
+  "imports": [
+    "..p0a_test_adapters",
+    "__future__"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "test"
+  ]
+}

@@ -1,0 +1,3 @@
+<testsuite name="pytest" tests="1">
+  <testcase classname="tests.test_auth" name="test_login[param-1]" file="tests/test_auth.py" time="0.031"/>
+</testsuite>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "38f848b462fe",
+  "generated_at": "39368fa26321",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -2123,6 +2123,20 @@
       "line_count": 114,
       "size_bytes": 3196
     },
+    "src/hate/adapters/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.adapters.__init__.py.json",
+      "sha256": "b260acb5527978a4da3213a32ec7cd7cefd8c168deaf1b72c8096fd14fbe41f7",
+      "line_count": 2,
+      "size_bytes": 35
+    },
+    "src/hate/adapters/junit.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.adapters.junit.py.json",
+      "sha256": "edf2eee2f0645f2f4ea0a6add9382180be47980cad35f4db2217c74d5e7f3553",
+      "line_count": 8,
+      "size_bytes": 153
+    },
     "src/hate/audit.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.audit.py.json",
@@ -2238,9 +2252,9 @@
     "src/hate/p0a_test_adapters.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_test_adapters.py.json",
-      "sha256": "fb2427be3260bb9298de5074a273655ce8b0aed53c1b44cdd2a41957282e477c",
-      "line_count": 296,
-      "size_bytes": 11290
+      "sha256": "a5980e6c8b6077617362f3301e7ba7286ceaa3696ccafc72efc83de958d237e0",
+      "line_count": 416,
+      "size_bytes": 16602
     },
     "src/hate/p0b.py": {
       "role": "implementation",
@@ -2374,6 +2388,13 @@
       "sha256": "ed1559aab519173293b8cc328e41f9d42fadd8a6e1d27b7cbd1cdce76e86c711",
       "line_count": 136,
       "size_bytes": 4639
+    },
+    "tests/test_adapters_junit.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_adapters_junit.py.json",
+      "sha256": "ea47b6a4c1e674da905bfb06c61929302ae6e97fa6899569c4bb0b1549fd14c7",
+      "line_count": 201,
+      "size_bytes": 7906
     },
     "tests/test_codemap_update.py": {
       "role": "test",
@@ -2856,6 +2877,10 @@
     [
       "tests/test_adapter_sdk.py",
       "src/hate/adapter_sdk.py"
+    ],
+    [
+      "tests/test_adapters_junit.py",
+      "src/hate/adapters/junit.py"
     ],
     [
       "tests/test_p0a.py",

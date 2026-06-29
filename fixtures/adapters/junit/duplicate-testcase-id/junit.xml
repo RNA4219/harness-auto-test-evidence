@@ -1,0 +1,4 @@
+<testsuite name="duplicate" tests="2">
+  <testcase classname="tests.test_dup" name="test_same" file="tests/test_dup.py"/>
+  <testcase classname="tests.test_dup" name="test_same" file="tests/test_dup.py"/>
+</testsuite>

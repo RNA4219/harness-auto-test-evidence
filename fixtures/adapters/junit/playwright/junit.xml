@@ -1,0 +1,3 @@
+<testsuite name="playwright" tests="1">
+  <testcase classname="tests/auth.spec.ts" name="chromium login smoke" file="tests/auth.spec.ts" time="1.235"/>
+</testsuite>

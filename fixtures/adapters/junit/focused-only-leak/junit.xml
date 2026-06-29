@@ -1,0 +1,5 @@
+<testsuite name="focus" tests="1">
+  <testcase classname="tests.test_focus" name="test_only_case" file="tests/test_focus.py">
+    <properties><property name="only" value="true"/></properties>
+  </testcase>
+</testsuite>

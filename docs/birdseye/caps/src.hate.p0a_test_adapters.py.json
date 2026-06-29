@@ -2,9 +2,9 @@
   "path": "src/hate/p0a_test_adapters.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "fb2427be3260bb9298de5074a273655ce8b0aed53c1b44cdd2a41957282e477c",
-  "line_count": 296,
-  "size_bytes": 11290,
+  "sha256": "a5980e6c8b6077617362f3301e7ba7286ceaa3696ccafc72efc83de958d237e0",
+  "line_count": 416,
+  "size_bytes": 16602,
   "headings": [],
   "imports": [
     ".p0a_constants",
@@ -29,6 +29,7 @@
   "tags": [
     "adapter",
     "artifact",
+    "fixture",
     "schema",
     "test"
   ]

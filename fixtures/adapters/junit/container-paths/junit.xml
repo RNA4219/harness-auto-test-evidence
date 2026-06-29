@@ -1,0 +1,3 @@
+<testsuite name="container" tests="1">
+  <testcase classname="tests.test_container" name="test_container_path" file="/workspace/project/tests/test_container.py" time="0.001"/>
+</testsuite>

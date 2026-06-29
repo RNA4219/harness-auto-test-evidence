@@ -1,0 +1,3 @@
+<testsuite name="skip" tests="1">
+  <testcase classname="tests.test_skip" name="test_skip"><skipped/></testcase>
+</testsuite>

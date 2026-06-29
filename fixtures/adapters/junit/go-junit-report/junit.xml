@@ -1,0 +1,3 @@
+<testsuite name="github.com/example/project" tests="1">
+  <testcase classname="TestAuth" name="TestLogin" time="0.002"/>
+</testsuite>

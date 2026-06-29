@@ -1,0 +1,7 @@
+<testsuites>
+  <testsuite name="auth.browser.test.ts" tests="1">
+    <testcase classname="auth.browser.test.ts" name="renders in chromium" time="0.044">
+      <properties><property name="flaky" value="true"/></properties>
+    </testcase>
+  </testsuite>
+</testsuites>

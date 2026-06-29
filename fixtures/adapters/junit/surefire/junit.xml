@@ -1,0 +1,5 @@
+<testsuite name="com.example.AuthTest" tests="3" failures="1" errors="0" skipped="1">
+  <testcase classname="com.example.AuthTest" name="loginPasses" time="0.012"/>
+  <testcase classname="com.example.AuthTest" name="loginFails" time="0.004"><failure message="expected 200"/></testcase>
+  <testcase classname="com.example.AuthTest" name="loginSkipped" time="0"><skipped message="feature disabled"/></testcase>
+</testsuite>

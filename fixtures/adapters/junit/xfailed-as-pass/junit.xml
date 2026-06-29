@@ -1,0 +1,5 @@
+<testsuite name="xfail" tests="1">
+  <testcase classname="tests.test_xfail" name="test_expected_failure" file="tests/test_xfail.py">
+    <system-out>xfail marker</system-out>
+  </testcase>
+</testsuite>

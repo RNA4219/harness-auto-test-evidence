@@ -1,0 +1,3 @@
+<testsuite name="parameterized" tests="1">
+  <testcase classname="tests.test_calc" name="test_add[1-2-3]" file="tests/test_calc.py" time="0.003"/>
+</testsuite>

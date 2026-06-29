@@ -1,0 +1,3 @@
+<testsuite name="windows" tests="1">
+  <testcase classname="tests.test_path" name="test_windows_path" file="tests\test_path.py" time="0.001"/>
+</testsuite>

@@ -1,0 +1,15 @@
+{
+  "path": "src/hate/adapters/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "b260acb5527978a4da3213a32ec7cd7cefd8c168deaf1b72c8096fd14fbe41f7",
+  "line_count": 2,
+  "size_bytes": 35,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter"
+  ]
+}

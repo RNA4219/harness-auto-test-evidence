@@ -1,0 +1,22 @@
+{
+  "path": "tests/test_adapters_junit.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "ea47b6a4c1e674da905bfb06c61929302ae6e97fa6899569c4bb0b1549fd14c7",
+  "line_count": 201,
+  "size_bytes": 7906,
+  "headings": [],
+  "imports": [
+    "hate.adapters.junit",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/adapters/junit.py"
+  ],
+  "tags": [
+    "adapter",
+    "fixture",
+    "test"
+  ]
+}
