@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "7b73a255ed1ba57347f5b4ecf3b67c9480b05ff6f2696b75948556385f44a611",
-  "line_count": 560,
-  "size_bytes": 28669,
+  "sha256": "1760d94508d931cf0883fe751a112b1212699adb0bd513907a70f09593656c76",
+  "line_count": 573,
+  "size_bytes": 29474,
   "headings": [
     "# 製品グレード実装仕様",
     "## 1. 目的",

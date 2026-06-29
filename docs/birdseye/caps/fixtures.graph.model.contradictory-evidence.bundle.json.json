@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/model/contradictory-evidence/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "05f00f0c214c27244f3b7993a3332d85be97afd8150e7bcdffc389c29ce30e29",
+  "line_count": 19,
+  "size_bytes": 580,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

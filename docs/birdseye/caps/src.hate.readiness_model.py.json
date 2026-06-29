@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/readiness_model.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "d7b1025a0a5f2466902f572f299b49bea190c579946181b4ac429521d5df1e39",
+  "line_count": 68,
+  "size_bytes": 3021,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

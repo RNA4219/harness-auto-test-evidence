@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/model/contract-mutation-evidence/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2a5104d7944bc961d1e4099a2602f1cda20fd6abb772c36e6a9ceaf4f78c88e1",
+  "line_count": 28,
+  "size_bytes": 818,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

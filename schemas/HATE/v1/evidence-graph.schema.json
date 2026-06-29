@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/evidence-graph.schema.json",
+  "title": "HATE Evidence Graph",
+  "type": "object",
+  "required": ["schema_version", "record_type", "nodes", "edges", "findings", "summary"],
+  "properties": {
+    "schema_version": { "const": "HATE/evidence-graph/v1" },
+    "record_type": { "const": "evidence_graph" },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "label", "sourceRefs"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "kind": {
+            "enum": ["requirement", "risk", "test", "execution", "coverage", "finding", "artifact", "manual_review", "release_claim", "contract", "mutation"]
+          },
+          "label": { "type": "string" },
+          "data": { "type": "object" },
+          "sourceRefs": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "kind", "sourceRefs"],
+        "properties": {
+          "from": { "type": "string", "minLength": 1 },
+          "to": { "type": "string", "minLength": 1 },
+          "kind": {
+            "enum": ["requires_test", "executed_by", "covered_by", "supported_by", "contradicted_by", "blocked_by", "reviewed_by", "derived_from"]
+          },
+          "sourceRefs": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": { "type": "object", "additionalProperties": true }
+    },
+    "summary": { "type": "object", "additionalProperties": true }
+  },
+  "additionalProperties": true
+}

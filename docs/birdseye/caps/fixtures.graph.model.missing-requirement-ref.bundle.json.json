@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/model/missing-requirement-ref/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "946191bc29ee3d79bbfc2893607a6b252e9ac229c55ea05a30aba34a5b965eda",
+  "line_count": 5,
+  "size_bytes": 102,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

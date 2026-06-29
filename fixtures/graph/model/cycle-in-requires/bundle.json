@@ -1,0 +1,10 @@
+{
+  "requirements": [
+    {"id": "REQ-A", "sourceRefs": ["requirements.md#REQ-A"]},
+    {"id": "REQ-B", "sourceRefs": ["requirements.md#REQ-B"]}
+  ],
+  "edges": [
+    {"from": "requirement:REQ-A", "to": "requirement:REQ-B", "kind": "requires_test", "sourceRefs": ["graph.md#cycle"]},
+    {"from": "requirement:REQ-B", "to": "requirement:REQ-A", "kind": "requires_test", "sourceRefs": ["graph.md#cycle"]}
+  ]
+}

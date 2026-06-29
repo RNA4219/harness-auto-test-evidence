@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_product_readiness_report.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "ddfcb36c8e96891f28ae10c924b3b1fede10ea27ffd0c79ac3e46b8c080d3ef6",
+  "line_count": 55,
+  "size_bytes": 1979,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.evidence_graph",
+    "hate.readiness_model",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evidence_graph.py",
+    "src/hate/readiness_model.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

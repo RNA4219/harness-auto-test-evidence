@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/product-readiness-report.schema.json",
+  "title": "HATE Product Readiness Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "summary",
+    "graph_summary",
+    "unsupported_claims",
+    "contradictions",
+    "hard_dqs",
+    "soft_gaps",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "record_type": { "const": "product_readiness_report" },
+    "summary": {
+      "type": "object",
+      "required": ["overall_status", "claim_count", "unsupported_claim_count", "contradiction_count", "hard_dq_count"],
+      "properties": {
+        "overall_status": { "enum": ["go", "hold", "block", "conditional"] },
+        "claim_count": { "type": "integer", "minimum": 0 },
+        "unsupported_claim_count": { "type": "integer", "minimum": 0 },
+        "contradiction_count": { "type": "integer", "minimum": 0 },
+        "hard_dq_count": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "graph_summary": { "type": "object", "additionalProperties": true },
+    "unsupported_claims": {
+      "type": "array",
+      "items": { "type": "object", "additionalProperties": true }
+    },
+    "contradictions": {
+      "type": "array",
+      "items": { "type": "object", "additionalProperties": true }
+    },
+    "hard_dqs": {
+      "type": "array",
+      "items": { "type": "object", "additionalProperties": true }
+    },
+    "soft_gaps": {
+      "type": "array",
+      "items": { "type": "object", "additionalProperties": true }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

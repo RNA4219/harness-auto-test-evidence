@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/model/risk-static-finding/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e89b8ad8ffdc23d619f4093de5813a88865fe4af5de80e0a4425bfaedae87b25",
+  "line_count": 24,
+  "size_bytes": 763,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

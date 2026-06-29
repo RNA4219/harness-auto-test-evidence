@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/model/cycle-in-requires/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e37a8a8574a3dc1e0154ab2ac58ec25696ac1dd7ced3d8706b4c55c7d2c2d4f7",
+  "line_count": 10,
+  "size_bytes": 410,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

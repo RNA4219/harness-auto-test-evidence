@@ -1,0 +1,9 @@
+{
+  "requirements": [
+    {"id": "REQ-A", "sourceRefs": ["requirements.md#REQ-A"]},
+    {"id": "REQ-B", "sourceRefs": ["requirements.md#REQ-B"]}
+  ],
+  "edges": [
+    {"from": "requirement:REQ-A", "to": "requirement:REQ-B", "kind": "teleports", "sourceRefs": ["graph.md#bad-edge"]}
+  ]
+}

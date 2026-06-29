@@ -1,0 +1,19 @@
+{
+  "requirements": [
+    {"id": "REQ-CONTRACT-001", "title": "Required provider contract passes", "sourceRefs": ["requirements.md#REQ-CONTRACT-001"]}
+  ],
+  "claims": [
+    {"id": "CLAIM-CONTRACT-READY", "requirement_refs": ["REQ-CONTRACT-001"], "ready": true, "sourceRefs": ["release.md#contract"]}
+  ],
+  "records": [
+    {
+      "record_id": "contract-required-failed",
+      "record_kind": "contract_evidence",
+      "sourceRef": "pact.json#/interactions/1",
+      "payload": {
+        "status": "failed",
+        "requirement_refs": ["REQ-CONTRACT-001"]
+      }
+    }
+  ]
+}

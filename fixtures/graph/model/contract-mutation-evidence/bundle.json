@@ -1,0 +1,28 @@
+{
+  "requirements": [
+    {"id": "REQ-BILLING-001", "title": "Billing contract and mutation oracle pass", "sourceRefs": ["requirements.md#REQ-BILLING-001"]}
+  ],
+  "claims": [
+    {"id": "CLAIM-BILLING-READY", "requirement_refs": ["REQ-BILLING-001"], "ready": true, "sourceRefs": ["release.md#billing"]}
+  ],
+  "records": [
+    {
+      "record_id": "contract-billing",
+      "record_kind": "contract_evidence",
+      "sourceRef": "pact.json#/interactions/0",
+      "payload": {
+        "status": "passed",
+        "requirement_refs": ["REQ-BILLING-001"]
+      }
+    },
+    {
+      "record_id": "mutation-billing",
+      "record_kind": "mutation_evidence",
+      "sourceRef": "mutation.json#/mutants/0",
+      "payload": {
+        "status": "killed",
+        "requirement_refs": ["REQ-BILLING-001"]
+      }
+    }
+  ]
+}

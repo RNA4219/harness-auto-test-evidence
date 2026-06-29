@@ -1,0 +1,8 @@
+{
+  "requirements": [
+    {"id": "REQ-UNSUPPORTED", "sourceRefs": ["requirements.md#REQ-UNSUPPORTED"]}
+  ],
+  "claims": [
+    {"id": "CLAIM-UNSUPPORTED", "requirement_refs": ["REQ-UNSUPPORTED"], "ready": true, "sourceRefs": ["release.md#unsupported"]}
+  ]
+}

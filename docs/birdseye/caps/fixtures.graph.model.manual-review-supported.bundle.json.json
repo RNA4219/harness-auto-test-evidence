@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/model/manual-review-supported/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1722cfd823a46668c37b3586205a4468d045e252158d7c1b374f77a3d64da32a",
+  "line_count": 17,
+  "size_bytes": 516,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

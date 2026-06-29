@@ -1,0 +1,13 @@
+{
+  "records": [
+    {
+      "record_id": "finding-orphan",
+      "record_kind": "static_finding",
+      "sourceRef": "results.sarif#/runs/0/results/0",
+      "payload": {
+        "rule_id": "WARN001",
+        "severity": "warning"
+      }
+    }
+  ]
+}

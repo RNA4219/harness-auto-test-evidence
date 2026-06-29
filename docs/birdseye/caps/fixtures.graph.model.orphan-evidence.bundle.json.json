@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/graph/model/orphan-evidence/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "27a4a014a943aeb590a8e63cee2c70d07ec36f6728c2c315915d51670200c3be",
+  "line_count": 13,
+  "size_bytes": 252,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

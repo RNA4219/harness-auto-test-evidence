@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_evidence_graph.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "46832c3b147746c7aa44125dd483d3977821116e935c3eb8bd22e94f02dd2b1a",
+  "line_count": 59,
+  "size_bytes": 2076,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.evidence_graph",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evidence_graph.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

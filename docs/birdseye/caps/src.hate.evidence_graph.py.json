@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/evidence_graph.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "906e8445791a247c40b64c339212516fe66d51106a5982c6bc0109e8bf08bfbc",
+  "line_count": 222,
+  "size_bytes": 9605,
+  "headings": [],
+  "imports": [
+    ".evidence_envelope",
+    "__future__",
+    "dataclasses",
+    "hashlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evidence_envelope.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "release",
+    "test"
+  ]
+}

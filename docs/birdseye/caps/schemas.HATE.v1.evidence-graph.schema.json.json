@@ -1,0 +1,19 @@
+{
+  "path": "schemas/HATE/v1/evidence-graph.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "0f54f0d1b3dc75d685a08824aaae5698a09767f9aafcd06c7ac8f288362e2813",
+  "line_count": 56,
+  "size_bytes": 1924,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "release",
+    "schema",
+    "test"
+  ]
+}

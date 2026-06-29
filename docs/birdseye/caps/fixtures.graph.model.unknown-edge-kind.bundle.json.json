@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/graph/model/unknown-edge-kind/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "743b865956495fe318dac0527e1dc9b658502a826dadb2f22a929c5f892fb84d",
+  "line_count": 9,
+  "size_bytes": 288,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

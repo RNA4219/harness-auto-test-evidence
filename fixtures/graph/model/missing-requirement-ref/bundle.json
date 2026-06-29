@@ -1,0 +1,5 @@
+{
+  "claims": [
+    {"id": "CLAIM-NO-REQ", "ready": false, "sourceRefs": ["release.md#no-req"]}
+  ]
+}

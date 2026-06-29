@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/graph/model/requirement-test-coverage/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9273856af0ede41aa66683c079938076fb6f603d0f254ab261f9ff7747118d96",
+  "line_count": 28,
+  "size_bytes": 790,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "release",
+    "test"
+  ]
+}

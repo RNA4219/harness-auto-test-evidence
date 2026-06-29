@@ -1,0 +1,24 @@
+{
+  "risks": [
+    {"id": "RISK-AUTH-STATIC", "severity": "high", "sourceRefs": ["risk.md#auth-static"]}
+  ],
+  "claims": [
+    {"id": "CLAIM-AUTH-SECURE", "requirement_refs": ["REQ-AUTH-SEC"], "risk_refs": ["RISK-AUTH-STATIC"], "sourceRefs": ["release.md#secure"]}
+  ],
+  "requirements": [
+    {"id": "REQ-AUTH-SEC", "title": "Auth code has no critical findings", "sourceRefs": ["requirements.md#REQ-AUTH-SEC"]}
+  ],
+  "records": [
+    {
+      "record_id": "finding-auth-critical",
+      "record_kind": "static_finding",
+      "sourceRef": "results.sarif#/runs/0/results/0",
+      "payload": {
+        "rule_id": "SEC001",
+        "severity": "critical",
+        "risk_refs": ["RISK-AUTH-STATIC"],
+        "claim_refs": ["CLAIM-AUTH-SECURE"]
+      }
+    }
+  ]
+}

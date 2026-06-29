@@ -1,0 +1,28 @@
+{
+  "requirements": [
+    {"id": "REQ-AUTH-001", "title": "Login is tested", "sourceRefs": ["requirements.md#REQ-AUTH-001"]}
+  ],
+  "claims": [
+    {"id": "CLAIM-AUTH-READY", "requirement_refs": ["REQ-AUTH-001"], "ready": true, "sourceRefs": ["release.md#auth"]}
+  ],
+  "records": [
+    {
+      "record_id": "test-auth-login",
+      "record_kind": "test_result",
+      "sourceRef": "tests/test_auth.py#L1",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_auth.py::test_login",
+        "requirement_refs": ["REQ-AUTH-001"]
+      }
+    },
+    {
+      "record_id": "coverage-auth",
+      "record_kind": "coverage_slice",
+      "sourceRef": "src/auth.py#L1",
+      "payload": {
+        "file": "src/auth.py",
+        "requirement_refs": ["REQ-AUTH-001"]
+      }
+    }
+  ]
+}

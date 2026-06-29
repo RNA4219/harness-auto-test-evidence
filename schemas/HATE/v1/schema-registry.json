@@ -41,6 +41,11 @@
       "record_type": "audit_record",
       "schema": "schemas/HATE/v1/audit-record.schema.json",
       "phase": "P0a"
+    },
+    {
+      "record_type": "evidence_graph",
+      "schema": "schemas/HATE/v1/evidence-graph.schema.json",
+      "phase": "P0b"
     }
   ],
   "bundles": [
@@ -48,6 +53,11 @@
       "artifact": "artifact-manifest.json",
       "schema": "schemas/HATE/v1/artifact-manifest.schema.json",
       "phase": "P0a"
+    },
+    {
+      "artifact": "product-readiness-report.json",
+      "schema": "schemas/HATE/v1/product-readiness-report.schema.json",
+      "phase": "P2"
     }
   ],
   "compatibility": {

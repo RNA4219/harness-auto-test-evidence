@@ -1,0 +1,17 @@
+{
+  "requirements": [
+    {"id": "REQ-MANUAL-001", "title": "Manual review supports controlled exception", "sourceRefs": ["requirements.md#REQ-MANUAL-001"]}
+  ],
+  "claims": [
+    {"id": "CLAIM-MANUAL-READY", "requirement_refs": ["REQ-MANUAL-001"], "ready": true, "sourceRefs": ["release.md#manual"]}
+  ],
+  "manual_reviews": [
+    {
+      "id": "MR-001",
+      "status": "approved",
+      "owner": "qa-lead",
+      "requirement_refs": ["REQ-MANUAL-001"],
+      "sourceRefs": ["manual-review.md#MR-001"]
+    }
+  ]
+}

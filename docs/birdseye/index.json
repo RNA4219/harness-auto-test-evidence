@@ -1,5 +1,5 @@
 {
-  "generated_at": "472cbea3ac3e",
+  "generated_at": "cdafaa0d90ba",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -285,9 +285,9 @@
     "docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_GRADE_IMPLEMENTATION_SPEC.md.json",
-      "sha256": "7b73a255ed1ba57347f5b4ecf3b67c9480b05ff6f2696b75948556385f44a611",
-      "line_count": 560,
-      "size_bytes": 28669
+      "sha256": "1760d94508d931cf0883fe751a112b1212699adb0bd513907a70f09593656c76",
+      "line_count": 573,
+      "size_bytes": 29474
     },
     "docs/process/PRODUCT_REQUIREMENTS_500K_READINESS_AUDIT.md": {
       "role": "requirements",
@@ -1948,6 +1948,76 @@
       "line_count": 108,
       "size_bytes": 3066
     },
+    "fixtures/graph/model/contract-mutation-evidence/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.contract-mutation-evidence.bundle.json.json",
+      "sha256": "2a5104d7944bc961d1e4099a2602f1cda20fd6abb772c36e6a9ceaf4f78c88e1",
+      "line_count": 28,
+      "size_bytes": 818
+    },
+    "fixtures/graph/model/contradictory-evidence/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.contradictory-evidence.bundle.json.json",
+      "sha256": "05f00f0c214c27244f3b7993a3332d85be97afd8150e7bcdffc389c29ce30e29",
+      "line_count": 19,
+      "size_bytes": 580
+    },
+    "fixtures/graph/model/cycle-in-requires/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.cycle-in-requires.bundle.json.json",
+      "sha256": "e37a8a8574a3dc1e0154ab2ac58ec25696ac1dd7ced3d8706b4c55c7d2c2d4f7",
+      "line_count": 10,
+      "size_bytes": 410
+    },
+    "fixtures/graph/model/manual-review-supported/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.manual-review-supported.bundle.json.json",
+      "sha256": "1722cfd823a46668c37b3586205a4468d045e252158d7c1b374f77a3d64da32a",
+      "line_count": 17,
+      "size_bytes": 516
+    },
+    "fixtures/graph/model/missing-requirement-ref/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.missing-requirement-ref.bundle.json.json",
+      "sha256": "946191bc29ee3d79bbfc2893607a6b252e9ac229c55ea05a30aba34a5b965eda",
+      "line_count": 5,
+      "size_bytes": 102
+    },
+    "fixtures/graph/model/orphan-evidence/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.orphan-evidence.bundle.json.json",
+      "sha256": "27a4a014a943aeb590a8e63cee2c70d07ec36f6728c2c315915d51670200c3be",
+      "line_count": 13,
+      "size_bytes": 252
+    },
+    "fixtures/graph/model/requirement-test-coverage/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.requirement-test-coverage.bundle.json.json",
+      "sha256": "9273856af0ede41aa66683c079938076fb6f603d0f254ab261f9ff7747118d96",
+      "line_count": 28,
+      "size_bytes": 790
+    },
+    "fixtures/graph/model/risk-static-finding/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.risk-static-finding.bundle.json.json",
+      "sha256": "e89b8ad8ffdc23d619f4093de5813a88865fe4af5de80e0a4425bfaedae87b25",
+      "line_count": 24,
+      "size_bytes": 763
+    },
+    "fixtures/graph/model/unknown-edge-kind/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.unknown-edge-kind.bundle.json.json",
+      "sha256": "743b865956495fe318dac0527e1dc9b658502a826dadb2f22a929c5f892fb84d",
+      "line_count": 9,
+      "size_bytes": 288
+    },
+    "fixtures/graph/model/unsupported-claim-marked-ready/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.model.unsupported-claim-marked-ready.bundle.json.json",
+      "sha256": "6dc4898d18f7a59fe24f57813b098640b2a4f3c13bbaf455ccb1f6a3db6e7b50",
+      "line_count": 8,
+      "size_bytes": 258
+    },
     "fixtures/identity/canonical/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.identity.canonical.README.md.json",
@@ -2340,6 +2410,13 @@
       "line_count": 43,
       "size_bytes": 1318
     },
+    "schemas/HATE/v1/evidence-graph.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.evidence-graph.schema.json.json",
+      "sha256": "0f54f0d1b3dc75d685a08824aaae5698a09767f9aafcd06c7ac8f288362e2813",
+      "line_count": 56,
+      "size_bytes": 1924
+    },
     "schemas/HATE/v1/mutation-evidence.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.mutation-evidence.schema.json.json",
@@ -2353,6 +2430,13 @@
       "sha256": "2acea629d44ee5cf3ebddb1e4b432664ef88f0f6afd61f76db267d4f716ddbeb",
       "line_count": 27,
       "size_bytes": 1073
+    },
+    "schemas/HATE/v1/product-readiness-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.product-readiness-report.schema.json.json",
+      "sha256": "d247c5af04c11b1af85dc337287e925cee70b3ad735223a96c68a9d374a97dba",
+      "line_count": 55,
+      "size_bytes": 1782
     },
     "schemas/HATE/v1/qeg-bundle.schema.json": {
       "role": "schema",
@@ -2371,9 +2455,9 @@
     "schemas/HATE/v1/schema-registry.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-registry.json.json",
-      "sha256": "db2c490a14553bef2a3c55079a74a08274fc6b933f25417a97c23f45786f610d",
-      "line_count": 62,
-      "size_bytes": 1569
+      "sha256": "2d5bcce38bc729c9169cc6bce3c3fd5f6da95e3652c6e2708496018303904b42",
+      "line_count": 72,
+      "size_bytes": 1847
     },
     "schemas/HATE/v1/source-ref.schema.json": {
       "role": "schema",
@@ -2514,6 +2598,13 @@
       "sha256": "86b5a0093577c5ae3249ab6d58208e451afec4075bb9862ae47ef4269b880b89",
       "line_count": 94,
       "size_bytes": 2992
+    },
+    "src/hate/evidence_graph.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.evidence_graph.py.json",
+      "sha256": "906e8445791a247c40b64c339212516fe66d51106a5982c6bc0109e8bf08bfbc",
+      "line_count": 222,
+      "size_bytes": 9605
     },
     "src/hate/governance.py": {
       "role": "implementation",
@@ -2697,6 +2788,13 @@
       "line_count": 238,
       "size_bytes": 9022
     },
+    "src/hate/readiness_model.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.readiness_model.py.json",
+      "sha256": "d7b1025a0a5f2466902f572f299b49bea190c579946181b4ac429521d5df1e39",
+      "line_count": 68,
+      "size_bytes": 3021
+    },
     "src/hate/release.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.release.py.json",
@@ -2781,6 +2879,13 @@
       "line_count": 85,
       "size_bytes": 3380
     },
+    "tests/test_evidence_graph.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_evidence_graph.py.json",
+      "sha256": "46832c3b147746c7aa44125dd483d3977821116e935c3eb8bd22e94f02dd2b1a",
+      "line_count": 59,
+      "size_bytes": 2076
+    },
     "tests/test_p0a.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p0a.py.json",
@@ -2822,6 +2927,13 @@
       "sha256": "1c7c061bd6b11f4dd5d81a177b6dd89e3c3269d608b654a0f8119903a00ccb66",
       "line_count": 51,
       "size_bytes": 2080
+    },
+    "tests/test_product_readiness_report.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_product_readiness_report.py.json",
+      "sha256": "ddfcb36c8e96891f28ae10c924b3b1fede10ea27ffd0c79ac3e46b8c080d3ef6",
+      "line_count": 55,
+      "size_bytes": 1979
     },
     "tests/test_schema_validator.py": {
       "role": "test",
@@ -3072,6 +3184,10 @@
       "src/hate/p0a_constants.py"
     ],
     [
+      "src/hate/evidence_graph.py",
+      "src/hate/evidence_envelope.py"
+    ],
+    [
       "src/hate/p0a.py",
       "src/hate/p0a_support.py"
     ],
@@ -3316,6 +3432,10 @@
       "src/hate/source_ref.py"
     ],
     [
+      "tests/test_evidence_graph.py",
+      "src/hate/evidence_graph.py"
+    ],
+    [
       "tests/test_p0a.py",
       "src/hate/p0a.py"
     ],
@@ -3362,6 +3482,14 @@
     [
       "tests/test_product_grade.py",
       "src/hate/product_grade.py"
+    ],
+    [
+      "tests/test_product_readiness_report.py",
+      "src/hate/evidence_graph.py"
+    ],
+    [
+      "tests/test_product_readiness_report.py",
+      "src/hate/readiness_model.py"
     ],
     [
       "tests/test_schema_validator.py",

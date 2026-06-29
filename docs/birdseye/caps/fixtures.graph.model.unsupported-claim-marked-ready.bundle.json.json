@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/model/unsupported-claim-marked-ready/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6dc4898d18f7a59fe24f57813b098640b2a4f3c13bbaf455ccb1f6a3db6e7b50",
+  "line_count": 8,
+  "size_bytes": 258,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

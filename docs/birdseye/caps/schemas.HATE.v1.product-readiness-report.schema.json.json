@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/product-readiness-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d247c5af04c11b1af85dc337287e925cee70b3ad735223a96c68a9d374a97dba",
+  "line_count": 55,
+  "size_bytes": 1782,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

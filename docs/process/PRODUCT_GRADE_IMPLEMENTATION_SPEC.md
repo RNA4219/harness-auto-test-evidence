@@ -137,6 +137,19 @@ Required edge types:
 | `attached_artifact` | evidence has artifact manifest item | unsafe artifact must point to quarantine |
 | `requires_manual` | gap requires manual-bb supplement | manual request cannot be waiver |
 
+W07 implementation boundary:
+
+- `src/hate/evidence_graph.py` builds deterministic `evidence_graph` records from validated bundle
+  inputs: `requirements`, `risks`, `claims`, `records`, `manual_reviews`, and explicit `edges`.
+- `src/hate/readiness_model.py` computes product readiness from graph edges only. A release claim is
+  supported only when it derives from a requirement that has `supported_by` or `reviewed_by` evidence.
+- Contradiction edges (`contradicted_by`, `blocked_by`) are surfaced in `product-readiness-report.json`
+  and block readiness.
+- Missing claim requirement refs, orphan evidence, unknown edge kinds, and `requires_test` cycles are
+  hard findings.
+- `unsupported_claim_marked_ready` is a hard DQ. A ready claim without a supported graph path must not
+  pass product readiness.
+
 ### 4.3 Store and Replay Productization
 
 Local store is mandatory before hosted/API can be accepted.
