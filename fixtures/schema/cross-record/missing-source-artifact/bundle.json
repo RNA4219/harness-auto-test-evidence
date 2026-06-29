@@ -1,0 +1,15 @@
+{
+  "artifacts": [],
+  "records": [
+    {
+      "record_id": "missing-artifact-1",
+      "record_kind": "test_result",
+      "sourceRef": "tests/missing_test.py#L1",
+      "source_hash": "sha256:ad64355106bb158b020ecf9702be48f7730fc091dd4bb6a2f092b40393495b3d",
+      "payload": {
+        "canonical_test_id": "pytest::tests/missing_test.py::test_ok",
+        "file": "tests/missing_test.py"
+      }
+    }
+  ]
+}

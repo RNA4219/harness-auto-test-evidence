@@ -160,6 +160,27 @@ Envelope record は少なくとも次を持つ。
 `schema_versions`、record ごとの `sourceRefs` と findings を持つ。ログだけの validator は
 不合格であり、hard finding は product-ready 判定へ渡せる構造化 report として残す。
 
+### 8.2 Cross-Record SourceRef/Hash Validator
+
+`src/hate/cross_record_validator.py` は envelope validation 後の records と artifact manifest を
+横断し、sourceRef が bundle 内 artifact と整合していることを確認する。`src/hate/source_ref.py`
+は Windows path、container path、workspace relative path を同じ `normalized_path` へ揃える。
+
+sourceRef validator が hard rejection とする条件:
+
+| Code | Severity | Meaning |
+|---|---|---|
+| `hash_mismatch` | hard | record の `source_hash` と artifact の `sha256` が一致しない |
+| `missing_source_artifact` | hard | sourceRef が指す artifact/path が bundle に存在しない |
+| `path_traversal_source_ref` | hard | sourceRef が `..`、絶対 path、外部 URL など bundle 外を指す |
+| `coverage_refers_unknown_test` | hard | coverage context が存在しない canonical test id を参照する |
+| `finding_refers_unknown_file` | hard | static finding の file が artifact manifest に存在しない |
+| `non_deterministic_record_id` | hard | replay 必須 record の id が sourceRefs/payload から安定再計算できない |
+
+cross-record section は `schema-validation-report.json.cross_record.violations[]` に
+`violation_id`、`severity`、`affected_record_ids`、`relation_kind`、`expected`、`observed`、
+`sourceRef` を持つ。hash mismatch や bundle 外参照は soft warning ではない。
+
 ## 9. Acceptance
 
 - P0a record の 100% が schema registry で validate できる

@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/schema/cross-record/coverage-refers-unknown-test/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1797ad2b675b13a707b10f0e2e17f31134796f75c4bcc8e158a40326d2473db1",
+  "line_count": 26,
+  "size_bytes": 644,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

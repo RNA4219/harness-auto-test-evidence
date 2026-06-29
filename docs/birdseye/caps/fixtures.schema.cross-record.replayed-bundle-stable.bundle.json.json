@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/cross-record/replayed-bundle-stable/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "821e638a35df3dc5b1d0b387c9cefdf0352979bf0a10489741bd7be22bae4832",
+  "line_count": 22,
+  "size_bytes": 639,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "src-app",
+      "path": "src/app.py",
+      "sha256": "sha256:ad64355106bb158b020ecf9702be48f7730fc091dd4bb6a2f092b40393495b3d"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "container-ref-1",
+      "record_kind": "static_finding",
+      "sourceRef": "/workspace/repo/src/app.py#L1",
+      "source_hash": "sha256:ad64355106bb158b020ecf9702be48f7730fc091dd4bb6a2f092b40393495b3d",
+      "payload": {
+        "rule_id": "WARN001",
+        "file": "/workspace/repo/src/app.py",
+        "line": 1
+      }
+    }
+  ]
+}

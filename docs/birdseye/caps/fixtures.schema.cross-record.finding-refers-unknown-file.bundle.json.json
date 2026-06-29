@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/schema/cross-record/finding-refers-unknown-file/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6a56754f59ed8c4b401da391729ffc93d29902e15a511d6a83b8ed06c5c99cc1",
+  "line_count": 22,
+  "size_bytes": 543,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

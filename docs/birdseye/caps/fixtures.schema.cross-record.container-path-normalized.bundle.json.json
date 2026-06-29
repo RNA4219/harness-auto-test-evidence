@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/schema/cross-record/container-path-normalized/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "518ee2c4bd0bcc465a59d784deecd660099aa7c50af6ddddf971cdc2dbab7c09",
+  "line_count": 22,
+  "size_bytes": 565,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

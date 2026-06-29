@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/schema/cross-record/matching-test-coverage-source/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c71ae82cfcd8c11e49d4141ba02d342804ebce9c66c71a3251feedfbd7e5f021",
+  "line_count": 41,
+  "size_bytes": 1158,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

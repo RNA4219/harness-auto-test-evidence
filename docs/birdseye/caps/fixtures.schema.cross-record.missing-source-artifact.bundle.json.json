@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/cross-record/missing-source-artifact/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "05e4faca0cb1c9eb6ea5a5eb3e5a5b2b50d39256b3c8f2cc4ef66aa3a3a353e6",
+  "line_count": 15,
+  "size_bytes": 412,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

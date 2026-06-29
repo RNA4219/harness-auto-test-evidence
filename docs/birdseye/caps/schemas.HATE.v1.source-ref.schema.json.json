@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/source-ref.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d980b0694cb4697e903803a7d2b8421490ce3da4def4bcfa4875679fe38f7eae",
+  "line_count": 28,
+  "size_bytes": 971,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

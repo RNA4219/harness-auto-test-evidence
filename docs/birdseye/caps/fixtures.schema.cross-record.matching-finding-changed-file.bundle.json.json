@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/schema/cross-record/matching-finding-changed-file/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "606d1deb6485aa034f5c537c2b16d78523f6dd88694f40d48eee6f490d6c5188",
+  "line_count": 23,
+  "size_bytes": 560,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

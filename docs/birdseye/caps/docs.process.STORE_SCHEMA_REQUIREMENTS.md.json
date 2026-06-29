@@ -2,9 +2,9 @@
   "path": "docs/process/STORE_SCHEMA_REQUIREMENTS.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "0d9ff0cbec532c333f76fec1d160a0a491ab62a89458344262537d41611b48b3",
-  "line_count": 75,
-  "size_bytes": 2718,
+  "sha256": "cdd7a8aa8133bcc5ee2c68a3b5a94ca1f89e0bf2e8665467d13f2436573fc95c",
+  "line_count": 81,
+  "size_bytes": 3312,
   "headings": [
     "# Store Schema Requirements",
     "## 1. Purpose",
@@ -19,6 +19,7 @@
   "depends_on": [],
   "tags": [
     "artifact",
+    "coverage",
     "fixture",
     "qeg",
     "schema",

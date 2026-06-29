@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/schema/cross-record/path-traversal-source-ref/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8d72c6b6f152952fc8977321327d8acf5a5c9559c8d8097ec1abe54c3f98113c",
+  "line_count": 22,
+  "size_bytes": 536,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

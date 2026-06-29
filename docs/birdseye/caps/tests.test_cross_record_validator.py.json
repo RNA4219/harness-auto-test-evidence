@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_cross_record_validator.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "4c275997b2f2d60a0d59287be64495ef64cd6659498031f49680a4892fead8eb",
+  "line_count": 85,
+  "size_bytes": 3380,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.cross_record_validator",
+    "hate.source_ref",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cross_record_validator.py",
+    "src/hate/source_ref.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

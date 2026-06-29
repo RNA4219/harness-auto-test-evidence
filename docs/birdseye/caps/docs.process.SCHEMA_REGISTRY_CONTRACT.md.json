@@ -2,9 +2,9 @@
   "path": "docs/process/SCHEMA_REGISTRY_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "4fde02f2dcbbcd022b06e3726ecd16d5969fa5c211928cb035dbc6eb9a18bdfa",
-  "line_count": 170,
-  "size_bytes": 6575,
+  "sha256": "a54b9d78f434a00f39c67254adb34ab5450f9c91be533de58fd97895f007652b",
+  "line_count": 191,
+  "size_bytes": 7991,
   "headings": [
     "# Schema Registry Contract",
     "## 1. 目的",
@@ -18,6 +18,7 @@
     "## 7. Fixture Matrix",
     "## 8. CLI / Validation",
     "### 8.1 Common Envelope Validator",
+    "### 8.2 Cross-Record SourceRef/Hash Validator",
     "## 9. Acceptance"
   ],
   "imports": [],

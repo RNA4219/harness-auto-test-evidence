@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/cross-record/hash-mismatch/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "496cdcbe9b5f0287dbc87768f080abbedf1f5236453b7016af2fba3e19860ed8",
+  "line_count": 21,
+  "size_bytes": 508,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

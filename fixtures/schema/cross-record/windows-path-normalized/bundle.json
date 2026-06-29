@@ -1,0 +1,21 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "test-sample",
+      "path": "tests/test_sample.py",
+      "sha256": "sha256:ad64355106bb158b020ecf9702be48f7730fc091dd4bb6a2f092b40393495b3d"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "windows-ref-1",
+      "record_kind": "test_result",
+      "sourceRef": "C:\\repo\\tests\\test_sample.py#L1",
+      "source_hash": "sha256:ad64355106bb158b020ecf9702be48f7730fc091dd4bb6a2f092b40393495b3d",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_sample.py::test_ok",
+        "file": "C:\\repo\\tests\\test_sample.py"
+      }
+    }
+  ]
+}

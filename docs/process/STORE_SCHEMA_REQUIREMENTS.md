@@ -39,6 +39,9 @@ local/hosted HATE store. The store is a read/replay substrate, not a QEG authori
 - Legal hold blocks deletion of protected metadata.
 - External export never mutates canonical bundle.
 - Store corruption is a doctor finding, not silent recovery.
+- sourceRefs are accepted only when their normalized path resolves inside the imported bundle.
+- Evidence record `source_hash` values must match artifact manifest `sha256` values before store import.
+- Replay-required records must have deterministic record ids derived from record kind, sourceRefs, and stable payload identity fields.
 
 ## 4. Migration Requirements
 
@@ -72,4 +75,7 @@ Each migration must define:
 - missing index is ignored for high-volume query
 - audit event can be updated in place
 - old bundle unreadable after minor migration
-
+- hash mismatch is downgraded to a soft warning
+- path traversal or external URL sourceRefs enter the canonical store
+- coverage contexts reference tests that do not exist in the same bundle
+- static findings reference files missing from the artifact manifest

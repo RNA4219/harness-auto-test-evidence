@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/cross-record/non-deterministic-record-id/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "26156d2ddc75d37297453dad7b9030e7d621de3e1b2b4e09e327eb931fcaa72e",
+  "line_count": 22,
+  "size_bytes": 629,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

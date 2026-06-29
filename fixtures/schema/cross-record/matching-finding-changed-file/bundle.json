@@ -1,0 +1,23 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "src-auth",
+      "path": "src/auth.py",
+      "sha256": "sha256:abf8ecca3a0383f9ed65c07d9c6777bf341f2db761ec1fd336d5c6d5592d759e"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "finding-1",
+      "record_kind": "static_finding",
+      "sourceRef": "src/auth.py#L2",
+      "source_hash": "sha256:abf8ecca3a0383f9ed65c07d9c6777bf341f2db761ec1fd336d5c6d5592d759e",
+      "payload": {
+        "rule_id": "SEC001",
+        "file": "src/auth.py",
+        "line": 2,
+        "changed_path": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/cross_record_validator.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "92e61c195cb88332401f8aff54b22f712e3bb53f787108b250dc71e17ae08a2e",
+  "line_count": 150,
+  "size_bytes": 6809,
+  "headings": [],
+  "imports": [
+    ".evidence_envelope",
+    ".source_ref",
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evidence_envelope.py",
+    "src/hate/source_ref.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

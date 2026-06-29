@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/schema/cross-record/windows-path-normalized/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "60995d75fd4d6e13b3fd9ca4b9d92e53604f9d80a435cf2efda1fe4b8d3b77c8",
+  "line_count": 21,
+  "size_bytes": 605,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

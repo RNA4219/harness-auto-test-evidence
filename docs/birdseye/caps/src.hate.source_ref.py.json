@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/source_ref.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0d09703abb2a1d527f4c45e92d7e44daa2c941a7381db76b384200bc2541c707",
+  "line_count": 156,
+  "size_bytes": 4718,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "hashlib",
+    "posixpath",
+    "re",
+    "typing",
+    "urllib.parse"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}
