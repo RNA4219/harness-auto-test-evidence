@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/enterprise/legal_hold.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ac5ee28ae6f88c792048651a4ab654dc4c778d507142b63d6bba1c42423a31bd",
+  "line_count": 91,
+  "size_bytes": 3225,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "release"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/invalid-collision/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bbfe0797d754616409ea70644793d05d60b617a57b2fb9bfa6f010692a09e29e",
+  "line_count": 22,
+  "size_bytes": 592,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

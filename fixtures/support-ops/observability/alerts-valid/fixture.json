@@ -1,0 +1,28 @@
+{
+  "description": "Alert rules project without incident when threshold is not crossed.",
+  "input": {
+    "report_id": "alerts-valid",
+    "profile": "default",
+    "logs": [],
+    "metrics": [
+      {"name": "adapter_error_rate", "value": 0.01, "sourceRef": "metrics/adapter_error_rate"}
+    ],
+    "alerts": [
+      {
+        "alert_id": "alert-adapter-error",
+        "metric": "adapter_error_rate",
+        "comparison": ">",
+        "threshold": 0.2,
+        "severity": "sev3",
+        "incident_class": "INC-6",
+        "sourceRef": "alerts/adapter_error_rate"
+      }
+    ],
+    "sourceRefs": ["fixtures/support-ops/observability/alerts-valid/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "alert_count": 1,
+    "incident_count": 0
+  }
+}

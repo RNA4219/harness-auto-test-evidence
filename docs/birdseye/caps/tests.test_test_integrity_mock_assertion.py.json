@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_test_integrity_mock_assertion.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "27b771a1e5d696f1b9f0451b90f796d5bb458dffbf60c75472929d3de46ec98c",
+  "line_count": 525,
+  "size_bytes": 21234,
+  "headings": [],
+  "imports": [
+    "hate.test_integrity.mock_assertion",
+    "hate.test_integrity.models",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/test_integrity/mock_assertion.py",
+    "src/hate/test_integrity/models.py"
+  ],
+  "tags": [
+    "epic",
+    "fixture",
+    "test"
+  ]
+}

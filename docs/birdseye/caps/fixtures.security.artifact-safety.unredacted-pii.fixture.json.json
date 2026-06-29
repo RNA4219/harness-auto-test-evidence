@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/artifact-safety/unredacted-pii/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "21b03fc5d9f8440c058c34825ae0f736e14b37381827410461a066af51db7812",
+  "line_count": 6,
+  "size_bytes": 183,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "security"
+  ]
+}

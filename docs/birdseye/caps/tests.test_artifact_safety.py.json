@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_artifact_safety.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "d17ebb5f5492c4addfe7b956c90db43076bba6b37bca665c4c25dcb17832353f",
+  "line_count": 279,
+  "size_bytes": 10979,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "base64",
+    "hate.security.artifact_safety",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/security/artifact_safety.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "release",
+    "security",
+    "test"
+  ]
+}

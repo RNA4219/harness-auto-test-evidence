@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/migration/legal_hold.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1711699c16ece7bb9de7f60ec5c2577ae3cc3e99db13fea15e3087f2b4e55258",
+  "line_count": 132,
+  "size_bytes": 6014,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.enterprise.legal_hold",
+    "hate.migration.compatibility",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/enterprise/legal_hold.py",
+    "src/hate/migration/compatibility.py"
+  ],
+  "tags": [
+    "enterprise",
+    "release",
+    "schema"
+  ]
+}

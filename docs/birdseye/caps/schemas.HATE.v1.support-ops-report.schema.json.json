@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/support-ops-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "bb4d0716a860ed05767d83c10e93ebc84f140aedb6de8938f32a40ef8aed70a0",
+  "line_count": 120,
+  "size_bytes": 3213,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

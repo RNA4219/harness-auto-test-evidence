@@ -1,0 +1,13 @@
+{
+  "artifact_id": "private-key-009",
+  "artifact_path": "config/credentials.pem",
+  "profile": "release",
+  "content": "-----BEGIN SYNTHETIC PRIVATE KEY-----\nMIIEpAIBAAKCAQEA0Z3VS5JJcds3xfn/ygWyF8PbnGy0AHB7mK3I\n-----END SYNTHETIC PRIVATE KEY-----\n",
+  "expected_redaction_status": "redacted",
+  "expected_classification": "restricted",
+  "expected_readiness_effect": "hard_dq",
+  "expected_redactions_count": 1,
+  "expected_secret_redacted": true,
+  "expected_severity": "critical",
+  "expected_redaction_type": "secret"
+}

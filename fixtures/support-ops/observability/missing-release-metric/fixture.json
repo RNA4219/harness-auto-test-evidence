@@ -1,0 +1,18 @@
+{
+  "description": "Missing release-critical observability metrics produce hold.",
+  "input": {
+    "report_id": "missing-release-metric",
+    "profile": "release",
+    "logs": [],
+    "metrics": [
+      {"name": "hard_dq_count", "value": 0, "sourceRef": "metrics/hard_dq"}
+    ],
+    "alerts": [],
+    "sourceRefs": ["fixtures/support-ops/observability/missing-release-metric/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "finding_code": "missing_release_metric",
+    "missing_count": 2
+  }
+}

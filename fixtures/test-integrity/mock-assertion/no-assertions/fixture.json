@@ -1,0 +1,14 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_no_exception_only",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/smoke/test_runner.py:15",
+  "description": "Test only checks no exception raised - no oracle",
+  "expected_signal": "assertion_quality",
+  "expected_assertion_type": "no_exception_only",
+  "code": "def test_no_exception_only():\n    processor = DataProcessor()\n    data = load_test_data()\n    # Just check it runs without exception\n    processor.run(data)\n    # No assertion of expected output\n    # just check it runs",
+  "mock_targets": [],
+  "assertions": []
+}

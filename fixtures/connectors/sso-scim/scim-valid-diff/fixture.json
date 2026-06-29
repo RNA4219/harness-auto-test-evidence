@@ -1,0 +1,33 @@
+{
+  "description": "SCIM user/group provisioning preview without live side effects.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "scim": {
+        "diff_id": "scim-diff-001",
+        "current_users": [
+          {"id": "user-001", "userName": "ada@example.test", "active": true}
+        ],
+        "desired_users": [
+          {"id": "user-001", "userName": "ada@example.test", "active": true},
+          {"id": "user-002", "userName": "grace@example.test", "active": true, "sourceRef": "scim/users/grace"}
+        ],
+        "current_groups": [],
+        "desired_groups": [
+          {"id": "group-001", "displayName": "engineering", "sourceRef": "scim/groups/engineering"}
+        ]
+      },
+      "audit_event_refs": ["audit/scim-diff-001"],
+      "sourceRefs": ["fixtures/connectors/sso-scim/scim-valid-diff/fixture.json"]
+    },
+    "connector_config": {
+      "enabled": true
+    }
+  },
+  "expected": {
+    "status": "preview",
+    "simulated_action_count": 2,
+    "denied_action_count": 0,
+    "readiness_effect": "pass"
+  }
+}

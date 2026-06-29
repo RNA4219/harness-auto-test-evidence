@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/artifact-safety/soft-gap-binary-blob.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "545e04bcd99ea8c5228ed6eec47b356204fa8ad4301e7fbc87129424308cfad9",
+  "line_count": 27,
+  "size_bytes": 589,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security",
+    "test"
+  ]
+}

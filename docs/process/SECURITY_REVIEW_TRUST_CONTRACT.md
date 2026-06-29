@@ -75,6 +75,28 @@ waiver、approval、retention 正本を置き換えない。
 | Evidence integrity | sha256, provenance, frozen bundle, replay |
 | Secure development | adapter conformance, schema registry, release validation |
 
+## 5.1 Connector Trust Boundary
+
+SSO / SCIM / SIEM / warehouse / ticketing connector は trust packet 上では
+external connector inventory として扱う。dry-run evidence は提出可能だが、
+connector token、client secret、private endpoint URL、raw artifact content は
+diagnostic や support bundle に含めない。connector failure は local-first
+precheck / QEG verdict を変更せず、non-gating warning として sourceRefs と
+audit refs に接続する。
+
+## 5.2 RBAC / Audit Trust Boundary
+
+RBAC と audit log は enterprise control evidence であり、release verdict の
+正本ではない。RBAC decision は least privilege の説明とアクセス拒否理由を
+sourceRefs 付きで残すが、precheck / QEG / release gate を allowed / denied に
+変換しない。
+
+Quarantined artifact については、safe metadata の参照だけを許可できる。
+raw artifact、raw path、secret、PII、unsafe diagnostic payload へのアクセスや
+export は denied decision として記録し、audit event に actor、action、resource、
+decision、reason、timestamp、sourceRefs を残す。監査提出用 trust packet は
+この audit event を参照してよいが、unsafe artifact 本体は含めない。
+
 ## 6. Vulnerability Handling
 
 | Severity | Target behavior |

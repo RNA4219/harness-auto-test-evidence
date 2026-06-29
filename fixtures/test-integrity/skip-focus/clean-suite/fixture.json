@@ -1,0 +1,26 @@
+{
+  "description": "Positive fixture: clean-suite - no integrity signals detected",
+  "test_records": [
+    {
+      "canonical_test_id": "test_login_success",
+      "framework": "pytest",
+      "status": "passed",
+      "sourceRefs": ["tests/auth/login_test.py::test_login_success"]
+    },
+    {
+      "canonical_test_id": "test_logout_success",
+      "framework": "pytest",
+      "status": "passed",
+      "sourceRefs": ["tests/auth/logout_test.py::test_logout_success"]
+    }
+  ],
+  "profile": "default",
+  "expected_summary": {
+    "overall_status": "pass",
+    "finding_count": 0,
+    "blocked_count": 0,
+    "hold_count": 0,
+    "soft_gap_count": 0,
+    "pass_count": 0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/p1a_internal/artifact_resolver.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "bf3983e149f7b49608e0e9b0e65de767223b32aa8aa7fae27b8fe38ec1052565",
+  "line_count": 67,
+  "size_bytes": 2695,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p1a_io",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a_io.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

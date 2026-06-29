@@ -1,0 +1,57 @@
+{
+  "description": "Risk coverage and readiness are projected without recomputing the upstream verdict.",
+  "input": {
+    "required_reports": ["run", "readiness", "risk_coverage_matrix"],
+    "reports": {
+      "bundle_hash": "sha256:riskreadiness",
+      "run": {
+        "run_id": "run-risk-001",
+        "attempt": 1,
+        "commit": "def456",
+        "profile": "product",
+        "sourceRefs": ["reports/run.json"]
+      },
+      "readiness": {
+        "run_id": "run-risk-001",
+        "summary": {
+          "overall_status": "hold",
+          "hard_dq_count": 0,
+          "soft_gap_count": 1
+        },
+        "soft_gaps": [
+          {
+            "gap_id": "gap-001",
+            "reason": "Coverage-only evidence",
+            "sourceRef": "reports/risk-coverage-matrix.json#/risks/0"
+          }
+        ],
+        "sourceRefs": ["reports/product-readiness-report.json"]
+      },
+      "risk_coverage_matrix": {
+        "run_id": "run-risk-001",
+        "risks": [
+          {
+            "risk_id": "risk-api-001",
+            "severity": "high",
+            "owner": "qa",
+            "layer": "api",
+            "description": "API claim needs oracle",
+            "required_evidence_classes": ["executable_oracle"],
+            "observed_evidence_classes": ["coverage_only"],
+            "oracle_evidence": false,
+            "manual_required": true,
+            "gap_class": "oracle_weak",
+            "sourceRef": "reports/risk-coverage-matrix.json#/risks/0"
+          }
+        ],
+        "sourceRefs": ["reports/risk-coverage-matrix.json"]
+      }
+    }
+  },
+  "expected": {
+    "decision": "hold",
+    "risk_id": "risk-api-001",
+    "oracle_status": "missing",
+    "manual_required": true
+  }
+}

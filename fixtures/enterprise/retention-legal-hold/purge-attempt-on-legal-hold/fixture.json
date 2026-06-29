@@ -1,0 +1,28 @@
+{
+  "input": {
+    "resource": {
+      "resource_id": "bundle-purge-held-001",
+      "resource_type": "canonical_bundle",
+      "classification": "restricted",
+      "retention_policy_id": "retention-restricted-metadata",
+      "operation": "purge",
+      "expires_at": "2026-01-01T00:00:00+00:00",
+      "legal_hold": {
+        "status": "active",
+        "reason": "regulatory hold",
+        "held_since": "2026-02-01T00:00:00+00:00",
+        "authorized_by": "legal-002"
+      },
+      "sourceRefs": ["fixtures/enterprise/retention-legal-hold/purge-attempt-on-legal-hold/fixture.json"]
+    },
+    "policy": {
+      "policy_id": "retention-restricted-metadata",
+      "retention_days": 0
+    },
+    "profile": "release",
+    "operation": "purge"
+  },
+  "expected": {
+    "readiness_effect": "hard_dq"
+  }
+}

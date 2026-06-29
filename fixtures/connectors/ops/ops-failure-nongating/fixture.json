@@ -1,0 +1,42 @@
+{
+  "description": "Ops connector failure remains non-gating - no override of precheck/product verdicts.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-ops-failure-001",
+      "siem_export": {
+        "connector_id": "siem-002",
+        "provider": "Splunk",
+        "error": "connection_timeout",
+        "sourceRef": "reports/siem-error.json"
+      },
+      "warehouse_export": {
+        "connector_id": "warehouse-002",
+        "provider": "Snowflake",
+        "error": "auth_failure",
+        "sourceRef": "reports/warehouse-error.json"
+      },
+      "ticketing_sync": {
+        "connector_id": "ticketing-002",
+        "provider": "Jira",
+        "error": "rate_limit",
+        "sourceRef": "reports/ticketing-error.json"
+      },
+      "sourceRefs": ["reports/enterprise-control-report.json"]
+    },
+    "connector_config": {
+      "enabled": true
+    }
+  },
+  "expected": {
+    "connectors": ["siem-002", "warehouse-002", "ticketing-002"],
+    "status": "failure_preview",
+    "readiness_effect": "non_gating_failure",
+    "all_non_gating": true,
+    "canonical_bundle_mutated_false": true,
+    "precheck_decision_override_false": true,
+    "qeg_verdict_override_false": true,
+    "has_sourceRefs": true
+  }
+}

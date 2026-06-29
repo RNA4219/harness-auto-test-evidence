@@ -2,12 +2,13 @@
   "path": "src/hate/p0b.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "664d600c4f20449e38c66c4fbfd7618e2a4078d8ffe4e7aa512c3f5e3f0c7e70",
-  "line_count": 854,
-  "size_bytes": 39507,
+  "sha256": "73244dda5f76035c8ee1b735972effb53593df81369fd204a288fed4d49aac49",
+  "line_count": 741,
+  "size_bytes": 33969,
   "headings": [],
   "imports": [
     ".",
+    ".p0b_sarif",
     ".p0b_support",
     "__future__",
     "dataclasses",
@@ -18,6 +19,7 @@
   ],
   "links": [],
   "depends_on": [
+    "src/hate/p0b_sarif.py",
     "src/hate/p0b_support.py"
   ],
   "tags": [

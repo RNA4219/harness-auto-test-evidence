@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/enterprise/audit.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ddbe72d45c53ec037ae51d3c66efe84a67694877c768513b1a424b93f4fe52ea",
+  "line_count": 229,
+  "size_bytes": 8179,
+  "headings": [],
+  "imports": [
+    ".rbac",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/enterprise/rbac.py"
+  ],
+  "tags": [
+    "enterprise",
+    "release"
+  ]
+}

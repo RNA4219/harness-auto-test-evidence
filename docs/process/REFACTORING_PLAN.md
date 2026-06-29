@@ -35,17 +35,22 @@ No-Go:
 
 ## 3. Current Hotspots
 
-Measured on 2026-06-29:
+Measured on 2026-06-30:
 
 | File | Lines | Status | Required action |
 |---|---:|---|---|
 | `src/hate/p0a_support.py` | 88 | Completed | Split into focused P0A modules; compatibility shim remains below 200 lines. |
-| `docs/process/SPECIFICATION.md` | 1027 | Over hard threshold | Convert to index plus focused contracts. |
-| `src/hate/p1a_support.py` | 865 | Near hard threshold | Split before adding security/privacy scanners. |
-| `src/hate/p0b.py` | 842 | Near hard threshold | Split QEG export orchestration from report construction. |
-| `src/hate/p1b.py` | 785 | Warning zone | Split workflow mapping models, CLI orchestration, and report generation. |
-| `tests/test_p2p3.py` | 731 | Warning zone | Split by report family and enterprise feature area. |
-| `docs/process/RUNBOOK.md` | 697 | Warning zone | Keep as operator index; move feature-specific runbooks out. |
+| `docs/process/SPECIFICATION.md` | 1225 | Approved root index pending split | Convert to index plus focused contracts. |
+| `src/hate/p0b.py` | 742 | Partially split | SARIF/contract/mutation helpers moved to `src/hate/p0b_sarif.py`; remaining split target is QEG export orchestration vs report construction. |
+| `src/hate/p1b.py` | 469 | Partially split | Workflow evidence record assembly moved to `src/hate/p1b_evidence.py`; RanD requirement alignment and trace links moved to `src/hate/p1b_alignment.py`; remaining split target is Shipyard evidence vs workflow artifact report generation. |
+| `src/hate/test_integrity/coupling.py` | 582 | Partially split | Classifications and coupling patterns moved to `src/hate/test_integrity/coupling_types.py`; finding records moved to `src/hate/test_integrity/coupling_findings.py`; remaining split target is risk/oracle detectors vs report assembly. |
+| `src/hate/test_integrity/mock_assertion.py` | 709 | Partially split | Classifications and mock/assertion patterns moved to `src/hate/test_integrity/mock_assertion_types.py`; remaining split target is report assembly. |
+| `src/hate/risk_matrix.py` | 648 | Partially split | Risk matrix constants, policy thresholds, and dataclasses moved to `src/hate/risk_matrix_types.py`; remaining split target is evidence classification vs dashboard projection. |
+| `src/hate/api/read_model.py` | 608 | Partially split | Response envelope, resource filter/sort contracts, and request validators moved to `src/hate/api/read_model_contract.py`; remaining split target is resource handlers vs projection assembly. |
+| `tests/test_p2p3.py` | 812 | Warning zone | Split by report family and enterprise feature area. |
+| `docs/process/RUNBOOK.md` | 765 | Warning zone | Keep as operator index; move feature-specific runbooks out. |
+| `tests/test_test_integrity_coupling.py` | 756 | Completed below hard threshold | Canonical fixture/schema tests split to `tests/test_test_integrity_coupling_fixtures.py`. |
+| `tests/test_api_read_model_contract.py` | 884 | Completed below hard threshold | Resource inventory tests split to `tests/test_api_read_model_inventory.py`. |
 
 Generated/golden evidence above 1000 lines is acceptable only when it remains fixture data:
 
@@ -109,6 +114,9 @@ Acceptance:
 - Bundle validation can run without invoking CLI.
 - Golden fixtures remain byte-stable unless the schema version changes.
 
+Status as of 2026-06-30: partial. SARIF parsing, contract status normalization, mutation status
+normalization, and line-range overlap helpers are isolated in `src/hate/p0b_sarif.py`.
+
 ### P1B workflow mapping
 
 Split `src/hate/p1b.py` into:
@@ -123,6 +131,31 @@ Acceptance:
 
 - Mapping logic is testable without filesystem writes.
 - Report serialization is snapshot/golden tested separately from mapping rules.
+
+Status as of 2026-06-30: partial. Workflow evidence record assembly is isolated in
+`src/hate/p1b_evidence.py`; RanD requirement alignment, trace-link assembly, gate aggregation,
+audit summary preservation, and manual bridge items are isolated in `src/hate/p1b_alignment.py`.
+
+### API read model
+
+Split `src/hate/api/read_model.py` into:
+
+- `src/hate/api/read_model_contract.py`: envelopes, pagination, staleness, filter and sort contracts.
+- `src/hate/api/read_model_projection.py`: canonical report to resource projection assembly.
+- `src/hate/api/read_model_handlers.py`: resource handler functions.
+- `src/hate/api/read_model_authz.py`: read-model authorization checks that remain pure and deterministic.
+
+Acceptance:
+
+- Public imports from `src/hate/api/__init__.py` remain compatible.
+- Resource handlers keep tenant data only in the envelope tenant field.
+- Projection logic remains deterministic and does not recompute readiness verdicts.
+- `tests/test_api_read_model.py`, `tests/test_api_read_model_contract.py`,
+  and `tests/test_api_read_model_inventory.py` pass before and after each split step.
+
+Status as of 2026-06-30: partial. Response envelope models, staleness metadata,
+resource filter/sort definitions, and request validators are isolated in
+`src/hate/api/read_model_contract.py`.
 
 ## 5. Specification Split Policy
 
@@ -168,3 +201,7 @@ Add a CI guard before product-grade implementation accelerates:
 - generated fixtures over 1000 lines: allowed only when path matches `fixtures/golden/**/expected/*.json`
 
 The guardrail must print path, line count, threshold, and required split target.
+
+Status as of 2026-06-30: implemented in `tools/check_file_size.py` with regression coverage in
+`tests/test_check_file_size.py`. The current tree passes the guard after splitting
+`tests/test_test_integrity_coupling.py` and `tests/test_api_read_model_contract.py`.

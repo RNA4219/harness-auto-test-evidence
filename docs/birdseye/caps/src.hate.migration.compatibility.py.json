@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/migration/compatibility.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "852887b83d956c8f0e4b65493466368f70d406a904a2a8b2e39e7079e8fd37b5",
+  "line_count": 208,
+  "size_bytes": 8890,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

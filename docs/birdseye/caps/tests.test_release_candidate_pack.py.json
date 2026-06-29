@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_release_candidate_pack.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "fb8a74407cf7dead83c6c22d53e55293a7da144836f000b0502a1d64ee228ee9",
+  "line_count": 113,
+  "size_bytes": 4690,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.release",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/release.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

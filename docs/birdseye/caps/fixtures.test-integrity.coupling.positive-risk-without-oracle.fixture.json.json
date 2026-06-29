@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/test-integrity/coupling/positive-risk-without-oracle.fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "faa54b05ff2d95338d0484beea97201b945b3f2d8debfd97b6ac720bf03e0d02",
+  "line_count": 35,
+  "size_bytes": 964,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "security",
+    "test"
+  ]
+}

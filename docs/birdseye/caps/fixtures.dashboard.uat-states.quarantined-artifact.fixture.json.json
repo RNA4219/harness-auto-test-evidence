@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/dashboard/uat-states/quarantined-artifact/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "cb612094aee209da283baf5e1a89c6bc6da98002862067946d7243ae56b7c5d2",
+  "line_count": 40,
+  "size_bytes": 1196,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

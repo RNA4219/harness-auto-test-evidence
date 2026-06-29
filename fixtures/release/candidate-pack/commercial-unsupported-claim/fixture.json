@@ -1,0 +1,19 @@
+{
+  "input": {
+    "release_id": "rc-commercial-blocked",
+    "source_version": "abc123",
+    "required_reports": ["commercial-truthfulness-report"],
+    "reports": [
+      {
+        "record_type": "commercial-truthfulness-report",
+        "report_id": "commercial",
+        "readiness_effect": "hard_dq",
+        "summary": {"unsupported_claim_count": 1, "release_eligible_claim_count": 0},
+        "claims": [{"claim_id": "claim-hosted-saas", "declared_status": "unsupported", "release_eligible": false}],
+        "sourceRefs": ["commercial-truthfulness-report.json"]
+      }
+    ],
+    "evidence_room_artifacts": []
+  },
+  "expected": {"blocker": "unsupported_commercial_claim"}
+}

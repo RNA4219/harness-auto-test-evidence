@@ -1,0 +1,32 @@
+{
+  "path": "src/hate/store/compare.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "670a6f618eb4192893360b8e8ae98b26657aa8ca90f4e055659cb2b3dcd40ef6",
+  "line_count": 497,
+  "size_bytes": 17253,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    ".indexes",
+    ".local_store",
+    ".replay",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/local_store.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

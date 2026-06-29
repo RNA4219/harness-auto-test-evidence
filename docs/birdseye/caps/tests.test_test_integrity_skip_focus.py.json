@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_test_integrity_skip_focus.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "6dfae16df9935952304352fb5cd5b9878b721368135ae5bce0465e2f4e92ecc0",
+  "line_count": 807,
+  "size_bytes": 29084,
+  "headings": [
+    "# Fixture paths - task-packet structure",
+    "# Required fixture names per task packet",
+    "# Canonical finding fields per task packet"
+  ],
+  "imports": [
+    "__future__",
+    "hate.test_integrity",
+    "hate.test_integrity.models",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/test_integrity/models.py"
+  ],
+  "tags": [
+    "fixture",
+    "release",
+    "test"
+  ]
+}

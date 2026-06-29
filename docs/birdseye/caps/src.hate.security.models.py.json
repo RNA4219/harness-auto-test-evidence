@@ -1,0 +1,30 @@
+{
+  "path": "src/hate/security/models.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c1558a112462f28e9fa4f93a310fff488a03c2cb3883eb546b9e7bd678c047a9",
+  "line_count": 399,
+  "size_bytes": 15389,
+  "headings": [
+    "# Severity levels per signal type",
+    "# Readiness effects per signal type",
+    "# Signal severity matrix for profile-based effects",
+    "# Allowlist contexts - these are safe when properly tagged"
+  ],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "security",
+    "test"
+  ]
+}

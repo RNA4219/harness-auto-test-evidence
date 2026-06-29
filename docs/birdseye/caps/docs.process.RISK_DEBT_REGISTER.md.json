@@ -2,9 +2,9 @@
   "path": "docs/process/RISK_DEBT_REGISTER.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "c1c1bcda9202685fda570f8aac2e35b2dff3cccc30a88e7e4140b4f3736b4500",
-  "line_count": 145,
-  "size_bytes": 4875,
+  "sha256": "764f823eb42299801179725d044afbb706b20591810a0f55cda5717ec8b6e613",
+  "line_count": 149,
+  "size_bytes": 5184,
   "headings": [
     "# Risk Debt Register",
     "## 1. 目的",
@@ -24,6 +24,7 @@
   "tags": [
     "artifact",
     "coverage",
+    "fixture",
     "qeg",
     "release",
     "schema",

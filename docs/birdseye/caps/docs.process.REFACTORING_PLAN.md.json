@@ -2,9 +2,9 @@
   "path": "docs/process/REFACTORING_PLAN.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "be5b41cf795f404116e2b1b7c19278f5434ed44b0e6994925b2687100dc0b59b",
-  "line_count": 170,
-  "size_bytes": 7431,
+  "sha256": "c89dfbf303267a851cdde841736eaee000ffca67a4cc23f4221a5893d9c759fc",
+  "line_count": 207,
+  "size_bytes": 10671,
   "headings": [
     "# Refactoring Plan",
     "## 1. Purpose",
@@ -15,6 +15,7 @@
     "### P1A trust and privacy hardening",
     "### P0B QEG export",
     "### P1B workflow mapping",
+    "### API read model",
     "## 5. Specification Split Policy",
     "## 6. Refactoring Execution Order",
     "## 7. CI Guardrail Requirement"
@@ -24,13 +25,12 @@
   "depends_on": [],
   "tags": [
     "adapter",
+    "api",
     "artifact",
-    "coverage",
     "enterprise",
     "fixture",
     "qeg",
     "schema",
-    "security",
     "test",
     "workflow"
   ]

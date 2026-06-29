@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/commercial-truthfulness-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "1483cf3ec1f7a7eee1c337196bc40c85353defbedcf782434f80303569e57140",
+  "line_count": 96,
+  "size_bytes": 3725,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "release",
+    "schema",
+    "security"
+  ]
+}

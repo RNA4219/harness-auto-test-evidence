@@ -1,0 +1,19 @@
+{
+  "path": "schemas/HATE/v1/scale-performance-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6997d6ea087f99eb63853c89b3687f63616c59509abd446b7062ce5a79ed518b",
+  "line_count": 108,
+  "size_bytes": 3277,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "SIEM safe event dry-run payload.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-siem-safe",
+      "siem_export": {
+        "connector_id": "siem-safe",
+        "provider": "Splunk",
+        "payload_kind": "audit_events",
+        "events_preview": [
+          {"event_type": "auth_success", "count": 3, "sourceRef": "audit/events/0"}
+        ],
+        "sourceRef": "reports/siem-safe-event.json"
+      },
+      "sourceRefs": ["fixtures/connectors/ops/siem-safe-event/fixture.json"]
+    },
+    "connector_config": {"enabled": true, "dry_run": true}
+  },
+  "expected": {
+    "mode": "siem",
+    "status": "preview",
+    "readiness_effect": "pass",
+    "payload_kind": "audit_events"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "manual-review-without-human-record",
+  "description": "Positive fixture: risk requires manual review but no human record exists",
+  "risk_matrix_entries": [
+    {
+      "risk_id": "risk-002-auth-flow",
+      "risk_level": "high",
+      "feature_id": "authentication_flow",
+      "source_refs": ["risk:risk-002-auth-flow"]
+    }
+  ],
+  "human_records": [],
+  "expected_findings": [
+    {
+      "evidence_class": "manual_review_required",
+      "classification": "missing_human_record",
+      "severity": "high",
+      "readiness_effect": "hold",
+      "manual_review_required": true,
+      "required_human_decision": "create_human_record_or_provide_oracle"
+    }
+  ],
+  "expected_status": "hold"
+}

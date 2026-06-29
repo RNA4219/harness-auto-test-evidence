@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/safe-diagnostic-bundle.schema.json",
+  "title": "HATE v1 Safe Diagnostic Bundle",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "bundle_id",
+    "artifact_ids",
+    "classification",
+    "redaction_status",
+    "quarantine_status",
+    "readiness_effect",
+    "safe_for_summary",
+    "sourceRefs",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "enum": ["safe-diagnostic-bundle"]
+    },
+    "bundle_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "included_artifacts": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "excluded_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_id", "reason", "safe_metadata"],
+        "properties": {
+          "artifact_id": {"type": "string"},
+          "reason": {"type": "string"},
+          "safe_metadata": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "classification": {
+      "enum": ["public", "internal", "confidential", "restricted"]
+    },
+    "redaction_status": {
+      "enum": ["not_required", "redacted", "pending", "failed"]
+    },
+    "quarantine_status": {
+      "enum": ["none", "quarantined", "released"]
+    },
+    "readiness_effect": {
+      "enum": ["pass", "soft_gap", "hold", "hard_dq"]
+    },
+    "safe_for_summary": {
+      "type": "boolean"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "redaction_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "line", "marker"],
+        "properties": {
+          "type": {
+            "enum": ["secret", "pii", "path", "url"]
+          },
+          "pattern": {
+            "type": "string"
+          },
+          "line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "span": {
+            "type": "object",
+            "required": ["start", "end"],
+            "properties": {
+              "start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "marker": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "url_domain": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "proof_hash": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64
+    },
+    "export_surface": {
+      "enum": ["dashboard", "support", "public", "internal", "qeg", "external_export"]
+    },
+    "export_ready": {
+      "type": "boolean"
+    },
+    "sanitized_context": {
+      "type": "object"
+    },
+    "error_records": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "object",
+      "required": ["artifact_count", "classification_count"],
+      "properties": {
+        "artifact_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "classification_count": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "redactions_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "secrets_redacted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pii_redacted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "paths_redacted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "urls_redacted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quarantined_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "safe_for_summary_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

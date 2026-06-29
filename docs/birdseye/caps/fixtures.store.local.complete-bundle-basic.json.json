@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/store/local/complete-bundle-basic.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bf89258ec9d46651e420b27cc0a5ad460291c440def38a79752b08adc192b676",
+  "line_count": 31,
+  "size_bytes": 624,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

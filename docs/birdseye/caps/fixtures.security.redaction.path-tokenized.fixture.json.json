@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/redaction/path-tokenized/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "02d869de0776f78b0f9c7029ccb2d3717b8af8b90dbe8dafeb494815a5c0ac45",
+  "line_count": 13,
+  "size_bytes": 530,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "security"
+  ]
+}

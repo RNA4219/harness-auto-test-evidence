@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_scale_fixtures.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "69ff2b415331cf6601d4e7e46a7f943226173110416d2e5e9b1bee2b28fc921d",
+  "line_count": 157,
+  "size_bytes": 5988,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.scale",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

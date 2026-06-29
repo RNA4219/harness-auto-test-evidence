@@ -17,6 +17,7 @@ EXCLUDED_PARTS = {
     "__pycache__",
     "dist",
     "build",
+    "tmp",
 }
 GENERATED_DIR = Path("docs/birdseye")
 

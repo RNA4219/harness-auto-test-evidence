@@ -1,0 +1,23 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_fixture_builder_legit",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/fixtures/test_builder_legit.py:20",
+  "description": "Fixture builder pattern - legitimate when not replacing oracle, with meaningful assertion",
+  "expected_signal": "none",
+  "expected_effect": "pass",
+  "code": "def test_fixture_builder_legit():\n    # Fixture builder builds test data, not behavior under test\n    # This is legitimate - fixture is NOT replacing the oracle\n    test_data = build_test_fixture({'name': 'Alice', 'role': 'admin'})\n    # Still has meaningful assertion against the system under test\n    user = UserService().create(test_data)\n    assert user.name == 'Alice'  # Meaningful assertion\n    assert user.role == 'admin'",
+  "mock_targets": [],
+  "assertions": [
+    {
+      "text": "assert user.name == 'Alice'",
+      "line_number": 7
+    },
+    {
+      "text": "assert user.role == 'admin'",
+      "line_number": 8
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/migration/legal-hold/hold-lost/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "35c16d565fd025cda412647d00a8c349652f9a5fe42b25045f00f5884da0262a",
+  "line_count": 22,
+  "size_bytes": 635,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "qeg_bundle",
+  "nodes": [
+    {
+      "id": "test-002",
+      "kind": "test_result",
+      "status": "passed",
+      "test_id": "TC-002",
+      "name": "Security test",
+      "duration_ms": 200,
+      "timestamp": "2026-06-29T10:00:00Z"
+    }
+  ],
+  "edges": [],
+  "sourceRefs": ["git:def456"],
+  "legal_hold_status": "active"
+}

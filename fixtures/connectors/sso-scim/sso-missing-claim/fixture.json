@@ -1,0 +1,39 @@
+{
+  "description": "SSO mapping with missing required claim - produces hold/manual review.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-003",
+      "sso_mapping": {
+        "mapping_id": "sso-003",
+        "provider": "GoogleWorkspace",
+        "groups": [
+          {"name": "users", "sourceRef": "reports/sso-groups.json#users"}
+        ],
+        "roles": [],
+        "claims": [
+          {"name": "name", "value": "Test User", "sourceRef": "reports/sso-claims.json#name"}
+        ],
+        "sourceRef": "reports/sso-mapping.json"
+      },
+      "sourceRefs": ["reports/enterprise-control-report.json"]
+    },
+    "mapping_config": {
+      "supported_claims": ["email", "name", "groups"],
+      "required_claims": ["email"],
+      "supported_groups": ["users"],
+      "supported_roles": []
+    }
+  },
+  "expected": {
+    "mapping_id": "sso-003",
+    "status": "missing_claim",
+    "mapped_claims": ["name"],
+    "missing_claim_count": 1,
+    "missing_claims_contain": ["email"],
+    "manual_review_required": true,
+    "hold_reason_contains": "Missing required claims",
+    "has_sourceRefs": true
+  }
+}

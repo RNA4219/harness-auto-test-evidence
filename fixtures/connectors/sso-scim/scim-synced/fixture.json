@@ -1,0 +1,47 @@
+{
+  "description": "SCIM provisioning fully synced - all users/groups match expected.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-004",
+      "scim_provisioning": {
+        "diff_id": "scim-001",
+        "provider": "Okta",
+        "users_added": [],
+        "users_removed": [],
+        "users_modified": [],
+        "groups_added": [],
+        "groups_removed": [],
+        "groups_modified": [],
+        "current_users": [
+          {"user_id": "user-001"},
+          {"user_id": "user-002"}
+        ],
+        "current_groups": [
+          {"group_id": "group-admins"},
+          {"group_id": "group-developers"}
+        ],
+        "sourceRef": "reports/scim-provisioning.json"
+      },
+      "sourceRefs": ["reports/enterprise-control-report.json"]
+    },
+    "provisioning_config": {
+      "expected_users": ["user-001", "user-002"],
+      "expected_groups": ["group-admins", "group-developers"],
+      "user_attributes": {},
+      "group_members": {}
+    }
+  },
+  "expected": {
+    "diff_id": "scim-001",
+    "status": "synced",
+    "users_synced_count": 2,
+    "groups_synced_count": 2,
+    "mismatch_count": 0,
+    "missing_entity_count": 0,
+    "manual_review_required": false,
+    "hold_reason": "",
+    "has_sourceRefs": true
+  }
+}

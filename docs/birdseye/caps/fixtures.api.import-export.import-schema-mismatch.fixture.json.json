@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/api/import-export/import-schema-mismatch/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "47425d92d779ebddc14991de370a0c726c4b37727c84c2cb5d304c9186a3f07d",
+  "line_count": 25,
+  "size_bytes": 613,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

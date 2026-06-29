@@ -1,0 +1,29 @@
+{
+  "input": {
+    "operation": "retention_transition",
+    "before": {
+      "schema_version": "HATE/v1",
+      "bundle_id": "bundle-retention-transition-001",
+      "sourceRefs": ["fixtures/migration/legal-hold/retention-transition/fixture.json"],
+      "legal_hold": {
+        "status": "active",
+        "reason": "regulatory hold",
+        "held_since": "2026-02-01T00:00:00+00:00",
+        "authorized_by": "legal-002"
+      }
+    },
+    "after": {
+      "schema_version": "HATE/v1",
+      "bundle_id": "bundle-retention-transition-001",
+      "retention_action": "retain",
+      "sourceRefs": ["fixtures/migration/legal-hold/retention-transition/fixture.json"],
+      "legal_hold": {
+        "status": "active",
+        "reason": "regulatory hold",
+        "held_since": "2026-02-01T00:00:00+00:00",
+        "authorized_by": "legal-002"
+      }
+    }
+  },
+  "expected": {"readiness_effect": "pass"}
+}

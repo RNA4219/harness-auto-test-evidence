@@ -1,0 +1,23 @@
+{
+  "description": "Artifact-heavy profile proves metadata-only large artifact handling.",
+  "input": {
+    "fixture_id": "artifact-heavy-seed",
+    "seed": "hate-scale-artifacts-001",
+    "target_tests": 5000,
+    "target_coverage_records": 25000,
+    "target_artifact_metadata": 100000,
+    "target_risks": 100,
+    "target_graph_nodes": 125000,
+    "target_graph_edges": 300000,
+    "adapter_count": 2,
+    "shard_count": 32,
+    "max_edge_fanout": 8,
+    "max_artifact_size_bytes": 10000000,
+    "generation_profile": "manifest_only"
+  },
+  "expected": {
+    "status": "pass",
+    "artifact_metadata": 100000,
+    "raw_artifact_content_committed": false
+  }
+}

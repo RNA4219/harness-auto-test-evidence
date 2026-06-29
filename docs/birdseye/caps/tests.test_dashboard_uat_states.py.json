@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_dashboard_uat_states.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "2ca9b0066dff745587497277f9f0c71f6732a98ad3917b06dbdf866567a65a56",
+  "line_count": 511,
+  "size_bytes": 18696,
+  "headings": [
+    "# Fixture paths"
+  ],
+  "imports": [
+    "__future__",
+    "hate.dashboard.uat_states",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/dashboard/uat_states.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "security",
+    "test"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "Ticketing safe summary dry-run payload.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-ticket-safe",
+      "ticketing_sync": {
+        "connector_id": "ticket-safe",
+        "provider": "Jira",
+        "payload_kind": "ticket_summaries",
+        "tickets_preview": [
+          {"title": "HATE run ready", "severity": "info", "sourceRef": "tickets/0"}
+        ],
+        "sourceRef": "reports/ticket-safe-summary.json"
+      },
+      "sourceRefs": ["fixtures/connectors/ops/ticket-safe-summary/fixture.json"]
+    },
+    "connector_config": {"enabled": true, "dry_run": true}
+  },
+  "expected": {
+    "mode": "ticketing",
+    "status": "preview",
+    "readiness_effect": "pass",
+    "payload_kind": "ticket_summaries"
+  }
+}

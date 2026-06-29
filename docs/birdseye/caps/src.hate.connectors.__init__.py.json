@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/connectors/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f3d6ed6b10164f44a1ba0a132249fe6d8f03250ceb5edad1b6b9e2d43e161ecb",
+  "line_count": 35,
+  "size_bytes": 788,
+  "headings": [],
+  "imports": [
+    "hate.connectors.ops",
+    "hate.connectors.reports",
+    "hate.connectors.scim",
+    "hate.connectors.sso"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/connectors/ops.py",
+    "src/hate/connectors/reports.py",
+    "src/hate/connectors/scim.py",
+    "src/hate/connectors/sso.py"
+  ],
+  "tags": [
+    "enterprise"
+  ]
+}

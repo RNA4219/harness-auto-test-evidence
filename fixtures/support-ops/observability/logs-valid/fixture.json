@@ -1,0 +1,24 @@
+{
+  "description": "Structured log events are accepted when required fields are present.",
+  "input": {
+    "report_id": "logs-valid",
+    "profile": "default",
+    "logs": [
+      {
+        "event_id": "log-001",
+        "level": "info",
+        "message": "precheck completed",
+        "correlation_id": "corr-001",
+        "sourceRef": "logs/precheck/0"
+      }
+    ],
+    "metrics": [],
+    "alerts": [],
+    "sourceRefs": ["fixtures/support-ops/observability/logs-valid/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "log_count": 1,
+    "finding_count": 0
+  }
+}

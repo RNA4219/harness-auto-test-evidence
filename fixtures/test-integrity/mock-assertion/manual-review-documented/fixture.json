@@ -1,0 +1,18 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_manual_review_documented",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/manual/test_documented_issue.py:15",
+  "description": "Test with documented manual review requirement and owner/expiry",
+  "expected_signal": "assertion_quality",
+  "expected_assertion_type": "no_exception_only",
+  "expected_effect": "conditional",
+  "owner": "test-team-lead@example.com",
+  "expiry": "2026-07-30",
+  "manual_review_required": true,
+  "code": "def test_manual_review_documented():\n    # Test marked for manual review with documented rationale\n    # Owner: test-team-lead@example.com\n    # Expiry: 2026-07-30\n    # Manual review required: true\n    service = Service()\n    result = service.execute()  # No assertion - needs human verification\n    # TODO: Add semantic assertion after manual review",
+  "mock_targets": [],
+  "assertions": []
+}

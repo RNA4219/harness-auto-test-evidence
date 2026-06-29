@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/test_integrity/mock_assertion_types.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "86d1c0a00e93cbdbeec148ce33d2470f7f297edf6534121a7a01fdd4712cd4c5",
+  "line_count": 130,
+  "size_bytes": 3561,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "enum"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "test"
+  ]
+}

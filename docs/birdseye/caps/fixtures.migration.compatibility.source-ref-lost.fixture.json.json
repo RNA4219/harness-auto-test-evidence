@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/migration/compatibility/source-ref-lost/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ce1ec73487dcf43bffd544fa5eac22e448f9c559b2a2443e3457519ea40ba46d",
+  "line_count": 31,
+  "size_bytes": 800,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

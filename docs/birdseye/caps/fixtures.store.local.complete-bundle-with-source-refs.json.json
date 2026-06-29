@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/store/local/complete-bundle-with-source-refs.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b24c2b82b908de39082789ab5042257a359a4ca2959d23a3001fcdb19857cae4",
+  "line_count": 21,
+  "size_bytes": 420,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

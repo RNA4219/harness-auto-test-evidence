@@ -1,0 +1,31 @@
+{
+  "path": "src/hate/test_integrity/models.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e8a7dddd59199b0b3cac1e3cd59409edc2854fa231042c929ff79e90f7fd55b2",
+  "line_count": 237,
+  "size_bytes": 8548,
+  "headings": [
+    "# Severity levels per PRODUCT_GRADE_IMPLEMENTATION_SPEC",
+    "# Readiness effects per product-grade spec",
+    "# Signal severity matrix by profile and marker",
+    "# Based on PRODUCT_GRADE_IMPLEMENTATION_SPEC.md lines 387-451",
+    "# Debt types for test integrity",
+    "# Debt statuses",
+    "# Marker kinds for canonical finding field",
+    "# Detector ID for skip/focus/todo detector",
+    "# Alias for backward compatibility with existing code"
+  ],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "enum",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "test"
+  ]
+}

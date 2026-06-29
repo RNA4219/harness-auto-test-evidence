@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/dashboard/view-models/missing-report/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "82bcc2dc161c4e4311986f59ceecb65d9fb1fd2a95eaf18dc3293e81c801901f",
+  "line_count": 38,
+  "size_bytes": 1074,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

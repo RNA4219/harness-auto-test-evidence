@@ -1,0 +1,19 @@
+{
+  "input": {
+    "claim": {
+      "claim_id": "claim-release-ready-with-open-items",
+      "claim_text": "Release candidate is ready even when required reports are missing.",
+      "surface": "release_note",
+      "claim_area": "release",
+      "declared_status": "unsupported",
+      "source_contract_refs": ["docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md"],
+      "required_evidence": ["release-candidate-pack"],
+      "sourceRefs": ["fixtures/commercial/truthfulness/unsupported-release-claim/fixture.json"]
+    },
+    "evidence_records": [],
+    "profile": "release"
+  },
+  "expected": {
+    "readiness_effect": "hard_dq"
+  }
+}

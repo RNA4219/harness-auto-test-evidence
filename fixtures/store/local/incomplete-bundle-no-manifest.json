@@ -1,0 +1,15 @@
+{
+  "description": "Negative fixture: incomplete bundle without manifest",
+  "expected_error": "Manifest not found",
+  "bundle_data": {
+    "schema_version": "HATE/v1",
+    "record_type": "qeg_bundle",
+    "nodes": [
+      {
+        "id": "test-incomplete-001",
+        "kind": "test_result",
+        "status": "pending"
+      }
+    ]
+  }
+}

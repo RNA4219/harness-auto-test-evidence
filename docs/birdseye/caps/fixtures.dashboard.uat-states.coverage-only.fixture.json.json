@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/dashboard/uat-states/coverage-only/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d1a423fcc4acf801eff52e5b81029a059274a2129f6bfc9da49c546d1a5ea495",
+  "line_count": 42,
+  "size_bytes": 1273,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "input": {
+    "claim": {
+      "claim_id": "claim-source-ref-required",
+      "claim_text": "API read model is supported.",
+      "surface": "api_doc",
+      "claim_area": "api",
+      "declared_status": "implemented",
+      "source_contract_refs": ["docs/process/API_READ_MODEL_CONTRACT.md"],
+      "implementation_refs": ["src/hate/api/read_model.py"],
+      "required_evidence": ["api-read-model-report"],
+      "sourceRefs": []
+    },
+    "evidence_records": [
+      {
+        "evidence_id": "api-read-model-report",
+        "status": "pass",
+        "sourceRefs": ["tests/test_api_read_model.py"]
+      }
+    ],
+    "profile": "release"
+  },
+  "expected": {
+    "readiness_effect": "hold"
+  }
+}

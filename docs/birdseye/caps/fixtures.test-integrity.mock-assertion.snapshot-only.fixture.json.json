@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/mock-assertion/snapshot-only/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3a29f7dea44f7d4f0344977130b9648e8de9f579ed661813ecb3508c3ce2b01c",
+  "line_count": 20,
+  "size_bytes": 695,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

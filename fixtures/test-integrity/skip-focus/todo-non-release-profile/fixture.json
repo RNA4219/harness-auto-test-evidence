@@ -1,0 +1,29 @@
+{
+  "description": "Positive fixture: todo-non-release-profile - todo marker acceptable in non-release profile",
+  "test_records": [
+    {
+      "canonical_test_id": "test_upcoming_feature",
+      "framework": "vitest",
+      "status": "passed",
+      "todo": true,
+      "sourceRefs": ["tests/features/todo_test.py::test_upcoming_feature"]
+    }
+  ],
+  "profile": "default",
+  "expected_summary": {
+    "overall_status": "soft_gap",
+    "finding_count": 1,
+    "blocked_count": 0,
+    "hold_count": 0,
+    "soft_gap_count": 1,
+    "pass_count": 0
+  },
+  "expected_findings": [
+    {
+      "signal_id": "test_todo_detected",
+      "severity": "low",
+      "readiness_effect": "soft_gap",
+      "marker_kind": "todo"
+    }
+  ]
+}

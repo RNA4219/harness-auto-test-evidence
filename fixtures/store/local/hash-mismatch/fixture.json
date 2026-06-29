@@ -1,0 +1,18 @@
+{
+  "description": "Negative fixture: hash mismatch between content and manifest",
+  "expected_error": "Content hash mismatch",
+  "bundle_data": {
+    "schema_version": "HATE/v1",
+    "record_type": "qeg_bundle",
+    "nodes": [
+      {
+        "id": "test-hash-mismatch-001",
+        "kind": "test_result",
+        "status": "passed"
+      }
+    ]
+  },
+  "manifest_hashes": {
+    "artifact-abc123": "sha256:wronghash0000000000000000000000000000"
+  }
+}

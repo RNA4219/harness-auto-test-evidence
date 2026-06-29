@@ -1,0 +1,32 @@
+{
+  "path": "tests/test_cli_release_candidate.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "f907075d6cad3b931cd8c129ddda0f0fb9a05fd7480bed5d196a6d850200c03e",
+  "line_count": 180,
+  "size_bytes": 6373,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "contextlib",
+    "hate.cli",
+    "hate.release",
+    "io",
+    "json",
+    "pathlib",
+    "subprocess",
+    "sys",
+    "tempfile"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py",
+    "src/hate/release.py"
+  ],
+  "tags": [
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

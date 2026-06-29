@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/enterprise/retention-legal-hold/purge-attempt-on-legal-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ea6544f894b431e0bd5dd45214e8ee61e9771d38024b7400a342a2f05c338a90",
+  "line_count": 28,
+  "size_bytes": 809,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "release"
+  ]
+}

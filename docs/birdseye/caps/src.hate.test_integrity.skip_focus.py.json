@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/test_integrity/skip_focus.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "b8bedb687a8582e8803aad7fa934a1901f9928039eef731fa1c324fc9dd8e509",
+  "line_count": 624,
+  "size_bytes": 22169,
+  "headings": [
+    "# Anti-evasion patterns per framework",
+    "# From PRODUCT_GRADE_IMPLEMENTATION_SPEC.md anti-evasion rules"
+  ],
+  "imports": [
+    ".models",
+    "__future__",
+    "datetime",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/test_integrity/models.py"
+  ],
+  "tags": [
+    "fixture",
+    "release",
+    "test"
+  ]
+}

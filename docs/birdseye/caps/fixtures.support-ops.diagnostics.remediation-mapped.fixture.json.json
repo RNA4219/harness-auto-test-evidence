@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/support-ops/diagnostics/remediation-mapped/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "40900609dd7f461093de3c9242d16e118cf77656e666bf1639f5c99b78adcf7d",
+  "line_count": 13,
+  "size_bytes": 218,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture"
+  ]
+}

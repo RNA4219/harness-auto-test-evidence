@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/connectors/ops.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "24a475ec09cd19eb340429d44a058cfa3be953b18422048079ec8432c4154136",
+  "line_count": 312,
+  "size_bytes": 11965,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "schema"
+  ]
+}

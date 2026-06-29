@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/performance/budget-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7818923078dfbf32e042c2aa9d6b5f2cc0f92860bd28699723de700d1e28d58a",
+  "line_count": 36,
+  "size_bytes": 923,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "store",
+    "test"
+  ]
+}

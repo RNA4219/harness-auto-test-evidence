@@ -158,3 +158,20 @@ HATE-<CATEGORY>-<NNN>
 - diagnostic bundle が secret / PII / unsafe artifact を含まない
 - optional external export failure は local-first precheck と QEG export を壊さない
 - error taxonomy の変更は migration guide または release note に記録される
+
+## 10. Implemented Diagnostic Catalog Contract
+
+`support-ops-report` は `error_records` と `diagnostic_bundles` を持つ。
+`error_records` は stable `HATE-<CATEGORY>-<NNN>` code、category、class、
+severity、user/operator message、remediation、owner_action、retryable、
+related_reports、sourceRefs を必須とする。
+
+Known finding code は catalog entry に解決し、remediation と owner_action が
+欠ける場合は hold finding とする。unknown / missing error code は pass ではなく
+`unknown_error_code` hold として扱い、support が taxonomy 更新を要求できるようにする。
+
+Safe diagnostic bundle は support 用の最小情報だけを保持する。raw artifact、
+customer source、raw log/stack、full environment、secret、PII、private URL、
+restricted path は bundle に入れず、redaction_log または excluded_artifacts の
+safe metadata として表現する。diagnostic bundle は QEG / release verdict を
+変更しない。

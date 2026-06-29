@@ -1,0 +1,43 @@
+{
+  "description": "Soft gap UAT state - conditional but not blocking",
+  "input": {
+    "readiness_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "product_readiness_report",
+      "summary": {
+        "overall_status": "conditional",
+        "claim_count": 10,
+        "unsupported_claim_count": 0,
+        "contradiction_count": 0,
+        "hard_dq_count": 0
+      },
+      "graph_summary": {},
+      "unsupported_claims": [],
+      "contradictions": [],
+      "hard_dqs": [],
+      "soft_gaps": [
+        {
+          "gap_id": "gap-001",
+          "type": "coverage_threshold",
+          "reason": "Coverage 85% (threshold 90%)",
+          "sourceRef": "coverage/adapter.py:threshold_check"
+        }
+      ],
+      "sourceRefs": ["reports/product-readiness-report.json"]
+    },
+    "run_id": "run-soft-gap-001",
+    "profile": "product"
+  },
+  "expected": {
+    "state_type": "soft_gap",
+    "overall_status": "conditional",
+    "soft_gap_count": 1,
+    "has_soft_gaps": true,
+    "ui_requirements": [
+      "show_soft_gap_count",
+      "show_gap_reasons_with_sourceRefs",
+      "show_conditional_status",
+      "show_next_actions_optional"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/commercial/truthfulness/unsupported-enterprise-claim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2f7bbecca3e8de11359580ea7fa822aceb0becea33fb269638ae6f4d9be3a4ee",
+  "line_count": 19,
+  "size_bytes": 651,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "release"
+  ]
+}

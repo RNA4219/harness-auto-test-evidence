@@ -1,0 +1,42 @@
+{
+  "description": "Coverage-only evidence - no execution result",
+  "input": {
+    "risk_coverage_matrix": {
+      "schema_version": "HATE/v1",
+      "record_type": "risk_coverage_matrix",
+      "risks": [
+        {
+          "risk_id": "risk-001",
+          "severity": "medium",
+          "coverage_status": "coverage_only",
+          "oracle_evidence": false,
+          "description": "Risk covered by static analysis only",
+          "sourceRef": "risk-registry.json:risk-001"
+        },
+        {
+          "risk_id": "risk-002",
+          "severity": "low",
+          "coverage_status": "coverage_only",
+          "oracle_evidence": false,
+          "description": "Risk covered by coverage report only",
+          "sourceRef": "risk-registry.json:risk-002"
+        }
+      ],
+      "sourceRefs": ["reports/risk-coverage-matrix.json"]
+    },
+    "run_id": "run-coverage-only-001",
+    "profile": "product"
+  },
+  "expected": {
+    "state_type": "coverage_only",
+    "overall_status": "conditional",
+    "coverage_only_count": 2,
+    "cannot_claim_execution_complete": true,
+    "ui_requirements": [
+      "show_coverage_only_count",
+      "link_to_risk_coverage_sourceRefs",
+      "show_evidence_is_coverage_only",
+      "cannot_claim_execution_complete"
+    ]
+  }
+}

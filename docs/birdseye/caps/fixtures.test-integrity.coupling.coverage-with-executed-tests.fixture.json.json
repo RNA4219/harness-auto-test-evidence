@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/test-integrity/coupling/coverage-with-executed-tests/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "db5e02541af747043f57dc16169ee8a7d3db73bbc95dd4ac3a811497f5c7ed1c",
+  "line_count": 31,
+  "size_bytes": 882,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

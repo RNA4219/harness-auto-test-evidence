@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/scale/fixtures.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8fe9e541b5c411c49d2736349f8260f352845349f1ea3c37c8c10c604a5561ac",
+  "line_count": 290,
+  "size_bytes": 11516,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

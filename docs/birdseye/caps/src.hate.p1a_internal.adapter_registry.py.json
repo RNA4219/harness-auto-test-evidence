@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/p1a_internal/adapter_registry.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ea9ea233c3ef8e9544a31ea454d226dece492895db06a8629772cd4941c6e3ff",
+  "line_count": 161,
+  "size_bytes": 7485,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate",
+    "hate.p1a_io",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a_io.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

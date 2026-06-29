@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/coupling/fixture-renamed-stable/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d5776408cd9d70df9e390e31d2e25fb5eb05aa56d87fab9fd62afcfa711d7b53",
+  "line_count": 19,
+  "size_bytes": 794,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

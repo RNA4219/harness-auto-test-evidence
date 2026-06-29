@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "manual-review-owned",
+  "description": "Negative fixture: manual review with valid human record - acceptable",
+  "human_records": [
+    {
+      "record_type": "human_review_record",
+      "record_id": "hr-001",
+      "owner": "alice@example.com",
+      "created_at": "2025-06-15T10:00:00Z",
+      "expiry_date": "2025-12-15T10:00:00Z",
+      "justification": "Legacy payment system - tested manually with approval from security team",
+      "source_refs": ["risk:risk-001-payment-security"]
+    }
+  ],
+  "risk_matrix_entries": [
+    {
+      "risk_id": "risk-001-payment-security",
+      "risk_level": "high",
+      "feature_id": "payment_processing",
+      "source_refs": ["risk:risk-001-payment-security"]
+    }
+  ],
+  "expected_findings": [],
+  "expected_status": "pass",
+  "notes": "Valid human record with owner and non-expired date - acceptable"
+}

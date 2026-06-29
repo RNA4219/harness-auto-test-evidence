@@ -1,0 +1,37 @@
+{
+  "description": "Negative fixture: skip-without-reason - skip marker missing justification",
+  "test_records": [
+    {
+      "canonical_test_id": "test_unjustified_skip",
+      "framework": "pytest",
+      "status": "skipped",
+      "skip": true,
+      "sourceRefs": ["tests/unit/skip_test.py::test_unjustified_skip"]
+    }
+  ],
+  "profile": "release",
+  "expected_summary": {
+    "overall_status": "hold",
+    "finding_count": 1,
+    "blocked_count": 0,
+    "hold_count": 1,
+    "soft_gap_count": 0,
+    "pass_count": 0
+  },
+  "expected_findings": [
+    {
+      "signal_id": "test_skip_detected",
+      "severity": "medium",
+      "readiness_effect": "hold",
+      "marker_kind": "skip",
+      "reason_contains": "without reason"
+    }
+  ],
+  "expected_risk_debt": [
+    {
+      "debt_type": "integrity_skip",
+      "severity": "medium",
+      "blocking_profile": ["release"]
+    }
+  ]
+}

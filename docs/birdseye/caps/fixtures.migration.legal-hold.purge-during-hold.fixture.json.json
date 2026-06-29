@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/migration/legal-hold/purge-during-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1bad12fcbe11d857a59970c20396a8357851c5861cd2e95c83d7276f95646c3e",
+  "line_count": 28,
+  "size_bytes": 844,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

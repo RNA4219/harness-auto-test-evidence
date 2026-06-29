@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/dashboard/view_models.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "9fb41bb9fade551de1a58a3a096e899571bbf9757393b51da7948fb3b0880de6",
+  "line_count": 545,
+  "size_bytes": 19349,
+  "headings": [
+    "# Builder functions - project from reports, never compute verdicts"
+  ],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hashlib",
+    "typing",
+    "uuid"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

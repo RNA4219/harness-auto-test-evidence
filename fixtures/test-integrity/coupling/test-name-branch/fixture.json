@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "test-name-branch",
+  "description": "Positive fixture: production code branches on test name (test_name_branch coupling)",
+  "production_sources": [
+    {
+      "file_path": "src/feature_x.py",
+      "code": "def process_data(mode):\n    if mode == 'test_unit_A':\n        return 'test_behavior'\n    return 'production_behavior'\n",
+      "source_ref": "prod:src/feature_x.py",
+      "test_ids": ["test_unit_A"],
+      "fixture_names": []
+    }
+  ],
+  "expected_findings": [
+    {
+      "evidence_class": "implementation_test_coupling",
+      "classification": "test_name_branch",
+      "severity": "high",
+      "readiness_effect": "hold",
+      "manual_review_required": true,
+      "required_human_decision": "verify_coupling_or_remove_branch"
+    }
+  ],
+  "expected_status": "hold"
+}

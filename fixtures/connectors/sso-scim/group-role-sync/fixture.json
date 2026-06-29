@@ -1,0 +1,36 @@
+{
+  "description": "SSO group and role sync dry-run keeps sourceRefs and audit refs.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "sso_mapping": {
+        "mapping_id": "sso-map-roles",
+        "claims": [
+          {"name": "email", "sourceRef": "idp/claims/email"}
+        ],
+        "groups": [
+          {"name": "security", "sourceRef": "idp/groups/security"},
+          {"name": "engineering", "sourceRef": "idp/groups/engineering"}
+        ],
+        "roles": [
+          {"name": "auditor", "sourceRef": "idp/roles/auditor"}
+        ]
+      },
+      "audit_event_refs": ["audit/group-role-sync"],
+      "sourceRefs": ["fixtures/connectors/sso-scim/group-role-sync/fixture.json"]
+    },
+    "mapping_config": {
+      "issuer": "https://idp.example.test",
+      "audience": "hate-enterprise",
+      "supported_claims": ["email"],
+      "required_claims": ["email"],
+      "supported_groups": ["security", "engineering"],
+      "supported_roles": ["auditor"]
+    }
+  },
+  "expected": {
+    "mapped_groups": ["security", "engineering"],
+    "mapped_roles": ["auditor"],
+    "audit_event_refs": ["audit/group-role-sync"]
+  }
+}

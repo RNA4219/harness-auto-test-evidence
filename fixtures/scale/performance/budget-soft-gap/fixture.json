@@ -1,0 +1,33 @@
+{
+  "description": "Slightly over budget produces soft gap in default profile.",
+  "input": {
+    "scenario_id": "budget-soft-gap",
+    "profile": "default",
+    "dataset_shape": {
+      "tests": 100000,
+      "coverage_records": 1000000,
+      "artifact_metadata": 5000,
+      "graph_nodes": 250000,
+      "graph_edges": 1000000
+    },
+    "observed_ms": {
+      "ingest": 330001,
+      "validation": 120000,
+      "graph_build": 180000,
+      "store_index": 90000,
+      "replay": 120000,
+      "report_generation": 60000
+    },
+    "estimated_counters": {
+      "pairwise_comparisons": 1000000,
+      "pagination_tested": true,
+      "cache_invalidation_tested": true
+    },
+    "sourceRefs": ["fixtures/scale/performance/budget-soft-gap/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "soft_gap",
+    "readiness_effect": "soft_gap",
+    "finding_code": "performance_budget_exceeded"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/skip-focus/todo-non-release-profile/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "900d3800bdac4051a35bcaaf0bc55ce478d958d0a9bd6086b44d15e371084bcd",
+  "line_count": 29,
+  "size_bytes": 727,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "test"
+  ]
+}

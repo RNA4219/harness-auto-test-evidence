@@ -1,0 +1,31 @@
+{
+  "input": {
+    "source_bundle": {
+      "schema_version": "HATE/v1",
+      "bundle_id": "bundle-patch-001",
+      "sourceRefs": ["fixtures/migration/compatibility/patch-compatible/fixture.json"],
+      "legal_hold": {
+        "status": "inactive",
+        "reason": "standard",
+        "held_since": "2026-06-01T00:00:00+00:00",
+        "authorized_by": "system"
+      }
+    },
+    "migrated_bundle": {
+      "schema_version": "HATE/v1",
+      "bundle_id": "bundle-patch-001",
+      "sourceRefs": ["fixtures/migration/compatibility/patch-compatible/fixture.json"],
+      "legal_hold": {
+        "status": "inactive",
+        "reason": "standard",
+        "held_since": "2026-06-01T00:00:00+00:00",
+        "authorized_by": "system"
+      }
+    },
+    "target_version": "HATE/v1",
+    "profile": "release"
+  },
+  "expected": {
+    "readiness_effect": "pass"
+  }
+}

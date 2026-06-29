@@ -1,0 +1,23 @@
+{
+  "input": {
+    "actor": {
+      "actor_id": "viewer-002",
+      "role": "viewer",
+      "scopes": ["safe_metadata"]
+    },
+    "request": {
+      "request_id": "req-missing-audit-001",
+      "action": "read",
+      "resource_type": "report",
+      "resource_id": "readiness-report-001",
+      "classification": "internal",
+      "access_level": "metadata"
+    },
+    "source_refs": ["fixtures/enterprise/rbac-audit/missing-audit-event/fixture.json"],
+    "timestamp": "2026-06-30T00:04:00+00:00"
+  },
+  "expected": {
+    "readiness_effect": "hold",
+    "finding_code": "missing_audit_event"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/support-ops/diagnostics/raw-artifact-in-bundle/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a79bd1ef521a824b8bceb2e312beb1e571bd033f79e0d4e22836c169a453f3e5",
+  "line_count": 22,
+  "size_bytes": 600,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

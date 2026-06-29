@@ -2,9 +2,9 @@
   "path": "docs/process/RUNBOOK.md",
   "role": "operations",
   "kind": "md",
-  "sha256": "161e399dc97deeb28ea97fcb43fb3ef637cc6dbf97055f31325573fc5b625c71",
-  "line_count": 739,
-  "size_bytes": 57742,
+  "sha256": "5672f2e191435a72cea7df41ba81afb9eb21e7d3b7b55dfa0641a48db59a69bd",
+  "line_count": 783,
+  "size_bytes": 61454,
   "headings": [
     "# Runbook",
     "## 0. 準備",
@@ -15,6 +15,7 @@
     "## 4.1 ローカル実行（P1a Trust Minimal）",
     "## 4.2 ローカル実行（P1b Workflow Mapping）",
     "## 4.3 ローカル実行（P2/P3 Product Readiness）",
+    "### File size guard",
     "## 5. 受理前確認",
     "## 5. ロールバック方針（文書中心）",
     "## 6. 最新メモ"

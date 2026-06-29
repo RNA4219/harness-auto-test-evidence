@@ -1,0 +1,28 @@
+{
+  "description": "Manual review request bundle is projected for API consumers.",
+  "input": {
+    "required_reports": ["manual_review"],
+    "reports": {
+      "bundle_hash": "sha256:manualreview",
+      "manual_review": {
+        "record_type": "manual_review_request_bundle",
+        "manual_review_requests": [
+          {
+            "request_id": "mrr-001",
+            "risk_ref": "risk-api-001",
+            "owner": "security",
+            "status": "pending",
+            "expires_at": "2026-07-07T00:00:00Z",
+            "sourceRef": "reports/manual-review-request.json#/0"
+          }
+        ],
+        "sourceRefs": ["reports/manual-review-request.json"]
+      }
+    }
+  },
+  "expected": {
+    "request_id": "mrr-001",
+    "status": "pending",
+    "owner": "security"
+  }
+}

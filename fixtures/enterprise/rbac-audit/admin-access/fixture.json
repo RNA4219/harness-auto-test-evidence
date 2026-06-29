@@ -1,0 +1,23 @@
+{
+  "input": {
+    "actor": {
+      "actor_id": "admin-001",
+      "role": "admin",
+      "scopes": ["safe_metadata", "policy_admin"]
+    },
+    "request": {
+      "request_id": "req-admin-001",
+      "action": "configure_policy",
+      "resource_type": "admin",
+      "resource_id": "policy-enterprise-default",
+      "classification": "restricted",
+      "access_level": "metadata"
+    },
+    "source_refs": ["fixtures/enterprise/rbac-audit/admin-access/fixture.json"],
+    "timestamp": "2026-06-30T00:00:00+00:00"
+  },
+  "expected": {
+    "decision": "allowed",
+    "readiness_effect": "pass"
+  }
+}

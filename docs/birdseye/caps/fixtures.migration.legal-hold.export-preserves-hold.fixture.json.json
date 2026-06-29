@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/migration/legal-hold/export-preserves-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "df65e92f8f264e1e0a4d67cb2889319a72d8e607e013cee29616ac788e1b265d",
+  "line_count": 28,
+  "size_bytes": 855,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

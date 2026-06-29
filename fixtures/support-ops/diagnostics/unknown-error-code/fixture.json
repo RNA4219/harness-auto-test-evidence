@@ -1,0 +1,14 @@
+{
+  "input": {
+    "findings": [
+      {
+        "code": "new_unmapped_failure",
+        "error_code": "HATE-NEW-999",
+        "sourceRef": "support-ops-report.json#/findings/0"
+      }
+    ]
+  },
+  "expected": {
+    "readiness_effect": "hold"
+  }
+}

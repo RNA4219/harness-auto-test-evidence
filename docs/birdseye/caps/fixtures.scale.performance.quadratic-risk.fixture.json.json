@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/performance/quadratic-risk/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d8c7401cc173904669b050f86b4b57116c2e219239df481686d0c1d4b6747787",
+  "line_count": 33,
+  "size_bytes": 880,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "store",
+    "test"
+  ]
+}

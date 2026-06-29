@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/connectors/ops/live-network-attempt/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4f6d0d6609e8e652cf65f63e4d672ec7e0eaf0564e1f1f76baedb4f0310afc9e",
+  "line_count": 27,
+  "size_bytes": 862,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

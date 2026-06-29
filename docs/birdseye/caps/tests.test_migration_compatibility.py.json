@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_migration_compatibility.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "063ed3759b7e979b9da014c3623307dab0bfd7aff1ad4a2f29aaef6ebfba2ba6",
+  "line_count": 107,
+  "size_bytes": 4236,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.migration",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

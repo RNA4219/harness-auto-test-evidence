@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/test-integrity/skip-focus/xfail-with-issue-ref/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "26a2efc46f913a9567ddd94450a5a5944f75539f2dd61d59ba1f60575d77bbfb",
+  "line_count": 32,
+  "size_bytes": 860,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/test-integrity/coupling/negative-coverage-with-oracle.fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "18773960db48c8f9231c5b1937e39a90d04e653adfe25f170ea47ddf409ecbc3",
+  "line_count": 31,
+  "size_bytes": 864,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

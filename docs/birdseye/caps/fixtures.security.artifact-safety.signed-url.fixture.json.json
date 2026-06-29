@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/artifact-safety/signed-url/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "023b09562b766d3aea4e0b667c4484d1a962cc91233d9da11151b5565b41b7d0",
+  "line_count": 6,
+  "size_bytes": 196,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "security"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/store/local/invalid-bundle-hash-mismatch.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e194f4f1c7b18e0d4d0aa4bb931ec22a022cc28c244ebf9a8210d867243e278f",
+  "line_count": 18,
+  "size_bytes": 451,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

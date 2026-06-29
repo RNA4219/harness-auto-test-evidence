@@ -1,0 +1,15 @@
+{
+  "test_run_id": "run-clean-001",
+  "timestamp": "2026-06-29T10:00:00Z",
+  "status": "pass",
+  "duration_ms": 1500,
+  "metadata": {
+    "framework": "pytest",
+    "version": "7.4.0",
+    "python_version": "3.11.0"
+  },
+  "test_count": 42,
+  "pass_count": 42,
+  "fail_count": 0,
+  "skip_count": 0
+}

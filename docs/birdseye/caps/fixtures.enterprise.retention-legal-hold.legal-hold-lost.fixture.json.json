@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/enterprise/retention-legal-hold/legal-hold-lost/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a3f8c2f848abc65c9b3f4417d952220b46ec85038e0ff1af60d5b56b6d6a93d4",
+  "line_count": 42,
+  "size_bytes": 1217,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "release"
+  ]
+}

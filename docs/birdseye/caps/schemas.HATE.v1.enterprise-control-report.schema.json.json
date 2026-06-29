@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/enterprise-control-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a96350c177af32bfdc1948db2e2136f226ec02408c494b9bbe71bea590b03f4e",
+  "line_count": 271,
+  "size_bytes": 7765,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "schema"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/dashboard/uat-states/unsupported-claim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2e2c8bdb0ce8b69dbb917c123aca121d144c210562a9620761ad4d72ff120d86",
+  "line_count": 47,
+  "size_bytes": 1390,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

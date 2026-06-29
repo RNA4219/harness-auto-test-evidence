@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/enterprise/rbac.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "40181d92859a99e67a7535e53cf6a642a7b89607e647f6b820faa6e65b446b04",
+  "line_count": 315,
+  "size_bytes": 9341,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "release",
+    "store"
+  ]
+}

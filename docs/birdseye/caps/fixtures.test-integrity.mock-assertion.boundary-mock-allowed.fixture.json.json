@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/test-integrity/mock-assertion/boundary-mock-allowed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fee807270231c716338642f5ddcaf5809a26a19a9a1a1c11b648a2db696ab813",
+  "line_count": 30,
+  "size_bytes": 1121,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

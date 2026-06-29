@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "HATE/v1/api-authz-decision.schema.json",
+  "title": "API Authorization Decision",
+  "description": "Authorization decision for API import/export operations. Safe-by-default with no tenant leakage in denial responses.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "decision_id",
+    "actor",
+    "tenant",
+    "scopes",
+    "resource",
+    "decision",
+    "reason_code",
+    "source_refs",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "HATE/v1",
+      "description": "Schema version identifier"
+    },
+    "record_type": {
+      "type": "string",
+      "const": "api-authz-decision",
+      "description": "Record type discriminator"
+    },
+    "decision_id": {
+      "type": "string",
+      "pattern": "^authz-[a-f0-9]{12}$",
+      "description": "Unique decision identifier"
+    },
+    "actor": {
+      "type": "string",
+      "description": "Actor identifier (user or service)"
+    },
+    "tenant": {
+      "type": "object",
+      "description": "Tenant scope (hashed for cross-tenant denials)",
+      "required": ["organization_id"],
+      "properties": {
+        "organization_id": {
+          "type": "string",
+          "description": "Organization ID (hashed for cross-tenant denials)"
+        },
+        "workspace_id": {
+          "type": "string",
+          "description": "Workspace ID (hashed for cross-tenant denials)"
+        }
+      }
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["public", "internal", "confidential", "restricted"]
+      },
+      "description": "Authorized scopes for this decision"
+    },
+    "resource": {
+      "type": "string",
+      "description": "Resource being authorized (bundle-import, export-surface, artifact-id)"
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["allowed", "denied"],
+      "description": "Authorization decision"
+    },
+    "reason_code": {
+      "type": "string",
+      "enum": [
+        "HATE-API-AUTH-ALLOWED",
+        "HATE-API-AUTH-CROSS-TENANT",
+        "HATE-API-SCHEMA-UNSUPPORTED",
+        "HATE-API-AUTH-SCOPE-MISMATCH",
+        "HATE-API-PRIV-EXPORT-BLOCKED",
+        "HATE-API-PRIV-QUARANTINED",
+        "HATE-API-AUTH-CLASSIFICATION"
+      ],
+      "description": "Machine-readable reason code"
+    },
+    "reason_detail": {
+      "type": "string",
+      "description": "Safe human-readable detail (no secrets/paths/tenant IDs)"
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Source references for audit trail"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp"
+    }
+  },
+  "additionalProperties": false
+}

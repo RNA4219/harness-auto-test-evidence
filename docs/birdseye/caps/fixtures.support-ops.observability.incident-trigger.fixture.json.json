@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/support-ops/observability/incident-trigger/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f55010513beba1f127a292019e409e915647cbab75c3462ef6af3a610415e235",
+  "line_count": 29,
+  "size_bytes": 784,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/store-manifest.schema.json",
+  "title": "HATE v1 Store Manifest",
+  "description": "Manifest for immutable local store bundles with atomic write guarantees",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "bundle_id",
+    "source_version",
+    "schema_versions",
+    "artifact_ids",
+    "content_hashes",
+    "index_hashes",
+    "legal_hold",
+    "retention_policy_id",
+    "created_at",
+    "producer_version",
+    "completed",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for the test run"
+    },
+    "bundle_id": {
+      "type": "string",
+      "pattern": "^bundle-[A-Fa-f0-9]{16}$",
+      "description": "Unique content-addressed bundle identifier"
+    },
+    "source_version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Version of source system (e.g., git commit SHA)"
+    },
+    "schema_versions": {
+      "type": "object",
+      "description": "Schema versions used during bundle creation",
+      "properties": {
+        "core": { "type": "string" },
+        "store": { "type": "string" }
+      },
+      "required": ["core", "store"],
+      "additionalProperties": true
+    },
+    "artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^artifact-[A-Fa-f0-9]{16}$"
+      },
+      "minItems": 1,
+      "description": "List of content-addressed artifact identifiers"
+    },
+    "content_hashes": {
+      "type": "object",
+      "description": "SHA256 hashes for each artifact",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+      }
+    },
+    "index_hashes": {
+      "type": "object",
+      "description": "SHA256 hashes for index files",
+      "properties": {
+        "runs": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" },
+        "bundles": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" },
+        "evidence": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" },
+        "risks": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" },
+        "artifacts": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" }
+      },
+      "additionalProperties": true
+    },
+    "legal_hold": {
+      "type": "object",
+      "description": "Mandatory legal hold metadata - MUST NOT be optional",
+      "required": ["status", "reason", "held_since", "authorized_by"],
+      "properties": {
+        "status": { "enum": ["none", "active", "released", "pending"] },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Reason for legal hold (empty string when status=none)"
+        },
+        "held_since": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp when hold was activated"
+        },
+        "authorized_by": {
+          "type": "string",
+          "minLength": 1,
+          "description": "User or role that authorized the hold"
+        },
+        "release_authorization": {
+          "type": "object",
+          "description": "Authorization required to release the hold"
+        }
+      },
+      "additionalProperties": false
+    },
+    "retention_policy_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier for the retention policy applied to this bundle"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO timestamp when the manifest was created"
+    },
+    "producer_version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Version of harness-auto-test-evidence that produced this manifest"
+    },
+    "completed": {
+      "type": "boolean",
+      "description": "True only after atomic write successfully completed"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "description": "Source references for provenance tracking"
+    },
+    "import_status": {
+      "type": "object",
+      "description": "Status of the import operation",
+      "properties": {
+        "phase": { "enum": ["pending", "importing", "completed", "failed", "quarantined"] },
+        "diagnostics": { "type": "array", "items": { "type": "object" } }
+      }
+    }
+  },
+  "additionalProperties": false
+}

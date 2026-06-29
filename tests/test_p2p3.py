@@ -70,8 +70,25 @@ def test_p2p3_generates_product_readiness_artifacts(tmp_path: Path) -> None:
     assert readiness["summary"]["overall_status"] == "go"
     assert readiness["summary"]["live_saas_required"] is False
     assert readiness["summary"]["required_artifact_count"] >= 20
+    assert readiness["summary"]["evaluation_score"] == 77.5
+    assert readiness["summary"]["evaluation_confidence"] == "medium"
+    assert readiness["summary"]["go_label_is_advisory"] is True
     assert readiness["summary"]["degraded_by_doctor_findings"] is False
     assert readiness["summary"]["degraded_by_unverified_acceptance"] is False
+    assert readiness["evaluation"]["method"] == "additive_evidence_minus_risk_penalty_v1"
+    assert readiness["evaluation"]["go_label_is_advisory"] is True
+    assert readiness["evaluation"]["release_approval"] is False
+    assert readiness["evaluation"]["addition_total"] == 82.5
+    assert readiness["evaluation"]["penalty_total"] == 5
+    assert readiness["evaluation"]["interpretation"] == "usable_with_review"
+    assert {item["component_id"] for item in readiness["evaluation"]["additions"]} == {
+        "aete_weighted_score",
+        "product_readiness_gate_coverage",
+        "required_artifact_completeness",
+        "workflow_acceptance",
+        "doctor_hygiene",
+    }
+    assert any(item["component_id"] == "uncalibrated_aete" and item["points"] == 5 for item in readiness["evaluation"]["penalties"])
     assert readiness["boundaries"]["qeg_gate_override"] is False
     assert readiness["boundaries"]["hosted_saas_claim"] is False
     assert [gate["gate_id"] for gate in readiness["product_readiness_gates"]] == [
@@ -539,6 +556,9 @@ def test_p2p3_degrades_to_hold_when_input_artifact_is_missing(tmp_path: Path) ->
     assert result["product_status"] == "hold"
     assert result["prg_coverage"] == "3/7"
     assert readiness["summary"]["degraded_by_input_artifacts"] is True
+    assert readiness["summary"]["evaluation_score"] < 77.5
+    assert readiness["summary"]["evaluation_confidence"] == "medium"
+    assert any(item["component_id"] == "missing_input_artifacts" and item["points"] > 0 for item in readiness["evaluation"]["penalties"])
     assert readiness["evidence_summary"]["missing_input_artifacts"][0]["artifact_ref"] == "workflow-docs-stale.json"
 
 

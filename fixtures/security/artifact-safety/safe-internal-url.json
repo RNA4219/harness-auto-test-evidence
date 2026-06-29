@@ -1,0 +1,18 @@
+{
+  "test_scenario": "external_api_documentation",
+  "documentation_urls": [
+    "https://docs.python.org/3/library/json.html",
+    "https://pypi.org/project/pytest/",
+    "https://github.com/pytest-dev/pytest",
+    "https://readthedocs.io/projects/pytest/"
+  ],
+  "internal_urls": [
+    "https://internal-docs.example.com/api/v1/users",
+    "https://api.example.com/v2/endpoints"
+  ],
+  "metadata": {
+    "purpose": "documentation_links",
+    "safe_for_public": true,
+    "timestamp": "2026-06-29T14:00:00Z"
+  }
+}

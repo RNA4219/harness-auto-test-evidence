@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/support-ops/observability/metrics-valid/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d698bf9a04d5b16d43a23e0d04ca270c9cda7bf8fe982c397176ecc31b2034a3",
+  "line_count": 20,
+  "size_bytes": 650,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

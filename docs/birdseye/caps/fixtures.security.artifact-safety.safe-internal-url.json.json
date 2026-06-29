@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/security/artifact-safety/safe-internal-url.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d5d7071c2aa5d240ea1c9246e3e2add6465916358836a4a8fed3fe341490ccd0",
+  "line_count": 18,
+  "size_bytes": 514,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "security",
+    "test"
+  ]
+}

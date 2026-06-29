@@ -1,0 +1,6 @@
+{
+  "artifact_id": "public-doc-url-allowed",
+  "artifact_path": "docs/references.txt",
+  "profile": "product",
+  "content": "See https://docs.python.org/3/library/json.html for public API docs."
+}

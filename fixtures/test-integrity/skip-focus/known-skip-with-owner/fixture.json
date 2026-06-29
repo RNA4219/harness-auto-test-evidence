@@ -1,0 +1,40 @@
+{
+  "description": "Positive fixture: known-skip-with-owner - skip marker with valid owner and reason",
+  "test_records": [
+    {
+      "canonical_test_id": "test_feature_disabled",
+      "framework": "pytest",
+      "status": "skipped",
+      "skip": true,
+      "skip_reason": "Feature temporarily disabled for refactoring",
+      "skip_owner": "team-lead@example.com",
+      "sourceRefs": ["tests/features/disabled_test.py::test_feature_disabled"]
+    }
+  ],
+  "profile": "default",
+  "expected_summary": {
+    "overall_status": "soft_gap",
+    "finding_count": 1,
+    "blocked_count": 0,
+    "hold_count": 0,
+    "soft_gap_count": 1,
+    "pass_count": 0
+  },
+  "expected_findings": [
+    {
+      "signal_id": "test_skip_detected",
+      "severity": "low",
+      "readiness_effect": "soft_gap",
+      "marker_kind": "skip",
+      "reason_contains": "skip marker"
+    }
+  ],
+  "expected_risk_debt": [
+    {
+      "debt_type": "integrity_skip",
+      "severity": "low",
+      "status": "accepted",
+      "blocking_profile": []
+    }
+  ]
+}

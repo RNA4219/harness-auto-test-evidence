@@ -1,0 +1,28 @@
+{
+  "input": {
+    "operation": "export",
+    "before": {
+      "schema_version": "HATE/v1",
+      "bundle_id": "bundle-export-hold-001",
+      "sourceRefs": ["fixtures/migration/legal-hold/export-preserves-hold/fixture.json"],
+      "legal_hold": {
+        "status": "active",
+        "reason": "litigation hold",
+        "held_since": "2026-01-01T00:00:00+00:00",
+        "authorized_by": "legal-001"
+      }
+    },
+    "after": {
+      "schema_version": "HATE/v1",
+      "bundle_id": "bundle-export-hold-001",
+      "sourceRefs": ["fixtures/migration/legal-hold/export-preserves-hold/fixture.json"],
+      "legal_hold": {
+        "status": "active",
+        "reason": "litigation hold",
+        "held_since": "2026-01-01T00:00:00+00:00",
+        "authorized_by": "legal-001"
+      }
+    }
+  },
+  "expected": {"finding": "legal_hold_blocks_mutation"}
+}

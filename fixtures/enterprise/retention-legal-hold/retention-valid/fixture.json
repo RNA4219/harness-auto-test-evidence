@@ -1,0 +1,26 @@
+{
+  "input": {
+    "resource": {
+      "resource_id": "bundle-valid-001",
+      "resource_type": "canonical_bundle",
+      "classification": "internal",
+      "retention_policy_id": "retention-internal-365",
+      "expires_at": "2027-06-30T00:00:00+00:00",
+      "legal_hold": {
+        "status": "inactive",
+        "reason": "standard retention",
+        "held_since": "2026-06-01T00:00:00+00:00",
+        "authorized_by": "system"
+      },
+      "sourceRefs": ["fixtures/enterprise/retention-legal-hold/retention-valid/fixture.json"]
+    },
+    "policy": {
+      "policy_id": "retention-internal-365",
+      "retention_days": 365
+    },
+    "profile": "release"
+  },
+  "expected": {
+    "readiness_effect": "pass"
+  }
+}

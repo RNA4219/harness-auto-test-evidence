@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/skip-focus/only-focused-leak/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8d043f3803621b123454bcd54007c1ddca613935efb2d76c9665e145b2f116b3",
+  "line_count": 37,
+  "size_bytes": 922,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "test"
+  ]
+}

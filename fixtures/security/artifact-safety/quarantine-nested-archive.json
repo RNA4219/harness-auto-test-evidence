@@ -1,0 +1,18 @@
+{
+  "artifact_info": {
+    "filename": "nested_archive.tar.gz.zip",
+    "path": "/artifacts/nested_archive.tar.gz.zip",
+    "size_bytes": 15000000,
+    "compression_chain": ["zip", "gzip", "tar"],
+    "nested_depth": 3,
+    "created_at": "2026-06-28T10:00:00Z"
+  },
+  "metadata": {
+    "artifact_type": "nested_archive",
+    "manifest": null,
+    "manifest_present": false,
+    "risk": "nested_archive_without_manifest",
+    "decompression_required": 3,
+    "suspicious": true
+  }
+}

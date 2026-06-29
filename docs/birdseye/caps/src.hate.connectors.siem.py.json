@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/connectors/siem.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "b0349026b9cfbefb95a1b61bfcf0643ed71f809374ca40ead91a0e4644eb9edc",
+  "line_count": 14,
+  "size_bytes": 405,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.connectors.ops",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/connectors/ops.py"
+  ],
+  "tags": [
+    "enterprise"
+  ]
+}

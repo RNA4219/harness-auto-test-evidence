@@ -1,0 +1,20 @@
+{
+  "path": "tests/test_check_file_size.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "5f7b9c1d9b8f6f166d83bf46a3ca00fcc1b75aab6843fb1acd93f026095bdd15",
+  "line_count": 42,
+  "size_bytes": 1415,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "importlib.util",
+    "pathlib",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test"
+  ]
+}

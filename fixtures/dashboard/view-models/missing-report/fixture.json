@@ -1,0 +1,38 @@
+{
+  "description": "Missing required report shown as blocker - product-ready forbidden",
+  "input": {
+    "readiness_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "product_readiness_report",
+      "summary": {
+        "overall_status": "block",
+        "claim_count": 10,
+        "unsupported_claim_count": 0,
+        "contradiction_count": 0,
+        "hard_dq_count": 0
+      },
+      "graph_summary": {},
+      "unsupported_claims": [],
+      "contradictions": [],
+      "hard_dqs": [],
+      "soft_gaps": [],
+      "sourceRefs": ["reports/product-readiness-report.json"]
+    },
+    "run_id": "run-missing-report-001",
+    "profile": "product",
+    "missing_reports": [
+      "risk-coverage-matrix",
+      "test-integrity-report"
+    ],
+    "artifact_safety_reports": [],
+    "manual_review_requests": []
+  },
+  "expected": {
+    "overall_status": "block",
+    "is_ready": false,
+    "missing_report_count": 2,
+    "has_missing_report_blockers": true,
+    "missing_report_blocker_types": ["missing_report"],
+    "cannot_show_product_ready": true
+  }
+}

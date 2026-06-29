@@ -1,0 +1,56 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "qeg_bundle",
+  "nodes": [
+    {
+      "id": "test-003",
+      "kind": "test_result",
+      "status": "passed",
+      "test_id": "TC-003",
+      "name": "Unit test",
+      "duration_ms": 50,
+      "timestamp": "2026-06-29T10:00:00Z"
+    },
+    {
+      "id": "coverage-003",
+      "kind": "coverage_slice",
+      "coverage_type": "line",
+      "covered": 90,
+      "total": 100,
+      "percentage": 90.0
+    },
+    {
+      "id": "static-003",
+      "kind": "static_finding",
+      "finding_type": "lint",
+      "severity": "info",
+      "message": "No issues found"
+    },
+    {
+      "id": "contract-003",
+      "kind": "contract_evidence",
+      "contract_type": "schema",
+      "validated": true
+    },
+    {
+      "id": "mutation-003",
+      "kind": "mutation_evidence",
+      "mutation_score": 95.0,
+      "killed": 19,
+      "total": 20
+    }
+  ],
+  "edges": [
+    {
+      "from": "test-003",
+      "to": "coverage-003",
+      "relationship": "produces"
+    },
+    {
+      "from": "test-003",
+      "to": "static-003",
+      "relationship": "produces"
+    }
+  ],
+  "sourceRefs": ["git:ghi789"]
+}

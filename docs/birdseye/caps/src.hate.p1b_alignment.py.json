@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/p1b_alignment.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "53309f863eb9d6bca5bdd3b3a90fe81c0adfad88d1d3bb6c8e50224b781157b3",
+  "line_count": 317,
+  "size_bytes": 14277,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

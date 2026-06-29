@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/api/import-export/export-quarantined-raw/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3bb1a8b6d145ead4a387d2a91adb49d4fcf11d45ee55bc46dedace35e08266bb",
+  "line_count": 30,
+  "size_bytes": 728,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/test-integrity/coupling/manual-review-owned/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "77a6ff3f925adc6d60b22ddd06e4fc93fc0e251c59898f690bd1299eb08fe7f2",
+  "line_count": 28,
+  "size_bytes": 944,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "security",
+    "test"
+  ]
+}

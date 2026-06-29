@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/enterprise/rbac-audit/export-denied-quarantine/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9a16afddf8fe85435d63fd96f8267234a01525ef6682f17522bc49169b5288db",
+  "line_count": 24,
+  "size_bytes": 667,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture"
+  ]
+}

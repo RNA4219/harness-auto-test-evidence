@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/release/candidate-pack/all-green/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1f0ddd9a14bd9740dcacb04202e02821fc2b8a34fb4fd5ece1126d0d968c2d3a",
+  "line_count": 34,
+  "size_bytes": 2469,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "store",
+    "test"
+  ]
+}

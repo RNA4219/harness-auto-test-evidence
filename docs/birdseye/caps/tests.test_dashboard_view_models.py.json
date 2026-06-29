@@ -1,0 +1,29 @@
+{
+  "path": "tests/test_dashboard_view_models.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "a597b883c626e4ee3c7db379b6d6d71b76fd70040da4f6847605fa50affadbc1",
+  "line_count": 491,
+  "size_bytes": 18548,
+  "headings": [
+    "# Fixture paths"
+  ],
+  "imports": [
+    "__future__",
+    "hate.dashboard.view_models",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/dashboard/view_models.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

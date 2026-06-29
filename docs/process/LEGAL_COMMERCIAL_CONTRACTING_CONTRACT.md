@@ -82,6 +82,14 @@ privacy、trust packet と矛盾しないことを説明できる必要がある
 - customer-specific exception は owner、expiry、renewal impact を持つ
 - security / privacy / residency の回答は trust packet / privacy / residency 正本と整合させる
 - response template は release ごとに freshness check を通す
+- procurement / sales / README / release note / API doc の customer-facing claim は
+  `commercial-truthfulness-report` を通し、claim id、claim text、surface、
+  source contract refs、implementation refs、evidence report refs、sourceRefs、
+  release eligibility、blocker state、procurement response text を持つ
+- manual review は exception や human decision を記録できるが、unsupported / planned
+  capability を implemented evidence に変換しない
+- release candidate pack は unsupported commercial claim、missing source contract ref、
+  missing evidence report、release pack contradiction を blocker として扱う
 
 ## 7. Commercial Risk
 
@@ -98,6 +106,8 @@ privacy、trust packet と矛盾しないことを説明できる必要がある
 
 - commercial commitment が source_refs、source_contracts、owner、status、verification_refs を持つ
 - procurement response が implemented / planned / unsupported を明確に区別する
+- commercial truthfulness report が claim inventory と evidence refs を保持し、
+  unsupported / planned capability を customer-facing available として扱わない
 - contract exception が owner、expiry、risk、workaround、linked roadmap item を持つ
 - unsupported commitment が customer-facing docs や sales response で available と表現されない
 - legal / commercial artifact が customer source code、secret、PII、unsafe artifact を含まない

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/dashboard/uat-states/hold-risk/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c444911de926efaa29b2e5efc2382f27eb9efc88229bda502dd4b9f97a0dce26",
+  "line_count": 58,
+  "size_bytes": 1696,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

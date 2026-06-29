@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/store/atomic_write.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "4bf1e5d15f7ce6f0b09f6f14e184a8b755f6624c41b1abb53986e9f6e29b60f7",
+  "line_count": 377,
+  "size_bytes": 11584,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "hashlib",
+    "json",
+    "os",
+    "pathlib",
+    "shutil",
+    "tempfile",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "store"
+  ]
+}

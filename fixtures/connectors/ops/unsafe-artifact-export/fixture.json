@@ -1,0 +1,27 @@
+{
+  "description": "Unsafe raw artifact export is blocked as hard DQ.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-unsafe-export",
+      "support_bundle": {
+        "connector_id": "support-unsafe",
+        "provider": "SupportDesk",
+        "payload_kind": "raw_artifact",
+        "raw_artifact_content": "SECRET_VALUE_SHOULD_NOT_EXPORT",
+        "quarantined_artifact": true,
+        "sourceRef": "reports/unsafe-artifact-export.json"
+      },
+      "sourceRefs": ["fixtures/connectors/ops/unsafe-artifact-export/fixture.json"]
+    },
+    "connector_config": {"enabled": true, "dry_run": true}
+  },
+  "expected": {
+    "mode": "support",
+    "status": "unsafe_export_blocked",
+    "readiness_effect": "hard_dq",
+    "denied_action": "unsafe_artifact_export",
+    "forbidden": "SECRET_VALUE_SHOULD_NOT_EXPORT"
+  }
+}

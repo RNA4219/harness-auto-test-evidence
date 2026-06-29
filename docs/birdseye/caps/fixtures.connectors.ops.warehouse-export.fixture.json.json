@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/connectors/ops/warehouse-export/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "52303a6e6bbaf7cc291e480d5e8ae29c0a87c72ab3cf4340d95220d541c2b0a4",
+  "line_count": 37,
+  "size_bytes": 1103,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "artifact_id": "path-traversal",
+  "artifact_path": "artifact-refs.json",
+  "profile": "release",
+  "content": "{\"path\":\"../../secrets/token.txt\"}"
+}

@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/store/local/incomplete-bundle-no-manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d8aadf2eb57001d263e64787e4ef902f3270159e503cc598ce50e161e97193a9",
+  "line_count": 15,
+  "size_bytes": 340,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

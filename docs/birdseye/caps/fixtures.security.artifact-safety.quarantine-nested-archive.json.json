@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/security/artifact-safety/quarantine-nested-archive.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "39ac49d8047ea8e9f7c2434f1fe6b1a44afe51621d1793429605f1256a7e78cc",
+  "line_count": 18,
+  "size_bytes": 482,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

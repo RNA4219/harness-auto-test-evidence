@@ -1,0 +1,36 @@
+{
+  "description": "Minimal run/readiness reports project into the runs resource.",
+  "input": {
+    "required_reports": ["run", "readiness"],
+    "reports": {
+      "bundle_hash": "sha256:minimalrun",
+      "run": {
+        "run_id": "run-api-001",
+        "attempt": 2,
+        "repo": "org/hate",
+        "branch": "main",
+        "commit": "abc123",
+        "actor": "ci",
+        "profile": "product",
+        "created_at": "2026-06-30T00:00:00Z",
+        "sourceRefs": ["reports/run.json"]
+      },
+      "readiness": {
+        "run_id": "run-api-001",
+        "profile": "product",
+        "summary": {
+          "overall_status": "go",
+          "hard_dq_count": 0,
+          "soft_gap_count": 0
+        },
+        "sourceRefs": ["reports/product-readiness-report.json"]
+      }
+    }
+  },
+  "expected": {
+    "run_id": "run-api-001",
+    "decision": "go",
+    "bundle_hash": "sha256:minimalrun",
+    "staleness": "fresh"
+  }
+}

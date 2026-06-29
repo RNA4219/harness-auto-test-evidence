@@ -56,6 +56,71 @@
       "record_type": "manual_review_request_bundle",
       "schema": "schemas/HATE/v1/manual-review-request.schema.json",
       "phase": "P0b"
+    },
+    {
+      "record_type": "test_integrity_report",
+      "schema": "schemas/HATE/v1/test-integrity-report.schema.json",
+      "phase": "P0b"
+    },
+    {
+      "record_type": "artifact-safety-report",
+      "schema": "schemas/HATE/v1/artifact-safety-report.schema.json",
+      "phase": "P0b"
+    },
+    {
+      "record_type": "safe-diagnostic-bundle",
+      "schema": "schemas/HATE/v1/safe-diagnostic-bundle.schema.json",
+      "phase": "P0b"
+    },
+    {
+      "record_type": "store_manifest",
+      "schema": "schemas/HATE/v1/store-manifest.schema.json",
+      "phase": "P0a"
+    },
+    {
+      "record_type": "api-authz-decision",
+      "schema": "schemas/api/api-authz-decision.schema.json",
+      "phase": "P1"
+    },
+    {
+      "record_type": "bundle-import-report",
+      "schema": "schemas/api/bundle-import-report.schema.json",
+      "phase": "P1"
+    },
+    {
+      "record_type": "safe-export-report",
+      "schema": "schemas/api/safe-export-report.schema.json",
+      "phase": "P1"
+    },
+    {
+      "record_type": "enterprise-control-report",
+      "schema": "schemas/HATE/v1/enterprise-control-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "scale-performance-report",
+      "schema": "schemas/HATE/v1/scale-performance-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "support-ops-report",
+      "schema": "schemas/HATE/v1/support-ops-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "migration-compatibility-report",
+      "schema": "schemas/HATE/v1/migration-compatibility-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "commercial-truthfulness-report",
+      "schema": "schemas/HATE/v1/commercial-truthfulness-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "release-candidate-pack",
+      "schema": "schemas/HATE/v1/release-candidate-pack.schema.json",
+      "phase": "P3"
     }
   ],
   "bundles": [

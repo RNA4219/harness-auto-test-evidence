@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/store/local/atomic-write-success/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "146b9f413c56b447361dec84d8a7f7909b4c069e9efce094cdfcad1f58a85fa4",
+  "line_count": 17,
+  "size_bytes": 344,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

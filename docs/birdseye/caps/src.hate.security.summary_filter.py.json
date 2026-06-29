@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/security/summary_filter.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "2f3b46546b5dd10364043cb182af592039d247949db1f5eb10c8cc6ab492ac5b",
+  "line_count": 216,
+  "size_bytes": 7911,
+  "headings": [
+    "# Summary visibility rules per surface"
+  ],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hashlib",
+    "json",
+    "typing",
+    "uuid"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "security"
+  ]
+}

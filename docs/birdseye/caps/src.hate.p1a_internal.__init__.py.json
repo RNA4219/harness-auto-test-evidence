@@ -1,0 +1,37 @@
+{
+  "path": "src/hate/p1a_internal/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e2a679398d00e64883606f0ac3d416f226496e5446952fdc2997abc5af4016ac",
+  "line_count": 97,
+  "size_bytes": 2518,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p1a_internal.adapter_conformance",
+    "hate.p1a_internal.adapter_registry",
+    "hate.p1a_internal.aete_scoring",
+    "hate.p1a_internal.artifact_resolver",
+    "hate.p1a_internal.doctor_report",
+    "hate.p1a_internal.identity",
+    "hate.p1a_internal.recommendations",
+    "hate.p1a_internal.retry_aggregation"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a_internal/adapter_conformance.py",
+    "src/hate/p1a_internal/adapter_registry.py",
+    "src/hate/p1a_internal/aete_scoring.py",
+    "src/hate/p1a_internal/artifact_resolver.py",
+    "src/hate/p1a_internal/doctor_report.py",
+    "src/hate/p1a_internal/identity.py",
+    "src/hate/p1a_internal/recommendations.py",
+    "src/hate/p1a_internal/retry_aggregation.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "schema",
+    "test"
+  ]
+}

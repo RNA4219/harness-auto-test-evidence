@@ -1,0 +1,17 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "qeg_bundle",
+  "nodes": [
+    {
+      "id": "test-005",
+      "kind": "test_result",
+      "status": "passed",
+      "test_id": "TC-005",
+      "name": "Minimal test",
+      "duration_ms": 10,
+      "timestamp": "2026-06-29T10:00:00Z"
+    }
+  ],
+  "edges": [],
+  "sourceRefs": ["git:min123"]
+}

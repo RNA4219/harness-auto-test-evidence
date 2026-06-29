@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/api/import-export/export-safe-diagnostic/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fb2043e004b8538329f84c834503bccc6a1bca1af5a4561e11e67863103395fd",
+  "line_count": 42,
+  "size_bytes": 1124,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

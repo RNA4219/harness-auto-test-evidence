@@ -1,0 +1,12 @@
+{
+  "artifact_id": "private-url-007",
+  "artifact_path": "logs/webhook_config.log",
+  "profile": "strict",
+  "content": "2024-01-15T10:30:00Z INFO Webhook configured\n2024-01-15T10:31:00Z DEBUG Callback URL: https://internal.company.com/webhook?token=secret123&signature=abc\n2024-01-15T10:32:00Z INFO Signed URL detected: https://storage.cloud.example.com/blob?x-amz-signature=def456\n",
+  "expected_redaction_status": "redacted",
+  "expected_classification": "restricted",
+  "expected_readiness_effect": "hard_dq",
+  "expected_redactions_count": 2,
+  "expected_url_redacted": true,
+  "expected_redaction_type": "url"
+}

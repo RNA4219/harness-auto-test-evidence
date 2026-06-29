@@ -1,0 +1,31 @@
+{
+  "description": "Missing required metrics are hard DQ in release profile.",
+  "input": {
+    "scenario_id": "missing-metrics",
+    "profile": "release",
+    "dataset_shape": {
+      "tests": 100000,
+      "coverage_records": 10000000,
+      "artifact_metadata": 100000,
+      "graph_nodes": 500000,
+      "graph_edges": 2000000
+    },
+    "observed_ms": {
+      "ingest": 100000,
+      "validation": 50000,
+      "graph_build": 90000
+    },
+    "estimated_counters": {
+      "pairwise_comparisons": 1000000,
+      "pagination_tested": false,
+      "cache_invalidation_tested": false
+    },
+    "sourceRefs": ["fixtures/scale/performance/missing-metrics/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "blocked",
+    "readiness_effect": "hard_dq",
+    "finding_code": "missing_performance_metric",
+    "missing_operations": ["store_index", "replay", "report_generation"]
+  }
+}

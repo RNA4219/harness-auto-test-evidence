@@ -11,7 +11,15 @@ from .p1a import TrustError, compare_trust, doctor_trust, evaluate_trust, explai
 from .p1b import WorkflowError, generate_workflow_mapping
 from .p2p3 import ProductError, generate_product_readiness, query_product_read_model, serve_product_read_model
 from .product_grade import ProductGradeError, generate_product_grade_reports
-from .store import StoreError, ingest_local_store, query_local_store, read_history_index
+from .store_legacy import StoreError, ingest_local_store, query_local_store, read_history_index
+from .release import assemble_release_candidate_pack, RELEASE_PACK_REQUIRED_REPORT_TYPES
+
+
+class ReleaseError(Exception):
+    def __init__(self, message: str, exit_code: int = 2, pack: dict | None = None) -> None:
+        super().__init__(message)
+        self.exit_code = exit_code
+        self.pack = pack
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -153,6 +161,16 @@ def build_parser() -> argparse.ArgumentParser:
 
     store_history = store_subparsers.add_parser("history", help="Read the local HATE store history index.")
     store_history.add_argument("--store", required=True, type=Path, help="Local store directory.")
+
+    release = subparsers.add_parser("release", help="Generate release candidate pack from P2/P3 product artifacts.")
+    release_subparsers = release.add_subparsers(dest="release_command", required=True)
+
+    release_candidate = release_subparsers.add_parser("candidate", help="Assemble release candidate pack from readiness reports.")
+    release_candidate.add_argument("--readiness", required=True, type=Path, help="Input P2/P3 product readiness artifact directory.")
+    release_candidate.add_argument("--out", required=True, type=Path, help="Output directory for release candidate pack.")
+    release_candidate.add_argument("--release-id", default=None, help="Release candidate identifier.")
+    release_candidate.add_argument("--source-version", default=None, help="Source version for generated records.")
+    release_candidate.add_argument("--dry-run", action="store_true", help="Generate pack without blocking on missing reports.")
 
     return parser
 
@@ -406,6 +424,25 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(result, ensure_ascii=False))
         return 0
 
+    if args.command == "release" and args.release_command == "candidate":
+        try:
+            result = _assemble_release_candidate(
+                readiness_dir=args.readiness,
+                out_dir=args.out,
+                release_id=args.release_id,
+                source_version=args.source_version,
+                dry_run=args.dry_run,
+            )
+        except ReleaseError as exc:
+            if exc.pack is not None:
+                print(json.dumps(exc.pack, ensure_ascii=False), file=sys.stderr)
+            else:
+                print(f"HATE-E-RELEASE: {exc}", file=sys.stderr)
+            return exc.exit_code
+
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
+
     parser.error(f"unknown command: {args.command}")
     return 1
 
@@ -418,3 +455,68 @@ def _parse_cli_filters(values: list[str]) -> dict[str, str]:
         key, item = value.split("=", 1)
         filters[key] = item
     return filters
+
+
+def _assemble_release_candidate(
+    readiness_dir: Path,
+    out_dir: Path,
+    release_id: str | None,
+    source_version: str | None,
+    dry_run: bool,
+) -> dict[str, Any]:
+    """Assemble release candidate pack from P2/P3 readiness artifacts."""
+    if not readiness_dir.exists():
+        raise ReleaseError(f"readiness directory not found: {readiness_dir}")
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Collect reports from readiness directory
+    reports: list[dict[str, Any]] = []
+    for report_type in RELEASE_PACK_REQUIRED_REPORT_TYPES:
+        report_path = readiness_dir / f"{report_type}.json"
+        if report_path.exists():
+            try:
+                report_data = json.loads(report_path.read_text(encoding="utf-8"))
+                reports.append(report_data)
+            except json.JSONDecodeError:
+                reports.append({
+                    "record_type": report_type,
+                    "report_id": report_type,
+                    "status": "malformed",
+                    "readiness_effect": "hard_dq",
+                    "sourceRefs": [str(report_path)],
+                })
+
+    # Assemble pack
+    input_data = {
+        "release_id": release_id or f"rc-{readiness_dir.name}",
+        "source_version": source_version or "unknown",
+        "reports": reports,
+        "required_reports": RELEASE_PACK_REQUIRED_REPORT_TYPES,
+        "evidence_room_artifacts": [],
+        "qeg_refs": [],
+        "qeg_approval_claimed": False,
+        "sign_off": {"status": "pending", "owner": "", "sourceRefs": []},
+    }
+
+    pack = assemble_release_candidate_pack(input_data)
+
+    # Write pack to output directory
+    pack_path = out_dir / "release-candidate-pack.json"
+    pack_path.write_text(json.dumps(pack, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    # Check blocking status
+    if pack["verdict"] == "blocked" and not dry_run:
+        raise ReleaseError(
+            f"release candidate pack is blocked: {len(pack['blockers'])} blockers",
+            exit_code=3,
+            pack=pack,
+        )
+
+    return {
+        "generated": ["release-candidate-pack.json"],
+        "out_dir": str(out_dir),
+        "verdict": pack["verdict"],
+        "release_ready": pack["summary"]["release_ready"],
+        "blocker_count": pack["summary"]["blocker_count"],
+    }

@@ -113,8 +113,65 @@ Release notes は最低限、次を持つ。
 ## 10. Acceptance
 
 - release は RG-1..RG-8 の evidence を持つ
+- release candidate pack は product readiness、test integrity、artifact safety、
+  safe diagnostic bundle、store manifest、scale performance、API contract、
+  dashboard UAT、enterprise control、support ops、migration compatibility、
+  commercial truthfulness の required report checklist を持つ
+- release candidate pack は required report 欠落、依存 hard DQ、open manual review、
+  unsupported commercial claim、quarantined / unsafe artifact export、QEG approval claim
+  を hard DQ blocker として保持する
+- evidence room manifest は safe artifact だけを included に置き、secret / PII /
+  quarantined / unsafe artifact を excluded に残す
+- pack hash は sorted report ids / hashes / sourceRefs から deterministic に再計算できる
 - breaking change は migration guide を持つ
 - deprecated field は removal window と replacement を持つ
 - replay impact が score / DQ / QEG export 差分を説明できる
 - previous stable が unsupported future schema を safe reject できる
 - release note が compatibility matrix と rollback instruction を持つ
+
+## 11. Retention / Legal Hold Migration Guard
+
+Migration は retention policy id と legal hold metadata を preserved field として
+扱う。migration dry-run で `before_migration.legal_hold` と
+`after_migration.legal_hold` が一致しない場合、release evidence は
+`legal_hold_lost` を hard DQ として扱う。
+
+Expired retention は migration 中に artifact body を削除しない。出力は
+metadata-only の purge eligibility として表現し、canonical bundle、audit event、
+sourceRefs、legal hold metadata を再計算可能なまま残す。
+
+## 12. Migration Compatibility Report
+
+`migration-compatibility-report` は migration dry-run の正本証跡である。
+各 decision は source version、target version、decision、readiness effect、
+reason、source hash、migrated hash、sourceRefs preserved、legal hold preserved、
+canonical source mutated、findings、sourceRefs を持つ。
+
+Patch / minor compatible な `HATE/v1.*` は pass として扱える。ただし sourceRefs、
+legal hold、source hash、canonical source immutability のいずれかが破られた場合は
+schema version が互換でも hard DQ とする。unsupported major version は release /
+regulated profile では hard DQ、default profile では hold とし、silent pass しない。
+
+## 13. Legal Hold Transition Evidence
+
+Legal hold migration は `legal_hold_transitions` として
+`migration-compatibility-report` に残す。operation は migration、replay、export、
+purge/delete、retention transition を区別する。
+
+Active legal hold が存在する resource では、migration / replay が legal hold metadata
+を落とすこと、export が raw mutation を伴うこと、purge/delete が実行されること、
+retention transition が `retain` 以外へ進むことを hard DQ とする。retain の
+retention transition は legal hold metadata が保持される限り pass として扱える。
+
+## 14. Release Candidate Pack
+
+`release-candidate-pack` は release approval ではなく、release readiness の
+証跡束である。HATE は QEG approval、publish approval、manual review approval を
+代替しない。QEG は `qeg_refs` として参照できるが、`qeg_approval_claimed` は常に
+false でなければならない。
+
+pack は required reports、report hashes、verdict、blockers、manual review state、
+commercial claim state、QEG refs、evidence room manifest、legal hold summary、
+sign-off metadata、sourceRefs、pack_hash を持つ。missing required report、open
+manual review、unsupported commercial claim、dependency hard DQ、unsafe artifact
+export attempt は release_ready=false とする。

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/connectors/ops/support-safe-bundle/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "45506a4c75290025d77ecb88c3d56bbcfb946d7d68519cafa652eba429af4d18",
+  "line_count": 27,
+  "size_bytes": 914,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

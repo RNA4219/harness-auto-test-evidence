@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/mock-assertion/risk-without-oracle/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2ed6719d3864a048ddaf843128aa14cb0a548ab97e075025fe35a9b42f3fd683",
+  "line_count": 16,
+  "size_bytes": 711,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

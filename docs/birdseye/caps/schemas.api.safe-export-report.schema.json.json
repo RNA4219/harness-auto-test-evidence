@@ -1,0 +1,18 @@
+{
+  "path": "schemas/api/safe-export-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "ea324f7a5fb2e1918baecbc3ac33188a8f3c3694041bf068214e4f5f7162cf01",
+  "line_count": 145,
+  "size_bytes": 4354,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "release",
+    "schema"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "artifact_id": "synthetic-pii-allowed",
+  "artifact_path": "fixtures/examples/user.txt",
+  "profile": "release",
+  "allowlist_ref": "SYNTHETIC-PII-001",
+  "content": "synthetic sample_pii email alice@example.test phone +1 555-010-9999"
+}

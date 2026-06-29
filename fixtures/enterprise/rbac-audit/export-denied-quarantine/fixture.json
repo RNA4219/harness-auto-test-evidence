@@ -1,0 +1,24 @@
+{
+  "input": {
+    "actor": {
+      "actor_id": "auditor-001",
+      "role": "auditor",
+      "scopes": ["safe_metadata", "export"]
+    },
+    "request": {
+      "request_id": "req-export-001",
+      "action": "export",
+      "resource_type": "export",
+      "resource_id": "export-artifact-quarantined-001",
+      "classification": "restricted",
+      "quarantine_status": "quarantined",
+      "access_level": "raw_artifact"
+    },
+    "source_refs": ["fixtures/enterprise/rbac-audit/export-denied-quarantine/fixture.json"],
+    "timestamp": "2026-06-30T00:03:00+00:00"
+  },
+  "expected": {
+    "decision": "denied",
+    "reason": "unsafe_export_scope_denied"
+  }
+}

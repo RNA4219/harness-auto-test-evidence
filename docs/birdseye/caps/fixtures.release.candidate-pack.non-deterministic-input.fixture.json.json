@@ -1,0 +1,22 @@
+{
+  "path": "fixtures/release/candidate-pack/non-deterministic-input/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d85b49c8e63ee7535696069ce84bb9351de1a7159f825c1649e57ef8f2e9e805",
+  "line_count": 27,
+  "size_bytes": 2417,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "store",
+    "test"
+  ]
+}

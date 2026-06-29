@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/coupling/manual-review-without-human-record/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3b516313c70ece9a06db322a2c902000e5506a2b92a4c220b01f0c8fcf57014b",
+  "line_count": 26,
+  "size_bytes": 788,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

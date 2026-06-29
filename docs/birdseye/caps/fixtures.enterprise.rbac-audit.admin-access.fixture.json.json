@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/enterprise/rbac-audit/admin-access/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e1603b6882429fa09c5b7d15ddd1eb20f0ef8a26b8d1f0e0683242d77dcf537f",
+  "line_count": 23,
+  "size_bytes": 602,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture"
+  ]
+}

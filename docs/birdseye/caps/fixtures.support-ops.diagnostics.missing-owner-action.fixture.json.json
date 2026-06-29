@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/support-ops/diagnostics/missing-owner-action/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "13dfff934b78c1471b4c135786dc4b330a7143d92d6dfafdb941d21f6751551b",
+  "line_count": 25,
+  "size_bytes": 629,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/coupling/data-driven-parser/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "09019223741517f1de0384d5bed5eab6d589ea289a887ea008102cab01869f1a",
+  "line_count": 19,
+  "size_bytes": 792,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

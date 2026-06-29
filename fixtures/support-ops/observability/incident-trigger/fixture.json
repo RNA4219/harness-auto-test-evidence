@@ -1,0 +1,29 @@
+{
+  "description": "Alert threshold crossing creates incident projection.",
+  "input": {
+    "report_id": "incident-trigger",
+    "profile": "default",
+    "logs": [],
+    "metrics": [
+      {"name": "unsafe_export_count", "value": 1, "sourceRef": "metrics/unsafe_export"}
+    ],
+    "alerts": [
+      {
+        "alert_id": "alert-unsafe-export",
+        "metric": "unsafe_export_count",
+        "comparison": ">",
+        "threshold": 0,
+        "severity": "sev1",
+        "incident_class": "INC-1",
+        "sourceRef": "alerts/unsafe_export"
+      }
+    ],
+    "sourceRefs": ["fixtures/support-ops/observability/incident-trigger/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "incident_count": 1,
+    "incident_class": "INC-1",
+    "severity": "sev1"
+  }
+}

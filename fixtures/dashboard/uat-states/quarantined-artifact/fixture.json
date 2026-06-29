@@ -1,0 +1,40 @@
+{
+  "description": "Artifact quarantined for safety - safe metadata only",
+  "input": {
+    "artifact_safety_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "artifact-safety-report",
+      "artifact_id": "artifact-quarantined-001",
+      "classification": "restricted",
+      "quarantine_required": true,
+      "redaction_required": true,
+      "readiness_effect": "hold",
+      "findings": [
+        {
+          "finding_id": "finding-001",
+          "finding_type": "secret_detected",
+          "severity": "critical",
+          "reason": "API key detected in log file",
+          "sourceRef": "security/redaction.py:secret_detector"
+        }
+      ],
+      "sourceRefs": ["reports/artifact-safety-report.json"]
+    },
+    "run_id": "run-quarantined-001",
+    "profile": "product"
+  },
+  "expected": {
+    "state_type": "quarantined_artifact",
+    "classification": "restricted",
+    "safe_metadata_only": true,
+    "has_quarantine_reason": true,
+    "no_raw_artifact_link": true,
+    "has_remediation": true,
+    "ui_requirements": [
+      "show_safe_metadata_only",
+      "show_quarantine_reason",
+      "no_raw_artifact_link",
+      "show_remediation_contact"
+    ]
+  }
+}

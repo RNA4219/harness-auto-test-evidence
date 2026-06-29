@@ -1,0 +1,36 @@
+{
+  "path": "src/hate/store/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c237d97a60ddee1448080ba2c528e5faed3398cd7adb9684a8c8e4d140fe1b17",
+  "line_count": 118,
+  "size_bytes": 2870,
+  "headings": [
+    "# Legacy imports (from store_legacy.py for backward compatibility)"
+  ],
+  "imports": [
+    ".atomic_write",
+    ".compare",
+    ".doctor",
+    ".indexes",
+    ".local_store",
+    ".replay",
+    "__future__",
+    "hate.store_legacy"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/compare.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/local_store.py",
+    "src/hate/store/replay.py",
+    "src/hate/store_legacy.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

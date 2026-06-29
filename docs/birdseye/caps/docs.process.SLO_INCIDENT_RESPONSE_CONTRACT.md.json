@@ -2,9 +2,9 @@
   "path": "docs/process/SLO_INCIDENT_RESPONSE_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "8eb9e333778c70c5fc3ac172e066bc5a9d6dee2efa7d278c084bea7cdd83653e",
-  "line_count": 151,
-  "size_bytes": 7512,
+  "sha256": "b5d6524c2243ddcd757a38c0e4c1c202676fd72e3b8320073b662379101784b0",
+  "line_count": 168,
+  "size_bytes": 8508,
   "headings": [
     "# SLO and Incident Response Contract",
     "## 1. 目的",
@@ -16,6 +16,7 @@
     "## 7. Incident Record",
     "## 8. Communication Policy",
     "## 9. Containment / Rollback",
+    "### 9.1 Safe Diagnostic Incident Evidence",
     "## 10. Postmortem Requirements",
     "## 11. Acceptance"
   ],

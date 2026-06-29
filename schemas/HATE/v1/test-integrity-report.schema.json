@@ -1,0 +1,709 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schemas/HATE/v1/test-integrity-report.schema.json",
+  "title": "Test Integrity Report",
+  "description": "Test integrity report with findings, risk debt, anti-evasion detection, mock abuse, and assertion quality per PRODUCT_GRADE_IMPLEMENTATION_SPEC.md Section 6",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "fixture_id",
+    "profile",
+    "summary",
+    "findings",
+    "risk_debt",
+    "anti_evasion",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "type": "string",
+      "const": "test_integrity_report"
+    },
+    "fixture_id": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string",
+      "enum": ["default", "strict", "release", "product"]
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "overall_status",
+        "finding_count",
+        "blocked_count",
+        "hold_count",
+        "soft_gap_count",
+        "pass_count",
+        "debt_count",
+        "open_debt_count",
+        "by_signal_type",
+        "profile_effect"
+      ],
+      "properties": {
+        "overall_status": {
+          "type": "string",
+          "enum": ["pass", "soft_gap", "hold", "blocked"]
+        },
+        "finding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hold_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "soft_gap_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pass_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "debt_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "open_debt_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "by_signal_type": {
+          "type": "object",
+          "required": ["skip", "xfail", "only", "todo", "implementation_test_coupling", "risk_without_oracle", "coverage_without_evidence"],
+          "properties": {
+            "skip": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "xfail": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "only": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "todo": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "mock_abuse": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "assertion_quality": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "implementation_test_coupling": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "risk_without_oracle": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "coverage_without_evidence": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "profile_effect": {
+          "type": "string"
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "detector_id",
+          "severity",
+          "profile",
+          "affected_test_id",
+          "marker_kind",
+          "reason",
+          "owner",
+          "expiry",
+          "sourceRef",
+          "readiness_effect",
+          "suggested_manual_review_action",
+          "sourceRefs",
+          "signal_id",
+          "affected_refs",
+          "product_effect",
+          "recommended_action"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string"
+          },
+          "detector_id": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "profile": {
+            "type": "string",
+            "enum": ["default", "strict", "release", "product"]
+          },
+          "affected_test_id": {
+            "type": "string"
+          },
+          "marker_kind": {
+            "type": "string",
+            "enum": ["skip", "xfail", "only", "todo", "test_name_branch", "fixture_name_branch", "golden_fixture_path_branch", "env_flag_branch", "ci_marker_branch", "risk_without_oracle", "coverage_without_evidence", "manual_review_required"]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "owner": {
+            "type": ["string", "null"]
+          },
+          "expiry": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": ["pass", "soft_gap", "hold", "blocked"]
+          },
+          "suggested_manual_review_action": {
+            "type": "string"
+          },
+          "signal_id": {
+            "type": "string",
+            "enum": ["test_skip_detected", "test_xfail_detected", "test_only_detected", "test_todo_detected", "mock_abuse_detected", "assertion_quality", "implementation_test_coupling", "risk_without_oracle", "coverage_without_evidence", "manual_review_required"]
+          },
+          "affected_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "recommended_action": {
+            "type": "string"
+          },
+          "product_effect": {
+            "type": "string",
+            "enum": ["pass", "soft_gap", "hold", "blocked"]
+          },
+          "sourceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "mock_abuse_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "test_id",
+          "mock_target",
+          "classification",
+          "confidence",
+          "reason",
+          "sourceRef",
+          "framework",
+          "language"
+        ],
+        "properties": {
+          "test_id": {
+            "type": "string"
+          },
+          "mock_target": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string",
+            "enum": ["external_boundary", "internal_domain", "empty_stub", "unknown"]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "reason": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "line_number": {
+            "type": ["integer", "null"]
+          },
+          "framework": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assertion_quality_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "test_id",
+          "assertion_type",
+          "confidence",
+          "reason",
+          "sourceRef",
+          "framework",
+          "language",
+          "has_domain_oracle"
+        ],
+        "properties": {
+          "test_id": {
+            "type": "string"
+          },
+          "assertion_type": {
+            "type": "string",
+            "enum": ["meaningful", "trivial", "no_exception_only", "snapshot_only", "missing", "constant"]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "reason": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "line_number": {
+            "type": ["integer", "null"]
+          },
+          "framework": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "has_domain_oracle": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "risk_debt": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "debt_id",
+          "debt_type",
+          "severity",
+          "status",
+          "test_id",
+          "marker",
+          "owner",
+          "created_at",
+          "last_seen_at",
+          "age_days",
+          "source_refs",
+          "recommended_actions",
+          "blocking_profile"
+        ],
+        "properties": {
+          "debt_id": {
+            "type": "string"
+          },
+          "debt_type": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["open", "acknowledged", "mitigated", "accepted", "closed", "stale"]
+          },
+          "test_id": {
+            "type": "string"
+          },
+          "marker": {
+            "type": "string"
+          },
+          "owner": {
+            "type": ["string", "null"]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "last_seen_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "age_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "recommended_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "blocking_profile": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "justification": {
+            "type": ["string", "null"]
+          },
+          "expiry_date": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "anti_evasion": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "pattern",
+          "test_id",
+          "framework",
+          "sourceRef"
+        ],
+        "properties": {
+          "pattern": {
+            "type": "string"
+          },
+          "test_id": {
+            "type": "string"
+          },
+          "framework": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "test_coupling_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "detector_id",
+          "evidence_class",
+          "triggering_records",
+          "sourceRefs",
+          "required_human_decision",
+          "readiness_effect",
+          "reason",
+          "severity",
+          "profile",
+          "manual_review_required",
+          "classification",
+          "confidence",
+          "affected_test_id"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string"
+          },
+          "detector_id": {
+            "type": "string"
+          },
+          "evidence_class": {
+            "type": "string",
+            "const": "implementation_test_coupling"
+          },
+          "triggering_records": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required_human_decision": {
+            "type": ["string", "null"]
+          },
+          "owner": {
+            "type": ["string", "null"]
+          },
+          "expiry": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": ["pass", "soft_gap", "hold", "blocked"]
+          },
+          "risk_matrix_entry_ref": {
+            "type": ["string", "null"]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "profile": {
+            "type": "string",
+            "enum": ["default", "strict", "release", "product"]
+          },
+          "manual_review_required": {
+            "type": "boolean"
+          },
+          "classification": {
+            "type": "string",
+            "enum": ["test_name_branch", "fixture_name_branch", "golden_fixture_path_branch", "env_flag_branch", "ci_marker_branch", "data_driven_parser", "stable_fixture_mapping", "no_coupling"]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "affected_test_id": {
+            "type": "string"
+          },
+          "affected_production_file": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "risk_oracle_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "detector_id",
+          "evidence_class",
+          "triggering_records",
+          "sourceRefs",
+          "readiness_effect",
+          "reason",
+          "severity",
+          "profile",
+          "manual_review_required",
+          "risk_level",
+          "oracle_classification",
+          "confidence"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string"
+          },
+          "detector_id": {
+            "type": "string"
+          },
+          "evidence_class": {
+            "type": "string",
+            "const": "risk_without_oracle"
+          },
+          "triggering_records": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required_human_decision": {
+            "type": ["string", "null"]
+          },
+          "owner": {
+            "type": ["string", "null"]
+          },
+          "expiry": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": ["pass", "soft_gap", "hold", "blocked"]
+          },
+          "risk_matrix_entry_ref": {
+            "type": ["string", "null"]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "profile": {
+            "type": "string",
+            "enum": ["default", "strict", "release", "product"]
+          },
+          "manual_review_required": {
+            "type": "boolean"
+          },
+          "risk_level": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "oracle_classification": {
+            "type": "string",
+            "enum": ["expected_value", "contract_check", "property_assertion", "mutation_score", "manual_oracle", "no_oracle"]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          }
+        }
+      }
+    },
+    "coverage_evidence_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "detector_id",
+          "evidence_class",
+          "triggering_records",
+          "sourceRefs",
+          "readiness_effect",
+          "reason",
+          "severity",
+          "profile",
+          "manual_review_required",
+          "coverage_classification",
+          "has_executed_tests",
+          "has_oracle",
+          "confidence"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string"
+          },
+          "detector_id": {
+            "type": "string"
+          },
+          "evidence_class": {
+            "type": "string",
+            "const": "coverage_without_evidence"
+          },
+          "triggering_records": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required_human_decision": {
+            "type": ["string", "null"]
+          },
+          "owner": {
+            "type": ["string", "null"]
+          },
+          "expiry": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": ["pass", "soft_gap", "hold", "blocked"]
+          },
+          "risk_matrix_entry_ref": {
+            "type": ["string", "null"]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "profile": {
+            "type": "string",
+            "enum": ["default", "strict", "release", "product"]
+          },
+          "manual_review_required": {
+            "type": "boolean"
+          },
+          "coverage_classification": {
+            "type": "string",
+            "enum": ["executed_tests_with_oracle", "coverage_only", "covered_lines_only", "no_coverage"]
+          },
+          "coverage_percentage": {
+            "type": ["number", "null"],
+            "minimum": 0.0,
+            "maximum": 100.0
+          },
+          "has_executed_tests": {
+            "type": "boolean"
+          },
+          "has_oracle": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          }
+        }
+      }
+    }
+  }
+}

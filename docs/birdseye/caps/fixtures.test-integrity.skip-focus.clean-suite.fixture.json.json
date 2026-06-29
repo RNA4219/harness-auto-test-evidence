@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/test-integrity/skip-focus/clean-suite/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e73e3efead4b5ac63a0658ecfabaea5187e0e6853391f3efa60b542594c44ff9",
+  "line_count": 26,
+  "size_bytes": 680,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/enterprise/retention.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "26ac50f67f1da38773aa2443cc38dfde731952dfa9651ff8ec8c406b9c7c454e",
+  "line_count": 263,
+  "size_bytes": 8869,
+  "headings": [],
+  "imports": [
+    ".legal_hold",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/enterprise/legal_hold.py"
+  ],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "release"
+  ]
+}

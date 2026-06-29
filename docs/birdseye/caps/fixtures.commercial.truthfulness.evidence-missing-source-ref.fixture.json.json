@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/commercial/truthfulness/evidence-missing-source-ref/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bd8772a28b1e79b6a8615c70030c7731e8e963c4ac183e509056b63ad82ef8bd",
+  "line_count": 26,
+  "size_bytes": 705,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "release",
+    "test"
+  ]
+}

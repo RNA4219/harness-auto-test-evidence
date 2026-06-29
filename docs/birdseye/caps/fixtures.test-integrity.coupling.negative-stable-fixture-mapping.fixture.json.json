@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/coupling/negative-stable-fixture-mapping.fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fa848283e7475b46a3aa5148137ad046349d9a87f3c562a7be44cfd118c6eb7b",
+  "line_count": 19,
+  "size_bytes": 803,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

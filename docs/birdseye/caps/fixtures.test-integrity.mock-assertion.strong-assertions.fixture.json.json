@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/mock-assertion/strong-assertions/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fc16e8b0bb7371889615e5838938b366361a8b53262a983be60e511b62024ac8",
+  "line_count": 26,
+  "size_bytes": 922,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

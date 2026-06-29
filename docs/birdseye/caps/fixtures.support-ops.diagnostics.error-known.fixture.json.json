@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/support-ops/diagnostics/error-known/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "30148f37dec30e2b888a322462d1b4da49e825d249b378e42825db676e98abe4",
+  "line_count": 9,
+  "size_bytes": 124,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/store/local/path-traversal-key/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "70b62763774828477847f862035ae4db117e3db358b406a476715639eda2018c",
+  "line_count": 6,
+  "size_bytes": 221,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "store"
+  ]
+}

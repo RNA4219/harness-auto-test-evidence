@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_support_ops_diagnostics.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "5fb9f5dffdcbf08eb644a85f08c37a0376439f9861c3f2b4ec66edb7f287f071",
+  "line_count": 122,
+  "size_bytes": 4585,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.support_ops",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

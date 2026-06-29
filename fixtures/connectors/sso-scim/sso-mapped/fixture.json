@@ -1,0 +1,44 @@
+{
+  "description": "SSO mapping fully mapped - all claims, groups, roles supported.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-001",
+      "sso_mapping": {
+        "mapping_id": "sso-001",
+        "provider": "Okta",
+        "groups": [
+          {"name": "admins", "sourceRef": "reports/sso-groups.json#admins"},
+          {"name": "developers", "sourceRef": "reports/sso-groups.json#developers"}
+        ],
+        "roles": [
+          {"name": "admin", "sourceRef": "reports/sso-roles.json#admin"},
+          {"name": "viewer", "sourceRef": "reports/sso-roles.json#viewer"}
+        ],
+        "claims": [
+          {"name": "email", "value": "user@example.com", "sourceRef": "reports/sso-claims.json#email"},
+          {"name": "name", "value": "Test User", "sourceRef": "reports/sso-claims.json#name"}
+        ],
+        "sourceRef": "reports/sso-mapping.json"
+      },
+      "sourceRefs": ["reports/enterprise-control-report.json"]
+    },
+    "mapping_config": {
+      "supported_claims": ["email", "name", "groups"],
+      "required_claims": ["email"],
+      "supported_groups": ["admins", "developers", "users"],
+      "supported_roles": ["admin", "viewer", "editor"]
+    }
+  },
+  "expected": {
+    "mapping_id": "sso-001",
+    "status": "mapped",
+    "mapped_claims": ["email", "name"],
+    "mapped_groups": ["admins", "developers"],
+    "mapped_roles": ["admin", "viewer"],
+    "manual_review_required": false,
+    "hold_reason": "",
+    "has_sourceRefs": true
+  }
+}

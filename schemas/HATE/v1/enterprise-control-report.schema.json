@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/enterprise-control-report.schema.json",
+  "title": "HATE Enterprise Control Report",
+  "type": "object",
+  "required": ["schema_version", "record_type", "connector_dry_runs", "sourceRefs"],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "enterprise-control-report"
+    },
+    "connector_dry_runs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/connector_dry_run"
+      }
+    },
+    "rbac_decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/enterprise_rbac_decision"
+      }
+    },
+    "audit_events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/enterprise_audit_event"
+      }
+    },
+    "retention_evaluations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/enterprise_retention_evaluation"
+      }
+    },
+    "legal_hold_migration_refs": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/enterprise_control_finding"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "enabled_count": {"type": "integer", "minimum": 0},
+        "disabled_count": {"type": "integer", "minimum": 0},
+        "hold_count": {"type": "integer", "minimum": 0},
+        "non_gating_failure_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "connector_dry_run": {
+      "type": "object",
+      "required": [
+        "connector_id",
+        "mode",
+        "enabled",
+        "configuration_status",
+        "simulated_actions",
+        "denied_actions",
+        "redacted_diagnostics",
+        "readiness_effect",
+        "sourceRefs"
+      ],
+      "properties": {
+        "connector_id": {"type": "string"},
+        "mode": {
+          "type": "string",
+          "enum": ["sso", "scim", "siem", "warehouse", "ticketing", "support"]
+        },
+        "enabled": {"type": "boolean"},
+        "configuration_status": {"type": "string"},
+        "simulated_actions": {
+          "type": "array",
+          "items": {"type": "object"}
+        },
+        "denied_actions": {
+          "type": "array",
+          "items": {"type": "object"}
+        },
+        "redacted_diagnostics": {
+          "type": "array",
+          "items": {"type": "object"}
+        },
+        "entitlement_status": {
+          "type": "string",
+          "enum": ["available", "disabled", "not_entitled", "unknown"]
+        },
+        "readiness_effect": {
+          "type": "string",
+          "enum": ["pass", "soft_gap", "hold", "blocked", "hard_dq", "non_gating_failure"]
+        },
+        "audit_event_refs": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "enterprise_rbac_decision": {
+      "type": "object",
+      "required": [
+        "actor",
+        "role",
+        "action",
+        "resource",
+        "decision",
+        "reason",
+        "allowed_scope",
+        "readiness_effect",
+        "verdict_mutated",
+        "sourceRefs"
+      ],
+      "properties": {
+        "actor": {"type": "string"},
+        "actor_id": {"type": "string"},
+        "role": {
+          "type": "string",
+          "enum": ["admin", "maintainer", "reviewer", "auditor", "viewer"]
+        },
+        "action": {"type": "string"},
+        "resource": {
+          "type": "object",
+          "required": ["type", "id"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["run", "artifact", "report", "manual_review", "export", "admin", "audit"]
+            },
+            "id": {"type": "string"},
+            "classification": {"type": "string"},
+            "quarantine_status": {"type": "string"}
+          },
+          "additionalProperties": true
+        },
+        "resource_type": {"type": "string"},
+        "resource_id": {"type": "string"},
+        "decision": {
+          "type": "string",
+          "enum": ["allowed", "denied"]
+        },
+        "reason": {"type": "string"},
+        "allowed_scope": {"type": "string"},
+        "readiness_effect": {
+          "type": "string",
+          "enum": ["pass", "soft_gap", "hold", "blocked", "hard_dq", "non_gating_failure"]
+        },
+        "verdict_mutated": {"type": "boolean"},
+        "request_id": {"type": "string"},
+        "sourceRefs": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "enterprise_audit_event": {
+      "type": "object",
+      "required": [
+        "event_id",
+        "actor",
+        "action",
+        "resource",
+        "decision",
+        "reason",
+        "timestamp",
+        "sourceRefs"
+      ],
+      "properties": {
+        "event_id": {"type": "string"},
+        "actor": {"type": "string"},
+        "action": {"type": "string"},
+        "resource": {
+          "type": "object",
+          "required": ["type", "id"],
+          "additionalProperties": true
+        },
+        "decision": {
+          "type": "string",
+          "enum": ["allowed", "denied"]
+        },
+        "reason": {"type": "string"},
+        "timestamp": {"type": "string"},
+        "sourceRefs": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "previous_hash": {"type": "string"},
+        "event_hash": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "enterprise_control_finding": {
+      "type": "object",
+      "required": ["code", "severity", "message"],
+      "properties": {
+        "code": {"type": "string"},
+        "severity": {
+          "type": "string",
+          "enum": ["info", "low", "medium", "high", "critical"]
+        },
+        "message": {"type": "string"},
+        "sourceRef": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "enterprise_retention_evaluation": {
+      "type": "object",
+      "required": [
+        "resource_id",
+        "resource_type",
+        "retention_policy_id",
+        "classification",
+        "action",
+        "readiness_effect",
+        "reason",
+        "purge_eligible_metadata_only",
+        "canonical_evidence_deleted",
+        "legal_hold_preserved",
+        "sourceRefs"
+      ],
+      "properties": {
+        "resource_id": {"type": "string"},
+        "resource_type": {
+          "type": "string",
+          "enum": ["bundle", "canonical_bundle", "artifact", "audit_event", "export", "report"]
+        },
+        "retention_policy_id": {"type": "string"},
+        "classification": {"type": "string"},
+        "action": {
+          "type": "string",
+          "enum": ["retain", "hold", "metadata_purge_eligible", "blocked_by_legal_hold"]
+        },
+        "readiness_effect": {
+          "type": "string",
+          "enum": ["pass", "soft_gap", "hold", "blocked", "hard_dq", "non_gating_failure"]
+        },
+        "reason": {"type": "string"},
+        "purge_eligible_metadata_only": {"type": "boolean"},
+        "canonical_evidence_deleted": {"type": "boolean"},
+        "legal_hold_preserved": {"type": "boolean"},
+        "findings": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/enterprise_control_finding"}
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

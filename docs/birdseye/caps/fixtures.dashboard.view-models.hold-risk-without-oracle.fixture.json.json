@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/dashboard/view-models/hold-risk-without-oracle/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "466c7d32da1662a3191a149955fc6300529c2bd0a87848637d38c88f9105afaf",
+  "line_count": 56,
+  "size_bytes": 1651,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

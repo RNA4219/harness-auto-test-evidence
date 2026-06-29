@@ -1,0 +1,26 @@
+{
+  "input": {
+    "claim": {
+      "claim_id": "claim-scale-performance-budget",
+      "claim_text": "HATE provides scale performance budget evidence for large runs.",
+      "surface": "readme",
+      "claim_area": "scale",
+      "declared_status": "implemented",
+      "source_contract_refs": ["docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md"],
+      "implementation_refs": ["src/hate/scale/performance_budget.py"],
+      "required_evidence": ["scale-performance-report"],
+      "sourceRefs": ["fixtures/commercial/truthfulness/supported-scale-claim/fixture.json"]
+    },
+    "evidence_records": [
+      {
+        "record_type": "scale-performance-report",
+        "status": "pass",
+        "sourceRefs": ["schemas/HATE/v1/scale-performance-report.schema.json"]
+      }
+    ],
+    "profile": "release"
+  },
+  "expected": {
+    "readiness_effect": "pass"
+  }
+}

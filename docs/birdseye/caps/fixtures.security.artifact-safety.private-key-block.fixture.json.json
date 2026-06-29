@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/security/artifact-safety/private-key-block/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6384efaa835de5ce24b3c9e4616d0bd4efd9a36f5ca41149028397ca3835ab6b",
+  "line_count": 6,
+  "size_bytes": 210,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

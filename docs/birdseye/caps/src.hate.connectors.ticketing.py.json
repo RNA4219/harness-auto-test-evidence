@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/connectors/ticketing.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "69c1da79639bfed47cff67239579c2a0ae90e39e1d376970a4f559c3a7f875a2",
+  "line_count": 14,
+  "size_bytes": 420,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.connectors.ops",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/connectors/ops.py"
+  ],
+  "tags": [
+    "enterprise"
+  ]
+}

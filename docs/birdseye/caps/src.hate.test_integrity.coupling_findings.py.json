@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/test_integrity/coupling_findings.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ee3f77cbe653ea357c1af6652c458d7609872b8cd36beddf5deb6a5d14722499",
+  "line_count": 194,
+  "size_bytes": 6239,
+  "headings": [],
+  "imports": [
+    ".coupling_types",
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/test_integrity/coupling_types.py"
+  ],
+  "tags": [
+    "coverage",
+    "test"
+  ]
+}

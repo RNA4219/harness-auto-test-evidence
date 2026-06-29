@@ -23,6 +23,15 @@ def _build_product_readiness_report(
     overall_status = _product_overall_status(input_gaps, doctor_findings, unverified_acceptance)
     gates = _product_readiness_gates(input_gaps, doctor_findings, unverified_acceptance)
     passed_gate_count = sum(1 for gate in gates if gate["status"] in {"pass", "covered_by_fixture", "covered_by_artifact"})
+    evaluation = _build_evaluation_score(
+        aete=aete,
+        gates=gates,
+        generated_refs=generated_refs,
+        input_gaps=input_gaps,
+        doctor_findings=doctor_findings,
+        unverified_acceptance=unverified_acceptance,
+        workflow_acceptance=workflow_acceptance,
+    )
     return {
         "schema_version": SCHEMA_VERSION,
         "record_type": "product_readiness_report",
@@ -40,9 +49,13 @@ def _build_product_readiness_report(
             "unverified_acceptance_count": unverified_acceptance,
             "missing_input_artifacts": input_gaps,
         },
+        "evaluation": evaluation,
         "summary": {
             "overall_status": overall_status,
             "prg_coverage": f"{passed_gate_count}/7",
+            "evaluation_score": evaluation["score"],
+            "evaluation_confidence": evaluation["confidence"],
+            "go_label_is_advisory": True,
             "metric_count": len(product_metrics.get("metrics", [])),
             "required_artifact_count": len(generated_refs),
             "live_saas_required": False,
@@ -61,6 +74,121 @@ def _build_product_readiness_report(
         "release_gate_override": False,
         "publish_gate_override": False,
     }
+
+
+def _build_evaluation_score(
+    *,
+    aete: dict[str, Any],
+    gates: list[dict[str, Any]],
+    generated_refs: list[str],
+    input_gaps: list[dict[str, str]],
+    doctor_findings: int,
+    unverified_acceptance: int,
+    workflow_acceptance: dict[str, Any],
+) -> dict[str, Any]:
+    """Build additive/subtractive product readiness score.
+
+    The score is advisory and intentionally separate from release approval.
+    """
+    aete_weighted = _safe_float(aete.get("weighted_score"), 0.0)
+    passed_gate_count = sum(1 for gate in gates if gate["status"] in {"pass", "covered_by_fixture", "covered_by_artifact"})
+    required_artifacts = len(_product_artifact_refs())
+    generated_ratio = min(1.0, len(set(generated_refs)) / required_artifacts) if required_artifacts else 0.0
+    workflow_verdict = str(workflow_acceptance.get("verdict", ""))
+    calibration_status = str(aete.get("calibration_status", "unknown"))
+    score_confidence = str(aete.get("score_confidence", "unknown"))
+
+    additions = [
+        _score_component("aete_weighted_score", round(aete_weighted * 50, 2), 50, "AETE weighted score is the primary evidence quality signal."),
+        _score_component("product_readiness_gate_coverage", round((passed_gate_count / 7) * 20, 2), 20, f"{passed_gate_count}/7 PRG gates have positive evidence status."),
+        _score_component("required_artifact_completeness", round(generated_ratio * 15, 2), 15, f"{len(set(generated_refs))}/{required_artifacts} required product artifacts generated."),
+        _score_component(
+            "workflow_acceptance",
+            10 if workflow_verdict == "accepted" else 6 if workflow_verdict == "accepted_with_gaps" else 0,
+            10,
+            f"Workflow acceptance verdict is {workflow_verdict or 'missing'}.",
+        ),
+        _score_component("doctor_hygiene", 5 if doctor_findings == 0 else 0, 5, f"Doctor finding count is {doctor_findings}."),
+    ]
+    penalties = [
+        _score_penalty("missing_input_artifacts", min(40, len(input_gaps) * 10), f"{len(input_gaps)} required upstream artifacts are missing."),
+        _score_penalty("doctor_findings", min(25, doctor_findings * 5), f"{doctor_findings} doctor findings remain."),
+        _score_penalty("unverified_acceptance", min(35, unverified_acceptance * 7), f"{unverified_acceptance} acceptance items are unverified."),
+        _score_penalty(
+            "uncalibrated_aete",
+            5 if calibration_status != "calibrated" else 0,
+            f"AETE calibration status is {calibration_status}.",
+        ),
+        _score_penalty(
+            "score_confidence",
+            10 if score_confidence == "low" else 5 if score_confidence in {"medium", "unknown", ""} else 0,
+            f"AETE score confidence is {score_confidence or 'unknown'}.",
+        ),
+    ]
+    addition_total = round(sum(item["points"] for item in additions), 2)
+    penalty_total = round(sum(item["points"] for item in penalties), 2)
+    score = round(max(0.0, min(100.0, addition_total - penalty_total)), 2)
+    return {
+        "score": score,
+        "max_score": 100,
+        "method": "additive_evidence_minus_risk_penalty_v1",
+        "confidence": _evaluation_confidence(score_confidence, calibration_status, input_gaps, doctor_findings, unverified_acceptance),
+        "go_label_is_advisory": True,
+        "release_approval": False,
+        "addition_total": addition_total,
+        "penalty_total": penalty_total,
+        "additions": additions,
+        "penalties": penalties,
+        "interpretation": _evaluation_interpretation(score),
+    }
+
+
+def _score_component(component_id: str, points: float, max_points: float, reason: str) -> dict[str, Any]:
+    return {
+        "component_id": component_id,
+        "points": round(points, 2),
+        "max_points": max_points,
+        "reason": reason,
+    }
+
+
+def _score_penalty(component_id: str, points: float, reason: str) -> dict[str, Any]:
+    return {
+        "component_id": component_id,
+        "points": round(points, 2),
+        "reason": reason,
+    }
+
+
+def _evaluation_confidence(
+    score_confidence: str,
+    calibration_status: str,
+    input_gaps: list[dict[str, str]],
+    doctor_findings: int,
+    unverified_acceptance: int,
+) -> str:
+    if input_gaps or doctor_findings or unverified_acceptance:
+        return "medium"
+    if calibration_status != "calibrated":
+        return "medium" if score_confidence == "high" else "low"
+    return score_confidence if score_confidence in {"high", "medium", "low"} else "medium"
+
+
+def _evaluation_interpretation(score: float) -> str:
+    if score >= 85:
+        return "strong_advisory_evidence"
+    if score >= 70:
+        return "usable_with_review"
+    if score >= 50:
+        return "material_gaps"
+    return "not_ready"
+
+
+def _safe_float(value: Any, default: float) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
 
 
 def _missing_product_input_refs(trust_dir: Path, workflow_dir: Path) -> list[dict[str, str]]:

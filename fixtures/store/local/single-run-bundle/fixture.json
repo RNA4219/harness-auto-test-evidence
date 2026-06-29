@@ -1,0 +1,31 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "qeg_bundle",
+  "nodes": [
+    {
+      "id": "test-001",
+      "kind": "test_result",
+      "status": "passed",
+      "test_id": "TC-001",
+      "name": "Authentication test",
+      "duration_ms": 150,
+      "timestamp": "2026-06-29T10:00:00Z"
+    },
+    {
+      "id": "coverage-001",
+      "kind": "coverage_slice",
+      "coverage_type": "line",
+      "covered": 85,
+      "total": 100,
+      "percentage": 85.0
+    }
+  ],
+  "edges": [
+    {
+      "from": "test-001",
+      "to": "coverage-001",
+      "relationship": "produces"
+    }
+  ],
+  "sourceRefs": ["git:abc123"]
+}

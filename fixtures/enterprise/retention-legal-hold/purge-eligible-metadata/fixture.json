@@ -1,0 +1,26 @@
+{
+  "input": {
+    "resource": {
+      "resource_id": "artifact-expired-001",
+      "resource_type": "artifact",
+      "classification": "internal",
+      "retention_policy_id": "retention-internal-90",
+      "expires_at": "2026-01-01T00:00:00+00:00",
+      "legal_hold": {
+        "status": "inactive",
+        "reason": "no active legal hold",
+        "held_since": "2026-01-01T00:00:00+00:00",
+        "authorized_by": "system"
+      },
+      "sourceRefs": ["fixtures/enterprise/retention-legal-hold/purge-eligible-metadata/fixture.json"]
+    },
+    "policy": {
+      "policy_id": "retention-internal-90",
+      "retention_days": 90
+    },
+    "profile": "release"
+  },
+  "expected": {
+    "purge_eligible_metadata_only": true
+  }
+}

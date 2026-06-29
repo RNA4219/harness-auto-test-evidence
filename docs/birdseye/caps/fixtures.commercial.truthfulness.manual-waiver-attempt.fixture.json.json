@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/commercial/truthfulness/manual-waiver-attempt/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "54753be6e711cf2acca701b36894039854f1de794fe3f8f1b2668b1508ad92e3",
+  "line_count": 27,
+  "size_bytes": 906,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "release"
+  ]
+}

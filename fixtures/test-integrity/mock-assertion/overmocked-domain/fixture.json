@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_mock_internal_calculator",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/domain/test_calculator.py:25",
+  "description": "Mock replaces behavior under test - internal domain function",
+  "expected_signal": "mock_abuse_detected",
+  "expected_classification": "internal_domain",
+  "code": "def test_mock_internal_calculator():\n    # Mock replaces the domain logic under test\n    mock_calc = Mock(spec=Calculator)\n    mock_calc.add.return_value = 5  # Fake result\n    # The add method IS the behavior being tested\n    result = mock_calc.add(2, 3)\n    assert result == 5  # Asserting mock's return value",
+  "mock_targets": [
+    {
+      "target": "calculator",
+      "context": "mock internal domain logic",
+      "mock_code": "mock_calc = Mock(spec=Calculator); mock_calc.add.return_value = 5",
+      "line_number": 3
+    }
+  ],
+  "assertions": [
+    {
+      "text": "assert result == 5",
+      "line_number": 7
+    }
+  ]
+}

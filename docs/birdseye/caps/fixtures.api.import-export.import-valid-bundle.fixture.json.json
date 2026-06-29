@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/api/import-export/import-valid-bundle/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "55f312656768bf8dc9e351dfd8687f1bd104c8e3a2cde5f0c570ef827797900b",
+  "line_count": 40,
+  "size_bytes": 1013,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

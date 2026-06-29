@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/read-model/risk-readiness/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "647c113064320cebb04c3dfeea1ad4f249c2d1b8325340106ed1ed304d35d4dd",
+  "line_count": 57,
+  "size_bytes": 1721,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "coverage",
+    "fixture"
+  ]
+}

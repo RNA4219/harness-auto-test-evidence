@@ -1,0 +1,45 @@
+{
+  "description": "SCIM provisioning with missing entity - produces hold/manual review.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-006",
+      "scim_provisioning": {
+        "diff_id": "scim-003",
+        "provider": "GoogleWorkspace",
+        "users_added": [],
+        "users_removed": [],
+        "users_modified": [],
+        "groups_added": [],
+        "groups_removed": [],
+        "groups_modified": [],
+        "current_users": [
+          {"user_id": "user-001"}
+        ],
+        "current_groups": [
+          {"group_id": "group-users"}
+        ],
+        "sourceRef": "reports/scim-provisioning.json"
+      },
+      "sourceRefs": ["reports/enterprise-control-report.json"]
+    },
+    "provisioning_config": {
+      "expected_users": ["user-001", "user-002", "user-003"],
+      "expected_groups": ["group-users", "group-admins"],
+      "user_attributes": {},
+      "group_members": {}
+    }
+  },
+  "expected": {
+    "diff_id": "scim-003",
+    "status": "missing_entity",
+    "users_synced_count": 1,
+    "groups_synced_count": 1,
+    "missing_entity_count": 3,
+    "missing_entities_contain": ["user-002", "user-003", "group-admins"],
+    "manual_review_required": true,
+    "hold_reason_contains": "Missing provisioned entities",
+    "has_sourceRefs": true
+  }
+}

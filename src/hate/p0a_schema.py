@@ -22,6 +22,7 @@ from .p0a_io import (
 )
 def _schema_validation_hits(records: list[dict[str, Any]]) -> list[dict[str, str]]:
     hits: list[dict[str, str]] = []
+    seen_hits: set[tuple[str, str, str]] = set()
     flattened: list[dict[str, Any]] = []
     for record in records:
         if isinstance(record, list):
@@ -36,7 +37,12 @@ def _schema_validation_hits(records: list[dict[str, Any]]) -> list[dict[str, str
             continue
         schema = _load_hate_schema(schema_name)
         for error in _validate_schema_value(record, schema, "$"):
-            hits.append(_dq("HATE-DQ-015", f"schema validation failed: {error}", _schema_source_ref(record, schema_name)))
+            hit = _dq("HATE-DQ-015", f"schema validation failed: {error}", _schema_source_ref(record, schema_name))
+            key = (hit["code"], hit["message"], hit["source_ref"])
+            if key in seen_hits:
+                continue
+            seen_hits.add(key)
+            hits.append(hit)
     return hits
 
 def _schema_name_for_generated_record(record: dict[str, Any]) -> str | None:

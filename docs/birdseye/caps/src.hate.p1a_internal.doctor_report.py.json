@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/p1a_internal/doctor_report.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8ff06c18d8b1d9568f4be4637c09be7e2e44889dcaa9fa91d841820db93c05dc",
+  "line_count": 105,
+  "size_bytes": 4298,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

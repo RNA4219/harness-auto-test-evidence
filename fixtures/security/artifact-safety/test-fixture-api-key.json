@@ -1,0 +1,17 @@
+{
+  "_comment": "@allowlist test_fixture - Test fixture API keys for unit tests",
+  "test_scenario": "api_authentication",
+  "config": {
+    "api_key": "FAKE_TEST_API_KEY_ak_test_1234567890abcdef1234",
+    "api_secret": "FAKE_TEST_SECRET_sk_test_abcdef12345678901234",
+    "github_token": "ghp_FAKE1234567890abcdef1234567890abcdef12",
+    "aws_access_key": "SYNTHETIC_AWS_ACCESS_KEY_REDACTED",
+    "aws_secret_key": "FAKEAWSSECRET1234567890abcdef"
+  },
+  "metadata": {
+    "test_fixture": true,
+    "generated_by": "test_fixture_generator",
+    "purpose": "unit_test_api_auth",
+    "timestamp": "2026-06-29T13:00:00Z"
+  }
+}

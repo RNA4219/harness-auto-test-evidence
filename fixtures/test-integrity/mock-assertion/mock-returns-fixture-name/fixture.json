@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_mock_returns_fixture_name",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/coupling/test_fixture_name_mock.py:12",
+  "description": "Mock returns fixture name - test/fixture-name coupling anti-pattern",
+  "expected_signal": "mock_abuse_detected",
+  "expected_classification": "fixture_name_coupling",
+  "code": "def test_mock_returns_fixture_name():\n    # Anti-pattern: mock returns the fixture/test name\n    # This creates coupling between test identity and mock behavior\n    mock_service = Mock()\n    mock_service.get_name.return_value = 'test_mock_returns_fixture_name'\n    result = mock_service.get_name()\n    assert result == 'test_mock_returns_fixture_name'  # Coupling detected",
+  "mock_targets": [
+    {
+      "target": "service",
+      "context": "mock returns test fixture name",
+      "mock_code": "mock_service.get_name.return_value = 'test_mock_returns_fixture_name'",
+      "line_number": 4
+    }
+  ],
+  "assertions": [
+    {
+      "text": "assert result == 'test_mock_returns_fixture_name'",
+      "line_number": 6
+    }
+  ]
+}

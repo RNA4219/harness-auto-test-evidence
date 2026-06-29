@@ -1,0 +1,7 @@
+{
+  "artifact_id": "clean-metadata",
+  "artifact_path": "reports/summary.json",
+  "profile": "default",
+  "content": "{\"status\":\"ok\",\"tests\":12}",
+  "manifest_present": true
+}

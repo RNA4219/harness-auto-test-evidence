@@ -1,0 +1,27 @@
+{
+  "input": {
+    "resource": {
+      "resource_id": "bundle-hold-001",
+      "resource_type": "canonical_bundle",
+      "classification": "confidential",
+      "retention_policy_id": "retention-confidential-180",
+      "expires_at": "2026-01-01T00:00:00+00:00",
+      "legal_hold": {
+        "status": "active",
+        "reason": "litigation hold",
+        "held_since": "2026-01-10T00:00:00+00:00",
+        "authorized_by": "legal-001",
+        "review_at": "2026-09-30T00:00:00+00:00"
+      },
+      "sourceRefs": ["fixtures/enterprise/retention-legal-hold/legal-hold-active/fixture.json"]
+    },
+    "policy": {
+      "policy_id": "retention-confidential-180",
+      "retention_days": 180
+    },
+    "profile": "release"
+  },
+  "expected": {
+    "action": "retain"
+  }
+}

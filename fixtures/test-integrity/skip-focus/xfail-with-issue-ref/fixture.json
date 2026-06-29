@@ -1,0 +1,32 @@
+{
+  "description": "Positive fixture: xfail-with-issue-ref - xfail marker with valid issue reference and expiry",
+  "test_records": [
+    {
+      "canonical_test_id": "test_known_bug",
+      "framework": "pytest",
+      "status": "passed",
+      "xfail": true,
+      "xfail_issue": "https://github.com/org/repo/issues/123",
+      "xfail_expiry": "2026-07-31",
+      "sourceRefs": ["tests/bugs/known_issue_test.py::test_known_bug"]
+    }
+  ],
+  "profile": "default",
+  "expected_summary": {
+    "overall_status": "soft_gap",
+    "finding_count": 1,
+    "blocked_count": 0,
+    "hold_count": 0,
+    "soft_gap_count": 1,
+    "pass_count": 0
+  },
+  "expected_findings": [
+    {
+      "signal_id": "test_xfail_detected",
+      "severity": "low",
+      "readiness_effect": "soft_gap",
+      "marker_kind": "xfail",
+      "reason_contains": "xfail marker"
+    }
+  ]
+}

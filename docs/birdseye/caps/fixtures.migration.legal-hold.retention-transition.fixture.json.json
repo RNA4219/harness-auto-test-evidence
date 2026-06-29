@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/migration/legal-hold/retention-transition/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0100b7cd04ef6b89900583e359a1a71275f49b2963debf089778bd0d68b7fc2e",
+  "line_count": 29,
+  "size_bytes": 908,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

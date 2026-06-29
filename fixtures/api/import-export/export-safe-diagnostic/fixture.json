@@ -1,0 +1,42 @@
+{
+  "description": "Safe diagnostic export with public/internal artifacts, quarantined artifact excluded",
+  "input": {
+    "artifacts": [
+      {
+        "artifact_id": "artifact-public-001",
+        "classification": "public",
+        "quarantine_status": "none",
+        "redaction_status": "not_required"
+      },
+      {
+        "artifact_id": "artifact-internal-002",
+        "classification": "internal",
+        "quarantine_status": "none",
+        "redaction_status": "not_required"
+      },
+      {
+        "artifact_id": "artifact-quarantined-003",
+        "classification": "restricted",
+        "quarantine_status": "quarantined",
+        "redaction_status": "redacted"
+      }
+    ],
+    "actor": "test-actor",
+    "tenant": {
+      "organization_id": "org-001",
+      "workspace_id": "ws-001"
+    },
+    "export_surface": "dashboard",
+    "role": "maintainer"
+  },
+  "expected": {
+    "export_status": "partial",
+    "readiness_effect": "hold",
+    "summary": {
+      "allowed_count": 2,
+      "excluded_count": 1,
+      "quarantined_excluded": 1
+    },
+    "excluded_artifacts_reasons": ["quarantined"]
+  }
+}

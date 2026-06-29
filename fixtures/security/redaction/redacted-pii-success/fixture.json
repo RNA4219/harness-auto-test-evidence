@@ -1,0 +1,12 @@
+{
+  "artifact_id": "redacted-pii-006",
+  "artifact_path": "logs/user_activity.log",
+  "profile": "release",
+  "content": "2024-01-15T10:30:00Z INFO User login: email=jane.doe@company.com\n2024-01-15T10:31:00Z DEBUG Phone contact: +1-415-555-1234\n2024-01-15T10:32:00Z INFO Session started for user_id=\"real_user_789\"\n",
+  "expected_redaction_status": "redacted",
+  "expected_classification": "restricted",
+  "expected_readiness_effect": "hard_dq",
+  "expected_redactions_count": 3,
+  "expected_pii_redacted": true,
+  "expected_redaction_types": ["pii"]
+}

@@ -1,0 +1,40 @@
+{
+  "description": "Valid bundle import with correct schema, sourceRefs, and public artifacts",
+  "input": {
+    "bundle": {
+      "schema_version": "HATE/v1",
+      "bundle_id": "bundle-valid-001",
+      "organization_id": "org-001",
+      "workspace_id": "ws-001",
+      "sourceRefs": ["test:valid-bundle"],
+      "artifacts": [
+        {
+          "artifact_id": "artifact-001",
+          "classification": "public",
+          "quarantine_status": "none",
+          "redaction_status": "not_required",
+          "sourceRefs": ["logs/runtime.log:L10"]
+        }
+      ],
+      "records": []
+    },
+    "actor": "test-actor",
+    "tenant": {
+      "organization_id": "org-001",
+      "workspace_id": "ws-001"
+    }
+  },
+  "expected": {
+    "import_status": "accepted",
+    "validation_results": {
+      "schema_valid": true,
+      "hash_valid": true,
+      "sourceRefs_valid": true,
+      "artifact_safety_valid": true
+    },
+    "summary": {
+      "accepted": true,
+      "unsafe_artifacts_count": 0
+    }
+  }
+}

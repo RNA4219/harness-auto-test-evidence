@@ -1,0 +1,33 @@
+{
+  "description": "O(N^2)-like comparison counter is hard DQ.",
+  "input": {
+    "scenario_id": "quadratic-risk",
+    "profile": "product",
+    "dataset_shape": {
+      "tests": 100000,
+      "coverage_records": 100000,
+      "artifact_metadata": 1000,
+      "graph_nodes": 100000,
+      "graph_edges": 200000
+    },
+    "observed_ms": {
+      "ingest": 100000,
+      "validation": 50000,
+      "graph_build": 90000,
+      "store_index": 40000,
+      "replay": 60000,
+      "report_generation": 30000
+    },
+    "estimated_counters": {
+      "pairwise_comparisons": 10000000000,
+      "pagination_tested": true,
+      "cache_invalidation_tested": true
+    },
+    "sourceRefs": ["fixtures/scale/performance/quadratic-risk/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "blocked",
+    "readiness_effect": "hard_dq",
+    "finding_code": "quadratic_complexity_risk"
+  }
+}

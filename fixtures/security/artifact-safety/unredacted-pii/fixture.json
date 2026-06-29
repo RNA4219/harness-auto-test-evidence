@@ -1,0 +1,6 @@
+{
+  "artifact_id": "unredacted-pii",
+  "artifact_path": "logs/customer.log",
+  "profile": "release",
+  "content": "customer email bob.smith@example.com called from +1 212-555-7890"
+}

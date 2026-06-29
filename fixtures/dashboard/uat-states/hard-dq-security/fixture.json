@@ -1,0 +1,57 @@
+{
+  "description": "Hard DQ due to security/adapter failure - cannot proceed",
+  "input": {
+    "readiness_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "product_readiness_report",
+      "summary": {
+        "overall_status": "block",
+        "claim_count": 10,
+        "unsupported_claim_count": 0,
+        "contradiction_count": 0,
+        "hard_dq_count": 1
+      },
+      "graph_summary": {},
+      "unsupported_claims": [],
+      "contradictions": [],
+      "hard_dqs": [
+        {
+          "dq_id": "dq-001",
+          "type": "adapter_parse_failure",
+          "severity": "critical",
+          "reason": "JUnit XML parse error: invalid format",
+          "sourceRef": "adapters/junit.py:parse_check"
+        }
+      ],
+      "soft_gaps": [],
+      "sourceRefs": ["reports/product-readiness-report.json"]
+    },
+    "artifact_safety_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "artifact-safety-report",
+      "artifact_id": "artifact-failed-001",
+      "classification": "internal",
+      "quarantine_required": false,
+      "redaction_required": false,
+      "readiness_effect": "block",
+      "findings": [],
+      "sourceRefs": ["reports/artifact-safety-report.json"]
+    },
+    "run_id": "run-hard-dq-001",
+    "profile": "product"
+  },
+  "expected": {
+    "state_type": "hard_dq_security",
+    "overall_status": "block",
+    "hard_dq_count": 1,
+    "severity": "critical",
+    "cannot_proceed_without_resolution": true,
+    "ui_requirements": [
+      "show_hard_dq_reason",
+      "show_severity_not_color_only",
+      "link_to_sourceRefs",
+      "cannot_proceed_without_resolution",
+      "show_remediation_actions"
+    ]
+  }
+}

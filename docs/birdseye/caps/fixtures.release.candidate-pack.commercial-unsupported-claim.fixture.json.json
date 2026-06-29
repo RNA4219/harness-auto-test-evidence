@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/release/candidate-pack/commercial-unsupported-claim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b64a97f5bb57e0591a7ff13d3c6836e45bd3bb74e12b4671c6f3981bd28728a1",
+  "line_count": 19,
+  "size_bytes": 684,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release"
+  ]
+}

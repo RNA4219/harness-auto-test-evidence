@@ -173,6 +173,24 @@ requirements portfolio は `REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md` を
 | Assurance | audit fixture と evidence room は unsafe artifact を含めない |
 | Portfolio | owner / acceptance / dependency / WIP を追跡する |
 
+### 7.1 RBAC / Audit Projection Contract
+
+`enterprise-control-report` は connector dry-run に加えて、local-first の
+RBAC decision と audit event projection を保持する。対象 resource は
+run、artifact、report、manual_review、export、admin、audit とし、role は
+admin、maintainer、reviewer、auditor、viewer を最小集合とする。
+
+RBAC decision は `actor`、`role`、`action`、`resource`、`decision`、
+`reason`、`allowed_scope`、`sourceRefs` を持ち、precheck / QEG / release の
+readiness verdict を変更してはならない。quarantined artifact は raw content
+ではなく safe metadata のみを許可し、raw export は deny として audit event に
+接続する。
+
+Audit event は read、export、review、quarantine、release、admin operation を
+記録し、`actor`、`action`、`resource`、`decision`、`reason`、`timestamp`、
+`sourceRefs` を必須とする。必須 audit event が欠ける場合は enterprise report
+上の hold finding とし、core evidence verdict の上書きには使わない。
+
 ## 8. Domain Model
 
 Enterprise-ready なプロダクトでは、単発 run ではなく account model が必要である。
@@ -298,6 +316,20 @@ required docs、audience、source_contracts、freshness、verification の詳細
 | HATE-PROD-023 | `LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md` に従って contracting / procurement response を設計する | P2 |
 | HATE-PROD-024 | `AUDIT_FIXTURE_ASSURANCE_CONTRACT.md` に従って audit fixture / assurance pack を設計する | P2 |
 | HATE-PROD-025 | `REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md` に従って requirements portfolio / WIP governance を設計する | P1 |
+
+## 14. SSO / SCIM Dry-Run Connector Contract
+
+SSO / SCIM connector は enterprise enablement であり、P0/P1 の precheck や
+product-ready verdict を上書きしない。実装は dry-run を既定とし、外部 IdP /
+SCIM endpoint への live network call は行わない。
+
+- SSO dry-run は issuer / audience / claim / group / role mapping を検証する。
+- missing required claim、unsupported claim、invalid issuer は hold/manual review として報告する。
+- SCIM dry-run は user/group create/update preview を出すが、delete/purge 系の destructive action は denied action とする。
+- disabled connector と connector failure は non-gating warning とし、canonical bundle を変更しない。
+- diagnostic には connector token、client secret、private URL、raw artifact を含めない。
+- SIEM / warehouse / ticketing / support connector は safe payload preview のみを出し、unsafe artifact export は hard DQ として止める。
+- evidence は `enterprise-control-report.json` の connector dry-run section と audit refs に残す。
 
 ## 14. Non-Goals
 

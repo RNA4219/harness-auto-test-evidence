@@ -2,9 +2,9 @@
   "path": "src/hate/p2p3_readiness.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "62cd04894213e639a95b69fce620649c921f1e8cbebcdc5fb089ff13c2b3834d",
-  "line_count": 201,
-  "size_bytes": 8831,
+  "sha256": "8c56e76c1083d2f71e4801e2c5a02ba9770c17dac6c7688a99c0e925c9263bc1",
+  "line_count": 329,
+  "size_bytes": 14212,
   "headings": [],
   "imports": [
     "__future__",
@@ -14,9 +14,7 @@
   "links": [],
   "depends_on": [],
   "tags": [
-    "adapter",
     "artifact",
-    "birdseye",
     "coverage",
     "enterprise",
     "fixture",

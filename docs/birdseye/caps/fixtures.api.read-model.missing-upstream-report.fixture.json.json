@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/read-model/missing-upstream-report/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ca1eda4618c05991c7707069a5fa6cff32b4cbc3c7a7a3b3b72e5b1d67248d84",
+  "line_count": 21,
+  "size_bytes": 571,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "coverage",
+    "fixture"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "Support safe bundle dry-run payload excludes raw artifacts.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-support-safe",
+      "support_bundle": {
+        "connector_id": "support-safe",
+        "provider": "SupportDesk",
+        "payload_kind": "safe_diagnostic_bundle",
+        "support_bundle_preview": [
+          {"bundle_id": "diag-001", "safe_metadata_only": true, "sourceRef": "support/bundles/0"}
+        ],
+        "sourceRef": "reports/support-safe-bundle.json"
+      },
+      "sourceRefs": ["fixtures/connectors/ops/support-safe-bundle/fixture.json"]
+    },
+    "connector_config": {"enabled": true, "dry_run": true}
+  },
+  "expected": {
+    "mode": "support",
+    "status": "preview",
+    "readiness_effect": "pass",
+    "payload_kind": "safe_diagnostic_bundle"
+  }
+}

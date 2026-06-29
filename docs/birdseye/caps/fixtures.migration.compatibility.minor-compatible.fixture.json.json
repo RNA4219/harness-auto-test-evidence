@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/migration/compatibility/minor-compatible/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "73dbbedb04c20faaf0c2f860840bdc0492a1c051cecaa93870934d771e0340df",
+  "line_count": 31,
+  "size_bytes": 869,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

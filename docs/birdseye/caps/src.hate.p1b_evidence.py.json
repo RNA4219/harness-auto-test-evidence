@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/p1b_evidence.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "6d13d188e02e9d713e6c370aab7c93e122ac0693cd4df52b26f881b99a9c4d93",
+  "line_count": 78,
+  "size_bytes": 3123,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "schema",
+    "workflow"
+  ]
+}

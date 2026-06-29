@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_performance_budget.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "44fb11ca03105138df31e7aa38a9fdc54e3b6310520e19a39cc7499a27279797",
+  "line_count": 110,
+  "size_bytes": 4138,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.scale",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

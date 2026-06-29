@@ -2,9 +2,9 @@
   "path": "tests/test_p2p3.py",
   "role": "test",
   "kind": "py",
-  "sha256": "dc937f6a4050f2a22dba0ac34ca54d6bd79a81a38aa3c18b2176fd609900f941",
-  "line_count": 812,
-  "size_bytes": 45175,
+  "sha256": "0a1654da447a5d65908bc5ea53658fb7518b4500fc5ac4575b81de1be2133889",
+  "line_count": 832,
+  "size_bytes": 46440,
   "headings": [],
   "imports": [
     "__future__",
@@ -21,8 +21,7 @@
   ],
   "links": [],
   "depends_on": [
-    "src/hate/p2p3.py",
-    "src/hate/store.py"
+    "src/hate/p2p3.py"
   ],
   "tags": [
     "artifact",

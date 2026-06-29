@@ -1,0 +1,22 @@
+{
+  "description": "Negative fixture: partial write with incomplete manifest",
+  "expected_error": "Atomic write failed",
+  "bundle_data": {
+    "schema_version": "HATE/v1",
+    "record_type": "qeg_bundle",
+    "nodes": [
+      {
+        "id": "test-partial-001",
+        "kind": "test_result",
+        "status": "passed"
+      }
+    ],
+    "_partial_write_marker": true
+  },
+  "manifest_state": {
+    "completed": false,
+    "import_status": {
+      "phase": "interrupted"
+    }
+  }
+}

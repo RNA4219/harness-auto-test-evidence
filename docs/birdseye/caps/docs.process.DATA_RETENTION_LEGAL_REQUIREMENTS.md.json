@@ -2,9 +2,9 @@
   "path": "docs/process/DATA_RETENTION_LEGAL_REQUIREMENTS.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "3a1e1af73db54140e2ce365d5e0533810aa6c575613a7bdba51df613ce0b6ce9",
-  "line_count": 125,
-  "size_bytes": 4487,
+  "sha256": "e9370f51e35020ba468fa1cb4f19be6097a9a169fbac630abb24ac47f3145d9b",
+  "line_count": 143,
+  "size_bytes": 5620,
   "headings": [
     "# Data Retention and Legal Requirements",
     "## 1. Purpose",
@@ -14,7 +14,8 @@
     "## 5. Customer Export and Deletion",
     "## 6. Audit Requirements",
     "## 7. Legal and Commercial Truthfulness",
-    "## 8. Product-Ready Gate"
+    "## 8. Product-Ready Gate",
+    "## 9. Enterprise Control Evaluation"
   ],
   "imports": [],
   "links": [],

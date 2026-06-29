@@ -1,0 +1,31 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "coverage-without-evidence",
+  "description": "Positive fixture: coverage percentage alone without meaningful oracle",
+  "coverage_records": [
+    {
+      "coverage_id": "cov-001",
+      "payload": {
+        "coverage_percentage": 92.5,
+        "covered_lines": ["src/auth.py:10", "src/auth.py:20", "src/auth.py:30"],
+        "executed_tests": [],
+        "risk_ref": ""
+      }
+    }
+  ],
+  "evidence_records": [],
+  "risk_matrix_entries": [],
+  "expected_findings": [
+    {
+      "evidence_class": "coverage_without_evidence",
+      "coverage_classification": "coverage_only",
+      "severity": "medium",
+      "readiness_effect": "soft_gap",
+      "has_executed_tests": false,
+      "has_oracle": false,
+      "manual_review_required": true
+    }
+  ],
+  "expected_status": "soft_gap"
+}

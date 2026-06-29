@@ -1,0 +1,33 @@
+{
+  "description": "Moderately over budget holds product profile.",
+  "input": {
+    "scenario_id": "budget-hold",
+    "profile": "product",
+    "dataset_shape": {
+      "tests": 100000,
+      "coverage_records": 10000000,
+      "artifact_metadata": 100000,
+      "graph_nodes": 500000,
+      "graph_edges": 2000000
+    },
+    "observed_ms": {
+      "ingest": 420000,
+      "validation": 120000,
+      "graph_build": 180000,
+      "store_index": 90000,
+      "replay": 120000,
+      "report_generation": 60000
+    },
+    "estimated_counters": {
+      "pairwise_comparisons": 1000000,
+      "pagination_tested": true,
+      "cache_invalidation_tested": false
+    },
+    "sourceRefs": ["fixtures/scale/performance/budget-hold/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "readiness_effect": "hold",
+    "operation": "ingest"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "input": {
+    "bundle_id": "diag-unsafe-001",
+    "created_at": "2026-06-30T00:00:00+00:00",
+    "sourceRefs": ["fixtures/support-ops/diagnostics/raw-artifact-in-bundle/fixture.json"],
+    "artifacts": [
+      {
+        "artifact_id": "artifact-raw-001",
+        "kind": "log",
+        "classification": "restricted",
+        "redaction_status": "failed",
+        "quarantine_status": "quarantined",
+        "raw_artifact_content": "customer source code with password=abc123",
+        "sourceRef": "raw.log"
+      }
+    ],
+    "findings": []
+  },
+  "expected": {
+    "export_ready": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/p1a_internal/retry_aggregation.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ee78c0243c8de569cc0ff59ec023ee253dba1b81a598bf63a1940db13255e7a1",
+  "line_count": 142,
+  "size_bytes": 5964,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p1a_internal.identity",
+    "hate.p1a_io",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a_internal/identity.py",
+    "src/hate/p1a_io.py"
+  ],
+  "tags": [
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

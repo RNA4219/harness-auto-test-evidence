@@ -1,0 +1,17 @@
+{
+  "path": "schemas/api/api-authz-decision.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "400f1e14243971b58f67c563a21f280b7c7a3f7eff473a8ef587e1f548a567fd",
+  "line_count": 103,
+  "size_bytes": 2867,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "schema"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/safe-diagnostic-bundle.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "8eae24a7554f9532d715b4f31ff43aa98f8bd6547ac6df99af718921ff3d328b",
+  "line_count": 192,
+  "size_bytes": 4531,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

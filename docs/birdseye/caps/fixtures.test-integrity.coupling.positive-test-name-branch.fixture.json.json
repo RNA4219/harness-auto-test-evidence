@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/coupling/positive-test-name-branch.fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3ef7d364480ff7fb2142748c241bbb780fa6fee89cb70c39620f320bfc87afbe",
+  "line_count": 26,
+  "size_bytes": 889,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_enterprise_retention_legal_hold.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "c56f5185fc8c1cc2cb3a5e41e060f3437c9da3b6bdd971f9e2065cdf08faa61f",
+  "line_count": 118,
+  "size_bytes": 4252,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.enterprise",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

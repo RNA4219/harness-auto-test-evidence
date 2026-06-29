@@ -1,0 +1,47 @@
+{
+  "description": "Unsupported claim in product readiness report - cannot claim product-ready",
+  "input": {
+    "readiness_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "product_readiness_report",
+      "summary": {
+        "overall_status": "hold",
+        "claim_count": 10,
+        "unsupported_claim_count": 2,
+        "contradiction_count": 0,
+        "hard_dq_count": 0
+      },
+      "graph_summary": {},
+      "unsupported_claims": [
+        {
+          "claim_id": "claim-001",
+          "reason": "Missing evidence for performance claim",
+          "sourceRef": "product-readiness-report.json:claim-001"
+        },
+        {
+          "claim_id": "claim-002",
+          "reason": "Missing evidence for security claim",
+          "sourceRef": "product-readiness-report.json:claim-002"
+        }
+      ],
+      "contradictions": [],
+      "hard_dqs": [],
+      "soft_gaps": [],
+      "sourceRefs": ["reports/product-readiness-report.json"]
+    },
+    "run_id": "run-unsupported-claim-001",
+    "profile": "product"
+  },
+  "expected": {
+    "state_type": "unsupported_claim",
+    "overall_status": "hold",
+    "unsupported_claim_count": 2,
+    "cannot_claim_product_ready": true,
+    "ui_requirements": [
+      "show_unsupported_claim_count",
+      "link_to_claim_sourceRefs",
+      "show_reason_for_unsupported",
+      "cannot_claim_product_ready"
+    ]
+  }
+}

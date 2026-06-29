@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/store/local/partial-write/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7ebbd202acd6bc4a2450de11c077762a8233259090c46a4943845e492aca150a",
+  "line_count": 22,
+  "size_bytes": 485,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

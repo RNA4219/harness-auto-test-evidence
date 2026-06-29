@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/security/redaction/private-url-redacted/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "be8989ad46f55caae1537c5041a7688e9f8320805dd1ca8731b3eddbf0b76127",
+  "line_count": 12,
+  "size_bytes": 620,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

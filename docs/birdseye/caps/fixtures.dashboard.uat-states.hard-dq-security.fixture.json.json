@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/dashboard/uat-states/hard-dq-security/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2713ef6d6ca09dfc73e3139e0f99ee0826c243ba3f1dc2942e9699aa94696ab7",
+  "line_count": 57,
+  "size_bytes": 1684,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

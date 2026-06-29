@@ -1,0 +1,14 @@
+{
+  "input": {
+    "release_id": "rc-legal-hold",
+    "source_version": "abc123",
+    "required_reports": ["store_manifest", "migration-compatibility-report", "commercial-truthfulness-report"],
+    "reports": [
+      {"record_type": "store_manifest", "report_id": "store", "status": "pass", "legal_hold": true, "sourceRefs": ["store-manifest.json"]},
+      {"record_type": "migration-compatibility-report", "report_id": "migration", "status": "pass", "legal_hold_active": true, "sourceRefs": ["migration-compatibility-report.json"]},
+      {"record_type": "commercial-truthfulness-report", "report_id": "commercial", "status": "pass", "summary": {"unsupported_claim_count": 0, "release_eligible_claim_count": 1}, "sourceRefs": ["commercial-truthfulness-report.json"]}
+    ],
+    "evidence_room_artifacts": []
+  },
+  "expected": {"held_report_refs": ["migration", "store"]}
+}

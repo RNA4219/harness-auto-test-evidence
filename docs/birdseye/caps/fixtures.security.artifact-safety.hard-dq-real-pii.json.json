@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/artifact-safety/hard-dq-real-pii.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "463ff3439d9faea9145d9aff1a7941b88827f4f7241968dcd83969d150fd08b8",
+  "line_count": 23,
+  "size_bytes": 603,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "security"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/p1a_internal/aete_scoring.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ac9d88a86b50c9e50264517276f0b8eb1e032c3ca8d6a524ac3a22671baa123e",
+  "line_count": 158,
+  "size_bytes": 7125,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p1a_internal.doctor_report",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a_internal/doctor_report.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "qeg",
+    "test"
+  ]
+}

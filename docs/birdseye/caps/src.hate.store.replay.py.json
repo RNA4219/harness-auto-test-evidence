@@ -1,0 +1,35 @@
+{
+  "path": "src/hate/store/replay.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f57aa9c8dc3facd987000640ba403058fce66b0dfb75b6bcfcbb9c372df2fa0f",
+  "line_count": 415,
+  "size_bytes": 13356,
+  "headings": [
+    "# Supported schema versions for replay",
+    "# Schema versions that require migration (not direct replay)"
+  ],
+  "imports": [
+    ".atomic_write",
+    ".indexes",
+    ".local_store",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "hashlib",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/local_store.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

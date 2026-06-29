@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_api_read_model_inventory.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "125118f5921b7133a8176d990a50e4010868c0cfbb7b8e42be2ac640af61e0ec",
+  "line_count": 104,
+  "size_bytes": 3198,
+  "headings": [
+    "# ============================================================================",
+    "# Comprehensive Resource Inventory Tests",
+    "# ============================================================================"
+  ],
+  "imports": [
+    "__future__",
+    "hate.api",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "schema",
+    "store",
+    "test"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "description": "SCIM provisioning with mismatch - produces hold/manual review.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-005",
+      "scim_provisioning": {
+        "diff_id": "scim-002",
+        "provider": "AzureAD",
+        "users_added": [],
+        "users_removed": [],
+        "users_modified": [
+          {
+            "user_id": "user-001",
+            "attributes": {"role": "viewer"},
+            "sourceRef": "reports/scim-users.json#user-001"
+          }
+        ],
+        "groups_added": [],
+        "groups_removed": [],
+        "groups_modified": [
+          {
+            "group_id": "group-admins",
+            "members": ["user-002"],
+            "sourceRef": "reports/scim-groups.json#group-admins"
+          }
+        ],
+        "current_users": [
+          {"user_id": "user-001"}
+        ],
+        "current_groups": [
+          {"group_id": "group-admins"}
+        ],
+        "sourceRef": "reports/scim-provisioning.json"
+      },
+      "sourceRefs": ["reports/enterprise-control-report.json"]
+    },
+    "provisioning_config": {
+      "expected_users": ["user-001"],
+      "expected_groups": ["group-admins"],
+      "user_attributes": {"role": "admin"},
+      "group_members": {"group-admins": ["user-001"]}
+    }
+  },
+  "expected": {
+    "diff_id": "scim-002",
+    "status": "mismatch",
+    "mismatch_count": 2,
+    "mismatches_contain_entities": ["user-001", "group-admins"],
+    "manual_review_required": true,
+    "hold_reason_contains": "Provisioning mismatches",
+    "has_sourceRefs": true
+  }
+}

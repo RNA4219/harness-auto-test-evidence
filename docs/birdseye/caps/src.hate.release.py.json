@@ -2,18 +2,21 @@
   "path": "src/hate/release.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "2bd232cd2a32906918b69a08c39eafed23e0c4fbcef01061045240115fd12ad1",
-  "line_count": 99,
-  "size_bytes": 4279,
+  "sha256": "ae637e4fb764caa1449d0bc937bfeb15b0d5a49561df002371e82bfaa948547e",
+  "line_count": 339,
+  "size_bytes": 14425,
   "headings": [],
   "imports": [
     "__future__",
+    "hashlib",
+    "json",
     "typing"
   ],
   "links": [],
   "depends_on": [],
   "tags": [
     "adapter",
+    "api",
     "artifact",
     "enterprise",
     "fixture",
@@ -21,6 +24,7 @@
     "release",
     "schema",
     "security",
-    "store"
+    "store",
+    "test"
   ]
 }

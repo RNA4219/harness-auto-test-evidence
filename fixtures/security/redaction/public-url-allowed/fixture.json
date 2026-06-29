@@ -1,0 +1,10 @@
+{
+  "artifact_id": "public-doc-url-003",
+  "artifact_path": "docs/api_reference.md",
+  "profile": "default",
+  "content": "# API Reference\n\nFor more details, see:\n- Python docs: https://docs.python.org/3/library/\n- PyPI packages: https://pypi.org/project/harness/\n- GitHub repo: https://github.com/example/harness\n\nAll external URLs are allowlisted public documentation.\n",
+  "expected_redaction_status": "not_required",
+  "expected_classification": "public",
+  "expected_readiness_effect": "pass",
+  "expected_redactions_count": 0
+}

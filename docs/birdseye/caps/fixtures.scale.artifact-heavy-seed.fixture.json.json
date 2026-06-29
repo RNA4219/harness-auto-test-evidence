@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/artifact-heavy-seed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6aa889ba736e95353e71e592c8b1be79ec8122ee506601b41d45236a67748d1d",
+  "line_count": 23,
+  "size_bytes": 664,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "input": {
+    "resource": {
+      "resource_id": "bundle-migration-lost-hold-001",
+      "resource_type": "canonical_bundle",
+      "classification": "confidential",
+      "retention_policy_id": "retention-confidential-180",
+      "expires_at": "2027-01-01T00:00:00+00:00",
+      "legal_hold": {
+        "status": "inactive",
+        "reason": "migration output",
+        "held_since": "2026-06-01T00:00:00+00:00",
+        "authorized_by": "migration"
+      },
+      "before_migration": {
+        "legal_hold": {
+          "status": "active",
+          "reason": "litigation hold",
+          "held_since": "2026-01-10T00:00:00+00:00",
+          "authorized_by": "legal-001"
+        }
+      },
+      "after_migration": {
+        "legal_hold": {
+          "status": "inactive",
+          "reason": "migration output",
+          "held_since": "2026-06-01T00:00:00+00:00",
+          "authorized_by": "migration"
+        }
+      },
+      "sourceRefs": ["fixtures/enterprise/retention-legal-hold/legal-hold-lost/fixture.json"]
+    },
+    "policy": {
+      "policy_id": "retention-confidential-180",
+      "retention_days": 180
+    },
+    "profile": "release"
+  },
+  "expected": {
+    "reason": "legal_hold_lost"
+  }
+}

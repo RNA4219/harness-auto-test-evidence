@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_empty_stub_service",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/stubs/test_empty_mock.py:10",
+  "description": "Empty stub mock - no behavior defined",
+  "expected_signal": "mock_abuse_detected",
+  "expected_classification": "empty_stub",
+  "code": "def test_empty_stub_service():\n    # Empty stub with no behavior\n    mock_service = Mock()\n    # No return_value, no side_effect defined\n    result = mock_service.process()\n    assert result is not None  # Trivial assertion",
+  "mock_targets": [
+    {
+      "target": "service",
+      "context": "internal domain mock",
+      "mock_code": "Mock()",
+      "line_number": 3
+    }
+  ],
+  "assertions": [
+    {
+      "text": "assert result is not None",
+      "line_number": 6
+    }
+  ]
+}

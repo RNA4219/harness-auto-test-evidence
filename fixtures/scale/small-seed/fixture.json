@@ -1,0 +1,25 @@
+{
+  "description": "Small deterministic smoke profile.",
+  "input": {
+    "fixture_id": "small-seed",
+    "seed": "hate-scale-small-001",
+    "target_tests": 1000,
+    "target_coverage_records": 10000,
+    "target_artifact_metadata": 100,
+    "target_risks": 25,
+    "target_graph_nodes": 5000,
+    "target_graph_edges": 20000,
+    "adapter_count": 1,
+    "shard_count": 2,
+    "max_edge_fanout": 8,
+    "generation_profile": "ci_smoke"
+  },
+  "expected": {
+    "status": "pass",
+    "tests": 1000,
+    "coverage_records": 10000,
+    "artifact_metadata": 100,
+    "graph_nodes": 5000,
+    "graph_edges": 20000
+  }
+}

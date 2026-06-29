@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/risk_matrix_types.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f5c72c3c09dca39a878048b6ee2e50397b35566fce88db0e871a58c31901c35e",
+  "line_count": 162,
+  "size_bytes": 4232,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage"
+  ]
+}

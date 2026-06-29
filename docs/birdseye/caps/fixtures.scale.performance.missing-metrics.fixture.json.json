@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/scale/performance/missing-metrics/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c3f8458e408b015f16257132c710e0d05333bfd18af8c42fbd55714583c76272",
+  "line_count": 31,
+  "size_bytes": 889,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "release",
+    "store",
+    "test"
+  ]
+}

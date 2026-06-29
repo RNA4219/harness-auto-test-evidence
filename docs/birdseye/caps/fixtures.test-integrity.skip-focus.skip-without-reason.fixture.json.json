@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/skip-focus/skip-without-reason/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4171e96d9ddf9a0070f3823cec0e57babbc84e85b19fa5912a7e828ff8b58c0f",
+  "line_count": 37,
+  "size_bytes": 891,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "test"
+  ]
+}

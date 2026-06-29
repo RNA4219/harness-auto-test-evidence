@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "fixture-name-branch",
+  "description": "Positive fixture: production code branches on fixture name (fixture_name_branch coupling)",
+  "production_sources": [
+    {
+      "file_path": "src/feature_y.py",
+      "code": "def load_config(source):\n    if source == 'fixture_golden_config':\n        return get_test_config()\n    return get_prod_config()\n",
+      "source_ref": "prod:src/feature_y.py",
+      "test_ids": [],
+      "fixture_names": ["fixture_golden_config"]
+    }
+  ],
+  "expected_findings": [
+    {
+      "evidence_class": "implementation_test_coupling",
+      "classification": "fixture_name_branch",
+      "severity": "high",
+      "readiness_effect": "hold",
+      "manual_review_required": true,
+      "required_human_decision": "verify_coupling_or_remove_branch"
+    }
+  ],
+  "expected_status": "hold"
+}

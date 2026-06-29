@@ -1,0 +1,25 @@
+{
+  "description": "Authorization denied for external export with reader role on confidential artifact",
+  "input": {
+    "actor": "test-reader",
+    "tenant": {
+      "organization_id": "org-001",
+      "workspace_id": "ws-001"
+    },
+    "export_surface": "external_export",
+    "artifacts": [
+      {
+        "artifact_id": "artifact-confidential-001",
+        "classification": "confidential",
+        "quarantine_status": "none",
+        "redaction_status": "not_required"
+      }
+    ],
+    "role": "reader"
+  },
+  "expected": {
+    "decision": "denied",
+    "reason_code": "HATE-API-PRIV-EXPORT-BLOCKED",
+    "tenant_hashed": true
+  }
+}

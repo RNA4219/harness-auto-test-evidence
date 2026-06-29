@@ -1,0 +1,42 @@
+{
+  "description": "Manual review required and pending - owner visible",
+  "input": {
+    "manual_review_requests": [
+      {
+        "request_id": "review-001",
+        "status": "pending",
+        "owner": "qa-lead@example.com",
+        "risk_ref": "risk-coverage-matrix.json:risk-high-001",
+        "evidence_type": "manual_test",
+        "expires_at": "2026-07-15T00:00:00Z",
+        "sourceRef": "manual-review-request.json:request-001"
+      },
+      {
+        "request_id": "review-002",
+        "status": "pending",
+        "owner": "developer@example.com",
+        "risk_ref": "risk-coverage-matrix.json:risk-medium-001",
+        "evidence_type": "exploratory_test",
+        "expires_at": "2026-06-25T00:00:00Z",
+        "sourceRef": "manual-review-request.json:request-002"
+      }
+    ],
+    "run_id": "run-manual-review-001",
+    "profile": "product"
+  },
+  "expected": {
+    "state_type": "manual_review_pending",
+    "overall_status": "hold",
+    "total_count": 2,
+    "overdue_count": 1,
+    "has_owner_visible": true,
+    "has_expiry_visible": true,
+    "cannot_claim_complete_until_human_record": true,
+    "ui_requirements": [
+      "show_owner_visible",
+      "show_expiry_overdue_status",
+      "link_to_risk_ref_sourceRefs",
+      "cannot_claim_complete_until_human_record"
+    ]
+  }
+}

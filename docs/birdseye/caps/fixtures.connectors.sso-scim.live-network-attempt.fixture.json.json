@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/connectors/sso-scim/live-network-attempt/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "50ce781e9dc6bd70c0b04558947bfadcf2b6c9b010eef224760b382f45956596",
+  "line_count": 48,
+  "size_bytes": 1435,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

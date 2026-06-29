@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/redaction/redacted-pii-success/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b1cce8992f3b23e908bd5face6295ddc5cc928c13c08d62d628b7bd75d6206e8",
+  "line_count": 12,
+  "size_bytes": 557,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "security"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/coupling/manual-review-expired/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fa09668acbc2d46de7117186a437dc3f77724beabf6cc01985ecc32b8dd71457",
+  "line_count": 36,
+  "size_bytes": 1055,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

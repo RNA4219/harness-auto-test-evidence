@@ -1,0 +1,25 @@
+{
+  "description": "Authorization allowed for internal surface with maintainer role",
+  "input": {
+    "actor": "test-maintainer",
+    "tenant": {
+      "organization_id": "org-001",
+      "workspace_id": "ws-001"
+    },
+    "export_surface": "internal",
+    "artifacts": [
+      {
+        "artifact_id": "artifact-internal-001",
+        "classification": "internal",
+        "quarantine_status": "none",
+        "redaction_status": "not_required"
+      }
+    ],
+    "role": "maintainer"
+  },
+  "expected": {
+    "decision": "allowed",
+    "reason_code": "HATE-API-AUTH-ALLOWED",
+    "scopes": ["public", "internal", "confidential"]
+  }
+}

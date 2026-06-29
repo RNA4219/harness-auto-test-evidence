@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/source-ref-cardinality/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f3b49bfc493a9b077244dac48b3b79a624a5e4a1f8d1d7a2b39f5170a3ee33e0",
+  "line_count": 22,
+  "size_bytes": 600,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

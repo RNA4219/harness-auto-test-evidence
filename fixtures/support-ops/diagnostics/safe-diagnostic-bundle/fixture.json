@@ -1,0 +1,33 @@
+{
+  "input": {
+    "bundle_id": "diag-safe-001",
+    "created_at": "2026-06-30T00:00:00+00:00",
+    "export_surface": "support",
+    "sourceRefs": ["fixtures/support-ops/diagnostics/safe-diagnostic-bundle/fixture.json"],
+    "context": {
+      "command": "hate doctor --bundle",
+      "path_hint": "C:\\Users\\ryo-n\\project\\artifact.log",
+      "token_hint": "tok_live_secret"
+    },
+    "artifacts": [
+      {
+        "artifact_id": "artifact-safe-001",
+        "kind": "report",
+        "classification": "internal",
+        "redaction_status": "redacted",
+        "quarantine_status": "none",
+        "path_hint": "C:\\Users\\ryo-n\\project\\safe-report.json",
+        "sourceRef": "safe-report.json"
+      }
+    ],
+    "findings": [
+      {
+        "code": "optional_export_failed",
+        "sourceRef": "enterprise-control-report.json#/connectors/siem"
+      }
+    ]
+  },
+  "expected": {
+    "export_ready": true
+  }
+}

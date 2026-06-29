@@ -1,0 +1,30 @@
+{
+  "description": "Export blocked for raw quarantined artifact with redaction failure - no safe metadata",
+  "input": {
+    "artifacts": [
+      {
+        "artifact_id": "artifact-redaction-failed-001",
+        "classification": "restricted",
+        "quarantine_status": "none",
+        "redaction_status": "failed"
+      }
+    ],
+    "actor": "test-actor",
+    "tenant": {
+      "organization_id": "org-001",
+      "workspace_id": "ws-001"
+    },
+    "export_surface": "summary",
+    "role": "developer"
+  },
+  "expected": {
+    "export_status": "blocked",
+    "readiness_effect": "hard_dq",
+    "excluded_artifacts": [
+      {
+        "exclusion_reason": "redaction_failed",
+        "safe_metadata": null
+      }
+    ]
+  }
+}

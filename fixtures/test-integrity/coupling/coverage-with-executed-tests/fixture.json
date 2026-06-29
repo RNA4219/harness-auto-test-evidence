@@ -1,0 +1,31 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "coverage-with-executed-tests",
+  "description": "Negative fixture: coverage with executed tests AND oracle - acceptable evidence",
+  "coverage_records": [
+    {
+      "coverage_id": "cov-002",
+      "payload": {
+        "coverage_percentage": 88.0,
+        "covered_lines": ["src/api.py:15", "src/api.py:25"],
+        "executed_tests": ["test_api_get", "test_api_post"],
+        "risk_ref": ""
+      }
+    }
+  ],
+  "evidence_records": [
+    {
+      "record_type": "execution_evidence",
+      "payload": {
+        "expected_value": "200 OK",
+        "actual_value": "200 OK",
+        "test_ref": "test_api_get"
+      }
+    }
+  ],
+  "risk_matrix_entries": [],
+  "expected_findings": [],
+  "expected_status": "pass",
+  "notes": "Coverage with executed tests AND oracle - acceptable evidence"
+}

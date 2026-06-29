@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/performance/budget-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ebef3e835b1cc50529e61304bf1dce621398e011df49981b82215ade93b2fdb8",
+  "line_count": 33,
+  "size_bytes": 854,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "store",
+    "test"
+  ]
+}

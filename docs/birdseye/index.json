@@ -1,5 +1,5 @@
 {
-  "generated_at": "f77f0a1e941e",
+  "generated_at": "bf7ab8988d12",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -103,9 +103,9 @@
     "docs/process/DATA_RETENTION_LEGAL_REQUIREMENTS.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.DATA_RETENTION_LEGAL_REQUIREMENTS.md.json",
-      "sha256": "3a1e1af73db54140e2ce365d5e0533810aa6c575613a7bdba51df613ce0b6ce9",
-      "line_count": 125,
-      "size_bytes": 4487
+      "sha256": "e9370f51e35020ba468fa1cb4f19be6097a9a169fbac630abb24ac47f3145d9b",
+      "line_count": 143,
+      "size_bytes": 5620
     },
     "docs/process/ENTERPRISE_DOMAIN_MODEL.md": {
       "role": "documentation",
@@ -117,9 +117,9 @@
     "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.ENTERPRISE_PRODUCT_REQUIREMENTS.md.json",
-      "sha256": "3f9a8831d4e796820e93104b7253240c24a6a28d32b730e298ac13b37bfe1e0d",
-      "line_count": 333,
-      "size_bytes": 24758
+      "sha256": "e556e62e423cc5609f053ca2b922ec9da5dd8024ff79898aa4b20e827d5a5845",
+      "line_count": 365,
+      "size_bytes": 26903
     },
     "docs/process/EPIC_TASK_PACKETS.md": {
       "role": "planning",
@@ -138,9 +138,9 @@
     "docs/process/EVALUATION.md": {
       "role": "quality",
       "caps": "docs/birdseye/caps/docs.process.EVALUATION.md.json",
-      "sha256": "2396f79e54c9a0157176717604a45c48c9499be75011b714730e889fe1c6ab4c",
-      "line_count": 517,
-      "size_bytes": 39077
+      "sha256": "7e7202283783db63c2e01378fff3fe3bf1875009807c9af31c1315e39e26b933",
+      "line_count": 524,
+      "size_bytes": 39594
     },
     "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md": {
       "role": "requirements",
@@ -152,9 +152,9 @@
     "docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md.json",
-      "sha256": "2abed10d0a91b394cbabf94a9448bc1359693117fa203bfad250de83f67930e9",
-      "line_count": 59,
-      "size_bytes": 2755
+      "sha256": "a5d56edca50d7fa56a3289421d2afd6944b5f1a654a07e69d211a65b102605cf",
+      "line_count": 88,
+      "size_bytes": 4560
     },
     "docs/process/GLM5_IMPLEMENTATION_PROMPT_PLAN.md": {
       "role": "documentation",
@@ -191,6 +191,13 @@
       "line_count": 435,
       "size_bytes": 12321
     },
+    "docs/process/IMPLEMENTATION_LEDGER.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.IMPLEMENTATION_LEDGER.md.json",
+      "sha256": "bfa3409cb2bd70197b08ec0f7c444654c85e1e5449d9a42ed29121498679c404",
+      "line_count": 56,
+      "size_bytes": 2532
+    },
     "docs/process/IMPLEMENTATION_ROADMAP_CHECKLIST.md": {
       "role": "planning",
       "caps": "docs/birdseye/caps/docs.process.IMPLEMENTATION_ROADMAP_CHECKLIST.md.json",
@@ -208,9 +215,9 @@
     "docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md.json",
-      "sha256": "44fc2082e689e90100d4bf91576a39913886c142c77b18234dda2f4de6179ed4",
-      "line_count": 104,
-      "size_bytes": 5271
+      "sha256": "70f456fa642fafc044b938af2d9775f2069f133892f524dd7aac0e20f6187440",
+      "line_count": 114,
+      "size_bytes": 6085
     },
     "docs/process/MANUAL_BB_GATE_FULL_IMPLEMENTATION.md": {
       "role": "documentation",
@@ -271,9 +278,9 @@
     "docs/process/PRODUCT_ERROR_TAXONOMY.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_ERROR_TAXONOMY.md.json",
-      "sha256": "4397ce68b06afe452052135bf8d5dcde5163227c03a6831e859d009ccc182bda",
-      "line_count": 160,
-      "size_bytes": 7512
+      "sha256": "ff74a81e486abc08b320f5a059f2be01006e3330e4808a5eedec68b217cd1870",
+      "line_count": 177,
+      "size_bytes": 8503
     },
     "docs/process/PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md": {
       "role": "requirements",
@@ -341,16 +348,16 @@
     "docs/process/REFACTORING_PLAN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.REFACTORING_PLAN.md.json",
-      "sha256": "be5b41cf795f404116e2b1b7c19278f5434ed44b0e6994925b2687100dc0b59b",
-      "line_count": 170,
-      "size_bytes": 7431
+      "sha256": "c89dfbf303267a851cdde841736eaee000ffca67a4cc23f4221a5893d9c759fc",
+      "line_count": 207,
+      "size_bytes": 10671
     },
     "docs/process/RELEASE_MIGRATION_POLICY.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.RELEASE_MIGRATION_POLICY.md.json",
-      "sha256": "b8a2b0bb8e1581ba2494a0ad685fc2cee9871a9c80f4a959150200c44249d26f",
-      "line_count": 120,
-      "size_bytes": 4161
+      "sha256": "d6363aef7a011e35bcc0ec26bb97e3ba2c343557b10b24021769e76cec5c340d",
+      "line_count": 177,
+      "size_bytes": 7611
     },
     "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md": {
       "role": "requirements",
@@ -362,23 +369,23 @@
     "docs/process/RISK_DEBT_REGISTER.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.RISK_DEBT_REGISTER.md.json",
-      "sha256": "c1c1bcda9202685fda570f8aac2e35b2dff3cccc30a88e7e4140b4f3736b4500",
-      "line_count": 145,
-      "size_bytes": 4875
+      "sha256": "764f823eb42299801179725d044afbb706b20591810a0f55cda5717ec8b6e613",
+      "line_count": 149,
+      "size_bytes": 5184
     },
     "docs/process/RUNBOOK.md": {
       "role": "operations",
       "caps": "docs/birdseye/caps/docs.process.RUNBOOK.md.json",
-      "sha256": "161e399dc97deeb28ea97fcb43fb3ef637cc6dbf97055f31325573fc5b625c71",
-      "line_count": 739,
-      "size_bytes": 57742
+      "sha256": "5672f2e191435a72cea7df41ba81afb9eb21e7d3b7b55dfa0641a48db59a69bd",
+      "line_count": 783,
+      "size_bytes": 61454
     },
     "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SCALE_PERFORMANCE_REQUIREMENTS.md.json",
-      "sha256": "2d084238a9ac85b74e1a2886fe41c05f4c3f9ec7af3473a487d113dcafaab1e0",
-      "line_count": 106,
-      "size_bytes": 3719
+      "sha256": "fd6a58f311378d855986e34294aae8e151f778ae49cb495e771fbaa29fe55cac",
+      "line_count": 112,
+      "size_bytes": 4178
     },
     "docs/process/SCHEMA_REGISTRY_CONTRACT.md": {
       "role": "requirements",
@@ -390,16 +397,16 @@
     "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SECURITY_REVIEW_TRUST_CONTRACT.md.json",
-      "sha256": "72b4190e952c6585be93346af49055630ae85e5b3e8a40a2a4496fd3928fdcbc",
-      "line_count": 110,
-      "size_bytes": 4730
+      "sha256": "13b36956a6b3064386fdace4989f6b48644829f7218f7d81f2fd77bb3b5143a8",
+      "line_count": 132,
+      "size_bytes": 5974
     },
     "docs/process/SLO_INCIDENT_RESPONSE_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SLO_INCIDENT_RESPONSE_CONTRACT.md.json",
-      "sha256": "8eb9e333778c70c5fc3ac172e066bc5a9d6dee2efa7d278c084bea7cdd83653e",
-      "line_count": 151,
-      "size_bytes": 7512
+      "sha256": "b5d6524c2243ddcd757a38c0e4c1c202676fd72e3b8320073b662379101784b0",
+      "line_count": 168,
+      "size_bytes": 8508
     },
     "docs/process/SPECIFICATION.md": {
       "role": "requirements",
@@ -1143,6 +1150,377 @@
       "line_count": 41,
       "size_bytes": 823
     },
+    "fixtures/api/import-export/authz-external-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.import-export.authz-external-denied.fixture.json.json",
+      "sha256": "c931715cffd977468108593218396a924e0f1ebcce3428828bfaf4916bddcc32",
+      "line_count": 25,
+      "size_bytes": 643
+    },
+    "fixtures/api/import-export/authz-internal-allowed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.import-export.authz-internal-allowed.fixture.json.json",
+      "sha256": "51a3f909a451690ffbcd66503ca540c0eca954cb064ed2acd31dfc6c0620225f",
+      "line_count": 25,
+      "size_bytes": 638
+    },
+    "fixtures/api/import-export/export-quarantined-raw/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.import-export.export-quarantined-raw.fixture.json.json",
+      "sha256": "3bb1a8b6d145ead4a387d2a91adb49d4fcf11d45ee55bc46dedace35e08266bb",
+      "line_count": 30,
+      "size_bytes": 728
+    },
+    "fixtures/api/import-export/export-safe-diagnostic/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.import-export.export-safe-diagnostic.fixture.json.json",
+      "sha256": "fb2043e004b8538329f84c834503bccc6a1bca1af5a4561e11e67863103395fd",
+      "line_count": 42,
+      "size_bytes": 1124
+    },
+    "fixtures/api/import-export/import-schema-mismatch/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.import-export.import-schema-mismatch.fixture.json.json",
+      "sha256": "47425d92d779ebddc14991de370a0c726c4b37727c84c2cb5d304c9186a3f07d",
+      "line_count": 25,
+      "size_bytes": 613
+    },
+    "fixtures/api/import-export/import-valid-bundle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.import-export.import-valid-bundle.fixture.json.json",
+      "sha256": "55f312656768bf8dc9e351dfd8687f1bd104c8e3a2cde5f0c570ef827797900b",
+      "line_count": 40,
+      "size_bytes": 1013
+    },
+    "fixtures/api/read-model/manual-review-pending/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.read-model.manual-review-pending.fixture.json.json",
+      "sha256": "00d2654a300ac4a05fddd0186c6d6e02173735536c17e7b2d351f4bb5e28409e",
+      "line_count": 28,
+      "size_bytes": 789
+    },
+    "fixtures/api/read-model/minimal-run/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.read-model.minimal-run.fixture.json.json",
+      "sha256": "59eeff2cbcf447d45da8d170e44cc206f6a0965e913e02063049a09715072737",
+      "line_count": 36,
+      "size_bytes": 936
+    },
+    "fixtures/api/read-model/missing-upstream-report/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.read-model.missing-upstream-report.fixture.json.json",
+      "sha256": "ca1eda4618c05991c7707069a5fa6cff32b4cbc3c7a7a3b3b72e5b1d67248d84",
+      "line_count": 21,
+      "size_bytes": 571
+    },
+    "fixtures/api/read-model/quarantined-artifact/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.read-model.quarantined-artifact.fixture.json.json",
+      "sha256": "f6f3be2516caace18f6da2640afa4e8f8f781e88e317a1e6a25a33f8afe6e5c1",
+      "line_count": 45,
+      "size_bytes": 1502
+    },
+    "fixtures/api/read-model/risk-readiness/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.api.read-model.risk-readiness.fixture.json.json",
+      "sha256": "647c113064320cebb04c3dfeea1ad4f249c2d1b8325340106ed1ed304d35d4dd",
+      "line_count": 57,
+      "size_bytes": 1721
+    },
+    "fixtures/commercial/truthfulness/evidence-missing-source-ref/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.commercial.truthfulness.evidence-missing-source-ref.fixture.json.json",
+      "sha256": "bd8772a28b1e79b6a8615c70030c7731e8e963c4ac183e509056b63ad82ef8bd",
+      "line_count": 26,
+      "size_bytes": 705
+    },
+    "fixtures/commercial/truthfulness/manual-waiver-attempt/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.commercial.truthfulness.manual-waiver-attempt.fixture.json.json",
+      "sha256": "54753be6e711cf2acca701b36894039854f1de794fe3f8f1b2668b1508ad92e3",
+      "line_count": 27,
+      "size_bytes": 906
+    },
+    "fixtures/commercial/truthfulness/supported-scale-claim/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.commercial.truthfulness.supported-scale-claim.fixture.json.json",
+      "sha256": "09911bbd4ef797d0950a4422776a3d61a2bcad7b4c0518448a45e69ec8519b85",
+      "line_count": 26,
+      "size_bytes": 862
+    },
+    "fixtures/commercial/truthfulness/supported-security-claim/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.commercial.truthfulness.supported-security-claim.fixture.json.json",
+      "sha256": "43872847b72ad1c410460d92fd490b4515200937124cd0fd535c2872e15c7db6",
+      "line_count": 31,
+      "size_bytes": 1171
+    },
+    "fixtures/commercial/truthfulness/unsupported-enterprise-claim/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.commercial.truthfulness.unsupported-enterprise-claim.fixture.json.json",
+      "sha256": "2f7bbecca3e8de11359580ea7fa822aceb0becea33fb269638ae6f4d9be3a4ee",
+      "line_count": 19,
+      "size_bytes": 651
+    },
+    "fixtures/commercial/truthfulness/unsupported-release-claim/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.commercial.truthfulness.unsupported-release-claim.fixture.json.json",
+      "sha256": "5286a81a3135c34f873f10f56f6160c739b9bcf03c12d77b346c1214e109ef10",
+      "line_count": 19,
+      "size_bytes": 648
+    },
+    "fixtures/connectors/ops/live-network-attempt/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.live-network-attempt.fixture.json.json",
+      "sha256": "4f6d0d6609e8e652cf65f63e4d672ec7e0eaf0564e1f1f76baedb4f0310afc9e",
+      "line_count": 27,
+      "size_bytes": 862
+    },
+    "fixtures/connectors/ops/ops-failure-nongating/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.ops-failure-nongating.fixture.json.json",
+      "sha256": "98683ad47ca9d493c4851ac3a217bf4ad8543f64faaa4e935b1a32c6084de7d7",
+      "line_count": 42,
+      "size_bytes": 1329
+    },
+    "fixtures/connectors/ops/siem-export/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.siem-export.fixture.json.json",
+      "sha256": "6484149e40f74a931bdccc32f800030046f8119665ce1ec4a0437458ca460ddc",
+      "line_count": 38,
+      "size_bytes": 1094
+    },
+    "fixtures/connectors/ops/siem-safe-event/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.siem-safe-event.fixture.json.json",
+      "sha256": "bc42fd9cccb4469ba24badb009d79f632307ec27c11550c8f553ae3e9855ee09",
+      "line_count": 27,
+      "size_bytes": 820
+    },
+    "fixtures/connectors/ops/support-safe-bundle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.support-safe-bundle.fixture.json.json",
+      "sha256": "45506a4c75290025d77ecb88c3d56bbcfb946d7d68519cafa652eba429af4d18",
+      "line_count": 27,
+      "size_bytes": 914
+    },
+    "fixtures/connectors/ops/ticket-safe-summary/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.ticket-safe-summary.fixture.json.json",
+      "sha256": "7623a2fab2892b483ef7705e806ad3833293f7ffe439532bddc71c33e03ad99f",
+      "line_count": 27,
+      "size_bytes": 854
+    },
+    "fixtures/connectors/ops/ticketing-sync/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.ticketing-sync.fixture.json.json",
+      "sha256": "7df3c0031e489ab1aff783dc3769cf5e5b272259e892709fae337d16b339dee9",
+      "line_count": 37,
+      "size_bytes": 1086
+    },
+    "fixtures/connectors/ops/unsafe-artifact-export/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.unsafe-artifact-export.fixture.json.json",
+      "sha256": "237c2129ead2fc38becf7ef5053e241e321c4555cfaeb7f6e9ca5dff27e2442f",
+      "line_count": 27,
+      "size_bytes": 931
+    },
+    "fixtures/connectors/ops/warehouse-export/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.warehouse-export.fixture.json.json",
+      "sha256": "52303a6e6bbaf7cc291e480d5e8ae29c0a87c72ab3cf4340d95220d541c2b0a4",
+      "line_count": 37,
+      "size_bytes": 1103
+    },
+    "fixtures/connectors/ops/warehouse-safe-row/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.ops.warehouse-safe-row.fixture.json.json",
+      "sha256": "5f04bf58bce727e91ab3c15401763071e6ecc9549c98390180ea39c71d782232",
+      "line_count": 27,
+      "size_bytes": 844
+    },
+    "fixtures/connectors/sso-scim/group-role-sync/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.group-role-sync.fixture.json.json",
+      "sha256": "311379cd4da21c3c311c1902f18a158d8975e4bdeb45395b43b41ea19976d010",
+      "line_count": 36,
+      "size_bytes": 1176
+    },
+    "fixtures/connectors/sso-scim/live-network-attempt/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.live-network-attempt.fixture.json.json",
+      "sha256": "50ce781e9dc6bd70c0b04558947bfadcf2b6c9b010eef224760b382f45956596",
+      "line_count": 48,
+      "size_bytes": 1435
+    },
+    "fixtures/connectors/sso-scim/missing-claim-mapping/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.missing-claim-mapping.fixture.json.json",
+      "sha256": "60bffd5e973d4a4ad00aac2b175a2685075def2726cf3da5d6c5d4078dc3b08b",
+      "line_count": 32,
+      "size_bytes": 923
+    },
+    "fixtures/connectors/sso-scim/scim-mismatch/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.scim-mismatch.fixture.json.json",
+      "sha256": "0d2c3991e0433861c849ffcf83b148347fc55031954dddf9388bde5068c4c108",
+      "line_count": 55,
+      "size_bytes": 1647
+    },
+    "fixtures/connectors/sso-scim/scim-missing-entity/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.scim-missing-entity.fixture.json.json",
+      "sha256": "e72014ffa44eb0c3e7d6ae7188a92cc902e6b5fd6dc3b2549bea3c58ca43407a",
+      "line_count": 45,
+      "size_bytes": 1392
+    },
+    "fixtures/connectors/sso-scim/scim-synced/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.scim-synced.fixture.json.json",
+      "sha256": "1bc882723f65a9802c0f89413afe60d07568a731c8e3c8b35ae7158af8bf083f",
+      "line_count": 47,
+      "size_bytes": 1358
+    },
+    "fixtures/connectors/sso-scim/scim-valid-diff/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.scim-valid-diff.fixture.json.json",
+      "sha256": "cb216e56ff0404ef991b86f032d6563144f77a9c9832057004d9d3da50a57f71",
+      "line_count": 33,
+      "size_bytes": 1081
+    },
+    "fixtures/connectors/sso-scim/sso-mapped/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.sso-mapped.fixture.json.json",
+      "sha256": "b339110f63efb11699e63354091682dc775dbbbe9d77d2f7406754013e17d128",
+      "line_count": 44,
+      "size_bytes": 1591
+    },
+    "fixtures/connectors/sso-scim/sso-missing-claim/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.sso-missing-claim.fixture.json.json",
+      "sha256": "2c809028646fceb9f6894f7405c2cf4c88b3dc1cefdc41e6a8c6cf8ca198c8a5",
+      "line_count": 39,
+      "size_bytes": 1221
+    },
+    "fixtures/connectors/sso-scim/sso-unsupported-claim/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.sso-unsupported-claim.fixture.json.json",
+      "sha256": "3ce7e4677df6db21e4e86832f230ee5cfbeb8e8e32171f28cd908f4b0e4d03b0",
+      "line_count": 42,
+      "size_bytes": 1441
+    },
+    "fixtures/connectors/sso-scim/sso-valid-mapping/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.sso-valid-mapping.fixture.json.json",
+      "sha256": "0766840d372347814caca4e02b95fd0b3aa725089ec6fe288acd034312b10046",
+      "line_count": 39,
+      "size_bytes": 1232
+    },
+    "fixtures/connectors/sso-scim/unsupported-claim/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.connectors.sso-scim.unsupported-claim.fixture.json.json",
+      "sha256": "3a522ff8d7990c4f46f758a89225592e779844963e177bd9ec2815cc730172bb",
+      "line_count": 31,
+      "size_bytes": 916
+    },
+    "fixtures/dashboard/uat-states/coverage-only/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.coverage-only.fixture.json.json",
+      "sha256": "d1a423fcc4acf801eff52e5b81029a059274a2129f6bfc9da49c546d1a5ea495",
+      "line_count": 42,
+      "size_bytes": 1273
+    },
+    "fixtures/dashboard/uat-states/hard-dq-security/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.hard-dq-security.fixture.json.json",
+      "sha256": "2713ef6d6ca09dfc73e3139e0f99ee0826c243ba3f1dc2942e9699aa94696ab7",
+      "line_count": 57,
+      "size_bytes": 1684
+    },
+    "fixtures/dashboard/uat-states/hold-risk/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.hold-risk.fixture.json.json",
+      "sha256": "c444911de926efaa29b2e5efc2382f27eb9efc88229bda502dd4b9f97a0dce26",
+      "line_count": 58,
+      "size_bytes": 1696
+    },
+    "fixtures/dashboard/uat-states/manual-review-pending/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.manual-review-pending.fixture.json.json",
+      "sha256": "71033f9ecdc32249a1f98c4e239277d25425f8d1a8ce8475a52ca1aeaea3449e",
+      "line_count": 42,
+      "size_bytes": 1306
+    },
+    "fixtures/dashboard/uat-states/missing-oracle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.missing-oracle.fixture.json.json",
+      "sha256": "39a3ad40f3cad1305bf9fdffef825002caeb944cf10116be9aa8c1c371d8d654",
+      "line_count": 43,
+      "size_bytes": 1295
+    },
+    "fixtures/dashboard/uat-states/quarantined-artifact/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.quarantined-artifact.fixture.json.json",
+      "sha256": "cb612094aee209da283baf5e1a89c6bc6da98002862067946d7243ae56b7c5d2",
+      "line_count": 40,
+      "size_bytes": 1196
+    },
+    "fixtures/dashboard/uat-states/ready/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.ready.fixture.json.json",
+      "sha256": "162691c3dd49178a6a922d3004d640652fbdbf0583f244d821fa72b6343cb3d3",
+      "line_count": 39,
+      "size_bytes": 1028
+    },
+    "fixtures/dashboard/uat-states/soft-gap/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.soft-gap.fixture.json.json",
+      "sha256": "37a215f1ed35a31d8e0ceaf34008b7d24c37e84d3de0dd7246dbbd11acefb6d0",
+      "line_count": 43,
+      "size_bytes": 1177
+    },
+    "fixtures/dashboard/uat-states/unsupported-claim/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.unsupported-claim.fixture.json.json",
+      "sha256": "2e2c8bdb0ce8b69dbb917c123aca121d144c210562a9620761ad4d72ff120d86",
+      "line_count": 47,
+      "size_bytes": 1390
+    },
+    "fixtures/dashboard/view-models/hold-risk-without-oracle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.view-models.hold-risk-without-oracle.fixture.json.json",
+      "sha256": "466c7d32da1662a3191a149955fc6300529c2bd0a87848637d38c88f9105afaf",
+      "line_count": 56,
+      "size_bytes": 1651
+    },
+    "fixtures/dashboard/view-models/manual-review-pending/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.view-models.manual-review-pending.fixture.json.json",
+      "sha256": "e203f143a29fad6cd9705e0391c204c1b3a12e92f6b12f3ef4927a89cf4da08e",
+      "line_count": 33,
+      "size_bytes": 995
+    },
+    "fixtures/dashboard/view-models/missing-report/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.view-models.missing-report.fixture.json.json",
+      "sha256": "82bcc2dc161c4e4311986f59ceecb65d9fb1fd2a95eaf18dc3293e81c801901f",
+      "line_count": 38,
+      "size_bytes": 1074
+    },
+    "fixtures/dashboard/view-models/quarantined-artifact/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.view-models.quarantined-artifact.fixture.json.json",
+      "sha256": "af136978666c406e3b416e9556d9884e575354a6c89e518db693eadc849cbd4c",
+      "line_count": 33,
+      "size_bytes": 1025
+    },
+    "fixtures/dashboard/view-models/ready-run/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.dashboard.view-models.ready-run.fixture.json.json",
+      "sha256": "4f111164168a2c16edeba219426eaa971d9ae69f1fa606fb9cf7bd60ebabea2b",
+      "line_count": 44,
+      "size_bytes": 1189
+    },
     "fixtures/doctor/taxonomy/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.doctor.taxonomy.README.md.json",
@@ -1156,6 +1534,90 @@
       "sha256": "256a91946d5d738061fe1da85bf9178180814efe2c2f16608f960c40350ea0be",
       "line_count": 32,
       "size_bytes": 685
+    },
+    "fixtures/enterprise/rbac-audit/admin-access/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.rbac-audit.admin-access.fixture.json.json",
+      "sha256": "e1603b6882429fa09c5b7d15ddd1eb20f0ef8a26b8d1f0e0683242d77dcf537f",
+      "line_count": 23,
+      "size_bytes": 602
+    },
+    "fixtures/enterprise/rbac-audit/export-denied-quarantine/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.rbac-audit.export-denied-quarantine.fixture.json.json",
+      "sha256": "9a16afddf8fe85435d63fd96f8267234a01525ef6682f17522bc49169b5288db",
+      "line_count": 24,
+      "size_bytes": 667
+    },
+    "fixtures/enterprise/rbac-audit/missing-audit-event/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.rbac-audit.missing-audit-event.fixture.json.json",
+      "sha256": "dc7930b6cc556769b26247d6a31c6d660de23d828a37014d3f5763d10e405f6d",
+      "line_count": 23,
+      "size_bytes": 601
+    },
+    "fixtures/enterprise/rbac-audit/reviewer-manual-review/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.rbac-audit.reviewer-manual-review.fixture.json.json",
+      "sha256": "27835855e287432dc5f1aad07d936e09a1011f13b01d9ab90c9d4723ae7ed47a",
+      "line_count": 23,
+      "size_bytes": 625
+    },
+    "fixtures/enterprise/rbac-audit/unauthorized-admin-action/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.rbac-audit.unauthorized-admin-action.fixture.json.json",
+      "sha256": "250e25619783e83d64798f829eeabfe0bc1e82e68ee1f7a52e17acfdda07a8b3",
+      "line_count": 23,
+      "size_bytes": 596
+    },
+    "fixtures/enterprise/rbac-audit/viewer-safe-metadata/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.rbac-audit.viewer-safe-metadata.fixture.json.json",
+      "sha256": "b3ff6efed8cbe63a3dd1092225fbae8ac6e3ae60cc0ba7aa84313acfd35c2813",
+      "line_count": 24,
+      "size_bytes": 638
+    },
+    "fixtures/enterprise/retention-legal-hold/legal-hold-active/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.retention-legal-hold.legal-hold-active.fixture.json.json",
+      "sha256": "668eea26eda9680dd9ed0ffc83f4e4efe5440d1a5661b74e9517e294d6afe415",
+      "line_count": 27,
+      "size_bytes": 776
+    },
+    "fixtures/enterprise/retention-legal-hold/legal-hold-lost/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.retention-legal-hold.legal-hold-lost.fixture.json.json",
+      "sha256": "a3f8c2f848abc65c9b3f4417d952220b46ec85038e0ff1af60d5b56b6d6a93d4",
+      "line_count": 42,
+      "size_bytes": 1217
+    },
+    "fixtures/enterprise/retention-legal-hold/missing-retention-policy/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.retention-legal-hold.missing-retention-policy.fixture.json.json",
+      "sha256": "d80ab7d7dd7d22a8df73c8155d25079235b7867ec9f5a2c954e5e2b2538a5fa4",
+      "line_count": 21,
+      "size_bytes": 565
+    },
+    "fixtures/enterprise/retention-legal-hold/purge-attempt-on-legal-hold/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.retention-legal-hold.purge-attempt-on-legal-hold.fixture.json.json",
+      "sha256": "ea6544f894b431e0bd5dd45214e8ee61e9771d38024b7400a342a2f05c338a90",
+      "line_count": 28,
+      "size_bytes": 809
+    },
+    "fixtures/enterprise/retention-legal-hold/purge-eligible-metadata/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.retention-legal-hold.purge-eligible-metadata.fixture.json.json",
+      "sha256": "59088e228daeffe4af7f6236bf9e0487290854b7757a64af4011d20709738720",
+      "line_count": 26,
+      "size_bytes": 736
+    },
+    "fixtures/enterprise/retention-legal-hold/retention-valid/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.enterprise.retention-legal-hold.retention-valid.fixture.json.json",
+      "sha256": "24fd9a136dc38531a08ad7c68a5eaf59afb3bc10d9207683faf81efb57f5aaaf",
+      "line_count": 26,
+      "size_bytes": 723
     },
     "fixtures/golden/p0a-minimal/dq-01-sha-missing/github-context.json": {
       "role": "fixture",
@@ -2172,6 +2634,90 @@
       "line_count": 36,
       "size_bytes": 1090
     },
+    "fixtures/migration/compatibility/canonical-mutated/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.compatibility.canonical-mutated.fixture.json.json",
+      "sha256": "2d957439264224c26bfbde28a020161e74e376befaa54c1b8048cd8c4ae8b71e",
+      "line_count": 32,
+      "size_bytes": 914
+    },
+    "fixtures/migration/compatibility/hash-changed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.compatibility.hash-changed.fixture.json.json",
+      "sha256": "93f8a970b89a38d3292842b67bf6507646dc14a2d21b801c9f9426ff797a63e7",
+      "line_count": 32,
+      "size_bytes": 953
+    },
+    "fixtures/migration/compatibility/minor-compatible/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.compatibility.minor-compatible.fixture.json.json",
+      "sha256": "73dbbedb04c20faaf0c2f860840bdc0492a1c051cecaa93870934d771e0340df",
+      "line_count": 31,
+      "size_bytes": 869
+    },
+    "fixtures/migration/compatibility/patch-compatible/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.compatibility.patch-compatible.fixture.json.json",
+      "sha256": "244b94831c380bc47c9853a1e29a270d94f88d4671f6a4f55a4efba4f6bc7d0d",
+      "line_count": 31,
+      "size_bytes": 867
+    },
+    "fixtures/migration/compatibility/source-ref-lost/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.compatibility.source-ref-lost.fixture.json.json",
+      "sha256": "ce1ec73487dcf43bffd544fa5eac22e448f9c559b2a2443e3457519ea40ba46d",
+      "line_count": 31,
+      "size_bytes": 800
+    },
+    "fixtures/migration/compatibility/unsupported-major/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.compatibility.unsupported-major.fixture.json.json",
+      "sha256": "c7427389e1b2f77df65a93eb94f81e2e6feb586e9b7aa1e72eba68b2f36e0f70",
+      "line_count": 31,
+      "size_bytes": 872
+    },
+    "fixtures/migration/legal-hold/export-preserves-hold/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.legal-hold.export-preserves-hold.fixture.json.json",
+      "sha256": "df65e92f8f264e1e0a4d67cb2889319a72d8e607e013cee29616ac788e1b265d",
+      "line_count": 28,
+      "size_bytes": 855
+    },
+    "fixtures/migration/legal-hold/hold-lost/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.legal-hold.hold-lost.fixture.json.json",
+      "sha256": "35c16d565fd025cda412647d00a8c349652f9a5fe42b25045f00f5884da0262a",
+      "line_count": 22,
+      "size_bytes": 635
+    },
+    "fixtures/migration/legal-hold/hold-preserved/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.legal-hold.hold-preserved.fixture.json.json",
+      "sha256": "7e18e4d902c3d9d3493967b212e9fb15d2c440ff74bfb3bbc90b99aeed06b8e8",
+      "line_count": 28,
+      "size_bytes": 837
+    },
+    "fixtures/migration/legal-hold/purge-during-hold/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.legal-hold.purge-during-hold.fixture.json.json",
+      "sha256": "1bad12fcbe11d857a59970c20396a8357851c5861cd2e95c83d7276f95646c3e",
+      "line_count": 28,
+      "size_bytes": 844
+    },
+    "fixtures/migration/legal-hold/replay-drops-hold/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.legal-hold.replay-drops-hold.fixture.json.json",
+      "sha256": "110a9d4c2163bf27783cb02b600ed55086446f52b3875cf49910421d0c042bbd",
+      "line_count": 31,
+      "size_bytes": 916
+    },
+    "fixtures/migration/legal-hold/retention-transition/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.migration.legal-hold.retention-transition.fixture.json.json",
+      "sha256": "0100b7cd04ef6b89900583e359a1a71275f49b2963debf089778bd0d68b7fc2e",
+      "line_count": 29,
+      "size_bytes": 908
+    },
     "fixtures/profile/inheritance/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.profile.inheritance.README.md.json",
@@ -2242,6 +2788,48 @@
       "line_count": 25,
       "size_bytes": 565
     },
+    "fixtures/release/candidate-pack/all-green/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.all-green.fixture.json.json",
+      "sha256": "1f0ddd9a14bd9740dcacb04202e02821fc2b8a34fb4fd5ece1126d0d968c2d3a",
+      "line_count": 34,
+      "size_bytes": 2469
+    },
+    "fixtures/release/candidate-pack/commercial-unsupported-claim/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.commercial-unsupported-claim.fixture.json.json",
+      "sha256": "b64a97f5bb57e0591a7ff13d3c6836e45bd3bb74e12b4671c6f3981bd28728a1",
+      "line_count": 19,
+      "size_bytes": 684
+    },
+    "fixtures/release/candidate-pack/legal-hold-preserved/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.legal-hold-preserved.fixture.json.json",
+      "sha256": "9f671f53b23875c960c536829320a8fc4a4092c4ef88bb54343e1913cfaabf2d",
+      "line_count": 14,
+      "size_bytes": 875
+    },
+    "fixtures/release/candidate-pack/missing-required-report/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.missing-required-report.fixture.json.json",
+      "sha256": "8301f8c890804a1732a68e0136ed0b2da3e0d59f80bdb91d2a65f25c6ee4599b",
+      "line_count": 22,
+      "size_bytes": 1876
+    },
+    "fixtures/release/candidate-pack/non-deterministic-input/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.non-deterministic-input.fixture.json.json",
+      "sha256": "d85b49c8e63ee7535696069ce84bb9351de1a7159f825c1649e57ef8f2e9e805",
+      "line_count": 27,
+      "size_bytes": 2417
+    },
+    "fixtures/release/candidate-pack/security-hard-dq/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.security-hard-dq.fixture.json.json",
+      "sha256": "f2b03b00d5c7dd283a5f7c6421d950c8ad4241de5b3c62cbe4f47b5a0a31f7dc",
+      "line_count": 15,
+      "size_bytes": 883
+    },
     "fixtures/replay/hardening/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.replay.hardening.README.md.json",
@@ -2269,6 +2857,83 @@
       "sha256": "dfc2cb48cffe368ed31a5ec8826c2be184cc6fb631066119843577d0eff7f6a9",
       "line_count": 34,
       "size_bytes": 651
+    },
+    "fixtures/scale/artifact-heavy-seed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.artifact-heavy-seed.fixture.json.json",
+      "sha256": "6aa889ba736e95353e71e592c8b1be79ec8122ee506601b41d45236a67748d1d",
+      "line_count": 23,
+      "size_bytes": 664
+    },
+    "fixtures/scale/invalid-collision/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.invalid-collision.fixture.json.json",
+      "sha256": "bbfe0797d754616409ea70644793d05d60b617a57b2fb9bfa6f010692a09e29e",
+      "line_count": 22,
+      "size_bytes": 592
+    },
+    "fixtures/scale/multi-adapter-seed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.multi-adapter-seed.fixture.json.json",
+      "sha256": "662d196013cf06337852806a6399de39db679529bf570044ff7b85c1117e6ab8",
+      "line_count": 23,
+      "size_bytes": 574
+    },
+    "fixtures/scale/performance/budget-hold/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.performance.budget-hold.fixture.json.json",
+      "sha256": "ebef3e835b1cc50529e61304bf1dce621398e011df49981b82215ade93b2fdb8",
+      "line_count": 33,
+      "size_bytes": 854
+    },
+    "fixtures/scale/performance/budget-pass/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.performance.budget-pass.fixture.json.json",
+      "sha256": "7818923078dfbf32e042c2aa9d6b5f2cc0f92860bd28699723de700d1e28d58a",
+      "line_count": 36,
+      "size_bytes": 923
+    },
+    "fixtures/scale/performance/budget-soft-gap/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.performance.budget-soft-gap.fixture.json.json",
+      "sha256": "7d2c1f3bafb769b139dca9055a78a06d89356a78bd282ed2e273cee9f23a7782",
+      "line_count": 33,
+      "size_bytes": 903
+    },
+    "fixtures/scale/performance/missing-metrics/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.performance.missing-metrics.fixture.json.json",
+      "sha256": "c3f8458e408b015f16257132c710e0d05333bfd18af8c42fbd55714583c76272",
+      "line_count": 31,
+      "size_bytes": 889
+    },
+    "fixtures/scale/performance/quadratic-risk/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.performance.quadratic-risk.fixture.json.json",
+      "sha256": "d8c7401cc173904669b050f86b4b57116c2e219239df481686d0c1d4b6747787",
+      "line_count": 33,
+      "size_bytes": 880
+    },
+    "fixtures/scale/risk-heavy-seed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.risk-heavy-seed.fixture.json.json",
+      "sha256": "7fc22248e0e549da01c642908644505bb827e8244990702ad00e3c41e0a4ae6f",
+      "line_count": 25,
+      "size_bytes": 668
+    },
+    "fixtures/scale/small-seed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.small-seed.fixture.json.json",
+      "sha256": "bde6084c3bd85a296fc1340c83f536e683ca2d777b4e2b56eb3bbe8f2e97f14a",
+      "line_count": 25,
+      "size_bytes": 616
+    },
+    "fixtures/scale/source-ref-cardinality/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.scale.source-ref-cardinality.fixture.json.json",
+      "sha256": "f3b49bfc493a9b077244dac48b3b79a624a5e4a1f8d1d7a2b39f5170a3ee33e0",
+      "line_count": 22,
+      "size_bytes": 600
     },
     "fixtures/schema/cross-record/container-path-normalized/bundle.json": {
       "role": "fixture",
@@ -2424,6 +3089,314 @@
       "line_count": 39,
       "size_bytes": 1179
     },
+    "fixtures/security/artifact-safety/api-key-secret/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.api-key-secret.fixture.json.json",
+      "sha256": "b5354f766b77218d42e9c6aa1e76caf844122cdb3ffbca4c4c3d1dc839c31d18",
+      "line_count": 6,
+      "size_bytes": 165
+    },
+    "fixtures/security/artifact-safety/archive-without-manifest/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.archive-without-manifest.fixture.json.json",
+      "sha256": "95e15c7f01683ebb4000de4e487f0e2934a5b1ad1c7bb2941e976b3b23734553",
+      "line_count": 7,
+      "size_bytes": 160
+    },
+    "fixtures/security/artifact-safety/base64-opaque-payload/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.base64-opaque-payload.fixture.json.json",
+      "sha256": "2f71b3419c8548bdf618ced0d1acd2f42475b7126a1951cf8ab94b3d572d2fbd",
+      "line_count": 6,
+      "size_bytes": 494
+    },
+    "fixtures/security/artifact-safety/clean-metadata.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.clean-metadata.json.json",
+      "sha256": "98c3cce6f7b56d4bbc4854f6a43ad398067671c32f5a90134d826724a9baad4e",
+      "line_count": 15,
+      "size_bytes": 299
+    },
+    "fixtures/security/artifact-safety/clean-metadata/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.clean-metadata.fixture.json.json",
+      "sha256": "5029a8579394ce3761dc2097fccb01a75da1fd290f13a75c9303c4d43058009b",
+      "line_count": 7,
+      "size_bytes": 182
+    },
+    "fixtures/security/artifact-safety/fake-secret-allowlisted/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.fake-secret-allowlisted.fixture.json.json",
+      "sha256": "b16a34a2937de4d72fe6d0e725efc884261d42c45a516c0e3fa3d4d84305fd4f",
+      "line_count": 7,
+      "size_bytes": 224
+    },
+    "fixtures/security/artifact-safety/hard-dq-real-pii.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.hard-dq-real-pii.json.json",
+      "sha256": "463ff3439d9faea9145d9aff1a7941b88827f4f7241968dcd83969d150fd08b8",
+      "line_count": 23,
+      "size_bytes": 603
+    },
+    "fixtures/security/artifact-safety/hard-dq-secret-exposed.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.hard-dq-secret-exposed.json.json",
+      "sha256": "494a1338334e4f06b2bfed8814e472845cd4f0a021e8d967b77198e4889210a9",
+      "line_count": 18,
+      "size_bytes": 537
+    },
+    "fixtures/security/artifact-safety/hold-path-traversal.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.hold-path-traversal.json.json",
+      "sha256": "2d4790dc6560e8c40f8ebba6d14a940b056111a7a93f5e4694fd80d82961b039",
+      "line_count": 22,
+      "size_bytes": 662
+    },
+    "fixtures/security/artifact-safety/hold-webhook-url.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.hold-webhook-url.json.json",
+      "sha256": "1339a7ad8e52d1a0dc242bb20aff0b2085a1c99e3c764fb3a0d3824ba83f4f96",
+      "line_count": 17,
+      "size_bytes": 766
+    },
+    "fixtures/security/artifact-safety/path-traversal/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.path-traversal.fixture.json.json",
+      "sha256": "477a7ddccb7c8e1bd72363af6987d29d7a095238daf0722f1e6eab78dd844311",
+      "line_count": 6,
+      "size_bytes": 158
+    },
+    "fixtures/security/artifact-safety/private-key-block/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.private-key-block.fixture.json.json",
+      "sha256": "6384efaa835de5ce24b3c9e4616d0bd4efd9a36f5ca41149028397ca3835ab6b",
+      "line_count": 6,
+      "size_bytes": 210
+    },
+    "fixtures/security/artifact-safety/public-doc-url-allowed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.public-doc-url-allowed.fixture.json.json",
+      "sha256": "09871367e0b26a57939383e5b01912e0b0d319c333df4cccc5120dd7953af9f4",
+      "line_count": 6,
+      "size_bytes": 197
+    },
+    "fixtures/security/artifact-safety/quarantine-archive-size.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.quarantine-archive-size.json.json",
+      "sha256": "5e10efe54a179065101cc50284ac08e5701553eebe0ad0de4fb10cf7f072f593",
+      "line_count": 19,
+      "size_bytes": 480
+    },
+    "fixtures/security/artifact-safety/quarantine-nested-archive.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.quarantine-nested-archive.json.json",
+      "sha256": "39ac49d8047ea8e9f7c2434f1fe6b1a44afe51621d1793429605f1256a7e78cc",
+      "line_count": 18,
+      "size_bytes": 482
+    },
+    "fixtures/security/artifact-safety/safe-internal-url.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.safe-internal-url.json.json",
+      "sha256": "d5d7071c2aa5d240ea1c9246e3e2add6465916358836a4a8fed3fe341490ccd0",
+      "line_count": 18,
+      "size_bytes": 514
+    },
+    "fixtures/security/artifact-safety/signed-url/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.signed-url.fixture.json.json",
+      "sha256": "023b09562b766d3aea4e0b667c4484d1a962cc91233d9da11151b5565b41b7d0",
+      "line_count": 6,
+      "size_bytes": 196
+    },
+    "fixtures/security/artifact-safety/soft-gap-base64-opaque.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.soft-gap-base64-opaque.json.json",
+      "sha256": "7c0b318694470b4a1fcb9836069be5dc85f2a9588de99dbe09aea111f61d4a97",
+      "line_count": 11,
+      "size_bytes": 22947
+    },
+    "fixtures/security/artifact-safety/soft-gap-binary-blob.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.soft-gap-binary-blob.json.json",
+      "sha256": "545e04bcd99ea8c5228ed6eec47b356204fa8ad4301e7fbc87129424308cfad9",
+      "line_count": 27,
+      "size_bytes": 589
+    },
+    "fixtures/security/artifact-safety/synthetic-pii-allowed.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.synthetic-pii-allowed.json.json",
+      "sha256": "c8b454809f91937f7787fb07107c983159e7b62f0e6cc071a36e7b2a5a3a07b5",
+      "line_count": 19,
+      "size_bytes": 527
+    },
+    "fixtures/security/artifact-safety/synthetic-pii-allowed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.synthetic-pii-allowed.fixture.json.json",
+      "sha256": "9af153b62d71d7fadf6e8898b9f4bfee9426f6bb6033dcbe202940ecab7d5ab9",
+      "line_count": 7,
+      "size_bytes": 242
+    },
+    "fixtures/security/artifact-safety/test-fixture-api-key.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.test-fixture-api-key.json.json",
+      "sha256": "6bdf0de142ff9f81c262b10f4ba3de22bdb2cf6125153f8d03dd23ad6cf6e329",
+      "line_count": 17,
+      "size_bytes": 610
+    },
+    "fixtures/security/artifact-safety/unredacted-pii/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.unredacted-pii.fixture.json.json",
+      "sha256": "21b03fc5d9f8440c058c34825ae0f736e14b37381827410461a066af51db7812",
+      "line_count": 6,
+      "size_bytes": 183
+    },
+    "fixtures/security/artifact-safety/windows-user-path/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.artifact-safety.windows-user-path.fixture.json.json",
+      "sha256": "a5479934fb0eddb945ecd9b2678b2edf496f3bc308182590004faf756daf7619",
+      "line_count": 6,
+      "size_bytes": 174
+    },
+    "fixtures/security/redaction/allowlisted-secret-visible/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.allowlisted-secret-visible.fixture.json.json",
+      "sha256": "adc2ee1c378b08e853d6c103a958613361bc9b248d188b0a27360b3ed736bcf5",
+      "line_count": 11,
+      "size_bytes": 544
+    },
+    "fixtures/security/redaction/clean-no-redaction/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.clean-no-redaction.fixture.json.json",
+      "sha256": "65a3e751369ec36b94c12e4413257d0b23ba48afec0da2f52e750a7a809177d2",
+      "line_count": 10,
+      "size_bytes": 485
+    },
+    "fixtures/security/redaction/dashboard-safe-view/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.dashboard-safe-view.fixture.json.json",
+      "sha256": "8e654167907c554cd29ea9c71cf38085ccf4a6bd77d2dec372834c60483f803e",
+      "line_count": 10,
+      "size_bytes": 541
+    },
+    "fixtures/security/redaction/diagnostic-bundle-raw-artifact/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.diagnostic-bundle-raw-artifact.fixture.json.json",
+      "sha256": "4ad4cb395d6701e7431f664889560ba8889bb43933f55361be66fc0c35442b0f",
+      "line_count": 13,
+      "size_bytes": 514
+    },
+    "fixtures/security/redaction/multiple-redactions/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.multiple-redactions.fixture.json.json",
+      "sha256": "f23f31f16c00df57b4e8b8a1fab378e7e177652d770073e2af8c70b52c6eeb6d",
+      "line_count": 15,
+      "size_bytes": 883
+    },
+    "fixtures/security/redaction/path-tokenized/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.path-tokenized.fixture.json.json",
+      "sha256": "02d869de0776f78b0f9c7029ccb2d3717b8af8b90dbe8dafeb494815a5c0ac45",
+      "line_count": 13,
+      "size_bytes": 530
+    },
+    "fixtures/security/redaction/path-traversal-redacted/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.path-traversal-redacted.fixture.json.json",
+      "sha256": "02d869de0776f78b0f9c7029ccb2d3717b8af8b90dbe8dafeb494815a5c0ac45",
+      "line_count": 13,
+      "size_bytes": 530
+    },
+    "fixtures/security/redaction/private-key-redacted/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.private-key-redacted.fixture.json.json",
+      "sha256": "4ad4cb395d6701e7431f664889560ba8889bb43933f55361be66fc0c35442b0f",
+      "line_count": 13,
+      "size_bytes": 514
+    },
+    "fixtures/security/redaction/private-url-redacted/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.private-url-redacted.fixture.json.json",
+      "sha256": "be8989ad46f55caae1537c5041a7688e9f8320805dd1ca8731b3eddbf0b76127",
+      "line_count": 12,
+      "size_bytes": 620
+    },
+    "fixtures/security/redaction/public-url-allowed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.public-url-allowed.fixture.json.json",
+      "sha256": "8e654167907c554cd29ea9c71cf38085ccf4a6bd77d2dec372834c60483f803e",
+      "line_count": 10,
+      "size_bytes": 541
+    },
+    "fixtures/security/redaction/raw-pii-summary/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.raw-pii-summary.fixture.json.json",
+      "sha256": "b1cce8992f3b23e908bd5face6295ddc5cc928c13c08d62d628b7bd75d6206e8",
+      "line_count": 12,
+      "size_bytes": 557
+    },
+    "fixtures/security/redaction/raw-secret-export/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.raw-secret-export.fixture.json.json",
+      "sha256": "a7f613099f6e4e94a6c2fcf8d88eb854e773d1173138a017e2d205d9edd04ecf",
+      "line_count": 12,
+      "size_bytes": 544
+    },
+    "fixtures/security/redaction/redacted-pii-success/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.redacted-pii-success.fixture.json.json",
+      "sha256": "b1cce8992f3b23e908bd5face6295ddc5cc928c13c08d62d628b7bd75d6206e8",
+      "line_count": 12,
+      "size_bytes": 557
+    },
+    "fixtures/security/redaction/redacted-secret-success/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.redacted-secret-success.fixture.json.json",
+      "sha256": "a7f613099f6e4e94a6c2fcf8d88eb854e773d1173138a017e2d205d9edd04ecf",
+      "line_count": 12,
+      "size_bytes": 544
+    },
+    "fixtures/security/redaction/reversible-redaction/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.reversible-redaction.fixture.json.json",
+      "sha256": "be8989ad46f55caae1537c5041a7688e9f8320805dd1ca8731b3eddbf0b76127",
+      "line_count": 12,
+      "size_bytes": 620
+    },
+    "fixtures/security/redaction/safe-summary/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.safe-summary.fixture.json.json",
+      "sha256": "65a3e751369ec36b94c12e4413257d0b23ba48afec0da2f52e750a7a809177d2",
+      "line_count": 10,
+      "size_bytes": 485
+    },
+    "fixtures/security/redaction/secret-redacted/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.secret-redacted.fixture.json.json",
+      "sha256": "a7f613099f6e4e94a6c2fcf8d88eb854e773d1173138a017e2d205d9edd04ecf",
+      "line_count": 12,
+      "size_bytes": 544
+    },
+    "fixtures/security/redaction/support-bundle-safe/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.support-bundle-safe.fixture.json.json",
+      "sha256": "f23f31f16c00df57b4e8b8a1fab378e7e177652d770073e2af8c70b52c6eeb6d",
+      "line_count": 15,
+      "size_bytes": 883
+    },
+    "fixtures/security/redaction/synthetic-pii-allowed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.synthetic-pii-allowed.fixture.json.json",
+      "sha256": "c99b66ba9fcd187617cb4c424b60a751c01461a557ee57a708a8b4019f1372b8",
+      "line_count": 11,
+      "size_bytes": 593
+    },
+    "fixtures/security/redaction/unauthorized-restricted-path/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.security.redaction.unauthorized-restricted-path.fixture.json.json",
+      "sha256": "02d869de0776f78b0f9c7029ccb2d3717b8af8b90dbe8dafeb494815a5c0ac45",
+      "line_count": 13,
+      "size_bytes": 530
+    },
     "fixtures/shipyard/no-overwrite/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.shipyard.no-overwrite.README.md.json",
@@ -2473,6 +3446,468 @@
       "line_count": 13,
       "size_bytes": 467
     },
+    "fixtures/store/local/atomic-write-success/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.atomic-write-success.fixture.json.json",
+      "sha256": "146b9f413c56b447361dec84d8a7f7909b4c069e9efce094cdfcad1f58a85fa4",
+      "line_count": 17,
+      "size_bytes": 344
+    },
+    "fixtures/store/local/complete-bundle-basic.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.complete-bundle-basic.json.json",
+      "sha256": "bf89258ec9d46651e420b27cc0a5ad460291c440def38a79752b08adc192b676",
+      "line_count": 31,
+      "size_bytes": 624
+    },
+    "fixtures/store/local/complete-bundle-minimal.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.complete-bundle-minimal.json.json",
+      "sha256": "146b9f413c56b447361dec84d8a7f7909b4c069e9efce094cdfcad1f58a85fa4",
+      "line_count": 17,
+      "size_bytes": 344
+    },
+    "fixtures/store/local/complete-bundle-with-artifacts.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.complete-bundle-with-artifacts.json.json",
+      "sha256": "d27252e1f5991c0f70ce7737584de107d702ce037ddd1ee84b2788b4da43b649",
+      "line_count": 56,
+      "size_bytes": 1150
+    },
+    "fixtures/store/local/complete-bundle-with-legal-hold-active.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.complete-bundle-with-legal-hold-active.json.json",
+      "sha256": "c48b6ae8d0d7fafe1401f9e8abe3b04983a3f66d19bee5557e0dcd8836749c27",
+      "line_count": 18,
+      "size_bytes": 379
+    },
+    "fixtures/store/local/complete-bundle-with-source-refs.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.complete-bundle-with-source-refs.json.json",
+      "sha256": "b24c2b82b908de39082789ab5042257a359a4ca2959d23a3001fcdb19857cae4",
+      "line_count": 21,
+      "size_bytes": 420
+    },
+    "fixtures/store/local/content-addressed-artifacts/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.content-addressed-artifacts.fixture.json.json",
+      "sha256": "d27252e1f5991c0f70ce7737584de107d702ce037ddd1ee84b2788b4da43b649",
+      "line_count": 56,
+      "size_bytes": 1150
+    },
+    "fixtures/store/local/corrupted-bundle-invalid-json.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.corrupted-bundle-invalid-json.json.json",
+      "sha256": "70b62763774828477847f862035ae4db117e3db358b406a476715639eda2018c",
+      "line_count": 6,
+      "size_bytes": 221
+    },
+    "fixtures/store/local/hash-mismatch/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.hash-mismatch.fixture.json.json",
+      "sha256": "e194f4f1c7b18e0d4d0aa4bb931ec22a022cc28c244ebf9a8210d867243e278f",
+      "line_count": 18,
+      "size_bytes": 451
+    },
+    "fixtures/store/local/incomplete-bundle-no-manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.incomplete-bundle-no-manifest.json.json",
+      "sha256": "d8aadf2eb57001d263e64787e4ef902f3270159e503cc598ce50e161e97193a9",
+      "line_count": 15,
+      "size_bytes": 340
+    },
+    "fixtures/store/local/incomplete-bundle-partial-write.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.incomplete-bundle-partial-write.json.json",
+      "sha256": "7ebbd202acd6bc4a2450de11c077762a8233259090c46a4943845e492aca150a",
+      "line_count": 22,
+      "size_bytes": 485
+    },
+    "fixtures/store/local/index-missing-record/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.index-missing-record.fixture.json.json",
+      "sha256": "982a28b24733b4f644bad8e9c2f98296374d64825255eb468a63eb9580640df4",
+      "line_count": 18,
+      "size_bytes": 402
+    },
+    "fixtures/store/local/invalid-bundle-hash-mismatch.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.invalid-bundle-hash-mismatch.json.json",
+      "sha256": "e194f4f1c7b18e0d4d0aa4bb931ec22a022cc28c244ebf9a8210d867243e278f",
+      "line_count": 18,
+      "size_bytes": 451
+    },
+    "fixtures/store/local/invalid-bundle-missing-legal-hold.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.invalid-bundle-missing-legal-hold.json.json",
+      "sha256": "982a28b24733b4f644bad8e9c2f98296374d64825255eb468a63eb9580640df4",
+      "line_count": 18,
+      "size_bytes": 402
+    },
+    "fixtures/store/local/legal-hold-metadata/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.legal-hold-metadata.fixture.json.json",
+      "sha256": "c48b6ae8d0d7fafe1401f9e8abe3b04983a3f66d19bee5557e0dcd8836749c27",
+      "line_count": 18,
+      "size_bytes": 379
+    },
+    "fixtures/store/local/multi-run-index/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.multi-run-index.fixture.json.json",
+      "sha256": "b24c2b82b908de39082789ab5042257a359a4ca2959d23a3001fcdb19857cae4",
+      "line_count": 21,
+      "size_bytes": 420
+    },
+    "fixtures/store/local/mutable-canonical-bundle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.mutable-canonical-bundle.fixture.json.json",
+      "sha256": "bf89258ec9d46651e420b27cc0a5ad460291c440def38a79752b08adc192b676",
+      "line_count": 31,
+      "size_bytes": 624
+    },
+    "fixtures/store/local/partial-write/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.partial-write.fixture.json.json",
+      "sha256": "7ebbd202acd6bc4a2450de11c077762a8233259090c46a4943845e492aca150a",
+      "line_count": 22,
+      "size_bytes": 485
+    },
+    "fixtures/store/local/path-traversal-key/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.path-traversal-key.fixture.json.json",
+      "sha256": "70b62763774828477847f862035ae4db117e3db358b406a476715639eda2018c",
+      "line_count": 6,
+      "size_bytes": 221
+    },
+    "fixtures/store/local/single-run-bundle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.store.local.single-run-bundle.fixture.json.json",
+      "sha256": "bf89258ec9d46651e420b27cc0a5ad460291c440def38a79752b08adc192b676",
+      "line_count": 31,
+      "size_bytes": 624
+    },
+    "fixtures/support-ops/diagnostics/error-known/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.diagnostics.error-known.fixture.json.json",
+      "sha256": "30148f37dec30e2b888a322462d1b4da49e825d249b378e42825db676e98abe4",
+      "line_count": 9,
+      "size_bytes": 124
+    },
+    "fixtures/support-ops/diagnostics/missing-owner-action/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.diagnostics.missing-owner-action.fixture.json.json",
+      "sha256": "13dfff934b78c1471b4c135786dc4b330a7143d92d6dfafdb941d21f6751551b",
+      "line_count": 25,
+      "size_bytes": 629
+    },
+    "fixtures/support-ops/diagnostics/raw-artifact-in-bundle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.diagnostics.raw-artifact-in-bundle.fixture.json.json",
+      "sha256": "a79bd1ef521a824b8bceb2e312beb1e571bd033f79e0d4e22836c169a453f3e5",
+      "line_count": 22,
+      "size_bytes": 600
+    },
+    "fixtures/support-ops/diagnostics/remediation-mapped/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.diagnostics.remediation-mapped.fixture.json.json",
+      "sha256": "40900609dd7f461093de3c9242d16e118cf77656e666bf1639f5c99b78adcf7d",
+      "line_count": 13,
+      "size_bytes": 218
+    },
+    "fixtures/support-ops/diagnostics/safe-diagnostic-bundle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.diagnostics.safe-diagnostic-bundle.fixture.json.json",
+      "sha256": "65ef58d2afbfd7bd0694e6307f117dde96f61db97f42b80de6db8b2b3bf1821a",
+      "line_count": 33,
+      "size_bytes": 926
+    },
+    "fixtures/support-ops/diagnostics/unknown-error-code/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.diagnostics.unknown-error-code.fixture.json.json",
+      "sha256": "a39ede9a7966d5b652050b1b294a4abc5650752d9f46ece5af8612909c42951a",
+      "line_count": 14,
+      "size_bytes": 250
+    },
+    "fixtures/support-ops/observability/alerts-valid/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.observability.alerts-valid.fixture.json.json",
+      "sha256": "20c5afc3ec9a6361be0301a2b0f353cf70edbf6cf9c7cc37c7faf2bc455e201c",
+      "line_count": 28,
+      "size_bytes": 770
+    },
+    "fixtures/support-ops/observability/incident-trigger/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.observability.incident-trigger.fixture.json.json",
+      "sha256": "f55010513beba1f127a292019e409e915647cbab75c3462ef6af3a610415e235",
+      "line_count": 29,
+      "size_bytes": 784
+    },
+    "fixtures/support-ops/observability/logs-valid/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.observability.logs-valid.fixture.json.json",
+      "sha256": "b4fc0c02231f290720a974b3b46b56f8c2d3317172d6567435248991d59ca080",
+      "line_count": 24,
+      "size_bytes": 590
+    },
+    "fixtures/support-ops/observability/metrics-valid/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.observability.metrics-valid.fixture.json.json",
+      "sha256": "d698bf9a04d5b16d43a23e0d04ca270c9cda7bf8fe982c397176ecc31b2034a3",
+      "line_count": 20,
+      "size_bytes": 650
+    },
+    "fixtures/support-ops/observability/missing-release-metric/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.observability.missing-release-metric.fixture.json.json",
+      "sha256": "054c81fd00a0fa2d5ba7257f8b3b6f7d51712a4f122342e89ca2bc9199e2ec87",
+      "line_count": 18,
+      "size_bytes": 518
+    },
+    "fixtures/support-ops/observability/raw-secret-log/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.support-ops.observability.raw-secret-log.fixture.json.json",
+      "sha256": "2ff49430a176e0f8f442f7e704f29a87ab8e92c45815c98e57e9e4ea25caf29c",
+      "line_count": 25,
+      "size_bytes": 747
+    },
+    "fixtures/test-integrity/coupling/coverage-with-executed-tests/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.coverage-with-executed-tests.fixture.json.json",
+      "sha256": "db5e02541af747043f57dc16169ee8a7d3db73bbc95dd4ac3a811497f5c7ed1c",
+      "line_count": 31,
+      "size_bytes": 882
+    },
+    "fixtures/test-integrity/coupling/coverage-without-evidence/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.coverage-without-evidence.fixture.json.json",
+      "sha256": "9461f9354c17804cecf1db5efc65559a50fa41cdb8ec97c51511007cfe1d6b77",
+      "line_count": 31,
+      "size_bytes": 879
+    },
+    "fixtures/test-integrity/coupling/data-driven-parser/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.data-driven-parser.fixture.json.json",
+      "sha256": "09019223741517f1de0384d5bed5eab6d589ea289a887ea008102cab01869f1a",
+      "line_count": 19,
+      "size_bytes": 792
+    },
+    "fixtures/test-integrity/coupling/fixture-name-branch/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.fixture-name-branch.fixture.json.json",
+      "sha256": "f3903ecc71798c145df47cf271bf7e04ec66ef4458bbf86de82831f1f0458191",
+      "line_count": 26,
+      "size_bytes": 913
+    },
+    "fixtures/test-integrity/coupling/fixture-renamed-stable/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.fixture-renamed-stable.fixture.json.json",
+      "sha256": "d5776408cd9d70df9e390e31d2e25fb5eb05aa56d87fab9fd62afcfa711d7b53",
+      "line_count": 19,
+      "size_bytes": 794
+    },
+    "fixtures/test-integrity/coupling/manual-review-expired/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.manual-review-expired.fixture.json.json",
+      "sha256": "fa09668acbc2d46de7117186a437dc3f77724beabf6cc01985ecc32b8dd71457",
+      "line_count": 36,
+      "size_bytes": 1055
+    },
+    "fixtures/test-integrity/coupling/manual-review-owned/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.manual-review-owned.fixture.json.json",
+      "sha256": "77a6ff3f925adc6d60b22ddd06e4fc93fc0e251c59898f690bd1299eb08fe7f2",
+      "line_count": 28,
+      "size_bytes": 944
+    },
+    "fixtures/test-integrity/coupling/manual-review-without-human-record/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.manual-review-without-human-record.fixture.json.json",
+      "sha256": "3b516313c70ece9a06db322a2c902000e5506a2b92a4c220b01f0c8fcf57014b",
+      "line_count": 26,
+      "size_bytes": 788
+    },
+    "fixtures/test-integrity/coupling/risk-without-oracle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.risk-without-oracle.fixture.json.json",
+      "sha256": "01cd231aea735b671d1950641bf53c7acb503ad788d4bb8c21e88eee45c49b25",
+      "line_count": 35,
+      "size_bytes": 955
+    },
+    "fixtures/test-integrity/coupling/test-name-branch/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.coupling.test-name-branch.fixture.json.json",
+      "sha256": "fe189d34beaef6a084d0311b7edc6c51466f14fffb5a586aaf1efbe0ed3f7c80",
+      "line_count": 26,
+      "size_bytes": 880
+    },
+    "fixtures/test-integrity/mock-assertion/assert-true-constant/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.assert-true-constant.fixture.json.json",
+      "sha256": "97a5d68d898a5b9165b47b08ec63332c48744aa943f568fd69b4bbde5863680e",
+      "line_count": 23,
+      "size_bytes": 725
+    },
+    "fixtures/test-integrity/mock-assertion/assertion-free-smoke/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.assertion-free-smoke.fixture.json.json",
+      "sha256": "4cfeabf77dca550f5c51a61e7bae2e03dd40d6f6226aceb7a4f5e45ef7411b7b",
+      "line_count": 16,
+      "size_bytes": 802
+    },
+    "fixtures/test-integrity/mock-assertion/boundary-mock-allowed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.boundary-mock-allowed.fixture.json.json",
+      "sha256": "fee807270231c716338642f5ddcaf5809a26a19a9a1a1c11b648a2db696ab813",
+      "line_count": 30,
+      "size_bytes": 1121
+    },
+    "fixtures/test-integrity/mock-assertion/empty-stub-success/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.empty-stub-success.fixture.json.json",
+      "sha256": "672a1bbdce28f5fad37df7285a2cf0bca53d37f1c800ab309ca6ad5bd494e518",
+      "line_count": 22,
+      "size_bytes": 992
+    },
+    "fixtures/test-integrity/mock-assertion/empty-stub/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.empty-stub.fixture.json.json",
+      "sha256": "e7d4aad1d1d76cd02ae03a654cbdbe3fbe778735be4d0145fab5a47cb9484be5",
+      "line_count": 26,
+      "size_bytes": 853
+    },
+    "fixtures/test-integrity/mock-assertion/fixture-builder-legit/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.fixture-builder-legit.fixture.json.json",
+      "sha256": "020deef6c5b504ee90b105546f358782a2ad52257a0f4abfbe5b09108efc5a12",
+      "line_count": 23,
+      "size_bytes": 1041
+    },
+    "fixtures/test-integrity/mock-assertion/manual-review-documented/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.manual-review-documented.fixture.json.json",
+      "sha256": "a02e4376e5e512267a05349842e57e3b7d53edebf66ab1ae8ea0d10bd1857870",
+      "line_count": 18,
+      "size_bytes": 948
+    },
+    "fixtures/test-integrity/mock-assertion/mock-returns-fixture-name/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.mock-returns-fixture-name.fixture.json.json",
+      "sha256": "9657ee1603f639f8a6a4a7884694e134c5871d3710500846193505fbbb2ff627",
+      "line_count": 26,
+      "size_bytes": 1158
+    },
+    "fixtures/test-integrity/mock-assertion/no-assertions/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.no-assertions.fixture.json.json",
+      "sha256": "3eb6021500a29e5a016ceebd0ba7964b3cce231670b3b4e8694087ba60077b46",
+      "line_count": 14,
+      "size_bytes": 645
+    },
+    "fixtures/test-integrity/mock-assertion/overmocked-domain/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.overmocked-domain.fixture.json.json",
+      "sha256": "b1c41b0a01c856c733488731bb0bb9bc1b8da99175f736df1a4b47bcc6c8b5c3",
+      "line_count": 26,
+      "size_bytes": 1038
+    },
+    "fixtures/test-integrity/mock-assertion/property-assertion/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.property-assertion.fixture.json.json",
+      "sha256": "db6a35a75052d39a92257baea53a2b3b91c5680ca3dc4afb2284731652bd538f",
+      "line_count": 22,
+      "size_bytes": 785
+    },
+    "fixtures/test-integrity/mock-assertion/risk-without-oracle/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.risk-without-oracle.fixture.json.json",
+      "sha256": "2ed6719d3864a048ddaf843128aa14cb0a548ab97e075025fe35a9b42f3fd683",
+      "line_count": 16,
+      "size_bytes": 711
+    },
+    "fixtures/test-integrity/mock-assertion/snapshot-only/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.snapshot-only.fixture.json.json",
+      "sha256": "3a29f7dea44f7d4f0344977130b9648e8de9f579ed661813ecb3508c3ce2b01c",
+      "line_count": 20,
+      "size_bytes": 695
+    },
+    "fixtures/test-integrity/mock-assertion/snapshot-with-semantic-guard/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.snapshot-with-semantic-guard.fixture.json.json",
+      "sha256": "6a7df4fa0b3ce16545875c46ecb8af9c7f669a48a9303bcbf7d7444dabdead28",
+      "line_count": 26,
+      "size_bytes": 984
+    },
+    "fixtures/test-integrity/mock-assertion/strong-assertions/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.mock-assertion.strong-assertions.fixture.json.json",
+      "sha256": "fc16e8b0bb7371889615e5838938b366361a8b53262a983be60e511b62024ac8",
+      "line_count": 26,
+      "size_bytes": 922
+    },
+    "fixtures/test-integrity/skip-focus/clean-suite/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.skip-focus.clean-suite.fixture.json.json",
+      "sha256": "e73e3efead4b5ac63a0658ecfabaea5187e0e6853391f3efa60b542594c44ff9",
+      "line_count": 26,
+      "size_bytes": 680
+    },
+    "fixtures/test-integrity/skip-focus/known-skip-with-owner/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.skip-focus.known-skip-with-owner.fixture.json.json",
+      "sha256": "7860d1945f6f81ce02cdb1f9209ab2a91679b65a0673a04d8755d11d663a3de4",
+      "line_count": 40,
+      "size_bytes": 1039
+    },
+    "fixtures/test-integrity/skip-focus/only-focused-leak/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.skip-focus.only-focused-leak.fixture.json.json",
+      "sha256": "8d043f3803621b123454bcd54007c1ddca613935efb2d76c9665e145b2f116b3",
+      "line_count": 37,
+      "size_bytes": 922
+    },
+    "fixtures/test-integrity/skip-focus/skip-in-critical-risk-area/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.skip-focus.skip-in-critical-risk-area.fixture.json.json",
+      "sha256": "246c3b8ce17895b52160cf63bc2b86b227f87e64ea736488bdae1fe96b225fc9",
+      "line_count": 40,
+      "size_bytes": 1123
+    },
+    "fixtures/test-integrity/skip-focus/skip-without-reason/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.skip-focus.skip-without-reason.fixture.json.json",
+      "sha256": "4171e96d9ddf9a0070f3823cec0e57babbc84e85b19fa5912a7e828ff8b58c0f",
+      "line_count": 37,
+      "size_bytes": 891
+    },
+    "fixtures/test-integrity/skip-focus/todo-in-release-profile/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.skip-focus.todo-in-release-profile.fixture.json.json",
+      "sha256": "f651ad0250006a3745171b6fcbf0681bf74a431a5aa1b7bc55707f8cd8be8920",
+      "line_count": 37,
+      "size_bytes": 924
+    },
+    "fixtures/test-integrity/skip-focus/todo-non-release-profile/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.skip-focus.todo-non-release-profile.fixture.json.json",
+      "sha256": "900d3800bdac4051a35bcaaf0bc55ce478d958d0a9bd6086b44d15e371084bcd",
+      "line_count": 29,
+      "size_bytes": 727
+    },
+    "fixtures/test-integrity/skip-focus/xfail-with-issue-ref/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.skip-focus.xfail-with-issue-ref.fixture.json.json",
+      "sha256": "26a2efc46f913a9567ddd94450a5a5944f75539f2dd61d59ba1f60575d77bbfb",
+      "line_count": 32,
+      "size_bytes": 860
+    },
+    "fixtures/test-integrity/skip-focus/xfail-without-expiry/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.test-integrity.skip-focus.xfail-without-expiry.fixture.json.json",
+      "sha256": "681eb212e44d31ed4d124d82bacf537e4f85f9d1ab927ea44f12c83704b2928a",
+      "line_count": 38,
+      "size_bytes": 950
+    },
     "pyproject.toml": {
       "role": "project",
       "caps": "docs/birdseye/caps/pyproject.toml.json",
@@ -2501,12 +3936,26 @@
       "line_count": 49,
       "size_bytes": 2016
     },
+    "schemas/HATE/v1/artifact-safety-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.artifact-safety-report.schema.json.json",
+      "sha256": "739c3ed7728491ab3bdecc2e577fc898e28b0b7fd8a1cc8d11e328016bfb40f9",
+      "line_count": 172,
+      "size_bytes": 4098
+    },
     "schemas/HATE/v1/audit-record.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.audit-record.schema.json.json",
       "sha256": "9fe3695558429e27383333bc02fdbbc2612ecd567284d6c8ad3b33975b270a53",
       "line_count": 30,
       "size_bytes": 932
+    },
+    "schemas/HATE/v1/commercial-truthfulness-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.commercial-truthfulness-report.schema.json.json",
+      "sha256": "1483cf3ec1f7a7eee1c337196bc40c85353defbedcf782434f80303569e57140",
+      "line_count": 96,
+      "size_bytes": 3725
     },
     "schemas/HATE/v1/common-envelope.schema.json": {
       "role": "schema",
@@ -2529,6 +3978,13 @@
       "line_count": 35,
       "size_bytes": 1212
     },
+    "schemas/HATE/v1/enterprise-control-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.enterprise-control-report.schema.json.json",
+      "sha256": "a96350c177af32bfdc1948db2e2136f226ec02408c494b9bbe71bea590b03f4e",
+      "line_count": 271,
+      "size_bytes": 7765
+    },
     "schemas/HATE/v1/evidence-envelope.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.evidence-envelope.schema.json.json",
@@ -2549,6 +4005,13 @@
       "sha256": "4df8b7e1a7c9ed4e0db02e0be1b8b1f5e11ac0a9197be04da6b50bad693b0a94",
       "line_count": 162,
       "size_bytes": 4164
+    },
+    "schemas/HATE/v1/migration-compatibility-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.migration-compatibility-report.schema.json.json",
+      "sha256": "b2a9f3332c7d65d75893bc8cf8ceab90daa3e631b95cf8efbe90ef8f6476c0d2",
+      "line_count": 106,
+      "size_bytes": 3786
     },
     "schemas/HATE/v1/mutation-evidence.schema.json": {
       "role": "schema",
@@ -2578,6 +4041,13 @@
       "line_count": 94,
       "size_bytes": 3303
     },
+    "schemas/HATE/v1/release-candidate-pack.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.release-candidate-pack.schema.json.json",
+      "sha256": "7526762d3ef1a30070235b6e6934e6972b72b937a936c9fae09a197c337e3c14",
+      "line_count": 154,
+      "size_bytes": 5524
+    },
     "schemas/HATE/v1/risk-coverage-matrix.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.risk-coverage-matrix.schema.json.json",
@@ -2592,12 +4062,26 @@
       "line_count": 46,
       "size_bytes": 1624
     },
+    "schemas/HATE/v1/safe-diagnostic-bundle.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.safe-diagnostic-bundle.schema.json.json",
+      "sha256": "8eae24a7554f9532d715b4f31ff43aa98f8bd6547ac6df99af718921ff3d328b",
+      "line_count": 192,
+      "size_bytes": 4531
+    },
+    "schemas/HATE/v1/scale-performance-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.scale-performance-report.schema.json.json",
+      "sha256": "6997d6ea087f99eb63853c89b3687f63616c59509abd446b7062ce5a79ed518b",
+      "line_count": 108,
+      "size_bytes": 3277
+    },
     "schemas/HATE/v1/schema-registry.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-registry.json.json",
-      "sha256": "2cdd9fa5c55723994764ce23007c2b0c139f56f19f54a364a2557e901a101fed",
-      "line_count": 82,
-      "size_bytes": 2121
+      "sha256": "a832eb010f63a6612e223478a0ed62918e2fe1a538c9b285a6c3c682b90c8426",
+      "line_count": 147,
+      "size_bytes": 4059
     },
     "schemas/HATE/v1/source-ref.schema.json": {
       "role": "schema",
@@ -2613,12 +4097,54 @@
       "line_count": 28,
       "size_bytes": 1016
     },
+    "schemas/HATE/v1/store-manifest.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.store-manifest.schema.json.json",
+      "sha256": "f127f69e15df9f3d9e9e2b3b50ae8608dba7c7162db8eb78c19b0835e2c2b3ac",
+      "line_count": 145,
+      "size_bytes": 4561
+    },
+    "schemas/HATE/v1/support-ops-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.support-ops-report.schema.json.json",
+      "sha256": "bb4d0716a860ed05767d83c10e93ebc84f140aedb6de8938f32a40ef8aed70a0",
+      "line_count": 120,
+      "size_bytes": 3213
+    },
+    "schemas/HATE/v1/test-integrity-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.test-integrity-report.schema.json.json",
+      "sha256": "16454e9812da7925b9d07ce0b01afbea399924013943b71a24f59c9ddb5548f6",
+      "line_count": 709,
+      "size_bytes": 18454
+    },
     "schemas/HATE/v1/test-result.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.test-result.schema.json.json",
       "sha256": "6e4fdbc24d4faa25d9503ee41ffb0691ffe4da46df901f5f1116d388da8d665b",
       "line_count": 57,
       "size_bytes": 1979
+    },
+    "schemas/api/api-authz-decision.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.api.api-authz-decision.schema.json.json",
+      "sha256": "400f1e14243971b58f67c563a21f280b7c7a3f7eff473a8ef587e1f548a567fd",
+      "line_count": 103,
+      "size_bytes": 2867
+    },
+    "schemas/api/bundle-import-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.api.bundle-import-report.schema.json.json",
+      "sha256": "31170b721e56622aada14446cebbdba0c0358c2e89eb63353170ebc54ba3accb",
+      "line_count": 159,
+      "size_bytes": 4518
+    },
+    "schemas/api/safe-export-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.api.safe-export-report.schema.json.json",
+      "sha256": "ea324f7a5fb2e1918baecbc3ac33188a8f3c3694041bf068214e4f5f7162cf01",
+      "line_count": 145,
+      "size_bytes": 4354
     },
     "src/hate/__init__.py": {
       "role": "implementation",
@@ -2690,6 +4216,48 @@
       "line_count": 105,
       "size_bytes": 3834
     },
+    "src/hate/api/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.api.__init__.py.json",
+      "sha256": "9e796b2a278976a05a14ac44dee4415f8ad3a2feaf79bf0dceb31ae214cade6e",
+      "line_count": 114,
+      "size_bytes": 2621
+    },
+    "src/hate/api/authz.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.api.authz.py.json",
+      "sha256": "1e718f31da35dc86b1be3931d8095382812376624242fa044c9f1e5b72d2c530",
+      "line_count": 346,
+      "size_bytes": 11913
+    },
+    "src/hate/api/errors.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.api.errors.py.json",
+      "sha256": "1339e5a902760b61534d376c7e5c628d389ad6bf38838b292bf9399b89d2c31f",
+      "line_count": 257,
+      "size_bytes": 8798
+    },
+    "src/hate/api/import_export.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.api.import_export.py.json",
+      "sha256": "56135c118a0560269195fcc632facd3f0a18a915ca4d0f9903cdcaf723e81d1d",
+      "line_count": 397,
+      "size_bytes": 14722
+    },
+    "src/hate/api/read_model.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.api.read_model.py.json",
+      "sha256": "349906833fa1419a299e7ef36853449355025b2f5ea6bd47ff40ca7e2482051a",
+      "line_count": 608,
+      "size_bytes": 21229
+    },
+    "src/hate/api/read_model_contract.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.api.read_model_contract.py.json",
+      "sha256": "22ebb1298551304f25fba58d56a1c41a60364848e30fed60dc0d9db6357f982e",
+      "line_count": 173,
+      "size_bytes": 5258
+    },
     "src/hate/audit.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.audit.py.json",
@@ -2707,9 +4275,23 @@
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "df456f2c18617c5050c427f62e08ff6dfd8fcd8f7bb724188d1afec31ea596dc",
-      "line_count": 420,
-      "size_bytes": 20607
+      "sha256": "a38b361773c49668960d10afd5c3c75db8a606fd6ab222d63f7867b479991ddc",
+      "line_count": 522,
+      "size_bytes": 25033
+    },
+    "src/hate/commercial/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.commercial.__init__.py.json",
+      "sha256": "2772ea40fbecebb7b79417a35ebd79afb9417025c1ff4a8349962e397f717b74",
+      "line_count": 13,
+      "size_bytes": 281
+    },
+    "src/hate/commercial/truthfulness.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.commercial.truthfulness.py.json",
+      "sha256": "0cc1671a614d98b2de549299be085c6326a45f8ccaa1e276e66b34f6fa1ed078",
+      "line_count": 287,
+      "size_bytes": 11936
     },
     "src/hate/connectors.py": {
       "role": "implementation",
@@ -2718,6 +4300,62 @@
       "line_count": 163,
       "size_bytes": 6530
     },
+    "src/hate/connectors/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.__init__.py.json",
+      "sha256": "f3d6ed6b10164f44a1ba0a132249fe6d8f03250ceb5edad1b6b9e2d43e161ecb",
+      "line_count": 35,
+      "size_bytes": 788
+    },
+    "src/hate/connectors/ops.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.ops.py.json",
+      "sha256": "24a475ec09cd19eb340429d44a058cfa3be953b18422048079ec8432c4154136",
+      "line_count": 312,
+      "size_bytes": 11965
+    },
+    "src/hate/connectors/reports.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.reports.py.json",
+      "sha256": "d2f2984c579cfd71bd25dbebf1484d6ac24ca6bf17977f7efd7710a74269cb8a",
+      "line_count": 139,
+      "size_bytes": 4906
+    },
+    "src/hate/connectors/scim.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.scim.py.json",
+      "sha256": "ddad943ab021e2a9e40e5bf34944836cc120ec6f290407ef138058c27f3914b5",
+      "line_count": 206,
+      "size_bytes": 7977
+    },
+    "src/hate/connectors/siem.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.siem.py.json",
+      "sha256": "b0349026b9cfbefb95a1b61bfcf0643ed71f809374ca40ead91a0e4644eb9edc",
+      "line_count": 14,
+      "size_bytes": 405
+    },
+    "src/hate/connectors/sso.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.sso.py.json",
+      "sha256": "5b16c6a4b40c77bc165db22fbade0b3206d51b1ceac3c76a0ab313c773e3cecd",
+      "line_count": 299,
+      "size_bytes": 10868
+    },
+    "src/hate/connectors/ticketing.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.ticketing.py.json",
+      "sha256": "69c1da79639bfed47cff67239579c2a0ae90e39e1d376970a4f559c3a7f875a2",
+      "line_count": 14,
+      "size_bytes": 420
+    },
+    "src/hate/connectors/warehouse.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.warehouse.py.json",
+      "sha256": "b4f6f2792392c32c43e6db52afc0dc53040e24e394cec321c065dafca2241188",
+      "line_count": 14,
+      "size_bytes": 420
+    },
     "src/hate/cross_record_validator.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cross_record_validator.py.json",
@@ -2725,12 +4363,68 @@
       "line_count": 150,
       "size_bytes": 6809
     },
+    "src/hate/dashboard/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.dashboard.__init__.py.json",
+      "sha256": "04c1478fa9f66707c5bc795d4cf669d3aaa10bdf38ee3e5aaacff776c71bb342",
+      "line_count": 72,
+      "size_bytes": 1950
+    },
+    "src/hate/dashboard/uat_states.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.dashboard.uat_states.py.json",
+      "sha256": "d566a6d300ed7de93b3dceebf13a467fc8337d779d1949454f1e362d37e22871",
+      "line_count": 609,
+      "size_bytes": 19715
+    },
+    "src/hate/dashboard/view_models.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.dashboard.view_models.py.json",
+      "sha256": "9fb41bb9fade551de1a58a3a096e899571bbf9757393b51da7948fb3b0880de6",
+      "line_count": 545,
+      "size_bytes": 19349
+    },
     "src/hate/domain.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.domain.py.json",
       "sha256": "610006a02b112343488a2149f49b515ef63896d51dbfd01a7782943f3a6ea2da",
       "line_count": 151,
       "size_bytes": 7301
+    },
+    "src/hate/enterprise/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.enterprise.__init__.py.json",
+      "sha256": "81b252a2cb42b9850698c420d4250792c21acbd917da9e223ddf78c55789841c",
+      "line_count": 20,
+      "size_bytes": 707
+    },
+    "src/hate/enterprise/audit.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.enterprise.audit.py.json",
+      "sha256": "ddbe72d45c53ec037ae51d3c66efe84a67694877c768513b1a424b93f4fe52ea",
+      "line_count": 229,
+      "size_bytes": 8179
+    },
+    "src/hate/enterprise/legal_hold.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.enterprise.legal_hold.py.json",
+      "sha256": "ac5ee28ae6f88c792048651a4ab654dc4c778d507142b63d6bba1c42423a31bd",
+      "line_count": 91,
+      "size_bytes": 3225
+    },
+    "src/hate/enterprise/rbac.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.enterprise.rbac.py.json",
+      "sha256": "40181d92859a99e67a7535e53cf6a642a7b89607e647f6b820faa6e65b446b04",
+      "line_count": 315,
+      "size_bytes": 9341
+    },
+    "src/hate/enterprise/retention.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.enterprise.retention.py.json",
+      "sha256": "26ac50f67f1da38773aa2443cc38dfde731952dfa9651ff8ec8c406b9c7c454e",
+      "line_count": 263,
+      "size_bytes": 8869
     },
     "src/hate/evidence_envelope.py": {
       "role": "implementation",
@@ -2759,6 +4453,27 @@
       "sha256": "f3ab09709c427d0642e821398f2649c6ec76ebc94036645e5bcce3815963e358",
       "line_count": 312,
       "size_bytes": 12198
+    },
+    "src/hate/migration/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.migration.__init__.py.json",
+      "sha256": "2ca8d0682b06e1f8432caba201c951e56adf141fb6824d1408fa8722cd9fe658",
+      "line_count": 16,
+      "size_bytes": 499
+    },
+    "src/hate/migration/compatibility.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.migration.compatibility.py.json",
+      "sha256": "852887b83d956c8f0e4b65493466368f70d406a904a2a8b2e39e7079e8fd37b5",
+      "line_count": 208,
+      "size_bytes": 8890
+    },
+    "src/hate/migration/legal_hold.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.migration.legal_hold.py.json",
+      "sha256": "1711699c16ece7bb9de7f60ec5c2577ae3cc3e99db13fea15e3087f2b4e55258",
+      "line_count": 132,
+      "size_bytes": 6014
     },
     "src/hate/p0a.py": {
       "role": "implementation",
@@ -2812,9 +4527,9 @@
     "src/hate/p0a_schema.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_schema.py.json",
-      "sha256": "29402072733901b77872e65abd9c578b3f465f09139b326b980a5c520dd630d8",
-      "line_count": 153,
-      "size_bytes": 6543
+      "sha256": "30605cd621933df75d5ed77a3debf1f20fda686b4676673114b0a7a69734be14",
+      "line_count": 159,
+      "size_bytes": 6770
     },
     "src/hate/p0a_static.py": {
       "role": "implementation",
@@ -2840,9 +4555,16 @@
     "src/hate/p0b.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0b.py.json",
-      "sha256": "664d600c4f20449e38c66c4fbfd7618e2a4078d8ffe4e7aa512c3f5e3f0c7e70",
-      "line_count": 854,
-      "size_bytes": 39507
+      "sha256": "73244dda5f76035c8ee1b735972effb53593df81369fd204a288fed4d49aac49",
+      "line_count": 741,
+      "size_bytes": 33969
+    },
+    "src/hate/p0b_sarif.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0b_sarif.py.json",
+      "sha256": "6b4835e3fe3bd21171514939f276dc2c4b764025c89386db23124deb5f6cc094",
+      "line_count": 125,
+      "size_bytes": 5668
     },
     "src/hate/p0b_support.py": {
       "role": "implementation",
@@ -2858,6 +4580,69 @@
       "line_count": 409,
       "size_bytes": 17776
     },
+    "src/hate/p1a_internal/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_internal.__init__.py.json",
+      "sha256": "e2a679398d00e64883606f0ac3d416f226496e5446952fdc2997abc5af4016ac",
+      "line_count": 97,
+      "size_bytes": 2518
+    },
+    "src/hate/p1a_internal/adapter_conformance.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_internal.adapter_conformance.py.json",
+      "sha256": "2e199f6d9e9e1dd48a7127908b0b7b07e0c65c77730e34fab5886fcd5b6c82c0",
+      "line_count": 145,
+      "size_bytes": 6097
+    },
+    "src/hate/p1a_internal/adapter_registry.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_internal.adapter_registry.py.json",
+      "sha256": "ea9ea233c3ef8e9544a31ea454d226dece492895db06a8629772cd4941c6e3ff",
+      "line_count": 161,
+      "size_bytes": 7485
+    },
+    "src/hate/p1a_internal/aete_scoring.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_internal.aete_scoring.py.json",
+      "sha256": "ac9d88a86b50c9e50264517276f0b8eb1e032c3ca8d6a524ac3a22671baa123e",
+      "line_count": 158,
+      "size_bytes": 7125
+    },
+    "src/hate/p1a_internal/artifact_resolver.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_internal.artifact_resolver.py.json",
+      "sha256": "bf3983e149f7b49608e0e9b0e65de767223b32aa8aa7fae27b8fe38ec1052565",
+      "line_count": 67,
+      "size_bytes": 2695
+    },
+    "src/hate/p1a_internal/doctor_report.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_internal.doctor_report.py.json",
+      "sha256": "8ff06c18d8b1d9568f4be4637c09be7e2e44889dcaa9fa91d841820db93c05dc",
+      "line_count": 105,
+      "size_bytes": 4298
+    },
+    "src/hate/p1a_internal/identity.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_internal.identity.py.json",
+      "sha256": "71a9273a2e1c1955ba9d4d5f1aca1121fa4bf2936ab26c73def058f165fdd8a6",
+      "line_count": 99,
+      "size_bytes": 3815
+    },
+    "src/hate/p1a_internal/recommendations.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_internal.recommendations.py.json",
+      "sha256": "b3c63bf4633302ca5f78eb6a50a1176d59415ad66454657fd2090d4b1d202115",
+      "line_count": 122,
+      "size_bytes": 5746
+    },
+    "src/hate/p1a_internal/retry_aggregation.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_internal.retry_aggregation.py.json",
+      "sha256": "ee78c0243c8de569cc0ff59ec023ee253dba1b81a598bf63a1940db13255e7a1",
+      "line_count": 142,
+      "size_bytes": 5964
+    },
     "src/hate/p1a_io.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_io.py.json",
@@ -2868,16 +4653,30 @@
     "src/hate/p1a_support.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_support.py.json",
-      "sha256": "11bf2f40d8f373eb0ba40b31998ca43ebf2fb88d4cab3598581b2e426d06a013",
-      "line_count": 914,
-      "size_bytes": 42669
+      "sha256": "b47a7e6a2b07d145e2ee4f7e5fe0ff8db2b1b00352ca46c9c1060aacd2ccfb8b",
+      "line_count": 99,
+      "size_bytes": 2672
     },
     "src/hate/p1b.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1b.py.json",
-      "sha256": "855082aa1fd4f0f75d9ab90ce85e2cb144a678d6758b3ab191135a4c915be904",
-      "line_count": 846,
-      "size_bytes": 37521
+      "sha256": "4f351f7819e4d8ff1c81f40855f3abf49967e1952b955b11eca5c4e3e65e511e",
+      "line_count": 469,
+      "size_bytes": 20197
+    },
+    "src/hate/p1b_alignment.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1b_alignment.py.json",
+      "sha256": "53309f863eb9d6bca5bdd3b3a90fe81c0adfad88d1d3bb6c8e50224b781157b3",
+      "line_count": 317,
+      "size_bytes": 14277
+    },
+    "src/hate/p1b_evidence.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1b_evidence.py.json",
+      "sha256": "6d13d188e02e9d713e6c370aab7c93e122ac0693cd4df52b26f881b99a9c4d93",
+      "line_count": 78,
+      "size_bytes": 3123
     },
     "src/hate/p2p3.py": {
       "role": "implementation",
@@ -2910,9 +4709,9 @@
     "src/hate/p2p3_readiness.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p2p3_readiness.py.json",
-      "sha256": "62cd04894213e639a95b69fce620649c921f1e8cbebcdc5fb089ff13c2b3834d",
-      "line_count": 201,
-      "size_bytes": 8831
+      "sha256": "8c56e76c1083d2f71e4801e2c5a02ba9770c17dac6c7688a99c0e925c9263bc1",
+      "line_count": 329,
+      "size_bytes": 14212
     },
     "src/hate/p2p3_reports.py": {
       "role": "implementation",
@@ -2945,16 +4744,44 @@
     "src/hate/release.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.release.py.json",
-      "sha256": "2bd232cd2a32906918b69a08c39eafed23e0c4fbcef01061045240115fd12ad1",
-      "line_count": 99,
-      "size_bytes": 4279
+      "sha256": "ae637e4fb764caa1449d0bc937bfeb15b0d5a49561df002371e82bfaa948547e",
+      "line_count": 339,
+      "size_bytes": 14425
     },
     "src/hate/risk_matrix.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.risk_matrix.py.json",
-      "sha256": "16f92fc7e4c38135304d1db4c7a5a267d74cf4394b0cb1c3849ad1e38808a4ae",
-      "line_count": 796,
-      "size_bytes": 30046
+      "sha256": "c054143dba91f3f95e69324c216e150ae15aed5f9c7951ca58ff97183c99d98e",
+      "line_count": 649,
+      "size_bytes": 26134
+    },
+    "src/hate/risk_matrix_types.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.risk_matrix_types.py.json",
+      "sha256": "f5c72c3c09dca39a878048b6ee2e50397b35566fce88db0e871a58c31901c35e",
+      "line_count": 162,
+      "size_bytes": 4232
+    },
+    "src/hate/scale/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.scale.__init__.py.json",
+      "sha256": "51ec553999963285a0aa1e552c46e90299f15b00097769180ef718187ddacca6",
+      "line_count": 25,
+      "size_bytes": 653
+    },
+    "src/hate/scale/fixtures.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.scale.fixtures.py.json",
+      "sha256": "8fe9e541b5c411c49d2736349f8260f352845349f1ea3c37c8c10c604a5561ac",
+      "line_count": 290,
+      "size_bytes": 11516
+    },
+    "src/hate/scale/performance_budget.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.scale.performance_budget.py.json",
+      "sha256": "c45915b81d8194f78e7d1ee723a7213f235e5281e58c407307f13706d66a8f11",
+      "line_count": 248,
+      "size_bytes": 8499
     },
     "src/hate/schema_validator.py": {
       "role": "implementation",
@@ -2963,6 +4790,48 @@
       "line_count": 174,
       "size_bytes": 6619
     },
+    "src/hate/security/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.security.__init__.py.json",
+      "sha256": "4a4229684476d997f8c23701014eddc684d1d151fba5ff6aa63238488456e857",
+      "line_count": 46,
+      "size_bytes": 1379
+    },
+    "src/hate/security/artifact_safety.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.security.artifact_safety.py.json",
+      "sha256": "427c97880fb57ae3996a4a168e7f6c4512054c47ddfcba3be058f8be51eb63b5",
+      "line_count": 713,
+      "size_bytes": 26351
+    },
+    "src/hate/security/export_filter.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.security.export_filter.py.json",
+      "sha256": "bb3e6d9ca57f68a28e0e6c006af10f004d2a9371a42d7da8af8fa2266d3280d7",
+      "line_count": 213,
+      "size_bytes": 7975
+    },
+    "src/hate/security/models.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.security.models.py.json",
+      "sha256": "c1558a112462f28e9fa4f93a310fff488a03c2cb3883eb546b9e7bd678c047a9",
+      "line_count": 399,
+      "size_bytes": 15389
+    },
+    "src/hate/security/redaction.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.security.redaction.py.json",
+      "sha256": "08838effacdcd048ea8b338bf4d7f0ab2ecfa479a16249ca7e22d02fffb249ca",
+      "line_count": 372,
+      "size_bytes": 13609
+    },
+    "src/hate/security/summary_filter.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.security.summary_filter.py.json",
+      "sha256": "2f3b46546b5dd10364043cb182af592039d247949db1f5eb10c8cc6ab492ac5b",
+      "line_count": 216,
+      "size_bytes": 7911
+    },
     "src/hate/source_ref.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.source_ref.py.json",
@@ -2970,12 +4839,152 @@
       "line_count": 156,
       "size_bytes": 4718
     },
-    "src/hate/store.py": {
+    "src/hate/store/__init__.py": {
       "role": "implementation",
-      "caps": "docs/birdseye/caps/src.hate.store.py.json",
+      "caps": "docs/birdseye/caps/src.hate.store.__init__.py.json",
+      "sha256": "c237d97a60ddee1448080ba2c528e5faed3398cd7adb9684a8c8e4d140fe1b17",
+      "line_count": 118,
+      "size_bytes": 2870
+    },
+    "src/hate/store/atomic_write.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.atomic_write.py.json",
+      "sha256": "4bf1e5d15f7ce6f0b09f6f14e184a8b755f6624c41b1abb53986e9f6e29b60f7",
+      "line_count": 377,
+      "size_bytes": 11584
+    },
+    "src/hate/store/compare.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.compare.py.json",
+      "sha256": "670a6f618eb4192893360b8e8ae98b26657aa8ca90f4e055659cb2b3dcd40ef6",
+      "line_count": 497,
+      "size_bytes": 17253
+    },
+    "src/hate/store/doctor.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.doctor.py.json",
+      "sha256": "0cb81de5e37ebe92d55ed9159e327d9d8bcf99a6992f2ec23458c1bfdaa874e8",
+      "line_count": 571,
+      "size_bytes": 20578
+    },
+    "src/hate/store/indexes.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.indexes.py.json",
+      "sha256": "e8b94cd9eb3c65a24d75a6b5ffe084e0811e116930182fef099dee6928c0b89f",
+      "line_count": 450,
+      "size_bytes": 15085
+    },
+    "src/hate/store/local_store.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.local_store.py.json",
+      "sha256": "a428f9e2396c34d994d1680972e48474e2babe0784214ea8c5ec9ab1ffab6e39",
+      "line_count": 719,
+      "size_bytes": 25160
+    },
+    "src/hate/store/replay.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.replay.py.json",
+      "sha256": "f57aa9c8dc3facd987000640ba403058fce66b0dfb75b6bcfcbb9c372df2fa0f",
+      "line_count": 415,
+      "size_bytes": 13356
+    },
+    "src/hate/store_legacy.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store_legacy.py.json",
       "sha256": "65655f085041ac6416736365fe5a717438a4c808067449d82034cdb52f5f2d68",
       "line_count": 215,
       "size_bytes": 8255
+    },
+    "src/hate/support_ops/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.support_ops.__init__.py.json",
+      "sha256": "f3ff161b875764c6a3cb0a69351ef58ecd18864209209ae56d8edeb9a43ba218",
+      "line_count": 35,
+      "size_bytes": 893
+    },
+    "src/hate/support_ops/diagnostics.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.support_ops.diagnostics.py.json",
+      "sha256": "2198576956e9d7deefa4ba4e68973de7f4f9615029951f9f573cb14dbc408564",
+      "line_count": 297,
+      "size_bytes": 12302
+    },
+    "src/hate/support_ops/error_catalog.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.support_ops.error_catalog.py.json",
+      "sha256": "f591da2b87ee0b3e359785a8d573c4f5ae58a1ebb7f20f61cc483d14ea7b92c6",
+      "line_count": 246,
+      "size_bytes": 9278
+    },
+    "src/hate/support_ops/observability.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.support_ops.observability.py.json",
+      "sha256": "256ddddeba343597ffa69cc4c76294a5f555594babe3cda9f5a6048b2eb4f899",
+      "line_count": 246,
+      "size_bytes": 9101
+    },
+    "src/hate/test_integrity/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.test_integrity.__init__.py.json",
+      "sha256": "ec84c57a9b6dc847199ffae411361a5e7aa312f5ad4e22b7b2cb7c6f600ee291",
+      "line_count": 19,
+      "size_bytes": 595
+    },
+    "src/hate/test_integrity/coupling.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.test_integrity.coupling.py.json",
+      "sha256": "cf4fd183edbde7682109fb7a8fa4b750bbe6327714fa7344a4ee6a6ad73cffa8",
+      "line_count": 576,
+      "size_bytes": 23352
+    },
+    "src/hate/test_integrity/coupling_findings.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.test_integrity.coupling_findings.py.json",
+      "sha256": "ee3f77cbe653ea357c1af6652c458d7609872b8cd36beddf5deb6a5d14722499",
+      "line_count": 194,
+      "size_bytes": 6239
+    },
+    "src/hate/test_integrity/coupling_types.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.test_integrity.coupling_types.py.json",
+      "sha256": "62daa8f795f0ccf228f926b30c4f8940a09a2d87ed4342ef364addb1d3a449f5",
+      "line_count": 109,
+      "size_bytes": 3092
+    },
+    "src/hate/test_integrity/manual_review.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.test_integrity.manual_review.py.json",
+      "sha256": "40a5b91a640176b483cffeee0da60968b79d1147c7c014e1e4acc40635d00b5e",
+      "line_count": 490,
+      "size_bytes": 18567
+    },
+    "src/hate/test_integrity/mock_assertion.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.test_integrity.mock_assertion.py.json",
+      "sha256": "6262c745181f890c8f9308a0d7c1b5d20e3bfa73eeac25b113c466ca3e73dd62",
+      "line_count": 709,
+      "size_bytes": 27217
+    },
+    "src/hate/test_integrity/mock_assertion_types.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.test_integrity.mock_assertion_types.py.json",
+      "sha256": "86d1c0a00e93cbdbeec148ce33d2470f7f297edf6534121a7a01fdd4712cd4c5",
+      "line_count": 130,
+      "size_bytes": 3561
+    },
+    "src/hate/test_integrity/models.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.test_integrity.models.py.json",
+      "sha256": "e8a7dddd59199b0b3cac1e3cd59409edc2854fa231042c929ff79e90f7fd55b2",
+      "line_count": 237,
+      "size_bytes": 8548
+    },
+    "src/hate/test_integrity/skip_focus.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.test_integrity.skip_focus.py.json",
+      "sha256": "b8bedb687a8582e8803aad7fa934a1901f9928039eef731fa1c324fc9dd8e509",
+      "line_count": 624,
+      "size_bytes": 22169
     },
     "tests/test_acceptance_pipeline.py": {
       "role": "test",
@@ -3019,6 +5028,62 @@
       "line_count": 203,
       "size_bytes": 8967
     },
+    "tests/test_api_import_export_authz.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_api_import_export_authz.py.json",
+      "sha256": "444ef6a9be89f129e69ffbc217feea413b211cc7251979ed02676c60f313a52c",
+      "line_count": 528,
+      "size_bytes": 21303
+    },
+    "tests/test_api_read_model.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_api_read_model.py.json",
+      "sha256": "8268aa3eed7de7583b36bda646c95141539e4a864250850669493bd0d5e2cf46",
+      "line_count": 123,
+      "size_bytes": 4791
+    },
+    "tests/test_api_read_model_contract.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_api_read_model_contract.py.json",
+      "sha256": "8cc3043b28a160ffa5a8ebea533f82f7fb8f0c0a2fa6669753bcbde5af117b27",
+      "line_count": 882,
+      "size_bytes": 31429
+    },
+    "tests/test_api_read_model_inventory.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_api_read_model_inventory.py.json",
+      "sha256": "125118f5921b7133a8176d990a50e4010868c0cfbb7b8e42be2ac640af61e0ec",
+      "line_count": 104,
+      "size_bytes": 3198
+    },
+    "tests/test_artifact_redaction.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_artifact_redaction.py.json",
+      "sha256": "e2ae92105c9aaf1b76b4142310963304d084e76e69999b56c38e220831d092a9",
+      "line_count": 395,
+      "size_bytes": 15732
+    },
+    "tests/test_artifact_safety.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_artifact_safety.py.json",
+      "sha256": "d17ebb5f5492c4addfe7b956c90db43076bba6b37bca665c4c25dcb17832353f",
+      "line_count": 279,
+      "size_bytes": 10979
+    },
+    "tests/test_check_file_size.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_check_file_size.py.json",
+      "sha256": "5f7b9c1d9b8f6f166d83bf46a3ca00fcc1b75aab6843fb1acd93f026095bdd15",
+      "line_count": 42,
+      "size_bytes": 1415
+    },
+    "tests/test_cli_release_candidate.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_cli_release_candidate.py.json",
+      "sha256": "f907075d6cad3b931cd8c129ddda0f0fb9a05fd7480bed5d196a6d850200c03e",
+      "line_count": 180,
+      "size_bytes": 6373
+    },
     "tests/test_codemap_update.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_codemap_update.py.json",
@@ -3026,12 +5091,61 @@
       "line_count": 45,
       "size_bytes": 1898
     },
+    "tests/test_commercial_truthfulness.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_commercial_truthfulness.py.json",
+      "sha256": "049840048dce9d5202dfddfd7e83e34acc20d80ca32824892811396f88965749",
+      "line_count": 125,
+      "size_bytes": 5172
+    },
+    "tests/test_connectors_ops.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_connectors_ops.py.json",
+      "sha256": "2a4d84ecc2cb476143419ac67d458193de0fd92a1299d4226302d4561a41d90a",
+      "line_count": 242,
+      "size_bytes": 8974
+    },
+    "tests/test_connectors_sso_scim.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_connectors_sso_scim.py.json",
+      "sha256": "c8ad27ac300a001398710424cf354a57d55e8bb8fefbcec9bbb90ef205564037",
+      "line_count": 225,
+      "size_bytes": 8845
+    },
     "tests/test_cross_record_validator.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_cross_record_validator.py.json",
       "sha256": "4c275997b2f2d60a0d59287be64495ef64cd6659498031f49680a4892fead8eb",
       "line_count": 85,
       "size_bytes": 3380
+    },
+    "tests/test_dashboard_uat_states.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_dashboard_uat_states.py.json",
+      "sha256": "2ca9b0066dff745587497277f9f0c71f6732a98ad3917b06dbdf866567a65a56",
+      "line_count": 511,
+      "size_bytes": 18696
+    },
+    "tests/test_dashboard_view_models.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_dashboard_view_models.py.json",
+      "sha256": "a597b883c626e4ee3c7db379b6d6d71b76fd70040da4f6847605fa50affadbc1",
+      "line_count": 491,
+      "size_bytes": 18548
+    },
+    "tests/test_enterprise_rbac_audit.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_enterprise_rbac_audit.py.json",
+      "sha256": "44198769559f0863aff7d7fb36361fdd7d68d6ecf4342760696ee64138feb649",
+      "line_count": 136,
+      "size_bytes": 4969
+    },
+    "tests/test_enterprise_retention_legal_hold.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_enterprise_retention_legal_hold.py.json",
+      "sha256": "c56f5185fc8c1cc2cb3a5e41e060f3437c9da3b6bdd971f9e2065cdf08faa61f",
+      "line_count": 118,
+      "size_bytes": 4252
     },
     "tests/test_evidence_graph.py": {
       "role": "test",
@@ -3047,12 +5161,26 @@
       "line_count": 237,
       "size_bytes": 7930
     },
+    "tests/test_migration_compatibility.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_migration_compatibility.py.json",
+      "sha256": "063ed3759b7e979b9da014c3623307dab0bfd7aff1ad4a2f29aaef6ebfba2ba6",
+      "line_count": 107,
+      "size_bytes": 4236
+    },
+    "tests/test_migration_legal_hold.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_migration_legal_hold.py.json",
+      "sha256": "be4f10bfc3e2e77a0db8a2f427f07e3c016f550fbacf744f11f6b7b2aa2f86ad",
+      "line_count": 102,
+      "size_bytes": 3730
+    },
     "tests/test_p0a.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p0a.py.json",
-      "sha256": "e82742b50d90265c0514a8241ebd44c8a26fe9205f2b67ea0b68ac670da30a5c",
-      "line_count": 675,
-      "size_bytes": 34100
+      "sha256": "2ca12d2a8f229e810df4975f47bb83d7a65576977f479ea864baed949b761beb",
+      "line_count": 695,
+      "size_bytes": 34802
     },
     "tests/test_p0b.py": {
       "role": "test",
@@ -3078,9 +5206,16 @@
     "tests/test_p2p3.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p2p3.py.json",
-      "sha256": "dc937f6a4050f2a22dba0ac34ca54d6bd79a81a38aa3c18b2176fd609900f941",
-      "line_count": 812,
-      "size_bytes": 45175
+      "sha256": "0a1654da447a5d65908bc5ea53658fb7518b4500fc5ac4575b81de1be2133889",
+      "line_count": 832,
+      "size_bytes": 46440
+    },
+    "tests/test_performance_budget.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_performance_budget.py.json",
+      "sha256": "44fb11ca03105138df31e7aa38a9fdc54e3b6310520e19a39cc7499a27279797",
+      "line_count": 110,
+      "size_bytes": 4138
     },
     "tests/test_product_grade.py": {
       "role": "test",
@@ -3096,12 +5231,26 @@
       "line_count": 55,
       "size_bytes": 1979
     },
+    "tests/test_release_candidate_pack.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_release_candidate_pack.py.json",
+      "sha256": "fb8a74407cf7dead83c6c22d53e55293a7da144836f000b0502a1d64ee228ee9",
+      "line_count": 113,
+      "size_bytes": 4690
+    },
     "tests/test_risk_matrix.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_risk_matrix.py.json",
       "sha256": "d08c82222bb2910e8f8977d18e49300664dc8f4cc0e0fcabe9e39247c88842b9",
       "line_count": 269,
       "size_bytes": 9672
+    },
+    "tests/test_scale_fixtures.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_scale_fixtures.py.json",
+      "sha256": "69ff2b415331cf6601d4e7e46a7f943226173110416d2e5e9b1bee2b28fc921d",
+      "line_count": 157,
+      "size_bytes": 5988
     },
     "tests/test_schema_validator.py": {
       "role": "test",
@@ -3110,12 +5259,75 @@
       "line_count": 128,
       "size_bytes": 4142
     },
+    "tests/test_store_local.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_local.py.json",
+      "sha256": "05a368eb42539917a641f3fa82b69126b5a6ab13fa339cbc2c166a013f30750d",
+      "line_count": 643,
+      "size_bytes": 20906
+    },
+    "tests/test_store_replay_compare.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_replay_compare.py.json",
+      "sha256": "6d68e0395868337b2f44138403ca3b2f1680c6115910fdcb4ff2626f84345a73",
+      "line_count": 780,
+      "size_bytes": 29837
+    },
+    "tests/test_support_ops_diagnostics.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_support_ops_diagnostics.py.json",
+      "sha256": "5fb9f5dffdcbf08eb644a85f08c37a0376439f9861c3f2b4ec66edb7f287f071",
+      "line_count": 122,
+      "size_bytes": 4585
+    },
+    "tests/test_support_ops_observability.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_support_ops_observability.py.json",
+      "sha256": "1e9e428ae873b8b2b641a8ccbaf865439130489f5e0d7c3cf81ff9424f9b6447",
+      "line_count": 113,
+      "size_bytes": 3855
+    },
+    "tests/test_test_integrity_coupling.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_test_integrity_coupling.py.json",
+      "sha256": "a589e70312aa8c12de55e5dc8d1fd900f3016ef23a50d7c5f8e5c5653ee22b4f",
+      "line_count": 754,
+      "size_bytes": 29618
+    },
+    "tests/test_test_integrity_coupling_fixtures.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_test_integrity_coupling_fixtures.py.json",
+      "sha256": "a3833480f2d5e14d711cb6aaee9276ccc3d74996b14552820b36e234fac762d7",
+      "line_count": 233,
+      "size_bytes": 11681
+    },
+    "tests/test_test_integrity_mock_assertion.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_test_integrity_mock_assertion.py.json",
+      "sha256": "27b771a1e5d696f1b9f0451b90f796d5bb458dffbf60c75472929d3de46ec98c",
+      "line_count": 525,
+      "size_bytes": 21234
+    },
+    "tests/test_test_integrity_skip_focus.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_test_integrity_skip_focus.py.json",
+      "sha256": "6dfae16df9935952304352fb5cd5b9878b721368135ae5bce0465e2f4e92ecc0",
+      "line_count": 807,
+      "size_bytes": 29084
+    },
+    "tools/check_file_size.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.check_file_size.py.json",
+      "sha256": "b22c508657a5e5bdb155edabe839c35932db45cd9102ae1b654fdc984514027e",
+      "line_count": 121,
+      "size_bytes": 3727
+    },
     "tools/codemap/update.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.codemap.update.py.json",
-      "sha256": "8e96303502c25e84aa8396978d0907a3c1414dbe55bd5f21a0510980b4eaaa0c",
-      "line_count": 309,
-      "size_bytes": 10319
+      "sha256": "30202b6a3497556bfdafa1e0a6da4ec6ac7d316b87e39d812aca1d8a4ce1a9ac",
+      "line_count": 310,
+      "size_bytes": 10330
     }
   },
   "edges": [
@@ -3304,6 +5516,38 @@
       "src/hate/adapter_sdk.py"
     ],
     [
+      "src/hate/api/__init__.py",
+      "src/hate/api/authz.py"
+    ],
+    [
+      "src/hate/api/__init__.py",
+      "src/hate/api/errors.py"
+    ],
+    [
+      "src/hate/api/__init__.py",
+      "src/hate/api/import_export.py"
+    ],
+    [
+      "src/hate/api/__init__.py",
+      "src/hate/api/read_model.py"
+    ],
+    [
+      "src/hate/api/import_export.py",
+      "src/hate/api/authz.py"
+    ],
+    [
+      "src/hate/api/read_model.py",
+      "src/hate/api/errors.py"
+    ],
+    [
+      "src/hate/api/read_model.py",
+      "src/hate/api/read_model_contract.py"
+    ],
+    [
+      "src/hate/api/read_model_contract.py",
+      "src/hate/api/errors.py"
+    ],
+    [
       "src/hate/audit.py",
       "src/hate/p2p3_io.py"
     ],
@@ -3333,7 +5577,43 @@
     ],
     [
       "src/hate/cli.py",
-      "src/hate/store.py"
+      "src/hate/release.py"
+    ],
+    [
+      "src/hate/cli.py",
+      "src/hate/store_legacy.py"
+    ],
+    [
+      "src/hate/commercial/__init__.py",
+      "src/hate/commercial/truthfulness.py"
+    ],
+    [
+      "src/hate/connectors/__init__.py",
+      "src/hate/connectors/ops.py"
+    ],
+    [
+      "src/hate/connectors/__init__.py",
+      "src/hate/connectors/reports.py"
+    ],
+    [
+      "src/hate/connectors/__init__.py",
+      "src/hate/connectors/scim.py"
+    ],
+    [
+      "src/hate/connectors/__init__.py",
+      "src/hate/connectors/sso.py"
+    ],
+    [
+      "src/hate/connectors/siem.py",
+      "src/hate/connectors/ops.py"
+    ],
+    [
+      "src/hate/connectors/ticketing.py",
+      "src/hate/connectors/ops.py"
+    ],
+    [
+      "src/hate/connectors/warehouse.py",
+      "src/hate/connectors/ops.py"
     ],
     [
       "src/hate/cross_record_validator.py",
@@ -3344,8 +5624,40 @@
       "src/hate/source_ref.py"
     ],
     [
+      "src/hate/dashboard/__init__.py",
+      "src/hate/dashboard/uat_states.py"
+    ],
+    [
+      "src/hate/dashboard/__init__.py",
+      "src/hate/dashboard/view_models.py"
+    ],
+    [
       "src/hate/domain.py",
       "src/hate/p2p3_io.py"
+    ],
+    [
+      "src/hate/enterprise/__init__.py",
+      "src/hate/enterprise/audit.py"
+    ],
+    [
+      "src/hate/enterprise/__init__.py",
+      "src/hate/enterprise/legal_hold.py"
+    ],
+    [
+      "src/hate/enterprise/__init__.py",
+      "src/hate/enterprise/rbac.py"
+    ],
+    [
+      "src/hate/enterprise/__init__.py",
+      "src/hate/enterprise/retention.py"
+    ],
+    [
+      "src/hate/enterprise/audit.py",
+      "src/hate/enterprise/rbac.py"
+    ],
+    [
+      "src/hate/enterprise/retention.py",
+      "src/hate/enterprise/legal_hold.py"
     ],
     [
       "src/hate/evidence_envelope.py",
@@ -3358,6 +5670,22 @@
     [
       "src/hate/manual_review_bridge.py",
       "src/hate/evidence_envelope.py"
+    ],
+    [
+      "src/hate/migration/__init__.py",
+      "src/hate/migration/compatibility.py"
+    ],
+    [
+      "src/hate/migration/__init__.py",
+      "src/hate/migration/legal_hold.py"
+    ],
+    [
+      "src/hate/migration/legal_hold.py",
+      "src/hate/enterprise/legal_hold.py"
+    ],
+    [
+      "src/hate/migration/legal_hold.py",
+      "src/hate/migration/compatibility.py"
     ],
     [
       "src/hate/p0a.py",
@@ -3469,6 +5797,10 @@
     ],
     [
       "src/hate/p0b.py",
+      "src/hate/p0b_sarif.py"
+    ],
+    [
+      "src/hate/p0b.py",
       "src/hate/p0b_support.py"
     ],
     [
@@ -3488,8 +5820,72 @@
       "src/hate/profile.py"
     ],
     [
-      "src/hate/p1a_support.py",
+      "src/hate/p1a_internal/__init__.py",
+      "src/hate/p1a_internal/adapter_conformance.py"
+    ],
+    [
+      "src/hate/p1a_internal/__init__.py",
+      "src/hate/p1a_internal/adapter_registry.py"
+    ],
+    [
+      "src/hate/p1a_internal/__init__.py",
+      "src/hate/p1a_internal/aete_scoring.py"
+    ],
+    [
+      "src/hate/p1a_internal/__init__.py",
+      "src/hate/p1a_internal/artifact_resolver.py"
+    ],
+    [
+      "src/hate/p1a_internal/__init__.py",
+      "src/hate/p1a_internal/doctor_report.py"
+    ],
+    [
+      "src/hate/p1a_internal/__init__.py",
+      "src/hate/p1a_internal/identity.py"
+    ],
+    [
+      "src/hate/p1a_internal/__init__.py",
+      "src/hate/p1a_internal/recommendations.py"
+    ],
+    [
+      "src/hate/p1a_internal/__init__.py",
+      "src/hate/p1a_internal/retry_aggregation.py"
+    ],
+    [
+      "src/hate/p1a_internal/adapter_conformance.py",
+      "src/hate/p1a_internal/adapter_registry.py"
+    ],
+    [
+      "src/hate/p1a_internal/adapter_registry.py",
       "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_internal/aete_scoring.py",
+      "src/hate/p1a_internal/doctor_report.py"
+    ],
+    [
+      "src/hate/p1a_internal/artifact_resolver.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_internal/identity.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_internal/retry_aggregation.py",
+      "src/hate/p1a_internal/identity.py"
+    ],
+    [
+      "src/hate/p1a_internal/retry_aggregation.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1b.py",
+      "src/hate/p1b_alignment.py"
+    ],
+    [
+      "src/hate/p1b.py",
+      "src/hate/p1b_evidence.py"
     ],
     [
       "src/hate/p2p3.py",
@@ -3556,6 +5952,18 @@
       "src/hate/evidence_envelope.py"
     ],
     [
+      "src/hate/risk_matrix.py",
+      "src/hate/risk_matrix_types.py"
+    ],
+    [
+      "src/hate/scale/__init__.py",
+      "src/hate/scale/fixtures.py"
+    ],
+    [
+      "src/hate/scale/__init__.py",
+      "src/hate/scale/performance_budget.py"
+    ],
+    [
       "src/hate/schema_validator.py",
       "src/hate/evidence_envelope.py"
     ],
@@ -3564,8 +5972,152 @@
       "src/hate/p0a_schema.py"
     ],
     [
-      "src/hate/store.py",
+      "src/hate/security/__init__.py",
+      "src/hate/security/artifact_safety.py"
+    ],
+    [
+      "src/hate/security/__init__.py",
+      "src/hate/security/models.py"
+    ],
+    [
+      "src/hate/store/__init__.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/__init__.py",
+      "src/hate/store/compare.py"
+    ],
+    [
+      "src/hate/store/__init__.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "src/hate/store/__init__.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/__init__.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/__init__.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "src/hate/store/__init__.py",
+      "src/hate/store_legacy.py"
+    ],
+    [
+      "src/hate/store/compare.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/compare.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/compare.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/compare.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "src/hate/store/doctor.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/doctor.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/doctor.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/replay.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/replay.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/replay.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store_legacy.py",
       "src/hate/p2p3_io.py"
+    ],
+    [
+      "src/hate/support_ops/__init__.py",
+      "src/hate/support_ops/diagnostics.py"
+    ],
+    [
+      "src/hate/support_ops/__init__.py",
+      "src/hate/support_ops/error_catalog.py"
+    ],
+    [
+      "src/hate/support_ops/__init__.py",
+      "src/hate/support_ops/observability.py"
+    ],
+    [
+      "src/hate/support_ops/diagnostics.py",
+      "src/hate/support_ops/error_catalog.py"
+    ],
+    [
+      "src/hate/test_integrity/__init__.py",
+      "src/hate/test_integrity/models.py"
+    ],
+    [
+      "src/hate/test_integrity/__init__.py",
+      "src/hate/test_integrity/skip_focus.py"
+    ],
+    [
+      "src/hate/test_integrity/coupling.py",
+      "src/hate/test_integrity/coupling_findings.py"
+    ],
+    [
+      "src/hate/test_integrity/coupling.py",
+      "src/hate/test_integrity/coupling_types.py"
+    ],
+    [
+      "src/hate/test_integrity/coupling.py",
+      "src/hate/test_integrity/models.py"
+    ],
+    [
+      "src/hate/test_integrity/coupling_findings.py",
+      "src/hate/test_integrity/coupling_types.py"
+    ],
+    [
+      "src/hate/test_integrity/manual_review.py",
+      "src/hate/test_integrity/coupling.py"
+    ],
+    [
+      "src/hate/test_integrity/manual_review.py",
+      "src/hate/test_integrity/models.py"
+    ],
+    [
+      "src/hate/test_integrity/mock_assertion.py",
+      "src/hate/test_integrity/mock_assertion_types.py"
+    ],
+    [
+      "src/hate/test_integrity/mock_assertion.py",
+      "src/hate/test_integrity/models.py"
+    ],
+    [
+      "src/hate/test_integrity/skip_focus.py",
+      "src/hate/test_integrity/models.py"
     ],
     [
       "tests/test_adapter_manifest_schema.py",
@@ -3600,12 +6152,52 @@
       "src/hate/adapters/stryker.py"
     ],
     [
+      "tests/test_artifact_redaction.py",
+      "src/hate/security/export_filter.py"
+    ],
+    [
+      "tests/test_artifact_redaction.py",
+      "src/hate/security/redaction.py"
+    ],
+    [
+      "tests/test_artifact_redaction.py",
+      "src/hate/security/summary_filter.py"
+    ],
+    [
+      "tests/test_artifact_safety.py",
+      "src/hate/security/artifact_safety.py"
+    ],
+    [
+      "tests/test_cli_release_candidate.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tests/test_cli_release_candidate.py",
+      "src/hate/release.py"
+    ],
+    [
+      "tests/test_connectors_ops.py",
+      "src/hate/connectors.py"
+    ],
+    [
+      "tests/test_connectors_sso_scim.py",
+      "src/hate/connectors.py"
+    ],
+    [
       "tests/test_cross_record_validator.py",
       "src/hate/cross_record_validator.py"
     ],
     [
       "tests/test_cross_record_validator.py",
       "src/hate/source_ref.py"
+    ],
+    [
+      "tests/test_dashboard_uat_states.py",
+      "src/hate/dashboard/uat_states.py"
+    ],
+    [
+      "tests/test_dashboard_view_models.py",
+      "src/hate/dashboard/view_models.py"
     ],
     [
       "tests/test_evidence_graph.py",
@@ -3664,10 +6256,6 @@
       "src/hate/p2p3.py"
     ],
     [
-      "tests/test_p2p3.py",
-      "src/hate/store.py"
-    ],
-    [
       "tests/test_product_grade.py",
       "src/hate/product_grade.py"
     ],
@@ -3680,6 +6268,10 @@
       "src/hate/readiness_model.py"
     ],
     [
+      "tests/test_release_candidate_pack.py",
+      "src/hate/release.py"
+    ],
+    [
       "tests/test_risk_matrix.py",
       "src/hate/evidence_graph.py"
     ],
@@ -3690,6 +6282,46 @@
     [
       "tests/test_schema_validator.py",
       "src/hate/schema_validator.py"
+    ],
+    [
+      "tests/test_store_local.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_local.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_replay_compare.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_test_integrity_coupling.py",
+      "src/hate/test_integrity/coupling.py"
+    ],
+    [
+      "tests/test_test_integrity_coupling.py",
+      "src/hate/test_integrity/manual_review.py"
+    ],
+    [
+      "tests/test_test_integrity_coupling_fixtures.py",
+      "src/hate/test_integrity/coupling.py"
+    ],
+    [
+      "tests/test_test_integrity_coupling_fixtures.py",
+      "src/hate/test_integrity/manual_review.py"
+    ],
+    [
+      "tests/test_test_integrity_mock_assertion.py",
+      "src/hate/test_integrity/mock_assertion.py"
+    ],
+    [
+      "tests/test_test_integrity_mock_assertion.py",
+      "src/hate/test_integrity/models.py"
+    ],
+    [
+      "tests/test_test_integrity_skip_focus.py",
+      "src/hate/test_integrity/models.py"
     ]
   ]
 }

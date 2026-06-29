@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/release-candidate-pack.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "7526762d3ef1a30070235b6e6934e6972b72b937a936c9fae09a197c337e3c14",
+  "line_count": 154,
+  "size_bytes": 5524,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

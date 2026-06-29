@@ -1,0 +1,25 @@
+{
+  "path": "docs/process/IMPLEMENTATION_LEDGER.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "bfa3409cb2bd70197b08ec0f7c444654c85e1e5449d9a42ed29121498679c404",
+  "line_count": 56,
+  "size_bytes": 2532,
+  "headings": [
+    "# Implementation Ledger",
+    "## Packet Ledger",
+    "## Completed Packet Details",
+    "### GLM-W00-refactor-p0a (go)"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "epic",
+    "schema",
+    "test"
+  ]
+}

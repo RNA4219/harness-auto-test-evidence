@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_connectors_ops.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "2a4d84ecc2cb476143419ac67d458193de0fd92a1299d4226302d4561a41d90a",
+  "line_count": 242,
+  "size_bytes": 8974,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.connectors",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/connectors.py"
+  ],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

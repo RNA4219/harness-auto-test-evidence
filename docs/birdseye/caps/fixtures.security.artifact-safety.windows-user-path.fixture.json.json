@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/security/artifact-safety/windows-user-path/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a5479934fb0eddb945ecd9b2678b2edf496f3bc308182590004faf756daf7619",
+  "line_count": 6,
+  "size_bytes": 174,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

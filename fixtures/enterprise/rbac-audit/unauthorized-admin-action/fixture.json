@@ -1,0 +1,23 @@
+{
+  "input": {
+    "actor": {
+      "actor_id": "viewer-003",
+      "role": "viewer",
+      "scopes": ["safe_metadata"]
+    },
+    "request": {
+      "request_id": "req-admin-deny-001",
+      "action": "manage_role",
+      "resource_type": "admin",
+      "resource_id": "role-admin",
+      "classification": "restricted",
+      "access_level": "metadata"
+    },
+    "source_refs": ["fixtures/enterprise/rbac-audit/unauthorized-admin-action/fixture.json"],
+    "timestamp": "2026-06-30T00:05:00+00:00"
+  },
+  "expected": {
+    "decision": "denied",
+    "reason": "admin_permission_required"
+  }
+}

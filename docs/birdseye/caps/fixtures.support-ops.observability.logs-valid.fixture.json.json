@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/support-ops/observability/logs-valid/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b4fc0c02231f290720a974b3b46b56f8c2d3317172d6567435248991d59ca080",
+  "line_count": 24,
+  "size_bytes": 590,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

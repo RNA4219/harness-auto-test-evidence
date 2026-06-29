@@ -1,0 +1,19 @@
+{
+  "path": "schemas/HATE/v1/test-integrity-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "16454e9812da7925b9d07ce0b01afbea399924013943b71a24f59c9ddb5548f6",
+  "line_count": 709,
+  "size_bytes": 18454,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

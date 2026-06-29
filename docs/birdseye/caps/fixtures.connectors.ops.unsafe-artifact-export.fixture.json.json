@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/connectors/ops/unsafe-artifact-export/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "237c2129ead2fc38becf7ef5053e241e321c4555cfaeb7f6e9ca5dff27e2442f",
+  "line_count": 27,
+  "size_bytes": 931,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "data-driven-parser",
+  "description": "Negative fixture: data-driven parser pattern - NOT coupling (false positive guard)",
+  "production_sources": [
+    {
+      "file_path": "src/parser.py",
+      "code": "def parse_config(data):\n    for entry in data:\n        if entry['type'] == 'service':\n            parse_service(entry)\n        elif entry['type'] == 'database':\n            parse_database(entry)\n",
+      "source_ref": "prod:src/parser.py",
+      "test_ids": [],
+      "fixture_names": []
+    }
+  ],
+  "expected_findings": [],
+  "expected_status": "pass",
+  "expected_classification": "data_driven_parser",
+  "notes": "Data-driven parser iterating over data entries - NOT test coupling"
+}

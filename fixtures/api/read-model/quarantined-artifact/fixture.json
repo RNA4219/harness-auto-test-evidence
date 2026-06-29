@@ -1,0 +1,45 @@
+{
+  "description": "Quarantined artifacts expose only safe metadata.",
+  "input": {
+    "required_reports": ["artifact_safety"],
+    "reports": {
+      "bundle_hash": "sha256:quarantine",
+      "artifact_safety": {
+        "run_id": "run-artifact-001",
+        "artifacts": [
+          {
+            "artifact_id": "artifact-secret-001",
+            "classification": "restricted",
+            "quarantine_status": "quarantined",
+            "redaction_status": "redaction_required",
+            "raw_content": "SECRET_SHOULD_NOT_APPEAR",
+            "safe_metadata": {
+              "artifact_id": "artifact-secret-001",
+              "classification": "restricted",
+              "safe_for_summary": false
+            },
+            "sourceRef": "reports/artifact-safety-report.json#/artifacts/0"
+          },
+          {
+            "artifact_id": "artifact-public-001",
+            "classification": "public",
+            "quarantine_status": "none",
+            "redaction_status": "not_required",
+            "safe_metadata": {
+              "artifact_id": "artifact-public-001",
+              "classification": "public",
+              "safe_for_summary": true
+            },
+            "sourceRef": "reports/artifact-safety-report.json#/artifacts/1"
+          }
+        ],
+        "sourceRefs": ["reports/artifact-safety-report.json"]
+      }
+    }
+  },
+  "expected": {
+    "restricted_artifact_id": "artifact-secret-001",
+    "reader_visible_count": 1,
+    "maintainer_visible_count": 2
+  }
+}

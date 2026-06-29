@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_connectors_sso_scim.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "c8ad27ac300a001398710424cf354a57d55e8bb8fefbcec9bbb90ef205564037",
+  "line_count": 225,
+  "size_bytes": 8845,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.connectors",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/connectors.py"
+  ],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

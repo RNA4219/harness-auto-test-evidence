@@ -1,0 +1,30 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_api_call_with_mock_http",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/api/test_http_client.py:45",
+  "description": "Test mocking external HTTP boundary with domain oracle",
+  "expected_signal": "none",
+  "code": "def test_api_call_with_mock_http(mock_http):\n    # Mock external boundary (HTTP)\n    mock_http.get('/api/users').returns({'id': 1, 'name': 'Alice'})\n    client = HttpClient(mock_http)\n    result = client.get_user(1)\n    # Domain oracle verifies behavior\n    assert result.name == 'Alice'\n    assert result.id == 1",
+  "mock_targets": [
+    {
+      "target": "http_client",
+      "context": "external boundary network mock",
+      "mock_code": "mock_http.get('/api/users').returns({'id': 1, 'name': 'Alice'})",
+      "line_number": 3
+    }
+  ],
+  "assertions": [
+    {
+      "text": "assert result.name == 'Alice'",
+      "line_number": 7
+    },
+    {
+      "text": "assert result.id == 1",
+      "line_number": 8
+    }
+  ],
+  "boundary_manifest": ["http", "api", "network", "external"]
+}

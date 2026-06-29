@@ -1,0 +1,21 @@
+{
+  "input": {
+    "resource": {
+      "resource_id": "bundle-missing-retention-001",
+      "resource_type": "canonical_bundle",
+      "classification": "internal",
+      "legal_hold": {
+        "status": "inactive",
+        "reason": "standard retention",
+        "held_since": "2026-06-01T00:00:00+00:00",
+        "authorized_by": "system"
+      },
+      "sourceRefs": ["fixtures/enterprise/retention-legal-hold/missing-retention-policy/fixture.json"]
+    },
+    "policy": {},
+    "profile": "release"
+  },
+  "expected": {
+    "readiness_effect": "hard_dq"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/support_ops/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f3ff161b875764c6a3cb0a69351ef58ecd18864209209ae56d8edeb9a43ba218",
+  "line_count": 35,
+  "size_bytes": 893,
+  "headings": [],
+  "imports": [
+    "hate.support_ops.diagnostics",
+    "hate.support_ops.error_catalog",
+    "hate.support_ops.observability"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/support_ops/diagnostics.py",
+    "src/hate/support_ops/error_catalog.py",
+    "src/hate/support_ops/observability.py"
+  ],
+  "tags": []
+}

@@ -1,0 +1,22 @@
+{
+  "description": "Negative profile with deterministic sourceRef collision.",
+  "input": {
+    "fixture_id": "invalid-collision",
+    "seed": "hate-scale-collision-001",
+    "target_tests": 10,
+    "target_coverage_records": 20,
+    "target_artifact_metadata": 5,
+    "target_risks": 2,
+    "target_graph_nodes": 10,
+    "target_graph_edges": 20,
+    "adapter_count": 1,
+    "shard_count": 1,
+    "max_edge_fanout": 8,
+    "generation_profile": "negative",
+    "force_source_ref_collision": true
+  },
+  "expected": {
+    "status": "blocked",
+    "finding_code": "source_ref_collision"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "path": "src/hate/store/doctor.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0cb81de5e37ebe92d55ed9159e327d9d8bcf99a6992f2ec23458c1bfdaa874e8",
+  "line_count": 571,
+  "size_bytes": 20578,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    ".indexes",
+    ".local_store",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/local_store.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

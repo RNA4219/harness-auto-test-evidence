@@ -1,0 +1,39 @@
+{
+  "description": "Valid SSO group, role, and claim mapping dry-run.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "sso_mapping": {
+        "mapping_id": "sso-map-001",
+        "claims": [
+          {"name": "email", "sourceRef": "idp/claims/email"},
+          {"name": "groups", "sourceRef": "idp/claims/groups"}
+        ],
+        "groups": [
+          {"name": "engineering", "sourceRef": "idp/groups/engineering"}
+        ],
+        "roles": [
+          {"name": "developer", "sourceRef": "idp/roles/developer"}
+        ],
+        "sourceRef": "fixtures/sso-valid-mapping"
+      },
+      "audit_event_refs": ["audit/sso-map-001"],
+      "sourceRefs": ["fixtures/connectors/sso-scim/sso-valid-mapping/fixture.json"]
+    },
+    "mapping_config": {
+      "enabled": true,
+      "issuer": "https://idp.example.test",
+      "audience": "hate-enterprise",
+      "supported_claims": ["email", "groups"],
+      "required_claims": ["email"],
+      "supported_groups": ["engineering"],
+      "supported_roles": ["developer"]
+    }
+  },
+  "expected": {
+    "status": "mapped",
+    "readiness_effect": "pass",
+    "manual_review_required": false,
+    "mapped_claims": ["email", "groups"]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/store/local/index-missing-record/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "982a28b24733b4f644bad8e9c2f98296374d64825255eb468a63eb9580640df4",
+  "line_count": 18,
+  "size_bytes": 402,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

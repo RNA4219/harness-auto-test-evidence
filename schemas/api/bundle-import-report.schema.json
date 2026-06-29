@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "HATE/v1/bundle-import-report.schema.json",
+  "title": "Bundle Import Report",
+  "description": "Import validation report for bundle imports. Validates schema, hash, sourceRefs, and artifact safety without mutating canonical bundle.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "import_id",
+    "import_status",
+    "bundle_id",
+    "bundle_hash",
+    "authz_decision",
+    "validation_results",
+    "sourceRefs",
+    "created_at",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "HATE/v1",
+      "description": "Schema version identifier"
+    },
+    "record_type": {
+      "type": "string",
+      "const": "bundle-import-report",
+      "description": "Record type discriminator"
+    },
+    "import_id": {
+      "type": "string",
+      "pattern": "^import-[a-f0-9]{12}$",
+      "description": "Unique import identifier"
+    },
+    "import_status": {
+      "type": "string",
+      "enum": ["accepted", "rejected", "duplicate"],
+      "description": "Import status"
+    },
+    "bundle_id": {
+      "type": "string",
+      "description": "Bundle identifier"
+    },
+    "bundle_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA256 hash of bundle content"
+    },
+    "idempotency_key": {
+      "type": "string",
+      "description": "Optional idempotency key for replay"
+    },
+    "authz_decision": {
+      "$ref": "api-authz-decision.schema.json",
+      "description": "Authorization decision"
+    },
+    "validation_results": {
+      "type": "object",
+      "description": "Validation results for schema, hash, sourceRefs, artifacts",
+      "required": ["schema_valid", "hash_valid", "sourceRefs_valid", "artifact_safety_valid"],
+      "properties": {
+        "schema_valid": {
+          "type": "boolean",
+          "description": "Schema version validation result"
+        },
+        "schema_message": {
+          "type": "string",
+          "description": "Schema validation message"
+        },
+        "hash_valid": {
+          "type": "boolean",
+          "description": "Bundle hash validation result"
+        },
+        "hash_match": {
+          "type": "boolean",
+          "description": "Idempotent hash match"
+        },
+        "sourceRefs_valid": {
+          "type": "boolean",
+          "description": "SourceRefs validation result"
+        },
+        "missing_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Missing sourceRef locations"
+        },
+        "artifact_safety_valid": {
+          "type": "boolean",
+          "description": "Artifact safety validation result"
+        },
+        "unsafe_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "artifact_id": {"type": "string"},
+              "reason": {"type": "string"},
+              "classification": {"type": "string"}
+            }
+          },
+          "description": "Unsafe artifacts flagged"
+        }
+      }
+    },
+    "rejection_reason": {
+      "type": "string",
+      "enum": [
+        "HATE-API-AUTH-CROSS-TENANT",
+        "HATE-API-SCHEMA-INVALID",
+        "HATE-API-REQ-MISSING-SOURCEREF",
+        "HATE-API-SCHEMA-UNSUPPORTED"
+      ],
+      "description": "Rejection reason code if rejected"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Source references"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp"
+    },
+    "summary": {
+      "type": "object",
+      "description": "Import summary",
+      "properties": {
+        "accepted": {
+          "type": "boolean",
+          "description": "Whether import was accepted"
+        },
+        "duplicate": {
+          "type": "boolean",
+          "description": "Whether import was duplicate/idempotent"
+        },
+        "idempotent": {
+          "type": "boolean",
+          "description": "Idempotent import detected"
+        },
+        "rejected_reason": {
+          "type": "string",
+          "description": "Rejection reason if rejected"
+        },
+        "unsafe_artifacts_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of unsafe artifacts flagged"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

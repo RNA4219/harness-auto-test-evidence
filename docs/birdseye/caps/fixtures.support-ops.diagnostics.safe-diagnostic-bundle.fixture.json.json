@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/support-ops/diagnostics/safe-diagnostic-bundle/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "65ef58d2afbfd7bd0694e6307f117dde96f61db97f42b80de6db8b2b3bf1821a",
+  "line_count": 33,
+  "size_bytes": 926,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture"
+  ]
+}

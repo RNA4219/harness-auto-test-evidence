@@ -1,0 +1,13 @@
+{
+  "artifact_id": "path-traversal-008",
+  "artifact_path": "logs/file_access.log",
+  "profile": "release",
+  "content": "2024-01-15T10:30:00Z INFO File requested\n2024-01-15T10:31:00Z DEBUG Path: ../../../etc/passwd\n2024-01-15T10:32:00Z ERROR Access denied\n",
+  "expected_redaction_status": "redacted",
+  "expected_classification": "restricted",
+  "expected_readiness_effect": "hard_dq",
+  "expected_redactions_count": 1,
+  "expected_path_redacted": true,
+  "expected_redaction_type": "path",
+  "expected_reason": "traversal"
+}

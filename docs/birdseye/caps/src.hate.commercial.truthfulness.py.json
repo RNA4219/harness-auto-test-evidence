@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/commercial/truthfulness.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0cc1671a614d98b2de549299be085c6326a45f8ccaa1e276e66b34f6fa1ed078",
+  "line_count": 287,
+  "size_bytes": 11936,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "enterprise",
+    "release",
+    "security"
+  ]
+}

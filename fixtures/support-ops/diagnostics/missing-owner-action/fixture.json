@@ -1,0 +1,25 @@
+{
+  "input": {
+    "bundle_id": "diag-missing-owner-action-001",
+    "created_at": "2026-06-30T00:00:00+00:00",
+    "sourceRefs": ["fixtures/support-ops/diagnostics/missing-owner-action/fixture.json"],
+    "artifacts": [
+      {
+        "artifact_id": "artifact-safe-002",
+        "kind": "report",
+        "classification": "internal",
+        "redaction_status": "redacted",
+        "quarantine_status": "none"
+      }
+    ],
+    "findings": [
+      {
+        "code": "missing_owner_action",
+        "sourceRef": "support-ops-report.json#/findings/owner"
+      }
+    ]
+  },
+  "expected": {
+    "readiness_effect": "hold"
+  }
+}

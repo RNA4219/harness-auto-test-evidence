@@ -1,0 +1,13 @@
+{
+  "input": {
+    "findings": [
+      {
+        "code": "risk_without_oracle",
+        "sourceRef": "risk-coverage-matrix.json#/risks/risk-001"
+      }
+    ]
+  },
+  "expected": {
+    "error_code": "HATE-DQ-007"
+  }
+}

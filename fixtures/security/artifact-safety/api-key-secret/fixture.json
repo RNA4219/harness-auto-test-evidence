@@ -1,0 +1,6 @@
+{
+  "artifact_id": "api-key-secret",
+  "artifact_path": "logs/runtime.log",
+  "profile": "release",
+  "content": "api_key = \"REALISTICSECRETKEYVALUE1234567890\""
+}

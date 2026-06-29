@@ -1,0 +1,21 @@
+{
+  "description": "Missing required upstream reports are surfaced as stale diagnostic findings, not fake success.",
+  "input": {
+    "required_reports": ["run", "readiness", "risk_coverage_matrix"],
+    "reports": {
+      "bundle_hash": "sha256:missing",
+      "run": {
+        "run_id": "run-missing-001",
+        "attempt": 1,
+        "commit": "fedcba",
+        "profile": "product",
+        "sourceRefs": ["reports/run.json"]
+      }
+    }
+  },
+  "expected": {
+    "staleness": "stale",
+    "diagnostic_code": "missing_upstream_report",
+    "missing_count": 2
+  }
+}

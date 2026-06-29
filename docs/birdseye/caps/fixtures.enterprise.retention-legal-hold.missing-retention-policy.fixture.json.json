@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/enterprise/retention-legal-hold/missing-retention-policy/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d80ab7d7dd7d22a8df73c8155d25079235b7867ec9f5a2c954e5e2b2538a5fa4",
+  "line_count": 21,
+  "size_bytes": 565,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "release"
+  ]
+}

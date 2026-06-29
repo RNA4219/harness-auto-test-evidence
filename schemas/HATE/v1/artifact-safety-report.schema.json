@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/artifact-safety-report.schema.json",
+  "title": "HATE v1 Artifact Safety Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "artifact_id",
+    "profile",
+    "findings",
+    "quarantine_required",
+    "redaction_required",
+    "readiness_effect",
+    "sourceRefs",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "enum": ["artifact-safety-report"]
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "detector_id",
+          "finding_type",
+          "severity",
+          "confidence",
+          "reason",
+          "sourceRef",
+          "redaction_hint",
+          "quarantine_action",
+          "readiness_effect",
+          "allowlist_ref",
+          "policy_refs",
+          "location",
+          "span"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "detector_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "finding_type": {
+            "enum": [
+              "secret_detected",
+              "pii_detected",
+              "unsafe_path_detected",
+              "external_url_detected",
+              "archive_or_binary_risk"
+            ]
+          },
+          "severity": {
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceRef": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "span": {
+            "type": "object",
+            "required": ["start", "end"],
+            "properties": {
+              "start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "redaction_hint": {
+            "type": "string",
+            "minLength": 1
+          },
+          "quarantine_action": {
+            "enum": ["none", "redact", "quarantine"]
+          },
+          "readiness_effect": {
+            "enum": ["pass", "soft_gap", "hold", "hard_dq"]
+          },
+          "allowlist_ref": {
+            "type": ["string", "null"]
+          },
+          "policy_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "quarantine_required": {
+      "type": "boolean"
+    },
+    "redaction_required": {
+      "type": "boolean"
+    },
+    "readiness_effect": {
+      "enum": ["pass", "soft_gap", "hold", "hard_dq"]
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["finding_count", "finding_types", "artifact_size", "artifact_path"],
+      "properties": {
+        "finding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "finding_types": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "artifact_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "artifact_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

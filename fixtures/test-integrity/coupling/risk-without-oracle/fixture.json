@@ -1,0 +1,35 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "risk-without-oracle",
+  "description": "Positive fixture: high/critical risk feature without oracle",
+  "risk_matrix_entries": [
+    {
+      "risk_id": "risk-001-payment-security",
+      "risk_level": "critical",
+      "feature_id": "payment_processing",
+      "source_refs": ["risk:risk-001-payment-security"]
+    }
+  ],
+  "evidence_records": [
+    {
+      "record_type": "coverage_slice",
+      "payload": {
+        "coverage_percentage": 85.0,
+        "covered_lines": ["line1", "line2", "line3"],
+        "risk_ref": "risk-001-payment-security"
+      }
+    }
+  ],
+  "expected_findings": [
+    {
+      "evidence_class": "risk_without_oracle",
+      "risk_level": "critical",
+      "severity": "critical",
+      "readiness_effect": "hold",
+      "oracle_classification": "no_oracle",
+      "manual_review_required": true
+    }
+  ],
+  "expected_status": "hold"
+}

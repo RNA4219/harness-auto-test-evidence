@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/support-ops/observability/missing-release-metric/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "054c81fd00a0fa2d5ba7257f8b3b6f7d51712a4f122342e89ca2bc9199e2ec87",
+  "line_count": 18,
+  "size_bytes": 518,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_service_returns_expected_output",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/services/test_user_service.py:20",
+  "description": "Test asserting domain output without mocks",
+  "expected_signal": "none",
+  "code": "def test_service_returns_expected_output():\n    service = UserService()\n    result = service.process_user({'name': 'Bob', 'age': 30})\n    # Domain oracle verifies output\n    assert result.status == 'processed'\n    assert result.user_id is not None\n    assert len(result.steps) >= 3",
+  "mock_targets": [],
+  "assertions": [
+    {
+      "text": "assert result.status == 'processed'",
+      "line_number": 5
+    },
+    {
+      "text": "assert result.user_id is not None",
+      "line_number": 6
+    },
+    {
+      "text": "assert len(result.steps) >= 3",
+      "line_number": 7
+    }
+  ]
+}

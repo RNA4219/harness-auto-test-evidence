@@ -1,0 +1,19 @@
+{
+  "input": {
+    "claim": {
+      "claim_id": "claim-enterprise-hosted-saas",
+      "claim_text": "Hosted enterprise SaaS control plane is available for regulated customers.",
+      "surface": "sales",
+      "claim_area": "enterprise",
+      "declared_status": "unsupported",
+      "source_contract_refs": ["docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md"],
+      "required_evidence": ["hosted-saas-availability-report"],
+      "sourceRefs": ["fixtures/commercial/truthfulness/unsupported-enterprise-claim/fixture.json"]
+    },
+    "evidence_records": [],
+    "profile": "release"
+  },
+  "expected": {
+    "readiness_effect": "hard_dq"
+  }
+}

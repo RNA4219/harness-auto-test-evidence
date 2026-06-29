@@ -1,0 +1,11 @@
+{
+  "artifact_id": "synthetic-pii-002",
+  "artifact_path": "test_data/sample_users.json",
+  "profile": "default",
+  "content": "{\n  \"users\": [\n    {\"email\": \"test_user@example.com\", \"name\": \"Test User\"},\n    {\"phone\": \"+1-555-FAKE-DATA\", \"user_id\": \"synthetic_user_001\"}\n  ],\n  \"metadata\": {\n    \"synthetic\": true,\n    \"generated_for\": \"unit testing\"\n  }\n}",
+  "expected_redaction_status": "not_required",
+  "expected_classification": "public",
+  "expected_readiness_effect": "pass",
+  "expected_redactions_count": 0,
+  "allowlist_context": "synthetic_pii"
+}

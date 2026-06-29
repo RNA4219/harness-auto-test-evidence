@@ -1,0 +1,17 @@
+{
+  "path": "src/hate/commercial/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "2772ea40fbecebb7b79417a35ebd79afb9417025c1ff4a8349962e397f717b74",
+  "line_count": 13,
+  "size_bytes": 281,
+  "headings": [],
+  "imports": [
+    ".truthfulness"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/commercial/truthfulness.py"
+  ],
+  "tags": []
+}

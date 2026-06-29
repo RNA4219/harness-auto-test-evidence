@@ -1,0 +1,23 @@
+{
+  "input": {
+    "actor": {
+      "actor_id": "reviewer-001",
+      "role": "reviewer",
+      "scopes": ["safe_metadata", "manual_review"]
+    },
+    "request": {
+      "request_id": "req-review-001",
+      "action": "approve_review",
+      "resource_type": "manual_review",
+      "resource_id": "manual-review-risk-001",
+      "classification": "confidential",
+      "access_level": "metadata"
+    },
+    "source_refs": ["fixtures/enterprise/rbac-audit/reviewer-manual-review/fixture.json"],
+    "timestamp": "2026-06-30T00:01:00+00:00"
+  },
+  "expected": {
+    "decision": "allowed",
+    "readiness_effect": "pass"
+  }
+}

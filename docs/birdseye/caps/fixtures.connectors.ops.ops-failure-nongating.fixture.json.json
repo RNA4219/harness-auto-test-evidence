@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/connectors/ops/ops-failure-nongating/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "98683ad47ca9d493c4851ac3a217bf4ad8543f64faaa4e935b1a32c6084de7d7",
+  "line_count": 42,
+  "size_bytes": 1329,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

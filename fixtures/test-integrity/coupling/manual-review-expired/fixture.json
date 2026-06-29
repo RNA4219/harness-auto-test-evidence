@@ -1,0 +1,36 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "manual-review-expired",
+  "description": "Positive fixture: human record has expired",
+  "human_records": [
+    {
+      "record_type": "human_review_record",
+      "record_id": "hr-002",
+      "owner": "bob@example.com",
+      "created_at": "2024-01-15T10:00:00Z",
+      "expiry_date": "2025-01-15T10:00:00Z",
+      "justification": "Temporary manual test approval",
+      "source_refs": ["risk:risk-003-data-export"]
+    }
+  ],
+  "risk_matrix_entries": [
+    {
+      "risk_id": "risk-003-data-export",
+      "risk_level": "medium",
+      "feature_id": "data_export",
+      "source_refs": ["risk:risk-003-data-export"]
+    }
+  ],
+  "expected_findings": [
+    {
+      "evidence_class": "manual_review_required",
+      "classification": "expired_human_record",
+      "severity": "medium",
+      "readiness_effect": "hold",
+      "manual_review_required": true,
+      "required_human_decision": "renew_or_replace_with_oracle"
+    }
+  ],
+  "expected_status": "hold"
+}

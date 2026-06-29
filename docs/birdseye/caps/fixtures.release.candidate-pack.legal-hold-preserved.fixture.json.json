@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/release/candidate-pack/legal-hold-preserved/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9f671f53b23875c960c536829320a8fc4a4092c4ef88bb54343e1913cfaabf2d",
+  "line_count": 14,
+  "size_bytes": 875,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "store"
+  ]
+}

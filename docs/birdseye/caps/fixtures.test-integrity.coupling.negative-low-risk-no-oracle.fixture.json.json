@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/test-integrity/coupling/negative-low-risk-no-oracle.fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fcc496537e1752885b3e460715c87088f8a55261f314342060e9ebed8e17b43c",
+  "line_count": 26,
+  "size_bytes": 726,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

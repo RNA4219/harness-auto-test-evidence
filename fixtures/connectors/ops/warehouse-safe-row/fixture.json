@@ -1,0 +1,27 @@
+{
+  "description": "Warehouse safe row dry-run payload.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-warehouse-safe",
+      "warehouse_export": {
+        "connector_id": "warehouse-safe",
+        "provider": "BigQuery",
+        "payload_kind": "metrics_rows",
+        "metrics_preview": [
+          {"metric": "hard_dq_count", "value": 0, "sourceRef": "metrics/0"}
+        ],
+        "sourceRef": "reports/warehouse-safe-row.json"
+      },
+      "sourceRefs": ["fixtures/connectors/ops/warehouse-safe-row/fixture.json"]
+    },
+    "connector_config": {"enabled": true, "dry_run": true}
+  },
+  "expected": {
+    "mode": "warehouse",
+    "status": "preview",
+    "readiness_effect": "pass",
+    "payload_kind": "metrics_rows"
+  }
+}

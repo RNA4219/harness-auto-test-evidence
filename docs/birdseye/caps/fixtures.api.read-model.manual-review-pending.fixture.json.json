@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/read-model/manual-review-pending/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "00d2654a300ac4a05fddd0186c6d6e02173735536c17e7b2d351f4bb5e28409e",
+  "line_count": 28,
+  "size_bytes": 789,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "security"
+  ]
+}

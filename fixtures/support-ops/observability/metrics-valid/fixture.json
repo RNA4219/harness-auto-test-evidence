@@ -1,0 +1,20 @@
+{
+  "description": "Release metrics pass when required metric set is present.",
+  "input": {
+    "report_id": "metrics-valid",
+    "profile": "release",
+    "logs": [],
+    "metrics": [
+      {"name": "hard_dq_count", "value": 0, "sourceRef": "metrics/hard_dq"},
+      {"name": "soft_gap_count", "value": 0, "sourceRef": "metrics/soft_gap"},
+      {"name": "readiness_latency_ms", "value": 1200, "sourceRef": "metrics/readiness_latency"}
+    ],
+    "alerts": [],
+    "sourceRefs": ["fixtures/support-ops/observability/metrics-valid/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "metric_count": 3,
+    "finding_count": 0
+  }
+}

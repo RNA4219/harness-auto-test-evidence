@@ -1,0 +1,36 @@
+{
+  "description": "All performance budgets pass in product profile.",
+  "input": {
+    "scenario_id": "budget-pass",
+    "profile": "product",
+    "dataset_shape": {
+      "tests": 1000,
+      "coverage_records": 10000,
+      "artifact_metadata": 100,
+      "graph_nodes": 5000,
+      "graph_edges": 20000
+    },
+    "observed_ms": {
+      "ingest": 100000,
+      "validation": 50000,
+      "graph_build": 90000,
+      "store_index": 40000,
+      "replay": 60000,
+      "report_generation": 30000
+    },
+    "estimated_counters": {
+      "pairwise_comparisons": 5000,
+      "pagination_tested": true,
+      "cache_invalidation_tested": true,
+      "peak_memory_mb": 256,
+      "input_bytes": 1000000,
+      "archive_entries": 10
+    },
+    "sourceRefs": ["fixtures/scale/performance/budget-pass/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "readiness_effect": "pass",
+    "finding_count": 0
+  }
+}

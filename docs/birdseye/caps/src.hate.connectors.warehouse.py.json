@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/connectors/warehouse.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "b4f6f2792392c32c43e6db52afc0dc53040e24e394cec321c065dafca2241188",
+  "line_count": 14,
+  "size_bytes": 420,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.connectors.ops",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/connectors/ops.py"
+  ],
+  "tags": [
+    "enterprise"
+  ]
+}

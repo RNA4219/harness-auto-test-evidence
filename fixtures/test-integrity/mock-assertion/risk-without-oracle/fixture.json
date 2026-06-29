@@ -1,0 +1,16 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_high_risk_no_oracle",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/critical/test_payment.py:30",
+  "description": "High-risk feature test without oracle",
+  "expected_signal": "assertion_quality",
+  "expected_assertion_type": "missing",
+  "expected_effect": "hold",
+  "risk_level": "high",
+  "code": "def test_high_risk_no_oracle():\n    payment = PaymentProcessor()\n    # Critical payment processing\n    payment.process_transaction({'amount': 100, 'card': '4111...'})\n    # No assertion of expected outcome\n    # Risk: no oracle for critical feature",
+  "mock_targets": [],
+  "assertions": []
+}

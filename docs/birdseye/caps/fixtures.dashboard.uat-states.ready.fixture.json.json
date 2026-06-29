@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/dashboard/uat-states/ready/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "162691c3dd49178a6a922d3004d640652fbdbf0583f244d821fa72b6343cb3d3",
+  "line_count": 39,
+  "size_bytes": 1028,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

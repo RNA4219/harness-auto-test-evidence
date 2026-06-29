@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/security/artifact-safety/base64-opaque-payload/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2f71b3419c8548bdf618ced0d1acd2f42475b7126a1951cf8ab94b3d572d2fbd",
+  "line_count": 6,
+  "size_bytes": 494,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

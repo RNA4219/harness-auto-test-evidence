@@ -1,0 +1,19 @@
+{
+  "_comment": "@allowlist synthetic_pii - Test fixture for synthetic user data",
+  "test_scenario": "user_registration",
+  "user_email": "test.user@example.test",
+  "user_phone": "+1-555-FAKE-1234",
+  "user_name": "Test User Synthetic",
+  "user_id": "test-synthetic-user-12345",
+  "address": {
+    "street": "123 Fake Street",
+    "city": "Test City",
+    "state": "TC",
+    "zip": "00000"
+  },
+  "metadata": {
+    "generated_by": "test_fixture_generator",
+    "synthetic": true,
+    "timestamp": "2026-06-29T12:00:00Z"
+  }
+}

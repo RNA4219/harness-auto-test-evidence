@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/connectors/sso-scim/sso-unsupported-claim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3ce7e4677df6db21e4e86832f230ee5cfbeb8e8e32171f28cd908f4b0e4d03b0",
+  "line_count": 42,
+  "size_bytes": 1441,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

@@ -7,3 +7,4 @@ __pycache__/
 dist/
 build/
 fixtures/golden/p0b-qeg-minimal/test-*
+tmp/

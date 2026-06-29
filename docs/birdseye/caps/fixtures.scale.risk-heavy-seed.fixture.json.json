@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/risk-heavy-seed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7fc22248e0e549da01c642908644505bb827e8244990702ad00e3c41e0a4ae6f",
+  "line_count": 25,
+  "size_bytes": 668,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

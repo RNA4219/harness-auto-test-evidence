@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/test_integrity/coupling_types.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "62daa8f795f0ccf228f926b30c4f8940a09a2d87ed4342ef364addb1d3a449f5",
+  "line_count": 109,
+  "size_bytes": 3092,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "enum"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

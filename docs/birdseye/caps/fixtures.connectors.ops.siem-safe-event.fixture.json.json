@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/connectors/ops/siem-safe-event/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bc42fd9cccb4469ba24badb009d79f632307ec27c11550c8f553ae3e9855ee09",
+  "line_count": 27,
+  "size_bytes": 820,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

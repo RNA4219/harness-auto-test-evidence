@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/api/import_export.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "56135c118a0560269195fcc632facd3f0a18a915ca4d0f9903cdcaf723e81d1d",
+  "line_count": 397,
+  "size_bytes": 14722,
+  "headings": [],
+  "imports": [
+    ".authz",
+    "__future__",
+    "datetime",
+    "hashlib",
+    "json",
+    "pathlib",
+    "typing",
+    "uuid"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/api/authz.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "schema"
+  ]
+}

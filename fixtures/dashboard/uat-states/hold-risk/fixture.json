@@ -1,0 +1,58 @@
+{
+  "description": "Hold due to risk without oracle evidence",
+  "input": {
+    "readiness_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "product_readiness_report",
+      "summary": {
+        "overall_status": "hold",
+        "claim_count": 10,
+        "unsupported_claim_count": 1,
+        "contradiction_count": 0,
+        "hard_dq_count": 0
+      },
+      "graph_summary": {},
+      "unsupported_claims": [
+        {
+          "claim_id": "claim-001",
+          "reason": "Missing oracle for critical risk",
+          "sourceRef": "risk-coverage-matrix.json:risk-critical-001"
+        }
+      ],
+      "contradictions": [],
+      "hard_dqs": [],
+      "soft_gaps": [],
+      "sourceRefs": ["reports/product-readiness-report.json"]
+    },
+    "risk_coverage_matrix": {
+      "schema_version": "HATE/v1",
+      "record_type": "risk_coverage_matrix",
+      "risks": [
+        {
+          "risk_id": "risk-critical-001",
+          "severity": "critical",
+          "coverage_status": "covered",
+          "oracle_evidence": false,
+          "description": "Critical security risk without oracle",
+          "sourceRef": "security-risk-registry.json:risk-001"
+        }
+      ],
+      "sourceRefs": ["reports/risk-coverage-matrix.json"]
+    },
+    "run_id": "run-hold-risk-001",
+    "profile": "product"
+  },
+  "expected": {
+    "state_type": "hold_risk",
+    "overall_status": "hold",
+    "oracle_missing_count": 1,
+    "unsupported_claim_count": 1,
+    "cannot_show_product_ready": true,
+    "ui_requirements": [
+      "show_oracle_missing_count",
+      "link_to_risk_coverage_sourceRefs",
+      "show_risk_severity_description",
+      "cannot_show_product_ready"
+    ]
+  }
+}

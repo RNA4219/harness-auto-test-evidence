@@ -1,0 +1,27 @@
+{
+  "description": "Live network attempt is denied in dry-run.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-live-network",
+      "siem_export": {
+        "connector_id": "siem-live-network",
+        "provider": "Splunk",
+        "payload_kind": "audit_events",
+        "events_preview": [
+          {"event_type": "auth_success", "count": 1}
+        ],
+        "sourceRef": "reports/live-network-attempt.json"
+      },
+      "sourceRefs": ["fixtures/connectors/ops/live-network-attempt/fixture.json"]
+    },
+    "connector_config": {"enabled": true, "dry_run": true, "live_network_attempt": true}
+  },
+  "expected": {
+    "mode": "siem",
+    "status": "denied_action",
+    "readiness_effect": "hold",
+    "denied_action": "live_network_call"
+  }
+}

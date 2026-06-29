@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/coupling/test-name-branch/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fe189d34beaef6a084d0311b7edc6c51466f14fffb5a586aaf1efbe0ed3f7c80",
+  "line_count": 26,
+  "size_bytes": 880,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

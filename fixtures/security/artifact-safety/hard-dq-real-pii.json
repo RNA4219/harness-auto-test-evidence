@@ -1,0 +1,23 @@
+{
+  "customer_database_export": {
+    "record_type": "customer",
+    "record_id": "cust-2026-001",
+    "email": "john.doe@enterprise-corp.com",
+    "phone": "+1-206-555-1234",
+    "full_name": "John A. Doe",
+    "address": {
+      "street": "456 Enterprise Blvd",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98101"
+    },
+    "user_id": "user-enterprise-12345",
+    "account_number": "ACC-2026-98765"
+  },
+  "metadata": {
+    "export_timestamp": "2026-06-28T10:00:00Z",
+    "export_reason": "customer_support_ticket",
+    "ticket_id": "TKT-2026-0456",
+    "contains_real_pii": true
+  }
+}

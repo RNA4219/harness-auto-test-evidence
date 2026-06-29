@@ -2,9 +2,9 @@
   "path": "docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "44fc2082e689e90100d4bf91576a39913886c142c77b18234dda2f4de6179ed4",
-  "line_count": 104,
-  "size_bytes": 5271,
+  "sha256": "70f456fa642fafc044b938af2d9775f2069f133892f524dd7aac0e20f6187440",
+  "line_count": 114,
+  "size_bytes": 6085,
   "headings": [
     "# Legal and Commercial Contracting Contract",
     "## 1. 目的",
@@ -20,6 +20,7 @@
   "links": [],
   "depends_on": [],
   "tags": [
+    "api",
     "artifact",
     "enterprise",
     "qeg",

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/enterprise/rbac-audit/viewer-safe-metadata/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b3ff6efed8cbe63a3dd1092225fbae8ac6e3ae60cc0ba7aa84313acfd35c2813",
+  "line_count": 24,
+  "size_bytes": 638,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/migration/compatibility/canonical-mutated/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2d957439264224c26bfbde28a020161e74e376befaa54c1b8048cd8c4ae8b71e",
+  "line_count": 32,
+  "size_bytes": 914,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

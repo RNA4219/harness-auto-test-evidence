@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/api/read_model.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "349906833fa1419a299e7ef36853449355025b2f5ea6bd47ff40ca7e2482051a",
+  "line_count": 608,
+  "size_bytes": 21229,
+  "headings": [],
+  "imports": [
+    ".errors",
+    ".read_model_contract",
+    "__future__",
+    "datetime",
+    "typing",
+    "uuid"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/api/errors.py",
+    "src/hate/api/read_model_contract.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "coverage",
+    "store"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/test_integrity/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ec84c57a9b6dc847199ffae411361a5e7aa312f5ad4e22b7b2cb7c6f600ee291",
+  "line_count": 19,
+  "size_bytes": 595,
+  "headings": [],
+  "imports": [
+    ".models",
+    ".skip_focus"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/test_integrity/models.py",
+    "src/hate/test_integrity/skip_focus.py"
+  ],
+  "tags": [
+    "release",
+    "test"
+  ]
+}

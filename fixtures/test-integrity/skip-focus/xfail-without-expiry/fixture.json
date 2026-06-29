@@ -1,0 +1,38 @@
+{
+  "description": "Negative fixture: xfail-without-expiry - xfail marker missing expiry date",
+  "test_records": [
+    {
+      "canonical_test_id": "test_stale_xfail",
+      "framework": "pytest",
+      "status": "passed",
+      "xfail": true,
+      "xfail_issue": "https://github.com/org/repo/issues/456",
+      "sourceRefs": ["tests/bugs/stale_xfail_test.py::test_stale_xfail"]
+    }
+  ],
+  "profile": "release",
+  "expected_summary": {
+    "overall_status": "hold",
+    "finding_count": 1,
+    "blocked_count": 0,
+    "hold_count": 1,
+    "soft_gap_count": 0,
+    "pass_count": 0
+  },
+  "expected_findings": [
+    {
+      "signal_id": "test_xfail_detected",
+      "severity": "high",
+      "readiness_effect": "hold",
+      "marker_kind": "xfail",
+      "reason_contains": "without expiry"
+    }
+  ],
+  "expected_risk_debt": [
+    {
+      "debt_type": "integrity_xfail",
+      "severity": "high",
+      "blocking_profile": ["release"]
+    }
+  ]
+}

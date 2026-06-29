@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/enterprise/rbac-audit/reviewer-manual-review/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "27835855e287432dc5f1aad07d936e09a1011f13b01d9ab90c9d4723ae7ed47a",
+  "line_count": 23,
+  "size_bytes": 625,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/migration/compatibility/hash-changed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "93f8a970b89a38d3292842b67bf6507646dc14a2d21b801c9f9426ff797a63e7",
+  "line_count": 32,
+  "size_bytes": 953,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/security/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "4a4229684476d997f8c23701014eddc684d1d151fba5ff6aa63238488456e857",
+  "line_count": 46,
+  "size_bytes": 1379,
+  "headings": [],
+  "imports": [
+    ".artifact_safety",
+    ".models"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/security/artifact_safety.py",
+    "src/hate/security/models.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "security"
+  ]
+}

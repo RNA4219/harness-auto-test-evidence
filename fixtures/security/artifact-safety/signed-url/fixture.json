@@ -1,0 +1,6 @@
+{
+  "artifact_id": "signed-url",
+  "artifact_path": "logs/url.txt",
+  "profile": "release",
+  "content": "download=https://storage.example.com/private/a.zip?X-Amz-Signature=abc123&token=secret"
+}

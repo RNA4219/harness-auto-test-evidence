@@ -1,0 +1,37 @@
+{
+  "description": "Warehouse export dry-run - produces preview without live network.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-warehouse-001",
+      "warehouse_export": {
+        "connector_id": "warehouse-001",
+        "provider": "Snowflake",
+        "payload_kind": "aggregate_metrics",
+        "metrics_preview": [
+          {"metric_name": "test_run_count", "value": 42},
+          {"metric_name": "pass_rate", "value": 0.95}
+        ],
+        "sourceRef": "reports/warehouse-metrics.json"
+      },
+      "sourceRefs": ["reports/enterprise-control-report.json"]
+    },
+    "connector_config": {
+      "enabled": true,
+      "provider": "Snowflake",
+      "dry_run": true
+    }
+  },
+  "expected": {
+    "connector_id": "warehouse-001",
+    "mode": "warehouse",
+    "status": "preview",
+    "enabled": true,
+    "readiness_effect": "pass",
+    "simulated_actions_count": 1,
+    "denied_actions_empty": true,
+    "payload_kind": "aggregate_metrics",
+    "has_sourceRefs": true
+  }
+}

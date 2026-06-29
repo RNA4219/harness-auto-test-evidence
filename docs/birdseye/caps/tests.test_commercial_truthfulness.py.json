@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_commercial_truthfulness.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "049840048dce9d5202dfddfd7e83e34acc20d80ca32824892811396f88965749",
+  "line_count": 125,
+  "size_bytes": 5172,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.commercial",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

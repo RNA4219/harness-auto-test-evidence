@@ -1,0 +1,30 @@
+{
+  "path": "src/hate/store/local_store.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "a428f9e2396c34d994d1680972e48474e2babe0784214ea8c5ec9ab1ffab6e39",
+  "line_count": 719,
+  "size_bytes": 25160,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    ".indexes",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "hashlib",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/indexes.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

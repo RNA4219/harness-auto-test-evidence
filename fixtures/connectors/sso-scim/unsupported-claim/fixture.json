@@ -1,0 +1,31 @@
+{
+  "description": "Unsupported SSO claim produces hold/manual review.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "sso_mapping": {
+        "mapping_id": "sso-map-unsupported",
+        "claims": [
+          {"name": "email", "sourceRef": "idp/claims/email"},
+          {"name": "admin_override", "sourceRef": "idp/claims/admin_override"}
+        ],
+        "groups": [],
+        "roles": []
+      },
+      "sourceRefs": ["fixtures/connectors/sso-scim/unsupported-claim/fixture.json"]
+    },
+    "mapping_config": {
+      "issuer": "https://idp.example.test",
+      "audience": "hate-enterprise",
+      "supported_claims": ["email"],
+      "required_claims": ["email"],
+      "supported_groups": [],
+      "supported_roles": []
+    }
+  },
+  "expected": {
+    "status": "unsupported_claim",
+    "unsupported_claim": "admin_override",
+    "readiness_effect": "hold"
+  }
+}

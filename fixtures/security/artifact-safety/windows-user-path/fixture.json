@@ -1,0 +1,6 @@
+{
+  "artifact_id": "windows-user-path",
+  "artifact_path": "logs/path.log",
+  "profile": "product",
+  "content": "opened C:\\Users\\ryo-n\\AppData\\Local\\Temp\\trace.zip"
+}

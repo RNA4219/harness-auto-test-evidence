@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_support_ops_observability.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "1e9e428ae873b8b2b641a8ccbaf865439130489f5e0d7c3cf81ff9424f9b6447",
+  "line_count": 113,
+  "size_bytes": 3855,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.support_ops",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

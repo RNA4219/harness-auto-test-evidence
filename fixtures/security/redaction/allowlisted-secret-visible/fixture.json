@@ -1,0 +1,11 @@
+{
+  "artifact_id": "test-secret-004",
+  "artifact_path": "tests/fixtures/test_config.json",
+  "profile": "default",
+  "content": "{\n  \"api_key\": \"test_api_key_12345678901234567890\",\n  \"test_secret\": \"fake_secret_for_testing_only\",\n  \"metadata\": {\n    \"allowlist_fixture\": true,\n    \"purpose\": \"unit test fixture\"\n  }\n}",
+  "expected_redaction_status": "not_required",
+  "expected_classification": "internal",
+  "expected_readiness_effect": "pass",
+  "expected_redactions_count": 0,
+  "allowlist_context": "test_fixture"
+}

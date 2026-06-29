@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/migration-compatibility-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "b2a9f3332c7d65d75893bc8cf8ceab90daa3e631b95cf8efbe90ef8f6476c0d2",
+  "line_count": 106,
+  "size_bytes": 3786,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

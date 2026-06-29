@@ -1,0 +1,22 @@
+{
+  "file_access_log": [
+    "../../../etc/passwd",
+    "../../../var/log/auth.log",
+    "..\\..\\..\\windows\\system32\\config\\SAM",
+    "/home/admin/../root/.ssh/id_rsa",
+    "/tmp/../../../etc/shadow",
+    "C:\\Users\\Administrator\\..\\..\\Windows\\System32\\drivers\\etc\\hosts"
+  ],
+  "attempted_paths": {
+    "passwd_access": "../../../etc/passwd",
+    "shadow_access": "/etc/shadow",
+    "ssh_key_access": "/root/.ssh/id_rsa",
+    "windows_config": "C:\\Windows\\System32\\config"
+  },
+  "metadata": {
+    "log_source": "security_audit",
+    "timestamp": "2026-06-28T11:00:00Z",
+    "risk_level": "critical",
+    "attack_pattern": "path_traversal"
+  }
+}

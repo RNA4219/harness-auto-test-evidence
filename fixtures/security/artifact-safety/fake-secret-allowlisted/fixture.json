@@ -1,0 +1,7 @@
+{
+  "artifact_id": "fake-secret-allowlisted",
+  "artifact_path": "fixtures/examples/env.txt",
+  "profile": "release",
+  "allowlist_ref": "ALLOWED-TEST-SECRET-001",
+  "content": "api_key = \"FAKESECRETKEYVALUE1234567890\""
+}

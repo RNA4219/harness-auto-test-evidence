@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/mock-assertion/manual-review-documented/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a02e4376e5e512267a05349842e57e3b7d53edebf66ab1ae8ea0d10bd1857870",
+  "line_count": 18,
+  "size_bytes": 948,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

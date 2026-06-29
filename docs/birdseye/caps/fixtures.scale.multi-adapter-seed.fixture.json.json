@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/multi-adapter-seed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "662d196013cf06337852806a6399de39db679529bf570044ff7b85c1117e6ab8",
+  "line_count": 23,
+  "size_bytes": 574,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

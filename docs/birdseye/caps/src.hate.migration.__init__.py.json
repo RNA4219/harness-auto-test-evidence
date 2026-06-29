@@ -1,0 +1,19 @@
+{
+  "path": "src/hate/migration/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "2ca8d0682b06e1f8432caba201c951e56adf141fb6824d1408fa8722cd9fe658",
+  "line_count": 16,
+  "size_bytes": 499,
+  "headings": [],
+  "imports": [
+    ".compatibility",
+    ".legal_hold"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/migration/compatibility.py",
+    "src/hate/migration/legal_hold.py"
+  ],
+  "tags": []
+}

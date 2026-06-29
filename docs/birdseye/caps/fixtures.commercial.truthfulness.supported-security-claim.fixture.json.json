@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/commercial/truthfulness/supported-security-claim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "43872847b72ad1c410460d92fd490b4515200937124cd0fd535c2872e15c7db6",
+  "line_count": 31,
+  "size_bytes": 1171,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "security"
+  ]
+}

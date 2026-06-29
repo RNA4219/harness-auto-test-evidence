@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/redaction/public-url-allowed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8e654167907c554cd29ea9c71cf38085ccf4a6bd77d2dec372834c60483f803e",
+  "line_count": 10,
+  "size_bytes": 541,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

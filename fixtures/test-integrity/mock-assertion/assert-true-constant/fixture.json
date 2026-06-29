@@ -1,0 +1,23 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_constant_true_assertion",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/unit/test_constants.py:10",
+  "description": "Constant assertion - always passes",
+  "expected_signal": "assertion_quality",
+  "expected_assertion_type": "trivial",
+  "code": "def test_constant_true_assertion():\n    service = Service()\n    result = service.execute()\n    # Always passes - meaningless\n    assert True\n    # Another constant\n    assert 1 == 1",
+  "mock_targets": [],
+  "assertions": [
+    {
+      "text": "assert True",
+      "line_number": 5
+    },
+    {
+      "text": "assert 1 == 1",
+      "line_number": 7
+    }
+  ]
+}

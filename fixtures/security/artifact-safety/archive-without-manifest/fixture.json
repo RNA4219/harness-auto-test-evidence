@@ -1,0 +1,7 @@
+{
+  "artifact_id": "archive-without-manifest",
+  "artifact_path": "artifacts/trace.zip",
+  "profile": "release",
+  "content": "",
+  "manifest_present": false
+}

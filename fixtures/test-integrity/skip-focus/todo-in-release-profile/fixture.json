@@ -1,0 +1,37 @@
+{
+  "description": "Negative fixture: todo-in-release-profile - todo marker blocked in release profile",
+  "test_records": [
+    {
+      "canonical_test_id": "test_incomplete_in_release",
+      "framework": "vitest",
+      "status": "passed",
+      "todo": true,
+      "sourceRefs": ["tests/features/release_todo_test.py::test_incomplete_in_release"]
+    }
+  ],
+  "profile": "release",
+  "expected_summary": {
+    "overall_status": "blocked",
+    "finding_count": 1,
+    "blocked_count": 1,
+    "hold_count": 0,
+    "soft_gap_count": 0,
+    "pass_count": 0
+  },
+  "expected_findings": [
+    {
+      "signal_id": "test_todo_detected",
+      "severity": "high",
+      "readiness_effect": "blocked",
+      "marker_kind": "todo",
+      "reason_contains": "todo"
+    }
+  ],
+  "expected_risk_debt": [
+    {
+      "debt_type": "integrity_todo",
+      "severity": "high",
+      "blocking_profile": ["release", "product"]
+    }
+  ]
+}

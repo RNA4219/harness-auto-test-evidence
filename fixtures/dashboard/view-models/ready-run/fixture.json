@@ -1,0 +1,44 @@
+{
+  "description": "Ready run with all reports present, no blockers",
+  "input": {
+    "readiness_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "product_readiness_report",
+      "summary": {
+        "overall_status": "go",
+        "claim_count": 10,
+        "unsupported_claim_count": 0,
+        "contradiction_count": 0,
+        "hard_dq_count": 0
+      },
+      "graph_summary": {},
+      "unsupported_claims": [],
+      "contradictions": [],
+      "hard_dqs": [],
+      "soft_gaps": [],
+      "sourceRefs": ["reports/product-readiness-report.json"]
+    },
+    "run_id": "run-ready-001",
+    "profile": "product",
+    "artifact_safety_reports": [
+      {
+        "artifact_id": "artifact-001",
+        "classification": "public",
+        "quarantine_required": false,
+        "redaction_required": false,
+        "sourceRefs": ["artifacts/logs/runtime.log"]
+      }
+    ],
+    "manual_review_requests": [],
+    "missing_reports": []
+  },
+  "expected": {
+    "overall_status": "go",
+    "is_ready": true,
+    "hard_dq_count": 0,
+    "missing_report_count": 0,
+    "quarantined_artifact_count": 0,
+    "blockers": [],
+    "has_safe_metadata_only_artifact": false
+  }
+}

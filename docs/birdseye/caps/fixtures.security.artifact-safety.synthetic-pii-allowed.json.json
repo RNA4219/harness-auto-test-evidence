@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/artifact-safety/synthetic-pii-allowed.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c8b454809f91937f7787fb07107c983159e7b62f0e6cc071a36e7b2a5a3a07b5",
+  "line_count": 19,
+  "size_bytes": 527,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security",
+    "test"
+  ]
+}

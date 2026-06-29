@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/api/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "9e796b2a278976a05a14ac44dee4415f8ad3a2feaf79bf0dceb31ae214cade6e",
+  "line_count": 114,
+  "size_bytes": 2621,
+  "headings": [],
+  "imports": [
+    ".authz",
+    ".errors",
+    ".import_export",
+    ".read_model",
+    "__future__"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/api/authz.py",
+    "src/hate/api/errors.py",
+    "src/hate/api/import_export.py",
+    "src/hate/api/read_model.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/store/indexes.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e8b94cd9eb3c65a24d75a6b5ffe084e0811e116930182fef099dee6928c0b89f",
+  "line_count": 450,
+  "size_bytes": 15085,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "hashlib",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

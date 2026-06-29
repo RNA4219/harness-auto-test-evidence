@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/small-seed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bde6084c3bd85a296fc1340c83f536e683ca2d777b4e2b56eb3bbe8f2e97f14a",
+  "line_count": 25,
+  "size_bytes": 616,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

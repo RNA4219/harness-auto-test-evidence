@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/support_ops/error_catalog.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f591da2b87ee0b3e359785a8d573c4f5ae58a1ebb7f20f61cc483d14ea7b92c6",
+  "line_count": 246,
+  "size_bytes": 9278,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "schema",
+    "store",
+    "test"
+  ]
+}

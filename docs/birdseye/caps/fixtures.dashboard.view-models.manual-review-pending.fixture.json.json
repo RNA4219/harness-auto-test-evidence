@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/dashboard/view-models/manual-review-pending/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e203f143a29fad6cd9705e0391c204c1b3a12e92f6b12f3ef4927a89cf4da08e",
+  "line_count": 33,
+  "size_bytes": 995,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

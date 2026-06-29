@@ -1,0 +1,15 @@
+{
+  "artifact_id": "multi-risk-010",
+  "artifact_path": "logs/comprehensive.log",
+  "profile": "product",
+  "content": "2024-01-15T10:30:00Z INFO Session started\n2024-01-15T10:31:00Z DEBUG Config: api_key=\"DUMMYSECRETKEYVALUE123456789\"\n2024-01-15T10:32:00Z INFO User email=john.smith@corp.com\n2024-01-15T10:33:00Z DEBUG Home path: /home/admin/.ssh/config\n2024-01-15T10:34:00Z INFO Signed URL: https://s3.amazonaws.com/bucket?AWSAccessKeyId=key&Signature=sig\n2024-01-15T10:35:00Z DEBUG Password: password=\"superSecretPass123\"\n",
+  "expected_redaction_status": "redacted",
+  "expected_classification": "restricted",
+  "expected_readiness_effect": "hard_dq",
+  "expected_redactions_count": 5,
+  "expected_redaction_types": ["secret", "pii", "path", "url"],
+  "expected_secrets_redacted": 2,
+  "expected_pii_redacted": 1,
+  "expected_paths_redacted": 1,
+  "expected_urls_redacted": 1
+}

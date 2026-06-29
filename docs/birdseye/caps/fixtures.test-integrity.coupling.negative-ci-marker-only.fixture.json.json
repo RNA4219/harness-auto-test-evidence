@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/coupling/negative-ci-marker-only.fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8c93f2e23273a9746184d32ef9f922db45732150445b7ba12057916ad2047601",
+  "line_count": 19,
+  "size_bytes": 731,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/support-ops/observability/alerts-valid/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "20c5afc3ec9a6361be0301a2b0f353cf70edbf6cf9c7cc37c7faf2bc455e201c",
+  "line_count": 28,
+  "size_bytes": 770,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture"
+  ]
+}

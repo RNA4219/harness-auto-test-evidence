@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/support-ops-report.schema.json",
+  "title": "HATE Support Ops Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "logs",
+    "metrics",
+    "alerts",
+    "incidents",
+    "findings",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "support-ops-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {
+      "type": "string",
+      "enum": ["pass", "soft_gap", "hold", "blocked"]
+    },
+    "logs": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "metrics": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "alerts": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "incidents": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "diagnostic_bundles": {
+      "type": "array",
+      "items": {"$ref": "safe-diagnostic-bundle.schema.json"}
+    },
+    "error_records": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/support_error_record"}
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "readiness_effect", "message", "sourceRef"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "readiness_effect": {
+            "type": "string",
+            "enum": ["pass", "soft_gap", "hold", "hard_dq"]
+          },
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "support_error_record": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "record_type",
+        "error_code",
+        "category",
+        "error_class",
+        "severity",
+        "message",
+        "remediation",
+        "owner_action",
+        "retryable",
+        "sourceRefs",
+        "safe_for_summary"
+      ],
+      "properties": {
+        "schema_version": {"const": "HATE/v1"},
+        "record_type": {"const": "support-error-record"},
+        "error_code": {"type": "string", "pattern": "^HATE-[A-Z]+-[0-9]{3}$"},
+        "category": {"type": "string"},
+        "error_class": {"type": "string"},
+        "severity": {"type": "string"},
+        "message": {"type": "string"},
+        "operator_message": {"type": "string"},
+        "remediation": {"type": "string", "minLength": 1},
+        "owner_action": {"type": "string", "minLength": 1},
+        "retryable": {"type": "boolean"},
+        "related_reports": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "safe_for_summary": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    }
+  }
+}

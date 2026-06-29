@@ -1,0 +1,31 @@
+{
+  "path": "tests/test_artifact_redaction.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "e2ae92105c9aaf1b76b4142310963304d084e76e69999b56c38e220831d092a9",
+  "line_count": 395,
+  "size_bytes": 15732,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.security.export_filter",
+    "hate.security.redaction",
+    "hate.security.summary_filter",
+    "json",
+    "pathlib",
+    "re"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/security/export_filter.py",
+    "src/hate/security/redaction.py",
+    "src/hate/security/summary_filter.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "security",
+    "test"
+  ]
+}

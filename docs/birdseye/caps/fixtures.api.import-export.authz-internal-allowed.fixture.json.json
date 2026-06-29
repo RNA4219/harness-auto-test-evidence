@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/api/import-export/authz-internal-allowed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "51a3f909a451690ffbcd66503ca540c0eca954cb064ed2acd31dfc6c0620225f",
+  "line_count": 25,
+  "size_bytes": 638,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

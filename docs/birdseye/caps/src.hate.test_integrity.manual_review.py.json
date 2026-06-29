@@ -1,0 +1,30 @@
+{
+  "path": "src/hate/test_integrity/manual_review.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "40a5b91a640176b483cffeee0da60968b79d1147c7c014e1e4acc40635d00b5e",
+  "line_count": 490,
+  "size_bytes": 18567,
+  "headings": [
+    "# Required decision types for manual review - per schema enum"
+  ],
+  "imports": [
+    ".coupling",
+    ".models",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/test_integrity/coupling.py",
+    "src/hate/test_integrity/models.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

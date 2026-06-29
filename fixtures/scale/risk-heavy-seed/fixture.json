@@ -1,0 +1,25 @@
+{
+  "description": "500k-class graph manifest-only proof.",
+  "input": {
+    "fixture_id": "risk-heavy-seed",
+    "seed": "hate-scale-risk-500k-001",
+    "target_tests": 100000,
+    "target_coverage_records": 10000000,
+    "target_artifact_metadata": 100000,
+    "target_risks": 100000,
+    "target_graph_nodes": 500000,
+    "target_graph_edges": 2000000,
+    "adapter_count": 6,
+    "shard_count": 64,
+    "max_edge_fanout": 8,
+    "generation_profile": "large_manifest_only"
+  },
+  "expected": {
+    "status": "pass",
+    "tests": 100000,
+    "coverage_records": 10000000,
+    "artifact_metadata": 100000,
+    "graph_nodes": 500000,
+    "graph_edges": 2000000
+  }
+}

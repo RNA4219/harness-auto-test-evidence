@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/test-integrity/coupling/positive-coverage-without-evidence.fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f5214ea58a3dc8efe66f23d6c95a1ad1ca286b45a40ffba3408f2c2a72bf0525",
+  "line_count": 31,
+  "size_bytes": 888,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

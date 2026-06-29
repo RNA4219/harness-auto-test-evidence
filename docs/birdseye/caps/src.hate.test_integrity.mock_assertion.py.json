@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/test_integrity/mock_assertion.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "6262c745181f890c8f9308a0d7c1b5d20e3bfa73eeac25b113c466ca3e73dd62",
+  "line_count": 709,
+  "size_bytes": 27217,
+  "headings": [],
+  "imports": [
+    ".mock_assertion_types",
+    ".models",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/test_integrity/mock_assertion_types.py",
+    "src/hate/test_integrity/models.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

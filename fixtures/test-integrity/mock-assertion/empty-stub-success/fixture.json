@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_empty_stub_success",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/stubs/test_empty_success.py:8",
+  "description": "Empty stub that passes - flagged as questionable even if test succeeds",
+  "expected_signal": "mock_abuse_detected",
+  "expected_classification": "empty_stub",
+  "expected_effect": "soft_gap",
+  "code": "def test_empty_stub_success():\n    # Empty stub - returns default mock value\n    # Even if test passes, this is flagged as questionable\n    mock_handler = Mock()\n    # No return_value or side_effect set\n    result = mock_handler.process()  # Returns Mock object by default\n    # Test passes because Mock returns a truthy object\n    # But this doesn't verify real behavior",
+  "mock_targets": [
+    {
+      "target": "handler",
+      "context": "empty stub no behavior",
+      "mock_code": "Mock()",
+      "line_number": 4
+    }
+  ],
+  "assertions": []
+}

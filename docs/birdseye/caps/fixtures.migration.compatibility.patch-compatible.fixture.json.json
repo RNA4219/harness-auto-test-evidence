@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/migration/compatibility/patch-compatible/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "244b94831c380bc47c9853a1e29a270d94f88d4671f6a4f55a4efba4f6bc7d0d",
+  "line_count": 31,
+  "size_bytes": 867,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

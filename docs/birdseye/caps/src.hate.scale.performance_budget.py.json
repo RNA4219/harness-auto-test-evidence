@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/scale/performance_budget.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c45915b81d8194f78e7d1ee723a7213f235e5281e58c407307f13706d66a8f11",
+  "line_count": 248,
+  "size_bytes": 8499,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "store"
+  ]
+}

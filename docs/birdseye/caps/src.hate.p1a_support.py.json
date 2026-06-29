@@ -2,26 +2,21 @@
   "path": "src/hate/p1a_support.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "11bf2f40d8f373eb0ba40b31998ca43ebf2fb88d4cab3598581b2e426d06a013",
-  "line_count": 914,
-  "size_bytes": 42669,
-  "headings": [],
+  "sha256": "b47a7e6a2b07d145e2ee4f7e5fe0ff8db2b1b00352ca46c9c1060aacd2ccfb8b",
+  "line_count": 99,
+  "size_bytes": 2672,
+  "headings": [
+    "# Re-export all functions and constants from p1a_internal package"
+  ],
   "imports": [
-    ".",
-    ".p1a_io",
     "__future__",
-    "typing"
+    "hate.p1a_internal"
   ],
   "links": [],
-  "depends_on": [
-    "src/hate/p1a_io.py"
-  ],
+  "depends_on": [],
   "tags": [
     "adapter",
     "artifact",
-    "coverage",
-    "qeg",
-    "release",
     "schema",
     "test"
   ]

@@ -1,0 +1,20 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_snapshot_only_no_guard",
+  "language": "javascript",
+  "framework": "jest",
+  "source_ref": "tests/ui/components/Header.test.js:5",
+  "description": "Snapshot only without semantic guard",
+  "expected_signal": "assertion_quality",
+  "expected_assertion_type": "snapshot_only",
+  "expected_effect": "soft_gap",
+  "code": "test('Header renders', () => {\n  const header = render(<Header />);\n  // Only snapshot, no semantic verification\n  expect(header).toMatchSnapshot();\n});",
+  "mock_targets": [],
+  "assertions": [
+    {
+      "text": "expect(header).toMatchSnapshot()",
+      "line_number": 4
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/p1a_internal/recommendations.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "b3c63bf4633302ca5f78eb6a50a1176d59415ad66454657fd2090d4b1d202115",
+  "line_count": 122,
+  "size_bytes": 5746,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

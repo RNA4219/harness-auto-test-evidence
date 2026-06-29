@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/api/authz.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1e718f31da35dc86b1be3931d8095382812376624242fa044c9f1e5b72d2c530",
+  "line_count": 346,
+  "size_bytes": 11913,
+  "headings": [
+    "# Classification hierarchy for authz decisions",
+    "# Actor scopes by surface",
+    "# Role permissions (minimal for local-first)"
+  ],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hashlib",
+    "typing",
+    "uuid"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema"
+  ]
+}

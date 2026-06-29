@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/security/artifact-safety/test-fixture-api-key.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6bdf0de142ff9f81c262b10f4ba3de22bdb2cf6125153f8d03dd23ad6cf6e329",
+  "line_count": 17,
+  "size_bytes": 610,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "security",
+    "test"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/api/read-model/minimal-run/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "59eeff2cbcf447d45da8d170e44cc206f6a0965e913e02063049a09715072737",
+  "line_count": 36,
+  "size_bytes": 936,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/skip-focus/xfail-without-expiry/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "681eb212e44d31ed4d124d82bacf537e4f85f9d1ab927ea44f12c83704b2928a",
+  "line_count": 38,
+  "size_bytes": 950,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "test"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/read-model/quarantined-artifact/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f6f3be2516caace18f6da2640afa4e8f8f781e88e317a1e6a25a33f8afe6e5c1",
+  "line_count": 45,
+  "size_bytes": 1502,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture"
+  ]
+}

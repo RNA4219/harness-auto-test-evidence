@@ -1,0 +1,21 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "qeg_bundle",
+  "nodes": [
+    {
+      "id": "test-004",
+      "kind": "test_result",
+      "status": "passed",
+      "test_id": "TC-004",
+      "name": "Integration test",
+      "duration_ms": 500,
+      "timestamp": "2026-06-29T10:00:00Z"
+    }
+  ],
+  "edges": [],
+  "sourceRefs": [
+    "git:ref123",
+    "jira:ticket-456",
+    "https://ci.example.com/build/789"
+  ]
+}

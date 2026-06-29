@@ -1,0 +1,37 @@
+{
+  "description": "Negative fixture: only-focused-leak - only/focus marker detected (hard DQ in release/product)",
+  "test_records": [
+    {
+      "canonical_test_id": "test_focused_execution",
+      "framework": "jest",
+      "status": "passed",
+      "only": true,
+      "sourceRefs": ["tests/unit/focused_test.py::test_focused_execution"]
+    }
+  ],
+  "profile": "release",
+  "expected_summary": {
+    "overall_status": "blocked",
+    "finding_count": 1,
+    "blocked_count": 1,
+    "hold_count": 0,
+    "soft_gap_count": 0,
+    "pass_count": 0
+  },
+  "expected_findings": [
+    {
+      "signal_id": "test_only_detected",
+      "severity": "high",
+      "readiness_effect": "blocked",
+      "marker_kind": "only",
+      "reason_contains": "only/focus"
+    }
+  ],
+  "expected_risk_debt": [
+    {
+      "debt_type": "integrity_only",
+      "severity": "high",
+      "blocking_profile": ["release", "product"]
+    }
+  ]
+}

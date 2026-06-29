@@ -1,0 +1,31 @@
+{
+  "input": {
+    "claim": {
+      "claim_id": "claim-security-safe-diagnostic",
+      "claim_text": "HATE provides safe diagnostic bundles that exclude secrets, PII, and raw artifacts.",
+      "surface": "security_questionnaire",
+      "claim_area": "security",
+      "declared_status": "implemented",
+      "source_contract_refs": ["docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md", "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md"],
+      "implementation_refs": ["src/hate/support_ops/diagnostics.py", "src/hate/security/redaction.py"],
+      "required_evidence": ["safe-diagnostic-bundle", "support-ops-report"],
+      "sourceRefs": ["fixtures/commercial/truthfulness/supported-security-claim/fixture.json"]
+    },
+    "evidence_records": [
+      {
+        "record_type": "safe-diagnostic-bundle",
+        "status": "pass",
+        "sourceRefs": ["schemas/HATE/v1/safe-diagnostic-bundle.schema.json"]
+      },
+      {
+        "record_type": "support-ops-report",
+        "status": "pass",
+        "sourceRefs": ["schemas/HATE/v1/support-ops-report.schema.json"]
+      }
+    ],
+    "profile": "release"
+  },
+  "expected": {
+    "readiness_effect": "pass"
+  }
+}

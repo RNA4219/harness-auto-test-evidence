@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/dashboard/view-models/quarantined-artifact/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "af136978666c406e3b416e9556d9884e575354a6c89e518db693eadc849cbd4c",
+  "line_count": 33,
+  "size_bytes": 1025,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

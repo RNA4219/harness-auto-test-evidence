@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/dashboard/uat_states.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "d566a6d300ed7de93b3dceebf13a467fc8337d779d1949454f1e362d37e22871",
+  "line_count": 609,
+  "size_bytes": 19715,
+  "headings": [
+    "# Builder functions - project from reports without computing verdicts"
+  ],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "hashlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

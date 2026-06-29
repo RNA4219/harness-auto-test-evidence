@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/scale/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "51ec553999963285a0aa1e552c46e90299f15b00097769180ef718187ddacca6",
+  "line_count": 25,
+  "size_bytes": 653,
+  "headings": [],
+  "imports": [
+    "hate.scale.fixtures",
+    "hate.scale.performance_budget"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/scale/fixtures.py",
+    "src/hate/scale/performance_budget.py"
+  ],
+  "tags": [
+    "fixture"
+  ]
+}

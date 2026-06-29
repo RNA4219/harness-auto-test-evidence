@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/dashboard/uat-states/manual-review-pending/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "71033f9ecdc32249a1f98c4e239277d25425f8d1a8ce8475a52ca1aeaea3449e",
+  "line_count": 42,
+  "size_bytes": 1306,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

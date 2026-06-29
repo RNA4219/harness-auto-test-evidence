@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_api_import_export_authz.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "444ef6a9be89f129e69ffbc217feea413b211cc7251979ed02676c60f313a52c",
+  "line_count": 528,
+  "size_bytes": 21303,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.api",
+    "json",
+    "pathlib",
+    "re"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

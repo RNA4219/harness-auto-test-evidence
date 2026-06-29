@@ -1,0 +1,19 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "test_coupling_fixture",
+  "fixture_id": "fixture-renamed-stable",
+  "description": "Negative fixture: stable fixture mapping registry - NOT coupling (rename stability)",
+  "production_sources": [
+    {
+      "file_path": "src/fixture_loader.py",
+      "code": "FIXTURE_MAP = {\n    'service_a': 'fixtures/service_a.json',\n    'service_b': 'fixtures/service_b.json',\n}\n\ndef get_fixture(name):\n    return FIXTURE_MAP.get(name)\n",
+      "source_ref": "prod:src/fixture_loader.py",
+      "test_ids": [],
+      "fixture_names": []
+    }
+  ],
+  "expected_findings": [],
+  "expected_status": "pass",
+  "expected_classification": "stable_fixture_mapping",
+  "notes": "Stable fixture mapping registry - fixture/test rename stability maintained"
+}

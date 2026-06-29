@@ -53,6 +53,13 @@ must show where limits are enforced and how partial/stale states are represented
 | scale-cache-stale | cache invalidation | stale source hash detected |
 | scale-archive-limit | archive safety | expansion stopped deterministically |
 
+Large fixtures are represented by deterministic generator specs and compact manifests.
+The repository must not commit hand-written 100k/500k-class raw outputs. A valid manifest
+records seed, generation profile, target counts, generated counts, sourceRef cardinality,
+artifact metadata count, graph nodes/edges, shard count, expected hashes, and sourceRefs.
+CI may use small/medium generated summaries while keeping 500k-class profiles as
+manifest-only proof.
+
 ## 5. Architecture Requirements
 
 - parsers must stream or chunk large inputs
@@ -103,4 +110,3 @@ findings: array
 ```
 
 Product-ready is blocked when the report is missing or any required scale No-Go is present.
-

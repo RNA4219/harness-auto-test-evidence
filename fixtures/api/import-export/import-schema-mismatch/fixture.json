@@ -1,0 +1,25 @@
+{
+  "description": "Import rejected due to unsupported schema version",
+  "input": {
+    "bundle": {
+      "schema_version": "INVALID/v2",
+      "bundle_id": "bundle-invalid-schema",
+      "organization_id": "org-001",
+      "workspace_id": "ws-001",
+      "sourceRefs": ["test:invalid-schema"],
+      "artifacts": []
+    },
+    "actor": "test-actor",
+    "tenant": {
+      "organization_id": "org-001",
+      "workspace_id": "ws-001"
+    }
+  },
+  "expected": {
+    "import_status": "rejected",
+    "rejection_reason": "HATE-API-SCHEMA-INVALID",
+    "validation_results": {
+      "schema_valid": false
+    }
+  }
+}

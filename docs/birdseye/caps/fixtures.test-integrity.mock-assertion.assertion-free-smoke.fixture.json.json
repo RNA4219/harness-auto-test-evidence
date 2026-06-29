@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/mock-assertion/assertion-free-smoke/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4cfeabf77dca550f5c51a61e7bae2e03dd40d6f6226aceb7a4f5e45ef7411b7b",
+  "line_count": 16,
+  "size_bytes": 802,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

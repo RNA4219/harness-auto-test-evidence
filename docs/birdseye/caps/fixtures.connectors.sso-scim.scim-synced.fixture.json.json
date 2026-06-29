@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/connectors/sso-scim/scim-synced/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1bc882723f65a9802c0f89413afe60d07568a731c8e3c8b35ae7158af8bf083f",
+  "line_count": 47,
+  "size_bytes": 1358,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

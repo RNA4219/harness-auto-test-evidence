@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_sorting_property",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/properties/test_sort.py:10",
+  "description": "Property-based assertion verifying behavior",
+  "expected_signal": "none",
+  "code": "@given(st.lists(st.integers()))\ndef test_sorting_property(numbers):\n    result = sorted(numbers)\n    # Property: output is always sorted\n    assert result == sorted(result)\n    # Property: contains same elements\n    assert len(result) == len(numbers)",
+  "mock_targets": [],
+  "assertions": [
+    {
+      "text": "assert result == sorted(result)",
+      "line_number": 5
+    },
+    {
+      "text": "assert len(result) == len(numbers)",
+      "line_number": 7
+    }
+  ]
+}

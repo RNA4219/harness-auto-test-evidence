@@ -1,0 +1,48 @@
+{
+  "description": "Live network attempts are denied and secrets are redacted in diagnostics.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "sso_mapping": {
+        "mapping_id": "sso-map-network",
+        "claims": [
+          {"name": "email", "sourceRef": "idp/claims/email"}
+        ],
+        "groups": [],
+        "roles": []
+      },
+      "scim": {
+        "diff_id": "scim-network",
+        "current_users": [],
+        "desired_users": [],
+        "current_groups": [],
+        "desired_groups": [],
+        "requested_actions": [
+          {"action": "delete_user", "target": "user-001", "sourceRef": "scim/actions/delete"}
+        ]
+      },
+      "sourceRefs": ["fixtures/connectors/sso-scim/live-network-attempt/fixture.json"]
+    },
+    "mapping_config": {
+      "issuer": "https://idp.example.test",
+      "audience": "hate-enterprise",
+      "supported_claims": ["email"],
+      "required_claims": ["email"],
+      "supported_groups": [],
+      "supported_roles": [],
+      "live_network_attempt": true,
+      "client_secret": "super-secret-value"
+    },
+    "connector_config": {
+      "enabled": true,
+      "live_network_attempt": true,
+      "token": "raw-token-value"
+    }
+  },
+  "expected": {
+    "sso_status": "invalid_config",
+    "scim_status": "denied_action",
+    "redacted_values": ["super-secret-value", "raw-token-value"],
+    "denied_action_count": 2
+  }
+}

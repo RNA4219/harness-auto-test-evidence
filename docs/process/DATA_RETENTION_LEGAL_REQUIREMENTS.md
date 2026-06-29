@@ -123,3 +123,21 @@ Product-ready is blocked when:
 - commercial unsupported claim is hidden
 - migration loses retention/legal hold state
 
+## 9. Enterprise Control Evaluation
+
+`enterprise-control-report` は retention / legal hold evaluation を保持する。
+canonical bundle には `retention_policy_id` が必須であり、release / regulated
+profile で欠けた場合は hard DQ とする。default profile では hold として扱う。
+
+Retention expiry は evidence の実削除ではなく、metadata-only の
+`metadata_purge_eligible` projection として出す。HATE のテストと dry-run は
+canonical evidence を削除せず、`canonical_evidence_deleted=false` を維持する。
+
+Legal hold が active の resource では purge、delete、raw export、export mutation、
+hold release を blocked operation とする。migration / replay / export 後に
+legal hold metadata が失われた場合は `legal_hold_lost` finding とし、release /
+regulated profile では hard DQ とする。
+
+Migration / replay / export / retention transition は legal hold を preserved field として
+扱う。active hold 中の retention transition は `retain` のみ許可し、purge/delete や
+raw export へ進む場合は hard DQ として report に残す。

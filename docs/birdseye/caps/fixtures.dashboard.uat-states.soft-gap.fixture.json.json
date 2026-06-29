@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/dashboard/uat-states/soft-gap/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "37a215f1ed35a31d8e0ceaf34008b7d24c37e84d3de0dd7246dbbd11acefb6d0",
+  "line_count": 43,
+  "size_bytes": 1177,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

@@ -127,6 +127,23 @@ severity を下げる根拠にはしない。
 | Schema / adapter regression | rollback release, publish migration note, run compatibility fixture |
 | Documentation regression | mark stale, publish correction, attach verified fixture |
 
+Ops connector dry-run failures for SIEM / warehouse / ticketing / support are
+non-gating unless they attempt live network calls, destructive actions, or unsafe
+artifact export. Unsafe artifact export is treated as INC-1 data/privacy exposure
+and must be blocked before payload generation; ordinary connector outage remains
+INC-5 degradation and must not mutate canonical bundles or QEG export.
+
+### 9.1 Safe Diagnostic Incident Evidence
+
+Support incident evidence は `safe-diagnostic-bundle` を参照できるが、raw artifact、
+customer source、secret、PII、private URL、full environment を含めてはならない。
+unsafe input が存在する場合は excluded_artifacts と redaction_log に safe metadata
+だけを残し、incident timeline には stable error code、remediation、owner_action、
+sourceRefs を接続する。
+
+Unknown error code は incident を pass にしない。`unknown_error_code` hold として
+taxonomy 更新または support owner action を要求する。
+
 ## 10. Postmortem Requirements
 
 Sev1 / Sev2 は postmortem を必須とする。最低限、以下を含める。

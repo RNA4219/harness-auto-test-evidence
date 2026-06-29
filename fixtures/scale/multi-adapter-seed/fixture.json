@@ -1,0 +1,23 @@
+{
+  "description": "Multi-adapter scale profile.",
+  "input": {
+    "fixture_id": "multi-adapter-seed",
+    "seed": "hate-scale-adapters-001",
+    "target_tests": 100000,
+    "target_coverage_records": 1000000,
+    "target_artifact_metadata": 5000,
+    "target_risks": 500,
+    "target_graph_nodes": 250000,
+    "target_graph_edges": 1000000,
+    "adapter_count": 5,
+    "shard_count": 16,
+    "max_edge_fanout": 8,
+    "generation_profile": "manifest_only"
+  },
+  "expected": {
+    "status": "pass",
+    "adapter_count": 5,
+    "shard_count": 16,
+    "tests": 100000
+  }
+}

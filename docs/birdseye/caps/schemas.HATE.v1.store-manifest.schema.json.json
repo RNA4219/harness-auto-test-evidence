@@ -1,0 +1,19 @@
+{
+  "path": "schemas/HATE/v1/store-manifest.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "f127f69e15df9f3d9e9e2b3b50ae8608dba7c7162db8eb78c19b0835e2c2b3ac",
+  "line_count": 145,
+  "size_bytes": 4561,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/artifact-safety/clean-metadata/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5029a8579394ce3761dc2097fccb01a75da1fd290f13a75c9303c4d43058009b",
+  "line_count": 7,
+  "size_bytes": 182,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security",
+    "test"
+  ]
+}

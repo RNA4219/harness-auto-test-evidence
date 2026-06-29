@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/connectors/scim.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ddad943ab021e2a9e40e5bf34944836cc120ec6f290407ef138058c27f3914b5",
+  "line_count": 206,
+  "size_bytes": 7977,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "schema"
+  ]
+}

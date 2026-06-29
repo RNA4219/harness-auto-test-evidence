@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/dashboard/uat-states/missing-oracle/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "39a3ad40f3cad1305bf9fdffef825002caeb944cf10116be9aa8c1c371d8d654",
+  "line_count": 43,
+  "size_bytes": 1295,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/mock-assertion/snapshot-with-semantic-guard/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6a7df4fa0b3ce16545875c46ecb8af9c7f669a48a9303bcbf7d7444dabdead28",
+  "line_count": 26,
+  "size_bytes": 984,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

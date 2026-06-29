@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/connectors/sso.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "5b16c6a4b40c77bc165db22fbade0b3206d51b1ceac3c76a0ab313c773e3cecd",
+  "line_count": 299,
+  "size_bytes": 10868,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "schema"
+  ]
+}

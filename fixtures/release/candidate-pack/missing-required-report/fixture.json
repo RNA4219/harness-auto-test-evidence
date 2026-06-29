@@ -1,0 +1,22 @@
+{
+  "input": {
+    "release_id": "rc-missing-required",
+    "source_version": "abc123",
+    "reports": [
+      {"record_type": "product-readiness-report", "report_id": "product", "status": "pass", "sourceRefs": ["product-readiness-report.json"]},
+      {"record_type": "test_integrity_report", "report_id": "test-integrity", "status": "pass", "sourceRefs": ["test-integrity-report.json"]},
+      {"record_type": "artifact-safety-report", "report_id": "artifact-safety", "status": "pass", "sourceRefs": ["artifact-safety-report.json"]},
+      {"record_type": "safe-diagnostic-bundle", "report_id": "diagnostic", "status": "pass", "sourceRefs": ["safe-diagnostic-bundle.json"]},
+      {"record_type": "store_manifest", "report_id": "store", "status": "pass", "sourceRefs": ["store-manifest.json"]},
+      {"record_type": "scale-performance-report", "report_id": "scale", "status": "pass", "sourceRefs": ["scale-performance-report.json"]},
+      {"record_type": "api-contract-report", "report_id": "api", "status": "pass", "sourceRefs": ["api-contract-report.json"]},
+      {"record_type": "dashboard-uat-report", "report_id": "dashboard", "status": "pass", "sourceRefs": ["dashboard-uat-report.json"]},
+      {"record_type": "enterprise-control-report", "report_id": "enterprise", "status": "pass", "sourceRefs": ["enterprise-control-report.json"]},
+      {"record_type": "migration-compatibility-report", "report_id": "migration", "status": "pass", "sourceRefs": ["migration-compatibility-report.json"]},
+      {"record_type": "commercial-truthfulness-report", "report_id": "commercial", "status": "pass", "summary": {"unsupported_claim_count": 0, "release_eligible_claim_count": 1}, "sourceRefs": ["commercial-truthfulness-report.json"]}
+    ],
+    "evidence_room_artifacts": [],
+    "qeg_refs": ["qeg-bundle.json"]
+  },
+  "expected": {"blocker": "missing_required_report"}
+}

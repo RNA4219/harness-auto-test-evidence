@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/enterprise/rbac-audit/missing-audit-event/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "dc7930b6cc556769b26247d6a31c6d660de23d828a37014d3f5763d10e405f6d",
+  "line_count": 23,
+  "size_bytes": 601,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture"
+  ]
+}

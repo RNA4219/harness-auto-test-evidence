@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/scale-performance-report.schema.json",
+  "title": "HATE Scale Performance Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "scale_targets",
+    "budgets",
+    "resource_limits",
+    "pagination",
+    "staleness",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "scale-performance-report"},
+    "scenario_id": {"type": "string"},
+    "profile": {"type": "string"},
+    "dataset_shape": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "scale_targets": {
+      "type": "object",
+      "required": ["tests", "coverage_records", "artifact_metadata", "graph_nodes", "graph_edges"],
+      "properties": {
+        "tests": {"type": "integer", "minimum": 0},
+        "coverage_records": {"type": "integer", "minimum": 0},
+        "artifact_metadata": {"type": "integer", "minimum": 0},
+        "graph_nodes": {"type": "integer", "minimum": 0},
+        "graph_edges": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "budgets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["operation", "target_ms", "status"],
+        "properties": {
+          "operation": {"type": "string"},
+          "target_ms": {"type": "number", "minimum": 0},
+          "observed_ms": {"type": ["number", "null"], "minimum": 0},
+          "status": {"type": "string", "enum": ["pass", "fail", "not_run"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "resource_limits": {
+      "type": "object",
+      "required": ["max_memory_mb", "max_input_bytes", "max_archive_entries"],
+      "properties": {
+        "max_memory_mb": {"type": "integer", "minimum": 0},
+        "max_input_bytes": {"type": "integer", "minimum": 0},
+        "max_archive_entries": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "pagination": {
+      "type": "object",
+      "required": ["required", "tested"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "tested": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "staleness": {
+      "type": "object",
+      "required": ["cache_invalidation_tested"],
+      "properties": {
+        "cache_invalidation_tested": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "fixture_manifests": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "estimated_counters": {
+      "type": "object",
+      "additionalProperties": {"type": ["integer", "number", "boolean", "string"]}
+    },
+    "validation_results": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "findings": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "overall_status": {
+      "type": "string",
+      "enum": ["pass", "soft_gap", "hold", "blocked"]
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": ["pass", "soft_gap", "hold", "hard_dq"]
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true
+}

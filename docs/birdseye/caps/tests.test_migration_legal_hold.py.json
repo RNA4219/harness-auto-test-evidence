@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_migration_legal_hold.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "be4f10bfc3e2e77a0db8a2f427f07e3c016f550fbacf744f11f6b7b2aa2f86ad",
+  "line_count": 102,
+  "size_bytes": 3730,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.migration",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

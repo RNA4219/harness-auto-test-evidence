@@ -1,0 +1,38 @@
+{
+  "description": "SIEM export dry-run - produces preview without live network.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-siem-001",
+      "siem_export": {
+        "connector_id": "siem-001",
+        "provider": "Splunk",
+        "payload_kind": "audit_events",
+        "events_preview": [
+          {"event_type": "auth_success", "count": 150},
+          {"event_type": "auth_failure", "count": 5}
+        ],
+        "sourceRef": "reports/siem-events.json"
+      },
+      "sourceRefs": ["reports/enterprise-control-report.json"]
+    },
+    "connector_config": {
+      "enabled": true,
+      "provider": "Splunk",
+      "endpoint": "https://siem.example.test",
+      "dry_run": true
+    }
+  },
+  "expected": {
+    "connector_id": "siem-001",
+    "mode": "siem",
+    "status": "preview",
+    "enabled": true,
+    "readiness_effect": "pass",
+    "simulated_actions_count": 1,
+    "denied_actions_empty": true,
+    "payload_kind": "audit_events",
+    "has_sourceRefs": true
+  }
+}

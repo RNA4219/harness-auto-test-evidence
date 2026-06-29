@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/connectors/ops/ticket-safe-summary/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7623a2fab2892b483ef7705e806ad3833293f7ffe439532bddc71c33e03ad99f",
+  "line_count": 27,
+  "size_bytes": 854,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

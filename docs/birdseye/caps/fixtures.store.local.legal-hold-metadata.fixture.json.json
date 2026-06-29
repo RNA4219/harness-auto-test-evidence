@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/store/local/legal-hold-metadata/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c48b6ae8d0d7fafe1401f9e8abe3b04983a3f66d19bee5557e0dcd8836749c27",
+  "line_count": 18,
+  "size_bytes": 379,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "security",
+    "store",
+    "test"
+  ]
+}

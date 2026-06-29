@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_ui_snapshot_with_semantic_guard",
+  "language": "javascript",
+  "framework": "jest",
+  "source_ref": "tests/ui/components/Button.test.js:15",
+  "description": "Snapshot test with semantic guard assertion",
+  "expected_signal": "none",
+  "code": "test('Button renders correctly', () => {\n  const button = render(<Button label='Click' />);\n  // Snapshot for visual regression\n  expect(button).toMatchSnapshot();\n  // Semantic guard: verify DOM structure\n  expect(button.getByRole('button')).toBeTruthy();\n  expect(button.getByText('Click')).toBeDefined();\n});",
+  "mock_targets": [],
+  "assertions": [
+    {
+      "text": "expect(button).toMatchSnapshot()",
+      "line_number": 4
+    },
+    {
+      "text": "expect(button.getByRole('button')).toBeTruthy()",
+      "line_number": 6
+    },
+    {
+      "text": "expect(button.getByText('Click')).toBeDefined()",
+      "line_number": 7
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "path": "fixtures/store/local/content-addressed-artifacts/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d27252e1f5991c0f70ce7737584de107d702ce037ddd1ee84b2788b4da43b649",
+  "line_count": 56,
+  "size_bytes": 1150,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

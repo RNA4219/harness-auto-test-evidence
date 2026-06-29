@@ -1,0 +1,17 @@
+{
+  "notification_config": {
+    "slack_webhook": "https://example.invalid/synthetic-slack-webhook/T00B00000/B00A00000/REDACTED",
+    "discord_webhook": "https://discord.com/api/webhooks/123456789012345678/abcdefghijklmnopqrstuvwxyz1234567890",
+    "teams_webhook": "https://outlook.office.com/webhook/XXXXX-XXXXX-XXXXX@XXXXX/IncomingWebhook/XXXXX/XXXXX",
+    "pagerduty_webhook": "https://events.pagerduty.com/webhook/XXXXXXXXXXXX"
+  },
+  "api_webhooks": {
+    "alert_endpoint": "https://api.enterprise-corp.com/webhook/critical-alerts",
+    "status_callback": "https://status.monitoring.com/callback/incidents"
+  },
+  "metadata": {
+    "config_type": "notification_webhooks",
+    "timestamp": "2026-06-28T12:00:00Z",
+    "risk": "external_webhook_hardcoded"
+  }
+}

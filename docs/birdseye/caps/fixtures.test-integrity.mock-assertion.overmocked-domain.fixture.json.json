@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/mock-assertion/overmocked-domain/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b1c41b0a01c856c733488731bb0bb9bc1b8da99175f736df1a4b47bcc6c8b5c3",
+  "line_count": 26,
+  "size_bytes": 1038,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

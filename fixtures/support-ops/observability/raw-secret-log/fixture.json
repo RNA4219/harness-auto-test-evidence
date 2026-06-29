@@ -1,0 +1,25 @@
+{
+  "description": "Raw secret and private paths are redacted from logs.",
+  "input": {
+    "report_id": "raw-secret-log",
+    "profile": "default",
+    "logs": [
+      {
+        "event_id": "log-secret",
+        "level": "error",
+        "message": "failed with token=SECRET_VALUE at C:\\Users\\customer\\repo",
+        "correlation_id": "corr-secret",
+        "sourceRef": "logs/secret",
+        "raw_log": "token=SECRET_VALUE"
+      }
+    ],
+    "metrics": [],
+    "alerts": [],
+    "sourceRefs": ["fixtures/support-ops/observability/raw-secret-log/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "finding_code": "unsafe_log_field_redacted",
+    "forbidden": ["SECRET_VALUE", "C:\\Users\\customer\\repo", "raw_log"]
+  }
+}

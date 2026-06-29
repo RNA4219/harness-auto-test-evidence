@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/artifact-safety/path-traversal/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "477a7ddccb7c8e1bd72363af6987d29d7a095238daf0722f1e6eab78dd844311",
+  "line_count": 6,
+  "size_bytes": 158,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "security"
+  ]
+}

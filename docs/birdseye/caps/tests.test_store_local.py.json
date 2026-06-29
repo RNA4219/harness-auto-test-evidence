@@ -1,0 +1,46 @@
+{
+  "path": "tests/test_store_local.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "05a368eb42539917a641f3fa82b69126b5a6ab13fa339cbc2c166a013f30750d",
+  "line_count": 643,
+  "size_bytes": 20906,
+  "headings": [
+    "# Fixtures directory",
+    "# ============================================================================",
+    "# Test 1-5: Positive fixtures (complete, valid bundles)",
+    "# ============================================================================",
+    "# ============================================================================",
+    "# Test 6-9: Negative fixtures (invalid/malformed bundles)",
+    "# ============================================================================",
+    "# ============================================================================",
+    "# Test 10-12: Core functionality tests",
+    "# ============================================================================",
+    "# ============================================================================",
+    "# Additional edge case tests",
+    "# ============================================================================"
+  ],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.atomic_write",
+    "hate.store.indexes",
+    "json",
+    "pathlib",
+    "pytest",
+    "tempfile",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/indexes.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

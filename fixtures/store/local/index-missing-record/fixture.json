@@ -1,0 +1,18 @@
+{
+  "description": "Negative fixture: missing mandatory legal_hold metadata",
+  "expected_error": "legal_hold metadata is MANDATORY",
+  "bundle_data": {
+    "schema_version": "HATE/v1",
+    "record_type": "qeg_bundle",
+    "nodes": [
+      {
+        "id": "test-no-hold-001",
+        "kind": "test_result",
+        "status": "passed"
+      }
+    ]
+  },
+  "import_params": {
+    "legal_hold": null
+  }
+}

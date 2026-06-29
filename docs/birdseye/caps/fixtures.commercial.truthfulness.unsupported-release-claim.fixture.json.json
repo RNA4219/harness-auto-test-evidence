@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/commercial/truthfulness/unsupported-release-claim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5286a81a3135c34f873f10f56f6160c739b9bcf03c12d77b346c1214e109ef10",
+  "line_count": 19,
+  "size_bytes": 648,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

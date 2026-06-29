@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/support_ops/observability.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "256ddddeba343597ffa69cc4c76294a5f555594babe3cda9f5a6048b2eb4f899",
+  "line_count": 246,
+  "size_bytes": 9101,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "release",
+    "schema"
+  ]
+}

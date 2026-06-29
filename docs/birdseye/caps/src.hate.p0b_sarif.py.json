@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/p0b_sarif.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "6b4835e3fe3bd21171514939f276dc2c4b764025c89386db23124deb5f6cc094",
+  "line_count": 125,
+  "size_bytes": 5668,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hashlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "qeg",
+    "security"
+  ]
+}

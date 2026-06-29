@@ -1,0 +1,6 @@
+{
+  "artifact_id": "private-key-block",
+  "artifact_path": "artifacts/key.pem",
+  "profile": "product",
+  "content": "-----BEGIN SYNTHETIC PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASC\n-----END SYNTHETIC PRIVATE KEY-----"
+}

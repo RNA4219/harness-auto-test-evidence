@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/test-integrity/skip-focus/known-skip-with-owner/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7860d1945f6f81ce02cdb1f9209ab2a91679b65a0673a04d8755d11d663a3de4",
+  "line_count": 40,
+  "size_bytes": 1039,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

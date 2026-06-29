@@ -1,0 +1,17 @@
+{
+  "path": "schemas/api/bundle-import-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "31170b721e56622aada14446cebbdba0c0358c2e89eb63353170ebc54ba3accb",
+  "line_count": 159,
+  "size_bytes": 4518,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "schema"
+  ]
+}

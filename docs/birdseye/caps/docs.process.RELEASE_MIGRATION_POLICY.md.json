@@ -2,9 +2,9 @@
   "path": "docs/process/RELEASE_MIGRATION_POLICY.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "b8a2b0bb8e1581ba2494a0ad685fc2cee9871a9c80f4a959150200c44249d26f",
-  "line_count": 120,
-  "size_bytes": 4161,
+  "sha256": "d6363aef7a011e35bcc0ec26bb97e3ba2c343557b10b24021769e76cec5c340d",
+  "line_count": 177,
+  "size_bytes": 7611,
   "headings": [
     "# Release and Migration Policy",
     "## 1. 目的",
@@ -16,19 +16,26 @@
     "## 7. Rollback Policy",
     "## 8. Compatibility Matrix",
     "## 9. Release Notes Requirements",
-    "## 10. Acceptance"
+    "## 10. Acceptance",
+    "## 11. Retention / Legal Hold Migration Guard",
+    "## 12. Migration Compatibility Report",
+    "## 13. Legal Hold Transition Evidence",
+    "## 14. Release Candidate Pack"
   ],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
     "adapter",
+    "api",
     "artifact",
     "enterprise",
     "fixture",
     "qeg",
     "release",
     "schema",
-    "security"
+    "security",
+    "store",
+    "test"
   ]
 }

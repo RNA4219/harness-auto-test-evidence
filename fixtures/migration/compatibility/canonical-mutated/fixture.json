@@ -1,0 +1,32 @@
+{
+  "input": {
+    "source_bundle": {
+      "schema_version": "HATE/v1",
+      "bundle_id": "bundle-mutated-001",
+      "sourceRefs": ["fixtures/migration/compatibility/canonical-mutated/fixture.json"],
+      "legal_hold": {
+        "status": "inactive",
+        "reason": "standard",
+        "held_since": "2026-06-01T00:00:00+00:00",
+        "authorized_by": "system"
+      }
+    },
+    "migrated_bundle": {
+      "schema_version": "HATE/v1",
+      "bundle_id": "bundle-mutated-001",
+      "sourceRefs": ["fixtures/migration/compatibility/canonical-mutated/fixture.json"],
+      "source_mutated": true,
+      "legal_hold": {
+        "status": "inactive",
+        "reason": "standard",
+        "held_since": "2026-06-01T00:00:00+00:00",
+        "authorized_by": "system"
+      }
+    },
+    "target_version": "HATE/v1",
+    "profile": "release"
+  },
+  "expected": {
+    "finding": "canonical_source_mutated"
+  }
+}

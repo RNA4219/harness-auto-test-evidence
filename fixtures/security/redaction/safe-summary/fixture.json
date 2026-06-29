@@ -1,0 +1,10 @@
+{
+  "artifact_id": "clean-log-001",
+  "artifact_path": "logs/runtime.log",
+  "profile": "default",
+  "content": "2024-01-15T10:30:00Z INFO Application started successfully\n2024-01-15T10:31:00Z INFO Configuration loaded from ./config/app.yaml\n2024-01-15T10:32:00Z INFO Public endpoint ready at https://api.example.com/v1\n",
+  "expected_redaction_status": "not_required",
+  "expected_classification": "public",
+  "expected_readiness_effect": "pass",
+  "expected_redactions_count": 0
+}

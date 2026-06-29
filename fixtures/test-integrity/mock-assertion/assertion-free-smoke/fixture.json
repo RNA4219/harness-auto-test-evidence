@@ -1,0 +1,16 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_type": "test_source",
+  "test_id": "test_assertion_free_smoke",
+  "language": "python",
+  "framework": "pytest",
+  "source_ref": "tests/smoke/test_app_startup.py:5",
+  "description": "Smoke test - assertion-free execution check for deployment verification",
+  "expected_signal": "assertion_quality",
+  "expected_assertion_type": "no_exception_only",
+  "expected_effect": "soft_gap",
+  "risk_level": "low",
+  "code": "def test_assertion_free_smoke():\n    # Smoke test - verifies app starts without crash\n    # Legitimate for deployment verification, but flagged for review\n    app = Application()\n    app.startup()  # No assertion - just checking execution\n    # Smoke test: if this runs, deployment succeeded",
+  "mock_targets": [],
+  "assertions": []
+}

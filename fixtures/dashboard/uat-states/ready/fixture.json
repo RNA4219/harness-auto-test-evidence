@@ -1,0 +1,39 @@
+{
+  "description": "Ready UAT state - run eligible for product release",
+  "input": {
+    "readiness_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "product_readiness_report",
+      "summary": {
+        "overall_status": "go",
+        "claim_count": 10,
+        "unsupported_claim_count": 0,
+        "contradiction_count": 0,
+        "hard_dq_count": 0
+      },
+      "graph_summary": {},
+      "unsupported_claims": [],
+      "contradictions": [],
+      "hard_dqs": [],
+      "soft_gaps": [],
+      "sourceRefs": ["reports/product-readiness-report.json"]
+    },
+    "run_id": "run-ready-001",
+    "profile": "product"
+  },
+  "expected": {
+    "state_type": "ready",
+    "overall_status": "go",
+    "blockers": [],
+    "manual_review_count": 0,
+    "quarantined_artifact_count": 0,
+    "missing_report_count": 0,
+    "ui_requirements": [
+      "show_run_provenance",
+      "show_profile",
+      "show_eligible_status_with_sourceRefs",
+      "no_blockers_visible",
+      "no_manual_review_pending"
+    ]
+  }
+}

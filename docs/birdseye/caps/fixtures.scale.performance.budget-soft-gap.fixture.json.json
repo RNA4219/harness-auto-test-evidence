@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/scale/performance/budget-soft-gap/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7d2c1f3bafb769b139dca9055a78a06d89356a78bd282ed2e273cee9f23a7782",
+  "line_count": 33,
+  "size_bytes": 903,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "store",
+    "test"
+  ]
+}

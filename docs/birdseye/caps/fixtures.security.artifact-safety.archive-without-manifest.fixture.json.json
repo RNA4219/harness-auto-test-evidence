@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/security/artifact-safety/archive-without-manifest/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "95e15c7f01683ebb4000de4e487f0e2934a5b1ad1c7bb2941e976b3b23734553",
+  "line_count": 7,
+  "size_bytes": 160,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "security"
+  ]
+}

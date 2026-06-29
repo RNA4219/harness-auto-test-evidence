@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/security/artifact-safety/hold-path-traversal.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2d4790dc6560e8c40f8ebba6d14a940b056111a7a93f5e4694fd80d82961b039",
+  "line_count": 22,
+  "size_bytes": 662,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "input": {
+    "actor": {
+      "actor_id": "viewer-001",
+      "role": "viewer",
+      "scopes": ["safe_metadata"]
+    },
+    "request": {
+      "request_id": "req-view-001",
+      "action": "read",
+      "resource_type": "artifact",
+      "resource_id": "artifact-quarantined-001",
+      "classification": "restricted",
+      "quarantine_status": "quarantined",
+      "access_level": "safe_metadata"
+    },
+    "source_refs": ["fixtures/enterprise/rbac-audit/viewer-safe-metadata/fixture.json"],
+    "timestamp": "2026-06-30T00:02:00+00:00"
+  },
+  "expected": {
+    "decision": "allowed",
+    "allowed_scope": "safe_metadata"
+  }
+}

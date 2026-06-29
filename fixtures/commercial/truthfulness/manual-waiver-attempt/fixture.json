@@ -1,0 +1,27 @@
+{
+  "input": {
+    "claim": {
+      "claim_id": "claim-manual-waived-hosted-runtime",
+      "claim_text": "Hosted runtime availability is available based on manual review.",
+      "surface": "procurement",
+      "claim_area": "enterprise",
+      "declared_status": "unsupported",
+      "source_contract_refs": ["docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md"],
+      "required_evidence": ["hosted-runtime-slo-report"],
+      "manual_review_refs": ["manual-review-claim-001"],
+      "manual_waiver_attempt": true,
+      "sourceRefs": ["fixtures/commercial/truthfulness/manual-waiver-attempt/fixture.json"]
+    },
+    "evidence_records": [
+      {
+        "record_type": "manual-review-request",
+        "evidence_id": "manual-review-claim-001",
+        "status": "pass"
+      }
+    ],
+    "profile": "release"
+  },
+  "expected": {
+    "finding": "manual_review_cannot_waive_unsupported_claim"
+  }
+}

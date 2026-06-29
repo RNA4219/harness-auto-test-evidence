@@ -1,0 +1,32 @@
+{
+  "description": "Missing required claim produces hold/manual review.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "sso_mapping": {
+        "mapping_id": "sso-map-missing",
+        "claims": [
+          {"name": "groups", "sourceRef": "idp/claims/groups"}
+        ],
+        "groups": [],
+        "roles": [],
+        "sourceRef": "fixtures/missing-claim-mapping"
+      },
+      "sourceRefs": ["fixtures/connectors/sso-scim/missing-claim-mapping/fixture.json"]
+    },
+    "mapping_config": {
+      "issuer": "https://idp.example.test",
+      "audience": "hate-enterprise",
+      "supported_claims": ["email", "groups"],
+      "required_claims": ["email"],
+      "supported_groups": [],
+      "supported_roles": []
+    }
+  },
+  "expected": {
+    "status": "missing_claim",
+    "readiness_effect": "hold",
+    "manual_review_required": true,
+    "missing_claim": "email"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/connectors/ops/warehouse-safe-row/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5f04bf58bce727e91ab3c15401763071e6ecc9549c98390180ea39c71d782232",
+  "line_count": 27,
+  "size_bytes": 844,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

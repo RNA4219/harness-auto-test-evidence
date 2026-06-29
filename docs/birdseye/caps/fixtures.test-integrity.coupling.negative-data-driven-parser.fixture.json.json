@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/test-integrity/coupling/negative-data-driven-parser.fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "897cdb91ec7261db2742dbcbf2b029f41674908d060f9ee8cc26123a11bd9c2d",
+  "line_count": 19,
+  "size_bytes": 801,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/p1a_internal/identity.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "71a9273a2e1c1955ba9d4d5f1aca1121fa4bf2936ab26c73def058f165fdd8a6",
+  "line_count": 99,
+  "size_bytes": 3815,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p1a_io",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a_io.py"
+  ],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

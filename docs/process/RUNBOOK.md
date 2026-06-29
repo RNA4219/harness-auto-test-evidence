@@ -144,6 +144,32 @@ P0a は Python 標準ライブラリのみで動く local-first CLI として実
   - `quarantine-report.json` は P0a で生成し、理由を `secret`, `external_url`, `path_traversal`, `symlink`, `unsafe_archive` などで分類する
   - summary は secret value、external URL、path traversal raw path を出さない
   - P0b は unsafe required artifact を `excludedArtifacts` と `evidence-map.gaps.unsafe_artifacts` に残す
+  - HATE-PG-005A artifact safety/secret quarantine detector:
+    - 6 detectors: secret_detected, pii_detected, unsafe_path_detected, external_url_detected, archive_or_binary_risk, quarantine_required
+    - secret_detected: token/API key/private key/password detection with confidence scoring
+    - pii_detected: email/phone/address/user id/name detection with redaction hints
+    - unsafe_path_detected: absolute path, home dir (~), Windows drive (C:\), traversal (../), temp/private paths
+    - external_url_detected: external URL, webhook, signed URL, cloud storage (s3://, gs://)
+    - archive_or_binary_risk: archive without manifest (>50MB or nested), binary blob, base64 opaque payload (>4KB decoded)
+    - quarantine_required: unsafe artifact quarantine decision with status/reason/redaction_hint/sourceRef
+    - allowlist_ref context: test_fixture, synthetic_pii, example_value, placeholder, documentation markers exempt fake/test secrets
+    - Profile effects: default soft_gap, strict hold, release hard_dq for secret/PII/path/URL risks
+    - Classification: public, internal, confidential, restricted levels
+    - No-Go criteria: secret/PII/path/URL warning-only pass, quarantine_required with readiness pass, allowlist_ref-less fake secret exemption, missing redaction_hint/sourceRef, 004C workspace contamination
+    - fixture path: `fixtures/security/artifact-safety/` contains 12 canonical fixtures
+    - test: `uv run pytest tests/test_artifact_safety.py`
+  - HATE-PG-005B redaction and summary/export safety filter:
+    - 3 modules: redaction.py, export_filter.py, summary_filter.py
+    - redaction filter: Remove secrets/PII/restricted paths/private URLs with [REDACTED_*] markers, preserve sourceRef/traceability, non-reversible proof hash
+    - export filter: Exclude quarantined artifacts from external/support export, keep safe metadata, failed redaction = hold/hard_dq
+    - summary filter: Display-only safety, NEVER change readiness verdicts, control per export surface (dashboard/support/public/internal)
+    - Classification: public (allow all), internal (mask), confidential (conditional), restricted (deny external)
+    - Quarantine semantics: none, quarantined, released (not deletion)
+    - Export surfaces: summary, dashboard, support_bundle, qeg_export, diagnostic_bundle, external_export, public
+    - Profile effects: default soft_gap, strict hold, release/product hard_dq for redaction failures
+    - fixture path: `fixtures/security/redaction/` contains 10 canonical fixtures (5 positive, 5 negative)
+    - schema: `schemas/HATE/v1/safe-diagnostic-bundle.schema.json`
+    - test: `uv run pytest tests/test_artifact_redaction.py`
 - P0a schema validation:
   - P0a は生成直後に `schemas/HATE/v1` の producer schema で自己検証する
   - 対象は `HATE-run.json`, `HATE-test-results.ndjson`, `HATE-coverage.ndjson`, `artifact-manifest.json`, `precheck-decision.json`, `record.json`
@@ -454,6 +480,18 @@ product readiness と enterprise readiness の advisory artifact を生成する
 
 - テスト:
   - `uv run pytest tests/test_p2p3.py`
+
+### File size guard
+
+Before adding major product-grade behavior, run:
+
+```powershell
+uv run python tools/check_file_size.py
+```
+
+The guard follows `docs/process/REFACTORING_PLAN.md`: hand-written source and test modules above
+900 lines fail, markdown above 1000 lines fails unless it is an approved root index pending split,
+and oversized generated fixtures are allowed only in golden expected-output paths.
 - P2/P3 readiness golden path:
   - `uv run python -m hate product readiness --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --trust fixtures/golden/p1a-trust-minimal/expected --workflow fixtures/golden/p1b-workflow-minimal/expected --out fixtures/golden/p2p3-product-readiness-minimal/expected`
 - P2 local store / history index:
@@ -466,7 +504,7 @@ product readiness と enterprise readiness の advisory artifact を生成する
   - store query は `canonical_source_preserved=true`、`stale_cache=false`、
     `publish_gate_override=false`、`release_gate_override=false` を維持する
 - P2/P3 生成物:
-  - `product-readiness-report.json` - PRG-0..PRG-6 coverage と境界field
+  - `product-readiness-report.json` - PRG-0..PRG-6 coverage、advisory `evaluation` score、境界field
   - `dashboard-report.html` - canonical artifacts から派生する静的 dashboard surface
   - `dashboard-view-model.json` - overview / risk matrix / evidence map /
     artifact budget / readiness trend の必須view model
@@ -550,6 +588,12 @@ P2/P3 minimal constraints:
   product status / publish / release gate を上書きしない
 - product readiness は固定 `go` ではない。入力 artifact 欠損がある場合は `hold`、
   doctor finding または unverified acceptance が残る場合は `conditional` に降格する
+- `product-readiness-report.json.summary.evaluation_score` は 0..100 の advisory score とし、
+  `evaluation.additions[]` で AETE、PRG coverage、artifact completeness、workflow acceptance、
+  doctor hygiene を加算し、`evaluation.penalties[]` で入力欠損、doctor finding、
+  unverified acceptance、未校正 AETE、低 confidence を減点する
+- `go_label_is_advisory=true` を常に保持し、`evaluation.release_approval=false` を明示する。
+  release approval / waiver / gate 正本は HATE が持たず、score は説明責任と優先順位付けに使う
 - 現行 golden fixture は high-risk execution evidence と doctor finding 0 を保持するため、
   `product_status=go`, `prg_coverage=7/7` を期待値とする
 - `hate product query` と `hate product serve` は `HOSTED_READ_MODEL_API.md` の response envelope を返す

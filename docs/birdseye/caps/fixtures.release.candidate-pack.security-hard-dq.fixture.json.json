@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/release/candidate-pack/security-hard-dq/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f2b03b00d5c7dd283a5f7c6421d950c8ad4241de5b3c62cbe4f47b5a0a31f7dc",
+  "line_count": 15,
+  "size_bytes": 883,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "security"
+  ]
+}

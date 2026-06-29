@@ -1,0 +1,9 @@
+{
+  "input": {
+    "error_code": "HATE-ART-003"
+  },
+  "expected": {
+    "category": "ART",
+    "severity": "hard_dq"
+  }
+}

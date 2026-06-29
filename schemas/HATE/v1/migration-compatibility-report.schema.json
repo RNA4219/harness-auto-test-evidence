@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/migration-compatibility-report.schema.json",
+  "title": "HATE Migration Compatibility Report",
+  "type": "object",
+  "required": ["schema_version", "record_type", "target_version", "decisions", "findings", "summary", "sourceRefs"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "migration-compatibility-report"},
+    "target_version": {"type": "string"},
+    "decisions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/migration_decision"}
+    },
+    "findings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/migration_finding"}
+    },
+    "legal_hold_transitions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/legal_hold_transition"}
+    },
+    "summary": {
+      "type": "object",
+      "required": ["decision_count", "readiness_effect"],
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "migration_decision": {
+      "type": "object",
+      "required": [
+        "source_version",
+        "target_version",
+        "decision",
+        "readiness_effect",
+        "reason",
+        "source_hash",
+        "migrated_hash",
+        "source_refs_preserved",
+        "legal_hold_preserved",
+        "canonical_source_mutated",
+        "findings",
+        "sourceRefs"
+      ],
+      "properties": {
+        "source_version": {"type": "string"},
+        "target_version": {"type": "string"},
+        "decision": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+        "readiness_effect": {"type": "string", "enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+        "reason": {"type": "string"},
+        "source_hash": {"type": "string", "minLength": 64, "maxLength": 64},
+        "migrated_hash": {"type": "string", "minLength": 64, "maxLength": 64},
+        "source_refs_preserved": {"type": "boolean"},
+        "legal_hold_preserved": {"type": "boolean"},
+        "canonical_source_mutated": {"type": "boolean"},
+        "findings": {"type": "array", "items": {"$ref": "#/$defs/migration_finding"}},
+        "sourceRefs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "migration_finding": {
+      "type": "object",
+      "required": ["code", "severity", "readiness_effect", "message", "sourceRef"],
+      "properties": {
+        "code": {"type": "string"},
+        "severity": {"type": "string"},
+        "readiness_effect": {"type": "string", "enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+        "message": {"type": "string"},
+        "sourceRef": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "legal_hold_transition": {
+      "type": "object",
+      "required": [
+        "operation",
+        "resource_id",
+        "legal_hold_preserved",
+        "mutation_blocked",
+        "readiness_effect",
+        "decision",
+        "compatibility_decision",
+        "findings",
+        "sourceRefs"
+      ],
+      "properties": {
+        "operation": {"type": "string"},
+        "resource_id": {"type": "string"},
+        "legal_hold_preserved": {"type": "boolean"},
+        "mutation_blocked": {"type": "boolean"},
+        "readiness_effect": {"type": "string", "enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+        "decision": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+        "compatibility_decision": {"$ref": "#/$defs/migration_decision"},
+        "findings": {"type": "array", "items": {"$ref": "#/$defs/migration_finding"}},
+        "sourceRefs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    }
+  }
+}

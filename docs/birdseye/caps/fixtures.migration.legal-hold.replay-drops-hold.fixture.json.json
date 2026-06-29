@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/migration/legal-hold/replay-drops-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "110a9d4c2163bf27783cb02b600ed55086446f52b3875cf49910421d0c042bbd",
+  "line_count": 31,
+  "size_bytes": 916,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

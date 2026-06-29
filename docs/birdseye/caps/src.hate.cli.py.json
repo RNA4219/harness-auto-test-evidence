@@ -2,9 +2,9 @@
   "path": "src/hate/cli.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "df456f2c18617c5050c427f62e08ff6dfd8fcd8f7bb724188d1afec31ea596dc",
-  "line_count": 420,
-  "size_bytes": 20607,
+  "sha256": "a38b361773c49668960d10afd5c3c75db8a606fd6ab222d63f7867b479991ddc",
+  "line_count": 522,
+  "size_bytes": 25033,
   "headings": [],
   "imports": [
     ".p0a",
@@ -13,7 +13,8 @@
     ".p1b",
     ".p2p3",
     ".product_grade",
-    ".store",
+    ".release",
+    ".store_legacy",
     "__future__",
     "argparse",
     "json",
@@ -28,7 +29,8 @@
     "src/hate/p1b.py",
     "src/hate/p2p3.py",
     "src/hate/product_grade.py",
-    "src/hate/store.py"
+    "src/hate/release.py",
+    "src/hate/store_legacy.py"
   ],
   "tags": [
     "artifact",

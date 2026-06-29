@@ -1,0 +1,43 @@
+{
+  "description": "Missing oracle for covered risk - cannot claim oracle-verified",
+  "input": {
+    "risk_coverage_matrix": {
+      "schema_version": "HATE/v1",
+      "record_type": "risk_coverage_matrix",
+      "risks": [
+        {
+          "risk_id": "risk-001",
+          "severity": "high",
+          "coverage_status": "covered",
+          "oracle_evidence": false,
+          "description": "High risk without oracle verification",
+          "sourceRef": "risk-registry.json:risk-001"
+        },
+        {
+          "risk_id": "risk-002",
+          "severity": "medium",
+          "coverage_status": "covered",
+          "oracle_evidence": false,
+          "description": "Medium risk without oracle verification",
+          "sourceRef": "risk-registry.json:risk-002"
+        }
+      ],
+      "sourceRefs": ["reports/risk-coverage-matrix.json"]
+    },
+    "run_id": "run-missing-oracle-001",
+    "profile": "product"
+  },
+  "expected": {
+    "state_type": "missing_oracle",
+    "overall_status": "hold",
+    "oracle_missing_count": 2,
+    "affected_risks_count": 2,
+    "cannot_claim_oracle_verified": true,
+    "ui_requirements": [
+      "show_oracle_missing_count",
+      "link_to_risk_coverage_sourceRefs",
+      "show_affected_risks",
+      "cannot_claim_oracle_verified"
+    ]
+  }
+}

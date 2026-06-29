@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "HATE/v1/safe-export-report.schema.json",
+  "title": "Safe Export Report",
+  "description": "Export report for safe diagnostic bundles. Excludes quarantined/redaction-failed artifacts with safe metadata handling.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "export_id",
+    "export_surface",
+    "export_profile",
+    "export_status",
+    "readiness_effect",
+    "authz_decision",
+    "allowed_artifacts",
+    "excluded_artifacts",
+    "sourceRefs",
+    "created_at",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "HATE/v1",
+      "description": "Schema version identifier"
+    },
+    "record_type": {
+      "type": "string",
+      "const": "safe-export-report",
+      "description": "Record type discriminator"
+    },
+    "export_id": {
+      "type": "string",
+      "pattern": "^export-[a-f0-9]{12}$",
+      "description": "Unique export identifier"
+    },
+    "export_surface": {
+      "type": "string",
+      "enum": ["public", "internal", "dashboard", "support_bundle", "external_export", "summary"],
+      "description": "Export surface"
+    },
+    "export_profile": {
+      "type": "string",
+      "enum": ["default", "release", "strict"],
+      "description": "Export profile"
+    },
+    "export_status": {
+      "type": "string",
+      "enum": ["ready", "blocked", "partial"],
+      "description": "Export readiness status"
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": ["pass", "hold", "hard_dq"],
+      "description": "Readiness effect on downstream processing"
+    },
+    "authz_decision": {
+      "$ref": "api-authz-decision.schema.json",
+      "description": "Authorization decision"
+    },
+    "allowed_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "Artifacts safe for export"
+      },
+      "description": "Artifacts allowed for export"
+    },
+    "excluded_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_id", "classification", "exclusion_reason"],
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "description": "Artifact identifier"
+          },
+          "classification": {
+            "type": "string",
+            "enum": ["public", "internal", "confidential", "restricted"],
+            "description": "Artifact classification"
+          },
+          "exclusion_reason": {
+            "type": "string",
+            "enum": ["quarantined", "redaction_failed", "classification_not_allowed"],
+            "description": "Reason for exclusion"
+          },
+          "safe_metadata": {
+            "type": "object",
+            "description": "Safe metadata for quarantined/classification-blocked artifacts (null for redaction_failed)",
+            "properties": {
+              "artifact_id": {"type": "string"},
+              "classification": {"type": "string"},
+              "quarantine_status": {"type": "string"},
+              "safe_for_summary": {"type": "boolean"}
+            }
+          }
+        }
+      },
+      "description": "Artifacts excluded from export"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Source references"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp"
+    },
+    "summary": {
+      "type": "object",
+      "description": "Export summary",
+      "required": ["allowed_count", "excluded_count"],
+      "properties": {
+        "allowed_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of allowed artifacts"
+        },
+        "excluded_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of excluded artifacts"
+        },
+        "quarantined_excluded": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of quarantined artifacts excluded"
+        },
+        "redaction_failed_excluded": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of redaction-failed artifacts excluded"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

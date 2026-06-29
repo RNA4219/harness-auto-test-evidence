@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/connectors/sso-scim/scim-missing-entity/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e72014ffa44eb0c3e7d6ae7188a92cc902e6b5fd6dc3b2549bea3c58ca43407a",
+  "line_count": 45,
+  "size_bytes": 1392,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

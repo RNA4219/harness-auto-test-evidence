@@ -1,0 +1,6 @@
+{
+  "description": "Negative fixture: corrupted bundle with invalid JSON",
+  "expected_error": "Bundle JSON invalid",
+  "bundle_content": "{ invalid json content missing closing brace",
+  "recovery_action": "quarantine"
+}

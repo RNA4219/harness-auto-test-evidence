@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_test_integrity_coupling_fixtures.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "a3833480f2d5e14d711cb6aaee9276ccc3d74996b14552820b36e234fac762d7",
+  "line_count": 233,
+  "size_bytes": 11681,
+  "headings": [
+    "# =============================================================================",
+    "# Canonical Fixture Tests",
+    "# =============================================================================",
+    "# =============================================================================",
+    "# Schema Validation Tests",
+    "# ============================================================================="
+  ],
+  "imports": [
+    "hate.test_integrity.coupling",
+    "hate.test_integrity.manual_review",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/test_integrity/coupling.py",
+    "src/hate/test_integrity/manual_review.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

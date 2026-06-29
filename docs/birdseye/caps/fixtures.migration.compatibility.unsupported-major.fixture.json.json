@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/migration/compatibility/unsupported-major/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c7427389e1b2f77df65a93eb94f81e2e6feb586e9b7aa1e72eba68b2f36e0f70",
+  "line_count": 31,
+  "size_bytes": 872,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

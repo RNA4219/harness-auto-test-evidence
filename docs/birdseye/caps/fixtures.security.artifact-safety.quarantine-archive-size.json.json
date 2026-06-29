@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/security/artifact-safety/quarantine-archive-size.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5e10efe54a179065101cc50284ac08e5701553eebe0ad0de4fb10cf7f072f593",
+  "line_count": 19,
+  "size_bytes": 480,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

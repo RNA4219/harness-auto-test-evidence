@@ -436,6 +436,26 @@ def test_p0a_schema_validation_missing_required_envelope_field_is_dq_015(tmp_pat
     assert any(hit["code"] == "HATE-DQ-015" and "record_id is required" in hit["message"] for hit in hits)
 
 
+def test_p0a_schema_validation_deduplicates_repeated_ndjson_errors(tmp_path: Path) -> None:
+    generate_p0a(FIXTURE_INPUT, tmp_path / "schema-dedupe-output", source_version="test")
+    records = [
+        json.loads(line)
+        for line in (tmp_path / "schema-dedupe-output" / "HATE-test-results.ndjson").read_text(encoding="utf-8").splitlines()
+    ]
+    for record in records:
+        record["commit_sha"] = "not-a-hex-sha"
+
+    hits = _schema_validation_hits([records])
+    matching = [
+        hit for hit in hits
+        if hit["code"] == "HATE-DQ-015"
+        and hit["source_ref"] == "HATE-test-results.ndjson"
+        and "commit_sha must match" in hit["message"]
+    ]
+
+    assert len(matching) == 1
+
+
 def test_p0a_default_profile_preserves_current_behavior(tmp_path: Path) -> None:
     result = generate_p0a(FIXTURE_INPUT, tmp_path / "profile-default-output", source_version="test", profile="default")
 

@@ -1,0 +1,40 @@
+{
+  "description": "Negative fixture: skip-in-critical-risk-area - skip in critical risk area causes blocked in release/product",
+  "test_records": [
+    {
+      "canonical_test_id": "test_critical_auth_bypass",
+      "framework": "pytest",
+      "status": "skipped",
+      "skip": true,
+      "skip_reason": "Need to setup test environment",
+      "skip_owner": "dev@example.com",
+      "risk_refs": ["risk:critical:auth-bypass"],
+      "requirement_refs": ["REQ-001: authentication security"],
+      "sourceRefs": ["tests/security/auth_test.py::test_critical_auth_bypass"]
+    }
+  ],
+  "profile": "release",
+  "expected_summary": {
+    "overall_status": "blocked",
+    "finding_count": 1,
+    "blocked_count": 1,
+    "hold_count": 0,
+    "soft_gap_count": 0,
+    "pass_count": 0
+  },
+  "expected_findings": [
+    {
+      "signal_id": "test_skip_detected",
+      "severity": "critical",
+      "readiness_effect": "blocked",
+      "marker_kind": "skip"
+    }
+  ],
+  "expected_risk_debt": [
+    {
+      "debt_type": "integrity_skip",
+      "severity": "critical",
+      "blocking_profile": ["release", "product"]
+    }
+  ]
+}

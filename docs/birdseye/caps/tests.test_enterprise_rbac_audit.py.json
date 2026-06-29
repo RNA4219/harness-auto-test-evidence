@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_enterprise_rbac_audit.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "44198769559f0863aff7d7fb36361fdd7d68d6ecf4342760696ee64138feb649",
+  "line_count": 136,
+  "size_bytes": 4969,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.enterprise",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

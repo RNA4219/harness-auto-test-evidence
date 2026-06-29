@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/commercial-truthfulness-report.schema.json",
+  "title": "HATE Commercial Truthfulness Report",
+  "type": "object",
+  "required": ["schema_version", "record_type", "report_id", "claims", "findings", "summary", "sourceRefs"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "commercial-truthfulness-report"},
+    "report_id": {"type": "string"},
+    "claims": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/commercial_claim_decision"}
+    },
+    "findings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/commercial_truthfulness_finding"}
+    },
+    "summary": {
+      "type": "object",
+      "required": ["claim_count", "readiness_effect"],
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "commercial_claim_decision": {
+      "type": "object",
+      "required": [
+        "claim_id",
+        "claim_text",
+        "surface",
+        "claim_area",
+        "declared_status",
+        "source_contract_refs",
+        "implementation_refs",
+        "required_evidence",
+        "observed_evidence",
+        "evidence_report_refs",
+        "sourceRefs",
+        "readiness_effect",
+        "decision",
+        "release_eligible",
+        "blocker_state",
+        "procurement_response_text",
+        "reason",
+        "findings"
+      ],
+      "properties": {
+        "claim_id": {"type": "string"},
+        "claim_text": {"type": "string"},
+        "surface": {
+          "type": "string",
+          "enum": ["readme", "release_note", "api_doc", "procurement", "sales", "security_questionnaire", "contract", "unspecified"]
+        },
+        "claim_area": {"type": "string"},
+        "declared_status": {
+          "type": "string",
+          "enum": ["proposed", "approved", "implemented", "available", "supported", "planned", "candidate", "exception", "unsupported", "expired"]
+        },
+        "source_contract_refs": {"type": "array", "items": {"type": "string"}},
+        "implementation_refs": {"type": "array", "items": {"type": "string"}},
+        "required_evidence": {"type": "array", "items": {"type": "string"}},
+        "observed_evidence": {"type": "array", "items": {"type": "string"}},
+        "evidence_report_refs": {"type": "array", "items": {"type": "string"}},
+        "sourceRefs": {"type": "array", "items": {"type": "string"}},
+        "readiness_effect": {"type": "string", "enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+        "decision": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+        "release_eligible": {"type": "boolean"},
+        "blocker_state": {"type": "string", "enum": ["none", "soft_gap", "hold", "hard_dq"]},
+        "procurement_response_text": {"type": "string"},
+        "reason": {"type": "string"},
+        "findings": {"type": "array", "items": {"$ref": "#/$defs/commercial_truthfulness_finding"}},
+        "manual_review_refs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "commercial_truthfulness_finding": {
+      "type": "object",
+      "required": ["code", "severity", "readiness_effect", "message", "claim_id", "sourceRef"],
+      "properties": {
+        "code": {"type": "string"},
+        "severity": {"type": "string"},
+        "readiness_effect": {"type": "string", "enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+        "message": {"type": "string"},
+        "claim_id": {"type": "string"},
+        "sourceRef": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  }
+}

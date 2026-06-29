@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/enterprise/retention-legal-hold/legal-hold-active/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "668eea26eda9680dd9ed0ffc83f4e4efe5440d1a5661b74e9517e294d6afe415",
+  "line_count": 27,
+  "size_bytes": 776,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "release"
+  ]
+}

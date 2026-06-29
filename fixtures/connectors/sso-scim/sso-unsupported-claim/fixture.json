@@ -1,0 +1,42 @@
+{
+  "description": "SSO mapping with unsupported claim - produces hold/manual review.",
+  "input": {
+    "enterprise_control_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "enterprise_control_report",
+      "report_id": "ecr-002",
+      "sso_mapping": {
+        "mapping_id": "sso-002",
+        "provider": "AzureAD",
+        "groups": [
+          {"name": "admins", "sourceRef": "reports/sso-groups.json#admins"}
+        ],
+        "roles": [
+          {"name": "admin", "sourceRef": "reports/sso-roles.json#admin"}
+        ],
+        "claims": [
+          {"name": "email", "value": "user@example.com", "sourceRef": "reports/sso-claims.json#email"},
+          {"name": "custom_claim", "value": "custom-value", "sourceRef": "reports/sso-claims.json#custom"}
+        ],
+        "sourceRef": "reports/sso-mapping.json"
+      },
+      "sourceRefs": ["reports/enterprise-control-report.json"]
+    },
+    "mapping_config": {
+      "supported_claims": ["email", "name", "groups"],
+      "required_claims": ["email"],
+      "supported_groups": ["admins", "users"],
+      "supported_roles": ["admin"]
+    }
+  },
+  "expected": {
+    "mapping_id": "sso-002",
+    "status": "unsupported_claim",
+    "mapped_claims": ["email"],
+    "unsupported_claim_count": 1,
+    "unsupported_claims_contain": ["custom_claim"],
+    "manual_review_required": true,
+    "hold_reason_contains": "Unsupported claims",
+    "has_sourceRefs": true
+  }
+}

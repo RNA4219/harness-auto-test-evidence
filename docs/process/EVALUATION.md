@@ -298,6 +298,13 @@ next_review_due: 2026-07-28
 - Support Deflection: `doctor` / docs / remediation catalog で解決できた問題の割合を記録できる
 - Product Readiness Gate Coverage: PRG-0..PRG-6 の各 gate が artifact / metric /
   acceptance criteria へ紐づく
+- Product Evaluation Score: `product-readiness-report.json` が 0..100 の
+  `evaluation_score`、`evaluation_confidence`、`evaluation.additions[]`、
+  `evaluation.penalties[]` を持ち、`go` / `conditional` / `hold` の label だけでなく
+  根拠の厚みと残リスクを数値で比較できる
+- Advisory Boundary: `go_label_is_advisory=true` と
+  `evaluation.release_approval=false` を保持し、HATE の score が release approval /
+  waiver / gate 正本になっていないことを確認できる
 - Privacy quarantine effectiveness: unsafe artifact の 100% が summary / export /
   diagnostic bundle から除外される
 - Read model rebuildability: hosted read model が canonical bundle から再構築可能

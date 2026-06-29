@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/test-integrity/skip-focus/skip-in-critical-risk-area/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "246c3b8ce17895b52160cf63bc2b86b227f87e64ea736488bdae1fe96b225fc9",
+  "line_count": 40,
+  "size_bytes": 1123,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "security",
+    "test"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "binary_artifact_list": [
+    "test_runner.exe",
+    "helper.dll",
+    "driver.sys",
+    "config.dat",
+    "data.bin"
+  ],
+  "binary_references": {
+    "executable": {
+      "path": "/artifacts/bin/test_runner.exe",
+      "size_bytes": 1048576,
+      "hash_sha256": "abc123..."
+    },
+    "library": {
+      "path": "/artifacts/lib/helper.dll",
+      "size_bytes": 524288,
+      "hash_sha256": "def456..."
+    }
+  },
+  "metadata": {
+    "artifact_type": "binary_collection",
+    "timestamp": "2026-06-28T13:00:00Z",
+    "purpose": "test_runner_binaries",
+    "undocumented": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/security/artifact-safety/soft-gap-base64-opaque.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7c0b318694470b4a1fcb9836069be5dc85f2a9588de99dbe09aea111f61d4a97",
+  "line_count": 11,
+  "size_bytes": 22947,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

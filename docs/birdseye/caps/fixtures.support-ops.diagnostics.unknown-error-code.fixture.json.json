@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/support-ops/diagnostics/unknown-error-code/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a39ede9a7966d5b652050b1b294a4abc5650752d9f46ece5af8612909c42951a",
+  "line_count": 14,
+  "size_bytes": 250,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

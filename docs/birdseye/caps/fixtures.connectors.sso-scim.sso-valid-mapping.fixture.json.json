@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/connectors/sso-scim/sso-valid-mapping/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0766840d372347814caca4e02b95fd0b3aa725089ec6fe288acd034312b10046",
+  "line_count": 39,
+  "size_bytes": 1232,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -2,23 +2,24 @@
   "path": "src/hate/risk_matrix.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "16f92fc7e4c38135304d1db4c7a5a267d74cf4394b0cb1c3849ad1e38808a4ae",
-  "line_count": 796,
-  "size_bytes": 30046,
+  "sha256": "c054143dba91f3f95e69324c216e150ae15aed5f9c7951ca58ff97183c99d98e",
+  "line_count": 649,
+  "size_bytes": 26134,
   "headings": [],
   "imports": [
     ".evidence_envelope",
+    ".risk_matrix_types",
     "__future__",
-    "dataclasses",
     "datetime",
     "typing"
   ],
   "links": [],
   "depends_on": [
-    "src/hate/evidence_envelope.py"
+    "src/hate/evidence_envelope.py",
+    "src/hate/risk_matrix_types.py"
   ],
   "tags": [
-    "artifact",
-    "coverage"
+    "coverage",
+    "fixture"
   ]
 }

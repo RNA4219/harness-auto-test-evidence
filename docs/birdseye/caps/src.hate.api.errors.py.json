@@ -1,0 +1,31 @@
+{
+  "path": "src/hate/api/errors.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1339e5a902760b61534d376c7e5c628d389ad6bf38838b292bf9399b89d2c31f",
+  "line_count": 257,
+  "size_bytes": 8798,
+  "headings": [
+    "# Error code prefixes (per API_REQUIREMENTS.md Section 7)",
+    "# Authentication/Authorization errors",
+    "# Request/Filter/Pagination errors",
+    "# Schema errors",
+    "# Store/Staleness errors",
+    "# Export errors (non-gating)",
+    "# Privacy/Quarantine errors"
+  ],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing",
+    "uuid"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema",
+    "store"
+  ]
+}

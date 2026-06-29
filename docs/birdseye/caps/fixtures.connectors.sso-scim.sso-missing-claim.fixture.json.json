@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/connectors/sso-scim/sso-missing-claim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2c809028646fceb9f6894f7405c2cf4c88b3dc1cefdc41e6a8c6cf8ca198c8a5",
+  "line_count": 39,
+  "size_bytes": 1221,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}
