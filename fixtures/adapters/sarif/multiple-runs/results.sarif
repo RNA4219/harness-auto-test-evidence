@@ -1,0 +1,7 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {"tool": {"driver": {"name": "semgrep"}}, "results": [{"ruleId": "A", "locations": [{"physicalLocation": {"artifactLocation": {"uri": "src/a.py"}, "region": {"startLine": 1}}}]}]},
+    {"tool": {"driver": {"name": "codeql"}}, "results": [{"ruleId": "B", "locations": [{"physicalLocation": {"artifactLocation": {"uri": "src/b.py"}, "region": {"startLine": 2}}}]}]}
+  ]
+}

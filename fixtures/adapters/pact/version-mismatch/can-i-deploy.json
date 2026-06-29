@@ -1,0 +1,6 @@
+{
+  "provider": {"name": "auth-provider"},
+  "consumer": {"name": "mobile-client"},
+  "pact_version": "mismatch",
+  "results": [{"interaction_id": "mobile-login", "status": "failed", "failure_class": "version_mismatch", "required": true}]
+}

@@ -1,0 +1,1 @@
+{"mutants":[{"id":"m-no-coverage","status":"NoCoverage","sourceFilePath":"src/db.py","location":{"start":{"line":6}},"mutatorName":"StringLiteral"}]}

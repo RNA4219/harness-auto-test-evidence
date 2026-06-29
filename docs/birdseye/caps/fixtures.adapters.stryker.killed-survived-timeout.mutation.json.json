@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/adapters/stryker/killed-survived-timeout/mutation.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "035762015ecfcf7c3560a7604e4064bfb841cb82abe2a6e807c418c0af3b3e5d",
+  "line_count": 7,
+  "size_bytes": 472,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture"
+  ]
+}

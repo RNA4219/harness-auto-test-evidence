@@ -1,0 +1,7 @@
+{
+  "mutants": [
+    {"id": "m-killed", "status": "Killed", "sourceFilePath": "src/auth.py", "location": {"start": {"line": 1}}, "mutatorName": "BooleanLiteral"},
+    {"id": "m-survived", "status": "Survived", "sourceFilePath": "src/auth.py", "location": {"start": {"line": 2}}, "mutatorName": "ConditionalExpression"},
+    {"id": "m-timeout", "status": "Timeout", "sourceFilePath": "src/auth.py", "location": {"start": {"line": 3}}, "mutatorName": "StringLiteral"}
+  ]
+}

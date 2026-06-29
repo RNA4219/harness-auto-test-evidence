@@ -1,0 +1,6 @@
+{
+  "provider": {"name": "auth-provider"},
+  "consumer": {"name": "web-client"},
+  "metadata": {"pactSpecification": {"version": "4.0.0"}},
+  "interactions": [{"id": "login-pass", "status": "passed", "required": true}]
+}

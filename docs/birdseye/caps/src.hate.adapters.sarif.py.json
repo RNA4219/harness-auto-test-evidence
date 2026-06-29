@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/adapters/sarif.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "dff118320b93d48fd9413a322fd0a2ee2eac08393446e99d1d570e8aeebbffe1",
+  "line_count": 66,
+  "size_bytes": 2915,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact"
+  ]
+}

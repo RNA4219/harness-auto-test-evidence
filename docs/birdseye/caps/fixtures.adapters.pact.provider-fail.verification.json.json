@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/adapters/pact/provider-fail/verification.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "08480435c224eadf941b0b543ce816a817b330576ee37af2ae7387593f6ba902",
+  "line_count": 5,
+  "size_bytes": 169,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture"
+  ]
+}

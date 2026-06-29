@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/adapters/stryker/incremental/mutation.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9530cdc2f82c5481cee3216587804ff69627188ebaf17624b0221f897682788d",
+  "line_count": 1,
+  "size_bytes": 154,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture"
+  ]
+}

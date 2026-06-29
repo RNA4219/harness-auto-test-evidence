@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/adapters/stryker.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8a1c898b95728a13755f15def2c5eafdefa3e474082989f5781d4d0bc3dd07e7",
+  "line_count": 105,
+  "size_bytes": 3834,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage"
+  ]
+}

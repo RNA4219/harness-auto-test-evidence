@@ -1,0 +1,5 @@
+{
+  "provider": {"name": "billing-provider"},
+  "consumer": {"name": "web-client"},
+  "interactions": [{"id": "invoice-create", "status": "failed", "required": true}]
+}

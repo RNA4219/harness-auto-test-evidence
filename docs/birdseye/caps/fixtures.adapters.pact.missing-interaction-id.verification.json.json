@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/adapters/pact/missing-interaction-id/verification.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0c60e775e068cb7ae4b7dbb9312ea40441b8de51bf5e0f7b28e62bab297c0ecd",
+  "line_count": 1,
+  "size_bytes": 91,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture"
+  ]
+}

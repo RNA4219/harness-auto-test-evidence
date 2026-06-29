@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/adapters/pact/version-mismatch/can-i-deploy.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5c0895b6ae6524286366ef40a6782e8e2b7549cc1b8a55c478a59f60d9bb350e",
+  "line_count": 6,
+  "size_bytes": 241,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture"
+  ]
+}

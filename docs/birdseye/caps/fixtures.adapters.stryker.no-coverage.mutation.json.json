@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/stryker/no-coverage/mutation.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "96b4ed1d54257c83bb80e579b608ecbf99f4012912aaa9a60ce269b2177079e9",
+  "line_count": 1,
+  "size_bytes": 150,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture"
+  ]
+}

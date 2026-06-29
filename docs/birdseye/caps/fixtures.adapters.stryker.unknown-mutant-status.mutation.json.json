@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/adapters/stryker/unknown-mutant-status/mutation.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "346bd907c7c8e0a4217f6c4b8c4c73c5981040659787f91e0530302d41c4a000",
+  "line_count": 1,
+  "size_bytes": 116,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture"
+  ]
+}

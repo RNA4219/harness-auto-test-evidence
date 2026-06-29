@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/adapters/pact.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "868bc10a38c5daa0c6d8b6d700f358a3fa4d1ba0c8e21f213ddfb99053e14fd4",
+  "line_count": 94,
+  "size_bytes": 4227,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter"
+  ]
+}

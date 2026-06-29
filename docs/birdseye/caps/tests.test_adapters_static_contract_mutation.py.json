@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_adapters_static_contract_mutation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "b6d58e6be28210b5b42a4ca57ea404ce55d1a6d95ded44ac12536efceef2a7e8",
+  "line_count": 203,
+  "size_bytes": 8967,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.adapters.pact",
+    "hate.adapters.sarif",
+    "hate.adapters.stryker",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/adapters/pact.py",
+    "src/hate/adapters/sarif.py",
+    "src/hate/adapters/stryker.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

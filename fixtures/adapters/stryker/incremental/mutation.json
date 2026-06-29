@@ -1,0 +1,1 @@
+{"mutants":{"m1":{"id":"m1","status":"Killed","sourceFilePath":"src/incremental.py","location":{"start":{"line":4}},"mutatorName":"ArithmeticOperator"}}}

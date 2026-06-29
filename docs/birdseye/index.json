@@ -1,5 +1,5 @@
 {
-  "generated_at": "40e24772bac5",
+  "generated_at": "f21544be18e3",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -842,6 +842,41 @@
       "line_count": 28,
       "size_bytes": 582
     },
+    "fixtures/adapters/pact/malformed-json/verification.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.pact.malformed-json.verification.json.json",
+      "sha256": "a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c",
+      "line_count": 1,
+      "size_bytes": 2
+    },
+    "fixtures/adapters/pact/missing-interaction-id/verification.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.pact.missing-interaction-id.verification.json.json",
+      "sha256": "0c60e775e068cb7ae4b7dbb9312ea40441b8de51bf5e0f7b28e62bab297c0ecd",
+      "line_count": 1,
+      "size_bytes": 91
+    },
+    "fixtures/adapters/pact/provider-fail/verification.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.pact.provider-fail.verification.json.json",
+      "sha256": "08480435c224eadf941b0b543ce816a817b330576ee37af2ae7387593f6ba902",
+      "line_count": 5,
+      "size_bytes": 169
+    },
+    "fixtures/adapters/pact/provider-pass/verification.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.pact.provider-pass.verification.json.json",
+      "sha256": "3c9a298f6c5aa7a34038daad7bded1b45dde2795c7f98bc7a0e44296802f0b87",
+      "line_count": 6,
+      "size_bytes": 221
+    },
+    "fixtures/adapters/pact/version-mismatch/can-i-deploy.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.pact.version-mismatch.can-i-deploy.json.json",
+      "sha256": "5c0895b6ae6524286366ef40a6782e8e2b7549cc1b8a55c478a59f60d9bb350e",
+      "line_count": 6,
+      "size_bytes": 241
+    },
     "fixtures/adapters/playwright/evidence/artifact-manifest.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.playwright.evidence.artifact-manifest.json.json",
@@ -904,6 +939,41 @@
       "sha256": "80909b546c77ed932a884d5d5a1d6819b6b6bd3644a3ea5e414f437115c5b3c7",
       "line_count": 16,
       "size_bytes": 509
+    },
+    "fixtures/adapters/stryker/incremental/mutation.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.stryker.incremental.mutation.json.json",
+      "sha256": "9530cdc2f82c5481cee3216587804ff69627188ebaf17624b0221f897682788d",
+      "line_count": 1,
+      "size_bytes": 154
+    },
+    "fixtures/adapters/stryker/killed-survived-timeout/mutation.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.stryker.killed-survived-timeout.mutation.json.json",
+      "sha256": "035762015ecfcf7c3560a7604e4064bfb841cb82abe2a6e807c418c0af3b3e5d",
+      "line_count": 7,
+      "size_bytes": 472
+    },
+    "fixtures/adapters/stryker/malformed-json/mutation.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.stryker.malformed-json.mutation.json.json",
+      "sha256": "a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c",
+      "line_count": 1,
+      "size_bytes": 2
+    },
+    "fixtures/adapters/stryker/no-coverage/mutation.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.stryker.no-coverage.mutation.json.json",
+      "sha256": "96b4ed1d54257c83bb80e579b608ecbf99f4012912aaa9a60ce269b2177079e9",
+      "line_count": 1,
+      "size_bytes": 150
+    },
+    "fixtures/adapters/stryker/unknown-mutant-status/mutation.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.stryker.unknown-mutant-status.mutation.json.json",
+      "sha256": "346bd907c7c8e0a4217f6c4b8c4c73c5981040659787f91e0530302d41c4a000",
+      "line_count": 1,
+      "size_bytes": 116
     },
     "fixtures/adapters/test-results/jest/input/github-context.json": {
       "role": "fixture",
@@ -2186,6 +2256,27 @@
       "line_count": 8,
       "size_bytes": 153
     },
+    "src/hate/adapters/pact.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.adapters.pact.py.json",
+      "sha256": "868bc10a38c5daa0c6d8b6d700f358a3fa4d1ba0c8e21f213ddfb99053e14fd4",
+      "line_count": 94,
+      "size_bytes": 4227
+    },
+    "src/hate/adapters/sarif.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.adapters.sarif.py.json",
+      "sha256": "dff118320b93d48fd9413a322fd0a2ee2eac08393446e99d1d570e8aeebbffe1",
+      "line_count": 66,
+      "size_bytes": 2915
+    },
+    "src/hate/adapters/stryker.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.adapters.stryker.py.json",
+      "sha256": "8a1c898b95728a13755f15def2c5eafdefa3e474082989f5781d4d0bc3dd07e7",
+      "line_count": 105,
+      "size_bytes": 3834
+    },
     "src/hate/audit.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.audit.py.json",
@@ -2451,6 +2542,13 @@
       "sha256": "ea47b6a4c1e674da905bfb06c61929302ae6e97fa6899569c4bb0b1549fd14c7",
       "line_count": 201,
       "size_bytes": 7906
+    },
+    "tests/test_adapters_static_contract_mutation.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_adapters_static_contract_mutation.py.json",
+      "sha256": "b6d58e6be28210b5b42a4ca57ea404ce55d1a6d95ded44ac12536efceef2a7e8",
+      "line_count": 203,
+      "size_bytes": 8967
     },
     "tests/test_codemap_update.py": {
       "role": "test",
@@ -2945,6 +3043,18 @@
     [
       "tests/test_adapters_junit.py",
       "src/hate/adapters/junit.py"
+    ],
+    [
+      "tests/test_adapters_static_contract_mutation.py",
+      "src/hate/adapters/pact.py"
+    ],
+    [
+      "tests/test_adapters_static_contract_mutation.py",
+      "src/hate/adapters/sarif.py"
+    ],
+    [
+      "tests/test_adapters_static_contract_mutation.py",
+      "src/hate/adapters/stryker.py"
     ],
     [
       "tests/test_p0a.py",

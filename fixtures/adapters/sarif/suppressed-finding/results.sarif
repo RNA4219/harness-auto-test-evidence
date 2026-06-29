@@ -1,0 +1,13 @@
+{
+  "version": "2.1.0",
+  "runs": [{
+    "tool": {"driver": {"name": "codeql"}},
+    "results": [{
+      "ruleId": "SEC-SUPPRESSED",
+      "level": "warning",
+      "message": {"text": "suppressed finding"},
+      "suppressions": [{"kind": "inSource"}],
+      "locations": [{"physicalLocation": {"artifactLocation": {"uri": "src/legacy.py"}, "region": {"startLine": 20}}}]
+    }]
+  }]
+}
