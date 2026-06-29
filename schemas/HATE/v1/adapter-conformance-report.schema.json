@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/adapter-conformance-report.schema.json",
+  "title": "HATE Adapter Conformance Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "parserVersion", "result", "entries", "findings"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "HATE.adapter-conformance-report/v1" },
+    "parserVersion": { "type": "string", "minLength": 1 },
+    "result": { "type": "string", "enum": ["pass", "fail"] },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "adapter_id",
+          "fixture_id",
+          "result",
+          "severity",
+          "sourceRefs",
+          "parserVersion",
+          "produced_record_counts"
+        ],
+        "properties": {
+          "adapter_id": { "type": "string", "minLength": 1 },
+          "fixture_id": { "type": "string", "minLength": 1 },
+          "result": { "type": "string", "enum": ["pass", "fail", "dq"] },
+          "severity": { "type": "string", "enum": ["pass", "info", "warning", "error"] },
+          "sourceRefs": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "parserVersion": { "type": "string", "minLength": 1 },
+          "produced_record_counts": {
+            "type": "object",
+            "additionalProperties": { "type": "integer", "minimum": 0 }
+          },
+          "diagnostics": { "type": "array" }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "severity", "message", "sourceRef"],
+        "properties": {
+          "code": { "type": "string", "minLength": 1 },
+          "severity": { "type": "string", "enum": ["info", "warning", "error"] },
+          "message": { "type": "string", "minLength": 1 },
+          "sourceRef": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

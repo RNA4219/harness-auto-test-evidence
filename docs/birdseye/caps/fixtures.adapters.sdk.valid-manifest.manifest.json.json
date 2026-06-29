@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/sdk/valid-manifest/manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "80909b546c77ed932a884d5d5a1d6819b6b6bd3644a3ea5e414f437115c5b3c7",
+  "line_count": 16,
+  "size_bytes": 509,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

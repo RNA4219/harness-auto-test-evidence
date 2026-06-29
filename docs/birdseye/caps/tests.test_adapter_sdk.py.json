@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_adapter_sdk.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "ed1559aab519173293b8cc328e41f9d42fadd8a6e1d27b7cbd1cdce76e86c711",
+  "line_count": 136,
+  "size_bytes": 4639,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.adapter_sdk",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/adapter_sdk.py"
+  ],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/adapter_sdk.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "cc6b056d4763bc3332971d364604ae0b054cfa3b81c779f65f3bd14ae953c551",
+  "line_count": 114,
+  "size_bytes": 3196,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

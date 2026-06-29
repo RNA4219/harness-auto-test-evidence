@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/adapter-conformance-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "febb8d51de4d7d2f5a7d45b023dc509209641028c1835d7379637efda8b65f97",
+  "line_count": 60,
+  "size_bytes": 2146,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "f039abbf882a",
+  "generated_at": "38f848b462fe",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -813,6 +813,55 @@
       "sha256": "d655a10e9fb057ed90b2fab4fe37fe8c1acb88252fa0c7a069925884f8f704e7",
       "line_count": 41,
       "size_bytes": 1429
+    },
+    "fixtures/adapters/sdk/capability-mismatch/manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.sdk.capability-mismatch.manifest.json.json",
+      "sha256": "bff1006f5ae8b0e8fd0a7a9d23567b037181d3e426cf87a0195a88ddd865021c",
+      "line_count": 16,
+      "size_bytes": 506
+    },
+    "fixtures/adapters/sdk/duplicate-adapter-id/first.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.sdk.duplicate-adapter-id.first.json.json",
+      "sha256": "b8dc63fd703b0971191649eadcba9b8b77f457902b939dde3b6bd554bad5bd42",
+      "line_count": 16,
+      "size_bytes": 485
+    },
+    "fixtures/adapters/sdk/duplicate-adapter-id/second.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.sdk.duplicate-adapter-id.second.json.json",
+      "sha256": "ca4cdcf993d2a1f2c91bbb6846274134419583542756d7deef3f161dac28b191",
+      "line_count": 16,
+      "size_bytes": 485
+    },
+    "fixtures/adapters/sdk/missing-required/manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.sdk.missing-required.manifest.json.json",
+      "sha256": "eb1a3d631c7118d0d56ad4735a6ca7d4651551974db10f221e0e244bac6fdf8d",
+      "line_count": 15,
+      "size_bytes": 434
+    },
+    "fixtures/adapters/sdk/unknown-output-record/manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.sdk.unknown-output-record.manifest.json.json",
+      "sha256": "619a98875a5613da5ce4e949f3ff414d26ecaf2e82470faaef3369c93343f315",
+      "line_count": 16,
+      "size_bytes": 496
+    },
+    "fixtures/adapters/sdk/unsupported-schema-version/manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.sdk.unsupported-schema-version.manifest.json.json",
+      "sha256": "d15c703e7496079e58edb8d97ac04e2d2db797ea233d33a0836dc939a7ca4903",
+      "line_count": 16,
+      "size_bytes": 494
+    },
+    "fixtures/adapters/sdk/valid-manifest/manifest.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.adapters.sdk.valid-manifest.manifest.json.json",
+      "sha256": "80909b546c77ed932a884d5d5a1d6819b6b6bd3644a3ea5e414f437115c5b3c7",
+      "line_count": 16,
+      "size_bytes": 509
     },
     "fixtures/adapters/test-results/jest/input/github-context.json": {
       "role": "fixture",
@@ -1969,6 +2018,20 @@
       "line_count": 25,
       "size_bytes": 504
     },
+    "schemas/HATE/v1/adapter-conformance-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.adapter-conformance-report.schema.json.json",
+      "sha256": "febb8d51de4d7d2f5a7d45b023dc509209641028c1835d7379637efda8b65f97",
+      "line_count": 60,
+      "size_bytes": 2146
+    },
+    "schemas/HATE/v1/adapter-manifest.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.adapter-manifest.schema.json.json",
+      "sha256": "c02b0e9549de30a8c3e20cd39ad650718722b2260d41afb3947dc99e66ffae2c",
+      "line_count": 78,
+      "size_bytes": 2211
+    },
     "schemas/HATE/v1/artifact-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.artifact-manifest.schema.json.json",
@@ -2035,9 +2098,9 @@
     "src/hate/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.__init__.py.json",
-      "sha256": "2fd7fd82ace11933ffd4f50b32766759c183385de747792ed31a6e911f3f6153",
+      "sha256": "b38002c7f6c6b11859f054f9c9223f4ccf6d697a268bc404f6a95688e977b224",
       "line_count": 5,
-      "size_bytes": 103
+      "size_bytes": 98
     },
     "src/hate/__main__.py": {
       "role": "implementation",
@@ -2045,6 +2108,20 @@
       "sha256": "d220d88dd9a25cd0629c5176dd6532a2db1da40eb014a8e80796b0ddeb134918",
       "line_count": 4,
       "size_bytes": 83
+    },
+    "src/hate/adapter_registry.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.adapter_registry.py.json",
+      "sha256": "faca43b105a029f1d10f12ff9a8d5592cfd4c6c136a967933135a9540a6c0f94",
+      "line_count": 240,
+      "size_bytes": 9273
+    },
+    "src/hate/adapter_sdk.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.adapter_sdk.py.json",
+      "sha256": "cc6b056d4763bc3332971d364604ae0b054cfa3b81c779f65f3bd14ae953c551",
+      "line_count": 114,
+      "size_bytes": 3196
     },
     "src/hate/audit.py": {
       "role": "implementation",
@@ -2283,6 +2360,20 @@
       "sha256": "6327cd62968a1f3e1fc83155cb5a41b518d46f8f2acd7cf23a206498b0503b3d",
       "line_count": 162,
       "size_bytes": 5461
+    },
+    "tests/test_adapter_manifest_schema.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_adapter_manifest_schema.py.json",
+      "sha256": "6187a4c182adf89557733a8df38adb2ff68a492611b07ac2f6cba7bfcf71ea94",
+      "line_count": 131,
+      "size_bytes": 4911
+    },
+    "tests/test_adapter_sdk.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_adapter_sdk.py.json",
+      "sha256": "ed1559aab519173293b8cc328e41f9d42fadd8a6e1d27b7cbd1cdce76e86c711",
+      "line_count": 136,
+      "size_bytes": 4639
     },
     "tests/test_codemap_update.py": {
       "role": "test",
@@ -2523,6 +2614,10 @@
       "src/hate/cli.py"
     ],
     [
+      "src/hate/adapter_registry.py",
+      "src/hate/adapter_sdk.py"
+    ],
+    [
       "src/hate/audit.py",
       "src/hate/p2p3_io.py"
     ],
@@ -2753,6 +2848,14 @@
     [
       "src/hate/store.py",
       "src/hate/p2p3_io.py"
+    ],
+    [
+      "tests/test_adapter_manifest_schema.py",
+      "src/hate/adapter_registry.py"
+    ],
+    [
+      "tests/test_adapter_sdk.py",
+      "src/hate/adapter_sdk.py"
     ],
     [
       "tests/test_p0a.py",

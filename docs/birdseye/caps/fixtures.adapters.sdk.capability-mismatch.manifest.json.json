@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/adapters/sdk/capability-mismatch/manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bff1006f5ae8b0e8fd0a7a9d23567b037181d3e426cf87a0195a88ddd865021c",
+  "line_count": 16,
+  "size_bytes": 506,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

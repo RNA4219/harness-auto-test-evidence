@@ -1,0 +1,19 @@
+{
+  "path": "schemas/HATE/v1/adapter-manifest.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "c02b0e9549de30a8c3e20cd39ad650718722b2260d41afb3947dc99e66ffae2c",
+  "line_count": 78,
+  "size_bytes": 2211,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

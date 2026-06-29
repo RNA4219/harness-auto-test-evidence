@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/adapter_registry.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "faca43b105a029f1d10f12ff9a8d5592cfd4c6c136a967933135a9540a6c0f94",
+  "line_count": 240,
+  "size_bytes": 9273,
+  "headings": [],
+  "imports": [
+    ".adapter_sdk",
+    "__future__",
+    "dataclasses",
+    "json",
+    "pathlib",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/adapter_sdk.py"
+  ],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "manifest_schema_version": "HATE.adapter-manifest/v1",
+  "adapter_id": "duplicate",
+  "version": "1.0.1",
+  "supported_input_formats": ["pytest-json"],
+  "emitted_record_kinds": ["test_result"],
+  "schema_version_range": { "min": "HATE/v1", "max": "HATE/v1" },
+  "parser_entrypoint": "hate.adapters.pytest_json:parse",
+  "feature_flags": [],
+  "conformance_fixtures": {
+    "happy": {
+      "input_format": "pytest-json",
+      "expected_record_kinds": ["test_result"]
+    }
+  }
+}

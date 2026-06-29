@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/sdk/duplicate-adapter-id/first.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b8dc63fd703b0971191649eadcba9b8b77f457902b939dde3b6bd554bad5bd42",
+  "line_count": 16,
+  "size_bytes": 485,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

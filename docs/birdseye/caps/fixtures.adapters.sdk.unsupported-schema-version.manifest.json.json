@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/sdk/unsupported-schema-version/manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d15c703e7496079e58edb8d97ac04e2d2db797ea233d33a0836dc939a7ca4903",
+  "line_count": 16,
+  "size_bytes": 494,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/sdk/missing-required/manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "eb1a3d631c7118d0d56ad4735a6ca7d4651551974db10f221e0e244bac6fdf8d",
+  "line_count": 15,
+  "size_bytes": 434,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

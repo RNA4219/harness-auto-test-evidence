@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/sdk/unknown-output-record/manifest.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "619a98875a5613da5ce4e949f3ff414d26ecaf2e82470faaef3369c93343f315",
+  "line_count": 16,
+  "size_bytes": 496,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}
