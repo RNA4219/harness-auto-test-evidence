@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/v1",
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-UNSUPPORTED",
+      "severity": "medium",
+      "sourceRefs": ["risks/RISK-UNSUPPORTED.yaml"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "CLAIM-UNSUPPORTED",
+      "status": "ready",
+      "sourceRefs": ["claims/CLAIM-UNSUPPORTED.yaml"]
+    }
+  ],
+  "records": [],
+  "manual_reviews": [],
+  "edges": [
+    {
+      "from": "risk:RISK-UNSUPPORTED",
+      "to": "claim:CLAIM-UNSUPPORTED",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-UNSUPPORTED.yaml"]
+    }
+  ]
+}

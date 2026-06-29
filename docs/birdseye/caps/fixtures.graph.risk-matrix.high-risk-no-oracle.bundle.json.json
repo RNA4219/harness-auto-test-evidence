@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/graph/risk-matrix/high-risk-no-oracle/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "487dc1a3aa7f4f1495614df1d41a519bb99ab9d080b41ecc9e16282b254764ad",
+  "line_count": 14,
+  "size_bytes": 232,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/graph/risk-matrix/coverage-without-evidence/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7963b6b1c47454792d3cf3a4defbde1c5d398f1a4fa3f5c5aaf31b34b5ea4147",
+  "line_count": 47,
+  "size_bytes": 1198,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

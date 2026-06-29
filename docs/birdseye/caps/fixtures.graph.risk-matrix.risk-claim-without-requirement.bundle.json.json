@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/risk-matrix/risk-claim-without-requirement/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "458427ddc58c19cac7e987ca343143334872ebb2c38ec26a2907be939baa2d0f",
+  "line_count": 28,
+  "size_bytes": 569,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

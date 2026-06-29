@@ -1,0 +1,44 @@
+{
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-CONTRACT-001",
+      "severity": "high",
+      "sourceRefs": ["risks/RISK-CONTRACT-001.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [
+    {
+      "record_id": "contract-001",
+      "record_kind": "contract_evidence",
+      "sourceRef": "contracts/contract-001.json",
+      "payload": {
+        "status": "passed"
+      }
+    },
+    {
+      "record_id": "mutation-001",
+      "record_kind": "mutation_evidence",
+      "sourceRef": "mutations/mutation-001.json",
+      "payload": {
+        "status": "killed"
+      }
+    }
+  ],
+  "manual_reviews": [],
+  "edges": [
+    {
+      "from": "risk:RISK-CONTRACT-001",
+      "to": "contract:contract-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-CONTRACT-001.yaml"]
+    },
+    {
+      "from": "risk:RISK-CONTRACT-001",
+      "to": "mutation:mutation-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-CONTRACT-001.yaml"]
+    }
+  ]
+}

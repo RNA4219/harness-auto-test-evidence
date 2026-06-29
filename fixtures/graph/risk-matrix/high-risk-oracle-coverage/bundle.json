@@ -1,0 +1,32 @@
+{
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-HIGH-001",
+      "severity": "high",
+      "sourceRefs": ["risks/RISK-HIGH-001.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [
+    {
+      "record_id": "test-high-001",
+      "record_kind": "test_result",
+      "sourceRef": "tests/test_high_001.py#L1",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_high_001.py::test_high",
+        "status": "passed",
+        "has_assertions": true
+      }
+    }
+  ],
+  "manual_reviews": [],
+  "edges": [
+    {
+      "from": "risk:RISK-HIGH-001",
+      "to": "execution:test-high-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-HIGH-001.yaml"]
+    }
+  ]
+}

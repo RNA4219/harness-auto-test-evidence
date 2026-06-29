@@ -1,16 +1,16 @@
 {
-  "path": "src/hate/evidence_graph.py",
+  "path": "src/hate/risk_matrix.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "d93b12b3b58a1cad0ec5cd2dc29a4570c8eee434ef52631a6040921d75862a01",
-  "line_count": 221,
-  "size_bytes": 9604,
+  "sha256": "16f92fc7e4c38135304d1db4c7a5a267d74cf4394b0cb1c3849ad1e38808a4ae",
+  "line_count": 796,
+  "size_bytes": 30046,
   "headings": [],
   "imports": [
     ".evidence_envelope",
     "__future__",
     "dataclasses",
-    "hashlib",
+    "datetime",
     "typing"
   ],
   "links": [],
@@ -19,8 +19,6 @@
   ],
   "tags": [
     "artifact",
-    "coverage",
-    "release",
-    "test"
+    "coverage"
   ]
 }

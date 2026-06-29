@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_risk_matrix.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "d08c82222bb2910e8f8977d18e49300664dc8f4cc0e0fcabe9e39247c88842b9",
+  "line_count": 269,
+  "size_bytes": 9672,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.evidence_graph",
+    "hate.risk_matrix",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evidence_graph.py",
+    "src/hate/risk_matrix.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "security",
+    "test"
+  ]
+}

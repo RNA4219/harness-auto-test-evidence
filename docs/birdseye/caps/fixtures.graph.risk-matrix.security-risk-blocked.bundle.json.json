@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/graph/risk-matrix/security-risk-blocked/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c5f92a632b84f988605361e0764320d49a16e6b704df2a2d4904f36737a6f5a2",
+  "line_count": 34,
+  "size_bytes": 774,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

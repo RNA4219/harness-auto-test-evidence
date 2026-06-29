@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/v1",
+  "requirements": [
+    {
+      "id": "REQ-MANUAL-001",
+      "status": "ready",
+      "sourceRefs": ["requirements/REQ-MANUAL-001.yaml"]
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-MANUAL-001",
+      "severity": "high",
+      "requirement_refs": ["REQ-MANUAL-001"],
+      "sourceRefs": ["risks/RISK-MANUAL-001.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [],
+  "manual_reviews": [],
+  "edges": []
+}

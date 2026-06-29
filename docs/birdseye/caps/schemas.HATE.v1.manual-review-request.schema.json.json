@@ -1,0 +1,19 @@
+{
+  "path": "schemas/HATE/v1/manual-review-request.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "4df8b7e1a7c9ed4e0db02e0be1b8b1f5e11ac0a9197be04da6b50bad693b0a94",
+  "line_count": 162,
+  "size_bytes": 4164,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

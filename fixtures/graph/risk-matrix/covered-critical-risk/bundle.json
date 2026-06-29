@@ -1,0 +1,47 @@
+{
+  "schema_version": "HATE/v1",
+  "requirements": [
+    {
+      "id": "REQ-CRITICAL-001",
+      "status": "ready",
+      "sourceRefs": ["requirements/REQ-CRITICAL-001.yaml"]
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-CRITICAL",
+      "severity": "critical",
+      "requirement_refs": ["REQ-CRITICAL-001"],
+      "sourceRefs": ["risks/RISK-CRITICAL.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [
+    {
+      "record_id": "test-critical-001",
+      "record_kind": "test_result",
+      "sourceRef": "tests/test_critical.py#L1",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_critical.py::test_critical",
+        "status": "passed",
+        "has_assertions": true,
+        "requirement_refs": ["REQ-CRITICAL-001"]
+      }
+    }
+  ],
+  "manual_reviews": [],
+  "edges": [
+    {
+      "from": "requirement:REQ-CRITICAL-001",
+      "to": "test:pytest::tests/test_critical.py::test_critical",
+      "kind": "requires_test",
+      "sourceRefs": ["requirements/REQ-CRITICAL-001.yaml"]
+    },
+    {
+      "from": "risk:RISK-CRITICAL",
+      "to": "execution:test-critical-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-CRITICAL.yaml"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-NO-ORACLE",
+      "severity": "high",
+      "sourceRefs": ["risks/RISK-NO-ORACLE.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [],
+  "manual_reviews": [],
+  "edges": []
+}

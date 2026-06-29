@@ -1,0 +1,29 @@
+{
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-MISSING-OWNER",
+      "severity": "high",
+      "sourceRefs": ["risks/RISK-MISSING-OWNER.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [],
+  "manual_reviews": [
+    {
+      "id": "REVIEW-MISSING-OWNER",
+      "status": "pending",
+      "owner": null,
+      "expiry_date": "2027-06-29T00:00:00Z",
+      "sourceRefs": ["reviews/REVIEW-MISSING-OWNER.yaml"]
+    }
+  ],
+  "edges": [
+    {
+      "from": "risk:RISK-MISSING-OWNER",
+      "to": "manual_review:REVIEW-MISSING-OWNER",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-MISSING-OWNER.yaml"]
+    }
+  ]
+}

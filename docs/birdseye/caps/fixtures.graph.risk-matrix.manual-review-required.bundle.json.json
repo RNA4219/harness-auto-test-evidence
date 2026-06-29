@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/risk-matrix/manual-review-required/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "63e7b481c28fef8ff5a84a3872b8bfe10c163defe3644ad66aaed541a3997b8e",
+  "line_count": 22,
+  "size_bytes": 439,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

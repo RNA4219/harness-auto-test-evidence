@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/graph/risk-matrix/contract-mutation-evidence/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c6c14107e69dac65a5616bfec8f360bd7eb9da87fdd765ecaf37a5ff91c57dd5",
+  "line_count": 44,
+  "size_bytes": 972,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

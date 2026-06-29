@@ -1,0 +1,63 @@
+{
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-CRITICAL-MIXED",
+      "severity": "critical",
+      "sourceRefs": ["risks/RISK-CRITICAL-MIXED.yaml"]
+    },
+    {
+      "id": "RISK-HIGH-MIXED",
+      "severity": "high",
+      "sourceRefs": ["risks/RISK-HIGH-MIXED.yaml"]
+    },
+    {
+      "id": "RISK-MEDIUM-MIXED",
+      "severity": "medium",
+      "sourceRefs": ["risks/RISK-MEDIUM-MIXED.yaml"]
+    },
+    {
+      "id": "RISK-LOW-MIXED",
+      "severity": "low",
+      "sourceRefs": ["risks/RISK-LOW-MIXED.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [
+    {
+      "record_id": "test-mixed-001",
+      "record_kind": "test_result",
+      "sourceRef": "tests/test_mixed_001.py#L1",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_mixed_001.py::test_critical",
+        "status": "passed",
+        "has_assertions": true
+      }
+    },
+    {
+      "record_id": "test-mixed-002",
+      "record_kind": "test_result",
+      "sourceRef": "tests/test_mixed_002.py#L1",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_mixed_002.py::test_high_coverage",
+        "status": "passed",
+        "has_assertions": false
+      }
+    }
+  ],
+  "manual_reviews": [],
+  "edges": [
+    {
+      "from": "risk:RISK-CRITICAL-MIXED",
+      "to": "execution:test-mixed-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-CRITICAL-MIXED.yaml"]
+    },
+    {
+      "from": "risk:RISK-HIGH-MIXED",
+      "to": "execution:test-mixed-002",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-HIGH-MIXED.yaml"]
+    }
+  ]
+}

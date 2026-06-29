@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/risk-matrix/risk-debt-accepted/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7b09b587fc16468ad3fd8d44a612006f8426a83c8570c3558e366fc97dd347d2",
+  "line_count": 15,
+  "size_bytes": 261,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

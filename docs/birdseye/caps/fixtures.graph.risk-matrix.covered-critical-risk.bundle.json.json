@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/graph/risk-matrix/covered-critical-risk/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3f1325330c50fe7ef77737b1ada9ee1c685be65e6d12337e3feb5ab94d880127",
+  "line_count": 47,
+  "size_bytes": 1183,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

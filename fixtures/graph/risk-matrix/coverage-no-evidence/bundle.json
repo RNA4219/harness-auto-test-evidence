@@ -1,0 +1,32 @@
+{
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-COVERAGE-001",
+      "severity": "medium",
+      "sourceRefs": ["risks/RISK-COVERAGE-001.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [
+    {
+      "record_id": "test-coverage-001",
+      "record_kind": "test_result",
+      "sourceRef": "tests/test_coverage.py#L1",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_coverage.py::test_coverage",
+        "status": "passed",
+        "has_assertions": false
+      }
+    }
+  ],
+  "manual_reviews": [],
+  "edges": [
+    {
+      "from": "risk:RISK-COVERAGE-001",
+      "to": "execution:test-coverage-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-COVERAGE-001.yaml"]
+    }
+  ]
+}

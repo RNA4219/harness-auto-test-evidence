@@ -1,5 +1,5 @@
 {
-  "generated_at": "cdafaa0d90ba",
+  "generated_at": "f77f0a1e941e",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -2018,6 +2018,132 @@
       "line_count": 8,
       "size_bytes": 258
     },
+    "fixtures/graph/risk-matrix/contract-mutation-evidence/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.contract-mutation-evidence.bundle.json.json",
+      "sha256": "c6c14107e69dac65a5616bfec8f360bd7eb9da87fdd765ecaf37a5ff91c57dd5",
+      "line_count": 44,
+      "size_bytes": 972
+    },
+    "fixtures/graph/risk-matrix/coverage-no-evidence/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.coverage-no-evidence.bundle.json.json",
+      "sha256": "0be693ac0dc7697915a5df79c2b17b366079b26271bdafe2ad2b9a120958f825",
+      "line_count": 32,
+      "size_bytes": 723
+    },
+    "fixtures/graph/risk-matrix/coverage-without-evidence/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.coverage-without-evidence.bundle.json.json",
+      "sha256": "7963b6b1c47454792d3cf3a4defbde1c5d398f1a4fa3f5c5aaf31b34b5ea4147",
+      "line_count": 47,
+      "size_bytes": 1198
+    },
+    "fixtures/graph/risk-matrix/covered-critical-risk/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.covered-critical-risk.bundle.json.json",
+      "sha256": "3f1325330c50fe7ef77737b1ada9ee1c685be65e6d12337e3feb5ab94d880127",
+      "line_count": 47,
+      "size_bytes": 1183
+    },
+    "fixtures/graph/risk-matrix/critical-risk-covered/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.critical-risk-covered.bundle.json.json",
+      "sha256": "6f2215ae46c5e15eb22f1c660bc951d9fa8644fdceffee1508b8904d37d82de1",
+      "line_count": 32,
+      "size_bytes": 708
+    },
+    "fixtures/graph/risk-matrix/expired-risk-debt/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.expired-risk-debt.bundle.json.json",
+      "sha256": "243c75c966680048c5a9cf11a9a5645fecb8b91fb1e177e7504b7260e1aca95a",
+      "line_count": 15,
+      "size_bytes": 263
+    },
+    "fixtures/graph/risk-matrix/high-risk-no-oracle/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.high-risk-no-oracle.bundle.json.json",
+      "sha256": "487dc1a3aa7f4f1495614df1d41a519bb99ab9d080b41ecc9e16282b254764ad",
+      "line_count": 14,
+      "size_bytes": 232
+    },
+    "fixtures/graph/risk-matrix/high-risk-oracle-coverage/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.high-risk-oracle-coverage.bundle.json.json",
+      "sha256": "565fdcff87b342b358f297379ada0ac206640d98c624564a7be49ffd0c1f8e1d",
+      "line_count": 32,
+      "size_bytes": 692
+    },
+    "fixtures/graph/risk-matrix/manual-review-required/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.manual-review-required.bundle.json.json",
+      "sha256": "63e7b481c28fef8ff5a84a3872b8bfe10c163defe3644ad66aaed541a3997b8e",
+      "line_count": 22,
+      "size_bytes": 439
+    },
+    "fixtures/graph/risk-matrix/manual-review-supported-risk/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.manual-review-supported-risk.bundle.json.json",
+      "sha256": "16f35d7306eff0fa6288f5e077b2a2ef7273009d7181045e6c35f3abc167fa19",
+      "line_count": 29,
+      "size_bytes": 609
+    },
+    "fixtures/graph/risk-matrix/manual-review-without-owner/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.manual-review-without-owner.bundle.json.json",
+      "sha256": "252be337b52e5566e3106e3e6c840471ec035af3e1ac514183c5b175dc88b1f6",
+      "line_count": 37,
+      "size_bytes": 805
+    },
+    "fixtures/graph/risk-matrix/missing-manual-owner/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.missing-manual-owner.bundle.json.json",
+      "sha256": "a52784a867fbd9c6ee6d3354b4efbae8d63dc4cc653f13afdd6090b174590266",
+      "line_count": 29,
+      "size_bytes": 630
+    },
+    "fixtures/graph/risk-matrix/multiple-risks-mixed/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.multiple-risks-mixed.bundle.json.json",
+      "sha256": "d32700ca57c6fa8259aac4a0734999afef5adc594c404533342bd6fe28818840",
+      "line_count": 63,
+      "size_bytes": 1570
+    },
+    "fixtures/graph/risk-matrix/risk-claim-without-requirement/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.risk-claim-without-requirement.bundle.json.json",
+      "sha256": "458427ddc58c19cac7e987ca343143334872ebb2c38ec26a2907be939baa2d0f",
+      "line_count": 28,
+      "size_bytes": 569
+    },
+    "fixtures/graph/risk-matrix/risk-debt-accepted/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.risk-debt-accepted.bundle.json.json",
+      "sha256": "7b09b587fc16468ad3fd8d44a612006f8426a83c8570c3558e366fc97dd347d2",
+      "line_count": 15,
+      "size_bytes": 261
+    },
+    "fixtures/graph/risk-matrix/security-risk-blocked/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.security-risk-blocked.bundle.json.json",
+      "sha256": "c5f92a632b84f988605361e0764320d49a16e6b704df2a2d4904f36737a6f5a2",
+      "line_count": 34,
+      "size_bytes": 774
+    },
+    "fixtures/graph/risk-matrix/unsupported-claim-risk/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.unsupported-claim-risk.bundle.json.json",
+      "sha256": "1cfad5e65bfe9ab8f23c04a90ec72e9d73d1a34154e63736a633c57861ca77b5",
+      "line_count": 27,
+      "size_bytes": 538
+    },
+    "fixtures/graph/risk-matrix/weak-coverage/bundle.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.graph.risk-matrix.weak-coverage.bundle.json.json",
+      "sha256": "0c9792e65b5594fe726ace07bbd7bc6c37c1ace136e75245f5cf830b70bac63f",
+      "line_count": 47,
+      "size_bytes": 1130
+    },
     "fixtures/identity/canonical/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.identity.canonical.README.md.json",
@@ -2417,6 +2543,13 @@
       "line_count": 56,
       "size_bytes": 1924
     },
+    "schemas/HATE/v1/manual-review-request.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.manual-review-request.schema.json.json",
+      "sha256": "4df8b7e1a7c9ed4e0db02e0be1b8b1f5e11ac0a9197be04da6b50bad693b0a94",
+      "line_count": 162,
+      "size_bytes": 4164
+    },
     "schemas/HATE/v1/mutation-evidence.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.mutation-evidence.schema.json.json",
@@ -2445,6 +2578,13 @@
       "line_count": 94,
       "size_bytes": 3303
     },
+    "schemas/HATE/v1/risk-coverage-matrix.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.risk-coverage-matrix.schema.json.json",
+      "sha256": "6996873689ca0fd3159e0cc9dd8703292725146a18ef7d2c49ed3d26b5ac2911",
+      "line_count": 334,
+      "size_bytes": 8861
+    },
     "schemas/HATE/v1/run.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.run.schema.json.json",
@@ -2455,9 +2595,9 @@
     "schemas/HATE/v1/schema-registry.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-registry.json.json",
-      "sha256": "2d5bcce38bc729c9169cc6bce3c3fd5f6da95e3652c6e2708496018303904b42",
-      "line_count": 72,
-      "size_bytes": 1847
+      "sha256": "2cdd9fa5c55723994764ce23007c2b0c139f56f19f54a364a2557e901a101fed",
+      "line_count": 82,
+      "size_bytes": 2121
     },
     "schemas/HATE/v1/source-ref.schema.json": {
       "role": "schema",
@@ -2602,9 +2742,9 @@
     "src/hate/evidence_graph.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evidence_graph.py.json",
-      "sha256": "906e8445791a247c40b64c339212516fe66d51106a5982c6bc0109e8bf08bfbc",
-      "line_count": 222,
-      "size_bytes": 9605
+      "sha256": "d93b12b3b58a1cad0ec5cd2dc29a4570c8eee434ef52631a6040921d75862a01",
+      "line_count": 221,
+      "size_bytes": 9604
     },
     "src/hate/governance.py": {
       "role": "implementation",
@@ -2612,6 +2752,13 @@
       "sha256": "8d3d618f629912d54a4c9f1fff03a1319109cbd6b83e604ccbd68a24976c047c",
       "line_count": 129,
       "size_bytes": 5519
+    },
+    "src/hate/manual_review_bridge.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.manual_review_bridge.py.json",
+      "sha256": "f3ab09709c427d0642e821398f2649c6ec76ebc94036645e5bcce3815963e358",
+      "line_count": 312,
+      "size_bytes": 12198
     },
     "src/hate/p0a.py": {
       "role": "implementation",
@@ -2802,6 +2949,13 @@
       "line_count": 99,
       "size_bytes": 4279
     },
+    "src/hate/risk_matrix.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.risk_matrix.py.json",
+      "sha256": "16f92fc7e4c38135304d1db4c7a5a267d74cf4394b0cb1c3849ad1e38808a4ae",
+      "line_count": 796,
+      "size_bytes": 30046
+    },
     "src/hate/schema_validator.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.schema_validator.py.json",
@@ -2886,6 +3040,13 @@
       "line_count": 59,
       "size_bytes": 2076
     },
+    "tests/test_manual_review_bridge.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_manual_review_bridge.py.json",
+      "sha256": "42309c8ad25c33f552cc6706b4e587b34b73fa9a8ed3aab4f54f56df9f44639f",
+      "line_count": 237,
+      "size_bytes": 7930
+    },
     "tests/test_p0a.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p0a.py.json",
@@ -2934,6 +3095,13 @@
       "sha256": "ddfcb36c8e96891f28ae10c924b3b1fede10ea27ffd0c79ac3e46b8c080d3ef6",
       "line_count": 55,
       "size_bytes": 1979
+    },
+    "tests/test_risk_matrix.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_risk_matrix.py.json",
+      "sha256": "d08c82222bb2910e8f8977d18e49300664dc8f4cc0e0fcabe9e39247c88842b9",
+      "line_count": 269,
+      "size_bytes": 9672
     },
     "tests/test_schema_validator.py": {
       "role": "test",
@@ -3188,6 +3356,10 @@
       "src/hate/evidence_envelope.py"
     ],
     [
+      "src/hate/manual_review_bridge.py",
+      "src/hate/evidence_envelope.py"
+    ],
+    [
       "src/hate/p0a.py",
       "src/hate/p0a_support.py"
     ],
@@ -3380,6 +3552,10 @@
       "src/hate/p0a_io.py"
     ],
     [
+      "src/hate/risk_matrix.py",
+      "src/hate/evidence_envelope.py"
+    ],
+    [
       "src/hate/schema_validator.py",
       "src/hate/evidence_envelope.py"
     ],
@@ -3436,6 +3612,18 @@
       "src/hate/evidence_graph.py"
     ],
     [
+      "tests/test_manual_review_bridge.py",
+      "src/hate/evidence_graph.py"
+    ],
+    [
+      "tests/test_manual_review_bridge.py",
+      "src/hate/manual_review_bridge.py"
+    ],
+    [
+      "tests/test_manual_review_bridge.py",
+      "src/hate/risk_matrix.py"
+    ],
+    [
       "tests/test_p0a.py",
       "src/hate/p0a.py"
     ],
@@ -3490,6 +3678,14 @@
     [
       "tests/test_product_readiness_report.py",
       "src/hate/readiness_model.py"
+    ],
+    [
+      "tests/test_risk_matrix.py",
+      "src/hate/evidence_graph.py"
+    ],
+    [
+      "tests/test_risk_matrix.py",
+      "src/hate/risk_matrix.py"
     ],
     [
       "tests/test_schema_validator.py",

@@ -1,0 +1,15 @@
+{
+  "schema_version": "HATE/v1",
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-EXPIRED",
+      "severity": "critical",
+      "sourceRefs": ["risks/RISK-EXPIRED.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [],
+  "manual_reviews": [],
+  "edges": []
+}

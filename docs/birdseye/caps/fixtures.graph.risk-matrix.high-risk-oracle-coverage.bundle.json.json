@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/graph/risk-matrix/high-risk-oracle-coverage/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "565fdcff87b342b358f297379ada0ac206640d98c624564a7be49ffd0c1f8e1d",
+  "line_count": 32,
+  "size_bytes": 692,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

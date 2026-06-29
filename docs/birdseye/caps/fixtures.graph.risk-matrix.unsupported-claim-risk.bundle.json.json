@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/graph/risk-matrix/unsupported-claim-risk/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1cfad5e65bfe9ab8f23c04a90ec72e9d73d1a34154e63736a633c57861ca77b5",
+  "line_count": 27,
+  "size_bytes": 538,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

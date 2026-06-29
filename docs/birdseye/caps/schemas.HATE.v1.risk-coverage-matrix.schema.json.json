@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/risk-coverage-matrix.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6996873689ca0fd3159e0cc9dd8703292725146a18ef7d2c49ed3d26b5ac2911",
+  "line_count": 334,
+  "size_bytes": 8861,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

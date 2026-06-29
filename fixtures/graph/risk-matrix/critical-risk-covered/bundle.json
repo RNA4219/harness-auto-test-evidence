@@ -1,0 +1,32 @@
+{
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-CRITICAL",
+      "severity": "critical",
+      "sourceRefs": ["risks/RISK-CRITICAL.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [
+    {
+      "record_id": "test-critical-001",
+      "record_kind": "test_result",
+      "sourceRef": "tests/test_critical.py#L1",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_critical.py::test_critical",
+        "status": "passed",
+        "has_assertions": true
+      }
+    }
+  ],
+  "manual_reviews": [],
+  "edges": [
+    {
+      "from": "risk:RISK-CRITICAL",
+      "to": "execution:test-critical-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-CRITICAL.yaml"]
+    }
+  ]
+}

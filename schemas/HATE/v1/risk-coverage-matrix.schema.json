@@ -1,0 +1,334 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schemas/HATE/v1/risk-coverage-matrix.schema.json",
+  "title": "Risk Coverage Matrix",
+  "description": "Risk coverage matrix with evidence classification, gap analysis, and debt tracking",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "fixture_id",
+    "profile",
+    "summary",
+    "entries",
+    "risk_debt",
+    "matrix_projection",
+    "findings",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "type": "string",
+      "const": "risk_coverage_matrix"
+    },
+    "fixture_id": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string",
+      "enum": ["default", "strict", "release", "product"]
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "overall_status",
+        "risk_count",
+        "covered_count",
+        "gap_count",
+        "hold_count",
+        "blocked_count",
+        "debt_count",
+        "stale_count"
+      ],
+      "properties": {
+        "overall_status": {
+          "type": "string",
+          "enum": ["pass", "soft_gap", "hold", "blocked"]
+        },
+        "risk_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "covered_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "gap_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hold_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "debt_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stale_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "risk_id",
+          "severity",
+          "evidence_class",
+          "oracle_strength",
+          "gap_class",
+          "readiness_effect",
+          "sourceRefs",
+          "requirement_refs",
+          "required_evidence_classes",
+          "observed_evidence_classes",
+          "owner",
+          "due_date"
+        ],
+        "properties": {
+          "risk_id": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "evidence_class": {
+            "type": ["string", "null"],
+            "enum": ["executable_oracle", "static_finding", "contract_check", "mutation_score", "coverage_only", "manual_review", null]
+          },
+          "oracle_strength": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "gap_class": {
+            "type": ["string", "null"],
+            "enum": ["missing_execution", "missing_oracle", "coverage_gap", "oracle_weak", "no_oracle", "unsupported_claim", "blocked_by_static_finding", "missing_contract", "missing_review", null]
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": ["pass", "soft_gap", "hold", "blocked"]
+          },
+          "sourceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "requirement_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required_evidence_classes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["executable_oracle", "contract_check", "mutation_score", "static_finding", "manual_review", "coverage_only"]
+            }
+          },
+          "observed_evidence_classes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["executable_oracle", "contract_check", "mutation_score", "static_finding", "manual_review", "coverage_only"]
+            }
+          },
+          "owner": {
+            "type": ["string", "null"]
+          },
+          "due_date": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "risk_debt": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "risk_debt_id",
+          "debt_type",
+          "severity",
+          "status",
+          "risk_id",
+          "owner",
+          "created_at",
+          "last_seen_at",
+          "age_days",
+          "source_refs",
+          "recommended_actions",
+          "blocking_profile"
+        ],
+        "properties": {
+          "risk_debt_id": {
+            "type": "string"
+          },
+          "debt_type": {
+            "type": "string",
+            "enum": ["missing_execution", "coverage_gap", "flaky_unresolved", "matrix_gap", "artifact_unsafe", "manual_required", "contract_gap", "mutation_gap", "static_unresolved", "traceability_gap"]
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["open", "acknowledged", "mitigated", "accepted", "closed", "stale"]
+          },
+          "risk_id": {
+            "type": "string"
+          },
+          "owner": {
+            "type": ["string", "null"]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "last_seen_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "age_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "recommended_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "blocking_profile": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "justification": {
+            "type": ["string", "null"]
+          },
+          "expiry_date": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "matrix_projection": {
+      "type": "object",
+      "required": [
+        "by_severity",
+        "by_gap_class",
+        "by_evidence_class",
+        "debt_summary",
+        "rows"
+      ],
+      "properties": {
+        "by_severity": {
+          "type": "object",
+          "properties": {
+            "low": {
+              "type": "object",
+              "properties": {
+                "total": {"type": "integer"},
+                "covered": {"type": "integer"},
+                "gaps": {"type": "integer"}
+              }
+            },
+            "medium": {
+              "type": "object",
+              "properties": {
+                "total": {"type": "integer"},
+                "covered": {"type": "integer"},
+                "gaps": {"type": "integer"}
+              }
+            },
+            "high": {
+              "type": "object",
+              "properties": {
+                "total": {"type": "integer"},
+                "covered": {"type": "integer"},
+                "gaps": {"type": "integer"}
+              }
+            },
+            "critical": {
+              "type": "object",
+              "properties": {
+                "total": {"type": "integer"},
+                "covered": {"type": "integer"},
+                "gaps": {"type": "integer"}
+              }
+            }
+          }
+        },
+        "by_gap_class": {
+          "type": "object"
+        },
+        "by_evidence_class": {
+          "type": "object"
+        },
+        "debt_summary": {
+          "type": "object",
+          "required": ["total", "open", "by_severity"],
+          "properties": {
+            "total": {"type": "integer"},
+            "open": {"type": "integer"},
+            "by_severity": {"type": "object"}
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRefs": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        }
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "HATE/v1",
+  "requirements": [
+    {
+      "id": "REQ-NO-OWNER-001",
+      "status": "ready",
+      "sourceRefs": ["requirements/REQ-NO-OWNER-001.yaml"]
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-NO-OWNER",
+      "severity": "high",
+      "requirement_refs": ["REQ-NO-OWNER-001"],
+      "sourceRefs": ["risks/RISK-NO-OWNER.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [],
+  "manual_reviews": [
+    {
+      "id": "REVIEW-NO-OWNER",
+      "status": "pending",
+      "owner": null,
+      "expiry_date": "2027-06-29T00:00:00Z",
+      "sourceRefs": ["reviews/REVIEW-NO-OWNER.yaml"]
+    }
+  ],
+  "edges": [
+    {
+      "from": "risk:RISK-NO-OWNER",
+      "to": "manual_review:REVIEW-NO-OWNER",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-NO-OWNER.yaml"]
+    }
+  ]
+}

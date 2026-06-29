@@ -1,0 +1,162 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schemas/HATE/v1/manual-review-request.schema.json",
+  "title": "Manual Review Request",
+  "description": "Controlled manual review request (NOT waiver - requires owner, expiry, sourceRefs)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "fixture_id",
+    "summary",
+    "requests",
+    "findings",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "type": "string",
+      "const": "manual_review_request_bundle"
+    },
+    "fixture_id": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "overall_status",
+        "request_count",
+        "pending_count",
+        "hard_dq_count",
+        "missing_owner_count",
+        "expired_count"
+      ],
+      "properties": {
+        "overall_status": {
+          "type": "string",
+          "enum": ["ready", "pending", "blocked"]
+        },
+        "request_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pending_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hard_dq_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_owner_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expired_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "requests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "request_id",
+          "risk_id",
+          "owner",
+          "expiry_date",
+          "expiry",
+          "created_at",
+          "source_refs",
+          "status",
+          "justification",
+          "evidence_context",
+          "reason",
+          "blocking",
+          "required_decision"
+        ],
+        "properties": {
+          "request_id": {
+            "type": "string"
+          },
+          "risk_id": {
+            "type": "string"
+          },
+          "owner": {
+            "type": ["string", "null"]
+          },
+          "expiry_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiry": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Canonical task-packet expiry alias; same value as expiry_date for compatibility"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": ["pending", "approved", "rejected", "expired"]
+          },
+          "justification": {
+            "type": ["string", "null"]
+          },
+          "evidence_context": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why manual review is needed"
+          },
+          "blocking": {
+            "type": "boolean",
+            "description": "Whether this blocks release"
+          },
+          "required_decision": {
+            "type": "string",
+            "description": "What decision is expected",
+            "enum": ["approve_or_reject", "verify_coverage_or_accept_risk", "verify_behavior_or_accept_weakness", "accept_weak_oracle_or_request_stronger", "accept_coverage_or_request_test", "fix_finding_or_accept_suppression"]
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"}
+        }
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

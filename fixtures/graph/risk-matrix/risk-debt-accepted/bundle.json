@@ -1,0 +1,15 @@
+{
+  "schema_version": "HATE/v1",
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-ACCEPTED",
+      "severity": "high",
+      "sourceRefs": ["risks/RISK-ACCEPTED.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [],
+  "manual_reviews": [],
+  "edges": []
+}

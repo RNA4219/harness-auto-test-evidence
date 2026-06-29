@@ -46,6 +46,16 @@
       "record_type": "evidence_graph",
       "schema": "schemas/HATE/v1/evidence-graph.schema.json",
       "phase": "P0b"
+    },
+    {
+      "record_type": "risk_coverage_matrix",
+      "schema": "schemas/HATE/v1/risk-coverage-matrix.schema.json",
+      "phase": "P0b"
+    },
+    {
+      "record_type": "manual_review_request_bundle",
+      "schema": "schemas/HATE/v1/manual-review-request.schema.json",
+      "phase": "P0b"
     }
   ],
   "bundles": [

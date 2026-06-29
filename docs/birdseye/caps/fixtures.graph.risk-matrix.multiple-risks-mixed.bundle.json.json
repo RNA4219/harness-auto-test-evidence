@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/graph/risk-matrix/multiple-risks-mixed/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d32700ca57c6fa8259aac4a0734999afef5adc594c404533342bd6fe28818840",
+  "line_count": 63,
+  "size_bytes": 1570,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

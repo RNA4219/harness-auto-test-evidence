@@ -1,0 +1,47 @@
+{
+  "schema_version": "HATE/v1",
+  "requirements": [
+    {
+      "id": "REQ-WEAK-001",
+      "status": "ready",
+      "sourceRefs": ["requirements/REQ-WEAK-001.yaml"]
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-WEAK-001",
+      "severity": "medium",
+      "requirement_refs": ["REQ-WEAK-001"],
+      "sourceRefs": ["risks/RISK-WEAK-001.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [
+    {
+      "record_id": "test-weak-001",
+      "record_kind": "test_result",
+      "sourceRef": "tests/test_weak.py#L1",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_weak.py::test_weak",
+        "status": "passed",
+        "has_assertions": false,
+        "requirement_refs": ["REQ-WEAK-001"]
+      }
+    }
+  ],
+  "manual_reviews": [],
+  "edges": [
+    {
+      "from": "requirement:REQ-WEAK-001",
+      "to": "test:pytest::tests/test_weak.py::test_weak",
+      "kind": "requires_test",
+      "sourceRefs": ["requirements/REQ-WEAK-001.yaml"]
+    },
+    {
+      "from": "risk:RISK-WEAK-001",
+      "to": "execution:test-weak-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-WEAK-001.yaml"]
+    }
+  ]
+}

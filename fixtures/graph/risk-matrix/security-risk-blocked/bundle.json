@@ -1,0 +1,34 @@
+{
+  "schema_version": "HATE/v1",
+  "requirements": [
+    {
+      "id": "REQ-SEC-001",
+      "status": "ready",
+      "sourceRefs": ["requirements/REQ-SEC-001.yaml"]
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-SEC-CRITICAL",
+      "severity": "critical",
+      "requirement_refs": ["REQ-SEC-001"],
+      "sourceRefs": ["risks/RISK-SEC-CRITICAL.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [
+    {
+      "record_id": "finding-sec-001",
+      "record_kind": "static_finding",
+      "sourceRef": "security/scanner.py#L1",
+      "payload": {
+        "severity": "critical",
+        "rule_id": "SEC-RULE-001",
+        "message": "Critical security vulnerability detected",
+        "risk_refs": ["RISK-SEC-CRITICAL"]
+      }
+    }
+  ],
+  "manual_reviews": [],
+  "edges": []
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/graph/risk-matrix/expired-risk-debt/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "243c75c966680048c5a9cf11a9a5645fecb8b91fb1e177e7504b7260e1aca95a",
+  "line_count": 15,
+  "size_bytes": 263,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

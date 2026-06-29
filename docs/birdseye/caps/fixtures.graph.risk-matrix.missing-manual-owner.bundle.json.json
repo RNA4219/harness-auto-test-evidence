@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/graph/risk-matrix/missing-manual-owner/bundle.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a52784a867fbd9c6ee6d3354b4efbae8d63dc4cc653f13afdd6090b174590266",
+  "line_count": 29,
+  "size_bytes": 630,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

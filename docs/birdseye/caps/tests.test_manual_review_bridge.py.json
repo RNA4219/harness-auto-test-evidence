@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_manual_review_bridge.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "42309c8ad25c33f552cc6706b4e587b34b73fa9a8ed3aab4f54f56df9f44639f",
+  "line_count": 237,
+  "size_bytes": 7930,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.evidence_graph",
+    "hate.manual_review_bridge",
+    "hate.risk_matrix",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evidence_graph.py",
+    "src/hate/manual_review_bridge.py",
+    "src/hate/risk_matrix.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

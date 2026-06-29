@@ -1,0 +1,29 @@
+{
+  "requirements": [],
+  "risks": [
+    {
+      "id": "RISK-MANUAL-001",
+      "severity": "medium",
+      "sourceRefs": ["risks/RISK-MANUAL-001.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [],
+  "manual_reviews": [
+    {
+      "id": "REVIEW-001",
+      "status": "approved",
+      "owner": "reviewer@example.com",
+      "expiry_date": "2027-06-29T00:00:00Z",
+      "sourceRefs": ["reviews/REVIEW-001.yaml"]
+    }
+  ],
+  "edges": [
+    {
+      "from": "risk:RISK-MANUAL-001",
+      "to": "manual_review:REVIEW-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-MANUAL-001.yaml"]
+    }
+  ]
+}

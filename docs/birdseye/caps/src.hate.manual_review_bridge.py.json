@@ -1,16 +1,16 @@
 {
-  "path": "src/hate/evidence_graph.py",
+  "path": "src/hate/manual_review_bridge.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "d93b12b3b58a1cad0ec5cd2dc29a4570c8eee434ef52631a6040921d75862a01",
-  "line_count": 221,
-  "size_bytes": 9604,
+  "sha256": "f3ab09709c427d0642e821398f2649c6ec76ebc94036645e5bcce3815963e358",
+  "line_count": 312,
+  "size_bytes": 12198,
   "headings": [],
   "imports": [
     ".evidence_envelope",
     "__future__",
     "dataclasses",
-    "hashlib",
+    "datetime",
     "typing"
   ],
   "links": [],
@@ -18,8 +18,8 @@
     "src/hate/evidence_envelope.py"
   ],
   "tags": [
-    "artifact",
     "coverage",
+    "fixture",
     "release",
     "test"
   ]

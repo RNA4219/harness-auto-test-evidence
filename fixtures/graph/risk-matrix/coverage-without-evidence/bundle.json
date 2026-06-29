@@ -1,0 +1,47 @@
+{
+  "schema_version": "HATE/v1",
+  "requirements": [
+    {
+      "id": "REQ-COVERAGE-001",
+      "status": "ready",
+      "sourceRefs": ["requirements/REQ-COVERAGE-001.yaml"]
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-COVERAGE-001",
+      "severity": "medium",
+      "requirement_refs": ["REQ-COVERAGE-001"],
+      "sourceRefs": ["risks/RISK-COVERAGE-001.yaml"]
+    }
+  ],
+  "claims": [],
+  "records": [
+    {
+      "record_id": "test-coverage-001",
+      "record_kind": "test_result",
+      "sourceRef": "tests/test_coverage.py#L1",
+      "payload": {
+        "canonical_test_id": "pytest::tests/test_coverage.py::test_coverage",
+        "status": "passed",
+        "has_assertions": false,
+        "requirement_refs": ["REQ-COVERAGE-001"]
+      }
+    }
+  ],
+  "manual_reviews": [],
+  "edges": [
+    {
+      "from": "requirement:REQ-COVERAGE-001",
+      "to": "test:pytest::tests/test_coverage.py::test_coverage",
+      "kind": "requires_test",
+      "sourceRefs": ["requirements/REQ-COVERAGE-001.yaml"]
+    },
+    {
+      "from": "risk:RISK-COVERAGE-001",
+      "to": "execution:test-coverage-001",
+      "kind": "blocked_by",
+      "sourceRefs": ["risks/RISK-COVERAGE-001.yaml"]
+    }
+  ]
+}
