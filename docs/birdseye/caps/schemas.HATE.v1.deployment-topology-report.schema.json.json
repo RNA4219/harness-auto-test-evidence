@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/deployment-topology-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "be6eb895454df26728974d87fdf014021600127d5eead0d7b99edd0096b0a659",
+  "line_count": 59,
+  "size_bytes": 1772,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

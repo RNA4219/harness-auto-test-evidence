@@ -17,6 +17,8 @@ SECRET_PATTERN = re.compile(
 PATH_PATTERN = re.compile(r"(?i)([A-Z]:\\Users\\|/home/|/Users/|\\\\[^\\]+\\)")
 REQUIRED_LOG_FIELDS = {"event_id", "level", "message", "correlation_id", "sourceRef"}
 RELEASE_METRICS = {"hard_dq_count", "soft_gap_count", "readiness_latency_ms"}
+REQUIRED_GAP_METRICS = {"job_duration_seconds"}
+REQUIRED_GAP_LOG_FIELDS = {"run_id"}
 
 
 @dataclass
@@ -27,6 +29,7 @@ class ObservabilityReport:
     overall_status: str
     logs: list[dict[str, Any]] = field(default_factory=list)
     metrics: list[dict[str, Any]] = field(default_factory=list)
+    spans: list[dict[str, Any]] = field(default_factory=list)
     alerts: list[dict[str, Any]] = field(default_factory=list)
     incidents: list[dict[str, Any]] = field(default_factory=list)
     findings: list[dict[str, Any]] = field(default_factory=list)
@@ -40,12 +43,14 @@ class ObservabilityReport:
             "overall_status": self.overall_status,
             "logs": self.logs,
             "metrics": self.metrics,
+            "spans": self.spans,
             "alerts": self.alerts,
             "incidents": self.incidents,
             "findings": self.findings,
             "summary": {
                 "log_count": len(self.logs),
                 "metric_count": len(self.metrics),
+                "span_count": len(self.spans),
                 "alert_count": len(self.alerts),
                 "incident_count": len(self.incidents),
                 "finding_count": len(self.findings),
@@ -65,19 +70,81 @@ def build_support_ops_report(data: dict[str, Any]) -> dict[str, Any]:
         profile=data.get("profile", "default"),
         report_id=report_id,
     )
+    spans, span_findings = validate_spans(data.get("spans", []), report_id)
     alerts, incidents, alert_findings = validate_alerts(data.get("alerts", []), metrics, report_id)
 
-    findings = log_findings + metric_findings + alert_findings
+    findings = log_findings + metric_findings + span_findings + alert_findings
     overall_status = _status_from_findings(findings)
     return ObservabilityReport(
         report_id=report_id,
         overall_status=overall_status,
         logs=logs,
         metrics=metrics,
+        spans=spans,
         alerts=alerts,
         incidents=incidents,
         findings=findings,
         sourceRefs=data.get("sourceRefs", []),
+    ).to_dict()
+
+
+def evaluate_observability_fixture(payload: dict[str, Any]) -> dict[str, str]:
+    """Evaluate the product gap observability fixture contract."""
+    data = payload.get("input", {})
+    report = build_observability_gap_report(data, payload.get("fixture_id", "observability-gap"))
+    finding_code = report["findings"][0]["code"] if report["findings"] else ""
+    return {
+        "status": report["overall_status"],
+        "finding_code": finding_code,
+        "readiness_effect": "hold" if report["overall_status"] == "hold" else "none",
+    }
+
+
+def build_observability_gap_report(data: dict[str, Any], report_id: str = "observability-gap") -> dict[str, Any]:
+    """Build the compact report used by HATE-GAP-010 closure fixtures."""
+    metric_names = _names_from_list(data.get("metrics", []))
+    log_fields = _names_from_list(data.get("logs", []))
+    spans_input = data.get("spans", [])
+    spans = _span_dicts_from_list(spans_input)
+    findings: list[dict[str, Any]] = []
+
+    missing_metrics = sorted(REQUIRED_GAP_METRICS - metric_names)
+    for metric_name in missing_metrics:
+        findings.append(_finding(
+            "observability_missing_metric",
+            "hold",
+            f"Required observability metric is missing: {metric_name}",
+            report_id,
+            f"metrics/{metric_name}",
+        ))
+
+    missing_log_fields = sorted(REQUIRED_GAP_LOG_FIELDS - log_fields)
+    for field_name in missing_log_fields:
+        findings.append(_finding(
+            "observability_missing_log_field",
+            "hold",
+            f"Required observability log field is missing: {field_name}",
+            report_id,
+            f"logs/{field_name}",
+        ))
+
+    if not spans:
+        findings.append(_finding(
+            "observability_missing_trace_span",
+            "hold",
+            "At least one trace span is required for run correlation.",
+            report_id,
+            "spans",
+        ))
+
+    return ObservabilityReport(
+        report_id=report_id,
+        overall_status=_status_from_findings(findings),
+        logs=[{"field": name, "status": "present"} for name in sorted(log_fields)],
+        metrics=[{"name": name, "status": "present"} for name in sorted(metric_names)],
+        spans=spans,
+        findings=findings,
+        sourceRefs=[f"fixtures/ops/observability/{report_id}/fixture.json"],
     ).to_dict()
 
 
@@ -156,6 +223,30 @@ def validate_metrics(
     return safe_metrics, findings
 
 
+def validate_spans(spans: list[dict[str, Any]] | list[str], report_id: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Validate trace span shape for support operations reporting."""
+    findings: list[dict[str, Any]] = []
+    safe_spans = _span_dicts_from_list(spans)
+    for index, span in enumerate(safe_spans):
+        if not span.get("name"):
+            findings.append(_finding(
+                "trace_span_missing_name",
+                "hold",
+                "Trace span is missing a name.",
+                report_id,
+                f"spans/{index}",
+            ))
+        if "duration_ms" in span and span["duration_ms"] < 0:
+            findings.append(_finding(
+                "trace_span_invalid_duration",
+                "hold",
+                "Trace span duration must be non-negative.",
+                report_id,
+                f"spans/{index}",
+            ))
+    return safe_spans, findings
+
+
 def validate_alerts(
     alerts: list[dict[str, Any]],
     metrics: list[dict[str, Any]],
@@ -218,6 +309,30 @@ def _redact_text(value: str) -> str:
     value = SECRET_PATTERN.sub("[REDACTED]", value)
     value = PATH_PATTERN.sub("[REDACTED_PATH]", value)
     return value
+
+
+def _names_from_list(items: list[Any]) -> set[str]:
+    names: set[str] = set()
+    for item in items:
+        if isinstance(item, str):
+            names.add(item)
+        elif isinstance(item, dict):
+            name = item.get("name") or item.get("field")
+            if isinstance(name, str):
+                names.add(name)
+    return names
+
+
+def _span_dicts_from_list(items: list[Any]) -> list[dict[str, Any]]:
+    spans: list[dict[str, Any]] = []
+    for index, item in enumerate(items):
+        if isinstance(item, str):
+            spans.append({"name": item, "status": "present", "sourceRef": f"spans/{index}"})
+        elif isinstance(item, dict):
+            span = dict(item)
+            span.setdefault("sourceRef", f"spans/{index}")
+            spans.append(span)
+    return spans
 
 
 def _finding(

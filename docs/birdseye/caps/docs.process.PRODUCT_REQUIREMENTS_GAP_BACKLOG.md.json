@@ -1,0 +1,30 @@
+{
+  "path": "docs/process/PRODUCT_REQUIREMENTS_GAP_BACKLOG.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "92afbee136bb055a8e022145845e4b580a3b7e8b80655fe96ca1a552da5d9f93",
+  "line_count": 159,
+  "size_bytes": 15100,
+  "headings": [
+    "# Product Requirements Gap Backlog",
+    "## 1. Gap Classes",
+    "## 2. Requirement Gaps Under Closure",
+    "## 3. Required New Specification Documents",
+    "## 3.1 Specification Closure Status",
+    "## 4. No-Go Rules",
+    "## 5. Current Assessment",
+    "## 6. Expansion Backlog"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/disaster-recovery-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "4533a14fcb5585b2c09248be255a4beaed567382caf67b91370d063a981720f6",
+  "line_count": 43,
+  "size_bytes": 1418,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

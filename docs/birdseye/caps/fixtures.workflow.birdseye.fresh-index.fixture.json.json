@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/workflow/birdseye/fresh-index/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1553f0fa79fd0f9a513db90f303d06ed06b410d2bc32ee15f825bf3295ec5581",
+  "line_count": 22,
+  "size_bytes": 588,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

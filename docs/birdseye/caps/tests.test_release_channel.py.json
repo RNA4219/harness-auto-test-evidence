@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_release_channel.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "b2a13f0e8c8a1f00c18bd7a629e48eb3536d991e0023dc8a27a7a5c815478fae",
+  "line_count": 149,
+  "size_bytes": 5193,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.release_channel",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/release_channel.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/evaluation/real-repo/baseline-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5fe0aad1e42d9e279e3c4f8ae339e3025d3d5c3dc2b7b8c396c4f9c05e83f37d",
+  "line_count": 11,
+  "size_bytes": 538,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

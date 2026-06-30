@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/workflow/plugin/cross-repo-valid/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "27c15de2d8bf24f6d5288a242daeba5d83a2d3b1f160908804d001a43222046c",
+  "line_count": 23,
+  "size_bytes": 656,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

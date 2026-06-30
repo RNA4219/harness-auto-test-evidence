@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_adapter_corpus_manifest.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "4db04ad6ccfd6feb1b3314815bdefcb63dd71a96aad94b33c3e998a7046bbfb0",
+  "line_count": 168,
+  "size_bytes": 6143,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hate.adapters",
+    "hate.adapters.corpus_manifest",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/adapters/corpus_manifest.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

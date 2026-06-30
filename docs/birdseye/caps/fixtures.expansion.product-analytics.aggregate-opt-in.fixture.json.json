@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/product-analytics/aggregate-opt-in/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6262860e9d56393867c128fff1c62b5dd4595b0ba089d4f140c4d457c696eea5",
+  "line_count": 29,
+  "size_bytes": 954,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

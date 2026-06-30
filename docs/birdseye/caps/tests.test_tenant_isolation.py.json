@@ -1,0 +1,29 @@
+{
+  "path": "tests/test_tenant_isolation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "fc442e2939ff78594b643ecf0eed3bd2b06b206217df01b5bc143e0001e4f0ab",
+  "line_count": 109,
+  "size_bytes": 4251,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.gap_closure",
+    "hate.tenant_isolation",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/gap_closure.py",
+    "src/hate/tenant_isolation.py"
+  ],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

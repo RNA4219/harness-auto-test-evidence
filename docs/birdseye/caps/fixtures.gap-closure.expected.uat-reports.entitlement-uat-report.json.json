@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/entitlement-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a6e68cc0ef00674bbb43f6c6e8b2c3b662559ecaf9025671f6f6b654045befb6",
+  "line_count": 34,
+  "size_bytes": 1151,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/family/junit-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a9ecd398646967370856c5145f8fead6f09e2dedd99c4b8a85f3f344aeb59dcf",
+  "line_count": 11,
+  "size_bytes": 483,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

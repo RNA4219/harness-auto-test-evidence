@@ -1,0 +1,25 @@
+{
+  "fixture_id": "consistent-evidence-pass",
+  "fixture_type": "positive",
+  "description": "Consistent evidence with no contradictions - should pass",
+  "input": {
+    "contradictions": [],
+    "blocking_effects": [],
+    "claim_impacts": [],
+    "pass_status_with_critical": false,
+    "critical_finding_present": false,
+    "coverage_mutation_aligned": true,
+    "contract_schema_aligned": true,
+    "confidence": 0.95,
+    "limits": {
+      "confidence_threshold": 0.7,
+      "max_contradictions": 50,
+      "max_blocking_effects": 20
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "finding_code": "",
+    "readiness_effect": "none"
+  }
+}

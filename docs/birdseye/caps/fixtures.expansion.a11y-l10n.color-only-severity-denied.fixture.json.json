@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/a11y-l10n/color-only-severity-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ee8a3bc456aa8b3af67b58030cff024a5b456f3cff04347601a83a8da0e2eb93",
+  "line_count": 31,
+  "size_bytes": 1003,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

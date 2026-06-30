@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/rate-limit/missing-tenant-scope/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "abaf11c8d770d361eddf2fb82dc14a93efa64a890779a3971bd5c56c415d706e",
+  "line_count": 24,
+  "size_bytes": 672,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

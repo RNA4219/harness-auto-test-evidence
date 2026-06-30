@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/rate-limit/burst-within-quota/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4a74050930eea6f9e5cbe5ccb417fa37e8a7aab6ea29b8fda9d80f20fd2b62f4",
+  "line_count": 11,
+  "size_bytes": 460,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

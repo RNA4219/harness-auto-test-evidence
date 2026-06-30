@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/scale/benchmark_catalog.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "625eefad5bd0e6f5ffe7c452037c24f13563522c50c5357854a9100465a37246",
+  "line_count": 141,
+  "size_bytes": 7149,
+  "headings": [],
+  "imports": [
+    ".performance_budget",
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/scale/performance_budget.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

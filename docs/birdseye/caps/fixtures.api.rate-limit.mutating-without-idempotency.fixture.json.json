@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/rate-limit/mutating-without-idempotency/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "da1afbe6d09dbb0471cf3c83c1907b6af79385b2616554717f95d065e5f7c22e",
+  "line_count": 29,
+  "size_bytes": 812,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

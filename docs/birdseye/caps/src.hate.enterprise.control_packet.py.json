@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/enterprise/control_packet.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1b2fef5db437be0668d4eb747e135a9815a4e0daac3a542acae89ed234b5e635",
+  "line_count": 213,
+  "size_bytes": 7908,
+  "headings": [],
+  "imports": [
+    ".audit",
+    ".rbac",
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/enterprise/audit.py",
+    "src/hate/enterprise/rbac.py"
+  ],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "release"
+  ]
+}

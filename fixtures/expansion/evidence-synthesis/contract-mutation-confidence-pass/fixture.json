@@ -1,0 +1,65 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-evidence-synthesis-contract-mutation-confidence-pass",
+  "gap_id": "HATE-GAP-053",
+  "packet_id": "HATE-PKT-EXP-027-evidence-synthesis",
+  "case_kind": "positive",
+  "input": {
+    "evidence_sources": [
+      {
+        "source_id": "es-001",
+        "source_type": "mutation",
+        "target_requirement": "req-correctness",
+        "confidence": 0.95,
+        "sourceRef": "evidence:es-001",
+        "rationale": "Strong mutation evidence source",
+        "verified": true
+      },
+      {
+        "source_id": "es-002",
+        "source_type": "contract",
+        "target_requirement": "req-correctness",
+        "confidence": 0.92,
+        "sourceRef": "evidence:es-002",
+        "rationale": "Strong contract evidence source",
+        "verified": true
+      }
+    ],
+    "mutation_coverage": [
+      {
+        "mutation_id": "mc-001",
+        "mutation_type": "operator",
+        "killed": true,
+        "confidence": 0.95,
+        "sourceRef": "mutation:mc-001",
+        "rationale": "Mutation killed by test"
+      }
+    ],
+    "contract_coverage": [
+      {
+        "contract_id": "cc-001",
+        "contract_type": "postcondition",
+        "satisfied": true,
+        "confidence": 0.92,
+        "sourceRef": "contract:cc-001",
+        "rationale": "Contract satisfied by test"
+      }
+    ],
+    "analysis_scope": "full",
+    "input_refs": ["evidence:es-001"],
+    "confidence": 0.94,
+    "limits": {
+      "max_evidence_sources": 100,
+      "max_mutation_coverage": 1000,
+      "max_contract_coverage": 100,
+      "confidence_threshold": 0.7
+    },
+    "mutation_evidence_available": true,
+    "contract_evidence_available": true,
+    "strong_evidence_threshold": 0.8
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_data_classification.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "8373166dc19ebce07bb53da3b34e76922c13710c72832fdfa89813a2181eb77e",
+  "line_count": 131,
+  "size_bytes": 4935,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.data_classification",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/data_classification.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

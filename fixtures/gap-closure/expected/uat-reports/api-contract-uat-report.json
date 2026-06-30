@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "gap-closure-uat-report",
+  "report_id": "api-contract-uat-report",
+  "source_version": "gap026-implemented",
+  "status": "implemented",
+  "decision": "awaiting_acceptance",
+  "readiness_effect": "none",
+  "gap_ids": [
+    "HATE-GAP-009"
+  ],
+  "task_seed_ids": [
+    "TASK-HATE-GAP-009"
+  ],
+  "acceptance_ids": [
+    "AC-HATE-GAP-009"
+  ],
+  "fixture_refs": [
+    "fixtures/api/contract/authz-leak-denied/fixture.json",
+    "fixtures/api/contract/paginated-evidence/fixture.json"
+  ],
+  "behavior_checked_count": 2,
+  "findings": [],
+  "sourceRefs": [
+    "fixtures/api/contract/authz-leak-denied/fixture.json",
+    "fixtures/api/contract/paginated-evidence/fixture.json"
+  ]
+}

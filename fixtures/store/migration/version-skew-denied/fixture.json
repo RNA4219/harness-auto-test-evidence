@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "store-migration-version-skew-denied",
+  "gap_id": "HATE-GAP-006",
+  "packet_id": "HATE-PKT-STORE-001-migration-rebuild",
+  "task_seed_id": "TASK-HATE-GAP-006",
+  "acceptance_id": "AC-HATE-GAP-006",
+  "case_kind": "negative",
+  "input": {
+    "from_schema": "HATE/v2.0",
+    "to_schema": "HATE/v1.1",
+    "compatibility_class": "unsupported",
+    "migration_guide_ref": null,
+    "rollback_plan_ref": null
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "store_schema_version_unsupported",
+    "readiness_effect": "hold",
+    "uat_report": "store-migration-uat-report.json"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_requirements_to_spec_gap_audit.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "0b0f624c2a11f78007fd8c1180b638df76a294ce70ff369a35bc9c1146251355",
+  "line_count": 93,
+  "size_bytes": 2864,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-oracle-classification-property-oracle-pass",
+  "gap_id": "HATE-GAP-052",
+  "packet_id": "HATE-PKT-EXP-026-oracle-classification",
+  "case_kind": "positive",
+  "input": {
+    "oracle_classes": [
+      {
+        "oracle_id": "oc-001",
+        "oracle_type": "property",
+        "target_risk": "risk-correctness",
+        "confidence": 0.95,
+        "sourceRef": "oracle:oc-001",
+        "rationale": "Property-based oracle for correctness risk",
+        "verified": true
+      }
+    ],
+    "semantic_guards": [
+      {
+        "guard_id": "sg-001",
+        "guard_type": "behavioral",
+        "target_behavior": "expected_state",
+        "confidence": 0.92,
+        "sourceRef": "guard:sg-001",
+        "rationale": "Behavioral semantic guard for expected state",
+        "verified": true
+      }
+    ],
+    "no_oracle_risks": [
+      {
+        "risk_id": "nor-001",
+        "risk_type": "edge_case",
+        "severity": "low",
+        "confidence": 0.95,
+        "sourceRef": "risk:nor-001",
+        "rationale": "Low severity edge case risk without oracle",
+        "mitigated": true
+      }
+    ],
+    "analysis_scope": "full",
+    "input_refs": ["oracle:oc-001"],
+    "confidence": 0.94,
+    "limits": {
+      "max_oracle_classes": 100,
+      "max_semantic_guards": 100,
+      "max_no_oracle_risks": 100,
+      "confidence_threshold": 0.7
+    },
+    "oracle_taxonomy_available": true,
+    "semantic_guard_available": true,
+    "critical_risk_coverage_available": true
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/store-migration-report.schema.json",
+  "title": "Store Migration Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "migration_id",
+    "from_schema",
+    "to_schema",
+    "compatibility_class",
+    "lifecycle_state",
+    "source_bundle_hash_before",
+    "source_bundle_hash_after",
+    "derived_store_hash_before",
+    "derived_store_hash_after",
+    "backup_manifest_ref",
+    "rollback_report_ref",
+    "replay_verification_ref",
+    "repair_artifact_ref",
+    "index_state",
+    "index_rebuild_checkpoints",
+    "findings",
+    "status",
+    "readiness_effect",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "record_type": { "const": "store-migration-report" },
+    "migration_id": { "type": "string", "minLength": 1 },
+    "from_schema": { "type": "string", "minLength": 1 },
+    "to_schema": { "type": "string", "minLength": 1 },
+    "compatibility_class": {
+      "enum": ["compatible", "migration_required", "unsupported", "blocked"]
+    },
+    "lifecycle_state": {
+      "enum": [
+        "planned",
+        "dry_run",
+        "backup_created",
+        "migrating",
+        "verifying",
+        "complete",
+        "blocked",
+        "rollback",
+        "restored",
+        "failed"
+      ]
+    },
+    "source_bundle_hash_before": { "type": "string" },
+    "source_bundle_hash_after": { "type": "string" },
+    "derived_store_hash_before": { "type": "string" },
+    "derived_store_hash_after": { "type": "string" },
+    "backup_manifest_ref": { "type": "string" },
+    "rollback_report_ref": { "type": "string" },
+    "replay_verification_ref": { "type": "string" },
+    "repair_artifact_ref": { "type": "string" },
+    "index_state": { "type": "string", "minLength": 1 },
+    "index_rebuild_checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sequence", "input_hash", "output_hash", "expected_output_hash", "record_count", "sourceRef"],
+        "properties": {
+          "sequence": { "type": "integer", "minimum": 0 },
+          "input_hash": { "type": "string" },
+          "output_hash": { "type": "string" },
+          "expected_output_hash": { "type": "string" },
+          "record_count": { "type": "integer", "minimum": 0 },
+          "sourceRef": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {
+            "enum": [
+              "store_canonical_hash_changed",
+              "store_index_corrupt_rebuild_required",
+              "store_index_rebuild_hash_mismatch",
+              "store_index_partial_marked_fresh",
+              "store_rollback_report_required",
+              "store_rollback_hash_mismatch",
+              "store_rollback_legal_hold_lost",
+              "store_schema_version_unsupported",
+              "store_replay_verification_missing"
+            ]
+          },
+          "severity": { "enum": ["low", "medium", "high", "critical"] },
+          "message": { "type": "string", "minLength": 1 },
+          "sourceRef": { "type": "string", "minLength": 1 },
+          "readiness_effect": { "enum": ["none", "soft_gap", "hold"] }
+        }
+      }
+    },
+    "status": { "enum": ["pass", "hold"] },
+    "readiness_effect": { "enum": ["none", "hold"] },
+    "sourceRefs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}

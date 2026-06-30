@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/rate-limit/abuse-burst-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d4f4fb54af442cdf3ea0b3cc517960dba433566e8150e6be71759d92c7340590",
+  "line_count": 30,
+  "size_bytes": 820,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

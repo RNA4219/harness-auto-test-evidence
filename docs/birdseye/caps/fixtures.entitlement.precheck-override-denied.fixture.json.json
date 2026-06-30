@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/entitlement/precheck-override-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f89302923f56887cdd152c2a8e29b81975fd9e9ef3e5bc14bff62c9795ac3e60",
+  "line_count": 22,
+  "size_bytes": 647,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

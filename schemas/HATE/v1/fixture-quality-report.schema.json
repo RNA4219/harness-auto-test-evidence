@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/fixture-quality-report.schema.json",
+  "title": "HATE Fixture Quality Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "analysis_scope",
+    "fixture_quality_config",
+    "findings",
+    "summary",
+    "fixture_findings",
+    "corpus_scope",
+    "schema_drift",
+    "input_refs",
+    "confidence",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "fixture-quality-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
+    "analysis_scope": {"type": "string"},
+    "fixture_quality_config": {
+      "type": "object",
+      "required": ["fixture_findings", "corpus_scope", "schema_drift"],
+      "properties": {
+        "fixture_findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["fixture_id", "fixture_type", "quality_metrics", "sourceRef"],
+            "properties": {
+              "fixture_id": {"type": "string"},
+              "fixture_type": {"type": "string", "enum": ["positive", "negative"]},
+              "quality_metrics": {
+                "type": "object",
+                "properties": {
+                  "coverage": {"type": "number", "minimum": 0, "maximum": 1},
+                  "completeness": {"type": "number", "minimum": 0, "maximum": 1},
+                  "consistency": {"type": "number", "minimum": 0, "maximum": 1}
+                },
+                "additionalProperties": true
+              },
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "corpus_scope": {
+          "type": "object",
+          "required": ["corpus_id", "fixture_count"],
+          "properties": {
+            "corpus_id": {"type": "string"},
+            "fixture_count": {"type": "integer", "minimum": 0},
+            "coverage_target": {"type": "number", "minimum": 0, "maximum": 1},
+            "completeness_baseline": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "additionalProperties": true
+        },
+        "schema_drift": {
+          "type": "object",
+          "required": ["drift_detected"],
+          "properties": {
+            "drift_detected": {"type": "boolean"},
+            "schema_version": {"type": "string"},
+            "baseline_version": {"type": "string"},
+            "drift_fields": {"type": "array", "items": {"type": "string"}}
+          },
+          "additionalProperties": true
+        },
+        "fixture_name_behavior_coupled": {"type": "boolean"},
+        "expected_output_exposed": {"type": "boolean"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "input_refs": {"type": "array", "items": {"type": "string"}},
+        "limits": {
+          "type": "object",
+          "required": ["confidence_threshold", "max_fixture_findings", "coverage_threshold"],
+          "properties": {
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+            "max_fixture_findings": {"type": "integer", "minimum": 0},
+            "coverage_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold", "blocked"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["fixture_finding_count", "corpus_fixture_count", "schema_drift_detected", "confidence", "finding_count"],
+      "properties": {
+        "fixture_finding_count": {"type": "integer", "minimum": 0},
+        "corpus_fixture_count": {"type": "integer", "minimum": 0},
+        "schema_drift_detected": {"type": "boolean"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "fixture_findings": {"type": "array", "items": {"type": "object"}},
+    "corpus_scope": {"type": "object"},
+    "schema_drift": {"type": "object"},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limits": {
+      "type": "object",
+      "required": ["confidence_threshold", "max_fixture_findings", "coverage_threshold"],
+      "properties": {
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "max_fixture_findings": {"type": "integer", "minimum": 0},
+        "coverage_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

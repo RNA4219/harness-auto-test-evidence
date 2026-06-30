@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/expansion/a11y_l10n.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "a68247812937f2c534e93b76c4f68f15f6621b135ac0a5fae81fd0c241b416b3",
+  "line_count": 156,
+  "size_bytes": 6146,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

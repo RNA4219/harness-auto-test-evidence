@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-docs-lifecycle-stale-claim-denied",
+  "gap_id": "HATE-GAP-033",
+  "packet_id": "HATE-PKT-EXP-007-docs-lifecycle",
+  "task_seed_id": "TASK-HATE-GAP-033",
+  "acceptance_id": "AC-HATE-GAP-033",
+  "case_kind": "negative",
+  "input": {
+    "lifecycle_config": {
+      "required_docs_defined": true,
+      "version_binding_enforced": true,
+      "broken_ref_detection_enabled": true,
+      "stale_doc_max_age_days": 90,
+      "required_docs": ["getting-started.md", "api-reference.md"],
+      "doc_claim_stale": true,
+      "doc_age_days": 120,
+      "broken_refs": [],
+      "version_bound": true
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "docs_lifecycle_stale_claim_denied",
+    "readiness_effect": "hold",
+    "uat_report": "docs-lifecycle-uat-report.json"
+  }
+}

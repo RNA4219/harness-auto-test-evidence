@@ -2,9 +2,9 @@
   "path": "src/hate/support_ops/diagnostics.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "2198576956e9d7deefa4ba4e68973de7f4f9615029951f9f573cb14dbc408564",
-  "line_count": 297,
-  "size_bytes": 12302,
+  "sha256": "7918ceb33c93210fb75c7b798a7c88e874e6ed3f71f912d682366efd93434147",
+  "line_count": 360,
+  "size_bytes": 14978,
   "headings": [],
   "imports": [
     "__future__",

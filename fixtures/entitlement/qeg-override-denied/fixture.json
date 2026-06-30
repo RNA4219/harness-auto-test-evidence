@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "entitlement-qeg-override-denied",
+  "gap_id": "HATE-GAP-004",
+  "packet_id": "HATE-PKT-COM-001-entitlement",
+  "task_seed_id": "TASK-HATE-GAP-004",
+  "acceptance_id": "AC-HATE-GAP-004",
+  "case_kind": "negative",
+  "input": {
+    "plan": "regulated",
+    "feature": "attestation_metadata",
+    "mode": "regulated",
+    "precheck_decision_override": false,
+    "qeg_verdict_override": true
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "entitlement_qeg_override_denied",
+    "readiness_effect": "hold",
+    "uat_report": "entitlement-uat-report.json"
+  }
+}

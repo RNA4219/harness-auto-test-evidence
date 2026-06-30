@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/worker-runtime-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "25e39e8d02783d78bb271b5823833069cc03479a49d1205478b2ef25de597d05",
+  "line_count": 108,
+  "size_bytes": 3199,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

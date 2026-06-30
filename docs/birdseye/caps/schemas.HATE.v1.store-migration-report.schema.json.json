@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/store-migration-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "0caac7ccc8866c56be9b9df2281a36afb88e194f6626348350aa82d5712f9ea3",
+  "line_count": 112,
+  "size_bytes": 3781,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

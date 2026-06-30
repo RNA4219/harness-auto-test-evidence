@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-evidence-command-recorded",
+  "gap_id": "HATE-GAP-023",
+  "packet_id": "HATE-PKT-WF-003-evidence-protocol",
+  "task_seed_id": "TASK-HATE-GAP-023",
+  "acceptance_id": "AC-HATE-GAP-023",
+  "case_kind": "positive",
+  "input": {
+    "evidence": {
+      "evidence_id": "ev_command_001",
+      "evidence_class": "command_execution",
+      "source_tool": "Codex",
+      "command_or_action": "uv run pytest tests/test_gap_closure_docs.py -q",
+      "exit_status": 0,
+      "artifact_refs": ["docs/acceptance/HATE_GAP_CLOSURE_ACCEPTANCE.md"],
+      "hashes": {"docs/acceptance/HATE_GAP_CLOSURE_ACCEPTANCE.md": "sha256:fixture"},
+      "decision_or_status": "passed",
+      "timestamp": "2026-06-30T00:00:00Z",
+      "sourceRefs": ["WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md#evidence-protocol"]
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "workflow-evidence-uat-report.json"
+  }
+}

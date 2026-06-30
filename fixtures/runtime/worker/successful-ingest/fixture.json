@@ -1,0 +1,14 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "runtime-worker-successful-ingest",
+  "gap_id": "HATE-GAP-001",
+  "packet_id": "HATE-PKT-RUNTIME-001-worker-runtime",
+  "task_seed_id": "TASK-HATE-GAP-001",
+  "acceptance_id": "AC-HATE-GAP-001",
+  "case_kind": "positive",
+  "input": {
+    "job": {"status": "queued", "idempotency_key": "idem-001"},
+    "worker_events": ["leased", "running", "succeeded"]
+  },
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "runtime-worker-uat-report.json"}
+}

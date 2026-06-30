@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/tenant-isolation-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "5e48c79cb48250ad46e3079e4ff0608726aa858220b9a3e8a9c8e571605e07d9",
+  "line_count": 62,
+  "size_bytes": 1874,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

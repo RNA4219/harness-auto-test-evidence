@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/dependency-compliance-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "5c3888f36aebb11e7baff471e50718ea9dc103ee5eb3ae2d86b4f4a42a143123",
+  "line_count": 43,
+  "size_bytes": 1446,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

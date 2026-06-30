@@ -1,0 +1,47 @@
+{
+  "fixture_id": "pass-with-critical-finding-blocked",
+  "fixture_type": "negative",
+  "description": "Pass status with critical finding present - should hold",
+  "input": {
+    "contradictions": [
+      {
+        "contradiction_id": "contr-1",
+        "contradiction_type": "verdict_mismatch",
+        "severity": "critical",
+        "sourceRef": "contr:1",
+        "rationale": "Pass verdict contradicts critical finding"
+      }
+    ],
+    "blocking_effects": [
+      {
+        "effect_id": "eff-1",
+        "effect_type": "verdict_override",
+        "blocked_claim": "claim-1",
+        "sourceRef": "eff:1"
+      }
+    ],
+    "claim_impacts": [
+      {
+        "claim_id": "claim-1",
+        "impact_type": "verdict_blocked",
+        "impact_severity": "high",
+        "sourceRef": "claim:1"
+      }
+    ],
+    "pass_status_with_critical": true,
+    "critical_finding_present": true,
+    "coverage_mutation_aligned": true,
+    "contract_schema_aligned": true,
+    "confidence": 0.95,
+    "limits": {
+      "confidence_threshold": 0.7,
+      "max_contradictions": 50,
+      "max_blocking_effects": 20
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "contradiction_pass_with_critical_finding_blocked",
+    "readiness_effect": "hold"
+  }
+}

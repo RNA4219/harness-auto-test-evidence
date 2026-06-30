@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/bulk-portability/cross-tenant-import-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b8e6bab0a3f9624eb119c74cad07e3a48f6236b3bf85709ab6e8447b40aa04c2",
+  "line_count": 27,
+  "size_bytes": 863,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

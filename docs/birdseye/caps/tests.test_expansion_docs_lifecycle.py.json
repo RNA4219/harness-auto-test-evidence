@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_expansion_docs_lifecycle.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "feb967103641b46c4f0c8cbbc79b943f63f1954012a62616b5014259fc56cec5",
+  "line_count": 131,
+  "size_bytes": 4627,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.docs_lifecycle",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/docs_lifecycle.py"
+  ],
+  "tags": [
+    "api",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

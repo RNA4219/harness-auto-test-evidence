@@ -34,9 +34,11 @@ next_review_due: 2026-07-28
 
 直近の確認済み baseline:
 
-- `uv run pytest -q`: 75 tests pass
-- `uv run python -m compileall src tests`: pass
-- UAT: HATE-P0A-001 / HATE-P0A-002 / HATE-P0A-003 / HATE-P0A-004 / HATE-P0A-005 / HATE-P0A-006 / HATE-P0A-007 / HATE-P0B-001 / HATE-P0B-002 / HATE-P0B-003 / HATE-P0B-004 / HATE-P0B-005 / HATE-P0B-006 は CLI 黒箱シナリオで pass
+- `uv run pytest -q`: 1046 tests pass
+- `uv run python -m compileall src tests tools`: pass
+- `git diff --check`: pass
+- Gap closure expected report: HATE-GAP-001..026 are `implemented`, `hold_count=0`, `checker_ready_count=0`
+- Birdseye: 966 nodes / 313 edges
 
 完了済み:
 
@@ -47,6 +49,7 @@ next_review_due: 2026-07-28
 - [x] HATE-P0A-005 artifact safety engine
 - [x] HATE-P0A-006 JSON Schema validation
 - [x] HATE-P0A-007 profile-aware precheck
+- [x] HATE-GAP-001..026 product requirement gap closure implementation
 
 実装済みだが後続 hardening 対象:
 

@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_a11y_l10n.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "e2a371f8852ac4e897932a94edb32399ae9018e3f89b8b4684afbd13e12c0240",
+  "line_count": 158,
+  "size_bytes": 5612,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.a11y_l10n",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/a11y_l10n.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

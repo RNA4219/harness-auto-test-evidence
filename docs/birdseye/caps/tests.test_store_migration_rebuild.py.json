@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_store_migration_rebuild.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "a114eefeecf673c5db0b33e36d15e9dea1f4964a7416d19a32cb2b92f0874f1a",
+  "line_count": 171,
+  "size_bytes": 6913,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

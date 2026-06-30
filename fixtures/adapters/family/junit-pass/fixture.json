@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "adapters-family-junit-pass",
+  "gap_id": "HATE-GAP-014",
+  "packet_id": "HATE-PKT-ADAPTER-001-family-packets",
+  "task_seed_id": "TASK-HATE-GAP-014",
+  "acceptance_id": "AC-HATE-GAP-014",
+  "case_kind": "positive",
+  "input": {"adapter_family": "test-results", "dialect": "junit", "malformed": false},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "adapter-family-uat-report.json"}
+}

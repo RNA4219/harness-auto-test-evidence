@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_expansion_disaster_recovery.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "2a8c9c11d7c7c8c71fc27a15749415969a43d03c7f3dffc4f1034decd4128ce9",
+  "line_count": 143,
+  "size_bytes": 5156,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.disaster_recovery",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/disaster_recovery.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

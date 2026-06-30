@@ -24,6 +24,17 @@ next_review_due: 2026-07-28
 `IMPLEMENTATION_TASK_BREAKDOWN.md` の実装タスクへ落ち、コード、schema、fixture、
 test、docs の5点が揃って初めて完了扱いにする。
 
+ただし、本書の存在は「50万〜100万行級の製品実装に必要な全要件が
+未仕様ゼロで閉じた」ことを意味しない。未仕様、浅い仕様、実装packet不足、
+fixture不足、runtime/operational不足は `PRODUCT_REQUIREMENTS_GAP_BACKLOG.md`
+で管理し、同backlogが閉じるまで product-scale full implementation ready とは
+主張しない。
+
+発見済みgapの実装packet化は `PRODUCT_REQUIREMENTS_GAP_CLOSURE_PACKETS.md` を
+正本とする。workflow-cookbook 由来の Task Seed / Acceptance / Evidence /
+Birdseye freshness / completion governance は
+`WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md` を正本とする。
+
 ## 2. 不足解消ステータス
 
 | 領域 | 既存の不足 | 本書で固定する解消内容 | 実装完了条件 |

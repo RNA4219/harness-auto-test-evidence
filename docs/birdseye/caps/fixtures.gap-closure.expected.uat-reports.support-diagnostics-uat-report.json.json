@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/support-diagnostics-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "04669c4bd2077cbc10bce56270275b2b1af10653f847a5ccc3ef536547d0a565",
+  "line_count": 28,
+  "size_bytes": 779,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

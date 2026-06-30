@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_self_hosted.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "630cfdd8009fe637b48e7463f871d0eeccc7b22bdfd1a49a31f901fcf2370058",
+  "line_count": 117,
+  "size_bytes": 4213,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.self_hosted",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/self_hosted.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

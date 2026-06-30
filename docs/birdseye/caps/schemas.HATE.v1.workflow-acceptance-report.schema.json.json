@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/workflow-acceptance-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "7eb7190f963d53d19296a70ba9c0fd4d9b91d5b0ff9354a789ef652aaa2b6e08",
+  "line_count": 47,
+  "size_bytes": 1537,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "workflow"
+  ]
+}

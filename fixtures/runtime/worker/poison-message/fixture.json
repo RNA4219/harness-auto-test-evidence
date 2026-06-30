@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "runtime-worker-poison-message",
+  "gap_id": "HATE-GAP-001",
+  "packet_id": "HATE-PKT-RUNTIME-001-worker-runtime",
+  "task_seed_id": "TASK-HATE-GAP-001",
+  "acceptance_id": "AC-HATE-GAP-001",
+  "case_kind": "negative",
+  "input": {"job": {"status": "running"}, "error_class": "invariant_violation"},
+  "expected": {"status": "hold", "finding_code": "worker_poison_message", "readiness_effect": "hold", "uat_report": "runtime-worker-uat-report.json"}
+}

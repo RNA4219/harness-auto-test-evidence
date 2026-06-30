@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/dependency-compliance/sbom-clean/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "aab8ad64354053ca481eae4fbe9ff00b2c07920b90b99e433a4bacbad1f80d6d",
+  "line_count": 36,
+  "size_bytes": 1086,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/workflow/acceptance/done-linked/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f0c0d9bc63e7c6c7d552822e430ec421e75b871985c234424334fc7b68fbacc7",
+  "line_count": 22,
+  "size_bytes": 654,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/bulk-portability-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "385ec05804b233319f37d78c89a8f2d5ea2398850c61817d31c8277c183205ba",
+  "line_count": 43,
+  "size_bytes": 1434,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

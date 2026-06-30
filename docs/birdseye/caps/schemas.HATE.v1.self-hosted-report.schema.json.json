@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/self-hosted-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "678b194df28edf6b673576a06bac9b3d36adf8a97ffc0b223593ed59ae39c05a",
+  "line_count": 43,
+  "size_bytes": 1419,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

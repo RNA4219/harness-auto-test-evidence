@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/evidence-synthesis-report.schema.json",
+  "title": "HATE Evidence Synthesis Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "synthesis_config",
+    "findings",
+    "summary",
+    "analysis_scope",
+    "input_refs",
+    "confidence",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "evidence-synthesis-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
+    "synthesis_config": {
+      "type": "object",
+      "required": ["evidence_sources", "mutation_coverage", "contract_coverage"],
+      "properties": {
+        "evidence_sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "source_type", "target_requirement", "confidence", "sourceRef", "rationale", "verified"],
+            "properties": {
+              "source_id": {"type": "string"},
+              "source_type": {"type": "string"},
+              "target_requirement": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"},
+              "verified": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "mutation_coverage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["mutation_id", "mutation_type", "killed", "confidence", "sourceRef", "rationale"],
+            "properties": {
+              "mutation_id": {"type": "string"},
+              "mutation_type": {"type": "string"},
+              "killed": {"type": "boolean"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "contract_coverage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["contract_id", "contract_type", "satisfied", "confidence", "sourceRef", "rationale"],
+            "properties": {
+              "contract_id": {"type": "string"},
+              "contract_type": {"type": "string"},
+              "satisfied": {"type": "boolean"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "analysis_scope": {"type": "string"},
+        "input_refs": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "limits": {
+          "type": "object",
+          "required": ["max_evidence_sources", "max_mutation_coverage", "max_contract_coverage", "confidence_threshold"],
+          "properties": {
+            "max_evidence_sources": {"type": "integer", "minimum": 0},
+            "max_mutation_coverage": {"type": "integer", "minimum": 0},
+            "max_contract_coverage": {"type": "integer", "minimum": 0},
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "additionalProperties": true
+        },
+        "mutation_evidence_available": {"type": "boolean"},
+        "contract_evidence_available": {"type": "boolean"},
+        "strong_evidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold", "blocked"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["evidence_source_count", "mutation_coverage_count", "contract_coverage_count", "confidence", "finding_count"],
+      "properties": {
+        "evidence_source_count": {"type": "integer", "minimum": 0},
+        "mutation_coverage_count": {"type": "integer", "minimum": 0},
+        "contract_coverage_count": {"type": "integer", "minimum": 0},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "analysis_scope": {"type": "string"},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limits": {
+      "type": "object",
+      "required": ["max_evidence_sources", "max_mutation_coverage", "max_contract_coverage", "confidence_threshold"],
+      "properties": {
+        "max_evidence_sources": {"type": "integer", "minimum": 0},
+        "max_mutation_coverage": {"type": "integer", "minimum": 0},
+        "max_contract_coverage": {"type": "integer", "minimum": 0},
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

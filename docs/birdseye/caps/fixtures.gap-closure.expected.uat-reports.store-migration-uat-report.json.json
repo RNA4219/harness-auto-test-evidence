@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/store-migration-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "04727687d289b794e1a9d40bc51457c532900b97bd356fa68c85d370a3689213",
+  "line_count": 36,
+  "size_bytes": 1321,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

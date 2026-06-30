@@ -1,0 +1,27 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-plugin-task-acceptance-drift",
+  "gap_id": "HATE-GAP-025",
+  "packet_id": "HATE-PKT-WF-005-plugin-integration",
+  "task_seed_id": "TASK-HATE-GAP-025",
+  "acceptance_id": "AC-HATE-GAP-025",
+  "case_kind": "negative",
+  "input": {
+    "plugin_config": {
+      "repositories": ["harness-auto-test-evidence", "workflow-cookbook"],
+      "task_sync": true,
+      "acceptance_sync": true,
+      "docs_stale_check": true,
+      "schema_valid": true
+    },
+    "sync_result": {
+      "done_tasks_without_acceptance": ["TASK-HATE-GAP-025"]
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "workflow_task_acceptance_drift",
+    "readiness_effect": "hold",
+    "uat_report": "workflow-plugin-uat-report.json"
+  }
+}

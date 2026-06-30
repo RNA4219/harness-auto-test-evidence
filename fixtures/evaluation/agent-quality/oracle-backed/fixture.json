@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "evaluation-agent-quality-oracle-backed",
+  "gap_id": "HATE-GAP-013",
+  "packet_id": "HATE-PKT-EVAL-002-agent-quality",
+  "task_seed_id": "TASK-HATE-GAP-013",
+  "acceptance_id": "AC-HATE-GAP-013",
+  "case_kind": "positive",
+  "input": {"agent_output": {"oracle_refs": ["contract_check"], "reviewer_decision": "pass"}},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "agent-quality-uat-report.json"}
+}

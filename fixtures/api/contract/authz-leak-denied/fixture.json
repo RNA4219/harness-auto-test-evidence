@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "api-contract-authz-leak-denied",
+  "gap_id": "HATE-GAP-009",
+  "packet_id": "HATE-PKT-API-002-contract-depth",
+  "task_seed_id": "TASK-HATE-GAP-009",
+  "acceptance_id": "AC-HATE-GAP-009",
+  "case_kind": "negative",
+  "input": {"endpoint": "/v1/artifacts", "authz": "denied", "raw_path_requested": true},
+  "expected": {"status": "hold", "finding_code": "api_authz_leak_denied", "readiness_effect": "hold", "uat_report": "api-contract-uat-report.json"}
+}

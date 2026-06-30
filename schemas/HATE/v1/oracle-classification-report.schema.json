@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/oracle-classification-report.schema.json",
+  "title": "HATE Oracle Classification Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "oracle_config",
+    "findings",
+    "summary",
+    "analysis_scope",
+    "input_refs",
+    "confidence",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "oracle-classification-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
+    "oracle_config": {
+      "type": "object",
+      "required": ["oracle_classes", "semantic_guards", "no_oracle_risks"],
+      "properties": {
+        "oracle_classes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["oracle_id", "oracle_type", "target_risk", "confidence", "sourceRef", "rationale", "verified"],
+            "properties": {
+              "oracle_id": {"type": "string"},
+              "oracle_type": {"type": "string"},
+              "target_risk": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"},
+              "verified": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "semantic_guards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["guard_id", "guard_type", "target_behavior", "confidence", "sourceRef", "rationale", "verified"],
+            "properties": {
+              "guard_id": {"type": "string"},
+              "guard_type": {"type": "string"},
+              "target_behavior": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"},
+              "verified": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "no_oracle_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["risk_id", "risk_type", "severity", "confidence", "sourceRef", "rationale", "mitigated"],
+            "properties": {
+              "risk_id": {"type": "string"},
+              "risk_type": {"type": "string"},
+              "severity": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"},
+              "mitigated": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "analysis_scope": {"type": "string"},
+        "input_refs": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "limits": {
+          "type": "object",
+          "required": ["max_oracle_classes", "max_semantic_guards", "max_no_oracle_risks", "confidence_threshold"],
+          "properties": {
+            "max_oracle_classes": {"type": "integer", "minimum": 0},
+            "max_semantic_guards": {"type": "integer", "minimum": 0},
+            "max_no_oracle_risks": {"type": "integer", "minimum": 0},
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "additionalProperties": true
+        },
+        "oracle_taxonomy_available": {"type": "boolean"},
+        "semantic_guard_available": {"type": "boolean"},
+        "critical_risk_coverage_available": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold", "blocked"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["oracle_class_count", "semantic_guard_count", "no_oracle_risk_count", "confidence", "finding_count"],
+      "properties": {
+        "oracle_class_count": {"type": "integer", "minimum": 0},
+        "semantic_guard_count": {"type": "integer", "minimum": 0},
+        "no_oracle_risk_count": {"type": "integer", "minimum": 0},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "analysis_scope": {"type": "string"},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limits": {
+      "type": "object",
+      "required": ["max_oracle_classes", "max_semantic_guards", "max_no_oracle_risks", "confidence_threshold"],
+      "properties": {
+        "max_oracle_classes": {"type": "integer", "minimum": 0},
+        "max_semantic_guards": {"type": "integer", "minimum": 0},
+        "max_no_oracle_risks": {"type": "integer", "minimum": 0},
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

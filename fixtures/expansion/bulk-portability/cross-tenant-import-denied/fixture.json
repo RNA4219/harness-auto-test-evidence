@@ -1,0 +1,27 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-bulk-portability-cross-tenant-import-denied",
+  "gap_id": "HATE-GAP-029",
+  "packet_id": "HATE-PKT-EXP-003-bulk-portability",
+  "task_seed_id": "TASK-HATE-GAP-029",
+  "acceptance_id": "AC-HATE-GAP-029",
+  "case_kind": "negative",
+  "input": {
+    "portability_config": {
+      "chunk_manifest_defined": true,
+      "resume_token_supported": true,
+      "integrity_manifest_defined": true,
+      "partial_failure_handling": true,
+      "tenant_boundary_enforced": true,
+      "source_tenant": "tenant-001",
+      "target_tenant": "tenant-002",
+      "migration_size_mb": 500
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "bulk_portability_cross_tenant_import_denied",
+    "readiness_effect": "hold",
+    "uat_report": "bulk-portability-uat-report.json"
+  }
+}

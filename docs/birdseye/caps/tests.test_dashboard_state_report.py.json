@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_dashboard_state_report.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "76dd9832cc22c27f4acd594f7a0263c5b48251f90ab77d7c783240e8395256ff",
+  "line_count": 167,
+  "size_bytes": 5785,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.dashboard",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

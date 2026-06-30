@@ -1,0 +1,25 @@
+{
+  "path": "docs/process/TENANT_ISOLATION_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "4f97129ddf6eb6799c84f2a9d128ecc61121db5fab58ccdddf1f1ece2e93a15d",
+  "line_count": 37,
+  "size_bytes": 1850,
+  "headings": [
+    "# Tenant Isolation Contract",
+    "## 1. Isolation Surfaces",
+    "## 2. Required Checks",
+    "## 3. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "store",
+    "test"
+  ]
+}

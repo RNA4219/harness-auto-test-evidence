@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_expansion_adapter_marketplace.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "6819307696149f82750b1d25a4dbbfd99b1120067f7070bf34b6f7cd27f50fbe",
+  "line_count": 163,
+  "size_bytes": 5970,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.adapter_marketplace",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/adapter_marketplace.py"
+  ],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

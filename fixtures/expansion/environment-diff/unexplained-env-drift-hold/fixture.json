@@ -1,0 +1,55 @@
+{
+  "fixture_id": "unexplained-env-drift-hold",
+  "fixture_type": "negative",
+  "description": "Runtime version drift is NOT explained - should hold",
+  "input": {
+    "environment_deltas": [
+      {
+        "delta_id": "delta-1",
+        "delta_type": "runtime_version_drift",
+        "category": "runtime",
+        "severity": "high",
+        "confidence": 0.9,
+        "sourceRef": "delta:1",
+        "rationale": "",
+        "explained": false
+      }
+    ],
+    "attempts_compared": [
+      {
+        "attempt_id": "attempt-1",
+        "environment_ref": "env:baseline",
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      {
+        "attempt_id": "attempt-2",
+        "environment_ref": "env:current",
+        "timestamp": "2024-01-02T00:00:00Z"
+      }
+    ],
+    "drift_classes": [
+      {
+        "class_id": "class-1",
+        "class_type": "runtime_version",
+        "drift_count": 1,
+        "severity": "high"
+      }
+    ],
+    "runtime_version_drift_explained": false,
+    "cache_state_known": true,
+    "analysis_scope": "execution_environment",
+    "input_refs": ["env:baseline", "env:current"],
+    "confidence": 0.9,
+    "limits": {
+      "max_deltas": 100,
+      "max_attempts": 10,
+      "max_drift_classes": 20,
+      "confidence_threshold": 0.7
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "environment_diff_unexplained_drift_hold",
+    "readiness_effect": "hold"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-completion-overclaim-detected",
+  "gap_id": "HATE-GAP-026",
+  "packet_id": "HATE-PKT-WF-006-completion-governance",
+  "task_seed_id": "TASK-HATE-GAP-026",
+  "acceptance_id": "AC-HATE-GAP-026",
+  "case_kind": "negative",
+  "input": {
+    "completion_claim": {
+      "claim": "product-ready",
+      "scope": "all hosted and enterprise workflow operation is complete",
+      "evidence_refs": ["WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md#completion-governance"]
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "completion_overclaim_detected",
+    "readiness_effect": "hold",
+    "uat_report": "workflow-completion-uat-report.json"
+  }
+}

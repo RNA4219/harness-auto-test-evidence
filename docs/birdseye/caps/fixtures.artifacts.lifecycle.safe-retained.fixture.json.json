@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/artifacts/lifecycle/safe-retained/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9f31668191178c9b60a2bc1e78ccc5868102e8ea264697ac963305ae0b28d776",
+  "line_count": 11,
+  "size_bytes": 498,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

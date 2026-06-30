@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/cost-governance/forecast-within-budget/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d8ad3c50275123fde4e9907df04c6f90d3d5c0d538ef993ea81d5d64a70202b7",
+  "line_count": 30,
+  "size_bytes": 921,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

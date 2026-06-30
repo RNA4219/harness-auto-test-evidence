@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/entitlement.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "af4b73afe6b88cae1b1744b69650f4e31d5e2e72c1af649d38a7d24a4e34712c",
+  "line_count": 225,
+  "size_bytes": 7638,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

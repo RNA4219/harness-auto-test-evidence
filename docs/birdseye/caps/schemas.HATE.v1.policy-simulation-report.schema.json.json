@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/policy-simulation-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6b0f78d75f758326c869488d311d8dfe219f1a980f0de6d524a5cd0feff8a4e7",
+  "line_count": 43,
+  "size_bytes": 1435,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/github-integration-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "787cc8dcc197e36a72db83ce1c549fca713b60aa259c6f147237c1a3b5ce63f9",
+  "line_count": 36,
+  "size_bytes": 1248,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

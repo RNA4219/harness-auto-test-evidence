@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/evaluation/agent-quality/avoidance-detected/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a5bd5ac5a21884176c32493873435b826fed250c794ab559dc8ccdad1d43a0ab",
+  "line_count": 11,
+  "size_bytes": 556,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

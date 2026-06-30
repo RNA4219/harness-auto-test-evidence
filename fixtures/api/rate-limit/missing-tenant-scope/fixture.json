@@ -1,0 +1,24 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "api-rate-limit-missing-tenant-scope",
+  "gap_id": "HATE-GAP-003",
+  "packet_id": "HATE-PKT-API-001-rate-limit",
+  "task_seed_id": "TASK-HATE-GAP-003",
+  "acceptance_id": "AC-HATE-GAP-003",
+  "case_kind": "negative",
+  "input": {
+    "request_id": "req-rate-limit-missing-tenant",
+    "route": "/v1/runs",
+    "method": "GET",
+    "requests": 1,
+    "quota": 100,
+    "window_seconds": 60,
+    "require_tenant_scope": true
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "api_tenant_scope_missing",
+    "readiness_effect": "hold",
+    "uat_report": "api-rate-limit-uat-report.json"
+  }
+}

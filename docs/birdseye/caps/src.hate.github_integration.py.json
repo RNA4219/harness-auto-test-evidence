@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/github_integration.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "5d85b91496690814db83c42a418b5da8df979bce6fab3e9821bfd4f808f71c8c",
+  "line_count": 215,
+  "size_bytes": 7863,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "evaluation-real-repo-regression-detected",
+  "gap_id": "HATE-GAP-012",
+  "packet_id": "HATE-PKT-EVAL-001-real-repo-scheduler",
+  "task_seed_id": "TASK-HATE-GAP-012",
+  "acceptance_id": "AC-HATE-GAP-012",
+  "case_kind": "negative",
+  "input": {"repo_id": "agent-taskstate", "baseline_decision": "eligible", "current_decision": "hold"},
+  "expected": {"status": "hold", "finding_code": "real_repo_regression_detected", "readiness_effect": "hold", "uat_report": "real-repo-evaluation-report.json"}
+}

@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/impact-analysis-report.schema.json",
+  "title": "HATE Impact Analysis Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "impact_config",
+    "findings",
+    "summary",
+    "analysis_scope",
+    "input_refs",
+    "confidence",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "impact-analysis-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
+    "impact_config": {
+      "type": "object",
+      "required": ["changed_refs", "affected_tests", "affected_requirements"],
+      "properties": {
+        "changed_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "change_type", "sourceRef"],
+            "properties": {
+              "path": {"type": "string"},
+              "change_type": {"type": "string"},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "affected_tests": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["test_id", "confidence", "sourceRef", "rationale"],
+            "properties": {
+              "test_id": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "affected_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["requirement_id", "confidence", "sourceRef", "rationale"],
+            "properties": {
+              "requirement_id": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "analysis_scope": {"type": "string"},
+        "input_refs": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "limits": {
+          "type": "object",
+          "required": ["max_affected_tests", "max_affected_requirements", "confidence_threshold"],
+          "properties": {
+            "max_affected_tests": {"type": "integer", "minimum": 0},
+            "max_affected_requirements": {"type": "integer", "minimum": 0},
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "additionalProperties": true
+        },
+        "dependency_sources_available": {"type": "boolean"},
+        "ownership_sources_available": {"type": "boolean"},
+        "history_sources_available": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold", "blocked"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["changed_ref_count", "affected_test_count", "affected_requirement_count", "confidence", "finding_count"],
+      "properties": {
+        "changed_ref_count": {"type": "integer", "minimum": 0},
+        "affected_test_count": {"type": "integer", "minimum": 0},
+        "affected_requirement_count": {"type": "integer", "minimum": 0},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "analysis_scope": {"type": "string"},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limits": {
+      "type": "object",
+      "required": ["max_affected_tests", "max_affected_requirements", "confidence_threshold"],
+      "properties": {
+        "max_affected_tests": {"type": "integer", "minimum": 0},
+        "max_affected_requirements": {"type": "integer", "minimum": 0},
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

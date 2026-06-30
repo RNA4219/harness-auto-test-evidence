@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/expansion/docs_lifecycle.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "20dda7c9e4652cb3124430ec8fcd742d4dbedb84777bc3c16401db76ce9e52d0",
+  "line_count": 194,
+  "size_bytes": 7764,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

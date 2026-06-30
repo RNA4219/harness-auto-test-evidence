@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/expansion/cost_governance.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "7a3d869021945afbec28cc99cbe474d787c976e8a973c8053c56199ac86e9b2f",
+  "line_count": 150,
+  "size_bytes": 6210,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

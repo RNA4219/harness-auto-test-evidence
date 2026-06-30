@@ -1,0 +1,33 @@
+{
+  "path": "docs/acceptance/AC-20260630-01.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "a41a16b50014bb9fb848899cfc13d532890072454741532299d17e5617d252fb",
+  "line_count": 170,
+  "size_bytes": 7177,
+  "headings": [
+    "# HATE Gap Closure UAT Readiness Acceptance Record",
+    "## Scope",
+    "## Acceptance Criteria",
+    "## Evidence",
+    "## Verification Result",
+    "## Open Risks"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "birdseye",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "security",
+    "store",
+    "workflow"
+  ]
+}

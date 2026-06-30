@@ -1,0 +1,26 @@
+{
+  "path": "docs/process/PRODUCT_E2E_UAT_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "a8d161db17282b1acf652498c68a340cfb51d991896de236d14ef5dfee5b8c74",
+  "line_count": 44,
+  "size_bytes": 1731,
+  "headings": [
+    "# Product E2E UAT Contract",
+    "## 1. Required Journeys",
+    "## 2. UAT Evidence",
+    "## 3. No-Go",
+    "## 4. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "security"
+  ]
+}

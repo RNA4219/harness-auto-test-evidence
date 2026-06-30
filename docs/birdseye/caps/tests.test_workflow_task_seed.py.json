@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_workflow_task_seed.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "33c34027746665fb09541c55a6b0a5b64cb5c221ec915efe43e8b94229742aa7",
+  "line_count": 158,
+  "size_bytes": 5693,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.workflow_task_seed",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/workflow_task_seed.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

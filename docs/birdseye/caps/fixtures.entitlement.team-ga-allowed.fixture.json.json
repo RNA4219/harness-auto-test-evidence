@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/entitlement/team-ga-allowed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "92bbe1feb10b9096b99b3fe7883358b47ca42645ee3acbc4b484713f426e3ec2",
+  "line_count": 11,
+  "size_bytes": 471,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

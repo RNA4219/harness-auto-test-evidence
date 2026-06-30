@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "tenant-cache-bleed-denied",
+  "gap_id": "HATE-GAP-002",
+  "packet_id": "HATE-PKT-ENT-001-tenant-isolation",
+  "task_seed_id": "TASK-HATE-GAP-002",
+  "acceptance_id": "AC-HATE-GAP-002",
+  "case_kind": "negative",
+  "input": {
+    "actor_tenant": "tenant_a",
+    "resource_tenant": "tenant_a",
+    "surface": "cache",
+    "role": "auditor",
+    "cache_key": "runs:latest"
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "tenant_cache_key_missing_scope",
+    "readiness_effect": "hold",
+    "uat_report": "tenant-isolation-uat-report.json"
+  }
+}

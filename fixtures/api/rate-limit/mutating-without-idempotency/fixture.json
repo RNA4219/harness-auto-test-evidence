@@ -1,0 +1,29 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "api-rate-limit-mutating-without-idempotency",
+  "gap_id": "HATE-GAP-003",
+  "packet_id": "HATE-PKT-API-001-rate-limit",
+  "task_seed_id": "TASK-HATE-GAP-003",
+  "acceptance_id": "AC-HATE-GAP-003",
+  "case_kind": "negative",
+  "input": {
+    "request_id": "req-rate-limit-no-idempotency",
+    "tenant": {
+      "organization_id": "org-001",
+      "workspace_id": "ws-001"
+    },
+    "actor_id": "user-001",
+    "route": "/v1/bundles/import",
+    "method": "POST",
+    "requests": 1,
+    "quota": 100,
+    "window_seconds": 60,
+    "require_tenant_scope": true
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "api_idempotency_key_missing",
+    "readiness_effect": "hold",
+    "uat_report": "api-rate-limit-uat-report.json"
+  }
+}

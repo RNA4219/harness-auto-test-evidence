@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_beta_acceptance.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "fecb087d24adbb3edc96e610218b71c7a097852f5f4aebe69f08e8a99d0c3b62",
+  "line_count": 222,
+  "size_bytes": 7695,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.beta_acceptance",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/beta_acceptance.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

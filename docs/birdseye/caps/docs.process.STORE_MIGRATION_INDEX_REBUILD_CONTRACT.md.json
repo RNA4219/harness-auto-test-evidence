@@ -1,0 +1,31 @@
+{
+  "path": "docs/process/STORE_MIGRATION_INDEX_REBUILD_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "9051e866e86868c3d587641a930008b6f78d74c8f9fb3e6f3bb7aed2b8242e82",
+  "line_count": 186,
+  "size_bytes": 6964,
+  "headings": [
+    "# Store Migration And Index Rebuild Contract",
+    "## 1. Scope",
+    "## 2. Migration Lifecycle",
+    "## 3. Record Contract",
+    "## 4. Version Skew",
+    "## 5. Index Rebuild And Corruption Recovery",
+    "## 6. Rollback",
+    "## 7. Fixtures",
+    "## 8. Implementation Packet Minimum",
+    "## 9. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "store"
+  ]
+}

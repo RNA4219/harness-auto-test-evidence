@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_deployment_topology.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "2fa9f878951eb341ec42b3af377fabf0d43f9ebc5bd9be9accb696e7ce78a80a",
+  "line_count": 136,
+  "size_bytes": 4886,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.deployment",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_real_repo_evaluation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "cf18c7be8666d9ab9b76f9d5f16482a85fcc6598c5caed47fd96d175f3001e0a",
+  "line_count": 114,
+  "size_bytes": 4446,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.evaluation",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

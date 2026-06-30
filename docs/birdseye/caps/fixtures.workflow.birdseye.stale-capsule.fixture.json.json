@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/workflow/birdseye/stale-capsule/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b660319fd0f1123e496e82734897691e232e17840f039956b7155f60d141fbb7",
+  "line_count": 23,
+  "size_bytes": 693,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

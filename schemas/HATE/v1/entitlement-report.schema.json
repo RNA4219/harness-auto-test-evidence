@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/HATE/v1/entitlement-report.schema.json",
+  "title": "HATE Entitlement Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "source_version",
+    "status",
+    "readiness_effect",
+    "plan",
+    "feature",
+    "mode",
+    "required_edition",
+    "entitlement_status",
+    "precheck_decision_override",
+    "qeg_verdict_override",
+    "over_limit",
+    "over_limit_action",
+    "audit_events",
+    "findings",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "record_type": { "const": "entitlement-report" },
+    "source_version": { "type": "string" },
+    "status": { "enum": ["pass", "hold"] },
+    "readiness_effect": { "enum": ["none", "hold"] },
+    "finding_code": { "type": "string" },
+    "plan": { "enum": ["local", "team", "enterprise", "regulated"] },
+    "feature": { "type": "string" },
+    "mode": { "type": "string" },
+    "required_edition": { "enum": ["local", "team", "enterprise", "regulated"] },
+    "entitlement_status": { "enum": ["available", "denied", "over_limit_warning"] },
+    "precheck_decision_override": { "type": "boolean" },
+    "qeg_verdict_override": { "type": "boolean" },
+    "over_limit": { "type": "boolean" },
+    "over_limit_action": { "enum": ["within_limit", "warn_only_preserve_evidence"] },
+    "audit_events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "event_type",
+          "plan",
+          "feature",
+          "mode",
+          "required_edition",
+          "decision",
+          "finding_code",
+          "over_limit",
+          "over_limit_action",
+          "created_at"
+        ],
+        "properties": {
+          "event_type": { "const": "entitlement_decision" },
+          "plan": { "type": "string" },
+          "feature": { "type": "string" },
+          "mode": { "type": "string" },
+          "required_edition": { "type": "string" },
+          "decision": { "enum": ["allow", "deny"] },
+          "finding_code": { "type": "string" },
+          "over_limit": { "type": "boolean" },
+          "over_limit_action": { "type": "string" },
+          "created_at": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "source_refs"],
+        "properties": {
+          "code": { "type": "string" },
+          "severity": { "enum": ["low", "medium", "high", "critical"] },
+          "message": { "type": "string" },
+          "source_refs": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

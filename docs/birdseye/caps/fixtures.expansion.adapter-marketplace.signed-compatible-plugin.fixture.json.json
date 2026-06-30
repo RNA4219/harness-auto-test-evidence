@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/adapter-marketplace/signed-compatible-plugin/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "165c514f52815597c1ce6237e53f44bf8edf48162745aba8acfa224e338684a5",
+  "line_count": 29,
+  "size_bytes": 916,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

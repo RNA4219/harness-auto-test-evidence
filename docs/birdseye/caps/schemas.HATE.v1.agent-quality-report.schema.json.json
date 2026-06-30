@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/agent-quality-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "fa42cee70f7414efa31590f712e4560ab05d7e64c80b3b2f632ae099382935f8",
+  "line_count": 59,
+  "size_bytes": 1894,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

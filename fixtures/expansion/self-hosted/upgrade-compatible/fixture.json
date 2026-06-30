@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-self-hosted-upgrade-compatible",
+  "gap_id": "HATE-GAP-031",
+  "packet_id": "HATE-PKT-EXP-005-self-hosted",
+  "task_seed_id": "TASK-HATE-GAP-031",
+  "acceptance_id": "AC-HATE-GAP-031",
+  "case_kind": "positive",
+  "input": {
+    "self_hosted_config": {
+      "installer_contract_defined": true,
+      "configuration_schema_defined": true,
+      "upgrade_plan_defined": true,
+      "rollback_supported": true,
+      "backup_prerequisite_defined": true,
+      "offline_verification_supported": true,
+      "air_gapped_mode": false,
+      "current_version": "1.0.0",
+      "target_version": "1.1.0",
+      "downgrade_requested": false
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "self-hosted-uat-report.json"
+  }
+}

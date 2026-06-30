@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "deployment-topology-local-single-node",
+  "gap_id": "HATE-GAP-017",
+  "packet_id": "HATE-PKT-DEPLOY-001-topology",
+  "task_seed_id": "TASK-HATE-GAP-017",
+  "acceptance_id": "AC-HATE-GAP-017",
+  "case_kind": "positive",
+  "input": {"topology": "local_single_node", "region": "local", "offline_mode": true},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "deployment-topology-uat-report.json"}
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/support/diagnostics/safe-bundle/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6cd37e6e09019a0353c96686709530f240e10085fff89e8f997292fca0d32a39",
+  "line_count": 11,
+  "size_bytes": 489,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

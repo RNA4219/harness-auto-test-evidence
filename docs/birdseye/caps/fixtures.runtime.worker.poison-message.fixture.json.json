@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/runtime/worker/poison-message/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7a2450b620a9442d2a5ee38d6632a6b16006793d3074cd3adc1ed686b82891cd",
+  "line_count": 11,
+  "size_bytes": 521,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

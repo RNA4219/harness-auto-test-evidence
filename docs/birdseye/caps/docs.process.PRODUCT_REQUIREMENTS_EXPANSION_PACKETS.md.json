@@ -1,0 +1,23 @@
+{
+  "path": "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_PACKETS.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "179d1d4b7032522b444622ea510259cf7bebb2096b5d161f9afadb1be3a96621",
+  "line_count": 92,
+  "size_bytes": 16243,
+  "headings": [
+    "# Product Requirements Expansion Packets",
+    "## 1. Common Expansion Packet Contract",
+    "## 2. Expansion Packet Ledger",
+    "## 3. Status"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "security",
+    "test"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/workflow-task-seed-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1797492a90182acf757b047a7a28400cf8a01672c6d932544750341f913b1b8b",
+  "line_count": 28,
+  "size_bytes": 768,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

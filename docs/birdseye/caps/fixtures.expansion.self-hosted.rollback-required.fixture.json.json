@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/self-hosted/rollback-required/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e5d5c485373f6adde56ae78cf42284b6838d903c340c32f628e42018a2b66e89",
+  "line_count": 29,
+  "size_bytes": 902,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

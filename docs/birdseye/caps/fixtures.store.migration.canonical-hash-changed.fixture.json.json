@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/store/migration/canonical-hash-changed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "09b9c15268d9838b4ef519ff2dc8ac5ab1cb552fa7c0ad4ed481ad173c0dd7ea",
+  "line_count": 21,
+  "size_bytes": 673,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

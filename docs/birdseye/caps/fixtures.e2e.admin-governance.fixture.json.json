@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/e2e/admin-governance/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3c5ec18ee54f3e3f0c93231090d43006daebadbed0f4da8dfa01e309ab8f1cc2",
+  "line_count": 20,
+  "size_bytes": 525,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

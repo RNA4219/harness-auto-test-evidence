@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/performance/benchmark/medium-repo-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d0833f49a017752c9eda87100992bab33d0745d5e3d53fdca5061e4cf9f8f36a",
+  "line_count": 11,
+  "size_bytes": 499,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

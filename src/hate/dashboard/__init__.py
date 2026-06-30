@@ -36,6 +36,11 @@ from hate.dashboard.uat_states import (
     build_coverage_only_state,
     build_unsupported_claim_state,
 )
+from hate.dashboard.state_report import (
+    DashboardStateFinding,
+    build_dashboard_state_report,
+    evaluate_dashboard_state_fixture,
+)
 
 __all__ = [
     # View models
@@ -69,4 +74,8 @@ __all__ = [
     "build_missing_oracle_state",
     "build_coverage_only_state",
     "build_unsupported_claim_state",
+    # Dashboard state report
+    "DashboardStateFinding",
+    "build_dashboard_state_report",
+    "evaluate_dashboard_state_fixture",
 ]

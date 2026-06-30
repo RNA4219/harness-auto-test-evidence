@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/runtime_worker.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "6e6a315e146c9a058a37a331443ec336efa7e755b9ab1fc97aea898ad6d0770a",
+  "line_count": 215,
+  "size_bytes": 8075,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

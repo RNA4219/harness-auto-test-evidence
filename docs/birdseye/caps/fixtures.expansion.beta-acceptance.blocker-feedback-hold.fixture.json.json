@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/beta-acceptance/blocker-feedback-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1238f0bf8a6d222af0d272d973732054ce5c808dc142111f3b0b30ce5a9ab6d9",
+  "line_count": 43,
+  "size_bytes": 1274,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

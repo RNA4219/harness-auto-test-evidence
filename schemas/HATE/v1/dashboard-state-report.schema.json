@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/dashboard-state-report.schema.json",
+  "title": "Dashboard State Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "view_states",
+    "required_views",
+    "required_states",
+    "findings",
+    "status",
+    "readiness_effect",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "record_type": { "const": "dashboard-state-report" },
+    "report_id": { "type": "string", "minLength": 1 },
+    "view_states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "view",
+          "state",
+          "rbac",
+          "sourceRefs",
+          "required_actions",
+          "forbidden_content",
+          "visible_sourceRefs",
+          "product_ready_badge",
+          "hard_dq_count",
+          "missing_report_count",
+          "restricted_path_visible",
+          "raw_secret_visible",
+          "severity_color_only"
+        ],
+        "properties": {
+          "view": { "type": "string", "minLength": 1 },
+          "state": { "type": "string", "minLength": 1 },
+          "rbac": { "enum": ["allowed", "denied"] },
+          "sourceRefs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "required_actions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "forbidden_content": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "visible_sourceRefs": { "type": "boolean" },
+          "product_ready_badge": { "type": "boolean" },
+          "hard_dq_count": { "type": "integer", "minimum": 0 },
+          "missing_report_count": { "type": "integer", "minimum": 0 },
+          "restricted_path_visible": { "type": "boolean" },
+          "raw_secret_visible": { "type": "boolean" },
+          "severity_color_only": { "type": "boolean" }
+        }
+      }
+    },
+    "required_views": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "required_states": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {
+            "enum": [
+              "dashboard_required_view_missing",
+              "dashboard_rbac_denied_state_required",
+              "dashboard_source_refs_missing",
+              "dashboard_action_missing",
+              "dashboard_product_ready_overclaim",
+              "dashboard_restricted_content_visible",
+              "dashboard_severity_color_only"
+            ]
+          },
+          "severity": { "enum": ["low", "medium", "high", "critical"] },
+          "message": { "type": "string", "minLength": 1 },
+          "sourceRef": { "type": "string", "minLength": 1 },
+          "readiness_effect": { "enum": ["none", "soft_gap", "hold"] }
+        }
+      }
+    },
+    "status": { "enum": ["pass", "hold"] },
+    "readiness_effect": { "enum": ["none", "hold"] },
+    "sourceRefs": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  }
+}

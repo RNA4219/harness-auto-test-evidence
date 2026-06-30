@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/enterprise/tenant/support-bundle-isolated/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f1556f2f0deb5c1c7a0015a88a71232923df2917f128118a74e80ce6647c3b95",
+  "line_count": 17,
+  "size_bytes": 593,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

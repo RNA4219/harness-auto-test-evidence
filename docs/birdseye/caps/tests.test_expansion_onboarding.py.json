@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_onboarding.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "0cbcecd2a98605b154ca31642991fa2fd203592fd1911099170ac5800356491c",
+  "line_count": 108,
+  "size_bytes": 3900,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.onboarding",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/onboarding.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

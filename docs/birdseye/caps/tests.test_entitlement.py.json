@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_entitlement.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "b367ec8d1669989b495ba7fc39125291e0fa9614b282828f2f9e7f0cf3d2e23f",
+  "line_count": 97,
+  "size_bytes": 3641,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.entitlement",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/entitlement.py"
+  ],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

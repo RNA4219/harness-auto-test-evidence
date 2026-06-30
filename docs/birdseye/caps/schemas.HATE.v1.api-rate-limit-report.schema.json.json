@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/api-rate-limit-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "7f456869275dfc5e011a94c5b30fe1ead8df9ef774e3942575f23558ce558a2a",
+  "line_count": 102,
+  "size_bytes": 3369,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema"
+  ]
+}

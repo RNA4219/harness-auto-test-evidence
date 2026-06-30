@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/deployment-topology-report.schema.json",
+  "title": "HATE Deployment Topology Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "profile",
+    "findings",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "deployment-topology-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "profile": {
+      "type": "object",
+      "required": [
+        "deployment_mode",
+        "required_region",
+        "actual_region",
+        "allowed_regions",
+        "offline_mode",
+        "data_classes",
+        "network",
+        "backup",
+        "local_first_preserved",
+        "canonical_bundle_rebuildable",
+        "blocked_hosted_upload_classes"
+      ],
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {"type": "object", "additionalProperties": true},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "entitlement-enterprise-feature-denied",
+  "gap_id": "HATE-GAP-004",
+  "packet_id": "HATE-PKT-COM-001-entitlement",
+  "task_seed_id": "TASK-HATE-GAP-004",
+  "acceptance_id": "AC-HATE-GAP-004",
+  "case_kind": "negative",
+  "input": {"plan": "team_ga", "feature": "tenant_isolation_admin", "mode": "hosted"},
+  "expected": {"status": "hold", "finding_code": "entitlement_feature_denied", "readiness_effect": "hold", "uat_report": "entitlement-uat-report.json"}
+}

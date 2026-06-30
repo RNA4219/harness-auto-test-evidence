@@ -1,0 +1,25 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-onboarding-golden-walkthrough",
+  "gap_id": "HATE-GAP-027",
+  "packet_id": "HATE-PKT-EXP-001-onboarding",
+  "task_seed_id": "TASK-HATE-GAP-027",
+  "acceptance_id": "AC-HATE-GAP-027",
+  "case_kind": "positive",
+  "input": {
+    "onboarding_config": {
+      "sample_repos": ["https://github.com/example/sample-repo"],
+      "walkthrough_step_count": 5,
+      "tutorial_failure_contract": true,
+      "support_handoff_contract": true,
+      "expected_output_defined": true,
+      "five_minute_path_valid": true,
+      "versioned_sample_repo": true
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "onboarding-uat-report.json"
+  }
+}

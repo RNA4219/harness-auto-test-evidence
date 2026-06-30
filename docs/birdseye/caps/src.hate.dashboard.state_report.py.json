@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/dashboard/state_report.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "7c3d6f18733ba60e685c2e702c22d9cb58f281f9e5a4fa0aa418b948def7aa8f",
+  "line_count": 188,
+  "size_bytes": 7721,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

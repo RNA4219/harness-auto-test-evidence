@@ -1,0 +1,55 @@
+{
+  "fixture_id": "runtime-version-drift-explained",
+  "fixture_type": "positive",
+  "description": "Runtime version drift is properly explained - should pass",
+  "input": {
+    "environment_deltas": [
+      {
+        "delta_id": "delta-1",
+        "delta_type": "runtime_version_drift",
+        "category": "runtime",
+        "severity": "medium",
+        "confidence": 0.9,
+        "sourceRef": "delta:1",
+        "rationale": "Python 3.10 → 3.11 upgrade for security patch",
+        "explained": true
+      }
+    ],
+    "attempts_compared": [
+      {
+        "attempt_id": "attempt-1",
+        "environment_ref": "env:baseline",
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      {
+        "attempt_id": "attempt-2",
+        "environment_ref": "env:current",
+        "timestamp": "2024-01-02T00:00:00Z"
+      }
+    ],
+    "drift_classes": [
+      {
+        "class_id": "class-1",
+        "class_type": "runtime_version",
+        "drift_count": 1,
+        "severity": "medium"
+      }
+    ],
+    "runtime_version_drift_explained": true,
+    "cache_state_known": true,
+    "analysis_scope": "execution_environment",
+    "input_refs": ["env:baseline", "env:current"],
+    "confidence": 0.9,
+    "limits": {
+      "max_deltas": 100,
+      "max_attempts": 10,
+      "max_drift_classes": 20,
+      "confidence_threshold": 0.7
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "finding_code": "",
+    "readiness_effect": "none"
+  }
+}

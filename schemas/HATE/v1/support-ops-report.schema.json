@@ -10,6 +10,7 @@
     "overall_status",
     "logs",
     "metrics",
+    "spans",
     "alerts",
     "incidents",
     "findings",
@@ -30,6 +31,20 @@
     "metrics": {
       "type": "array",
       "items": {"type": "object"}
+    },
+    "spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "sourceRef"],
+        "properties": {
+          "name": {"type": "string"},
+          "status": {"type": "string"},
+          "duration_ms": {"type": "number", "minimum": 0},
+          "sourceRef": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
     },
     "alerts": {
       "type": "array",

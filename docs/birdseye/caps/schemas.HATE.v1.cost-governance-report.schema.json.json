@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/cost-governance-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "dc82b0ced73d83498d1c58e50bec7a1972d8d219114310073d07f4047bd73d88",
+  "line_count": 43,
+  "size_bytes": 1416,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

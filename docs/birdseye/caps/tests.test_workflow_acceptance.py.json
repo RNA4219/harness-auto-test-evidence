@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_workflow_acceptance.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "f94a992814ea24dbae56f56009f4ca75c4a29cfa57d4a3d08ff0c5f48f82c3b1",
+  "line_count": 159,
+  "size_bytes": 5549,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.workflow_acceptance",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/workflow_acceptance.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

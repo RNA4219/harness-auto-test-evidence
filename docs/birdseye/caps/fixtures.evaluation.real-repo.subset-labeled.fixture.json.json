@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/evaluation/real-repo/subset-labeled/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "37ef03f06528be347613ce31c771a5b412bfe6266afac7e646eb94ed60d9fdc7",
+  "line_count": 22,
+  "size_bytes": 641,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "performance-benchmark-budget-exceeded",
+  "gap_id": "HATE-GAP-018",
+  "packet_id": "HATE-PKT-PERF-001-benchmark-catalog",
+  "task_seed_id": "TASK-HATE-GAP-018",
+  "acceptance_id": "AC-HATE-GAP-018",
+  "case_kind": "negative",
+  "input": {"repo_class": "medium", "duration_seconds": 150, "budget_seconds": 120},
+  "expected": {"status": "hold", "finding_code": "performance_budget_exceeded", "readiness_effect": "hold", "uat_report": "performance-benchmark-uat-report.json"}
+}

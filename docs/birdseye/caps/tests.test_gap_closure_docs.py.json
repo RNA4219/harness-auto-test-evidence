@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_gap_closure_docs.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "19d39e4319a4d87d5d6d9bc7a9ff188c7ee3ac504196dbaee64990fb4a727dd4",
+  "line_count": 192,
+  "size_bytes": 7245,
+  "headings": [],
+  "imports": [
+    "json",
+    "pathlib",
+    "re"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

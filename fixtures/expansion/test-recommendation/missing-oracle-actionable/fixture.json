@@ -1,0 +1,54 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-test-recommendation-missing-oracle-actionable",
+  "gap_id": "HATE-GAP-050",
+  "packet_id": "HATE-PKT-EXP-024-test-recommendation",
+  "case_kind": "positive",
+  "input": {
+    "recommendations": [
+      {
+        "action": "add_oracle_for_missing_risk",
+        "target": "test_coverage_missing_risk",
+        "confidence": 0.95,
+        "sourceRef": "analysis:recommendation-001",
+        "rationale": "Missing oracle detected for coverage risk",
+        "actionable": true
+      }
+    ],
+    "required_oracles": [
+      {
+        "oracle_id": "oracle-coverage-001",
+        "risk_id": "risk-coverage-001",
+        "confidence": 0.92,
+        "sourceRef": "oracle:coverage-check",
+        "rationale": "Coverage oracle for risk detection",
+        "verified": true
+      }
+    ],
+    "verification_commands": [
+      {
+        "command_id": "cmd-verify-001",
+        "recommendation_id": "rec-001",
+        "confidence": 0.95,
+        "sourceRef": "command:verify-oracle",
+        "rationale": "Verification command for oracle recommendation",
+        "verified": true
+      }
+    ],
+    "analysis_scope": "full",
+    "input_refs": ["analysis:recommendation-001"],
+    "confidence": 0.94,
+    "limits": {
+      "max_recommendations": 100,
+      "max_oracles": 50,
+      "confidence_threshold": 0.7
+    },
+    "actionable_taxonomy_used": true,
+    "oracle_validation_enabled": true,
+    "command_verification_enabled": true
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none"
+  }
+}

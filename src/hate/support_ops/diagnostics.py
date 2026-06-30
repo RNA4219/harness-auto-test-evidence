@@ -44,6 +44,7 @@ class DiagnosticBundleResult:
             "overall_status": _status_from_findings(self.findings),
             "logs": [],
             "metrics": [],
+            "spans": [],
             "alerts": [],
             "incidents": [],
             "diagnostic_bundles": [self.bundle],
@@ -142,6 +143,68 @@ def build_diagnostics_report(data: dict[str, Any]) -> dict[str, Any]:
     """Build a support-ops-report containing a safe diagnostic bundle."""
 
     return build_diagnostic_bundle(data).to_report()
+
+
+def evaluate_support_diagnostics_fixture(payload: dict[str, Any]) -> dict[str, str]:
+    """Evaluate the product gap support diagnostics fixture contract."""
+    data = payload.get("input", {})
+    report = build_support_diagnostics_gap_report(data, payload.get("fixture_id", "support-diagnostics-gap"))
+    finding_code = report["findings"][0]["code"] if report["findings"] else ""
+    return {
+        "status": report["overall_status"],
+        "finding_code": finding_code,
+        "readiness_effect": "hold" if report["overall_status"] == "hold" else "none",
+    }
+
+
+def build_support_diagnostics_gap_report(
+    data: dict[str, Any],
+    report_id: str = "support-diagnostics-gap",
+) -> dict[str, Any]:
+    """Build the compact support diagnostics report used by HATE-GAP-011."""
+    bundle = dict(data.get("bundle") or {})
+    findings: list[dict[str, Any]] = []
+
+    if bundle.get("secret_count", 0) > 0 and not bundle.get("redacted"):
+        findings.append(_finding(
+            "support_diagnostic_raw_secret_denied",
+            "hold",
+            "Diagnostic bundle contains unredacted secrets.",
+            f"fixtures/support/diagnostics/{report_id}/fixture.json#bundle",
+        ))
+    if bundle.get("raw_customer_code"):
+        findings.append(_finding(
+            "support_diagnostic_raw_customer_code_denied",
+            "hold",
+            "Diagnostic bundle must not expose raw customer code.",
+            f"fixtures/support/diagnostics/{report_id}/fixture.json#bundle",
+        ))
+
+    safe_bundle = {
+        "schema_version": "HATE/v1",
+        "record_type": "safe-diagnostic-bundle",
+        "bundle_id": report_id,
+        "artifact_ids": ["metadata-only"],
+        "included_artifacts": [],
+        "excluded_artifacts": [],
+        "classification": "internal",
+        "redaction_status": "redacted" if bundle.get("redacted") else "not_required",
+        "quarantine_status": "none",
+        "readiness_effect": _max_effect([finding["readiness_effect"] for finding in findings]),
+        "safe_for_summary": not findings,
+        "export_surface": "support",
+        "export_ready": not findings,
+        "sanitized_context": {
+            "redacted": bool(bundle.get("redacted")),
+            "secret_count": int(bundle.get("secret_count", 0)),
+            "raw_customer_code": bool(bundle.get("raw_customer_code")),
+        },
+        "error_records": [],
+        "redaction_log": [],
+        "proof_hash": _proof_hash(bundle, findings),
+        "sourceRefs": [f"fixtures/support/diagnostics/{report_id}/fixture.json"],
+    }
+    return DiagnosticBundleResult(bundle=safe_bundle, findings=findings).to_report()
 
 
 def _unsafe_artifact_reason(artifact: dict[str, Any]) -> str:

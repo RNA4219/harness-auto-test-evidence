@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/workflow-plugin-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "edc0faecf72c1891d15d1cce0404a63c7ef29b01bd91313a1bf53e76d6e1e709",
+  "line_count": 45,
+  "size_bytes": 1509,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "workflow"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "src/hate/support_ops/observability.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "256ddddeba343597ffa69cc4c76294a5f555594babe3cda9f5a6048b2eb4f899",
-  "line_count": 246,
-  "size_bytes": 9101,
+  "sha256": "e259c08e470a8f5ea9c0d444e800f9c7b76e7cde313b2ac64cb512ee9a07837f",
+  "line_count": 361,
+  "size_bytes": 13542,
   "headings": [],
   "imports": [
     "__future__",
@@ -17,6 +17,7 @@
   "tags": [
     "api",
     "artifact",
+    "fixture",
     "release",
     "schema"
   ]

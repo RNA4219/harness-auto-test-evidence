@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/workflow-evidence-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "f8de06456bc9d44f97e46c93b8a4ba354017349d7f4bb55aa399954819ab0d79",
+  "line_count": 43,
+  "size_bytes": 1417,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "workflow"
+  ]
+}

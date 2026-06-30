@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "release-channel-breaking-without-migration",
+  "gap_id": "HATE-GAP-019",
+  "packet_id": "HATE-PKT-REL-001-release-channel",
+  "task_seed_id": "TASK-HATE-GAP-019",
+  "acceptance_id": "AC-HATE-GAP-019",
+  "case_kind": "negative",
+  "input": {"change_type": "breaking", "migration_required": true, "migration_plan": false},
+  "expected": {"status": "hold", "finding_code": "release_breaking_without_migration", "readiness_effect": "hold", "uat_report": "release-channel-uat-report.json"}
+}

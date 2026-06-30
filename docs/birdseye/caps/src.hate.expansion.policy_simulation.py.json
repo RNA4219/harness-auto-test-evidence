@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/expansion/policy_simulation.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "19c365cc26321b2bd2860c9ae313c2aea93a9c71f07334e0b544a3fd944f5278",
+  "line_count": 135,
+  "size_bytes": 5273,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

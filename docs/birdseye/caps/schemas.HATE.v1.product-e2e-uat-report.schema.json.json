@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/product-e2e-uat-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "2d79f299624f985ea9db6bf02d35a594e8923abd303a2fb9c2ca287a5e44e225",
+  "line_count": 70,
+  "size_bytes": 2274,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

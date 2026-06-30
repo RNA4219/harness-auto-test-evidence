@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/release-channel-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d5994cdef9d68cfd7369308692109f4a6893daa4c5cf89dd2dea479f35faf31f",
+  "line_count": 28,
+  "size_bytes": 787,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

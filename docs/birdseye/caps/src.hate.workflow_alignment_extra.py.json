@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/workflow_alignment_extra.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e4db00fd5f33de162626df635340f10d5e6e2a67eb2a180424586f58384711a5",
+  "line_count": 138,
+  "size_bytes": 4779,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "release",
+    "security",
+    "workflow"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-task-seed-missing-scope",
+  "gap_id": "HATE-GAP-021",
+  "packet_id": "HATE-PKT-WF-001-task-seed-loop",
+  "task_seed_id": "TASK-HATE-GAP-021",
+  "acceptance_id": "AC-HATE-GAP-021",
+  "case_kind": "negative",
+  "input": {
+    "task_seed": {
+      "objective": "Implement Task Seed projection and validation",
+      "requirements": {
+        "behavior": ["valid task seeds include objective, scope, requirements, commands, dependencies"]
+      },
+      "commands": ["uv run pytest tests/test_gap_closure_docs.py -q"]
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "task_seed_missing_scope",
+    "readiness_effect": "hold",
+    "uat_report": "workflow-task-seed-uat-report.json"
+  }
+}

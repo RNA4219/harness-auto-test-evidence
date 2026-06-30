@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/adapters/corpus_manifest.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "663b47e1ea489e5ed1ca096e797523c37e45d1f8e65ad8cc431a99f7ea15be5f",
+  "line_count": 278,
+  "size_bytes": 10838,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/store/migration/rebuild-checkpoint-hash-mismatch/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "78f3af41bdf759bd90accec0d2f0b42e72ab6c1b6c0f2f385f5dba8aab90b500",
+  "line_count": 26,
+  "size_bytes": 815,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

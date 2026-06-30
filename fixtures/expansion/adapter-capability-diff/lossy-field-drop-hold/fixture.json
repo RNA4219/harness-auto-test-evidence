@@ -1,0 +1,39 @@
+{
+  "fixture_id": "lossy-field-drop-hold",
+  "fixture_type": "negative",
+  "description": "Lossy field drop detected - should hold",
+  "input": {
+    "raw_field_map": {
+      "field_a": {"type": "string", "value": "value_a"},
+      "field_b": {"type": "number", "value": 123},
+      "field_c": {"type": "object", "value": {"nested": true}}
+    },
+    "normalized_field_map": {
+      "field_a": {"type": "string", "normalized_value": "value_a"},
+      "field_b": {"type": "number", "normalized_value": 123}
+    },
+    "lossy_transforms": [
+      {
+        "transform_id": "t1",
+        "field_name": "field_c",
+        "transform_type": "field_drop",
+        "loss_type": "field_missing",
+        "sourceRef": "t:1"
+      }
+    ],
+    "lossy_field_drop_detected": true,
+    "claim_drift_detected": false,
+    "unsupported_dialect_detected": false,
+    "confidence": 0.95,
+    "limits": {
+      "confidence_threshold": 0.7,
+      "max_transforms": 50,
+      "max_field_drops": 10
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "adapter_capability_diff_lossy_field_drop_hold",
+    "readiness_effect": "hold"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "gap-closure-uat-report",
+  "report_id": "release-channel-uat-report",
+  "source_version": "gap026-implemented",
+  "status": "implemented",
+  "decision": "awaiting_acceptance",
+  "readiness_effect": "none",
+  "gap_ids": [
+    "HATE-GAP-019"
+  ],
+  "task_seed_ids": [
+    "TASK-HATE-GAP-019"
+  ],
+  "acceptance_ids": [
+    "AC-HATE-GAP-019"
+  ],
+  "fixture_refs": [
+    "fixtures/release/channel/breaking-without-migration/fixture.json",
+    "fixtures/release/channel/minor-compatible/fixture.json"
+  ],
+  "behavior_checked_count": 2,
+  "findings": [],
+  "sourceRefs": [
+    "fixtures/release/channel/breaking-without-migration/fixture.json",
+    "fixtures/release/channel/minor-compatible/fixture.json"
+  ]
+}

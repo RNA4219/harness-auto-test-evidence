@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-bulk-portability-resumable-export",
+  "gap_id": "HATE-GAP-029",
+  "packet_id": "HATE-PKT-EXP-003-bulk-portability",
+  "task_seed_id": "TASK-HATE-GAP-029",
+  "acceptance_id": "AC-HATE-GAP-029",
+  "case_kind": "positive",
+  "input": {
+    "portability_config": {
+      "chunk_manifest_defined": true,
+      "resume_token_supported": true,
+      "integrity_manifest_defined": true,
+      "partial_failure_handling": true,
+      "tenant_boundary_enforced": true,
+      "source_tenant": "tenant-001",
+      "target_tenant": "tenant-001",
+      "migration_size_mb": 500
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "bulk-portability-uat-report.json"
+  }
+}

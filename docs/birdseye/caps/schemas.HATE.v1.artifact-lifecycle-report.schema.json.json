@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/artifact-lifecycle-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "af2f75961b338bdff2dc55fcc72b0393618ff26d6356f399535488dcc5b949a4",
+  "line_count": 62,
+  "size_bytes": 1815,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

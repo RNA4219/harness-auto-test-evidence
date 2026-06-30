@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/github/unsafe-artifact-redacted/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ff64b1043610c2c36adc9277e639e0a2c881314c6ab5e6ed779403bb486d15e5",
+  "line_count": 25,
+  "size_bytes": 806,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

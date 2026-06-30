@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/workflow/task-seed/valid-packet/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "108fbbfe81eaa5446486821c0c076d64b3519f816ead2eadcebd8afd2125927c",
+  "line_count": 29,
+  "size_bytes": 988,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

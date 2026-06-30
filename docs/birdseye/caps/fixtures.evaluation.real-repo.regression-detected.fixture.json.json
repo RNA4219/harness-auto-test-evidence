@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/evaluation/real-repo/regression-detected/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2c9aebddfdb3f20ae748c06ed94aa7bad5db8a87f40dd3e4d63d796a21fed984",
+  "line_count": 11,
+  "size_bytes": 567,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

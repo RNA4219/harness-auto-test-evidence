@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/agent-quality-report.schema.json",
+  "title": "HATE Agent Quality Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "score",
+    "dimensions",
+    "oracle_refs",
+    "avoidance_signals",
+    "reviewer",
+    "retention",
+    "findings",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "agent-quality-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "score": {"type": "number", "minimum": 0, "maximum": 1},
+    "dimensions": {"type": "object", "additionalProperties": true},
+    "oracle_refs": {"type": "array", "items": {"type": "string"}},
+    "avoidance_signals": {"type": "array", "items": {"type": "string"}},
+    "reviewer": {
+      "type": "object",
+      "required": ["decision", "record_ref", "controlled_decision"],
+      "additionalProperties": true
+    },
+    "retention": {
+      "type": "object",
+      "required": ["retained", "retention_days"],
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "readiness_effect", "message", "sourceRef"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold"]},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {"type": "object", "additionalProperties": true},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

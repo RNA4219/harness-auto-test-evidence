@@ -63,6 +63,11 @@ from .doctor import (
     diagnose_run,
     diagnose_full_store,
 )
+from .migration_rebuild import (
+    StoreMigrationFinding,
+    build_store_migration_report,
+    evaluate_store_migration_fixture,
+)
 
 # Legacy imports (from store_legacy.py for backward compatibility)
 from hate.store_legacy import (
@@ -110,6 +115,9 @@ __all__ = [
     "diagnose_bundle",
     "diagnose_run",
     "diagnose_full_store",
+    "StoreMigrationFinding",
+    "build_store_migration_report",
+    "evaluate_store_migration_fixture",
     # Legacy exports
     "StoreError",
     "ingest_local_store",

@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/enterprise/tenant/artifact-cross-access-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a5d2c835452036bd7f6e78d05b93f25df0dfb24081520a2c5c03d8912c22319f",
+  "line_count": 22,
+  "size_bytes": 657,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/HATE/v1/github-integration-report.schema.json",
+  "title": "HATE GitHub Integration Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "source_version",
+    "status",
+    "readiness_effect",
+    "surface",
+    "actor",
+    "permissions",
+    "annotation_count",
+    "unsafe_artifact_count",
+    "redacted_annotation_count",
+    "run_id",
+    "previous_run_id",
+    "rerun_linked",
+    "canonical_evidence_mutated",
+    "audit_events",
+    "findings",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "record_type": { "const": "github-integration-report" },
+    "source_version": { "type": "string" },
+    "status": { "enum": ["pass", "hold"] },
+    "readiness_effect": { "enum": ["none", "hold"] },
+    "finding_code": { "type": "string" },
+    "surface": { "type": "string" },
+    "actor": { "type": "string" },
+    "permissions": { "type": "array", "items": { "type": "string" } },
+    "annotation_count": { "type": "integer", "minimum": 0 },
+    "unsafe_artifact_count": { "type": "integer", "minimum": 0 },
+    "redacted_annotation_count": { "type": "integer", "minimum": 0 },
+    "run_id": { "type": "string" },
+    "previous_run_id": { "type": "string" },
+    "rerun_linked": { "type": "boolean" },
+    "canonical_evidence_mutated": { "type": "boolean" },
+    "audit_events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "event_type",
+          "surface",
+          "actor",
+          "permissions",
+          "decision",
+          "finding_code",
+          "run_id",
+          "previous_run_id",
+          "created_at"
+        ],
+        "properties": {
+          "event_type": { "const": "github_integration_decision" },
+          "surface": { "type": "string" },
+          "actor": { "type": "string" },
+          "permissions": { "type": "array", "items": { "type": "string" } },
+          "decision": { "enum": ["allow", "deny"] },
+          "finding_code": { "type": "string" },
+          "run_id": { "type": "string" },
+          "previous_run_id": { "type": "string" },
+          "created_at": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "source_refs"],
+        "properties": {
+          "code": { "type": "string" },
+          "severity": { "enum": ["low", "medium", "high", "critical"] },
+          "message": { "type": "string" },
+          "source_refs": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sourceRefs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

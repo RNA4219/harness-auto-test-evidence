@@ -1,0 +1,20 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-acceptance-done-without-record",
+  "gap_id": "HATE-GAP-022",
+  "packet_id": "HATE-PKT-WF-002-acceptance-linkage",
+  "task_seed_id": "TASK-HATE-GAP-022",
+  "acceptance_id": "AC-HATE-GAP-022",
+  "case_kind": "negative",
+  "input": {
+    "task_status": "done",
+    "acceptance_record": null,
+    "exception_reason": null
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "done_task_missing_acceptance",
+    "readiness_effect": "hold",
+    "uat_report": "workflow-acceptance-uat-report.json"
+  }
+}

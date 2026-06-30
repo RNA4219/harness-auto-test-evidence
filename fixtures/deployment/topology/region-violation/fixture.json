@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "deployment-topology-region-violation",
+  "gap_id": "HATE-GAP-017",
+  "packet_id": "HATE-PKT-DEPLOY-001-topology",
+  "task_seed_id": "TASK-HATE-GAP-017",
+  "acceptance_id": "AC-HATE-GAP-017",
+  "case_kind": "negative",
+  "input": {"topology": "hosted", "required_region": "jp", "actual_region": "us"},
+  "expected": {"status": "hold", "finding_code": "deployment_region_violation", "readiness_effect": "hold", "uat_report": "deployment-topology-uat-report.json"}
+}

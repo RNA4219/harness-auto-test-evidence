@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/evaluation/agent_quality.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ff3dfcb873eef2039777463fe3c83e53fef642219a61819f7fde3d0e4aaf9723",
+  "line_count": 166,
+  "size_bytes": 5694,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

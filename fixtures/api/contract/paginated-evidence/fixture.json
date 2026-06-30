@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "api-contract-paginated-evidence",
+  "gap_id": "HATE-GAP-009",
+  "packet_id": "HATE-PKT-API-002-contract-depth",
+  "task_seed_id": "TASK-HATE-GAP-009",
+  "acceptance_id": "AC-HATE-GAP-009",
+  "case_kind": "positive",
+  "input": {"endpoint": "/v1/evidence", "pagination": {"limit": 50, "cursor": "cur_1"}, "authz": "allowed"},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "api-contract-uat-report.json"}
+}

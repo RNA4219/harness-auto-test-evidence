@@ -1,0 +1,36 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-beta-acceptance-cohort-exit-pass",
+  "gap_id": "HATE-GAP-040",
+  "packet_id": "HATE-PKT-EXP-010-beta-acceptance",
+  "task_seed_id": "TASK-HATE-GAP-040",
+  "acceptance_id": "AC-HATE-GAP-040",
+  "case_kind": "positive",
+  "input": {
+    "beta_config": {
+      "cohort_defined": true,
+      "cohort_id": "beta-cohort-001",
+      "customer_evidence_limits_defined": true,
+      "feedback_items": [
+        {
+          "feedback_id": "feedback-001",
+          "classification": "bug",
+          "severity": "low",
+          "sourceRef": "feedback-001"
+        }
+      ],
+      "blocker_count": 0,
+      "critical_blocker_count": 0,
+      "triage_owner": "triage-owner-001",
+      "exit_criteria_defined": true,
+      "exit_criteria_met": true,
+      "acceptance_record_present": true,
+      "customer_secret_present": false
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "beta-acceptance-uat-report.json"
+  }
+}

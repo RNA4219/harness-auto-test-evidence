@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/workflow_completion.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1bd46e8a4ad2a95b79708b88591fd0d747d8f57fe15e2b2532672f0c22b948db",
+  "line_count": 182,
+  "size_bytes": 7183,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "fixture",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

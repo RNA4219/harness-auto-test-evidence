@@ -1,0 +1,30 @@
+{
+  "path": "docs/process/REQUIREMENTS_TO_SPEC_GAP_AUDIT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "ec14a5ca7e8ec091dc6cdb7e1427eaa18fd47e7c07c81bde5e978b5d4915b18f",
+  "line_count": 55,
+  "size_bytes": 2844,
+  "headings": [
+    "# Requirements To Spec Gap Audit",
+    "## 1. Audit Scope",
+    "## 2. Findings",
+    "## 3. Existing Coverage Confirmed",
+    "## 4. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "release",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/dashboard-state-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "add16605673e076da5091fbc1e0027a146450d982dad76a478ded12d1612238a",
+  "line_count": 28,
+  "size_bytes": 759,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

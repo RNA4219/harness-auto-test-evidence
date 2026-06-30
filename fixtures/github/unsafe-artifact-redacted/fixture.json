@@ -1,0 +1,25 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "github-unsafe-artifact-redacted",
+  "gap_id": "HATE-GAP-005",
+  "packet_id": "HATE-PKT-GH-001-github-integration",
+  "task_seed_id": "TASK-HATE-GAP-005",
+  "acceptance_id": "AC-HATE-GAP-005",
+  "case_kind": "positive",
+  "input": {
+    "surface": "check_run",
+    "actor": "github_app",
+    "permissions": ["checks:write", "pull-requests:read"],
+    "unsafe_artifacts": 2,
+    "redacted_annotations": 2,
+    "annotations": [
+      {"path": "src/hate/api.py", "message": "unsafe artifact redacted", "safe": true},
+      {"path": "src/hate/store.py", "message": "raw path omitted", "safe": true}
+    ]
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "github-integration-uat-report.json"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-oracle-classification-snapshot-only-critical-hold",
+  "gap_id": "HATE-GAP-052",
+  "packet_id": "HATE-PKT-EXP-026-oracle-classification",
+  "case_kind": "negative",
+  "input": {
+    "oracle_classes": [
+      {
+        "oracle_id": "oc-snapshot",
+        "oracle_type": "snapshot",
+        "target_risk": "risk-critical",
+        "confidence": 0.3,
+        "sourceRef": "oracle:oc-snapshot",
+        "rationale": "Snapshot-only oracle for critical risk",
+        "verified": false
+      }
+    ],
+    "semantic_guards": [
+      {
+        "guard_id": "sg-empty",
+        "guard_type": "none",
+        "target_behavior": "",
+        "confidence": 0.3,
+        "sourceRef": "",
+        "rationale": "No semantic guard available",
+        "verified": false
+      }
+    ],
+    "no_oracle_risks": [
+      {
+        "risk_id": "nor-critical",
+        "risk_type": "critical",
+        "severity": "critical",
+        "confidence": 0.3,
+        "sourceRef": "",
+        "rationale": "Critical risk without oracle",
+        "mitigated": false
+      }
+    ],
+    "analysis_scope": "partial",
+    "input_refs": ["oracle:oc-snapshot"],
+    "confidence": 0.3,
+    "limits": {
+      "max_oracle_classes": 100,
+      "max_semantic_guards": 100,
+      "max_no_oracle_risks": 100,
+      "confidence_threshold": 0.7
+    },
+    "oracle_taxonomy_available": false,
+    "semantic_guard_available": false,
+    "critical_risk_coverage_available": false
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "oracle_classification_snapshot_only_critical_hold",
+    "readiness_effect": "hold"
+  }
+}

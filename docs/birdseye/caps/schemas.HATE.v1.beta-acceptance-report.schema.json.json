@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/beta-acceptance-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "ec70e6127416ad6c632c62deb7e68931c62c1f1b99dc043094755e1ddcb7372e",
+  "line_count": 43,
+  "size_bytes": 1416,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

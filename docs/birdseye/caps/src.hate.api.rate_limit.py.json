@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/api/rate_limit.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "abb2934101e466f39fec5bc98859f196ade68671be5f8986ec3dc2ae3c10281c",
+  "line_count": 271,
+  "size_bytes": 9164,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "math",
+    "typing",
+    "uuid"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "path": "docs/acceptance/HATE_GAP_CLOSURE_ACCEPTANCE.md",
+  "role": "quality",
+  "kind": "md",
+  "sha256": "8c348231ab5d240e1bd33fd414d1c66fac26ee39a417df1501d5cae5cd1bbaa4",
+  "line_count": 66,
+  "size_bytes": 4940,
+  "headings": [
+    "# HATE Gap Closure Acceptance Ledger",
+    "## Acceptance States",
+    "## Acceptance Ledger",
+    "## No-Go"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "release",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

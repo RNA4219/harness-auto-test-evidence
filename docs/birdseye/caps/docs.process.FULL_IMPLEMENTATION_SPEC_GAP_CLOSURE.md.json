@@ -2,9 +2,9 @@
   "path": "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "ddefd3390e8af70dece2a348c177314b1488b429d1dd86512fcefc11e7cd01ef",
-  "line_count": 469,
-  "size_bytes": 23317,
+  "sha256": "1da32528e5f1ae056dc4d8309986fd91de9f57211c5823b3312628fa1aee3429",
+  "line_count": 480,
+  "size_bytes": 23577,
   "headings": [
     "# フル実装仕様不足解消書",
     "## 1. 目的",
@@ -36,6 +36,7 @@
     "adapter",
     "api",
     "artifact",
+    "birdseye",
     "coverage",
     "enterprise",
     "fixture",
@@ -43,6 +44,7 @@
     "release",
     "schema",
     "store",
-    "test"
+    "test",
+    "workflow"
   ]
 }

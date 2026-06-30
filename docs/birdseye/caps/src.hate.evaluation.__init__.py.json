@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/evaluation/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "49fe6427c49f35129c756adde03e669eef0b3390bd6f5bc82a70ec7dc9307719",
+  "line_count": 21,
+  "size_bytes": 563,
+  "headings": [],
+  "imports": [
+    "hate.evaluation.agent_quality",
+    "hate.evaluation.real_repo"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evaluation/agent_quality.py",
+    "src/hate/evaluation/real_repo.py"
+  ],
+  "tags": [
+    "fixture"
+  ]
+}

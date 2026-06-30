@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/workflow/completion/scope-safe/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "72ba7a20462b711ac58bc974a44d14e7c5d133614cd87e2467853b563cbe69e1",
+  "line_count": 21,
+  "size_bytes": 680,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

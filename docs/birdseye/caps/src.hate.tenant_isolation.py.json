@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/tenant_isolation.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1658bd8de0704d5240ec27cd1032af3c6f43cf3b0ecebbf123af7b2b2da11239",
+  "line_count": 154,
+  "size_bytes": 5693,
+  "headings": [],
+  "imports": [
+    ".authz",
+    "__future__",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/authz.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

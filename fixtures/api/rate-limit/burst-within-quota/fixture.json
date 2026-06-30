@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "api-rate-limit-burst-within-quota",
+  "gap_id": "HATE-GAP-003",
+  "packet_id": "HATE-PKT-API-001-rate-limit",
+  "task_seed_id": "TASK-HATE-GAP-003",
+  "acceptance_id": "AC-HATE-GAP-003",
+  "case_kind": "positive",
+  "input": {"requests": 10, "quota": 100, "window_seconds": 60},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "api-rate-limit-uat-report.json"}
+}

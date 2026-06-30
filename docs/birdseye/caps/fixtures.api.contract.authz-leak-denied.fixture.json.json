@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/api/contract/authz-leak-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6e1375853631f5646f00b1dfbf617db1627a711ba9891045f76efc2ffbbf21b0",
+  "line_count": 11,
+  "size_bytes": 524,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

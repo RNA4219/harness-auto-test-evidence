@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/product-analytics-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "1aa7f2da48149e3ad6403d3cf00f9ca28426026573b0ca9bc09c4aff5d6b788a",
+  "line_count": 43,
+  "size_bytes": 1432,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

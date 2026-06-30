@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/evaluation/real_repo.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "194bbd6ea0d723893d27855bd5309d044d1e861228b97c354be87894cf3a70fb",
+  "line_count": 209,
+  "size_bytes": 7225,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

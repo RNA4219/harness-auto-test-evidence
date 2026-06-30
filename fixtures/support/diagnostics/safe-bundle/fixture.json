@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "support-diagnostics-safe-bundle",
+  "gap_id": "HATE-GAP-011",
+  "packet_id": "HATE-PKT-SUP-001-diagnostics",
+  "task_seed_id": "TASK-HATE-GAP-011",
+  "acceptance_id": "AC-HATE-GAP-011",
+  "case_kind": "positive",
+  "input": {"bundle": {"redacted": true, "raw_customer_code": false, "secret_count": 0}},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "support-diagnostics-uat-report.json"}
+}

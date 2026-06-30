@@ -2,9 +2,9 @@
   "path": "src/hate/support_ops/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "f3ff161b875764c6a3cb0a69351ef58ecd18864209209ae56d8edeb9a43ba218",
-  "line_count": 35,
-  "size_bytes": 893,
+  "sha256": "87501c78ea8760d2a70884bb98cee2d93c574f03fcb0bd685e3b2f7a70865794",
+  "line_count": 45,
+  "size_bytes": 1255,
   "headings": [],
   "imports": [
     "hate.support_ops.diagnostics",
@@ -17,5 +17,7 @@
     "src/hate/support_ops/error_catalog.py",
     "src/hate/support_ops/observability.py"
   ],
-  "tags": []
+  "tags": [
+    "fixture"
+  ]
 }

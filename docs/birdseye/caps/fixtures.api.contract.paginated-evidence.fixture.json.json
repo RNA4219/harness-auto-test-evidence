@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/contract/paginated-evidence/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6a120798a8eb61d0440a7e0365fe085c27c752417226b1a85f073722bef1eed6",
+  "line_count": 11,
+  "size_bytes": 504,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

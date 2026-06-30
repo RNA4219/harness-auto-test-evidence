@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/workflow_plugin.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "26625ca1246ec3273210184f5ff75d37deacfb6673ffa93efe32e17809082793",
+  "line_count": 170,
+  "size_bytes": 6661,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

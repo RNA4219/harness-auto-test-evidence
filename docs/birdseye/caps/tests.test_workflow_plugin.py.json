@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_workflow_plugin.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "13aa370cdb58d7d2f0bb4a0222e899349bc8418b1f94581f78b3c503ecad1c6a",
+  "line_count": 145,
+  "size_bytes": 5254,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.workflow_plugin",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/workflow_plugin.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

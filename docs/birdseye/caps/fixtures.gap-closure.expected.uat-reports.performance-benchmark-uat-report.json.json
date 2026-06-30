@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/performance-benchmark-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4856616d830831b1b1ac821ce520c6846e54bae20d478a1e81b5439ef77ccb81",
+  "line_count": 28,
+  "size_bytes": 795,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "fixture_id": "recurring-failure-blocked",
+  "fixture_type": "negative",
+  "description": "Recurring failure pattern detected - should hold",
+  "input": {
+    "baseline_window": {
+      "window_id": "baseline-1",
+      "start_date": "2024-01-01",
+      "end_date": "2024-01-31",
+      "baseline_metrics": {
+        "pass_rate": 0.95,
+        "coverage": 0.85
+      }
+    },
+    "trend_metrics": [
+      {
+        "metric_id": "metric-1",
+        "metric_type": "pass_rate",
+        "value": 0.92,
+        "trend_direction": "down",
+        "confidence": 0.9,
+        "sourceRef": "metric:1",
+        "rationale": "Pass rate degraded by 3%"
+      }
+    ],
+    "recurrences": [
+      {
+        "recurrence_id": "rec-1",
+        "failure_pattern": "timeout_flake",
+        "occurrence_count": 3,
+        "resolved": false,
+        "severity": "high",
+        "sourceRef": "rec:1",
+        "rationale": "Timeout flake recurring 3 times without resolution"
+      }
+    ],
+    "parser_regression_detected": false,
+    "recurring_failure_pattern": true,
+    "risk_debt_burn_rate": 0.0,
+    "analysis_scope": "historical_regression",
+    "input_refs": ["baseline-1", "current"],
+    "confidence": 0.9,
+    "limits": {
+      "max_trend_metrics": 50,
+      "max_recurrences": 20,
+      "risk_debt_threshold": 0.3,
+      "confidence_threshold": 0.7
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "historical_regression_recurring_failure_blocked",
+    "readiness_effect": "hold"
+  }
+}

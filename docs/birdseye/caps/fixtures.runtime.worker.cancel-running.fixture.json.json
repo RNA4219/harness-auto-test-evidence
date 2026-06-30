@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/runtime/worker/cancel-running/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4aad88d2f1793215780d364577e0903cd0adc5e20e1c4d8786e327b44fb91b64",
+  "line_count": 16,
+  "size_bytes": 591,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

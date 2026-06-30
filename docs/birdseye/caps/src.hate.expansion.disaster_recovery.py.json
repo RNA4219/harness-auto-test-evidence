@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/expansion/disaster_recovery.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c5e77550db9f274953f71205b59e671f75c55353aff415e866f0f8e18ec9c45b",
+  "line_count": 152,
+  "size_bytes": 6093,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

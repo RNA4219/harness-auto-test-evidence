@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/data-classification/public-summary-safe/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "457dea699d4b399ebaf861a4419c52103ab697b7236d5d372284908c2ea2cd6b",
+  "line_count": 27,
+  "size_bytes": 878,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

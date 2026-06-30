@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/disaster-recovery/corrupt-backup-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c52db766e772f067e5be3c9b9088b65aa8e6a61eef3ec78123ce7e8e329192d0",
+  "line_count": 31,
+  "size_bytes": 993,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

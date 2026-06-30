@@ -1,0 +1,48 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-impact-analysis-missing-dependency-source-hold",
+  "gap_id": "HATE-GAP-049",
+  "packet_id": "HATE-PKT-EXP-023-impact-analysis",
+  "case_kind": "negative",
+  "input": {
+    "changed_refs": [
+      {
+        "path": "src/hate/analysis/impact_analysis.py",
+        "change_type": "modified",
+        "sourceRef": "commit:abc123"
+      }
+    ],
+    "affected_tests": [
+      {
+        "test_id": "test_impact_analysis_hold",
+        "confidence": 0.95,
+        "sourceRef": "test-file:tests/test_analysis_impact_analysis.py",
+        "rationale": "Direct dependency on modified module"
+      }
+    ],
+    "affected_requirements": [
+      {
+        "requirement_id": "REQ-IMPACT-001",
+        "confidence": 0.9,
+        "sourceRef": "requirement:docs/requirements.md",
+        "rationale": "Requirement traced to modified code"
+      }
+    ],
+    "analysis_scope": "full",
+    "input_refs": ["commit:abc123"],
+    "confidence": 0.92,
+    "limits": {
+      "max_affected_tests": 1000,
+      "max_affected_requirements": 100,
+      "confidence_threshold": 0.7
+    },
+    "dependency_sources_available": false,
+    "ownership_sources_available": true,
+    "history_sources_available": true
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "impact_analysis_missing_dependency_source",
+    "readiness_effect": "hold"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "gap-closure-uat-report",
+  "report_id": "adapter-corpus-uat-report",
+  "source_version": "gap026-implemented",
+  "status": "implemented",
+  "decision": "awaiting_acceptance",
+  "readiness_effect": "none",
+  "gap_ids": [
+    "HATE-GAP-007"
+  ],
+  "task_seed_ids": [
+    "TASK-HATE-GAP-007"
+  ],
+  "acceptance_ids": [
+    "AC-HATE-GAP-007"
+  ],
+  "fixture_refs": [
+    "fixtures/corpus/manifest/minimum-dialects/fixture.json",
+    "fixtures/corpus/manifest/stale-fixture/fixture.json"
+  ],
+  "behavior_checked_count": 2,
+  "findings": [],
+  "sourceRefs": [
+    "fixtures/corpus/manifest/minimum-dialects/fixture.json",
+    "fixtures/corpus/manifest/stale-fixture/fixture.json"
+  ]
+}

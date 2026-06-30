@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/github/rerun-preserves-run-id-link/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e4f8bed41f6fef1f060d2edda2d33ae2767abd4549176dddb8f8070ffe1844ff",
+  "line_count": 24,
+  "size_bytes": 683,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

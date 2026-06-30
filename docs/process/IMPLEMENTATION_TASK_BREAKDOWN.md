@@ -17,6 +17,11 @@ worker-facing task backlog である。各タスクは、コード、schema、fi
 50万行級の product-grade 実装へ展開する epic / worker packet の入口は
 `IMPLEMENTATION_EPIC_BREAKDOWN.md` を正本とする。
 
+PRD gap から横断実装packetへ展開する入口は
+`PRODUCT_REQUIREMENTS_GAP_CLOSURE_PACKETS.md` を正本とする。特に
+HATE-GAP-001..026 は、フェーズ別タスクだけでなく gap packet ID、
+acceptance、fixture、UAT evidence へ必ず紐づける。
+
 ## 2. Done の共通条件
 
 全タスク共通で、以下を満たす。

@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/expansion/beta_acceptance.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "6b3c02b427cba269f381f124b89127c8149a6e1ee67db94365d3a368bc8ab63f",
+  "line_count": 179,
+  "size_bytes": 6918,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

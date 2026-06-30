@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/workflow-completion-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "5c49e192409a184b9b4ac374610a1bb990749ffe4e04749d3ae59f9f8784ba38",
+  "line_count": 43,
+  "size_bytes": 1439,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "workflow"
+  ]
+}

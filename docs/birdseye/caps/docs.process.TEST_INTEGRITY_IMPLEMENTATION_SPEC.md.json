@@ -1,0 +1,26 @@
+{
+  "path": "docs/process/TEST_INTEGRITY_IMPLEMENTATION_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "19bcaa967300e7ada727c1fb4d16e6c5ec381d61bfa90eb7078ad79c70ef2b44",
+  "line_count": 90,
+  "size_bytes": 3733,
+  "headings": [
+    "# Test Integrity Implementation Spec",
+    "## 1. Scope",
+    "## 2. Required Inputs",
+    "## 3. Detector Output",
+    "## 4. Detection Rules",
+    "## 5. Fixture Matrix",
+    "## 6. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

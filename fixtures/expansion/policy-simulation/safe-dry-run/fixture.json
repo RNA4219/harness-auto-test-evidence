@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-policy-simulation-safe-dry-run",
+  "gap_id": "HATE-GAP-028",
+  "packet_id": "HATE-PKT-EXP-002-policy-simulation",
+  "task_seed_id": "TASK-HATE-GAP-028",
+  "acceptance_id": "AC-HATE-GAP-028",
+  "case_kind": "positive",
+  "input": {
+    "simulation_config": {
+      "dry_run_supported": true,
+      "blast_radius_bounded": true,
+      "rollback_plan_defined": true,
+      "evidence_eligibility_impact_shown": true,
+      "audit_evidence_generated": true,
+      "affected_repos": ["repo-a", "repo-b"],
+      "change_type": "policy-update",
+      "max_affected_threshold": 5
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "policy-simulation-uat-report.json"
+  }
+}

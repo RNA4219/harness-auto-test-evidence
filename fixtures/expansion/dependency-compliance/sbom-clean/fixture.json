@@ -1,0 +1,36 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-dependency-compliance-sbom-clean",
+  "gap_id": "HATE-GAP-034",
+  "packet_id": "HATE-PKT-EXP-008-dependency-compliance",
+  "task_seed_id": "TASK-HATE-GAP-034",
+  "acceptance_id": "AC-HATE-GAP-034",
+  "case_kind": "positive",
+  "input": {
+    "compliance_config": {
+      "sbom_present": true,
+      "sbom_format": "cyclonedx-json",
+      "packages": [
+        {
+          "name": "requests",
+          "version": "2.31.0",
+          "license": "Apache-2.0",
+          "purl": "pkg:pypi/requests@2.31.0",
+          "vulnerabilities": []
+        }
+      ],
+      "license_policy_defined": true,
+      "allowed_licenses": ["Apache-2.0", "MIT", "BSD-3-Clause"],
+      "denied_licenses": ["GPL-3.0", "AGPL-3.0"],
+      "vulnerability_policy_defined": true,
+      "vulnerability_max_age_days": 30,
+      "exceptions": [],
+      "provenance_attestation_present": true
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "dependency-compliance-uat-report.json"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-task-seed-valid-packet",
+  "gap_id": "HATE-GAP-021",
+  "packet_id": "HATE-PKT-WF-001-task-seed-loop",
+  "task_seed_id": "TASK-HATE-GAP-021",
+  "acceptance_id": "AC-HATE-GAP-021",
+  "case_kind": "positive",
+  "input": {
+    "task_seed": {
+      "objective": "Implement Task Seed projection and validation",
+      "scope": {
+        "in": ["docs/tasks", "tests"],
+        "out": ["external issue tracker sync"]
+      },
+      "requirements": {
+        "behavior": ["valid task seeds include objective, scope, requirements, commands, dependencies"],
+        "constraints": ["task seed slices target <=0.5d"]
+      },
+      "commands": ["uv run pytest tests/test_gap_closure_docs.py -q"],
+      "dependencies": ["WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md#task-seed-loop"]
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "workflow-task-seed-uat-report.json"
+  }
+}

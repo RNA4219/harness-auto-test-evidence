@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_adapter_family_packet.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "8a4ecf0abd9806471cfa994ce775e59a60225c68e47083bbd4b4017d0d13c2c6",
+  "line_count": 170,
+  "size_bytes": 6243,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hate.adapters",
+    "hate.adapters.corpus_manifest",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/adapters/corpus_manifest.py"
+  ],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/workflow-plugin-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "84e8655c4fa1a502564ad31c4aea50f43ea0961b66c89ecf22440ee91d661cb0",
+  "line_count": 28,
+  "size_bytes": 777,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

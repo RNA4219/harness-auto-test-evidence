@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/expansion/data_classification.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "720a3083f75bd4dc933ef1253839e5f00e652670f47eaf78ef0fa02c705bda00",
+  "line_count": 168,
+  "size_bytes": 6494,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

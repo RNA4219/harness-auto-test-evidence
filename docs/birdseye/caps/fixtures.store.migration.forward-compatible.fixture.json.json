@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/store/migration/forward-compatible/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ccc582b02411009195dc806b1c36a18319691b5fef6284c5a9866a1d6e7a8742",
+  "line_count": 11,
+  "size_bytes": 506,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

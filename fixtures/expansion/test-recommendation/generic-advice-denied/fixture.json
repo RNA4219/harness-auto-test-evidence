@@ -1,0 +1,55 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-test-recommendation-generic-advice-denied",
+  "gap_id": "HATE-GAP-050",
+  "packet_id": "HATE-PKT-EXP-024-test-recommendation",
+  "case_kind": "negative",
+  "input": {
+    "recommendations": [
+      {
+        "action": "general_improvement",
+        "target": "test_quality",
+        "confidence": 0.5,
+        "sourceRef": "analysis:recommendation-001",
+        "rationale": "Generic advice without specific action",
+        "actionable": false
+      }
+    ],
+    "required_oracles": [
+      {
+        "oracle_id": "oracle-001",
+        "risk_id": "risk-001",
+        "confidence": 0.5,
+        "sourceRef": "oracle:general",
+        "rationale": "General oracle recommendation",
+        "verified": true
+      }
+    ],
+    "verification_commands": [
+      {
+        "command_id": "cmd-001",
+        "recommendation_id": "rec-001",
+        "confidence": 0.5,
+        "sourceRef": "command:general",
+        "rationale": "General verification command",
+        "verified": true
+      }
+    ],
+    "analysis_scope": "full",
+    "input_refs": ["analysis:recommendation-001"],
+    "confidence": 0.5,
+    "limits": {
+      "max_recommendations": 100,
+      "max_oracles": 50,
+      "confidence_threshold": 0.7
+    },
+    "actionable_taxonomy_used": false,
+    "oracle_validation_enabled": true,
+    "command_verification_enabled": true
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "test_recommendation_generic_advice_denied",
+    "readiness_effect": "hold"
+  }
+}

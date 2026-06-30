@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/observability-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d6ee40f9099e150582eb1ac469eca767b945dc42e9c7ec5b46275a54aa61bfb4",
+  "line_count": 28,
+  "size_bytes": 767,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

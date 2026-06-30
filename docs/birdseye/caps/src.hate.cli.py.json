@@ -2,11 +2,12 @@
   "path": "src/hate/cli.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "a38b361773c49668960d10afd5c3c75db8a606fd6ab222d63f7867b479991ddc",
-  "line_count": 522,
-  "size_bytes": 25033,
+  "sha256": "75f916261fdea4ab13f62d9f4d1aaae8c52724b70c0b264ab51685f58655022d",
+  "line_count": 548,
+  "size_bytes": 25861,
   "headings": [],
   "imports": [
+    ".gap_closure",
     ".p0a",
     ".p0b",
     ".p1a",
@@ -23,6 +24,7 @@
   ],
   "links": [],
   "depends_on": [
+    "src/hate/gap_closure.py",
     "src/hate/p0a.py",
     "src/hate/p0b.py",
     "src/hate/p1a.py",

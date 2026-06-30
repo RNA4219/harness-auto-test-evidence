@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/notifications/signed-delivery/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "afb6b1103e431ff1803d551365022ef4d0ad27e48702502053a1c83bcb912459",
+  "line_count": 26,
+  "size_bytes": 774,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

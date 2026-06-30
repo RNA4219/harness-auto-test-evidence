@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/dashboard-state-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "cd04be18ce24fd3a5b2f965ab5d83965001de5fe2d083207fbc603b97ebc0804",
+  "line_count": 91,
+  "size_bytes": 3376,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

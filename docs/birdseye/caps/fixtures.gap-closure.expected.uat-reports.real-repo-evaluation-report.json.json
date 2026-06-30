@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/real-repo-evaluation-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "45031b807aca692d6f9321b52a8db9dde1cbe16a1119d8b07d782af8ef17f28f",
+  "line_count": 28,
+  "size_bytes": 788,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/tenant-isolation-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c6581939655c7e9b0df96a3da4566549b030b9572ca68b625a22181ff35eed03",
+  "line_count": 28,
+  "size_bytes": 772,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

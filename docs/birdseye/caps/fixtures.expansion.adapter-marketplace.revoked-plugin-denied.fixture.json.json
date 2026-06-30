@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/adapter-marketplace/revoked-plugin-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c1bc1ce24bc62102a99f8c497e1f217b0007dcf47a215537f9d4325f9faee07c",
+  "line_count": 30,
+  "size_bytes": 978,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

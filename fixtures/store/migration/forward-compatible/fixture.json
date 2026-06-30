@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "store-migration-forward-compatible",
+  "gap_id": "HATE-GAP-006",
+  "packet_id": "HATE-PKT-STORE-001-migration-rebuild",
+  "task_seed_id": "TASK-HATE-GAP-006",
+  "acceptance_id": "AC-HATE-GAP-006",
+  "case_kind": "positive",
+  "input": {"from_schema": "HATE/v1", "to_schema": "HATE/v1.1", "dry_run": true, "replay": "pass"},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "store-migration-uat-report.json"}
+}

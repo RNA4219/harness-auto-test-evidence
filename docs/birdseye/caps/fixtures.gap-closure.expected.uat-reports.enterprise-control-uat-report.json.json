@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/enterprise-control-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7890c710a66a6387fe962985c808dd6150c270ac1a539b5b87d6e75a0b2e8d3e",
+  "line_count": 28,
+  "size_bytes": 784,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

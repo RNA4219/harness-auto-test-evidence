@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/product_e2e.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ba912e1fa31b3c087f8a839f2e858a89724114e8b6519bc115a1dad28b7b979e",
+  "line_count": 237,
+  "size_bytes": 9907,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security"
+  ]
+}

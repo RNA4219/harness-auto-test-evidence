@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "enterprise-control-admin-allowed",
+  "gap_id": "HATE-GAP-015",
+  "packet_id": "HATE-PKT-ENT-002-control-packets",
+  "task_seed_id": "TASK-HATE-GAP-015",
+  "acceptance_id": "AC-HATE-GAP-015",
+  "case_kind": "positive",
+  "input": {"role": "admin", "action": "update_retention_policy"},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "enterprise-control-uat-report.json"}
+}

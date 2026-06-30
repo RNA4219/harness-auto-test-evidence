@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/real-repo-evaluation-report.schema.json",
+  "title": "HATE Real Repository Evaluation Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "repo_id",
+    "baseline",
+    "current",
+    "timeout_ms",
+    "runtime_budget_ms",
+    "timeout_recorded",
+    "subset",
+    "findings",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "real-repo-evaluation-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "repo_id": {"type": "string"},
+    "baseline": {
+      "type": "object",
+      "required": ["decision", "record_count"],
+      "additionalProperties": true
+    },
+    "current": {
+      "type": "object",
+      "required": ["decision", "record_count", "parser_status", "runtime_ms", "unsafe_artifact_findings"],
+      "additionalProperties": true
+    },
+    "timeout_ms": {"type": "integer", "minimum": 1},
+    "runtime_budget_ms": {"type": "integer", "minimum": 1},
+    "timeout_recorded": {"type": "boolean"},
+    "subset": {
+      "type": "object",
+      "required": ["is_subset", "label", "limitation_visible", "proves_full_suite"],
+      "properties": {
+        "is_subset": {"type": "boolean"},
+        "label": {"type": "string"},
+        "limitation_visible": {"type": "boolean"},
+        "proves_full_suite": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "readiness_effect", "message", "sourceRef"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold"]},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {"type": "object", "additionalProperties": true},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

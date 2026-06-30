@@ -1,0 +1,31 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-disaster-recovery-corrupt-backup-denied",
+  "gap_id": "HATE-GAP-037",
+  "packet_id": "HATE-PKT-EXP-007-disaster-recovery",
+  "task_seed_id": "TASK-HATE-GAP-037",
+  "acceptance_id": "AC-HATE-GAP-037",
+  "case_kind": "negative",
+  "input": {
+    "dr_config": {
+      "backup_inventory_present": true,
+      "backup_id": "backup-2026-07-01-001",
+      "backup_created_at": "2026-07-01T00:00:00Z",
+      "backup_integrity_hash": "sha256:abc123",
+      "restore_drill_executed": true,
+      "restore_verified": true,
+      "rpo_minutes": 60,
+      "rto_minutes": 120,
+      "rpo_budget_minutes": 240,
+      "rto_budget_minutes": 480,
+      "corrupt_backup_detected": true,
+      "incident_evidence_present": true
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "disaster_recovery_corrupt_backup_denied",
+    "readiness_effect": "hold",
+    "uat_report": "disaster-recovery-uat-report.json"
+  }
+}

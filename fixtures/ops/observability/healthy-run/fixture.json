@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "ops-observability-healthy-run",
+  "gap_id": "HATE-GAP-010",
+  "packet_id": "HATE-PKT-OPS-001-observability",
+  "task_seed_id": "TASK-HATE-GAP-010",
+  "acceptance_id": "AC-HATE-GAP-010",
+  "case_kind": "positive",
+  "input": {"metrics": ["job_duration_seconds", "artifact_quarantine_count"], "logs": ["run_id"], "spans": ["hate.p0a"]},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "observability-uat-report.json"}
+}

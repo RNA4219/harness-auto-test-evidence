@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/store/migration/version-skew-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "67be76876fb125166f3d963019862619ed2201961e7b397b4944b6bdae43fe5f",
+  "line_count": 22,
+  "size_bytes": 664,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

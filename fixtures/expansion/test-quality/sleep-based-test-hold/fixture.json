@@ -1,0 +1,58 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-test-quality-sleep-based-test-hold",
+  "gap_id": "HATE-GAP-054",
+  "packet_id": "HATE-PKT-EXP-028-test-quality",
+  "case_kind": "negative",
+  "input": {
+    "test_patterns": [
+      {
+        "pattern_id": "tp-empty",
+        "pattern_type": "none",
+        "quality_dimension": "",
+        "confidence": 0.3,
+        "sourceRef": "",
+        "rationale": "No test pattern detected",
+        "verified": false
+      }
+    ],
+    "anti_patterns": [
+      {
+        "anti_pattern_id": "ap-sleep",
+        "anti_pattern_type": "sleep_based",
+        "severity": "critical",
+        "confidence": 0.3,
+        "sourceRef": "",
+        "rationale": "Critical sleep-based anti-pattern not mitigated",
+        "mitigated": false
+      }
+    ],
+    "quality_metrics": [
+      {
+        "metric_id": "qm-empty",
+        "metric_type": "none",
+        "value": 0.3,
+        "confidence": 0.3,
+        "sourceRef": "",
+        "rationale": "No quality metric available"
+      }
+    ],
+    "analysis_scope": "partial",
+    "input_refs": ["anti-pattern:ap-sleep"],
+    "confidence": 0.3,
+    "limits": {
+      "max_test_patterns": 100,
+      "max_anti_patterns": 100,
+      "max_quality_metrics": 100,
+      "confidence_threshold": 0.7
+    },
+    "determinism_available": false,
+    "timeout_available": false,
+    "isolation_available": false
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "test_quality_sleep_based_test_hold",
+    "readiness_effect": "hold"
+  }
+}

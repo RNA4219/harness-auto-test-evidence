@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-acceptance-done-linked",
+  "gap_id": "HATE-GAP-022",
+  "packet_id": "HATE-PKT-WF-002-acceptance-linkage",
+  "task_seed_id": "TASK-HATE-GAP-022",
+  "acceptance_id": "AC-HATE-GAP-022",
+  "case_kind": "positive",
+  "input": {
+    "task_status": "done",
+    "acceptance_record": {
+      "path": "docs/acceptance/HATE_GAP_CLOSURE_ACCEPTANCE.md",
+      "state": "accepted",
+      "evidence_refs": ["workflow-acceptance-uat-report.json"]
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "workflow-acceptance-uat-report.json"
+  }
+}

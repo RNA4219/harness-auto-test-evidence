@@ -1,0 +1,31 @@
+{
+  "path": "docs/process/PRODUCT_REQUIREMENTS_GAP_CLOSURE_PACKETS.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "036e7ffd8ba4e211dc0c94757909b28e892523bea465d7bae74f60bd68f385ff",
+  "line_count": 119,
+  "size_bytes": 13124,
+  "headings": [
+    "# Product Requirements Gap Closure Packets",
+    "## 1. Common Packet Contract",
+    "## 2. Packet Ledger",
+    "## 3. Task Seed Projection",
+    "## 4. Closure Status Semantics"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "birdseye",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "security",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

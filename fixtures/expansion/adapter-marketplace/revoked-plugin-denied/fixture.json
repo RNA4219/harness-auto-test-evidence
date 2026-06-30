@@ -1,0 +1,30 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-adapter-marketplace-revoked-plugin-denied",
+  "gap_id": "HATE-GAP-035",
+  "packet_id": "HATE-PKT-EXP-009-adapter-marketplace",
+  "task_seed_id": "TASK-HATE-GAP-035",
+  "acceptance_id": "AC-HATE-GAP-035",
+  "case_kind": "negative",
+  "input": {
+    "plugin_config": {
+      "plugin_manifest_present": true,
+      "plugin_id": "com.malicious.plugin",
+      "publisher_id": "com.malicious",
+      "signature_present": true,
+      "signature_verified": true,
+      "compatibility_range": ">=1.0.0,<2.0.0",
+      "host_version": "1.6.0",
+      "conformance_evidence_present": true,
+      "deprecation_status": "revoked",
+      "revocation_record_present": true,
+      "requested_install": true
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "adapter_marketplace_revoked_plugin_denied",
+    "readiness_effect": "hold",
+    "uat_report": "adapter-marketplace-uat-report.json"
+  }
+}

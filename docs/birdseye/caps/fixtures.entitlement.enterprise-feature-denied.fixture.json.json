@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/entitlement/enterprise-feature-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "371c7f92abab338ec32e316030dd0cd528114a2ba8b39881b4d679fa669ba466",
+  "line_count": 11,
+  "size_bytes": 530,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

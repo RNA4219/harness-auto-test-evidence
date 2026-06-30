@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/policy-simulation/blast-radius-unbounded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ea0bc5e6799e18053614de922a364e3eff3e9836f79332510eeb881af8a3bfc0",
+  "line_count": 27,
+  "size_bytes": 869,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

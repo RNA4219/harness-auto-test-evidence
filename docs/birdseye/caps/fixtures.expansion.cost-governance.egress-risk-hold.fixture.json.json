@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/cost-governance/egress-risk-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a5e788ece8142d8f6a16c0c9fe3e6e11b104eadb8e0de96e90718f09112802b7",
+  "line_count": 31,
+  "size_bytes": 972,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/release_channel.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "802b617897d92d5772f36d1e3e71d5693235ae11b787deefcc8a23838d9e5e5f",
+  "line_count": 229,
+  "size_bytes": 8875,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

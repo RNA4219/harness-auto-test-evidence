@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/e2e/support-triage/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "119b08ce350e985725dc75fe7f810d2fc8bb0e0e50ef4def1ad9fa801a00d075",
+  "line_count": 19,
+  "size_bytes": 511,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

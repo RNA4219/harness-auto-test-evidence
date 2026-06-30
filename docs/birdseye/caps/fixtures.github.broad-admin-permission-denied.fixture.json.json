@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/github/broad-admin-permission-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4ec99ee89c5aa9dc683c2c00fb3c7a7cfa4b82261fc00008ceaf4659f110375e",
+  "line_count": 21,
+  "size_bytes": 661,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

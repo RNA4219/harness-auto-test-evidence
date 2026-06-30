@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/expansion/dependency_compliance.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0f82d896390e33a48680df396426ed405f80b233f50d06b62f0f2d4b96cf813e",
+  "line_count": 216,
+  "size_bytes": 8447,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

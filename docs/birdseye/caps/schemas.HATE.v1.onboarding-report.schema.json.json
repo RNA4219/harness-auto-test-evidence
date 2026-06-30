@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/onboarding-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "00a0ce193f50d14b3301a2cd03880354f9bd4c812d90f8f5fe8d6ddfea1f2058",
+  "line_count": 43,
+  "size_bytes": 1414,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

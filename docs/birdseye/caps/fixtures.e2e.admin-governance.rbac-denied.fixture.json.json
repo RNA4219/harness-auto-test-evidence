@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/e2e/admin-governance/rbac-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "60704bdcb726f0009d7301f2ac6522658f8580725a8fc620826eb526ce8d0e88",
+  "line_count": 20,
+  "size_bytes": 559,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

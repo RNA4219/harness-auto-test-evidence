@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/deployment/topology/region-violation/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a991dd3c7b6b14dce94f2f1f9b8f199e9de4561c359b25b1206f5597181686dc",
+  "line_count": 11,
+  "size_bytes": 534,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

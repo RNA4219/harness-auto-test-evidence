@@ -1,0 +1,29 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-product-analytics-aggregate-opt-in",
+  "gap_id": "HATE-GAP-036",
+  "packet_id": "HATE-PKT-EXP-010-product-analytics",
+  "task_seed_id": "TASK-HATE-GAP-036",
+  "acceptance_id": "AC-HATE-GAP-036",
+  "case_kind": "positive",
+  "input": {
+    "analytics_config": {
+      "event_allowlist_defined": true,
+      "event_allowlist": ["feature_usage", "page_view", "error_count"],
+      "events": ["feature_usage", "page_view"],
+      "opt_in_required": true,
+      "tenant_opt_in": true,
+      "aggregate_only": true,
+      "suppression_rules_defined": true,
+      "usage_report_defined": true,
+      "adoption_kpis": ["daily_active_users", "feature_adoption_rate"],
+      "raw_path_present": false,
+      "raw_artifact_ref_present": false
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "product-analytics-uat-report.json"
+  }
+}

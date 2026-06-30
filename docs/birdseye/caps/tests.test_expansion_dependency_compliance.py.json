@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_dependency_compliance.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "778eeab796b1ba055e90eb9caced84e4c1c65d8facb377fbfd82d6bfd1d9bcf6",
+  "line_count": 140,
+  "size_bytes": 5045,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.dependency_compliance",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/dependency_compliance.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

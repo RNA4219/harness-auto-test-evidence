@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "github-permission-denied",
+  "gap_id": "HATE-GAP-005",
+  "packet_id": "HATE-PKT-GH-001-github-integration",
+  "task_seed_id": "TASK-HATE-GAP-005",
+  "acceptance_id": "AC-HATE-GAP-005",
+  "case_kind": "negative",
+  "input": {"surface": "check_run", "permissions": ["pull-requests:read"], "required": "checks:write"},
+  "expected": {"status": "hold", "finding_code": "github_permission_denied", "readiness_effect": "hold", "uat_report": "github-integration-uat-report.json"}
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/github/pr-check-success/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a0b4a176dfe76fc572b44f52baa15fb419d955fb1784b323319f386219e1ef7d",
+  "line_count": 11,
+  "size_bytes": 511,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

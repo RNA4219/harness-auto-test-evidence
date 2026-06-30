@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/deployment/topology.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "97f06cce3596aa9821d612518be6b48968ee44cdc55e56cf6faf7ff2ca4435bc",
+  "line_count": 220,
+  "size_bytes": 8866,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

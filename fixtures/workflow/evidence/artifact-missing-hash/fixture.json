@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-evidence-artifact-missing-hash",
+  "gap_id": "HATE-GAP-023",
+  "packet_id": "HATE-PKT-WF-003-evidence-protocol",
+  "task_seed_id": "TASK-HATE-GAP-023",
+  "acceptance_id": "AC-HATE-GAP-023",
+  "case_kind": "negative",
+  "input": {
+    "evidence": {
+      "evidence_id": "ev_artifact_001",
+      "evidence_class": "artifact_generation",
+      "source_tool": "Codex",
+      "command_or_action": "codemap.update",
+      "artifact_refs": ["docs/birdseye/index.json"],
+      "hashes": {},
+      "decision_or_status": "generated",
+      "timestamp": "2026-06-30T00:00:00Z",
+      "sourceRefs": ["WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md#evidence-protocol"]
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "evidence_artifact_missing_hash",
+    "readiness_effect": "hold",
+    "uat_report": "workflow-evidence-uat-report.json"
+  }
+}

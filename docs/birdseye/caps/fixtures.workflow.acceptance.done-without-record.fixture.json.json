@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/workflow/acceptance/done-without-record/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5b527256a1216c6c4271b110499cbaf3ab3844f1022750dab4947e2a9a126453",
+  "line_count": 20,
+  "size_bytes": 587,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/evaluation/real-repo/timeout-recorded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ab7a1e85af7619e9ea596aafe9c717db400d342d0ea7d35f324c7dd1922abdd6",
+  "line_count": 22,
+  "size_bytes": 654,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

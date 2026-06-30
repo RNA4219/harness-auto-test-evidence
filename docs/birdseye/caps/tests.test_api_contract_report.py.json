@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_api_contract_report.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "b53d14796e615d4264745bfa96f6a0e306b9e87f42eb1ecefc021c64860b137f",
+  "line_count": 138,
+  "size_bytes": 4728,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.api",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

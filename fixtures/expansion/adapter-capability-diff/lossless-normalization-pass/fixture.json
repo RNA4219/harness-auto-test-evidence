@@ -1,0 +1,30 @@
+{
+  "fixture_id": "lossless-normalization-pass",
+  "fixture_type": "positive",
+  "description": "Lossless field normalization - all fields preserved",
+  "input": {
+    "raw_field_map": {
+      "field_a": {"type": "string", "value": "value_a"},
+      "field_b": {"type": "number", "value": 123}
+    },
+    "normalized_field_map": {
+      "field_a": {"type": "string", "normalized_value": "value_a"},
+      "field_b": {"type": "number", "normalized_value": 123}
+    },
+    "lossy_transforms": [],
+    "lossy_field_drop_detected": false,
+    "claim_drift_detected": false,
+    "unsupported_dialect_detected": false,
+    "confidence": 0.95,
+    "limits": {
+      "confidence_threshold": 0.7,
+      "max_transforms": 50,
+      "max_field_drops": 10
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "finding_code": "",
+    "readiness_effect": "none"
+  }
+}

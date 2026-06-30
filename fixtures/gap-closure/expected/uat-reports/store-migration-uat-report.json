@@ -1,0 +1,36 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "gap-closure-uat-report",
+  "report_id": "store-migration-uat-report",
+  "source_version": "gap026-implemented",
+  "status": "implemented",
+  "decision": "awaiting_acceptance",
+  "readiness_effect": "none",
+  "gap_ids": [
+    "HATE-GAP-006"
+  ],
+  "task_seed_ids": [
+    "TASK-HATE-GAP-006"
+  ],
+  "acceptance_ids": [
+    "AC-HATE-GAP-006"
+  ],
+  "fixture_refs": [
+    "fixtures/store/migration/canonical-hash-changed/fixture.json",
+    "fixtures/store/migration/corrupt-index/fixture.json",
+    "fixtures/store/migration/forward-compatible/fixture.json",
+    "fixtures/store/migration/rebuild-checkpoint-hash-mismatch/fixture.json",
+    "fixtures/store/migration/rollback-required/fixture.json",
+    "fixtures/store/migration/version-skew-denied/fixture.json"
+  ],
+  "behavior_checked_count": 6,
+  "findings": [],
+  "sourceRefs": [
+    "fixtures/store/migration/canonical-hash-changed/fixture.json",
+    "fixtures/store/migration/corrupt-index/fixture.json",
+    "fixtures/store/migration/forward-compatible/fixture.json",
+    "fixtures/store/migration/rebuild-checkpoint-hash-mismatch/fixture.json",
+    "fixtures/store/migration/rollback-required/fixture.json",
+    "fixtures/store/migration/version-skew-denied/fixture.json"
+  ]
+}

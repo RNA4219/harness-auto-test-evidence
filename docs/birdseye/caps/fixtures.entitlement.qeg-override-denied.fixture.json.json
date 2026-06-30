@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/entitlement/qeg-override-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8bf6d23aaae1f430b4c07cceb7ab0e15c9b743dc683c261daa023a32dcb8027a",
+  "line_count": 22,
+  "size_bytes": 643,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "e2e-security-quarantine-block",
+  "gap_id": "HATE-GAP-020",
+  "packet_id": "HATE-PKT-UAT-001-product-e2e",
+  "task_seed_id": "TASK-HATE-GAP-020",
+  "acceptance_id": "AC-HATE-GAP-020",
+  "case_kind": "negative",
+  "input": {
+    "journey": "security_quarantine",
+    "unsafe_artifact": true,
+    "summary_safe": false
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "e2e_security_quarantine_block",
+    "readiness_effect": "hold",
+    "uat_report": "product-e2e-uat-report.json"
+  }
+}

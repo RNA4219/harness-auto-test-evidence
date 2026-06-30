@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/e2e/qa-risk-review/no-oracle/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1170292be2bc4d8741e84e8d6a6941ed10661bc11c206dd526f2ca1d58853139",
+  "line_count": 20,
+  "size_bytes": 548,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

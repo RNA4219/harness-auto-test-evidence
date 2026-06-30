@@ -81,9 +81,37 @@ errors:
     source_refs: array
 ```
 
-## 6. Endpoint Requirements
+## 6. Rate Limit And Abuse
 
-### 6.1 Runs
+Hosted API requests must be rate-limited by tenant, actor, route, and method
+before expensive store, artifact, export, or import work begins. The local-first
+implementation may model this as a deterministic evaluator, but it must preserve
+the same response and audit contract that a hosted gateway would expose.
+
+Required behavior:
+
+- Quota windows define `limit`, `window_seconds`, `used`, `remaining`,
+  `reset_after_seconds`, and `retry_after_seconds` when a request is denied.
+- Denied requests return structured findings and a `Retry-After` response header.
+- Hosted requests require `organization_id` and `workspace_id` tenant scope.
+- Mutating operations (`POST`, `PUT`, `PATCH`, `DELETE`) require an
+  idempotency key before quota accounting can be treated as safe.
+- Abuse bursts above the configured multiplier are distinguished from ordinary
+  quota exhaustion and receive a higher-severity finding.
+- Every decision emits an audit event with request id, tenant, actor, route,
+  method, decision, usage, and finding code.
+
+No-Go:
+
+- treating a quota denial as a successful empty response
+- applying rate limits without tenant scope in hosted mode
+- allowing mutating requests to bypass idempotency requirements
+- hiding abuse bursts inside generic quota warnings
+- omitting retry-after or audit evidence for denied requests
+
+## 7. Endpoint Requirements
+
+### 7.1 Runs
 
 | Endpoint | Required filters | Required fields |
 |---|---|---|
@@ -96,7 +124,7 @@ No-Go:
 - hiding stale status when read model is rebuilding
 - returning decision without source bundle hash
 
-### 6.2 Evidence and Risks
+### 7.2 Evidence and Risks
 
 | Endpoint | Required filters | Required fields |
 |---|---|---|
@@ -109,7 +137,7 @@ No-Go:
 - high/critical risk sorted below low-risk items by default
 - missing oracle hidden inside generic warning
 
-### 6.3 Artifacts
+### 7.3 Artifacts
 
 `GET /v1/artifacts` returns metadata only unless caller is authorized and artifact is safe.
 
@@ -129,7 +157,7 @@ No-Go:
 - failed redaction returns signed URL
 - external URL is fetched by API without policy
 
-### 6.4 Risk Debt
+### 7.4 Risk Debt
 
 `PATCH /v1/risk-debt/{debt_id}` supports lifecycle transitions only.
 
@@ -145,7 +173,7 @@ Allowed transitions:
 
 Every transition emits audit event and before/after state.
 
-### 6.5 Bundle Import
+### 7.5 Bundle Import
 
 `POST /v1/bundles/import` validates:
 
@@ -163,7 +191,7 @@ No-Go:
 - import accepts invalid schema to "show partial UI"
 - import hides parser failures
 
-## 7. Error Taxonomy
+## 8. Error Taxonomy
 
 | Prefix | Meaning |
 |---|---|
@@ -174,7 +202,7 @@ No-Go:
 | HATE-API-EXPORT-* | non-gating exporter failure |
 | HATE-API-PRIV-* | privacy/quarantine/redaction denial |
 
-## 8. API Acceptance
+## 9. API Acceptance
 
 API-ready requires:
 
@@ -186,4 +214,3 @@ API-ready requires:
 - stale/partial response tests
 - no restricted path leakage test
 - `api-contract-report.json`
-

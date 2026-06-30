@@ -1,0 +1,30 @@
+{
+  "path": "docs/tasks/HATE_GAP_CLOSURE_TASK_SEEDS.md",
+  "role": "planning",
+  "kind": "md",
+  "sha256": "d85258ec2583f3509fcdbcddcab2cd1ad9616c58e7eea4ec0d97214edb12d40c",
+  "line_count": 70,
+  "size_bytes": 7703,
+  "headings": [
+    "# HATE Gap Closure Task Seeds",
+    "## Common Requirements",
+    "## Task Seed Ledger",
+    "## Verification Commands"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "birdseye",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

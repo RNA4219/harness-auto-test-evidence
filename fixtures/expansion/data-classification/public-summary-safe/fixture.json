@@ -1,0 +1,27 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-data-classification-public-summary-safe",
+  "gap_id": "HATE-GAP-032",
+  "packet_id": "HATE-PKT-EXP-006-data-classification",
+  "task_seed_id": "TASK-HATE-GAP-032",
+  "acceptance_id": "AC-HATE-GAP-032",
+  "case_kind": "positive",
+  "input": {
+    "classification_config": {
+      "field_taxonomy_defined": true,
+      "sink_allowlist_defined": true,
+      "redaction_policy_defined": true,
+      "telemetry_allowed": true,
+      "telemetry_destination": "https://telemetry.example.com/v1",
+      "public_summary_safe": true,
+      "classified_fields": ["user_email", "account_id"],
+      "prohibited_field_exposed": false,
+      "sink_type": "telemetry"
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "data-classification-uat-report.json"
+  }
+}

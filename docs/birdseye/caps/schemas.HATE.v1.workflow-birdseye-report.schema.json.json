@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/workflow-birdseye-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "95b642aa677e6c9e3ac51328d63cbc367a6f3e178518a06f4d0c746cda8ab010",
+  "line_count": 43,
+  "size_bytes": 1417,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "schema",
+    "workflow"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "docs/process/IMPLEMENTATION_ROADMAP_CHECKLIST.md",
   "role": "planning",
   "kind": "md",
-  "sha256": "6edef819628fd6af6bb56cc0c4143970fc34ee86d2b1f15c3af5a9bcb3ea6b84",
-  "line_count": 324,
-  "size_bytes": 12024,
+  "sha256": "318aaee2d533f924df0c76269610264a52b12c49df25d09f7715ddf8a52e510a",
+  "line_count": 327,
+  "size_bytes": 11713,
   "headings": [
     "# 実装ロードマップ / チェックリスト",
     "## 1. 目的",
@@ -32,6 +32,7 @@
   "tags": [
     "adapter",
     "artifact",
+    "birdseye",
     "coverage",
     "fixture",
     "qeg",

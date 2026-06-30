@@ -1,0 +1,19 @@
+{
+  "path": "src/hate/deployment/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "32e8b299f82982e111cc6cf377b3af8bee5da05010cd40eb823e615de3541382",
+  "line_count": 13,
+  "size_bytes": 322,
+  "headings": [],
+  "imports": [
+    ".topology"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/deployment/topology.py"
+  ],
+  "tags": [
+    "fixture"
+  ]
+}

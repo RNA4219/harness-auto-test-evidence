@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/data-classification-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "53979fe056a2d513f76f6ea7b54f7408fb4be2a82836dcfa48a4ed2be7893bae",
+  "line_count": 43,
+  "size_bytes": 1449,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md",
   "role": "planning",
   "kind": "md",
-  "sha256": "0c53c97ce6aba2ee33d93e9980141fd5adc73e4959066d8845ef5b353d925df4",
-  "line_count": 188,
-  "size_bytes": 13780,
+  "sha256": "888ac1e0170ab8016965d904ecb62e53ac17ae50f80a0013cbf79d0c0a9d1358",
+  "line_count": 193,
+  "size_bytes": 13939,
   "headings": [
     "# フル実装タスク分解",
     "## 1. 目的",

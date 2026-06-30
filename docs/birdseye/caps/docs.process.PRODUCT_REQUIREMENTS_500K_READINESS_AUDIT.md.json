@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_REQUIREMENTS_500K_READINESS_AUDIT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "1baca1a5bbf6729ea4adbd6df4b56022a56cce7fa47715d199178b0170e48c76",
-  "line_count": 218,
-  "size_bytes": 8208,
+  "sha256": "26e4acc5c87103db30eb9da060887a4707b59eedf06c1ef53c2787a9771afafd",
+  "line_count": 220,
+  "size_bytes": 8345,
   "headings": [
     "# 50万行級プロダクト要件定義 3回監査",
     "## 1. 目的",

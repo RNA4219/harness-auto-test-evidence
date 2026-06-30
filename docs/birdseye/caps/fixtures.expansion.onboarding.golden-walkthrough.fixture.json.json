@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/onboarding/golden-walkthrough/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "cc7fbbdcb732b22c94f6e0ef4dd0129a8210a9302eac30251adc9ff0b107717d",
+  "line_count": 25,
+  "size_bytes": 761,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

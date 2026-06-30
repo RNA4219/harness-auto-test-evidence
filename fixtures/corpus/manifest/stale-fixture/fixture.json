@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "corpus-manifest-stale-fixture",
+  "gap_id": "HATE-GAP-007",
+  "packet_id": "HATE-PKT-CORPUS-001-adapter-corpus",
+  "task_seed_id": "TASK-HATE-GAP-007",
+  "acceptance_id": "AC-HATE-GAP-007",
+  "case_kind": "negative",
+  "input": {"families": ["test-results"], "stale_count": 1},
+  "expected": {"status": "hold", "finding_code": "adapter_corpus_stale_fixture", "readiness_effect": "hold", "uat_report": "adapter-corpus-uat-report.json"}
+}

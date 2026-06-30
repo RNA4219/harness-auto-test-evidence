@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/artifact-lifecycle-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "37c680a6ea2e9d4cdc1ca310e96fe35e152b6032cd1b49648945ada8d6450886",
+  "line_count": 28,
+  "size_bytes": 796,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

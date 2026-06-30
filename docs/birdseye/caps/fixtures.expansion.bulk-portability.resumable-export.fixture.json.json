@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/bulk-portability/resumable-export/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0991ed2d8fd8ecd73568edd356460a06ec495b9905b1231becbb59fe8bbb4f5d",
+  "line_count": 26,
+  "size_bytes": 786,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

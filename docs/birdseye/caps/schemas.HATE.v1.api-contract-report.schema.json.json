@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/api-contract-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a153c8d954b943dbbab7ef0a9ad2cd022bd148a0f2ffeca21290a53054410e50",
+  "line_count": 98,
+  "size_bytes": 3196,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema"
+  ]
+}

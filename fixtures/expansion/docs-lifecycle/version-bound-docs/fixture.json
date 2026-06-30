@@ -1,0 +1,27 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-docs-lifecycle-version-bound-docs",
+  "gap_id": "HATE-GAP-033",
+  "packet_id": "HATE-PKT-EXP-007-docs-lifecycle",
+  "task_seed_id": "TASK-HATE-GAP-033",
+  "acceptance_id": "AC-HATE-GAP-033",
+  "case_kind": "positive",
+  "input": {
+    "lifecycle_config": {
+      "required_docs_defined": true,
+      "version_binding_enforced": true,
+      "broken_ref_detection_enabled": true,
+      "stale_doc_max_age_days": 90,
+      "required_docs": ["getting-started.md", "api-reference.md"],
+      "doc_claim_stale": false,
+      "doc_age_days": 30,
+      "broken_refs": [],
+      "version_bound": true
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "docs-lifecycle-uat-report.json"
+  }
+}

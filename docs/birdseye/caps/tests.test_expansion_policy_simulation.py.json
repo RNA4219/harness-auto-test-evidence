@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_policy_simulation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "2e6c8ed8b03a421bbf594d696b62ebaca258c60c06f7b55e72e3f391066ff43f",
+  "line_count": 111,
+  "size_bytes": 4049,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.policy_simulation",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/policy_simulation.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

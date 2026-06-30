@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/api-contract-report.schema.json",
+  "title": "API Contract Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "endpoint",
+    "resource",
+    "request_contract",
+    "response_contract",
+    "findings",
+    "status",
+    "readiness_effect",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": { "const": "HATE/v1" },
+    "record_type": { "const": "api-contract-report" },
+    "report_id": { "type": "string", "minLength": 1 },
+    "endpoint": { "type": "string" },
+    "resource": { "type": "string", "minLength": 1 },
+    "request_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pagination", "filters", "sort", "authz"],
+      "properties": {
+        "pagination": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["limit", "cursor", "next_cursor"],
+              "properties": {
+                "limit": { "type": ["integer", "null"] },
+                "cursor": { "type": ["string", "null"] },
+                "next_cursor": { "type": ["string", "null"] }
+              }
+            }
+          ]
+        },
+        "filters": { "type": "object" },
+        "sort": { "type": ["string", "null"] },
+        "authz": { "enum": ["allowed", "denied"] }
+      }
+    },
+    "response_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "envelope_required",
+        "source_required",
+        "staleness_required",
+        "pagination_required",
+        "redacted_denial_required"
+      ],
+      "properties": {
+        "envelope_required": { "type": "boolean" },
+        "source_required": { "type": "boolean" },
+        "staleness_required": { "type": "boolean" },
+        "pagination_required": { "type": "boolean" },
+        "redacted_denial_required": { "type": "boolean" }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {
+            "enum": [
+              "api_endpoint_unknown",
+              "api_pagination_missing",
+              "api_pagination_invalid",
+              "api_authz_leak_denied",
+              "api_authz_tenant_leak_denied",
+              "api_stale_read_model_marked_fresh",
+              "api_response_envelope_missing"
+            ]
+          },
+          "severity": { "enum": ["low", "medium", "high", "critical"] },
+          "message": { "type": "string", "minLength": 1 },
+          "sourceRef": { "type": "string", "minLength": 1 },
+          "readiness_effect": { "enum": ["none", "soft_gap", "hold"] }
+        }
+      }
+    },
+    "status": { "enum": ["pass", "hold"] },
+    "readiness_effect": { "enum": ["none", "hold"] },
+    "sourceRefs": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  }
+}

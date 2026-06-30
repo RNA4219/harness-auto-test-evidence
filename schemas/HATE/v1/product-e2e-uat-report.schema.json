@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/product-e2e-uat-report.schema.json",
+  "title": "HATE Product E2E UAT Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "journeys",
+    "findings",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "product-e2e-uat-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "journeys": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "journey",
+          "owner",
+          "expected_path",
+          "required_negative_case",
+          "has_negative_case",
+          "rbac_negative_case",
+          "emitted_evidence",
+          "visual_evidence"
+        ],
+        "properties": {
+          "journey": {"type": "string"},
+          "owner": {"type": "string"},
+          "expected_path": {"type": "string", "enum": ["positive", "negative"]},
+          "required_negative_case": {"type": "string"},
+          "has_negative_case": {"type": "boolean"},
+          "rbac_negative_case": {"type": "boolean"},
+          "emitted_evidence": {"type": "array", "items": {"type": "string"}},
+          "visual_evidence": {"type": "boolean"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "journey", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "journey": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {"type": "object", "additionalProperties": true},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

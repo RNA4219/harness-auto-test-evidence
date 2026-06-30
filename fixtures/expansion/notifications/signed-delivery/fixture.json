@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-notifications-signed-delivery",
+  "gap_id": "HATE-GAP-030",
+  "packet_id": "HATE-PKT-EXP-004-notifications",
+  "task_seed_id": "TASK-HATE-GAP-030",
+  "acceptance_id": "AC-HATE-GAP-030",
+  "case_kind": "positive",
+  "input": {
+    "notification_config": {
+      "event_taxonomy_defined": true,
+      "signing_enabled": true,
+      "retry_schedule_defined": true,
+      "dedupe_enabled": true,
+      "dead_letter_state_defined": true,
+      "tenant_scoped_delivery": true,
+      "webhook_url": "https://example.com/webhook",
+      "signature_verified": true
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "notification-uat-report.json"
+  }
+}

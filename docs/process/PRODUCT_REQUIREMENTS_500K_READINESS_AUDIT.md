@@ -212,7 +212,9 @@ work package ごとの詳細仕様へ落とす必要がある。
 - local store table/index/migration spec
 - adapter parser dialect specs
 - large fixture generation plan
-- test integrity detector implementation design
-- RBAC/audit/retention state transition spec
-- release candidate pack validator spec
-
+- test integrity detector implementation design:
+  `TEST_INTEGRITY_IMPLEMENTATION_SPEC.md`
+- RBAC/audit/retention state transition spec:
+  `ENTERPRISE_CONTROL_STATE_TRANSITION_SPEC.md`
+- release candidate pack validator spec:
+  `RELEASE_CANDIDATE_PACK_VALIDATOR_SPEC.md`

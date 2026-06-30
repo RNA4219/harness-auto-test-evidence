@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/expansion/product_analytics.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e51753602d864f5e07bbb3c1dac3456402df5a18cff5e6dddf1cb77ac7a8192b",
+  "line_count": 181,
+  "size_bytes": 6793,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

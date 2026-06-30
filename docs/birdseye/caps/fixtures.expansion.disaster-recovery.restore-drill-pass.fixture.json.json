@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/disaster-recovery/restore-drill-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0db29088dc15d192e0ec65944e23a8db470995efb19f77024e42321c83846241",
+  "line_count": 30,
+  "size_bytes": 928,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

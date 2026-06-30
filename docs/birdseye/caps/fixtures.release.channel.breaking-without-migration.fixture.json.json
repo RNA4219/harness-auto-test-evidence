@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/release/channel/breaking-without-migration/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "dcff0915d5710daddb699bf71db9d417dab58bd1a8341c9c4ecfbf2bbe54884c",
+  "line_count": 11,
+  "size_bytes": 557,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

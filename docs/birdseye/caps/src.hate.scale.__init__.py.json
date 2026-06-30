@@ -2,16 +2,18 @@
   "path": "src/hate/scale/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "51ec553999963285a0aa1e552c46e90299f15b00097769180ef718187ddacca6",
-  "line_count": 25,
-  "size_bytes": 653,
+  "sha256": "aea65b268acbcf13ae026158cf031455556d38d7fde7a736c5e902af546438b5",
+  "line_count": 31,
+  "size_bytes": 854,
   "headings": [],
   "imports": [
+    "hate.scale.benchmark_catalog",
     "hate.scale.fixtures",
     "hate.scale.performance_budget"
   ],
   "links": [],
   "depends_on": [
+    "src/hate/scale/benchmark_catalog.py",
     "src/hate/scale/fixtures.py",
     "src/hate/scale/performance_budget.py"
   ],

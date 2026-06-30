@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/agent-quality-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4741d9fddd015869eed5e7b8b90baa94bf8b8c391c8870175573b2b5b4184ee0",
+  "line_count": 28,
+  "size_bytes": 799,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

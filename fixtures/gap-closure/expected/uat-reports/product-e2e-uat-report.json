@@ -1,0 +1,48 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "gap-closure-uat-report",
+  "report_id": "product-e2e-uat-report",
+  "source_version": "gap026-implemented",
+  "status": "implemented",
+  "decision": "awaiting_acceptance",
+  "readiness_effect": "none",
+  "gap_ids": [
+    "HATE-GAP-020"
+  ],
+  "task_seed_ids": [
+    "TASK-HATE-GAP-020"
+  ],
+  "acceptance_ids": [
+    "AC-HATE-GAP-020"
+  ],
+  "fixture_refs": [
+    "fixtures/e2e/admin-governance/fixture.json",
+    "fixtures/e2e/admin-governance/rbac-denied/fixture.json",
+    "fixtures/e2e/developer-pr-loop/fixture.json",
+    "fixtures/e2e/developer-pr-loop/parser-failure/fixture.json",
+    "fixtures/e2e/qa-risk-review/fixture.json",
+    "fixtures/e2e/qa-risk-review/no-oracle/fixture.json",
+    "fixtures/e2e/release-review/fixture.json",
+    "fixtures/e2e/release-review/qeg-invalid/fixture.json",
+    "fixtures/e2e/security-quarantine/block/fixture.json",
+    "fixtures/e2e/security-quarantine/fixture.json",
+    "fixtures/e2e/support-triage/fixture.json",
+    "fixtures/e2e/support-triage/raw-artifact-denied/fixture.json"
+  ],
+  "behavior_checked_count": 12,
+  "findings": [],
+  "sourceRefs": [
+    "fixtures/e2e/admin-governance/fixture.json",
+    "fixtures/e2e/admin-governance/rbac-denied/fixture.json",
+    "fixtures/e2e/developer-pr-loop/fixture.json",
+    "fixtures/e2e/developer-pr-loop/parser-failure/fixture.json",
+    "fixtures/e2e/qa-risk-review/fixture.json",
+    "fixtures/e2e/qa-risk-review/no-oracle/fixture.json",
+    "fixtures/e2e/release-review/fixture.json",
+    "fixtures/e2e/release-review/qeg-invalid/fixture.json",
+    "fixtures/e2e/security-quarantine/block/fixture.json",
+    "fixtures/e2e/security-quarantine/fixture.json",
+    "fixtures/e2e/support-triage/fixture.json",
+    "fixtures/e2e/support-triage/raw-artifact-denied/fixture.json"
+  ]
+}

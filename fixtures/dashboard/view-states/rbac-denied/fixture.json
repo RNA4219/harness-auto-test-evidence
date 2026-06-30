@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "dashboard-view-states-rbac-denied",
+  "gap_id": "HATE-GAP-008",
+  "packet_id": "HATE-PKT-UI-001-dashboard-states",
+  "task_seed_id": "TASK-HATE-GAP-008",
+  "acceptance_id": "AC-HATE-GAP-008",
+  "case_kind": "negative",
+  "input": {"view": "artifact_detail", "state": "ready", "rbac": "denied"},
+  "expected": {"status": "hold", "finding_code": "dashboard_rbac_denied_state_required", "readiness_effect": "hold", "uat_report": "dashboard-state-uat-report.json"}
+}

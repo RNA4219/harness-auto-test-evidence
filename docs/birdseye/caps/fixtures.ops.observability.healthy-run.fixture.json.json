@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/ops/observability/healthy-run/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ad3ce6c1c5f6702dfc4cdf4643f7115bb26e3967fbcfb1e51e6559550d141733",
+  "line_count": 11,
+  "size_bytes": 515,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

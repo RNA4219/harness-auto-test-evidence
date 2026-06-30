@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_api_rate_limit.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "5c62337995df44015ee65ead4be5ac7370b808715d27726f98fe45dcc08bbd7a",
+  "line_count": 103,
+  "size_bytes": 3981,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.api.rate_limit",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/api/rate_limit.py"
+  ],
+  "tags": [
+    "api",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

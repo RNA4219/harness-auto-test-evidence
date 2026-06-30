@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/workflow/completion/overclaim-detected/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "30b62272058ad2b0f374ba24eb97125dd114f713e26cf9f19f6e1c55b9c0d247",
+  "line_count": 22,
+  "size_bytes": 731,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "fixture_id": "fixture-name-coupled-hold",
+  "fixture_type": "negative",
+  "description": "Fixture name behavior coupled - should hold",
+  "input": {
+    "fixture_findings": [
+      {
+        "fixture_id": "fixture-1",
+        "fixture_type": "positive",
+        "quality_metrics": {
+          "coverage": 0.95,
+          "completeness": 0.90,
+          "consistency": 0.98
+        },
+        "sourceRef": "fixture:1",
+        "rationale": "High quality fixture"
+      }
+    ],
+    "corpus_scope": {
+      "corpus_id": "corpus-1",
+      "fixture_count": 10,
+      "coverage_target": 0.90,
+      "completeness_baseline": 0.85
+    },
+    "schema_drift": {
+      "drift_detected": false,
+      "schema_version": "v1",
+      "baseline_version": "v1",
+      "drift_fields": []
+    },
+    "fixture_name_behavior_coupled": true,
+    "expected_output_exposed": false,
+    "confidence": 0.95,
+    "limits": {
+      "confidence_threshold": 0.7,
+      "max_fixture_findings": 50,
+      "coverage_threshold": 0.8
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "fixture_quality_fixture_name_coupled_hold",
+    "readiness_effect": "hold"
+  }
+}

@@ -5,10 +5,15 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from hate.support_ops import build_support_ops_report
+from hate.support_ops import (
+    build_observability_gap_report,
+    build_support_ops_report,
+    evaluate_observability_fixture,
+)
 
 
 FIXTURE_ROOT = Path(__file__).resolve().parents[1] / "fixtures" / "support-ops" / "observability"
+GAP_FIXTURE_ROOT = Path(__file__).resolve().parents[1] / "fixtures" / "ops" / "observability"
 SCHEMA_PATH = (
     Path(__file__).resolve().parents[1]
     / "schemas"
@@ -20,6 +25,11 @@ SCHEMA_PATH = (
 
 def load_fixture(name: str) -> dict:
     with (FIXTURE_ROOT / name / "fixture.json").open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_gap_fixture(name: str) -> dict:
+    with (GAP_FIXTURE_ROOT / name / "fixture.json").open(encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -40,6 +50,11 @@ def test_packet_fixture_paths_exist() -> None:
         assert (FIXTURE_ROOT / name / "fixture.json").exists()
 
 
+def test_gap_fixture_paths_exist() -> None:
+    for name in ["healthy-run", "missing-trace-span"]:
+        assert (GAP_FIXTURE_ROOT / name / "fixture.json").exists()
+
+
 def test_structured_logs_valid() -> None:
     report, expected = report_from_fixture("logs-valid")
 
@@ -55,6 +70,21 @@ def test_metrics_valid_for_release_profile() -> None:
     assert report["overall_status"] == expected["overall_status"]
     assert report["summary"]["metric_count"] == expected["metric_count"]
     assert report["summary"]["finding_count"] == expected["finding_count"]
+    assert report["spans"] == []
+
+
+def test_support_ops_report_includes_trace_spans() -> None:
+    report = build_support_ops_report({
+        "report_id": "trace-valid",
+        "logs": [],
+        "metrics": [],
+        "spans": [{"name": "hate.p0a", "duration_ms": 12}],
+        "alerts": [],
+    })
+
+    assert report["overall_status"] == "pass"
+    assert report["summary"]["span_count"] == 1
+    assert report["spans"][0]["name"] == "hate.p0a"
 
 
 def test_alerts_valid_without_incident() -> None:
@@ -95,6 +125,31 @@ def test_missing_release_metric_holds() -> None:
     assert all(item["readiness_effect"] == "hold" for item in missing)
 
 
+def test_gap_observability_healthy_run_is_pass() -> None:
+    fixture = load_gap_fixture("healthy-run")
+
+    result = evaluate_observability_fixture(fixture)
+    report = build_observability_gap_report(fixture["input"], fixture["fixture_id"])
+
+    assert result["status"] == fixture["expected"]["status"]
+    assert result["finding_code"] == ""
+    assert report["overall_status"] == "pass"
+    assert report["summary"]["span_count"] == 1
+    assert report["spans"][0]["name"] == "hate.p0a"
+
+
+def test_gap_observability_missing_trace_span_holds() -> None:
+    fixture = load_gap_fixture("missing-trace-span")
+
+    result = evaluate_observability_fixture(fixture)
+    report = build_observability_gap_report(fixture["input"], fixture["fixture_id"])
+
+    assert result["status"] == fixture["expected"]["status"]
+    assert result["finding_code"] == fixture["expected"]["finding_code"]
+    assert report["overall_status"] == "hold"
+    assert any(item["code"] == "observability_missing_trace_span" for item in report["findings"])
+
+
 def test_support_ops_schema_contract() -> None:
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
 
@@ -106,6 +161,7 @@ def test_support_ops_schema_contract() -> None:
         "overall_status",
         "logs",
         "metrics",
+        "spans",
         "alerts",
         "incidents",
         "findings",

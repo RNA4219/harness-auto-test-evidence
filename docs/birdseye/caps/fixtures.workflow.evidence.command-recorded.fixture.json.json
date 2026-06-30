@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/workflow/evidence/command-recorded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "262a1e418c14aba48234ef70031a8fda729d5d68976ec856f378ad3a532b8c2e",
+  "line_count": 28,
+  "size_bytes": 1004,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "artifacts-lifecycle-safe-retained",
+  "gap_id": "HATE-GAP-016",
+  "packet_id": "HATE-PKT-ART-001-artifact-lifecycle",
+  "task_seed_id": "TASK-HATE-GAP-016",
+  "acceptance_id": "AC-HATE-GAP-016",
+  "case_kind": "positive",
+  "input": {"artifact_state": "safe", "retention_class": "standard", "legal_hold": false},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "artifact-lifecycle-uat-report.json"}
+}

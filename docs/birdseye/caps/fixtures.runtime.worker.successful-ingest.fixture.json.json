@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/runtime/worker/successful-ingest/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "85b1fdc02872a9089b894a7ab64c4e3341aeb21cd878bc0123eeb16ff8eac083",
+  "line_count": 14,
+  "size_bytes": 540,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

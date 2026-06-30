@@ -1,0 +1,36 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "gap-closure-uat-report",
+  "report_id": "github-integration-uat-report",
+  "source_version": "gap026-implemented",
+  "status": "implemented",
+  "decision": "awaiting_acceptance",
+  "readiness_effect": "none",
+  "gap_ids": [
+    "HATE-GAP-005"
+  ],
+  "task_seed_ids": [
+    "TASK-HATE-GAP-005"
+  ],
+  "acceptance_ids": [
+    "AC-HATE-GAP-005"
+  ],
+  "fixture_refs": [
+    "fixtures/github/broad-admin-permission-denied/fixture.json",
+    "fixtures/github/permission-denied/fixture.json",
+    "fixtures/github/pr-check-success/fixture.json",
+    "fixtures/github/rerun-preserves-run-id-link/fixture.json",
+    "fixtures/github/unsafe-annotation-denied/fixture.json",
+    "fixtures/github/unsafe-artifact-redacted/fixture.json"
+  ],
+  "behavior_checked_count": 6,
+  "findings": [],
+  "sourceRefs": [
+    "fixtures/github/broad-admin-permission-denied/fixture.json",
+    "fixtures/github/permission-denied/fixture.json",
+    "fixtures/github/pr-check-success/fixture.json",
+    "fixtures/github/rerun-preserves-run-id-link/fixture.json",
+    "fixtures/github/unsafe-annotation-denied/fixture.json",
+    "fixtures/github/unsafe-artifact-redacted/fixture.json"
+  ]
+}

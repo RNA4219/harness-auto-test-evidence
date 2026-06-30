@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/github-integration-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6630909f9c4a52d6435f28649d093e60ffb099bdd5911ff95ccb0a089b879efa",
+  "line_count": 90,
+  "size_bytes": 2910,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

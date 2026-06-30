@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/release/channel/minor-compatible/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ea41e7b6931cdb20c6decf837fe34ed5ca744f8d02b641709d74d13a13c0f012",
+  "line_count": 11,
+  "size_bytes": 489,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

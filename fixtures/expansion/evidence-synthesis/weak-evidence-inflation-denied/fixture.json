@@ -1,0 +1,57 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-evidence-synthesis-weak-evidence-inflation-denied",
+  "gap_id": "HATE-GAP-053",
+  "packet_id": "HATE-PKT-EXP-027-evidence-synthesis",
+  "case_kind": "negative",
+  "input": {
+    "evidence_sources": [
+      {
+        "source_id": "es-weak",
+        "source_type": "weak",
+        "target_requirement": "req-correctness",
+        "confidence": 0.3,
+        "sourceRef": "",
+        "rationale": "Weak evidence source without strong support",
+        "verified": false
+      }
+    ],
+    "mutation_coverage": [
+      {
+        "mutation_id": "mc-empty",
+        "mutation_type": "none",
+        "killed": false,
+        "confidence": 0.3,
+        "sourceRef": "",
+        "rationale": "No mutation coverage available"
+      }
+    ],
+    "contract_coverage": [
+      {
+        "contract_id": "cc-empty",
+        "contract_type": "none",
+        "satisfied": false,
+        "confidence": 0.3,
+        "sourceRef": "",
+        "rationale": "No contract coverage available"
+      }
+    ],
+    "analysis_scope": "partial",
+    "input_refs": ["evidence:es-weak"],
+    "confidence": 0.3,
+    "limits": {
+      "max_evidence_sources": 100,
+      "max_mutation_coverage": 1000,
+      "max_contract_coverage": 100,
+      "confidence_threshold": 0.7
+    },
+    "mutation_evidence_available": false,
+    "contract_evidence_available": false,
+    "strong_evidence_threshold": 0.8
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "evidence_synthesis_weak_evidence_inflation_denied",
+    "readiness_effect": "hold"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/notifications/unsigned-webhook-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "216aaf7dcd9579e3633a21971252cf66b5f6aee1837f4b2c89a2f25593ffe1d2",
+  "line_count": 27,
+  "size_bytes": 816,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

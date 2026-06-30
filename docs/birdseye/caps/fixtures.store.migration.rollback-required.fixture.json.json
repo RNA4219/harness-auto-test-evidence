@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/store/migration/rollback-required/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5a9a4500640765ff2d0a412318b8c2c306a303f6a373684b297f3bf295046763",
+  "line_count": 24,
+  "size_bytes": 827,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

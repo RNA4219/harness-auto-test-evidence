@@ -1,0 +1,941 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "gap-closure-report",
+  "source_version": "gap026-implemented",
+  "overall_status": "checker_ready",
+  "summary": {
+    "gap_count": 26,
+    "checker_ready_count": 0,
+    "implemented_count": 26,
+    "hold_count": 0,
+    "fixture_ref_count": 76,
+    "behavior_checked_count": 76,
+    "uat_report_count": 26,
+    "missing_required_doc_count": 0,
+    "workflow_alignment_status": "uat_ready"
+  },
+  "findings": [],
+  "workflow_alignment": {
+    "status": "uat_ready",
+    "checks": [
+      {
+        "check_id": "workflow_task_seed_sync",
+        "status": "pass",
+        "task_seed_count": 26,
+        "findings": []
+      },
+      {
+        "check_id": "workflow_acceptance_records",
+        "status": "pass",
+        "record_count": 1,
+        "findings": []
+      },
+      {
+        "check_id": "workflow_acceptance_index",
+        "status": "pass",
+        "findings": []
+      },
+      {
+        "check_id": "workflow_completion_trace",
+        "status": "pass",
+        "implemented_trace_count": 26,
+        "findings": []
+      },
+      {
+        "check_id": "workflow_birdseye_invariants",
+        "status": "pass",
+        "node_count": 971,
+        "findings": []
+      },
+      {
+        "check_id": "workflow_evidence_minimum_fields",
+        "status": "pass",
+        "findings": []
+      },
+      {
+        "check_id": "workflow_coverage_policy",
+        "status": "pass",
+        "findings": []
+      },
+      {
+        "check_id": "workflow_priority_score_policy",
+        "status": "pass",
+        "findings": []
+      },
+      {
+        "check_id": "workflow_metrics_kpi_policy",
+        "status": "pass",
+        "findings": []
+      },
+      {
+        "check_id": "workflow_feature_detection_policy",
+        "status": "pass",
+        "findings": []
+      },
+      {
+        "check_id": "workflow_security_release_evidence_policy",
+        "status": "pass",
+        "findings": []
+      }
+    ],
+    "findings": []
+  },
+  "uat_reports": [
+    "uat-reports/adapter-corpus-uat-report.json",
+    "uat-reports/adapter-family-uat-report.json",
+    "uat-reports/agent-quality-uat-report.json",
+    "uat-reports/api-contract-uat-report.json",
+    "uat-reports/api-rate-limit-uat-report.json",
+    "uat-reports/artifact-lifecycle-uat-report.json",
+    "uat-reports/dashboard-state-uat-report.json",
+    "uat-reports/deployment-topology-uat-report.json",
+    "uat-reports/enterprise-control-uat-report.json",
+    "uat-reports/entitlement-uat-report.json",
+    "uat-reports/github-integration-uat-report.json",
+    "uat-reports/observability-uat-report.json",
+    "uat-reports/performance-benchmark-uat-report.json",
+    "uat-reports/product-e2e-uat-report.json",
+    "uat-reports/real-repo-evaluation-report.json",
+    "uat-reports/release-channel-uat-report.json",
+    "uat-reports/runtime-worker-uat-report.json",
+    "uat-reports/store-migration-uat-report.json",
+    "uat-reports/support-diagnostics-uat-report.json",
+    "uat-reports/tenant-isolation-uat-report.json",
+    "uat-reports/workflow-acceptance-uat-report.json",
+    "uat-reports/workflow-birdseye-uat-report.json",
+    "uat-reports/workflow-completion-uat-report.json",
+    "uat-reports/workflow-evidence-uat-report.json",
+    "uat-reports/workflow-plugin-uat-report.json",
+    "uat-reports/workflow-task-seed-uat-report.json"
+  ],
+  "gaps": [
+    {
+      "gap_id": "HATE-GAP-001",
+      "task_seed_id": "TASK-HATE-GAP-001",
+      "acceptance_id": "AC-HATE-GAP-001",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/runtime/worker/successful-ingest/fixture.json",
+        "fixtures/runtime/worker/poison-message/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "runtime-worker-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/runtime_worker.py",
+        "tests": [
+          "tests/test_runtime_worker.py"
+        ],
+        "fixtures": [
+          "fixtures/runtime/worker/successful-ingest/fixture.json",
+          "fixtures/runtime/worker/retry-then-success/fixture.json",
+          "fixtures/runtime/worker/cancel-running/fixture.json",
+          "fixtures/runtime/worker/poison-message/fixture.json"
+        ],
+        "contract": "docs/process/HOSTED_WORKER_RUNTIME_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-002",
+      "task_seed_id": "TASK-HATE-GAP-002",
+      "acceptance_id": "AC-HATE-GAP-002",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/enterprise/tenant/own-org-access/fixture.json",
+        "fixtures/enterprise/tenant/cross-org-denied/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "tenant-isolation-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/tenant_isolation.py",
+        "tests": [
+          "tests/test_tenant_isolation.py"
+        ],
+        "fixtures": [
+          "fixtures/enterprise/tenant/own-org-access/fixture.json",
+          "fixtures/enterprise/tenant/cross-org-denied/fixture.json",
+          "fixtures/enterprise/tenant/artifact-cross-access-denied/fixture.json",
+          "fixtures/enterprise/tenant/cache-bleed-denied/fixture.json",
+          "fixtures/enterprise/tenant/audit-cross-read-denied/fixture.json",
+          "fixtures/enterprise/tenant/export-mixed-tenant-denied/fixture.json",
+          "fixtures/enterprise/tenant/support-bundle-isolated/fixture.json",
+          "fixtures/enterprise/tenant/telemetry-payload-denied/fixture.json"
+        ],
+        "contract": "docs/process/TENANT_ISOLATION_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-003",
+      "task_seed_id": "TASK-HATE-GAP-003",
+      "acceptance_id": "AC-HATE-GAP-003",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/api/rate-limit/burst-within-quota/fixture.json",
+        "fixtures/api/rate-limit/quota-exceeded/fixture.json",
+        "fixtures/api/rate-limit/missing-tenant-scope/fixture.json",
+        "fixtures/api/rate-limit/mutating-without-idempotency/fixture.json",
+        "fixtures/api/rate-limit/abuse-burst-denied/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 4,
+      "behavior_checked_count": 5,
+      "uat_reports": [
+        "api-rate-limit-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/api/rate_limit.py",
+        "tests": [
+          "tests/test_api_rate_limit.py"
+        ],
+        "fixtures": [
+          "fixtures/api/rate-limit/burst-within-quota/fixture.json",
+          "fixtures/api/rate-limit/quota-exceeded/fixture.json",
+          "fixtures/api/rate-limit/missing-tenant-scope/fixture.json",
+          "fixtures/api/rate-limit/mutating-without-idempotency/fixture.json",
+          "fixtures/api/rate-limit/abuse-burst-denied/fixture.json"
+        ],
+        "contract": "docs/process/API_REQUIREMENTS.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-004",
+      "task_seed_id": "TASK-HATE-GAP-004",
+      "acceptance_id": "AC-HATE-GAP-004",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/entitlement/team-ga-allowed/fixture.json",
+        "fixtures/entitlement/local-first-non-gating/fixture.json",
+        "fixtures/entitlement/enterprise-feature-denied/fixture.json",
+        "fixtures/entitlement/precheck-override-denied/fixture.json",
+        "fixtures/entitlement/qeg-override-denied/fixture.json"
+      ],
+      "positive_fixture_count": 2,
+      "negative_fixture_count": 3,
+      "behavior_checked_count": 5,
+      "uat_reports": [
+        "entitlement-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/entitlement.py",
+        "tests": [
+          "tests/test_entitlement.py"
+        ],
+        "fixtures": [
+          "fixtures/entitlement/team-ga-allowed/fixture.json",
+          "fixtures/entitlement/enterprise-feature-denied/fixture.json",
+          "fixtures/entitlement/local-first-non-gating/fixture.json",
+          "fixtures/entitlement/precheck-override-denied/fixture.json",
+          "fixtures/entitlement/qeg-override-denied/fixture.json"
+        ],
+        "contract": "docs/process/PACKAGING_ENTITLEMENT_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-005",
+      "task_seed_id": "TASK-HATE-GAP-005",
+      "acceptance_id": "AC-HATE-GAP-005",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/github/pr-check-success/fixture.json",
+        "fixtures/github/rerun-preserves-run-id-link/fixture.json",
+        "fixtures/github/unsafe-artifact-redacted/fixture.json",
+        "fixtures/github/permission-denied/fixture.json",
+        "fixtures/github/broad-admin-permission-denied/fixture.json",
+        "fixtures/github/unsafe-annotation-denied/fixture.json"
+      ],
+      "positive_fixture_count": 3,
+      "negative_fixture_count": 3,
+      "behavior_checked_count": 6,
+      "uat_reports": [
+        "github-integration-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/github_integration.py",
+        "tests": [
+          "tests/test_github_integration.py"
+        ],
+        "fixtures": [
+          "fixtures/github/pr-check-success/fixture.json",
+          "fixtures/github/permission-denied/fixture.json",
+          "fixtures/github/rerun-preserves-run-id-link/fixture.json",
+          "fixtures/github/unsafe-artifact-redacted/fixture.json",
+          "fixtures/github/broad-admin-permission-denied/fixture.json",
+          "fixtures/github/unsafe-annotation-denied/fixture.json"
+        ],
+        "contract": "docs/process/GITHUB_INTEGRATION_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-006",
+      "task_seed_id": "TASK-HATE-GAP-006",
+      "acceptance_id": "AC-HATE-GAP-006",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/store/migration/forward-compatible/fixture.json",
+        "fixtures/store/migration/corrupt-index/fixture.json",
+        "fixtures/store/migration/rollback-required/fixture.json",
+        "fixtures/store/migration/version-skew-denied/fixture.json",
+        "fixtures/store/migration/rebuild-checkpoint-hash-mismatch/fixture.json",
+        "fixtures/store/migration/canonical-hash-changed/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 5,
+      "behavior_checked_count": 6,
+      "uat_reports": [
+        "store-migration-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/store/migration_rebuild.py",
+        "tests": [
+          "tests/test_store_migration_rebuild.py"
+        ],
+        "fixtures": [
+          "fixtures/store/migration/forward-compatible/fixture.json",
+          "fixtures/store/migration/corrupt-index/fixture.json",
+          "fixtures/store/migration/rollback-required/fixture.json",
+          "fixtures/store/migration/version-skew-denied/fixture.json",
+          "fixtures/store/migration/rebuild-checkpoint-hash-mismatch/fixture.json",
+          "fixtures/store/migration/canonical-hash-changed/fixture.json"
+        ],
+        "contract": "docs/process/STORE_MIGRATION_INDEX_REBUILD_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-007",
+      "task_seed_id": "TASK-HATE-GAP-007",
+      "acceptance_id": "AC-HATE-GAP-007",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/corpus/manifest/minimum-dialects/fixture.json",
+        "fixtures/corpus/manifest/stale-fixture/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "adapter-corpus-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/adapters/corpus_manifest.py",
+        "tests": [
+          "tests/test_adapter_corpus_manifest.py"
+        ],
+        "fixtures": [
+          "fixtures/corpus/manifest/minimum-dialects/fixture.json",
+          "fixtures/corpus/manifest/stale-fixture/fixture.json"
+        ],
+        "contract": "docs/process/ADAPTER_CORPUS_MANIFEST.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-008",
+      "task_seed_id": "TASK-HATE-GAP-008",
+      "acceptance_id": "AC-HATE-GAP-008",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/dashboard/view-states/ready/fixture.json",
+        "fixtures/dashboard/view-states/rbac-denied/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "dashboard-state-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/dashboard/state_report.py",
+        "tests": [
+          "tests/test_dashboard_state_report.py",
+          "tests/test_dashboard_uat_states.py",
+          "tests/test_dashboard_view_models.py"
+        ],
+        "fixtures": [
+          "fixtures/dashboard/view-states/ready/fixture.json",
+          "fixtures/dashboard/view-states/rbac-denied/fixture.json"
+        ],
+        "contract": "docs/process/UI_WORKFLOW_REQUIREMENTS.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-009",
+      "task_seed_id": "TASK-HATE-GAP-009",
+      "acceptance_id": "AC-HATE-GAP-009",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/api/contract/paginated-evidence/fixture.json",
+        "fixtures/api/contract/authz-leak-denied/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "api-contract-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/api/contract_report.py",
+        "tests": [
+          "tests/test_api_contract_report.py",
+          "tests/test_api_read_model_contract.py",
+          "tests/test_api_import_export_authz.py"
+        ],
+        "fixtures": [
+          "fixtures/api/contract/paginated-evidence/fixture.json",
+          "fixtures/api/contract/authz-leak-denied/fixture.json"
+        ],
+        "contract": "docs/process/HOSTED_READ_MODEL_API.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-010",
+      "task_seed_id": "TASK-HATE-GAP-010",
+      "acceptance_id": "AC-HATE-GAP-010",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/ops/observability/healthy-run/fixture.json",
+        "fixtures/ops/observability/missing-trace-span/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "observability-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/support_ops/observability.py",
+        "tests": [
+          "tests/test_support_ops_observability.py"
+        ],
+        "fixtures": [
+          "fixtures/ops/observability/healthy-run/fixture.json",
+          "fixtures/ops/observability/missing-trace-span/fixture.json",
+          "fixtures/support-ops/observability/logs-valid/fixture.json",
+          "fixtures/support-ops/observability/metrics-valid/fixture.json",
+          "fixtures/support-ops/observability/alerts-valid/fixture.json",
+          "fixtures/support-ops/observability/incident-trigger/fixture.json",
+          "fixtures/support-ops/observability/raw-secret-log/fixture.json",
+          "fixtures/support-ops/observability/missing-release-metric/fixture.json"
+        ],
+        "contract": "docs/process/SLO_INCIDENT_RESPONSE_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-011",
+      "task_seed_id": "TASK-HATE-GAP-011",
+      "acceptance_id": "AC-HATE-GAP-011",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/support/diagnostics/safe-bundle/fixture.json",
+        "fixtures/support/diagnostics/raw-secret-denied/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "support-diagnostics-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/support_ops/diagnostics.py",
+        "tests": [
+          "tests/test_support_ops_diagnostics.py"
+        ],
+        "fixtures": [
+          "fixtures/support/diagnostics/safe-bundle/fixture.json",
+          "fixtures/support/diagnostics/raw-secret-denied/fixture.json",
+          "fixtures/support-ops/diagnostics/safe-diagnostic-bundle/fixture.json",
+          "fixtures/support-ops/diagnostics/raw-artifact-in-bundle/fixture.json",
+          "fixtures/support-ops/diagnostics/error-known/fixture.json",
+          "fixtures/support-ops/diagnostics/remediation-mapped/fixture.json",
+          "fixtures/support-ops/diagnostics/unknown-error-code/fixture.json",
+          "fixtures/support-ops/diagnostics/missing-owner-action/fixture.json"
+        ],
+        "contract": "docs/process/PRODUCT_ERROR_TAXONOMY.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-012",
+      "task_seed_id": "TASK-HATE-GAP-012",
+      "acceptance_id": "AC-HATE-GAP-012",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/evaluation/real-repo/baseline-pass/fixture.json",
+        "fixtures/evaluation/real-repo/regression-detected/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "real-repo-evaluation-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/evaluation/real_repo.py",
+        "tests": [
+          "tests/test_real_repo_evaluation.py"
+        ],
+        "fixtures": [
+          "fixtures/evaluation/real-repo/baseline-pass/fixture.json",
+          "fixtures/evaluation/real-repo/regression-detected/fixture.json",
+          "fixtures/evaluation/real-repo/timeout-recorded/fixture.json",
+          "fixtures/evaluation/real-repo/subset-labeled/fixture.json"
+        ],
+        "contract": "docs/process/REAL_REPO_EVALUATION_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-013",
+      "task_seed_id": "TASK-HATE-GAP-013",
+      "acceptance_id": "AC-HATE-GAP-013",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/evaluation/agent-quality/oracle-backed/fixture.json",
+        "fixtures/evaluation/agent-quality/avoidance-detected/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "agent-quality-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/evaluation/agent_quality.py",
+        "tests": [
+          "tests/test_agent_quality.py"
+        ],
+        "fixtures": [
+          "fixtures/evaluation/agent-quality/oracle-backed/fixture.json",
+          "fixtures/evaluation/agent-quality/avoidance-detected/fixture.json"
+        ],
+        "contract": "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-014",
+      "task_seed_id": "TASK-HATE-GAP-014",
+      "acceptance_id": "AC-HATE-GAP-014",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/adapters/family/junit-pass/fixture.json",
+        "fixtures/adapters/family/malformed-input/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "adapter-family-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/adapters/family_packet.py",
+        "tests": [
+          "tests/test_adapter_family_packet.py"
+        ],
+        "fixtures": [
+          "fixtures/adapters/family/junit-pass/fixture.json",
+          "fixtures/adapters/family/malformed-input/fixture.json"
+        ],
+        "contract": "docs/process/ADAPTER_CORPUS_MANIFEST.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-015",
+      "task_seed_id": "TASK-HATE-GAP-015",
+      "acceptance_id": "AC-HATE-GAP-015",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/enterprise/control/admin-allowed/fixture.json",
+        "fixtures/enterprise/control/auditor-write-denied/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "enterprise-control-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/enterprise/control_packet.py",
+        "tests": [
+          "tests/test_enterprise_control_packet.py"
+        ],
+        "fixtures": [
+          "fixtures/enterprise/control/admin-allowed/fixture.json",
+          "fixtures/enterprise/control/auditor-write-denied/fixture.json"
+        ],
+        "contract": "docs/process/ENTERPRISE_DOMAIN_MODEL.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-016",
+      "task_seed_id": "TASK-HATE-GAP-016",
+      "acceptance_id": "AC-HATE-GAP-016",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/artifacts/lifecycle/safe-retained/fixture.json",
+        "fixtures/artifacts/lifecycle/legal-hold-delete-denied/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "artifact-lifecycle-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/security/artifact_lifecycle.py",
+        "tests": [
+          "tests/test_artifact_lifecycle.py"
+        ],
+        "fixtures": [
+          "fixtures/artifacts/lifecycle/safe-retained/fixture.json",
+          "fixtures/artifacts/lifecycle/legal-hold-delete-denied/fixture.json"
+        ],
+        "contract": "docs/process/PRIVACY_QUARANTINE_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-017",
+      "task_seed_id": "TASK-HATE-GAP-017",
+      "acceptance_id": "AC-HATE-GAP-017",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/deployment/topology/local-single-node/fixture.json",
+        "fixtures/deployment/topology/region-violation/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "deployment-topology-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/deployment/topology.py",
+        "tests": [
+          "tests/test_deployment_topology.py"
+        ],
+        "fixtures": [
+          "fixtures/deployment/topology/local-single-node/fixture.json",
+          "fixtures/deployment/topology/region-violation/fixture.json"
+        ],
+        "contract": "docs/process/DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-018",
+      "task_seed_id": "TASK-HATE-GAP-018",
+      "acceptance_id": "AC-HATE-GAP-018",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/performance/benchmark/medium-repo-pass/fixture.json",
+        "fixtures/performance/benchmark/budget-exceeded/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "performance-benchmark-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/scale/benchmark_catalog.py",
+        "tests": [
+          "tests/test_benchmark_catalog.py"
+        ],
+        "fixtures": [
+          "fixtures/performance/benchmark/medium-repo-pass/fixture.json",
+          "fixtures/performance/benchmark/budget-exceeded/fixture.json"
+        ],
+        "contract": "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-019",
+      "task_seed_id": "TASK-HATE-GAP-019",
+      "acceptance_id": "AC-HATE-GAP-019",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/release/channel/minor-compatible/fixture.json",
+        "fixtures/release/channel/breaking-without-migration/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "release-channel-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/release_channel.py",
+        "tests": [
+          "tests/test_release_channel.py"
+        ],
+        "fixtures": [
+          "fixtures/release/channel/minor-compatible/fixture.json",
+          "fixtures/release/channel/breaking-without-migration/fixture.json"
+        ],
+        "contract": "docs/process/RELEASE_MIGRATION_POLICY.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-020",
+      "task_seed_id": "TASK-HATE-GAP-020",
+      "acceptance_id": "AC-HATE-GAP-020",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/e2e/developer-pr-loop/fixture.json",
+        "fixtures/e2e/qa-risk-review/fixture.json",
+        "fixtures/e2e/release-review/fixture.json",
+        "fixtures/e2e/admin-governance/fixture.json",
+        "fixtures/e2e/security-quarantine/fixture.json",
+        "fixtures/e2e/support-triage/fixture.json",
+        "fixtures/e2e/developer-pr-loop/parser-failure/fixture.json",
+        "fixtures/e2e/qa-risk-review/no-oracle/fixture.json",
+        "fixtures/e2e/release-review/qeg-invalid/fixture.json",
+        "fixtures/e2e/admin-governance/rbac-denied/fixture.json",
+        "fixtures/e2e/security-quarantine/block/fixture.json",
+        "fixtures/e2e/support-triage/raw-artifact-denied/fixture.json"
+      ],
+      "positive_fixture_count": 6,
+      "negative_fixture_count": 6,
+      "behavior_checked_count": 12,
+      "uat_reports": [
+        "product-e2e-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/product_e2e.py",
+        "tests": [
+          "tests/test_product_e2e.py"
+        ],
+        "fixtures": [
+          "fixtures/e2e/developer-pr-loop/fixture.json",
+          "fixtures/e2e/developer-pr-loop/parser-failure/fixture.json",
+          "fixtures/e2e/qa-risk-review/fixture.json",
+          "fixtures/e2e/qa-risk-review/no-oracle/fixture.json",
+          "fixtures/e2e/release-review/fixture.json",
+          "fixtures/e2e/release-review/qeg-invalid/fixture.json",
+          "fixtures/e2e/admin-governance/fixture.json",
+          "fixtures/e2e/admin-governance/rbac-denied/fixture.json",
+          "fixtures/e2e/security-quarantine/fixture.json",
+          "fixtures/e2e/security-quarantine/block/fixture.json",
+          "fixtures/e2e/support-triage/fixture.json",
+          "fixtures/e2e/support-triage/raw-artifact-denied/fixture.json"
+        ],
+        "contract": "docs/process/PRODUCT_E2E_UAT_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-021",
+      "task_seed_id": "TASK-HATE-GAP-021",
+      "acceptance_id": "AC-HATE-GAP-021",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/workflow/task-seed/valid-packet/fixture.json",
+        "fixtures/workflow/task-seed/missing-scope/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "workflow-task-seed-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/workflow_task_seed.py",
+        "tests": [
+          "tests/test_workflow_task_seed.py"
+        ],
+        "fixtures": [
+          "fixtures/workflow/task-seed/valid-packet/fixture.json",
+          "fixtures/workflow/task-seed/missing-scope/fixture.json"
+        ],
+        "contract": "docs/process/WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-022",
+      "task_seed_id": "TASK-HATE-GAP-022",
+      "acceptance_id": "AC-HATE-GAP-022",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/workflow/acceptance/done-linked/fixture.json",
+        "fixtures/workflow/acceptance/done-without-record/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "workflow-acceptance-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/workflow_acceptance.py",
+        "tests": [
+          "tests/test_workflow_acceptance.py"
+        ],
+        "fixtures": [
+          "fixtures/workflow/acceptance/done-linked/fixture.json",
+          "fixtures/workflow/acceptance/done-without-record/fixture.json"
+        ],
+        "contract": "docs/process/WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-023",
+      "task_seed_id": "TASK-HATE-GAP-023",
+      "acceptance_id": "AC-HATE-GAP-023",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/workflow/evidence/command-recorded/fixture.json",
+        "fixtures/workflow/evidence/artifact-missing-hash/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "workflow-evidence-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/workflow_evidence.py",
+        "tests": [
+          "tests/test_workflow_evidence.py"
+        ],
+        "fixtures": [
+          "fixtures/workflow/evidence/command-recorded/fixture.json",
+          "fixtures/workflow/evidence/artifact-missing-hash/fixture.json"
+        ],
+        "contract": "docs/process/WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-024",
+      "task_seed_id": "TASK-HATE-GAP-024",
+      "acceptance_id": "AC-HATE-GAP-024",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/workflow/birdseye/fresh-index/fixture.json",
+        "fixtures/workflow/birdseye/stale-capsule/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "workflow-birdseye-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/workflow_birdseye.py",
+        "tests": [
+          "tests/test_workflow_birdseye.py"
+        ],
+        "fixtures": [
+          "fixtures/workflow/birdseye/fresh-index/fixture.json",
+          "fixtures/workflow/birdseye/stale-capsule/fixture.json"
+        ],
+        "contract": "docs/process/WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-025",
+      "task_seed_id": "TASK-HATE-GAP-025",
+      "acceptance_id": "AC-HATE-GAP-025",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/workflow/plugin/cross-repo-valid/fixture.json",
+        "fixtures/workflow/plugin/task-acceptance-drift/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "workflow-plugin-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/workflow_plugin.py",
+        "tests": [
+          "tests/test_workflow_plugin.py"
+        ],
+        "fixtures": [
+          "fixtures/workflow/plugin/cross-repo-valid/fixture.json",
+          "fixtures/workflow/plugin/task-acceptance-drift/fixture.json"
+        ],
+        "contract": "docs/process/WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md"
+      },
+      "findings": []
+    },
+    {
+      "gap_id": "HATE-GAP-026",
+      "task_seed_id": "TASK-HATE-GAP-026",
+      "acceptance_id": "AC-HATE-GAP-026",
+      "status": "implemented",
+      "readiness_effect": "none",
+      "fixture_refs": [
+        "fixtures/workflow/completion/scope-safe/fixture.json",
+        "fixtures/workflow/completion/overclaim-detected/fixture.json"
+      ],
+      "positive_fixture_count": 1,
+      "negative_fixture_count": 1,
+      "behavior_checked_count": 2,
+      "uat_reports": [
+        "workflow-completion-uat-report.json"
+      ],
+      "implementation_evidence": {
+        "runtime_module": "src/hate/workflow_completion.py",
+        "tests": [
+          "tests/test_workflow_completion.py"
+        ],
+        "fixtures": [
+          "fixtures/workflow/completion/scope-safe/fixture.json",
+          "fixtures/workflow/completion/overclaim-detected/fixture.json"
+        ],
+        "contract": "docs/process/WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md"
+      },
+      "findings": []
+    }
+  ]
+}

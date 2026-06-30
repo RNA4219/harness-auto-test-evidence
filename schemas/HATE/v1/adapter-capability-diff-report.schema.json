@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/adapter-capability-diff-report.schema.json",
+  "title": "HATE Adapter Capability Diff Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "analysis_scope",
+    "adapter_config",
+    "findings",
+    "summary",
+    "raw_field_map",
+    "normalized_field_map",
+    "lossy_transforms",
+    "input_refs",
+    "confidence",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "adapter-capability-diff-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
+    "analysis_scope": {"type": "string"},
+    "adapter_config": {
+      "type": "object",
+      "required": ["raw_field_map", "normalized_field_map", "lossy_transforms"],
+      "properties": {
+        "raw_field_map": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "normalized_field_map": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "lossy_transforms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["transform_id", "field_name", "transform_type"],
+            "properties": {
+              "transform_id": {"type": "string"},
+              "field_name": {"type": "string"},
+              "transform_type": {"type": "string"},
+              "loss_type": {"type": "string"},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "lossy_field_drop_detected": {"type": "boolean"},
+        "claim_drift_detected": {"type": "boolean"},
+        "unsupported_dialect_detected": {"type": "boolean"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "input_refs": {"type": "array", "items": {"type": "string"}},
+        "limits": {
+          "type": "object",
+          "required": ["confidence_threshold", "max_transforms", "max_field_drops"],
+          "properties": {
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+            "max_transforms": {"type": "integer", "minimum": 0},
+            "max_field_drops": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold", "blocked"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["raw_field_count", "normalized_field_count", "lossy_transform_count", "confidence", "finding_count"],
+      "properties": {
+        "raw_field_count": {"type": "integer", "minimum": 0},
+        "normalized_field_count": {"type": "integer", "minimum": 0},
+        "lossy_transform_count": {"type": "integer", "minimum": 0},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "raw_field_map": {"type": "object"},
+    "normalized_field_map": {"type": "object"},
+    "lossy_transforms": {"type": "array", "items": {"type": "object"}},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limits": {
+      "type": "object",
+      "required": ["confidence_threshold", "max_transforms", "max_field_drops"],
+      "properties": {
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "max_transforms": {"type": "integer", "minimum": 0},
+        "max_field_drops": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

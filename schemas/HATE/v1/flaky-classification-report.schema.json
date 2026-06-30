@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/flaky-classification-report.schema.json",
+  "title": "HATE Flaky Classification Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "flaky_config",
+    "findings",
+    "summary",
+    "analysis_scope",
+    "input_refs",
+    "confidence",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "flaky-classification-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
+    "flaky_config": {
+      "type": "object",
+      "required": ["flake_classes", "attempt_history", "environment_evidence"],
+      "properties": {
+        "flake_classes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["class_id", "class_name", "confidence", "sourceRef", "rationale", "verified"],
+            "properties": {
+              "class_id": {"type": "string"},
+              "class_name": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"},
+              "verified": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "attempt_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["attempt_id", "test_id", "outcome", "confidence", "sourceRef", "rationale"],
+            "properties": {
+              "attempt_id": {"type": "string"},
+              "test_id": {"type": "string"},
+              "outcome": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "environment_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["evidence_id", "delta_type", "confidence", "sourceRef", "rationale", "verified"],
+            "properties": {
+              "evidence_id": {"type": "string"},
+              "delta_type": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"},
+              "verified": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "analysis_scope": {"type": "string"},
+        "input_refs": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "limits": {
+          "type": "object",
+          "required": ["max_flake_classes", "max_attempts", "confidence_threshold"],
+          "properties": {
+            "max_flake_classes": {"type": "integer", "minimum": 0},
+            "max_attempts": {"type": "integer", "minimum": 0},
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "additionalProperties": true
+        },
+        "class_taxonomy_available": {"type": "boolean"},
+        "retry_history_available": {"type": "boolean"},
+        "environment_evidence_available": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold", "blocked"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["flake_class_count", "attempt_history_count", "environment_evidence_count", "confidence", "finding_count"],
+      "properties": {
+        "flake_class_count": {"type": "integer", "minimum": 0},
+        "attempt_history_count": {"type": "integer", "minimum": 0},
+        "environment_evidence_count": {"type": "integer", "minimum": 0},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "analysis_scope": {"type": "string"},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limits": {
+      "type": "object",
+      "required": ["max_flake_classes", "max_attempts", "confidence_threshold"],
+      "properties": {
+        "max_flake_classes": {"type": "integer", "minimum": 0},
+        "max_attempts": {"type": "integer", "minimum": 0},
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

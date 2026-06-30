@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/data-classification/prohibited-telemetry-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8e20473812015f55bc177855529c60684b71af64a52c2a8b09ee33f956bb5be6",
+  "line_count": 28,
+  "size_bytes": 963,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

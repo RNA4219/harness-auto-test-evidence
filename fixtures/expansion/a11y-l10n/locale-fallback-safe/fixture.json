@@ -1,0 +1,30 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-a11y-l10n-locale-fallback-safe",
+  "gap_id": "HATE-GAP-038",
+  "packet_id": "HATE-PKT-EXP-008-a11y-l10n",
+  "task_seed_id": "TASK-HATE-GAP-038",
+  "acceptance_id": "AC-HATE-GAP-038",
+  "case_kind": "positive",
+  "input": {
+    "a11y_config": {
+      "message_catalog_present": true,
+      "stable_message_ids": true,
+      "supported_locales": ["en-US", "ja-JP", "fr-FR"],
+      "requested_locale": "ja-JP",
+      "fallback_locale": "en-US",
+      "fallback_used": false,
+      "keyboard_navigation_checked": true,
+      "color_contrast_checked": true,
+      "color_only_severity_used": false,
+      "screen_reader_labels_present": true,
+      "translation_stale": false,
+      "translation_last_reviewed_at": "2026-06-15T00:00:00Z"
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "a11y-l10n-uat-report.json"
+  }
+}

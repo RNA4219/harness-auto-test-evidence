@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/docs-lifecycle-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "56b41ec808cfda4923bebf8e19921baa52763e09fe930b31d99e07900f8ac4a9",
+  "line_count": 43,
+  "size_bytes": 1424,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

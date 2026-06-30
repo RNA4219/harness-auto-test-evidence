@@ -68,14 +68,74 @@
       "phase": "P0b"
     },
     {
+      "record_type": "artifact-lifecycle-report",
+      "schema": "schemas/HATE/v1/artifact-lifecycle-report.schema.json",
+      "phase": "P3"
+    },
+    {
       "record_type": "safe-diagnostic-bundle",
       "schema": "schemas/HATE/v1/safe-diagnostic-bundle.schema.json",
       "phase": "P0b"
     },
     {
+      "record_type": "worker-runtime-report",
+      "schema": "schemas/HATE/v1/worker-runtime-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "tenant-isolation-report",
+      "schema": "schemas/HATE/v1/tenant-isolation-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "api-rate-limit-report",
+      "schema": "schemas/HATE/v1/api-rate-limit-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "api-contract-report",
+      "schema": "schemas/HATE/v1/api-contract-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "entitlement-report",
+      "schema": "schemas/HATE/v1/entitlement-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "github-integration-report",
+      "schema": "schemas/HATE/v1/github-integration-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "dashboard-state-report",
+      "schema": "schemas/HATE/v1/dashboard-state-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "deployment-topology-report",
+      "schema": "schemas/HATE/v1/deployment-topology-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "adapter-conformance-report",
+      "schema": "schemas/HATE/v1/adapter-conformance-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "adapter-family-report",
+      "schema": "schemas/HATE/v1/adapter-family-report.schema.json",
+      "phase": "P3"
+    },
+    {
       "record_type": "store_manifest",
       "schema": "schemas/HATE/v1/store-manifest.schema.json",
       "phase": "P0a"
+    },
+    {
+      "record_type": "store-migration-report",
+      "schema": "schemas/HATE/v1/store-migration-report.schema.json",
+      "phase": "P3"
     },
     {
       "record_type": "api-authz-decision",
@@ -108,6 +168,16 @@
       "phase": "P3"
     },
     {
+      "record_type": "real-repo-evaluation-report",
+      "schema": "schemas/HATE/v1/real-repo-evaluation-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "agent-quality-report",
+      "schema": "schemas/HATE/v1/agent-quality-report.schema.json",
+      "phase": "P3"
+    },
+    {
       "record_type": "migration-compatibility-report",
       "schema": "schemas/HATE/v1/migration-compatibility-report.schema.json",
       "phase": "P3"
@@ -120,6 +190,176 @@
     {
       "record_type": "release-candidate-pack",
       "schema": "schemas/HATE/v1/release-candidate-pack.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "release-channel-report",
+      "schema": "schemas/HATE/v1/release-channel-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "product-e2e-uat-report",
+      "schema": "schemas/HATE/v1/product-e2e-uat-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "workflow-task-seed-report",
+      "schema": "schemas/HATE/v1/workflow-task-seed-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "workflow-acceptance-report",
+      "schema": "schemas/HATE/v1/workflow-acceptance-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "workflow-evidence-report",
+      "schema": "schemas/HATE/v1/workflow-evidence-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "workflow-birdseye-report",
+      "schema": "schemas/HATE/v1/workflow-birdseye-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "workflow-plugin-report",
+      "schema": "schemas/HATE/v1/workflow-plugin-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "workflow-completion-report",
+      "schema": "schemas/HATE/v1/workflow-completion-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "onboarding-report",
+      "schema": "schemas/HATE/v1/onboarding-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "policy-simulation-report",
+      "schema": "schemas/HATE/v1/policy-simulation-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "bulk-portability-report",
+      "schema": "schemas/HATE/v1/bulk-portability-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "notification-report",
+      "schema": "schemas/HATE/v1/notification-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "self-hosted-report",
+      "schema": "schemas/HATE/v1/self-hosted-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "data-classification-report",
+      "schema": "schemas/HATE/v1/data-classification-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "dependency-compliance-report",
+      "schema": "schemas/HATE/v1/dependency-compliance-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "adapter-marketplace-report",
+      "schema": "schemas/HATE/v1/adapter-marketplace-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "product-analytics-report",
+      "schema": "schemas/HATE/v1/product-analytics-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "docs-lifecycle-report",
+      "schema": "schemas/HATE/v1/docs-lifecycle-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "disaster-recovery-report",
+      "schema": "schemas/HATE/v1/disaster-recovery-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "a11y-l10n-report",
+      "schema": "schemas/HATE/v1/a11y-l10n-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "cost-governance-report",
+      "schema": "schemas/HATE/v1/cost-governance-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "beta-acceptance-report",
+      "schema": "schemas/HATE/v1/beta-acceptance-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "impact-analysis-report",
+      "schema": "schemas/HATE/v1/impact-analysis-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "test-recommendation-report",
+      "schema": "schemas/HATE/v1/test-recommendation-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "flaky-classification-report",
+      "schema": "schemas/HATE/v1/flaky-classification-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "oracle-classification-report",
+      "schema": "schemas/HATE/v1/oracle-classification-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "evidence-synthesis-report",
+      "schema": "schemas/HATE/v1/evidence-synthesis-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "test-quality-report",
+      "schema": "schemas/HATE/v1/test-quality-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "environment-diff-report",
+      "schema": "schemas/HATE/v1/environment-diff-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "historical-regression-report",
+      "schema": "schemas/HATE/v1/historical-regression-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "fixture-quality-report",
+      "schema": "schemas/HATE/v1/fixture-quality-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "contradiction-report",
+      "schema": "schemas/HATE/v1/contradiction-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "audience-report-pack",
+      "schema": "schemas/HATE/v1/audience-report-pack.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "adapter-capability-diff-report",
+      "schema": "schemas/HATE/v1/adapter-capability-diff-report.schema.json",
       "phase": "P3"
     }
   ],

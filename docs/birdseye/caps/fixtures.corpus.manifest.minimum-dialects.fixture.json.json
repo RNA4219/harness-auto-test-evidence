@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/corpus/manifest/minimum-dialects/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bb0ecd9cfb63098302c521406e5ce8d0a5c9830c4b6035879274bf4d33e131c9",
+  "line_count": 11,
+  "size_bytes": 521,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

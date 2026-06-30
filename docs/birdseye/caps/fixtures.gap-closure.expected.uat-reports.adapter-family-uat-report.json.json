@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/adapter-family-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b9372a3258225d2036ffa38f47368b8cb8b66e8a85de7ec99697cd2758cae1de",
+  "line_count": 28,
+  "size_bytes": 752,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

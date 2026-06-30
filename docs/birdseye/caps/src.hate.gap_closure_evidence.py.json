@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/gap_closure_evidence.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "fcbe187e47dbe07a0a236437224558405dedf63f3f2b4cb3572d7d6c87011595",
+  "line_count": 293,
+  "size_bytes": 13824,
+  "headings": [],
+  "imports": [
+    "__future__"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "store",
+    "test"
+  ]
+}

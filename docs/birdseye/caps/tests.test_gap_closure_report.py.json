@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_gap_closure_report.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "54fdfbec18274cb5715c896503a5e60744ec0264abc92bd989bae867f7331cc6",
+  "line_count": 224,
+  "size_bytes": 11858,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.cli",
+    "hate.gap_closure",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py",
+    "src/hate/gap_closure.py"
+  ],
+  "tags": [
+    "birdseye",
+    "coverage",
+    "fixture",
+    "release",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

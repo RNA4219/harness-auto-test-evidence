@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/api/contract_report.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ba9d9e129841511c61090294e2503daf23f979965a49e048347c6b8bbadadd49",
+  "line_count": 180,
+  "size_bytes": 6222,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

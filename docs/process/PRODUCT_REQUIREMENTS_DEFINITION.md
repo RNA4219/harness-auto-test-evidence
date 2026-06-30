@@ -27,6 +27,15 @@ next_review_due: 2026-07-29
 - `DATA_RETENTION_LEGAL_REQUIREMENTS.md`
 - `SCALE_PERFORMANCE_REQUIREMENTS.md`
 - `IMPLEMENTATION_EPIC_BREAKDOWN.md`
+- `PRODUCT_REQUIREMENTS_GAP_BACKLOG.md`
+- `PRODUCT_REQUIREMENTS_GAP_CLOSURE_PACKETS.md`
+- `PRODUCT_REQUIREMENTS_EXPANSION_GAP_BACKLOG.md`
+- `PRODUCT_REQUIREMENTS_EXPANSION_PACKETS.md`
+- `PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md`
+- `TEST_INTEGRITY_IMPLEMENTATION_SPEC.md`
+- `ENTERPRISE_CONTROL_STATE_TRANSITION_SPEC.md`
+- `RELEASE_CANDIDATE_PACK_VALIDATOR_SPEC.md`
+- `WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md`
 
 要件定義としての目的:
 
@@ -34,6 +43,11 @@ next_review_due: 2026-07-29
 - 顧客、利用者、業務フロー、データ、権限、運用、検収条件を明確にする
 - MVP / Team GA / Enterprise / Regulated の段階差を固定する
 - 各要件が仕様、実装タスク、fixture、UAT、product-ready evidenceへ辿れるようにする
+- 未仕様、浅い仕様、実装packet不足は `PRODUCT_REQUIREMENTS_GAP_BACKLOG.md` で
+  open gap として管理し、閉じるまで50万〜100万行級の実装準備完了と呼ばない
+- HATE-GAP-001..026 実装後に見えた追加不足は
+  `PRODUCT_REQUIREMENTS_EXPANSION_GAP_BACKLOG.md` で HATE-GAP-027+ として
+  管理し、既存gap closure reportへ混ぜずに versioned expansion として扱う
 
 ## 2. Product Problem Statement
 
@@ -348,6 +362,132 @@ toy data structures from becoming the accepted design.
 | FR-LIFE-004 | Deprecated field use must produce warning with removal version and replacement | P2 | deprecated fixture produces expected warning |
 | FR-LIFE-005 | Legal hold and retention must survive migration without deleting protected metadata | P3 | migration fixture preserves legal hold |
 
+### 7.15 Company Rollout and Adoption Requirements
+
+Company use requires more than a working checker. The product must support
+multi-repository rollout, staged adoption, exception handling, and adoption
+evidence so internal platform teams can deploy HATE without turning every repo
+into a one-off project.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-ROLL-001 | Rollout waves must define target repos, owners, policy template, entry criteria, exit criteria, and rollback plan | P2 | rollout wave fixture shows staged adoption and failed-wave rollback |
+| FR-ROLL-002 | Repo onboarding status must distinguish not-started, bootstrapping, evidence-missing, policy-blocked, active, and suspended | P2 | status transition matrix rejects illegal jumps |
+| FR-ROLL-003 | Exceptions must be time-bound, owner-backed, scoped to repo/policy/evidence class, and visible in release pack | P2 | expired exception blocks product-ready |
+| FR-ROLL-004 | Adoption reports must aggregate repo coverage, active blockers, open risk debt, and time-to-green without raw code or test names | P2 | portfolio report passes privacy fixture |
+
+### 7.16 CI, SCM, and Repository Provider Coverage
+
+The product must not hide provider-specific work behind the word `generic`.
+Enterprise adoption requires explicit behavior for common SCM and CI systems,
+including permission boundaries, artifact ownership, annotations, and reruns.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-CI-001 | Provider contracts must cover GitHub, GitLab, Azure DevOps, Jenkins, CircleCI, Bitbucket, Buildkite, and generic local imports | P1-P2 | provider matrix has positive and denied-permission fixtures |
+| FR-CI-002 | Each provider must define commit identity, PR/MR identity, run attempt, artifact lifetime, annotation target, and rerun semantics | P1-P2 | identity normalization fixture is deterministic |
+| FR-CI-003 | Missing or ambiguous provider identity must become input failure, not silent advisory output | P1 | ambiguous run fixture is hard DQ or input failure by profile |
+| FR-CI-004 | Provider integrations must declare minimum permissions and deny broad/admin scopes unless explicitly required | P1 | overbroad permission fixture is denied |
+
+### 7.17 Language and Test Runner Coverage
+
+Adapter coverage must match real polyglot company repositories. The product may
+stage support by milestone, but the PRD must name the required runner families
+so implementation cannot stop at Python and JavaScript.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-LANG-001 | Test result support must include Python, JavaScript/TypeScript, Java/Kotlin, Go, .NET, Rust, C/C++, Ruby, and PHP runner families | P1-P3 | runner family corpus records supported, partial, and unsupported states |
+| FR-LANG-002 | .NET xUnit/NUnit/MSTest, Rust nextest/libtest, CTest, Cypress, Mocha, RSpec, PHPUnit, and monorepo task runners must have dialect entries | P2-P3 | dialect matrix fixture prevents untracked parser assumptions |
+| FR-LANG-003 | Unsupported runner output must produce a capability gap with remediation, not malformed evidence | P1 | unsupported runner fixture emits adapter capability gap |
+| FR-LANG-004 | Runner support claims must be tied to conformance fixtures and release notes | P2 | docs claim without conformance fixture blocks product-ready |
+
+### 7.18 Real Repository Evaluation Requirements
+
+Real repository evaluation must become a recurring product quality loop rather
+than an occasional manual trial. It must cover repository size, language mix,
+CI provider, history, failure modes, and regression trends.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-REEVAL-001 | Evaluation roster must include small, medium, large, monorepo, polyglot, flaky, artifact-heavy, and security-heavy repositories | P1 | roster fixture labels repo class and allowed data exposure |
+| FR-REEVAL-002 | Evaluation runs must record baseline, current result, regression, timeout, parser gap, and manual review outcome | P1 | regression fixture produces blocked evaluation report |
+| FR-REEVAL-003 | Timeout and resource budgets must be per repo class and must not hide missing evidence | P1 | timeout fixture records incomplete evidence as hold |
+| FR-REEVAL-004 | Evaluation trend must feed roadmap priority without exposing customer source or raw test content | P2 | trend report uses aggregate safe fields only |
+
+### 7.19 Organizational Governance Requirements
+
+Enterprise quality gates are operated by people and committees, not only by
+code. HATE must model policy approval, exception review, periodic audit, and
+delegation boundaries as first-class requirements.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-GOV-001 | Policy templates must have author, approver, effective date, review cadence, affected repo set, and rollback owner | P2 | policy template without approver is hold |
+| FR-GOV-002 | Exception requests must require owner, expiry, rationale, affected risks, compensating evidence, and reviewer decision | P2 | exception missing compensating evidence blocks product-ready |
+| FR-GOV-003 | Governance review packets must list policy drift, expired exceptions, repeated waivers, and unresolved high-risk debt | P2 | governance packet fixture ranks blockers |
+| FR-GOV-004 | Delegation rules must prevent service accounts or single roles from approving their own quality exceptions | P2 | self-approval fixture is denied |
+
+### 7.20 Security Procurement and Trust Package Requirements
+
+Company adoption usually requires a security/procurement packet before broad
+rollout. HATE must produce and validate safe trust evidence without leaking
+customer artifacts or overstating certification.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-PROC-001 | Security review packet must include architecture, data flow, data classes, subprocessors, encryption, secrets handling, and retention summary | P2 | packet fixture rejects missing data flow |
+| FR-PROC-002 | Compliance claims must distinguish implemented control, inherited control, external attestation, roadmap, and unsupported claim | P2 | unsupported certification claim blocks product-ready |
+| FR-PROC-003 | Vulnerability response requirements must define intake, severity, SLA, customer notice, fixed version, and exception expiry | P2 | overdue critical vulnerability blocks release pack |
+| FR-PROC-004 | Procurement export must contain only safe summaries and approved evidence references | P2 | raw artifact in procurement packet is denied |
+
+### 7.21 Value Measurement and ROI Requirements
+
+The product must measure whether it improves quality work. Product analytics
+alone is insufficient; HATE needs quality outcome metrics that justify company
+adoption while preserving privacy.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-VALUE-001 | Value reports must track review time saved, risk debt burn-down, release blocker lead time, repeat finding rate, and avoided unsupported claims | P2 | value report fixture computes aggregate deltas |
+| FR-VALUE-002 | ROI metrics must be explainable from safe evidence refs and must not use raw source, raw test names, or individual developer ranking | P2 | privacy fixture denies individual leaderboard |
+| FR-VALUE-003 | Quality outcome metrics must separate detection volume from meaningful fixed risk | P2 | noisy finding fixture does not improve value score |
+| FR-VALUE-004 | Executive summaries must include limitations, confidence, sample size, and missing baseline warnings | P2 | missing baseline produces soft gap or hold |
+
+### 7.22 Daily Developer Experience Requirements
+
+Developers need fast, actionable, low-noise feedback where they already work.
+The product must define PR comments, IDE/CLI loops, notifications, suppression
+UX, and recommendation quality so HATE is usable every day.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-DX-001 | PR/MR feedback must group findings by fix action, risk impact, owner, and blocking status with stable deep links | P1 | PR comment fixture has actionable grouping and no raw secret |
+| FR-DX-002 | CLI and IDE flows must support local explain, local fixture replay, recommendation preview, and offline-safe mode | P2 | offline local fixture produces same deterministic recommendation |
+| FR-DX-003 | Suppression UX must require reason, owner, expiry, affected sourceRefs, and alternative evidence | P1 | broad suppression fixture is denied |
+| FR-DX-004 | Recommendation quality must be evaluated for precision, duplication, stale refs, and fix verification outcome | P2 | bad recommendation fixture lowers recommendation quality report |
+
+### 7.23 Core Analysis Expansion Requirements
+
+HATE must grow as an evidence analysis engine, not only as an adapter/report
+collector. These requirements are functional requirements for what the product
+can analyze, infer, classify, reconcile, and explain from test evidence.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-ANALYSIS-001 | Impact analysis must infer affected tests, requirements, risks, owners, and evidence from changed files using dependency, import, ownership, and history signals | P1 | changed dependency fixture produces affected-test candidates with confidence and sourceRefs |
+| FR-ANALYSIS-002 | Test recommendation must propose add, modify, rerun, or manual-review actions with required oracle, test layer, risk ref, and verification command | P1 | missing-oracle fixture produces actionable recommendation, not generic advice |
+| FR-ANALYSIS-003 | Flaky classification must separate code, test, environment, infrastructure, timeout, order-dependent, and unknown flake classes from retry/history/environment evidence | P1 | environment-flake fixture is not misclassified as product pass |
+| FR-ANALYSIS-004 | Oracle classification must distinguish exact value, invariant, property, metamorphic, snapshot, approval, contract, mutation-backed, manual, and no-oracle evidence | P1 | snapshot-only critical risk remains hold unless semantic guard exists |
+| FR-ANALYSIS-005 | Evidence synthesis must combine execution, coverage, mutation, contract, static finding, artifact, and manual evidence into risk-level and requirement-level confidence | P1 | contradictory weak evidence does not inflate readiness |
+| FR-ANALYSIS-006 | Test code quality analysis must detect duplicate tests, overbroad snapshot assertions, huge fixture dependency, nondeterministic time/random/network usage, sleeps, and order dependence | P1 | sleep-based test fixture emits test-quality finding |
+| FR-ANALYSIS-007 | Execution environment diff analysis must compare OS, runtime, browser, container image, dependency lock, env vars, cache, service dependency, and shard topology across attempts | P1 | runtime-version drift fixture explains result change |
+| FR-ANALYSIS-008 | Cross-evidence contradiction detection must surface inconsistent signals between pass/fail tests, coverage, mutation, contract, static findings, artifact safety, and release claims | P1 | pass-with-critical-finding fixture blocks readiness |
+| FR-ANALYSIS-009 | Historical regression analysis must detect recurring failures, trend degradation, risk debt burn-up, flaky rate drift, parser regression, and evidence quality regression | P2 | recurring failure fixture links prior runs and blocks overclaim |
+| FR-ANALYSIS-010 | Multi-audience report generation must derive developer, QA, release, QEG, and machine summaries from the same canonical evidence without recomputing verdicts | P2 | audience report fixture keeps identical sourceRefs across views |
+| FR-ANALYSIS-011 | Fixture and corpus quality detection must flag stale fixtures, expected-output leakage, fixture-name coupling risk, duplicate cases, weak negative coverage, and schema drift | P1 | fixture-name-coupled expected fixture is hold |
+| FR-ANALYSIS-012 | Adapter capability diff must compare raw input samples against normalized output to identify dropped fields, unsupported dialect features, lossy transforms, and capability claim drift | P1 | lossy adapter fixture emits capability diff finding |
+
 ## 8. Non-Functional Requirements
 
 | ID | Category | Requirement | Target |
@@ -364,6 +504,12 @@ toy data structures from becoming the accepted design.
 | NFR-010 | Privacy | Telemetry never includes raw test title/body/path/artifact content | prohibited signal tests |
 | NFR-011 | Auditability | Every product-ready claim has evidence refs | release pack validation |
 | NFR-012 | Supportability | Diagnostic bundle is sufficient for first-line triage | support UAT |
+| NFR-013 | Adoption scalability | 500 repositories can be staged through rollout waves without global policy mutation | rollout portfolio fixture |
+| NFR-014 | Provider coverage | Each claimed CI/SCM provider has identity, permission, artifact, and rerun contract tests | provider matrix |
+| NFR-015 | Value accountability | Quality value reports show confidence and limitations, not only activity volume | value report UAT |
+| NFR-016 | Developer feedback latency | Local explain and PR summary generation stay fast enough for daily PR use | P95 latency budget by repo class |
+| NFR-017 | Analysis explainability | Every inferred affected test, recommendation, flake class, contradiction, and confidence score has sourceRefs and confidence rationale | analysis fixture |
+| NFR-018 | No hidden inference | Inference failures must become explicit unknown/hold findings, not silent pass or readiness inflation | negative analysis fixture |
 
 ## 9. Data Requirements
 
@@ -381,6 +527,23 @@ toy data structures from becoming the accepted design.
 | TestIntegritySignal | signal id, severity, refs, decision impact | product-ready blocker |
 | AuditEvent | actor, action, target, before/after, hash link | append-only |
 | ConnectorResult | provider, status, errors, non_gating, hash before/after | non-gating |
+| RolloutWave | wave id, repo set, owners, entry/exit criteria, rollback state | portfolio scoped |
+| ProviderIntegration | provider, permission set, identity mapping, artifact policy, rerun policy | tenant scoped |
+| RunnerDialect | language, runner, format, support state, conformance fixture refs | public metadata |
+| GovernanceException | owner, expiry, rationale, affected risks, compensating evidence | audit retained |
+| TrustPacket | data flow, controls, attestations, unsupported claims, safe evidence refs | export safe |
+| ValueMetric | metric id, aggregate value, baseline, confidence, limitations | no individual ranking |
+| DeveloperFeedback | finding group, action, deep link, suppression state, recommendation quality | repo scoped |
+| ImpactAnalysis | changed refs, affected tests, affected requirements, confidence, rationale | source-backed |
+| TestRecommendation | action, target, risk refs, required oracle, command, verification status | no generic advice |
+| FlakyClassification | class, attempts, history refs, environment deltas, confidence | explainable |
+| OracleAssessment | oracle class, semantic guard, risk coverage, confidence | risk scoped |
+| EvidenceSynthesis | requirement/risk confidence, contributing evidence, contradictions, limits | no hidden inflation |
+| TestQualityFinding | pattern, affected test, severity, readiness effect, remediation | test scoped |
+| EnvironmentDiff | runtime, image, dependency, cache, service, shard deltas | attempt scoped |
+| ContradictionFinding | evidence refs, contradiction type, blocking effect, sourceRefs | release scoped |
+| FixtureQualityFinding | fixture id, issue type, coupling risk, stale status, schema drift | corpus scoped |
+| AdapterCapabilityDiff | adapter id, raw field, normalized field, loss type, claim drift | conformance scoped |
 
 ## 10. Authorization Requirements
 
@@ -394,6 +557,9 @@ toy data structures from becoming the accepted design.
 | Platform Admin | manage org/profile/adapter/retention/connectors | alter immutable evidence silently |
 | Auditor | read evidence room and audit log | mutate evidence or policy |
 | Service Account | perform configured automation | replace human review record |
+| Governance Reviewer | approve policy templates and scoped exceptions | approve own exception or bypass expiry |
+| Procurement Reviewer | read trust packet and safe evidence summaries | access raw artifacts or customer code |
+| Engineering Manager | view aggregate adoption and value reports | view individual developer ranking from HATE telemetry |
 
 ## 11. Acceptance and UAT
 
@@ -417,6 +583,26 @@ toy data structures from becoming the accepted design.
 | AC-REQ-016 | Scale and performance | 100k test / 10M coverage / 100k artifact metadata design fixture and measured budgets |
 | AC-REQ-017 | Observability | structured metrics/logs/alerts/support diagnostics/telemetry privacy fixtures |
 | AC-REQ-018 | Lifecycle compatibility | schema/store/API/profile/adapter/view-model migration, deprecation, rollback fixtures |
+| AC-REQ-019 | Company rollout | rollout wave, repo status, exception expiry, portfolio adoption fixtures |
+| AC-REQ-020 | CI/SCM provider coverage | provider identity, permission, artifact lifetime, annotation, rerun fixtures |
+| AC-REQ-021 | Language and runner coverage | polyglot runner dialect matrix and unsupported runner capability-gap fixtures |
+| AC-REQ-022 | Real repository evaluation | recurring roster, baseline, regression, timeout, trend fixtures |
+| AC-REQ-023 | Organizational governance | policy approval, exception review, delegation denial, governance packet fixtures |
+| AC-REQ-024 | Security procurement and trust packet | security review packet, compliance claim, vulnerability SLA, safe procurement export fixtures |
+| AC-REQ-025 | Value measurement and ROI | safe aggregate value metrics, confidence, limitation, missing baseline fixtures |
+| AC-REQ-026 | Daily developer experience | PR/MR feedback, local explain, suppression UX, recommendation quality fixtures |
+| AC-REQ-027 | Impact analysis | changed dependency, ownership, history, affected-test confidence fixtures |
+| AC-REQ-028 | Test recommendation | add/modify/rerun/manual actions with oracle and command verification fixtures |
+| AC-REQ-029 | Flaky classification | code/test/environment/infrastructure/order/timeout flake fixtures |
+| AC-REQ-030 | Oracle classification | exact/invariant/property/metamorphic/snapshot/contract/manual/no-oracle fixtures |
+| AC-REQ-031 | Evidence synthesis | risk and requirement confidence with contradiction and weak-evidence fixtures |
+| AC-REQ-032 | Test code quality | duplicate, snapshot-only, huge fixture, nondeterministic, sleep/order fixtures |
+| AC-REQ-033 | Environment diff | OS/runtime/browser/container/cache/env/shard drift fixtures |
+| AC-REQ-034 | Cross-evidence contradiction | pass-with-critical-finding, coverage-up-mutation-down, contract-schema conflict fixtures |
+| AC-REQ-035 | Historical regression | recurring failure, trend degradation, parser regression, risk debt burn-up fixtures |
+| AC-REQ-036 | Multi-audience reports | developer/QA/release/QEG/machine views from identical sourceRefs fixtures |
+| AC-REQ-037 | Fixture corpus quality | stale, duplicate, expected leakage, fixture-name coupling, schema drift fixtures |
+| AC-REQ-038 | Adapter capability diff | raw-vs-normalized field loss and capability claim drift fixtures |
 
 ## 12. Release Stage Requirements
 
@@ -425,9 +611,9 @@ toy data structures from becoming the accepted design.
 | Prototype | P0a/P0b local fixture exists | golden path and QEG export pass |
 | Internal Alpha | adapter expansion and risk graph available | 3 internal repos replayable |
 | Private Beta | local store, test integrity, artifact safety, doctor stable | 3 customer-like repos pass UAT |
-| Team GA | GitHub Action, adapter SDK, QEG export, support docs | no open P0/P1 product blockers |
-| Enterprise Ready | API/dashboard/RBAC/audit/retention/connectors ready | enterprise-control-report pass |
-| Regulated Ready | assurance/evidence room/legal hold/compliance pack ready | auditor walkthrough pass |
+| Team GA | GitHub Action, adapter SDK, QEG export, support docs, daily developer feedback, provider matrix | no open P0/P1 product blockers and developer feedback UAT pass |
+| Enterprise Ready | API/dashboard/RBAC/audit/retention/connectors, rollout waves, governance, DR, value reporting ready | enterprise-control-report and rollout/governance reports pass |
+| Regulated Ready | assurance/evidence room/legal hold/compliance pack, trust packet, dependency compliance, procurement export ready | auditor and procurement walkthrough pass |
 
 ## 13. Requirement Traceability
 
@@ -460,6 +646,26 @@ No requirement is accepted when it has only prose and no fixture/test/evidence p
 | `FR-SCALE-*` | J-DEV, J-QA, J-REL | AC-REQ-016 | HATE-PG-001, HATE-PG-003, HATE-PG-005, HATE-PG-007, HATE-PG-008, HATE-PG-014 | scale-performance-report |
 | `FR-LIFE-*` | J-AUD, J-ADM, J-REL | AC-REQ-018 | HATE-PG-005, HATE-PG-011, HATE-PG-012, HATE-PG-015 | migration-compatibility-report |
 | `FR-OPS-005`, `FR-OPS-006` | J-REL, J-SUP | AC-REQ-010, AC-REQ-012 | HATE-PG-011, HATE-PG-012, HATE-PG-016 | release-candidate-pack, commercial-truthfulness-report |
+| `FR-ROLL-*` | J-ADM, J-SUP, J-REL | AC-REQ-019 | HATE-GAP-041 | rollout-adoption-report |
+| `FR-CI-*` | J-DEV, J-ADM, J-REL | AC-REQ-020 | HATE-GAP-042 | provider-integration-report |
+| `FR-LANG-*` | J-DEV, J-QA, J-REL | AC-REQ-021 | HATE-GAP-043 | runner-dialect-coverage-report |
+| `FR-REEVAL-*` | J-QA, J-REL, J-AUD | AC-REQ-022 | HATE-GAP-044 | real-repo-evaluation-report |
+| `FR-GOV-*` | J-ADM, J-AUD, J-REL | AC-REQ-023 | HATE-GAP-045 | governance-review-report |
+| `FR-PROC-*` | J-SEC, J-AUD, J-REL | AC-REQ-024 | HATE-GAP-046 | security-procurement-report |
+| `FR-VALUE-*` | J-SUP, J-REL, J-ADM | AC-REQ-025 | HATE-GAP-047 | value-measurement-report |
+| `FR-DX-*` | J-DEV, J-QA | AC-REQ-026 | HATE-GAP-048 | developer-experience-report |
+| `FR-ANALYSIS-001` | J-DEV, J-QA, J-REL | AC-REQ-027 | HATE-GAP-049 | impact-analysis-report |
+| `FR-ANALYSIS-002` | J-DEV, J-QA | AC-REQ-028 | HATE-GAP-050 | test-recommendation-report |
+| `FR-ANALYSIS-003` | J-DEV, J-QA, J-REL | AC-REQ-029 | HATE-GAP-051 | flaky-classification-report |
+| `FR-ANALYSIS-004` | J-QA, J-REL | AC-REQ-030 | HATE-GAP-052 | oracle-classification-report |
+| `FR-ANALYSIS-005` | J-QA, J-REL, J-AUD | AC-REQ-031 | HATE-GAP-053 | evidence-synthesis-report |
+| `FR-ANALYSIS-006` | J-DEV, J-QA | AC-REQ-032 | HATE-GAP-054 | test-quality-report |
+| `FR-ANALYSIS-007` | J-DEV, J-SUP, J-REL | AC-REQ-033 | HATE-GAP-055 | environment-diff-report |
+| `FR-ANALYSIS-008` | J-QA, J-REL, J-AUD | AC-REQ-034 | HATE-GAP-056 | contradiction-report |
+| `FR-ANALYSIS-009` | J-QA, J-REL, J-AUD | AC-REQ-035 | HATE-GAP-057 | historical-regression-report |
+| `FR-ANALYSIS-010` | J-DEV, J-QA, J-REL | AC-REQ-036 | HATE-GAP-058 | audience-report-pack |
+| `FR-ANALYSIS-011` | J-QA, J-AUD | AC-REQ-037 | HATE-GAP-059 | fixture-quality-report |
+| `FR-ANALYSIS-012` | J-ADM, J-QA | AC-REQ-038 | HATE-GAP-060 | adapter-capability-diff-report |
 
 ### 13.2 Acceptance Evidence Minimum
 

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/github/unsafe-annotation-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ff770c8fa2ac657829d918fbd4fb0857353c383cf3d5207e3cea176af8e31baa",
+  "line_count": 25,
+  "size_bytes": 786,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

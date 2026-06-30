@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/enterprise/tenant/audit-cross-read-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bcc0dcbacd9c461abf4f3b5cd15225a505d1e5532e86258c00cf89bfe3e44cc0",
+  "line_count": 21,
+  "size_bytes": 597,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

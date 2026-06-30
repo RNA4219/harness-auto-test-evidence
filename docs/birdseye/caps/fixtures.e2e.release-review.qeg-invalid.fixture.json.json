@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/e2e/release-review/qeg-invalid/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2cbf136acabd51e4da1a648574aa7d36d824e6ee7f133061b707762e39cf7770",
+  "line_count": 20,
+  "size_bytes": 579,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

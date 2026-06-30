@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_workflow_evidence.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "7e8ecad3e3bc93289b8bc0515e25088addc36e38737b0e84dd2754ac8e0e784c",
+  "line_count": 144,
+  "size_bytes": 5081,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.workflow_evidence",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/workflow_evidence.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

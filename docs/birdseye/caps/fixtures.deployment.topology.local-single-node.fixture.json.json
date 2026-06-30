@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/deployment/topology/local-single-node/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5e5e33e8564779815c8d5440cc64673ff02f67749e0edfafce756a0cbdd52e9f",
+  "line_count": 11,
+  "size_bytes": 492,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

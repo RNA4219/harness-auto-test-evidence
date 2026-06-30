@@ -1,0 +1,23 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-birdseye-stale-capsule",
+  "gap_id": "HATE-GAP-024",
+  "packet_id": "HATE-PKT-WF-004-birdseye-freshness",
+  "task_seed_id": "TASK-HATE-GAP-024",
+  "acceptance_id": "AC-HATE-GAP-024",
+  "case_kind": "negative",
+  "input": {
+    "birdseye": {
+      "index_exists": true,
+      "readme_matches_index": false,
+      "caps_missing": ["docs/birdseye/caps/docs.process.EXAMPLE.md.json"],
+      "changed_paths_have_caps": false
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "birdseye_stale_or_incomplete",
+    "readiness_effect": "hold",
+    "uat_report": "workflow-birdseye-uat-report.json"
+  }
+}

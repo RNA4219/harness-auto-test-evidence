@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/dependency-compliance/denied-license/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bd2f7ccf56ee0e2804090340ca00111adf4de1228b20d1919e816c6a1d9da51c",
+  "line_count": 37,
+  "size_bytes": 1161,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

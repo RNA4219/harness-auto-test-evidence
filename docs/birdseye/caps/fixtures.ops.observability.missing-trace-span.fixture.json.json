@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/ops/observability/missing-trace-span/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a157cf345b9eebf3dc3f614131b8702f98b3829e360de0afb581c05f73cb156a",
+  "line_count": 11,
+  "size_bytes": 535,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

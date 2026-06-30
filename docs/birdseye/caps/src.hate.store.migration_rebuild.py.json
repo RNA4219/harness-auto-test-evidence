@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/store/migration_rebuild.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c451672c5052e43cc7f75b0a13f773c56d6c45cc5789d4d68c6b1fee9d4eee06",
+  "line_count": 275,
+  "size_bytes": 10280,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

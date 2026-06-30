@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/workflow/plugin/task-acceptance-drift/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c2dd81582998e4885a483702181ae1d09acee40dc444a434a3f606905ffbec02",
+  "line_count": 27,
+  "size_bytes": 804,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

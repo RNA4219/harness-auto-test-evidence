@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/entitlement-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a8da5854d5f73617d80ca925ba641e7841a7d3c7ee2320c4f577e742c288781f",
+  "line_count": 93,
+  "size_bytes": 2939,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "qeg",
+    "schema"
+  ]
+}

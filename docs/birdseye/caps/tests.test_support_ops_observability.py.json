@@ -2,9 +2,9 @@
   "path": "tests/test_support_ops_observability.py",
   "role": "test",
   "kind": "py",
-  "sha256": "1e9e428ae873b8b2b641a8ccbaf865439130489f5e0d7c3cf81ff9424f9b6447",
-  "line_count": 113,
-  "size_bytes": 3855,
+  "sha256": "ca4a7c6dec0ac73c690f07f20ff2c3fdb68b0546999992de087c02ea2b5c8027",
+  "line_count": 169,
+  "size_bytes": 5846,
   "headings": [],
   "imports": [
     "__future__",

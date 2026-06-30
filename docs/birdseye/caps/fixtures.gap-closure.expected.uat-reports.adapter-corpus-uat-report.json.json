@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/adapter-corpus-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ae8e3e6a7318b06a52e4539358e9ab7d02b96820cd7d99b5547f7887ff823025",
+  "line_count": 28,
+  "size_bytes": 760,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

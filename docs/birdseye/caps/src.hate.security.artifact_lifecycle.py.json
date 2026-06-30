@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/security/artifact_lifecycle.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "275b9381bbe096435721781806a3daf760d27d8394b24684f5eded05cd4e68cb",
+  "line_count": 187,
+  "size_bytes": 7506,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "security"
+  ]
+}

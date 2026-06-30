@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_github_integration.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "565f36799f7658c79f48f08ffdd0b58d50a87ef642979736173a95952a3f1a1b",
+  "line_count": 114,
+  "size_bytes": 4202,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.github_integration",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/github_integration.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

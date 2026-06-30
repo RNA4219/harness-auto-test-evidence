@@ -1,0 +1,24 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "store-migration-rollback-required",
+  "gap_id": "HATE-GAP-006",
+  "packet_id": "HATE-PKT-STORE-001-migration-rebuild",
+  "task_seed_id": "TASK-HATE-GAP-006",
+  "acceptance_id": "AC-HATE-GAP-006",
+  "case_kind": "negative",
+  "input": {
+    "lifecycle_state": "failed",
+    "backup_manifest_ref": "backup-manifest.json",
+    "rollback_report_ref": null,
+    "source_bundle_hash_before": "sha256:canonical-a",
+    "source_bundle_hash_after": "sha256:canonical-a",
+    "derived_store_hash_before": "sha256:derived-a",
+    "derived_store_hash_after": "sha256:derived-drift"
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "store_rollback_report_required",
+    "readiness_effect": "hold",
+    "uat_report": "store-migration-uat-report.json"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "path": "src/hate/expansion/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "dae26ac5c4e69f01a0691952cba97c435222c26c41544baa0c72cf7bfce921ad",
+  "line_count": 3,
+  "size_bytes": 97,
+  "headings": [],
+  "imports": [
+    "__future__"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

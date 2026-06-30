@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/workflow_acceptance.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "55e60f981efc636f34404d641374df7dd9f5eb7e49f029d6f5527088f4d9b067",
+  "line_count": 148,
+  "size_bytes": 5997,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

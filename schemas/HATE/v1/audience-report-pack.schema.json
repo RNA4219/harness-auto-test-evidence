@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/audience-report-pack.schema.json",
+  "title": "HATE Audience Report Pack",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "analysis_scope",
+    "audience_config",
+    "findings",
+    "summary",
+    "audience_views",
+    "shared_sourceRefs",
+    "verdict_recomputed",
+    "input_refs",
+    "confidence",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "audience-report-pack"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
+    "analysis_scope": {"type": "string"},
+    "audience_config": {
+      "type": "object",
+      "required": ["audience_views", "shared_sourceRefs", "verdict_recomputed"],
+      "properties": {
+        "audience_views": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["audience_id", "view_type", "verdict", "sourceRef"],
+            "properties": {
+              "audience_id": {"type": "string"},
+              "view_type": {"type": "string"},
+              "verdict": {"type": "string", "enum": ["pass", "hold", "fail"]},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "shared_sourceRefs": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "verdict_recomputed": {"type": "boolean"},
+        "source_ref_drift_detected": {"type": "boolean"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "input_refs": {"type": "array", "items": {"type": "string"}},
+        "limits": {
+          "type": "object",
+          "required": ["confidence_threshold", "max_views", "max_sourceRefs"],
+          "properties": {
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+            "max_views": {"type": "integer", "minimum": 0},
+            "max_sourceRefs": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold", "blocked"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["view_count", "shared_sourceRef_count", "verdict_recomputed", "confidence", "finding_count"],
+      "properties": {
+        "view_count": {"type": "integer", "minimum": 0},
+        "shared_sourceRef_count": {"type": "integer", "minimum": 0},
+        "verdict_recomputed": {"type": "boolean"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "audience_views": {"type": "array", "items": {"type": "object"}},
+    "shared_sourceRefs": {"type": "array", "items": {"type": "string"}},
+    "verdict_recomputed": {"type": "boolean"},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limits": {
+      "type": "object",
+      "required": ["confidence_threshold", "max_views", "max_sourceRefs"],
+      "properties": {
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "max_views": {"type": "integer", "minimum": 0},
+        "max_sourceRefs": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

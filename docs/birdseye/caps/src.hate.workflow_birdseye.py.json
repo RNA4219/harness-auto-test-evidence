@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/workflow_birdseye.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f0f39dff253c5aa0fb910f959ce1416e6e34ef6051cce999e2f2e0e8a69e40e6",
+  "line_count": 126,
+  "size_bytes": 4890,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

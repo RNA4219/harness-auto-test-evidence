@@ -1,0 +1,30 @@
+{
+  "fixture_id": "verdict-recomputed-denied",
+  "fixture_type": "negative",
+  "description": "Verdict recomputed - should hold (verdict must not be recomputed)",
+  "input": {
+    "audience_views": [
+      {
+        "audience_id": "aud-1",
+        "view_type": "technical",
+        "verdict": "pass",
+        "sourceRef": "view:1",
+        "rationale": "Technical review passed"
+      }
+    ],
+    "shared_sourceRefs": ["evidence:1"],
+    "verdict_recomputed": true,
+    "source_ref_drift_detected": false,
+    "confidence": 0.95,
+    "limits": {
+      "confidence_threshold": 0.7,
+      "max_views": 10,
+      "max_sourceRefs": 50
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "audience_report_pack_verdict_recomputed_denied",
+    "readiness_effect": "hold"
+  }
+}

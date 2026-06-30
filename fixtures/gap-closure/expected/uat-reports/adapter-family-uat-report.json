@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "gap-closure-uat-report",
+  "report_id": "adapter-family-uat-report",
+  "source_version": "gap026-implemented",
+  "status": "implemented",
+  "decision": "awaiting_acceptance",
+  "readiness_effect": "none",
+  "gap_ids": [
+    "HATE-GAP-014"
+  ],
+  "task_seed_ids": [
+    "TASK-HATE-GAP-014"
+  ],
+  "acceptance_ids": [
+    "AC-HATE-GAP-014"
+  ],
+  "fixture_refs": [
+    "fixtures/adapters/family/junit-pass/fixture.json",
+    "fixtures/adapters/family/malformed-input/fixture.json"
+  ],
+  "behavior_checked_count": 2,
+  "findings": [],
+  "sourceRefs": [
+    "fixtures/adapters/family/junit-pass/fixture.json",
+    "fixtures/adapters/family/malformed-input/fixture.json"
+  ]
+}

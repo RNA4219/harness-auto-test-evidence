@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/test-recommendation-report.schema.json",
+  "title": "HATE Test Recommendation Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "recommendation_config",
+    "findings",
+    "summary",
+    "analysis_scope",
+    "input_refs",
+    "confidence",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "test-recommendation-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
+    "recommendation_config": {
+      "type": "object",
+      "required": ["recommendations", "required_oracles", "verification_commands"],
+      "properties": {
+        "recommendations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["action", "target", "confidence", "sourceRef", "rationale", "actionable"],
+            "properties": {
+              "action": {"type": "string"},
+              "target": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"},
+              "actionable": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "required_oracles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["oracle_id", "risk_id", "confidence", "sourceRef", "rationale", "verified"],
+            "properties": {
+              "oracle_id": {"type": "string"},
+              "risk_id": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"},
+              "verified": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["command_id", "recommendation_id", "confidence", "sourceRef", "rationale", "verified"],
+            "properties": {
+              "command_id": {"type": "string"},
+              "recommendation_id": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"},
+              "verified": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "analysis_scope": {"type": "string"},
+        "input_refs": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "limits": {
+          "type": "object",
+          "required": ["max_recommendations", "max_oracles", "confidence_threshold"],
+          "properties": {
+            "max_recommendations": {"type": "integer", "minimum": 0},
+            "max_oracles": {"type": "integer", "minimum": 0},
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "additionalProperties": true
+        },
+        "actionable_taxonomy_used": {"type": "boolean"},
+        "oracle_validation_enabled": {"type": "boolean"},
+        "command_verification_enabled": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold", "blocked"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["recommendation_count", "required_oracle_count", "verification_command_count", "confidence", "finding_count"],
+      "properties": {
+        "recommendation_count": {"type": "integer", "minimum": 0},
+        "required_oracle_count": {"type": "integer", "minimum": 0},
+        "verification_command_count": {"type": "integer", "minimum": 0},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "analysis_scope": {"type": "string"},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limits": {
+      "type": "object",
+      "required": ["max_recommendations", "max_oracles", "confidence_threshold"],
+      "properties": {
+        "max_recommendations": {"type": "integer", "minimum": 0},
+        "max_oracles": {"type": "integer", "minimum": 0},
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/workflow_task_seed.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "48833620af684422d4dfee5483cd0b58101d9313b61b2ff020f7888d10eeabb3",
+  "line_count": 167,
+  "size_bytes": 7156,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

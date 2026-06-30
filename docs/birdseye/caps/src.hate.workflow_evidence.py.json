@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/workflow_evidence.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "bade3e5c7ee8b8650ef07490793aa1bbc6c567ceb9211ffe055eb7efdc88a672",
+  "line_count": 154,
+  "size_bytes": 5103,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

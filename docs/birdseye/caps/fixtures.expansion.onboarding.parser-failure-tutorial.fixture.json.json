@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/onboarding/parser-failure-tutorial/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "25fc945cf3b1ac4aaa92b72aea6f8775075123b3b7cc9cd6ecb44ae65f59959d",
+  "line_count": 26,
+  "size_bytes": 833,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

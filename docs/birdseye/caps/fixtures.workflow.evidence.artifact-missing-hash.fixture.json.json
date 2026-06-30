@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/workflow/evidence/artifact-missing-hash/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "295a112e12f52524161e675c9b58d3b785826648e25603b2bb891958f9104e76",
+  "line_count": 28,
+  "size_bytes": 924,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

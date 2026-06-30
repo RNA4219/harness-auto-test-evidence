@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/release-channel-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "9c64fcf1173a02742a81023667616d881566543661bec1425df8d446b8fcb948",
+  "line_count": 60,
+  "size_bytes": 1803,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

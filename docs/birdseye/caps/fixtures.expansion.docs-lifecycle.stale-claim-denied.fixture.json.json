@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/docs-lifecycle/stale-claim-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "273d561a8b100d70b86f5b6a92b447ccea6c89fe2cc9fc56729b41816e494384",
+  "line_count": 28,
+  "size_bytes": 869,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

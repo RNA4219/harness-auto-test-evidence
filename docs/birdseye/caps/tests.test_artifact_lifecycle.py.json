@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_artifact_lifecycle.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "856adec4628b6d5d244632710f5ae551cc86dbe9d43d95789a5f42934ae05dc4",
+  "line_count": 131,
+  "size_bytes": 4869,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.security",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

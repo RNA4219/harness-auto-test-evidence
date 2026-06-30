@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/runtime/worker/retry-then-success/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9aea1d9b41065ab695c3aa546282fc58cfd23e5be63725f89132018eae8dd5a6",
+  "line_count": 15,
+  "size_bytes": 668,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

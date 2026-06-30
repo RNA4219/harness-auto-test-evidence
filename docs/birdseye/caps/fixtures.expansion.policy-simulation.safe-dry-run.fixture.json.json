@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/policy-simulation/safe-dry-run/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c0be2bee58113eb8c687fcea6202b0e634ec76c81f9fce269ab1d469b243b349",
+  "line_count": 26,
+  "size_bytes": 794,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

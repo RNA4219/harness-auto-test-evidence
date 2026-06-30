@@ -1,0 +1,27 @@
+{
+  "path": "docs/process/GITHUB_INTEGRATION_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "bd0770c2bd5b9b9c18eacc1c1bb0d43347879884a78f3cb9945fc8c527a1526e",
+  "line_count": 51,
+  "size_bytes": 1844,
+  "headings": [
+    "# GitHub Integration Contract",
+    "## 1. Responsibility Split",
+    "## 2. Permissions",
+    "## 3. Fixtures",
+    "## 4. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "test",
+    "workflow"
+  ]
+}

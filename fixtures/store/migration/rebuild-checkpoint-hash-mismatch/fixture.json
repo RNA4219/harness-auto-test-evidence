@@ -1,0 +1,26 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "store-migration-rebuild-checkpoint-hash-mismatch",
+  "gap_id": "HATE-GAP-006",
+  "packet_id": "HATE-PKT-STORE-001-migration-rebuild",
+  "task_seed_id": "TASK-HATE-GAP-006",
+  "acceptance_id": "AC-HATE-GAP-006",
+  "case_kind": "negative",
+  "input": {
+    "index_state": "rebuilding",
+    "rebuild_checkpoint": {
+      "sequence": 3,
+      "input_hash": "sha256:canonical-a",
+      "expected_output_hash": "sha256:index-good",
+      "output_hash": "sha256:index-bad",
+      "record_count": 128,
+      "sourceRef": "index-rebuild-checkpoints.jsonl#3"
+    }
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "store_index_rebuild_hash_mismatch",
+    "readiness_effect": "hold",
+    "uat_report": "store-migration-uat-report.json"
+  }
+}

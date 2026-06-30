@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_notifications.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "e86f59d44f07d997d9dcd50e1fb9bed0adc712ac11b7f41ee9fdd8597817e64c",
+  "line_count": 111,
+  "size_bytes": 3988,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.notifications",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/notifications.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

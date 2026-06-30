@@ -1,0 +1,57 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-test-quality-deterministic-tests-pass",
+  "gap_id": "HATE-GAP-054",
+  "packet_id": "HATE-PKT-EXP-028-test-quality",
+  "case_kind": "positive",
+  "input": {
+    "test_patterns": [
+      {
+        "pattern_id": "tp-001",
+        "pattern_type": "deterministic",
+        "quality_dimension": "reliability",
+        "confidence": 0.95,
+        "sourceRef": "pattern:tp-001",
+        "rationale": "Deterministic test pattern detected",
+        "verified": true
+      }
+    ],
+    "anti_patterns": [
+      {
+        "anti_pattern_id": "ap-001",
+        "anti_pattern_type": "sleep_based",
+        "severity": "low",
+        "confidence": 0.95,
+        "sourceRef": "anti-pattern:ap-001",
+        "rationale": "Low severity sleep-based anti-pattern detected but mitigated",
+        "mitigated": true
+      }
+    ],
+    "quality_metrics": [
+      {
+        "metric_id": "qm-001",
+        "metric_type": "determinism",
+        "value": 0.95,
+        "confidence": 0.95,
+        "sourceRef": "metric:qm-001",
+        "rationale": "High determinism score"
+      }
+    ],
+    "analysis_scope": "full",
+    "input_refs": ["pattern:tp-001"],
+    "confidence": 0.94,
+    "limits": {
+      "max_test_patterns": 100,
+      "max_anti_patterns": 100,
+      "max_quality_metrics": 100,
+      "confidence_threshold": 0.7
+    },
+    "determinism_available": true,
+    "timeout_available": true,
+    "isolation_available": true
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none"
+  }
+}

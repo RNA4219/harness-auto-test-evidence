@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/artifacts/lifecycle/legal-hold-delete-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a474cff2f31f60090c3e2277df435d1a785390a673c25b02dc33f3c274b42fae",
+  "line_count": 11,
+  "size_bytes": 550,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

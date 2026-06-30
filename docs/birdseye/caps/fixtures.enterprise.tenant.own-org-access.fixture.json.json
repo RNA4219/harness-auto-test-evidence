@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/enterprise/tenant/own-org-access/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a0e7e240b1b2c6104e84a1b760cff690faaebe4754ac4d276bdb4e29a4e3e0a9",
+  "line_count": 11,
+  "size_bytes": 483,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

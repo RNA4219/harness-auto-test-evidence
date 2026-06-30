@@ -54,6 +54,7 @@ from .read_model import (
     RESOURCE_FILTERS,
     RESOURCE_SORT_FIELDS,
 )
+from .contract_report import APIContractFinding, build_api_contract_report, evaluate_api_contract_fixture
 
 __all__ = [
     # authz
@@ -111,4 +112,8 @@ __all__ = [
     "list_doctor_findings",
     "RESOURCE_FILTERS",
     "RESOURCE_SORT_FIELDS",
+    # contract report
+    "APIContractFinding",
+    "build_api_contract_report",
+    "evaluate_api_contract_fixture",
 ]

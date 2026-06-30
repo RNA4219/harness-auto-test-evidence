@@ -1,0 +1,28 @@
+{
+  "path": "docs/process/ENTERPRISE_CONTROL_STATE_TRANSITION_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "06002b6d1bc71a010f54d02cc21995e73a5537bdd69364529051f520ed7a5a3a",
+  "line_count": 99,
+  "size_bytes": 3078,
+  "headings": [
+    "# Enterprise Control State Transition Spec",
+    "## 1. Scope",
+    "## 2. RBAC Decision Contract",
+    "## 3. Audit Event Contract",
+    "## 4. State Machines",
+    "## 5. Required Findings",
+    "## 6. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

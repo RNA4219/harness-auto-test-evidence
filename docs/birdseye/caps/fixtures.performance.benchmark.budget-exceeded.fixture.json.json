@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/performance/benchmark/budget-exceeded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e97e93476a17270615140cd7c566e37e72a5269a2483b4f9afca2fe7e4c56f81",
+  "line_count": 11,
+  "size_bytes": 546,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/e2e/support-triage/raw-artifact-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "445a0a177d38e46f58683457cc8e2d5b694ae5c5c24a5fa7fe286078da08a0fb",
+  "line_count": 20,
+  "size_bytes": 587,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

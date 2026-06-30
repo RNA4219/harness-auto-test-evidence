@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/api/rate-limit/quota-exceeded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7c43a9579cf9eddd9af4f7479545c045e68c3a2f9539f590db7fabcf457677ae",
+  "line_count": 11,
+  "size_bytes": 495,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

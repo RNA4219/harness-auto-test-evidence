@@ -1,0 +1,37 @@
+{
+  "fixture_id": "shared-sourcerefs-pass",
+  "fixture_type": "positive",
+  "description": "Shared sourceRefs with verdict not recomputed - should pass",
+  "input": {
+    "audience_views": [
+      {
+        "audience_id": "aud-1",
+        "view_type": "technical",
+        "verdict": "pass",
+        "sourceRef": "view:1",
+        "rationale": "Technical review passed"
+      },
+      {
+        "audience_id": "aud-2",
+        "view_type": "management",
+        "verdict": "pass",
+        "sourceRef": "view:2",
+        "rationale": "Management review passed"
+      }
+    ],
+    "shared_sourceRefs": ["evidence:1", "evidence:2", "evidence:3"],
+    "verdict_recomputed": false,
+    "source_ref_drift_detected": false,
+    "confidence": 0.95,
+    "limits": {
+      "confidence_threshold": 0.7,
+      "max_views": 10,
+      "max_sourceRefs": 50
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "finding_code": "",
+    "readiness_effect": "none"
+  }
+}

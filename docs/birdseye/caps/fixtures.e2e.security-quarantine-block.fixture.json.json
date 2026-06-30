@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/e2e/security-quarantine-block/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b453f0b7f8f8d50e6445abda16c23ae73717c4d01cf8941533a7f0e2d6cbf3e9",
+  "line_count": 11,
+  "size_bytes": 533,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

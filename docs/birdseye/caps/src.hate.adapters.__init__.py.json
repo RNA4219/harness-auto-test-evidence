@@ -2,14 +2,21 @@
   "path": "src/hate/adapters/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "b260acb5527978a4da3213a32ec7cd7cefd8c168deaf1b72c8096fd14fbe41f7",
-  "line_count": 2,
-  "size_bytes": 35,
+  "sha256": "ef507815823c33c6da51d1087b83d51d3f90fc3f7e3f22724b67ede2b0abb345",
+  "line_count": 21,
+  "size_bytes": 520,
   "headings": [],
-  "imports": [],
+  "imports": [
+    ".corpus_manifest",
+    ".family_packet"
+  ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/adapters/corpus_manifest.py",
+    "src/hate/adapters/family_packet.py"
+  ],
   "tags": [
-    "adapter"
+    "adapter",
+    "fixture"
   ]
 }

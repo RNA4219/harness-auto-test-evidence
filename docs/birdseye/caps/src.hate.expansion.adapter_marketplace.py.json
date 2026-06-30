@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/expansion/adapter_marketplace.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ac2f36b30df1ed1e08e17ae173259a08933f9b8ce0364aee49348be677903e49",
+  "line_count": 190,
+  "size_bytes": 7606,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

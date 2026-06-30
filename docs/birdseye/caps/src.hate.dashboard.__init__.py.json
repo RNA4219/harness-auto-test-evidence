@@ -2,23 +2,26 @@
   "path": "src/hate/dashboard/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "04c1478fa9f66707c5bc795d4cf669d3aaa10bdf38ee3e5aaacff776c71bb342",
-  "line_count": 72,
-  "size_bytes": 1950,
+  "sha256": "39c3b47df7fdd8b3fcd6a8aa0dadf2029a87dccf547c92fcf4184a52007e7bde",
+  "line_count": 81,
+  "size_bytes": 2228,
   "headings": [],
   "imports": [
     "__future__",
+    "hate.dashboard.state_report",
     "hate.dashboard.uat_states",
     "hate.dashboard.view_models"
   ],
   "links": [],
   "depends_on": [
+    "src/hate/dashboard/state_report.py",
     "src/hate/dashboard/uat_states.py",
     "src/hate/dashboard/view_models.py"
   ],
   "tags": [
     "artifact",
     "coverage",
+    "fixture",
     "security"
   ]
 }

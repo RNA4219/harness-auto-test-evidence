@@ -2,9 +2,9 @@
   "path": "src/hate/store/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "c237d97a60ddee1448080ba2c528e5faed3398cd7adb9684a8c8e4d140fe1b17",
-  "line_count": 118,
-  "size_bytes": 2870,
+  "sha256": "64450dbc6a685e6e4ed91a044eb2eb0aa1d9a47070509828a3e1287aaca673c3",
+  "line_count": 126,
+  "size_bytes": 3110,
   "headings": [
     "# Legacy imports (from store_legacy.py for backward compatibility)"
   ],
@@ -14,6 +14,7 @@
     ".doctor",
     ".indexes",
     ".local_store",
+    ".migration_rebuild",
     ".replay",
     "__future__",
     "hate.store_legacy"
@@ -25,11 +26,13 @@
     "src/hate/store/doctor.py",
     "src/hate/store/indexes.py",
     "src/hate/store/local_store.py",
+    "src/hate/store/migration_rebuild.py",
     "src/hate/store/replay.py",
     "src/hate/store_legacy.py"
   ],
   "tags": [
     "artifact",
+    "fixture",
     "schema",
     "store"
   ]

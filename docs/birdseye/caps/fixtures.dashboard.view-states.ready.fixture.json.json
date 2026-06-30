@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/dashboard/view-states/ready/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4a3c2dea1c4d029ec6b027c2c194479241788af52ca79e64e1c750dd5195f064",
+  "line_count": 11,
+  "size_bytes": 467,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

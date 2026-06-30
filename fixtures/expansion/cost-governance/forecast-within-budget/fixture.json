@@ -1,0 +1,30 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-cost-governance-forecast-within-budget",
+  "gap_id": "HATE-GAP-039",
+  "packet_id": "HATE-PKT-EXP-009-cost-governance",
+  "task_seed_id": "TASK-HATE-GAP-039",
+  "acceptance_id": "AC-HATE-GAP-039",
+  "case_kind": "positive",
+  "input": {
+    "cost_config": {
+      "tenant_id": "tenant-001",
+      "forecast_window_days": 30,
+      "storage_gb_current": 100.0,
+      "storage_gb_forecast": 150.0,
+      "storage_budget_gb": 200.0,
+      "egress_gb_forecast": 50.0,
+      "egress_budget_gb": 100.0,
+      "retention_cost_forecast": 0.0,
+      "budget_thresholds_defined": true,
+      "storage_class_recommendation": "standard",
+      "remediation_plan_defined": true,
+      "non_gating_advisory": false
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "cost-governance-uat-report.json"
+  }
+}

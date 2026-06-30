@@ -1,0 +1,21 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "store-migration-canonical-hash-changed",
+  "gap_id": "HATE-GAP-006",
+  "packet_id": "HATE-PKT-STORE-001-migration-rebuild",
+  "task_seed_id": "TASK-HATE-GAP-006",
+  "acceptance_id": "AC-HATE-GAP-006",
+  "case_kind": "negative",
+  "input": {
+    "source_bundle_hash_before": "sha256:canonical-a",
+    "source_bundle_hash_after": "sha256:canonical-b",
+    "repair_artifact_ref": null,
+    "lifecycle_state": "verifying"
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "store_canonical_hash_changed",
+    "readiness_effect": "hold",
+    "uat_report": "store-migration-uat-report.json"
+  }
+}

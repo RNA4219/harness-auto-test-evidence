@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/e2e/developer-pr-loop/parser-failure/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "64729a82639c3499587bfc060601cb0a27f1762f325868facf0aa2dc33400b99",
+  "line_count": 20,
+  "size_bytes": 575,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

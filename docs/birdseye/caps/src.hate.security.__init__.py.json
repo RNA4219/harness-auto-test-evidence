@@ -2,22 +2,25 @@
   "path": "src/hate/security/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "4a4229684476d997f8c23701014eddc684d1d151fba5ff6aa63238488456e857",
-  "line_count": 46,
-  "size_bytes": 1379,
+  "sha256": "8656bef7f29965083ac20754b9d663307428d377495252ef28d976a79cd45829",
+  "line_count": 54,
+  "size_bytes": 1638,
   "headings": [],
   "imports": [
+    ".artifact_lifecycle",
     ".artifact_safety",
     ".models"
   ],
   "links": [],
   "depends_on": [
+    "src/hate/security/artifact_lifecycle.py",
     "src/hate/security/artifact_safety.py",
     "src/hate/security/models.py"
   ],
   "tags": [
     "api",
     "artifact",
+    "fixture",
     "security"
   ]
 }

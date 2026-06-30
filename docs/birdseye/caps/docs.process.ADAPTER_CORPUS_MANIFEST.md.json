@@ -1,0 +1,28 @@
+{
+  "path": "docs/process/ADAPTER_CORPUS_MANIFEST.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "fd8265b0c7519875e6cfe521e6761c40c71103bdf028670faaefe9710d9ef3d0",
+  "line_count": 123,
+  "size_bytes": 4222,
+  "headings": [
+    "# Adapter Corpus Manifest",
+    "## 1. Corpus Requirements",
+    "## 2. Minimum Families",
+    "## 3. Manifest Fixture Contract",
+    "## 4. Acceptance",
+    "## 5. Implementation Packet Minimum"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "birdseye",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

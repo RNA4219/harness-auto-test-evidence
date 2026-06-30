@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/expansion/notifications.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "4d4479e45f167855d02ffeddf181adeb17dee80cf2ccedb9cfc935cefd718580",
+  "line_count": 140,
+  "size_bytes": 5305,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

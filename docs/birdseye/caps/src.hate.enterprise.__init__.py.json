@@ -2,12 +2,13 @@
   "path": "src/hate/enterprise/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "81b252a2cb42b9850698c420d4250792c21acbd917da9e223ddf78c55789841c",
-  "line_count": 20,
-  "size_bytes": 707,
+  "sha256": "1d57e5f15ba8df54a5a9dbc86ec4d792217c8b7559727153458eb9f1a85db2a6",
+  "line_count": 28,
+  "size_bytes": 975,
   "headings": [],
   "imports": [
     ".audit",
+    ".control_packet",
     ".legal_hold",
     ".rbac",
     ".retention"
@@ -15,11 +16,13 @@
   "links": [],
   "depends_on": [
     "src/hate/enterprise/audit.py",
+    "src/hate/enterprise/control_packet.py",
     "src/hate/enterprise/legal_hold.py",
     "src/hate/enterprise/rbac.py",
     "src/hate/enterprise/retention.py"
   ],
   "tags": [
-    "enterprise"
+    "enterprise",
+    "fixture"
   ]
 }

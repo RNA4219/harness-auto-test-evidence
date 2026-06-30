@@ -27,8 +27,14 @@ from .artifact_safety import (
     scan_for_external_urls,
     scan_for_archive_risk,
 )
+from .artifact_lifecycle import (
+    ArtifactLifecycleFinding,
+    build_artifact_lifecycle_report,
+    evaluate_artifact_lifecycle_fixture,
+)
 
 __all__ = [
+    "ArtifactLifecycleFinding",
     "SafetyFinding",
     "ArtifactSafetyFinding",
     "SafetySignalType",
@@ -38,6 +44,8 @@ __all__ = [
     "ALLOWLIST_CONTEXTS",
     "detect_artifact_safety_signals",
     "build_artifact_safety_report",
+    "build_artifact_lifecycle_report",
+    "evaluate_artifact_lifecycle_fixture",
     "scan_for_secrets",
     "scan_for_pii",
     "scan_for_unsafe_paths",

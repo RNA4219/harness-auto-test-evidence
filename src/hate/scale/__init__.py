@@ -12,6 +12,10 @@ from hate.scale.performance_budget import (
     PerformanceBudgetInput,
     evaluate_performance_budget,
 )
+from hate.scale.benchmark_catalog import (
+    build_benchmark_catalog_report,
+    evaluate_benchmark_catalog_fixture,
+)
 
 __all__ = [
     "ScaleFixtureManifest",
@@ -21,5 +25,7 @@ __all__ = [
     "generate_scale_fixture_manifest",
     "validate_scale_fixture_manifest",
     "PerformanceBudgetInput",
+    "build_benchmark_catalog_report",
+    "evaluate_benchmark_catalog_fixture",
     "evaluate_performance_budget",
 ]

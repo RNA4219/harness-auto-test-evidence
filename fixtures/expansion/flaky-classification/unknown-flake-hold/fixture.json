@@ -1,0 +1,55 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-flaky-classification-unknown-flake-hold",
+  "gap_id": "HATE-GAP-051",
+  "packet_id": "HATE-PKT-EXP-025-flaky-classification",
+  "case_kind": "negative",
+  "input": {
+    "flake_classes": [
+      {
+        "class_id": "fc-unknown",
+        "class_name": "unknown_flake",
+        "confidence": 0.3,
+        "sourceRef": "classification:fc-unknown",
+        "rationale": "Unknown flake class not in taxonomy",
+        "verified": false
+      }
+    ],
+    "attempt_history": [
+      {
+        "attempt_id": "attempt-001",
+        "test_id": "test_unknown",
+        "outcome": "failed",
+        "confidence": 0.3,
+        "sourceRef": "attempt:001",
+        "rationale": "Unknown failure pattern"
+      }
+    ],
+    "environment_evidence": [
+      {
+        "evidence_id": "ee-unknown",
+        "delta_type": "unknown",
+        "confidence": 0.3,
+        "sourceRef": "",
+        "rationale": "Unknown environment evidence",
+        "verified": false
+      }
+    ],
+    "analysis_scope": "partial",
+    "input_refs": ["classification:fc-unknown"],
+    "confidence": 0.3,
+    "limits": {
+      "max_flake_classes": 100,
+      "max_attempts": 1000,
+      "confidence_threshold": 0.7
+    },
+    "class_taxonomy_available": false,
+    "retry_history_available": true,
+    "environment_evidence_available": true
+  },
+  "expected": {
+    "status": "hold",
+    "finding_code": "flaky_classification_unknown_flake_hold",
+    "readiness_effect": "hold"
+  }
+}

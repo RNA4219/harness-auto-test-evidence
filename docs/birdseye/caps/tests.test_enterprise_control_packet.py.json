@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_enterprise_control_packet.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "e17a8a0a838cb90c65f5ffc482e559d441d9afcec73904dd0b71c060f2b4aa8b",
+  "line_count": 118,
+  "size_bytes": 4496,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.enterprise",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

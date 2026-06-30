@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/historical-regression-report.schema.json",
+  "title": "HATE Historical Regression Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "regression_config",
+    "findings",
+    "summary",
+    "baseline_window",
+    "trend_metrics",
+    "recurrences",
+    "analysis_scope",
+    "input_refs",
+    "confidence",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "historical-regression-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
+    "regression_config": {
+      "type": "object",
+      "required": ["baseline_window", "trend_metrics", "recurrences"],
+      "properties": {
+        "baseline_window": {
+          "type": "object",
+          "required": ["window_id", "start_date", "end_date", "baseline_metrics"],
+          "properties": {
+            "window_id": {"type": "string"},
+            "start_date": {"type": "string"},
+            "end_date": {"type": "string"},
+            "baseline_metrics": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        },
+        "trend_metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["metric_id", "metric_type", "value", "trend_direction", "confidence", "sourceRef"],
+            "properties": {
+              "metric_id": {"type": "string"},
+              "metric_type": {"type": "string"},
+              "value": {"type": "number"},
+              "trend_direction": {"type": "string", "enum": ["up", "down", "stable"]},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "recurrences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["recurrence_id", "failure_pattern", "occurrence_count", "resolved", "severity", "sourceRef"],
+            "properties": {
+              "recurrence_id": {"type": "string"},
+              "failure_pattern": {"type": "string"},
+              "occurrence_count": {"type": "integer", "minimum": 0},
+              "resolved": {"type": "boolean"},
+              "severity": {"type": "string"},
+              "sourceRef": {"type": "string"},
+              "rationale": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "parser_regression_detected": {"type": "boolean"},
+        "recurring_failure_pattern": {"type": "boolean"},
+        "risk_debt_burn_rate": {"type": "number", "minimum": 0},
+        "analysis_scope": {"type": "string"},
+        "input_refs": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "limits": {
+          "type": "object",
+          "required": ["max_trend_metrics", "max_recurrences", "risk_debt_threshold", "confidence_threshold"],
+          "properties": {
+            "max_trend_metrics": {"type": "integer", "minimum": 0},
+            "max_recurrences": {"type": "integer", "minimum": 0},
+            "risk_debt_threshold": {"type": "number", "minimum": 0},
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold", "blocked"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["trend_metric_count", "recurrence_count", "baseline_window_days", "confidence", "finding_count"],
+      "properties": {
+        "trend_metric_count": {"type": "integer", "minimum": 0},
+        "recurrence_count": {"type": "integer", "minimum": 0},
+        "baseline_window_days": {"type": "integer", "minimum": 0},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "baseline_window": {"type": "object"},
+    "trend_metrics": {"type": "array", "items": {"type": "object"}},
+    "recurrences": {"type": "array", "items": {"type": "object"}},
+    "analysis_scope": {"type": "string"},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limits": {
+      "type": "object",
+      "required": ["max_trend_metrics", "max_recurrences", "risk_debt_threshold", "confidence_threshold"],
+      "properties": {
+        "max_trend_metrics": {"type": "integer", "minimum": 0},
+        "max_recurrences": {"type": "integer", "minimum": 0},
+        "risk_debt_threshold": {"type": "number", "minimum": 0},
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

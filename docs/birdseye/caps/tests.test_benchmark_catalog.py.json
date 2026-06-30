@@ -1,0 +1,22 @@
+{
+  "path": "tests/test_benchmark_catalog.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "5abdc94ed9f0243054e4e486327aab121bd45dcbea8f51896fa77294ab03af6a",
+  "line_count": 114,
+  "size_bytes": 4088,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.scale",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

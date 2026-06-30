@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/adapters/family_packet.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "19abd1ce77092e3420326599d2ea002c1122ca82e83852cc7d466694438817b3",
+  "line_count": 325,
+  "size_bytes": 12131,
+  "headings": [],
+  "imports": [
+    ".corpus_manifest",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/adapters/corpus_manifest.py"
+  ],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

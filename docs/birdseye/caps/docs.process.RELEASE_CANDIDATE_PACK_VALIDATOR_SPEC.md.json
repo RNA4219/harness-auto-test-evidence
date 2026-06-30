@@ -1,0 +1,30 @@
+{
+  "path": "docs/process/RELEASE_CANDIDATE_PACK_VALIDATOR_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "6f7481226a37b6e3d182c0d0f1cfce11ae1bd40224e51e0773124041c7463fab",
+  "line_count": 88,
+  "size_bytes": 3176,
+  "headings": [
+    "# Release Candidate Pack Validator Spec",
+    "## 1. Required Inputs",
+    "## 2. Validator Output",
+    "## 3. Blocking Rules",
+    "## 4. Deterministic Hash",
+    "## 5. Required Fixtures",
+    "## 6. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

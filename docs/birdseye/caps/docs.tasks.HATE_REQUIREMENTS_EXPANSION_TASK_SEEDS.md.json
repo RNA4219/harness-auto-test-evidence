@@ -1,0 +1,23 @@
+{
+  "path": "docs/tasks/HATE_REQUIREMENTS_EXPANSION_TASK_SEEDS.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "c581f811405465f6e5142d02b7eaef41d396693c9f3572bac7c0e6cd9e852b09",
+  "line_count": 57,
+  "size_bytes": 8768,
+  "headings": [
+    "# HATE Requirements Expansion Task Seeds",
+    "## Common Commands",
+    "## Task Seed Ledger"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

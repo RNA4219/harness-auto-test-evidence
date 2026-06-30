@@ -9,17 +9,25 @@ from hate.support_ops import (
     build_diagnostic_bundle,
     build_diagnostics_report,
     build_error_catalog_report,
+    build_support_diagnostics_gap_report,
+    evaluate_support_diagnostics_fixture,
     lookup_error_code,
 )
 
 
 FIXTURE_ROOT = Path(__file__).resolve().parents[1] / "fixtures" / "support-ops" / "diagnostics"
+GAP_FIXTURE_ROOT = Path(__file__).resolve().parents[1] / "fixtures" / "support" / "diagnostics"
 SUPPORT_SCHEMA = Path(__file__).resolve().parents[1] / "schemas" / "HATE" / "v1" / "support-ops-report.schema.json"
 DIAGNOSTIC_SCHEMA = Path(__file__).resolve().parents[1] / "schemas" / "HATE" / "v1" / "safe-diagnostic-bundle.schema.json"
 
 
 def load_fixture(name: str) -> dict:
     with (FIXTURE_ROOT / name / "fixture.json").open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_gap_fixture(name: str) -> dict:
+    with (GAP_FIXTURE_ROOT / name / "fixture.json").open(encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -33,6 +41,11 @@ def test_packet_fixture_paths_exist() -> None:
         "missing-owner-action",
     ]:
         assert (FIXTURE_ROOT / name / "fixture.json").exists()
+
+
+def test_gap_fixture_paths_exist() -> None:
+    for name in ["safe-bundle", "raw-secret-denied"]:
+        assert (GAP_FIXTURE_ROOT / name / "fixture.json").exists()
 
 
 def test_known_error_code_lookup_is_stable() -> None:
@@ -108,7 +121,33 @@ def test_diagnostics_report_contains_support_ops_sections() -> None:
     assert report["record_type"] == "support-ops-report"
     assert report["overall_status"] == "pass"
     assert report["diagnostic_bundles"]
+    assert report["spans"] == []
     assert report["summary"]["safe_for_support"] is True
+
+
+def test_gap_support_diagnostics_safe_bundle_passes() -> None:
+    fixture = load_gap_fixture("safe-bundle")
+
+    result = evaluate_support_diagnostics_fixture(fixture)
+    report = build_support_diagnostics_gap_report(fixture["input"], fixture["fixture_id"])
+
+    assert result["status"] == fixture["expected"]["status"]
+    assert result["finding_code"] == ""
+    assert report["overall_status"] == "pass"
+    assert report["diagnostic_bundles"][0]["safe_for_summary"] is True
+
+
+def test_gap_support_diagnostics_raw_secret_holds() -> None:
+    fixture = load_gap_fixture("raw-secret-denied")
+
+    result = evaluate_support_diagnostics_fixture(fixture)
+    report = build_support_diagnostics_gap_report(fixture["input"], fixture["fixture_id"])
+
+    assert result["status"] == fixture["expected"]["status"]
+    assert result["finding_code"] == fixture["expected"]["finding_code"]
+    assert report["overall_status"] == "hold"
+    assert report["diagnostic_bundles"][0]["export_ready"] is False
+    assert any(item["code"] == "support_diagnostic_raw_secret_denied" for item in report["findings"])
 
 
 def test_schemas_define_diagnostics_and_error_records() -> None:
@@ -116,6 +155,7 @@ def test_schemas_define_diagnostics_and_error_records() -> None:
     diagnostic_schema = json.loads(DIAGNOSTIC_SCHEMA.read_text(encoding="utf-8"))
 
     assert "diagnostic_bundles" in support_schema["properties"]
+    assert "spans" in support_schema["properties"]
     assert "error_records" in support_schema["properties"]
     assert "support_error_record" in support_schema["$defs"]
     assert "included_artifacts" in diagnostic_schema["properties"]

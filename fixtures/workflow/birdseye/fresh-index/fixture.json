@@ -1,0 +1,22 @@
+{
+  "schema_version": "HATE/workflow-gap-fixture/v1",
+  "fixture_id": "workflow-birdseye-fresh-index",
+  "gap_id": "HATE-GAP-024",
+  "packet_id": "HATE-PKT-WF-004-birdseye-freshness",
+  "task_seed_id": "TASK-HATE-GAP-024",
+  "acceptance_id": "AC-HATE-GAP-024",
+  "case_kind": "positive",
+  "input": {
+    "birdseye": {
+      "index_exists": true,
+      "readme_matches_index": true,
+      "caps_missing": [],
+      "changed_paths_have_caps": true
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "workflow-birdseye-uat-report.json"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/github/permission-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4d13203878284b0c2ad594e0aa0d5437564c557517998acd0e227eda018d4517",
+  "line_count": 11,
+  "size_bytes": 545,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

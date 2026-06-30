@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/beta-acceptance/cohort-exit-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "574cf503a98e045e56ddd8f3064296f629a6c0e83b9919595683577837df4d37",
+  "line_count": 36,
+  "size_bytes": 1039,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

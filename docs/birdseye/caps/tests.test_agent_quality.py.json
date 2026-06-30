@@ -1,0 +1,22 @@
+{
+  "path": "tests/test_agent_quality.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "1e0384d82402e8c61d13bb0cbae8cbe3fe016557372996eef9f33688d154e1b1",
+  "line_count": 87,
+  "size_bytes": 3245,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.evaluation",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

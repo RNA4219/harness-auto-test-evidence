@@ -1,0 +1,34 @@
+{
+  "path": "docs/process/WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "c61cc32141077d244370b5c71b4ecaad998ea195f9e1d3c4c8079ac116abc2fe",
+  "line_count": 260,
+  "size_bytes": 8880,
+  "headings": [
+    "# Workflow Cookbook Operation Contract",
+    "## 1. Task Seed Loop",
+    "## 2. Acceptance Linkage",
+    "## 3. Evidence Protocol",
+    "## 4. Birdseye Freshness",
+    "## 5. Workflow Plugin Integration",
+    "## 6. Priority, Metrics, And Feature Detection",
+    "## 7. Security And Release Evidence",
+    "## 8. Completion Governance",
+    "## 9. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

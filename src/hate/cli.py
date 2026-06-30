@@ -13,6 +13,7 @@ from .p2p3 import ProductError, generate_product_readiness, query_product_read_m
 from .product_grade import ProductGradeError, generate_product_grade_reports
 from .store_legacy import StoreError, ingest_local_store, query_local_store, read_history_index
 from .release import assemble_release_candidate_pack, RELEASE_PACK_REQUIRED_REPORT_TYPES
+from .gap_closure import GapClosureError, generate_gap_closure_report
 
 
 class ReleaseError(Exception):
@@ -171,6 +172,14 @@ def build_parser() -> argparse.ArgumentParser:
     release_candidate.add_argument("--release-id", default=None, help="Release candidate identifier.")
     release_candidate.add_argument("--source-version", default=None, help="Source version for generated records.")
     release_candidate.add_argument("--dry-run", action="store_true", help="Generate pack without blocking on missing reports.")
+
+    gap = subparsers.add_parser("gap", help="Generate gap closure and workflow-cookbook alignment reports.")
+    gap_subparsers = gap.add_subparsers(dest="gap_command", required=True)
+
+    gap_closure = gap_subparsers.add_parser("closure", help="Validate HATE-GAP-001..026 closure docs, task seeds, acceptance, and fixtures.")
+    gap_closure.add_argument("--repo-root", default=Path("."), type=Path, help="Repository root to validate.")
+    gap_closure.add_argument("--out", required=True, type=Path, help="Output directory for gap-closure-report.json.")
+    gap_closure.add_argument("--source-version", default=None, help="Source version for generated report.")
 
     return parser
 
@@ -438,6 +447,23 @@ def main(argv: list[str] | None = None) -> int:
                 print(json.dumps(exc.pack, ensure_ascii=False), file=sys.stderr)
             else:
                 print(f"HATE-E-RELEASE: {exc}", file=sys.stderr)
+            return exc.exit_code
+
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
+
+    if args.command == "gap" and args.gap_command == "closure":
+        try:
+            result = generate_gap_closure_report(
+                repo_root=args.repo_root,
+                out_dir=args.out,
+                source_version=args.source_version,
+            )
+        except GapClosureError as exc:
+            if exc.report is not None:
+                print(json.dumps(exc.report, ensure_ascii=False), file=sys.stderr)
+            else:
+                print(f"HATE-E-GAP: {exc}", file=sys.stderr)
             return exc.exit_code
 
         print(json.dumps(result, ensure_ascii=False))

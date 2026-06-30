@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/a11y-l10n/locale-fallback-safe/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "414b7567379082e7ec385e07e4f01fd26cf662c2a5bc66eaa1b120acebc65353",
+  "line_count": 30,
+  "size_bytes": 947,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -2,12 +2,13 @@
   "path": "src/hate/api/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "9e796b2a278976a05a14ac44dee4415f8ad3a2feaf79bf0dceb31ae214cade6e",
-  "line_count": 114,
-  "size_bytes": 2621,
+  "sha256": "f19fd7f6f646ca3d0bcf0b43a5d291f1c7b213caabcbe51fea4a243fb97ef92e",
+  "line_count": 119,
+  "size_bytes": 2845,
   "headings": [],
   "imports": [
     ".authz",
+    ".contract_report",
     ".errors",
     ".import_export",
     ".read_model",
@@ -16,6 +17,7 @@
   "links": [],
   "depends_on": [
     "src/hate/api/authz.py",
+    "src/hate/api/contract_report.py",
     "src/hate/api/errors.py",
     "src/hate/api/import_export.py",
     "src/hate/api/read_model.py"
@@ -23,6 +25,7 @@
   "tags": [
     "api",
     "artifact",
+    "fixture",
     "schema",
     "store"
   ]

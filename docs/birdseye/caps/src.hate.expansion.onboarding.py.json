@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/expansion/onboarding.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "b63ec805dccf225e1cb41c0219dd77f8f4700fb37d590d2a6c0f27ffffb20e52",
+  "line_count": 139,
+  "size_bytes": 5335,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

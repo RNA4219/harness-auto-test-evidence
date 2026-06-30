@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_bulk_portability.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "a515f31f8b7d59dfb564df2d6524812d3a3cbe053fb7d132c5f91f30033ec2b4",
+  "line_count": 111,
+  "size_bytes": 4075,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.bulk_portability",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/bulk_portability.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

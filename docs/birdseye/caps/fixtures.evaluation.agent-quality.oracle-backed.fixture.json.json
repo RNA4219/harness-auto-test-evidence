@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/evaluation/agent-quality/oracle-backed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a70848576309ed477b7e604c993752afc9bf54aa3c8662da436fdfb329eaf36e",
+  "line_count": 11,
+  "size_bytes": 498,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

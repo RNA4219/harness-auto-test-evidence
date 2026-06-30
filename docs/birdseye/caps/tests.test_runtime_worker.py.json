@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_runtime_worker.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "973ad3770fb4ccb0f36acf7d8ebc1a367f2f3dda303f0426c84475e365f7f08b",
+  "line_count": 84,
+  "size_bytes": 3537,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.gap_closure",
+    "hate.runtime_worker",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/gap_closure.py",
+    "src/hate/runtime_worker.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "release-channel-minor-compatible",
+  "gap_id": "HATE-GAP-019",
+  "packet_id": "HATE-PKT-REL-001-release-channel",
+  "task_seed_id": "TASK-HATE-GAP-019",
+  "acceptance_id": "AC-HATE-GAP-019",
+  "case_kind": "positive",
+  "input": {"change_type": "minor", "migration_required": false, "rollback_plan": true},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "release-channel-uat-report.json"}
+}

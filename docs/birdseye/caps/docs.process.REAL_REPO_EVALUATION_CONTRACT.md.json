@@ -1,0 +1,23 @@
+{
+  "path": "docs/process/REAL_REPO_EVALUATION_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "ee93dcd143b7067f5feb4a39ea0f100ecec6279fc9326039ffcd555c7aca50c7",
+  "line_count": 48,
+  "size_bytes": 1501,
+  "headings": [
+    "# Real Repository Evaluation Contract",
+    "## 1. Repository Roster",
+    "## 2. Baseline Rules",
+    "## 3. Fixtures",
+    "## 4. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "tenant-support-bundle-isolated",
+  "gap_id": "HATE-GAP-002",
+  "packet_id": "HATE-PKT-ENT-001-tenant-isolation",
+  "task_seed_id": "TASK-HATE-GAP-002",
+  "acceptance_id": "AC-HATE-GAP-002",
+  "case_kind": "positive",
+  "input": {
+    "actor_tenant": "tenant_a",
+    "resource_tenant": "tenant_a",
+    "surface": "support_bundle",
+    "role": "auditor",
+    "support_bundle_metadata_tenants": ["tenant_a"]
+  },
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "tenant-isolation-uat-report.json"}
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "evaluation-agent-quality-avoidance-detected",
+  "gap_id": "HATE-GAP-013",
+  "packet_id": "HATE-PKT-EVAL-002-agent-quality",
+  "task_seed_id": "TASK-HATE-GAP-013",
+  "acceptance_id": "AC-HATE-GAP-013",
+  "case_kind": "negative",
+  "input": {"agent_output": {"oracle_refs": [], "avoidance_signals": ["fixture_name_branch"]}},
+  "expected": {"status": "hold", "finding_code": "agent_quality_avoidance_detected", "readiness_effect": "hold", "uat_report": "agent-quality-uat-report.json"}
+}

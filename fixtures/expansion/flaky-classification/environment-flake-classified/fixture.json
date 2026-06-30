@@ -1,0 +1,62 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-flaky-classification-environment-flake-classified",
+  "gap_id": "HATE-GAP-051",
+  "packet_id": "HATE-PKT-EXP-025-flaky-classification",
+  "case_kind": "positive",
+  "input": {
+    "flake_classes": [
+      {
+        "class_id": "fc-001",
+        "class_name": "environment_flake",
+        "confidence": 0.95,
+        "sourceRef": "classification:fc-001",
+        "rationale": "Environment delta detected between passes and failures",
+        "verified": true
+      }
+    ],
+    "attempt_history": [
+      {
+        "attempt_id": "attempt-001",
+        "test_id": "test_env_flake",
+        "outcome": "failed",
+        "confidence": 0.92,
+        "sourceRef": "attempt:001",
+        "rationale": "First attempt failed in different environment"
+      },
+      {
+        "attempt_id": "attempt-002",
+        "test_id": "test_env_flake",
+        "outcome": "passed",
+        "confidence": 0.92,
+        "sourceRef": "attempt:002",
+        "rationale": "Second attempt passed in original environment"
+      }
+    ],
+    "environment_evidence": [
+      {
+        "evidence_id": "ee-001",
+        "delta_type": "runtime_version",
+        "confidence": 0.95,
+        "sourceRef": "env:evidence-001",
+        "rationale": "Runtime version difference between attempts",
+        "verified": true
+      }
+    ],
+    "analysis_scope": "full",
+    "input_refs": ["classification:fc-001"],
+    "confidence": 0.94,
+    "limits": {
+      "max_flake_classes": 100,
+      "max_attempts": 1000,
+      "confidence_threshold": 0.7
+    },
+    "class_taxonomy_available": true,
+    "retry_history_available": true,
+    "environment_evidence_available": true
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none"
+  }
+}

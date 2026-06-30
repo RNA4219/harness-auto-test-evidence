@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/dashboard/view-states/rbac-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b116d656ff4308d574f209c4334ec1946a455e4b0683a0f0360d35969899db53",
+  "line_count": 11,
+  "size_bytes": 533,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

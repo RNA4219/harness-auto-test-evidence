@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_cost_governance.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "a93ff7c1c0b27a848983a7b7e9874923345fbe57eb4eeba45596014676db8d16",
+  "line_count": 158,
+  "size_bytes": 5670,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.cost_governance",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/cost_governance.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

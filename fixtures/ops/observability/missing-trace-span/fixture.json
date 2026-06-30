@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "ops-observability-missing-trace-span",
+  "gap_id": "HATE-GAP-010",
+  "packet_id": "HATE-PKT-OPS-001-observability",
+  "task_seed_id": "TASK-HATE-GAP-010",
+  "acceptance_id": "AC-HATE-GAP-010",
+  "case_kind": "negative",
+  "input": {"metrics": ["job_duration_seconds"], "logs": ["run_id"], "spans": []},
+  "expected": {"status": "hold", "finding_code": "observability_missing_trace_span", "readiness_effect": "hold", "uat_report": "observability-uat-report.json"}
+}

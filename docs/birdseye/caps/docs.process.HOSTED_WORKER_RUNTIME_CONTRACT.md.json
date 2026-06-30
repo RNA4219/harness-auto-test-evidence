@@ -1,0 +1,24 @@
+{
+  "path": "docs/process/HOSTED_WORKER_RUNTIME_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "2902da6ddb2c3c3d1a6bee5ac56b85b0e8c498c0e735e8fe27234ff196197852",
+  "line_count": 65,
+  "size_bytes": 2306,
+  "headings": [
+    "# Hosted Worker Runtime Contract",
+    "## 1. Job Model",
+    "## 2. Idempotency",
+    "## 3. Retry And Poison Rules",
+    "## 4. Fixtures",
+    "## 5. Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

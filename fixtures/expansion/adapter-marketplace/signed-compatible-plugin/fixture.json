@@ -1,0 +1,29 @@
+{
+  "schema_version": "HATE/expansion-gap-fixture/v1",
+  "fixture_id": "expansion-adapter-marketplace-signed-compatible-plugin",
+  "gap_id": "HATE-GAP-035",
+  "packet_id": "HATE-PKT-EXP-009-adapter-marketplace",
+  "task_seed_id": "TASK-HATE-GAP-035",
+  "acceptance_id": "AC-HATE-GAP-035",
+  "case_kind": "positive",
+  "input": {
+    "plugin_config": {
+      "plugin_manifest_present": true,
+      "plugin_id": "com.example.adapter-v2",
+      "publisher_id": "com.example",
+      "signature_present": true,
+      "signature_verified": true,
+      "compatibility_range": ">=1.5.0,<2.0.0",
+      "host_version": "1.6.0",
+      "conformance_evidence_present": true,
+      "deprecation_status": "active",
+      "revocation_record_present": false,
+      "requested_install": true
+    }
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "adapter-marketplace-uat-report.json"
+  }
+}

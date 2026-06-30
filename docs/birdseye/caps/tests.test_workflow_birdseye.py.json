@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_workflow_birdseye.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "21a28b0fff498efebd2e7e3fb77dd50c441250c6513aced034ca42c28b82ae48",
+  "line_count": 123,
+  "size_bytes": 4335,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.workflow_birdseye",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/workflow_birdseye.py"
+  ],
+  "tags": [
+    "birdseye",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

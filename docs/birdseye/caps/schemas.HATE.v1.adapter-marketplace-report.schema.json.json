@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/adapter-marketplace-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "4df6de3b3e86999afb48bd6db02b8b7a9a5b75d8f6a3d2424398f6fc62c2f6b5",
+  "line_count": 43,
+  "size_bytes": 1432,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "schema"
+  ]
+}

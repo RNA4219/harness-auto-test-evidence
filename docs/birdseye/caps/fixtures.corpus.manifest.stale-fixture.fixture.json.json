@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/corpus/manifest/stale-fixture/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "57cb65d5fbffc1b70ddb103450e8d4e8ece7d4c8a27eb86302852eb512850436",
+  "line_count": 11,
+  "size_bytes": 507,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

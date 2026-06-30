@@ -1,0 +1,24 @@
+{
+  "path": "docs/acceptance/INDEX.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "06d889420a599c51b9278e9d97f6559906105bd83c22c2edddd6567b4bf948f3",
+  "line_count": 25,
+  "size_bytes": 2084,
+  "headings": [
+    "# Acceptance Index",
+    "## Generation Policy"
+  ],
+  "imports": [],
+  "links": [
+    "AC-20260630-01.md",
+    "HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md"
+  ],
+  "depends_on": [
+    "docs/acceptance/AC-20260630-01.md",
+    "docs/acceptance/HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md"
+  ],
+  "tags": [
+    "workflow"
+  ]
+}

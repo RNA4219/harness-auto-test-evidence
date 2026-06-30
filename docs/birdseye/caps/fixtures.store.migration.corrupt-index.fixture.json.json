@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/store/migration/corrupt-index/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "31beaa2795a0e54631f8cadf0f1035fa3c78338673f11db90d1a28bb3a177d08",
+  "line_count": 11,
+  "size_bytes": 524,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

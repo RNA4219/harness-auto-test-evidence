@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_product_e2e.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "fe57cc2b7347b7148781a05569722c82acef1e31dd72f21bf88ef759fed7047b",
+  "line_count": 168,
+  "size_bytes": 5916,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.product_e2e",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/product_e2e.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "test"
+  ]
+}

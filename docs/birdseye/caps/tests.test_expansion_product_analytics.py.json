@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_expansion_product_analytics.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "41c0c84036e99412276dbe51730b2f9e85a6fad93503c023cca5c4132421edd4",
+  "line_count": 176,
+  "size_bytes": 6230,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.product_analytics",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/product_analytics.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

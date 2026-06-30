@@ -1,0 +1,11 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "dashboard-view-states-ready",
+  "gap_id": "HATE-GAP-008",
+  "packet_id": "HATE-PKT-UI-001-dashboard-states",
+  "task_seed_id": "TASK-HATE-GAP-008",
+  "acceptance_id": "AC-HATE-GAP-008",
+  "case_kind": "positive",
+  "input": {"view": "risk_graph", "state": "ready", "rbac": "allowed"},
+  "expected": {"status": "pass", "readiness_effect": "none", "uat_report": "dashboard-state-uat-report.json"}
+}

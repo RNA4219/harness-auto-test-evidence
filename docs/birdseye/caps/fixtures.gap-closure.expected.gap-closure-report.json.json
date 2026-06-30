@@ -1,0 +1,26 @@
+{
+  "path": "fixtures/gap-closure/expected/gap-closure-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "54b6c00d866e37343142b4bc5310bba35f4a9211183a6eb252c53b7b8f00fc32",
+  "line_count": 941,
+  "size_bytes": 34863,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "birdseye",
+    "coverage",
+    "enterprise",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "store",
+    "workflow"
+  ]
+}

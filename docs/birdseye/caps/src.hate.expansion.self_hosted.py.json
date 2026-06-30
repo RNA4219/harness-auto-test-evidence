@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/expansion/self_hosted.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "de136b95fd840d6414ae550a0310a5ea75b167e609483854f413dce18d4adef9",
+  "line_count": 143,
+  "size_bytes": 5673,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

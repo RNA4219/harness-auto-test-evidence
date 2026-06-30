@@ -1,0 +1,24 @@
+{
+  "schema_version": "HATE/product-gap-fixture/v1",
+  "fixture_id": "github-rerun-preserves-run-id-link",
+  "gap_id": "HATE-GAP-005",
+  "packet_id": "HATE-PKT-GH-001-github-integration",
+  "task_seed_id": "TASK-HATE-GAP-005",
+  "acceptance_id": "AC-HATE-GAP-005",
+  "case_kind": "positive",
+  "input": {
+    "surface": "workflow_run",
+    "actor": "github_action",
+    "permissions": ["actions:read"],
+    "rerun": true,
+    "run_id": "run-002",
+    "previous_run_id": "run-001",
+    "rerun_linked": true,
+    "canonical_evidence_mutated": false
+  },
+  "expected": {
+    "status": "pass",
+    "readiness_effect": "none",
+    "uat_report": "github-integration-uat-report.json"
+  }
+}

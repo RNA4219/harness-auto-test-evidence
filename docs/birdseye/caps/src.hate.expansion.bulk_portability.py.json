@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/expansion/bulk_portability.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ef60e3822ad4544ba137bb4269eca2f8b4820adf38f07d549e423ff59b95a92a",
+  "line_count": 134,
+  "size_bytes": 5239,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

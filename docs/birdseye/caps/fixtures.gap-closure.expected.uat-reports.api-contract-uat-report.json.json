@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/gap-closure/expected/uat-reports/api-contract-uat-report.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ea2655a670f73eb450a48378a74ebb64c4d13dc6161abab1d4a2afd9e2060432",
+  "line_count": 28,
+  "size_bytes": 758,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

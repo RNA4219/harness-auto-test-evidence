@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_workflow_completion.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "c13c1e0b546b3984ba29cc46a1d6177dfba7741d1f39e275350754d63069abdd",
+  "line_count": 143,
+  "size_bytes": 5296,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.workflow_completion",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/workflow_completion.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

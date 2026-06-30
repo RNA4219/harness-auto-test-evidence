@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/workflow/task-seed/missing-scope/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a1c1a14794ad2d8d18a9e5c500ed8a25d2fd7495edc93b02595fb6c21ca49f08",
+  "line_count": 24,
+  "size_bytes": 783,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

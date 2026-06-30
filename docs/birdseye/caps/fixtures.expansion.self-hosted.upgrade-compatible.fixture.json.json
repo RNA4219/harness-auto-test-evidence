@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/self-hosted/upgrade-compatible/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "06502a54310ca726484144662127faf318471423b43a046516cfec151121070e",
+  "line_count": 28,
+  "size_bytes": 849,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}
