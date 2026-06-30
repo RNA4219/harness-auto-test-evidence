@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_analysis_environment_diff.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "69c7177636623d932d00518f709ecfee65e15a81ed888932561c5a2e5b2235cd",
+  "line_count": 111,
+  "size_bytes": 4972,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.analysis.environment_diff",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/analysis/environment_diff.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

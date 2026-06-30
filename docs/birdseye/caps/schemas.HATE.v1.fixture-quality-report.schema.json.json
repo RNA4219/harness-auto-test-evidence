@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/fixture-quality-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "5cdb08d4ec4cea6dc4d234d752cabc0dc4824f5760e8256fb73ad9fd4c514e9b",
+  "line_count": 142,
+  "size_bytes": 5530,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

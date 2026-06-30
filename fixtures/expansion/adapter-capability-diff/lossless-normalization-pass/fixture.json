@@ -4,12 +4,24 @@
   "description": "Lossless field normalization - all fields preserved",
   "input": {
     "raw_field_map": {
-      "field_a": {"type": "string", "value": "value_a"},
-      "field_b": {"type": "number", "value": 123}
+      "field_a": {
+        "type": "string",
+        "value": "value_a"
+      },
+      "field_b": {
+        "type": "number",
+        "value": 123
+      }
     },
     "normalized_field_map": {
-      "field_a": {"type": "string", "normalized_value": "value_a"},
-      "field_b": {"type": "number", "normalized_value": 123}
+      "field_a": {
+        "type": "string",
+        "normalized_value": "value_a"
+      },
+      "field_b": {
+        "type": "number",
+        "normalized_value": 123
+      }
     },
     "lossy_transforms": [],
     "lossy_field_drop_detected": false,
@@ -26,5 +38,7 @@
     "status": "pass",
     "finding_code": "",
     "readiness_effect": "none"
-  }
+  },
+  "case_kind": "positive",
+  "schema_version": "HATE/expansion-gap-fixture/v1"
 }

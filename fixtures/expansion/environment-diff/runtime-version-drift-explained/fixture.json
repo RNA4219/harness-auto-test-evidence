@@ -38,7 +38,10 @@
     "runtime_version_drift_explained": true,
     "cache_state_known": true,
     "analysis_scope": "execution_environment",
-    "input_refs": ["env:baseline", "env:current"],
+    "input_refs": [
+      "env:baseline",
+      "env:current"
+    ],
     "confidence": 0.9,
     "limits": {
       "max_deltas": 100,
@@ -51,5 +54,7 @@
     "status": "pass",
     "finding_code": "",
     "readiness_effect": "none"
-  }
+  },
+  "case_kind": "positive",
+  "schema_version": "HATE/expansion-gap-fixture/v1"
 }

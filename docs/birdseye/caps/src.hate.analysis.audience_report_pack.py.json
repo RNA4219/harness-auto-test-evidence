@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/analysis/audience_report_pack.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "2fec2376ebf80ec2418c2969d396360587256a1e357910e0f9b9e4ea5a4bed49",
+  "line_count": 180,
+  "size_bytes": 6528,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

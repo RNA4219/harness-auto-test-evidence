@@ -2,9 +2,9 @@
   "path": "tools/codemap/update.py",
   "role": "tooling",
   "kind": "py",
-  "sha256": "30202b6a3497556bfdafa1e0a6da4ec6ac7d316b87e39d812aca1d8a4ce1a9ac",
+  "sha256": "85685af1fe037b34201a5b5b8abbd2f01cb654c868206ff87f6ae4dd80c52b2d",
   "line_count": 310,
-  "size_bytes": 10330,
+  "size_bytes": 10344,
   "headings": [],
   "imports": [
     "__future__",

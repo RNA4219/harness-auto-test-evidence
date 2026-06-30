@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/adapter-capability-diff/lossless-normalization-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f474bb37b11c9f52580a7898ddb31fc2645eb44d5a1dfce68aecfc2d4b7939ba",
+  "line_count": 44,
+  "size_bytes": 1030,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

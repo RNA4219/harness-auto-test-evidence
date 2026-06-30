@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/analysis/adapter_capability_diff.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8a25edbacae483f61cc090910f7bf326cc21abcee2e05ced3e9f7b2193608acc",
+  "line_count": 178,
+  "size_bytes": 6955,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

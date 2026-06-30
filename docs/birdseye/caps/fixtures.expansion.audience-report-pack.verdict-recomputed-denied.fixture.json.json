@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/audience-report-pack/verdict-recomputed-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "398c9252e99588acf04c05eb9854eef50c45c641731c708edfaaf227c06fa005",
+  "line_count": 34,
+  "size_bytes": 880,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

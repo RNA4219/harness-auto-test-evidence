@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/flaky-classification/unknown-flake-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a6c48f4be0098cc3d3813c6ef710171ad7f5a07c93fbb23d89f0df14f976f732",
+  "line_count": 55,
+  "size_bytes": 1526,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

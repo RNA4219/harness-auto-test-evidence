@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/analysis/impact_analysis.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f2547aa45369b24ee369af08681c1c63cf03c76631780a95fcd1aa4ec04003e9",
+  "line_count": 199,
+  "size_bytes": 7401,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

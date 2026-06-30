@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/historical-regression/recurring-failure-blocked/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8c2c74e6b2813076d3ca8235784f84bddd672257883eb6275e9388d3e5590836",
+  "line_count": 60,
+  "size_bytes": 1597,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

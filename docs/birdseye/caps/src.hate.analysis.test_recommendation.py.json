@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/analysis/test_recommendation.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "39ae58a712801672ca61323b2a7fb7a7efc20342948439e08c6299e05b9c1782",
+  "line_count": 214,
+  "size_bytes": 8146,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

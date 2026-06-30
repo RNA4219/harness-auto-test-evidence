@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/adapter-capability-diff/lossy-field-drop-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "95d115456162ce14e27743530480c8d5a679b6ac4e59cf79a11b10c5c620b53f",
+  "line_count": 58,
+  "size_bytes": 1353,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema"
+  ]
+}

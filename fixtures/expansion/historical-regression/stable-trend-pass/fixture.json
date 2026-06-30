@@ -28,7 +28,10 @@
     "recurring_failure_pattern": false,
     "risk_debt_burn_rate": 0.0,
     "analysis_scope": "historical_regression",
-    "input_refs": ["baseline-1", "current"],
+    "input_refs": [
+      "baseline-1",
+      "current"
+    ],
     "confidence": 0.9,
     "limits": {
       "max_trend_metrics": 50,
@@ -41,5 +44,7 @@
     "status": "pass",
     "finding_code": "",
     "readiness_effect": "none"
-  }
+  },
+  "case_kind": "positive",
+  "schema_version": "HATE/expansion-gap-fixture/v1"
 }

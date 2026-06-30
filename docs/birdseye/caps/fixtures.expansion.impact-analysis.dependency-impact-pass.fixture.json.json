@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/impact-analysis/dependency-impact-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "08948056d08f4cba59226b2e1124335bf348621950d077e8b952467a5d5a557b",
+  "line_count": 47,
+  "size_bytes": 1334,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

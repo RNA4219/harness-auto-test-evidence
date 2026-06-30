@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/expansion/test-recommendation/missing-oracle-actionable/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "655edc32f3434f606e4aa63a413c68685114de84436899bbf86ddf200af05483",
+  "line_count": 54,
+  "size_bytes": 1584,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_analysis_historical_regression.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "6dc0b9f0ff211c831fb67d861d880c9da287e8295b31b3dae542b57d2e7e60e0",
+  "line_count": 138,
+  "size_bytes": 5710,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.analysis.historical_regression",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/analysis/historical_regression.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

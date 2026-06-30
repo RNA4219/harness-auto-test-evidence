@@ -3,25 +3,351 @@
     "release_id": "rc-all-green",
     "source_version": "abc123",
     "reports": [
-      {"record_type": "commercial-truthfulness-report", "report_id": "commercial", "status": "pass", "summary": {"unsupported_claim_count": 0, "release_eligible_claim_count": 2}, "claims": [{"claim_id": "claim-supported", "declared_status": "implemented", "release_eligible": true}], "sourceRefs": ["commercial-truthfulness-report.json"]},
-      {"record_type": "migration-compatibility-report", "report_id": "migration", "status": "pass", "sourceRefs": ["migration-compatibility-report.json"]},
-      {"record_type": "support-ops-report", "report_id": "support", "status": "pass", "sourceRefs": ["support-ops-report.json"]},
-      {"record_type": "enterprise-control-report", "report_id": "enterprise", "status": "pass", "sourceRefs": ["enterprise-control-report.json"]},
-      {"record_type": "dashboard-uat-report", "report_id": "dashboard", "status": "pass", "sourceRefs": ["dashboard-uat-report.json"]},
-      {"record_type": "api-contract-report", "report_id": "api", "status": "pass", "sourceRefs": ["api-contract-report.json"]},
-      {"record_type": "scale-performance-report", "report_id": "scale", "status": "pass", "sourceRefs": ["scale-performance-report.json"]},
-      {"record_type": "store_manifest", "report_id": "store", "status": "pass", "sourceRefs": ["store-manifest.json"]},
-      {"record_type": "safe-diagnostic-bundle", "report_id": "diagnostic", "status": "pass", "sourceRefs": ["safe-diagnostic-bundle.json"]},
-      {"record_type": "artifact-safety-report", "report_id": "artifact-safety", "status": "pass", "sourceRefs": ["artifact-safety-report.json"]},
-      {"record_type": "test_integrity_report", "report_id": "test-integrity", "status": "pass", "sourceRefs": ["test-integrity-report.json"]},
-      {"record_type": "product-readiness-report", "report_id": "product", "status": "pass", "sourceRefs": ["product-readiness-report.json"]}
+      {
+        "record_type": "commercial-truthfulness-report",
+        "report_id": "commercial",
+        "status": "pass",
+        "summary": {
+          "unsupported_claim_count": 0,
+          "release_eligible_claim_count": 2
+        },
+        "claims": [
+          {
+            "claim_id": "claim-supported",
+            "declared_status": "implemented",
+            "release_eligible": true
+          }
+        ],
+        "sourceRefs": [
+          "commercial-truthfulness-report.json"
+        ]
+      },
+      {
+        "record_type": "migration-compatibility-report",
+        "report_id": "migration",
+        "status": "pass",
+        "sourceRefs": [
+          "migration-compatibility-report.json"
+        ]
+      },
+      {
+        "record_type": "support-ops-report",
+        "report_id": "support",
+        "status": "pass",
+        "sourceRefs": [
+          "support-ops-report.json"
+        ]
+      },
+      {
+        "record_type": "enterprise-control-report",
+        "report_id": "enterprise",
+        "status": "pass",
+        "sourceRefs": [
+          "enterprise-control-report.json"
+        ]
+      },
+      {
+        "record_type": "dashboard-uat-report",
+        "report_id": "dashboard",
+        "status": "pass",
+        "sourceRefs": [
+          "dashboard-uat-report.json"
+        ]
+      },
+      {
+        "record_type": "api-contract-report",
+        "report_id": "api",
+        "status": "pass",
+        "sourceRefs": [
+          "api-contract-report.json"
+        ]
+      },
+      {
+        "record_type": "scale-performance-report",
+        "report_id": "scale",
+        "status": "pass",
+        "sourceRefs": [
+          "scale-performance-report.json"
+        ]
+      },
+      {
+        "record_type": "store_manifest",
+        "report_id": "store",
+        "status": "pass",
+        "sourceRefs": [
+          "store-manifest.json"
+        ]
+      },
+      {
+        "record_type": "safe-diagnostic-bundle",
+        "report_id": "diagnostic",
+        "status": "pass",
+        "sourceRefs": [
+          "safe-diagnostic-bundle.json"
+        ]
+      },
+      {
+        "record_type": "artifact-safety-report",
+        "report_id": "artifact-safety",
+        "status": "pass",
+        "sourceRefs": [
+          "artifact-safety-report.json"
+        ]
+      },
+      {
+        "record_type": "test_integrity_report",
+        "report_id": "test-integrity",
+        "status": "pass",
+        "sourceRefs": [
+          "test-integrity-report.json"
+        ]
+      },
+      {
+        "record_type": "product-readiness-report",
+        "report_id": "product",
+        "status": "pass",
+        "sourceRefs": [
+          "product-readiness-report.json"
+        ]
+      },
+      {
+        "record_type": "onboarding-report",
+        "report_id": "onboarding-report",
+        "status": "pass",
+        "sourceRefs": [
+          "onboarding-report.json"
+        ]
+      },
+      {
+        "record_type": "policy-simulation-report",
+        "report_id": "policy-simulation-report",
+        "status": "pass",
+        "sourceRefs": [
+          "policy-simulation-report.json"
+        ]
+      },
+      {
+        "record_type": "bulk-portability-report",
+        "report_id": "bulk-portability-report",
+        "status": "pass",
+        "sourceRefs": [
+          "bulk-portability-report.json"
+        ]
+      },
+      {
+        "record_type": "notification-report",
+        "report_id": "notification-report",
+        "status": "pass",
+        "sourceRefs": [
+          "notification-report.json"
+        ]
+      },
+      {
+        "record_type": "self-hosted-report",
+        "report_id": "self-hosted-report",
+        "status": "pass",
+        "sourceRefs": [
+          "self-hosted-report.json"
+        ]
+      },
+      {
+        "record_type": "data-classification-report",
+        "report_id": "data-classification-report",
+        "status": "pass",
+        "sourceRefs": [
+          "data-classification-report.json"
+        ]
+      },
+      {
+        "record_type": "docs-lifecycle-report",
+        "report_id": "docs-lifecycle-report",
+        "status": "pass",
+        "sourceRefs": [
+          "docs-lifecycle-report.json"
+        ]
+      },
+      {
+        "record_type": "dependency-compliance-report",
+        "report_id": "dependency-compliance-report",
+        "status": "pass",
+        "sourceRefs": [
+          "dependency-compliance-report.json"
+        ]
+      },
+      {
+        "record_type": "adapter-marketplace-report",
+        "report_id": "adapter-marketplace-report",
+        "status": "pass",
+        "sourceRefs": [
+          "adapter-marketplace-report.json"
+        ]
+      },
+      {
+        "record_type": "product-analytics-report",
+        "report_id": "product-analytics-report",
+        "status": "pass",
+        "sourceRefs": [
+          "product-analytics-report.json"
+        ]
+      },
+      {
+        "record_type": "disaster-recovery-report",
+        "report_id": "disaster-recovery-report",
+        "status": "pass",
+        "sourceRefs": [
+          "disaster-recovery-report.json"
+        ]
+      },
+      {
+        "record_type": "a11y-l10n-report",
+        "report_id": "a11y-l10n-report",
+        "status": "pass",
+        "sourceRefs": [
+          "a11y-l10n-report.json"
+        ]
+      },
+      {
+        "record_type": "cost-governance-report",
+        "report_id": "cost-governance-report",
+        "status": "pass",
+        "sourceRefs": [
+          "cost-governance-report.json"
+        ]
+      },
+      {
+        "record_type": "beta-acceptance-report",
+        "report_id": "beta-acceptance-report",
+        "status": "pass",
+        "sourceRefs": [
+          "beta-acceptance-report.json"
+        ]
+      },
+      {
+        "record_type": "impact-analysis-report",
+        "report_id": "impact-analysis-report",
+        "status": "pass",
+        "sourceRefs": [
+          "impact-analysis-report.json"
+        ]
+      },
+      {
+        "record_type": "test-recommendation-report",
+        "report_id": "test-recommendation-report",
+        "status": "pass",
+        "sourceRefs": [
+          "test-recommendation-report.json"
+        ]
+      },
+      {
+        "record_type": "flaky-classification-report",
+        "report_id": "flaky-classification-report",
+        "status": "pass",
+        "sourceRefs": [
+          "flaky-classification-report.json"
+        ]
+      },
+      {
+        "record_type": "oracle-classification-report",
+        "report_id": "oracle-classification-report",
+        "status": "pass",
+        "sourceRefs": [
+          "oracle-classification-report.json"
+        ]
+      },
+      {
+        "record_type": "evidence-synthesis-report",
+        "report_id": "evidence-synthesis-report",
+        "status": "pass",
+        "sourceRefs": [
+          "evidence-synthesis-report.json"
+        ]
+      },
+      {
+        "record_type": "test-quality-report",
+        "report_id": "test-quality-report",
+        "status": "pass",
+        "sourceRefs": [
+          "test-quality-report.json"
+        ]
+      },
+      {
+        "record_type": "environment-diff-report",
+        "report_id": "environment-diff-report",
+        "status": "pass",
+        "sourceRefs": [
+          "environment-diff-report.json"
+        ]
+      },
+      {
+        "record_type": "contradiction-report",
+        "report_id": "contradiction-report",
+        "status": "pass",
+        "sourceRefs": [
+          "contradiction-report.json"
+        ]
+      },
+      {
+        "record_type": "historical-regression-report",
+        "report_id": "historical-regression-report",
+        "status": "pass",
+        "sourceRefs": [
+          "historical-regression-report.json"
+        ]
+      },
+      {
+        "record_type": "audience-report-pack",
+        "report_id": "audience-report-pack",
+        "status": "pass",
+        "sourceRefs": [
+          "audience-report-pack.json"
+        ]
+      },
+      {
+        "record_type": "fixture-quality-report",
+        "report_id": "fixture-quality-report",
+        "status": "pass",
+        "sourceRefs": [
+          "fixture-quality-report.json"
+        ]
+      },
+      {
+        "record_type": "adapter-capability-diff-report",
+        "report_id": "adapter-capability-diff-report",
+        "status": "pass",
+        "sourceRefs": [
+          "adapter-capability-diff-report.json"
+        ]
+      }
     ],
     "evidence_room_artifacts": [
-      {"artifact_id": "raw-secret", "safe_to_share": false, "quarantine_status": "quarantined", "sourceRefs": ["raw.log"]},
-      {"artifact_id": "safe-summary", "safe_to_share": true, "sourceRefs": ["summary.md"]}
+      {
+        "artifact_id": "raw-secret",
+        "safe_to_share": false,
+        "quarantine_status": "quarantined",
+        "sourceRefs": [
+          "raw.log"
+        ]
+      },
+      {
+        "artifact_id": "safe-summary",
+        "safe_to_share": true,
+        "sourceRefs": [
+          "summary.md"
+        ]
+      }
     ],
-    "qeg_refs": ["qeg-bundle.json"],
-    "sign_off": {"status": "pending", "owner": "release-manager", "sourceRefs": ["release-checklist.md"]}
+    "qeg_refs": [
+      "qeg-bundle.json"
+    ],
+    "sign_off": {
+      "status": "pending",
+      "owner": "release-manager",
+      "sourceRefs": [
+        "release-checklist.md"
+      ]
+    }
   },
-  "expected": {"same_as": "all-green"}
+  "expected": {
+    "same_as": "all-green"
+  }
 }

@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/analysis/oracle_classification.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "76754a0f1511b6201c87b22f61de7dda4037de61a57553f06f6c279def530aa2",
+  "line_count": 215,
+  "size_bytes": 8528,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

@@ -12,7 +12,9 @@
         "rationale": "Technical review passed"
       }
     ],
-    "shared_sourceRefs": ["evidence:1"],
+    "shared_sourceRefs": [
+      "evidence:1"
+    ],
     "verdict_recomputed": true,
     "source_ref_drift_detected": false,
     "confidence": 0.95,
@@ -26,5 +28,7 @@
     "status": "hold",
     "finding_code": "audience_report_pack_verdict_recomputed_denied",
     "readiness_effect": "hold"
-  }
+  },
+  "case_kind": "negative",
+  "schema_version": "HATE/expansion-gap-fixture/v1"
 }

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/test-recommendation/generic-advice-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f69cf25052f8c4bcc87e3e561dc8650541caef49b808ebc70eba16653b8073a1",
+  "line_count": 55,
+  "size_bytes": 1557,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

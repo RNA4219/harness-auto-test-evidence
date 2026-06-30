@@ -1,0 +1,15 @@
+{
+  "path": "src/hate/analysis/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f3cf7021d6a57c008f7e3221c581e78ba442c1a70b0971cea49462911ea75546",
+  "line_count": 3,
+  "size_bytes": 88,
+  "headings": [],
+  "imports": [
+    "__future__"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

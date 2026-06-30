@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/evidence-synthesis-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6549237fb0499bf738fb6be0f6f91e78d2cce77c6f7401befe2ca18594964364",
+  "line_count": 144,
+  "size_bytes": 5814,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "schema"
+  ]
+}

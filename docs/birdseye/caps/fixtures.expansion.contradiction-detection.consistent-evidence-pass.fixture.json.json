@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/contradiction-detection/consistent-evidence-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "69e009dcf016e1fc20b57ca110d711db03ac8d8789e206f2effd977fef582c4d",
+  "line_count": 27,
+  "size_bytes": 730,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

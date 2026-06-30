@@ -43,5 +43,7 @@
     "status": "hold",
     "finding_code": "contradiction_pass_with_critical_finding_blocked",
     "readiness_effect": "hold"
-  }
+  },
+  "case_kind": "negative",
+  "schema_version": "HATE/expansion-gap-fixture/v1"
 }

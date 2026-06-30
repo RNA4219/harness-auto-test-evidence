@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/analysis/flaky_classification.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "a9825e761aa0e09311a535f452349a344a2ad34162b9e75500821b1b8afcd43d",
+  "line_count": 214,
+  "size_bytes": 8127,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

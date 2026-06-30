@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_analysis_flaky_classification.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "d6eea4cdd1c4f479a27cb5511e2cf3fd200754d1d9cf1aece497b1ab665eee56",
+  "line_count": 146,
+  "size_bytes": 6963,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.analysis.flaky_classification",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/analysis/flaky_classification.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

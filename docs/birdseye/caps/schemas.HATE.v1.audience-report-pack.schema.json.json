@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/audience-report-pack.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "0d242b6e829eedd7e66665efa851c047dc96a53848a72dabc809c317e52c4323",
+  "line_count": 116,
+  "size_bytes": 4281,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

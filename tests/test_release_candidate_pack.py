@@ -5,7 +5,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from hate.release import assemble_release_candidate_pack
+from hate.expansion_runner import EXPANSION_REPORT_TYPES
+from hate.release import RELEASE_PACK_REQUIRED_REPORT_TYPES, assemble_release_candidate_pack
 
 
 FIXTURE_ROOT = Path(__file__).resolve().parents[1] / "fixtures" / "release" / "candidate-pack"
@@ -111,3 +112,7 @@ def test_schema_and_registry_define_release_candidate_pack() -> None:
     assert "evidence_room_excluded_artifact" in schema["$defs"]
     records = {item["record_type"]: item["schema"] for item in registry["records"]}
     assert records["release-candidate-pack"] == "schemas/HATE/v1/release-candidate-pack.schema.json"
+
+
+def test_release_pack_requires_connected_expansion_reports() -> None:
+    assert set(EXPANSION_REPORT_TYPES).issubset(set(RELEASE_PACK_REQUIRED_REPORT_TYPES))

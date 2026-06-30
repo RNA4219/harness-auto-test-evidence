@@ -4,13 +4,30 @@
   "description": "Lossy field drop detected - should hold",
   "input": {
     "raw_field_map": {
-      "field_a": {"type": "string", "value": "value_a"},
-      "field_b": {"type": "number", "value": 123},
-      "field_c": {"type": "object", "value": {"nested": true}}
+      "field_a": {
+        "type": "string",
+        "value": "value_a"
+      },
+      "field_b": {
+        "type": "number",
+        "value": 123
+      },
+      "field_c": {
+        "type": "object",
+        "value": {
+          "nested": true
+        }
+      }
     },
     "normalized_field_map": {
-      "field_a": {"type": "string", "normalized_value": "value_a"},
-      "field_b": {"type": "number", "normalized_value": 123}
+      "field_a": {
+        "type": "string",
+        "normalized_value": "value_a"
+      },
+      "field_b": {
+        "type": "number",
+        "normalized_value": 123
+      }
     },
     "lossy_transforms": [
       {
@@ -35,5 +52,7 @@
     "status": "hold",
     "finding_code": "adapter_capability_diff_lossy_field_drop_hold",
     "readiness_effect": "hold"
-  }
+  },
+  "case_kind": "negative",
+  "schema_version": "HATE/expansion-gap-fixture/v1"
 }

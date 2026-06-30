@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_analysis_test_quality.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "5a943f5d93d697860960a1621556d24482c952ed1b6c69dc3ff83e628a4da80c",
+  "line_count": 162,
+  "size_bytes": 8022,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.analysis.test_quality",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/analysis/test_quality.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

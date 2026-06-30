@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_expansion_runner.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "f02155783899e0003e86c522d3b0681ec6893f5987de3c761b6e589b6bc3dac3",
+  "line_count": 75,
+  "size_bytes": 2448,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.cli",
+    "hate.expansion_runner",
+    "hate.release",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py",
+    "src/hate/expansion_runner.py",
+    "src/hate/release.py"
+  ],
+  "tags": [
+    "fixture",
+    "release",
+    "test"
+  ]
+}

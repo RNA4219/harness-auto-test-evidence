@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/evidence-synthesis/weak-evidence-inflation-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0299fd71cc400121390668fe29b2bb1a9525d184409e8195537dc6562cc72045",
+  "line_count": 57,
+  "size_bytes": 1598,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

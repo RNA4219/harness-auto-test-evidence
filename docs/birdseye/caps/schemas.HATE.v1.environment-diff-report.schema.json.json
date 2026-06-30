@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/environment-diff-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "2bc886d1aab2265399d03813a77c876e6dee38d7035f9e8481d9b3f8e18f670c",
+  "line_count": 145,
+  "size_bytes": 5521,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

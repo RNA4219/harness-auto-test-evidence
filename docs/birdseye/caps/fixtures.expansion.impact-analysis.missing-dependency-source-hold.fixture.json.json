@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/impact-analysis/missing-dependency-source-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1107756b34d02b81e1aece7e273519f1b397d39df72df4911dbff23e43782a86",
+  "line_count": 48,
+  "size_bytes": 1408,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

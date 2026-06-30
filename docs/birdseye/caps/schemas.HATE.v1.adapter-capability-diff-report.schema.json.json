@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/adapter-capability-diff-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "8879fbc0832cbdffd95ac4eb27625e4e1caf773a2bbc6cf00e57281b5c9ad8dc",
+  "line_count": 121,
+  "size_bytes": 4480,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "schema"
+  ]
+}

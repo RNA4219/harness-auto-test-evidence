@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_analysis_test_recommendation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "3482bf19742ff212487ebe1ee5a32a999d4e69eea2927af1c1e8da22100fd759",
+  "line_count": 146,
+  "size_bytes": 6944,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.analysis.test_recommendation",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/analysis/test_recommendation.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

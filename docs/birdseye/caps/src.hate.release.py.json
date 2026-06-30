@@ -2,18 +2,21 @@
   "path": "src/hate/release.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "ae637e4fb764caa1449d0bc937bfeb15b0d5a49561df002371e82bfaa948547e",
-  "line_count": 339,
-  "size_bytes": 14425,
+  "sha256": "5e5444748ce23341ac384b50975ea7d3b1e09d6042f8ef126413b07e32bca2ed",
+  "line_count": 342,
+  "size_bytes": 14420,
   "headings": [],
   "imports": [
+    ".expansion_runner",
     "__future__",
     "hashlib",
     "json",
     "typing"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/expansion_runner.py"
+  ],
   "tags": [
     "adapter",
     "api",

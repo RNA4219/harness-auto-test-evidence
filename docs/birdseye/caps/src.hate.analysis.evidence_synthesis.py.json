@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/analysis/evidence_synthesis.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "15d16f588ea329fdd67b351e5b4a176f857bc30f7c616140952139977fa5d6b2",
+  "line_count": 219,
+  "size_bytes": 8581,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

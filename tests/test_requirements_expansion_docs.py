@@ -221,9 +221,13 @@ def test_expansion_packets_are_complete_enough_for_worker_handoff() -> None:
 def test_expansion_acceptance_does_not_overclaim_implementation() -> None:
     acceptance = _read(ACCEPTANCE / "HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md")
 
-    assert "All entries are `specified`; none are `implemented` or `accepted`." in acceptance
+    assert "connected to the expansion runner/release pack path" in acceptance
     assert "| specified | hold until implemented |" in acceptance
-    assert "Do not mark expansion gaps as `implemented` from docs-only work." in acceptance
+    assert "implementation requires runtime code, schema, fixtures, tests, and a CLI/release-pack connection" in acceptance
+    for gap_id in [f"HATE-GAP-{index:03d}" for index in list(range(27, 41)) + list(range(49, 61))]:
+        assert f"| {gap_id} |" in acceptance
+        row = next(line for line in acceptance.splitlines() if f"| {gap_id} |" in line)
+        assert "| implemented | connected to expansion runner and release pack |" in row
 
 
 def test_top_level_prd_references_expansion_backlog() -> None:

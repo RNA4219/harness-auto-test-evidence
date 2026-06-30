@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/environment-diff/runtime-version-drift-explained/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1d782832edda7aa4bf909dbb1c1e4b205de1a0e98b1ffcdc2c2a6dd9c651e653",
+  "line_count": 60,
+  "size_bytes": 1541,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

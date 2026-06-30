@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_analysis_audience_report_pack.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "4c2061b86ccd648c47438878b3da9e70845349947ab260d92b0b7dff0c064f79",
+  "line_count": 136,
+  "size_bytes": 5407,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.analysis.audience_report_pack",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/analysis/audience_report_pack.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

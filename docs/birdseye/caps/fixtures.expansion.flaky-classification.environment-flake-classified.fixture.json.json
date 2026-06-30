@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/flaky-classification/environment-flake-classified/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "51a2ff607c3c1ce5f00153dfbf4ce66bf9b3b643b90fd003ceeb8c94e5588972",
+  "line_count": 62,
+  "size_bytes": 1794,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

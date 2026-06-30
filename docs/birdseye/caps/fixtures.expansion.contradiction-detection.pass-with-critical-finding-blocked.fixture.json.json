@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/contradiction-detection/pass-with-critical-finding-blocked/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4a8ac136fee24c839f32371c6327b0827a493cab24fc6058d517123b81db2790",
+  "line_count": 49,
+  "size_bytes": 1343,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

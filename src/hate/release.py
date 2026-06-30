@@ -4,6 +4,8 @@ import hashlib
 import json
 from typing import Any
 
+from .expansion_runner import EXPANSION_REPORT_TYPES
+
 SCHEMA_VERSION = "HATE/v1"
 
 RELEASE_REQUIRED_REPORTS = [
@@ -34,6 +36,7 @@ RELEASE_PACK_REQUIRED_REPORT_TYPES = [
     "support-ops-report",
     "migration-compatibility-report",
     "commercial-truthfulness-report",
+    *EXPANSION_REPORT_TYPES,
 ]
 
 

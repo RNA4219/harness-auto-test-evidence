@@ -2,18 +2,20 @@
   "path": "tests/test_release_candidate_pack.py",
   "role": "test",
   "kind": "py",
-  "sha256": "fb8a74407cf7dead83c6c22d53e55293a7da144836f000b0502a1d64ee228ee9",
-  "line_count": 113,
-  "size_bytes": 4690,
+  "sha256": "4df42bc801126bb73fd780d94500d8b3888bff5b95c66a1581bc6bec76926b90",
+  "line_count": 118,
+  "size_bytes": 4944,
   "headings": [],
   "imports": [
     "__future__",
+    "hate.expansion_runner",
     "hate.release",
     "json",
     "pathlib"
   ],
   "links": [],
   "depends_on": [
+    "src/hate/expansion_runner.py",
     "src/hate/release.py"
   ],
   "tags": [

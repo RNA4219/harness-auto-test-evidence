@@ -19,7 +19,11 @@
         "rationale": "Management review passed"
       }
     ],
-    "shared_sourceRefs": ["evidence:1", "evidence:2", "evidence:3"],
+    "shared_sourceRefs": [
+      "evidence:1",
+      "evidence:2",
+      "evidence:3"
+    ],
     "verdict_recomputed": false,
     "source_ref_drift_detected": false,
     "confidence": 0.95,
@@ -33,5 +37,7 @@
     "status": "pass",
     "finding_code": "",
     "readiness_effect": "none"
-  }
+  },
+  "case_kind": "positive",
+  "schema_version": "HATE/expansion-gap-fixture/v1"
 }

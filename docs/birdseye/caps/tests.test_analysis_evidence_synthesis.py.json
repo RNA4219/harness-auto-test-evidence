@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_analysis_evidence_synthesis.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "3ec2defc6638dbf8ed4fd5a60c600f7dcf9b51b2c444cbad2dc3210cd110ad8a",
+  "line_count": 146,
+  "size_bytes": 7292,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.analysis.evidence_synthesis",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/analysis/evidence_synthesis.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/analysis/fixture_quality.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "eaa3fecfbc4952411ffb592854c0db3bf0a425696b3bde08914cafb66920a80c",
+  "line_count": 199,
+  "size_bytes": 7516,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

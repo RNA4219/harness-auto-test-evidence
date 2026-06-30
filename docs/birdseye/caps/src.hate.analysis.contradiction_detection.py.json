@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/analysis/contradiction_detection.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8a21933159d9ff3c45ac56fe68e3c41b01bd6deaa1399156b2b62afe2ad41c41",
+  "line_count": 208,
+  "size_bytes": 7685,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

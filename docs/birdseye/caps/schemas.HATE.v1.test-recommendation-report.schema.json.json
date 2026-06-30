@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/test-recommendation-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "b4eba1e07e13b8a68c323212a661ed38d3029c31620477b67426eeec5c22890a",
+  "line_count": 141,
+  "size_bytes": 5470,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

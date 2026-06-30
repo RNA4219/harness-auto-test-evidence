@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/test-quality/deterministic-tests-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0f30187a478d334f305f24bc19f29794bc348f4ddd4b0732de2f920c246e903f",
+  "line_count": 57,
+  "size_bytes": 1566,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

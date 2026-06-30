@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/fixture-quality/fixture-name-coupled-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e3cc6b087d9996a4cdfbc930ac3c427769ed6bbfa4cb9e51ce4412baf12a44ad",
+  "line_count": 47,
+  "size_bytes": 1234,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

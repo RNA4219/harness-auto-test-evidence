@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/impact-analysis-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a46cf95268b4301dcc5f1b51fcd04c6fd2fd45aa0e2721f172345b151bfa5a01",
+  "line_count": 134,
+  "size_bytes": 5024,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

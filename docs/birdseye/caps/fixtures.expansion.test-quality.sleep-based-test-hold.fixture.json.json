@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/test-quality/sleep-based-test-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "59e938cce243b088e39a615b74c8452faab98ab5c98eedcef0bf6f9b58100189",
+  "line_count": 58,
+  "size_bytes": 1550,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

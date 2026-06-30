@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/oracle-classification/snapshot-only-critical-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f6da70520c4aaf816124e09def922184a298c4058d1133f8ff67abb7ffe7074b",
+  "line_count": 59,
+  "size_bytes": 1660,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

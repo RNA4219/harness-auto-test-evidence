@@ -9,7 +9,7 @@
         "fixture_type": "positive",
         "quality_metrics": {
           "coverage": 0.95,
-          "completeness": 0.90,
+          "completeness": 0.9,
           "consistency": 0.98
         },
         "sourceRef": "fixture:1",
@@ -19,7 +19,7 @@
     "corpus_scope": {
       "corpus_id": "corpus-1",
       "fixture_count": 10,
-      "coverage_target": 0.90,
+      "coverage_target": 0.9,
       "completeness_baseline": 0.85
     },
     "schema_drift": {
@@ -41,5 +41,7 @@
     "status": "hold",
     "finding_code": "fixture_quality_fixture_name_coupled_hold",
     "readiness_effect": "hold"
-  }
+  },
+  "case_kind": "negative",
+  "schema_version": "HATE/expansion-gap-fixture/v1"
 }

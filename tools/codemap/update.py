@@ -57,7 +57,7 @@ def main() -> int:
     (out / "caps").mkdir(parents=True, exist_ok=True)
     for path, content in planned.items():
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(content, encoding="utf-8")
+        path.write_text(content, encoding="utf-8", newline="\n")
     print(f"generated {len(generated['nodes'])} birdseye nodes and {len(generated['edges'])} edges")
     return 0
 

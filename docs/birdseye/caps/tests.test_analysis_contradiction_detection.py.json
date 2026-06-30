@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_analysis_contradiction_detection.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "6ca0b754b0e589b113270a679218368d6b2a678533af11a62496d6466c8cf203",
+  "line_count": 134,
+  "size_bytes": 5381,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.analysis.contradiction_detection",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/analysis/contradiction_detection.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

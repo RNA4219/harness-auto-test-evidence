@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/analysis/environment_diff.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8a08c1220da4edfc0b5d7d619f66762c9ad985a9a2931c6c202f62f6886e2c64",
+  "line_count": 208,
+  "size_bytes": 7677,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

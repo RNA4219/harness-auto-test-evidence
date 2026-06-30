@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/fixture-quality/corpus-quality-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "048b02d43c1650db2bfc816a569f0a30409cf0230bba01a8114d83baa4b4ae9e",
+  "line_count": 47,
+  "size_bytes": 1233,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

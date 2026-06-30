@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/environment-diff/unexplained-env-drift-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "26609b835d8c91b726fe588eee5b3c8eeada3fbdb7e74a072bebd8ed58845194",
+  "line_count": 60,
+  "size_bytes": 1521,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

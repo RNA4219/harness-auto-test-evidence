@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/analysis/historical_regression.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1d6ddbe33a12802008ef3686657ed1e02d0d0c00e7648930c93e8edbdf97da5f",
+  "line_count": 224,
+  "size_bytes": 8694,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

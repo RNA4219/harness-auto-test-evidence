@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/oracle-classification/property-oracle-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ca09067fd5ea8e1e21641e4d9de0fa318098c6fe76a32365f1473950cbaaeaf0",
+  "line_count": 58,
+  "size_bytes": 1631,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

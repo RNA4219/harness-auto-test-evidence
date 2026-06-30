@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_analysis_oracle_classification.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "7caea88f6ee4409ae9e0bca4031b5306225ab4af3485bbb03f7df858335131f7",
+  "line_count": 114,
+  "size_bytes": 5460,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.analysis.oracle_classification",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/analysis/oracle_classification.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

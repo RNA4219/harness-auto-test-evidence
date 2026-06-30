@@ -14,6 +14,7 @@ from .product_grade import ProductGradeError, generate_product_grade_reports
 from .store_legacy import StoreError, ingest_local_store, query_local_store, read_history_index
 from .release import assemble_release_candidate_pack, RELEASE_PACK_REQUIRED_REPORT_TYPES
 from .gap_closure import GapClosureError, generate_gap_closure_report
+from .expansion_runner import ExpansionRunError, run_expansion_suite
 
 
 class ReleaseError(Exception):
@@ -180,6 +181,20 @@ def build_parser() -> argparse.ArgumentParser:
     gap_closure.add_argument("--repo-root", default=Path("."), type=Path, help="Repository root to validate.")
     gap_closure.add_argument("--out", required=True, type=Path, help="Output directory for gap-closure-report.json.")
     gap_closure.add_argument("--source-version", default=None, help="Source version for generated report.")
+
+    expansion = subparsers.add_parser("expansion", help="Generate HATE expansion and analysis reports from canonical fixtures.")
+    expansion_subparsers = expansion.add_subparsers(dest="expansion_command", required=True)
+
+    expansion_run = expansion_subparsers.add_parser("run", help="Run HATE-GAP-027..040 and HATE-GAP-049..060 report builders.")
+    expansion_run.add_argument("--fixtures-root", default=Path("fixtures/expansion"), type=Path, help="Canonical expansion fixture root.")
+    expansion_run.add_argument("--out", required=True, type=Path, help="Output directory for generated expansion reports.")
+    expansion_run.add_argument(
+        "--case-kind",
+        choices=["positive", "negative", "all"],
+        default="positive",
+        help="Fixture case kind to run. Positive output is release-pack compatible.",
+    )
+    expansion_run.add_argument("--area", action="append", default=[], help="Optional expansion area to run; repeat for multiple areas.")
 
     return parser
 
@@ -464,6 +479,21 @@ def main(argv: list[str] | None = None) -> int:
                 print(json.dumps(exc.report, ensure_ascii=False), file=sys.stderr)
             else:
                 print(f"HATE-E-GAP: {exc}", file=sys.stderr)
+            return exc.exit_code
+
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
+
+    if args.command == "expansion" and args.expansion_command == "run":
+        try:
+            result = run_expansion_suite(
+                fixtures_root=args.fixtures_root,
+                out_dir=args.out,
+                areas=args.area,
+                case_kind=args.case_kind,
+            )
+        except ExpansionRunError as exc:
+            print(f"HATE-E-EXPANSION: {exc}", file=sys.stderr)
             return exc.exit_code
 
         print(json.dumps(result, ensure_ascii=False))

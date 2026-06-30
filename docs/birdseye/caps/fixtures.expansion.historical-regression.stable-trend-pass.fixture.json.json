@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/historical-regression/stable-trend-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "31710b4f4797efe112032f22f17b98a51e7035f1b5725a55c579d4ae93f3b014",
+  "line_count": 50,
+  "size_bytes": 1257,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

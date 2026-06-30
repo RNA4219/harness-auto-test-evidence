@@ -21,5 +21,7 @@
     "status": "pass",
     "finding_code": "",
     "readiness_effect": "none"
-  }
+  },
+  "case_kind": "positive",
+  "schema_version": "HATE/expansion-gap-fixture/v1"
 }

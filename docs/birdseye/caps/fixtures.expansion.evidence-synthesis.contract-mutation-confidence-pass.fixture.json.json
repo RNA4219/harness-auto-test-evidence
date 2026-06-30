@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/expansion/evidence-synthesis/contract-mutation-confidence-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6aa5055e34111d02544463ee3bda7cef281803588a63d0c10a27d6eee156ae4d",
+  "line_count": 65,
+  "size_bytes": 1838,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}
