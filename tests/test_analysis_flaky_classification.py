@@ -107,6 +107,23 @@ def test_unverified_flake_class_holds() -> None:
     assert "flaky_classification_unknown_flake_hold" in _codes(report)
 
 
+def test_flaky_source_availability_defaults_to_hold() -> None:
+    report = build_flaky_classification_report({
+        "flake_classes": [{"class_id": "c1", "class_name": "env", "confidence": 0.9, "sourceRef": "c:1", "rationale": "r", "verified": True}],
+        "attempt_history": [{"attempt_id": "a1", "test_id": "t1", "outcome": "fail", "confidence": 0.9, "sourceRef": "a:1", "rationale": "r"}],
+        "environment_evidence": [{"evidence_id": "e1", "delta_type": "runtime", "confidence": 0.9, "sourceRef": "e:1", "rationale": "r", "verified": True}],
+        "confidence": 0.9,
+        "limits": {"confidence_threshold": 0.7},
+    })
+
+    assert report["overall_status"] == "hold"
+    assert {
+        "flaky_classification_unknown_flake_hold",
+        "flaky_classification_retry_history_missing",
+        "flaky_classification_environment_evidence_missing",
+    }.issubset(set(_codes(report)))
+
+
 def test_environment_evidence_without_source_ref_holds() -> None:
     report = build_flaky_classification_report({
         "flake_classes": [{"class_id": "c1", "class_name": "env", "confidence": 0.9, "sourceRef": "c:1", "rationale": "r", "verified": True}],

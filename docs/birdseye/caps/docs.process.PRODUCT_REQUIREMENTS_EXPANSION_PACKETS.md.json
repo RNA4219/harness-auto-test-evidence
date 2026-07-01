@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_PACKETS.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "d18e070bed650b5b7cc8bdfd07583589808a211548a8d5623b26e13b1e04968b",
+  "sha256": "09da62d99c908cb4b995864f3ec05413323b6fdd48f62bb5e4e4e6bbff0657bc",
   "line_count": 99,
-  "size_bytes": 16678,
+  "size_bytes": 16820,
   "headings": [
     "# Product Requirements Expansion Packets",
     "## 1. Common Expansion Packet Contract",

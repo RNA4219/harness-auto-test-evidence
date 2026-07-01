@@ -123,6 +123,23 @@ def test_critical_anti_pattern_not_mitigated_holds() -> None:
     assert "test_quality_sleep_based_test_hold" in _codes(report)
 
 
+def test_quality_support_availability_defaults_to_hold() -> None:
+    report = build_test_quality_report({
+        "test_patterns": [{"pattern_id": "tp1", "pattern_type": "deterministic", "quality_dimension": "reliability", "confidence": 0.9, "sourceRef": "tp:1", "rationale": "r", "verified": True}],
+        "anti_patterns": [{"anti_pattern_id": "ap1", "anti_pattern_type": "sleep_based", "severity": "low", "confidence": 0.9, "sourceRef": "ap:1", "rationale": "r", "mitigated": True}],
+        "quality_metrics": [{"metric_id": "qm1", "metric_type": "determinism", "value": 0.9, "confidence": 0.9, "sourceRef": "qm:1", "rationale": "r"}],
+        "confidence": 0.9,
+        "limits": {"confidence_threshold": 0.7},
+    })
+
+    assert report["overall_status"] == "hold"
+    assert {
+        "test_quality_determinism_missing",
+        "test_quality_timeout_missing",
+        "test_quality_isolation_missing",
+    }.issubset(set(_codes(report)))
+
+
 def test_anti_pattern_without_source_ref_holds() -> None:
     report = build_test_quality_report({
         "test_patterns": [{"pattern_id": "tp1", "pattern_type": "deterministic", "quality_dimension": "reliability", "confidence": 0.9, "sourceRef": "tp:1", "rationale": "r", "verified": True}],

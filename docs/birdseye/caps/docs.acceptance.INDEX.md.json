@@ -2,9 +2,9 @@
   "path": "docs/acceptance/INDEX.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "06d889420a599c51b9278e9d97f6559906105bd83c22c2edddd6567b4bf948f3",
+  "sha256": "a2906cc5b3d6dd1ac839601f545bc514a736d5a2ba23afdb271681285d307bf5",
   "line_count": 25,
-  "size_bytes": 2084,
+  "size_bytes": 2116,
   "headings": [
     "# Acceptance Index",
     "## Generation Policy"

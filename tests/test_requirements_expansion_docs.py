@@ -221,8 +221,8 @@ def test_expansion_packets_are_complete_enough_for_worker_handoff() -> None:
 def test_expansion_acceptance_does_not_overclaim_implementation() -> None:
     acceptance = _read(ACCEPTANCE / "HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md")
 
-    assert "connected to the expansion runner/release pack path" in acceptance
-    assert "implementation requires runtime code, schema, fixtures, tests, and a CLI/release-pack connection" in acceptance
+    assert "connected to generated\nUAT reports, the expansion runner, and the release pack path" in acceptance
+    assert "implementation requires runtime code, schema, fixtures, tests, generated UAT reports, and a CLI/release-pack connection" in acceptance
     for gap_id in EXPANSION_GAP_IDS:
         assert f"| {gap_id} |" in acceptance
         row = next(line for line in acceptance.splitlines() if f"| {gap_id} |" in line)
@@ -285,7 +285,7 @@ def test_w34_requirement_expansion_closes_narrow_company_use_scope() -> None:
         "HATE-PKT-EXP-020-security-procurement",
         "HATE-PKT-EXP-021-value-measurement",
         "HATE-PKT-EXP-022-developer-experience",
-        "implemented-ready",
+        "implemented",
         "src/hate/expansion/portfolio_readiness.py",
         "PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md",
     ]
@@ -405,8 +405,8 @@ def test_expansion_detail_spec_hardens_uat_rough_edges() -> None:
     assert "pytest.skip" in detail
     assert "*.schema.json" in detail
     assert "Noncanonical fixture aliases are prohibited" in detail
-    assert "HATE-GAP-034 through HATE-GAP-040 are `specified-ready`" in packets
-    assert "no longer `specified-thin`" in backlog
+    assert "HATE-GAP-034 through HATE-GAP-040 are implemented" in packets
+    assert "no longer" in backlog and "`specified-thin`" in backlog
 
 
 def test_w32_expansion_detail_spec_defines_runtime_contract_edges() -> None:
@@ -434,7 +434,7 @@ def test_w33_expansion_detail_spec_defines_implementation_contracts() -> None:
     packets = _read(PROCESS / "PRODUCT_REQUIREMENTS_EXPANSION_PACKETS.md")
 
     assert "## 18. W33 Implementation Readiness" in detail
-    assert "specified-ready" in packets
+    assert "`implemented` at machine-check level" in packets
     for gap_id, required_terms in W33_DETAIL_TERMS.items():
         assert gap_id in detail
         missing_terms = [term for term in required_terms if term not in detail]
@@ -446,7 +446,8 @@ def test_w33_expansion_detail_spec_no_longer_allows_thin_handoff() -> None:
 
     assert "The current W33 packets are therefore `specified-thin`" not in detail
     assert "must not start implementation until each packet" not in detail
-    assert "runtime modules, schemas, fixtures, tests" in detail
+    assert "from `specified-thin` to `specified-ready`" not in detail
+    assert "Runtime modules, schemas, fixtures, tests" in detail
 
 
 def test_w33_expansion_detail_spec_pins_file_schema_and_test_contracts() -> None:

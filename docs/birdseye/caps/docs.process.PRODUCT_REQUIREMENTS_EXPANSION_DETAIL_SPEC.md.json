@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "217e700726ff6943adbd4a9e37defc87b95c89df17ca5b65631c460ac380987a",
-  "line_count": 965,
-  "size_bytes": 37536,
+  "sha256": "cf88fcbcfc477591d242f302b2549b13b4415920664beae035c41467025f52ee",
+  "line_count": 964,
+  "size_bytes": 37562,
   "headings": [
     "# Product Requirements Expansion Detail Spec",
     "## 1. Purpose",

@@ -98,8 +98,8 @@ def _normalize_synthesis_config(raw_config: dict[str, Any]) -> dict[str, Any]:
         "input_refs": [str(ref) for ref in config.get("input_refs", []) if str(ref)],
         "confidence": float(config.get("confidence", 0.0) or 0.0),
         "limits": _normalize_limits(config.get("limits", {})),
-        "mutation_evidence_available": bool(config.get("mutation_evidence_available", True)),
-        "contract_evidence_available": bool(config.get("contract_evidence_available", True)),
+        "mutation_evidence_available": bool(config.get("mutation_evidence_available", False)),
+        "contract_evidence_available": bool(config.get("contract_evidence_available", False)),
         "strong_evidence_threshold": float(config.get("strong_evidence_threshold", 0.8) or 0.8),
     }
 
@@ -179,7 +179,7 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[EvidenceSynth
     for es in config["evidence_sources"]:
         if not es.get("sourceRef"):
             findings.append(_finding(
-                "evidence_synthesis_mutation_coverage_missing",
+                "evidence_synthesis_source_ref_missing",
                 f"Evidence source '{es.get('source_id')}' missing sourceRef.",
                 source_ref,
             ))

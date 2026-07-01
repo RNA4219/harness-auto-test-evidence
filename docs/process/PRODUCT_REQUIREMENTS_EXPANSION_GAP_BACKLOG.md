@@ -12,9 +12,10 @@ This backlog starts the second requirement-gap wave after HATE-GAP-001 through
 HATE-GAP-026 reached `implemented` machine status. It captures product gaps that
 are still too thin for a 50万〜100万行級 product roadmap.
 
-These gaps are `specified`, not `implemented`. They must not be counted in the
-existing HATE-GAP-001..026 gap-closure report until runtime code, schemas,
-fixtures, tests, generated UAT reports, and acceptance records exist.
+These gaps have reached `implemented` machine status through runtime code,
+schemas, fixtures, tests, generated expansion UAT reports, and release-pack
+connection. They are still separate from the existing HATE-GAP-001..026
+gap-closure report and remain acceptance-pending until reviewed.
 
 The detailed implementation contract for canonical fixtures, schema registry
 behavior, accepted input vocabulary, finding codes, and UAT hardening lives in
@@ -76,13 +77,13 @@ Each expansion gap must have:
 ## 2.1 Detail Readiness
 
 HATE-GAP-027 through HATE-GAP-040 all have detail-level implementation
-contracts in `PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md`. HATE-GAP-034
-through HATE-GAP-040 are still unimplemented, but no longer `specified-thin`;
-they are ready for implementation handoff once a worker receives the matching
-packet, task seed, acceptance ID, and UAT checklist.
+contracts in `PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md` and runtime
+report builders under `src/hate/expansion/`. They are no longer
+`specified-thin`; they are implemented at machine-check level and pending human
+acceptance review.
 
 HATE-GAP-041 through HATE-GAP-048 are third-wave requirement expansions. They
-are `implemented-ready` at runtime through
+are `implemented` at runtime through
 `src/hate/expansion/portfolio_readiness.py`, the focused
 `PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md`, registered schemas,
 canonical positive and negative fixtures, expansion runner specs, release
@@ -91,11 +92,11 @@ provider breadth, polyglot runner, governance, procurement, value, and daily
 developer experience gaps while still leaving later hardening work to
 HATE-GAP-049 through HATE-GAP-060.
 
-HATE-GAP-049 through HATE-GAP-060 are core functional expansions. They are
-`specified` at PRD/backlog/packet level and must receive detail specs before
-worker implementation. They focus on HATE's analysis engine: impact inference,
-recommendation, flaky/oracle classification, evidence synthesis, contradiction
-detection, historical regression, fixture quality, and adapter capability diff.
+HATE-GAP-049 through HATE-GAP-060 are core functional expansions implemented as
+analysis report builders under `src/hate/analysis/`, with registered schemas,
+canonical fixtures, focused tests, expansion runner output, and generated UAT
+report support. They remain hardening targets where analysis depth must keep
+moving from supplied report facts toward stronger inference.
 
 ## 3. No-Go
 
@@ -108,9 +109,9 @@ detection, historical regression, fixture quality, and adapter capability diff.
 - Do not allow commercial, support, or roadmap wording to imply a capability is
   available before its expansion packet is implemented and accepted.
 
-## 4. Sequencing
+## 4. Hardening Sequencing
 
-Recommended implementation order:
+Recommended post-implementation hardening order:
 
 1. HATE-GAP-027, HATE-GAP-033, HATE-GAP-038: user-facing correctness.
 2. HATE-GAP-028, HATE-GAP-029, HATE-GAP-031, HATE-GAP-037: admin/runtime safety.

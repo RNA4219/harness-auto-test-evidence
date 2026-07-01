@@ -98,9 +98,9 @@ def _normalize_impact_config(raw_config: dict[str, Any]) -> dict[str, Any]:
         "input_refs": [str(ref) for ref in config.get("input_refs", []) if str(ref)],
         "confidence": float(config.get("confidence", 0.0) or 0.0),
         "limits": _normalize_limits(config.get("limits", {})),
-        "dependency_sources_available": bool(config.get("dependency_sources_available", True)),
-        "ownership_sources_available": bool(config.get("ownership_sources_available", True)),
-        "history_sources_available": bool(config.get("history_sources_available", True)),
+        "dependency_sources_available": bool(config.get("dependency_sources_available", False)),
+        "ownership_sources_available": bool(config.get("ownership_sources_available", False)),
+        "history_sources_available": bool(config.get("history_sources_available", False)),
     }
 
 

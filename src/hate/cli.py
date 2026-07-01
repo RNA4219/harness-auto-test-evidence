@@ -167,7 +167,7 @@ def build_parser() -> argparse.ArgumentParser:
     expansion = subparsers.add_parser("expansion", help="Generate HATE expansion and analysis reports from canonical fixtures.")
     expansion_subparsers = expansion.add_subparsers(dest="expansion_command", required=True)
 
-    expansion_run = expansion_subparsers.add_parser("run", help="Run HATE-GAP-027..040 and HATE-GAP-049..060 report builders.")
+    expansion_run = expansion_subparsers.add_parser("run", help="Run HATE-GAP-027..060 expansion report and UAT builders.")
     expansion_run.add_argument("--fixtures-root", default=Path("fixtures/expansion"), type=Path, help="Canonical expansion fixture root.")
     expansion_run.add_argument("--out", required=True, type=Path, help="Output directory for generated expansion reports.")
     expansion_run.add_argument(

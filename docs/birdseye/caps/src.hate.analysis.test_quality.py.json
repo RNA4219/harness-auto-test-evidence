@@ -2,9 +2,9 @@
   "path": "src/hate/analysis/test_quality.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "9bd5abbb6997f723e3c51758921eb7fce8628e7c894fdb31b5e0c4f0a3f35f81",
+  "sha256": "7c955a3685bfbe7e271f409e0d668ce87a0555aa19cef67a45f59c27bc7e2f93",
   "line_count": 226,
-  "size_bytes": 8405,
+  "size_bytes": 8409,
   "headings": [],
   "imports": [
     "__future__",

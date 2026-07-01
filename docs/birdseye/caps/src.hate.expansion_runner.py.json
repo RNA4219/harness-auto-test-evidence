@@ -2,9 +2,9 @@
   "path": "src/hate/expansion_runner.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "be6a401f10397029d0bbde8036adca33641c86f5166c776a12a227762d722890",
-  "line_count": 214,
-  "size_bytes": 11164,
+  "sha256": "d884883022201f2cf1648f0c05227bd839a17cc99b1a900878636c5d831df209",
+  "line_count": 264,
+  "size_bytes": 14556,
   "headings": [],
   "imports": [
     ".analysis.adapter_capability_diff",

@@ -98,9 +98,9 @@ def _normalize_flaky_config(raw_config: dict[str, Any]) -> dict[str, Any]:
         "input_refs": [str(ref) for ref in config.get("input_refs", []) if str(ref)],
         "confidence": float(config.get("confidence", 0.0) or 0.0),
         "limits": _normalize_limits(config.get("limits", {})),
-        "class_taxonomy_available": bool(config.get("class_taxonomy_available", True)),
-        "retry_history_available": bool(config.get("retry_history_available", True)),
-        "environment_evidence_available": bool(config.get("environment_evidence_available", True)),
+        "class_taxonomy_available": bool(config.get("class_taxonomy_available", False)),
+        "retry_history_available": bool(config.get("retry_history_available", False)),
+        "environment_evidence_available": bool(config.get("environment_evidence_available", False)),
     }
 
 

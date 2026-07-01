@@ -107,6 +107,23 @@ def test_unverified_oracle_class_holds() -> None:
     assert "oracle_classification_snapshot_only_critical_hold" in _codes(report)
 
 
+def test_oracle_support_availability_defaults_to_hold() -> None:
+    report = build_oracle_classification_report({
+        "oracle_classes": [{"oracle_id": "o1", "oracle_type": "property", "target_risk": "r1", "confidence": 0.9, "sourceRef": "o:1", "rationale": "r", "verified": True}],
+        "semantic_guards": [{"guard_id": "g1", "guard_type": "behavioral", "target_behavior": "b1", "confidence": 0.9, "sourceRef": "g:1", "rationale": "r", "verified": True}],
+        "no_oracle_risks": [{"risk_id": "nor1", "risk_type": "low", "severity": "low", "confidence": 0.9, "sourceRef": "nor:1", "rationale": "r", "mitigated": True}],
+        "confidence": 0.9,
+        "limits": {"confidence_threshold": 0.7},
+    })
+
+    assert report["overall_status"] == "hold"
+    assert {
+        "oracle_classification_taxonomy_missing",
+        "oracle_classification_semantic_guard_missing",
+        "oracle_classification_critical_coverage_missing",
+    }.issubset(set(_codes(report)))
+
+
 def test_oracle_classification_schema_registered() -> None:
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     records = {record["record_type"]: record["schema"] for record in registry["records"]}

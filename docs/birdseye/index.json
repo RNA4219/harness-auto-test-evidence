@@ -1,5 +1,5 @@
 {
-  "generated_at": "1b583ab6d174",
+  "generated_at": "9d015f8f6c53",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -40,16 +40,16 @@
     "docs/acceptance/HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.acceptance.HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md.json",
-      "sha256": "69142216d022a2b8238827d9ee8bfb009922aa6329a81521a548dccf1582c229",
-      "line_count": 60,
-      "size_bytes": 6798
+      "sha256": "8475442d808f9fb7acd76bdd39f5dd3a8b089415cc5d5b3ddaed1259d23fa72a",
+      "line_count": 61,
+      "size_bytes": 6855
     },
     "docs/acceptance/INDEX.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.INDEX.md.json",
-      "sha256": "06d889420a599c51b9278e9d97f6559906105bd83c22c2edddd6567b4bf948f3",
+      "sha256": "a2906cc5b3d6dd1ac839601f545bc514a736d5a2ba23afdb271681285d307bf5",
       "line_count": 25,
-      "size_bytes": 2084
+      "size_bytes": 2116
     },
     "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md": {
       "role": "quality",
@@ -376,23 +376,23 @@
     "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md.json",
-      "sha256": "217e700726ff6943adbd4a9e37defc87b95c89df17ca5b65631c460ac380987a",
-      "line_count": 965,
-      "size_bytes": 37536
+      "sha256": "cf88fcbcfc477591d242f302b2549b13b4415920664beae035c41467025f52ee",
+      "line_count": 964,
+      "size_bytes": 37562
     },
     "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_GAP_BACKLOG.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_EXPANSION_GAP_BACKLOG.md.json",
-      "sha256": "8182c59b2ae15ef129f0f531dc0fd7f8dd7a4dec237a67e0534f8809b9e5cbb3",
-      "line_count": 122,
-      "size_bytes": 16247
+      "sha256": "eea46d8251eaa0ebb20e16a9cf04c69b6dc09857a2d88381ae69b11e61a90e2d",
+      "line_count": 123,
+      "size_bytes": 16266
     },
     "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_PACKETS.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_EXPANSION_PACKETS.md.json",
-      "sha256": "d18e070bed650b5b7cc8bdfd07583589808a211548a8d5623b26e13b1e04968b",
+      "sha256": "09da62d99c908cb4b995864f3ec05413323b6fdd48f62bb5e4e4e6bbff0657bc",
       "line_count": 99,
-      "size_bytes": 16678
+      "size_bytes": 16820
     },
     "docs/process/PRODUCT_REQUIREMENTS_GAP_BACKLOG.md": {
       "role": "requirements",
@@ -6102,9 +6102,9 @@
     "src/hate/analysis/evidence_synthesis.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.analysis.evidence_synthesis.py.json",
-      "sha256": "15d16f588ea329fdd67b351e5b4a176f857bc30f7c616140952139977fa5d6b2",
+      "sha256": "1410c88f4a9d0239b173ebba799ab3a23c63e343f0af4dc7e892d3a384192580",
       "line_count": 219,
-      "size_bytes": 8581
+      "size_bytes": 8577
     },
     "src/hate/analysis/fixture_quality.py": {
       "role": "implementation",
@@ -6116,9 +6116,9 @@
     "src/hate/analysis/flaky_classification.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.analysis.flaky_classification.py.json",
-      "sha256": "a9825e761aa0e09311a535f452349a344a2ad34162b9e75500821b1b8afcd43d",
+      "sha256": "a3ec1c17f1cc9e73becaf60cb4da42fb047fd6b20add682a7747b22217e3eacf",
       "line_count": 214,
-      "size_bytes": 8127
+      "size_bytes": 8131
     },
     "src/hate/analysis/historical_regression.py": {
       "role": "implementation",
@@ -6130,23 +6130,23 @@
     "src/hate/analysis/impact_analysis.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.analysis.impact_analysis.py.json",
-      "sha256": "f2547aa45369b24ee369af08681c1c63cf03c76631780a95fcd1aa4ec04003e9",
+      "sha256": "1c3d6baec0e85f5fbfb33a6ae02c9b990b1a9c9fc317adefe5b8e807648df7fe",
       "line_count": 199,
-      "size_bytes": 7401
+      "size_bytes": 7405
     },
     "src/hate/analysis/oracle_classification.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.analysis.oracle_classification.py.json",
-      "sha256": "76754a0f1511b6201c87b22f61de7dda4037de61a57553f06f6c279def530aa2",
-      "line_count": 215,
-      "size_bytes": 8528
+      "sha256": "b40ef6743179d78422a4db77209acbaea4f1fafb42a7a302a92f7211d7687c1d",
+      "line_count": 236,
+      "size_bytes": 9285
     },
     "src/hate/analysis/test_quality.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.analysis.test_quality.py.json",
-      "sha256": "9bd5abbb6997f723e3c51758921eb7fce8628e7c894fdb31b5e0c4f0a3f35f81",
+      "sha256": "7c955a3685bfbe7e271f409e0d668ce87a0555aa19cef67a45f59c27bc7e2f93",
       "line_count": 226,
-      "size_bytes": 8405
+      "size_bytes": 8409
     },
     "src/hate/analysis/test_recommendation.py": {
       "role": "implementation",
@@ -6235,9 +6235,9 @@
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "5b9523b42c7f50eef7c9afece36a8e6ae62977e647924a3dd76f591588a02afa",
+      "sha256": "2ba7b94e3fbb6f33ccb0f93899a15b91699375e3756b832e2954a6a903e28a5e",
       "line_count": 187,
-      "size_bytes": 13647
+      "size_bytes": 13643
     },
     "src/hate/cli_handlers.py": {
       "role": "implementation",
@@ -6466,9 +6466,9 @@
     "src/hate/expansion/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.expansion.__init__.py.json",
-      "sha256": "dae26ac5c4e69f01a0691952cba97c435222c26c41544baa0c72cf7bfce921ad",
+      "sha256": "b38a07c2425ce233f0108b07531eb1cd8b4f698e5c95b4917c95095e212fedca",
       "line_count": 3,
-      "size_bytes": 97
+      "size_bytes": 98
     },
     "src/hate/expansion/a11y_l10n.py": {
       "role": "implementation",
@@ -6578,9 +6578,9 @@
     "src/hate/expansion_runner.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.expansion_runner.py.json",
-      "sha256": "be6a401f10397029d0bbde8036adca33641c86f5166c776a12a227762d722890",
-      "line_count": 214,
-      "size_bytes": 11164
+      "sha256": "d884883022201f2cf1648f0c05227bd839a17cc99b1a900878636c5d831df209",
+      "line_count": 264,
+      "size_bytes": 14556
     },
     "src/hate/gap_closure.py": {
       "role": "implementation",
@@ -7397,9 +7397,9 @@
     "tests/test_analysis_evidence_synthesis.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_analysis_evidence_synthesis.py.json",
-      "sha256": "3ec2defc6638dbf8ed4fd5a60c600f7dcf9b51b2c444cbad2dc3210cd110ad8a",
-      "line_count": 146,
-      "size_bytes": 7292
+      "sha256": "66a02d83b396d949d67ed2ba239f920e0138d1513e5a7fe20b4fe07ee6126cf5",
+      "line_count": 163,
+      "size_bytes": 8234
     },
     "tests/test_analysis_fixture_quality.py": {
       "role": "test",
@@ -7411,9 +7411,9 @@
     "tests/test_analysis_flaky_classification.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_analysis_flaky_classification.py.json",
-      "sha256": "d6eea4cdd1c4f479a27cb5511e2cf3fd200754d1d9cf1aece497b1ab665eee56",
-      "line_count": 146,
-      "size_bytes": 6963
+      "sha256": "06785759e7a5d6d98fc121b468fc1e0901444c0921094254d5c7bc8a21bebe4b",
+      "line_count": 163,
+      "size_bytes": 7867
     },
     "tests/test_analysis_historical_regression.py": {
       "role": "test",
@@ -7425,23 +7425,23 @@
     "tests/test_analysis_impact_analysis.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_analysis_impact_analysis.py.json",
-      "sha256": "16761a7d9d0f45b16ae6ea5de00ba78633308b141c3a06cfbf1bae1a86fe3e03",
-      "line_count": 146,
-      "size_bytes": 6284
+      "sha256": "fa40115656fd52cb481a6d7802e7c1952bae2e4e71afac72d7bf3504bef52f77",
+      "line_count": 163,
+      "size_bytes": 7052
     },
     "tests/test_analysis_oracle_classification.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_analysis_oracle_classification.py.json",
-      "sha256": "7caea88f6ee4409ae9e0bca4031b5306225ab4af3485bbb03f7df858335131f7",
-      "line_count": 114,
-      "size_bytes": 5460
+      "sha256": "e42c963ccd2d6fd7fc754a7c9d34ef1f5b3023b2c2434d90d9c61f9ede13e123",
+      "line_count": 131,
+      "size_bytes": 6438
     },
     "tests/test_analysis_test_quality.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_analysis_test_quality.py.json",
-      "sha256": "5a943f5d93d697860960a1621556d24482c952ed1b6c69dc3ff83e628a4da80c",
-      "line_count": 162,
-      "size_bytes": 8022
+      "sha256": "087324c652c5062115575bb627abab9b8f2c1ff2bf9585a09673723e6411aedc",
+      "line_count": 179,
+      "size_bytes": 8972
     },
     "tests/test_analysis_test_recommendation.py": {
       "role": "test",
@@ -7733,9 +7733,9 @@
     "tests/test_expansion_runner.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_expansion_runner.py.json",
-      "sha256": "f02155783899e0003e86c522d3b0681ec6893f5987de3c761b6e589b6bc3dac3",
-      "line_count": 75,
-      "size_bytes": 2448
+      "sha256": "77dcf7238ffdf0e08d354a71bdf5f6f86b03d93366aa4566147afb81cf78ea6b",
+      "line_count": 81,
+      "size_bytes": 2893
     },
     "tests/test_expansion_self_hosted.py": {
       "role": "test",
@@ -7873,9 +7873,9 @@
     "tests/test_requirements_expansion_docs.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_requirements_expansion_docs.py.json",
-      "sha256": "277a8dfa2d9a49757c31a36e4ba9e7f5ce3b672cbeb3958aaef15e68e014b57b",
-      "line_count": 521,
-      "size_bytes": 22003
+      "sha256": "a8620a366e964a58cabf2eed3ad93dcb61ac74e76b4a574e76235eb1fd9650da",
+      "line_count": 522,
+      "size_bytes": 22155
     },
     "tests/test_requirements_to_spec_gap_audit.py": {
       "role": "test",

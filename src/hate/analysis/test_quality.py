@@ -98,9 +98,9 @@ def _normalize_quality_config(raw_config: dict[str, Any]) -> dict[str, Any]:
         "input_refs": [str(ref) for ref in config.get("input_refs", []) if str(ref)],
         "confidence": float(config.get("confidence", 0.0) or 0.0),
         "limits": _normalize_limits(config.get("limits", {})),
-        "determinism_available": bool(config.get("determinism_available", True)),
-        "timeout_available": bool(config.get("timeout_available", True)),
-        "isolation_available": bool(config.get("isolation_available", True)),
+        "determinism_available": bool(config.get("determinism_available", False)),
+        "timeout_available": bool(config.get("timeout_available", False)),
+        "isolation_available": bool(config.get("isolation_available", False)),
     }
 
 

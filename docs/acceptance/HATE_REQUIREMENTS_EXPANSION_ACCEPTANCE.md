@@ -8,8 +8,9 @@ next_review_due: 2026-07-08
 
 # HATE Requirements Expansion Acceptance Ledger
 
-This ledger defines acceptance shells for HATE-GAP-027 through HATE-GAP-060.
-HATE-GAP-027 through HATE-GAP-060 are `implemented` and connected to the expansion runner/release pack path.
+This ledger defines acceptance evidence for HATE-GAP-027 through HATE-GAP-060.
+HATE-GAP-027 through HATE-GAP-060 are `implemented` and connected to generated
+UAT reports, the expansion runner, and the release pack path.
 
 | AC ID | Gap | Required evidence | Current state | Decision |
 |---|---|---|---|---|
@@ -50,7 +51,7 @@ HATE-GAP-027 through HATE-GAP-060 are `implemented` and connected to the expansi
 
 ## No-Go
 
-- Do not mark expansion gaps as `implemented` from docs-only work; implementation requires runtime code, schema, fixtures, tests, and a CLI/release-pack connection.
+- Do not mark expansion gaps as `implemented` from docs-only work; implementation requires runtime code, schema, fixtures, tests, generated UAT reports, and a CLI/release-pack connection.
 - HATE-GAP-041 through HATE-GAP-048 are implemented as third-wave portfolio readiness reports:
   rollout adoption, provider matrix, runner dialect coverage, recurring real repo evaluation,
   governance review, security procurement, value measurement, and developer experience.

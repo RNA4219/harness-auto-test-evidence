@@ -75,6 +75,23 @@ def test_mutation_coverage_missing_holds() -> None:
     assert "evidence_synthesis_mutation_coverage_missing" in _codes(report)
 
 
+def test_evidence_availability_defaults_to_hold() -> None:
+    report = build_evidence_synthesis_report({
+        "evidence_sources": [{"source_id": "es1", "source_type": "mutation", "target_requirement": "r1", "confidence": 0.9, "sourceRef": "es:1", "rationale": "r", "verified": True}],
+        "mutation_coverage": [{"mutation_id": "mc1", "mutation_type": "operator", "killed": True, "confidence": 0.9, "sourceRef": "mc:1", "rationale": "r"}],
+        "contract_coverage": [{"contract_id": "cc1", "contract_type": "postcondition", "satisfied": True, "confidence": 0.9, "sourceRef": "cc:1", "rationale": "r"}],
+        "strong_evidence_threshold": 0.8,
+        "confidence": 0.9,
+        "limits": {"confidence_threshold": 0.7},
+    })
+
+    assert report["overall_status"] == "hold"
+    assert {
+        "evidence_synthesis_mutation_coverage_missing",
+        "evidence_synthesis_contract_coverage_missing",
+    }.issubset(set(_codes(report)))
+
+
 def test_contract_coverage_missing_holds() -> None:
     report = build_evidence_synthesis_report({
         "evidence_sources": [{"source_id": "es1", "source_type": "contract", "target_requirement": "r1", "confidence": 0.9, "sourceRef": "es:1", "rationale": "r", "verified": True}],
@@ -104,7 +121,7 @@ def test_evidence_source_without_source_ref_holds() -> None:
     })
 
     assert report["overall_status"] == "hold"
-    assert "evidence_synthesis_mutation_coverage_missing" in _codes(report)
+    assert "evidence_synthesis_source_ref_missing" in _codes(report)
 
 
 def test_mutation_without_source_ref_holds() -> None:

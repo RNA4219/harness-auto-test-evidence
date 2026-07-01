@@ -2,9 +2,9 @@
   "path": "docs/acceptance/HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "69142216d022a2b8238827d9ee8bfb009922aa6329a81521a548dccf1582c229",
-  "line_count": 60,
-  "size_bytes": 6798,
+  "sha256": "8475442d808f9fb7acd76bdd39f5dd3a8b089415cc5d5b3ddaed1259d23fa72a",
+  "line_count": 61,
+  "size_bytes": 6855,
   "headings": [
     "# HATE Requirements Expansion Acceptance Ledger",
     "## No-Go"

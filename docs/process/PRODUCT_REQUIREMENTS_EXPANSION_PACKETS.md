@@ -24,11 +24,11 @@ until both this ledger and the detail spec contain its contract.
 | `gap_id` | One `HATE-GAP-027` through `HATE-GAP-060` |
 | `packet_id` | Stable handoff ID |
 | `contract_ref` | Spec or future contract section |
-| `positive_fixture` | Planned fixture path for pass behavior |
-| `negative_fixture` | Planned fixture path for hold/deny behavior |
-| `uat_evidence` | Planned generated report |
+| `positive_fixture` | Canonical fixture path for pass behavior |
+| `negative_fixture` | Canonical fixture path for hold/deny behavior |
+| `uat_evidence` | Generated UAT report |
 | `owner` | Role accountable for acceptance |
-| `done_gate` | Test or generated evidence required before implementation can be called done |
+| `done_gate` | Test or generated evidence required before implementation remains accepted |
 
 ## 2. Expansion Packet Ledger
 
@@ -71,17 +71,17 @@ until both this ledger and the detail spec contain its contract.
 
 ## 3. Status
 
-All expansion packets are `specified`. A packet remains `planned` until code,
-schemas, fixtures, tests, generated UAT reports, Birdseye updates, and
-acceptance records exist.
+All expansion packets are `implemented` at machine-check level: runtime modules,
+schemas, canonical fixtures, tests, expansion runner output, release-pack
+connection, generated UAT reports, and Birdseye updates exist. They remain
+acceptance-pending until human review accepts the generated evidence.
 
-HATE-GAP-034 through HATE-GAP-040 are `specified-ready` at the documentation
-contract level after `PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md` section 11
-through section 18. They remain unimplemented until runtime modules, schemas,
-fixtures, tests, generated UAT reports, Birdseye updates, and acceptance records
-exist.
+HATE-GAP-034 through HATE-GAP-040 are implemented as second-wave expansion
+reports after `PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md` section 11
+through section 18. Their runtime modules live under `src/hate/expansion/` and
+their UAT evidence is emitted by `hate expansion run`.
 
-HATE-GAP-041 through HATE-GAP-048 are `implemented-ready` as third-wave
+HATE-GAP-041 through HATE-GAP-048 are `implemented` as third-wave
 portfolio readiness reports. Their runtime module is
 `src/hate/expansion/portfolio_readiness.py`; their schemas are registered under
 `schemas/HATE/v1/*-report.schema.json`; their positive and negative canonical
@@ -92,8 +92,8 @@ specified in `PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md` and
 connected to the expansion runner, release candidate pack, acceptance matrix,
 and tests.
 
-HATE-GAP-049 through HATE-GAP-060 are `specified-ready` at the documentation
-contract level after `PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md` section 23
-through section 26. They remain unimplemented until runtime modules, schemas,
-fixtures, tests, generated UAT reports, Birdseye updates, and acceptance records
-exist.
+HATE-GAP-049 through HATE-GAP-060 are implemented as core analysis report
+builders after `PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md` section 23
+through section 26. Their runtime modules live under `src/hate/analysis/`; their
+schemas, fixtures, tests, release-pack connection, and generated UAT reports are
+present. Remaining work is functional hardening, not missing packet execution.

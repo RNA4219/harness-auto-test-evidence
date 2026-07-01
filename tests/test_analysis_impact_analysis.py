@@ -107,6 +107,23 @@ def test_low_confidence_holds() -> None:
     assert "impact_analysis_confidence_missing" in _codes(report)
 
 
+def test_missing_source_availability_defaults_to_hold() -> None:
+    report = build_impact_analysis_report({
+        "changed_refs": [{"path": "src/test.py", "change_type": "modified", "sourceRef": "c:1"}],
+        "affected_tests": [{"test_id": "t1", "confidence": 0.9, "sourceRef": "t:1", "rationale": "r"}],
+        "affected_requirements": [{"requirement_id": "r1", "confidence": 0.9, "sourceRef": "req:1", "rationale": "r"}],
+        "confidence": 0.9,
+        "limits": {"confidence_threshold": 0.7},
+    })
+
+    assert report["overall_status"] == "hold"
+    assert {
+        "impact_analysis_missing_dependency_source",
+        "impact_analysis_missing_ownership_source",
+        "impact_analysis_missing_history_source",
+    }.issubset(set(_codes(report)))
+
+
 def test_affected_test_without_source_ref_holds() -> None:
     report = build_impact_analysis_report({
         "changed_refs": [{"path": "src/test.py", "change_type": "modified", "sourceRef": "c:1"}],

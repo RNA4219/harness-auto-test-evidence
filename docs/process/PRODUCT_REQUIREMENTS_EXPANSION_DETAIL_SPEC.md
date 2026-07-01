@@ -694,14 +694,13 @@ No-Go:
 
 ## 18. W33 Implementation Readiness
 
-HATE-GAP-034 through HATE-GAP-040 now have detail-level contracts. They may move
-from `specified-thin` to `specified-ready` only when the packet ledger, task seed
-ledger, and acceptance ledger reference these canonical fixture paths and report
-names.
+HATE-GAP-034 through HATE-GAP-040 have detail-level contracts and machine-check
+implementations. The packet ledger, task seed ledger, and acceptance ledger
+reference these canonical fixture paths and report names.
 
-Implementation must still create runtime modules, schemas, fixtures, tests,
-Birdseye updates, and generated UAT evidence before any gap is marked
-`implemented`.
+Runtime modules, schemas, fixtures, tests, Birdseye updates, and generated UAT
+evidence are required to keep these gaps marked `implemented`. Any regression in
+those artifacts moves the affected gap back to acceptance hold.
 
 ## 19. W33 File And Function Contract
 

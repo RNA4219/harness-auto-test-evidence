@@ -23,12 +23,17 @@ def test_positive_expansion_suite_generates_release_pack_reports(tmp_path: Path)
 
     assert manifest["overall_status"] == "pass"
     assert manifest["missing_areas"] == []
+    assert any(path.endswith("impact-analysis-uat-report.json") for path in manifest["generated_uat_reports"])
     assert set(manifest["report_types"]) == set(EXPANSION_REPORT_TYPES)
     for record_type in EXPANSION_REPORT_TYPES:
         report_path = tmp_path / f"{record_type}.json"
         assert report_path.exists(), f"missing generated report: {record_type}"
         report = json.loads(report_path.read_text(encoding="utf-8"))
         assert report["record_type"] == record_type
+    uat_report = json.loads((tmp_path / "impact-analysis-uat-report.json").read_text(encoding="utf-8"))
+    assert uat_report["record_type"] == "expansion-uat-report"
+    assert uat_report["gap_id"] == "HATE-GAP-049"
+    assert uat_report["overall_status"] == "pass"
 
 
 def test_generated_expansion_reports_satisfy_release_required_inputs(tmp_path: Path) -> None:
@@ -73,3 +78,4 @@ def test_expansion_cli_run_writes_manifest_and_reports(tmp_path: Path) -> None:
     assert manifest["overall_status"] == "pass"
     assert manifest["report_types"] == ["impact-analysis-report"]
     assert (tmp_path / "impact-analysis-report.json").exists()
+    assert (tmp_path / "impact-analysis-uat-report.json").exists()

@@ -98,9 +98,9 @@ def _normalize_oracle_config(raw_config: dict[str, Any]) -> dict[str, Any]:
         "input_refs": [str(ref) for ref in config.get("input_refs", []) if str(ref)],
         "confidence": float(config.get("confidence", 0.0) or 0.0),
         "limits": _normalize_limits(config.get("limits", {})),
-        "oracle_taxonomy_available": bool(config.get("oracle_taxonomy_available", True)),
-        "semantic_guard_available": bool(config.get("semantic_guard_available", True)),
-        "critical_risk_coverage_available": bool(config.get("critical_risk_coverage_available", True)),
+        "oracle_taxonomy_available": bool(config.get("oracle_taxonomy_available", False)),
+        "semantic_guard_available": bool(config.get("semantic_guard_available", False)),
+        "critical_risk_coverage_available": bool(config.get("critical_risk_coverage_available", False)),
     }
 
 
@@ -164,6 +164,27 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[OracleClassif
         ))
 
     # Additional finding codes from vocabulary
+    if not config["oracle_taxonomy_available"]:
+        findings.append(_finding(
+            "oracle_classification_taxonomy_missing",
+            "Oracle classification requires an oracle taxonomy.",
+            source_ref,
+        ))
+
+    if not config["semantic_guard_available"]:
+        findings.append(_finding(
+            "oracle_classification_semantic_guard_missing",
+            "Oracle classification requires semantic guard evidence.",
+            source_ref,
+        ))
+
+    if not config["critical_risk_coverage_available"]:
+        findings.append(_finding(
+            "oracle_classification_critical_coverage_missing",
+            "Oracle classification requires critical risk coverage evidence.",
+            source_ref,
+        ))
+
     for nor in config["no_oracle_risks"]:
         if nor.get("severity") == "critical" and not nor.get("mitigated"):
             findings.append(_finding(
