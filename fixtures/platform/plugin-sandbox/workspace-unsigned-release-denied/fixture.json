@@ -1,0 +1,20 @@
+{
+  "fixture_id": "workspace-unsigned-release-denied",
+  "input": {
+    "profile": "release",
+    "plugin": {
+      "plugin_id": "workspace-risk-plugin",
+      "detector_id": "workspace.risk",
+      "execution_mode": "subprocess_local",
+      "signed": false,
+      "trusted": false
+    },
+    "limits": {"timeout_ms": 30000, "max_output_bytes": 1048576, "max_input_bytes": 1048576, "network_mode": "none"},
+    "execution": {
+      "output_bytes": 64,
+      "output": {"schema_version": "HATE/v1", "detector_id": "workspace.risk", "sourceRefs": ["fixture:/plugin/workspace"]}
+    },
+    "sourceRefs": ["fixtures/platform/plugin-sandbox/workspace-unsigned-release-denied/fixture.json"]
+  },
+  "expected": {"overall_status": "hold", "finding_code": "plugin_trust_denied", "allowed": false}
+}

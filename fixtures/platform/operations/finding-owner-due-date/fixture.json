@@ -1,0 +1,34 @@
+{
+  "fixture_id": "finding-owner-due-date",
+  "description": "Accepted risk debt without owner or expiry creates projection findings.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-accept-missing-owner",
+        "sequence": 1,
+        "event_type": "risk_debt_accepted",
+        "operating_record_id": "op-risk-missing-owner",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-missing-owner",
+        "severity": "critical",
+        "readiness_effect": "hold",
+        "owner": "",
+        "due_date": "",
+        "expiry_date": "",
+        "decision_basis": [],
+        "evidence_refs": [],
+        "sourceRefs": ["fixtures/platform/operations/finding-owner-due-date/fixture.json#accepted"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "status": "accepted",
+    "finding_codes": [
+      "operating_accepted_debt_missing_owner_or_expiry",
+      "operating_accepted_debt_missing_decision_basis"
+    ]
+  }
+}

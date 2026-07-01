@@ -1,0 +1,41 @@
+{
+  "fixture_id": "findings-owner-queue",
+  "description": "Findings Queue shows operating records sorted by due date with owner and sourceRefs.",
+  "input": {
+    "operating_projection_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "operating-projection-report",
+      "records": [
+        {
+          "operating_record_id": "op-late",
+          "entity_kind": "finding",
+          "entity_id": "finding-late",
+          "status": "open",
+          "severity": "medium",
+          "readiness_effect": "hold",
+          "owner": "owner-b",
+          "due_date": "2026-07-20",
+          "sourceRefs": ["fixtures/platform/dashboard/findings-owner-queue/fixture.json#late"]
+        },
+        {
+          "operating_record_id": "op-early",
+          "entity_kind": "finding",
+          "entity_id": "finding-early",
+          "status": "open",
+          "severity": "critical",
+          "readiness_effect": "hold",
+          "owner": "owner-a",
+          "due_date": "2026-07-02",
+          "sourceRefs": ["fixtures/platform/dashboard/findings-owner-queue/fixture.json#early"]
+        }
+      ],
+      "findings": [],
+      "sourceRefs": ["fixtures/platform/dashboard/findings-owner-queue/fixture.json"]
+    }
+  },
+  "expected": {
+    "view_id": "findings-queue",
+    "first_record_id": "op-early",
+    "open_count": 2
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "fixture_id": "cross-tenant-hidden",
+  "input": {
+    "request": {
+      "actor": {"actor_id": "viewer-1", "role": "viewer", "tenant_id": "tenant-a"},
+      "resource": {
+        "type": "artifact",
+        "id": "C:\\secret\\tenant-b\\raw-output.log",
+        "tenant_id": "tenant-b",
+        "exists": true
+      },
+      "action": "metadata_read",
+      "sourceRefs": ["fixtures/platform/rbac/cross-tenant-hidden/fixture.json"]
+    }
+  },
+  "expected": {
+    "overall_status": "pass",
+    "decision": "deny",
+    "reason": "cross_tenant_hidden",
+    "http_status": 403,
+    "tenant_visible": false,
+    "safe_resource_id": "redacted"
+  }
+}

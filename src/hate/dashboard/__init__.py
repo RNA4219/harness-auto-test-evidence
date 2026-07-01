@@ -14,6 +14,12 @@ from hate.dashboard.view_models import (
     build_risk_coverage_view_model,
     build_dashboard_view_model,
 )
+from hate.dashboard.platform_views import (
+    build_connector_sync_view_model,
+    build_findings_queue_view_model,
+    build_operating_manual_review_queue_view_model,
+    build_risk_debt_board_view_model,
+)
 
 from hate.dashboard.uat_states import (
     UATState,
@@ -41,6 +47,8 @@ from hate.dashboard.state_report import (
     build_dashboard_state_report,
     evaluate_dashboard_state_fixture,
 )
+from hate.dashboard.wireframe import build_platform_dashboard_wireframe_report
+from hate.dashboard.uat_report import DashboardUATFinding, build_dashboard_uat_report
 
 __all__ = [
     # View models
@@ -54,6 +62,10 @@ __all__ = [
     "build_manual_review_queue_view_model",
     "build_risk_coverage_view_model",
     "build_dashboard_view_model",
+    "build_connector_sync_view_model",
+    "build_findings_queue_view_model",
+    "build_operating_manual_review_queue_view_model",
+    "build_risk_debt_board_view_model",
     # UAT states
     "UATState",
     "ReadyState",
@@ -78,4 +90,7 @@ __all__ = [
     "DashboardStateFinding",
     "build_dashboard_state_report",
     "evaluate_dashboard_state_fixture",
+    "build_platform_dashboard_wireframe_report",
+    "DashboardUATFinding",
+    "build_dashboard_uat_report",
 ]

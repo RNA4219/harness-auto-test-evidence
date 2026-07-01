@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/dashboard-uat-report.schema.json",
+  "title": "Dashboard UAT Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "view_model_results",
+    "checks",
+    "state_report_refs",
+    "manual_uat_refs",
+    "findings",
+    "status",
+    "readiness_effect",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "dashboard-uat-report"},
+    "report_id": {"type": "string", "minLength": 1},
+    "view_model_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["fixture_id", "view", "status", "sourceRefs"],
+        "properties": {
+          "fixture_id": {"type": "string"},
+          "view": {"type": "string"},
+          "status": {"enum": ["pass", "fail", "not_run", "blocked"]},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "checks": {"type": "object", "additionalProperties": {"type": "object"}},
+    "state_report_refs": {"type": "array", "items": {"type": "string"}},
+    "manual_uat_refs": {"type": "array", "items": {"type": "string"}},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {
+            "enum": [
+              "dashboard_uat_required_check_not_run",
+              "dashboard_uat_required_check_failed",
+              "dashboard_uat_view_model_fixture_failed",
+              "dashboard_uat_state_report_missing",
+              "dashboard_uat_unsafe_artifact_visible",
+              "dashboard_uat_product_ready_overclaim"
+            ]
+          },
+          "severity": {"enum": ["low", "medium", "high", "critical"]},
+          "message": {"type": "string", "minLength": 1},
+          "sourceRef": {"type": "string", "minLength": 1},
+          "readiness_effect": {"enum": ["none", "soft_gap", "hold"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "status": {"enum": ["pass", "hold"]},
+    "readiness_effect": {"enum": ["none", "hold"]},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  }
+}

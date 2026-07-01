@@ -1,0 +1,26 @@
+{
+  "fixture_id": "policy-drift",
+  "input": {
+    "required_views": ["policy_drift"],
+    "views": [
+      {
+        "view_id": "policy_drift",
+        "scope": {"repo_id": "hate", "profile": "release"},
+        "generated_at": "2026-07-01T00:00:00Z",
+        "stale": false,
+        "permissions": {"can_read": true},
+        "summary": {"base_policy_hash": "sha256:base", "effective_policy_hash": "sha256:head", "changed_rules": 2},
+        "items": [{"rule": "required_owner", "before": true, "after": false}],
+        "selected_item": {"rule": "required_owner", "sourceRefs": ["hate-policy.override.json"]},
+        "sourceRefs": ["fixtures/platform/dashboard/policy-drift/fixture.json"],
+        "redactions": [],
+        "errors": [],
+        "layout": ["header", "summary_metrics", "filter_bar", "primary_table_or_timeline", "detail_panel", "sourceRefs_panel", "unsafe_redaction_notices"],
+        "columns": [{"id": "rule", "label": "Rule"}, {"id": "after", "label": "After"}]
+      }
+    ],
+    "visual_acceptance": ["stable_table_labels", "distinct_non_ready_states", "score_breakdown_visible", "sourceRefs_reachable", "unsafe_body_never_rendered", "keyboard_focus_order_complete", "mobile_critical_information_preserved"],
+    "sourceRefs": ["fixtures/platform/dashboard/policy-drift/fixture.json"]
+  },
+  "expected": {"overall_status": "pass", "changed_rules": 2}
+}

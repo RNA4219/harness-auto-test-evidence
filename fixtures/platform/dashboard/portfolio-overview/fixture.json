@@ -1,0 +1,26 @@
+{
+  "fixture_id": "portfolio-overview",
+  "input": {
+    "required_views": ["portfolio_overview"],
+    "views": [
+      {
+        "view_id": "portfolio_overview",
+        "scope": {"org": "local"},
+        "generated_at": "2026-07-01T00:00:00Z",
+        "stale": false,
+        "permissions": {"can_read": true, "can_view_raw": false},
+        "summary": {"repo_health": "mixed", "trend": "improving", "open_holds": 2, "expired_debt": 1},
+        "items": [{"repo_id": "hate", "score": 0.82, "open_holds": 2}],
+        "selected_item": {"repo_id": "hate", "sourceRefs": ["score/hate"]},
+        "sourceRefs": ["fixtures/platform/dashboard/portfolio-overview/fixture.json"],
+        "redactions": [],
+        "errors": [],
+        "layout": ["header", "summary_metrics", "filter_bar", "primary_table_or_timeline", "detail_panel", "sourceRefs_panel", "unsafe_redaction_notices"],
+        "columns": [{"id": "repo_id", "label": "Repository"}, {"id": "score", "label": "Score"}]
+      }
+    ],
+    "visual_acceptance": ["stable_table_labels", "distinct_non_ready_states", "score_breakdown_visible", "sourceRefs_reachable", "unsafe_body_never_rendered", "keyboard_focus_order_complete", "mobile_critical_information_preserved"],
+    "sourceRefs": ["fixtures/platform/dashboard/portfolio-overview/fixture.json"]
+  },
+  "expected": {"overall_status": "pass", "open_holds": 2, "expired_debt": 1}
+}

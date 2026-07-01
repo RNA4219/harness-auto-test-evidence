@@ -1,0 +1,45 @@
+{
+  "fixture_id": "connector-sync-safe-summary",
+  "description": "Connector sync dashboard exposes safe summary only, not raw connector payload body.",
+  "input": {
+    "connector_sync_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "platform-connector-sync-report",
+      "accepted_payloads": [
+        {
+          "sync_id": "sync-safe",
+          "operating_record_id": "op-safe",
+          "connector_id": "github-check",
+          "external_system": "github_check",
+          "direction": "outbound",
+          "operation": "create",
+          "state": "prepared",
+          "idempotency_key": "idem-safe",
+          "payload_hash": "sha256:abc",
+          "safe_summary": {
+            "summary": "safe summary"
+          },
+          "payload": {
+            "raw_artifact_body": "SECRET_SHOULD_NOT_RENDER"
+          },
+          "sourceRefs": ["fixtures/platform/dashboard/connector-sync-safe-summary/fixture.json#payload"]
+        }
+      ],
+      "denied_payloads": [],
+      "skipped_duplicate_payloads": [],
+      "findings": [],
+      "summary": {
+        "accepted_count": 1,
+        "denied_count": 0,
+        "skipped_duplicate_count": 0,
+        "generated_event_count": 1
+      },
+      "sourceRefs": ["fixtures/platform/dashboard/connector-sync-safe-summary/fixture.json"]
+    }
+  },
+  "expected": {
+    "view_id": "connector-sync",
+    "accepted_count": 1,
+    "forbidden": "SECRET_SHOULD_NOT_RENDER"
+  }
+}

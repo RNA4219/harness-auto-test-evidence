@@ -1,0 +1,47 @@
+{
+  "fixture_id": "idempotent-retry",
+  "description": "Duplicate payload with same idempotency key and hash is skipped instead of sent twice.",
+  "input": {
+    "sync_payloads": [
+      {
+        "sync_id": "sync-retry-001",
+        "operating_record_id": "op-finding-retry",
+        "connector_id": "generic-tracker",
+        "external_system": "generic_tracker",
+        "direction": "outbound",
+        "operation": "update",
+        "state": "sent",
+        "idempotency_key": "idem-retry-001",
+        "payload_hash": "sha256:1b7edda508e4e8c699548a591d47b592cc29ecec3c168e3350dbb718b2b0c6bd",
+        "redaction_status": "not_required",
+        "payload": {
+          "summary": "retry same payload",
+          "external_ref": "ISSUE-2"
+        },
+        "sourceRefs": ["fixtures/platform/connectors/idempotent-retry/fixture.json#payload-1"]
+      },
+      {
+        "sync_id": "sync-retry-002",
+        "operating_record_id": "op-finding-retry",
+        "connector_id": "generic-tracker",
+        "external_system": "generic_tracker",
+        "direction": "outbound",
+        "operation": "update",
+        "state": "sent",
+        "idempotency_key": "idem-retry-001",
+        "payload_hash": "sha256:1b7edda508e4e8c699548a591d47b592cc29ecec3c168e3350dbb718b2b0c6bd",
+        "redaction_status": "not_required",
+        "payload": {
+          "summary": "retry same payload",
+          "external_ref": "ISSUE-2"
+        },
+        "sourceRefs": ["fixtures/platform/connectors/idempotent-retry/fixture.json#payload-2"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "accepted_count": 1,
+    "skipped_duplicate_count": 1
+  }
+}

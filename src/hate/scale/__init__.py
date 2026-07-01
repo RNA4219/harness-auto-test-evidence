@@ -16,6 +16,7 @@ from hate.scale.benchmark_catalog import (
     build_benchmark_catalog_report,
     evaluate_benchmark_catalog_fixture,
 )
+from hate.scale.platform_benchmark import build_platform_benchmark_report
 
 __all__ = [
     "ScaleFixtureManifest",
@@ -26,6 +27,7 @@ __all__ = [
     "validate_scale_fixture_manifest",
     "PerformanceBudgetInput",
     "build_benchmark_catalog_report",
+    "build_platform_benchmark_report",
     "evaluate_benchmark_catalog_fixture",
     "evaluate_performance_budget",
 ]

@@ -1,0 +1,20 @@
+{
+  "fixture_id": "output-budget-exceeded",
+  "input": {
+    "profile": "default",
+    "plugin": {
+      "plugin_id": "workspace-large-output",
+      "detector_id": "workspace.large",
+      "execution_mode": "subprocess_local",
+      "signed": true,
+      "trusted": true
+    },
+    "limits": {"timeout_ms": 30000, "max_output_bytes": 100, "max_input_bytes": 1048576, "network_mode": "none"},
+    "execution": {
+      "output_bytes": 512,
+      "output": {"schema_version": "HATE/v1", "detector_id": "workspace.large", "sourceRefs": ["fixture:/plugin/large-output"]}
+    },
+    "sourceRefs": ["fixtures/platform/plugin-sandbox/output-budget-exceeded/fixture.json"]
+  },
+  "expected": {"overall_status": "hold", "finding_code": "plugin_output_budget_exceeded"}
+}

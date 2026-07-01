@@ -1,0 +1,32 @@
+{
+  "fixture_id": "accepted-debt-invalid-expiry",
+  "description": "Accepted risk debt with an invalid expiry date is held as an operating finding.",
+  "input": {
+    "as_of_date": "2026-07-01",
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-accept-invalid-expiry",
+        "sequence": 1,
+        "event_type": "risk_debt_accepted",
+        "operating_record_id": "op-risk-invalid-expiry",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-invalid-expiry",
+        "severity": "medium",
+        "readiness_effect": "soft_gap",
+        "owner": "qa-owner",
+        "due_date": "2026-07-15",
+        "expiry_date": "not-a-date",
+        "decision_basis": ["temporary accepted risk"],
+        "evidence_refs": ["manual-review-invalid-expiry"],
+        "sourceRefs": ["fixtures/platform/operations/accepted-debt-invalid-expiry/fixture.json#accepted"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "status": "accepted",
+    "finding_code": "operating_accepted_debt_invalid_expiry"
+  }
+}

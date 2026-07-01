@@ -1,0 +1,23 @@
+{
+  "fixture_id": "orphan-artifact-metadata",
+  "input": {
+    "store_mode": "local-jsonl",
+    "tables": [],
+    "indexes": [],
+    "restore": {
+      "append_only_event_counts_match": true,
+      "projection_hash_matches": true,
+      "legal_hold_count": 0,
+      "checksum": "sha256:orphan",
+      "resolved_artifact_refs": []
+    },
+    "artifact_metadata": [
+      {"artifact_id": "artifact-orphan", "referenced": true}
+    ],
+    "sourceRefs": ["fixtures/platform/store/orphan-artifact-metadata/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "finding_code": "platform_store_orphan_artifact_metadata"
+  }
+}

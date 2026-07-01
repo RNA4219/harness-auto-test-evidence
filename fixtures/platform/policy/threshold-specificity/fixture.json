@@ -1,0 +1,40 @@
+{
+  "fixture_id": "threshold-specificity",
+  "description": "Detector threshold resolution chooses repo_id + suite_id over broader layers.",
+  "input": {
+    "profile": "default",
+    "threshold_context": {
+      "detector": "test_integrity",
+      "signal": "mock_abuse_detected",
+      "repo_id": "hate",
+      "suite_id": "unit",
+      "repo_class": "medium",
+      "suite_kind": "pytest",
+      "risk_class": "high"
+    },
+    "base_policy": {
+      "schema_version": "HATE/v1",
+      "record_type": "platform-policy-config",
+      "policy_id": "policy-threshold",
+      "policy_version": "2026.07.01",
+      "profiles": {"default": {"inherits": null, "threshold_defaults": {"default": 0.7}}},
+      "thresholds": [
+        {"detector": "test_integrity", "signal": "mock_abuse_detected", "value": 0.4, "source_path": "thresholds.detector", "reason": "detector default"},
+        {"detector": "test_integrity", "signal": "mock_abuse_detected", "risk_class": "high", "value": 0.6, "source_path": "thresholds.risk", "reason": "risk high"},
+        {"detector": "test_integrity", "signal": "mock_abuse_detected", "repo_class": "medium", "suite_kind": "pytest", "value": 0.75, "source_path": "thresholds.repo_class", "reason": "medium pytest"},
+        {"detector": "test_integrity", "signal": "mock_abuse_detected", "repo_id": "hate", "suite_id": "unit", "value": 0.9, "source_path": "thresholds.repo_suite", "reason": "HATE unit suite"}
+      ],
+      "detectors": {},
+      "plugins": {"allow_unsigned": true, "allowlist": [], "denylist": [], "required_signature": false, "trusted_publishers": []},
+      "scheduler": {"max_concurrent_repos": 1, "lease_seconds": 60, "heartbeat_seconds": 10},
+      "retention": {"default_retention_days": 90, "unsafe_artifact_retention_days": 365, "audit_event_retention_days": 365, "legal_hold_override": true, "deletion_mode": "metadata_only"},
+      "artifact_safety": {},
+      "sourceRefs": ["fixtures/platform/policy/threshold-specificity/fixture.json#base"]
+    }
+  },
+  "expected": {
+    "overall_status": "pass",
+    "value": 0.9,
+    "source_layer": "repo_suite"
+  }
+}

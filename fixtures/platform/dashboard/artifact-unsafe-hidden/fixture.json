@@ -1,0 +1,28 @@
+{
+  "fixture_id": "artifact-unsafe-hidden",
+  "input": {
+    "required_views": ["artifact_quarantine"],
+    "views": [
+      {
+        "view_id": "artifact_quarantine",
+        "state": "unsafe_hidden",
+        "state_behaviors": ["redaction_reason", "approval_path"],
+        "scope": {"repo_id": "hate"},
+        "generated_at": "2026-07-01T00:00:00Z",
+        "stale": false,
+        "permissions": {"can_read": true, "can_view_raw": false},
+        "summary": {"quarantined": 1},
+        "items": [{"artifact_id": "artifact-unsafe", "redaction_reason": "secret"}],
+        "selected_item": {"artifact_id": "artifact-unsafe", "approval_path": "manual_review"},
+        "sourceRefs": ["fixtures/platform/dashboard/artifact-unsafe-hidden/fixture.json"],
+        "redactions": [{"field": "body", "reason": "secret"}],
+        "errors": [],
+        "layout": ["header", "summary_metrics", "filter_bar", "primary_table_or_timeline", "detail_panel", "sourceRefs_panel", "unsafe_redaction_notices"],
+        "columns": [{"id": "artifact_id", "label": "Artifact"}, {"id": "redaction_reason", "label": "Reason"}]
+      }
+    ],
+    "visual_acceptance": ["stable_table_labels", "distinct_non_ready_states", "score_breakdown_visible", "sourceRefs_reachable", "unsafe_body_never_rendered", "keyboard_focus_order_complete", "mobile_critical_information_preserved"],
+    "sourceRefs": ["fixtures/platform/dashboard/artifact-unsafe-hidden/fixture.json"]
+  },
+  "expected": {"overall_status": "pass", "unsafe_body_rendered": false}
+}

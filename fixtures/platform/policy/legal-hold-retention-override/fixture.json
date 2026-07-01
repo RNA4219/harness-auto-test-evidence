@@ -1,0 +1,27 @@
+{
+  "fixture_id": "legal-hold-retention-override",
+  "description": "Legal hold overrides requested full delete into tombstone retention behavior.",
+  "input": {
+    "profile": "default",
+    "retention_request": {"legal_hold_active": true, "deletion_mode": "full_delete"},
+    "base_policy": {
+      "schema_version": "HATE/v1",
+      "record_type": "platform-policy-config",
+      "policy_id": "policy-retention",
+      "policy_version": "2026.07.01",
+      "profiles": {"default": {"inherits": null, "unsigned_plugin_policy": "allow"}},
+      "thresholds": [],
+      "detectors": {},
+      "plugins": {"allow_unsigned": true, "allowlist": [], "denylist": [], "required_signature": false, "trusted_publishers": []},
+      "scheduler": {"max_concurrent_repos": 1, "lease_seconds": 60, "heartbeat_seconds": 10},
+      "retention": {"default_retention_days": 90, "unsafe_artifact_retention_days": 365, "audit_event_retention_days": 365, "legal_hold_override": true, "deletion_mode": "metadata_only"},
+      "artifact_safety": {},
+      "sourceRefs": ["fixtures/platform/policy/legal-hold-retention-override/fixture.json#base"]
+    }
+  },
+  "expected": {
+    "overall_status": "hold",
+    "effective_deletion_mode": "tombstone",
+    "finding_code": "platform_policy_legal_hold_overrides_full_delete"
+  }
+}

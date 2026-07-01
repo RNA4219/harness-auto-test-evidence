@@ -1,0 +1,12 @@
+{
+  "fixture_id": "degraded-query",
+  "input": {
+    "dataset_class": "bench-medium",
+    "seed": "bench-degraded",
+    "metrics": {"generation_time_ms": 1, "store_ingest_time_ms": 1, "projection_rebuild_time_ms": 1, "read_model_query_p50_ms": 40, "read_model_query_p95_ms": 5000, "read_model_query_p99_ms": 7000, "dashboard_view_model_generation_time_ms": 1, "scheduler_lease_scan_time_ms": 1, "artifact_metadata_query_time_ms": 1},
+    "budgets": {"ingest_budget_ms": 10, "projection_rebuild_budget_ms": 10, "read_model_p95_budget_ms": 100, "dashboard_view_model_p95_budget_ms": 10, "scheduler_lease_scan_budget_ms": 10, "artifact_metadata_query_budget_ms": 10},
+    "baseline": {"hardware_class": "ci", "os": "Windows", "python_version": "3.12", "storage_mode": "sqlite", "dataset_class": "bench-medium", "seed": "bench-degraded", "policy_hash": "sha256:policy"},
+    "degradations": ["degraded_query"]
+  },
+  "expected": {"overall_status": "hold", "finding_code": "platform_benchmark_budget_exceeded", "degradation": "degraded_query"}
+}

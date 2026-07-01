@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/platform-connector-sync-report.schema.json",
+  "title": "HATE Platform Connector Sync Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "sync_payloads",
+    "accepted_payloads",
+    "denied_payloads",
+    "skipped_duplicate_payloads",
+    "generated_operating_events",
+    "findings",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "platform-connector-sync-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "sync_payloads": {"type": "array", "items": {"$ref": "#/$defs/syncPayload"}},
+    "accepted_payloads": {"type": "array", "items": {"$ref": "#/$defs/syncPayload"}},
+    "denied_payloads": {"type": "array", "items": {"$ref": "#/$defs/syncPayload"}},
+    "skipped_duplicate_payloads": {"type": "array", "items": {"$ref": "#/$defs/syncPayload"}},
+    "generated_operating_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "schema_version",
+          "record_type",
+          "event_id",
+          "sequence",
+          "event_type",
+          "operating_record_id",
+          "entity_kind",
+          "entity_id",
+          "external_system",
+          "external_ref",
+          "external_status",
+          "sync_direction",
+          "sync_status",
+          "sync_error",
+          "sourceRefs"
+        ],
+        "properties": {
+          "schema_version": {"const": "HATE/v1"},
+          "record_type": {"const": "operating-event-record"},
+          "event_id": {"type": "string", "minLength": 1},
+          "sequence": {"type": "integer", "minimum": 1},
+          "event_type": {"type": "string", "enum": ["tracker_sync_completed", "tracker_sync_failed", "notification_sent", "notification_failed"]},
+          "operating_record_id": {"type": "string"},
+          "entity_kind": {"type": "string"},
+          "entity_id": {"type": "string"},
+          "external_system": {"type": "string"},
+          "external_ref": {"type": "string"},
+          "external_status": {"type": "string"},
+          "sync_direction": {"type": "string", "enum": ["outbound", "inbound_ack", ""]},
+          "sync_status": {"type": "string"},
+          "sync_error": {"type": "string"},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "readiness_effect", "message", "sync_id", "operating_record_id", "sourceRefs"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "connector_sync_required_field_missing",
+              "connector_sync_invalid_direction",
+              "connector_sync_invalid_operation",
+              "connector_sync_invalid_state",
+              "connector_sync_idempotency_key_reused_with_different_payload",
+              "connector_sync_payload_hash_mismatch",
+              "connector_sync_redaction_not_safe",
+              "connector_sync_unsafe_payload_denied",
+              "connector_sync_inbound_ack_mutation_denied",
+              "connector_sync_external_close_failure_non_canonical"
+            ]
+          },
+          "severity": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+          "readiness_effect": {"type": "string", "enum": ["none", "soft_gap", "hold"]},
+          "message": {"type": "string", "minLength": 1},
+          "sync_id": {"type": "string"},
+          "operating_record_id": {"type": "string"},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}},
+          "missing_fields": {"type": "array", "items": {"type": "string"}},
+          "expected_hash": {"type": "string"},
+          "forbidden_fields": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "payload_count",
+        "accepted_count",
+        "denied_count",
+        "skipped_duplicate_count",
+        "finding_count",
+        "generated_event_count"
+      ],
+      "properties": {
+        "payload_count": {"type": "integer", "minimum": 0},
+        "accepted_count": {"type": "integer", "minimum": 0},
+        "denied_count": {"type": "integer", "minimum": 0},
+        "skipped_duplicate_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0},
+        "generated_event_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "syncPayload": {
+      "type": "object",
+      "required": [
+        "sync_id",
+        "operating_record_id",
+        "connector_id",
+        "external_system",
+        "direction",
+        "operation",
+        "idempotency_key",
+        "payload_hash",
+        "redaction_status",
+        "sourceRefs",
+        "payload",
+        "state",
+        "safe_summary"
+      ],
+      "properties": {
+        "sync_id": {"type": "string"},
+        "operating_record_id": {"type": "string"},
+        "connector_id": {"type": "string"},
+        "external_system": {"type": "string"},
+        "direction": {"type": "string", "enum": ["outbound", "inbound_ack", ""]},
+        "operation": {"type": "string", "enum": ["create", "update", "comment", "close", "ack", ""]},
+        "idempotency_key": {"type": "string"},
+        "payload_hash": {"type": "string"},
+        "redaction_status": {"type": "string", "enum": ["not_required", "redacted", ""]},
+        "sourceRefs": {"type": "array", "items": {"type": "string"}},
+        "payload": {"type": "object"},
+        "state": {
+          "type": "string",
+          "enum": ["queued", "prepared", "sent", "acknowledged", "failed_retryable", "failed_terminal", "cancelled"]
+        },
+        "safe_summary": {"type": "object"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

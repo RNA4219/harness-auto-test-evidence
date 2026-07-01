@@ -1,0 +1,28 @@
+{
+  "fixture_id": "builtin-pass",
+  "input": {
+    "profile": "release",
+    "plugin": {
+      "plugin_id": "builtin-test-integrity",
+      "detector_id": "hate.test_integrity",
+      "execution_mode": "in_process_builtin",
+      "signed": true,
+      "trusted": true
+    },
+    "input_bundle": {"redacted_canonical_input": true, "read_only_artifact_metadata": true},
+    "limits": {
+      "timeout_ms": 30000,
+      "max_output_bytes": 1048576,
+      "max_input_bytes": 1048576,
+      "max_memory_mb": 512,
+      "filesystem_allowlist": ["workspace:/fixtures"],
+      "network_mode": "none"
+    },
+    "execution": {
+      "output_bytes": 128,
+      "output": {"schema_version": "HATE/v1", "detector_id": "hate.test_integrity", "sourceRefs": ["fixture:/plugin/builtin"]}
+    },
+    "sourceRefs": ["fixtures/platform/plugin-sandbox/builtin-pass/fixture.json"]
+  },
+  "expected": {"overall_status": "pass", "allowed": true}
+}

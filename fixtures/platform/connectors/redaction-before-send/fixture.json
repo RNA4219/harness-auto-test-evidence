@@ -1,0 +1,48 @@
+{
+  "fixture_id": "redaction-before-send",
+  "description": "Redacted safe payload may be sent, while raw unsafe artifact fields are denied before send.",
+  "input": {
+    "sync_payloads": [
+      {
+        "sync_id": "sync-redacted-safe",
+        "operating_record_id": "op-finding-webhook",
+        "connector_id": "webhook-safe",
+        "external_system": "webhook",
+        "direction": "outbound",
+        "operation": "create",
+        "state": "prepared",
+        "idempotency_key": "idem-webhook-safe",
+        "payload_hash": "sha256:f92232de2019d73e890fcec1b3c349051384194b3b6dfd44c2a8a07ff20f1249",
+        "redaction_status": "redacted",
+        "payload": {
+          "summary": "safe redacted payload",
+          "external_ref": "webhook-1"
+        },
+        "sourceRefs": ["fixtures/platform/connectors/redaction-before-send/fixture.json#safe"]
+      },
+      {
+        "sync_id": "sync-redacted-unsafe",
+        "operating_record_id": "op-finding-webhook",
+        "connector_id": "webhook-unsafe",
+        "external_system": "webhook",
+        "direction": "outbound",
+        "operation": "create",
+        "state": "prepared",
+        "idempotency_key": "idem-webhook-unsafe",
+        "payload_hash": "sha256:79e01bee35e79cd57606377a58e68bce96fd37879021f962be5f005f2a32a01a",
+        "redaction_status": "redacted",
+        "payload": {
+          "summary": "unsafe raw body",
+          "raw_artifact_body": "secret=abc123"
+        },
+        "sourceRefs": ["fixtures/platform/connectors/redaction-before-send/fixture.json#unsafe"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "accepted_count": 1,
+    "denied_count": 1,
+    "finding_code": "connector_sync_unsafe_payload_denied"
+  }
+}

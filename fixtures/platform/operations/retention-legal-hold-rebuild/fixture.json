@@ -1,0 +1,77 @@
+{
+  "fixture_id": "retention-legal-hold-rebuild",
+  "description": "Retention, legal hold, and projection rebuild events remain attached to the operating projection.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-risk-accepted-rebuild",
+        "sequence": 1,
+        "event_type": "risk_debt_accepted",
+        "operating_record_id": "op-risk-rebuild",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-rebuild",
+        "severity": "high",
+        "readiness_effect": "soft_gap",
+        "owner": "qa-owner",
+        "due_date": "2026-07-15",
+        "expiry_date": "2026-08-01",
+        "decision_basis": ["accepted with expiry"],
+        "evidence_refs": ["manual-review-rebuild"],
+        "sourceRefs": ["fixtures/platform/operations/retention-legal-hold-rebuild/fixture.json#accepted"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-retention-applied",
+        "sequence": 2,
+        "event_type": "retention_applied",
+        "operating_record_id": "op-risk-rebuild",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-rebuild",
+        "severity": "high",
+        "readiness_effect": "soft_gap",
+        "retention_policy_id": "retention-ops-365",
+        "sourceRefs": ["fixtures/platform/operations/retention-legal-hold-rebuild/fixture.json#retention"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-legal-hold",
+        "sequence": 3,
+        "event_type": "legal_hold_applied",
+        "operating_record_id": "op-risk-rebuild",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-rebuild",
+        "severity": "high",
+        "readiness_effect": "soft_gap",
+        "legal_hold_id": "legal-hold-001",
+        "sourceRefs": ["fixtures/platform/operations/retention-legal-hold-rebuild/fixture.json#hold"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-projection-rebuilt",
+        "sequence": 4,
+        "event_type": "projection_rebuilt",
+        "operating_record_id": "op-risk-rebuild",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-rebuild",
+        "severity": "high",
+        "readiness_effect": "soft_gap",
+        "rebuild_id": "rebuild-001",
+        "previous_event_hash": "hash-003",
+        "event_hash": "hash-004",
+        "sourceRefs": ["fixtures/platform/operations/retention-legal-hold-rebuild/fixture.json#rebuild"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "status": "accepted",
+    "retention_policy_id": "retention-ops-365",
+    "legal_hold_id": "legal-hold-001",
+    "rebuild_id": "rebuild-001"
+  }
+}

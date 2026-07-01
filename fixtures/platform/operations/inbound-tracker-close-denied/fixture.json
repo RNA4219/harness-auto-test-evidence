@@ -1,0 +1,48 @@
+{
+  "fixture_id": "inbound-tracker-close-denied",
+  "description": "Inbound tracker close is mirrored but cannot resolve the canonical operating record.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-finding-open",
+        "sequence": 1,
+        "event_type": "finding_opened",
+        "operating_record_id": "op-finding-tracker",
+        "entity_kind": "finding",
+        "entity_id": "finding-tracker",
+        "severity": "high",
+        "readiness_effect": "hold",
+        "owner": "qa-owner",
+        "due_date": "2026-07-15",
+        "decision_basis": ["external issue mirrors finding"],
+        "sourceRefs": ["fixtures/platform/operations/inbound-tracker-close-denied/fixture.json#open"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-tracker-ack",
+        "sequence": 2,
+        "event_type": "tracker_sync_completed",
+        "operating_record_id": "op-finding-tracker",
+        "entity_kind": "finding",
+        "entity_id": "finding-tracker",
+        "severity": "high",
+        "readiness_effect": "hold",
+        "external_system": "github_issue",
+        "external_ref": "https://example.invalid/issues/123",
+        "external_status": "closed",
+        "sync_direction": "inbound",
+        "sync_status": "acknowledged",
+        "last_synced_at": "2026-07-01T10:00:00Z",
+        "sourceRefs": ["fixtures/platform/operations/inbound-tracker-close-denied/fixture.json#ack"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "status": "open",
+    "finding_code": "operating_inbound_tracker_close_denied"
+  }
+}

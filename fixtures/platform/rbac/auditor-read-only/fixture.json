@@ -1,0 +1,17 @@
+{
+  "fixture_id": "auditor-read-only",
+  "input": {
+    "request": {
+      "actor": {"actor_id": "auditor-1", "role": "auditor", "tenant_id": "tenant-a"},
+      "resource": {"type": "finding", "id": "finding-1", "tenant_id": "tenant-a"},
+      "action": "resolve",
+      "sourceRefs": ["fixtures/platform/rbac/auditor-read-only/fixture.json"]
+    }
+  },
+  "expected": {
+    "overall_status": "pass",
+    "decision": "deny",
+    "reason": "role_permission_denied",
+    "http_status": 403
+  }
+}

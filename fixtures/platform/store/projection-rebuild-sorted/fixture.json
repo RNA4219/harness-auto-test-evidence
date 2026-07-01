@@ -1,0 +1,59 @@
+{
+  "fixture_id": "projection-rebuild-sorted",
+  "description": "Projection rebuild sorts append-only events by sequence before reducing current state.",
+  "input": {
+    "verify_event_stream": true,
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-sort-002",
+        "sequence": 2,
+        "occurred_at": "2026-07-01T00:02:00Z",
+        "event_type": "risk_debt_resolved",
+        "operating_record_id": "op-rebuild-sort",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-rebuild-sort",
+        "severity": "high",
+        "readiness_effect": "none",
+        "owner": "qa-owner",
+        "due_date": "2026-07-10",
+        "expiry_date": "2026-08-01",
+        "actor": "system",
+        "decision_basis": ["oracle added"],
+        "evidence_refs": ["contract-test-sort"],
+        "previous_event_hash": "hash-001",
+        "event_hash": "hash-002",
+        "sourceRefs": ["fixtures/platform/store/projection-rebuild-sorted/fixture.json#event-2"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-sort-001",
+        "sequence": 1,
+        "occurred_at": "2026-07-01T00:01:00Z",
+        "event_type": "risk_debt_accepted",
+        "operating_record_id": "op-rebuild-sort",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-rebuild-sort",
+        "severity": "high",
+        "readiness_effect": "soft_gap",
+        "owner": "qa-owner",
+        "due_date": "2026-07-10",
+        "expiry_date": "2026-08-01",
+        "actor": "system",
+        "decision_basis": ["accepted debt"],
+        "evidence_refs": ["manual-review-sort"],
+        "event_hash": "hash-001",
+        "sourceRefs": ["fixtures/platform/store/projection-rebuild-sorted/fixture.json#event-1"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "status": "resolved",
+    "first_event_id": "evt-sort-001",
+    "last_event_id": "evt-sort-002",
+    "event_stream_finding_count": 0
+  }
+}

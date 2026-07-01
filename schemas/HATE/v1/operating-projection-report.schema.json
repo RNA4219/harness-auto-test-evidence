@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/operating-projection-report.schema.json",
+  "title": "HATE Operating Projection Report",
+  "type": "object",
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "events", "records", "findings", "summary", "sourceRefs"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "operating-projection-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "events": {"type": "array", "items": {"$ref": "operating-event-record.schema.json"}},
+    "records": {"type": "array", "items": {"$ref": "operating-finding-record.schema.json"}},
+    "findings": {"type": "array"},
+    "summary": {"type": "object"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

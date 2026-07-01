@@ -1,0 +1,26 @@
+{
+  "fixture_id": "repo-regression-detail",
+  "input": {
+    "required_views": ["repo_detail"],
+    "views": [
+      {
+        "view_id": "repo_detail",
+        "scope": {"repo_id": "hate"},
+        "generated_at": "2026-07-01T00:00:00Z",
+        "stale": false,
+        "permissions": {"can_read": true},
+        "summary": {"suite_status": "regressed", "regression_count": 1},
+        "items": [{"suite_id": "unit", "status": "hold", "regression": true}],
+        "selected_item": {"suite_id": "unit", "score_breakdown": {"oracle": -0.15}},
+        "sourceRefs": ["fixtures/platform/dashboard/repo-regression-detail/fixture.json"],
+        "redactions": [],
+        "errors": [],
+        "layout": ["header", "summary_metrics", "filter_bar", "primary_table_or_timeline", "detail_panel", "sourceRefs_panel", "unsafe_redaction_notices"],
+        "columns": [{"id": "suite_id", "label": "Suite"}, {"id": "status", "label": "Status"}]
+      }
+    ],
+    "visual_acceptance": ["stable_table_labels", "distinct_non_ready_states", "score_breakdown_visible", "sourceRefs_reachable", "unsafe_body_never_rendered", "keyboard_focus_order_complete", "mobile_critical_information_preserved"],
+    "sourceRefs": ["fixtures/platform/dashboard/repo-regression-detail/fixture.json"]
+  },
+  "expected": {"overall_status": "pass", "regression_count": 1}
+}

@@ -1,0 +1,18 @@
+{
+  "fixture_id": "crash-isolated",
+  "input": {
+    "profile": "default",
+    "plugin": {
+      "plugin_id": "workspace-crash",
+      "detector_id": "workspace.crash",
+      "execution_mode": "subprocess_local",
+      "signed": true,
+      "trusted": true,
+      "required_blocking": false
+    },
+    "limits": {"timeout_ms": 30000, "max_output_bytes": 1048576, "max_input_bytes": 1048576, "network_mode": "none"},
+    "execution": {"crashed": true, "output_bytes": 0},
+    "sourceRefs": ["fixtures/platform/plugin-sandbox/crash-isolated/fixture.json"]
+  },
+  "expected": {"overall_status": "hold", "finding_code": "plugin_execution_failed", "platform_continues": true}
+}

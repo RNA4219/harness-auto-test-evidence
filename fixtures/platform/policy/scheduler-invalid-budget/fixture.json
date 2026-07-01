@@ -1,0 +1,51 @@
+{
+  "fixture_id": "scheduler-invalid-budget",
+  "description": "Scheduler budget rejects invalid concurrency and heartbeat/lease relationship.",
+  "input": {
+    "profile": "default",
+    "base_policy": {
+      "schema_version": "HATE/v1",
+      "record_type": "platform-policy-config",
+      "policy_id": "policy-scheduler-invalid",
+      "policy_version": "2026.07.01",
+      "profiles": {
+        "default": {"inherits": null, "unsigned_plugin_policy": "allow"}
+      },
+      "thresholds": [],
+      "detectors": {},
+      "plugins": {
+        "allow_unsigned": true,
+        "allowlist": [],
+        "denylist": [],
+        "required_signature": false,
+        "trusted_publishers": []
+      },
+      "scheduler": {
+        "max_concurrent_repos": 0,
+        "max_concurrent_suites": -1,
+        "max_concurrent_plugins": 2,
+        "lease_seconds": 30,
+        "heartbeat_seconds": 30,
+        "command_timeout_profiles": {"large": 2700000},
+        "retry_policy": {"max_attempts": 2}
+      },
+      "retention": {
+        "default_retention_days": 90,
+        "unsafe_artifact_retention_days": 365,
+        "audit_event_retention_days": 365,
+        "legal_hold_override": true,
+        "deletion_mode": "metadata_only"
+      },
+      "artifact_safety": {},
+      "sourceRefs": ["fixtures/platform/policy/scheduler-invalid-budget/fixture.json#base"]
+    }
+  },
+  "expected": {
+    "overall_status": "hold",
+    "finding_codes": [
+      "platform_policy_scheduler_repo_budget_invalid",
+      "platform_policy_scheduler_suite_budget_invalid",
+      "platform_policy_scheduler_heartbeat_not_less_than_lease"
+    ]
+  }
+}

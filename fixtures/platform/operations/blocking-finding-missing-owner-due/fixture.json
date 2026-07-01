@@ -1,0 +1,29 @@
+{
+  "fixture_id": "blocking-finding-missing-owner-due",
+  "description": "Open blocking finding without owner or due date holds readiness.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-blocking-open",
+        "sequence": 1,
+        "event_type": "finding_opened",
+        "operating_record_id": "op-blocking-missing-owner-due",
+        "entity_kind": "finding",
+        "entity_id": "finding-blocking",
+        "severity": "critical",
+        "readiness_effect": "hold",
+        "owner": "",
+        "due_date": "",
+        "decision_basis": ["critical finding requires owner queue"],
+        "sourceRefs": ["fixtures/platform/operations/blocking-finding-missing-owner-due/fixture.json#open"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "status": "open",
+    "finding_code": "operating_blocking_record_missing_owner_or_due_date"
+  }
+}

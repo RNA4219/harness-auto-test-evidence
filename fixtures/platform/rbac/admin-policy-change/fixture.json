@@ -1,0 +1,17 @@
+{
+  "fixture_id": "admin-policy-change",
+  "input": {
+    "request": {
+      "actor": {"actor_id": "admin-1", "role": "admin", "tenant_id": "tenant-a"},
+      "resource": {"type": "policy", "id": "policy-main", "tenant_id": "tenant-a"},
+      "action": "change",
+      "sourceRefs": ["fixtures/platform/rbac/admin-policy-change/fixture.json"]
+    }
+  },
+  "expected": {
+    "overall_status": "pass",
+    "decision": "allow",
+    "reason": "role_permission_allowed",
+    "http_status": 200
+  }
+}

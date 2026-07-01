@@ -1,0 +1,25 @@
+{
+  "fixture_id": "raw-artifact-approval",
+  "input": {
+    "request": {
+      "actor": {"actor_id": "admin-1", "role": "admin", "tenant_id": "tenant-a"},
+      "resource": {"type": "artifact", "id": "artifact-safe-1", "tenant_id": "tenant-a"},
+      "action": "raw_access",
+      "artifact": {
+        "safety_state": "approved_raw",
+        "approval_event_ref": "audit/raw-approval-1",
+        "purpose": "incident investigation",
+        "expiry": "2026-07-15",
+        "audit_event_ref": "audit/raw-access-1"
+      },
+      "sourceRefs": ["fixtures/platform/rbac/raw-artifact-approval/fixture.json"]
+    }
+  },
+  "expected": {
+    "overall_status": "pass",
+    "decision": "allow",
+    "reason": "raw_artifact_access_approved",
+    "raw_artifact_returned": true,
+    "http_status": 200
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "fixture_id": "dedupe-target-missing",
+  "description": "Deduplicated finding must point at an existing operating record.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-open-duplicate",
+        "sequence": 1,
+        "event_type": "finding_opened",
+        "operating_record_id": "op-duplicate-001",
+        "entity_kind": "finding",
+        "entity_id": "finding-duplicate-001",
+        "severity": "medium",
+        "readiness_effect": "hold",
+        "owner": "qa-owner",
+        "due_date": "2026-07-10",
+        "expiry_date": "",
+        "decision_basis": ["duplicate of another finding"],
+        "evidence_refs": ["evidence-duplicate"],
+        "sourceRefs": ["fixtures/platform/operations/dedupe-target-missing/fixture.json#open"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-dedupe-missing-target",
+        "sequence": 2,
+        "event_type": "finding_deduplicated",
+        "operating_record_id": "op-duplicate-001",
+        "entity_kind": "finding",
+        "entity_id": "finding-duplicate-001",
+        "severity": "medium",
+        "readiness_effect": "none",
+        "owner": "qa-owner",
+        "due_date": "2026-07-10",
+        "expiry_date": "",
+        "decision_basis": ["deduplicated"],
+        "evidence_refs": ["evidence-duplicate"],
+        "superseding_record_id": "op-canonical-missing",
+        "sourceRefs": ["fixtures/platform/operations/dedupe-target-missing/fixture.json#dedupe"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "status": "merged",
+    "finding_code": "operating_dedupe_target_not_found"
+  }
+}

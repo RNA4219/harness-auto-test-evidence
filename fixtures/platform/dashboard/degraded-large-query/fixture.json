@@ -1,0 +1,28 @@
+{
+  "fixture_id": "degraded-large-query",
+  "input": {
+    "required_views": ["portfolio_overview"],
+    "views": [
+      {
+        "view_id": "portfolio_overview",
+        "state": "degraded",
+        "state_behaviors": ["performance_budget_exceeded", "reduced_data_mode"],
+        "scope": {"org": "local"},
+        "generated_at": "2026-07-01T00:00:00Z",
+        "stale": true,
+        "permissions": {"can_read": true},
+        "summary": {"mode": "reduced", "omitted_items": 50000},
+        "items": [],
+        "selected_item": {},
+        "sourceRefs": ["fixtures/platform/dashboard/degraded-large-query/fixture.json"],
+        "redactions": [],
+        "errors": [{"code": "dashboard_degraded_large_query"}],
+        "layout": ["header", "summary_metrics", "filter_bar", "primary_table_or_timeline", "detail_panel", "sourceRefs_panel", "unsafe_redaction_notices"],
+        "columns": [{"id": "mode", "label": "Mode"}]
+      }
+    ],
+    "visual_acceptance": ["stable_table_labels", "distinct_non_ready_states", "score_breakdown_visible", "sourceRefs_reachable", "unsafe_body_never_rendered", "keyboard_focus_order_complete", "mobile_critical_information_preserved"],
+    "sourceRefs": ["fixtures/platform/dashboard/degraded-large-query/fixture.json"]
+  },
+  "expected": {"overall_status": "pass", "state": "degraded"}
+}

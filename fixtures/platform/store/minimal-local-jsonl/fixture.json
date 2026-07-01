@@ -1,0 +1,59 @@
+{
+  "fixture_id": "minimal-local-jsonl",
+  "input": {
+    "store_mode": "local-jsonl",
+    "tables": [
+      {"name": "run_history", "key": "run_id"},
+      {"name": "run_suite_result", "key": "run_id,repo_id,suite_id"},
+      {"name": "score_history", "key": "score_id"},
+      {"name": "baseline_event", "key": "baseline_event_id"},
+      {"name": "operating_event", "key": "event_id"},
+      {"name": "operating_projection", "key": "operating_record_id"},
+      {"name": "policy_snapshot", "key": "policy_hash"},
+      {"name": "plugin_execution", "key": "plugin_execution_id"},
+      {"name": "artifact_metadata", "key": "artifact_id"},
+      {"name": "scheduler_job", "key": "job_id"},
+      {"name": "audit_event", "key": "audit_event_id"}
+    ],
+    "indexes": [
+      "idx_run_repo_time",
+      "idx_run_source_version",
+      "idx_suite_status",
+      "idx_score_repo_time",
+      "idx_operating_status_due",
+      "idx_operating_owner",
+      "idx_operating_entity",
+      "idx_policy_hash",
+      "idx_artifact_state",
+      "idx_scheduler_state_lease"
+    ],
+    "events": [
+      {
+        "table": "operating_event",
+        "sequence": 1,
+        "event_id": "evt-1",
+        "occurred_at": "2026-07-01T00:00:00Z",
+        "actor": "system",
+        "sourceRefs": ["fixtures/platform/store/minimal-local-jsonl/fixture.json#evt-1"],
+        "previous_event_hash": "",
+        "event_hash": "hash-1"
+      },
+      {
+        "table": "operating_event",
+        "sequence": 2,
+        "event_id": "evt-2",
+        "occurred_at": "2026-07-01T00:01:00Z",
+        "actor": "system",
+        "sourceRefs": ["fixtures/platform/store/minimal-local-jsonl/fixture.json#evt-2"],
+        "previous_event_hash": "hash-1",
+        "event_hash": "hash-2"
+      }
+    ],
+    "sourceRefs": ["fixtures/platform/store/minimal-local-jsonl/fixture.json"]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "table_count": 11,
+    "index_count": 10
+  }
+}

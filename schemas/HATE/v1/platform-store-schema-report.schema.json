@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/platform-store-schema-report.schema.json",
+  "title": "HATE Platform Store Schema Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "store_mode",
+    "logical_tables",
+    "required_indexes",
+    "event_ordering",
+    "migration_decision",
+    "backup_restore_decision",
+    "findings",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "platform-store-schema-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "store_mode": {"type": "string", "enum": ["local-jsonl", "sqlite", "postgres", ""]},
+    "logical_tables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["table", "key", "present"],
+        "properties": {
+          "table": {"type": "string", "minLength": 1},
+          "key": {"type": "string", "minLength": 1},
+          "present": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "required_indexes": {"type": "array", "items": {"type": "string"}},
+    "event_ordering": {
+      "type": "object",
+      "required": ["event_count", "sequences", "projection_hash"],
+      "properties": {
+        "event_count": {"type": "integer", "minimum": 0},
+        "sequences": {"type": "array"},
+        "projection_hash": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "migration_decision": {
+      "type": "object",
+      "required": ["migration_id", "status", "legal_hold_preserved", "raw_access_audit_preserved"],
+      "properties": {
+        "migration_id": {"type": "string"},
+        "status": {"type": "string"},
+        "legal_hold_preserved": {"type": "boolean"},
+        "raw_access_audit_preserved": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "backup_restore_decision": {
+      "type": "object",
+      "required": [
+        "backup_id",
+        "checksum_matches",
+        "projection_hash_matches",
+        "legal_hold_count_matches",
+        "artifact_metadata_count"
+      ],
+      "properties": {
+        "backup_id": {"type": "string"},
+        "checksum_matches": {"type": "boolean"},
+        "projection_hash_matches": {"type": "boolean"},
+        "legal_hold_count_matches": {"type": "boolean"},
+        "artifact_metadata_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "readiness_effect", "message", "sourceRefs"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "platform_store_mode_unknown",
+              "platform_store_logical_table_missing",
+              "platform_store_logical_table_key_mismatch",
+              "platform_store_required_index_missing",
+              "platform_store_append_event_field_missing",
+              "platform_store_event_duplicate_id",
+              "projection_rebuild_failed_event_gap",
+              "platform_store_event_sequence_invalid",
+              "projection_rebuild_failed_hash_continuity",
+              "platform_store_migration_field_missing",
+              "platform_store_migration_legal_hold_lost",
+              "platform_store_migration_debt_expiry_rewritten",
+              "platform_store_migration_score_history_unpreserved",
+              "platform_store_migration_raw_access_audit_removed",
+              "platform_store_backup_field_missing",
+              "platform_store_restore_event_count_mismatch",
+              "platform_store_restore_projection_hash_mismatch",
+              "platform_store_restore_legal_hold_count_mismatch",
+              "platform_store_restore_checksum_mismatch",
+              "platform_store_orphan_artifact_metadata"
+            ]
+          },
+          "severity": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+          "readiness_effect": {"type": "string", "enum": ["none", "soft_gap", "hold"]},
+          "message": {"type": "string", "minLength": 1},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}},
+          "store_mode": {"type": "string"},
+          "table": {"type": "string"},
+          "expected_key": {"type": "string"},
+          "index": {"type": "string"},
+          "event_id": {"type": "string"},
+          "sequence": {"type": "integer"},
+          "field": {"type": "string"},
+          "artifact_id": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["table_count", "index_count", "event_count", "artifact_metadata_count", "finding_count"],
+      "properties": {
+        "table_count": {"type": "integer", "minimum": 0},
+        "index_count": {"type": "integer", "minimum": 0},
+        "event_count": {"type": "integer", "minimum": 0},
+        "artifact_metadata_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

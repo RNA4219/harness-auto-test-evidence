@@ -1,0 +1,26 @@
+{
+  "fixture_id": "mobile-critical-summary",
+  "input": {
+    "required_views": ["manual_review_queue"],
+    "views": [
+      {
+        "view_id": "manual_review_queue",
+        "scope": {"repo_id": "hate", "viewport": "mobile"},
+        "generated_at": "2026-07-01T00:00:00Z",
+        "stale": false,
+        "permissions": {"can_read": true},
+        "summary": {"blocking_reviews": 1, "critical_visible": true},
+        "items": [{"review_id": "mr-1", "required_decision": "approve_or_reject", "blocking": true}],
+        "selected_item": {"review_id": "mr-1", "sourceRefs": ["manual-review/mr-1"]},
+        "sourceRefs": ["fixtures/platform/dashboard/mobile-critical-summary/fixture.json"],
+        "redactions": [],
+        "errors": [],
+        "layout": ["header", "summary_metrics", "filter_bar", "primary_table_or_timeline", "detail_panel", "sourceRefs_panel", "unsafe_redaction_notices"],
+        "columns": [{"id": "review_id", "label": "Review"}, {"id": "required_decision", "label": "Decision"}]
+      }
+    ],
+    "visual_acceptance": ["stable_table_labels", "distinct_non_ready_states", "score_breakdown_visible", "sourceRefs_reachable", "unsafe_body_never_rendered", "keyboard_focus_order_complete", "mobile_critical_information_preserved"],
+    "sourceRefs": ["fixtures/platform/dashboard/mobile-critical-summary/fixture.json"]
+  },
+  "expected": {"overall_status": "pass", "critical_visible": true}
+}

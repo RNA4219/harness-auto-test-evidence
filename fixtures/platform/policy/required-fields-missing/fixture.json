@@ -1,0 +1,37 @@
+{
+  "fixture_id": "required-fields-missing",
+  "description": "Missing required top-level platform policy fields becomes a hold finding.",
+  "input": {
+    "profile": "default",
+    "base_policy": {
+      "schema_version": "HATE/v1",
+      "record_type": "platform-policy-config",
+      "policy_id": "policy-missing-required",
+      "policy_version": "2026.07.01",
+      "profiles": {
+        "default": {"inherits": null, "unsigned_plugin_policy": "allow"}
+      },
+      "plugins": {
+        "allow_unsigned": true,
+        "allowlist": [],
+        "denylist": [],
+        "required_signature": false,
+        "trusted_publishers": []
+      },
+      "scheduler": {"max_concurrent_repos": 1, "lease_seconds": 60, "heartbeat_seconds": 10},
+      "retention": {
+        "default_retention_days": 90,
+        "unsafe_artifact_retention_days": 365,
+        "audit_event_retention_days": 365,
+        "legal_hold_override": true,
+        "deletion_mode": "metadata_only"
+      },
+      "sourceRefs": ["fixtures/platform/policy/required-fields-missing/fixture.json#base"]
+    }
+  },
+  "expected": {
+    "overall_status": "hold",
+    "finding_code": "platform_policy_required_field_missing",
+    "missing_fields": ["artifact_safety", "detectors", "thresholds"]
+  }
+}

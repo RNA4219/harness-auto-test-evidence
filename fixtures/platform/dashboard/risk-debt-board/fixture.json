@@ -1,0 +1,46 @@
+{
+  "fixture_id": "risk-debt-board",
+  "description": "Risk Debt Board shows accepted/expired debt with expiry and evidence refs.",
+  "input": {
+    "operating_projection_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "operating-projection-report",
+      "records": [
+        {
+          "operating_record_id": "op-debt-expired",
+          "entity_kind": "risk_debt",
+          "entity_id": "risk-expired",
+          "status": "expired",
+          "severity": "high",
+          "readiness_effect": "hold",
+          "owner": "qa-owner",
+          "expiry_date": "2026-06-30",
+          "evidence_refs": ["manual-review-expired"],
+          "decision_basis": ["accepted until oracle lands"],
+          "sourceRefs": ["fixtures/platform/dashboard/risk-debt-board/fixture.json#expired"]
+        },
+        {
+          "operating_record_id": "op-debt-accepted",
+          "entity_kind": "risk_debt",
+          "entity_id": "risk-accepted",
+          "status": "accepted",
+          "severity": "medium",
+          "readiness_effect": "soft_gap",
+          "owner": "qa-owner",
+          "expiry_date": "2026-08-01",
+          "evidence_refs": ["manual-review-accepted"],
+          "decision_basis": ["temporary acceptance"],
+          "sourceRefs": ["fixtures/platform/dashboard/risk-debt-board/fixture.json#accepted"]
+        }
+      ],
+      "findings": [],
+      "sourceRefs": ["fixtures/platform/dashboard/risk-debt-board/fixture.json"]
+    }
+  },
+  "expected": {
+    "view_id": "risk-debt-board",
+    "accepted_count": 1,
+    "expired_count": 1,
+    "first_record_id": "op-debt-expired"
+  }
+}

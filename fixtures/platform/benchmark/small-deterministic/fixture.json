@@ -1,0 +1,37 @@
+{
+  "fixture_id": "small-deterministic",
+  "input": {
+    "dataset_class": "bench-small",
+    "seed": "bench-seed-001",
+    "metrics": {
+      "generation_time_ms": 100,
+      "store_ingest_time_ms": 200,
+      "projection_rebuild_time_ms": 300,
+      "read_model_query_p50_ms": 10,
+      "read_model_query_p95_ms": 20,
+      "read_model_query_p99_ms": 30,
+      "dashboard_view_model_generation_time_ms": 40,
+      "scheduler_lease_scan_time_ms": 50,
+      "artifact_metadata_query_time_ms": 60
+    },
+    "budgets": {
+      "ingest_budget_ms": 1000,
+      "projection_rebuild_budget_ms": 1000,
+      "read_model_p95_budget_ms": 100,
+      "dashboard_view_model_p95_budget_ms": 100,
+      "scheduler_lease_scan_budget_ms": 100,
+      "artifact_metadata_query_budget_ms": 100
+    },
+    "baseline": {
+      "hardware_class": "local-dev",
+      "os": "Windows",
+      "python_version": "3.12",
+      "storage_mode": "local-jsonl",
+      "dataset_class": "bench-small",
+      "seed": "bench-seed-001",
+      "policy_hash": "sha256:policy"
+    },
+    "sourceRefs": ["fixtures/platform/benchmark/small-deterministic/fixture.json"]
+  },
+  "expected": {"overall_status": "pass", "repo_count": 10, "finding_count": 10000}
+}

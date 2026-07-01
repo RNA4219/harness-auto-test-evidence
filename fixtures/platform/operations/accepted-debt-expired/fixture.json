@@ -1,0 +1,32 @@
+{
+  "fixture_id": "accepted-debt-expired",
+  "description": "Accepted risk debt past expiry becomes expired in the projection and holds readiness.",
+  "input": {
+    "as_of_date": "2026-07-01",
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-accept-expired",
+        "sequence": 1,
+        "event_type": "risk_debt_accepted",
+        "operating_record_id": "op-risk-expired",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-expired",
+        "severity": "high",
+        "readiness_effect": "soft_gap",
+        "owner": "qa-owner",
+        "due_date": "2026-06-20",
+        "expiry_date": "2026-06-30",
+        "decision_basis": ["accepted until oracle lands"],
+        "evidence_refs": ["manual-review-expired"],
+        "sourceRefs": ["fixtures/platform/operations/accepted-debt-expired/fixture.json#accepted"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "status": "expired",
+    "finding_code": "operating_accepted_debt_expired"
+  }
+}

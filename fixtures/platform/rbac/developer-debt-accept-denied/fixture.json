@@ -1,0 +1,18 @@
+{
+  "fixture_id": "developer-debt-accept-denied",
+  "input": {
+    "request": {
+      "actor": {"actor_id": "dev-1", "role": "developer", "tenant_id": "tenant-a"},
+      "resource": {"type": "risk_debt", "id": "debt-1", "tenant_id": "tenant-a"},
+      "action": "accept",
+      "owned_resource": true,
+      "sourceRefs": ["fixtures/platform/rbac/developer-debt-accept-denied/fixture.json"]
+    }
+  },
+  "expected": {
+    "overall_status": "pass",
+    "decision": "deny",
+    "reason": "role_permission_denied",
+    "http_status": 403
+  }
+}

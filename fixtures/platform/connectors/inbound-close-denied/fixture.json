@@ -1,0 +1,31 @@
+{
+  "fixture_id": "inbound-close-denied",
+  "description": "Inbound ack cannot close or mutate canonical operating state.",
+  "input": {
+    "sync_payloads": [
+      {
+        "sync_id": "sync-inbound-close-001",
+        "operating_record_id": "op-finding-inbound",
+        "connector_id": "github-issue",
+        "external_system": "github_issue",
+        "direction": "inbound_ack",
+        "operation": "ack",
+        "state": "acknowledged",
+        "idempotency_key": "idem-inbound-close-001",
+        "payload_hash": "sha256:ccfe64e18aaa56a431714fbc6dfd278db25e750d49f997f20bdbbbb1590355e2",
+        "redaction_status": "not_required",
+        "payload": {
+          "external_status": "closed",
+          "external_ref": "ISSUE-1",
+          "owner": "external-user"
+        },
+        "sourceRefs": ["fixtures/platform/connectors/inbound-close-denied/fixture.json#payload"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "finding_code": "connector_sync_inbound_ack_mutation_denied",
+    "generated_event_type": "tracker_sync_failed"
+  }
+}

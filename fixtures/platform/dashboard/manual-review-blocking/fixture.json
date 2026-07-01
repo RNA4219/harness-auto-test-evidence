@@ -1,0 +1,34 @@
+{
+  "fixture_id": "manual-review-blocking",
+  "description": "Manual review queue keeps required decision visible through operating projection.",
+  "input": {
+    "operating_projection_report": {
+      "schema_version": "HATE/v1",
+      "record_type": "operating-projection-report",
+      "records": [
+        {
+          "operating_record_id": "op-review",
+          "entity_kind": "manual_review",
+          "entity_id": "review-001",
+          "status": "open",
+          "severity": "high",
+          "readiness_effect": "hold",
+          "owner": "review-owner",
+          "due_date": "2026-07-03",
+          "expiry_date": "2026-07-10",
+          "manual_review": {
+            "required_decision": "approve_or_reject_debt",
+            "blocking": true
+          },
+          "sourceRefs": ["fixtures/platform/dashboard/manual-review-blocking/fixture.json#review"]
+        }
+      ],
+      "findings": [],
+      "sourceRefs": ["fixtures/platform/dashboard/manual-review-blocking/fixture.json"]
+    }
+  },
+  "expected": {
+    "manual_review_record_id": "op-review",
+    "required_decision": "approve_or_reject_debt"
+  }
+}

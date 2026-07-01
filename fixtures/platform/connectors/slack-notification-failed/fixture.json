@@ -1,0 +1,30 @@
+{
+  "fixture_id": "slack-notification-failed",
+  "description": "Slack retryable failure writes notification_failed operating event without mutating canonical state.",
+  "input": {
+    "sync_payloads": [
+      {
+        "sync_id": "sync-slack-001",
+        "operating_record_id": "op-finding-slack",
+        "connector_id": "slack-release",
+        "external_system": "slack",
+        "direction": "outbound",
+        "operation": "comment",
+        "state": "failed_retryable",
+        "idempotency_key": "idem-slack-001",
+        "payload_hash": "sha256:296892553ca0445b3f826b65941aa819339012a1e2a5eaf7066ef1bd84959f57",
+        "redaction_status": "not_required",
+        "payload": {
+          "message": "release blocker notification",
+          "external_ref": "slack-msg-001"
+        },
+        "sourceRefs": ["fixtures/platform/connectors/slack-notification-failed/fixture.json#payload"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "generated_event_type": "notification_failed",
+    "sync_status": "failed_retryable"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/platform-rbac-matrix-report.schema.json",
+  "title": "HATE Platform RBAC Matrix Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "roles",
+    "resources",
+    "decision",
+    "findings",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "platform-rbac-matrix-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "roles": {
+      "type": "array",
+      "items": {"type": "string", "enum": ["admin", "maintainer", "developer", "auditor", "viewer", "service"]}
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["resource", "actions"],
+        "properties": {
+          "resource": {
+            "type": "string",
+            "enum": ["run", "finding", "risk_debt", "manual_review", "policy", "artifact", "audit_event", "scheduler"]
+          },
+          "actions": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": [
+        "actor_id",
+        "role",
+        "resource_type",
+        "resource_id",
+        "action",
+        "decision",
+        "reason",
+        "http_status",
+        "tenant_visible",
+        "restricted_payload_loaded",
+        "raw_artifact_returned",
+        "denial_record",
+        "sourceRefs"
+      ],
+      "properties": {
+        "actor_id": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "enum": ["admin", "maintainer", "developer", "auditor", "viewer", "service"]},
+        "resource_type": {
+          "type": "string",
+          "enum": ["run", "finding", "risk_debt", "manual_review", "policy", "artifact", "audit_event", "scheduler", ""]
+        },
+        "resource_id": {"type": "string"},
+        "action": {"type": "string"},
+        "decision": {"type": "string", "enum": ["allow", "deny"]},
+        "reason": {
+          "type": "string",
+          "enum": [
+            "role_permission_denied",
+            "unknown_role",
+            "unknown_resource_action",
+            "cross_tenant_hidden",
+            "same_tenant_resource_missing",
+            "legal_hold_bypass_denied",
+            "raw_artifact_role_denied",
+            "raw_artifact_safety_state_denied",
+            "raw_artifact_approval_required",
+            "raw_artifact_purpose_required",
+            "raw_artifact_expiry_required",
+            "raw_artifact_expiry_invalid",
+            "raw_artifact_audit_event_required",
+            "raw_artifact_access_approved",
+            "role_permission_allowed"
+          ]
+        },
+        "http_status": {"type": "integer", "minimum": 100},
+        "tenant_visible": {"type": "boolean"},
+        "restricted_payload_loaded": {"type": "boolean"},
+        "raw_artifact_returned": {"type": "boolean"},
+        "denial_record": {
+          "type": "object",
+          "properties": {
+            "reason": {"type": "string"},
+            "resource_type": {"type": "string"},
+            "resource_id": {"type": "string"},
+            "message": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "sourceRefs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "readiness_effect", "message", "sourceRefs"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "platform_rbac_denial_leaks_raw_path",
+              "platform_rbac_denial_leaks_secret",
+              "platform_rbac_payload_loaded_before_authz",
+              "platform_rbac_unsafe_raw_artifact_returned"
+            ]
+          },
+          "severity": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+          "readiness_effect": {"type": "string", "enum": ["none", "soft_gap", "hold"]},
+          "message": {"type": "string", "minLength": 1},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["decision", "http_status", "tenant_visible", "restricted_payload_loaded", "finding_count"],
+      "properties": {
+        "decision": {"type": "string", "enum": ["allow", "deny"]},
+        "http_status": {"type": "integer", "minimum": 100},
+        "tenant_visible": {"type": "boolean"},
+        "restricted_payload_loaded": {"type": "boolean"},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

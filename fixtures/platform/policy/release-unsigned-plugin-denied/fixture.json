@@ -1,0 +1,35 @@
+{
+  "fixture_id": "release-unsigned-plugin-denied",
+  "description": "Release profile denies unsigned plugin from unknown publisher.",
+  "input": {
+    "profile": "release",
+    "plugin_request": {"plugin_id": "plugin-unsafe", "publisher": "unknown", "signed": false},
+    "base_policy": {
+      "schema_version": "HATE/v1",
+      "record_type": "platform-policy-config",
+      "policy_id": "policy-release-plugin",
+      "policy_version": "2026.07.01",
+      "profiles": {
+        "default": {"inherits": null, "unsigned_plugin_policy": "allow"},
+        "strict": {"inherits": "default", "unsigned_plugin_policy": "deny"},
+        "release": {"inherits": "strict", "required_owner": true, "required_due_date": true}
+      },
+      "thresholds": [],
+      "detectors": {},
+      "plugins": {"allow_unsigned": false, "allowlist": [], "denylist": [], "required_signature": true, "trusted_publishers": ["trusted"]},
+      "scheduler": {"max_concurrent_repos": 1, "lease_seconds": 60, "heartbeat_seconds": 10},
+      "retention": {"default_retention_days": 90, "unsafe_artifact_retention_days": 365, "audit_event_retention_days": 365, "legal_hold_override": true, "deletion_mode": "metadata_only"},
+      "artifact_safety": {},
+      "sourceRefs": ["fixtures/platform/policy/release-unsigned-plugin-denied/fixture.json#base"]
+    }
+  },
+  "expected": {
+    "overall_status": "hold",
+    "allowed": false,
+    "finding_codes": [
+      "platform_policy_unsigned_plugin_denied",
+      "platform_policy_plugin_signature_required",
+      "platform_policy_unknown_publisher_denied"
+    ]
+  }
+}

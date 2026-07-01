@@ -1,0 +1,54 @@
+{
+  "fixture_id": "manual-review-no-evidence",
+  "description": "Resolved manual review without decision evidence remains a hold.",
+  "input": {
+    "as_of_date": "2026-07-01",
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-review-requested",
+        "sequence": 1,
+        "event_type": "manual_review_requested",
+        "operating_record_id": "op-review-001",
+        "entity_kind": "manual_review",
+        "entity_id": "review-001",
+        "severity": "high",
+        "readiness_effect": "hold",
+        "owner": "review-owner",
+        "due_date": "2026-07-05",
+        "expiry_date": "2026-07-10",
+        "required_decision": "approve_or_reject_debt",
+        "decision_basis": ["risk lacks executable oracle"],
+        "sourceRefs": ["fixtures/platform/operations/manual-review-no-evidence/fixture.json#requested"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-review-decided",
+        "sequence": 2,
+        "event_type": "manual_review_decided",
+        "operating_record_id": "op-review-001",
+        "entity_kind": "manual_review",
+        "entity_id": "review-001",
+        "severity": "high",
+        "readiness_effect": "hold",
+        "owner": "review-owner",
+        "due_date": "2026-07-05",
+        "expiry_date": "2026-07-10",
+        "reviewer": "human-reviewer",
+        "required_decision": "approve_or_reject_debt",
+        "decision_reason": "accepted without attaching evidence",
+        "blocking": true,
+        "decision_basis": ["manual decision"],
+        "evidence_refs": [],
+        "sourceRefs": ["fixtures/platform/operations/manual-review-no-evidence/fixture.json#decided"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "status": "resolved",
+    "finding_code": "operating_manual_review_decision_missing_evidence"
+  }
+}

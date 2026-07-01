@@ -1,0 +1,33 @@
+{
+  "fixture_id": "backup-restore-checksum",
+  "input": {
+    "store_mode": "postgres",
+    "tables": [],
+    "indexes": [],
+    "backup_manifest": {
+      "backup_id": "backup-001",
+      "store_version": "1.1.0",
+      "created_at": "2026-07-01T00:00:00Z",
+      "table_counts": {"operating_event": 2, "audit_event": 1},
+      "artifact_metadata_count": 1,
+      "legal_hold_count": 1,
+      "checksum": "sha256:backup",
+      "sourceRefs": ["backup-manifest.json"]
+    },
+    "restore": {
+      "append_only_event_counts_match": true,
+      "projection_hash_matches": true,
+      "legal_hold_count": 1,
+      "checksum": "sha256:backup",
+      "resolved_artifact_refs": ["artifact-1"]
+    },
+    "artifact_metadata": [
+      {"artifact_id": "artifact-1", "referenced": true}
+    ],
+    "sourceRefs": ["fixtures/platform/store/backup-restore-checksum/fixture.json"]
+  },
+  "expected": {
+    "checksum_matches": true,
+    "legal_hold_count_matches": true
+  }
+}

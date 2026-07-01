@@ -1,0 +1,53 @@
+{
+  "fixture_id": "projection-rebuild-hash-mismatch",
+  "description": "Strict projection rebuild detects broken previous_event_hash continuity.",
+  "input": {
+    "verify_event_stream": true,
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-hash-001",
+        "sequence": 1,
+        "occurred_at": "2026-07-01T00:00:00Z",
+        "event_type": "risk_debt_accepted",
+        "operating_record_id": "op-rebuild-hash",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-rebuild-hash",
+        "severity": "high",
+        "readiness_effect": "soft_gap",
+        "owner": "qa-owner",
+        "due_date": "2026-07-10",
+        "expiry_date": "2026-08-01",
+        "actor": "system",
+        "decision_basis": ["accepted debt before rebuild"],
+        "evidence_refs": ["manual-review-hash"],
+        "event_hash": "hash-001",
+        "sourceRefs": ["fixtures/platform/store/projection-rebuild-hash-mismatch/fixture.json#event-1"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-hash-002",
+        "sequence": 2,
+        "occurred_at": "2026-07-01T00:01:00Z",
+        "event_type": "projection_rebuilt",
+        "operating_record_id": "op-rebuild-hash",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-rebuild-hash",
+        "severity": "high",
+        "readiness_effect": "soft_gap",
+        "actor": "system",
+        "rebuild_id": "rebuild-hash-001",
+        "previous_event_hash": "wrong-hash",
+        "event_hash": "hash-002",
+        "sourceRefs": ["fixtures/platform/store/projection-rebuild-hash-mismatch/fixture.json#event-2"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "finding_code": "projection_rebuild_failed_hash_continuity",
+    "event_stream_finding_count": 1
+  }
+}

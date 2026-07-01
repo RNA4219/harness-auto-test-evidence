@@ -1,0 +1,70 @@
+{
+  "fixture_id": "debt-resolved-with-evidence",
+  "description": "Risk debt lifecycle reduces accepted debt to resolved when resolving evidence is present.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-open-001",
+        "sequence": 1,
+        "event_type": "finding_opened",
+        "operating_record_id": "op-risk-001",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-001",
+        "severity": "high",
+        "readiness_effect": "hold",
+        "owner": "qa-owner",
+        "due_date": "2026-07-15",
+        "expiry_date": "",
+        "decision_basis": ["risk without executable oracle"],
+        "evidence_refs": [],
+        "sourceRefs": ["fixtures/platform/operations/debt-resolved-with-evidence/fixture.json#open"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-accept-001",
+        "sequence": 2,
+        "event_type": "risk_debt_accepted",
+        "operating_record_id": "op-risk-001",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-001",
+        "severity": "high",
+        "readiness_effect": "hold",
+        "owner": "qa-owner",
+        "due_date": "2026-07-15",
+        "expiry_date": "2026-08-01",
+        "justification": "temporary oracle gap accepted by QA",
+        "decision_basis": ["manual acceptance with expiry"],
+        "evidence_refs": ["manual-review-001"],
+        "sourceRefs": ["fixtures/platform/operations/debt-resolved-with-evidence/fixture.json#accepted"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-resolve-001",
+        "sequence": 3,
+        "event_type": "risk_debt_resolved",
+        "operating_record_id": "op-risk-001",
+        "entity_kind": "risk_debt",
+        "entity_id": "risk-001",
+        "severity": "high",
+        "readiness_effect": "none",
+        "owner": "qa-owner",
+        "due_date": "2026-07-15",
+        "expiry_date": "2026-08-01",
+        "decision_basis": ["oracle added"],
+        "evidence_refs": ["contract-test-001"],
+        "sourceRefs": ["fixtures/platform/operations/debt-resolved-with-evidence/fixture.json#resolved"]
+      }
+    ]
+  },
+  "expected": {
+    "record_type": "operating-projection-report",
+    "overall_status": "pass",
+    "status": "resolved",
+    "last_event_id": "evt-resolve-001",
+    "evidence_ref": "contract-test-001"
+  }
+}

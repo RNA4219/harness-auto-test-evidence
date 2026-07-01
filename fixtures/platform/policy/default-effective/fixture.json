@@ -1,0 +1,48 @@
+{
+  "fixture_id": "default-effective",
+  "description": "Default platform policy profile resolves inherited rules and policy hash.",
+  "input": {
+    "profile": "default",
+    "base_policy": {
+      "schema_version": "HATE/v1",
+      "record_type": "platform-policy-config",
+      "policy_id": "policy-default",
+      "policy_version": "2026.07.01",
+      "profiles": {
+        "default": {
+          "inherits": null,
+          "required_owner": false,
+          "required_due_date": false,
+          "accepted_debt_max_age_days": 30,
+          "manual_review_requires_evidence_refs": false,
+          "unsigned_plugin_policy": "allow",
+          "threshold_defaults": {"default": 0.7}
+        }
+      },
+      "thresholds": [],
+      "detectors": {"test_integrity": {"enabled": true}},
+      "plugins": {
+        "allow_unsigned": true,
+        "allowlist": [],
+        "denylist": [],
+        "required_signature": false,
+        "trusted_publishers": []
+      },
+      "scheduler": {"max_concurrent_repos": 1, "lease_seconds": 60, "heartbeat_seconds": 10},
+      "retention": {
+        "default_retention_days": 90,
+        "unsafe_artifact_retention_days": 365,
+        "audit_event_retention_days": 365,
+        "legal_hold_override": true,
+        "deletion_mode": "metadata_only"
+      },
+      "artifact_safety": {"unsafe_artifact_policy": "quarantine"},
+      "sourceRefs": ["fixtures/platform/policy/default-effective/fixture.json#base"]
+    }
+  },
+  "expected": {
+    "overall_status": "pass",
+    "profile": "default",
+    "required_owner": false
+  }
+}

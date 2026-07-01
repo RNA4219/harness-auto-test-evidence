@@ -1,0 +1,31 @@
+{
+  "fixture_id": "github-check-safe-summary",
+  "description": "GitHub check outbound payload contains only safe summary fields and passes.",
+  "input": {
+    "sync_payloads": [
+      {
+        "sync_id": "sync-gh-check-001",
+        "operating_record_id": "op-finding-gh-check",
+        "connector_id": "github-check",
+        "external_system": "github_check",
+        "direction": "outbound",
+        "operation": "create",
+        "state": "prepared",
+        "idempotency_key": "idem-gh-check-001",
+        "payload_hash": "sha256:7c6870ad9f1152622e7102107e597870849c3c6c9c18d9102fa216d83d872704",
+        "redaction_status": "not_required",
+        "payload": {
+          "summary": "3 findings, 1 hold",
+          "annotation_count": 3,
+          "external_ref": "check-run-001"
+        },
+        "sourceRefs": ["fixtures/platform/connectors/github-check-safe-summary/fixture.json#payload"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "pass",
+    "accepted_count": 1,
+    "generated_event_type": "tracker_sync_completed"
+  }
+}

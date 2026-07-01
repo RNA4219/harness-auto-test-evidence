@@ -1,0 +1,51 @@
+{
+  "fixture_id": "projection-rebuild-gap",
+  "description": "Strict projection rebuild detects a missing sequence gap in append-only operating events.",
+  "input": {
+    "verify_event_stream": true,
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-gap-001",
+        "sequence": 1,
+        "occurred_at": "2026-07-01T00:00:00Z",
+        "event_type": "finding_opened",
+        "operating_record_id": "op-rebuild-gap",
+        "entity_kind": "finding",
+        "entity_id": "finding-rebuild-gap",
+        "severity": "high",
+        "readiness_effect": "hold",
+        "owner": "qa-owner",
+        "due_date": "2026-07-10",
+        "actor": "system",
+        "decision_basis": ["rebuild gap fixture"],
+        "event_hash": "hash-001",
+        "sourceRefs": ["fixtures/platform/store/projection-rebuild-gap/fixture.json#event-1"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-gap-003",
+        "sequence": 3,
+        "occurred_at": "2026-07-01T00:02:00Z",
+        "event_type": "projection_rebuilt",
+        "operating_record_id": "op-rebuild-gap",
+        "entity_kind": "finding",
+        "entity_id": "finding-rebuild-gap",
+        "severity": "high",
+        "readiness_effect": "hold",
+        "actor": "system",
+        "rebuild_id": "rebuild-gap-001",
+        "previous_event_hash": "hash-001",
+        "event_hash": "hash-003",
+        "sourceRefs": ["fixtures/platform/store/projection-rebuild-gap/fixture.json#event-3"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "finding_code": "projection_rebuild_failed_event_gap",
+    "event_stream_finding_count": 1
+  }
+}

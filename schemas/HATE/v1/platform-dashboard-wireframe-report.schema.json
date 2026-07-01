@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/platform-dashboard-wireframe-report.schema.json",
+  "title": "HATE Platform Dashboard Wireframe Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "view_inventory",
+    "state_matrix",
+    "visual_acceptance",
+    "findings",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "platform-dashboard-wireframe-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "view_inventory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "view_id",
+          "state",
+          "scope",
+          "stale",
+          "missing_fields",
+          "missing_layout",
+          "missing_state_behaviors",
+          "sourceRefs"
+        ],
+        "properties": {
+          "view_id": {"type": "string", "minLength": 1},
+          "state": {
+            "type": "string",
+            "enum": ["ready", "loading", "empty", "partial", "stale", "permission_denied", "unsafe_hidden", "degraded"]
+          },
+          "scope": {"type": "object"},
+          "stale": {"type": "boolean"},
+          "missing_fields": {"type": "array", "items": {"type": "string"}},
+          "missing_layout": {"type": "array", "items": {"type": "string"}},
+          "missing_state_behaviors": {"type": "array", "items": {"type": "string"}},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "state_matrix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["state", "covered", "required_behaviors"],
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": ["loading", "empty", "partial", "stale", "permission_denied", "unsafe_hidden", "degraded"]
+          },
+          "covered": {"type": "boolean"},
+          "required_behaviors": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "visual_acceptance": {"type": "array", "items": {"type": "string"}},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "readiness_effect", "message", "sourceRefs"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "dashboard_wireframe_view_model_field_missing",
+              "dashboard_wireframe_layout_region_missing",
+              "dashboard_wireframe_state_behavior_missing",
+              "dashboard_wireframe_source_refs_missing",
+              "dashboard_wireframe_table_label_missing",
+              "dashboard_wireframe_recomputes_readiness",
+              "dashboard_wireframe_required_view_missing",
+              "dashboard_wireframe_visual_acceptance_missing",
+              "dashboard_wireframe_unsafe_body_rendered"
+            ]
+          },
+          "severity": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+          "readiness_effect": {"type": "string", "enum": ["none", "soft_gap", "hold"]},
+          "message": {"type": "string", "minLength": 1},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}},
+          "view_id": {"type": "string"},
+          "missing_fields": {"type": "array", "items": {"type": "string"}},
+          "missing_layout": {"type": "array", "items": {"type": "string"}},
+          "state": {"type": "string"},
+          "missing_behaviors": {"type": "array", "items": {"type": "string"}},
+          "acceptance": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["view_count", "required_view_count", "covered_view_count", "finding_count"],
+      "properties": {
+        "view_count": {"type": "integer", "minimum": 0},
+        "required_view_count": {"type": "integer", "minimum": 0},
+        "covered_view_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

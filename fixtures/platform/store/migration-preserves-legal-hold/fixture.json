@@ -1,0 +1,29 @@
+{
+  "fixture_id": "migration-preserves-legal-hold",
+  "input": {
+    "store_mode": "sqlite",
+    "tables": [],
+    "indexes": [],
+    "migration": {
+      "migration_id": "mig-001",
+      "from_store_version": "1.0.0",
+      "to_store_version": "1.1.0",
+      "started_at": "2026-07-01T00:00:00Z",
+      "finished_at": "2026-07-01T00:01:00Z",
+      "status": "completed",
+      "pre_migration_checksum": "sha256:pre",
+      "post_migration_checksum": "sha256:post",
+      "rollback_note": "restore backup mig-001",
+      "compatibility_report_ref": "compat/mig-001.json",
+      "legal_hold_before_count": 2,
+      "legal_hold_after_count": 2,
+      "raw_access_audit_before_count": 3,
+      "raw_access_audit_after_count": 3
+    },
+    "sourceRefs": ["fixtures/platform/store/migration-preserves-legal-hold/fixture.json"]
+  },
+  "expected": {
+    "legal_hold_preserved": true,
+    "raw_access_audit_preserved": true
+  }
+}

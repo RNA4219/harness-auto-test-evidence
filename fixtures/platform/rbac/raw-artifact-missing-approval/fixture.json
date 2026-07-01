@@ -1,0 +1,24 @@
+{
+  "fixture_id": "raw-artifact-missing-approval",
+  "input": {
+    "request": {
+      "actor": {"actor_id": "admin-1", "role": "admin", "tenant_id": "tenant-a"},
+      "resource": {"type": "artifact", "id": "artifact-safe-2", "tenant_id": "tenant-a"},
+      "action": "raw_access",
+      "artifact": {
+        "safety_state": "approved_raw",
+        "purpose": "incident investigation",
+        "expiry": "2026-07-15",
+        "audit_event_ref": "audit/raw-access-2"
+      },
+      "sourceRefs": ["fixtures/platform/rbac/raw-artifact-missing-approval/fixture.json"]
+    }
+  },
+  "expected": {
+    "overall_status": "pass",
+    "decision": "deny",
+    "reason": "raw_artifact_approval_required",
+    "raw_artifact_returned": false,
+    "http_status": 403
+  }
+}

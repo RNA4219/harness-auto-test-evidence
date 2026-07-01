@@ -1,0 +1,46 @@
+{
+  "fixture_id": "notification-failure-retains-finding",
+  "description": "Notification failure is recorded and does not close or downgrade the finding.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-finding-open-notify",
+        "sequence": 1,
+        "event_type": "finding_opened",
+        "operating_record_id": "op-finding-notify",
+        "entity_kind": "finding",
+        "entity_id": "finding-notify",
+        "severity": "critical",
+        "readiness_effect": "hold",
+        "owner": "release-owner",
+        "due_date": "2026-07-02",
+        "decision_basis": ["release blocker"],
+        "sourceRefs": ["fixtures/platform/operations/notification-failure-retains-finding/fixture.json#open"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "operating-event-record",
+        "event_id": "evt-notification-failed",
+        "sequence": 2,
+        "event_type": "notification_failed",
+        "operating_record_id": "op-finding-notify",
+        "entity_kind": "finding",
+        "entity_id": "finding-notify",
+        "severity": "critical",
+        "readiness_effect": "hold",
+        "delivery_target": "slack:release",
+        "delivery_status": "failed_retryable",
+        "attempt": 1,
+        "error_code": "transport_timeout",
+        "sourceRefs": ["fixtures/platform/operations/notification-failure-retains-finding/fixture.json#notify"]
+      }
+    ]
+  },
+  "expected": {
+    "overall_status": "hold",
+    "status": "open",
+    "finding_code": "operating_notification_failed"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "fixture_id": "network-denied",
+  "input": {
+    "profile": "strict",
+    "plugin": {
+      "plugin_id": "workspace-network",
+      "detector_id": "workspace.network",
+      "execution_mode": "subprocess_local",
+      "signed": true,
+      "trusted": true
+    },
+    "limits": {"timeout_ms": 30000, "max_output_bytes": 1048576, "max_input_bytes": 1048576, "network_mode": "none"},
+    "execution": {
+      "network_access_attempted": true,
+      "network_mode": "none",
+      "output_bytes": 64,
+      "output": {"schema_version": "HATE/v1", "detector_id": "workspace.network", "sourceRefs": ["fixture:/plugin/network"]}
+    },
+    "sourceRefs": ["fixtures/platform/plugin-sandbox/network-denied/fixture.json"]
+  },
+  "expected": {"overall_status": "hold", "finding_code": "plugin_forbidden_network_access"}
+}
