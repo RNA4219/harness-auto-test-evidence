@@ -1,0 +1,13 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "self-approval-denied",
+  "case_kind": "negative",
+  "input": {
+    "governance_config": {
+      "policy_templates": [{"template_id": "policy-001", "author": "platform", "approver": "platform", "effective_date": "2026-07-01", "review_cadence": "quarterly", "rollback_owner": "platform"}],
+      "exception_requests": [],
+      "review_packet": {"expired_exception_count": 0, "unresolved_high_risk_debt_count": 0},
+      "self_approval_detected": true
+    }
+  }
+}

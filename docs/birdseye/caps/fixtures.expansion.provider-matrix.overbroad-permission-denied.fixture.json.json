@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/provider-matrix/overbroad-permission-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "daaa7bd3ee61f0f5928ad3d8b826ebe2f7b8bc2b1e9648501df95b27083082a4",
+  "line_count": 13,
+  "size_bytes": 521,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

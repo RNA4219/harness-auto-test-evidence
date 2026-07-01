@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/governance-workflow/self-approval-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "31b214e0760247c1547008b6845ccca2be402ebedfbef49ae4867136cc26c41c",
+  "line_count": 13,
+  "size_bytes": 512,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

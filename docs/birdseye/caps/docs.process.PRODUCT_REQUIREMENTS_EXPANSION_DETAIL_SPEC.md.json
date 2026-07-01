@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "6a91d6760bdbb3300bc1c50652a340d0684596c97a05fab1e9096f97c47520c2",
-  "line_count": 957,
-  "size_bytes": 37180,
+  "sha256": "217e700726ff6943adbd4a9e37defc87b95c89df17ca5b65631c460ac380987a",
+  "line_count": 965,
+  "size_bytes": 37536,
   "headings": [
     "# Product Requirements Expansion Detail Spec",
     "## 1. Purpose",
@@ -32,7 +32,8 @@
     "## 23. W34 Core Functional Expansion Scope",
     "## 24. W34 Canonical File And Function Contract",
     "## 25. W34 Canonical Fixtures, Schemas, And Findings",
-    "## 26. W34 Schema And Test Minimum"
+    "## 26. W34 Schema And Test Minimum",
+    "## 27. HATE-GAP-041 Through HATE-GAP-048 Detail Spec Index"
   ],
   "imports": [],
   "links": [],

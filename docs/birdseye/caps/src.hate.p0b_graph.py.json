@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/p0b_graph.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c7aa1da7de450f172e37627e0873600689281cbd71ac4e2796b7325f160a7b73",
+  "line_count": 96,
+  "size_bytes": 4140,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "test"
+  ]
+}

@@ -44,14 +44,12 @@ def test_cli_release_candidate_from_fixture() -> None:
 
         out_dir = Path(tmp) / "out"
 
-        # Run CLI command
         exit_code = main([
             "release", "candidate",
             "--readiness", str(readiness_dir),
             "--out", str(out_dir),
             "--release-id", "rc-test",
             "--source-version", "test-1.0",
-            "--dry-run",
         ])
 
         assert exit_code == 0
@@ -62,6 +60,9 @@ def test_cli_release_candidate_from_fixture() -> None:
         assert pack["record_type"] == "release-candidate-pack"
         assert pack["release_id"] == "rc-test"
         assert pack["source_version"] == "test-1.0"
+        assert pack["verdict"] == "ready"
+        assert pack["summary"]["release_ready"] is True
+        assert pack["summary"]["blocker_count"] == 0
 
 
 def test_cli_release_candidate_blocked_without_dry_run() -> None:
@@ -178,3 +179,6 @@ def test_cli_release_candidate_output_includes_summary() -> None:
         assert "verdict" in output
         assert "release_ready" in output
         assert "blocker_count" in output
+        assert output["verdict"] == "ready"
+        assert output["release_ready"] is True
+        assert output["blocker_count"] == 0

@@ -303,6 +303,46 @@
       "phase": "P3"
     },
     {
+      "record_type": "rollout-adoption-report",
+      "schema": "schemas/HATE/v1/rollout-adoption-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "provider-integration-report",
+      "schema": "schemas/HATE/v1/provider-integration-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "runner-dialect-coverage-report",
+      "schema": "schemas/HATE/v1/runner-dialect-coverage-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "recurring-real-repo-eval-report",
+      "schema": "schemas/HATE/v1/recurring-real-repo-eval-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "governance-review-report",
+      "schema": "schemas/HATE/v1/governance-review-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "security-procurement-report",
+      "schema": "schemas/HATE/v1/security-procurement-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "value-measurement-report",
+      "schema": "schemas/HATE/v1/value-measurement-report.schema.json",
+      "phase": "P3"
+    },
+    {
+      "record_type": "developer-experience-report",
+      "schema": "schemas/HATE/v1/developer-experience-report.schema.json",
+      "phase": "P3"
+    },
+    {
       "record_type": "impact-analysis-report",
       "schema": "schemas/HATE/v1/impact-analysis-report.schema.json",
       "phase": "P3"

@@ -1,0 +1,47 @@
+{
+  "path": "src/hate/cli_handlers.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "a54597d5c9084e8366f0e5f293792904570e50da4349d1932c1c55be72b81b42",
+  "line_count": 398,
+  "size_bytes": 13941,
+  "headings": [],
+  "imports": [
+    ".expansion_runner",
+    ".gap_closure",
+    ".p0a",
+    ".p0b",
+    ".p1a",
+    ".p1b",
+    ".p2p3",
+    ".product_grade",
+    ".release",
+    ".store_legacy",
+    "__future__",
+    "argparse",
+    "json",
+    "pathlib",
+    "sys",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion_runner.py",
+    "src/hate/gap_closure.py",
+    "src/hate/p0a.py",
+    "src/hate/p0b.py",
+    "src/hate/p1a.py",
+    "src/hate/p1b.py",
+    "src/hate/p2p3.py",
+    "src/hate/product_grade.py",
+    "src/hate/release.py",
+    "src/hate/store_legacy.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "store",
+    "workflow"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/developer-experience-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "ad2bf4f93d8eeddd7698e11d4f67e0e411a83f1c3d59f75f310d79766e126eab",
+  "line_count": 17,
+  "size_bytes": 720,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

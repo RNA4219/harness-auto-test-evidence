@@ -1,0 +1,24 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "aggregate-roi-pass",
+  "case_kind": "positive",
+  "input": {
+    "value_config": {
+      "aggregate_metrics": [
+        {"metric_id": "review_time_saved", "delta": 12},
+        {"metric_id": "risk_debt_burn_down", "delta": 8},
+        {"metric_id": "release_blocker_lead_time", "delta": -2},
+        {"metric_id": "repeat_finding_rate", "delta": -0.1},
+        {"metric_id": "avoided_unsupported_claims", "delta": 3}
+      ],
+      "roi_inputs": {"period": "monthly"},
+      "confidence": 0.75,
+      "limitations": ["sample is internal repositories only"],
+      "sample_size": 12,
+      "baseline_present": true,
+      "individual_ranking_present": false,
+      "noisy_signal_counts_as_value": false,
+      "safe_evidence_refs": ["value-evidence-001"]
+    }
+  }
+}

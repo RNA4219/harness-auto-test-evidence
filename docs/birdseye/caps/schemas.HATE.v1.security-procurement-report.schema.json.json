@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/security-procurement-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "7eb8f50875f0993e4e3e8d52740f04b2a17d704799b49eb6439e526bf58f11dd",
+  "line_count": 17,
+  "size_bytes": 738,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "security"
+  ]
+}

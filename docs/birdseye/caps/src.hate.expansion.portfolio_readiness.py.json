@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/expansion/portfolio_readiness.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "22eba405643a992e63c27f150c00e9566cd976b2a12def2c4e96c590095ac084",
+  "line_count": 602,
+  "size_bytes": 30785,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "security"
+  ]
+}

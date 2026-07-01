@@ -71,7 +71,7 @@ until both this ledger and the detail spec contain its contract.
 
 ## 3. Status
 
-All expansion packets are `specified`. They remain `planned` until code,
+All expansion packets are `specified`. A packet remains `planned` until code,
 schemas, fixtures, tests, generated UAT reports, Birdseye updates, and
 acceptance records exist.
 
@@ -81,9 +81,16 @@ through section 18. They remain unimplemented until runtime modules, schemas,
 fixtures, tests, generated UAT reports, Birdseye updates, and acceptance records
 exist.
 
-HATE-GAP-041 through HATE-GAP-048 are `specified-planned`. They intentionally do
-not claim implementation readiness until a follow-up detail spec pins runtime
-modules, schemas, fixtures, tests, report contracts, and UAT hardening.
+HATE-GAP-041 through HATE-GAP-048 are `implemented-ready` as third-wave
+portfolio readiness reports. Their runtime module is
+`src/hate/expansion/portfolio_readiness.py`; their schemas are registered under
+`schemas/HATE/v1/*-report.schema.json`; their positive and negative canonical
+fixtures live under `fixtures/expansion/{rollout-adoption,provider-matrix,
+runner-dialects,recurring-real-repo-eval,governance-workflow,
+security-procurement,value-measurement,developer-experience}/`; and they are
+specified in `PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md` and
+connected to the expansion runner, release candidate pack, acceptance matrix,
+and tests.
 
 HATE-GAP-049 through HATE-GAP-060 are `specified-ready` at the documentation
 contract level after `PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md` section 23

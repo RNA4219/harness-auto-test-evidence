@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/runner-dialects/unsupported-runner-capability-gap/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "adaa54c70ab2ee2a83d8cdc117aa715624050edb2b22b32c0bfcc82dad492d25",
+  "line_count": 13,
+  "size_bytes": 423,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

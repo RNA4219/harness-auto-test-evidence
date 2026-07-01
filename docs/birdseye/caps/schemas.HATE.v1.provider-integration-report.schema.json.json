@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/provider-integration-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "ba536cf8797d6424814d9926cefd86fd658b76ac4980011b9ec75b424704bb35",
+  "line_count": 17,
+  "size_bytes": 732,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

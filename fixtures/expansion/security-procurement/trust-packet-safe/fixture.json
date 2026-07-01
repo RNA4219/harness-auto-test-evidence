@@ -1,0 +1,14 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "trust-packet-safe",
+  "case_kind": "positive",
+  "input": {
+    "procurement_config": {
+      "security_review_packet": {"architecture": "local-first-cli", "data_flow": "safe summaries only", "data_classes": "public/internal", "subprocessors": "none", "encryption": "at-rest-by-host", "secrets_handling": "redacted", "retention_summary": "policy-bound"},
+      "control_claims": [{"claim_id": "control-001", "claim_class": "implemented"}],
+      "vulnerability_slas": [{"severity": "critical", "overdue": false}],
+      "procurement_export_safe": true,
+      "raw_artifact_in_export": false
+    }
+  }
+}

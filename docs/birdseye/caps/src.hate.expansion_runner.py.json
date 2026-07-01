@@ -2,9 +2,9 @@
   "path": "src/hate/expansion_runner.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "b0b15352bc42170fcef9dfab37015c997ef7285a25ca32a659cce75949a6d2bc",
-  "line_count": 196,
-  "size_bytes": 9780,
+  "sha256": "be6a401f10397029d0bbde8036adca33641c86f5166c776a12a227762d722890",
+  "line_count": 214,
+  "size_bytes": 11164,
   "headings": [],
   "imports": [
     ".analysis.adapter_capability_diff",
@@ -31,6 +31,7 @@
     ".expansion.notifications",
     ".expansion.onboarding",
     ".expansion.policy_simulation",
+    ".expansion.portfolio_readiness",
     ".expansion.product_analytics",
     ".expansion.self_hosted",
     "__future__",
@@ -65,12 +66,15 @@
     "src/hate/expansion/notifications.py",
     "src/hate/expansion/onboarding.py",
     "src/hate/expansion/policy_simulation.py",
+    "src/hate/expansion/portfolio_readiness.py",
     "src/hate/expansion/product_analytics.py",
     "src/hate/expansion/self_hosted.py"
   ],
   "tags": [
     "adapter",
+    "coverage",
     "fixture",
+    "security",
     "test"
   ]
 }

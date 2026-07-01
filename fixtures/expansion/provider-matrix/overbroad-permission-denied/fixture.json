@@ -1,0 +1,13 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "overbroad-permission-denied",
+  "case_kind": "negative",
+  "input": {
+    "provider_config": {
+      "required_providers": ["github"],
+      "providers": [{"provider": "github", "support_state": "supported", "commit_identity": "sha", "review_identity": "pr", "run_attempt": "run", "artifact_lifetime": "90d", "annotation_target": "check", "rerun_semantics": "attempt"}],
+      "minimum_permissions_declared": true,
+      "overbroad_permission_detected": true
+    }
+  }
+}

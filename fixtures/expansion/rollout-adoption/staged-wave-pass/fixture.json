@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "staged-wave-pass",
+  "case_kind": "positive",
+  "input": {
+    "rollout_config": {
+      "waves": [
+        {
+          "wave_id": "wave-001",
+          "owner": "platform-admin",
+          "policy_template": "team-ga-default",
+          "entry_criteria": "p0-p1-green",
+          "exit_criteria": "two-week-stable"
+        }
+      ],
+      "repo_statuses": [
+        {"repo": "repo-a", "status": "active"},
+        {"repo": "repo-b", "status": "bootstrapping"}
+      ],
+      "exceptions": [
+        {"exception_id": "ex-001", "owner": "platform-admin", "scope": "repo-b:coverage", "expired": false}
+      ],
+      "portfolio_metrics_safe": true,
+      "rollback_plan_present": true,
+      "illegal_status_transition_detected": false
+    }
+  }
+}

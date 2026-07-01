@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/governance-review-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "dba6fe3ec207dc9e56be956c886458f7fbe128f50253b375c9ec468ddc2488e4",
+  "line_count": 17,
+  "size_bytes": 730,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

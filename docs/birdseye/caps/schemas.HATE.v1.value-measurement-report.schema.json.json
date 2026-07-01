@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/value-measurement-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a399e2da4d16fc2e1707acf054b9dfd98a56239ddb18d49c0f652e38236f0015",
+  "line_count": 17,
+  "size_bytes": 720,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

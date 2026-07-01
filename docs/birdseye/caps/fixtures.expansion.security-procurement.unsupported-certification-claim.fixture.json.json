@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/expansion/security-procurement/unsupported-certification-claim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "69841fde086c98aafc0e78ea4f89d0850cddef2c6312ddceb96d79fe7493d677",
+  "line_count": 14,
+  "size_bytes": 643,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

@@ -2,32 +2,21 @@
   "path": "src/hate/p0b.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "73244dda5f76035c8ee1b735972effb53593df81369fd204a288fed4d49aac49",
-  "line_count": 741,
-  "size_bytes": 33969,
+  "sha256": "656b3c7ad5b59e374cc1287479020badbd85e1ae5a3d84e7221971d1ce48d1b2",
+  "line_count": 13,
+  "size_bytes": 362,
   "headings": [],
   "imports": [
-    ".",
-    ".p0b_sarif",
-    ".p0b_support",
-    "__future__",
-    "dataclasses",
-    "hashlib",
-    "json",
-    "pathlib",
-    "typing"
+    ".p0b_exporter",
+    ".p0b_types",
+    "__future__"
   ],
   "links": [],
   "depends_on": [
-    "src/hate/p0b_sarif.py",
-    "src/hate/p0b_support.py"
+    "src/hate/p0b_exporter.py",
+    "src/hate/p0b_types.py"
   ],
   "tags": [
-    "artifact",
-    "coverage",
-    "fixture",
-    "qeg",
-    "schema",
-    "test"
+    "qeg"
   ]
 }

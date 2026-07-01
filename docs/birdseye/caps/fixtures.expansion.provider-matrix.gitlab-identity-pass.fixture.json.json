@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/expansion/provider-matrix/gitlab-identity-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c8e4af2aa2e0b1f6a57b0c7e1097acdb77f3d8e517ea3acd7faf2013adacd1ce",
+  "line_count": 23,
+  "size_bytes": 2504,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

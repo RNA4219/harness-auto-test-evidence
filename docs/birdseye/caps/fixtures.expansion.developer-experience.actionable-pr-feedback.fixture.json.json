@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/developer-experience/actionable-pr-feedback/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "774b3c50b7c2d87dec1f81f060034b195e01bf11a945e6b0f70f18d3e67a5804",
+  "line_count": 18,
+  "size_bytes": 666,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

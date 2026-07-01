@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/rollout-adoption/expired-exception-blocks/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0ff6c5cffdef38064616012cc176f7621c879abbb1b9974a5aa379e4c5f70db0",
+  "line_count": 14,
+  "size_bytes": 579,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

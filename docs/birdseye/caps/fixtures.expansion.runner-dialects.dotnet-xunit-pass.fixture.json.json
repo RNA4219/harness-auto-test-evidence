@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/runner-dialects/dotnet-xunit-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "dc160f265d78d942fcaaafd9225da318673f4d2e0c205c8587b16522a0c6cc36",
+  "line_count": 28,
+  "size_bytes": 1555,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

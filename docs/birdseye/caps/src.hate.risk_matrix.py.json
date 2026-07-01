@@ -2,12 +2,13 @@
   "path": "src/hate/risk_matrix.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "c054143dba91f3f95e69324c216e150ae15aed5f9c7951ca58ff97183c99d98e",
-  "line_count": 649,
-  "size_bytes": 26134,
+  "sha256": "3db3e4e517dc71eaad24937a01684b4c71860bf246ce3cc84c1670252dae3cc0",
+  "line_count": 501,
+  "size_bytes": 19737,
   "headings": [],
   "imports": [
     ".evidence_envelope",
+    ".risk_matrix_evidence",
     ".risk_matrix_types",
     "__future__",
     "datetime",
@@ -16,6 +17,7 @@
   "links": [],
   "depends_on": [
     "src/hate/evidence_envelope.py",
+    "src/hate/risk_matrix_evidence.py",
     "src/hate/risk_matrix_types.py"
   ],
   "tags": [

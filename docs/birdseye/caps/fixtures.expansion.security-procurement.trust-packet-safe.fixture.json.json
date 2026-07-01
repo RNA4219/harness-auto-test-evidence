@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/expansion/security-procurement/trust-packet-safe/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3aaa4da0f4327af2ac72f4664d8dd1db0fc7826b34ac0274768411419e94c269",
+  "line_count": 14,
+  "size_bytes": 653,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "security"
+  ]
+}

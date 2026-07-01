@@ -1,0 +1,17 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "broad-suppression-denied",
+  "case_kind": "negative",
+  "input": {
+    "dx_config": {
+      "feedback_groups": [{"group_id": "fg-001", "fix_action": "ignore all", "risk_impact": "unknown", "owner": "developer", "blocking_status": "none", "deep_link": "pr://1#comment-1"}],
+      "local_explain_available": true,
+      "local_replay_available": true,
+      "suppression_controls": {"owner": "developer", "expiry_required": false},
+      "recommendation_quality_score": 0.8,
+      "latency_ms": 1000,
+      "broad_suppression_detected": true,
+      "stable_deep_links": true
+    }
+  }
+}

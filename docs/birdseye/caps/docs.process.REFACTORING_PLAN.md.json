@@ -2,9 +2,9 @@
   "path": "docs/process/REFACTORING_PLAN.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "c89dfbf303267a851cdde841736eaee000ffca67a4cc23f4221a5893d9c759fc",
-  "line_count": 207,
-  "size_bytes": 10671,
+  "sha256": "446543bfe0d411bde955ddd38922967ad8351496b9fb559837cf6717164a794b",
+  "line_count": 249,
+  "size_bytes": 13735,
   "headings": [
     "# Refactoring Plan",
     "## 1. Purpose",

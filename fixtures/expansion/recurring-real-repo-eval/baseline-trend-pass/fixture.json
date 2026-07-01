@@ -1,0 +1,20 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "baseline-trend-pass",
+  "case_kind": "positive",
+  "input": {
+    "evaluation_config": {
+      "required_repo_classes": ["small", "medium", "large", "monorepo", "polyglot", "flaky", "artifact-heavy", "security-heavy"],
+      "repo_roster": [
+        {"repo": "small-a", "class": "small"}, {"repo": "medium-a", "class": "medium"}, {"repo": "large-a", "class": "large"},
+        {"repo": "mono-a", "class": "monorepo"}, {"repo": "poly-a", "class": "polyglot"}, {"repo": "flaky-a", "class": "flaky"},
+        {"repo": "artifact-a", "class": "artifact-heavy"}, {"repo": "security-a", "class": "security-heavy"}
+      ],
+      "runs": [{"run_id": "eval-001", "baseline_ref": "baseline-001", "current_result_ref": "current-001"}],
+      "timeout_budget_by_class": {"small": 300, "medium": 900, "large": 1800, "monorepo": 3600},
+      "trend_privacy_safe": true,
+      "regression_detected": false,
+      "timeout_hides_missing_evidence": false
+    }
+  }
+}

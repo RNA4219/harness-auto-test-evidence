@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/expansion/rollout-adoption/staged-wave-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2a37e009ad70e99e4615e154b958190df00014bf58ebca7b1751f871a5471986",
+  "line_count": 28,
+  "size_bytes": 797,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema"
+  ]
+}

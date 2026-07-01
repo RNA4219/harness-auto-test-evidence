@@ -2,14 +2,13 @@
   "path": "src/hate/security/artifact_safety.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "427c97880fb57ae3996a4a168e7f6c4512054c47ddfcba3be058f8be51eb63b5",
-  "line_count": 713,
-  "size_bytes": 26351,
+  "sha256": "563b0328454179ee5296da41ffc0e16b1de1b5a9fc15fda5516d6898716cb2a7",
+  "line_count": 628,
+  "size_bytes": 22602,
   "headings": [],
   "imports": [
+    ".artifact_archive",
     "__future__",
-    "base64",
-    "binascii",
     "json",
     "pathlib",
     "re",
@@ -18,7 +17,9 @@
     "uuid"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/security/artifact_archive.py"
+  ],
   "tags": [
     "api",
     "artifact",

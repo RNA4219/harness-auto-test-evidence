@@ -2,9 +2,9 @@
   "path": "tests/test_requirements_expansion_docs.py",
   "role": "test",
   "kind": "py",
-  "sha256": "fbcace4f6e655209dac298d27987511c3b846429366e268947b9d21b445120b2",
-  "line_count": 504,
-  "size_bytes": 21132,
+  "sha256": "277a8dfa2d9a49757c31a36e4ba9e7f5ce3b672cbeb3958aaef15e68e014b57b",
+  "line_count": 521,
+  "size_bytes": 22003,
   "headings": [],
   "imports": [
     "__future__",

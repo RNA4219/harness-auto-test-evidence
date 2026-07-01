@@ -317,6 +317,70 @@
         "sourceRefs": [
           "adapter-capability-diff-report.json"
         ]
+      },
+      {
+        "record_type": "rollout-adoption-report",
+        "report_id": "rollout-adoption-report",
+        "status": "pass",
+        "sourceRefs": [
+          "rollout-adoption-report.json"
+        ]
+      },
+      {
+        "record_type": "provider-integration-report",
+        "report_id": "provider-integration-report",
+        "status": "pass",
+        "sourceRefs": [
+          "provider-integration-report.json"
+        ]
+      },
+      {
+        "record_type": "runner-dialect-coverage-report",
+        "report_id": "runner-dialect-coverage-report",
+        "status": "pass",
+        "sourceRefs": [
+          "runner-dialect-coverage-report.json"
+        ]
+      },
+      {
+        "record_type": "recurring-real-repo-eval-report",
+        "report_id": "recurring-real-repo-eval-report",
+        "status": "pass",
+        "sourceRefs": [
+          "recurring-real-repo-eval-report.json"
+        ]
+      },
+      {
+        "record_type": "governance-review-report",
+        "report_id": "governance-review-report",
+        "status": "pass",
+        "sourceRefs": [
+          "governance-review-report.json"
+        ]
+      },
+      {
+        "record_type": "security-procurement-report",
+        "report_id": "security-procurement-report",
+        "status": "pass",
+        "sourceRefs": [
+          "security-procurement-report.json"
+        ]
+      },
+      {
+        "record_type": "value-measurement-report",
+        "report_id": "value-measurement-report",
+        "status": "pass",
+        "sourceRefs": [
+          "value-measurement-report.json"
+        ]
+      },
+      {
+        "record_type": "developer-experience-report",
+        "report_id": "developer-experience-report",
+        "status": "pass",
+        "sourceRefs": [
+          "developer-experience-report.json"
+        ]
       }
     ],
     "evidence_room_artifacts": [

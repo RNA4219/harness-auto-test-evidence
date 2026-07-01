@@ -30,6 +30,16 @@ from .expansion.notifications import build_notification_report
 from .expansion.onboarding import build_onboarding_report
 from .expansion.policy_simulation import build_policy_simulation_report
 from .expansion.product_analytics import build_product_analytics_report
+from .expansion.portfolio_readiness import (
+    build_developer_experience_report,
+    build_governance_review_report,
+    build_provider_integration_report,
+    build_recurring_real_repo_eval_report,
+    build_rollout_adoption_report,
+    build_runner_dialect_coverage_report,
+    build_security_procurement_report,
+    build_value_measurement_report,
+)
 from .expansion.self_hosted import build_self_hosted_report
 
 
@@ -65,6 +75,14 @@ EXPANSION_REPORT_SPECS: tuple[ExpansionReportSpec, ...] = (
     ExpansionReportSpec("a11y-l10n", "HATE-GAP-038", "a11y-l10n-report", build_a11y_l10n_report),
     ExpansionReportSpec("cost-governance", "HATE-GAP-039", "cost-governance-report", build_cost_governance_report),
     ExpansionReportSpec("beta-acceptance", "HATE-GAP-040", "beta-acceptance-report", build_beta_acceptance_report),
+    ExpansionReportSpec("rollout-adoption", "HATE-GAP-041", "rollout-adoption-report", build_rollout_adoption_report),
+    ExpansionReportSpec("provider-matrix", "HATE-GAP-042", "provider-integration-report", build_provider_integration_report),
+    ExpansionReportSpec("runner-dialects", "HATE-GAP-043", "runner-dialect-coverage-report", build_runner_dialect_coverage_report),
+    ExpansionReportSpec("recurring-real-repo-eval", "HATE-GAP-044", "recurring-real-repo-eval-report", build_recurring_real_repo_eval_report),
+    ExpansionReportSpec("governance-workflow", "HATE-GAP-045", "governance-review-report", build_governance_review_report),
+    ExpansionReportSpec("security-procurement", "HATE-GAP-046", "security-procurement-report", build_security_procurement_report),
+    ExpansionReportSpec("value-measurement", "HATE-GAP-047", "value-measurement-report", build_value_measurement_report),
+    ExpansionReportSpec("developer-experience", "HATE-GAP-048", "developer-experience-report", build_developer_experience_report),
     ExpansionReportSpec("impact-analysis", "HATE-GAP-049", "impact-analysis-report", build_impact_analysis_report),
     ExpansionReportSpec("test-recommendation", "HATE-GAP-050", "test-recommendation-report", build_test_recommendation_report),
     ExpansionReportSpec("flaky-classification", "HATE-GAP-051", "flaky-classification-report", build_flaky_classification_report),

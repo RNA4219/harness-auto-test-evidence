@@ -1,0 +1,24 @@
+{
+  "path": "docs/process/PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "e2708a300d6d6987a20c8da0d0c92db51687c6db4082e831edf37f5815612533",
+  "line_count": 114,
+  "size_bytes": 5945,
+  "headings": [
+    "# Product Requirements Portfolio Readiness Detail Spec",
+    "## 1. HATE-GAP-041 Through HATE-GAP-048 Runtime Contract",
+    "## 2. Schemas, Fixtures, And Findings",
+    "## 3. Test And Release Minimum"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "security",
+    "workflow"
+  ]
+}

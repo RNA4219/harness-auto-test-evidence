@@ -114,8 +114,12 @@ Acceptance:
 - Bundle validation can run without invoking CLI.
 - Golden fixtures remain byte-stable unless the schema version changes.
 
-Status as of 2026-06-30: partial. SARIF parsing, contract status normalization, mutation status
-normalization, and line-range overlap helpers are isolated in `src/hate/p0b_sarif.py`.
+Status as of 2026-07-01: completed for the current split target. Public imports remain available
+through `src/hate/p0b.py`; orchestration lives in `src/hate/p0b_exporter.py`, typed/shared
+records in `src/hate/p0b_types.py`, filesystem input loading in `src/hate/p0b_inputs.py`,
+graph seed construction in `src/hate/p0b_graph.py`, QEG graph phases in
+`src/hate/p0b_phases.py`, output/report serialization in `src/hate/p0b_outputs.py`, and
+SARIF/contract/mutation normalization in `src/hate/p0b_sarif.py`.
 
 ### P1B workflow mapping
 
@@ -153,9 +157,11 @@ Acceptance:
 - `tests/test_api_read_model.py`, `tests/test_api_read_model_contract.py`,
   and `tests/test_api_read_model_inventory.py` pass before and after each split step.
 
-Status as of 2026-06-30: partial. Response envelope models, staleness metadata,
-resource filter/sort definitions, and request validators are isolated in
-`src/hate/api/read_model_contract.py`.
+Status as of 2026-07-01: completed for the current split target. Response envelope models,
+staleness metadata, resource filter/sort definitions, and request validators remain isolated in
+`src/hate/api/read_model_contract.py`; canonical report projection and default model construction
+are isolated in `src/hate/api/read_model_projection.py`; `src/hate/api/read_model.py` now contains
+response builders plus resource handlers.
 
 ## 5. Specification Split Policy
 
@@ -183,12 +189,48 @@ Required focused contracts:
 
 ## 6. Refactoring Execution Order
 
-1. Split `p0a_support.py` before implementing HATE-PG-001B/C adapter corpus expansion.
-2. Split `SPECIFICATION.md` before adding EPIC-004 and later detailed packet sections.
-3. Split `p1a_support.py` before implementing EPIC-005 privacy/security scanners.
-4. Split `p0b.py` before expanding QEG/schema validation integration.
-5. Split `p1b.py` before workflow mapping grows into UI/API support.
-6. Split `tests/test_p2p3.py` when EPIC-006/009 implementation resumes.
+Full-tree scan as of 2026-07-01:
+
+- Git-tracked plus non-ignored untracked files: 2344 files, 150376 lines.
+- Main split pressure: `docs` 55613 lines, `src` 39985 lines, `fixtures` 23280 lines,
+  `tests` 22257 lines, `schemas` 8166 lines.
+- Current hard guard status: pass. No hand-maintained Python source exceeds 900 lines, no
+  non-approved Markdown spec exceeds 1000 lines, and generated Birdseye/index data is excluded.
+- Warning-zone source modules: `src/hate/gap_closure.py` 774, `src/hate/p0b.py` 741,
+  `src/hate/store/local_store.py` 719, `src/hate/security/artifact_safety.py` 713,
+  `src/hate/test_integrity/mock_assertion.py` 709, `src/hate/risk_matrix.py` 649,
+  `src/hate/test_integrity/skip_focus.py` 624, `src/hate/dashboard/uat_states.py` 609,
+  `src/hate/api/read_model.py` 608, `src/hate/expansion/portfolio_readiness.py` 602.
+- Warning-zone tests: `tests/test_api_read_model_contract.py` 882, `tests/test_p2p3.py` 832,
+  `tests/test_test_integrity_skip_focus.py` 807, `tests/test_store_replay_compare.py` 780,
+  `tests/test_test_integrity_coupling.py` 754.
+- Warning-zone docs: `docs/process/PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md` 965. It must
+  remain an index and continue moving detailed packets to focused spec files.
+
+Updated execution order:
+
+1. Split `src/hate/p0b.py` before any further QEG/export behavior. `export_qeg` is 702 lines and
+   76 branch points; it is the highest-risk runtime hotspot.
+2. Split `src/hate/cli.py` command dispatch before adding new CLI surfaces. `main` is 302 lines and
+   57 branch points; command handlers should move to focused modules.
+3. Split `src/hate/risk_matrix.py` evidence classification. `_classify_evidence_for_risk` is 139
+   lines and 45 branch points; keep matrix assembly separate from evidence matching policy.
+4. Split `src/hate/api/read_model.py` projection/handler assembly before API expansion resumes.
+5. Split `src/hate/security/artifact_safety.py` archive/binary scanning from report assembly before
+   adding more artifact detectors.
+6. Split `src/hate/test_integrity/mock_assertion.py` and `src/hate/test_integrity/skip_focus.py`
+   report assembly from detector rules before new integrity signals are added.
+7. Split large test modules by fixture family after their matching runtime split, starting with
+   `tests/test_api_read_model_contract.py`, `tests/test_p2p3.py`, and
+   `tests/test_test_integrity_skip_focus.py`.
+8. Keep `docs/process/SPECIFICATION.md` as an approved root index only; do not add detailed
+   packet text there.
+
+Status as of 2026-07-01: execution order items 1-5 are completed for the current high-priority
+refactoring phase. `src/hate/p0b.py` is now a compatibility facade, `src/hate/cli.py` keeps parser
+and thin entrypoint only, risk evidence matching moved to `src/hate/risk_matrix_evidence.py`,
+read-model projection moved to `src/hate/api/read_model_projection.py`, and archive/binary artifact
+scanning moved to `src/hate/security/artifact_archive.py`.
 
 ## 7. CI Guardrail Requirement
 

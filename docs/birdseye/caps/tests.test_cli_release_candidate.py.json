@@ -2,9 +2,9 @@
   "path": "tests/test_cli_release_candidate.py",
   "role": "test",
   "kind": "py",
-  "sha256": "f907075d6cad3b931cd8c129ddda0f0fb9a05fd7480bed5d196a6d850200c03e",
-  "line_count": 180,
-  "size_bytes": 6373,
+  "sha256": "a86e153ca624ee971026d7d939ac9da4305e74271652e1db3d63b87e33ce7b7f",
+  "line_count": 184,
+  "size_bytes": 6609,
   "headings": [],
   "imports": [
     "__future__",

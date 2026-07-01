@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/p0b_inputs.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "dcc7238649f1ae35810e52db7c2e0e40ccca9c9fa02d9bd064d5bb02d962bbe6",
+  "line_count": 58,
+  "size_bytes": 2419,
+  "headings": [],
+  "imports": [
+    ".p0b_support",
+    ".p0b_types",
+    "__future__",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0b_support.py",
+    "src/hate/p0b_types.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

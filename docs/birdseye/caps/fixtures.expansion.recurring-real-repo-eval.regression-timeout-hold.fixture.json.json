@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/recurring-real-repo-eval/regression-timeout-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6e9f9972d21e9867a1d7c8387369b73a5f30d62aff0081f7c3ca8e64a5596448",
+  "line_count": 16,
+  "size_bytes": 540,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

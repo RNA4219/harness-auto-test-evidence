@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/value-measurement/individual-leaderboard-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8dbe9811dea7eed3dd39c0d96c95ba8d0e5b7ec180e11ee12e0f536a074f20d0",
+  "line_count": 16,
+  "size_bytes": 446,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

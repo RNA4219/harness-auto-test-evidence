@@ -1,0 +1,16 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "individual-leaderboard-denied",
+  "case_kind": "negative",
+  "input": {
+    "value_config": {
+      "aggregate_metrics": [{"metric_id": "review_time_saved", "delta": 1}],
+      "confidence": 0.9,
+      "limitations": ["privacy denial fixture"],
+      "sample_size": 2,
+      "baseline_present": true,
+      "individual_ranking_present": true,
+      "safe_evidence_refs": ["safe-ref"]
+    }
+  }
+}

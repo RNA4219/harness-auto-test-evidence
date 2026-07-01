@@ -2,39 +2,19 @@
   "path": "src/hate/cli.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "4710a2cad08009d739b5c65816998338a756fb9075479f00bef6ffbea8646445",
-  "line_count": 578,
-  "size_bytes": 27416,
+  "sha256": "5b9523b42c7f50eef7c9afece36a8e6ae62977e647924a3dd76f591588a02afa",
+  "line_count": 187,
+  "size_bytes": 13647,
   "headings": [],
   "imports": [
-    ".expansion_runner",
-    ".gap_closure",
-    ".p0a",
-    ".p0b",
-    ".p1a",
-    ".p1b",
-    ".p2p3",
-    ".product_grade",
-    ".release",
-    ".store_legacy",
+    ".cli_handlers",
     "__future__",
     "argparse",
-    "json",
-    "pathlib",
-    "sys"
+    "pathlib"
   ],
   "links": [],
   "depends_on": [
-    "src/hate/expansion_runner.py",
-    "src/hate/gap_closure.py",
-    "src/hate/p0a.py",
-    "src/hate/p0b.py",
-    "src/hate/p1a.py",
-    "src/hate/p1b.py",
-    "src/hate/p2p3.py",
-    "src/hate/product_grade.py",
-    "src/hate/release.py",
-    "src/hate/store_legacy.py"
+    "src/hate/cli_handlers.py"
   ],
   "tags": [
     "artifact",
@@ -43,7 +23,6 @@
     "qeg",
     "release",
     "store",
-    "test",
-    "workflow"
+    "test"
   ]
 }

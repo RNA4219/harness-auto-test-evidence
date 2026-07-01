@@ -955,3 +955,11 @@ Each W34 test file must include:
 
 Tests must not use `pytest.skip`, substring-only assertions, or a fixture name as
 the only behavioral oracle.
+
+## 27. HATE-GAP-041 Through HATE-GAP-048 Detail Spec Index
+
+The detailed runtime, schema, fixture, finding, test, and release connection
+contract for HATE-GAP-041 through HATE-GAP-048 lives in
+`PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md`. This parent file
+keeps only the index pointer so it remains below the 1000-line maintainability
+guard.

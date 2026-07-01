@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/rollout-adoption-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d9b683e07136a94c1643af52c06b528fc7d8dfc9aa5c8b04a6d26a1117280efd",
+  "line_count": 17,
+  "size_bytes": 722,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

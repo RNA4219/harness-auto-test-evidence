@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_expansion_portfolio_readiness.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "4d0f8049b50049d797e0cc9a5d2d390af5ca169e1277256622a02596fb3d6831",
+  "line_count": 260,
+  "size_bytes": 9617,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.portfolio_readiness",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/portfolio_readiness.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

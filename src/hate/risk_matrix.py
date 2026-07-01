@@ -4,6 +4,7 @@ from datetime import UTC, datetime
 from typing import Any
 
 from .evidence_envelope import source_refs
+from .risk_matrix_evidence import classify_evidence_for_risk
 from .risk_matrix_types import (
     SEVERITY_AGING_DAYS,
     SEVERITY_LEVELS,
@@ -131,7 +132,7 @@ def build_risk_coverage_matrix(
         # Determine required evidence classes based on severity and requirement
         required_evidence_classes = _required_evidence_for_severity(severity)
 
-        evidence_info = _classify_evidence_for_risk(risk_id, nodes, edges, requirement_refs)
+        evidence_info = classify_evidence_for_risk(risk_id, nodes, edges, requirement_refs)
         oracle_strength = _compute_oracle_strength(evidence_info)
         gap_class = _determine_gap_class(evidence_info, oracle_strength, severity)
         readiness_effect = _determine_readiness_effect(severity, gap_class, profile, evidence_info)
@@ -250,155 +251,6 @@ def build_risk_coverage_matrix(
         "findings": findings,
         "sourceRefs": sorted({ref for entry in entries for ref in entry.sourceRefs}),
     }
-
-
-def _classify_evidence_for_risk(
-    risk_id: str,
-    nodes: dict[str, dict[str, Any]],
-    edges: list[dict[str, Any]],
-    requirement_refs: list[str],
-) -> dict[str, Any]:
-    risk_node_id = f"risk:{risk_id}"
-    connected_evidence = []
-    has_static_blocker = False
-
-    # First check for edges from this risk
-    for edge in edges:
-        if edge.get("kind") == "blocked_by" and edge.get("from") == risk_node_id:
-            to_id = edge.get("to", "")
-            to_node = nodes.get(to_id)
-            if to_node:
-                kind = to_node.get("kind", "")
-                # Static findings are blockers, not coverage evidence
-                if kind == "finding":
-                    has_static_blocker = True
-                    # Don't add to connected_evidence - findings indicate problems
-                elif kind in {"contract", "mutation", "manual_review", "execution"}:
-                    # Contract, mutation, manual_review, and execution can provide coverage
-                    connected_evidence.append(to_node)
-
-    # If risk has requirement_refs, only consider evidence tied to those requirements
-    if requirement_refs:
-        valid_requirement_ids = {f"requirement:{req_id}" for req_id in requirement_refs}
-
-        for edge in edges:
-            if edge.get("kind") in {"supported_by", "reviewed_by"}:
-                from_id = edge.get("from", "")
-                # Only include evidence from requirements the risk is associated with
-                if from_id in valid_requirement_ids:
-                    to_id = edge.get("to", "")
-                    to_node = nodes.get(to_id)
-                    if to_node and to_node.get("kind") != "finding":
-                        connected_evidence.append(to_node)
-
-        # Also check requirement -> test -> execution chains
-        for req_id in requirement_refs:
-            req_node_id = f"requirement:{req_id}"
-            req_edges = [e for e in edges if e.get("from") == req_node_id and e.get("kind") == "requires_test"]
-            for req_edge in req_edges:
-                test_id = req_edge.get("to", "")
-                test_node = nodes.get(test_id)
-                if test_node:
-                    exec_edges = [e for e in edges if e.get("from") == test_id and e.get("kind") == "executed_by"]
-                    for exec_edge in exec_edges:
-                        exec_id = exec_edge.get("to", "")
-                        exec_node = nodes.get(exec_id)
-                        if exec_node:
-                            connected_evidence.append(exec_node)
-    else:
-        # If no requirement_refs specified, use legacy logic for backward compatibility
-        for edge in edges:
-            if edge.get("kind") in {"supported_by", "reviewed_by"}:
-                from_id = edge.get("from", "")
-                if from_id.startswith("requirement:"):
-                    req_edges = [e for e in edges if e.get("from") == from_id and e.get("kind") == "requires_test"]
-                    for req_edge in req_edges:
-                        test_id = req_edge.get("to", "")
-                        test_node = nodes.get(test_id)
-                        if test_node:
-                            exec_edges = [e for e in edges if e.get("from") == test_id and e.get("kind") == "executed_by"]
-                            for exec_edge in exec_edges:
-                                exec_id = exec_edge.get("to", "")
-                                exec_node = nodes.get(exec_id)
-                                if exec_node:
-                                    connected_evidence.append(exec_node)
-
-    # Deduplicate evidence nodes
-    seen_ids = set()
-    unique_evidence = []
-    for node in connected_evidence:
-        node_id = node.get("id", "")
-        if node_id not in seen_ids:
-            seen_ids.add(node_id)
-            unique_evidence.append(node)
-
-    if not unique_evidence and not has_static_blocker:
-        return {"primary_class": None, "evidence_nodes": [], "has_oracle": False, "all_classes": [], "has_static_blocker": False}
-
-    evidence_classes_found: set[str] = set()
-    has_oracle = False
-
-    for node in unique_evidence:
-        kind = node.get("kind", "")
-        data = node.get("data", {})
-
-        if kind == "execution":
-            payload = data.get("payload", {})
-            status = payload.get("status", "")
-            has_assertions = payload.get("has_assertions", True)
-            if status in {"passed", "failed"} and has_assertions:
-                evidence_classes_found.add("executable_oracle")
-                has_oracle = True
-            else:
-                evidence_classes_found.add("coverage_only")
-
-        elif kind == "contract":
-            status = data.get("payload", {}).get("status", "")
-            if status == "passed":
-                evidence_classes_found.add("contract_check")
-                has_oracle = True
-            else:
-                evidence_classes_found.add("contract_check")
-
-        elif kind == "mutation":
-            status = data.get("payload", {}).get("status", "")
-            if status == "killed":
-                evidence_classes_found.add("mutation_score")
-                has_oracle = True
-            else:
-                evidence_classes_found.add("mutation_score")
-
-        elif kind == "coverage":
-            contexts = data.get("payload", {}).get("contexts", [])
-            has_contexts = bool(contexts)
-            if has_contexts:
-                evidence_classes_found.add("coverage_only")
-            else:
-                evidence_classes_found.add("coverage_only")
-
-        elif kind == "manual_review":
-            status = data.get("status", "") or data.get("data", {}).get("status", "")
-            if status == "approved":
-                evidence_classes_found.add("manual_review")
-                has_oracle = True
-
-    primary_class = _select_primary_evidence_class(evidence_classes_found)
-
-    return {
-        "primary_class": primary_class,
-        "evidence_nodes": [node["id"] for node in unique_evidence],
-        "has_oracle": has_oracle,
-        "all_classes": sorted(evidence_classes_found),
-        "has_static_blocker": has_static_blocker,
-    }
-
-
-def _select_primary_evidence_class(classes: set[str]) -> str | None:
-    priority = ["executable_oracle", "contract_check", "mutation_score", "static_finding", "manual_review", "coverage_only"]
-    for cls in priority:
-        if cls in classes:
-            return cls
-    return None
 
 
 def _compute_oracle_strength(evidence_info: dict[str, Any]) -> float:

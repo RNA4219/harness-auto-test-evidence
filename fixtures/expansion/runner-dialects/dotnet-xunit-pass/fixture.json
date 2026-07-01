@@ -1,0 +1,28 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "dotnet-xunit-pass",
+  "case_kind": "positive",
+  "input": {
+    "runner_config": {
+      "required_families": ["python", "javascript-typescript", "java-kotlin", "go", "dotnet", "rust", "cpp", "ruby", "php"],
+      "runner_families": [
+        {"family": "python", "support_state": "supported"},
+        {"family": "javascript-typescript", "support_state": "supported"},
+        {"family": "java-kotlin", "support_state": "supported"},
+        {"family": "go", "support_state": "supported"},
+        {"family": "dotnet", "support_state": "supported"},
+        {"family": "rust", "support_state": "partial"},
+        {"family": "cpp", "support_state": "partial"},
+        {"family": "ruby", "support_state": "partial"},
+        {"family": "php", "support_state": "partial"}
+      ],
+      "dialects": [
+        {"dialect": "xunit", "family": "dotnet", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/dotnet-xunit-pass/fixture.json"},
+        {"dialect": "nextest", "family": "rust", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/rust-nextest/fixture.json"},
+        {"dialect": "ctest", "family": "cpp", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/ctest/fixture.json"},
+        {"dialect": "rspec", "family": "ruby", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/rspec/fixture.json"},
+        {"dialect": "phpunit", "family": "php", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/phpunit/fixture.json"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "expired-exception-blocks",
+  "case_kind": "negative",
+  "input": {
+    "rollout_config": {
+      "waves": [{"wave_id": "wave-001", "owner": "platform-admin", "policy_template": "team-ga-default", "entry_criteria": "p0-p1-green", "exit_criteria": "stable"}],
+      "repo_statuses": [{"repo": "repo-a", "status": "active"}],
+      "exceptions": [{"exception_id": "ex-001", "owner": "platform-admin", "scope": "repo-a:oracle", "expired": true}],
+      "portfolio_metrics_safe": true,
+      "rollback_plan_present": true
+    }
+  }
+}

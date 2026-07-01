@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/p0b_types.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "2adb70527a9494f55ae9734fe6d808b19d74fbbb355fec61b7a777a33a11e77b",
+  "line_count": 40,
+  "size_bytes": 958,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

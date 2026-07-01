@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/security/artifact_archive.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ab7253b7fca910b2aa4f48005e01e93ec137a997c0f3de867376bb73d416926c",
+  "line_count": 128,
+  "size_bytes": 4703,
+  "headings": [],
+  "imports": [
+    ".artifact_safety",
+    "__future__",
+    "base64",
+    "binascii",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/security/artifact_safety.py"
+  ],
+  "tags": [
+    "artifact",
+    "security"
+  ]
+}

@@ -82,10 +82,14 @@ they are ready for implementation handoff once a worker receives the matching
 packet, task seed, acceptance ID, and UAT checklist.
 
 HATE-GAP-041 through HATE-GAP-048 are third-wave requirement expansions. They
-are `specified` at PRD/backlog/packet level and must receive detailed runtime
-contracts before implementation handoff. They exist to close company-wide
-adoption, provider breadth, polyglot runner, governance, procurement, value, and
-daily developer experience gaps.
+are `implemented-ready` at runtime through
+`src/hate/expansion/portfolio_readiness.py`, the focused
+`PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md`, registered schemas,
+canonical positive and negative fixtures, expansion runner specs, release
+candidate pack entries, and acceptance rows. They close company-wide adoption,
+provider breadth, polyglot runner, governance, procurement, value, and daily
+developer experience gaps while still leaving later hardening work to
+HATE-GAP-049 through HATE-GAP-060.
 
 HATE-GAP-049 through HATE-GAP-060 are core functional expansions. They are
 `specified` at PRD/backlog/packet level and must receive detail specs before

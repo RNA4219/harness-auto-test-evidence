@@ -1,0 +1,23 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "gitlab-identity-pass",
+  "case_kind": "positive",
+  "input": {
+    "provider_config": {
+      "required_providers": ["github", "gitlab", "azure-devops", "jenkins", "circleci", "bitbucket", "buildkite", "local-import"],
+      "providers": [
+        {"provider": "github", "support_state": "supported", "commit_identity": "sha", "review_identity": "pr", "run_attempt": "run_attempt", "artifact_lifetime": "90d", "annotation_target": "check-run", "rerun_semantics": "attempt"},
+        {"provider": "gitlab", "support_state": "supported", "commit_identity": "sha", "review_identity": "mr", "run_attempt": "pipeline_attempt", "artifact_lifetime": "job-expiry", "annotation_target": "merge-request-note", "rerun_semantics": "pipeline-retry"},
+        {"provider": "azure-devops", "support_state": "partial", "commit_identity": "sourceVersion", "review_identity": "pullRequestId", "run_attempt": "attempt", "artifact_lifetime": "retention", "annotation_target": "thread", "rerun_semantics": "rerun"},
+        {"provider": "jenkins", "support_state": "partial", "commit_identity": "git_commit", "review_identity": "change_id", "run_attempt": "build_number", "artifact_lifetime": "job-policy", "annotation_target": "summary", "rerun_semantics": "rebuild"},
+        {"provider": "circleci", "support_state": "partial", "commit_identity": "revision", "review_identity": "pull_request", "run_attempt": "workflow_job", "artifact_lifetime": "artifact-ttl", "annotation_target": "summary", "rerun_semantics": "rerun-workflow"},
+        {"provider": "bitbucket", "support_state": "partial", "commit_identity": "commit", "review_identity": "pullrequest", "run_attempt": "build_number", "artifact_lifetime": "retention", "annotation_target": "report", "rerun_semantics": "rerun-step"},
+        {"provider": "buildkite", "support_state": "partial", "commit_identity": "commit", "review_identity": "pull_request", "run_attempt": "build_attempt", "artifact_lifetime": "artifact-policy", "annotation_target": "annotation", "rerun_semantics": "rebuild"},
+        {"provider": "local-import", "support_state": "supported", "commit_identity": "source_sha", "review_identity": "local_ref", "run_attempt": "import_id", "artifact_lifetime": "local-policy", "annotation_target": "local-report", "rerun_semantics": "new-import"}
+      ],
+      "minimum_permissions_declared": true,
+      "ambiguous_identity_detected": false,
+      "overbroad_permission_detected": false
+    }
+  }
+}

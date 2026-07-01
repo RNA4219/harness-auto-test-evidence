@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HATE governance review report",
+  "type": "object",
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "governance_config", "findings", "summary", "sourceRefs"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "governance-review-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"enum": ["pass", "hold"]},
+    "readiness_effect": {"enum": ["none", "hold"]},
+    "governance_config": {"type": "object"},
+    "findings": {"type": "array"},
+    "summary": {"type": "object"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  }
+}

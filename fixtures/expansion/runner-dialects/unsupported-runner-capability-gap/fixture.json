@@ -1,0 +1,13 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "unsupported-runner-capability-gap",
+  "case_kind": "negative",
+  "input": {
+    "runner_config": {
+      "required_families": ["dotnet"],
+      "runner_families": [{"family": "dotnet", "support_state": "supported"}],
+      "dialects": [{"dialect": "mstest", "family": "dotnet", "conformance_fixture_ref": ""}],
+      "unsupported_capability_gap_detected": true
+    }
+  }
+}

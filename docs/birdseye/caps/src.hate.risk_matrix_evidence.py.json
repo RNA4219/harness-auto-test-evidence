@@ -1,0 +1,19 @@
+{
+  "path": "src/hate/risk_matrix_evidence.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f23a2818e2600cf49e10a661d8366e7698e6bd93737b77d315749cdfd4675c24",
+  "line_count": 177,
+  "size_bytes": 6078,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "test"
+  ]
+}

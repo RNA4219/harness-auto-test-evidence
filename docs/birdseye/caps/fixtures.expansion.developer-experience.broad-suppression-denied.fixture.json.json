@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/expansion/developer-experience/broad-suppression-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f740acce01222e7880b2fe578f0a2d69026bf8d019460e580f8dc2cb5a58d1f9",
+  "line_count": 17,
+  "size_bytes": 635,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

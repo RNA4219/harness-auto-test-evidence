@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/expansion/governance-workflow/policy-approved-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ee05dae487310cbad6eb01c49423d34c2d090d1f2effd7a3d84a4a67b7568945",
+  "line_count": 13,
+  "size_bytes": 761,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

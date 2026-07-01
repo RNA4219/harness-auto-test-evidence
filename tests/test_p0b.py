@@ -84,6 +84,25 @@ def test_p0b_export_minimal_fixture(tmp_path: Path) -> None:
     assert "C:\\Users" not in json.dumps(report)
 
 
+def test_p0b_minimal_golden_outputs_are_stable(tmp_path: Path) -> None:
+    """Minimal P0b outputs stay aligned with the checked-in golden artifacts."""
+    fixture_dir = _copy_fixture(Path("fixtures/golden/p0b-qeg-minimal/input"), tmp_path / "input")
+    out_dir = tmp_path / "output"
+    expected_dir = Path("fixtures/golden/p0b-qeg-minimal/expected")
+
+    export_qeg(fixture_dir=fixture_dir, out_dir=out_dir)
+
+    for artifact_name in [
+        "qeg-bundle.json",
+        "evidence-map.json",
+        "diff-risk-test.json",
+        "qeg-export-report.json",
+    ]:
+        actual = json.loads((out_dir / artifact_name).read_text(encoding="utf-8"))
+        expected = json.loads((expected_dir / artifact_name).read_text(encoding="utf-8"))
+        assert actual == expected, artifact_name
+
+
 def test_p0b_qeg_bundle_schema_rejects_missing_required_metadata(tmp_path: Path) -> None:
     """QEG compatibility schema catches malformed bundles before downstream import."""
     fixture_dir = _copy_fixture(Path("fixtures/golden/p0b-qeg-minimal/input"), tmp_path / "input")

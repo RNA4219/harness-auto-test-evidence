@@ -31,24 +31,55 @@
     {
       "evidence_id": "execution:1001:f577f8ac1efa67ea",
       "kind": "execution_evidence",
-      "label": "Execution: junit:tests/test_auth.py::test_login"
+      "label": "Execution: junit:tests/test_auth.py::test_login",
+      "artifact_kind": "",
+      "adapter": "",
+      "artifact_role": "",
+      "path": "",
+      "sourceRefs": [
+        "fixture:/p0a/HATE-test-results.ndjson"
+      ]
     },
     {
       "evidence_id": "execution:1001:32d9b797e7024544",
       "kind": "execution_evidence",
-      "label": "Execution: junit:tests/test_db.py::test_connection"
+      "label": "Execution: junit:tests/test_db.py::test_connection",
+      "artifact_kind": "",
+      "adapter": "",
+      "artifact_role": "",
+      "path": "",
+      "sourceRefs": [
+        "fixture:/p0a/HATE-test-results.ndjson"
+      ]
     },
     {
       "evidence_id": "coverage:d3b242d4cf93fa8e",
       "kind": "coverage",
-      "label": "Coverage: src/auth.py"
+      "label": "Coverage: src/auth.py",
+      "artifact_kind": "",
+      "adapter": "",
+      "artifact_role": "",
+      "path": "",
+      "sourceRefs": [
+        "fixture:/p0a/HATE-coverage.ndjson"
+      ]
     },
     {
       "evidence_id": "coverage:6045026f204d0e03",
       "kind": "coverage",
-      "label": "Coverage: src/db.py"
+      "label": "Coverage: src/db.py",
+      "artifact_kind": "",
+      "adapter": "",
+      "artifact_role": "",
+      "path": "",
+      "sourceRefs": [
+        "fixture:/p0a/HATE-coverage.ndjson"
+      ]
     }
   ],
+  "findings": [],
+  "contracts": [],
+  "mutations": [],
   "links": {
     "requires_test": [
       {
@@ -85,7 +116,20 @@
         "to": "test:32d9b797e7024544",
         "confidence": "medium"
       }
-    ]
+    ],
+    "touches": [
+      {
+        "from": "changed_code:src/auth.py#L10-L20",
+        "to": "risk:risk-auth-high",
+        "confidence": "high"
+      },
+      {
+        "from": "changed_code:src/db.py#L5-L10",
+        "to": "risk:risk-db-high",
+        "confidence": "high"
+      }
+    ],
+    "contradicts": []
   },
   "gaps": {
     "unsupported_claims": [],

@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/p0b_phases.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c69286f0637e9cdd1abcdd68f012ce5ba6c4653aa5e627857ed2b98dd9f86504",
+  "line_count": 515,
+  "size_bytes": 21967,
+  "headings": [],
+  "imports": [
+    ".p0b_sarif",
+    ".p0b_support",
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0b_sarif.py",
+    "src/hate/p0b_support.py"
+  ],
+  "tags": [
+    "artifact",
+    "qeg",
+    "test"
+  ]
+}

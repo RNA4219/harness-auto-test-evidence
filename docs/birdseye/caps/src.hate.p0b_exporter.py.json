@@ -1,0 +1,35 @@
+{
+  "path": "src/hate/p0b_exporter.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "2fbe6e121e158cd14ab437acd51b6771706e9b8b8252546917dc2b7565dd1bab",
+  "line_count": 193,
+  "size_bytes": 6618,
+  "headings": [],
+  "imports": [
+    ".",
+    ".p0b_graph",
+    ".p0b_inputs",
+    ".p0b_outputs",
+    ".p0b_phases",
+    ".p0b_types",
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0b_graph.py",
+    "src/hate/p0b_inputs.py",
+    "src/hate/p0b_outputs.py",
+    "src/hate/p0b_phases.py",
+    "src/hate/p0b_types.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

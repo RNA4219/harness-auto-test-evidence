@@ -9,7 +9,7 @@ next_review_due: 2026-07-08
 # HATE Requirements Expansion Acceptance Ledger
 
 This ledger defines acceptance shells for HATE-GAP-027 through HATE-GAP-060.
-HATE-GAP-027 through HATE-GAP-040 and HATE-GAP-049 through HATE-GAP-060 are `implemented` and connected to the expansion runner/release pack path. HATE-GAP-041 through HATE-GAP-048 remain `specified` until their runtime modules, schemas, fixtures, and UAT reports are added.
+HATE-GAP-027 through HATE-GAP-060 are `implemented` and connected to the expansion runner/release pack path.
 
 | AC ID | Gap | Required evidence | Current state | Decision |
 |---|---|---|---|---|
@@ -27,14 +27,14 @@ HATE-GAP-027 through HATE-GAP-040 and HATE-GAP-049 through HATE-GAP-060 are `imp
 | AC-HATE-GAP-038 | HATE-GAP-038 | accessibility/localization fixtures and a11y-l10n-uat-report.json | implemented | connected to expansion runner and release pack |
 | AC-HATE-GAP-039 | HATE-GAP-039 | cost governance fixtures and cost-governance-uat-report.json | implemented | connected to expansion runner and release pack |
 | AC-HATE-GAP-040 | HATE-GAP-040 | beta acceptance fixtures and beta-acceptance-uat-report.json | implemented | connected to expansion runner and release pack |
-| AC-HATE-GAP-041 | HATE-GAP-041 | rollout adoption fixtures and rollout-adoption-uat-report.json | specified | hold until implemented |
-| AC-HATE-GAP-042 | HATE-GAP-042 | provider matrix fixtures and provider-integration-uat-report.json | specified | hold until implemented |
-| AC-HATE-GAP-043 | HATE-GAP-043 | runner dialect fixtures and runner-dialect-coverage-uat-report.json | specified | hold until implemented |
-| AC-HATE-GAP-044 | HATE-GAP-044 | recurring real repo evaluation fixtures and recurring-real-repo-eval-uat-report.json | specified | hold until implemented |
-| AC-HATE-GAP-045 | HATE-GAP-045 | governance workflow fixtures and governance-review-uat-report.json | specified | hold until implemented |
-| AC-HATE-GAP-046 | HATE-GAP-046 | security procurement fixtures and security-procurement-uat-report.json | specified | hold until implemented |
-| AC-HATE-GAP-047 | HATE-GAP-047 | value measurement fixtures and value-measurement-uat-report.json | specified | hold until implemented |
-| AC-HATE-GAP-048 | HATE-GAP-048 | developer experience fixtures and developer-experience-uat-report.json | specified | hold until implemented |
+| AC-HATE-GAP-041 | HATE-GAP-041 | rollout adoption fixtures and rollout-adoption-uat-report.json | implemented | connected to expansion runner and release pack |
+| AC-HATE-GAP-042 | HATE-GAP-042 | provider matrix fixtures and provider-integration-uat-report.json | implemented | connected to expansion runner and release pack |
+| AC-HATE-GAP-043 | HATE-GAP-043 | runner dialect fixtures and runner-dialect-coverage-uat-report.json | implemented | connected to expansion runner and release pack |
+| AC-HATE-GAP-044 | HATE-GAP-044 | recurring real repo evaluation fixtures and recurring-real-repo-eval-uat-report.json | implemented | connected to expansion runner and release pack |
+| AC-HATE-GAP-045 | HATE-GAP-045 | governance workflow fixtures and governance-review-uat-report.json | implemented | connected to expansion runner and release pack |
+| AC-HATE-GAP-046 | HATE-GAP-046 | security procurement fixtures and security-procurement-uat-report.json | implemented | connected to expansion runner and release pack |
+| AC-HATE-GAP-047 | HATE-GAP-047 | value measurement fixtures and value-measurement-uat-report.json | implemented | connected to expansion runner and release pack |
+| AC-HATE-GAP-048 | HATE-GAP-048 | developer experience fixtures and developer-experience-uat-report.json | implemented | connected to expansion runner and release pack |
 | AC-HATE-GAP-049 | HATE-GAP-049 | impact analysis fixtures and impact-analysis-uat-report.json | implemented | connected to expansion runner and release pack |
 | AC-HATE-GAP-050 | HATE-GAP-050 | test recommendation fixtures and test-recommendation-uat-report.json | implemented | connected to expansion runner and release pack |
 | AC-HATE-GAP-051 | HATE-GAP-051 | flaky classification fixtures and flaky-classification-uat-report.json | implemented | connected to expansion runner and release pack |
@@ -51,6 +51,9 @@ HATE-GAP-027 through HATE-GAP-040 and HATE-GAP-049 through HATE-GAP-060 are `imp
 ## No-Go
 
 - Do not mark expansion gaps as `implemented` from docs-only work; implementation requires runtime code, schema, fixtures, tests, and a CLI/release-pack connection.
+- HATE-GAP-041 through HATE-GAP-048 are implemented as third-wave portfolio readiness reports:
+  rollout adoption, provider matrix, runner dialect coverage, recurring real repo evaluation,
+  governance review, security procurement, value measurement, and developer experience.
 - Do not add expansion gaps to the HATE-GAP-001..026 generated closure report
   until a second-wave generator is implemented.
 - Do not use beta acceptance, analytics, or customer docs as a waiver for

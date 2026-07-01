@@ -222,9 +222,8 @@ def test_expansion_acceptance_does_not_overclaim_implementation() -> None:
     acceptance = _read(ACCEPTANCE / "HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md")
 
     assert "connected to the expansion runner/release pack path" in acceptance
-    assert "| specified | hold until implemented |" in acceptance
     assert "implementation requires runtime code, schema, fixtures, tests, and a CLI/release-pack connection" in acceptance
-    for gap_id in [f"HATE-GAP-{index:03d}" for index in list(range(27, 41)) + list(range(49, 61))]:
+    for gap_id in EXPANSION_GAP_IDS:
         assert f"| {gap_id} |" in acceptance
         row = next(line for line in acceptance.splitlines() if f"| {gap_id} |" in line)
         assert "| implemented | connected to expansion runner and release pack |" in row
@@ -243,6 +242,8 @@ def test_w34_requirement_expansion_closes_narrow_company_use_scope() -> None:
     prd = _read(PROCESS / "PRODUCT_REQUIREMENTS_DEFINITION.md")
     backlog = _read(PROCESS / "PRODUCT_REQUIREMENTS_EXPANSION_GAP_BACKLOG.md")
     packets = _read(PROCESS / "PRODUCT_REQUIREMENTS_EXPANSION_PACKETS.md")
+    detail = _read(PROCESS / "PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md")
+    portfolio_detail = _read(PROCESS / "PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md")
     tasks = _read(TASKS / "HATE_REQUIREMENTS_EXPANSION_TASK_SEEDS.md")
     acceptance = _read(ACCEPTANCE / "HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md")
 
@@ -284,12 +285,28 @@ def test_w34_requirement_expansion_closes_narrow_company_use_scope() -> None:
         "HATE-PKT-EXP-020-security-procurement",
         "HATE-PKT-EXP-021-value-measurement",
         "HATE-PKT-EXP-022-developer-experience",
-        "specified-planned",
+        "implemented-ready",
+        "src/hate/expansion/portfolio_readiness.py",
+        "PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md",
+    ]
+    required_detail_terms = [
+        "## 1. HATE-GAP-041 Through HATE-GAP-048 Runtime Contract",
+        "## 2. Schemas, Fixtures, And Findings",
+        "## 3. Test And Release Minimum",
+        "build_rollout_adoption_report",
+        "build_developer_experience_report",
+        "rollout-adoption-report.schema.json",
+        "developer-experience-report.schema.json",
+        "runner_dialect_unsupported_capability_gap",
+        "recurring_eval_regression_detected",
+        "developer_experience_broad_suppression_denied",
     ]
 
     assert [term for term in required_prd_terms if term not in prd] == []
     assert [term for term in required_backlog_terms if term not in backlog] == []
     assert [term for term in required_packet_terms if term not in packets] == []
+    assert "PRODUCT_REQUIREMENTS_PORTFOLIO_READINESS_DETAIL_SPEC.md" in detail
+    assert [term for term in required_detail_terms if term not in portfolio_detail] == []
     for gap_id in W34_GAP_IDS:
         suffix = gap_id.rsplit("-", 1)[1]
         assert f"TASK-HATE-GAP-{suffix}" in tasks

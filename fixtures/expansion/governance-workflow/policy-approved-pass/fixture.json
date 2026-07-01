@@ -1,0 +1,13 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "policy-approved-pass",
+  "case_kind": "positive",
+  "input": {
+    "governance_config": {
+      "policy_templates": [{"template_id": "policy-001", "author": "platform", "approver": "governance", "effective_date": "2026-07-01", "review_cadence": "quarterly", "affected_repo_set": "team-ga", "rollback_owner": "platform"}],
+      "exception_requests": [{"request_id": "ex-001", "owner": "qa", "expiry": "2026-08-01", "rationale": "temporary adapter gap", "affected_risks": ["risk-001"], "compensating_evidence": ["manual-review-001"], "reviewer_decision": "accepted"}],
+      "review_packet": {"expired_exception_count": 0, "unresolved_high_risk_debt_count": 0},
+      "self_approval_detected": false
+    }
+  }
+}

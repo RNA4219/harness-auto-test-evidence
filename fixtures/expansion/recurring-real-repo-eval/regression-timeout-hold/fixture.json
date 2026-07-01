@@ -1,0 +1,16 @@
+{
+  "schema_version": "HATE/v1",
+  "fixture_id": "regression-timeout-hold",
+  "case_kind": "negative",
+  "input": {
+    "evaluation_config": {
+      "required_repo_classes": ["small", "large"],
+      "repo_roster": [{"repo": "small-a", "class": "small"}],
+      "runs": [{"run_id": "eval-002", "baseline_ref": "baseline-002", "current_result_ref": "current-002"}],
+      "timeout_budget_by_class": {"small": 300},
+      "trend_privacy_safe": true,
+      "regression_detected": true,
+      "timeout_hides_missing_evidence": true
+    }
+  }
+}

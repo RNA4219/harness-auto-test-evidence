@@ -12,7 +12,14 @@
     "unsupportedClaims": [],
     "excludedArtifacts": []
   },
+  "qeg_schema_compatibility": {
+    "schema": "schemas/HATE/v1/qeg-bundle.schema.json",
+    "valid": true,
+    "errors": []
+  },
   "unsupportedClaims": [],
+  "contract_failures": [],
+  "mutation_gaps": [],
   "missing_execution": [],
   "excludedArtifacts": [],
   "source_refs": [

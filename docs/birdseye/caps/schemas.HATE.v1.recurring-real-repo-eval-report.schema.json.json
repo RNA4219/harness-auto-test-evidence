@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/recurring-real-repo-eval-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a169888f1f0ca6633f9694f748ca16a2dbf0ef0559863f81224ef9ec0ccf61e8",
+  "line_count": 17,
+  "size_bytes": 756,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}
