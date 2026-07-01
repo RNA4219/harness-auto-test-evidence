@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/canonical-identity-index.schema.json",
+  "title": "HATE Canonical Identity Index",
+  "type": "object",
+  "required": ["schema_version", "record_type", "run_id", "summary", "identities"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "canonical_identity_index"},
+    "run_id": {"type": "string"},
+    "summary": {"type": "object", "required": ["identity_count", "duplicate_normalized_ids", "has_duplicates"]},
+    "identities": {"type": "array"}
+  },
+  "additionalProperties": true
+}

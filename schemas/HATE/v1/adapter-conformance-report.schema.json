@@ -25,7 +25,7 @@
     "manifest_id": { "type": "string", "minLength": 1 },
     "parserVersion": { "type": "string", "minLength": 1 },
     "result": { "enum": ["pass", "fail"] },
-    "required_family_count": { "type": "integer", "minimum": 1 },
+    "required_family_count": { "type": "integer", "minimum": 0 },
     "observed_family_count": { "type": "integer", "minimum": 0 },
     "family_summaries": {
       "type": "array",
@@ -112,10 +112,26 @@
               "adapter_corpus_fixture_count_below_minimum",
               "adapter_corpus_stale_fixture",
               "adapter_corpus_unsupported_claim",
-              "adapter_corpus_expected_output_missing"
+              "adapter_corpus_expected_output_missing",
+              "missing_required",
+              "unsupported_manifest_schema",
+              "invalid_adapter_id",
+              "invalid_input_formats",
+              "invalid_emitted_records",
+              "unknown_output_record",
+              "invalid_schema_range",
+              "unsupported_schema_version",
+              "invalid_parser_entrypoint",
+              "invalid_feature_flags",
+              "missing_conformance_fixtures",
+              "invalid_fixture",
+              "invalid_fixture_records",
+              "capability_mismatch",
+              "manifest_parse_error",
+              "duplicate_adapter_id"
             ]
           },
-          "severity": { "enum": ["low", "medium", "high", "critical"] },
+          "severity": { "enum": ["error", "low", "medium", "high", "critical"] },
           "message": { "type": "string", "minLength": 1 },
           "sourceRef": { "type": "string", "minLength": 1 },
           "readiness_effect": { "enum": ["none", "soft_gap", "hold"] }

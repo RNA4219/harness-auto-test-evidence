@@ -102,7 +102,7 @@ def build_runner_dialect_coverage_report(
     source_refs: list[str] | None = None,
 ) -> dict[str, Any]:
     config = _normalize_runner_config(input_data.get("runner_config", input_data))
-    return _build_report(
+    report = _build_report(
         record_type="runner-dialect-coverage-report",
         report_id=report_id,
         config_key="runner_config",
@@ -111,6 +111,8 @@ def build_runner_dialect_coverage_report(
         summary=_runner_summary(config),
         findings=_runner_findings(config, _first_source(source_refs, input_data, "runner-dialect-coverage")),
     )
+    report["results"] = _runner_results(config)
+    return report
 
 
 def build_recurring_real_repo_eval_report(
@@ -384,6 +386,28 @@ def _runner_findings(config: dict[str, Any], source_ref: str) -> list[PortfolioF
     if config["claim_without_conformance_detected"]:
         findings.append(_finding("runner_dialect_claim_without_conformance", "Runner support claim without conformance fixture blocks product-ready.", source_ref))
     return findings
+
+
+def _runner_results(config: dict[str, Any]) -> list[dict[str, Any]]:
+    results = []
+    for dialect in config["dialects"]:
+        dialect_id = str(dialect.get("dialect") or dialect.get("id") or "")
+        has_fixture = bool(dialect.get("conformance_fixture_ref"))
+        results.append({
+            "case_id": dialect_id or "dialect",
+            "expected": {
+                "dialect": dialect_id,
+                "conformance_fixture_required": True,
+            },
+            "actual": {
+                "dialect": dialect_id,
+                "summary": {},
+                "ignored_noise": [],
+                "parser_status": "parsed" if has_fixture else "unparsed",
+            },
+            "passed": has_fixture,
+        })
+    return results
 
 
 def _normalize_recurring_eval_config(raw: dict[str, Any]) -> dict[str, Any]:

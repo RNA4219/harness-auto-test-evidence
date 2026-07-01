@@ -47,6 +47,38 @@ PROFILES: dict[str, dict[str, Any]] = {
 }
 
 
+PROFILE_POLICIES: dict[str, dict[str, str]] = {
+    "default": {
+        "dq_policy": "p0a_hard_dq_only",
+        "soft_gap_policy": "p1a_p1b_gaps_visible",
+        "aete_policy": "uncalibrated_allowed",
+        "manual_policy": "high_risk_gap_recommended",
+        "export_policy": "qeg_partial_allowed",
+    },
+    "strict": {
+        "dq_policy": "high_risk_missing_execution_and_unsafe_required_artifact_hard",
+        "soft_gap_policy": "weak_oracle_and_missing_context_conditional",
+        "aete_policy": "medium_confidence_recommended",
+        "manual_policy": "manual_supplement_required",
+        "export_policy": "qeg_partial_allowed_with_warning",
+    },
+    "release": {
+        "dq_policy": "strict_plus_unresolved_high_critical_static_and_open_manual_required_hard",
+        "soft_gap_policy": "uncalibrated_score_conditional",
+        "aete_policy": "calibration_status_explicit_required",
+        "manual_policy": "unresolved_manual_request_blocks_eligibility",
+        "export_policy": "qeg_export_only_without_hard_dq",
+    },
+    "experimental": {
+        "dq_policy": "required_input_failures_only",
+        "soft_gap_policy": "adapter_development_gaps_softened",
+        "aete_policy": "reference_score_only",
+        "manual_policy": "manual_supplement_recommendation",
+        "export_policy": "debug_non_release_export",
+    },
+}
+
+
 def resolve_profile(profile_name: str) -> dict[str, Any]:
     if profile_name not in PROFILES:
         raise ValueError(f"unknown profile: {profile_name}")
@@ -66,6 +98,7 @@ def resolve_profile(profile_name: str) -> dict[str, Any]:
         "profile": profile_name,
         "inherits": list(reversed(chain)),
         "rules": rules,
+        "policies": deepcopy(PROFILE_POLICIES[profile_name]),
     }
 
 
@@ -109,11 +142,13 @@ def build_profile_report(
         {"profile": name, "inherits": PROFILES[name].get("inherits")}
         for name in PROFILES
     ]
-    drift_checks = _profile_drift_checks(profile_name, chain, effective_rules)
+    effective_policies = deepcopy(PROFILE_POLICIES[profile_name])
+    drift_checks = _profile_drift_checks(profile_name, chain, effective_rules, effective_policies)
     hash_payload = {
         "profile": profile_name,
         "chain": chain,
         "rules": effective_rules,
+        "policies": effective_policies,
         "rule_sources": rule_sources,
         "profile_version": PROFILE_VERSION,
     }
@@ -131,6 +166,9 @@ def build_profile_report(
         "effective_chain": chain,
         "inheritance_graph": inheritance_graph,
         "rules": deepcopy(effective_rules),
+        "effective_rules": deepcopy(effective_rules),
+        "effective_policies": effective_policies,
+        "policy_table": deepcopy(PROFILE_POLICIES),
         "rule_sources": rule_sources,
         "rule_diffs": rule_diffs,
         "drift_checks": drift_checks,
@@ -142,7 +180,12 @@ def build_profile_report(
     }
 
 
-def _profile_drift_checks(profile_name: str, chain: list[str], rules: dict[str, Any]) -> list[dict[str, Any]]:
+def _profile_drift_checks(
+    profile_name: str,
+    chain: list[str],
+    rules: dict[str, Any],
+    policies: dict[str, str],
+) -> list[dict[str, Any]]:
     expected_chain = {
         "default": ["default"],
         "strict": ["default", "strict"],
@@ -160,6 +203,23 @@ def _profile_drift_checks(profile_name: str, chain: list[str], rules: dict[str, 
             "check_id": "effective-rules-complete",
             "status": "pass" if {"require_tests", "require_coverage", "unsafe_artifact_policy"}.issubset(rules) else "fail",
             "required_rules": ["require_tests", "require_coverage", "unsafe_artifact_policy"],
+        },
+        {
+            "check_id": "effective-policies-complete",
+            "status": "pass" if {
+                "dq_policy",
+                "soft_gap_policy",
+                "aete_policy",
+                "manual_policy",
+                "export_policy",
+            }.issubset(policies) else "fail",
+            "required_policies": [
+                "dq_policy",
+                "soft_gap_policy",
+                "aete_policy",
+                "manual_policy",
+                "export_policy",
+            ],
         },
         {
             "check_id": "qeg-gate-boundary",

@@ -77,6 +77,7 @@ def _build_retry_aggregation(run_id: str, run_attempt: int, bundle: dict[str, An
         })
     return {
         "schema_version": SCHEMA_VERSION,
+        "record_type": "retry_aggregation",
         "run_id": run_id,
         "run_attempt": run_attempt,
         "aggregates": aggregates,

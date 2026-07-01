@@ -129,6 +129,7 @@ def _build_adapter_capability_manifest() -> dict[str, Any]:
     upstream = next(adapter for adapter in registry["adapters"] if adapter["adapter_id"] == "export-qeg-bundle")
     return {
         "schema_version": SCHEMA_VERSION,
+        "record_type": "adapter_capability_manifest",
         "adapter_id": "hate-p0b-qeg-bundle",
         "adapter_version": __version__,
         "kind": "upstream",

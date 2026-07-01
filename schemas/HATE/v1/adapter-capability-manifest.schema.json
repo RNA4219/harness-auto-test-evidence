@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/adapter-capability-manifest.schema.json",
+  "title": "HATE Adapter Capability Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "adapter_id",
+    "adapter_version",
+    "kind",
+    "input_formats",
+    "output_record_types",
+    "capability",
+    "known_limits",
+    "conformance_fixtures",
+    "profile_support",
+    "registry_ref"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "adapter_capability_manifest"},
+    "adapter_id": {"type": "string"},
+    "adapter_version": {"type": "string"},
+    "kind": {"type": "string"},
+    "input_formats": {"type": "array"},
+    "output_record_types": {"type": "array"},
+    "capability": {"type": "object"},
+    "known_limits": {"type": "array"},
+    "conformance_fixtures": {"type": "array"},
+    "profile_support": {"type": "object"},
+    "registry_ref": {"type": "string"}
+  },
+  "additionalProperties": true
+}

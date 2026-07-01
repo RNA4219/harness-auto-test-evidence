@@ -33,6 +33,8 @@ def build_read_model(
     artifact_safety = reports.get("artifact_safety", {})
     manual_review_report = reports.get("manual_review", {})
     evidence_graph = reports.get("evidence_graph", {})
+    operating_projection = reports.get("operating_projection", {})
+    connector_sync = reports.get("connector_sync", {})
 
     run_id = (
         run_report.get("run_id")
@@ -96,6 +98,16 @@ def build_read_model(
                 "remediation": finding.get("remediation") or finding.get("suggested_manual_review_action"),
                 "source_refs": finding.get("sourceRefs", []) or ([finding["sourceRef"]] if finding.get("sourceRef") else []),
             })
+    for finding in operating_projection.get("findings", []) + connector_sync.get("findings", []):
+        findings.append({
+            "finding_id": finding.get("code") or finding.get("finding_id") or finding.get("id"),
+            "severity": finding.get("severity", finding.get("readiness_effect", "info")),
+            "category": "operating" if "operating_record_id" in finding else "connector_sync",
+            "message": finding.get("message", ""),
+            "remediation": finding.get("remediation"),
+            "source_refs": finding.get("sourceRefs", []),
+            "operating_record_id": finding.get("operating_record_id", ""),
+        })
 
     manual_review_requests = manual_review_report.get("requests", [])
     if manual_review_report.get("record_type") == "manual_review_request_bundle":
@@ -112,6 +124,20 @@ def build_read_model(
                 "source_refs": node.get("sourceRefs", []) or ([node["sourceRef"]] if node.get("sourceRef") else []),
                 "artifact_refs": node.get("artifact_refs", []),
             })
+
+    operating_records = [_project_operating_record(record) for record in operating_projection.get("records", [])]
+    connector_sync_payloads = [
+        _project_connector_payload(payload, status="accepted")
+        for payload in connector_sync.get("accepted_payloads", [])
+    ]
+    connector_sync_payloads.extend(
+        _project_connector_payload(payload, status="denied")
+        for payload in connector_sync.get("denied_payloads", [])
+    )
+    connector_sync_payloads.extend(
+        _project_connector_payload(payload, status="skipped_duplicate")
+        for payload in connector_sync.get("skipped_duplicate_payloads", [])
+    )
 
     diagnostics = []
     for report_name in missing_reports:
@@ -151,6 +177,8 @@ def build_read_model(
         "artifacts": artifacts,
         "findings": findings + diagnostics,
         "manual_review_requests": manual_review_requests,
+        "operating_records": operating_records,
+        "connector_sync_payloads": connector_sync_payloads,
         "readiness_summaries": [readiness_summary] if readiness_summary else [],
         "sourceRefs": source_refs,
         "source": {
@@ -209,4 +237,39 @@ def _safe_artifact_metadata(artifact: dict[str, Any]) -> dict[str, Any]:
         "redaction_status": redaction_status,
         "safe_metadata": safe_metadata,
         "source_refs": artifact.get("sourceRefs", []) or ([artifact["sourceRef"]] if artifact.get("sourceRef") else []),
+    }
+
+
+def _project_operating_record(record: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "operating_record_id": record.get("operating_record_id", ""),
+        "entity_kind": record.get("entity_kind", ""),
+        "entity_id": record.get("entity_id", ""),
+        "status": record.get("status", ""),
+        "severity": record.get("severity", ""),
+        "readiness_effect": record.get("readiness_effect", ""),
+        "owner": record.get("owner", ""),
+        "due_date": record.get("due_date", ""),
+        "expiry_date": record.get("expiry_date", ""),
+        "source_refs": record.get("sourceRefs", []),
+        "evidence_refs": record.get("evidence_refs", []),
+        "decision_basis": record.get("decision_basis", []),
+        "tracker_sync_count": len(record.get("tracker_syncs", [])),
+        "notification_count": len(record.get("notifications", [])),
+    }
+
+
+def _project_connector_payload(payload: dict[str, Any], *, status: str) -> dict[str, Any]:
+    return {
+        "sync_id": payload.get("sync_id", ""),
+        "operating_record_id": payload.get("operating_record_id", ""),
+        "connector_id": payload.get("connector_id", ""),
+        "external_system": payload.get("external_system", ""),
+        "direction": payload.get("direction", ""),
+        "operation": payload.get("operation", ""),
+        "state": payload.get("state", ""),
+        "status": status,
+        "payload_hash": payload.get("payload_hash", ""),
+        "safe_summary": payload.get("safe_summary", {}),
+        "source_refs": payload.get("sourceRefs", []),
     }

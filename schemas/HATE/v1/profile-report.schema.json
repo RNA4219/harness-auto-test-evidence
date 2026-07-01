@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/profile-report.schema.json",
+  "title": "HATE Profile Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "profile_version",
+    "profile",
+    "inherits",
+    "effective_chain",
+    "inheritance_graph",
+    "rules",
+    "effective_rules",
+    "effective_policies",
+    "policy_table",
+    "rule_sources",
+    "rule_diffs",
+    "drift_checks",
+    "profile_hash",
+    "qeg_gate_policy",
+    "release_gate_override",
+    "publish_gate_override"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "profile_report"},
+    "profile_version": {"type": "string"},
+    "run_id": {"type": "string"},
+    "run_attempt": {"type": "integer", "minimum": 1},
+    "commit_sha": {"type": "string"},
+    "created_at": {"type": "string"},
+    "profile": {"type": "string", "enum": ["default", "strict", "release", "experimental"]},
+    "inherits": {"type": "array", "items": {"type": "string"}},
+    "effective_chain": {"type": "array", "items": {"type": "string"}},
+    "inheritance_graph": {"type": "array", "items": {"type": "object"}},
+    "rules": {"type": "object"},
+    "effective_rules": {"type": "object"},
+    "effective_policies": {
+      "type": "object",
+      "required": ["dq_policy", "soft_gap_policy", "aete_policy", "manual_policy", "export_policy"],
+      "properties": {
+        "dq_policy": {"type": "string"},
+        "soft_gap_policy": {"type": "string"},
+        "aete_policy": {"type": "string"},
+        "manual_policy": {"type": "string"},
+        "export_policy": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "policy_table": {
+      "type": "object",
+      "required": ["default", "strict", "release", "experimental"],
+      "additionalProperties": {"type": "object"}
+    },
+    "rule_sources": {"type": "object"},
+    "rule_diffs": {"type": "array", "items": {"type": "object"}},
+    "drift_checks": {"type": "array", "items": {"type": "object"}},
+    "profile_hash": {"type": "string"},
+    "qeg_gate_policy": {"const": false},
+    "release_gate_override": {"const": false},
+    "publish_gate_override": {"const": false},
+    "decision_impact": {"type": "object"},
+    "checks": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": true
+}

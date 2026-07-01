@@ -8,7 +8,6 @@ from typing import Any
 
 from .evidence_envelope import (
     ENVELOPE_SCHEMA_VERSION,
-    RECORD_KIND_SCHEMA_FILES,
     parse_timestamp,
     record_kind,
     source_refs,
@@ -32,6 +31,32 @@ PAYLOAD_REQUIRED_FIELDS = {
     "static_finding": {"rule_id", "severity", "file", "line", "sourceRef"},
     "contract_evidence": {"contract_id", "provider", "consumer", "interaction_id", "status", "sourceRef"},
     "mutation_evidence": {"mutation_id", "file", "line", "status", "sourceRef"},
+}
+
+ENVELOPE_TOP_LEVEL_FIELDS = {
+    "schema_version",
+    "record_kind",
+    "record_type",
+    "record_id",
+    "run_id",
+    "run_attempt",
+    "commit_sha",
+    "created_at",
+    "collected_at",
+    "source_tool",
+    "source_version",
+    "producer",
+    "parserVersion",
+    "sourceRef",
+    "source_ref",
+    "sourceRefs",
+    "source_refs",
+    "source_hash",
+    "sha256",
+    "redaction_status",
+    "normalized_path_set",
+    "diagnostics",
+    "payload",
 }
 
 
@@ -80,16 +105,22 @@ def validate_record(record: dict[str, Any], *, schema_root: Path | None = None, 
     kind = record_kind(record) or ""
     schema_version = str(record.get("schema_version", ""))
     record_id = str(record.get("record_id", ""))
-    schema_ref = RECORD_KIND_SCHEMA_FILES.get(kind)
+    registry = _load_schema_registry(root)
+    registry_entries = _registry_entries(registry)
+    registry_entry = registry_entries.get(kind)
+    schema_ref = _schema_file_name(str(registry_entry.get("schema", ""))) if registry_entry else None
 
     def reject(code: str, message: str) -> None:
         findings.append(SchemaFinding(code=code, severity="hard", message=message, sourceRef=refs[0] if refs else source_ref))
+
+    def warn(code: str, message: str) -> None:
+        findings.append(SchemaFinding(code=code, severity="warn", message=message, sourceRef=refs[0] if refs else source_ref))
 
     if schema_version != ENVELOPE_SCHEMA_VERSION:
         reject("unknown_schema_version", f"unsupported schema_version: {schema_version or '<missing>'}")
     if not kind:
         reject("missing_record_kind", "record_kind or record_type is required")
-    elif kind not in RECORD_KIND_SCHEMA_FILES:
+    elif kind not in registry_entries:
         reject("unknown_record_kind", f"unknown record kind: {kind}")
     if not refs:
         reject("missing_source_ref", "sourceRef or sourceRefs is required")
@@ -103,6 +134,22 @@ def validate_record(record: dict[str, Any], *, schema_root: Path | None = None, 
             reject("invalid_timestamp", f"invalid timestamp: {timestamp}")
     if _contains_secret(record):
         reject("unredacted_secret", "record contains an unredacted secret-like value")
+
+    if registry_entry:
+        unknown_fields = sorted(set(record).difference(ENVELOPE_TOP_LEVEL_FIELDS))
+        policy = str(registry_entry.get("unknown_field_policy", _default_unknown_field_policy(registry_entry)))
+        if unknown_fields and policy == "reject":
+            reject("unknown_field_rejected", f"{kind} contains unknown top-level fields: {', '.join(unknown_fields)}")
+        elif unknown_fields and policy == "warn":
+            warn("unknown_field_preserved", f"{kind} preserves unknown top-level fields: {', '.join(unknown_fields)}")
+        for deprecated in registry_entry.get("deprecated_fields", []):
+            if not isinstance(deprecated, dict):
+                continue
+            field = str(deprecated.get("field", ""))
+            if field and field in record:
+                replacement = str(deprecated.get("replacement", ""))
+                suffix = f"; replacement: {replacement}" if replacement else ""
+                warn("deprecated_field_used", f"{field} is deprecated{suffix}")
 
     payload = record.get("payload")
     if not isinstance(payload, dict):
@@ -128,7 +175,7 @@ def validate_record(record: dict[str, Any], *, schema_root: Path | None = None, 
         schema_version=schema_version or "<missing>",
         schema_ref=schema_ref,
         sourceRefs=refs,
-        accepted=not findings,
+        accepted=not any(finding.severity == "hard" for finding in findings),
         findings=findings,
     )
 
@@ -137,22 +184,43 @@ def validate_records(records: list[dict[str, Any]], *, schema_root: Path | None 
     return [validate_record(record, schema_root=schema_root, source_ref=f"{source_ref}#line={index + 1}") for index, record in enumerate(records)]
 
 
-def build_schema_validation_report(results: list[SchemaValidationResult], *, fixture_id: str = "schema-envelope") -> dict[str, Any]:
+def build_schema_validation_report(
+    results: list[SchemaValidationResult],
+    *,
+    fixture_id: str = "schema-envelope",
+    cross_record_violations: list[Any] | None = None,
+) -> dict[str, Any]:
     rejection_classes: dict[str, int] = {}
+    warning_classes: dict[str, int] = {}
+    rejected_record_ids = {result.record_id for result in results if not result.accepted}
     for result in results:
         for finding in result.findings:
-            rejection_classes[finding.code] = rejection_classes.get(finding.code, 0) + 1
+            if finding.severity == "hard":
+                rejection_classes[finding.code] = rejection_classes.get(finding.code, 0) + 1
+            else:
+                warning_classes[finding.code] = warning_classes.get(finding.code, 0) + 1
+    cross_record = _cross_record_section(cross_record_violations or [])
+    for violation in cross_record["violations"]:
+        code = str(violation.get("code", "unknown_cross_record_violation"))
+        rejection_classes[code] = rejection_classes.get(code, 0) + 1
+        for record_id in violation.get("affected_record_ids", []):
+            rejected_record_ids.add(str(record_id))
+    accepted_count = sum(1 for result in results if result.record_id not in rejected_record_ids)
     return {
         "schema_version": "HATE/schema-validation-report/v1",
         "record_type": "schema_validation_report",
         "fixture_id": fixture_id,
         "summary": {
-            "accepted": sum(1 for result in results if result.accepted),
-            "rejected": sum(1 for result in results if not result.accepted),
+            "accepted": accepted_count,
+            "rejected": len(rejected_record_ids),
+            "warnings": sum(1 for result in results for finding in result.findings if finding.severity != "hard"),
+            "cross_record_violation_count": cross_record["violation_count"],
             "rejection_classes": dict(sorted(rejection_classes.items())),
+            "warning_classes": dict(sorted(warning_classes.items())),
             "schema_versions": sorted({result.schema_version for result in results}),
         },
         "results": [result.as_dict() for result in results],
+        "cross_record": cross_record,
     }
 
 
@@ -162,6 +230,52 @@ def _read_schema(path: Path) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f"{path} must contain a JSON object")
     return data
+
+
+def _cross_record_section(violations: list[Any]) -> dict[str, Any]:
+    serialized: list[dict[str, Any]] = []
+    for violation in violations:
+        if hasattr(violation, "as_dict"):
+            item = violation.as_dict()
+        elif isinstance(violation, dict):
+            item = dict(violation)
+        else:
+            continue
+        serialized.append(item)
+    serialized.sort(key=lambda item: (str(item.get("code", "")), str(item.get("sourceRef", "")), str(item.get("violation_id", ""))))
+    return {
+        "violation_count": len(serialized),
+        "violations": serialized,
+    }
+
+
+def _load_schema_registry(schema_root: Path) -> dict[str, Any]:
+    registry_path = schema_root / "schema-registry.json"
+    if not registry_path.exists():
+        registry_path = SCHEMA_ROOT / "schema-registry.json"
+    return _read_schema(registry_path)
+
+
+def _registry_entries(registry: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    entries: dict[str, dict[str, Any]] = {}
+    for item in registry.get("records", []):
+        if not isinstance(item, dict):
+            continue
+        record_type = item.get("record_type")
+        if isinstance(record_type, str) and record_type:
+            entries[record_type] = item
+    return entries
+
+
+def _schema_file_name(schema_ref: str) -> str:
+    return schema_ref.replace("\\", "/").rsplit("/", 1)[-1]
+
+
+def _default_unknown_field_policy(registry_entry: dict[str, Any]) -> str:
+    phase = str(registry_entry.get("phase", ""))
+    if phase in {"P0", "P0a", "P0b"}:
+        return "preserve_without_summary"
+    return "warn"
 
 
 def _contains_secret(value: Any) -> bool:

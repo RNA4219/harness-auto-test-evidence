@@ -65,7 +65,7 @@ def build_identity_connector_report(run_id: str, rbac_matrix: dict[str, Any]) ->
 
 
 def build_enterprise_connector_report(run_id: str) -> dict[str, Any]:
-    """Build SIEM/warehouse/ticket dry-run contract report placeholder."""
+    """Build the SIEM/warehouse/ticket dry-run contract report."""
     connectors = [
         _ops_connector("siem"),
         _ops_connector("warehouse"),

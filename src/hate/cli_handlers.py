@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from .evaluation import RealRepoHistoryStoreError, ingest_real_repo_history, query_real_repo_history, run_real_repo_roster
 from .expansion_runner import ExpansionRunError, run_expansion_suite
 from .gap_closure import GapClosureError, generate_gap_closure_report
 from .p0a import PrecheckError, generate_p0a
@@ -320,6 +321,49 @@ def dispatch_cli(args: argparse.Namespace, parser: argparse.ArgumentParser) -> i
         except ExpansionRunError as exc:
             print(f"HATE-E-EXPANSION: {exc}", file=sys.stderr)
             return exc.exit_code
+
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
+
+    if args.command == "real-repo" and args.real_repo_command == "run":
+        try:
+            result = run_real_repo_roster(
+                roster_path=args.roster,
+                out_dir=args.out,
+                source_version=args.source_version,
+            )
+        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            print(f"HATE-E-REAL-REPO: {exc}", file=sys.stderr)
+            return 2
+
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
+
+    if args.command == "real-repo" and args.real_repo_command == "history-ingest":
+        try:
+            result = ingest_real_repo_history(args.history, args.store)
+        except RealRepoHistoryStoreError as exc:
+            print(f"HATE-E-REAL-REPO-HISTORY: {exc}", file=sys.stderr)
+            return 2
+
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
+
+    if args.command == "real-repo" and args.real_repo_command == "history-query":
+        try:
+            result = query_real_repo_history(
+                args.store,
+                repo_id=args.repo_id,
+                suite_id=args.suite_id,
+                source_version=args.source_version,
+                status=args.status,
+                since=args.since,
+                until=args.until,
+                limit=args.limit,
+            )
+        except RealRepoHistoryStoreError as exc:
+            print(f"HATE-E-REAL-REPO-HISTORY: {exc}", file=sys.stderr)
+            return 2
 
         print(json.dumps(result, ensure_ascii=False))
         return 0

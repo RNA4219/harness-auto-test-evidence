@@ -176,9 +176,10 @@ def build_conformance_report(
     manifest_findings: Iterable[ManifestFinding] = (),
     parser_version: str = "adapter-registry/1.0.0",
 ) -> dict[str, Any]:
+    manifest_list = list(manifests)
     entries: list[dict[str, Any]] = []
     all_findings = list(manifest_findings)
-    for manifest in manifests:
+    for manifest in manifest_list:
         adapter_id = str(manifest.get("adapter_id", "unknown"))
         fixture_map = manifest.get("conformance_fixtures", {})
         if isinstance(fixture_map, Mapping):
@@ -197,11 +198,25 @@ def build_conformance_report(
                     }
                 )
     return {
-        "schema_version": "HATE.adapter-conformance-report/v1",
+        "schema_version": "HATE/v1",
+        "record_type": "adapter-conformance-report",
+        "manifest_id": "adapter-sdk-manifest-set",
         "parserVersion": parser_version,
         "result": "fail" if all_findings else "pass",
+        "required_family_count": len(manifest_list),
+        "observed_family_count": len({entry["adapter_id"] for entry in entries}),
+        "family_summaries": [],
         "entries": entries,
-        "findings": [finding.to_report() for finding in all_findings],
+        "findings": [
+            {
+                **finding.to_report(),
+                "readiness_effect": "hold",
+            }
+            for finding in all_findings
+        ],
+        "status": "hold" if all_findings else "pass",
+        "readiness_effect": "hold" if all_findings else "none",
+        "sourceRefs": sorted({ref for entry in entries for ref in entry["sourceRefs"]} | {finding.source_ref for finding in all_findings}),
     }
 
 

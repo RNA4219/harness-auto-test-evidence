@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "HATE runner dialect coverage report",
   "type": "object",
-  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "runner_config", "findings", "summary", "sourceRefs"],
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "runner_config", "results", "findings", "summary", "sourceRefs"],
   "properties": {
     "schema_version": {"const": "HATE/v1"},
     "record_type": {"const": "runner-dialect-coverage-report"},
@@ -10,6 +10,30 @@
     "overall_status": {"enum": ["pass", "hold"]},
     "readiness_effect": {"enum": ["none", "hold"]},
     "runner_config": {"type": "object"},
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case_id", "expected", "actual", "passed"],
+        "properties": {
+          "case_id": {"type": "string"},
+          "expected": {"type": "object"},
+          "actual": {
+            "type": "object",
+            "required": ["dialect", "summary", "ignored_noise", "parser_status"],
+            "properties": {
+              "dialect": {"type": "string"},
+              "summary": {"type": "object", "additionalProperties": {"type": "integer"}},
+              "ignored_noise": {"type": "array", "items": {"type": "string"}},
+              "parser_status": {"type": "string", "enum": ["parsed", "unparsed"]}
+            },
+            "additionalProperties": true
+          },
+          "passed": {"type": "boolean"}
+        },
+        "additionalProperties": true
+      }
+    },
     "findings": {"type": "array"},
     "summary": {"type": "object"},
     "sourceRefs": {"type": "array", "items": {"type": "string"}}

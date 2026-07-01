@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/aete-signal-report.schema.json",
+  "title": "HATE AETE Signal Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "run_id",
+    "run_attempt",
+    "profile",
+    "rubric_version",
+    "profile_version",
+    "dimensions",
+    "signals",
+    "reason_refs",
+    "deterministic",
+    "source_refs",
+    "release_gate_override",
+    "publish_gate_override"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "aete_signal_report"},
+    "run_id": {"type": "string"},
+    "run_attempt": {"type": "integer", "minimum": 1},
+    "profile": {"type": "string"},
+    "rubric_version": {"type": "string"},
+    "profile_version": {"type": "string"},
+    "dimensions": {"type": "object"},
+    "signals": {"type": "array"},
+    "reason_refs": {"type": "array"},
+    "deterministic": {"const": true},
+    "source_refs": {"type": "array", "items": {"type": "string"}},
+    "release_gate_override": {"const": false},
+    "publish_gate_override": {"const": false}
+  },
+  "additionalProperties": true
+}

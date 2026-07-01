@@ -19,6 +19,7 @@ from hate.connectors.reports import (
     build_enterprise_connector_report,
     build_identity_connector_report,
 )
+from hate.connectors.sync import build_connector_sync_report
 
 __all__ = [
     "SSOMapping",
@@ -32,4 +33,5 @@ __all__ = [
     "build_ops_connector_report",
     "build_enterprise_connector_report",
     "build_identity_connector_report",
+    "build_connector_sync_report",
 ]

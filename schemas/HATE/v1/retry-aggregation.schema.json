@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/retry-aggregation.schema.json",
+  "title": "HATE Retry Aggregation",
+  "type": "object",
+  "required": ["schema_version", "record_type", "run_id", "run_attempt", "aggregates", "summary"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "retry_aggregation"},
+    "run_id": {"type": "string"},
+    "run_attempt": {"type": "integer", "minimum": 1},
+    "aggregates": {"type": "array"},
+    "summary": {
+      "type": "object",
+      "required": ["aggregate_count", "flaky_count", "inconclusive_count", "matrix_group_count", "missing_shard_count"]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/doctor-report.schema.json",
+  "title": "HATE Doctor Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "run_id",
+    "run_attempt",
+    "findings",
+    "summary",
+    "release_gate_override",
+    "publish_gate_override"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "doctor_report"},
+    "run_id": {"type": "string"},
+    "run_attempt": {"type": "integer", "minimum": 1},
+    "findings": {"type": "array"},
+    "summary": {
+      "type": "object",
+      "required": ["finding_count", "blocking_categories", "by_category", "by_severity", "taxonomy_version"]
+    },
+    "release_gate_override": {"const": false},
+    "publish_gate_override": {"const": false}
+  },
+  "additionalProperties": true
+}

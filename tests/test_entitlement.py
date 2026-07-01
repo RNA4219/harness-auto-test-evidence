@@ -90,8 +90,7 @@ def test_schema_registered_for_entitlement_report() -> None:
     assert schema["properties"]["record_type"]["const"] == "entitlement-report"
     assert "precheck_decision_override" in schema["required"]
     assert "qeg_verdict_override" in schema["required"]
-    assert {
-        "record_type": "entitlement-report",
-        "schema": "schemas/HATE/v1/entitlement-report.schema.json",
-        "phase": "P3",
-    } in registry["records"]
+    records = {record["record_type"]: record for record in registry["records"]}
+    assert records["entitlement-report"]["schema"] == "schemas/HATE/v1/entitlement-report.schema.json"
+    assert records["entitlement-report"]["phase"] == "P3"
+    assert records["entitlement-report"]["unknown_field_policy"] == "warn"

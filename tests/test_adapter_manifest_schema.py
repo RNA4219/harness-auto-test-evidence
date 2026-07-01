@@ -102,10 +102,18 @@ def test_conformance_report_for_valid_manifest_contains_traceable_entries() -> N
     manifest = load_manifest(fixture_path("valid-manifest"))
     report = build_conformance_report([manifest], parser_version="adapter-registry/test")
 
-    assert report["schema_version"] == "HATE.adapter-conformance-report/v1"
+    assert report["schema_version"] == "HATE/v1"
+    assert report["record_type"] == "adapter-conformance-report"
+    assert report["manifest_id"] == "adapter-sdk-manifest-set"
     assert report["parserVersion"] == "adapter-registry/test"
     assert report["result"] == "pass"
+    assert report["status"] == "pass"
+    assert report["readiness_effect"] == "none"
     assert report["findings"] == []
+    assert report["required_family_count"] == 1
+    assert report["observed_family_count"] == 1
+    assert report["family_summaries"] == []
+    assert report["sourceRefs"] == ["manifest:pytest-json:conformance_fixtures.happy"]
     assert report["entries"] == [
         {
             "adapter_id": "pytest-json",
@@ -127,5 +135,8 @@ def test_conformance_report_carries_manifest_findings() -> None:
     report = build_conformance_report([manifest], manifest_findings=findings)
 
     assert report["result"] == "fail"
+    assert report["status"] == "hold"
+    assert report["readiness_effect"] == "hold"
     assert any(finding["code"] == "unknown_output_record" for finding in report["findings"])
+    assert all(finding["readiness_effect"] == "hold" for finding in report["findings"])
     assert any(str(path) in finding["sourceRef"] for finding in report["findings"])

@@ -96,8 +96,7 @@ def test_schema_registered_for_api_rate_limit_report() -> None:
     assert schema["properties"]["record_type"]["const"] == "api-rate-limit-report"
     assert "audit_events" in schema["required"]
     assert "response_headers" in schema["required"]
-    assert {
-        "record_type": "api-rate-limit-report",
-        "schema": "schemas/HATE/v1/api-rate-limit-report.schema.json",
-        "phase": "P3",
-    } in registry["records"]
+    records = {record["record_type"]: record for record in registry["records"]}
+    assert records["api-rate-limit-report"]["schema"] == "schemas/HATE/v1/api-rate-limit-report.schema.json"
+    assert records["api-rate-limit-report"]["phase"] == "P3"
+    assert records["api-rate-limit-report"]["unknown_field_policy"] == "warn"

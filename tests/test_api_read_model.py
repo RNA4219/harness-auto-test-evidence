@@ -121,3 +121,69 @@ def test_missing_upstream_report_is_stale_diagnostic_not_fake_success() -> None:
     assert runs["data"]["runs"][0]["decision"] == "unknown"
     assert len(read_model["diagnostics"]) == expected["missing_count"]
     assert findings["data"]["findings"][0]["finding_id"] == expected["diagnostic_code"]
+
+
+def test_operating_projection_and_connector_sync_are_projected() -> None:
+    read_model = build_read_model({
+        "run": {
+            "run_id": "run-platform",
+            "attempt": 1,
+            "commit": "abc123",
+            "profile": "default",
+            "decision": "hold",
+            "sourceRefs": ["reports/run.json"],
+        },
+        "operating_projection": {
+            "records": [
+                {
+                    "operating_record_id": "op-001",
+                    "entity_kind": "finding",
+                    "entity_id": "finding-001",
+                    "status": "open",
+                    "severity": "high",
+                    "readiness_effect": "hold",
+                    "owner": "owner-a",
+                    "due_date": "2026-07-02",
+                    "sourceRefs": ["reports/operating.json#/records/0"],
+                    "tracker_syncs": [{"event_id": "sync-1"}],
+                    "notifications": [{"event_id": "notify-1"}],
+                }
+            ],
+            "findings": [
+                {
+                    "code": "operating_blocking_record_missing_owner_or_due_date",
+                    "severity": "high",
+                    "message": "owner missing",
+                    "operating_record_id": "op-001",
+                    "sourceRefs": ["reports/operating.json#/findings/0"],
+                }
+            ],
+            "sourceRefs": ["reports/operating.json"],
+        },
+        "connector_sync": {
+            "accepted_payloads": [
+                {
+                    "sync_id": "sync-001",
+                    "operating_record_id": "op-001",
+                    "connector_id": "github-check",
+                    "external_system": "github_check",
+                    "direction": "outbound",
+                    "operation": "create",
+                    "state": "prepared",
+                    "payload_hash": "sha256:abc",
+                    "safe_summary": {"summary": "safe"},
+                    "sourceRefs": ["reports/connector.json#/accepted/0"],
+                }
+            ],
+            "denied_payloads": [],
+            "skipped_duplicate_payloads": [],
+            "findings": [],
+            "sourceRefs": ["reports/connector.json"],
+        },
+    })
+
+    assert read_model["operating_records"][0]["operating_record_id"] == "op-001"
+    assert read_model["operating_records"][0]["tracker_sync_count"] == 1
+    assert read_model["connector_sync_payloads"][0]["sync_id"] == "sync-001"
+    assert read_model["connector_sync_payloads"][0]["safe_summary"]["summary"] == "safe"
+    assert any(finding["category"] == "operating" for finding in read_model["findings"])

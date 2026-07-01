@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/p1a-adapter-conformance.schema.json",
+  "title": "HATE P1a Adapter Conformance",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "run_id",
+    "adapter_registry_ref",
+    "adapter_registry",
+    "adapter_results",
+    "checks",
+    "summary",
+    "release_gate_override",
+    "publish_gate_override"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "adapter_conformance"},
+    "run_id": {"type": "string"},
+    "adapter_registry_ref": {"type": "string"},
+    "adapter_registry": {"type": "object"},
+    "adapter_results": {"type": "array"},
+    "checks": {"type": "array"},
+    "summary": {"type": "object"},
+    "release_gate_override": {"const": false},
+    "publish_gate_override": {"const": false}
+  },
+  "additionalProperties": true
+}

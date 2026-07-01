@@ -178,6 +178,28 @@ def build_parser() -> argparse.ArgumentParser:
     )
     expansion_run.add_argument("--area", action="append", default=[], help="Optional expansion area to run; repeat for multiple areas.")
 
+    real_repo = subparsers.add_parser("real-repo", help="Run recurring real repository evaluation from a roster.")
+    real_repo_subparsers = real_repo.add_subparsers(dest="real_repo_command", required=True)
+
+    real_repo_run = real_repo_subparsers.add_parser("run", help="Run local real-repo commands with timeout evidence.")
+    real_repo_run.add_argument("--roster", required=True, type=Path, help="JSON roster containing repositories[].")
+    real_repo_run.add_argument("--out", required=True, type=Path, help="Output directory for real-repo reports.")
+    real_repo_run.add_argument("--source-version", default=None, help="Source version for generated records.")
+
+    real_repo_ingest = real_repo_subparsers.add_parser("history-ingest", help="Append real-repo run history JSONL into a local store.")
+    real_repo_ingest.add_argument("--history", required=True, type=Path, help="real-repo-run-history.jsonl produced by real-repo run.")
+    real_repo_ingest.add_argument("--store", required=True, type=Path, help="Local real-repo history store directory.")
+
+    real_repo_query = real_repo_subparsers.add_parser("history-query", help="Query the local real-repo history store.")
+    real_repo_query.add_argument("--store", required=True, type=Path, help="Local real-repo history store directory.")
+    real_repo_query.add_argument("--repo-id", default=None, help="Filter by repository id.")
+    real_repo_query.add_argument("--suite-id", default=None, help="Filter by suite id.")
+    real_repo_query.add_argument("--source-version", default=None, help="Filter by source version.")
+    real_repo_query.add_argument("--status", choices=["pass", "hold", "blocked"], default=None, help="Filter by run status.")
+    real_repo_query.add_argument("--since", default=None, help="Inclusive started_at lower bound.")
+    real_repo_query.add_argument("--until", default=None, help="Inclusive started_at upper bound.")
+    real_repo_query.add_argument("--limit", type=int, default=100, help="Maximum returned entries.")
+
     return parser
 
 

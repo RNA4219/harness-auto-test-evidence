@@ -107,8 +107,7 @@ def test_schema_registered_for_github_integration_report() -> None:
 
     assert schema["properties"]["record_type"]["const"] == "github-integration-report"
     assert "canonical_evidence_mutated" in schema["required"]
-    assert {
-        "record_type": "github-integration-report",
-        "schema": "schemas/HATE/v1/github-integration-report.schema.json",
-        "phase": "P3",
-    } in registry["records"]
+    records = {record["record_type"]: record for record in registry["records"]}
+    assert records["github-integration-report"]["schema"] == "schemas/HATE/v1/github-integration-report.schema.json"
+    assert records["github-integration-report"]["phase"] == "P3"
+    assert records["github-integration-report"]["unknown_field_policy"] == "warn"

@@ -8,6 +8,9 @@
     "effective_chain",
     "inheritance_graph",
     "rules",
+    "effective_rules",
+    "effective_policies",
+    "policy_table",
     "rule_sources",
     "rule_diffs",
     "drift_checks",
@@ -37,6 +40,7 @@
   "required_drift_checks": [
     "profile-chain-known",
     "effective-rules-complete",
+    "effective-policies-complete",
     "qeg-gate-boundary"
   ],
   "qeg_gate_policy": false,
