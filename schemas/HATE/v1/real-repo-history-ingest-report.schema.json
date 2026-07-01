@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/real-repo-history-ingest-report.schema.json",
+  "title": "HATE Real Repository History Ingest Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "store_version",
+    "history_path",
+    "store_path",
+    "source_history_hash",
+    "ingested_count",
+    "stored_count",
+    "repo_count",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "real-repo-history-ingest-report"},
+    "report_id": {"type": "string"},
+    "store_version": {"type": "string"},
+    "history_path": {"type": "string"},
+    "store_path": {"type": "string"},
+    "source_history_hash": {"type": "string"},
+    "ingested_count": {"type": "integer", "minimum": 0},
+    "stored_count": {"type": "integer", "minimum": 0},
+    "repo_count": {"type": "integer", "minimum": 0},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

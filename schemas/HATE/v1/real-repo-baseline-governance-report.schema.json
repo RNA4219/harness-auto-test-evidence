@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/real-repo-baseline-governance-report.schema.json",
+  "title": "HATE Real Repository Baseline Governance Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "baseline_id",
+    "repo_id",
+    "suite_id",
+    "baseline_run_id",
+    "status",
+    "frozen",
+    "can_use_for_regression",
+    "implementation_readiness_proof",
+    "projection",
+    "findings",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "real-repo-baseline-governance-report"},
+    "report_id": {"type": "string"},
+    "baseline_id": {"type": "string"},
+    "repo_id": {"type": "string"},
+    "suite_id": {"type": "string"},
+    "baseline_run_id": {"type": "string"},
+    "status": {"type": "string", "enum": ["missing", "proposed", "approved", "expired", "revoked", "superseded"]},
+    "frozen": {"type": "boolean"},
+    "can_use_for_regression": {"type": "boolean"},
+    "implementation_readiness_proof": {"type": "boolean"},
+    "projection": {"type": "object", "additionalProperties": true},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "readiness_effect", "message"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold"]},
+          "message": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {"type": "object", "additionalProperties": true},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

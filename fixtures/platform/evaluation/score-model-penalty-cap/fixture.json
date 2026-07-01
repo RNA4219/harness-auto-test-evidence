@@ -1,0 +1,29 @@
+{
+  "fixture_id": "score-model-penalty-cap",
+  "description": "Real-repo score is clamped at zero when penalties exceed base score.",
+  "input": {
+    "repo_id": "score-penalty-repo",
+    "suite_id": "unit",
+    "components": {
+      "evidence_strength": 0.1,
+      "coverage_confidence": 0.0,
+      "oracle_confidence": 0.0,
+      "freshness_score": 0.2,
+      "stability_score": 0.0,
+      "ownership_clarity": 0.0
+    },
+    "penalties": {
+      "regression_penalty": 40,
+      "timeout_penalty": 20,
+      "record_collapse_penalty": 30,
+      "manual_debt_penalty": 15,
+      "expired_debt_penalty": 50,
+      "unsafe_artifact_penalty": 50
+    }
+  },
+  "expected": {
+    "score": 0,
+    "score_band": "blocked",
+    "penalty_total": 205
+  }
+}

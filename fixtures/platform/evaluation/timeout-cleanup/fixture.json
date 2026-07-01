@@ -1,0 +1,24 @@
+{
+  "fixture_id": "timeout-cleanup",
+  "description": "Timed out real-repo command records timeout reason and cleanup attempt metadata.",
+  "input": {
+    "repo_id": "timeout-cleanup-repo",
+    "timeout_recorded": true,
+    "timed_out": true,
+    "failure_kind": "timeout",
+    "command_exit_code": 124,
+    "timeout_cleanup": {
+      "timeout_reason": "command_timeout_exceeded",
+      "cleanup_attempted": true,
+      "cleanup_method": "taskkill_tree",
+      "cleanup_completed": true,
+      "fallback_kill_used": false
+    }
+  },
+  "expected": {
+    "overall_status": "hold",
+    "finding_code": "real_repo_timeout_recorded",
+    "timeout_reason": "command_timeout_exceeded",
+    "cleanup_attempted": true
+  }
+}

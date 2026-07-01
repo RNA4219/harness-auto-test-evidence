@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/real-repo-history-query-report.schema.json",
+  "title": "HATE Real Repository History Query Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "store_version",
+    "store_path",
+    "filters",
+    "matched_count",
+    "returned_count",
+    "entries",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "real-repo-history-query-report"},
+    "report_id": {"type": "string"},
+    "store_version": {"type": "string"},
+    "store_path": {"type": "string"},
+    "filters": {"type": "object", "additionalProperties": {"type": "string"}},
+    "matched_count": {"type": "integer", "minimum": 0},
+    "returned_count": {"type": "integer", "minimum": 0},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["run_id", "repo_id", "suite_id", "source_version", "started_at", "status", "sourceRefs"],
+        "properties": {
+          "run_id": {"type": "string"},
+          "repo_id": {"type": "string"},
+          "suite_id": {"type": "string"},
+          "ownership_scope": {"type": "string"},
+          "source_version": {"type": "string"},
+          "roster_hash": {"type": "string"},
+          "policy_hash": {"type": "string"},
+          "started_at": {"type": "string"},
+          "finished_at": {"type": "string"},
+          "status": {"type": "string", "enum": ["pass", "hold", "blocked", ""]},
+          "record_count": {"type": ["integer", "null"]},
+          "duration_ms": {"type": ["integer", "null"]},
+          "failure_kind": {"type": "string"},
+          "timeout_recorded": {"type": "boolean"},
+          "store_sequence": {"type": ["integer", "null"]},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

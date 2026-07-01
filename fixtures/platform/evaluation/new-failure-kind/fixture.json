@@ -1,0 +1,20 @@
+{
+  "fixture_id": "new-failure-kind",
+  "description": "Current real-repo run introduces a failure kind absent from the baseline.",
+  "input": {
+    "repo_id": "failure-kind-repo",
+    "suite_id": "unit",
+    "baseline_decision": "pass",
+    "current_decision": "pass",
+    "baseline_record_count": 20,
+    "current_record_count": 20,
+    "baseline_failure_kind": "",
+    "failure_kind": "dependency_network_blocked",
+    "command_exit_code": 1
+  },
+  "expected": {
+    "overall_status": "hold",
+    "regression_class": "failure_kind_new",
+    "finding_code": "real_repo_failure_kind_new"
+  }
+}

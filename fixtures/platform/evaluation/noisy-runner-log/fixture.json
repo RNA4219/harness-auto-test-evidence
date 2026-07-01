@@ -1,0 +1,42 @@
+{
+  "fixture_id": "noisy-runner-log",
+  "description": "Runner dialect parser ignores non-summary error/noise lines and preserves aggregate counts.",
+  "input": {
+    "cases": [
+      {
+        "case_id": "pytest-noisy",
+        "stdout": "ERROR handler emitted 500 errors while exercising retry paths\n================ 1436 passed, 11 skipped in 108.14s ================",
+        "stderr": "non-summary warning: expected failure branch was covered",
+        "expected": {
+          "dialect": "pytest",
+          "summary": {"passed": 1436, "skipped": 11, "total_tests": 1447}
+        }
+      },
+      {
+        "case_id": "vitest-noisy",
+        "stdout": "WARN Result validation failed errors [{\"code\":\"semantic_error\"}]\n Test Files  106 passed | 1 skipped (107)\n      Tests  2266 passed | 15 skipped (2281)",
+        "stderr": "",
+        "expected": {
+          "dialect": "vitest",
+          "summary": {"passed": 2266, "skipped": 15, "total_tests": 2281}
+        }
+      },
+      {
+        "case_id": "bun-noisy",
+        "stdout": "ERROR handler emitted 500 errors while exercising retry paths\nbun test v1.3.12\n 57 pass\n 0 fail\n 0 error\nRan 57 tests across 10 files. [644.00ms]",
+        "stderr": "",
+        "expected": {
+          "dialect": "bun",
+          "summary": {"passed": 57, "total_tests": 57}
+        }
+      }
+    ]
+  },
+  "expected": {
+    "record_type": "runner-dialect-coverage-report",
+    "overall_status": "pass",
+    "case_count": 3,
+    "failed": 0,
+    "dialects": ["bun", "pytest", "vitest"]
+  }
+}

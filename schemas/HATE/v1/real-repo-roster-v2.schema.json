@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/real-repo-roster-v2.schema.json",
+  "title": "HATE Real Repository Roster v2",
+  "type": "object",
+  "required": ["schema_version", "record_type", "roster_id", "source_version", "default_policy_ref", "repositories"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "real-repo-roster-v2"},
+    "roster_id": {"type": "string"},
+    "source_version": {"type": "string"},
+    "default_policy_ref": {"type": "string"},
+    "repositories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["repo_id", "path", "ownership_scope", "repo_class", "suites"],
+        "properties": {
+          "repo_id": {"type": "string"},
+          "path": {"type": "string"},
+          "ownership_scope": {"type": "string", "enum": ["owned", "external", "third_party_sample"]},
+          "repo_class": {"type": "string", "enum": ["small", "medium", "large", "xlarge", "monorepo"]},
+          "tags": {"type": "array", "items": {"type": "string"}},
+          "risk_profile": {"type": "string"},
+          "env": {"type": "object", "additionalProperties": {"type": "string"}},
+          "suites": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["suite_id", "suite_kind", "command", "timeout_profile", "subset"],
+              "properties": {
+                "suite_id": {"type": "string"},
+                "suite_kind": {
+                  "type": "string",
+                  "enum": ["unit", "integration", "e2e", "build", "typecheck", "lint", "security", "smoke", "package-split"]
+                },
+                "command": {"type": "array", "items": {"type": "string"}},
+                "timeout_profile": {"type": "string"},
+                "subset": {"type": "boolean"},
+                "subset_label": {"type": "string"},
+                "expected_record_floor": {"type": "integer", "minimum": 0},
+                "baseline_ref": {"type": "string"},
+                "env": {"type": "object", "additionalProperties": {"type": "string"}}
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

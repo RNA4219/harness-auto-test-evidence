@@ -1,0 +1,140 @@
+{
+  "source_version": "codex-dev-root-extra-local",
+  "repositories": [
+    {
+      "repo_id": "aituber-kit",
+      "repo_class": "medium",
+      "path": "C:/Users/ryo-n/Codex_dev/aituber-kit",
+      "command": ["npm", "test", "--", "--runInBand"],
+      "subset": false
+    },
+    {
+      "repo_id": "code-to-gate",
+      "repo_class": "large",
+      "path": "C:/Users/ryo-n/Codex_dev/code-to-gate",
+      "command": ["npm", "run", "test:ci:stable"],
+      "subset": false
+    },
+    {
+      "repo_id": "dit-adapter",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/Delivery-industry-and-Information-Tech-adapter",
+      "command": ["uv", "run", "--extra", "dev", "python", "-m", "pytest", "-q"],
+      "subset": false
+    },
+    {
+      "repo_id": "image-summarizer-backend",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/image-summarizer",
+      "command": [
+        "uv",
+        "run",
+        "--with",
+        "pytest",
+        "--with",
+        "fastapi",
+        "--with",
+        "uvicorn[standard]",
+        "--with",
+        "pydantic",
+        "--with",
+        "pydantic-settings",
+        "--with",
+        "httpx",
+        "--with",
+        "pillow",
+        "--with",
+        "python-dotenv",
+        "--with",
+        "python-multipart",
+        "--with",
+        "numpy",
+        "--with",
+        "opencv-python",
+        "python",
+        "-m",
+        "compileall",
+        "backend/app"
+      ],
+      "subset": false
+    },
+    {
+      "repo_id": "image-summarizer-frontend",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/image-summarizer/frontend",
+      "command": ["npm", "run", "build"],
+      "subset": false
+    },
+    {
+      "repo_id": "lyriclytic",
+      "repo_class": "medium",
+      "path": "C:/Users/ryo-n/Codex_dev/LyricLytic",
+      "command": ["npm", "run", "test:run"],
+      "subset": false
+    },
+    {
+      "repo_id": "ndlocr-lite",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/ndlocr-lite",
+      "command": ["uv", "run", "python", "-m", "compileall", "src"],
+      "subset": false
+    },
+    {
+      "repo_id": "open-synaptic-code",
+      "repo_class": "medium",
+      "path": "C:/Users/ryo-n/Codex_dev/open-synaptic-code",
+      "command": ["cargo", "test"],
+      "subset": false
+    },
+    {
+      "repo_id": "pokemon-card-ai-battle",
+      "repo_class": "medium",
+      "path": "C:/Users/ryo-n/Codex_dev/pokemon_card_ai_battle",
+      "command": [
+        "uv",
+        "run",
+        "--with",
+        "pytest",
+        "--with",
+        "jsonschema",
+        "--with",
+        "coverage",
+        "--with",
+        "kagglehub",
+        "python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "subset": false
+    },
+    {
+      "repo_id": "quality-evidence-graph",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/quality-evidence-graph",
+      "command": ["npm", "run", "typecheck"],
+      "subset": false
+    },
+    {
+      "repo_id": "rand-research-runtime",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/RanD/research-runtime",
+      "command": ["uv", "run", "--with", "tzdata", "--with", "pytest", "python", "-m", "pytest", "-q"],
+      "subset": false
+    },
+    {
+      "repo_id": "rna4219-webpage",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/rna4219_webpage",
+      "command": ["npm", "run", "build"],
+      "subset": false
+    },
+    {
+      "repo_id": "storm-access",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/storm-access",
+      "command": ["uv", "run", "--with", "pytest", "pytest", "-q"],
+      "subset": false
+    }
+  ]
+}

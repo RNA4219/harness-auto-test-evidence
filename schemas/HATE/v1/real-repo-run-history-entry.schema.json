@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/real-repo-run-history-entry.schema.json",
+  "title": "HATE Real Repository Run History Entry",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "run_id",
+    "repo_id",
+    "suite_id",
+    "ownership_scope",
+    "source_version",
+    "roster_hash",
+    "policy_hash",
+    "environment_fingerprint",
+    "started_at",
+    "finished_at",
+    "status",
+    "record_count",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "real-repo-run-history-entry"},
+    "run_id": {"type": "string"},
+    "repo_id": {"type": "string"},
+    "suite_id": {"type": "string"},
+    "ownership_scope": {"type": "string"},
+    "source_version": {"type": "string"},
+    "roster_hash": {"type": "string"},
+    "policy_hash": {"type": "string"},
+    "environment_fingerprint": {"type": "object", "additionalProperties": {"type": "string"}},
+    "started_at": {"type": "string"},
+    "finished_at": {"type": "string"},
+    "status": {"type": "string", "enum": ["pass", "hold", "blocked"]},
+    "record_count": {"type": ["integer", "null"]},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

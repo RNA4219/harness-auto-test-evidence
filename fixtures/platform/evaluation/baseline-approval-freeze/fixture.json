@@ -1,0 +1,63 @@
+{
+  "fixture_id": "baseline-approval-freeze",
+  "description": "Approved and frozen baseline remains usable for regression comparison.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "real-repo-baseline-event",
+        "baseline_id": "baseline-alpha-unit",
+        "repo_id": "alpha",
+        "suite_id": "unit",
+        "baseline_run_id": "run-alpha-unit-001",
+        "event_type": "proposed",
+        "actor": "qa",
+        "reason": "initial stable baseline",
+        "approved_by": "",
+        "expires_at": "2026-12-31",
+        "policy_hash": "sha256:policy001",
+        "ownership_scope": "owned",
+        "sourceRefs": ["fixtures/platform/evaluation/baseline-approval-freeze/fixture.json#proposed"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "real-repo-baseline-event",
+        "baseline_id": "baseline-alpha-unit",
+        "repo_id": "alpha",
+        "suite_id": "unit",
+        "baseline_run_id": "run-alpha-unit-001",
+        "event_type": "approved",
+        "actor": "qa-lead",
+        "reason": "reviewed stable pass",
+        "approved_by": "qa-lead",
+        "expires_at": "2026-12-31",
+        "policy_hash": "sha256:policy001",
+        "ownership_scope": "owned",
+        "sourceRefs": ["fixtures/platform/evaluation/baseline-approval-freeze/fixture.json#approved"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "real-repo-baseline-event",
+        "baseline_id": "baseline-alpha-unit",
+        "repo_id": "alpha",
+        "suite_id": "unit",
+        "baseline_run_id": "run-alpha-unit-001",
+        "event_type": "frozen",
+        "actor": "qa-lead",
+        "reason": "freeze for release comparison",
+        "approved_by": "qa-lead",
+        "expires_at": "2026-12-31",
+        "policy_hash": "sha256:policy001",
+        "ownership_scope": "owned",
+        "sourceRefs": ["fixtures/platform/evaluation/baseline-approval-freeze/fixture.json#frozen"]
+      }
+    ]
+  },
+  "expected": {
+    "record_type": "real-repo-baseline-governance-report",
+    "status": "approved",
+    "frozen": true,
+    "can_use_for_regression": true,
+    "finding_count": 0
+  }
+}

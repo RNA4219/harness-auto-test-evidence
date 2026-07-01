@@ -1,0 +1,29 @@
+{
+  "fixture_id": "baseline-unapproved-denied",
+  "description": "Proposed baseline cannot be used for regression comparison.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "real-repo-baseline-event",
+        "baseline_id": "baseline-proposed",
+        "repo_id": "alpha",
+        "suite_id": "unit",
+        "baseline_run_id": "run-alpha-unit-002",
+        "event_type": "proposed",
+        "actor": "qa",
+        "reason": "not reviewed",
+        "approved_by": "",
+        "expires_at": "2026-12-31",
+        "policy_hash": "sha256:policy001",
+        "ownership_scope": "owned",
+        "sourceRefs": ["fixtures/platform/evaluation/baseline-unapproved-denied/fixture.json#proposed"]
+      }
+    ]
+  },
+  "expected": {
+    "status": "proposed",
+    "can_use_for_regression": false,
+    "finding_code": "baseline_unapproved"
+  }
+}

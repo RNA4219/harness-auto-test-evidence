@@ -15,6 +15,8 @@
     "runtime_budget_ms",
     "timeout_recorded",
     "subset",
+    "regressions",
+    "external_hold",
     "findings",
     "summary",
     "sourceRefs"
@@ -33,6 +35,60 @@
     "current": {
       "type": "object",
       "required": ["decision", "record_count", "parser_status", "runtime_ms", "unsafe_artifact_findings"],
+      "properties": {
+        "output_safety": {
+          "type": "object",
+          "required": [
+            "redaction_status",
+            "redaction_rule_version",
+            "redaction_count",
+            "line_endings_normalized",
+            "control_characters_removed",
+            "ansi_removed",
+            "truncated",
+            "raw_output_sha256",
+            "raw_access",
+            "safe_for_read_model"
+          ],
+          "properties": {
+            "redaction_status": {"type": "string", "enum": ["not_required", "redacted"]},
+            "redaction_rule_version": {"type": "string"},
+            "redactions": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+            "redaction_count": {"type": "integer", "minimum": 0},
+            "line_endings_normalized": {"type": "boolean"},
+            "control_characters_removed": {"type": "boolean"},
+            "ansi_removed": {"type": "boolean"},
+            "truncated": {"type": "boolean"},
+            "limit": {"type": "integer", "minimum": 1},
+            "raw_output_sha256": {"type": "string"},
+            "raw_access": {"type": "string", "enum": ["not_required", "quarantined_required"]},
+            "safe_for_read_model": {"type": "boolean"}
+          },
+          "additionalProperties": true
+        },
+        "timeout_cleanup": {
+          "type": "object",
+          "required": ["timeout_reason", "cleanup_attempted", "cleanup_method", "cleanup_completed"],
+          "properties": {
+            "timeout_reason": {"type": "string"},
+            "cleanup_attempted": {"type": "boolean"},
+            "cleanup_method": {"type": "string"},
+            "cleanup_completed": {"type": ["boolean", "null"]},
+            "fallback_kill_used": {"type": "boolean"}
+          },
+          "additionalProperties": true
+        },
+        "runner_dialect": {"type": "string"},
+        "runner_parser": {
+          "type": "object",
+          "required": ["parser_status", "ignored_noise"],
+          "properties": {
+            "parser_status": {"type": "string", "enum": ["parsed", "unparsed"]},
+            "ignored_noise": {"type": "array", "items": {"type": "string"}}
+          },
+          "additionalProperties": true
+        }
+      },
       "additionalProperties": true
     },
     "timeout_ms": {"type": "integer", "minimum": 1},
@@ -46,6 +102,42 @@
         "label": {"type": "string"},
         "limitation_visible": {"type": "boolean"},
         "proves_full_suite": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "regressions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["regression_class", "code", "readiness_effect", "message", "evidence"],
+        "properties": {
+          "regression_class": {
+            "type": "string",
+            "enum": [
+              "status_regression",
+              "record_count_collapse",
+              "runtime_drift",
+              "failure_kind_new",
+              "parser_quality_regression",
+              "external_hold_detected"
+            ]
+          },
+          "code": {"type": "string"},
+          "readiness_effect": {"type": "string", "enum": ["hold"]},
+          "message": {"type": "string"},
+          "evidence": {"type": "object", "additionalProperties": true}
+        },
+        "additionalProperties": true
+      }
+    },
+    "external_hold": {
+      "type": "object",
+      "required": ["detected", "ownership_scope", "implementation_failure", "records"],
+      "properties": {
+        "detected": {"type": "boolean"},
+        "ownership_scope": {"type": "string"},
+        "implementation_failure": {"type": ["boolean", "null"]},
+        "records": {"type": "array", "items": {"type": "object", "additionalProperties": true}}
       },
       "additionalProperties": true
     },

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/real-repo-score-report.schema.json",
+  "title": "HATE Real Repository Score Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "repo_id",
+    "suite_id",
+    "score",
+    "score_band",
+    "release_approval",
+    "score_breakdown",
+    "decision_basis",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "real-repo-score-report"},
+    "report_id": {"type": "string"},
+    "repo_id": {"type": "string"},
+    "suite_id": {"type": "string"},
+    "source_version": {"type": "string"},
+    "policy_hash": {"type": "string"},
+    "score": {"type": "number", "minimum": 0, "maximum": 100},
+    "score_band": {"type": "string", "enum": ["strong", "usable", "weak", "blocked"]},
+    "release_approval": {"const": false},
+    "score_breakdown": {
+      "type": "object",
+      "required": ["component_weights", "components", "component_points", "base_score", "penalties", "penalty_total", "score"],
+      "properties": {
+        "component_weights": {"type": "object", "additionalProperties": {"type": "number"}},
+        "components": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}},
+        "component_points": {"type": "object", "additionalProperties": {"type": "number"}},
+        "base_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "penalties": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0}},
+        "penalty_total": {"type": "number", "minimum": 0},
+        "score": {"type": "number", "minimum": 0, "maximum": 100}
+      },
+      "additionalProperties": true
+    },
+    "decision_basis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["basis_id", "kind", "value", "points", "rationale"],
+        "properties": {
+          "basis_id": {"type": "string"},
+          "kind": {"type": "string", "enum": ["component", "penalty"]},
+          "value": {"type": "number"},
+          "points": {"type": "number"},
+          "rationale": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

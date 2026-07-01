@@ -1,0 +1,274 @@
+{
+  "source_version": "opencode-package-tests-local",
+  "repositories": [
+    {
+      "repo_id": "opencode-effect-drizzle-sqlite",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode",
+      "command": ["bun", "--cwd", "packages/effect-drizzle-sqlite", "test"],
+      "subset": true,
+      "subset_label": "opencode package test: packages/effect-drizzle-sqlite"
+    },
+    {
+      "repo_id": "opencode-http-recorder",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode",
+      "command": ["bun", "--cwd", "packages/http-recorder", "test"],
+      "subset": true,
+      "subset_label": "opencode package test: packages/http-recorder"
+    },
+    {
+      "repo_id": "opencode-ui",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode",
+      "command": ["bun", "--cwd", "packages/ui", "test"],
+      "subset": true,
+      "subset_label": "opencode package test: packages/ui"
+    },
+    {
+      "repo_id": "opencode-llm",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode",
+      "command": ["bun", "--cwd", "packages/llm", "test"],
+      "subset": true,
+      "subset_label": "opencode package test: packages/llm"
+    },
+    {
+      "repo_id": "opencode-core",
+      "repo_class": "medium",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode",
+      "command": ["bun", "--cwd", "packages/core", "test"],
+      "timeout_ms": 300000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/core"
+    },
+    {
+      "repo_id": "opencode-tui",
+      "repo_class": "medium",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode",
+      "command": ["bun", "--cwd", "packages/tui", "test"],
+      "timeout_ms": 300000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/tui"
+    },
+    {
+      "repo_id": "opencode-opencode-acp",
+      "repo_class": "medium",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/acp"],
+      "timeout_ms": 240000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/acp"
+    },
+    {
+      "repo_id": "opencode-opencode-server",
+      "repo_class": "large",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/server"],
+      "timeout_ms": 420000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/server"
+    },
+    {
+      "repo_id": "opencode-opencode-account",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/account"],
+      "timeout_ms": 120000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/account"
+    },
+    {
+      "repo_id": "opencode-opencode-agent",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/agent"],
+      "timeout_ms": 120000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/agent"
+    },
+    {
+      "repo_id": "opencode-opencode-permission-task",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/permission-task.test.ts"],
+      "timeout_ms": 120000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/permission-task.test.ts"
+    },
+    {
+      "repo_id": "opencode-opencode-rest",
+      "repo_class": "large",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/auth", "test/background", "test/config", "test/control-plane", "test/effect", "test/filesystem", "test/fixture", "test/format", "test/git", "test/ide", "test/image", "test/installation", "test/patch", "test/permission", "test/question", "test/share", "test/skill", "test/snapshot", "test/storage", "test/util", "test/v2"],
+      "timeout_ms": 420000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode broad non-core rest directories"
+    },
+    {
+      "repo_id": "opencode-opencode-provider",
+      "repo_class": "large",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/provider"],
+      "timeout_ms": 180000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/provider"
+    },
+    {
+      "repo_id": "opencode-opencode-plugin",
+      "repo_class": "large",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/plugin"],
+      "timeout_ms": 180000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/plugin"
+    },
+    {
+      "repo_id": "opencode-opencode-project",
+      "repo_class": "large",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/project"],
+      "timeout_ms": 180000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/project"
+    },
+    {
+      "repo_id": "opencode-opencode-lsp-mcp-tool",
+      "repo_class": "large",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/lsp", "test/mcp", "test/tool"],
+      "timeout_ms": 240000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/lsp test/mcp test/tool"
+    },
+    {
+      "repo_id": "opencode-opencode-session",
+      "repo_class": "large",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/session"],
+      "timeout_ms": 240000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/session"
+    },
+    {
+      "repo_id": "opencode-opencode-cli",
+      "repo_class": "large",
+      "path": "C:/Users/ryo-n/Codex_dev/opencode/packages/opencode",
+      "command": ["bun", "test", "--timeout", "30000", "test/cli"],
+      "timeout_ms": 300000,
+      "env": {
+        "HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "OPENCODE_DISABLE_MODELS_FETCH": "1",
+        "USERPROFILE": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home",
+        "XDG_CACHE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.cache",
+        "XDG_STATE_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/state",
+        "XDG_DATA_HOME": "C:/Users/ryo-n/Codex_dev/harness-auto-test-evidence/tmp/opencode-home/.local/share"
+      },
+      "subset": true,
+      "subset_label": "opencode package test: packages/opencode test/cli"
+    }
+  ]
+}

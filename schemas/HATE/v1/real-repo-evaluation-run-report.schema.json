@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/real-repo-evaluation-run-report.schema.json",
+  "title": "HATE Real Repository Evaluation Run Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "source_version",
+    "run_id",
+    "roster_hash",
+    "policy_hash",
+    "environment_fingerprint",
+    "overall_status",
+    "roster_path",
+    "repo_count",
+    "hold_count",
+    "generated_reports",
+    "summary",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "real-repo-evaluation-run-report"},
+    "report_id": {"type": "string"},
+    "source_version": {"type": "string"},
+    "run_id": {"type": "string"},
+    "roster_hash": {"type": "string"},
+    "policy_hash": {"type": "string"},
+    "environment_fingerprint": {"type": "object", "additionalProperties": {"type": "string"}},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "roster_path": {"type": "string"},
+    "repo_count": {"type": "integer", "minimum": 0},
+    "hold_count": {"type": "integer", "minimum": 0},
+    "generated_reports": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "summary": {
+      "type": "object",
+      "required": ["passed", "held", "timeout_count", "executed_record_count", "held_repos"],
+      "properties": {
+        "passed": {"type": "integer", "minimum": 0},
+        "held": {"type": "integer", "minimum": 0},
+        "timeout_count": {"type": "integer", "minimum": 0},
+        "executed_record_count": {"type": "integer", "minimum": 0},
+        "held_repos": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true
+}

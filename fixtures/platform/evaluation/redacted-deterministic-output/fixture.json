@@ -1,0 +1,17 @@
+{
+  "fixture_id": "redacted-deterministic-output",
+  "description": "Command output excerpt removes ANSI/control characters, secrets, PII, and private paths with deterministic truncation metadata.",
+  "input": {
+    "stdout": "\u001b[31mFAIL\u001b[0m\r\napi_key=\"supersecretvalue1234567890\" user alice@example.com C:\\Users\\ryo-n\\secret\\file.txt\u0007",
+    "stderr": "/home/runner/work/private/repo/file.py token=ghp_abcdefghijklmnopqrstuvwxyz"
+  },
+  "expected": {
+    "redaction_status": "redacted",
+    "raw_access": "quarantined_required",
+    "markers": ["[REDACTED_SECRET]", "[REDACTED_PII]", "[REDACTED_PATH]"],
+    "forbidden": ["supersecretvalue1234567890", "alice@example.com", "C:\\Users\\ryo-n", "ghp_abcdefghijklmnopqrstuvwxyz"],
+    "ansi_removed": true,
+    "control_characters_removed": true,
+    "line_endings_normalized": true
+  }
+}

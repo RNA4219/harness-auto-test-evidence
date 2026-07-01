@@ -1,0 +1,32 @@
+{
+  "fixture_id": "platform-evaluation-roster-v2-invalid-ownership",
+  "requirements": ["PPH-EVAL-001"],
+  "acceptance": ["PPH-AC-EVAL-001"],
+  "input": {
+    "schema_version": "HATE/v1",
+    "record_type": "real-repo-roster-v2",
+    "roster_id": "fixture-roster-invalid",
+    "source_version": "fixture-source",
+    "default_policy_ref": "policy://default",
+    "repositories": [
+      {
+        "repo_id": "fixture-repo",
+        "path": ".",
+        "ownership_scope": "mine",
+        "repo_class": "small",
+        "suites": [
+          {
+            "suite_id": "unit",
+            "suite_kind": "unit",
+            "command": ["python", "-c", "print('1 passed in 0.1s')"],
+            "timeout_profile": "small",
+            "subset": false
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "error_contains": "invalid ownership_scope"
+  }
+}

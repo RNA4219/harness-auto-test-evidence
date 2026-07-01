@@ -1,0 +1,72 @@
+{
+  "fixture_id": "history-store-query-filter",
+  "description": "Query real-repo history by repository, suite, source version, status, and time window.",
+  "input": {
+    "history_entries": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "real-repo-run-history-entry",
+        "run_id": "run-alpha-unit-001",
+        "repo_id": "alpha",
+        "suite_id": "unit",
+        "ownership_scope": "owned",
+        "source_version": "main@001",
+        "roster_hash": "sha256:roster001",
+        "policy_hash": "sha256:policy001",
+        "environment_fingerprint": {"os": "Windows"},
+        "started_at": "2026-07-01T00:00:00Z",
+        "finished_at": "2026-07-01T00:00:02Z",
+        "status": "pass",
+        "record_count": 12,
+        "sourceRefs": ["fixtures/platform/evaluation/history-store-query-filter/fixture.json#alpha-unit-001"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "real-repo-run-history-entry",
+        "run_id": "run-alpha-unit-002",
+        "repo_id": "alpha",
+        "suite_id": "unit",
+        "ownership_scope": "owned",
+        "source_version": "main@002",
+        "roster_hash": "sha256:roster002",
+        "policy_hash": "sha256:policy001",
+        "environment_fingerprint": {"os": "Windows"},
+        "started_at": "2026-07-01T01:00:00Z",
+        "finished_at": "2026-07-01T01:00:03Z",
+        "status": "hold",
+        "record_count": 12,
+        "sourceRefs": ["fixtures/platform/evaluation/history-store-query-filter/fixture.json#alpha-unit-002"]
+      },
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "real-repo-run-history-entry",
+        "run_id": "run-beta-smoke-001",
+        "repo_id": "beta",
+        "suite_id": "smoke",
+        "ownership_scope": "owned",
+        "source_version": "main@002",
+        "roster_hash": "sha256:roster002",
+        "policy_hash": "sha256:policy001",
+        "environment_fingerprint": {"os": "Windows"},
+        "started_at": "2026-07-01T02:00:00Z",
+        "finished_at": "2026-07-01T02:00:01Z",
+        "status": "pass",
+        "record_count": 4,
+        "sourceRefs": ["fixtures/platform/evaluation/history-store-query-filter/fixture.json#beta-smoke-001"]
+      }
+    ]
+  },
+  "expected": {
+    "record_type": "real-repo-history-query-report",
+    "filter": {
+      "repo_id": "alpha",
+      "suite_id": "unit",
+      "source_version": "main@002",
+      "status": "hold",
+      "since": "2026-07-01T00:30:00Z",
+      "until": "2026-07-01T01:30:00Z"
+    },
+    "matched_count": 1,
+    "returned_run_id": "run-alpha-unit-002"
+  }
+}

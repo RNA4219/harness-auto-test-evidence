@@ -1,0 +1,21 @@
+{
+  "fixture_id": "runtime-drift",
+  "description": "Current real-repo run exceeds baseline runtime by the configured ratio.",
+  "input": {
+    "repo_id": "runtime-repo",
+    "suite_id": "unit",
+    "baseline_decision": "pass",
+    "current_decision": "pass",
+    "baseline_record_count": 20,
+    "current_record_count": 20,
+    "baseline_runtime_ms": 1000,
+    "runtime_ms": 2500,
+    "runtime_drift_ratio": 1.5,
+    "runtime_budget_ms": 5000
+  },
+  "expected": {
+    "overall_status": "hold",
+    "regression_class": "runtime_drift",
+    "finding_code": "real_repo_runtime_drift"
+  }
+}

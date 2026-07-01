@@ -1,0 +1,29 @@
+{
+  "fixture_id": "baseline-expired-denied",
+  "description": "Expired approved baseline cannot hide regressions.",
+  "input": {
+    "events": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "real-repo-baseline-event",
+        "baseline_id": "baseline-expired",
+        "repo_id": "alpha",
+        "suite_id": "unit",
+        "baseline_run_id": "run-alpha-unit-003",
+        "event_type": "approved",
+        "actor": "qa-lead",
+        "reason": "old pass",
+        "approved_by": "qa-lead",
+        "expires_at": "2026-01-01",
+        "policy_hash": "sha256:policy001",
+        "ownership_scope": "owned",
+        "sourceRefs": ["fixtures/platform/evaluation/baseline-expired-denied/fixture.json#approved"]
+      }
+    ]
+  },
+  "expected": {
+    "status": "expired",
+    "can_use_for_regression": false,
+    "finding_code": "baseline_expired"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "fixture_id": "score-model-balanced",
+  "description": "Real-repo score emits bounded score, score_breakdown, and decision_basis.",
+  "input": {
+    "repo_id": "score-repo",
+    "suite_id": "unit",
+    "source_version": "main@score",
+    "policy_hash": "sha256:policy-score",
+    "components": {
+      "evidence_strength": 0.9,
+      "coverage_confidence": 0.8,
+      "oracle_confidence": 0.7,
+      "freshness_score": 0.9,
+      "stability_score": 0.8,
+      "ownership_clarity": 1.0
+    },
+    "penalties": {
+      "regression_penalty": 20,
+      "timeout_penalty": 0,
+      "record_collapse_penalty": 0,
+      "manual_debt_penalty": 3,
+      "expired_debt_penalty": 0,
+      "unsafe_artifact_penalty": 0
+    }
+  },
+  "expected": {
+    "record_type": "real-repo-score-report",
+    "score": 62.5,
+    "score_band": "weak",
+    "release_approval": false,
+    "decision_basis_min": 7
+  }
+}

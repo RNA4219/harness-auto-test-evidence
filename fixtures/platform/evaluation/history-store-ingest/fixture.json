@@ -1,0 +1,32 @@
+{
+  "fixture_id": "history-store-ingest",
+  "description": "Append real-repo run history entries into a local JSONL history store.",
+  "input": {
+    "history_entries": [
+      {
+        "schema_version": "HATE/v1",
+        "record_type": "real-repo-run-history-entry",
+        "run_id": "run-alpha-unit-001",
+        "repo_id": "alpha",
+        "suite_id": "unit",
+        "ownership_scope": "owned",
+        "source_version": "main@001",
+        "roster_hash": "sha256:roster001",
+        "policy_hash": "sha256:policy001",
+        "environment_fingerprint": {"os": "Windows", "python": "3.12"},
+        "started_at": "2026-07-01T00:00:00Z",
+        "finished_at": "2026-07-01T00:00:02Z",
+        "status": "pass",
+        "record_count": 12,
+        "sourceRefs": ["fixtures/platform/evaluation/history-store-ingest/fixture.json#alpha"]
+      }
+    ]
+  },
+  "expected": {
+    "record_type": "real-repo-history-ingest-report",
+    "ingested_count": 1,
+    "stored_count": 1,
+    "repo_count": 1,
+    "index_record_type": "real-repo-history-index"
+  }
+}

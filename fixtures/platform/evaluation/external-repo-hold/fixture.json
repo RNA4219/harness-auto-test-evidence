@@ -1,0 +1,22 @@
+{
+  "fixture_id": "external-repo-hold",
+  "description": "External repository failure is retained as evidence without counting as HATE implementation failure.",
+  "input": {
+    "repo_id": "external-sample",
+    "suite_id": "smoke",
+    "ownership_scope": "external",
+    "baseline_decision": "pass",
+    "current_decision": "hold",
+    "baseline_record_count": 10,
+    "current_record_count": 10,
+    "baseline_failure_kind": "",
+    "failure_kind": "dependency_network_blocked",
+    "command_exit_code": 1
+  },
+  "expected": {
+    "overall_status": "hold",
+    "regression_class": "external_hold_detected",
+    "finding_code": "real_repo_external_hold_detected",
+    "implementation_failure": false
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "source_version": "agent-tools-full-local",
+  "repositories": [
+    {
+      "repo_id": "agent-gatefield",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/Agent_tools/agent-gatefield",
+      "command": ["uv", "run", "--extra", "dev", "pytest", "-q"],
+      "subset": false
+    },
+    {
+      "repo_id": "agent-protocols",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/Agent_tools/agent-protocols",
+      "command": ["npm", "test"],
+      "subset": false
+    },
+    {
+      "repo_id": "agent-state-gate",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/Agent_tools/agent-state-gate",
+      "command": ["uv", "run", "--extra", "dev", "pytest", "-q"],
+      "subset": false
+    },
+    {
+      "repo_id": "agent-taskstate",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/Agent_tools/agent-taskstate",
+      "command": ["uv", "run", "--extra", "dev", "pytest", "-q"],
+      "subset": false
+    },
+    {
+      "repo_id": "manual-bb-test-harness",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/Agent_tools/manual-bb-test-harness",
+      "command": ["uv", "run", "--extra", "dev", "pytest", "-q"],
+      "subset": false
+    },
+    {
+      "repo_id": "memx-resolver",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/Agent_tools/memx-resolver",
+      "command": ["uv", "run", "--with", "pytest", "python", "-m", "pytest", "tests", "-q"],
+      "subset": false
+    },
+    {
+      "repo_id": "shipyard-cp",
+      "repo_class": "medium",
+      "path": "C:/Users/ryo-n/Codex_dev/Agent_tools/shipyard-cp",
+      "command": ["npm", "test"],
+      "subset": false
+    },
+    {
+      "repo_id": "tracker-bridge-materials",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/Agent_tools/tracker-bridge-materials",
+      "command": ["uv", "run", "--extra", "dev", "pytest", "-q"],
+      "subset": false
+    },
+    {
+      "repo_id": "workflow-cookbook",
+      "repo_class": "small",
+      "path": "C:/Users/ryo-n/Codex_dev/Agent_tools/workflow-cookbook",
+      "command": ["uv", "run", "--extra", "dev", "pytest", "-q"],
+      "subset": false
+    }
+  ]
+}
