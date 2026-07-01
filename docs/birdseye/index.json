@@ -1,5 +1,5 @@
 {
-  "generated_at": "d651db4a4b52",
+  "generated_at": "1b583ab6d174",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -180,9 +180,9 @@
     "docs/process/EVALUATION.md": {
       "role": "quality",
       "caps": "docs/birdseye/caps/docs.process.EVALUATION.md.json",
-      "sha256": "7e7202283783db63c2e01378fff3fe3bf1875009807c9af31c1315e39e26b933",
-      "line_count": 524,
-      "size_bytes": 39594
+      "sha256": "a5952f73787603b71297e5ce3d6a1f09d3a4bbce6a4ef9f92210256b2653c9b8",
+      "line_count": 526,
+      "size_bytes": 39308
     },
     "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md": {
       "role": "requirements",
@@ -509,9 +509,9 @@
     "docs/process/RUNBOOK.md": {
       "role": "operations",
       "caps": "docs/birdseye/caps/docs.process.RUNBOOK.md.json",
-      "sha256": "5672f2e191435a72cea7df41ba81afb9eb21e7d3b7b55dfa0641a48db59a69bd",
-      "line_count": 783,
-      "size_bytes": 61454
+      "sha256": "fb1780daecc3485d6aaeee35895b15d5dd71fdc33e8607dc65df33d6b91c0cdd",
+      "line_count": 786,
+      "size_bytes": 60973
     },
     "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md": {
       "role": "requirements",
@@ -5409,9 +5409,9 @@
     "schemas/HATE/v1/agent-quality-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.agent-quality-report.schema.json.json",
-      "sha256": "fa42cee70f7414efa31590f712e4560ab05d7e64c80b3b2f632ae099382935f8",
-      "line_count": 59,
-      "size_bytes": 1894
+      "sha256": "2a53e5c8e673f485682eab0a743e71b7375cb828fc089e1a23872380a17f5be4",
+      "line_count": 77,
+      "size_bytes": 2442
     },
     "schemas/HATE/v1/api-contract-report.schema.json": {
       "role": "schema",
@@ -6438,9 +6438,9 @@
     "src/hate/evaluation/agent_quality.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evaluation.agent_quality.py.json",
-      "sha256": "ff3dfcb873eef2039777463fe3c83e53fef642219a61819f7fde3d0e4aaf9723",
-      "line_count": 166,
-      "size_bytes": 5694
+      "sha256": "2f165d442911d2b94af32c3cd729a93018764ec00de09fc7637334ebe3342ace",
+      "line_count": 243,
+      "size_bytes": 8098
     },
     "src/hate/evaluation/real_repo.py": {
       "role": "implementation",
@@ -6725,9 +6725,9 @@
     "src/hate/p0b_exporter.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0b_exporter.py.json",
-      "sha256": "2fbe6e121e158cd14ab437acd51b6771706e9b8b8252546917dc2b7565dd1bab",
+      "sha256": "838a464f3104ae4ec1a5e9820ce4f8123e70bbdf104a6072d2eed5b4ad58a2b7",
       "line_count": 193,
-      "size_bytes": 6618
+      "size_bytes": 6578
     },
     "src/hate/p0b_graph.py": {
       "role": "implementation",
@@ -6914,9 +6914,9 @@
     "src/hate/p2p3_readiness.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p2p3_readiness.py.json",
-      "sha256": "8c56e76c1083d2f71e4801e2c5a02ba9770c17dac6c7688a99c0e925c9263bc1",
-      "line_count": 329,
-      "size_bytes": 14212
+      "sha256": "b9fd8c97d05a88179891ee35a19c067f1f5f34633cde67af103bf5ff4524d0ac",
+      "line_count": 414,
+      "size_bytes": 16899
     },
     "src/hate/p2p3_reports.py": {
       "role": "implementation",
@@ -7362,9 +7362,9 @@
     "tests/test_agent_quality.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_agent_quality.py.json",
-      "sha256": "1e0384d82402e8c61d13bb0cbae8cbe3fe016557372996eef9f33688d154e1b1",
-      "line_count": 87,
-      "size_bytes": 3245
+      "sha256": "05f65cb500d50730de9be77602f8b866b052a23bfce8fa487d86faa9659c6bde",
+      "line_count": 112,
+      "size_bytes": 4119
     },
     "tests/test_analysis_adapter_capability_diff.py": {
       "role": "test",
@@ -7817,9 +7817,9 @@
     "tests/test_p2p3.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p2p3.py.json",
-      "sha256": "0a1654da447a5d65908bc5ea53658fb7518b4500fc5ac4575b81de1be2133889",
-      "line_count": 832,
-      "size_bytes": 46440
+      "sha256": "c4e0210bc025645d7123ff2dbb375127efac4598077d60343c5900fe673a1feb",
+      "line_count": 897,
+      "size_bytes": 48431
     },
     "tests/test_performance_budget.py": {
       "role": "test",
@@ -9499,6 +9499,10 @@
     [
       "tests/test_p2p3.py",
       "src/hate/p2p3.py"
+    ],
+    [
+      "tests/test_p2p3.py",
+      "src/hate/p2p3_readiness.py"
     ],
     [
       "tests/test_product_e2e.py",

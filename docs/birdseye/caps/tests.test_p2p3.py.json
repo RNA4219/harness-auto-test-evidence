@@ -2,13 +2,14 @@
   "path": "tests/test_p2p3.py",
   "role": "test",
   "kind": "py",
-  "sha256": "0a1654da447a5d65908bc5ea53658fb7518b4500fc5ac4575b81de1be2133889",
-  "line_count": 832,
-  "size_bytes": 46440,
+  "sha256": "c4e0210bc025645d7123ff2dbb375127efac4598077d60343c5900fe673a1feb",
+  "line_count": 897,
+  "size_bytes": 48431,
   "headings": [],
   "imports": [
     "__future__",
     "hate.p2p3",
+    "hate.p2p3_readiness",
     "hate.store",
     "http.server",
     "json",
@@ -21,7 +22,8 @@
   ],
   "links": [],
   "depends_on": [
-    "src/hate/p2p3.py"
+    "src/hate/p2p3.py",
+    "src/hate/p2p3_readiness.py"
   ],
   "tags": [
     "artifact",

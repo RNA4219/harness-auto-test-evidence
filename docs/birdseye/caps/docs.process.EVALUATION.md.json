@@ -2,9 +2,9 @@
   "path": "docs/process/EVALUATION.md",
   "role": "quality",
   "kind": "md",
-  "sha256": "7e7202283783db63c2e01378fff3fe3bf1875009807c9af31c1315e39e26b933",
-  "line_count": 524,
-  "size_bytes": 39594,
+  "sha256": "a5952f73787603b71297e5ce3d6a1f09d3a4bbce6a4ef9f92210256b2653c9b8",
+  "line_count": 526,
+  "size_bytes": 39308,
   "headings": [
     "# Evaluation",
     "## Acceptance Criteria",

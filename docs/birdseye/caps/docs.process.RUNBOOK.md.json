@@ -2,9 +2,9 @@
   "path": "docs/process/RUNBOOK.md",
   "role": "operations",
   "kind": "md",
-  "sha256": "5672f2e191435a72cea7df41ba81afb9eb21e7d3b7b55dfa0641a48db59a69bd",
-  "line_count": 783,
-  "size_bytes": 61454,
+  "sha256": "fb1780daecc3485d6aaeee35895b15d5dd71fdc33e8607dc65df33d6b91c0cdd",
+  "line_count": 786,
+  "size_bytes": 60973,
   "headings": [
     "# Runbook",
     "## 0. 準備",

@@ -93,13 +93,23 @@ def build_agent_quality_report(
             source_refs[0],
         ))
 
-    score = _score(oracle_refs, avoidance_signals, reviewer_decision, retained, retention_days)
+    score_result = _score(
+        oracle_refs,
+        avoidance_signals,
+        reviewer_decision,
+        reviewer_record_ref,
+        retained,
+        retention_days,
+    )
     return {
         "schema_version": "HATE/v1",
         "record_type": "agent-quality-report",
         "report_id": report_id,
         "overall_status": "hold" if findings else "pass",
-        "score": score,
+        "score": score_result["score"],
+        "raw_score": score_result["raw_score"],
+        "cap_score": score_result["cap_score"],
+        "caps": score_result["caps"],
         "dimensions": {
             "oracle_backing": 1.0 if oracle_refs else 0.0,
             "avoidance_penalty": min(1.0, len(avoidance_signals) * 0.4),
@@ -132,9 +142,10 @@ def _score(
     oracle_refs: list[Any],
     avoidance_signals: list[Any],
     reviewer_decision: str,
+    reviewer_record_ref: str,
     retained: bool,
     retention_days: int,
-) -> float:
+) -> dict[str, Any]:
     score = 1.0
     if not oracle_refs:
         score -= 0.35
@@ -143,7 +154,73 @@ def _score(
         score -= 0.2
     if not retained or retention_days <= 0:
         score -= 0.2
-    return max(0.0, round(score, 2))
+    raw_score = max(0.0, round(score, 2))
+    caps = _score_caps(
+        oracle_refs=oracle_refs,
+        avoidance_signals=avoidance_signals,
+        reviewer_decision=reviewer_decision,
+        reviewer_record_ref=reviewer_record_ref,
+        retained=retained,
+        retention_days=retention_days,
+    )
+    cap_score = min((cap["max_score"] for cap in caps), default=1.0)
+    return {
+        "score": round(min(raw_score, cap_score), 2),
+        "raw_score": raw_score,
+        "cap_score": cap_score,
+        "caps": caps,
+    }
+
+
+def _score_caps(
+    *,
+    oracle_refs: list[Any],
+    avoidance_signals: list[Any],
+    reviewer_decision: str,
+    reviewer_record_ref: str,
+    retained: bool,
+    retention_days: int,
+) -> list[dict[str, Any]]:
+    caps: list[dict[str, Any]] = []
+    if not oracle_refs:
+        caps.append(_score_cap(
+            "oracle_missing",
+            0.4,
+            "Agent quality cannot score above weak evidence without oracle-backed references.",
+        ))
+    if avoidance_signals:
+        caps.append(_score_cap(
+            "avoidance_detected",
+            0.35,
+            "Suspicious avoidance signals cap agent quality below acceptable evidence.",
+        ))
+    if reviewer_decision and reviewer_decision not in REQUIRED_REVIEWER_DECISIONS:
+        caps.append(_score_cap(
+            "reviewer_decision_invalid",
+            0.6,
+            "Invalid reviewer decision prevents high-confidence quality scoring.",
+        ))
+    if reviewer_decision in {"needs_review", "reject"} and not reviewer_record_ref:
+        caps.append(_score_cap(
+            "reviewer_record_missing",
+            0.55,
+            "Reviewer workflow cannot score highly without a retained reviewer record.",
+        ))
+    if not retained or retention_days <= 0:
+        caps.append(_score_cap(
+            "retention_missing",
+            0.5,
+            "Evidence without retention cannot carry high agent quality score.",
+        ))
+    return caps
+
+
+def _score_cap(cap_id: str, max_score: float, reason: str) -> dict[str, Any]:
+    return {
+        "cap_id": cap_id,
+        "max_score": max_score,
+        "reason": reason,
+    }
 
 
 def _finding(

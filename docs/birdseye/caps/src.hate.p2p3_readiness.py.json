@@ -2,9 +2,9 @@
   "path": "src/hate/p2p3_readiness.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "8c56e76c1083d2f71e4801e2c5a02ba9770c17dac6c7688a99c0e925c9263bc1",
-  "line_count": 329,
-  "size_bytes": 14212,
+  "sha256": "b9fd8c97d05a88179891ee35a19c067f1f5f34633cde67af103bf5ff4524d0ac",
+  "line_count": 414,
+  "size_bytes": 16899,
   "headings": [],
   "imports": [
     "__future__",

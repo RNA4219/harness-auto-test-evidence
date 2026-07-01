@@ -2,9 +2,9 @@
   "path": "src/hate/evaluation/agent_quality.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "ff3dfcb873eef2039777463fe3c83e53fef642219a61819f7fde3d0e4aaf9723",
-  "line_count": 166,
-  "size_bytes": 5694,
+  "sha256": "2f165d442911d2b94af32c3cd729a93018764ec00de09fc7637334ebe3342ace",
+  "line_count": 243,
+  "size_bytes": 8098,
   "headings": [],
   "imports": [
     "__future__",

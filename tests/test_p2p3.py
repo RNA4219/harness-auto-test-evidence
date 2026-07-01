@@ -12,6 +12,7 @@ from http.server import ThreadingHTTPServer
 from pathlib import Path
 
 from hate.p2p3 import generate_product_readiness, make_product_read_model_handler, query_product_read_model
+from hate.p2p3_readiness import _build_evaluation_score
 from hate.store import ingest_local_store, query_local_store, read_history_index
 
 
@@ -75,12 +76,15 @@ def test_p2p3_generates_product_readiness_artifacts(tmp_path: Path) -> None:
     assert readiness["summary"]["go_label_is_advisory"] is True
     assert readiness["summary"]["degraded_by_doctor_findings"] is False
     assert readiness["summary"]["degraded_by_unverified_acceptance"] is False
-    assert readiness["evaluation"]["method"] == "additive_evidence_minus_risk_penalty_v1"
+    assert readiness["evaluation"]["method"] == "gate_capped_evidence_score_v2"
     assert readiness["evaluation"]["go_label_is_advisory"] is True
     assert readiness["evaluation"]["release_approval"] is False
+    assert readiness["evaluation"]["raw_score"] == 77.5
+    assert readiness["evaluation"]["cap_score"] == 79
     assert readiness["evaluation"]["addition_total"] == 82.5
     assert readiness["evaluation"]["penalty_total"] == 5
     assert readiness["evaluation"]["interpretation"] == "usable_with_review"
+    assert any(item["cap_id"] == "uncalibrated_aete" for item in readiness["evaluation"]["caps"])
     assert {item["component_id"] for item in readiness["evaluation"]["additions"]} == {
         "aete_weighted_score",
         "product_readiness_gate_coverage",
@@ -559,7 +563,68 @@ def test_p2p3_degrades_to_hold_when_input_artifact_is_missing(tmp_path: Path) ->
     assert readiness["summary"]["evaluation_score"] < 77.5
     assert readiness["summary"]["evaluation_confidence"] == "medium"
     assert any(item["component_id"] == "missing_input_artifacts" and item["points"] > 0 for item in readiness["evaluation"]["penalties"])
+    assert readiness["evaluation"]["score"] <= 49
+    assert readiness["evaluation"]["cap_score"] == 49
+    assert any(item["cap_id"] == "missing_input_artifacts" for item in readiness["evaluation"]["caps"])
     assert readiness["evidence_summary"]["missing_input_artifacts"][0]["artifact_ref"] == "workflow-docs-stale.json"
+
+
+def test_p2p3_evaluation_caps_prevent_easy_additive_scores() -> None:
+    """Risk gates cap the score even when positive evidence components are high."""
+    evaluation = _build_evaluation_score(
+        aete={"weighted_score": 1.0, "calibration_status": "calibrated", "score_confidence": "high"},
+        gates=[
+            {"status": "pass"},
+            {"status": "covered_by_fixture"},
+            {"status": "covered_by_fixture"},
+            {"status": "covered_by_artifact"},
+            {"status": "covered_by_artifact"},
+            {"status": "covered_by_artifact"},
+            {"status": "covered_by_artifact"},
+        ],
+        generated_refs=[
+            "pr-annotation-export.json",
+            "artifact-budget-report.json",
+            "attestation-report.json",
+            "external-export-report.json",
+            "product-error-catalog.json",
+            "enterprise-risk-debt-register.json",
+            "privacy-quarantine-report.json",
+            "hosted-read-model-index.json",
+            "domain-model-report.json",
+            "rbac-matrix-report.json",
+            "identity-connector-report.json",
+            "enterprise-connector-report.json",
+            "audit-event-log.json",
+            "retention-governance-report.json",
+            "release-migration-report.json",
+            "entitlement-usage-report.json",
+            "incident-slo-report.json",
+            "adoption-health-report.json",
+            "security-trust-packet.json",
+            "residency-deployment-report.json",
+            "roadmap-decision-record.json",
+            "accessibility-localization-report.json",
+            "commercial-contract-report.json",
+            "audit-assurance-pack.json",
+            "release-candidate-pack.json",
+            "dashboard-report.html",
+            "dashboard-view-model.json",
+        ],
+        input_gaps=[],
+        doctor_findings=1,
+        unverified_acceptance=2,
+        workflow_acceptance={"verdict": "accepted"},
+    )
+
+    assert evaluation["raw_score"] > evaluation["score"]
+    assert evaluation["score"] == 69
+    assert evaluation["cap_score"] == 69
+    assert {cap["cap_id"] for cap in evaluation["caps"]} >= {
+        "doctor_findings_present",
+        "unverified_acceptance_present",
+    }
+    assert evaluation["interpretation"] == "material_gaps"
 
 
 def test_p2p3_hosted_read_model_query_envelope() -> None:

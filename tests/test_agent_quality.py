@@ -33,6 +33,9 @@ def test_oracle_backed_agent_output_passes() -> None:
     assert result["finding_code"] == ""
     assert report["overall_status"] == "pass"
     assert report["score"] == 1.0
+    assert report["raw_score"] == 1.0
+    assert report["cap_score"] == 1.0
+    assert report["caps"] == []
     assert report["summary"]["oracle_count"] == 1
 
 
@@ -45,6 +48,10 @@ def test_avoidance_signal_holds_with_expected_code() -> None:
     assert result["status"] == fixture["expected"]["status"]
     assert result["finding_code"] == fixture["expected"]["finding_code"]
     assert report["overall_status"] == "hold"
+    assert report["score"] == 0.35
+    assert report["raw_score"] == 0.4
+    assert report["cap_score"] == 0.35
+    assert {cap["cap_id"] for cap in report["caps"]} == {"oracle_missing", "avoidance_detected"}
     assert report["summary"]["manual_review_required"] is True
     assert report["findings"][0]["code"] == "agent_quality_avoidance_detected"
 
@@ -61,6 +68,7 @@ def test_missing_oracle_invalid_reviewer_and_retention_are_hold_findings() -> No
 
     codes = {finding["code"] for finding in report["findings"]}
     assert report["overall_status"] == "hold"
+    assert report["score"] <= 0.4
     assert "agent_quality_oracle_missing" in codes
     assert "agent_quality_reviewer_decision_invalid" in codes
     assert "agent_quality_retention_missing" in codes
@@ -75,7 +83,24 @@ def test_reviewer_needs_review_requires_record_ref() -> None:
     })
 
     assert report["overall_status"] == "hold"
+    assert report["score"] <= 0.55
     assert report["findings"][0]["code"] == "agent_quality_reviewer_record_missing"
+
+
+def test_missing_oracle_caps_agent_quality_score() -> None:
+    report = build_agent_quality_report({
+        "agent_output": {
+            "oracle_refs": [],
+            "reviewer_decision": "pass",
+            "retained": True,
+            "retention_days": 30,
+        }
+    })
+
+    assert report["raw_score"] == 0.65
+    assert report["score"] == 0.4
+    assert report["cap_score"] == 0.4
+    assert report["caps"][0]["cap_id"] == "oracle_missing"
 
 
 def test_schema_and_registry_contract() -> None:
@@ -83,5 +108,5 @@ def test_schema_and_registry_contract() -> None:
     registry = json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
 
     assert schema["properties"]["record_type"]["const"] == "agent-quality-report"
-    assert set(schema["required"]) >= {"score", "dimensions", "reviewer", "retention"}
+    assert set(schema["required"]) >= {"score", "raw_score", "cap_score", "caps", "dimensions", "reviewer", "retention"}
     assert any(record["record_type"] == "agent-quality-report" for record in registry["records"])

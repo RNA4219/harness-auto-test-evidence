@@ -9,6 +9,9 @@
     "report_id",
     "overall_status",
     "score",
+    "raw_score",
+    "cap_score",
+    "caps",
     "dimensions",
     "oracle_refs",
     "avoidance_signals",
@@ -24,6 +27,21 @@
     "report_id": {"type": "string"},
     "overall_status": {"type": "string", "enum": ["pass", "hold"]},
     "score": {"type": "number", "minimum": 0, "maximum": 1},
+    "raw_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "cap_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "caps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cap_id", "max_score", "reason"],
+        "properties": {
+          "cap_id": {"type": "string"},
+          "max_score": {"type": "number", "minimum": 0, "maximum": 1},
+          "reason": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
     "dimensions": {"type": "object", "additionalProperties": true},
     "oracle_refs": {"type": "array", "items": {"type": "string"}},
     "avoidance_signals": {"type": "array", "items": {"type": "string"}},

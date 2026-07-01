@@ -86,9 +86,12 @@ def _build_evaluation_score(
     unverified_acceptance: int,
     workflow_acceptance: dict[str, Any],
 ) -> dict[str, Any]:
-    """Build additive/subtractive product readiness score.
+    """Build a gate-capped product readiness score.
 
     The score is advisory and intentionally separate from release approval.
+    Positive evidence explains the raw score, but unresolved gates cap the final
+    score so missing inputs or unverified acceptance cannot be hidden by broad
+    artifact generation.
     """
     aete_weighted = _safe_float(aete.get("weighted_score"), 0.0)
     passed_gate_count = sum(1 for gate in gates if gate["status"] in {"pass", "covered_by_fixture", "covered_by_artifact"})
@@ -127,14 +130,27 @@ def _build_evaluation_score(
     ]
     addition_total = round(sum(item["points"] for item in additions), 2)
     penalty_total = round(sum(item["points"] for item in penalties), 2)
-    score = round(max(0.0, min(100.0, addition_total - penalty_total)), 2)
+    raw_score = round(max(0.0, min(100.0, addition_total - penalty_total)), 2)
+    caps = _evaluation_score_caps(
+        input_gaps=input_gaps,
+        doctor_findings=doctor_findings,
+        unverified_acceptance=unverified_acceptance,
+        workflow_verdict=workflow_verdict,
+        calibration_status=calibration_status,
+        score_confidence=score_confidence,
+    )
+    cap_score = min((cap["max_score"] for cap in caps), default=100)
+    score = round(min(raw_score, cap_score), 2)
     return {
         "score": score,
         "max_score": 100,
-        "method": "additive_evidence_minus_risk_penalty_v1",
+        "method": "gate_capped_evidence_score_v2",
         "confidence": _evaluation_confidence(score_confidence, calibration_status, input_gaps, doctor_findings, unverified_acceptance),
         "go_label_is_advisory": True,
         "release_approval": False,
+        "raw_score": raw_score,
+        "cap_score": cap_score,
+        "caps": caps,
         "addition_total": addition_total,
         "penalty_total": penalty_total,
         "additions": additions,
@@ -156,6 +172,75 @@ def _score_penalty(component_id: str, points: float, reason: str) -> dict[str, A
     return {
         "component_id": component_id,
         "points": round(points, 2),
+        "reason": reason,
+    }
+
+
+def _evaluation_score_caps(
+    *,
+    input_gaps: list[dict[str, str]],
+    doctor_findings: int,
+    unverified_acceptance: int,
+    workflow_verdict: str,
+    calibration_status: str,
+    score_confidence: str,
+) -> list[dict[str, Any]]:
+    caps: list[dict[str, Any]] = []
+    if input_gaps:
+        caps.append(_score_cap(
+            "missing_input_artifacts",
+            49,
+            "Missing upstream artifacts prevent readiness from exceeding not-ready evidence.",
+        ))
+    if doctor_findings:
+        caps.append(_score_cap(
+            "doctor_findings_present",
+            69,
+            "Unresolved doctor findings prevent usable-with-review scoring.",
+        ))
+    if unverified_acceptance:
+        caps.append(_score_cap(
+            "unverified_acceptance_present",
+            69,
+            "Unverified acceptance prevents usable-with-review scoring.",
+        ))
+    if workflow_verdict == "accepted_with_gaps":
+        caps.append(_score_cap(
+            "workflow_accepted_with_gaps",
+            74,
+            "Workflow acceptance with gaps cannot score as strong evidence.",
+        ))
+    elif workflow_verdict not in {"accepted", ""}:
+        caps.append(_score_cap(
+            "workflow_not_accepted",
+            59,
+            f"Workflow acceptance verdict is {workflow_verdict}.",
+        ))
+    if calibration_status != "calibrated":
+        caps.append(_score_cap(
+            "uncalibrated_aete",
+            79,
+            "Uncalibrated AETE cannot score as strong advisory evidence.",
+        ))
+    if score_confidence == "low":
+        caps.append(_score_cap(
+            "low_score_confidence",
+            59,
+            "Low AETE score confidence caps readiness below material acceptance.",
+        ))
+    elif score_confidence in {"medium", "unknown", ""}:
+        caps.append(_score_cap(
+            "non_high_score_confidence",
+            84,
+            f"AETE score confidence is {score_confidence or 'unknown'}.",
+        ))
+    return caps
+
+
+def _score_cap(cap_id: str, max_score: float, reason: str) -> dict[str, Any]:
+    return {
+        "cap_id": cap_id,
+        "max_score": max_score,
         "reason": reason,
     }
 

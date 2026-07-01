@@ -300,8 +300,10 @@ next_review_due: 2026-07-28
   acceptance criteria へ紐づく
 - Product Evaluation Score: `product-readiness-report.json` が 0..100 の
   `evaluation_score`、`evaluation_confidence`、`evaluation.additions[]`、
-  `evaluation.penalties[]` を持ち、`go` / `conditional` / `hold` の label だけでなく
-  根拠の厚みと残リスクを数値で比較できる
+  `evaluation.penalties[]`、`evaluation.caps[]` を持ち、`go` / `conditional` / `hold`
+  の label だけでなく根拠の厚みと残リスクを数値で比較できる。最終 score は
+  additive な raw score ではなく、入力 artifact 欠損、doctor finding、unverified
+  acceptance、workflow gap、未校正/低 confidence の gate cap を適用した値とする
 - Advisory Boundary: `go_label_is_advisory=true` と
   `evaluation.release_approval=false` を保持し、HATE の score が release approval /
   waiver / gate 正本になっていないことを確認できる

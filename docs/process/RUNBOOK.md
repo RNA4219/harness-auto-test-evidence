@@ -590,8 +590,11 @@ P2/P3 minimal constraints:
   doctor finding または unverified acceptance が残る場合は `conditional` に降格する
 - `product-readiness-report.json.summary.evaluation_score` は 0..100 の advisory score とし、
   `evaluation.additions[]` で AETE、PRG coverage、artifact completeness、workflow acceptance、
-  doctor hygiene を加算し、`evaluation.penalties[]` で入力欠損、doctor finding、
-  unverified acceptance、未校正 AETE、低 confidence を減点する
+  doctor hygiene を説明用に集計し、`evaluation.penalties[]` で入力欠損、doctor finding、
+  unverified acceptance、未校正 AETE、低 confidence を減点した `raw_score` を出す。
+  最終 score は `evaluation.caps[]` の gate cap を適用した値であり、入力 artifact 欠損、
+  doctor finding、unverified acceptance、workflow gap、未校正/低 confidence が残る場合は
+  高得点に逃がさない
 - `go_label_is_advisory=true` を常に保持し、`evaluation.release_approval=false` を明示する。
   release approval / waiver / gate 正本は HATE が持たず、score は説明責任と優先順位付けに使う
 - 現行 golden fixture は high-risk execution evidence と doctor finding 0 を保持するため、
