@@ -1,0 +1,32 @@
+{
+  "fixture_id": "all-required-reports-pass",
+  "input": {
+    "release_id": "rc-spec-pass",
+    "source_version": "abc123",
+    "required_reports": [
+      {"report_id": "product-readiness-report", "path": "product-readiness-report.json", "hash": "hash-product", "required_for_stage": "team_ga"},
+      {"report_id": "adapter-conformance-report", "path": "adapter-conformance-report.json", "hash": "hash-adapter", "required_for_stage": "team_ga"},
+      {"report_id": "schema_validation_report", "path": "schema-validation-report.json", "hash": "hash-schema", "required_for_stage": "team_ga"},
+      {"report_id": "store_replay_report", "path": "store-replay-report.json", "hash": "hash-store-replay", "required_for_stage": "team_ga"},
+      {"report_id": "test_integrity_report", "path": "test-integrity-report.json", "hash": "hash-test", "required_for_stage": "team_ga"},
+      {"report_id": "security-quarantine-report", "path": "security-quarantine-report.json", "hash": "hash-security", "required_for_stage": "team_ga"},
+      {"report_id": "migration-compatibility-report", "path": "migration-compatibility-report.json", "hash": "hash-migration", "required_for_stage": "team_ga"},
+      {"report_id": "commercial-truthfulness-report", "path": "commercial-truthfulness-report.json", "hash": "hash-commercial", "required_for_stage": "team_ga"}
+    ],
+    "reports": [
+      {"record_type": "product-readiness-report", "report_id": "product-readiness-report", "report_hash": "hash-product", "status": "pass", "sourceRefs": ["product-readiness-report.json"]},
+      {"record_type": "adapter-conformance-report", "report_id": "adapter-conformance-report", "report_hash": "hash-adapter", "status": "pass", "sourceRefs": ["adapter-conformance-report.json"]},
+      {"record_type": "schema_validation_report", "report_id": "schema_validation_report", "report_hash": "hash-schema", "status": "pass", "sourceRefs": ["schema-validation-report.json"]},
+      {"record_type": "store_replay_report", "report_id": "store_replay_report", "report_hash": "hash-store-replay", "status": "pass", "sourceRefs": ["store-replay-report.json"]},
+      {"record_type": "test_integrity_report", "report_id": "test_integrity_report", "report_hash": "hash-test", "status": "pass", "sourceRefs": ["test-integrity-report.json"]},
+      {"record_type": "security-quarantine-report", "report_id": "security-quarantine-report", "report_hash": "hash-security", "status": "pass", "sourceRefs": ["security-quarantine-report.json"]},
+      {"record_type": "migration-compatibility-report", "report_id": "migration-compatibility-report", "report_hash": "hash-migration", "status": "pass", "sourceRefs": ["migration-compatibility-report.json"]},
+      {"record_type": "commercial-truthfulness-report", "report_id": "commercial-truthfulness-report", "report_hash": "hash-commercial", "status": "pass", "summary": {"unsupported_claim_count": 0, "release_eligible_claim_count": 1}, "sourceRefs": ["commercial-truthfulness-report.json"]}
+    ],
+    "qeg_refs": {"validate_ref": "qeg/validate", "import_ref": "qeg/import", "gate_ref": "qeg/gate", "record_ref": "qeg/record", "validate_status": "pass", "import_status": "pass", "gate_status": "referenced"},
+    "evidence_room_artifacts": [
+      {"artifact_id": "safe-pack", "artifact_hash": "hash-safe", "safe_to_share": true, "sourceRefs": ["evidence-room/safe-pack"]}
+    ]
+  },
+  "expected": {"verdict": "ready", "release_ready": true}
+}

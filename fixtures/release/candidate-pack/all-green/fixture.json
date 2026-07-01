@@ -381,6 +381,38 @@
         "sourceRefs": [
           "developer-experience-report.json"
         ]
+      },
+      {
+        "sourceRefs": [
+          "adapter-conformance-report.json"
+        ],
+        "record_type": "adapter-conformance-report",
+        "report_id": "adapter-conformance",
+        "status": "pass"
+      },
+      {
+        "sourceRefs": [
+          "schema-validation-report.json"
+        ],
+        "record_type": "schema_validation_report",
+        "report_id": "schema-validation",
+        "status": "pass"
+      },
+      {
+        "sourceRefs": [
+          "store-replay-report.json"
+        ],
+        "record_type": "store_replay_report",
+        "report_id": "store-replay",
+        "status": "pass"
+      },
+      {
+        "sourceRefs": [
+          "security-quarantine-report.json"
+        ],
+        "record_type": "security-quarantine-report",
+        "report_id": "security-quarantine",
+        "status": "pass"
       }
     ],
     "evidence_room_artifacts": [

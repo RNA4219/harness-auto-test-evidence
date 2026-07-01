@@ -1,0 +1,12 @@
+{
+  "fixture_id": "qeg-approval-claimed",
+  "input": {
+    "release_id": "rc-spec-qeg-claim",
+    "source_version": "abc123",
+    "required_reports": [],
+    "reports": [],
+    "qeg_refs": {"validate_ref": "qeg/validate", "import_ref": "qeg/import", "gate_ref": "qeg/gate", "record_ref": "qeg/record", "validate_status": "pass", "import_status": "pass"},
+    "qeg_approval_claimed": true
+  },
+  "expected": {"verdict": "blocked", "blocker_code": "qeg_approval_claimed", "qeg_approval_claimed": false}
+}

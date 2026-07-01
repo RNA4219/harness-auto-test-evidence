@@ -32,6 +32,7 @@ from .artifact_lifecycle import (
     build_artifact_lifecycle_report,
     evaluate_artifact_lifecycle_fixture,
 )
+from .quarantine_report import build_security_quarantine_report
 
 __all__ = [
     "ArtifactLifecycleFinding",
@@ -45,6 +46,7 @@ __all__ = [
     "detect_artifact_safety_signals",
     "build_artifact_safety_report",
     "build_artifact_lifecycle_report",
+    "build_security_quarantine_report",
     "evaluate_artifact_lifecycle_fixture",
     "scan_for_secrets",
     "scan_for_pii",

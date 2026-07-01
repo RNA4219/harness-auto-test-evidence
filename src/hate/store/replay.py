@@ -96,6 +96,189 @@ class ReplayReport:
         return compute_json_hash_for_write(self.to_dict())
 
 
+def build_store_replay_report(
+    replay_report: ReplayReport | dict[str, Any],
+    *,
+    comparison_report: Any | None = None,
+    doctor_report: Any | None = None,
+    migration_report: dict[str, Any] | None = None,
+    baseline_info: BaselineInfo | dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Build the product-grade store-replay-report envelope.
+
+    The replay, compare, doctor, and migration modules intentionally remain
+    separate. This builder creates the evidence report required by product-grade
+    acceptance so release checks can prove replay determinism, diff behavior,
+    corruption diagnostics, migration state, and baseline selection together.
+    """
+
+    replay = replay_report.to_dict() if hasattr(replay_report, "to_dict") else dict(replay_report)
+    comparison = _to_dict_or_none(comparison_report)
+    doctor = _to_dict_or_none(doctor_report)
+    migration = dict(migration_report or {})
+    baseline = _baseline_section(baseline_info, comparison)
+    diff_entries = _diff_entries(comparison)
+    corruption_findings = _corruption_findings(doctor)
+    migration_status = _migration_status(replay, migration)
+    readiness_effect = _store_replay_readiness(replay, comparison, doctor, migration_status, baseline)
+    report = {
+        **replay,
+        "record_type": "store_replay_report",
+        "baseline_resolution": baseline,
+        "diff_entries": diff_entries,
+        "corruption_findings": corruption_findings,
+        "migration_status": migration_status,
+        "readiness_effect": readiness_effect,
+        "sourceRefs": _store_replay_source_refs(replay, comparison, doctor, migration),
+    }
+    report["replay_hash"] = compute_json_hash_for_write({key: value for key, value in report.items() if key != "replay_hash"})
+    return report
+
+
+def _to_dict_or_none(value: Any | None) -> dict[str, Any] | None:
+    if value is None:
+        return None
+    if hasattr(value, "to_dict"):
+        return value.to_dict()
+    if isinstance(value, dict):
+        return dict(value)
+    return None
+
+
+def _baseline_section(
+    baseline_info: BaselineInfo | dict[str, Any] | None,
+    comparison: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if baseline_info is not None:
+        baseline = baseline_info.to_dict() if hasattr(baseline_info, "to_dict") else dict(baseline_info)
+        return {
+            "baseline_bundle_id": str(baseline.get("baseline_bundle_id") or ""),
+            "baseline_run_id": str(baseline.get("baseline_run_id") or ""),
+            "baseline_created_at": str(baseline.get("baseline_created_at") or ""),
+            "selection_method": str(baseline.get("selection_method") or "explicit_ref"),
+            "is_filename_sort": bool(baseline.get("is_filename_sort", False)),
+            "valid": not bool(baseline.get("is_filename_sort", False)),
+        }
+    if comparison:
+        is_filename_sort = bool(comparison.get("is_filename_sort_baseline", False))
+        method = str(comparison.get("baseline_selection_method") or "none")
+        return {
+            "baseline_bundle_id": str(comparison.get("baseline_bundle_id") or ""),
+            "baseline_run_id": "",
+            "baseline_created_at": "",
+            "selection_method": method,
+            "is_filename_sort": is_filename_sort,
+            "valid": bool(comparison.get("baseline_bundle_id")) and not is_filename_sort,
+        }
+    return {
+        "baseline_bundle_id": "",
+        "baseline_run_id": "",
+        "baseline_created_at": "",
+        "selection_method": "none",
+        "is_filename_sort": False,
+        "valid": True,
+    }
+
+
+def _diff_entries(comparison: dict[str, Any] | None) -> list[dict[str, Any]]:
+    if not comparison:
+        return []
+    entries: list[dict[str, Any]] = []
+    for item in comparison.get("artifact_diffs", []):
+        entries.append(
+            {
+                "artifact_id": str(item.get("artifact_id") or ""),
+                "baseline_hash": item.get("baseline_hash"),
+                "current_hash": item.get("current_hash"),
+                "result": str(item.get("result") or "incomparable"),
+                "details": dict(item.get("details") or {}),
+            }
+        )
+    return entries
+
+
+def _corruption_findings(doctor: dict[str, Any] | None) -> list[dict[str, Any]]:
+    if not doctor:
+        return []
+    findings: list[dict[str, Any]] = []
+    for item in doctor.get("findings", []):
+        findings.append(
+            {
+                "finding_id": str(item.get("finding_id") or ""),
+                "severity": str(item.get("severity") or "info"),
+                "category": str(item.get("category") or "unknown"),
+                "message": str(item.get("message") or ""),
+                "path": item.get("path"),
+                "remediation": item.get("remediation"),
+            }
+        )
+    return findings
+
+
+def _migration_status(replay: dict[str, Any], migration: dict[str, Any]) -> dict[str, Any]:
+    if migration:
+        return {
+            "schema_compatible": bool(migration.get("compatibility_class", "") == "compatible")
+            or bool(replay.get("schema_compatible", False)),
+            "migration_hold": bool(migration.get("readiness_effect") in {"hold", "hard_dq"})
+            or bool(replay.get("migration_hold", False)),
+            "compatibility_class": str(migration.get("compatibility_class") or "unknown"),
+            "rollback_plan_ref": str(migration.get("rollback_plan_ref") or migration.get("rollback_ref") or ""),
+            "checksum_before": str(migration.get("checksum_before") or ""),
+            "checksum_after": str(migration.get("checksum_after") or ""),
+        }
+    return {
+        "schema_compatible": bool(replay.get("schema_compatible", False)),
+        "migration_hold": bool(replay.get("migration_hold", False)),
+        "compatibility_class": "compatible" if replay.get("schema_compatible", False) else "migration_required",
+        "rollback_plan_ref": "",
+        "checksum_before": "",
+        "checksum_after": "",
+    }
+
+
+def _store_replay_readiness(
+    replay: dict[str, Any],
+    comparison: dict[str, Any] | None,
+    doctor: dict[str, Any] | None,
+    migration_status: dict[str, Any],
+    baseline: dict[str, Any],
+) -> str:
+    if doctor and int(doctor.get("hard_dq_count", 0) or 0) > 0:
+        return "hard_dq"
+    if int(replay.get("hash_mismatches", 0) or 0) > 0 or int(replay.get("artifacts_missing", 0) or 0) > 0:
+        return "hard_dq"
+    if not baseline["valid"]:
+        return "hard_dq"
+    if migration_status["migration_hold"]:
+        return "hold"
+    if comparison and bool(comparison.get("is_filename_sort_baseline", False)):
+        return "hard_dq"
+    if comparison and str(comparison.get("comparison_result")) == "regression":
+        return "hold"
+    return "pass"
+
+
+def _store_replay_source_refs(
+    replay: dict[str, Any],
+    comparison: dict[str, Any] | None,
+    doctor: dict[str, Any] | None,
+    migration: dict[str, Any],
+) -> list[str]:
+    refs = {
+        "src/hate/store/replay.py",
+        "docs/process/STORE_SCHEMA_REQUIREMENTS.md",
+        "docs/process/EPIC_TASK_PACKETS.md:HATE-PG-006",
+    }
+    if comparison:
+        refs.add("src/hate/store/compare.py")
+    if doctor:
+        refs.add("src/hate/store/doctor.py")
+    if migration:
+        refs.add("src/hate/store/migration_rebuild.py")
+    return sorted(refs)
+
+
 @dataclass
 class BaselineInfo:
     """Baseline selection information."""

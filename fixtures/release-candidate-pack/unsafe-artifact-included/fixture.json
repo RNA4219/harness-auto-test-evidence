@@ -1,0 +1,14 @@
+{
+  "fixture_id": "unsafe-artifact-included",
+  "input": {
+    "release_id": "rc-spec-unsafe",
+    "source_version": "abc123",
+    "required_reports": [],
+    "reports": [],
+    "qeg_refs": {"validate_ref": "qeg/validate", "import_ref": "qeg/import", "gate_ref": "qeg/gate", "record_ref": "qeg/record", "validate_status": "pass", "import_status": "pass"},
+    "evidence_room_artifacts": [
+      {"artifact_id": "unsafe-log", "contains_secret": true, "include_in_evidence_room": true, "sourceRefs": ["unsafe-log"]}
+    ]
+  },
+  "expected": {"verdict": "blocked", "blocker_code": "unsafe_artifact_included", "excluded_reason": "unsafe_or_quarantined"}
+}

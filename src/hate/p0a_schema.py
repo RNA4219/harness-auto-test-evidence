@@ -81,15 +81,23 @@ def _load_hate_schema(name: str) -> dict[str, Any]:
         raise ValueError(f"{name} must be a JSON object")
     return data
 
-def _validate_schema_value(value: Any, schema: dict[str, Any], path: str) -> list[str]:
+def _validate_schema_value(value: Any, schema: dict[str, Any], path: str, _root_schema: dict[str, Any] | None = None) -> list[str]:
+    root_schema = _root_schema or schema
     errors: list[str] = []
+    if "$ref" in schema:
+        ref_schema = _resolve_schema_ref(str(schema["$ref"]), root_schema)
+        if ref_schema is None:
+            return [f"{path} has unsupported schema ref: {schema['$ref']}"]
+        return _validate_schema_value(value, ref_schema, path, root_schema)
     if "allOf" in schema:
         for item in schema["allOf"]:
             if not isinstance(item, dict):
                 continue
             if "$ref" in item:
                 item = _load_hate_schema(str(item["$ref"]))
-            errors.extend(_validate_schema_value(value, item, path))
+                errors.extend(_validate_schema_value(value, item, path, item))
+            else:
+                errors.extend(_validate_schema_value(value, item, path, root_schema))
         return errors
     if "const" in schema and value != schema["const"]:
         errors.append(f"{path} must equal {schema['const']!r}")
@@ -120,13 +128,13 @@ def _validate_schema_value(value: Any, schema: dict[str, Any], path: str) -> lis
         if isinstance(properties, dict):
             for field, subschema in properties.items():
                 if field in value and isinstance(subschema, dict):
-                    errors.extend(_validate_schema_value(value[field], subschema, f"{path}.{field}"))
+                    errors.extend(_validate_schema_value(value[field], subschema, f"{path}.{field}", root_schema))
         additional = schema.get("additionalProperties", True)
         if isinstance(additional, dict):
             known = set(properties) if isinstance(properties, dict) else set()
             for field, item in value.items():
                 if field not in known:
-                    errors.extend(_validate_schema_value(item, additional, f"{path}.{field}"))
+                    errors.extend(_validate_schema_value(item, additional, f"{path}.{field}", root_schema))
         elif additional is False and isinstance(properties, dict):
             unknown = sorted(set(value).difference(properties))
             if unknown:
@@ -135,8 +143,18 @@ def _validate_schema_value(value: Any, schema: dict[str, Any], path: str) -> lis
         item_schema = schema.get("items")
         if isinstance(item_schema, dict):
             for index, item in enumerate(value):
-                errors.extend(_validate_schema_value(item, item_schema, f"{path}[{index}]"))
+                errors.extend(_validate_schema_value(item, item_schema, f"{path}[{index}]", root_schema))
     return errors
+
+def _resolve_schema_ref(ref: str, root_schema: dict[str, Any]) -> dict[str, Any] | None:
+    if not ref.startswith("#/"):
+        return None
+    value: Any = root_schema
+    for part in ref[2:].split("/"):
+        if not isinstance(value, dict) or part not in value:
+            return None
+        value = value[part]
+    return value if isinstance(value, dict) else None
 
 def _schema_type_matches(value: Any, expected_type: str) -> bool:
     if expected_type == "object":

@@ -1,0 +1,15 @@
+{
+  "fixture_id": "open-manual-review",
+  "input": {
+    "release_id": "rc-spec-manual-review",
+    "source_version": "abc123",
+    "required_reports": [
+      {"report_id": "test_integrity_report", "path": "test-integrity-report.json", "hash": "hash-test", "required_for_stage": "team_ga"}
+    ],
+    "reports": [
+      {"record_type": "test_integrity_report", "report_id": "test_integrity_report", "report_hash": "hash-test", "status": "hold", "summary": {"manual_review_required_count": 1}, "sourceRefs": ["test-integrity-report.json"]}
+    ],
+    "qeg_refs": {"validate_ref": "qeg/validate", "import_ref": "qeg/import", "gate_ref": "qeg/gate", "record_ref": "qeg/record", "validate_status": "pass", "import_status": "pass"}
+  },
+  "expected": {"verdict": "blocked", "blocker_code": "open_manual_review", "manual_review_status": "open"}
+}

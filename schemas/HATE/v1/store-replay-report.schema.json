@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/store-replay-report.schema.json",
+  "title": "Store Replay Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "bundle_id",
+    "run_id",
+    "replay_hash",
+    "source_bundle_hash",
+    "schema_compatible",
+    "migration_hold",
+    "legal_hold_preserved",
+    "baseline_valid",
+    "artifacts_replayed",
+    "artifacts_missing",
+    "hash_mismatches",
+    "baseline_resolution",
+    "diff_entries",
+    "corruption_findings",
+    "migration_status",
+    "readiness_effect",
+    "sourceRefs",
+    "replayed_at",
+    "diagnostics"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "store_replay_report"},
+    "bundle_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "minLength": 1},
+    "replay_hash": {"type": "string"},
+    "source_bundle_hash": {"type": "string"},
+    "schema_compatible": {"type": "boolean"},
+    "migration_hold": {"type": "boolean"},
+    "legal_hold_preserved": {"type": "boolean"},
+    "baseline_valid": {"type": "boolean"},
+    "artifacts_replayed": {"type": "integer", "minimum": 0},
+    "artifacts_missing": {"type": "integer", "minimum": 0},
+    "hash_mismatches": {"type": "integer", "minimum": 0},
+    "baseline_resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline_bundle_id",
+        "baseline_run_id",
+        "baseline_created_at",
+        "selection_method",
+        "is_filename_sort",
+        "valid"
+      ],
+      "properties": {
+        "baseline_bundle_id": {"type": "string"},
+        "baseline_run_id": {"type": "string"},
+        "baseline_created_at": {"type": "string"},
+        "selection_method": {"type": "string"},
+        "is_filename_sort": {"type": "boolean"},
+        "valid": {"type": "boolean"}
+      }
+    },
+    "diff_entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifact_id", "baseline_hash", "current_hash", "result", "details"],
+        "properties": {
+          "artifact_id": {"type": "string"},
+          "baseline_hash": {"type": ["string", "null"]},
+          "current_hash": {"type": ["string", "null"]},
+          "result": {"enum": ["improvement", "regression", "no_change", "incomparable"]},
+          "details": {"type": "object"}
+        }
+      }
+    },
+    "corruption_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["finding_id", "severity", "category", "message", "path", "remediation"],
+        "properties": {
+          "finding_id": {"type": "string"},
+          "severity": {"enum": ["hard_dq", "soft_dq", "warning", "info"]},
+          "category": {"type": "string"},
+          "message": {"type": "string"},
+          "path": {"type": ["string", "null"]},
+          "remediation": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "migration_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_compatible",
+        "migration_hold",
+        "compatibility_class",
+        "rollback_plan_ref",
+        "checksum_before",
+        "checksum_after"
+      ],
+      "properties": {
+        "schema_compatible": {"type": "boolean"},
+        "migration_hold": {"type": "boolean"},
+        "compatibility_class": {"type": "string"},
+        "rollback_plan_ref": {"type": "string"},
+        "checksum_before": {"type": "string"},
+        "checksum_after": {"type": "string"}
+      }
+    },
+    "readiness_effect": {"enum": ["pass", "hold", "hard_dq"]},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}},
+    "replayed_at": {"type": "string"},
+    "diagnostics": {"type": "array", "items": {"type": "object"}}
+  }
+}

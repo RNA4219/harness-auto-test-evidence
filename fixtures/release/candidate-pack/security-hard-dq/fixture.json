@@ -2,9 +2,9 @@
   "input": {
     "release_id": "rc-security-hard-dq",
     "source_version": "abc123",
-    "required_reports": ["artifact-safety-report", "commercial-truthfulness-report"],
+    "required_reports": ["security-quarantine-report", "commercial-truthfulness-report"],
     "reports": [
-      {"record_type": "artifact-safety-report", "report_id": "artifact-safety", "readiness_effect": "hard_dq", "sourceRefs": ["artifact-safety-report.json"]},
+      {"record_type": "security-quarantine-report", "report_id": "security-quarantine", "readiness_effect": "hard_dq", "sourceRefs": ["security-quarantine-report.json"]},
       {"record_type": "commercial-truthfulness-report", "report_id": "commercial", "status": "pass", "summary": {"unsupported_claim_count": 0, "release_eligible_claim_count": 1}, "sourceRefs": ["commercial-truthfulness-report.json"]}
     ],
     "evidence_room_artifacts": [

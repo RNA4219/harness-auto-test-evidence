@@ -7,6 +7,7 @@
     "schema_version",
     "record_type",
     "release_id",
+    "release_candidate_id",
     "source_version",
     "required_reports",
     "reports",
@@ -29,10 +30,19 @@
     "schema_version": {"const": "HATE/v1"},
     "record_type": {"const": "release-candidate-pack"},
     "release_id": {"type": "string"},
+    "release_candidate_id": {"type": "string"},
     "source_version": {"type": "string"},
     "required_reports": {"type": "array", "items": {"type": "string"}},
     "reports": {"type": "array", "items": {"$ref": "#/$defs/report_entry"}},
-    "missing_required_reports": {"type": "array", "items": {"type": "string"}},
+    "missing_required_reports": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"type": "string"},
+          {"$ref": "#/$defs/missing_required_report"}
+        ]
+      }
+    },
     "verdict": {"type": "string", "enum": ["ready", "blocked"]},
     "readiness_effect": {"type": "string", "enum": ["pass", "hard_dq"]},
     "blockers": {"type": "array", "items": {"$ref": "#/$defs/blocker"}},
@@ -55,7 +65,21 @@
       },
       "additionalProperties": true
     },
-    "qeg_refs": {"type": "array", "items": {"type": "string"}},
+    "qeg_refs": {
+      "type": "object",
+      "required": ["validate_ref", "import_ref", "gate_ref", "record_ref", "validate_status", "import_status", "gate_status", "approval_claimed"],
+      "properties": {
+        "validate_ref": {"type": "string"},
+        "import_ref": {"type": "string"},
+        "gate_ref": {"type": "string"},
+        "record_ref": {"type": "string"},
+        "validate_status": {"type": "string"},
+        "import_status": {"type": "string"},
+        "gate_status": {"type": "string"},
+        "approval_claimed": {"const": false}
+      },
+      "additionalProperties": true
+    },
     "qeg_approval_claimed": {"const": false},
     "evidence_room_manifest": {
       "type": "object",
@@ -103,6 +127,16 @@
   },
   "additionalProperties": true,
   "$defs": {
+    "missing_required_report": {
+      "type": "object",
+      "required": ["report_id", "path", "required_for_stage"],
+      "properties": {
+        "report_id": {"type": "string"},
+        "path": {"type": "string"},
+        "required_for_stage": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
     "report_entry": {
       "type": "object",
       "required": ["record_type", "report_id", "report_hash", "readiness_effect", "sourceRefs", "legal_hold"],

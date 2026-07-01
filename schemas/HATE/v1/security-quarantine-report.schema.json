@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/security-quarantine-report.schema.json",
+  "title": "Security Quarantine Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "profile",
+    "artifact_results",
+    "surface_checks",
+    "findings",
+    "status",
+    "readiness_effect",
+    "sourceRefs",
+    "summary",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "security-quarantine-report"},
+    "report_id": {"type": "string", "minLength": 1},
+    "profile": {"type": "string", "minLength": 1},
+    "artifact_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "artifact_id",
+          "classification",
+          "quarantine_required",
+          "quarantine_status",
+          "redaction_required",
+          "redaction_status",
+          "safe_for_summary",
+          "finding_types",
+          "readiness_effect",
+          "sourceRefs"
+        ],
+        "properties": {
+          "artifact_id": {"type": "string", "minLength": 1},
+          "classification": {"enum": ["public", "internal", "confidential", "restricted"]},
+          "quarantine_required": {"type": "boolean"},
+          "quarantine_status": {"enum": ["none", "quarantined", "released"]},
+          "redaction_required": {"type": "boolean"},
+          "redaction_status": {"enum": ["not_required", "redacted", "pending", "failed"]},
+          "safe_for_summary": {"type": "boolean"},
+          "finding_types": {"type": "array", "items": {"type": "string"}},
+          "readiness_effect": {"enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "surface_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "surface",
+          "summary_visible_artifact_ids",
+          "summary_hidden_artifact_ids",
+          "export_allowed_artifact_ids",
+          "export_excluded_artifact_ids",
+          "export_hold_artifact_ids",
+          "export_ready",
+          "readiness_effect",
+          "sourceRefs"
+        ],
+        "properties": {
+          "surface": {"type": "string", "minLength": 1},
+          "summary_visible_artifact_ids": {"type": "array", "items": {"type": "string"}},
+          "summary_hidden_artifact_ids": {"type": "array", "items": {"type": "string"}},
+          "export_allowed_artifact_ids": {"type": "array", "items": {"type": "string"}},
+          "export_excluded_artifact_ids": {"type": "array", "items": {"type": "string"}},
+          "export_hold_artifact_ids": {"type": "array", "items": {"type": "string"}},
+          "export_ready": {"type": "boolean"},
+          "readiness_effect": {"enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "severity",
+          "message",
+          "sourceRef",
+          "readiness_effect",
+          "artifact_id",
+          "required_action"
+        ],
+        "properties": {
+          "code": {
+            "enum": [
+              "security_quarantine_decision_missing",
+              "security_quarantine_redaction_not_complete",
+              "security_quarantine_artifact_hard_dq",
+              "security_quarantine_unsafe_artifact_visible",
+              "security_quarantine_unsafe_artifact_exported",
+              "security_quarantine_restricted_artifact_exported"
+            ]
+          },
+          "severity": {"enum": ["low", "medium", "high", "critical"]},
+          "message": {"type": "string", "minLength": 1},
+          "sourceRef": {"type": "string", "minLength": 1},
+          "readiness_effect": {"enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+          "artifact_id": {"type": "string", "minLength": 1},
+          "required_action": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "status": {"enum": ["pass", "hold"]},
+    "readiness_effect": {"enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}},
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_count",
+        "artifact_report_count",
+        "surface_count",
+        "finding_count",
+        "quarantined_count",
+        "redaction_pending_or_failed_count"
+      ],
+      "properties": {
+        "artifact_count": {"type": "integer", "minimum": 0},
+        "artifact_report_count": {"type": "integer", "minimum": 0},
+        "surface_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0},
+        "quarantined_count": {"type": "integer", "minimum": 0},
+        "redaction_pending_or_failed_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "generated_at": {"type": "string", "minLength": 1}
+  }
+}

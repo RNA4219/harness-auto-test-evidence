@@ -32,6 +32,34 @@ def _build_product_readiness_report(
         unverified_acceptance=unverified_acceptance,
         workflow_acceptance=workflow_acceptance,
     )
+    unsupported_claims = _product_unsupported_claims(alignment)
+    contradictions = _product_contradictions(alignment)
+    hard_dqs = _product_hard_dqs(alignment, doctor)
+    soft_gaps = _product_soft_gaps(
+        input_gaps=input_gaps,
+        doctor=doctor,
+        alignment=alignment,
+        unverified_acceptance=unverified_acceptance,
+    )
+    canonical_source_refs = _product_source_refs(
+        source_refs=source_refs,
+        generated_refs=generated_refs,
+        alignment=alignment,
+        doctor=doctor,
+        soft_gaps=soft_gaps,
+        hard_dqs=hard_dqs,
+        unsupported_claims=unsupported_claims,
+        contradictions=contradictions,
+    )
+    graph_summary = _product_graph_summary(
+        alignment=alignment,
+        generated_refs=generated_refs,
+        gates=gates,
+        unsupported_claims=unsupported_claims,
+        contradictions=contradictions,
+        hard_dqs=hard_dqs,
+        soft_gaps=soft_gaps,
+    )
     return {
         "schema_version": SCHEMA_VERSION,
         "record_type": "product_readiness_report",
@@ -52,6 +80,11 @@ def _build_product_readiness_report(
         "evaluation": evaluation,
         "summary": {
             "overall_status": overall_status,
+            "claim_count": graph_summary["claim_count"],
+            "unsupported_claim_count": len(unsupported_claims),
+            "contradiction_count": len(contradictions),
+            "hard_dq_count": len(hard_dqs),
+            "soft_gap_count": len(soft_gaps),
             "prg_coverage": f"{passed_gate_count}/7",
             "evaluation_score": evaluation["score"],
             "evaluation_confidence": evaluation["confidence"],
@@ -70,10 +103,163 @@ def _build_product_readiness_report(
             "publish_gate_override": False,
             "hosted_saas_claim": False,
         },
+        "graph_summary": graph_summary,
+        "unsupported_claims": unsupported_claims,
+        "contradictions": contradictions,
+        "hard_dqs": hard_dqs,
+        "soft_gaps": soft_gaps,
+        "sourceRefs": canonical_source_refs,
         "source_refs": source_refs,
         "release_gate_override": False,
         "publish_gate_override": False,
     }
+
+
+def _product_graph_summary(
+    *,
+    alignment: dict[str, Any],
+    generated_refs: list[str],
+    gates: list[dict[str, Any]],
+    unsupported_claims: list[dict[str, Any]],
+    contradictions: list[dict[str, Any]],
+    hard_dqs: list[dict[str, Any]],
+    soft_gaps: list[dict[str, Any]],
+) -> dict[str, Any]:
+    summary = alignment.get("summary", {}) if isinstance(alignment.get("summary"), dict) else {}
+    claim_count = _safe_int(
+        summary.get("claim_count"),
+        _safe_int(summary.get("acceptance_count"), _safe_int(summary.get("requirement_count"), 0)),
+    )
+    return {
+        "claim_count": claim_count,
+        "requirement_count": _safe_int(summary.get("requirement_count"), claim_count),
+        "acceptance_count": _safe_int(summary.get("acceptance_count"), claim_count),
+        "generated_artifact_count": len(set(generated_refs)),
+        "readiness_gate_count": len(gates),
+        "unsupported_claim_count": len(unsupported_claims),
+        "contradiction_count": len(contradictions),
+        "hard_dq_count": len(hard_dqs),
+        "soft_gap_count": len(soft_gaps),
+        "source_report_refs": ["requirement-evidence-alignment.json", "doctor-report.json", "product-readiness-report.json"],
+    }
+
+
+def _product_unsupported_claims(alignment: dict[str, Any]) -> list[dict[str, Any]]:
+    claims = alignment.get("unsupported_claims")
+    if isinstance(claims, list):
+        return [_canonical_gap_item(item, "unsupported_claim", "unsupported_claim") for item in claims if isinstance(item, dict)]
+
+    result: list[dict[str, Any]] = []
+    for key in ("claims", "acceptance_items", "requirements"):
+        for item in alignment.get(key, []) if isinstance(alignment.get(key), list) else []:
+            if not isinstance(item, dict):
+                continue
+            status = str(item.get("status") or item.get("support_status") or item.get("evidence_status") or "")
+            if status in {"unsupported", "missing_evidence", "unverified"}:
+                result.append(_canonical_gap_item(item, str(item.get("claim_id") or item.get("id") or key), "unsupported_claim"))
+    return result
+
+
+def _product_contradictions(alignment: dict[str, Any]) -> list[dict[str, Any]]:
+    contradictions = alignment.get("contradictions")
+    if isinstance(contradictions, list):
+        return [_canonical_gap_item(item, "contradiction", "contradiction") for item in contradictions if isinstance(item, dict)]
+    return []
+
+
+def _product_hard_dqs(alignment: dict[str, Any], doctor: dict[str, Any]) -> list[dict[str, Any]]:
+    hard_dqs: list[dict[str, Any]] = []
+    for source in (alignment.get("hard_dqs"), doctor.get("hard_dqs")):
+        if isinstance(source, list):
+            hard_dqs.extend(_canonical_gap_item(item, "hard_dq", "hard_dq") for item in source if isinstance(item, dict))
+    for finding in doctor.get("findings", []) if isinstance(doctor.get("findings"), list) else []:
+        if isinstance(finding, dict) and str(finding.get("severity") or finding.get("effect") or "") in {"hard", "hard_dq", "block", "critical"}:
+            hard_dqs.append(_canonical_gap_item(finding, str(finding.get("code") or "doctor_hard_dq"), "hard_dq"))
+    return hard_dqs
+
+
+def _product_soft_gaps(
+    *,
+    input_gaps: list[dict[str, str]],
+    doctor: dict[str, Any],
+    alignment: dict[str, Any],
+    unverified_acceptance: int,
+) -> list[dict[str, Any]]:
+    soft_gaps: list[dict[str, Any]] = []
+    for gap in input_gaps:
+        artifact_ref = str(gap.get("artifact_ref", "missing-input"))
+        soft_gaps.append(
+            {
+                "code": "missing_input_artifact",
+                "severity": "medium",
+                "message": str(gap.get("reason") or "expected input artifact missing"),
+                "artifact_ref": artifact_ref,
+                "root": str(gap.get("root") or "unknown"),
+                "readiness_effect": "hold",
+                "sourceRefs": [artifact_ref],
+            }
+        )
+    for finding in doctor.get("findings", []) if isinstance(doctor.get("findings"), list) else []:
+        if isinstance(finding, dict) and str(finding.get("severity") or finding.get("effect") or "") not in {"hard", "hard_dq", "block", "critical"}:
+            soft_gaps.append(_canonical_gap_item(finding, str(finding.get("code") or "doctor_finding"), "soft_gap"))
+    if unverified_acceptance and not any(gap.get("code") == "unverified_acceptance" for gap in soft_gaps):
+        soft_gaps.append(
+            {
+                "code": "unverified_acceptance",
+                "severity": "medium",
+                "message": f"{unverified_acceptance} acceptance items are not verified by evidence.",
+                "readiness_effect": "conditional",
+                "sourceRefs": _extract_source_refs(alignment) or ["requirement-evidence-alignment.json"],
+            }
+        )
+    return soft_gaps
+
+
+def _canonical_gap_item(item: dict[str, Any], default_code: str, default_kind: str) -> dict[str, Any]:
+    source_refs = _extract_source_refs(item)
+    return {
+        "code": str(item.get("code") or item.get("finding_code") or item.get("claim_id") or item.get("id") or default_code),
+        "kind": str(item.get("kind") or item.get("type") or default_kind),
+        "severity": str(item.get("severity") or "medium"),
+        "message": str(item.get("message") or item.get("reason") or default_code),
+        "readiness_effect": str(item.get("readiness_effect") or item.get("effect") or "hold"),
+        "sourceRefs": source_refs,
+    }
+
+
+def _product_source_refs(
+    *,
+    source_refs: list[str],
+    generated_refs: list[str],
+    alignment: dict[str, Any],
+    doctor: dict[str, Any],
+    soft_gaps: list[dict[str, Any]],
+    hard_dqs: list[dict[str, Any]],
+    unsupported_claims: list[dict[str, Any]],
+    contradictions: list[dict[str, Any]],
+) -> list[str]:
+    refs = list(source_refs) + list(generated_refs)
+    refs.extend(_extract_source_refs(alignment))
+    refs.extend(_extract_source_refs(doctor))
+    for item in soft_gaps + hard_dqs + unsupported_claims + contradictions:
+        refs.extend(_extract_source_refs(item))
+    return sorted({str(ref) for ref in refs if str(ref)})
+
+
+def _extract_source_refs(value: Any) -> list[str]:
+    if not isinstance(value, dict):
+        return []
+    refs: list[str] = []
+    for key in ("sourceRefs", "source_refs"):
+        raw = value.get(key)
+        if isinstance(raw, list):
+            refs.extend(str(ref) for ref in raw if str(ref))
+        elif isinstance(raw, str) and raw:
+            refs.append(raw)
+    raw_ref = value.get("sourceRef") or value.get("source_ref")
+    if isinstance(raw_ref, str) and raw_ref:
+        refs.append(raw_ref)
+    return sorted(set(refs))
 
 
 def _build_evaluation_score(
@@ -276,6 +462,13 @@ def _safe_float(value: Any, default: float) -> float:
         return default
 
 
+def _safe_int(value: Any, default: int) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
 def _missing_product_input_refs(trust_dir: Path, workflow_dir: Path) -> list[dict[str, str]]:
     expected = {
         trust_dir: [
@@ -410,5 +603,3 @@ def _product_artifact_refs() -> list[str]:
         "governance-portfolio-report.json",
         "release-candidate-pack.json",
     ]
-
-

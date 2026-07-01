@@ -1,0 +1,16 @@
+{
+  "fixture_id": "missing-required-report",
+  "input": {
+    "release_id": "rc-spec-missing",
+    "source_version": "abc123",
+    "required_reports": [
+      {"report_id": "product-readiness-report", "path": "product-readiness-report.json", "hash": "hash-product", "required_for_stage": "team_ga"},
+      {"report_id": "support-ops-report", "path": "support-ops-report.json", "hash": "hash-support", "required_for_stage": "team_ga"}
+    ],
+    "reports": [
+      {"record_type": "product-readiness-report", "report_id": "product-readiness-report", "report_hash": "hash-product", "status": "pass", "sourceRefs": ["product-readiness-report.json"]}
+    ],
+    "qeg_refs": {"validate_ref": "qeg/validate", "import_ref": "qeg/import", "gate_ref": "qeg/gate", "record_ref": "qeg/record", "validate_status": "pass", "import_status": "pass"}
+  },
+  "expected": {"verdict": "blocked", "missing_report_id": "support-ops-report", "missing_path": "support-ops-report.json"}
+}

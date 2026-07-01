@@ -116,3 +116,21 @@ def test_schema_and_registry_define_release_candidate_pack() -> None:
 
 def test_release_pack_requires_connected_expansion_reports() -> None:
     assert set(EXPANSION_REPORT_TYPES).issubset(set(RELEASE_PACK_REQUIRED_REPORT_TYPES))
+
+
+def test_release_pack_requires_product_grade_canonical_reports() -> None:
+    required = set(RELEASE_PACK_REQUIRED_REPORT_TYPES)
+
+    assert {
+        "adapter-conformance-report",
+        "schema_validation_report",
+        "store_replay_report",
+        "security-quarantine-report",
+        "api-contract-report",
+        "dashboard-uat-report",
+        "enterprise-control-report",
+        "scale-performance-report",
+        "migration-compatibility-report",
+        "commercial-truthfulness-report",
+        "support-ops-report",
+    }.issubset(required)

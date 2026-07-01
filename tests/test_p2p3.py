@@ -468,6 +468,9 @@ def test_p2p3_generates_product_readiness_artifacts(tmp_path: Path) -> None:
     assert release_pack["record_type"] == "release_candidate_pack"
     assert release_pack["release_candidate_id"] == "rc-1001-fixture"
     assert release_pack["missing_required_reports"] == []
+    assert "schema-validation-report.json" in release_pack["missing_canonical_reports"]
+    assert not release_pack["summary"]["canonical_product_grade_ready"]
+    assert next(item for item in release_pack["canonical_report_mapping"] if item["canonical_report"] == "security-quarantine-report.json")["observed_refs"] == ["privacy-quarantine-report.json"]
     assert release_pack["summary"]["missing_required_report_count"] == 0
     assert release_pack["summary"]["release_ready"] is True
     assert {gate["gate_id"] for gate in release_pack["release_gates"]} == {

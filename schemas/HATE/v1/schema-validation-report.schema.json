@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/schema-validation-report.schema.json",
+  "title": "Schema Validation Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "fixture_id",
+    "summary",
+    "results",
+    "cross_record"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/schema-validation-report/v1"},
+    "record_type": {"const": "schema_validation_report"},
+    "fixture_id": {"type": "string", "minLength": 1},
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accepted",
+        "rejected",
+        "warnings",
+        "cross_record_violation_count",
+        "rejection_classes",
+        "warning_classes",
+        "schema_versions"
+      ],
+      "properties": {
+        "accepted": {"type": "integer", "minimum": 0},
+        "rejected": {"type": "integer", "minimum": 0},
+        "warnings": {"type": "integer", "minimum": 0},
+        "cross_record_violation_count": {"type": "integer", "minimum": 0},
+        "rejection_classes": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1}},
+        "warning_classes": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1}},
+        "schema_versions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "record_kind",
+          "schema_version",
+          "schema_ref",
+          "sourceRefs",
+          "accepted",
+          "findings"
+        ],
+        "properties": {
+          "record_id": {"type": "string"},
+          "record_kind": {"type": "string"},
+          "schema_version": {"type": "string"},
+          "schema_ref": {"type": "string"},
+          "sourceRefs": {"type": "array", "items": {"type": "string"}},
+          "accepted": {"type": "boolean"},
+          "findings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["code", "severity", "message", "sourceRef"],
+              "properties": {
+                "code": {"type": "string"},
+                "severity": {"enum": ["hard", "warn"]},
+                "message": {"type": "string"},
+                "sourceRef": {"type": "string"}
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "cross_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["violation_count", "violations"],
+      "properties": {
+        "violation_count": {"type": "integer", "minimum": 0},
+        "violations": {"type": "array", "items": {"type": "object"}}
+      }
+    }
+  }
+}
