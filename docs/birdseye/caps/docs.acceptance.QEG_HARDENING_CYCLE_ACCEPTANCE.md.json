@@ -1,0 +1,25 @@
+{
+  "path": "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md",
+  "role": "quality",
+  "kind": "md",
+  "sha256": "1ea6035725f4143dc5dd09613f1bf95bd7781153c6c60bd5bbc48a52b9be43b9",
+  "line_count": 51,
+  "size_bytes": 3337,
+  "headings": [
+    "# QEG Hardening Cycle Acceptance",
+    "## Guardrails",
+    "## External QEG Tool Run"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -19,6 +19,7 @@ from .p2p3 import ProductError, generate_product_readiness, query_product_read_m
 from .product_grade import ProductGradeError, generate_product_grade_reports
 from .release import RELEASE_PACK_REQUIRED_REPORT_TYPES, assemble_release_candidate_pack
 from .store_legacy import StoreError, ingest_local_store, query_local_store, read_history_index
+from .validation_cycles import ValidationCycleError, run_validation_cycles
 
 
 class ReleaseError(Exception):
@@ -363,6 +364,19 @@ def dispatch_cli(args: argparse.Namespace, parser: argparse.ArgumentParser) -> i
             )
         except RealRepoHistoryStoreError as exc:
             print(f"HATE-E-REAL-REPO-HISTORY: {exc}", file=sys.stderr)
+            return 2
+
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
+
+    if args.command == "validation" and args.validation_command == "cycles":
+        try:
+            result = run_validation_cycles(fixture_path=args.fixture, out_dir=args.out)
+        except (OSError, json.JSONDecodeError, ValidationCycleError) as exc:
+            if isinstance(exc, ValidationCycleError) and exc.report is not None:
+                print(json.dumps(exc.report, ensure_ascii=False), file=sys.stderr)
+                return exc.exit_code
+            print(f"HATE-E-VALIDATION-CYCLES: {exc}", file=sys.stderr)
             return 2
 
         print(json.dumps(result, ensure_ascii=False))

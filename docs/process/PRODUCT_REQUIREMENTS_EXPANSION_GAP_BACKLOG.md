@@ -37,6 +37,12 @@ Each expansion gap must have:
 
 ## 2. Expansion Gap Ledger
 
+The `Class` column preserves the original discovery class from the requirement
+gap audit. Current implementation state is tracked by
+`HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md`, packet rows, generated UAT reports,
+and the five-tool validation record. A row can therefore retain
+`thin_requirement` as its origin while being implemented at machine-check level.
+
 | Gap ID | Class | Area | Current weakness | Required specification work | Target milestone |
 |---|---|---|---|---|---|
 | HATE-GAP-027 | `thin_requirement` | Guided onboarding and sample projects | PRD names a five-minute path, but product onboarding has no versioned sample repo, expected output, or failure tutorial contract | Add guided onboarding contract with sample project matrix, golden walkthrough, failed-run tutorial, and support handoff evidence | Team GA |

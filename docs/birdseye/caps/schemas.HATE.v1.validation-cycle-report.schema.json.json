@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/validation-cycle-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a8e16165ce79cb177608cf1332fd16af278de700505a0872cf1ffa0652d4f909",
+  "line_count": 83,
+  "size_bytes": 2485,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

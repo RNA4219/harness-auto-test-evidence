@@ -1,0 +1,32 @@
+{
+  "path": "docs/acceptance/FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "400588e9dbef56d7d0d625c2c6468cd9a03864083fcb9706f34eafaa0d1e6e66",
+  "line_count": 113,
+  "size_bytes": 9126,
+  "headings": [
+    "# Five-Tool Validation Gate For HATE-GAP-042, HATE-GAP-043, And HATE-GAP-049..060",
+    "## Chain Status",
+    "## Artifact Map",
+    "## Findings And Risks",
+    "## Manual BB Plan",
+    "## QEG Gate Package",
+    "## Verdict",
+    "## Next Commands"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

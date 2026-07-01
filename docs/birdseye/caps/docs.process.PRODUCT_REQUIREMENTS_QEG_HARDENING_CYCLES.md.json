@@ -1,0 +1,27 @@
+{
+  "path": "docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "1ce0149a952f6ec27c982e4c1e969113dddae607c7b05422bed0f7e99a3e92cb",
+  "line_count": 56,
+  "size_bytes": 2580,
+  "headings": [
+    "# QEG Hardening Cycles Requirements",
+    "## Cycle Contract",
+    "## Ten Required Cycles",
+    "## Implementation Contract",
+    "## No-Go"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

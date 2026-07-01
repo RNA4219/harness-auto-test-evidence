@@ -2,9 +2,9 @@
   "path": "src/hate/cli_handlers.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "8179eb2471ea7315ef9718f23e40b7d5d587f55040dbb5a8baf0917da99ba63f",
-  "line_count": 442,
-  "size_bytes": 15604,
+  "sha256": "1f7522ece5d6fc35c443d9a250c668ac73c28fe457a5f0f9d0cd3b0c4e5005d2",
+  "line_count": 456,
+  "size_bytes": 16300,
   "headings": [],
   "imports": [
     ".evaluation",
@@ -18,6 +18,7 @@
     ".product_grade",
     ".release",
     ".store_legacy",
+    ".validation_cycles",
     "__future__",
     "argparse",
     "json",
@@ -36,7 +37,8 @@
     "src/hate/p2p3.py",
     "src/hate/product_grade.py",
     "src/hate/release.py",
-    "src/hate/store_legacy.py"
+    "src/hate/store_legacy.py",
+    "src/hate/validation_cycles.py"
   ],
   "tags": [
     "fixture",

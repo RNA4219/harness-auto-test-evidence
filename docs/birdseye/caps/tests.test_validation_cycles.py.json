@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_validation_cycles.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "2a1a68bf1eff6387aafec803a8b7f52475ab06bd94f360d3648afc5105f8fa2a",
+  "line_count": 124,
+  "size_bytes": 5056,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.cli",
+    "hate.validation_cycles",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py",
+    "src/hate/validation_cycles.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

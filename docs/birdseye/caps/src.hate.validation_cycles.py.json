@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/validation_cycles.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "75200097d6d638ceabf2ce91f404b9a3f14bb8f446ee7e4ab05a47a8b2bf0a7c",
+  "line_count": 183,
+  "size_bytes": 9033,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

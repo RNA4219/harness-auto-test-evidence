@@ -200,6 +200,13 @@ def build_parser() -> argparse.ArgumentParser:
     real_repo_query.add_argument("--until", default=None, help="Inclusive started_at upper bound.")
     real_repo_query.add_argument("--limit", type=int, default=100, help="Maximum returned entries.")
 
+    validation = subparsers.add_parser("validation", help="Run repeated five-tool/QEG validation cycles.")
+    validation_subparsers = validation.add_subparsers(dest="validation_command", required=True)
+
+    validation_cycles = validation_subparsers.add_parser("cycles", help="Evaluate ten QEG hardening cycles.")
+    validation_cycles.add_argument("--fixture", required=True, type=Path, help="Validation cycle fixture JSON.")
+    validation_cycles.add_argument("--out", required=True, type=Path, help="Output directory for validation-cycle-report.json.")
+
     return parser
 
 

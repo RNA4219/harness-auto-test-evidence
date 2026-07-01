@@ -493,6 +493,13 @@
       "deprecated_fields": []
     },
     {
+      "record_type": "validation-cycle-report",
+      "schema": "schemas/HATE/v1/validation-cycle-report.schema.json",
+      "phase": "P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
       "record_type": "release-channel-report",
       "schema": "schemas/HATE/v1/release-channel-report.schema.json",
       "phase": "P3",

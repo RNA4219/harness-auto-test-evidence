@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/validation-cycle-report.schema.json",
+  "title": "HATE Validation Cycle Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "verdict",
+    "expected_cycle_count",
+    "cycles",
+    "findings",
+    "summary",
+    "qeg_final_approval_claimed",
+    "limits",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"const": "validation-cycle-report"},
+    "report_id": {"type": "string"},
+    "overall_status": {"type": "string", "enum": ["pass", "blocked"]},
+    "readiness_effect": {"type": "string", "enum": ["pass", "hard_dq"]},
+    "verdict": {"type": "string", "enum": ["go", "no_go"]},
+    "expected_cycle_count": {"type": "integer", "minimum": 1},
+    "cycles": {"type": "array", "items": {"$ref": "#/$defs/cycle"}},
+    "findings": {"type": "array", "items": {"$ref": "#/$defs/finding"}},
+    "summary": {
+      "type": "object",
+      "required": [
+        "cycle_count",
+        "go_cycle_count",
+        "no_go_cycle_count",
+        "finding_count",
+        "hard_dq_count",
+        "qeg_go_count"
+      ],
+      "additionalProperties": true
+    },
+    "qeg_final_approval_claimed": {"const": false},
+    "limits": {
+      "type": "object",
+      "required": ["qeg_is_final_gate", "hate_must_not_claim_qeg_approval", "manual_bb_blockers_allowed_for_go"],
+      "properties": {
+        "qeg_is_final_gate": {"const": true},
+        "hate_must_not_claim_qeg_approval": {"const": true},
+        "manual_bb_blockers_allowed_for_go": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "cycle": {
+      "type": "object",
+      "required": [
+        "cycle_id",
+        "missing_possibility",
+        "requirement_refs",
+        "spec_refs",
+        "implementation_refs",
+        "test_refs",
+        "chain_status",
+        "manual_bb",
+        "qeg_package",
+        "release_candidate_pack",
+        "sourceRefs",
+        "cycle_verdict",
+        "finding_count"
+      ],
+      "additionalProperties": true
+    },
+    "finding": {
+      "type": "object",
+      "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+      "additionalProperties": true
+    }
+  }
+}

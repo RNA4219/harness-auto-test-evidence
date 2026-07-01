@@ -1,5 +1,5 @@
 {
-  "generated_at": "9c1bb708521b",
+  "generated_at": "06beb7adf484",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -30,6 +30,13 @@
       "line_count": 170,
       "size_bytes": 7177
     },
+    "docs/acceptance/FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md.json",
+      "sha256": "400588e9dbef56d7d0d625c2c6468cd9a03864083fcb9706f34eafaa0d1e6e66",
+      "line_count": 113,
+      "size_bytes": 9126
+    },
     "docs/acceptance/HATE_GAP_CLOSURE_ACCEPTANCE.md": {
       "role": "quality",
       "caps": "docs/birdseye/caps/docs.acceptance.HATE_GAP_CLOSURE_ACCEPTANCE.md.json",
@@ -47,9 +54,16 @@
     "docs/acceptance/INDEX.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.INDEX.md.json",
-      "sha256": "a2906cc5b3d6dd1ac839601f545bc514a736d5a2ba23afdb271681285d307bf5",
-      "line_count": 25,
-      "size_bytes": 2116
+      "sha256": "ab724644ae09a64df9830f4e47f95f6b505a768d34fc6569928d7845da911832",
+      "line_count": 27,
+      "size_bytes": 2856
+    },
+    "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md": {
+      "role": "quality",
+      "caps": "docs/birdseye/caps/docs.acceptance.QEG_HARDENING_CYCLE_ACCEPTANCE.md.json",
+      "sha256": "1ea6035725f4143dc5dd09613f1bf95bd7781153c6c60bd5bbc48a52b9be43b9",
+      "line_count": 51,
+      "size_bytes": 3337
     },
     "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md": {
       "role": "quality",
@@ -446,9 +460,9 @@
     "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_DEFINITION.md.json",
-      "sha256": "85c8e8844a35c1c7c07227c31dadef5b70de7b0dbd940bc9cf0424b3f68ef3b5",
-      "line_count": 715,
-      "size_bytes": 58255
+      "sha256": "8fe4ffdfd544d003559e39026bde9e343d97a8d169385a184e44cb3e738e3a82",
+      "line_count": 736,
+      "size_bytes": 60330
     },
     "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md": {
       "role": "requirements",
@@ -460,9 +474,9 @@
     "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_GAP_BACKLOG.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_EXPANSION_GAP_BACKLOG.md.json",
-      "sha256": "eea46d8251eaa0ebb20e16a9cf04c69b6dc09857a2d88381ae69b11e61a90e2d",
-      "line_count": 123,
-      "size_bytes": 16266
+      "sha256": "710c414bf688846d6f0143b949ef534ffb116df46425b77a9aadf22f71fde68d",
+      "line_count": 129,
+      "size_bytes": 16626
     },
     "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_PACKETS.md": {
       "role": "requirements",
@@ -491,6 +505,13 @@
       "sha256": "e2708a300d6d6987a20c8da0d0c92db51687c6db4082e831edf37f5815612533",
       "line_count": 114,
       "size_bytes": 5945
+    },
+    "docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md.json",
+      "sha256": "1ce0149a952f6ec27c982e4c1e969113dddae607c7b05422bed0f7e99a3e92cb",
+      "line_count": 56,
+      "size_bytes": 2580
     },
     "docs/process/PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md": {
       "role": "requirements",
@@ -5917,6 +5938,13 @@
       "line_count": 38,
       "size_bytes": 950
     },
+    "fixtures/validation-cycles/ten-cycle-go/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.validation-cycles.ten-cycle-go.fixture.json.json",
+      "sha256": "4f4f495edbd9eac0e5caccb9535602d04e88be9cba23cf6e7e42135baa6e421a",
+      "line_count": 145,
+      "size_bytes": 10640
+    },
     "fixtures/workflow/acceptance/done-linked/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.workflow.acceptance.done-linked.fixture.json.json",
@@ -6662,9 +6690,9 @@
     "schemas/HATE/v1/schema-registry.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-registry.json.json",
-      "sha256": "b59686c3033a51828e5111c4e6189018689f23a0c05ae6359b7f8ed6116df85f",
-      "line_count": 811,
-      "size_bytes": 25646
+      "sha256": "c4a46970431db8f27dfaffdee6b21698f122d3305e8f4f6f458d7b49e711dec6",
+      "line_count": 818,
+      "size_bytes": 25867
     },
     "schemas/HATE/v1/schema-validation-report.schema.json": {
       "role": "schema",
@@ -6770,6 +6798,13 @@
       "sha256": "6e4fdbc24d4faa25d9503ee41ffb0691ffe4da46df901f5f1116d388da8d665b",
       "line_count": 57,
       "size_bytes": 1979
+    },
+    "schemas/HATE/v1/validation-cycle-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.validation-cycle-report.schema.json.json",
+      "sha256": "a8e16165ce79cb177608cf1332fd16af278de700505a0872cf1ffa0652d4f909",
+      "line_count": 83,
+      "size_bytes": 2485
     },
     "schemas/HATE/v1/value-measurement-report.schema.json": {
       "role": "schema",
@@ -7103,16 +7138,16 @@
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "fae1006f97d441120c6673c20ba5bf96db40971e22ee4d72018776a956c50809",
-      "line_count": 209,
-      "size_bytes": 15656
+      "sha256": "9953fafd9e1f0d5bfbdde1690bc04d74b3000c7dd35440081b9e3d33a7abe1f3",
+      "line_count": 216,
+      "size_bytes": 16213
     },
     "src/hate/cli_handlers.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli_handlers.py.json",
-      "sha256": "8179eb2471ea7315ef9718f23e40b7d5d587f55040dbb5a8baf0917da99ba63f",
-      "line_count": 442,
-      "size_bytes": 15604
+      "sha256": "1f7522ece5d6fc35c443d9a250c668ac73c28fe457a5f0f9d0cd3b0c4e5005d2",
+      "line_count": 456,
+      "size_bytes": 16300
     },
     "src/hate/commercial/__init__.py": {
       "role": "implementation",
@@ -8255,6 +8290,13 @@
       "line_count": 624,
       "size_bytes": 22169
     },
+    "src/hate/validation_cycles.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.validation_cycles.py.json",
+      "sha256": "75200097d6d638ceabf2ce91f404b9a3f14bb8f446ee7e4ab05a47a8b2bf0a7c",
+      "line_count": 183,
+      "size_bytes": 9033
+    },
     "src/hate/workflow_acceptance.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.workflow_acceptance.py.json",
@@ -8986,9 +9028,9 @@
     "tests/test_requirements_expansion_docs.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_requirements_expansion_docs.py.json",
-      "sha256": "a8620a366e964a58cabf2eed3ad93dcb61ac74e76b4a574e76235eb1fd9650da",
-      "line_count": 522,
-      "size_bytes": 22155
+      "sha256": "b7f5ef0ea48f73efbefb83155fd4158761925fe0fd5f4f36f43a01ccdb914007",
+      "line_count": 569,
+      "size_bytes": 23880
     },
     "tests/test_requirements_to_spec_gap_audit.py": {
       "role": "test",
@@ -9101,6 +9143,13 @@
       "sha256": "6dfae16df9935952304352fb5cd5b9878b721368135ae5bce0465e2f4e92ecc0",
       "line_count": 807,
       "size_bytes": 29084
+    },
+    "tests/test_validation_cycles.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_validation_cycles.py.json",
+      "sha256": "2a1a68bf1eff6387aafec803a8b7f52475ab06bd94f360d3648afc5105f8fa2a",
+      "line_count": 124,
+      "size_bytes": 5056
     },
     "tests/test_workflow_acceptance.py": {
       "role": "test",
@@ -9358,7 +9407,15 @@
     ],
     [
       "docs/acceptance/INDEX.md",
+      "docs/acceptance/FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md"
+    ],
+    [
+      "docs/acceptance/INDEX.md",
       "docs/acceptance/HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md"
+    ],
+    [
+      "docs/acceptance/INDEX.md",
+      "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md"
     ],
     [
       "src/hate/__main__.py",
@@ -9471,6 +9528,10 @@
     [
       "src/hate/cli_handlers.py",
       "src/hate/store_legacy.py"
+    ],
+    [
+      "src/hate/cli_handlers.py",
+      "src/hate/validation_cycles.py"
     ],
     [
       "src/hate/commercial/__init__.py",
@@ -10903,6 +10964,14 @@
     [
       "tests/test_test_integrity_skip_focus.py",
       "src/hate/test_integrity/models.py"
+    ],
+    [
+      "tests/test_validation_cycles.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tests/test_validation_cycles.py",
+      "src/hate/validation_cycles.py"
     ],
     [
       "tests/test_workflow_acceptance.py",

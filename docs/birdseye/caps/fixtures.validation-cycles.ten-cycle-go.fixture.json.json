@@ -1,0 +1,20 @@
+{
+  "path": "fixtures/validation-cycles/ten-cycle-go/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4f4f495edbd9eac0e5caccb9535602d04e88be9cba23cf6e7e42135baa6e421a",
+  "line_count": 145,
+  "size_bytes": 10640,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": "HATE/validation-cycle-fixture/v1",
+  "fixture_id": "validation-cycles-ten-cycle-go",
+  "input": {
+    "expected_cycle_count": 10,
+    "sourceRefs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md"],
+    "cycles": [
+      {
+        "cycle_id": "HATE-QEG-CYCLE-001",
+        "missing_possibility": "real repository false positive resistance",
+        "requirement_refs": ["FR-CYCLE-001"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-1"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-001", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-001:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-001:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:001"]
+      },
+      {
+        "cycle_id": "HATE-QEG-CYCLE-002",
+        "missing_possibility": "external artifact availability and path portability",
+        "requirement_refs": ["FR-CYCLE-002"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-2"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-002", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-002:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-002:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:002"]
+      },
+      {
+        "cycle_id": "HATE-QEG-CYCLE-003",
+        "missing_possibility": "manual oracle gap closure",
+        "requirement_refs": ["FR-CYCLE-003"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-3"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-003", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-003:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-003:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:003"]
+      },
+      {
+        "cycle_id": "HATE-QEG-CYCLE-004",
+        "missing_possibility": "flaky and environment drift separation",
+        "requirement_refs": ["FR-CYCLE-004"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-4"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-004", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-004:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-004:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:004"]
+      },
+      {
+        "cycle_id": "HATE-QEG-CYCLE-005",
+        "missing_possibility": "adapter raw-to-normalized loss regression",
+        "requirement_refs": ["FR-CYCLE-005"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-5"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-005", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-005:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-005:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:005"]
+      },
+      {
+        "cycle_id": "HATE-QEG-CYCLE-006",
+        "missing_possibility": "privacy and artifact quarantine leak resistance",
+        "requirement_refs": ["FR-CYCLE-006"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-6"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-006", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-006:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-006:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:006"]
+      },
+      {
+        "cycle_id": "HATE-QEG-CYCLE-007",
+        "missing_possibility": "schema registry and version migration drift",
+        "requirement_refs": ["FR-CYCLE-007"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-7"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-007", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-007:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-007:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:007"]
+      },
+      {
+        "cycle_id": "HATE-QEG-CYCLE-008",
+        "missing_possibility": "performance timeout and large corpus stability",
+        "requirement_refs": ["FR-CYCLE-008"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-8"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-008", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-008:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-008:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:008"]
+      },
+      {
+        "cycle_id": "HATE-QEG-CYCLE-009",
+        "missing_possibility": "report explainability and audience consistency",
+        "requirement_refs": ["FR-CYCLE-009"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-9"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-009", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-009:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-009:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:009"]
+      },
+      {
+        "cycle_id": "HATE-QEG-CYCLE-010",
+        "missing_possibility": "end-to-end release-pack reproducibility",
+        "requirement_refs": ["FR-CYCLE-010"],
+        "spec_refs": ["docs/process/PRODUCT_REQUIREMENTS_QEG_HARDENING_CYCLES.md#cycle-10"],
+        "implementation_refs": ["src/hate/validation_cycles.py"],
+        "test_refs": ["tests/test_validation_cycles.py::test_ten_cycle_go_fixture_passes"],
+        "chain_status": {"RanD": "ran", "Code-to-gate": "ran", "HATE": "ran", "manual-bb": "ran", "QEG": "ran"},
+        "manual_bb": {"brief_ref": "manual-bb:HATE-QEG-CYCLE-010", "open_blockers": [], "p0_case_count": 2},
+        "qeg_package": {"bundle_ref": "qeg:HATE-QEG-CYCLE-010:bundle", "validate_status": "pass", "import_status": "pass", "gate_status": "go", "record_ref": "qeg:HATE-QEG-CYCLE-010:record", "approval_claimed_by_hate": false},
+        "release_candidate_pack": {"verdict": "ready", "summary": {"blocker_count": 0, "release_ready": true}},
+        "sourceRefs": ["cycle:010"]
+      }
+    ]
+  },
+  "expected": {
+    "verdict": "go",
+    "go_cycle_count": 10,
+    "finding_count": 0
+  }
+}

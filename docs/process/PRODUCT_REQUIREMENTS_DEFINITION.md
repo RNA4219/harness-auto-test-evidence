@@ -504,6 +504,27 @@ can analyze, infer, classify, reconcile, and explain from test evidence.
 | FR-ANALYSIS-011 | Fixture and corpus quality detection must flag stale fixtures, expected-output leakage, fixture-name coupling risk, duplicate cases, weak negative coverage, and schema drift | P1 | fixture-name-coupled expected fixture is hold |
 | FR-ANALYSIS-012 | Adapter capability diff must compare raw input samples against normalized output to identify dropped fields, unsupported dialect features, lossy transforms, and capability claim drift | P1 | lossy adapter fixture emits capability diff finding |
 
+### 7.24 QEG Hardening Cycle Requirements
+
+The product must repeatedly turn newly suspected gaps into machine-checkable
+validation cycles. A cycle is complete only when requirement, specification,
+implementation, automated tests, manual-bb evidence, QEG package evidence, and
+release candidate readiness all agree on `go` without HATE claiming QEG final
+approval.
+
+| ID | Requirement | Priority | Acceptance |
+|---|---|---:|---|
+| FR-CYCLE-001 | Real repository false-positive resistance must be represented as a five-tool validation cycle | P1 | cycle 1 reaches go with no manual blocker |
+| FR-CYCLE-002 | External artifact availability and path portability must be represented as a five-tool validation cycle | P1 | cycle 2 reaches go with portable QEG refs |
+| FR-CYCLE-003 | Manual oracle gap closure must be represented as a five-tool validation cycle | P1 | cycle 3 reaches go with manual-bb P0 cases |
+| FR-CYCLE-004 | Flaky and environment drift separation must be represented as a five-tool validation cycle | P1 | cycle 4 reaches go with QEG package go |
+| FR-CYCLE-005 | Adapter raw-to-normalized loss regression must be represented as a five-tool validation cycle | P1 | cycle 5 reaches go with adapter evidence |
+| FR-CYCLE-006 | Privacy and artifact quarantine leak resistance must be represented as a five-tool validation cycle | P1 | cycle 6 reaches go with safe package evidence |
+| FR-CYCLE-007 | Schema registry and version migration drift must be represented as a five-tool validation cycle | P1 | cycle 7 reaches go with schema refs |
+| FR-CYCLE-008 | Performance timeout and large corpus stability must be represented as a five-tool validation cycle | P1 | cycle 8 reaches go with timeout-safe evidence |
+| FR-CYCLE-009 | Report explainability and audience consistency must be represented as a five-tool validation cycle | P1 | cycle 9 reaches go with shared sourceRefs |
+| FR-CYCLE-010 | End-to-end release-pack reproducibility must be represented as a five-tool validation cycle | P1 | cycle 10 reaches go with deterministic release-pack evidence |
+
 ## 8. Non-Functional Requirements
 
 | ID | Category | Requirement | Target |

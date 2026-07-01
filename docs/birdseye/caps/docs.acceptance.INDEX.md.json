@@ -2,9 +2,9 @@
   "path": "docs/acceptance/INDEX.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "a2906cc5b3d6dd1ac839601f545bc514a736d5a2ba23afdb271681285d307bf5",
-  "line_count": 25,
-  "size_bytes": 2116,
+  "sha256": "ab724644ae09a64df9830f4e47f95f6b505a768d34fc6569928d7845da911832",
+  "line_count": 27,
+  "size_bytes": 2856,
   "headings": [
     "# Acceptance Index",
     "## Generation Policy"
@@ -12,13 +12,19 @@
   "imports": [],
   "links": [
     "AC-20260630-01.md",
-    "HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md"
+    "FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md",
+    "HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md",
+    "QEG_HARDENING_CYCLE_ACCEPTANCE.md"
   ],
   "depends_on": [
     "docs/acceptance/AC-20260630-01.md",
-    "docs/acceptance/HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md"
+    "docs/acceptance/FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md",
+    "docs/acceptance/HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md",
+    "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md"
   ],
   "tags": [
+    "coverage",
+    "qeg",
     "workflow"
   ]
 }

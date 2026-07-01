@@ -168,6 +168,7 @@ def test_expansion_requirement_documents_exist() -> None:
     assert (PROCESS / "PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md").is_file()
     assert (TASKS / "HATE_REQUIREMENTS_EXPANSION_TASK_SEEDS.md").is_file()
     assert (ACCEPTANCE / "HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md").is_file()
+    assert (ACCEPTANCE / "FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md").is_file()
 
 
 def test_expansion_gap_ids_are_projected_to_packet_task_and_acceptance_ledgers() -> None:
@@ -391,6 +392,52 @@ def test_w35_core_functional_expansion_follows_requirements_then_spec_order() ->
         assert f"TASK-HATE-GAP-{suffix}" in tasks
         assert f"AC-HATE-GAP-{suffix}" in acceptance
         assert f"AC-HATE-GAP-{suffix}" in index
+
+
+def test_five_tool_validation_gate_records_target_thin_requirement_slice() -> None:
+    gate = _read(ACCEPTANCE / "FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md")
+    index = _read(ACCEPTANCE / "INDEX.md")
+
+    required_terms = [
+        "RanD",
+        "Code-to-gate",
+        "HATE",
+        "manual-bb",
+        "QEG",
+        "Conditional Go for the HATE-side implementation slice",
+        "QEG must decide final",
+        "HATE must not convert",
+        "src/hate/expansion/portfolio_readiness.py::build_provider_integration_report",
+        "src/hate/expansion/portfolio_readiness.py::build_runner_dialect_coverage_report",
+        "src/hate/analysis/impact_analysis.py",
+        "src/hate/analysis/test_recommendation.py",
+        "src/hate/analysis/flaky_classification.py",
+        "src/hate/analysis/oracle_classification.py",
+        "src/hate/analysis/evidence_synthesis.py",
+        "src/hate/analysis/contradiction_detection.py",
+        "src/hate/analysis/audience_report_pack.py",
+        "src/hate/analysis/fixture_quality.py",
+        "src/hate/analysis/adapter_capability_diff.py",
+    ]
+    target_gaps = [
+        "HATE-GAP-042",
+        "HATE-GAP-043",
+        "HATE-GAP-049",
+        "HATE-GAP-050",
+        "HATE-GAP-051",
+        "HATE-GAP-052",
+        "HATE-GAP-053",
+        "HATE-GAP-056",
+        "HATE-GAP-058",
+        "HATE-GAP-059",
+        "HATE-GAP-060",
+    ]
+
+    assert [term for term in required_terms if term not in gate] == []
+    for gap_id in target_gaps:
+        assert gap_id in gate
+        assert f"AC-{gap_id}" in index
+    assert "FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md" in index
 
 
 def test_expansion_detail_spec_hardens_uat_rough_edges() -> None:
