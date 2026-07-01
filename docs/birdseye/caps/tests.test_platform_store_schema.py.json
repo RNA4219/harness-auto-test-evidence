@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_platform_store_schema.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "9a432da14b6c8e2de7e641c058ce6ac44ad68c5b8fde93d37a3240682316f9f1",
+  "line_count": 100,
+  "size_bytes": 4196,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p0a_schema",
+    "hate.platform_store_schema",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_schema.py",
+    "src/hate/platform_store_schema.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

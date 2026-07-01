@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/aete-score.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "477b3a8c1904dbca9d94a3a6161db48d993c90f15fde3d35332069852b983434",
+  "line_count": 45,
+  "size_bytes": 1376,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema"
+  ]
+}

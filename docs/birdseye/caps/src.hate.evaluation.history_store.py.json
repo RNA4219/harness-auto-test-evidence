@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/evaluation/history_store.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "f462e7479188cbba133c3b5f86dbd483a4cdeb9fd063da7feb38d640c1f0b1ef",
+  "line_count": 213,
+  "size_bytes": 8318,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hashlib",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

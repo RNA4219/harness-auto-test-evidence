@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/artifact-resolver-map.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "341a76435ce33cff5d2eef24d428a7a12c9a3b5edd825f32ba74b1292cf7fb50",
+  "line_count": 18,
+  "size_bytes": 667,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

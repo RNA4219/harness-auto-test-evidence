@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/connectors/inbound-close-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "37b2b6c733e01c167c8e053428b439eb0eb010310836e4185748947ba4a9b2df",
+  "line_count": 31,
+  "size_bytes": 1069,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

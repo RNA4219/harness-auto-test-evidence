@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/evaluation/roster-v2-valid/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6ada8b069dbc60b05abfd79ccc5866c94587603d7dd2f018d091444244c85c91",
+  "line_count": 34,
+  "size_bytes": 910,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

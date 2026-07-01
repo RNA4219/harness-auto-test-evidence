@@ -1,0 +1,16 @@
+{
+  "path": "docs/process/real-repo-rosters/agent-tools-full.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "c9d5eea646cd96ce15b265f235050447f387bfb428e1c17415888b696feacaf4",
+  "line_count": 68,
+  "size_bytes": 2187,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test",
+    "workflow"
+  ]
+}

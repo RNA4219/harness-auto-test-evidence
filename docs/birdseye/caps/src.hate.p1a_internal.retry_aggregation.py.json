@@ -2,9 +2,9 @@
   "path": "src/hate/p1a_internal/retry_aggregation.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "ee78c0243c8de569cc0ff59ec023ee253dba1b81a598bf63a1940db13255e7a1",
-  "line_count": 142,
-  "size_bytes": 5964,
+  "sha256": "29dc2e1582b31ebbe820187440085f808d184a33a30344ea98f5b1e371311898",
+  "line_count": 143,
+  "size_bytes": 6009,
   "headings": [],
   "imports": [
     "__future__",

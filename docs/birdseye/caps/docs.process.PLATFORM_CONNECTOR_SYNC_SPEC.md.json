@@ -1,0 +1,24 @@
+{
+  "path": "docs/process/PLATFORM_CONNECTOR_SYNC_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "fdb2987d8c13e373977e225aa825943de271561e3cfcfb79822568eb3bb28c66",
+  "line_count": 92,
+  "size_bytes": 2472,
+  "headings": [
+    "# Platform Connector Sync Specification",
+    "## 1. Source of Truth",
+    "## 2. Connector Types",
+    "## 3. Sync Payload",
+    "## 4. State Machine",
+    "## 5. Inbound Ack",
+    "## 6. Required Fixtures"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

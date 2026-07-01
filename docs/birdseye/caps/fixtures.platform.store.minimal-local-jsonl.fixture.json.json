@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/store/minimal-local-jsonl/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5b189474fd92789149a7d9af7cdaa4b5cc899a61c3e8e86f1be78dc8efaa1502",
+  "line_count": 59,
+  "size_bytes": 1950,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

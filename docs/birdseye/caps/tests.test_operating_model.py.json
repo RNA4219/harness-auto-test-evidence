@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_operating_model.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "910251c0882ad180b8046377e7eb27c908a499ccfb752b781ca8f2f993d72174",
+  "line_count": 216,
+  "size_bytes": 9935,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.operations",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/scale/platform_benchmark.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "898c5e8adbc99844949b66c0757cbb0553bc48adb85bb74517c44e55ed2b1e2f",
+  "line_count": 221,
+  "size_bytes": 9155,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hashlib",
+    "json",
+    "math",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

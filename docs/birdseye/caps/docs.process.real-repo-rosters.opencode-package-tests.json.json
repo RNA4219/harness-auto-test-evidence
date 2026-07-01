@@ -1,0 +1,15 @@
+{
+  "path": "docs/process/real-repo-rosters/opencode-package-tests.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "f2610f1c0701070addc28591c4d2d039b74253f5a8606e5f1bffc042eef5ec03",
+  "line_count": 274,
+  "size_bytes": 14600,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test"
+  ]
+}

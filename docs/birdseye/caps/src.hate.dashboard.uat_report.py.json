@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/dashboard/uat_report.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0e84001cf1063bccab26959cccfab7363f0ca94abd44fed4d16a81d29698873b",
+  "line_count": 158,
+  "size_bytes": 6105,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

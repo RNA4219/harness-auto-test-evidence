@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/evaluation/score-model-penalty-cap/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5baea9c2a1e2d089ea3d04c34942344e0efc122ed622e226ea6b49742ce55242",
+  "line_count": 29,
+  "size_bytes": 747,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "src/hate/dashboard/platform_views.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "297f0a1ee76fea71fab70c04ffa4a3343c6f7109b469fe2ad93560862680c8e8",
+  "line_count": 227,
+  "size_bytes": 9238,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

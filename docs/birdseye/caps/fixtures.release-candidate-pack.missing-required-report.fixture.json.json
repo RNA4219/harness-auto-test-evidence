@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/release-candidate-pack/missing-required-report/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "60b4ad1b5709234e0aaf5c4a5a351f1ab1b1631731b07ec1801ebbb57b3a1f07",
+  "line_count": 16,
+  "size_bytes": 965,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

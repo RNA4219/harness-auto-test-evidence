@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/store/migration-preserves-legal-hold/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "341bcfa224d8ae1793c813f59cfac1938ca2f6c0b9998abb1aece5c304a7594a",
+  "line_count": 29,
+  "size_bytes": 922,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "store"
+  ]
+}

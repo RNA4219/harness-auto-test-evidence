@@ -2,20 +2,36 @@
   "path": "src/hate/evaluation/real_repo.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "194bbd6ea0d723893d27855bd5309d044d1e861228b97c354be87894cf3a70fb",
-  "line_count": 209,
-  "size_bytes": 7225,
+  "sha256": "f69457306f42cc1fd4e386073e1397cd955ffe180054bac14817810a1ee296eb",
+  "line_count": 766,
+  "size_bytes": 29769,
   "headings": [],
   "imports": [
     "__future__",
     "dataclasses",
+    "datetime",
+    "hashlib",
+    "hate.evaluation.output_safety",
+    "hate.evaluation.regression_engine",
+    "hate.evaluation.runner_dialects",
+    "json",
+    "os",
+    "pathlib",
+    "platform",
+    "shutil",
+    "subprocess",
+    "time",
     "typing"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/evaluation/output_safety.py",
+    "src/hate/evaluation/regression_engine.py",
+    "src/hate/evaluation/runner_dialects.py"
+  ],
   "tags": [
     "artifact",
     "fixture",
-    "store"
+    "security"
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/dashboard/connector-sync-safe-summary/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2811971580c6a34e97aa7f33ec5f7408c597c2edc9778027ac36ee159bc8e788",
+  "line_count": 45,
+  "size_bytes": 1447,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

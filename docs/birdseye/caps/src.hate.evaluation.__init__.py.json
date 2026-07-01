@@ -2,20 +2,34 @@
   "path": "src/hate/evaluation/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "49fe6427c49f35129c756adde03e669eef0b3390bd6f5bc82a70ec7dc9307719",
-  "line_count": 21,
-  "size_bytes": 563,
+  "sha256": "98f507c1b98df2d847db2d6d5a83a0101d1812b3ab78b1c92503be00f004dace",
+  "line_count": 42,
+  "size_bytes": 1474,
   "headings": [],
   "imports": [
     "hate.evaluation.agent_quality",
-    "hate.evaluation.real_repo"
+    "hate.evaluation.baseline_governance",
+    "hate.evaluation.history_store",
+    "hate.evaluation.output_safety",
+    "hate.evaluation.real_repo",
+    "hate.evaluation.regression_engine",
+    "hate.evaluation.runner_dialects",
+    "hate.evaluation.score_model"
   ],
   "links": [],
   "depends_on": [
     "src/hate/evaluation/agent_quality.py",
-    "src/hate/evaluation/real_repo.py"
+    "src/hate/evaluation/baseline_governance.py",
+    "src/hate/evaluation/history_store.py",
+    "src/hate/evaluation/output_safety.py",
+    "src/hate/evaluation/real_repo.py",
+    "src/hate/evaluation/regression_engine.py",
+    "src/hate/evaluation/runner_dialects.py",
+    "src/hate/evaluation/score_model.py"
   ],
   "tags": [
-    "fixture"
+    "coverage",
+    "fixture",
+    "store"
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "path": "docs/process/PLATFORM_RBAC_MATRIX_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "92aaa1be22381d3c729a21defe21cfbd71d0bbcb203f736d2ebf55e2cc391a94",
+  "line_count": 78,
+  "size_bytes": 2913,
+  "headings": [
+    "# Platform RBAC Matrix Specification",
+    "## 1. Roles",
+    "## 2. Resource Actions",
+    "## 3. Permission Matrix",
+    "## 4. Tenant and Scope Rules",
+    "## 5. Raw Artifact Access",
+    "## 6. Required Fixtures"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "release"
+  ]
+}

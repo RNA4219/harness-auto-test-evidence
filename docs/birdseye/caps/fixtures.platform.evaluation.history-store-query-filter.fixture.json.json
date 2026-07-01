@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/evaluation/history-store-query-filter/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "78b6a43755de6f90571ccbe161c47debeb0670d864e69deea84a1e8db26f62ac",
+  "line_count": 72,
+  "size_bytes": 2582,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

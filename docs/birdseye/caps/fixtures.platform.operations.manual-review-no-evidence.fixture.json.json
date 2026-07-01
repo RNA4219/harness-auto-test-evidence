@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/operations/manual-review-no-evidence/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d1760ad59f1ce117cdaf416450c0374099c26bab068c3baf4fb75dbc60a3fd2c",
+  "line_count": 54,
+  "size_bytes": 1951,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

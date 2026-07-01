@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/rbac/cross-tenant-hidden/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "51d7a0dc9f41dd030f2874bc3626384ae79afbf87382b124c34f01511f3dc25f",
+  "line_count": 24,
+  "size_bytes": 647,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

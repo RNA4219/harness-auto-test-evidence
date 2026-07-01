@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/operations/blocking-finding-missing-owner-due/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4affe466f447d197e0dbbeb511dcb7b071ed619079f6472af0cb1cf444a9b846",
+  "line_count": 29,
+  "size_bytes": 964,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

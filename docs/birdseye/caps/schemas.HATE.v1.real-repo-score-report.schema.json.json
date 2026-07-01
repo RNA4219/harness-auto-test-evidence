@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/real-repo-score-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "0e80b293f2f703cdfd0f2450d789fe086986d271b91dba048988241f845d2c83",
+  "line_count": 63,
+  "size_bytes": 2394,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema"
+  ]
+}

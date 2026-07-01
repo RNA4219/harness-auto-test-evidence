@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/profile-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "586979a127d544b6d2ae70b29f6782182fb663daf2d40da6809f52cd02da4921",
+  "line_count": 68,
+  "size_bytes": 2397,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "release",
+    "schema"
+  ]
+}

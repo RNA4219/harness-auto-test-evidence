@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/evaluation/noisy-runner-log/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2cbab4a741b137026e293acb78bf043481731b657d3b4638712ec2a613ba6471",
+  "line_count": 42,
+  "size_bytes": 1543,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

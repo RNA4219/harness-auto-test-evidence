@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/rbac/admin-policy-change/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e2bab6ecb612fe22427e701fafaf5e9a6b954ad4de07c880e1082e7fec78d827",
+  "line_count": 17,
+  "size_bytes": 495,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

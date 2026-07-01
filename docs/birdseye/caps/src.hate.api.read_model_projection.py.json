@@ -2,9 +2,9 @@
   "path": "src/hate/api/read_model_projection.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "2860fccdb97052397b2267b7e87c1ccdddd11463403437b066bf3f7f6b6d5312",
-  "line_count": 212,
-  "size_bytes": 9333,
+  "sha256": "80a262f80a833f3fd0a18cf79420e6e76c0cc29a66982a58af4417a14797e674",
+  "line_count": 275,
+  "size_bytes": 12424,
   "headings": [],
   "imports": [
     ".read_model_contract",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "9d015f8f6c53",
+  "generated_at": "9c1bb708521b",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -187,9 +187,9 @@
     "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md.json",
-      "sha256": "1da32528e5f1ae056dc4d8309986fd91de9f57211c5823b3312628fa1aee3429",
-      "line_count": 480,
-      "size_bytes": 23577
+      "sha256": "51b534fd49118aa57af01f99be786eafa28d7e0db1d8882833ca674bf3bdb4ab",
+      "line_count": 483,
+      "size_bytes": 23661
     },
     "docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md": {
       "role": "requirements",
@@ -250,9 +250,9 @@
     "docs/process/IMPLEMENTATION_LEDGER.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.IMPLEMENTATION_LEDGER.md.json",
-      "sha256": "c0109e2f6c07d18ee84c3c0d48d19d5fe4021e74bc71be24553f086ab9fc25ec",
-      "line_count": 74,
-      "size_bytes": 3552
+      "sha256": "d6d05c3cdecd6a3df799ca76a469514f99700b41c532347cdc9721aacf82c5b1",
+      "line_count": 94,
+      "size_bytes": 5427
     },
     "docs/process/IMPLEMENTATION_ROADMAP_CHECKLIST.md": {
       "role": "planning",
@@ -264,9 +264,9 @@
     "docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md": {
       "role": "planning",
       "caps": "docs/birdseye/caps/docs.process.IMPLEMENTATION_TASK_BREAKDOWN.md.json",
-      "sha256": "888ac1e0170ab8016965d904ecb62e53ac17ae50f80a0013cbf79d0c0a9d1358",
+      "sha256": "e62cdef2bd0f01407aac9558196628b5d204afa67a495783041a69dac9e59806",
       "line_count": 193,
-      "size_bytes": 13939
+      "size_bytes": 13959
     },
     "docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md": {
       "role": "requirements",
@@ -324,6 +324,55 @@
       "line_count": 122,
       "size_bytes": 4736
     },
+    "docs/process/PLATFORM_BENCHMARK_FIXTURE_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PLATFORM_BENCHMARK_FIXTURE_SPEC.md.json",
+      "sha256": "a5a2d32f1e0777bd5ebccf9a959620aaba87d7005f17480f20c6d9b1e5671473",
+      "line_count": 96,
+      "size_bytes": 2701
+    },
+    "docs/process/PLATFORM_CONNECTOR_SYNC_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PLATFORM_CONNECTOR_SYNC_SPEC.md.json",
+      "sha256": "fdb2987d8c13e373977e225aa825943de271561e3cfcfb79822568eb3bb28c66",
+      "line_count": 92,
+      "size_bytes": 2472
+    },
+    "docs/process/PLATFORM_DASHBOARD_WIREFRAME_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PLATFORM_DASHBOARD_WIREFRAME_SPEC.md.json",
+      "sha256": "037d1a35a1291121dfd5d5f7fa06a66a1cd961bb32868d79f226628477e29a83",
+      "line_count": 95,
+      "size_bytes": 3589
+    },
+    "docs/process/PLATFORM_PLUGIN_SANDBOX_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PLATFORM_PLUGIN_SANDBOX_SPEC.md.json",
+      "sha256": "b54b50f929bfee9ccf9f96f90a14c88ba4fdd7c3d2f012eda43b465b3e12619f",
+      "line_count": 87,
+      "size_bytes": 2445
+    },
+    "docs/process/PLATFORM_POLICY_CONFIG_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PLATFORM_POLICY_CONFIG_SPEC.md.json",
+      "sha256": "07388be2a4d30fecd152c36874c0ca135fc6c066ea70279aad2f8af0b2030202",
+      "line_count": 130,
+      "size_bytes": 3170
+    },
+    "docs/process/PLATFORM_RBAC_MATRIX_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PLATFORM_RBAC_MATRIX_SPEC.md.json",
+      "sha256": "92aaa1be22381d3c729a21defe21cfbd71d0bbcb203f736d2ebf55e2cc391a94",
+      "line_count": 78,
+      "size_bytes": 2913
+    },
+    "docs/process/PLATFORM_STORE_SCHEMA_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PLATFORM_STORE_SCHEMA_SPEC.md.json",
+      "sha256": "780ffab3362f5e9403a183d4eba8548b8e7dc14087e6ffab7b2f46cf9deb29cf",
+      "line_count": 120,
+      "size_bytes": 4172
+    },
     "docs/process/PRIVACY_QUARANTINE_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRIVACY_QUARANTINE_CONTRACT.md.json",
@@ -359,6 +408,34 @@
       "line_count": 573,
       "size_bytes": 29474
     },
+    "docs/process/PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md.json",
+      "sha256": "886851d557c1ecf849ed80029dc17a51d562054f2be7c15f5a859168a3762dde",
+      "line_count": 851,
+      "size_bytes": 27292
+    },
+    "docs/process/PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md.json",
+      "sha256": "6ba0cfe815e68ca6562912a279ed2da5737d3756a7554e9978db2841535acb99",
+      "line_count": 146,
+      "size_bytes": 12116
+    },
+    "docs/process/PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md.json",
+      "sha256": "c3ed9987c64e0957baaf32a32996f54dcce94f3345447030b9336bbc6c96f8d4",
+      "line_count": 274,
+      "size_bytes": 21293
+    },
+    "docs/process/PRODUCT_PLATFORM_PHASE_SPEC_AUDIT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.PRODUCT_PLATFORM_PHASE_SPEC_AUDIT.md.json",
+      "sha256": "c0c56e156a8b9f83ab342fbaabf2683974c58b02028bc4f4403076b0bf6240ac",
+      "line_count": 98,
+      "size_bytes": 6725
+    },
     "docs/process/PRODUCT_REQUIREMENTS_500K_READINESS_AUDIT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_500K_READINESS_AUDIT.md.json",
@@ -369,9 +446,9 @@
     "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_DEFINITION.md.json",
-      "sha256": "7100166eb1bc32b4ae0773e7e9dbc0e2b996ae91876960bc3145c79cd50e6899",
-      "line_count": 699,
-      "size_bytes": 57431
+      "sha256": "85c8e8844a35c1c7c07227c31dadef5b70de7b0dbd940bc9cf0424b3f68ef3b5",
+      "line_count": 715,
+      "size_bytes": 58255
     },
     "docs/process/PRODUCT_REQUIREMENTS_EXPANSION_DETAIL_SPEC.md": {
       "role": "requirements",
@@ -397,9 +474,9 @@
     "docs/process/PRODUCT_REQUIREMENTS_GAP_BACKLOG.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_REQUIREMENTS_GAP_BACKLOG.md.json",
-      "sha256": "92afbee136bb055a8e022145845e4b580a3b7e8b80655fe96ca1a552da5d9f93",
-      "line_count": 159,
-      "size_bytes": 15100
+      "sha256": "5060c9cf8c7fafbe9aa76fbfb2e0d9c2d4da1649a2f522a37b4e9b5c3230c3d7",
+      "line_count": 185,
+      "size_bytes": 17777
     },
     "docs/process/PRODUCT_REQUIREMENTS_GAP_CLOSURE_PACKETS.md": {
       "role": "requirements",
@@ -449,6 +526,13 @@
       "sha256": "c0eda9e5bf1386e59ff283cfdf4e8f6079f8ff73e56504aa24787dad495a235b",
       "line_count": 85,
       "size_bytes": 4141
+    },
+    "docs/process/REAL_REPO_EVALUATION.md": {
+      "role": "quality",
+      "caps": "docs/birdseye/caps/docs.process.REAL_REPO_EVALUATION.md.json",
+      "sha256": "521e0bbf92986cf5d99dbfc3bbf33a1e13e9c4d9e204d41cd90187035ccaa455",
+      "line_count": 380,
+      "size_bytes": 16397
     },
     "docs/process/REAL_REPO_EVALUATION_CONTRACT.md": {
       "role": "requirements",
@@ -509,9 +593,9 @@
     "docs/process/RUNBOOK.md": {
       "role": "operations",
       "caps": "docs/birdseye/caps/docs.process.RUNBOOK.md.json",
-      "sha256": "fb1780daecc3485d6aaeee35895b15d5dd71fdc33e8607dc65df33d6b91c0cdd",
-      "line_count": 786,
-      "size_bytes": 60973
+      "sha256": "0ae40b1dc6aceb86dfe13ba3e816e2d6500332925861dc7da57dbf75e6ca62d4",
+      "line_count": 990,
+      "size_bytes": 69456
     },
     "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md": {
       "role": "requirements",
@@ -523,9 +607,9 @@
     "docs/process/SCHEMA_REGISTRY_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SCHEMA_REGISTRY_CONTRACT.md.json",
-      "sha256": "a54b9d78f434a00f39c67254adb34ab5450f9c91be533de58fd97895f007652b",
-      "line_count": 191,
-      "size_bytes": 7991
+      "sha256": "ec4011b6d045043a3fa54e517d89a587c68b497a1d2231112455c0cf68683279",
+      "line_count": 200,
+      "size_bytes": 8632
     },
     "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md": {
       "role": "requirements",
@@ -544,9 +628,9 @@
     "docs/process/SPECIFICATION.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SPECIFICATION.md.json",
-      "sha256": "d46c7c4964a9d194f76f0e39552443fe58e4bf36859f96bc232460ca633f3b90",
+      "sha256": "28b2d4f74f96083c3251020dfe6c7046495341f03ab738737d4e341f2330db28",
       "line_count": 1225,
-      "size_bytes": 61851
+      "size_bytes": 60745
     },
     "docs/process/SPECIFICATION_COMPLETION_AUDIT.md": {
       "role": "requirements",
@@ -708,6 +792,27 @@
       "sha256": "0b0c3840197769f4f9acaa437716a43c2fc2fd31f8353b9a897874a383bd3d67",
       "line_count": 209,
       "size_bytes": 7411
+    },
+    "docs/process/real-repo-rosters/agent-tools-full.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.real-repo-rosters.agent-tools-full.json.json",
+      "sha256": "c9d5eea646cd96ce15b265f235050447f387bfb428e1c17415888b696feacaf4",
+      "line_count": 68,
+      "size_bytes": 2187
+    },
+    "docs/process/real-repo-rosters/codex-dev-root-extra.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.real-repo-rosters.codex-dev-root-extra.json.json",
+      "sha256": "a7a1eef4ef93cd5d069088ba11e9a31b6bc466374b747e2d8ba2dcd858e5d8ae",
+      "line_count": 140,
+      "size_bytes": 3689
+    },
+    "docs/process/real-repo-rosters/opencode-package-tests.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.real-repo-rosters.opencode-package-tests.json.json",
+      "sha256": "f2610f1c0701070addc28591c4d2d039b74253f5a8606e5f1bffc042eef5ec03",
+      "line_count": 274,
+      "size_bytes": 14600
     },
     "docs/process/shipyard-run-evidence-full-implementation-spec.json": {
       "role": "requirements",
@@ -3985,6 +4090,510 @@
       "line_count": 11,
       "size_bytes": 499
     },
+    "fixtures/platform/benchmark/degraded-query/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.benchmark.degraded-query.fixture.json.json",
+      "sha256": "28c3c3bac66aba463ce5f9d26da390664da821883115e964cb9f1fcc0521b2bf",
+      "line_count": 12,
+      "size_bytes": 1041
+    },
+    "fixtures/platform/benchmark/expired-debt-distribution/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.benchmark.expired-debt-distribution.fixture.json.json",
+      "sha256": "856bb9d240a27cfa1bd75faf8baa64b474b8068e0565f5303cd04a2e0ea1a98f",
+      "line_count": 11,
+      "size_bytes": 956
+    },
+    "fixtures/platform/benchmark/external-hold-distribution/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.benchmark.external-hold-distribution.fixture.json.json",
+      "sha256": "01b9ea0073a6ed1981b673094d87896964458ac67be3d3cbe16421c7cb236b61",
+      "line_count": 11,
+      "size_bytes": 995
+    },
+    "fixtures/platform/benchmark/measured-baseline-metadata/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.benchmark.measured-baseline-metadata.fixture.json.json",
+      "sha256": "de2a642057a55e399e53538f6f0cc8fbf45a360ad33ebb32811f26fc8e5bf8fb",
+      "line_count": 11,
+      "size_bytes": 988
+    },
+    "fixtures/platform/benchmark/small-deterministic/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.benchmark.small-deterministic.fixture.json.json",
+      "sha256": "43484f97ab7b6855f3cc18919ccf8f457f5f4a5b8abb0301f8b7bd7e33270a44",
+      "line_count": 37,
+      "size_bytes": 1217
+    },
+    "fixtures/platform/benchmark/stale-cache-distribution/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.benchmark.stale-cache-distribution.fixture.json.json",
+      "sha256": "41068bcb16a52ef62a3b494e5af9f41dded05ec97081d0dbe7409170f01035d6",
+      "line_count": 11,
+      "size_bytes": 959
+    },
+    "fixtures/platform/connectors/github-check-safe-summary/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.connectors.github-check-safe-summary.fixture.json.json",
+      "sha256": "0735a60ac9d2501518486cceaf5d30467b887fbde4b237c742f92789bc396e01",
+      "line_count": 31,
+      "size_bytes": 1049
+    },
+    "fixtures/platform/connectors/idempotent-retry/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.connectors.idempotent-retry.fixture.json.json",
+      "sha256": "082b7db8176a3bf1de699d35337a908acc9284de4dac6b5ada2a8f1baa6ff3fd",
+      "line_count": 47,
+      "size_bytes": 1655
+    },
+    "fixtures/platform/connectors/inbound-close-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.connectors.inbound-close-denied.fixture.json.json",
+      "sha256": "37b2b6c733e01c167c8e053428b439eb0eb010310836e4185748947ba4a9b2df",
+      "line_count": 31,
+      "size_bytes": 1069
+    },
+    "fixtures/platform/connectors/redaction-before-send/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.connectors.redaction-before-send.fixture.json.json",
+      "sha256": "e6d015502d95d042204c47fa0befc1f10a29af9dadda4e59cca75bb83e2e0de6",
+      "line_count": 48,
+      "size_bytes": 1731
+    },
+    "fixtures/platform/connectors/slack-notification-failed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.connectors.slack-notification-failed.fixture.json.json",
+      "sha256": "10a9acfc1bf92956b0d3414bbec889aa88ee6fd4f8053bc8da48a7167a2a4d42",
+      "line_count": 30,
+      "size_bytes": 1056
+    },
+    "fixtures/platform/dashboard/artifact-unsafe-hidden/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.artifact-unsafe-hidden.fixture.json.json",
+      "sha256": "e40708751cd1b133cd2dfa86029e0d0e2e781f78cc6b537b92e51d64da40bd54",
+      "line_count": 28,
+      "size_bytes": 1521
+    },
+    "fixtures/platform/dashboard/connector-sync-safe-summary/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.connector-sync-safe-summary.fixture.json.json",
+      "sha256": "2811971580c6a34e97aa7f33ec5f7408c597c2edc9778027ac36ee159bc8e788",
+      "line_count": 45,
+      "size_bytes": 1447
+    },
+    "fixtures/platform/dashboard/degraded-large-query/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.degraded-large-query.fixture.json.json",
+      "sha256": "0db4781bc0da95fcea19ea2546b47aba9927f7c962fe83212afb84eb3c8c435c",
+      "line_count": 28,
+      "size_bytes": 1328
+    },
+    "fixtures/platform/dashboard/findings-owner-queue/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.findings-owner-queue.fixture.json.json",
+      "sha256": "a61cbe606b509673fbaba5499485fe4cb9fed1fca0ac9678b2637cd425250057",
+      "line_count": 41,
+      "size_bytes": 1343
+    },
+    "fixtures/platform/dashboard/manual-review-blocking/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.manual-review-blocking.fixture.json.json",
+      "sha256": "eb38ab5ffdcf0f41a93c471a03848a1dab3875dd4a34733732bd383f5c4f583c",
+      "line_count": 34,
+      "size_bytes": 1128
+    },
+    "fixtures/platform/dashboard/mobile-critical-summary/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.mobile-critical-summary.fixture.json.json",
+      "sha256": "59542715ba4f565d71d6b2d1068608bb486257087d87e4eaf6e53259758afda3",
+      "line_count": 26,
+      "size_bytes": 1419
+    },
+    "fixtures/platform/dashboard/policy-drift/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.policy-drift.fixture.json.json",
+      "sha256": "7fe7df1bd2e2f9ffaf23bbd0706a40de1a4c0372a8d4a4a93716730661525aa9",
+      "line_count": 26,
+      "size_bytes": 1379
+    },
+    "fixtures/platform/dashboard/portfolio-overview/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.portfolio-overview.fixture.json.json",
+      "sha256": "e961210852e89e8fe684317d55f968ce713178c70a87eb87616602a755ebd414",
+      "line_count": 26,
+      "size_bytes": 1390
+    },
+    "fixtures/platform/dashboard/repo-regression-detail/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.repo-regression-detail.fixture.json.json",
+      "sha256": "7edb977adff271ea76ae94d18c693aca4d16eda20d14c03f78113697d3ba30ee",
+      "line_count": 26,
+      "size_bytes": 1339
+    },
+    "fixtures/platform/dashboard/risk-debt-board/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.dashboard.risk-debt-board.fixture.json.json",
+      "sha256": "50e43530043b77d7bfc06066560263f409fd3407450f6d2224c1ad20939502b2",
+      "line_count": 46,
+      "size_bytes": 1614
+    },
+    "fixtures/platform/evaluation/baseline-approval-freeze/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.baseline-approval-freeze.fixture.json.json",
+      "sha256": "e58cfb5722c72bd86c7a12edbaccc9b630168b075b702ba0a95ca42af6a0b8c0",
+      "line_count": 63,
+      "size_bytes": 2191
+    },
+    "fixtures/platform/evaluation/baseline-expired-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.baseline-expired-denied.fixture.json.json",
+      "sha256": "88e2bfb6b1ada648b2aecd550435ffac7faee7b3fd5c557a7f02d75044f2f9e1",
+      "line_count": 29,
+      "size_bytes": 873
+    },
+    "fixtures/platform/evaluation/baseline-unapproved-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.baseline-unapproved-denied.fixture.json.json",
+      "sha256": "1e0c4c1ba401ba99bf6ff8df6ba087d8c4f91a8e8136ef92c7254deb324d46ad",
+      "line_count": 29,
+      "size_bytes": 885
+    },
+    "fixtures/platform/evaluation/external-repo-hold/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.external-repo-hold.fixture.json.json",
+      "sha256": "3b9d18e5a708ebc596e3446fc897c3b0794ac70fb6c64a619da3998b7ec04d79",
+      "line_count": 22,
+      "size_bytes": 707
+    },
+    "fixtures/platform/evaluation/history-store-ingest/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.history-store-ingest.fixture.json.json",
+      "sha256": "a1776c7cf791012c25b0dce5006961b9d5ab12274661fd3e945d18ab347d4750",
+      "line_count": 32,
+      "size_bytes": 1055
+    },
+    "fixtures/platform/evaluation/history-store-query-filter/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.history-store-query-filter.fixture.json.json",
+      "sha256": "78b6a43755de6f90571ccbe161c47debeb0670d864e69deea84a1e8db26f62ac",
+      "line_count": 72,
+      "size_bytes": 2582
+    },
+    "fixtures/platform/evaluation/new-failure-kind/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.new-failure-kind.fixture.json.json",
+      "sha256": "f55d8d1679f3afbcd9a00bab2785f624b4a812b0c2a2007373cc5ed8e7f08eb1",
+      "line_count": 20,
+      "size_bytes": 595
+    },
+    "fixtures/platform/evaluation/noisy-runner-log/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.noisy-runner-log.fixture.json.json",
+      "sha256": "2cbab4a741b137026e293acb78bf043481731b657d3b4638712ec2a613ba6471",
+      "line_count": 42,
+      "size_bytes": 1543
+    },
+    "fixtures/platform/evaluation/redacted-deterministic-output/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.redacted-deterministic-output.fixture.json.json",
+      "sha256": "72318d17222a973b0f6e4a4804706d316f7dd90c0bed8ddef540b3747e7153f1",
+      "line_count": 17,
+      "size_bytes": 857
+    },
+    "fixtures/platform/evaluation/roster-v2-invalid-ownership/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.roster-v2-invalid-ownership.fixture.json.json",
+      "sha256": "74c3239664df7bd57cf7ebb92d25c0a7e4dbc62c65b332691a3b8ed4a47686cb",
+      "line_count": 32,
+      "size_bytes": 858
+    },
+    "fixtures/platform/evaluation/roster-v2-valid/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.roster-v2-valid.fixture.json.json",
+      "sha256": "6ada8b069dbc60b05abfd79ccc5866c94587603d7dd2f018d091444244c85c91",
+      "line_count": 34,
+      "size_bytes": 910
+    },
+    "fixtures/platform/evaluation/runtime-drift/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.runtime-drift.fixture.json.json",
+      "sha256": "1dc5e1f7970c6ac4718656865042974abd5ded577347310379eb4588411c82de",
+      "line_count": 21,
+      "size_bytes": 588
+    },
+    "fixtures/platform/evaluation/score-model-balanced/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.score-model-balanced.fixture.json.json",
+      "sha256": "eabfdd802d5ea626a799f86ada927c188c544e3559238220333e5948692462b2",
+      "line_count": 33,
+      "size_bytes": 893
+    },
+    "fixtures/platform/evaluation/score-model-penalty-cap/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.score-model-penalty-cap.fixture.json.json",
+      "sha256": "5baea9c2a1e2d089ea3d04c34942344e0efc122ed622e226ea6b49742ce55242",
+      "line_count": 29,
+      "size_bytes": 747
+    },
+    "fixtures/platform/evaluation/timeout-cleanup/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.evaluation.timeout-cleanup.fixture.json.json",
+      "sha256": "3bbd8c81c14364a373505afdd0790abd2bc66d1c6c88cabb604d9c85cba4b052",
+      "line_count": 24,
+      "size_bytes": 715
+    },
+    "fixtures/platform/operations/accepted-debt-expired/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.accepted-debt-expired.fixture.json.json",
+      "sha256": "3b0b60735797bd75659c2a45f9fc0963e0d7565ff84397f695cbebda6b77a1ff",
+      "line_count": 32,
+      "size_bytes": 1064
+    },
+    "fixtures/platform/operations/accepted-debt-invalid-expiry/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.accepted-debt-invalid-expiry.fixture.json.json",
+      "sha256": "e9669784106f4cbf949faafc7c9f3cabb92772324c4e0b0a36a8d65aa79adfaa",
+      "line_count": 32,
+      "size_bytes": 1106
+    },
+    "fixtures/platform/operations/blocking-finding-missing-owner-due/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.blocking-finding-missing-owner-due.fixture.json.json",
+      "sha256": "4affe466f447d197e0dbbeb511dcb7b071ed619079f6472af0cb1cf444a9b846",
+      "line_count": 29,
+      "size_bytes": 964
+    },
+    "fixtures/platform/operations/debt-resolved-with-evidence/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.debt-resolved-with-evidence.fixture.json.json",
+      "sha256": "fa51b9124a95e80463308e1cedcd6673bd177211bb7df48c30cb1e8f2e8fd863",
+      "line_count": 70,
+      "size_bytes": 2519
+    },
+    "fixtures/platform/operations/dedupe-target-missing/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.dedupe-target-missing.fixture.json.json",
+      "sha256": "fed6f099842ac2aa120c5cb321d382faf17a71ccf8bbcad4d8b171ae4153eec7",
+      "line_count": 50,
+      "size_bytes": 1753
+    },
+    "fixtures/platform/operations/finding-owner-due-date/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.finding-owner-due-date.fixture.json.json",
+      "sha256": "0f0df10bdda5d500cd3fd9669dede22882b0a46c1a5f8821518622d9f154af06",
+      "line_count": 34,
+      "size_bytes": 1046
+    },
+    "fixtures/platform/operations/inbound-tracker-close-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.inbound-tracker-close-denied.fixture.json.json",
+      "sha256": "f5cb1e48cf6f219c854b4865e127aceaae78b125b7f4b6f4af4895552e375d18",
+      "line_count": 48,
+      "size_bytes": 1726
+    },
+    "fixtures/platform/operations/manual-review-no-evidence/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.manual-review-no-evidence.fixture.json.json",
+      "sha256": "d1760ad59f1ce117cdaf416450c0374099c26bab068c3baf4fb75dbc60a3fd2c",
+      "line_count": 54,
+      "size_bytes": 1951
+    },
+    "fixtures/platform/operations/notification-failure-retains-finding/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.notification-failure-retains-finding.fixture.json.json",
+      "sha256": "378003ceb4c66f172e59108b6b4e4798747b5d0ec9966d0c01d722da71aeadcc",
+      "line_count": 46,
+      "size_bytes": 1631
+    },
+    "fixtures/platform/operations/retention-legal-hold-rebuild/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.operations.retention-legal-hold-rebuild.fixture.json.json",
+      "sha256": "8b1fb9399d35717b66c731de18e0cddfde949d9b0c8b94624d521df992ce8c8a",
+      "line_count": 77,
+      "size_bytes": 2858
+    },
+    "fixtures/platform/plugin-sandbox/builtin-pass/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.plugin-sandbox.builtin-pass.fixture.json.json",
+      "sha256": "4a84d376c329ea8196d032689949bc3d918343c891e7518434124a74a4cdf6dc",
+      "line_count": 28,
+      "size_bytes": 925
+    },
+    "fixtures/platform/plugin-sandbox/crash-isolated/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.plugin-sandbox.crash-isolated.fixture.json.json",
+      "sha256": "ce016d84269c0b9538a13da75da323b8bb29e3ee61f153afd1bb0519259e4e4f",
+      "line_count": 18,
+      "size_bytes": 673
+    },
+    "fixtures/platform/plugin-sandbox/network-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.plugin-sandbox.network-denied.fixture.json.json",
+      "sha256": "328f565e79287b79519dc4f9304fb89408cd5c9225dcf0238d4c9e2882544d56",
+      "line_count": 22,
+      "size_bytes": 814
+    },
+    "fixtures/platform/plugin-sandbox/output-budget-exceeded/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.plugin-sandbox.output-budget-exceeded.fixture.json.json",
+      "sha256": "a9eb7841469102394957b976e33423adea0838be192540801e47dbe2e963074f",
+      "line_count": 20,
+      "size_bytes": 762
+    },
+    "fixtures/platform/plugin-sandbox/workspace-unsigned-release-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.plugin-sandbox.workspace-unsigned-release-denied.fixture.json.json",
+      "sha256": "dfb81da4aed43e09e79c3363b0b292e113457a1c5d6c67465566c3cc5b2dd6dd",
+      "line_count": 20,
+      "size_bytes": 791
+    },
+    "fixtures/platform/policy/default-effective/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.policy.default-effective.fixture.json.json",
+      "sha256": "7b9ef92265750113837e77ea05a377469e32f2f95701e50f14200e0286cfc18d",
+      "line_count": 48,
+      "size_bytes": 1566
+    },
+    "fixtures/platform/policy/layered-override/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.policy.layered-override.fixture.json.json",
+      "sha256": "0f462981a1180cea3207c5ccdb08d54b0f7f0befc398022618417a1b82bbb861",
+      "line_count": 38,
+      "size_bytes": 1589
+    },
+    "fixtures/platform/policy/legal-hold-retention-override/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.policy.legal-hold-retention-override.fixture.json.json",
+      "sha256": "c45d3aff18545b1800c608a52422a8e386d4c0ad294595c37e0d396b28053adf",
+      "line_count": 27,
+      "size_bytes": 1304
+    },
+    "fixtures/platform/policy/regulated-unsigned-plugin-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.policy.regulated-unsigned-plugin-denied.fixture.json.json",
+      "sha256": "6b0bff9df8e94e58de10fa9a07a12606f7237dbd2eddbae8d61856e9846359ce",
+      "line_count": 46,
+      "size_bytes": 1639
+    },
+    "fixtures/platform/policy/release-unsigned-plugin-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.policy.release-unsigned-plugin-denied.fixture.json.json",
+      "sha256": "91535484df31638d52629919b965cdc566ca9d087807943fdf970205c2132168",
+      "line_count": 35,
+      "size_bytes": 1585
+    },
+    "fixtures/platform/policy/required-fields-missing/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.policy.required-fields-missing.fixture.json.json",
+      "sha256": "e2ddfbd042128bbb0b213c059b4521b29ca8455c95fe82a8a499e891a3f1ed38",
+      "line_count": 37,
+      "size_bytes": 1261
+    },
+    "fixtures/platform/policy/scheduler-invalid-budget/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.policy.scheduler-invalid-budget.fixture.json.json",
+      "sha256": "67357d9cc194d248a2e9e0b05c6118de6eac8b9e1747152546fdfcf2dffe3615",
+      "line_count": 51,
+      "size_bytes": 1625
+    },
+    "fixtures/platform/policy/threshold-specificity/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.policy.threshold-specificity.fixture.json.json",
+      "sha256": "f5a7366101e452c29a7d1ccb86ad7801e6028c878c398ca9b0697764e74a873a",
+      "line_count": 40,
+      "size_bytes": 2115
+    },
+    "fixtures/platform/rbac/admin-policy-change/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.rbac.admin-policy-change.fixture.json.json",
+      "sha256": "e2bab6ecb612fe22427e701fafaf5e9a6b954ad4de07c880e1082e7fec78d827",
+      "line_count": 17,
+      "size_bytes": 495
+    },
+    "fixtures/platform/rbac/auditor-read-only/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.rbac.auditor-read-only.fixture.json.json",
+      "sha256": "f971e56f4cc9c839817c7ce2d8afa9bc0fa136bde1eb2edc038e1b9ff2392c54",
+      "line_count": 17,
+      "size_bytes": 493
+    },
+    "fixtures/platform/rbac/cross-tenant-hidden/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.rbac.cross-tenant-hidden.fixture.json.json",
+      "sha256": "51d7a0dc9f41dd030f2874bc3626384ae79afbf87382b124c34f01511f3dc25f",
+      "line_count": 24,
+      "size_bytes": 647
+    },
+    "fixtures/platform/rbac/developer-debt-accept-denied/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.rbac.developer-debt-accept-denied.fixture.json.json",
+      "sha256": "4a84b9efb0f7cc3e36138fb09d8fdb10ee6a325b726dbfe0f1fddfdfc485e6a0",
+      "line_count": 18,
+      "size_bytes": 541
+    },
+    "fixtures/platform/rbac/raw-artifact-approval/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.rbac.raw-artifact-approval.fixture.json.json",
+      "sha256": "bc895c0e6ad6c59d6ccf985537b51e68dbff1b099b1904cc16f9e787bdfa5729",
+      "line_count": 25,
+      "size_bytes": 797
+    },
+    "fixtures/platform/rbac/raw-artifact-missing-approval/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.rbac.raw-artifact-missing-approval.fixture.json.json",
+      "sha256": "4ed5263ce38bdce32d7162b180770a2e924919a04776f8dea72b21a46d249e13",
+      "line_count": 24,
+      "size_bytes": 761
+    },
+    "fixtures/platform/store/backup-restore-checksum/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.store.backup-restore-checksum.fixture.json.json",
+      "sha256": "312331c7b832ac34ed696e4a33c9e0d4eba9e166b4791cd12cf929af71be55ce",
+      "line_count": 33,
+      "size_bytes": 962
+    },
+    "fixtures/platform/store/migration-preserves-legal-hold/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.store.migration-preserves-legal-hold.fixture.json.json",
+      "sha256": "341bcfa224d8ae1793c813f59cfac1938ca2f6c0b9998abb1aece5c304a7594a",
+      "line_count": 29,
+      "size_bytes": 922
+    },
+    "fixtures/platform/store/minimal-local-jsonl/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.store.minimal-local-jsonl.fixture.json.json",
+      "sha256": "5b189474fd92789149a7d9af7cdaa4b5cc899a61c3e8e86f1be78dc8efaa1502",
+      "line_count": 59,
+      "size_bytes": 1950
+    },
+    "fixtures/platform/store/orphan-artifact-metadata/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.store.orphan-artifact-metadata.fixture.json.json",
+      "sha256": "9558b205d78c1f4b46236a13a762d8c7043de9e5842a095c25eb52cc6d2566ae",
+      "line_count": 23,
+      "size_bytes": 635
+    },
+    "fixtures/platform/store/projection-rebuild-gap/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.store.projection-rebuild-gap.fixture.json.json",
+      "sha256": "e988534ce3123c0f63f8d9980c28fd3f6d4dcfa2a596893c16c30f3853cfe982",
+      "line_count": 51,
+      "size_bytes": 1763
+    },
+    "fixtures/platform/store/projection-rebuild-hash-mismatch/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.store.projection-rebuild-hash-mismatch.fixture.json.json",
+      "sha256": "23904906d20c992b37af2d3577a0f2f2f769788b590bcfa2a83b40211f712d06",
+      "line_count": 53,
+      "size_bytes": 1896
+    },
+    "fixtures/platform/store/projection-rebuild-sorted/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.platform.store.projection-rebuild-sorted.fixture.json.json",
+      "sha256": "09626279e674e952776dc257104c865e8c2a675b462ec63dce5141d4e4918f3f",
+      "line_count": 59,
+      "size_bytes": 2055
+    },
     "fixtures/profile/inheritance/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.profile.inheritance.README.md.json",
@@ -3995,9 +4604,9 @@
     "fixtures/profile/inheritance/expected/profile-report.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.profile.inheritance.expected.profile-report.shape.json.json",
-      "sha256": "555fe6e345ac4b6c3a0373e3977b57d924778a4bc9f62c7fc9c2ba4e87a970b5",
-      "line_count": 45,
-      "size_bytes": 1091
+      "sha256": "f8d140de40831e30287a8546d6757ca19cb792df279b767a7287e1d70ce4ae46",
+      "line_count": 49,
+      "size_bytes": 1150
     },
     "fixtures/rand/audit-no-overwrite/README.md": {
       "role": "fixture",
@@ -4055,12 +4664,47 @@
       "line_count": 25,
       "size_bytes": 565
     },
+    "fixtures/release-candidate-pack/all-required-reports-pass/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release-candidate-pack.all-required-reports-pass.fixture.json.json",
+      "sha256": "6e4e61e97de2f8148a4e9ded1b1514e341e9b01c330152318c44baf7e63ace11",
+      "line_count": 32,
+      "size_bytes": 3455
+    },
+    "fixtures/release-candidate-pack/missing-required-report/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release-candidate-pack.missing-required-report.fixture.json.json",
+      "sha256": "60b4ad1b5709234e0aaf5c4a5a351f1ab1b1631731b07ec1801ebbb57b3a1f07",
+      "line_count": 16,
+      "size_bytes": 965
+    },
+    "fixtures/release-candidate-pack/open-manual-review/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release-candidate-pack.open-manual-review.fixture.json.json",
+      "sha256": "1f213cf440015af0cb50ed67828228e4678558dba5e15771371644038ecef606",
+      "line_count": 15,
+      "size_bytes": 842
+    },
+    "fixtures/release-candidate-pack/qeg-approval-claimed/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release-candidate-pack.qeg-approval-claimed.fixture.json.json",
+      "sha256": "62391e193edadbce247b65ad3c0690fb869ca46f1194084ddba005b0d6a05135",
+      "line_count": 12,
+      "size_bytes": 503
+    },
+    "fixtures/release-candidate-pack/unsafe-artifact-included/fixture.json": {
+      "role": "fixture",
+      "caps": "docs/birdseye/caps/fixtures.release-candidate-pack.unsafe-artifact-included.fixture.json.json",
+      "sha256": "8789ca92145f5d319804ed1b3732069c3ea1f899f321ed1615bd3e939593e998",
+      "line_count": 14,
+      "size_bytes": 652
+    },
     "fixtures/release/candidate-pack/all-green/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.all-green.fixture.json.json",
-      "sha256": "a8ce4961db843c335a13723c870d8bd6b55ecb61c99b29966a0af1e1ab12a944",
-      "line_count": 417,
-      "size_bytes": 10856
+      "sha256": "7ddcb2c3221738c6c4b60c6b92e13f13bd5a96fbd30ec02851dab3cb660db585",
+      "line_count": 449,
+      "size_bytes": 11701
     },
     "fixtures/release/candidate-pack/commercial-unsupported-claim/fixture.json": {
       "role": "fixture",
@@ -4079,23 +4723,23 @@
     "fixtures/release/candidate-pack/missing-required-report/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.missing-required-report.fixture.json.json",
-      "sha256": "5922ed1683bac19161d57cb625729bb5e66578bad454b3acb4ecef80839b07a7",
-      "line_count": 379,
-      "size_bytes": 10031
+      "sha256": "1ef8f7e7fe16b97702239ca80f33fc39ac3931711d07898b4d279621348e99ea",
+      "line_count": 411,
+      "size_bytes": 10876
     },
     "fixtures/release/candidate-pack/non-deterministic-input/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.non-deterministic-input.fixture.json.json",
-      "sha256": "28891c09c5867096060801a551639c74997d608fa3e34684b477ff60692ac656",
-      "line_count": 417,
-      "size_bytes": 10860
+      "sha256": "5f37309c864f4122d9567571209414570078a1da6096d4d0fe43da85ba4e67f9",
+      "line_count": 449,
+      "size_bytes": 11705
     },
     "fixtures/release/candidate-pack/security-hard-dq/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.release.candidate-pack.security-hard-dq.fixture.json.json",
-      "sha256": "f2b03b00d5c7dd283a5f7c6421d950c8ad4241de5b3c62cbe4f47b5a0a31f7dc",
+      "sha256": "7715201d1bbf5cd5b3ece37ae1640b8cd082e240686e8740473183fd7db87e3b",
       "line_count": 15,
-      "size_bytes": 883
+      "size_bytes": 899
     },
     "fixtures/release/channel/breaking-without-migration/fixture.json": {
       "role": "fixture",
@@ -5378,12 +6022,19 @@
       "line_count": 121,
       "size_bytes": 4480
     },
+    "schemas/HATE/v1/adapter-capability-manifest.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.adapter-capability-manifest.schema.json.json",
+      "sha256": "55b24184b6d1fe754b03e5b85097a083cbb7f3675120794a95bc51efd71217ad",
+      "line_count": 35,
+      "size_bytes": 1054
+    },
     "schemas/HATE/v1/adapter-conformance-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.adapter-conformance-report.schema.json.json",
-      "sha256": "b9de8fa43984b47bdf232a7e9b2d1fe8eb2bad98c4cb5777244cc4a9a4b7453b",
-      "line_count": 129,
-      "size_bytes": 4767
+      "sha256": "6fb65b8a2dc0d156bd91ad423f801ba19ac1b2171f95df92c6c3ea87fbce0b64",
+      "line_count": 145,
+      "size_bytes": 5407
     },
     "schemas/HATE/v1/adapter-family-report.schema.json": {
       "role": "schema",
@@ -5405,6 +6056,27 @@
       "sha256": "4df6de3b3e86999afb48bd6db02b8b7a9a5b75d8f6a3d2424398f6fc62c2f6b5",
       "line_count": 43,
       "size_bytes": 1432
+    },
+    "schemas/HATE/v1/adapter-registry.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.adapter-registry.schema.json.json",
+      "sha256": "3722c5590f7707c88454a0a1c11de7ae6d7d5938ea317bdc87f61168612460fb",
+      "line_count": 27,
+      "size_bytes": 891
+    },
+    "schemas/HATE/v1/aete-score.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.aete-score.schema.json.json",
+      "sha256": "477b3a8c1904dbca9d94a3a6161db48d993c90f15fde3d35332069852b983434",
+      "line_count": 45,
+      "size_bytes": 1376
+    },
+    "schemas/HATE/v1/aete-signal-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.aete-signal-report.schema.json.json",
+      "sha256": "d4e8ef6fead684c2b9e649ede245c6b577fa8e5d757ad306b2f068ccfedbdd80",
+      "line_count": 39,
+      "size_bytes": 1171
     },
     "schemas/HATE/v1/agent-quality-report.schema.json": {
       "role": "schema",
@@ -5441,6 +6113,13 @@
       "line_count": 49,
       "size_bytes": 2016
     },
+    "schemas/HATE/v1/artifact-resolver-map.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.artifact-resolver-map.schema.json.json",
+      "sha256": "341a76435ce33cff5d2eef24d428a7a12c9a3b5edd825f32ba74b1292cf7fb50",
+      "line_count": 18,
+      "size_bytes": 667
+    },
     "schemas/HATE/v1/artifact-safety-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.artifact-safety-report.schema.json.json",
@@ -5475,6 +6154,13 @@
       "sha256": "385ec05804b233319f37d78c89a8f2d5ea2398850c61817d31c8277c183205ba",
       "line_count": 43,
       "size_bytes": 1434
+    },
+    "schemas/HATE/v1/canonical-identity-index.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.canonical-identity-index.schema.json.json",
+      "sha256": "b9c61ce04695596a60f2c0edb7a55e4e30ff3f577e46fc8582e429d4413bb509",
+      "line_count": 15,
+      "size_bytes": 636
     },
     "schemas/HATE/v1/commercial-truthfulness-report.schema.json": {
       "role": "schema",
@@ -5525,6 +6211,13 @@
       "line_count": 91,
       "size_bytes": 3376
     },
+    "schemas/HATE/v1/dashboard-uat-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.dashboard-uat-report.schema.json.json",
+      "sha256": "7e33c6d7c835eaea442ec4490e3cae3cc89448915fcfdfd7ef67c9e041e8c151",
+      "line_count": 69,
+      "size_bytes": 2406
+    },
     "schemas/HATE/v1/data-classification-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.data-classification-report.schema.json.json",
@@ -5566,6 +6259,13 @@
       "sha256": "56b41ec808cfda4923bebf8e19921baa52763e09fe930b31d99e07900f8ac4a9",
       "line_count": 43,
       "size_bytes": 1424
+    },
+    "schemas/HATE/v1/doctor-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.doctor-report.schema.json.json",
+      "sha256": "6bb3fdeeac469903c7907fabecaca2e96b3d4300316aba169f4386befe4431c9",
+      "line_count": 30,
+      "size_bytes": 892
     },
     "schemas/HATE/v1/enterprise-control-report.schema.json": {
       "role": "schema",
@@ -5686,12 +6386,89 @@
       "line_count": 43,
       "size_bytes": 1414
     },
+    "schemas/HATE/v1/operating-event-record.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.operating-event-record.schema.json.json",
+      "sha256": "636aa5f9b0ffd8cccf47d3da332a5461be885e67caba538d83814e34c5635a97",
+      "line_count": 86,
+      "size_bytes": 2955
+    },
+    "schemas/HATE/v1/operating-finding-record.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.operating-finding-record.schema.json.json",
+      "sha256": "8c811ac70c7b53e18af59e65d37ece6cba3ccac454e575eb7164b4bd7d1750e2",
+      "line_count": 49,
+      "size_bytes": 1751
+    },
+    "schemas/HATE/v1/operating-projection-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.operating-projection-report.schema.json.json",
+      "sha256": "0127aeb16991fbb2013faf1b40ad7314a0252f715f10c7c407b8f10472dd86c8",
+      "line_count": 20,
+      "size_bytes": 1029
+    },
     "schemas/HATE/v1/oracle-classification-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.oracle-classification-report.schema.json.json",
       "sha256": "08cccc3a08fab27f9bfaa50c28911419a00253c2855e57a59352242bddf9890b",
       "line_count": 146,
       "size_bytes": 5830
+    },
+    "schemas/HATE/v1/p1a-adapter-conformance.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.p1a-adapter-conformance.schema.json.json",
+      "sha256": "873bbc4ffc4ac9c53263b3ace1222fd6f261ac2439943f9d77ed013cb1da2b68",
+      "line_count": 31,
+      "size_bytes": 928
+    },
+    "schemas/HATE/v1/platform-benchmark-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-benchmark-report.schema.json.json",
+      "sha256": "f474522b404d10c5d7b15fee4a79bfa74af5e6afc3d4ac7e13638b5dba3b9370",
+      "line_count": 45,
+      "size_bytes": 1433
+    },
+    "schemas/HATE/v1/platform-connector-sync-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-connector-sync-report.schema.json.json",
+      "sha256": "ebd24de4004f990fdf490a01e319a900dda6e00e3e189b8281af29c57b238dce",
+      "line_count": 168,
+      "size_bytes": 6388
+    },
+    "schemas/HATE/v1/platform-dashboard-wireframe-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-dashboard-wireframe-report.schema.json.json",
+      "sha256": "0f6fc54be0ff35c521a9c0e65c64e55055be080e5268652db02c06661c240a89",
+      "line_count": 120,
+      "size_bytes": 4532
+    },
+    "schemas/HATE/v1/platform-plugin-sandbox-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-plugin-sandbox-report.schema.json.json",
+      "sha256": "589ac3edf73733ddc7fbe6a019d9cc2b8e29cec71c120d02941523417af5907d",
+      "line_count": 45,
+      "size_bytes": 1452
+    },
+    "schemas/HATE/v1/platform-policy-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-policy-report.schema.json.json",
+      "sha256": "e4d21b39c41a2d8e8538ce844a594be01f63ac26051455166c3a5952a4399be2",
+      "line_count": 45,
+      "size_bytes": 1473
+    },
+    "schemas/HATE/v1/platform-rbac-matrix-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-rbac-matrix-report.schema.json.json",
+      "sha256": "b164fa04ef2045ae4f3dbfa4849c5ed3cdde6b2701b40adaa89094ec6c348cbd",
+      "line_count": 147,
+      "size_bytes": 5148
+    },
+    "schemas/HATE/v1/platform-store-schema-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-store-schema-report.schema.json.json",
+      "sha256": "abdedcfe50b7837d47e6ea0e06d9af4deddc73414782e8409386b65589311786",
+      "line_count": 144,
+      "size_bytes": 5501
     },
     "schemas/HATE/v1/policy-simulation-report.schema.json": {
       "role": "schema",
@@ -5728,6 +6505,13 @@
       "line_count": 55,
       "size_bytes": 1782
     },
+    "schemas/HATE/v1/profile-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.profile-report.schema.json.json",
+      "sha256": "586979a127d544b6d2ae70b29f6782182fb663daf2d40da6809f52cd02da4921",
+      "line_count": 68,
+      "size_bytes": 2397
+    },
     "schemas/HATE/v1/provider-integration-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.provider-integration-report.schema.json.json",
@@ -5742,12 +6526,68 @@
       "line_count": 94,
       "size_bytes": 3303
     },
+    "schemas/HATE/v1/real-repo-baseline-event.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-baseline-event.schema.json.json",
+      "sha256": "0131f1009ec74531e72b1c5faf5abf1788715bce7f1cac79be156dfd3c2ee4c4",
+      "line_count": 36,
+      "size_bytes": 1206
+    },
+    "schemas/HATE/v1/real-repo-baseline-governance-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-baseline-governance-report.schema.json.json",
+      "sha256": "292351abff0cfebaa9fe136508cd8eb3b56e03758c3b038290825245d4e257f5",
+      "line_count": 54,
+      "size_bytes": 1805
+    },
     "schemas/HATE/v1/real-repo-evaluation-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-evaluation-report.schema.json.json",
-      "sha256": "f13efe770a48056b52e9bc908172be2140bbcf8c89113d1c6612a9cdb98b8393",
-      "line_count": 71,
-      "size_bytes": 2275
+      "sha256": "3778d0063627433b91e15dd0ba2cd70fc111ed353d29bea12a61755fc5cdb6d6",
+      "line_count": 163,
+      "size_bytes": 5849
+    },
+    "schemas/HATE/v1/real-repo-evaluation-run-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-evaluation-run-report.schema.json.json",
+      "sha256": "103825e0859fccd239ecef8bfad9f55437df011c94e1002d1589693d1e4b5fb6",
+      "line_count": 61,
+      "size_bytes": 1926
+    },
+    "schemas/HATE/v1/real-repo-history-ingest-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-history-ingest-report.schema.json.json",
+      "sha256": "51828e2aaac2804658ce4d06a4dcd6100ffbf1d1494efbef29e270d617a302d7",
+      "line_count": 33,
+      "size_bytes": 1071
+    },
+    "schemas/HATE/v1/real-repo-history-query-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-history-query-report.schema.json.json",
+      "sha256": "3f045135c6ca52fe96372b1fa12710bbd03911f512aac4181661522cd950394e",
+      "line_count": 56,
+      "size_bytes": 2075
+    },
+    "schemas/HATE/v1/real-repo-roster-v2.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-roster-v2.schema.json.json",
+      "sha256": "be5e2a46332160c2f81ed489c86e7dec73890f9b1a6a2cd47b625cc3da703d51",
+      "line_count": 54,
+      "size_bytes": 2358
+    },
+    "schemas/HATE/v1/real-repo-run-history-entry.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-run-history-entry.schema.json.json",
+      "sha256": "c166cf982df8046e67734cd88018feec056a793f392434a674d11b24a12e166a",
+      "line_count": 41,
+      "size_bytes": 1320
+    },
+    "schemas/HATE/v1/real-repo-score-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-score-report.schema.json.json",
+      "sha256": "0e80b293f2f703cdfd0f2450d789fe086986d271b91dba048988241f845d2c83",
+      "line_count": 63,
+      "size_bytes": 2394
     },
     "schemas/HATE/v1/recurring-real-repo-eval-report.schema.json": {
       "role": "schema",
@@ -5759,9 +6599,9 @@
     "schemas/HATE/v1/release-candidate-pack.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.release-candidate-pack.schema.json.json",
-      "sha256": "7526762d3ef1a30070235b6e6934e6972b72b937a936c9fae09a197c337e3c14",
-      "line_count": 154,
-      "size_bytes": 5524
+      "sha256": "b800ada812539aa5508e41c61299ae98ef00e1d2171b9cde5e80892d7697bc55",
+      "line_count": 188,
+      "size_bytes": 6587
     },
     "schemas/HATE/v1/release-channel-report.schema.json": {
       "role": "schema",
@@ -5769,6 +6609,13 @@
       "sha256": "9c64fcf1173a02742a81023667616d881566543661bec1425df8d446b8fcb948",
       "line_count": 60,
       "size_bytes": 1803
+    },
+    "schemas/HATE/v1/retry-aggregation.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.retry-aggregation.schema.json.json",
+      "sha256": "645d970e16122fe93cd2c054d47cbabf3d8dae532ffa89bbc35a81aea8cb2360",
+      "line_count": 19,
+      "size_bytes": 739
     },
     "schemas/HATE/v1/risk-coverage-matrix.schema.json": {
       "role": "schema",
@@ -5794,9 +6641,9 @@
     "schemas/HATE/v1/runner-dialect-coverage-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.runner-dialect-coverage-report.schema.json.json",
-      "sha256": "3692a5f854104fcbc88c46ae024d0e5275c26f3064de5f2ded4849041b0b6872",
-      "line_count": 17,
-      "size_bytes": 734
+      "sha256": "faaaaff43fbf25cf8b0baffd5cfdf921a284893829716dfa43c1c9aef30510d8",
+      "line_count": 41,
+      "size_bytes": 1630
     },
     "schemas/HATE/v1/safe-diagnostic-bundle.schema.json": {
       "role": "schema",
@@ -5815,9 +6662,16 @@
     "schemas/HATE/v1/schema-registry.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-registry.json.json",
-      "sha256": "a20882a0aa324478abb110061e1ae78c057838e74006fc2725c5b4cf319b7dac",
-      "line_count": 427,
-      "size_bytes": 12635
+      "sha256": "b59686c3033a51828e5111c4e6189018689f23a0c05ae6359b7f8ed6116df85f",
+      "line_count": 811,
+      "size_bytes": 25646
+    },
+    "schemas/HATE/v1/schema-validation-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-validation-report.schema.json.json",
+      "sha256": "c67228f5981fd5bab82b6087201f2ce078999ba865a92329594ec78fdf31200f",
+      "line_count": 89,
+      "size_bytes": 2886
     },
     "schemas/HATE/v1/security-procurement-report.schema.json": {
       "role": "schema",
@@ -5825,6 +6679,13 @@
       "sha256": "7eb8f50875f0993e4e3e8d52740f04b2a17d704799b49eb6439e526bf58f11dd",
       "line_count": 17,
       "size_bytes": 738
+    },
+    "schemas/HATE/v1/security-quarantine-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.security-quarantine-report.schema.json.json",
+      "sha256": "994123ec6e464588e252aa9cfb69bd3e3c42f6fdf0457645343a2947dac819ed",
+      "line_count": 145,
+      "size_bytes": 5291
     },
     "schemas/HATE/v1/self-hosted-report.schema.json": {
       "role": "schema",
@@ -5860,6 +6721,13 @@
       "sha256": "0caac7ccc8866c56be9b9df2281a36afb88e194f6626348350aa82d5712f9ea3",
       "line_count": 112,
       "size_bytes": 3781
+    },
+    "schemas/HATE/v1/store-replay-report.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE.v1.store-replay-report.schema.json.json",
+      "sha256": "6bfe7a85e27a85288447d3147c0ba12ec75c57b39823322089847b79869c1c92",
+      "line_count": 120,
+      "size_bytes": 3961
     },
     "schemas/HATE/v1/support-ops-report.schema.json": {
       "role": "schema",
@@ -5997,9 +6865,9 @@
     "src/hate/adapter_registry.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.adapter_registry.py.json",
-      "sha256": "faca43b105a029f1d10f12ff9a8d5592cfd4c6c136a967933135a9540a6c0f94",
-      "line_count": 240,
-      "size_bytes": 9273
+      "sha256": "cf9ea06c31b13774bc6516e7b568948f2e107067bb7a70eb808bf84db5c3d81d",
+      "line_count": 255,
+      "size_bytes": 9928
     },
     "src/hate/adapter_sdk.py": {
       "role": "implementation",
@@ -6214,9 +7082,9 @@
     "src/hate/api/read_model_projection.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.api.read_model_projection.py.json",
-      "sha256": "2860fccdb97052397b2267b7e87c1ccdddd11463403437b066bf3f7f6b6d5312",
-      "line_count": 212,
-      "size_bytes": 9333
+      "sha256": "80a262f80a833f3fd0a18cf79420e6e76c0cc29a66982a58af4417a14797e674",
+      "line_count": 275,
+      "size_bytes": 12424
     },
     "src/hate/audit.py": {
       "role": "implementation",
@@ -6235,16 +7103,16 @@
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "2ba7b94e3fbb6f33ccb0f93899a15b91699375e3756b832e2954a6a903e28a5e",
-      "line_count": 187,
-      "size_bytes": 13643
+      "sha256": "fae1006f97d441120c6673c20ba5bf96db40971e22ee4d72018776a956c50809",
+      "line_count": 209,
+      "size_bytes": 15656
     },
     "src/hate/cli_handlers.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli_handlers.py.json",
-      "sha256": "a54597d5c9084e8366f0e5f293792904570e50da4349d1932c1c55be72b81b42",
-      "line_count": 398,
-      "size_bytes": 13941
+      "sha256": "8179eb2471ea7315ef9718f23e40b7d5d587f55040dbb5a8baf0917da99ba63f",
+      "line_count": 442,
+      "size_bytes": 15604
     },
     "src/hate/commercial/__init__.py": {
       "role": "implementation",
@@ -6270,9 +7138,9 @@
     "src/hate/connectors/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.connectors.__init__.py.json",
-      "sha256": "f3d6ed6b10164f44a1ba0a132249fe6d8f03250ceb5edad1b6b9e2d43e161ecb",
-      "line_count": 35,
-      "size_bytes": 788
+      "sha256": "580d8250b41f52281732e506a014b842e49249f0e7a7e474bb18443dfec4d562",
+      "line_count": 37,
+      "size_bytes": 884
     },
     "src/hate/connectors/ops.py": {
       "role": "implementation",
@@ -6284,9 +7152,9 @@
     "src/hate/connectors/reports.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.connectors.reports.py.json",
-      "sha256": "d2f2984c579cfd71bd25dbebf1484d6ac24ca6bf17977f7efd7710a74269cb8a",
+      "sha256": "0451942a3735537d41dbddc3a533fbebf72074c4673a5f2674e290824d3bd55a",
       "line_count": 139,
-      "size_bytes": 4906
+      "size_bytes": 4898
     },
     "src/hate/connectors/scim.py": {
       "role": "implementation",
@@ -6308,6 +7176,13 @@
       "sha256": "5b16c6a4b40c77bc165db22fbade0b3206d51b1ceac3c76a0ab313c773e3cecd",
       "line_count": 299,
       "size_bytes": 10868
+    },
+    "src/hate/connectors/sync.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.connectors.sync.py.json",
+      "sha256": "ab9bacf18a94945c7536d20639e8959248db0f4f42064202e83f3b74f5c9409c",
+      "line_count": 243,
+      "size_bytes": 9901
     },
     "src/hate/connectors/ticketing.py": {
       "role": "implementation",
@@ -6333,9 +7208,16 @@
     "src/hate/dashboard/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.dashboard.__init__.py.json",
-      "sha256": "39c3b47df7fdd8b3fcd6a8aa0dadf2029a87dccf547c92fcf4184a52007e7bde",
-      "line_count": 81,
-      "size_bytes": 2228
+      "sha256": "da00bfd44d4115f656b2f55dcaa3eab5b0c1a30de5720c06d11c5174ddfd75e3",
+      "line_count": 96,
+      "size_bytes": 2885
+    },
+    "src/hate/dashboard/platform_views.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.dashboard.platform_views.py.json",
+      "sha256": "297f0a1ee76fea71fab70c04ffa4a3343c6f7109b469fe2ad93560862680c8e8",
+      "line_count": 227,
+      "size_bytes": 9238
     },
     "src/hate/dashboard/state_report.py": {
       "role": "implementation",
@@ -6343,6 +7225,13 @@
       "sha256": "7c3d6f18733ba60e685c2e702c22d9cb58f281f9e5a4fa0aa418b948def7aa8f",
       "line_count": 188,
       "size_bytes": 7721
+    },
+    "src/hate/dashboard/uat_report.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.dashboard.uat_report.py.json",
+      "sha256": "0e84001cf1063bccab26959cccfab7363f0ca94abd44fed4d16a81d29698873b",
+      "line_count": 158,
+      "size_bytes": 6105
     },
     "src/hate/dashboard/uat_states.py": {
       "role": "implementation",
@@ -6357,6 +7246,13 @@
       "sha256": "9fb41bb9fade551de1a58a3a096e899571bbf9757393b51da7948fb3b0880de6",
       "line_count": 545,
       "size_bytes": 19349
+    },
+    "src/hate/dashboard/wireframe.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.dashboard.wireframe.py.json",
+      "sha256": "d61428eec121a7f8d788fd1ff80667a7f8c22ab58145ab81611dd5cec12cb30a",
+      "line_count": 184,
+      "size_bytes": 6927
     },
     "src/hate/deployment/__init__.py": {
       "role": "implementation",
@@ -6431,9 +7327,9 @@
     "src/hate/evaluation/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evaluation.__init__.py.json",
-      "sha256": "49fe6427c49f35129c756adde03e669eef0b3390bd6f5bc82a70ec7dc9307719",
-      "line_count": 21,
-      "size_bytes": 563
+      "sha256": "98f507c1b98df2d847db2d6d5a83a0101d1812b3ab78b1c92503be00f004dace",
+      "line_count": 42,
+      "size_bytes": 1474
     },
     "src/hate/evaluation/agent_quality.py": {
       "role": "implementation",
@@ -6442,12 +7338,54 @@
       "line_count": 243,
       "size_bytes": 8098
     },
+    "src/hate/evaluation/baseline_governance.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.evaluation.baseline_governance.py.json",
+      "sha256": "9631bc7f7b847ba5f058978ce7052b2fac857598fd02a0bb39c45ec08ba5f975",
+      "line_count": 144,
+      "size_bytes": 6345
+    },
+    "src/hate/evaluation/history_store.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.evaluation.history_store.py.json",
+      "sha256": "f462e7479188cbba133c3b5f86dbd483a4cdeb9fd063da7feb38d640c1f0b1ef",
+      "line_count": 213,
+      "size_bytes": 8318
+    },
+    "src/hate/evaluation/output_safety.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.evaluation.output_safety.py.json",
+      "sha256": "364153e27fb564a87d5f4279a7c0167bc7d968eb0525019b1d72071036bd6c83",
+      "line_count": 96,
+      "size_bytes": 3723
+    },
     "src/hate/evaluation/real_repo.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evaluation.real_repo.py.json",
-      "sha256": "194bbd6ea0d723893d27855bd5309d044d1e861228b97c354be87894cf3a70fb",
-      "line_count": 209,
-      "size_bytes": 7225
+      "sha256": "f69457306f42cc1fd4e386073e1397cd955ffe180054bac14817810a1ee296eb",
+      "line_count": 766,
+      "size_bytes": 29769
+    },
+    "src/hate/evaluation/regression_engine.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.evaluation.regression_engine.py.json",
+      "sha256": "6a62fdf33584d0daeb7dc39c0ee19f5085a6cecfed87868073402ee98cadb022",
+      "line_count": 131,
+      "size_bytes": 5368
+    },
+    "src/hate/evaluation/runner_dialects.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.evaluation.runner_dialects.py.json",
+      "sha256": "cd5076a0395d8894c9e5d480f78b9fb322e0c8ed88de02af0b3948b5f2189fcd",
+      "line_count": 191,
+      "size_bytes": 6620
+    },
+    "src/hate/evaluation/score_model.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.evaluation.score_model.py.json",
+      "sha256": "655168c2176aba72d05c0ae7f90d533e49f7a70fdfc302a8111d65060b0fcf53",
+      "line_count": 121,
+      "size_bytes": 4274
     },
     "src/hate/evidence_envelope.py": {
       "role": "implementation",
@@ -6557,9 +7495,9 @@
     "src/hate/expansion/portfolio_readiness.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.expansion.portfolio_readiness.py.json",
-      "sha256": "22eba405643a992e63c27f150c00e9566cd976b2a12def2c4e96c590095ac084",
-      "line_count": 602,
-      "size_bytes": 30785
+      "sha256": "b761d8b8cd18746840a9088694fcd9e735122567d26354fa19da8f6db609815c",
+      "line_count": 626,
+      "size_bytes": 31615
     },
     "src/hate/expansion/product_analytics.py": {
       "role": "implementation",
@@ -6638,6 +7576,20 @@
       "line_count": 132,
       "size_bytes": 6014
     },
+    "src/hate/operations/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.operations.__init__.py.json",
+      "sha256": "bb1e1eedcce076e362b406382d3b1406eeded1000e80e69a5c8b1fb4b2af753b",
+      "line_count": 8,
+      "size_bytes": 251
+    },
+    "src/hate/operations/operating_model.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.operations.operating_model.py.json",
+      "sha256": "373659c6cc33e14bacdf442663e2c38c52c29becea753bbc73d491ca7e1e18d9",
+      "line_count": 381,
+      "size_bytes": 19220
+    },
     "src/hate/p0a.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a.py.json",
@@ -6690,9 +7642,9 @@
     "src/hate/p0a_schema.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_schema.py.json",
-      "sha256": "30605cd621933df75d5ed77a3debf1f20fda686b4676673114b0a7a69734be14",
-      "line_count": 159,
-      "size_bytes": 6770
+      "sha256": "2a87a9e8d62a15e8765d27648a62749c5a6bdc31c8aff0a5b88fb600e8207e89",
+      "line_count": 177,
+      "size_bytes": 7665
     },
     "src/hate/p0a_static.py": {
       "role": "implementation",
@@ -6802,9 +7754,9 @@
     "src/hate/p1a_internal/adapter_registry.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_internal.adapter_registry.py.json",
-      "sha256": "ea9ea233c3ef8e9544a31ea454d226dece492895db06a8629772cd4941c6e3ff",
-      "line_count": 161,
-      "size_bytes": 7485
+      "sha256": "e3a02296a7b683235e52b9295ce360cf0ab2ad0d94448fc8d07579f6e1b694bd",
+      "line_count": 162,
+      "size_bytes": 7539
     },
     "src/hate/p1a_internal/aete_scoring.py": {
       "role": "implementation",
@@ -6844,9 +7796,9 @@
     "src/hate/p1a_internal/retry_aggregation.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_internal.retry_aggregation.py.json",
-      "sha256": "ee78c0243c8de569cc0ff59ec023ee253dba1b81a598bf63a1940db13255e7a1",
-      "line_count": 142,
-      "size_bytes": 5964
+      "sha256": "29dc2e1582b31ebbe820187440085f808d184a33a30344ea98f5b1e371311898",
+      "line_count": 143,
+      "size_bytes": 6009
     },
     "src/hate/p1a_io.py": {
       "role": "implementation",
@@ -6914,9 +7866,9 @@
     "src/hate/p2p3_readiness.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p2p3_readiness.py.json",
-      "sha256": "b9fd8c97d05a88179891ee35a19c067f1f5f34633cde67af103bf5ff4524d0ac",
-      "line_count": 414,
-      "size_bytes": 16899
+      "sha256": "9fb47cf2e306bcdf68e0529e5f2a169ecc28fe2fce16e000e3ecd7fa8ff803eb",
+      "line_count": 605,
+      "size_bytes": 25207
     },
     "src/hate/p2p3_reports.py": {
       "role": "implementation",
@@ -6924,6 +7876,41 @@
       "sha256": "bd1a84ccb47ab2a09a2e4f8360f045ccbc2cca61850fd5b2337833dc6c49f605",
       "line_count": 430,
       "size_bytes": 18807
+    },
+    "src/hate/platform_rbac.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.platform_rbac.py.json",
+      "sha256": "6b3d9b73f7eabe83ea1a220d2bc9adae6fc48ff0411f82cdbd332c02a7bf9c56",
+      "line_count": 264,
+      "size_bytes": 10129
+    },
+    "src/hate/platform_store_schema.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.platform_store_schema.py.json",
+      "sha256": "1e6814c6ea6ec13131423d287610fc3fd0be81dcdb89610b940a947056b624e5",
+      "line_count": 283,
+      "size_bytes": 12001
+    },
+    "src/hate/plugins/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.plugins.__init__.py.json",
+      "sha256": "515a52aefe07ee1c5d94f2557607af3185fb7902ec523cd37a2de6fa137fd4f4",
+      "line_count": 5,
+      "size_bytes": 144
+    },
+    "src/hate/plugins/sandbox.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.plugins.sandbox.py.json",
+      "sha256": "c7c57321c8429935af63f91969902349b2b9ee522884fa3bc7491fb291a2db63",
+      "line_count": 190,
+      "size_bytes": 8352
+    },
+    "src/hate/policy_config.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.policy_config.py.json",
+      "sha256": "3414a640a0fe5c8ed030954dbd2fec68977f52fdf4083e243a748bf55f3fcb23",
+      "line_count": 341,
+      "size_bytes": 13676
     },
     "src/hate/product_e2e.py": {
       "role": "implementation",
@@ -6942,9 +7929,9 @@
     "src/hate/profile.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.profile.py.json",
-      "sha256": "0a0a288f292769e3a43913a1f9e97bfb41447eaa4014b6b24a1cc66ecf1717a5",
-      "line_count": 238,
-      "size_bytes": 9022
+      "sha256": "71efdebd2d87a568048c7ec45dce422446d9f31544deb82201dd4f16f13e7557",
+      "line_count": 298,
+      "size_bytes": 11059
     },
     "src/hate/readiness_model.py": {
       "role": "implementation",
@@ -6956,9 +7943,9 @@
     "src/hate/release.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.release.py.json",
-      "sha256": "5e5444748ce23341ac384b50975ea7d3b1e09d6042f8ef126413b07e32bca2ed",
-      "line_count": 342,
-      "size_bytes": 14420
+      "sha256": "4dd2eaf490ec121a0806f596fe3fb26bec89a949e98ceb0cda010758deb2fc66",
+      "line_count": 526,
+      "size_bytes": 22408
     },
     "src/hate/release_channel.py": {
       "role": "implementation",
@@ -6998,9 +7985,9 @@
     "src/hate/scale/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.scale.__init__.py.json",
-      "sha256": "aea65b268acbcf13ae026158cf031455556d38d7fde7a736c5e902af546438b5",
-      "line_count": 31,
-      "size_bytes": 854
+      "sha256": "ec4fcab73d946fc15af71e7b8ba46bc0f050c8318f9b59e8c2df72ea17da0853",
+      "line_count": 33,
+      "size_bytes": 967
     },
     "src/hate/scale/benchmark_catalog.py": {
       "role": "implementation",
@@ -7023,19 +8010,26 @@
       "line_count": 248,
       "size_bytes": 8499
     },
+    "src/hate/scale/platform_benchmark.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.scale.platform_benchmark.py.json",
+      "sha256": "898c5e8adbc99844949b66c0757cbb0553bc48adb85bb74517c44e55ed2b1e2f",
+      "line_count": 221,
+      "size_bytes": 9155
+    },
     "src/hate/schema_validator.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.schema_validator.py.json",
-      "sha256": "0ee588b79c51a6020c5e304102b9a82a375fd5183d2c3df25347c081e484241d",
-      "line_count": 174,
-      "size_bytes": 6619
+      "sha256": "3c7c2ccc44eac1a05a38053f317f7e4ea77077d7305c91bb188020a76d70139a",
+      "line_count": 288,
+      "size_bytes": 11145
     },
     "src/hate/security/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.__init__.py.json",
-      "sha256": "8656bef7f29965083ac20754b9d663307428d377495252ef28d976a79cd45829",
-      "line_count": 54,
-      "size_bytes": 1638
+      "sha256": "7b6fcfaaf2e9f8e21e181a80bf9e9275f8b5b2e0b7a10357ff942e1077e23e98",
+      "line_count": 56,
+      "size_bytes": 1742
     },
     "src/hate/security/artifact_archive.py": {
       "role": "implementation",
@@ -7072,6 +8066,13 @@
       "line_count": 399,
       "size_bytes": 15389
     },
+    "src/hate/security/quarantine_report.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.security.quarantine_report.py.json",
+      "sha256": "47bad9ef464b2b423d06d32eabbe0204c3a79ee43d09ccc0e65d01c161cd8e0a",
+      "line_count": 276,
+      "size_bytes": 12050
+    },
     "src/hate/security/redaction.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.redaction.py.json",
@@ -7096,9 +8097,9 @@
     "src/hate/store/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store.__init__.py.json",
-      "sha256": "64450dbc6a685e6e4ed91a044eb2eb0aa1d9a47070509828a3e1287aaca673c3",
-      "line_count": 126,
-      "size_bytes": 3110
+      "sha256": "442f1deab190ef2b0cefd9732b0397a7d6446d4d82dbc03788844e500fd6c9f5",
+      "line_count": 128,
+      "size_bytes": 3174
     },
     "src/hate/store/atomic_write.py": {
       "role": "implementation",
@@ -7145,9 +8146,9 @@
     "src/hate/store/replay.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store.replay.py.json",
-      "sha256": "f57aa9c8dc3facd987000640ba403058fce66b0dfb75b6bcfcbb9c372df2fa0f",
-      "line_count": 415,
-      "size_bytes": 13356
+      "sha256": "cac598e87d2f1799b4fe985b671f937c17cde1efe717d83341a06fe8a8fdf990",
+      "line_count": 598,
+      "size_bytes": 20716
     },
     "src/hate/store_legacy.py": {
       "role": "implementation",
@@ -7327,9 +8328,9 @@
     "tests/test_adapter_manifest_schema.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_adapter_manifest_schema.py.json",
-      "sha256": "6187a4c182adf89557733a8df38adb2ff68a492611b07ac2f6cba7bfcf71ea94",
-      "line_count": 131,
-      "size_bytes": 4911
+      "sha256": "eb547c08e226a81d956ece83360c1f3c0153ab9bcd3c23ec6dad770912f9af8d",
+      "line_count": 142,
+      "size_bytes": 5499
     },
     "tests/test_adapter_sdk.py": {
       "role": "test",
@@ -7467,16 +8468,16 @@
     "tests/test_api_rate_limit.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_api_rate_limit.py.json",
-      "sha256": "5c62337995df44015ee65ead4be5ac7370b808715d27726f98fe45dcc08bbd7a",
-      "line_count": 103,
-      "size_bytes": 3981
+      "sha256": "c4a1d3d54091376574c67a76a978c277fe292321fa36fb5a52c9f48e17d8c915",
+      "line_count": 102,
+      "size_bytes": 4125
     },
     "tests/test_api_read_model.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_api_read_model.py.json",
-      "sha256": "8268aa3eed7de7583b36bda646c95141539e4a864250850669493bd0d5e2cf46",
-      "line_count": 123,
-      "size_bytes": 4791
+      "sha256": "ea4e5ced3a23de1d7924279ad4657eeffb4e863d927d4163243ab1c9ec25ac81",
+      "line_count": 189,
+      "size_bytes": 7469
     },
     "tests/test_api_read_model_contract.py": {
       "role": "test",
@@ -7576,6 +8577,13 @@
       "line_count": 167,
       "size_bytes": 5785
     },
+    "tests/test_dashboard_uat_report.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_dashboard_uat_report.py.json",
+      "sha256": "7d85e946eecc28bb6beac8110001f6666648aedb5ec48e633cec70e9e037be19",
+      "line_count": 101,
+      "size_bytes": 3467
+    },
     "tests/test_dashboard_uat_states.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_dashboard_uat_states.py.json",
@@ -7621,9 +8629,9 @@
     "tests/test_entitlement.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_entitlement.py.json",
-      "sha256": "b367ec8d1669989b495ba7fc39125291e0fa9614b282828f2f9e7f0cf3d2e23f",
-      "line_count": 97,
-      "size_bytes": 3641
+      "sha256": "16ab261ce752a5d334b2ae9f8e6c763a241a97db67814c852a9100ae07c1836f",
+      "line_count": 96,
+      "size_bytes": 3779
     },
     "tests/test_evidence_graph.py": {
       "role": "test",
@@ -7761,9 +8769,9 @@
     "tests/test_github_integration.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_github_integration.py.json",
-      "sha256": "565f36799f7658c79f48f08ffdd0b58d50a87ef642979736173a95952a3f1a1b",
-      "line_count": 114,
-      "size_bytes": 4202
+      "sha256": "a1006910eb7be92a9df8bb1d1c3c7e5d9f963d52232a7349540fad2a9d743b66",
+      "line_count": 113,
+      "size_bytes": 4354
     },
     "tests/test_manual_review_bridge.py": {
       "role": "test",
@@ -7786,6 +8794,13 @@
       "line_count": 102,
       "size_bytes": 3730
     },
+    "tests/test_operating_model.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_operating_model.py.json",
+      "sha256": "910251c0882ad180b8046377e7eb27c908a499ccfb752b781ca8f2f993d72174",
+      "line_count": 216,
+      "size_bytes": 9935
+    },
     "tests/test_p0a.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p0a.py.json",
@@ -7807,6 +8822,13 @@
       "line_count": 615,
       "size_bytes": 29125
     },
+    "tests/test_p1a_schema_registry_contract.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p1a_schema_registry_contract.py.json",
+      "sha256": "5a8bf746c46847d3a079644378ee628389fe9fa6d724d0bcb4b85b2daaa0576d",
+      "line_count": 63,
+      "size_bytes": 2671
+    },
     "tests/test_p1b.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p1b.py.json",
@@ -7817,9 +8839,16 @@
     "tests/test_p2p3.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p2p3.py.json",
-      "sha256": "c4e0210bc025645d7123ff2dbb375127efac4598077d60343c5900fe673a1feb",
-      "line_count": 897,
-      "size_bytes": 48431
+      "sha256": "754675e3f722d6f8b4dbfa390c25c802280aba320adf5807e449c8be8ca6341a",
+      "line_count": 900,
+      "size_bytes": 48786
+    },
+    "tests/test_p2p3_product_readiness_contract.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p2p3_product_readiness_contract.py.json",
+      "sha256": "c951fb1727df3c68bdd5ce3e21beb5ff9568bd15328a11ef19df68f4eb03d629",
+      "line_count": 62,
+      "size_bytes": 2564
     },
     "tests/test_performance_budget.py": {
       "role": "test",
@@ -7827,6 +8856,62 @@
       "sha256": "44fb11ca03105138df31e7aa38a9fdc54e3b6310520e19a39cc7499a27279797",
       "line_count": 110,
       "size_bytes": 4138
+    },
+    "tests/test_platform_benchmark.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_platform_benchmark.py.json",
+      "sha256": "ed576fb7905555dd9e2d91912ce7e70ff4d3f031885f59ab6254b9472f48eab6",
+      "line_count": 112,
+      "size_bytes": 4489
+    },
+    "tests/test_platform_connector_sync.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_platform_connector_sync.py.json",
+      "sha256": "4807bb47f54e3408547751f8d5e9f8c23b093389576d2eb6c2e4d879b2d32ba2",
+      "line_count": 104,
+      "size_bytes": 4773
+    },
+    "tests/test_platform_dashboard_views.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_platform_dashboard_views.py.json",
+      "sha256": "9b06ae028edb57d7ea0edbf5b44edb0b07149e4111b25b7237c96dd1ddbdf940",
+      "line_count": 79,
+      "size_bytes": 3010
+    },
+    "tests/test_platform_dashboard_wireframe.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_platform_dashboard_wireframe.py.json",
+      "sha256": "7af832f1b7df3d2be28cc24f01cdd50d2e313c7c59d4300e3a0230363f888ec3",
+      "line_count": 135,
+      "size_bytes": 5660
+    },
+    "tests/test_platform_plugin_sandbox.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_platform_plugin_sandbox.py.json",
+      "sha256": "0621a980e93e99c87c8d0d9f00e8a609fa1d5867577735e2cb577540502057e0",
+      "line_count": 90,
+      "size_bytes": 3379
+    },
+    "tests/test_platform_policy_config.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_platform_policy_config.py.json",
+      "sha256": "98aad78ac77a921986452ec71664b58c7e18bb4285bba5235b3668fe996118bb",
+      "line_count": 126,
+      "size_bytes": 5428
+    },
+    "tests/test_platform_rbac.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_platform_rbac.py.json",
+      "sha256": "c7fed6580e68a42686977d1448e384a7c5896f4e79f7296a2e8b26b5d623e74d",
+      "line_count": 129,
+      "size_bytes": 5483
+    },
+    "tests/test_platform_store_schema.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_platform_store_schema.py.json",
+      "sha256": "9a432da14b6c8e2de7e641c058ce6ac44ad68c5b8fde93d37a3240682316f9f1",
+      "line_count": 100,
+      "size_bytes": 4196
     },
     "tests/test_product_e2e.py": {
       "role": "test",
@@ -7842,6 +8927,13 @@
       "line_count": 51,
       "size_bytes": 2080
     },
+    "tests/test_product_grade_report_contracts.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_product_grade_report_contracts.py.json",
+      "sha256": "af7e0fe233de46ce02691c16f9257195d031b1b9dac36dc78dfa3c72a27f279c",
+      "line_count": 131,
+      "size_bytes": 5506
+    },
     "tests/test_product_readiness_report.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_product_readiness_report.py.json",
@@ -7849,19 +8941,40 @@
       "line_count": 55,
       "size_bytes": 1979
     },
+    "tests/test_profile_report_contract.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_profile_report_contract.py.json",
+      "sha256": "a808f768f602836deb4042c9ac199b28f6969c80ca07bb2317d3fbc1f0a485c0",
+      "line_count": 80,
+      "size_bytes": 3195
+    },
     "tests/test_real_repo_evaluation.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_real_repo_evaluation.py.json",
-      "sha256": "cf18c7be8666d9ab9b76f9d5f16482a85fcc6598c5caed47fd96d175f3001e0a",
-      "line_count": 114,
-      "size_bytes": 4446
+      "sha256": "e64d92e2dff641da351953377368577a105a2b900d40194213101919718f006f",
+      "line_count": 762,
+      "size_bytes": 31860
+    },
+    "tests/test_real_repo_platform_packets.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_real_repo_platform_packets.py.json",
+      "sha256": "d8acb7191ae819f50ca4b633d6021b73e9d75043b9dffc6429dc8afff863e8cc",
+      "line_count": 224,
+      "size_bytes": 10144
     },
     "tests/test_release_candidate_pack.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_release_candidate_pack.py.json",
-      "sha256": "4df42bc801126bb73fd780d94500d8b3888bff5b95c66a1581bc6bec76926b90",
-      "line_count": 118,
-      "size_bytes": 4944
+      "sha256": "e8324e952084ab6216c89304673e2219be39a7dbfa06f407c3683afb68aa3525",
+      "line_count": 136,
+      "size_bytes": 5507
+    },
+    "tests/test_release_candidate_pack_validator_spec.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_release_candidate_pack_validator_spec.py.json",
+      "sha256": "fa0abec0a8093fb203ff2e13605ad689bfd0b98272ba300ba40b089796a3b8ba",
+      "line_count": 105,
+      "size_bytes": 3695
     },
     "tests/test_release_channel.py": {
       "role": "test",
@@ -7908,9 +9021,16 @@
     "tests/test_schema_validator.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_schema_validator.py.json",
-      "sha256": "6209cefb4ae0e086b850e07183373abd9d1123ed6eacd8e0b49577dd2bca1acf",
-      "line_count": 128,
-      "size_bytes": 4142
+      "sha256": "bfb757d53ebfac94dc089c126ecbaaa26070e94ad1437b83427ecde116d14301",
+      "line_count": 236,
+      "size_bytes": 8445
+    },
+    "tests/test_security_quarantine_report.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_security_quarantine_report.py.json",
+      "sha256": "05fe7de801a2288bbbf5d057d7f5a1b7238f2717ae958458122538ef94994913",
+      "line_count": 149,
+      "size_bytes": 5859
     },
     "tests/test_store_local.py": {
       "role": "test",
@@ -8373,6 +9493,10 @@
       "src/hate/connectors/sso.py"
     ],
     [
+      "src/hate/connectors/__init__.py",
+      "src/hate/connectors/sync.py"
+    ],
+    [
       "src/hate/connectors/siem.py",
       "src/hate/connectors/ops.py"
     ],
@@ -8394,7 +9518,15 @@
     ],
     [
       "src/hate/dashboard/__init__.py",
+      "src/hate/dashboard/platform_views.py"
+    ],
+    [
+      "src/hate/dashboard/__init__.py",
       "src/hate/dashboard/state_report.py"
+    ],
+    [
+      "src/hate/dashboard/__init__.py",
+      "src/hate/dashboard/uat_report.py"
     ],
     [
       "src/hate/dashboard/__init__.py",
@@ -8403,6 +9535,10 @@
     [
       "src/hate/dashboard/__init__.py",
       "src/hate/dashboard/view_models.py"
+    ],
+    [
+      "src/hate/dashboard/__init__.py",
+      "src/hate/dashboard/wireframe.py"
     ],
     [
       "src/hate/deployment/__init__.py",
@@ -8454,7 +9590,43 @@
     ],
     [
       "src/hate/evaluation/__init__.py",
+      "src/hate/evaluation/baseline_governance.py"
+    ],
+    [
+      "src/hate/evaluation/__init__.py",
+      "src/hate/evaluation/history_store.py"
+    ],
+    [
+      "src/hate/evaluation/__init__.py",
+      "src/hate/evaluation/output_safety.py"
+    ],
+    [
+      "src/hate/evaluation/__init__.py",
       "src/hate/evaluation/real_repo.py"
+    ],
+    [
+      "src/hate/evaluation/__init__.py",
+      "src/hate/evaluation/regression_engine.py"
+    ],
+    [
+      "src/hate/evaluation/__init__.py",
+      "src/hate/evaluation/runner_dialects.py"
+    ],
+    [
+      "src/hate/evaluation/__init__.py",
+      "src/hate/evaluation/score_model.py"
+    ],
+    [
+      "src/hate/evaluation/real_repo.py",
+      "src/hate/evaluation/output_safety.py"
+    ],
+    [
+      "src/hate/evaluation/real_repo.py",
+      "src/hate/evaluation/regression_engine.py"
+    ],
+    [
+      "src/hate/evaluation/real_repo.py",
+      "src/hate/evaluation/runner_dialects.py"
     ],
     [
       "src/hate/evidence_envelope.py",
@@ -8703,6 +9875,10 @@
     [
       "src/hate/migration/legal_hold.py",
       "src/hate/migration/compatibility.py"
+    ],
+    [
+      "src/hate/operations/__init__.py",
+      "src/hate/operations/operating_model.py"
     ],
     [
       "src/hate/p0a.py",
@@ -9005,6 +10181,10 @@
       "src/hate/p2p3_io.py"
     ],
     [
+      "src/hate/plugins/__init__.py",
+      "src/hate/plugins/sandbox.py"
+    ],
+    [
       "src/hate/profile.py",
       "src/hate/p0a_io.py"
     ],
@@ -9037,6 +10217,10 @@
       "src/hate/scale/performance_budget.py"
     ],
     [
+      "src/hate/scale/__init__.py",
+      "src/hate/scale/platform_benchmark.py"
+    ],
+    [
       "src/hate/scale/benchmark_catalog.py",
       "src/hate/scale/performance_budget.py"
     ],
@@ -9061,12 +10245,24 @@
       "src/hate/security/models.py"
     ],
     [
+      "src/hate/security/__init__.py",
+      "src/hate/security/quarantine_report.py"
+    ],
+    [
       "src/hate/security/artifact_archive.py",
       "src/hate/security/artifact_safety.py"
     ],
     [
       "src/hate/security/artifact_safety.py",
       "src/hate/security/artifact_archive.py"
+    ],
+    [
+      "src/hate/security/quarantine_report.py",
+      "src/hate/security/export_filter.py"
+    ],
+    [
+      "src/hate/security/quarantine_report.py",
+      "src/hate/security/summary_filter.py"
     ],
     [
       "src/hate/store/__init__.py",
@@ -9489,6 +10685,10 @@
       "src/hate/p1a.py"
     ],
     [
+      "tests/test_p1a_schema_registry_contract.py",
+      "src/hate/p1a.py"
+    ],
+    [
       "tests/test_p1b.py",
       "src/hate/p0b.py"
     ],
@@ -9505,12 +10705,72 @@
       "src/hate/p2p3_readiness.py"
     ],
     [
+      "tests/test_p2p3_product_readiness_contract.py",
+      "src/hate/p0a_schema.py"
+    ],
+    [
+      "tests/test_p2p3_product_readiness_contract.py",
+      "src/hate/p2p3_readiness.py"
+    ],
+    [
+      "tests/test_platform_connector_sync.py",
+      "src/hate/connectors.py"
+    ],
+    [
+      "tests/test_platform_connector_sync.py",
+      "src/hate/p0a_schema.py"
+    ],
+    [
+      "tests/test_platform_dashboard_wireframe.py",
+      "src/hate/p0a_schema.py"
+    ],
+    [
+      "tests/test_platform_plugin_sandbox.py",
+      "src/hate/plugins/sandbox.py"
+    ],
+    [
+      "tests/test_platform_policy_config.py",
+      "src/hate/policy_config.py"
+    ],
+    [
+      "tests/test_platform_rbac.py",
+      "src/hate/p0a_schema.py"
+    ],
+    [
+      "tests/test_platform_rbac.py",
+      "src/hate/platform_rbac.py"
+    ],
+    [
+      "tests/test_platform_store_schema.py",
+      "src/hate/p0a_schema.py"
+    ],
+    [
+      "tests/test_platform_store_schema.py",
+      "src/hate/platform_store_schema.py"
+    ],
+    [
       "tests/test_product_e2e.py",
       "src/hate/product_e2e.py"
     ],
     [
       "tests/test_product_grade.py",
       "src/hate/product_grade.py"
+    ],
+    [
+      "tests/test_product_grade_report_contracts.py",
+      "src/hate/schema_validator.py"
+    ],
+    [
+      "tests/test_product_grade_report_contracts.py",
+      "src/hate/store/compare.py"
+    ],
+    [
+      "tests/test_product_grade_report_contracts.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_product_grade_report_contracts.py",
+      "src/hate/store/replay.py"
     ],
     [
       "tests/test_product_readiness_report.py",
@@ -9521,11 +10781,43 @@
       "src/hate/readiness_model.py"
     ],
     [
+      "tests/test_profile_report_contract.py",
+      "src/hate/profile.py"
+    ],
+    [
+      "tests/test_real_repo_evaluation.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tests/test_real_repo_evaluation.py",
+      "src/hate/evaluation/real_repo.py"
+    ],
+    [
+      "tests/test_real_repo_platform_packets.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tests/test_real_repo_platform_packets.py",
+      "src/hate/evaluation/history_store.py"
+    ],
+    [
+      "tests/test_real_repo_platform_packets.py",
+      "src/hate/evaluation/output_safety.py"
+    ],
+    [
+      "tests/test_real_repo_platform_packets.py",
+      "src/hate/evaluation/real_repo.py"
+    ],
+    [
       "tests/test_release_candidate_pack.py",
       "src/hate/expansion_runner.py"
     ],
     [
       "tests/test_release_candidate_pack.py",
+      "src/hate/release.py"
+    ],
+    [
+      "tests/test_release_candidate_pack_validator_spec.py",
       "src/hate/release.py"
     ],
     [
@@ -9550,7 +10842,19 @@
     ],
     [
       "tests/test_schema_validator.py",
+      "src/hate/cross_record_validator.py"
+    ],
+    [
+      "tests/test_schema_validator.py",
       "src/hate/schema_validator.py"
+    ],
+    [
+      "tests/test_security_quarantine_report.py",
+      "src/hate/security/artifact_safety.py"
+    ],
+    [
+      "tests/test_security_quarantine_report.py",
+      "src/hate/security/quarantine_report.py"
     ],
     [
       "tests/test_store_local.py",

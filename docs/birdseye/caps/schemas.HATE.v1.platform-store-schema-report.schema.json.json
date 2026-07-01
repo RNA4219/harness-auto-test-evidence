@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/platform-store-schema-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "abdedcfe50b7837d47e6ea0e06d9af4deddc73414782e8409386b65589311786",
+  "line_count": 144,
+  "size_bytes": 5501,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

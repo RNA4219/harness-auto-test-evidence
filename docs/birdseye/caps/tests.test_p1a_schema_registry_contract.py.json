@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_p1a_schema_registry_contract.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "5a8bf746c46847d3a079644378ee628389fe9fa6d724d0bcb4b85b2daaa0576d",
+  "line_count": 63,
+  "size_bytes": 2671,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p1a",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

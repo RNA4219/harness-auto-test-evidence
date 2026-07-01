@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/plugin-sandbox/output-budget-exceeded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a9eb7841469102394957b976e33423adea0838be192540801e47dbe2e963074f",
+  "line_count": 20,
+  "size_bytes": 762,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -2,21 +2,27 @@
   "path": "src/hate/dashboard/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "39c3b47df7fdd8b3fcd6a8aa0dadf2029a87dccf547c92fcf4184a52007e7bde",
-  "line_count": 81,
-  "size_bytes": 2228,
+  "sha256": "da00bfd44d4115f656b2f55dcaa3eab5b0c1a30de5720c06d11c5174ddfd75e3",
+  "line_count": 96,
+  "size_bytes": 2885,
   "headings": [],
   "imports": [
     "__future__",
+    "hate.dashboard.platform_views",
     "hate.dashboard.state_report",
+    "hate.dashboard.uat_report",
     "hate.dashboard.uat_states",
-    "hate.dashboard.view_models"
+    "hate.dashboard.view_models",
+    "hate.dashboard.wireframe"
   ],
   "links": [],
   "depends_on": [
+    "src/hate/dashboard/platform_views.py",
     "src/hate/dashboard/state_report.py",
+    "src/hate/dashboard/uat_report.py",
     "src/hate/dashboard/uat_states.py",
-    "src/hate/dashboard/view_models.py"
+    "src/hate/dashboard/view_models.py",
+    "src/hate/dashboard/wireframe.py"
   ],
   "tags": [
     "artifact",

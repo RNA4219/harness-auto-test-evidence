@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/dashboard/risk-debt-board/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "50e43530043b77d7bfc06066560263f409fd3407450f6d2224c1ad20939502b2",
+  "line_count": 46,
+  "size_bytes": 1614,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

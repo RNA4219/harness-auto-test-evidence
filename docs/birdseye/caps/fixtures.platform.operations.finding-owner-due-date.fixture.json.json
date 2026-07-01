@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/operations/finding-owner-due-date/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0f0df10bdda5d500cd3fd9669dede22882b0a46c1a5f8821518622d9f154af06",
+  "line_count": 34,
+  "size_bytes": 1046,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

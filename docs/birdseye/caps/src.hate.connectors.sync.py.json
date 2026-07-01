@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/connectors/sync.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ab9bacf18a94945c7536d20639e8959248db0f4f42064202e83f3b74f5c9409c",
+  "line_count": 243,
+  "size_bytes": 9901,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hashlib",
+    "json",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

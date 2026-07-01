@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/plugins/sandbox.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c7c57321c8429935af63f91969902349b2b9ee522884fa3bc7491fb291a2db63",
+  "line_count": 190,
+  "size_bytes": 8352,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "release",
+    "schema"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_platform_connector_sync.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "4807bb47f54e3408547751f8d5e9f8c23b093389576d2eb6c2e4d879b2d32ba2",
+  "line_count": 104,
+  "size_bytes": 4773,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.connectors",
+    "hate.p0a_schema",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/connectors.py",
+    "src/hate/p0a_schema.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

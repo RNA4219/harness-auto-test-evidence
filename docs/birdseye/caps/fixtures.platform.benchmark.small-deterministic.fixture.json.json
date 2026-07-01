@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/benchmark/small-deterministic/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "43484f97ab7b6855f3cc18919ccf8f457f5f4a5b8abb0301f8b7bd7e33270a44",
+  "line_count": 37,
+  "size_bytes": 1217,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

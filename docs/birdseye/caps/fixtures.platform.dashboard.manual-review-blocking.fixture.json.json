@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/dashboard/manual-review-blocking/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "eb38ab5ffdcf0f41a93c471a03848a1dab3875dd4a34733732bd383f5c4f583c",
+  "line_count": 34,
+  "size_bytes": 1128,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/doctor-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6bb3fdeeac469903c7907fabecaca2e96b3d4300316aba169f4386befe4431c9",
+  "line_count": 30,
+  "size_bytes": 892,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema"
+  ]
+}

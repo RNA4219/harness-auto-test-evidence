@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/dashboard/repo-regression-detail/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7edb977adff271ea76ae94d18c693aca4d16eda20d14c03f78113697d3ba30ee",
+  "line_count": 26,
+  "size_bytes": 1339,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

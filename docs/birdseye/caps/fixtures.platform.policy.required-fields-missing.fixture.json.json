@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/policy/required-fields-missing/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e2ddfbd042128bbb0b213c059b4521b29ca8455c95fe82a8a499e891a3f1ed38",
+  "line_count": 37,
+  "size_bytes": 1261,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

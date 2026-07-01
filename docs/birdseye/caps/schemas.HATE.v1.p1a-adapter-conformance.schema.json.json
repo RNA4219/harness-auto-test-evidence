@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/p1a-adapter-conformance.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "873bbc4ffc4ac9c53263b3ace1222fd6f261ac2439943f9d77ed013cb1da2b68",
+  "line_count": 31,
+  "size_bytes": 928,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "release",
+    "schema"
+  ]
+}

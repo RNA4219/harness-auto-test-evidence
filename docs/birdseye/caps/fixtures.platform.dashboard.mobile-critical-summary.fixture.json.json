@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/dashboard/mobile-critical-summary/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "59542715ba4f565d71d6b2d1068608bb486257087d87e4eaf6e53259758afda3",
+  "line_count": 26,
+  "size_bytes": 1419,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

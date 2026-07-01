@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/evaluation/baseline-unapproved-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1e0c4c1ba401ba99bf6ff8df6ba087d8c4f91a8e8136ef92c7254deb324d46ad",
+  "line_count": 29,
+  "size_bytes": 885,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

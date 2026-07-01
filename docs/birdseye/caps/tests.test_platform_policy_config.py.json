@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_platform_policy_config.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "98aad78ac77a921986452ec71664b58c7e18bb4285bba5235b3668fe996118bb",
+  "line_count": 126,
+  "size_bytes": 5428,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.policy_config",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/policy_config.py"
+  ],
+  "tags": [
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

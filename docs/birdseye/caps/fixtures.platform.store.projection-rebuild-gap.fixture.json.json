@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/store/projection-rebuild-gap/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e988534ce3123c0f63f8d9980c28fd3f6d4dcfa2a596893c16c30f3853cfe982",
+  "line_count": 51,
+  "size_bytes": 1763,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

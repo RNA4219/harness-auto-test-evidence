@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/plugin-sandbox/network-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "328f565e79287b79519dc4f9304fb89408cd5c9225dcf0238d4c9e2882544d56",
+  "line_count": 22,
+  "size_bytes": 814,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

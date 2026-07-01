@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/operating-projection-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "0127aeb16991fbb2013faf1b40ad7314a0252f715f10c7c407b8f10472dd86c8",
+  "line_count": 20,
+  "size_bytes": 1029,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

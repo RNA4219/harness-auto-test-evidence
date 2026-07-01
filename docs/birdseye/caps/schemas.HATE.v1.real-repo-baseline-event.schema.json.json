@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/real-repo-baseline-event.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "0131f1009ec74531e72b1c5faf5abf1788715bce7f1cac79be156dfd3c2ee4c4",
+  "line_count": 36,
+  "size_bytes": 1206,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

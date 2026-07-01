@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/dashboard/wireframe.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "d61428eec121a7f8d788fd1ff80667a7f8c22ab58145ab81611dd5cec12cb30a",
+  "line_count": 184,
+  "size_bytes": 6927,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

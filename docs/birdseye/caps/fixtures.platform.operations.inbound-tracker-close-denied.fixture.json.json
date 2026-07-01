@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/operations/inbound-tracker-close-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f5cb1e48cf6f219c854b4865e127aceaae78b125b7f4b6f4af4895552e375d18",
+  "line_count": 48,
+  "size_bytes": 1726,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

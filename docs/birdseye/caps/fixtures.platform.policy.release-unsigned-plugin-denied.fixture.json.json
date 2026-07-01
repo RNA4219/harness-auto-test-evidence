@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/platform/policy/release-unsigned-plugin-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "91535484df31638d52629919b965cdc566ca9d087807943fdf970205c2132168",
+  "line_count": 35,
+  "size_bytes": 1585,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

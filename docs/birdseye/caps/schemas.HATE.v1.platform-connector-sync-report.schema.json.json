@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/platform-connector-sync-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "ebd24de4004f990fdf490a01e319a900dda6e00e3e189b8281af29c57b238dce",
+  "line_count": 168,
+  "size_bytes": 6388,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

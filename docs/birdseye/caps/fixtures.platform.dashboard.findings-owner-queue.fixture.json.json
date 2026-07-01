@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/dashboard/findings-owner-queue/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a61cbe606b509673fbaba5499485fe4cb9fed1fca0ac9678b2637cd425250057",
+  "line_count": 41,
+  "size_bytes": 1343,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "tests/test_adapter_manifest_schema.py",
   "role": "test",
   "kind": "py",
-  "sha256": "6187a4c182adf89557733a8df38adb2ff68a492611b07ac2f6cba7bfcf71ea94",
-  "line_count": 131,
-  "size_bytes": 4911,
+  "sha256": "eb547c08e226a81d956ece83360c1f3c0153ab9bcd3c23ec6dad770912f9af8d",
+  "line_count": 142,
+  "size_bytes": 5499,
   "headings": [],
   "imports": [
     "__future__",

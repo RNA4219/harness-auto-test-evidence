@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/evaluation/new-failure-kind/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f55d8d1679f3afbcd9a00bab2785f624b4a812b0c2a2007373cc5ed8e7f08eb1",
+  "line_count": 20,
+  "size_bytes": 595,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

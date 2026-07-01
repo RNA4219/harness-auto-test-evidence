@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/real-repo-evaluation-run-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "103825e0859fccd239ecef8bfad9f55437df011c94e1002d1589693d1e4b5fb6",
+  "line_count": 61,
+  "size_bytes": 1926,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

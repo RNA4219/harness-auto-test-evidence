@@ -1,0 +1,28 @@
+{
+  "path": "docs/process/PLATFORM_POLICY_CONFIG_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "07388be2a4d30fecd152c36874c0ca135fc6c066ea70279aad2f8af0b2030202",
+  "line_count": 130,
+  "size_bytes": 3170,
+  "headings": [
+    "# Platform Policy Config Specification",
+    "## 1. Config Files",
+    "## 2. Top-Level Shape",
+    "## 3. Profile Rules",
+    "## 4. Threshold Resolution",
+    "## 5. Plugin Trust Policy",
+    "## 6. Retention and Legal Hold",
+    "## 7. Scheduler Budget",
+    "## 8. Required Fixtures"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

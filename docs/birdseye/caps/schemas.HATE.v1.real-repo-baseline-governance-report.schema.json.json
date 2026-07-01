@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/real-repo-baseline-governance-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "292351abff0cfebaa9fe136508cd8eb3b56e03758c3b038290825245d4e257f5",
+  "line_count": 54,
+  "size_bytes": 1805,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/evaluation/roster-v2-invalid-ownership/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "74c3239664df7bd57cf7ebb92d25c0a7e4dbc62c65b332691a3b8ed4a47686cb",
+  "line_count": 32,
+  "size_bytes": 858,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

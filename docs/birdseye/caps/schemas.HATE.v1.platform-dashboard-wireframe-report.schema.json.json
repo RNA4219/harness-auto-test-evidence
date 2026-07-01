@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/platform-dashboard-wireframe-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "0f6fc54be0ff35c521a9c0e65c64e55055be080e5268652db02c06661c240a89",
+  "line_count": 120,
+  "size_bytes": 4532,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

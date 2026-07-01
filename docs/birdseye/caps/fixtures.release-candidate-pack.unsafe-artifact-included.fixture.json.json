@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/release-candidate-pack/unsafe-artifact-included/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8789ca92145f5d319804ed1b3732069c3ea1f899f321ed1615bd3e939593e998",
+  "line_count": 14,
+  "size_bytes": 652,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

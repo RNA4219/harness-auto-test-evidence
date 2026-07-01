@@ -2,9 +2,9 @@
   "path": "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "1da32528e5f1ae056dc4d8309986fd91de9f57211c5823b3312628fa1aee3429",
-  "line_count": 480,
-  "size_bytes": 23577,
+  "sha256": "51b534fd49118aa57af01f99be786eafa28d7e0db1d8882833ca674bf3bdb4ab",
+  "line_count": 483,
+  "size_bytes": 23661,
   "headings": [
     "# フル実装仕様不足解消書",
     "## 1. 目的",

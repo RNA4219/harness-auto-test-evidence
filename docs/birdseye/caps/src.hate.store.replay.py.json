@@ -2,9 +2,9 @@
   "path": "src/hate/store/replay.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "f57aa9c8dc3facd987000640ba403058fce66b0dfb75b6bcfcbb9c372df2fa0f",
-  "line_count": 415,
-  "size_bytes": 13356,
+  "sha256": "cac598e87d2f1799b4fe985b671f937c17cde1efe717d83341a06fe8a8fdf990",
+  "line_count": 598,
+  "size_bytes": 20716,
   "headings": [
     "# Supported schema versions for replay",
     "# Schema versions that require migration (not direct replay)"
@@ -29,6 +29,7 @@
   ],
   "tags": [
     "artifact",
+    "release",
     "schema",
     "store"
   ]

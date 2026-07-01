@@ -1,0 +1,42 @@
+{
+  "path": "docs/process/PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "c3ed9987c64e0957baaf32a32996f54dcce94f3345447030b9336bbc6c96f8d4",
+  "line_count": 274,
+  "size_bytes": 21293,
+  "headings": [
+    "# Product Platform Phase Requirements",
+    "## 1. Product Principles",
+    "## 2. Personas",
+    "## 3. Phase A: 評価基盤 Requirements",
+    "### 3.1 Scope",
+    "### 3.2 Non-Functional Requirements",
+    "## 4. Phase B: 運用基盤 Requirements",
+    "### 4.1 Scope",
+    "### 4.2 Non-Functional Requirements",
+    "## 5. Phase C: 拡張基盤 Requirements",
+    "### 5.1 Scope",
+    "### 5.2 Non-Functional Requirements",
+    "## 6. Phase D: 利用面 Requirements",
+    "### 6.1 Scope",
+    "### 6.2 Non-Functional Requirements",
+    "## 7. Phase E: 大規模化 Requirements",
+    "### 7.1 Scope",
+    "### 7.2 Non-Functional Requirements",
+    "## 8. Acceptance Criteria Matrix",
+    "## 9. No-Go Rules",
+    "## 10. Traceability"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "store"
+  ]
+}

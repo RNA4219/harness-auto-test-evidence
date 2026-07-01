@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/benchmark/expired-debt-distribution/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "856bb9d240a27cfa1bd75faf8baa64b474b8068e0565f5303cd04a2e0ea1a98f",
+  "line_count": 11,
+  "size_bytes": 956,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

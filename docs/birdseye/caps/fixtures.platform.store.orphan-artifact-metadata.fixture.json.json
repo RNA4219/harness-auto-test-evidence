@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/store/orphan-artifact-metadata/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9558b205d78c1f4b46236a13a762d8c7043de9e5842a095c25eb52cc6d2566ae",
+  "line_count": 23,
+  "size_bytes": 635,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

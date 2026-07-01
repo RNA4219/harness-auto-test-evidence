@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/schema-validation-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "c67228f5981fd5bab82b6087201f2ce078999ba865a92329594ec78fdf31200f",
+  "line_count": 89,
+  "size_bytes": 2886,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

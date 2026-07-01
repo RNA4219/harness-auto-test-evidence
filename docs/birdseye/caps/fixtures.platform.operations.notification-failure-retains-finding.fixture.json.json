@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/operations/notification-failure-retains-finding/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "378003ceb4c66f172e59108b6b4e4798747b5d0ec9966d0c01d722da71aeadcc",
+  "line_count": 46,
+  "size_bytes": 1631,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

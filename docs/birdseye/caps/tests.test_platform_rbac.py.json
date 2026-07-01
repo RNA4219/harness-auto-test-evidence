@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_platform_rbac.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "c7fed6580e68a42686977d1448e384a7c5896f4e79f7296a2e8b26b5d623e74d",
+  "line_count": 129,
+  "size_bytes": 5483,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p0a_schema",
+    "hate.platform_rbac",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_schema.py",
+    "src/hate/platform_rbac.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

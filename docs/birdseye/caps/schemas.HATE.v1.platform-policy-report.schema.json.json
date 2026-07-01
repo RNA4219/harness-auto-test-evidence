@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/platform-policy-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "e4d21b39c41a2d8e8538ce844a594be01f63ac26051455166c3a5952a4399be2",
+  "line_count": 45,
+  "size_bytes": 1473,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

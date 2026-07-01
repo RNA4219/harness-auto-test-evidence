@@ -2,9 +2,9 @@
   "path": "tests/test_release_candidate_pack.py",
   "role": "test",
   "kind": "py",
-  "sha256": "4df42bc801126bb73fd780d94500d8b3888bff5b95c66a1581bc6bec76926b90",
-  "line_count": 118,
-  "size_bytes": 4944,
+  "sha256": "e8324e952084ab6216c89304673e2219be39a7dbfa06f407c3683afb68aa3525",
+  "line_count": 136,
+  "size_bytes": 5507,
   "headings": [],
   "imports": [
     "__future__",

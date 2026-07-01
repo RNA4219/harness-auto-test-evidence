@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/operating-event-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "636aa5f9b0ffd8cccf47d3da332a5461be885e67caba538d83814e34c5635a97",
+  "line_count": 86,
+  "size_bytes": 2955,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/dashboard/artifact-unsafe-hidden/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e40708751cd1b133cd2dfa86029e0d0e2e781f78cc6b537b92e51d64da40bd54",
+  "line_count": 28,
+  "size_bytes": 1521,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

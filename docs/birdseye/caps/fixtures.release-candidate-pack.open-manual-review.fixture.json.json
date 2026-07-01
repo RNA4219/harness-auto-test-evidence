@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/release-candidate-pack/open-manual-review/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1f213cf440015af0cb50ed67828228e4678558dba5e15771371644038ecef606",
+  "line_count": 15,
+  "size_bytes": 842,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "test"
+  ]
+}

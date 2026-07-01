@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/connectors/github-check-safe-summary/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0735a60ac9d2501518486cceaf5d30467b887fbde4b237c742f92789bc396e01",
+  "line_count": 31,
+  "size_bytes": 1049,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

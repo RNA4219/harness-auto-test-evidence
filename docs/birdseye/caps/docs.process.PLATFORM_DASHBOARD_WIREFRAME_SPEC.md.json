@@ -1,0 +1,24 @@
+{
+  "path": "docs/process/PLATFORM_DASHBOARD_WIREFRAME_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "037d1a35a1291121dfd5d5f7fa06a66a1cd961bb32868d79f226628477e29a83",
+  "line_count": 95,
+  "size_bytes": 3589,
+  "headings": [
+    "# Platform Dashboard Wireframe Specification",
+    "## 1. View Inventory",
+    "## 2. Common Layout",
+    "## 3. State Matrix",
+    "## 4. View Model Contracts",
+    "## 5. Visual Acceptance",
+    "## 6. Required Fixtures"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/platform-rbac-matrix-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "b164fa04ef2045ae4f3dbfa4849c5ed3cdde6b2701b40adaa89094ec6c348cbd",
+  "line_count": 147,
+  "size_bytes": 5148,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

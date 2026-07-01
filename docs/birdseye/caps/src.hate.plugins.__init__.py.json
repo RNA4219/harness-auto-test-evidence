@@ -1,0 +1,17 @@
+{
+  "path": "src/hate/plugins/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "515a52aefe07ee1c5d94f2557607af3185fb7902ec523cd37a2de6fa137fd4f4",
+  "line_count": 5,
+  "size_bytes": 144,
+  "headings": [],
+  "imports": [
+    "hate.plugins.sandbox"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/plugins/sandbox.py"
+  ],
+  "tags": []
+}

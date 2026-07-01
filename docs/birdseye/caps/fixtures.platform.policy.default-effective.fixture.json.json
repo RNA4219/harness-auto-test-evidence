@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/platform/policy/default-effective/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7b9ef92265750113837e77ea05a377469e32f2f95701e50f14200e0286cfc18d",
+  "line_count": 48,
+  "size_bytes": 1566,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

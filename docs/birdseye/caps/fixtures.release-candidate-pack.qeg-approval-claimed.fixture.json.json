@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/release-candidate-pack/qeg-approval-claimed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "62391e193edadbce247b65ad3c0690fb869ca46f1194084ddba005b0d6a05135",
+  "line_count": 12,
+  "size_bytes": 503,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

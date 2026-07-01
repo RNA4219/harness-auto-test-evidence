@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/evaluation/runtime-drift/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1dc5e1f7970c6ac4718656865042974abd5ded577347310379eb4588411c82de",
+  "line_count": 21,
+  "size_bytes": 588,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

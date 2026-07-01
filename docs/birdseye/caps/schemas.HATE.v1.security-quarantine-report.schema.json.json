@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/security-quarantine-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "994123ec6e464588e252aa9cfb69bd3e3c42f6fdf0457645343a2947dac819ed",
+  "line_count": 145,
+  "size_bytes": 5291,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "release",
+    "schema",
+    "security"
+  ]
+}

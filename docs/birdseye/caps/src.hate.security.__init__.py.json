@@ -2,20 +2,22 @@
   "path": "src/hate/security/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "8656bef7f29965083ac20754b9d663307428d377495252ef28d976a79cd45829",
-  "line_count": 54,
-  "size_bytes": 1638,
+  "sha256": "7b6fcfaaf2e9f8e21e181a80bf9e9275f8b5b2e0b7a10357ff942e1077e23e98",
+  "line_count": 56,
+  "size_bytes": 1742,
   "headings": [],
   "imports": [
     ".artifact_lifecycle",
     ".artifact_safety",
-    ".models"
+    ".models",
+    ".quarantine_report"
   ],
   "links": [],
   "depends_on": [
     "src/hate/security/artifact_lifecycle.py",
     "src/hate/security/artifact_safety.py",
-    "src/hate/security/models.py"
+    "src/hate/security/models.py",
+    "src/hate/security/quarantine_report.py"
   ],
   "tags": [
     "api",

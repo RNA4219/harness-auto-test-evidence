@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/real-repo-run-history-entry.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "c166cf982df8046e67734cd88018feec056a793f392434a674d11b24a12e166a",
+  "line_count": 41,
+  "size_bytes": 1320,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

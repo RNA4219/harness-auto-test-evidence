@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/store-replay-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6bfe7a85e27a85288447d3147c0ba12ec75c57b39823322089847b79869c1c92",
+  "line_count": 120,
+  "size_bytes": 3961,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

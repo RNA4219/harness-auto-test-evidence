@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/platform/policy/threshold-specificity/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f5a7366101e452c29a7d1ccb86ad7801e6028c878c398ca9b0697764e74a873a",
+  "line_count": 40,
+  "size_bytes": 2115,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

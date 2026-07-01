@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/aete-signal-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d4e8ef6fead684c2b9e649ede245c6b577fa8e5d757ad306b2f068ccfedbdd80",
+  "line_count": 39,
+  "size_bytes": 1171,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema"
+  ]
+}

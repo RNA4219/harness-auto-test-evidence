@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/operations/debt-resolved-with-evidence/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fa51b9124a95e80463308e1cedcd6673bd177211bb7df48c30cb1e8f2e8fd863",
+  "line_count": 70,
+  "size_bytes": 2519,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/operating-finding-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "8c811ac70c7b53e18af59e65d37ece6cba3ccac454e575eb7164b4bd7d1750e2",
+  "line_count": 49,
+  "size_bytes": 1751,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/dashboard/degraded-large-query/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0db4781bc0da95fcea19ea2546b47aba9927f7c962fe83212afb84eb3c8c435c",
+  "line_count": 28,
+  "size_bytes": 1328,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

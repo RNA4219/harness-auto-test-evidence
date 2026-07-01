@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/dashboard/policy-drift/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7fe7df1bd2e2f9ffaf23bbd0706a40de1a4c0372a8d4a4a93716730661525aa9",
+  "line_count": 26,
+  "size_bytes": 1379,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

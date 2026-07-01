@@ -1,0 +1,29 @@
+{
+  "path": "docs/process/PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "6ba0cfe815e68ca6562912a279ed2da5737d3756a7554e9978db2841535acb99",
+  "line_count": 146,
+  "size_bytes": 12116,
+  "headings": [
+    "# Product Platform Phase Implementation Packets",
+    "## 1. Dispatch Rules",
+    "## 2. Evaluation Foundation Packets",
+    "## 3. Operations Foundation Packets",
+    "## 4. Extension Foundation Packets",
+    "## 5. Consumption Surface Packets",
+    "## 6. Scale Foundation Packets",
+    "## 7. Parallelization Plan",
+    "## 8. Definition of Done"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

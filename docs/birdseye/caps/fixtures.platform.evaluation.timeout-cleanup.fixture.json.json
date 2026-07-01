@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/evaluation/timeout-cleanup/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3bbd8c81c14364a373505afdd0790abd2bc66d1c6c88cabb604d9c85cba4b052",
+  "line_count": 24,
+  "size_bytes": 715,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

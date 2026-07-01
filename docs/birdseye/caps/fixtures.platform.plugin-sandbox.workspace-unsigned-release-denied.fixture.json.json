@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/plugin-sandbox/workspace-unsigned-release-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "dfb81da4aed43e09e79c3363b0b292e113457a1c5d6c67465566c3cc5b2dd6dd",
+  "line_count": 20,
+  "size_bytes": 791,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/policy/scheduler-invalid-budget/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "67357d9cc194d248a2e9e0b05c6118de6eac8b9e1747152546fdfcf2dffe3615",
+  "line_count": 51,
+  "size_bytes": 1625,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

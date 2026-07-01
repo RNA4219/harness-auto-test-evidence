@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/evaluation/redacted-deterministic-output/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "72318d17222a973b0f6e4a4804706d316f7dd90c0bed8ddef540b3747e7153f1",
+  "line_count": 17,
+  "size_bytes": 857,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture"
+  ]
+}

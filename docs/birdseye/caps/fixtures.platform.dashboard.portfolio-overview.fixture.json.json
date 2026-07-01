@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/dashboard/portfolio-overview/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e961210852e89e8fe684317d55f968ce713178c70a87eb87616602a755ebd414",
+  "line_count": 26,
+  "size_bytes": 1390,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

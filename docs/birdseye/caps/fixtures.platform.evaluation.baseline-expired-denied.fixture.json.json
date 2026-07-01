@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/evaluation/baseline-expired-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "88e2bfb6b1ada648b2aecd550435ffac7faee7b3fd5c557a7f02d75044f2f9e1",
+  "line_count": 29,
+  "size_bytes": 873,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "path": "tests/test_security_quarantine_report.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "05fe7de801a2288bbbf5d057d7f5a1b7238f2717ae958458122538ef94994913",
+  "line_count": 149,
+  "size_bytes": 5859,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.security.artifact_safety",
+    "hate.security.quarantine_report",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/security/artifact_safety.py",
+    "src/hate/security/quarantine_report.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "security",
+    "test"
+  ]
+}

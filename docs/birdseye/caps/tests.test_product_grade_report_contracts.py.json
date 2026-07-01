@@ -1,0 +1,32 @@
+{
+  "path": "tests/test_product_grade_report_contracts.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "af7e0fe233de46ce02691c16f9257195d031b1b9dac36dc78dfa3c72a27f279c",
+  "line_count": 131,
+  "size_bytes": 5506,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.schema_validator",
+    "hate.store.compare",
+    "hate.store.doctor",
+    "hate.store.replay",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_validator.py",
+    "src/hate/store/compare.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

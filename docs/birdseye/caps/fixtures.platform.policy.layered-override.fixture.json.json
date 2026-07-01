@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/platform/policy/layered-override/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0f462981a1180cea3207c5ccdb08d54b0f7f0befc398022618417a1b82bbb861",
+  "line_count": 38,
+  "size_bytes": 1589,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

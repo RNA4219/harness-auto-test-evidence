@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/rbac/developer-debt-accept-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4a84b9efb0f7cc3e36138fb09d8fdb10ee6a325b726dbfe0f1fddfdfc485e6a0",
+  "line_count": 18,
+  "size_bytes": 541,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/evaluation/output_safety.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "364153e27fb564a87d5f4279a7c0167bc7d968eb0525019b1d72071036bd6c83",
+  "line_count": 96,
+  "size_bytes": 3723,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hashlib",
+    "os",
+    "pathlib",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api"
+  ]
+}

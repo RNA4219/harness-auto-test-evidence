@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/rbac/raw-artifact-missing-approval/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4ed5263ce38bdce32d7162b180770a2e924919a04776f8dea72b21a46d249e13",
+  "line_count": 24,
+  "size_bytes": 761,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "tests/test_api_read_model.py",
   "role": "test",
   "kind": "py",
-  "sha256": "8268aa3eed7de7583b36bda646c95141539e4a864250850669493bd0d5e2cf46",
-  "line_count": 123,
-  "size_bytes": 4791,
+  "sha256": "ea4e5ced3a23de1d7924279ad4657eeffb4e863d927d4163243ab1c9ec25ac81",
+  "line_count": 189,
+  "size_bytes": 7469,
   "headings": [],
   "imports": [
     "__future__",

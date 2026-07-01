@@ -1,0 +1,35 @@
+{
+  "path": "tests/test_real_repo_platform_packets.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "d8acb7191ae819f50ca4b633d6021b73e9d75043b9dffc6429dc8afff863e8cc",
+  "line_count": 224,
+  "size_bytes": 10144,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.cli",
+    "hate.evaluation",
+    "hate.evaluation.history_store",
+    "hate.evaluation.output_safety",
+    "hate.evaluation.real_repo",
+    "json",
+    "pathlib",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py",
+    "src/hate/evaluation/history_store.py",
+    "src/hate/evaluation/output_safety.py",
+    "src/hate/evaluation/real_repo.py"
+  ],
+  "tags": [
+    "api",
+    "coverage",
+    "fixture",
+    "release",
+    "store",
+    "test"
+  ]
+}

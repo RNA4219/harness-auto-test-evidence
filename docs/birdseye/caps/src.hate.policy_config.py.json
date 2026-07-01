@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/policy_config.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "3414a640a0fe5c8ed030954dbd2fec68977f52fdf4083e243a748bf55f3fcb23",
+  "line_count": 341,
+  "size_bytes": 13676,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "copy",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "release",
+    "schema"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/operations/dedupe-target-missing/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fed6f099842ac2aa120c5cb321d382faf17a71ccf8bbcad4d8b171ae4153eec7",
+  "line_count": 50,
+  "size_bytes": 1753,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

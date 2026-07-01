@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/security/quarantine_report.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "47bad9ef464b2b423d06d32eabbe0204c3a79ee43d09ccc0e65d01c161cd8e0a",
+  "line_count": 276,
+  "size_bytes": 12050,
+  "headings": [],
+  "imports": [
+    ".export_filter",
+    ".summary_filter",
+    "__future__",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/security/export_filter.py",
+    "src/hate/security/summary_filter.py"
+  ],
+  "tags": [
+    "artifact",
+    "qeg",
+    "schema",
+    "security"
+  ]
+}

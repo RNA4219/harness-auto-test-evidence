@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/connectors/redaction-before-send/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e6d015502d95d042204c47fa0befc1f10a29af9dadda4e59cca75bb83e2e0de6",
+  "line_count": 48,
+  "size_bytes": 1731,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

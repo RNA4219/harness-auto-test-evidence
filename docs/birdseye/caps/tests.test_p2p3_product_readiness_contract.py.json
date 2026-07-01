@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_p2p3_product_readiness_contract.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "c951fb1727df3c68bdd5ce3e21beb5ff9568bd15328a11ef19df68f4eb03d629",
+  "line_count": 62,
+  "size_bytes": 2564,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p0a_schema",
+    "hate.p2p3_readiness",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_schema.py",
+    "src/hate/p2p3_readiness.py"
+  ],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

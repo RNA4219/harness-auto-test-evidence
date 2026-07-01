@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/adapter-registry.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "3722c5590f7707c88454a0a1c11de7ae6d7d5938ea317bdc87f61168612460fb",
+  "line_count": 27,
+  "size_bytes": 891,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "release",
+    "schema"
+  ]
+}

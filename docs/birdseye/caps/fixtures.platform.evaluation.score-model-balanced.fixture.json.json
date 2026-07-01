@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/platform/evaluation/score-model-balanced/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "eabfdd802d5ea626a799f86ada927c188c544e3559238220333e5948692462b2",
+  "line_count": 33,
+  "size_bytes": 893,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "release"
+  ]
+}

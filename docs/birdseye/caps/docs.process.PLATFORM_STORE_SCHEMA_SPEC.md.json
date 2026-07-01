@@ -1,0 +1,29 @@
+{
+  "path": "docs/process/PLATFORM_STORE_SCHEMA_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "780ffab3362f5e9403a183d4eba8548b8e7dc14087e6ffab7b2f46cf9deb29cf",
+  "line_count": 120,
+  "size_bytes": 4172,
+  "headings": [
+    "# Platform Store Schema Specification",
+    "## 1. Store Modes",
+    "## 2. Logical Tables",
+    "## 3. Required Indexes",
+    "## 4. Event Ordering",
+    "## 5. Migration Contract",
+    "## 6. Backup and Restore",
+    "## 7. Fixture Requirements"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

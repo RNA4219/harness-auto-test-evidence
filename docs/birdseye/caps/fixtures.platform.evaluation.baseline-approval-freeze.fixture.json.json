@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/evaluation/baseline-approval-freeze/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e58cfb5722c72bd86c7a12edbaccc9b630168b075b702ba0a95ca42af6a0b8c0",
+  "line_count": 63,
+  "size_bytes": 2191,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

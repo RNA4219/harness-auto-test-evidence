@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/store/backup-restore-checksum/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "312331c7b832ac34ed696e4a33c9e0d4eba9e166b4791cd12cf929af71be55ce",
+  "line_count": 33,
+  "size_bytes": 962,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

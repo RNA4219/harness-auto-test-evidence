@@ -2,9 +2,9 @@
   "path": "docs/process/SPECIFICATION.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "d46c7c4964a9d194f76f0e39552443fe58e4bf36859f96bc232460ca633f3b90",
+  "sha256": "28b2d4f74f96083c3251020dfe6c7046495341f03ab738737d4e341f2330db28",
   "line_count": 1225,
-  "size_bytes": 61851,
+  "size_bytes": 60745,
   "headings": [
     "# HATE 仕様書",
     "## 1. 目的",

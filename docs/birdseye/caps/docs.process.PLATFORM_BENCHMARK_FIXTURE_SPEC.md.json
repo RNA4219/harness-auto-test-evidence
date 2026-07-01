@@ -1,0 +1,26 @@
+{
+  "path": "docs/process/PLATFORM_BENCHMARK_FIXTURE_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "a5a2d32f1e0777bd5ebccf9a959620aaba87d7005f17480f20c6d9b1e5671473",
+  "line_count": 96,
+  "size_bytes": 2701,
+  "headings": [
+    "# Platform Benchmark Fixture Specification",
+    "## 1. Dataset Classes",
+    "## 2. Generator Inputs",
+    "## 3. Distribution Requirements",
+    "## 4. Performance Metrics",
+    "## 5. Degradation Modes",
+    "## 6. Required Fixtures"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "store"
+  ]
+}

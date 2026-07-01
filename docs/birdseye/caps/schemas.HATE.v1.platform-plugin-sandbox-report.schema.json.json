@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/platform-plugin-sandbox-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "589ac3edf73733ddc7fbe6a019d9cc2b8e29cec71c120d02941523417af5907d",
+  "line_count": 45,
+  "size_bytes": 1452,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

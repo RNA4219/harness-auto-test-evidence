@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/connectors/idempotent-retry/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "082b7db8176a3bf1de699d35337a908acc9284de4dac6b5ada2a8f1baa6ff3fd",
+  "line_count": 47,
+  "size_bytes": 1655,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

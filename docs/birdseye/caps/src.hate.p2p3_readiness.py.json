@@ -2,9 +2,9 @@
   "path": "src/hate/p2p3_readiness.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "b9fd8c97d05a88179891ee35a19c067f1f5f34633cde67af103bf5ff4524d0ac",
-  "line_count": 414,
-  "size_bytes": 16899,
+  "sha256": "9fb47cf2e306bcdf68e0529e5f2a169ecc28fe2fce16e000e3ecd7fa8ff803eb",
+  "line_count": 605,
+  "size_bytes": 25207,
   "headings": [],
   "imports": [
     "__future__",
@@ -18,8 +18,6 @@
     "coverage",
     "enterprise",
     "fixture",
-    "qeg",
-    "release",
     "schema",
     "test",
     "workflow"

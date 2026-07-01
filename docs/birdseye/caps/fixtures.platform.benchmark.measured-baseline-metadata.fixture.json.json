@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/platform/benchmark/measured-baseline-metadata/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "de2a642057a55e399e53538f6f0cc8fbf45a360ad33ebb32811f26fc8e5bf8fb",
+  "line_count": 11,
+  "size_bytes": 988,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "store"
+  ]
+}

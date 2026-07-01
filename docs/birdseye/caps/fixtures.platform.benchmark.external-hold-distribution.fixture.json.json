@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/platform/benchmark/external-hold-distribution/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "01b9ea0073a6ed1981b673094d87896964458ac67be3d3cbe16421c7cb236b61",
+  "line_count": 11,
+  "size_bytes": 995,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "store"
+  ]
+}

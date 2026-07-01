@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/evaluation/score_model.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "655168c2176aba72d05c0ae7f90d533e49f7a70fdfc302a8111d65060b0fcf53",
+  "line_count": 121,
+  "size_bytes": 4274,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

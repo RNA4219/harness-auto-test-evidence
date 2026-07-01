@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/real-repo-roster-v2.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "be5e2a46332160c2f81ed489c86e7dec73890f9b1a6a2cd47b625cc3da703d51",
+  "line_count": 54,
+  "size_bytes": 2358,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "security"
+  ]
+}

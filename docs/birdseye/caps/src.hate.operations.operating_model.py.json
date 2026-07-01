@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/operations/operating_model.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "373659c6cc33e14bacdf442663e2c38c52c29becea753bbc73d491ca7e1e18d9",
+  "line_count": 381,
+  "size_bytes": 19220,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "path": "docs/process/real-repo-rosters/codex-dev-root-extra.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "a7a1eef4ef93cd5d069088ba11e9a31b6bc466374b747e2d8ba2dcd858e5d8ae",
+  "line_count": 140,
+  "size_bytes": 3689,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "coverage",
+    "schema",
+    "test"
+  ]
+}

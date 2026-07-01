@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/connectors/slack-notification-failed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "10a9acfc1bf92956b0d3414bbec889aa88ee6fd4f8053bc8da48a7167a2a4d42",
+  "line_count": 30,
+  "size_bytes": 1056,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

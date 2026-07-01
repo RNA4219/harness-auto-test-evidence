@@ -1,0 +1,21 @@
+{
+  "path": "tests/test_platform_dashboard_views.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "9b06ae028edb57d7ea0edbf5b44edb0b07149e4111b25b7237c96dd1ddbdf940",
+  "line_count": 79,
+  "size_bytes": 3010,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.dashboard",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "path": "docs/process/REAL_REPO_EVALUATION.md",
+  "role": "quality",
+  "kind": "md",
+  "sha256": "521e0bbf92986cf5d99dbfc3bbf33a1e13e9c4d9e204d41cd90187035ccaa455",
+  "line_count": 380,
+  "size_bytes": 16397,
+  "headings": [
+    "# Real Repository Evaluation",
+    "## Agent_tools Full Roster",
+    "## 2026-07-01 Local Evaluation",
+    "## 2026-07-01 Codex_dev Root Extra Evaluation",
+    "## Fixed Holds",
+    "### manual-bb-test-harness",
+    "### memx-resolver",
+    "### pokemon-card-ai-battle",
+    "### rand-research-runtime",
+    "## Current Limitations",
+    "## Remaining Evaluation Gap",
+    "### opencode",
+    "## 2026-07-01 OpenCode Clean External Evaluation"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/evaluation/runner_dialects.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "cd5076a0395d8894c9e5d480f78b9fb322e0c8ed88de02af0b3948b5f2189fcd",
+  "line_count": 191,
+  "size_bytes": 6620,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

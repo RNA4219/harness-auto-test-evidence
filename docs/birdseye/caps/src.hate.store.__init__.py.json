@@ -2,9 +2,9 @@
   "path": "src/hate/store/__init__.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "64450dbc6a685e6e4ed91a044eb2eb0aa1d9a47070509828a3e1287aaca673c3",
-  "line_count": 126,
-  "size_bytes": 3110,
+  "sha256": "442f1deab190ef2b0cefd9732b0397a7d6446d4d82dbc03788844e500fd6c9f5",
+  "line_count": 128,
+  "size_bytes": 3174,
   "headings": [
     "# Legacy imports (from store_legacy.py for backward compatibility)"
   ],

@@ -1,0 +1,19 @@
+{
+  "path": "fixtures/platform/plugin-sandbox/builtin-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4a84d376c329ea8196d032689949bc3d918343c891e7518434124a74a4cdf6dc",
+  "line_count": 28,
+  "size_bytes": 925,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

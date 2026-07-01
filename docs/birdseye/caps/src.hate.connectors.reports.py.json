@@ -2,9 +2,9 @@
   "path": "src/hate/connectors/reports.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "d2f2984c579cfd71bd25dbebf1484d6ac24ca6bf17977f7efd7710a74269cb8a",
+  "sha256": "0451942a3735537d41dbddc3a533fbebf72074c4673a5f2674e290824d3bd55a",
   "line_count": 139,
-  "size_bytes": 4906,
+  "size_bytes": 4898,
   "headings": [],
   "imports": [
     "__future__",

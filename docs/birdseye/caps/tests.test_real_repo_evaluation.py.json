@@ -2,22 +2,28 @@
   "path": "tests/test_real_repo_evaluation.py",
   "role": "test",
   "kind": "py",
-  "sha256": "cf18c7be8666d9ab9b76f9d5f16482a85fcc6598c5caed47fd96d175f3001e0a",
-  "line_count": 114,
-  "size_bytes": 4446,
+  "sha256": "e64d92e2dff641da351953377368577a105a2b900d40194213101919718f006f",
+  "line_count": 762,
+  "size_bytes": 31860,
   "headings": [],
   "imports": [
     "__future__",
+    "hate.cli",
     "hate.evaluation",
+    "hate.evaluation.real_repo",
     "json",
-    "pathlib"
+    "pathlib",
+    "sys"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/cli.py",
+    "src/hate/evaluation/real_repo.py"
+  ],
   "tags": [
-    "artifact",
     "fixture",
     "schema",
+    "store",
     "test"
   ]
 }

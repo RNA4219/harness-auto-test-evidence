@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_platform_dashboard_wireframe.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "7af832f1b7df3d2be28cc24f01cdd50d2e313c7c59d4300e3a0230363f888ec3",
+  "line_count": 135,
+  "size_bytes": 5660,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.dashboard",
+    "hate.p0a_schema",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_schema.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

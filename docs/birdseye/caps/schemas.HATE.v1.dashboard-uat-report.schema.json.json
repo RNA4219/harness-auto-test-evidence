@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/dashboard-uat-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "7e33c6d7c835eaea442ec4490e3cae3cc89448915fcfdfd7ef67c9e041e8c151",
+  "line_count": 69,
+  "size_bytes": 2406,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

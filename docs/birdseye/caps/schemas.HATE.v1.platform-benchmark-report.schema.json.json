@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/platform-benchmark-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "f474522b404d10c5d7b15fee4a79bfa74af5e6afc3d4ac7e13638b5dba3b9370",
+  "line_count": 45,
+  "size_bytes": 1433,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

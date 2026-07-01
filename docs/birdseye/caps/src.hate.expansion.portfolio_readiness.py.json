@@ -2,9 +2,9 @@
   "path": "src/hate/expansion/portfolio_readiness.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "22eba405643a992e63c27f150c00e9566cd976b2a12def2c4e96c590095ac084",
-  "line_count": 602,
-  "size_bytes": 30785,
+  "sha256": "b761d8b8cd18746840a9088694fcd9e735122567d26354fa19da8f6db609815c",
+  "line_count": 626,
+  "size_bytes": 31615,
   "headings": [],
   "imports": [
     "__future__",

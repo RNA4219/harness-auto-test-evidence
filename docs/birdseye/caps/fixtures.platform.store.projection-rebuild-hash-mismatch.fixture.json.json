@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/store/projection-rebuild-hash-mismatch/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "23904906d20c992b37af2d3577a0f2f2f769788b590bcfa2a83b40211f712d06",
+  "line_count": 53,
+  "size_bytes": 1896,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

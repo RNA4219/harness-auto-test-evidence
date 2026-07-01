@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/plugin-sandbox/crash-isolated/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ce016d84269c0b9538a13da75da323b8bb29e3ee61f153afd1bb0519259e4e4f",
+  "line_count": 18,
+  "size_bytes": 673,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

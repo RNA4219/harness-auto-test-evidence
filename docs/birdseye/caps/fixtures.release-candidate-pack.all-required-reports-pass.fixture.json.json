@@ -1,0 +1,23 @@
+{
+  "path": "fixtures/release-candidate-pack/all-required-reports-pass/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6e4e61e97de2f8148a4e9ded1b1514e341e9b01c330152318c44baf7e63ace11",
+  "line_count": 32,
+  "size_bytes": 3455,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "store",
+    "test"
+  ]
+}

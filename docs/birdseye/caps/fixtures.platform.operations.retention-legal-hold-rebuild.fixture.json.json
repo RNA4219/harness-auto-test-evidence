@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/operations/retention-legal-hold-rebuild/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8b1fb9399d35717b66c731de18e0cddfde949d9b0c8b94624d521df992ce8c8a",
+  "line_count": 77,
+  "size_bytes": 2858,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/platform_store_schema.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1e6814c6ea6ec13131423d287610fc3fd0be81dcdb89610b940a947056b624e5",
+  "line_count": 283,
+  "size_bytes": 12001,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

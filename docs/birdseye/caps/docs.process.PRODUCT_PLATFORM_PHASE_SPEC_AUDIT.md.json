@@ -1,0 +1,30 @@
+{
+  "path": "docs/process/PRODUCT_PLATFORM_PHASE_SPEC_AUDIT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "c0c56e156a8b9f83ab342fbaabf2683974c58b02028bc4f4403076b0bf6240ac",
+  "line_count": 98,
+  "size_bytes": 6725,
+  "headings": [
+    "# Product Platform Phase Specification Audit",
+    "## 1. Audit Method",
+    "## 2. Findings",
+    "## 3. Coverage After Fix",
+    "## 4. No-Go Checklist",
+    "## 5. Physical Specification Closure",
+    "## 6. Residual Implementation Validation"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "coverage",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "store"
+  ]
+}

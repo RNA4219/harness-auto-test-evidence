@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/policy/regulated-unsigned-plugin-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6b0bff9df8e94e58de10fa9a07a12606f7237dbd2eddbae8d61856e9846359ce",
+  "line_count": 46,
+  "size_bytes": 1639,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

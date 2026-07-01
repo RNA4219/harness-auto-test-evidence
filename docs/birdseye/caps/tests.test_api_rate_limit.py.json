@@ -2,9 +2,9 @@
   "path": "tests/test_api_rate_limit.py",
   "role": "test",
   "kind": "py",
-  "sha256": "5c62337995df44015ee65ead4be5ac7370b808715d27726f98fe45dcc08bbd7a",
-  "line_count": 103,
-  "size_bytes": 3981,
+  "sha256": "c4a1d3d54091376574c67a76a978c277fe292321fa36fb5a52c9f48e17d8c915",
+  "line_count": 102,
+  "size_bytes": 4125,
   "headings": [],
   "imports": [
     "__future__",

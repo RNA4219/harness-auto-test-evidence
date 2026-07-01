@@ -1,0 +1,18 @@
+{
+  "path": "src/hate/evaluation/regression_engine.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "6a62fdf33584d0daeb7dc39c0ee19f5085a6cecfed87868073402ee98cadb022",
+  "line_count": 131,
+  "size_bytes": 5368,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "store"
+  ]
+}

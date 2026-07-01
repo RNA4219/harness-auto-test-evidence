@@ -2,9 +2,9 @@
   "path": "tests/test_entitlement.py",
   "role": "test",
   "kind": "py",
-  "sha256": "b367ec8d1669989b495ba7fc39125291e0fa9614b282828f2f9e7f0cf3d2e23f",
-  "line_count": 97,
-  "size_bytes": 3641,
+  "sha256": "16ab261ce752a5d334b2ae9f8e6c763a241a97db67814c852a9100ae07c1836f",
+  "line_count": 96,
+  "size_bytes": 3779,
   "headings": [],
   "imports": [
     "__future__",

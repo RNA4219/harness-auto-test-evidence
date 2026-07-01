@@ -2,14 +2,15 @@
   "path": "docs/process/IMPLEMENTATION_LEDGER.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "c0109e2f6c07d18ee84c3c0d48d19d5fe4021e74bc71be24553f086ab9fc25ec",
-  "line_count": 74,
-  "size_bytes": 3552,
+  "sha256": "d6d05c3cdecd6a3df799ca76a469514f99700b41c532347cdc9721aacf82c5b1",
+  "line_count": 94,
+  "size_bytes": 5427,
   "headings": [
     "# Implementation Ledger",
     "## Packet Ledger",
     "## Completed Packet Details",
     "### GLM-W00-refactor-p0a (go)",
+    "### GLM-W01..W06 foundation validators (go)",
     "### REAL-REPO-TRIAL-20260630-01 (go)"
   ],
   "imports": [],
@@ -19,7 +20,7 @@
     "adapter",
     "artifact",
     "coverage",
-    "epic",
+    "fixture",
     "schema",
     "test"
   ]

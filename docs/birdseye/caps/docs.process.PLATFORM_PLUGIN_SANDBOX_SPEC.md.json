@@ -1,0 +1,27 @@
+{
+  "path": "docs/process/PLATFORM_PLUGIN_SANDBOX_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "b54b50f929bfee9ccf9f96f90a14c88ba4fdd7c3d2f012eda43b465b3e12619f",
+  "line_count": 87,
+  "size_bytes": 2445,
+  "headings": [
+    "# Platform Plugin Sandbox Specification",
+    "## 1. Execution Modes",
+    "## 2. Sandbox Inputs",
+    "## 3. Resource Limits",
+    "## 4. Output Contract",
+    "## 5. Failure Isolation",
+    "## 6. Required Fixtures"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

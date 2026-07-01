@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_platform_plugin_sandbox.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "0621a980e93e99c87c8d0d9f00e8a609fa1d5867577735e2cb577540502057e0",
+  "line_count": 90,
+  "size_bytes": 3379,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.plugins.sandbox",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/plugins/sandbox.py"
+  ],
+  "tags": [
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

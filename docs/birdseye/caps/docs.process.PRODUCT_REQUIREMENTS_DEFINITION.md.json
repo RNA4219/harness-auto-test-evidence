@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "7100166eb1bc32b4ae0773e7e9dbc0e2b996ae91876960bc3145c79cd50e6899",
-  "line_count": 699,
-  "size_bytes": 57431,
+  "sha256": "85c8e8844a35c1c7c07227c31dadef5b70de7b0dbd940bc9cf0424b3f68ef3b5",
+  "line_count": 715,
+  "size_bytes": 58255,
   "headings": [
     "# 製品要件定義書",
     "## 1. 目的",
@@ -61,6 +61,7 @@
     "qeg",
     "release",
     "schema",
+    "store",
     "test",
     "workflow"
   ]

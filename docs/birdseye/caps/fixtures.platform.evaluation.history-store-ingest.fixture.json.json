@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/evaluation/history-store-ingest/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a1776c7cf791012c25b0dce5006961b9d5ab12274661fd3e945d18ab347d4750",
+  "line_count": 32,
+  "size_bytes": 1055,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

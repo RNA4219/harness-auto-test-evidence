@@ -2,9 +2,9 @@
   "path": "docs/process/SCHEMA_REGISTRY_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "a54b9d78f434a00f39c67254adb34ab5450f9c91be533de58fd97895f007652b",
-  "line_count": 191,
-  "size_bytes": 7991,
+  "sha256": "ec4011b6d045043a3fa54e517d89a587c68b497a1d2231112455c0cf68683279",
+  "line_count": 200,
+  "size_bytes": 8632,
   "headings": [
     "# Schema Registry Contract",
     "## 1. 目的",

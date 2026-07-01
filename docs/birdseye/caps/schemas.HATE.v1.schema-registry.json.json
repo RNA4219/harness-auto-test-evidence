@@ -2,19 +2,18 @@
   "path": "schemas/HATE/v1/schema-registry.json",
   "role": "schema",
   "kind": "json",
-  "sha256": "a20882a0aa324478abb110061e1ae78c057838e74006fc2725c5b4cf319b7dac",
-  "line_count": 427,
-  "size_bytes": 12635,
+  "sha256": "b59686c3033a51828e5111c4e6189018689f23a0c05ae6359b7f8ed6116df85f",
+  "line_count": 811,
+  "size_bytes": 25646,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
-    "adapter",
-    "api",
     "artifact",
     "coverage",
     "schema",
+    "security",
     "store",
     "test"
   ]

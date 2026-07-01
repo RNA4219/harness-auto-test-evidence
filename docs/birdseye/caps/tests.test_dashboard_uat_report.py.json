@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_dashboard_uat_report.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "7d85e946eecc28bb6beac8110001f6666648aedb5ec48e633cec70e9e037be19",
+  "line_count": 101,
+  "size_bytes": 3467,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.dashboard",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

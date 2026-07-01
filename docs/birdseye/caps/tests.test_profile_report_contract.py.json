@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_profile_report_contract.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "a808f768f602836deb4042c9ac199b28f6969c80ca07bb2317d3fbc1f0a485c0",
+  "line_count": 80,
+  "size_bytes": 3195,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.profile",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/profile.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

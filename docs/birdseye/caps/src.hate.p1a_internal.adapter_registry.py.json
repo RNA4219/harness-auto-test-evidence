@@ -2,9 +2,9 @@
   "path": "src/hate/p1a_internal/adapter_registry.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "ea9ea233c3ef8e9544a31ea454d226dece492895db06a8629772cd4941c6e3ff",
-  "line_count": 161,
-  "size_bytes": 7485,
+  "sha256": "e3a02296a7b683235e52b9295ce360cf0ab2ad0d94448fc8d07579f6e1b694bd",
+  "line_count": 162,
+  "size_bytes": 7539,
   "headings": [],
   "imports": [
     "__future__",

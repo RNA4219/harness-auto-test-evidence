@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/platform/rbac/auditor-read-only/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f971e56f4cc9c839817c7ce2d8afa9bc0fa136bde1eb2edc038e1b9ff2392c54",
+  "line_count": 17,
+  "size_bytes": 493,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

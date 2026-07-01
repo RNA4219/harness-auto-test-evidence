@@ -2,9 +2,9 @@
   "path": "src/hate/profile.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "0a0a288f292769e3a43913a1f9e97bfb41447eaa4014b6b24a1cc66ecf1717a5",
-  "line_count": 238,
-  "size_bytes": 9022,
+  "sha256": "71efdebd2d87a568048c7ec45dce422446d9f31544deb82201dd4f16f13e7557",
+  "line_count": 298,
+  "size_bytes": 11059,
   "headings": [],
   "imports": [
     ".p0a_io",
@@ -19,10 +19,11 @@
     "src/hate/p0a_io.py"
   ],
   "tags": [
+    "adapter",
     "artifact",
     "coverage",
+    "qeg",
     "release",
-    "schema",
     "test"
   ]
 }

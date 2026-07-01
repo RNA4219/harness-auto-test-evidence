@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/platform/benchmark/stale-cache-distribution/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "41068bcb16a52ef62a3b494e5af9f41dded05ec97081d0dbe7409170f01035d6",
+  "line_count": 11,
+  "size_bytes": 959,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

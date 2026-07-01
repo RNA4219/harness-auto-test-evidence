@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/rbac/raw-artifact-approval/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bc895c0e6ad6c59d6ccf985537b51e68dbff1b099b1904cc16f9e787bdfa5729",
+  "line_count": 25,
+  "size_bytes": 797,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

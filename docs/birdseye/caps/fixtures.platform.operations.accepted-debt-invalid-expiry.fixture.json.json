@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/platform/operations/accepted-debt-invalid-expiry/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e9669784106f4cbf949faafc7c9f3cabb92772324c4e0b0a36a8d65aa79adfaa",
+  "line_count": 32,
+  "size_bytes": 1106,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

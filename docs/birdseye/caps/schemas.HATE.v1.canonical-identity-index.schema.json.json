@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/canonical-identity-index.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "b9c61ce04695596a60f2c0edb7a55e4e30ff3f577e46fc8582e429d4413bb509",
+  "line_count": 15,
+  "size_bytes": 636,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}
