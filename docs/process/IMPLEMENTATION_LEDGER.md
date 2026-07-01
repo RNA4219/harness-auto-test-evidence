@@ -2,7 +2,7 @@
 intent_id: INT-HATE-IMPLEMENTATION-LEDGER-001
 owner: RNA4219
 status: active
-last_reviewed_at: 2026-06-30
+last_reviewed_at: 2026-07-02
 next_review_due: 2026-07-30
 ---
 
@@ -15,12 +15,12 @@ GLM worker packet execution status per GLM_IMPLEMENTATION_DISPATCH_PACK.md Secti
 | Worker packet | Status | GLM attempts | Codex repair | Evidence report | UAT result | Notes |
 |---|---|---:|---|---|---|---|
 | GLM-W00-refactor-p0a | go | 1 | no | tests passed | pass | P0A split verified: p1a_support.py 914→98 lines, p1a_internal package 9 modules all under thresholds |
-| GLM-W01-adapter-sdk | pending | 0 | no | adapter-conformance-report.json | not_run | blocked by dispatch - requires GLM-W00 completion verified |
-| GLM-W02-junit-corpus | pending | 0 | no | adapter-conformance-report.json | not_run | blocked by HATE-PG-001A |
-| GLM-W03-coverage-corpus | pending | 0 | no | adapter-conformance-report.json | not_run | blocked by HATE-PG-001A |
-| GLM-W04-static-contract-mutation-corpus | pending | 0 | no | adapter-conformance-report.json | not_run | blocked by HATE-PG-001A |
-| GLM-W05-envelope-validator | pending | 0 | no | schema-validation-report.json | not_run | blocked by EPIC-001 completion |
-| GLM-W06-source-ref-validator | pending | 0 | no | schema-validation-report.json | not_run | blocked by EPIC-001 completion |
+| GLM-W01-adapter-sdk | go | 0 | yes | adapter-conformance-report.json | pass | Adapter manifest validator emits schema-aligned conformance report with traceable entries and manifest findings |
+| GLM-W02-junit-corpus | go | 0 | yes | adapter-conformance-report.json | pass | Adapter corpus conformance covers test-results dialect family including JUnit and runner dialects |
+| GLM-W03-coverage-corpus | go | 0 | yes | adapter-conformance-report.json | pass | Adapter corpus conformance covers LCOV, Cobertura, JaCoCo, and coverage.py fixture expectations |
+| GLM-W04-static-contract-mutation-corpus | go | 0 | yes | adapter-conformance-report.json | pass | Adapter corpus conformance covers static, contract, mutation, and artifact families |
+| GLM-W05-envelope-validator | go | 0 | yes | schema-validation-report.json | pass | Registry-driven envelope validation covers unknown/deprecated field policy and deterministic rejection classes |
+| GLM-W06-source-ref-validator | go | 0 | yes | schema-validation-report.json | pass | Cross-record sourceRef/hash violations are embedded in schema-validation-report cross_record section |
 | REAL-REPO-TRIAL-20260630-01 | go | 0 | no | docs/process/REAL_REPO_TRIALS.md | pass | HATE P0a self-application against agent-gatefield, agent-taskstate, code-to-gate, shipyard-cp, manual-bb-test-harness |
 
 ## Completed Packet Details
@@ -55,6 +55,26 @@ git diff --check                             # ✓ clean
 **Memory saved**: `hate-p1a-support-split-complete.md`
 
 **Next dispatch ready**: GLM-W01-adapter-sdk unblocked
+
+### GLM-W01..W06 foundation validators (go)
+
+**Completion date**: 2026-07-02
+
+**Work performed**:
+- Adapter SDK manifest validation now emits `adapter-conformance-report.json` with the schema-required envelope fields, readiness effect, sourceRefs, and manifest finding metadata.
+- Adapter corpus conformance validates required dialect families, fixture counts, stale reviews, unsupported claims, and expected output refs.
+- Schema registry entries declare `unknown_field_policy` and `deprecated_fields`.
+- Envelope validation dispatches through `schema-registry.json` and reports unknown/deprecated field policy results.
+- Cross-record sourceRef/hash violations are included under `schema-validation-report.json.cross_record.violations[]`.
+
+**Acceptance commands run**:
+```powershell
+uv run pytest tests/test_adapter_manifest_schema.py tests/test_adapter_corpus_manifest.py tests/test_schema_validator.py tests/test_cross_record_validator.py -q  # ✓ passed
+uv run pytest -q                                                                                                      # ✓ 1449 passed
+uv run python -m compileall src tests                                                                                 # ✓ passed
+uv run python tools/codemap/update.py                                                                                 # ✓ 1298 nodes / 426 edges
+git diff --check                                                                                                      # ✓ clean
+```
 
 ### REAL-REPO-TRIAL-20260630-01 (go)
 

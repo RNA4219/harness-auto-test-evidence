@@ -97,6 +97,17 @@ the gap, not the latest implementation state.
 | `ADAPTER_CORPUS_MANIFEST.md` | corpus size, fixture generation, dialect coverage, stale checks | HATE-GAP-007, HATE-GAP-014 |
 | `PRODUCT_E2E_UAT_CONTRACT.md` | end-to-end journeys and product UAT evidence | HATE-GAP-020 |
 | `WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md` | Task Seed, acceptance, Evidence, Birdseye freshness, workflow plugin, completion governance | HATE-GAP-021..026 |
+| `PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md` | post-PoC evaluation, operations, extension, consumption, and scale requirements | Platform Phase |
+| `PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md` | record types, state machines, API/read-model, score, cache, scheduler, artifact store details | Platform Phase |
+| `PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md` | implementation packets and UAT gates for the five platform phases | Platform Phase |
+| `PRODUCT_PLATFORM_PHASE_SPEC_AUDIT.md` | gap audit for NFR, RBAC, retention, baseline governance, plugin trust, recovery, and scale capacity | Platform Phase |
+| `PLATFORM_STORE_SCHEMA_SPEC.md` | physical store tables, indexes, event ordering, migration, backup/restore | Platform Phase |
+| `PLATFORM_POLICY_CONFIG_SPEC.md` | policy JSON shape, profile, threshold, plugin trust, retention, scheduler budget | Platform Phase |
+| `PLATFORM_RBAC_MATRIX_SPEC.md` | role/tenant/resource/action authorization and raw artifact access | Platform Phase |
+| `PLATFORM_DASHBOARD_WIREFRAME_SPEC.md` | dashboard view inventory, state matrix, and view model contracts | Platform Phase |
+| `PLATFORM_BENCHMARK_FIXTURE_SPEC.md` | deterministic capacity fixture generation and degradation modes | Platform Phase |
+| `PLATFORM_CONNECTOR_SYNC_SPEC.md` | GitHub/Slack/tracker/webhook sync payloads, state, and failure handling | Platform Phase |
+| `PLATFORM_PLUGIN_SANDBOX_SPEC.md` | detector plugin execution modes, resource limits, trust enforcement, failure isolation | Platform Phase |
 
 ## 3.1 Specification Closure Status
 
@@ -107,6 +118,21 @@ the gap, not the latest implementation state.
 
 This status means ambiguity is closed enough for worker dispatch. It does not
 mean the product capability is accepted or product-ready.
+
+## 3.2 Platform Phase Specification Status
+
+The post-PoC platform phases are now specified as product requirements and
+detail specifications. They are not implemented or accepted until the packet
+ledger in `PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md` has code, schemas,
+fixtures, tests, UAT evidence, and Birdseye updates.
+
+| Phase | Requirement status | Specification status | Implementation status |
+|---|---|---|---|
+| 評価基盤 | `specified` by `PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md` | `specified` by `PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md` | `not_started` |
+| 運用基盤 | `specified` by `PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md` | `specified` by `PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md` | `not_started` |
+| 拡張基盤 | `specified` by `PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md` | `specified` by `PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md` | `not_started` |
+| 利用面 | `specified` by `PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md` | `specified` by `PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md` | `not_started` |
+| 大規模化 | `specified` by `PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md` | `specified` by `PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md` | `not_started` |
 
 ## 4. No-Go Rules
 

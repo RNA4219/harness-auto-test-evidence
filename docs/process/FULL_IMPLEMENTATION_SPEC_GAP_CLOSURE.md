@@ -46,7 +46,7 @@ Birdseye freshness / completion governance は
 | Playwright | trace/screenshot/video/log の安全検査が抽象的 | artifact分類、quarantine、test_result添付を定義 | unsafe traceがsummary/QEG/exportから除外される |
 | Pact/Stryker | contract/mutation evidence の採用条件が未固定 | record_type、AETE影響、QEG nodeを定義 | pact/stryker fixtureが evidence node と score reason になる |
 | AETE | score式はあるが、入力signalとprofile差分が曖昧 | signal source、profile inheritance、dimension reasonを定義 | 同一bundle/profileで deterministic |
-| Profile | default/strict/releaseの差分が未実装寄り | DQ/soft_gap/manual policyの差分表を固定 | `profile-report.json` と drift test |
+| Profile | profile差分がreport contractとして未固定 | DQ/soft_gap/AETE/manual/export policyの差分表を固定 | `profile-report.json` schema、registry、drift test |
 | Schema | JSON Schema運用の合否基準が薄い | producer schema、migration、unknown field policyを実装単位化 | schema validationがCIで必須 |
 | Storage | local artifact以上の履歴/DBが未定義 | local storeとhosted storeの境界を定義 | run/bundle/historyが再読込可能 |
 | Hosted API | read model envelopeだけでAPI仕様が薄い | resource、filter、authz、error、stalenessを定義 | API fixture / contract test |
@@ -214,10 +214,13 @@ Profile結果は `profile-report.json` に出す。
 ```yaml
 profile_report:
   profile: string
-  inherited_from: string | null
+  effective_chain: array
   effective_rules: object
-  changed_from_parent: array
-  dq_policy_hash: string
+  effective_policies: object
+  policy_table: object
+  rule_diffs: array
+  drift_checks: array
+  profile_hash: string
   deterministic: true
 ```
 

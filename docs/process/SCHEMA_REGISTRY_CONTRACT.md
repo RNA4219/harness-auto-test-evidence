@@ -63,6 +63,15 @@ HATE の JSON / NDJSON / bundle / report schema を、実装者・adapter 作者
 | `precheck_decision` | yes | `schemas/HATE/v1/precheck-decision.schema.json` |
 | `audit_record` | yes | `schemas/HATE/v1/audit-record.schema.json` |
 | `aete_score` | P1a | `schemas/HATE/v1/aete-score.schema.json` |
+| `aete_signal_report` | P1a | `schemas/HATE/v1/aete-signal-report.schema.json` |
+| `profile_report` | P1a | `schemas/HATE/v1/profile-report.schema.json` |
+| `doctor_report` | P1a | `schemas/HATE/v1/doctor-report.schema.json` |
+| `adapter_registry` | P1a | `schemas/HATE/v1/adapter-registry.schema.json` |
+| `adapter_capability_manifest` | P1a | `schemas/HATE/v1/adapter-capability-manifest.schema.json` |
+| `adapter_conformance` | P1a | `schemas/HATE/v1/p1a-adapter-conformance.schema.json` |
+| `artifact_resolution` | P1a | `schemas/HATE/v1/artifact-resolver-map.schema.json` |
+| `canonical_identity_index` | P1a | `schemas/HATE/v1/canonical-identity-index.schema.json` |
+| `retry_aggregation` | P1a | `schemas/HATE/v1/retry-aggregation.schema.json` |
 | `risk_debt` | P1a | `schemas/HATE/v1/risk-debt.schema.json` |
 
 Bundle / report schema:

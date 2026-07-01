@@ -1196,7 +1196,7 @@ product-grade spec は次を固定する。
 - adapter 対応が 1 happy path fixture だけで、dialect / negative / conformance を持たない
 - fixture expected を手書きし、実行コードから再生成できない
 - user-facing failure に stable error code と remediation がない
-- `test_skip_detected`, `mock_abuse_detected`, `assertion_quality`, `implementation_test_coupling`, `risk_without_oracle`, `coverage_without_evidence`, `manual_review_required` の信号が未実装または未解決である
+- `test_skip_detected`, `mock_abuse_detected`, `assertion_quality`, `implementation_test_coupling`, `risk_without_oracle`, `coverage_without_evidence`, `manual_review_required` の信号が期待artifactに出力されない、または未解決のまま残る
 - focused test marker、production code の test/fixture coupling、high/critical risk without oracle、coverage-only required risk、behavior-under-test mock abuse が存在する
 - `manual_review_required` を HATE が自動生成した review record で解消している
 - QEG verdict、Shipyard verdict、RanD verdict、manual-bb verdict を HATE 側で上書きしている
