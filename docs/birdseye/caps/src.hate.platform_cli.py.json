@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/platform_cli.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "fd25f3f46f7b7ae8d565297d8ec638f20d8c3a5922a5f43406c3065faaf0b7af",
+  "line_count": 304,
+  "size_bytes": 11538,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.evaluation",
+    "hate.p2p3",
+    "hate.policy_config",
+    "html",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p2p3.py",
+    "src/hate/policy_config.py"
+  ],
+  "tags": [
+    "release",
+    "schema",
+    "store"
+  ]
+}

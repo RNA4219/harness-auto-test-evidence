@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_platform_cli.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "831152bb58b651a803d8e4a507a5b4aef3228880b3ab0e7bd2638d501adfcf5c",
+  "line_count": 151,
+  "size_bytes": 5335,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.cli",
+    "hate.platform_cli",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py",
+    "src/hate/platform_cli.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

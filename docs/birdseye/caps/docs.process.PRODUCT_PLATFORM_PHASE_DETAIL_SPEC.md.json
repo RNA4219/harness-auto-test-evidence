@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "886851d557c1ecf849ed80029dc17a51d562054f2be7c15f5a859168a3762dde",
-  "line_count": 851,
-  "size_bytes": 27292,
+  "sha256": "ab6f07096f75151b9ca1c24b94a1e2925c373efcc8a86ea98a61f4657ef7b2a4",
+  "line_count": 894,
+  "size_bytes": 30181,
   "headings": [
     "# Product Platform Phase Detail Specification",
     "## 1. Canonical Record Types",
@@ -32,6 +32,8 @@
     "### 4.5 Plugin Compatibility and Trust",
     "## 5. Phase D: Consumption Surfaces",
     "### 5.1 CLI",
+    "### 5.1.1 Platform CLI Minimum Contract",
+    "### 5.1.2 Product-Grade Recalculation Contract",
     "### 5.2 Read Model Resources",
     "### 5.3 JSON API",
     "### 5.3.1 RBAC Matrix",
@@ -43,9 +45,7 @@
     "### 6.2 Parallel Execution",
     "### 6.3 Incremental Scan",
     "### 6.4 Roster Scheduler",
-    "### 6.5 Artifact Store",
-    "### 6.6 Store Recovery and Capacity",
-    "### 6.7 Required Fixtures"
+    "### 6.5 Artifact Store"
   ],
   "imports": [],
   "links": [],

@@ -2,9 +2,9 @@
   "path": "src/hate/p0a_schema.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "2a87a9e8d62a15e8765d27648a62749c5a6bdc31c8aff0a5b88fb600e8207e89",
-  "line_count": 177,
-  "size_bytes": 7665,
+  "sha256": "5ff552beebd679b38ada7209fba1d77f922e172a2381c8015a9dd96aa4da1566",
+  "line_count": 182,
+  "size_bytes": 7959,
   "headings": [],
   "imports": [
     ".p0a_constants",

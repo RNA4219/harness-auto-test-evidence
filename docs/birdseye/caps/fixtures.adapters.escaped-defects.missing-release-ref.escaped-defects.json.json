@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/adapters/escaped-defects/missing-release-ref/escaped-defects.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4b687628492bcd7e2b4bcdcb65647baff973106853c69316e2034924907018e7",
+  "line_count": 11,
+  "size_bytes": 250,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "release"
+  ]
+}

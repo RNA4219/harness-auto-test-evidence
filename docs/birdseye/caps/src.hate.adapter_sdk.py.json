@@ -2,9 +2,9 @@
   "path": "src/hate/adapter_sdk.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "cc6b056d4763bc3332971d364604ae0b054cfa3b81c779f65f3bd14ae953c551",
-  "line_count": 114,
-  "size_bytes": 3196,
+  "sha256": "3c4a419571420712217e06de6970bd1fcc3c12fa2136f5889394fece0e130ddd",
+  "line_count": 115,
+  "size_bytes": 3225,
   "headings": [],
   "imports": [
     "__future__",

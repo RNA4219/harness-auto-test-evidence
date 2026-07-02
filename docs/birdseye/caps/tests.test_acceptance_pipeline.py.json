@@ -2,9 +2,9 @@
   "path": "tests/test_acceptance_pipeline.py",
   "role": "test",
   "kind": "py",
-  "sha256": "6327cd62968a1f3e1fc83155cb5a41b518d46f8f2acd7cf23a206498b0503b3d",
-  "line_count": 162,
-  "size_bytes": 5461,
+  "sha256": "47541c83945cda75326d940587b7ffd236ed87cd9ed504628cbb6b18aa724d15",
+  "line_count": 165,
+  "size_bytes": 5695,
   "headings": [],
   "imports": [
     "__future__",

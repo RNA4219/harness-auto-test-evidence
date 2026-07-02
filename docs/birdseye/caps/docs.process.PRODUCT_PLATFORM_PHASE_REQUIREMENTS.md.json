@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "c3ed9987c64e0957baaf32a32996f54dcce94f3345447030b9336bbc6c96f8d4",
-  "line_count": 274,
-  "size_bytes": 21293,
+  "sha256": "376706d340580a438087c459c542c07077c6ca7a164caaefe2a0b017863483bb",
+  "line_count": 294,
+  "size_bytes": 23859,
   "headings": [
     "# Product Platform Phase Requirements",
     "## 1. Product Principles",
@@ -26,6 +26,7 @@
     "### 7.2 Non-Functional Requirements",
     "## 8. Acceptance Criteria Matrix",
     "## 9. No-Go Rules",
+    "## 9.1 Immediate Platform Closure Requirements",
     "## 10. Traceability"
   ],
   "imports": [],

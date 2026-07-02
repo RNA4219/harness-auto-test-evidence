@@ -2,9 +2,9 @@
   "path": "docs/process/BLUEPRINT.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "bf2ce194e66b847db1897a33eade5826e641f71870849befc4bc1c79285ad26a",
-  "line_count": 557,
-  "size_bytes": 32710,
+  "sha256": "f0d1156e02b7e5070fcfd938d953c9bc0fad82300d8e365f06d4313a6fc7599f",
+  "line_count": 558,
+  "size_bytes": 32944,
   "headings": [
     "# BluePrint",
     "## 1. 背景と問題定義",

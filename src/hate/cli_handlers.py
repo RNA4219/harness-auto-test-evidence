@@ -16,6 +16,18 @@ from .p0b import ExportError, export_qeg
 from .p1a import TrustError, compare_trust, doctor_trust, evaluate_trust, explain_trust, recommend_trust, replay_trust
 from .p1b import WorkflowError, generate_workflow_mapping
 from .p2p3 import ProductError, generate_product_readiness, query_product_read_model, serve_product_read_model
+from .platform_cli import (
+    PlatformCliError,
+    platform_compare,
+    platform_debt,
+    platform_findings,
+    platform_history,
+    platform_policy_explain,
+    platform_report_html,
+    platform_review,
+    platform_run,
+    platform_serve,
+)
 from .product_grade import ProductGradeError, generate_product_grade_reports
 from .release import RELEASE_PACK_REQUIRED_REPORT_TYPES, assemble_release_candidate_pack
 from .store_legacy import StoreError, ingest_local_store, query_local_store, read_history_index
@@ -369,6 +381,19 @@ def dispatch_cli(args: argparse.Namespace, parser: argparse.ArgumentParser) -> i
         print(json.dumps(result, ensure_ascii=False))
         return 0
 
+    if args.command == "platform":
+        try:
+            result = _dispatch_platform(args)
+        except (PlatformCliError, RealRepoHistoryStoreError, OSError, ValueError, json.JSONDecodeError) as exc:
+            print(f"HATE-E-PLATFORM: {exc}", file=sys.stderr)
+            return getattr(exc, "exit_code", 2)
+        except KeyboardInterrupt:
+            return 0
+
+        if result is not None:
+            print(json.dumps(result, ensure_ascii=False))
+        return 0
+
     if args.command == "validation" and args.validation_command == "cycles":
         try:
             result = run_validation_cycles(fixture_path=args.fixture, out_dir=args.out)
@@ -384,6 +409,38 @@ def dispatch_cli(args: argparse.Namespace, parser: argparse.ArgumentParser) -> i
 
     parser.error(f"unknown command: {args.command}")
     return 1
+
+
+def _dispatch_platform(args: argparse.Namespace) -> dict[str, Any] | None:
+    if args.platform_command == "run":
+        return platform_run(args.roster, args.out, source_version=args.source_version)
+    if args.platform_command == "history":
+        return platform_history(
+            args.store,
+            repo_id=args.repo_id,
+            suite_id=args.suite_id,
+            source_version=args.source_version,
+            status=args.status,
+            since=args.since,
+            until=args.until,
+            limit=args.limit,
+        )
+    if args.platform_command == "compare":
+        return platform_compare(args.base, args.head, out_path=args.out)
+    if args.platform_command == "findings":
+        return platform_findings(args.input)
+    if args.platform_command == "debt":
+        return platform_debt(args.input)
+    if args.platform_command == "review":
+        return platform_review(args.input)
+    if args.platform_command == "policy" and args.platform_policy_command == "explain":
+        return platform_policy_explain(args.policy, out_path=args.out, profile=args.profile)
+    if args.platform_command == "report" and args.platform_report_command == "html":
+        return platform_report_html(args.input, args.out)
+    if args.platform_command == "serve":
+        platform_serve(args.readiness, args.host, args.port)
+        return None
+    raise PlatformCliError(f"unknown platform command: {args.platform_command}")
 
 
 def _parse_cli_filters(values: list[str]) -> dict[str, str]:

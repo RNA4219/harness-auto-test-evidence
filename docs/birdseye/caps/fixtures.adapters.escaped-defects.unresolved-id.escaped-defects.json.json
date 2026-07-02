@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/adapters/escaped-defects/unresolved-id/escaped-defects.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "27edddb5aa1127582ae817c29a79bcfec7dcf14208214cce528a0ee837300379",
+  "line_count": 12,
+  "size_bytes": 296,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

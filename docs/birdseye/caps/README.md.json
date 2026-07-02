@@ -2,9 +2,9 @@
   "path": "README.md",
   "role": "navigation",
   "kind": "md",
-  "sha256": "ec4403538eb9425c28f6a5c39c94cd10e531f4b02bd121974c56763490e89973",
-  "line_count": 128,
-  "size_bytes": 8337,
+  "sha256": "88a9de7bd0435ffcfb0cf71cb447734f4970fb653e25983a13b72ad2a12a98c7",
+  "line_count": 132,
+  "size_bytes": 9074,
   "headings": [
     "# harness-auto-test-evidence",
     "## 1. 役割",
@@ -117,7 +117,6 @@
     "docs/research/deep-research-report.md"
   ],
   "tags": [
-    "adapter",
     "api",
     "artifact",
     "birdseye",

@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/evidence-strength.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "b63940f1cb23c9c2865dadf806a4b8da7b9da742e6cd2b4798ca049d94350bbe",
+  "line_count": 48,
+  "size_bytes": 1598,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

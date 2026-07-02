@@ -122,6 +122,14 @@ Do not start dashboard rendering before read model resources exist.
 Do not start plugin sandbox before manifest and policy resolution are stable.
 Do not start scheduler before cache key and run identity are stable.
 
+## 7.1 Immediate Dispatch: Platform CLI and Product-Grade Gate
+
+| Packet ID | Requirements | Scope | Output | Tests | UAT Gate |
+|---|---|---|---|---|---|
+| PPH-PKT-UX-001A-platform-cli-wrapper | PPH-UX-CLI-001..006 | Add `hate platform run/history/compare/findings/debt/review/policy/report/serve` as an orchestration layer over canonical reports | CLI handlers + projection reports | platform CLI parser/handler tests | commands exist and preserve underlying report semantics |
+| PPH-PKT-GRADE-001-product-grade-recalc | PPH-GRADE-001..002 | Recalculate product-grade status from docs, implementation refs, tests, real-data validation, QEG smoke, and residual blockers | product-grade evidence summary with implementation matrix | product-grade status tests | summary is not hard-coded `no_go`; residual blockers keep product_ready false |
+| PPH-PKT-DOCS-001-state-freshness | PPH-GRADE-001 | Refresh README state and ledger with current test count, real-repo validation, and platform residuals | README + ledger update | docs link/status test or grep check | stale `93 tests pass` and old product-grade wording absent |
+
 ## 8. Definition of Done
 
 For each packet:

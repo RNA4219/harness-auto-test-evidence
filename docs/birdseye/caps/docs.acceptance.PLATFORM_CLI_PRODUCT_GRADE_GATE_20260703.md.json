@@ -1,0 +1,26 @@
+{
+  "path": "docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "d1cfb4b41f5295b7274fee0e3e4b20bca5d945b2cf83934147427c48e21b8fd6",
+  "line_count": 79,
+  "size_bytes": 3244,
+  "headings": [
+    "# Platform CLI and Product-Grade Gate Evidence 2026-07-03",
+    "## Scope",
+    "## Five-Tool Validation Chain",
+    "## HATE Evidence",
+    "## Product-Grade Residual Blockers",
+    "## Acceptance"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "fixture",
+    "qeg",
+    "release",
+    "test"
+  ]
+}

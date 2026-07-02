@@ -2,12 +2,13 @@
   "path": "src/hate/p0a.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "94f207b29dd971a039a0ebc015d1610bf8ca02ed31947dce9d110b9de9e38fff",
-  "line_count": 224,
-  "size_bytes": 10178,
+  "sha256": "cca63a050d9750f1fe09f702dd97db6a5b563bfe5ed463494ec4700a7060aa2d",
+  "line_count": 261,
+  "size_bytes": 11672,
   "headings": [],
   "imports": [
     ".",
+    ".p0a_evidence_strength",
     ".p0a_support",
     ".profile",
     "__future__",
@@ -18,6 +19,7 @@
   ],
   "links": [],
   "depends_on": [
+    "src/hate/p0a_evidence_strength.py",
     "src/hate/p0a_support.py",
     "src/hate/profile.py"
   ],

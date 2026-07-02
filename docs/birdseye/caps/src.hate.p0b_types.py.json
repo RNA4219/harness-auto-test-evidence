@@ -2,9 +2,9 @@
   "path": "src/hate/p0b_types.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "2adb70527a9494f55ae9734fe6d808b19d74fbbb355fec61b7a777a33a11e77b",
-  "line_count": 40,
-  "size_bytes": 958,
+  "sha256": "0f6a73ed11e81d0d03a682f16cfc97e8c880f3c01c2156f01b97101b904a124f",
+  "line_count": 44,
+  "size_bytes": 1138,
   "headings": [],
   "imports": [
     "__future__",

@@ -200,6 +200,55 @@ def build_parser() -> argparse.ArgumentParser:
     real_repo_query.add_argument("--until", default=None, help="Inclusive started_at upper bound.")
     real_repo_query.add_argument("--limit", type=int, default=100, help="Maximum returned entries.")
 
+    platform = subparsers.add_parser("platform", help="Operate HATE platform workflows from canonical reports.")
+    platform_subparsers = platform.add_subparsers(dest="platform_command", required=True)
+
+    platform_run = platform_subparsers.add_parser("run", help="Run a real-repo roster through the platform entrypoint.")
+    platform_run.add_argument("--roster", required=True, type=Path, help="JSON roster containing repositories[].")
+    platform_run.add_argument("--out", required=True, type=Path, help="Output directory for platform run reports.")
+    platform_run.add_argument("--source-version", default=None, help="Source version for generated records.")
+
+    platform_history = platform_subparsers.add_parser("history", help="Query the platform real-repo history store.")
+    platform_history.add_argument("--store", required=True, type=Path, help="Local real-repo history store directory.")
+    platform_history.add_argument("--repo-id", default=None, help="Filter by repository id.")
+    platform_history.add_argument("--suite-id", default=None, help="Filter by suite id.")
+    platform_history.add_argument("--source-version", default=None, help="Filter by source version.")
+    platform_history.add_argument("--status", choices=["pass", "hold", "blocked"], default=None, help="Filter by run status.")
+    platform_history.add_argument("--since", default=None, help="Inclusive started_at lower bound.")
+    platform_history.add_argument("--until", default=None, help="Inclusive started_at upper bound.")
+    platform_history.add_argument("--limit", type=int, default=100, help="Maximum returned entries.")
+
+    platform_compare = platform_subparsers.add_parser("compare", help="Compare two platform report JSON files.")
+    platform_compare.add_argument("--base", required=True, type=Path, help="Base report JSON.")
+    platform_compare.add_argument("--head", required=True, type=Path, help="Head report JSON.")
+    platform_compare.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+
+    for name, help_text in (
+        ("findings", "List findings from a platform report file or directory."),
+        ("debt", "List risk debt items from a platform report file or directory."),
+        ("review", "List manual review requests from a platform report file or directory."),
+    ):
+        sub = platform_subparsers.add_parser(name, help=help_text)
+        sub.add_argument("--input", required=True, type=Path, help="Input report JSON file or directory.")
+
+    platform_policy = platform_subparsers.add_parser("policy", help="Explain effective platform policy.")
+    platform_policy_subparsers = platform_policy.add_subparsers(dest="platform_policy_command", required=True)
+    platform_policy_explain = platform_policy_subparsers.add_parser("explain", help="Evaluate platform policy JSON.")
+    platform_policy_explain.add_argument("--policy", required=True, type=Path, help="Policy JSON or wrapper input.")
+    platform_policy_explain.add_argument("--profile", default="default", help="Profile to evaluate when input has no profile.")
+    platform_policy_explain.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+
+    platform_report = platform_subparsers.add_parser("report", help="Generate platform reports.")
+    platform_report_subparsers = platform_report.add_subparsers(dest="platform_report_command", required=True)
+    platform_report_html = platform_report_subparsers.add_parser("html", help="Generate an offline HTML summary.")
+    platform_report_html.add_argument("--input", required=True, type=Path, help="Input report JSON file or directory.")
+    platform_report_html.add_argument("--out", required=True, type=Path, help="Output HTML path.")
+
+    platform_serve = platform_subparsers.add_parser("serve", help="Serve local product readiness artifacts through platform entrypoint.")
+    platform_serve.add_argument("--readiness", required=True, type=Path, help="Input P2/P3 product readiness artifact directory.")
+    platform_serve.add_argument("--host", default="127.0.0.1", help="Host to bind.")
+    platform_serve.add_argument("--port", default=8765, type=int, help="Port to bind.")
+
     validation = subparsers.add_parser("validation", help="Run repeated five-tool/QEG validation cycles.")
     validation_subparsers = validation.add_subparsers(dest="validation_command", required=True)
 

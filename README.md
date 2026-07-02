@@ -125,7 +125,8 @@ E2E 検収は `hate p0a -> hate export qeg -> hate trust evaluate -> hate workfl
 ## 4. 状態
 
 - local/advisory artifact 実装: P0a/P0b/P1a/P1b/P2/P3 の証跡生成は実装済み
-- product-grade 実装: adapter corpus、local store replay、API/read model、dashboard UI、RBAC/audit/retention、enterprise connector runtime、support/ops evidence は未完了
-- 現在の回帰: `uv run pytest` で 93 tests pass
-- 現在の release readiness: local/advisory artifact の fixture 上では P2/P3 report を生成できるが、product-ready / enterprise-ready / regulated-ready の主張には `PRODUCT_GRADE_IMPLEMENTATION_SPEC.md` の evidence reports が必要
+- platform CLI 導線: `hate platform run/history/compare/findings/debt/review/policy/report/serve` を実装済み。既存の real-repo / history / policy / read model / HTML report 導線を platform 操作面へ統合している。
+- product-grade 実装: 13 product-grade 領域は requirement/spec、実装参照、テスト参照を再計算し、実データ検証と QEG smoke を統合して `conditional_go` まで判定する。残摩擦がある限り `product_ready` は `false` のまま維持する。
+- 現在の回帰: `uv run pytest -q` で 1495 tests pass
+- 現在の release readiness: local/advisory artifact の fixture 上では P2/P3 report を生成でき、product-grade は `conditional_go`。product-ready / enterprise-ready / regulated-ready の最終主張には QEG release approval と、`REAL_REPO_BULK_VALIDATION_20260702.md` に残る実データ運用摩擦の解消が必要。
 - 対象外: hosted SaaS runtime、実 dashboard frontend、enterprise connector runtime、QEG / Shipyard の release / publish approval 正本

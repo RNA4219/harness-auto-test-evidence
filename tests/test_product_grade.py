@@ -21,18 +21,25 @@ def test_product_grade_reports_generate_required_report_set(tmp_path: Path) -> N
     expected_reports = {spec.filename for spec in REPORT_SPECS}
     assert expected_reports.issubset(set(result["generated"]))
     assert result["product_ready"] is False
-    assert result["product_grade_implementation_status"] == "no_go"
+    assert result["product_grade_implementation_status"] == "conditional_go"
 
     summary = json.loads((out_dir / "product-grade-evidence-summary.json").read_text(encoding="utf-8"))
     assert summary["required_report_count"] == len(REPORT_SPECS)
     assert summary["generated_report_count"] == len(REPORT_SPECS)
     assert summary["product_ready"] is False
-    assert summary["product_grade_implementation_status"] == "no_go"
+    assert summary["product_grade_implementation_status"] == "conditional_go"
+    assert summary["real_data_validation"]["repo_suite_count"] == 22
+    assert summary["real_data_validation"]["executed_records"] == 12771
+    assert summary["real_data_validation"]["qeg_smoke_passed"] is True
+    assert summary["real_data_validation"]["residual_blockers"]
 
     api_report = json.loads((out_dir / "api-contract-report.json").read_text(encoding="utf-8"))
-    assert api_report["status"] == "specified"
-    assert api_report["product_ready_evidence"] is False
-    assert "implementation code" in api_report["required_next_evidence"]
+    assert api_report["status"] == "implemented_with_evidence"
+    assert api_report["product_ready_evidence"] is True
+    assert api_report["implementation_evidence_status"] == "implemented"
+    assert api_report["missing_implementation_refs"] == []
+    assert api_report["missing_test_refs"] == []
+    assert "QEG release approval" in api_report["required_next_evidence"]
 
 
 def test_product_grade_reports_detect_missing_required_docs(tmp_path: Path) -> None:
@@ -49,3 +56,4 @@ def test_product_grade_reports_detect_missing_required_docs(tmp_path: Path) -> N
 
     summary = json.loads((out_dir / "product-grade-evidence-summary.json").read_text(encoding="utf-8"))
     assert "api-contract-report.json" in summary["missing_or_incomplete_reports"]
+    assert summary["product_grade_implementation_status"] == "no_go"

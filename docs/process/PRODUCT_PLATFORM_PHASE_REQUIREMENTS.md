@@ -246,12 +246,32 @@ next_review_due: 2026-07-15
 - finding、risk debt、manual review が別々の未接続 report のままなら運用基盤完了と呼ばない。
 - detector 追加に本体コード編集が必須なら拡張基盤完了と呼ばない。
 - CLI の JSON 出力しかなく、read model/API/HTML/dashboard がないなら利用面完了と呼ばない。
+- `hate platform ...` が存在せず、real-repo / store / product / expansion の個別コマンドを利用者が
+  手でつなぐ必要があるなら platform 利用面完了と呼ばない。
+- product-grade status が docs-only skeleton の `no_go` 固定で、実装証跡、テスト証跡、
+  実リポジトリ検証、QEG smoke、残摩擦を再計算しないなら product-grade 完了と呼ばない。
 - cache/parallel/incremental が sourceRefs や policy hash を落とすなら大規模化完了と呼ばない。
 - external repo hold を勝手に修正して pass を作る運用は評価証跡として無効とする。
 - RBAC、retention/legal hold、baseline approval、plugin trust、backup/restore が
   acceptance に落ちていない場合、会社利用可能な仕様完了とは呼ばない。
 - store schema、policy config、RBAC matrix、dashboard wireframe、benchmark fixture
   が正本仕様として存在しない場合、実装投入可能とは呼ばない。
+
+## 9.1 Immediate Platform Closure Requirements
+
+The first post-PoC closure increment must cover the following before further
+feature work is counted as company-operable:
+
+| Requirement ID | Requirement | Acceptance |
+|---|---|---|
+| PPH-UX-CLI-001 | `hate platform run` wraps real-repo roster execution and emits the same run manifest without weakening timeout, output safety, or external hold semantics. | CLI smoke creates `real-repo-evaluation-run-report.json`. |
+| PPH-UX-CLI-002 | `hate platform history` queries the real-repo history store with repo/suite/status/time filters. | Query returns `real-repo-history-query-report`. |
+| PPH-UX-CLI-003 | `hate platform compare` compares two real-repo run manifests or report files and emits added/removed/changed status, record count, runtime, and dialect deltas. | Pass-to-hold or record collapse is visible as a comparison finding. |
+| PPH-UX-CLI-004 | `hate platform findings`, `debt`, and `review` project report directories into operator-readable JSON lists while preserving sourceRefs and not recomputing verdicts. | Empty lists are explicit; missing input is an error. |
+| PPH-UX-CLI-005 | `hate platform policy explain` evaluates platform policy config and returns effective profile, threshold, plugin trust, retention, and scheduler decisions. | Existing policy fixtures pass through the platform CLI. |
+| PPH-UX-CLI-006 | `hate platform report html` generates an offline, self-contained HTML summary from platform reports without raw unsafe artifact bodies. | HTML file contains status/finding summaries and source refs only. |
+| PPH-GRADE-001 | Product-grade status recalculates from docs, mapped implementation files, mapped tests, latest real-repo bulk validation, and QEG smoke evidence. | Summary is no longer hard-coded `no_go`; residual blockers are explicit. |
+| PPH-GRADE-002 | Product-grade status must stay below product-ready while unresolved real-data friction exists, including env cache friction, held owned repos, or build/typecheck-only checks without oracle inflation. | Status may be `conditional_go`, but `product_ready` remains false until blockers are cleared. |
 
 ## 10. Traceability
 

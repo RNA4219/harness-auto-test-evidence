@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "6ba0cfe815e68ca6562912a279ed2da5737d3756a7554e9978db2841535acb99",
-  "line_count": 146,
-  "size_bytes": 12116,
+  "sha256": "b6733b8c1d4804e795c856a03c623314cdb57ee1c52d0ad0901192120a75c757",
+  "line_count": 154,
+  "size_bytes": 13240,
   "headings": [
     "# Product Platform Phase Implementation Packets",
     "## 1. Dispatch Rules",
@@ -14,6 +14,7 @@
     "## 5. Consumption Surface Packets",
     "## 6. Scale Foundation Packets",
     "## 7. Parallelization Plan",
+    "## 7.1 Immediate Dispatch: Platform CLI and Product-Grade Gate",
     "## 8. Definition of Done"
   ],
   "imports": [],

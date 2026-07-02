@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_evidence_strength.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "c59464387ded2f1afad8770e33f74df24076d14413993edf5ea7d1cfb1c77ae4",
+  "line_count": 128,
+  "size_bytes": 5376,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p0a",
+    "hate.p0b",
+    "json",
+    "pathlib",
+    "shutil"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p0b.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

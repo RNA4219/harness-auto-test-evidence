@@ -501,6 +501,49 @@ Required commands:
 | `hate platform report html` | generate HTML report |
 | `hate platform serve` | serve JSON API/dashboard |
 
+### 5.1.1 Platform CLI Minimum Contract
+
+The first platform CLI implementation is an orchestration layer over canonical
+reports, not a new verdict engine. It must preserve the output contracts of the
+underlying commands and add operator-facing projections only when the projection
+can retain sourceRefs.
+
+| Command | Required inputs | Output record | No-Go |
+|---|---|---|---|
+| `hate platform run` | `--roster`, `--out`, optional `--source-version` | `real-repo-evaluation-run-report` | must not suppress hold, timeout, external hold, or output safety findings |
+| `hate platform history` | `--store`, optional filters | `real-repo-history-query-report` | must not synthesize missing history as pass |
+| `hate platform compare` | `--base`, `--head`, optional `--out` | `platform-comparison-report` | must not ignore pass-to-hold, record count, runtime, dialect, or finding deltas |
+| `hate platform findings` | `--input` report dir/file | `platform-findings-report` | must not drop sourceRef/sourceRefs |
+| `hate platform debt` | `--input` report dir/file | `platform-debt-report` | empty debt must be explicit, not hidden |
+| `hate platform review` | `--input` report dir/file | `platform-review-report` | manual review requests must remain requests, not waivers |
+| `hate platform policy explain` | `--policy` JSON, optional `--out`, `--profile` | `platform-policy-report` | release/regulated plugin trust denials must not be softened |
+| `hate platform report html` | `--input` report dir/file, `--out` HTML path | offline HTML | must not embed raw unsafe artifact body, secret, PII, or unrestricted local paths |
+| `hate platform serve` | `--readiness`, optional host/port | hosted read-model REST envelope | must delegate to product read model and not recompute verdicts |
+
+### 5.1.2 Product-Grade Recalculation Contract
+
+`product grade-reports` must evaluate more than the existence of requirement
+documents. The report generator must combine:
+
+- required specification document presence
+- implementation file presence for each product-grade area
+- mapped test file presence
+- latest real-repo bulk validation acceptance evidence, when present
+- QEG smoke evidence, when present in the acceptance record
+- unresolved residual blockers such as owned repo holds, environment cache
+  friction, or build/typecheck-only evidence constraints
+
+Output status:
+
+| Status | Meaning |
+|---|---|
+| `no_go` | required docs or mapped implementation/test evidence is missing |
+| `conditional_go` | required docs and mapped implementation/test evidence exist, but residual operational blockers remain |
+| `verified` | required docs, mapped implementation/test evidence, real-data validation, and QEG smoke pass with no residual blockers |
+
+`product_ready` remains false unless status is `verified` and a release/QEG
+approval record exists. HATE must not promote itself to final release authority.
+
 ### 5.2 Read Model Resources
 
 Resources:

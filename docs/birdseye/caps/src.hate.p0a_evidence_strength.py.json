@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/p0a_evidence_strength.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "a35e1b320aa88d2d040c0a741014d345180c7450f5eaaf5250dc09786087d1bc",
+  "line_count": 242,
+  "size_bytes": 9794,
+  "headings": [],
+  "imports": [
+    ".adapters.stryker",
+    ".p0a_io",
+    ".p0a_records",
+    "__future__",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/adapters/stryker.py",
+    "src/hate/p0a_io.py",
+    "src/hate/p0a_records.py"
+  ],
+  "tags": [
+    "adapter",
+    "coverage",
+    "test"
+  ]
+}

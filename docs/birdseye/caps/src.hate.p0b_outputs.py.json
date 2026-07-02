@@ -2,9 +2,9 @@
   "path": "src/hate/p0b_outputs.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "51f34790229fb69ea0eb504230e08ad01fa0bff03eb2d3e3c5be1bc1c5ec44fe",
-  "line_count": 179,
-  "size_bytes": 6983,
+  "sha256": "8d32b9ae9e6c8b92f8df657c2a8198e1db50b2b8f7537720d4820b998e74c029",
+  "line_count": 232,
+  "size_bytes": 9435,
   "headings": [],
   "imports": [
     ".p0b_support",

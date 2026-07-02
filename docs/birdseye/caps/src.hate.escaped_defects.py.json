@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/escaped_defects.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "fdfff9aaef6c161ed80b94f4c383e22963b4311c287b6af70cd48d5223c1080a",
+  "line_count": 109,
+  "size_bytes": 3847,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "csv",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}
