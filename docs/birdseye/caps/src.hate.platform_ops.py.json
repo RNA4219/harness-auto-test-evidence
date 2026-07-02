@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/platform_ops.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8a38997beaa676067e38b29491aefd2bed548cfc82e8d77a0f7104dbd44501ab",
+  "line_count": 328,
+  "size_bytes": 13263,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hate.evaluation.score_model",
+    "hate.plugins.sandbox",
+    "json",
+    "pathlib",
+    "subprocess",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evaluation/score_model.py",
+    "src/hate/plugins/sandbox.py"
+  ],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

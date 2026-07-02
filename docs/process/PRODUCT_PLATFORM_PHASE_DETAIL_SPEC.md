@@ -519,6 +519,10 @@ can retain sourceRefs.
 | `hate platform policy explain` | `--policy` JSON, optional `--out`, `--profile` | `platform-policy-report` | release/regulated plugin trust denials must not be softened |
 | `hate platform report html` | `--input` report dir/file, `--out` HTML path | offline HTML | must not embed raw unsafe artifact body, secret, PII, or unrestricted local paths |
 | `hate platform serve` | `--readiness`, optional host/port | hosted read-model REST envelope | must delegate to product read model and not recompute verdicts |
+| `hate platform schedule` | `--roster`, `--history-store`, optional `--cache-ttl-hours`, `--retry-limit`, `--force`, `--out` | `platform-schedule-plan` | must not silently skip held suites; cache hits require fresh pass history |
+| `hate platform assign` | `--input` report dir/file, optional `--out` | `platform-assignment-report` | must hold missing owner/due-date and breached SLA |
+| `hate platform plugin run` | `--manifest`, optional `--out` | `platform-plugin-run-report` | must route execution through sandbox policy, resource, input, output, and isolation checks |
+| `hate platform score` | `--input` report dir/file, optional `--out` | `platform-score-report` | must expose component weights and bounded penalties |
 
 ### 5.1.2 Product-Grade Recalculation Contract
 
@@ -543,6 +547,37 @@ Output status:
 
 `product_ready` remains false unless status is `verified` and a release/QEG
 approval record exists. HATE must not promote itself to final release authority.
+
+### 5.1.3 Operating Runtime Closure Contract
+
+`platform-schedule-plan` fields:
+
+- `tasks[]`: `repo_id`, `suite_id`, `action`, `cache`, `retry`, `resume_token`
+- `cache.hit`: true only when the last history entry is pass and inside TTL
+- `retry.planned_attempts`: bounded by `retry_limit` and only non-zero for held
+  or blocked suites
+- `summary`: `task_count`, `run_count`, `cache_hit_count`, `retry_count`
+
+`platform-assignment-report` fields:
+
+- `assignments[]`: finding code, severity, owner, due date, SLA status, sourceRefs
+- missing owner/due date produces `platform_assignment_missing_owner_or_due_date`
+- overdue assigned work produces `platform_assignment_sla_breached`
+
+`platform-plugin-run-report` fields:
+
+- manifest path sourceRef
+- plugin id, detector id, sandbox report, findings
+- command execution is optional; when present, stdout must be JSON object output
+  and is validated by `platform-plugin-sandbox-report`
+
+`platform-score-report` fields:
+
+- `scores[]` are `real-repo-score-report` records
+- build/typecheck dialects reduce oracle confidence instead of adding executable
+  oracle value
+- regression, timeout, record collapse, manual debt, expired debt, and unsafe
+  artifact risks are bounded penalties with a visible decision basis
 
 ### 5.2 Read Model Resources
 

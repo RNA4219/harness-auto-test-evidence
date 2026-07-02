@@ -84,8 +84,8 @@ REPORT_SPECS: tuple[ReportSpec, ...] = (
         "scale-performance-report.json",
         "scale and performance",
         ("SCALE_PERFORMANCE_REQUIREMENTS.md", "ACCEPTANCE_CRITERIA_MATRIX.md", "IMPLEMENTATION_EPIC_BREAKDOWN.md"),
-        ("src/hate/scale/platform_benchmark.py", "src/hate/scale/performance_budget.py"),
-        ("tests/test_platform_benchmark.py", "tests/test_scale_fixtures.py"),
+        ("src/hate/scale/platform_benchmark.py", "src/hate/scale/performance_budget.py", "src/hate/platform_ops.py"),
+        ("tests/test_platform_benchmark.py", "tests/test_scale_fixtures.py", "tests/test_platform_ops.py"),
     ),
     ReportSpec(
         "migration-compatibility-report.json",
@@ -105,8 +105,8 @@ REPORT_SPECS: tuple[ReportSpec, ...] = (
         "support-ops-report.json",
         "observability and support operations",
         ("DATA_RETENTION_LEGAL_REQUIREMENTS.md", "ACCEPTANCE_CRITERIA_MATRIX.md", "IMPLEMENTATION_EPIC_BREAKDOWN.md"),
-        ("src/hate/support_ops/observability.py", "src/hate/support_ops/diagnostics.py"),
-        ("tests/test_support_ops_observability.py", "tests/test_support_ops_diagnostics.py"),
+        ("src/hate/support_ops/observability.py", "src/hate/support_ops/diagnostics.py", "src/hate/platform_ops.py"),
+        ("tests/test_support_ops_observability.py", "tests/test_support_ops_diagnostics.py", "tests/test_platform_ops.py"),
     ),
     ReportSpec(
         "release-candidate-pack.json",

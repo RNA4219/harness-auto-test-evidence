@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_platform_ops.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "4ca81049eb0e6a1051adf40e31d78213e9ac3ba53111fe8ecf052fe78b4b3cf5",
+  "line_count": 178,
+  "size_bytes": 6755,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.cli",
+    "hate.platform_ops",
+    "json",
+    "pathlib",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py",
+    "src/hate/platform_ops.py"
+  ],
+  "tags": [
+    "schema",
+    "store",
+    "test"
+  ]
+}

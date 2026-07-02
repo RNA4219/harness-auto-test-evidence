@@ -12,6 +12,12 @@ from pathlib import Path
 from typing import Any
 
 from hate.evaluation import query_real_repo_history, run_real_repo_roster
+from hate.platform_ops import (
+    build_platform_assignment_report,
+    build_platform_schedule_plan,
+    build_platform_score_report,
+    run_platform_plugin,
+)
 from hate.policy_config import build_platform_policy_report
 from hate.p2p3 import serve_product_read_model
 
@@ -149,6 +155,9 @@ def platform_policy_explain(policy_path: Path, out_path: Path | None = None, pro
 def platform_report_html(input_path: Path, out_path: Path) -> dict[str, Any]:
     reports = _load_reports(input_path)
     findings = platform_findings(input_path)["items"]
+    debts = platform_debt(input_path)["items"]
+    reviews = platform_review(input_path)["items"]
+    critical = [item for item in findings if str(item.get("severity", "")).lower() in {"critical", "high"}]
     rows = "\n".join(
         "<tr>"
         f"<td>{html.escape(str(report.get('record_type', '')))}</td>"
@@ -176,11 +185,18 @@ body {{ font-family: system-ui, sans-serif; margin: 2rem; }}
 table {{ border-collapse: collapse; width: 100%; margin: 1rem 0; }}
 th, td {{ border: 1px solid #ccc; padding: 0.4rem; text-align: left; }}
 </style>
-<h1>HATE Platform Report</h1>
+<h1>HATE Platform Daily Report</h1>
+<p>Reports: {len(reports)} / Findings: {len(findings)} / Critical queue: {len(critical)} / Debt: {len(debts)} / Reviews: {len(reviews)}</p>
 <h2>Reports</h2>
 <table><thead><tr><th>Type</th><th>ID</th><th>Status</th><th>Findings</th></tr></thead><tbody>{rows}</tbody></table>
+<h2>Operator Queue</h2>
+<table><thead><tr><th>Code</th><th>Severity</th><th>Owner</th><th>Due</th><th>Source refs</th></tr></thead><tbody>{_queue_rows(critical)}</tbody></table>
 <h2>Findings</h2>
 <table><thead><tr><th>Code</th><th>Severity</th><th>Effect</th><th>Source refs</th></tr></thead><tbody>{finding_rows}</tbody></table>
+<h2>Risk Debt</h2>
+<table><thead><tr><th>ID</th><th>Owner</th><th>Expiry</th><th>Status</th></tr></thead><tbody>{_debt_rows(debts)}</tbody></table>
+<h2>Manual Review</h2>
+<table><thead><tr><th>ID</th><th>Owner</th><th>Blocking</th><th>Decision</th></tr></thead><tbody>{_review_rows(reviews)}</tbody></table>
 </html>
 """
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -192,12 +208,45 @@ th, td {{ border: 1px solid #ccc; padding: 0.4rem; text-align: left; }}
         "html_path": str(out_path),
         "report_count": len(reports),
         "finding_count": len(findings),
+        "debt_count": len(debts),
+        "review_count": len(reviews),
+        "critical_queue_count": len(critical),
         "sourceRefs": [str(input_path)],
     }
 
 
 def platform_serve(readiness_dir: Path, host: str, port: int) -> None:
     serve_product_read_model(readiness_dir=readiness_dir, host=host, port=port)
+
+
+def platform_schedule(
+    roster_path: Path,
+    history_store: Path,
+    out_path: Path | None = None,
+    cache_ttl_hours: int = 24,
+    retry_limit: int = 1,
+    force: bool = False,
+) -> dict[str, Any]:
+    return build_platform_schedule_plan(
+        roster_path,
+        history_store,
+        out_path,
+        cache_ttl_hours=cache_ttl_hours,
+        retry_limit=retry_limit,
+        force=force,
+    )
+
+
+def platform_assign(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    return build_platform_assignment_report(input_path, out_path)
+
+
+def platform_plugin_run(manifest_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    return run_platform_plugin(manifest_path, out_path)
+
+
+def platform_score(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    return build_platform_score_report(input_path, out_path)
 
 
 def _projection_report(record_type: str, input_path: Path, items: list[dict[str, Any]], count_key: str) -> dict[str, Any]:
@@ -289,6 +338,43 @@ def _source_refs(value: dict[str, Any]) -> list[str]:
     if isinstance(refs, str):
         return [refs]
     return [str(item) for item in refs if isinstance(item, str)]
+
+
+def _queue_rows(items: list[dict[str, Any]]) -> str:
+    return "\n".join(
+        "<tr>"
+        f"<td>{html.escape(str(item.get('code', '')))}</td>"
+        f"<td>{html.escape(str(item.get('severity', '')))}</td>"
+        f"<td>{html.escape(str(item.get('owner', '')))}</td>"
+        f"<td>{html.escape(str(item.get('due_date', item.get('dueDate', ''))))}</td>"
+        f"<td>{html.escape(', '.join(_source_refs(item)))}</td>"
+        "</tr>"
+        for item in items
+    )
+
+
+def _debt_rows(items: list[dict[str, Any]]) -> str:
+    return "\n".join(
+        "<tr>"
+        f"<td>{html.escape(str(item.get('debt_id', item.get('id', ''))))}</td>"
+        f"<td>{html.escape(str(item.get('owner', '')))}</td>"
+        f"<td>{html.escape(str(item.get('expiry', item.get('expiry_date', ''))))}</td>"
+        f"<td>{html.escape(str(item.get('status', '')))}</td>"
+        "</tr>"
+        for item in items
+    )
+
+
+def _review_rows(items: list[dict[str, Any]]) -> str:
+    return "\n".join(
+        "<tr>"
+        f"<td>{html.escape(str(item.get('request_id', item.get('id', ''))))}</td>"
+        f"<td>{html.escape(str(item.get('owner', '')))}</td>"
+        f"<td>{html.escape(str(item.get('blocking', '')))}</td>"
+        f"<td>{html.escape(str(item.get('required_decision', item.get('decision', ''))))}</td>"
+        "</tr>"
+        for item in items
+    )
 
 
 def _int(value: Any) -> int:

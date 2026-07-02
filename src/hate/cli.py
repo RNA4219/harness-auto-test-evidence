@@ -223,6 +223,14 @@ def build_parser() -> argparse.ArgumentParser:
     platform_compare.add_argument("--head", required=True, type=Path, help="Head report JSON.")
     platform_compare.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
 
+    platform_schedule = platform_subparsers.add_parser("schedule", help="Plan scheduled platform runs with cache, retry, and resume tokens.")
+    platform_schedule.add_argument("--roster", required=True, type=Path, help="JSON roster containing repositories[].")
+    platform_schedule.add_argument("--history-store", required=True, type=Path, help="History store directory or run_history.jsonl path.")
+    platform_schedule.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+    platform_schedule.add_argument("--cache-ttl-hours", type=int, default=24, help="Fresh pass cache TTL.")
+    platform_schedule.add_argument("--retry-limit", type=int, default=1, help="Retry attempts planned for held suites.")
+    platform_schedule.add_argument("--force", action="store_true", help="Bypass cache hits and plan all suites.")
+
     for name, help_text in (
         ("findings", "List findings from a platform report file or directory."),
         ("debt", "List risk debt items from a platform report file or directory."),
@@ -230,6 +238,20 @@ def build_parser() -> argparse.ArgumentParser:
     ):
         sub = platform_subparsers.add_parser(name, help=help_text)
         sub.add_argument("--input", required=True, type=Path, help="Input report JSON file or directory.")
+
+    platform_assign = platform_subparsers.add_parser("assign", help="Build owner, due-date, and SLA assignment queue from findings.")
+    platform_assign.add_argument("--input", required=True, type=Path, help="Input report JSON file or directory.")
+    platform_assign.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+
+    platform_score = platform_subparsers.add_parser("score", help="Compute explainable platform scores from real-repo reports.")
+    platform_score.add_argument("--input", required=True, type=Path, help="Input report JSON file or directory.")
+    platform_score.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+
+    platform_plugin = platform_subparsers.add_parser("plugin", help="Run and isolate platform detector plugins.")
+    platform_plugin_subparsers = platform_plugin.add_subparsers(dest="platform_plugin_command", required=True)
+    platform_plugin_run = platform_plugin_subparsers.add_parser("run", help="Execute a plugin manifest under platform isolation checks.")
+    platform_plugin_run.add_argument("--manifest", required=True, type=Path, help="Plugin manifest JSON.")
+    platform_plugin_run.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
 
     platform_policy = platform_subparsers.add_parser("policy", help="Explain effective platform policy.")
     platform_policy_subparsers = platform_policy.add_subparsers(dest="platform_policy_command", required=True)

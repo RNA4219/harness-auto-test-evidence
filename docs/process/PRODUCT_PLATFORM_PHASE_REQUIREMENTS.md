@@ -272,6 +272,20 @@ feature work is counted as company-operable:
 | PPH-UX-CLI-006 | `hate platform report html` generates an offline, self-contained HTML summary from platform reports without raw unsafe artifact bodies. | HTML file contains status/finding summaries and source refs only. |
 | PPH-GRADE-001 | Product-grade status recalculates from docs, mapped implementation files, mapped tests, latest real-repo bulk validation, and QEG smoke evidence. | Summary is no longer hard-coded `no_go`; residual blockers are explicit. |
 | PPH-GRADE-002 | Product-grade status must stay below product-ready while unresolved real-data friction exists, including env cache friction, held owned repos, or build/typecheck-only checks without oracle inflation. | Status may be `conditional_go`, but `product_ready` remains false until blockers are cleared. |
+| PPH-OPS-CLI-001 | `hate platform schedule` plans recurring runs with cache TTL, retry budget, and resume tokens so 100+ repos do not require blind full reruns. | Fresh pass entries become `cache_hit`; held entries plan bounded retries. |
+| PPH-OPS-CLI-002 | `hate platform assign` projects findings into owner/due-date/SLA queues and holds missing owner or overdue work. | Missing owner/due date and breached SLA are emitted as findings. |
+| PPH-OPS-CLI-003 | `hate platform plugin run` loads a plugin manifest, optionally executes a local command, and always routes output through sandbox trust/resource/output checks. | Malformed, unsigned, over-budget, crashed, or unsafe plugins cannot be hidden as pass. |
+| PPH-OPS-CLI-004 | `hate platform score` computes explainable platform scores from real-repo history/reports using freshness, regression, manual debt, timeout, unsafe artifact, and oracle confidence. | Build/typecheck-only evidence lowers oracle confidence and does not inflate executable-test readiness. |
+
+No-Go additions:
+
+- A scheduler that always reruns every suite, has no resume token, or drops held
+  suite retry context is not operationally acceptable.
+- Findings without owner/due-date/SLA visibility are not acceptable for daily
+  operation.
+- Plugin support that only documents sandbox policy but cannot load and run a
+  manifest is not platform runtime support.
+- Score output without a component/penalty breakdown is not acceptable.
 
 ## 10. Traceability
 

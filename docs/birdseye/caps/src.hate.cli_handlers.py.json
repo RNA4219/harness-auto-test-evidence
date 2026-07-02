@@ -2,9 +2,9 @@
   "path": "src/hate/cli_handlers.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "7e2a12a57d38cf2ccbb22888dcd126c19d4f3dcc4f951985342e00823f911921",
-  "line_count": 513,
-  "size_bytes": 18482,
+  "sha256": "6c16c6c4ec05c7558f06c9e90a53487195954ff487900b834b47755a11658ffe",
+  "line_count": 532,
+  "size_bytes": 19228,
   "headings": [],
   "imports": [
     ".evaluation",

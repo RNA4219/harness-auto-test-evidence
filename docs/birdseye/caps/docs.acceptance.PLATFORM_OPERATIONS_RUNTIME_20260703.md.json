@@ -1,0 +1,23 @@
+{
+  "path": "docs/acceptance/PLATFORM_OPERATIONS_RUNTIME_20260703.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "334b4a0fce6dd74e6830bc4e654ee9a4f88e28835b2bf02d7c68e3b419c2d171",
+  "line_count": 47,
+  "size_bytes": 1608,
+  "headings": [
+    "# Platform Operations Runtime 2026-07-03",
+    "## Scope",
+    "## Acceptance Evidence",
+    "## Residual Boundaries"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "release",
+    "test"
+  ]
+}

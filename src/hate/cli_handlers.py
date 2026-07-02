@@ -18,14 +18,18 @@ from .p1b import WorkflowError, generate_workflow_mapping
 from .p2p3 import ProductError, generate_product_readiness, query_product_read_model, serve_product_read_model
 from .platform_cli import (
     PlatformCliError,
+    platform_assign,
     platform_compare,
     platform_debt,
     platform_findings,
     platform_history,
     platform_policy_explain,
+    platform_plugin_run,
     platform_report_html,
     platform_review,
     platform_run,
+    platform_schedule,
+    platform_score,
     platform_serve,
 )
 from .product_grade import ProductGradeError, generate_product_grade_reports
@@ -427,12 +431,27 @@ def _dispatch_platform(args: argparse.Namespace) -> dict[str, Any] | None:
         )
     if args.platform_command == "compare":
         return platform_compare(args.base, args.head, out_path=args.out)
+    if args.platform_command == "schedule":
+        return platform_schedule(
+            args.roster,
+            args.history_store,
+            out_path=args.out,
+            cache_ttl_hours=args.cache_ttl_hours,
+            retry_limit=args.retry_limit,
+            force=args.force,
+        )
     if args.platform_command == "findings":
         return platform_findings(args.input)
     if args.platform_command == "debt":
         return platform_debt(args.input)
     if args.platform_command == "review":
         return platform_review(args.input)
+    if args.platform_command == "assign":
+        return platform_assign(args.input, out_path=args.out)
+    if args.platform_command == "score":
+        return platform_score(args.input, out_path=args.out)
+    if args.platform_command == "plugin" and args.platform_plugin_command == "run":
+        return platform_plugin_run(args.manifest, out_path=args.out)
     if args.platform_command == "policy" and args.platform_policy_command == "explain":
         return platform_policy_explain(args.policy, out_path=args.out, profile=args.profile)
     if args.platform_command == "report" and args.platform_report_command == "html":

@@ -1,5 +1,5 @@
 {
-  "generated_at": "c44ebb2ec8ee",
+  "generated_at": "f744f42de4f8",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -12,9 +12,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "88a9de7bd0435ffcfb0cf71cb447734f4970fb653e25983a13b72ad2a12a98c7",
-      "line_count": 132,
-      "size_bytes": 9074
+      "sha256": "8544b8fedeff384269f9ad7b1dc3988b953a987d03ccab9440b018afbdd3dfe5",
+      "line_count": 133,
+      "size_bytes": 9295
     },
     "TASK.codex.md": {
       "role": "planning",
@@ -64,6 +64,13 @@
       "sha256": "d1cfb4b41f5295b7274fee0e3e4b20bca5d945b2cf83934147427c48e21b8fd6",
       "line_count": 79,
       "size_bytes": 3244
+    },
+    "docs/acceptance/PLATFORM_OPERATIONS_RUNTIME_20260703.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.PLATFORM_OPERATIONS_RUNTIME_20260703.md.json",
+      "sha256": "334b4a0fce6dd74e6830bc4e654ee9a4f88e28835b2bf02d7c68e3b419c2d171",
+      "line_count": 47,
+      "size_bytes": 1608
     },
     "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md": {
       "role": "quality",
@@ -439,9 +446,9 @@
     "docs/process/PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md.json",
-      "sha256": "ab6f07096f75151b9ca1c24b94a1e2925c373efcc8a86ea98a61f4657ef7b2a4",
-      "line_count": 894,
-      "size_bytes": 30181
+      "sha256": "3b4b08b4fbaab94ef3e8b3236472dc6e74bfd8798f908d584235e0aaed6b11e3",
+      "line_count": 929,
+      "size_bytes": 32168
     },
     "docs/process/PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md": {
       "role": "documentation",
@@ -453,9 +460,9 @@
     "docs/process/PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md.json",
-      "sha256": "376706d340580a438087c459c542c07077c6ca7a164caaefe2a0b017863483bb",
-      "line_count": 294,
-      "size_bytes": 23859
+      "sha256": "ba8e108ddebf9d3252559acee707e163d2e4cb54679772ad9ad3b5ba408e8ec4",
+      "line_count": 308,
+      "size_bytes": 25320
     },
     "docs/process/PRODUCT_PLATFORM_PHASE_SPEC_AUDIT.md": {
       "role": "requirements",
@@ -7173,16 +7180,16 @@
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "7525572d14b6e2c4bfe194a682c92d61d14430d4e61938ebc37351ccf995179e",
-      "line_count": 265,
-      "size_bytes": 20391
+      "sha256": "1c7868bf96c444a815950e69ab01514f33deb3589d6b203889eeed1ee1f67afa",
+      "line_count": 287,
+      "size_bytes": 22514
     },
     "src/hate/cli_handlers.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli_handlers.py.json",
-      "sha256": "7e2a12a57d38cf2ccbb22888dcd126c19d4f3dcc4f951985342e00823f911921",
-      "line_count": 513,
-      "size_bytes": 18482
+      "sha256": "6c16c6c4ec05c7558f06c9e90a53487195954ff487900b834b47755a11658ffe",
+      "line_count": 532,
+      "size_bytes": 19228
     },
     "src/hate/commercial/__init__.py": {
       "role": "implementation",
@@ -7964,9 +7971,16 @@
     "src/hate/platform_cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.platform_cli.py.json",
-      "sha256": "fd25f3f46f7b7ae8d565297d8ec638f20d8c3a5922a5f43406c3065faaf0b7af",
-      "line_count": 304,
-      "size_bytes": 11538
+      "sha256": "be0913567fcacbfbb64d47783bbaec7b30d912b07e0ca9a672635a6695f5839b",
+      "line_count": 390,
+      "size_bytes": 14887
+    },
+    "src/hate/platform_ops.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.platform_ops.py.json",
+      "sha256": "8a38997beaa676067e38b29491aefd2bed548cfc82e8d77a0f7104dbd44501ab",
+      "line_count": 328,
+      "size_bytes": 13263
     },
     "src/hate/platform_rbac.py": {
       "role": "implementation",
@@ -8013,9 +8027,9 @@
     "src/hate/product_grade.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.product_grade.py.json",
-      "sha256": "6f8b070abbe278b7c003367765cfa24bb88d755d948b3a7e3436d591ba4a77c5",
+      "sha256": "825a5db20e51b021890bf0131094b7b40d9904127184e5a7542cf070ab87bc71",
       "line_count": 306,
-      "size_bytes": 13083
+      "size_bytes": 13199
     },
     "src/hate/profile.py": {
       "role": "implementation",
@@ -8996,6 +9010,13 @@
       "sha256": "7af832f1b7df3d2be28cc24f01cdd50d2e313c7c59d4300e3a0230363f888ec3",
       "line_count": 135,
       "size_bytes": 5660
+    },
+    "tests/test_platform_ops.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_platform_ops.py.json",
+      "sha256": "4ca81049eb0e6a1051adf40e31d78213e9ac3ba53111fe8ecf052fe78b4b3cf5",
+      "line_count": 178,
+      "size_bytes": 6755
     },
     "tests/test_platform_plugin_sandbox.py": {
       "role": "test",
@@ -10341,7 +10362,19 @@
     ],
     [
       "src/hate/platform_cli.py",
+      "src/hate/platform_ops.py"
+    ],
+    [
+      "src/hate/platform_cli.py",
       "src/hate/policy_config.py"
+    ],
+    [
+      "src/hate/platform_ops.py",
+      "src/hate/evaluation/score_model.py"
+    ],
+    [
+      "src/hate/platform_ops.py",
+      "src/hate/plugins/sandbox.py"
     ],
     [
       "src/hate/plugins/__init__.py",
@@ -10902,6 +10935,14 @@
     [
       "tests/test_platform_dashboard_wireframe.py",
       "src/hate/p0a_schema.py"
+    ],
+    [
+      "tests/test_platform_ops.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tests/test_platform_ops.py",
+      "src/hate/platform_ops.py"
     ],
     [
       "tests/test_platform_plugin_sandbox.py",

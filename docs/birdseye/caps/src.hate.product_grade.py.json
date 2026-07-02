@@ -2,9 +2,9 @@
   "path": "src/hate/product_grade.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "6f8b070abbe278b7c003367765cfa24bb88d755d948b3a7e3436d591ba4a77c5",
+  "sha256": "825a5db20e51b021890bf0131094b7b40d9904127184e5a7542cf070ab87bc71",
   "line_count": 306,
-  "size_bytes": 13083,
+  "size_bytes": 13199,
   "headings": [],
   "imports": [
     "__future__",
