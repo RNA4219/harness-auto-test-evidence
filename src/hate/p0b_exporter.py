@@ -9,6 +9,8 @@ from .p0b_phases import (
     append_artifact_nodes,
     append_contract_nodes,
     append_coverage_nodes,
+    append_evidence_strength_nodes,
+    append_escaped_defect_nodes,
     append_mutation_nodes,
     append_sarif_finding_nodes,
     append_test_execution_nodes,
@@ -44,6 +46,10 @@ def export_qeg(
     coverage_records = inputs.coverage_records
     contract_records = inputs.contract_records
     mutation_records = inputs.mutation_records
+    evidence_strength_records = inputs.evidence_strength_records
+    escaped_defects = inputs.escaped_defects
+    escaped_defect_claims = inputs.escaped_defect_claims
+    escaped_defects_path = inputs.escaped_defects_path
     artifact_manifest = inputs.artifact_manifest
     precheck_decision = inputs.precheck_decision
     audit_record = inputs.audit_record
@@ -111,6 +117,14 @@ def export_qeg(
         p0a_dir=p0a_dir,
         source_ref=source_ref,
     )
+    unsupported_claims.extend(escaped_defect_claims)
+    append_escaped_defect_nodes(
+        escaped_defects=escaped_defects,
+        nodes=nodes,
+        edges=edges,
+        escaped_defects_path=escaped_defects_path,
+        source_ref=source_ref,
+    )
     append_artifact_nodes(
         artifact_by_id=artifact_by_id,
         nodes=nodes,
@@ -129,6 +143,14 @@ def export_qeg(
         excluded_artifacts=excluded_artifacts,
         run_id=run_id,
         run_attempt=run_attempt,
+        p0a_dir=p0a_dir,
+        source_ref=source_ref,
+    )
+    append_evidence_strength_nodes(
+        evidence_strength_records=evidence_strength_records,
+        test_node_ids=test_node_ids,
+        nodes=nodes,
+        edges=edges,
         p0a_dir=p0a_dir,
         source_ref=source_ref,
     )
@@ -189,5 +211,8 @@ def export_qeg(
         sarif_record=sarif_record,
         contract_records=contract_records,
         mutation_records=mutation_records,
+        evidence_strength_records=evidence_strength_records,
+        escaped_defects=escaped_defects,
+        escaped_defects_path=escaped_defects_path,
         source_ref=source_ref,
     )

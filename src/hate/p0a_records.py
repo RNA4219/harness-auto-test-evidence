@@ -71,6 +71,7 @@ def _summary(
     coverage_records: list[dict[str, Any]],
     artifact_manifest: dict[str, Any],
     decision_record: dict[str, Any],
+    evidence_strength_distribution: dict[str, Any] | None = None,
 ) -> str:
     passed = sum(1 for record in test_records if record["payload"]["status"] == "passed")
     failed = sum(1 for record in test_records if record["payload"]["status"] in {"failed", "error"})
@@ -91,6 +92,13 @@ def _summary(
         coverage_line = f"Coverage sample: `{coverage_files[0]}` has {covered} covered lines and {uncovered} uncovered line"
         if uncovered != 1:
             coverage_line += "s"
+    strength = evidence_strength_distribution or {}
+    strength_line = (
+        "Evidence strength: "
+        f"{strength.get('total', 0)} tests, "
+        f"flake known {strength.get('flake_known', 0)}/unknown {strength.get('flake_unknown', 0)}, "
+        f"mutation known {strength.get('mutation_known', 0)}/unknown {strength.get('mutation_unknown', 0)}"
+    )
     return "\n".join(
         [
             "# P0a Minimal Evidence Summary",
@@ -100,6 +108,7 @@ def _summary(
             f"- Commit: `{context.get('commit_sha', '')[:40]}`",
             f"- Test result: {passed} passed, {failed} failed",
             f"- {coverage_line}",
+            f"- {strength_line}",
             f"- Precheck: {decision} for optional QEG evidence export in P0b",
             f"- Generated artifacts: {artifact_names}",
             "",

@@ -12,6 +12,11 @@ def parse_runner_summary(stdout: str, stderr: str = "") -> dict[str, Any]:
     for dialect, parser in (
         ("vitest", _parse_vitest_summary),
         ("bun", _parse_bun_test_summary),
+        ("cargo-test", _parse_cargo_test_summary),
+        ("nextjs-build", _parse_nextjs_build_summary),
+        ("astro-build", _parse_astro_build_summary),
+        ("typescript-typecheck", _parse_typescript_typecheck_summary),
+        ("python-compileall", _parse_python_compileall_summary),
         ("pytest", _parse_pytest_summary),
     ):
         summary = parser(text)
@@ -63,7 +68,16 @@ def build_runner_dialect_coverage_report(data: dict[str, Any], report_id: str = 
         "overall_status": "hold" if findings else "pass",
         "readiness_effect": "hold" if findings else "none",
         "runner_config": {
-            "required_dialects": ["pytest", "vitest", "bun"],
+            "required_dialects": [
+                "pytest",
+                "vitest",
+                "bun",
+                "cargo-test",
+                "nextjs-build",
+                "astro-build",
+                "typescript-typecheck",
+                "python-compileall",
+            ],
             "noise_guard": True,
         },
         "results": results,
@@ -168,6 +182,91 @@ def _parse_bun_test_summary(text: str) -> dict[str, int]:
                 counts["total_tests"] = total
                 return {key: value for key, value in counts.items() if value}
     return {}
+
+
+def _parse_cargo_test_summary(text: str) -> dict[str, int]:
+    counts = {
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0,
+    }
+    matched = False
+    for line in text.splitlines():
+        plain = re.sub(r"\x1b\[[0-9;]*m", "", line).strip()
+        if not plain.lower().startswith("test result:"):
+            continue
+        matched = True
+        for count, label in re.findall(
+            r"(\d+)\s+(passed|failed|ignored|filtered out)",
+            plain,
+            flags=re.IGNORECASE,
+        ):
+            key = label.lower()
+            if key in {"ignored", "filtered out"}:
+                key = "skipped"
+            counts[key] += int(count)
+    total = sum(counts.values())
+    if not matched or total == 0:
+        return {}
+    counts["total_tests"] = total
+    return {key: value for key, value in counts.items() if value}
+
+
+def _parse_nextjs_build_summary(text: str) -> dict[str, int]:
+    plain = re.sub(r"\x1b\[[0-9;]*m", "", text)
+    if "next build" not in plain and "Next.js" not in plain:
+        return {}
+    if "Compiled successfully" not in plain:
+        return {}
+    static_pages = 0
+    page_match = re.search(r"Generating static pages\s+\((\d+)/(\d+)\)", plain)
+    if page_match:
+        static_pages = int(page_match.group(2))
+    summary = {
+        "build_passed": 1,
+        "typecheck_passed": 1 if "checking validity of types" in plain else 0,
+        "static_pages": static_pages,
+        "total_checks": 1,
+    }
+    return {key: value for key, value in summary.items() if value}
+
+
+def _parse_astro_build_summary(text: str) -> dict[str, int]:
+    plain = re.sub(r"\x1b\[[0-9;]*m", "", text)
+    if "astro build" not in plain and "[build]" not in plain:
+        return {}
+    if "[build] Complete!" not in plain:
+        return {}
+    pages = 0
+    page_match = re.search(r"\[build\]\s+(\d+)\s+page\(s\)\s+built", plain)
+    if page_match:
+        pages = int(page_match.group(1))
+    return {
+        "build_passed": 1,
+        "static_pages": pages,
+        "total_checks": 1,
+    }
+
+
+def _parse_typescript_typecheck_summary(text: str) -> dict[str, int]:
+    plain = re.sub(r"\x1b\[[0-9;]*m", "", text)
+    if "tsc --noEmit" not in plain:
+        return {}
+    if re.search(r"\berror TS\d+:", plain):
+        return {}
+    return {"typecheck_passed": 1, "total_checks": 1}
+
+
+def _parse_python_compileall_summary(text: str) -> dict[str, int]:
+    plain = re.sub(r"\x1b\[[0-9;]*m", "", text)
+    listing_count = len(re.findall(r"^Listing\s+'[^']+'\.\.\.", plain, flags=re.MULTILINE))
+    compiling_count = len(re.findall(r"^Compiling\s+'[^']+'\.\.\.", plain, flags=re.MULTILINE))
+    if listing_count == 0 and compiling_count == 0:
+        return {}
+    return {
+        "compiled_paths": listing_count + compiling_count,
+        "total_checks": 1,
+    }
 
 
 def _looks_like_pytest_summary_line(line: str) -> bool:

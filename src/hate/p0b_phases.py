@@ -92,6 +92,115 @@ def append_mutation_nodes(
     return mutation_by_id
 
 
+def append_evidence_strength_nodes(
+    *,
+    evidence_strength_records: list[dict[str, Any]],
+    test_node_ids: dict[str, str],
+    nodes: list[dict[str, Any]],
+    edges: list[dict[str, Any]],
+    p0a_dir: Path,
+    source_ref: Callable[[Path], str],
+) -> dict[str, str]:
+    strength_by_test_id: dict[str, str] = {}
+    for record in evidence_strength_records:
+        payload = record.get("payload", {})
+        test_id = str(payload.get("test_id") or "")
+        if not test_id:
+            continue
+        strength_node_id = f"evidence_strength:{_hash_test_id(test_id)}"
+        strength_by_test_id[test_id] = strength_node_id
+        nodes.append({
+            "id": strength_node_id,
+            "kind": "evidence_strength",
+            "label": f"Evidence strength: {test_id}",
+            "data": {
+                "test_id": test_id,
+                "flake_score": payload.get("flake_score", "unknown"),
+                "mutation_score": payload.get("mutation_score", "unknown"),
+                "sample_size": int(payload.get("sample_size", 0) or 0),
+                "computed_at": payload.get("computed_at", ""),
+                "inputs": payload.get("inputs", []),
+            },
+            "sourceRefs": [source_ref(p0a_dir / "HATE-evidence-strength.ndjson")],
+        })
+        test_node_id = test_node_ids.get(test_id)
+        if test_node_id:
+            edges.append({
+                "kind": "has_strength",
+                "from": test_node_id,
+                "to": strength_node_id,
+                "traceability": {
+                    "sourceRefs": [source_ref(p0a_dir / "HATE-evidence-strength.ndjson")],
+                    "confidence": "medium",
+                    "assumptions": ["Evidence strength is computed by HATE and interpreted by QEG policy."],
+                },
+            })
+    return strength_by_test_id
+
+
+def append_escaped_defect_nodes(
+    *,
+    escaped_defects: list[dict[str, Any]],
+    nodes: list[dict[str, Any]],
+    edges: list[dict[str, Any]],
+    escaped_defects_path: Path | None,
+    source_ref: Callable[[Path], str],
+) -> None:
+    if not escaped_defects or escaped_defects_path is None:
+        return
+    source_refs = [source_ref(escaped_defects_path)]
+    for defect in escaped_defects:
+        defect_id = str(defect.get("defect_id", ""))
+        if not defect_id:
+            continue
+        node_id = _escaped_defect_node_id(defect_id)
+        nodes.append({
+            "id": node_id,
+            "kind": "escaped_defect",
+            "label": f"Escaped defect {defect_id}",
+            "data": {
+                "defect_id": defect_id,
+                "detected_at": defect.get("detected_at", ""),
+                "severity": defect.get("severity", "unknown"),
+                "affected_requirement_ids": defect.get("affected_requirement_ids", []),
+                "affected_risk_ids": defect.get("affected_risk_ids", []),
+                "release_ref": defect.get("release_ref", ""),
+                "adapter": "escaped_defect",
+            },
+            "sourceRefs": source_refs,
+        })
+        for requirement_id in defect.get("affected_requirement_ids", []):
+            edges.append(_escaped_defect_edge(node_id, str(requirement_id), "relates_to_requirement", source_refs))
+        for risk_id in defect.get("affected_risk_ids", []):
+            edges.append(_escaped_defect_edge(node_id, str(risk_id), "relates_to_risk", source_refs))
+        release_ref = str(defect.get("release_ref", ""))
+        if release_ref:
+            edges.append(_escaped_defect_edge(node_id, release_ref, "escaped_after", source_refs))
+
+
+def _escaped_defect_node_id(defect_id: str) -> str:
+    return f"escaped_defect:{_hash_path(defect_id)}"
+
+
+def _escaped_defect_edge(
+    from_node: str,
+    to_ref: str,
+    kind: str,
+    source_refs: list[str],
+) -> dict[str, Any]:
+    return {
+        "kind": kind,
+        "from": from_node,
+        "to": to_ref,
+        "traceability": {
+            "sourceRefs": source_refs,
+            "confidence": "medium",
+            "assumptions": ["Escaped defect tracker export maps the defect to this cross-repo reference."],
+            "adapter": "escaped_defect",
+        },
+    }
+
+
 def append_sarif_finding_nodes(
     *,
     sarif_record: dict[str, Any],

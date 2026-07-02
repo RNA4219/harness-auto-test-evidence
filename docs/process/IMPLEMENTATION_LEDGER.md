@@ -22,6 +22,7 @@ GLM worker packet execution status per GLM_IMPLEMENTATION_DISPATCH_PACK.md Secti
 | GLM-W05-envelope-validator | go | 0 | yes | schema-validation-report.json | pass | Registry-driven envelope validation covers unknown/deprecated field policy and deterministic rejection classes |
 | GLM-W06-source-ref-validator | go | 0 | yes | schema-validation-report.json | pass | Cross-record sourceRef/hash violations are embedded in schema-validation-report cross_record section |
 | REAL-REPO-TRIAL-20260630-01 | go | 0 | no | docs/process/REAL_REPO_TRIALS.md | pass | HATE P0a self-application against agent-gatefield, agent-taskstate, code-to-gate, shipyard-cp, manual-bb-test-harness |
+| REAL-REPO-BULK-20260702-01 | conditional_go | 0 | yes | docs/acceptance/REAL_REPO_BULK_VALIDATION_20260702.md | pass_with_hold | 22 repo/suites and 12,771 records validated; cargo/build/typecheck dialect classification hardened; memx-resolver remains held by missing yaml dependency |
 
 ## Completed Packet Details
 

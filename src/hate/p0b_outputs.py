@@ -42,6 +42,9 @@ def write_export_outputs(
     sarif_record: dict[str, Any],
     contract_records: list[dict[str, Any]],
     mutation_records: list[dict[str, Any]],
+    evidence_strength_records: list[dict[str, Any]],
+    escaped_defects: list[dict[str, Any]],
+    escaped_defects_path: Path | None,
     source_ref: Callable[[Path], str],
 ) -> dict[str, Any]:
     evidence_map = _build_evidence_map(
@@ -82,6 +85,8 @@ def write_export_outputs(
                 *([{"kind": "HATE-static", "path": source_ref(p0a_dir / "HATE-static.sarif")}] if sarif_record else []),
                 *([{"kind": "HATE-contract", "path": source_ref(p0a_dir / "HATE-contract.ndjson")}] if contract_records else []),
                 *([{"kind": "HATE-mutation", "path": source_ref(p0a_dir / "HATE-mutation.ndjson")}] if mutation_records else []),
+                *([{"kind": "HATE-evidence-strength", "path": source_ref(p0a_dir / "HATE-evidence-strength.ndjson")}] if evidence_strength_records else []),
+                *([{"kind": "escaped-defects", "path": source_ref(escaped_defects_path)}] if escaped_defects_path else []),
             ],
             "debugOnly": decision == "hard_dq",
         },
@@ -116,6 +121,15 @@ def write_export_outputs(
         ],
         "publish_gate_override": False,
     }
+    if evidence_strength_records:
+        export_report["evidence_strength_distribution"] = _evidence_strength_distribution(evidence_strength_records)
+    escaped_defect_gaps = [
+        claim for claim in completeness["unsupportedClaims"]
+        if str(claim.get("reason", "")).startswith("escaped defect")
+    ]
+    if escaped_defects or escaped_defect_gaps:
+        export_report["escaped_defects"] = escaped_defects
+        export_report["escaped_defect_gaps"] = escaped_defect_gaps
     summary_content = "\n".join([
         "# P0b QEG Export Summary",
         "",
@@ -126,6 +140,8 @@ def write_export_outputs(
         f"- Edges: {len(edges)}",
         f"- Completeness: `{completeness['score']:.2f}`",
         f"- Missing execution gaps: {len(missing_executions)}",
+        f"- Evidence strength: {_format_strength_distribution(evidence_strength_records)}",
+        f"- Escaped defects: {len(escaped_defects)}",
         "",
         "Generated artifacts:",
         f"- `qeg-bundle.json` ({len(nodes)} nodes, {len(edges)} edges)",
@@ -177,3 +193,40 @@ def write_export_outputs(
         "out_dir": str(out_dir),
         "publish_gate_override": False,
     }
+
+
+def _evidence_strength_distribution(records: list[dict[str, Any]]) -> dict[str, int]:
+    flake_known = 0
+    mutation_known = 0
+    flake_nonzero = 0
+    mutation_zero = 0
+    for record in records:
+        payload = record.get("payload", {})
+        flake_score = payload.get("flake_score", "unknown")
+        mutation_score = payload.get("mutation_score", "unknown")
+        if isinstance(flake_score, int | float):
+            flake_known += 1
+            if float(flake_score) > 0:
+                flake_nonzero += 1
+        if isinstance(mutation_score, int | float):
+            mutation_known += 1
+            if float(mutation_score) == 0:
+                mutation_zero += 1
+    return {
+        "total": len(records),
+        "flake_known": flake_known,
+        "flake_unknown": len(records) - flake_known,
+        "flake_nonzero": flake_nonzero,
+        "mutation_known": mutation_known,
+        "mutation_unknown": len(records) - mutation_known,
+        "mutation_zero": mutation_zero,
+    }
+
+
+def _format_strength_distribution(records: list[dict[str, Any]]) -> str:
+    distribution = _evidence_strength_distribution(records)
+    return (
+        f"{distribution['total']} records, "
+        f"flake known {distribution['flake_known']}/unknown {distribution['flake_unknown']}, "
+        f"mutation known {distribution['mutation_known']}/unknown {distribution['mutation_unknown']}"
+    )

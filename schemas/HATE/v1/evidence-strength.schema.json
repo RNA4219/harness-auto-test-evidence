@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quality-harness.dev/schemas/hate/v1/evidence-strength.schema.json",
+  "title": "HATE v1 Evidence Strength Record",
+  "allOf": [
+    { "$ref": "common-envelope.schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": { "const": "evidence_strength" },
+        "payload": {
+          "type": "object",
+          "required": ["test_id", "flake_score", "mutation_score", "sample_size", "computed_at", "inputs"],
+          "properties": {
+            "test_id": { "type": "string", "minLength": 1 },
+            "flake_score": {
+              "oneOf": [
+                { "type": "number", "minimum": 0 },
+                { "const": "unknown" }
+              ]
+            },
+            "mutation_score": {
+              "oneOf": [
+                { "type": "number", "minimum": 0 },
+                { "const": "unknown" }
+              ]
+            },
+            "sample_size": { "type": "integer", "minimum": 0 },
+            "computed_at": { "type": "string", "minLength": 1 },
+            "inputs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["kind", "sourceRef"],
+                "properties": {
+                  "kind": { "type": "string", "minLength": 1 },
+                  "sourceRef": { "type": "string", "minLength": 1 }
+                },
+                "additionalProperties": true
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

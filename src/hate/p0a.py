@@ -32,6 +32,11 @@ from .p0a_support import (
     _write_json,
     _write_ndjson,
 )
+from .p0a_evidence_strength import (
+    _build_evidence_strength_records,
+    _evidence_strength_distribution,
+    _parse_stryker_mutation,
+)
 from .profile import evaluate_profile, resolve_profile
 
 def generate_p0a(
@@ -60,6 +65,7 @@ def generate_p0a(
     cobertura_path = input_dir / "cobertura.xml"
     jacoco_path = input_dir / "jacoco.xml"
     coveragepy_path = input_dir / "coverage.json"
+    stryker_path = _first_existing(input_dir, ["mutation.json", "stryker-report.json", "stryker.json"])
     sarif_path = _first_existing(input_dir, ["results.sarif", "sarif.json", "HATE-static.sarif"])
     artifacts_dir = input_dir / "artifacts"
     artifact_refs_path = input_dir / "artifact-refs.json"
@@ -81,8 +87,11 @@ def generate_p0a(
 
     test_records: list[dict[str, Any]] = []
     coverage_records: list[dict[str, Any]] = []
+    mutation_records: list[dict[str, Any]] = []
+    evidence_strength_records: list[dict[str, Any]] = []
     test_adapter_errors: list[dict[str, str]] = []
     coverage_adapter_errors: list[dict[str, str]] = []
+    mutation_adapter_errors: list[dict[str, str]] = []
 
     try:
         test_records = _parse_junit(junit_path, context, created_at, version)
@@ -121,6 +130,12 @@ def generate_p0a(
     except Exception as exc:  # noqa: BLE001
         coverage_adapter_errors.append(_dq("HATE-DQ-002", f"coverage.py parse failure: {exc}", "coverage.json"))
 
+    if stryker_path is not None:
+        try:
+            mutation_records = _parse_stryker_mutation(stryker_path, context, created_at, version)
+        except Exception as exc:  # noqa: BLE001
+            mutation_adapter_errors.append(_dq("HATE-DQ-002", f"stryker mutation parse failure: {exc}", stryker_path.name))
+
     sarif_record: dict[str, Any] | None = None
     sarif_error: dict[str, str] | None = None
     if sarif_path is not None:
@@ -136,12 +151,21 @@ def generate_p0a(
         dq_hits.extend(test_adapter_errors)
     # Coverage adapter errors always count (malformed coverage is serious)
     dq_hits.extend(coverage_adapter_errors)
+    dq_hits.extend(mutation_adapter_errors)
     if sarif_error:
         dq_hits.append(sarif_error)
     if coverage_records and not test_records:
         dq_hits.append(_dq("HATE-DQ-008", "coverage exists but no test execution result exists", "lcov.info"))
 
     run_record = _run_record(context, created_at, version)
+    evidence_strength_records = _build_evidence_strength_records(
+        context=context,
+        created_at=created_at,
+        source_version=version,
+        input_dir=input_dir,
+        test_records=test_records,
+        mutation_records=mutation_records,
+    )
     artifact_manifest = _artifact_manifest(context, created_at, artifacts_dir, artifact_refs_path, fixture_path_prefix)
     missing_artifacts = [
         artifact for artifact in artifact_manifest["artifacts"]
@@ -174,6 +198,7 @@ def generate_p0a(
         "HATE-run.json": run_record,
         "HATE-test-results.ndjson": test_records,
         "HATE-coverage.ndjson": coverage_records,
+        "HATE-evidence-strength.ndjson": evidence_strength_records,
         "artifact-manifest.json": artifact_manifest,
         "quarantine-report.json": _quarantine_report(context, created_at, version, artifact_manifest),
         "profile-report.json": profile_report,
@@ -181,10 +206,15 @@ def generate_p0a(
     }
     if sarif_record is not None:
         outputs["HATE-static.sarif"] = sarif_record
+    if mutation_records:
+        outputs["HATE-mutation.ndjson"] = mutation_records
 
     _write_json(out_dir / "HATE-run.json", run_record)
     _write_ndjson(out_dir / "HATE-test-results.ndjson", test_records)
     _write_ndjson(out_dir / "HATE-coverage.ndjson", coverage_records)
+    _write_ndjson(out_dir / "HATE-evidence-strength.ndjson", evidence_strength_records)
+    if mutation_records:
+        _write_ndjson(out_dir / "HATE-mutation.ndjson", mutation_records)
     if sarif_record is not None:
         _write_json(out_dir / "HATE-static.sarif", sarif_record)
     _write_json(out_dir / "artifact-manifest.json", artifact_manifest)
@@ -201,7 +231,14 @@ def generate_p0a(
         _write_json(out_dir / "precheck-decision.json", decision_record)
         record = _audit_record(context, created_at, version, outputs, input_dir)
     _write_json(out_dir / "record.json", record)
-    summary = _summary(context, test_records, coverage_records, artifact_manifest, decision_record)
+    summary = _summary(
+        context,
+        test_records,
+        coverage_records,
+        artifact_manifest,
+        decision_record,
+        evidence_strength_distribution=_evidence_strength_distribution(evidence_strength_records),
+    )
     (out_dir / "summary.md").write_text(summary, encoding="utf-8")
 
     result = {

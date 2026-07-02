@@ -53,6 +53,10 @@ def _schema_name_for_generated_record(record: dict[str, Any]) -> str | None:
         return "test-result.schema.json"
     if record_type == "coverage_slice":
         return "coverage-slice.schema.json"
+    if record_type == "mutation_evidence":
+        return "mutation-evidence.schema.json"
+    if record_type == "evidence_strength":
+        return "evidence-strength.schema.json"
     if record_type == "precheck_decision":
         return "precheck-decision.schema.json"
     if record_type == "audit_record":
@@ -69,6 +73,8 @@ def _schema_source_ref(record: dict[str, Any], schema_name: str) -> str:
         "run": "HATE-run.json",
         "test_result": "HATE-test-results.ndjson",
         "coverage_slice": "HATE-coverage.ndjson",
+        "mutation_evidence": "HATE-mutation.ndjson",
+        "evidence_strength": "HATE-evidence-strength.ndjson",
         "precheck_decision": "precheck-decision.json",
         "audit_record": "record.json",
     }.get(record_type, "generated-record")
@@ -172,6 +178,5 @@ def _schema_type_matches(value: Any, expected_type: str) -> bool:
     if expected_type == "null":
         return value is None
     return True
-
 
 

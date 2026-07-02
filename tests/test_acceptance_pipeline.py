@@ -42,6 +42,9 @@ def test_hate_cli_acceptance_pipeline(tmp_path: Path) -> None:
     assert p0b["export_status"] == "success"
     assert p0b["missing_executions"] == 0
     assert p0b["publish_gate_override"] is False
+    bundle = read_json(p0b_out / "qeg-bundle.json")
+    assert any(node["kind"] == "evidence_strength" for node in bundle["nodes"])
+    assert any(item["kind"] == "HATE-evidence-strength" for item in bundle["metadata"]["inputArtifacts"])
 
     trust = run_hate(
         "trust",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "06beb7adf484",
+  "generated_at": "cd81c24c0c50",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -64,6 +64,13 @@
       "sha256": "1ea6035725f4143dc5dd09613f1bf95bd7781153c6c60bd5bbc48a52b9be43b9",
       "line_count": 51,
       "size_bytes": 3337
+    },
+    "docs/acceptance/REAL_REPO_BULK_VALIDATION_20260702.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.REAL_REPO_BULK_VALIDATION_20260702.md.json",
+      "sha256": "bd30c708cea1bc7bd782995e9c4c9a91ce2d89d73e83f53b6a6a94b315c2fbc8",
+      "line_count": 55,
+      "size_bytes": 4139
     },
     "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md": {
       "role": "quality",
@@ -264,9 +271,9 @@
     "docs/process/IMPLEMENTATION_LEDGER.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.IMPLEMENTATION_LEDGER.md.json",
-      "sha256": "d6d05c3cdecd6a3df799ca76a469514f99700b41c532347cdc9721aacf82c5b1",
-      "line_count": 94,
-      "size_bytes": 5427
+      "sha256": "026157fe98a7f6e9f80f8967922f29f8729206a2b6e0d725aec81c63a7ec4107",
+      "line_count": 95,
+      "size_bytes": 5714
     },
     "docs/process/IMPLEMENTATION_ROADMAP_CHECKLIST.md": {
       "role": "planning",
@@ -4310,9 +4317,9 @@
     "fixtures/platform/evaluation/noisy-runner-log/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.platform.evaluation.noisy-runner-log.fixture.json.json",
-      "sha256": "2cbab4a741b137026e293acb78bf043481731b657d3b4638712ec2a613ba6471",
-      "line_count": 42,
-      "size_bytes": 1543
+      "sha256": "1e6bf242123ec6d3fea168fee01602a580fcbd3e080524c075f26de4506c0486",
+      "line_count": 87,
+      "size_bytes": 3851
     },
     "fixtures/platform/evaluation/redacted-deterministic-output/fixture.json": {
       "role": "fixture",
@@ -7411,9 +7418,9 @@
     "src/hate/evaluation/runner_dialects.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evaluation.runner_dialects.py.json",
-      "sha256": "cd5076a0395d8894c9e5d480f78b9fb322e0c8ed88de02af0b3948b5f2189fcd",
-      "line_count": 191,
-      "size_bytes": 6620
+      "sha256": "542d7943c5b1684ba5ec54856d473915b3c858199b14da520da399d8a61af2b3",
+      "line_count": 290,
+      "size_bytes": 9969
     },
     "src/hate/evaluation/score_model.py": {
       "role": "implementation",
@@ -9000,9 +9007,9 @@
     "tests/test_real_repo_platform_packets.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_real_repo_platform_packets.py.json",
-      "sha256": "d8acb7191ae819f50ca4b633d6021b73e9d75043b9dffc6429dc8afff863e8cc",
-      "line_count": 224,
-      "size_bytes": 10144
+      "sha256": "d57dd00d619c72c0de73b2a8420cad1157ada39186ce794c527b09c8f41b38b8",
+      "line_count": 246,
+      "size_bytes": 11262
     },
     "tests/test_release_candidate_pack.py": {
       "role": "test",

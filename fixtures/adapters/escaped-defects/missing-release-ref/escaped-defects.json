@@ -1,0 +1,11 @@
+{
+  "defects": [
+    {
+      "defect_id": "BUG-103",
+      "detected_at": "2026-07-01T12:00:00Z",
+      "severity": "medium",
+      "affected_requirement_ids": ["rand:req/login-session"],
+      "affected_risk_ids": ["ctg:risk-auth-high"]
+    }
+  ]
+}

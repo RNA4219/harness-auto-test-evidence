@@ -27,14 +27,18 @@ class P0bInputBundle:
     p0a_dir: Path
     diff_risk_path: Path
     risk_debt_lifecycle_path: Path
+    escaped_defects_path: Path | None
     run_record: dict[str, Any]
     test_records: list[dict[str, Any]]
     coverage_records: list[dict[str, Any]]
     contract_records: list[dict[str, Any]]
     mutation_records: list[dict[str, Any]]
+    evidence_strength_records: list[dict[str, Any]]
     artifact_manifest: dict[str, Any]
     precheck_decision: dict[str, Any]
     audit_record: dict[str, Any]
     sarif_record: dict[str, Any]
     diff_risk_test: dict[str, Any]
     risk_debt_lifecycle: dict[str, Any]
+    escaped_defects: list[dict[str, Any]]
+    escaped_defect_claims: list[dict[str, Any]]

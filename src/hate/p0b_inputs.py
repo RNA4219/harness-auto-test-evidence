@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from .escaped_defects import find_escaped_defects_path, load_escaped_defects
 from .p0b_support import _read_json, _read_ndjson
 from .p0b_types import ExportError, P0bInputBundle
 
@@ -21,6 +22,11 @@ def load_input_bundle(fixture_dir: Path) -> P0bInputBundle:
     p0a_dir = fixture_dir / "p0a"
     diff_risk_path = fixture_dir / "diff-risk-test.json"
     risk_debt_lifecycle_path = fixture_dir / "risk-debt-lifecycle.json"
+    escaped_defects_path = find_escaped_defects_path(fixture_dir)
+    escaped_defects: list[dict] = []
+    escaped_defect_claims: list[dict] = []
+    if escaped_defects_path:
+        escaped_defects, escaped_defect_claims = load_escaped_defects(escaped_defects_path)
     required_p0a_files = [
         "HATE-run.json",
         "HATE-test-results.ndjson",
@@ -40,6 +46,7 @@ def load_input_bundle(fixture_dir: Path) -> P0bInputBundle:
         p0a_dir=p0a_dir,
         diff_risk_path=diff_risk_path,
         risk_debt_lifecycle_path=risk_debt_lifecycle_path,
+        escaped_defects_path=escaped_defects_path,
         run_record=_read_json(p0a_dir / "HATE-run.json"),
         test_records=_read_ndjson(p0a_dir / "HATE-test-results.ndjson"),
         coverage_records=_read_ndjson(p0a_dir / "HATE-coverage.ndjson"),
@@ -49,10 +56,15 @@ def load_input_bundle(fixture_dir: Path) -> P0bInputBundle:
         mutation_records=_read_ndjson(p0a_dir / "HATE-mutation.ndjson")
         if (p0a_dir / "HATE-mutation.ndjson").exists()
         else [],
+        evidence_strength_records=_read_ndjson(p0a_dir / "HATE-evidence-strength.ndjson")
+        if (p0a_dir / "HATE-evidence-strength.ndjson").exists()
+        else [],
         artifact_manifest=_read_json(p0a_dir / "artifact-manifest.json"),
         precheck_decision=_read_json(p0a_dir / "precheck-decision.json"),
         audit_record=_read_json(p0a_dir / "record.json"),
         sarif_record=_read_json(p0a_dir / "HATE-static.sarif") if (p0a_dir / "HATE-static.sarif").exists() else {},
         diff_risk_test=_read_json(diff_risk_path) if diff_risk_path.exists() else {},
         risk_debt_lifecycle=_read_json(risk_debt_lifecycle_path) if risk_debt_lifecycle_path.exists() else {},
+        escaped_defects=escaped_defects,
+        escaped_defect_claims=escaped_defect_claims,
     )

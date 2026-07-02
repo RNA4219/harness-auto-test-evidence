@@ -45,6 +45,13 @@
       "deprecated_fields": []
     },
     {
+      "record_type": "evidence_strength",
+      "schema": "schemas/HATE/v1/evidence-strength.schema.json",
+      "phase": "P0a",
+      "unknown_field_policy": "preserve_without_summary",
+      "deprecated_fields": []
+    },
+    {
       "record_type": "precheck_decision",
       "schema": "schemas/HATE/v1/precheck-decision.schema.json",
       "phase": "P0a",

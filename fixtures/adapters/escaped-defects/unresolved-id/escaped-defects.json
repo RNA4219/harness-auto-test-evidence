@@ -1,0 +1,12 @@
+{
+  "defects": [
+    {
+      "defect_id": "BUG-102",
+      "detected_at": "2026-07-01T11:00:00Z",
+      "severity": "critical",
+      "affected_requirement_ids": ["REQ-LOGIN-1"],
+      "affected_risk_ids": ["ctg:risk-auth-high"],
+      "release_ref": "qeg:release/verdict-2026-06-30"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "path": "docs/acceptance/REAL_REPO_BULK_VALIDATION_20260702.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "bd30c708cea1bc7bd782995e9c4c9a91ce2d89d73e83f53b6a6a94b315c2fbc8",
+  "line_count": 55,
+  "size_bytes": 4139,
+  "headings": [
+    "# Real Repo Bulk Validation 2026-07-02",
+    "## Scope",
+    "## Findings",
+    "## Commands",
+    "## Residual Gaps"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "store",
+    "test"
+  ]
+}

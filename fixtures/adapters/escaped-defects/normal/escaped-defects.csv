@@ -1,0 +1,2 @@
+defect_id,detected_at,severity,affected_requirement_ids,affected_risk_ids,release_ref
+BUG-101,2026-07-01T10:15:00Z,high,rand:req/login-session,ctg:risk-auth-high,qeg:release/verdict-2026-06-30

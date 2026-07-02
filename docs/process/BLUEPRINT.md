@@ -173,6 +173,7 @@ HATE が出す `qeg-bundle.json` や optional evidence は、QEG の
 |---|---|---|
 | 自動テスト ingest | JUnit / coverage / SARIF / Playwright / Pact / Stryker を収集・正規化 | optional evidence として graph / placement / Gate へ統合 |
 | 信頼評価 | flaky、retry、matrix、coverage context、artifact availability を AETE に写像 | source-backed な Gate reason、DQ、blocker、residual risk を判定 |
+| Evidence strength | run 履歴・retry/replay の pass/fail 遷移と mutation evidence から `evidence_strength` を算出し、unknown を明示して export | strength のしきい値、policy 判断、go/hold/block への反映 |
 | 統制 | QEG が読める provenance / hash / sourceRefs / manifest を出力 | Gate policy、waiver、approval、retention、immutability、schema hardening を統制 |
 | 互換性 | QEG minimal fixture / optional evidence fixture を生成 | fixture regression で import / verdict / record を検証 |
 

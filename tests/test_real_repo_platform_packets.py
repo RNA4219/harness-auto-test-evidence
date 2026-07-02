@@ -181,6 +181,28 @@ def test_runner_dialect_coverage_ignores_noisy_logs() -> None:
     assert any(result["actual"]["ignored_noise"] for result in report["results"])
 
 
+def test_runner_dialect_coverage_does_not_misclassify_cargo_as_pytest() -> None:
+    fixture = _fixture("noisy-runner-log")
+
+    report = build_runner_dialect_coverage_report(fixture["input"], fixture["fixture_id"])
+
+    cargo = next(result for result in report["results"] if result["case_id"] == "cargo-test-real-output")
+    assert cargo["actual"]["dialect"] == "cargo-test"
+    assert cargo["actual"]["summary"] == {"passed": 25, "total_tests": 25}
+
+
+def test_runner_dialect_coverage_classifies_build_and_check_outputs() -> None:
+    fixture = _fixture("noisy-runner-log")
+
+    report = build_runner_dialect_coverage_report(fixture["input"], fixture["fixture_id"])
+    actual_by_case = {result["case_id"]: result["actual"] for result in report["results"]}
+
+    assert actual_by_case["nextjs-build-real-output"]["dialect"] == "nextjs-build"
+    assert actual_by_case["astro-build-real-output"]["dialect"] == "astro-build"
+    assert actual_by_case["typescript-typecheck-real-output"]["dialect"] == "typescript-typecheck"
+    assert actual_by_case["python-compileall-real-output"]["dialect"] == "python-compileall"
+
+
 def test_real_repo_baseline_approval_freeze_is_usable() -> None:
     fixture = _fixture("baseline-approval-freeze")
 

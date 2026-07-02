@@ -29,14 +29,59 @@
           "dialect": "bun",
           "summary": {"passed": 57, "total_tests": 57}
         }
+      },
+      {
+        "case_id": "cargo-test-real-output",
+        "stdout": "running 25 tests\ntest core::memory::tests::frontmatter_roundtrip ... ok\n\ntest result: ok. 25 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+        "stderr": "",
+        "expected": {
+          "dialect": "cargo-test",
+          "summary": {"passed": 25, "total_tests": 25}
+        }
+      },
+      {
+        "case_id": "nextjs-build-real-output",
+        "stdout": "> frontend@1.0.0 build\n> next build\n\n   ▲ Next.js 14.0.0\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Generating static pages (0/4) ...\n ✓ Generating static pages (4/4)",
+        "stderr": "",
+        "expected": {
+          "dialect": "nextjs-build",
+          "summary": {"build_passed": 1, "typecheck_passed": 1, "static_pages": 4, "total_checks": 1}
+        }
+      },
+      {
+        "case_id": "typescript-typecheck-real-output",
+        "stdout": "> @quality-harness/quality-evidence-graph@0.1.0 typecheck\n> tsc --noEmit",
+        "stderr": "",
+        "expected": {
+          "dialect": "typescript-typecheck",
+          "summary": {"typecheck_passed": 1, "total_checks": 1}
+        }
+      },
+      {
+        "case_id": "python-compileall-real-output",
+        "stdout": "Listing 'backend/app'...\nListing 'backend/app\\\\clients'...\nListing 'backend/app\\\\routers'...\nListing 'backend/app\\\\schemas'...",
+        "stderr": "",
+        "expected": {
+          "dialect": "python-compileall",
+          "summary": {"compiled_paths": 4, "total_checks": 1}
+        }
+      },
+      {
+        "case_id": "astro-build-real-output",
+        "stdout": "> rna4219-webpage@0.0.1 build\n> astro build\n\n08:16:24 [build] output: \"static\"\n08:16:24 [build] ✓ Completed in 541ms.\n08:16:26 [build] 10 page(s) built in 2.68s\n08:16:26 [build] Complete!",
+        "stderr": "",
+        "expected": {
+          "dialect": "astro-build",
+          "summary": {"build_passed": 1, "static_pages": 10, "total_checks": 1}
+        }
       }
     ]
   },
   "expected": {
     "record_type": "runner-dialect-coverage-report",
     "overall_status": "pass",
-    "case_count": 3,
+    "case_count": 8,
     "failed": 0,
-    "dialects": ["bun", "pytest", "vitest"]
+    "dialects": ["astro-build", "bun", "cargo-test", "nextjs-build", "pytest", "python-compileall", "typescript-typecheck", "vitest"]
   }
 }

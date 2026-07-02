@@ -597,6 +597,89 @@ def test_p0b_maps_stryker_mutation_survivor_to_oracle_gap(tmp_path: Path) -> Non
     assert any(artifact["kind"] == "HATE-mutation" for artifact in input_artifacts)
 
 
+def test_p0b_ingests_escaped_defects_csv_as_qeg_optional_evidence(tmp_path: Path) -> None:
+    """Escaped defect CSV export is normalized and attached to the QEG bundle."""
+    fixture_dir = _copy_fixture(Path("fixtures/golden/p0b-qeg-minimal/input"), tmp_path / "input")
+    out_dir = tmp_path / "output"
+    shutil.copy2(
+        Path("fixtures/adapters/escaped-defects/normal/escaped-defects.csv"),
+        fixture_dir / "escaped-defects.csv",
+    )
+
+    result = export_qeg(fixture_dir=fixture_dir, out_dir=out_dir)
+
+    assert result["export_status"] == "success"
+    bundle = json.loads((out_dir / "qeg-bundle.json").read_text(encoding="utf-8"))
+    ev_map = json.loads((out_dir / "evidence-map.json").read_text(encoding="utf-8"))
+    report = json.loads((out_dir / "qeg-export-report.json").read_text(encoding="utf-8"))
+
+    defect_nodes = [node for node in bundle["nodes"] if node["kind"] == "escaped_defect"]
+    assert len(defect_nodes) == 1
+    defect = defect_nodes[0]["data"]
+    assert defect == {
+        "defect_id": "hate:defect/BUG-101",
+        "detected_at": "2026-07-01T10:15:00Z",
+        "severity": "high",
+        "affected_requirement_ids": ["rand:req/login-session"],
+        "affected_risk_ids": ["ctg:risk-auth-high"],
+        "release_ref": "qeg:release/verdict-2026-06-30",
+        "adapter": "escaped_defect",
+    }
+    assert report["escaped_defects"][0]["defect_id"] == "hate:defect/BUG-101"
+    assert report["escaped_defect_gaps"] == []
+    assert ev_map["escaped_defects"][0]["release_ref"] == "qeg:release/verdict-2026-06-30"
+    assert ev_map["links"]["escaped_after"][0]["to"] == "qeg:release/verdict-2026-06-30"
+    input_artifacts = bundle["metadata"]["inputArtifacts"]
+    assert any(artifact["kind"] == "escaped-defects" for artifact in input_artifacts)
+
+
+def test_p0b_escaped_defect_unresolved_id_is_visible_gap(tmp_path: Path) -> None:
+    """Unresolved cross-repo ids in escaped defect input are reported, not evaluated."""
+    fixture_dir = _copy_fixture(Path("fixtures/golden/p0b-qeg-minimal/input"), tmp_path / "input")
+    out_dir = tmp_path / "output"
+    shutil.copy2(
+        Path("fixtures/adapters/escaped-defects/unresolved-id/escaped-defects.json"),
+        fixture_dir / "escaped-defects.json",
+    )
+
+    result = export_qeg(fixture_dir=fixture_dir, out_dir=out_dir)
+
+    assert result["export_status"] == "partial"
+    report = json.loads((out_dir / "qeg-export-report.json").read_text(encoding="utf-8"))
+    assert report["completeness"]["score"] == 0.9
+    assert report["escaped_defect_gaps"] == [
+        {
+            "defect_id": "hate:defect/BUG-102",
+            "refs": ["REQ-LOGIN-1"],
+            "reason": "escaped defect id resolution failed",
+        }
+    ]
+
+
+def test_p0b_escaped_defect_missing_release_ref_is_visible_gap(tmp_path: Path) -> None:
+    """release_ref is required for later QEG efficacy analysis and remains a visible gap."""
+    fixture_dir = _copy_fixture(Path("fixtures/golden/p0b-qeg-minimal/input"), tmp_path / "input")
+    out_dir = tmp_path / "output"
+    shutil.copy2(
+        Path("fixtures/adapters/escaped-defects/missing-release-ref/escaped-defects.json"),
+        fixture_dir / "escaped-defects.json",
+    )
+
+    result = export_qeg(fixture_dir=fixture_dir, out_dir=out_dir)
+
+    assert result["export_status"] == "partial"
+    report = json.loads((out_dir / "qeg-export-report.json").read_text(encoding="utf-8"))
+    ev_map = json.loads((out_dir / "evidence-map.json").read_text(encoding="utf-8"))
+    assert report["escaped_defect_gaps"] == [
+        {
+            "defect_id": "hate:defect/BUG-103",
+            "reason": "escaped defect release_ref missing",
+        }
+    ]
+    assert ev_map["escaped_defects"][0]["release_ref"] == ""
+    assert ev_map["links"]["escaped_after"] == []
+
+
 def test_p0b_cli_export_qeg(tmp_path: Path) -> None:
     """CLI `hate export qeg` generates expected artifacts."""
     import subprocess

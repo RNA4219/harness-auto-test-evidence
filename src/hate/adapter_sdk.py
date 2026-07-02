@@ -13,6 +13,7 @@ SUPPORTED_RECORD_KINDS = frozenset(
         "static_finding",
         "contract_evidence",
         "mutation_evidence",
+        "evidence_strength",
     }
 )
 

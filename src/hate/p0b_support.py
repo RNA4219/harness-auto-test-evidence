@@ -29,6 +29,8 @@ def _build_evidence_map(
     findings_list: list[dict[str, Any]] = []
     contracts_list: list[dict[str, Any]] = []
     mutations_list: list[dict[str, Any]] = []
+    evidence_strength_list: list[dict[str, Any]] = []
+    escaped_defects_list: list[dict[str, Any]] = []
 
     for node in nodes:
         kind = node.get("kind", "")
@@ -44,7 +46,7 @@ def _build_evidence_map(
                 "canonical_test_id": node.get("data", {}).get("canonical_test_id", ""),
                 "status": node.get("data", {}).get("status", "unknown"),
             })
-        elif kind in {"execution_evidence", "coverage", "evidence_artifact", "contract_evidence", "mutation_evidence"}:
+        elif kind in {"execution_evidence", "coverage", "evidence_artifact", "contract_evidence", "mutation_evidence", "evidence_strength"}:
             data = node.get("data", {})
             evidence_list.append({
                 "evidence_id": node["id"],
@@ -56,6 +58,16 @@ def _build_evidence_map(
                 "path": data.get("path", ""),
                 "sourceRefs": node.get("sourceRefs", []),
             })
+            if kind == "evidence_strength":
+                evidence_strength_list.append({
+                    "test_id": data.get("test_id", ""),
+                    "flake_score": data.get("flake_score", "unknown"),
+                    "mutation_score": data.get("mutation_score", "unknown"),
+                    "sample_size": data.get("sample_size", 0),
+                    "computed_at": data.get("computed_at", ""),
+                    "inputs": data.get("inputs", []),
+                    "sourceRefs": node.get("sourceRefs", []),
+                })
             if kind == "contract_evidence":
                 contracts_list.append({
                     "contract_id": data.get("contract_id", ""),
@@ -88,6 +100,17 @@ def _build_evidence_map(
                 "location": data.get("location", {}),
                 "sourceRefs": node.get("sourceRefs", []),
             })
+        elif kind == "escaped_defect":
+            data = node.get("data", {})
+            escaped_defects_list.append({
+                "defect_id": data.get("defect_id", ""),
+                "detected_at": data.get("detected_at", ""),
+                "severity": data.get("severity", "unknown"),
+                "affected_requirement_ids": data.get("affected_requirement_ids", []),
+                "affected_risk_ids": data.get("affected_risk_ids", []),
+                "release_ref": data.get("release_ref", ""),
+                "sourceRefs": node.get("sourceRefs", []),
+            })
 
     # Build link arrays
     requires_test_links: list[dict[str, Any]] = []
@@ -95,6 +118,10 @@ def _build_evidence_map(
     supports_links: list[dict[str, Any]] = []
     touches_links: list[dict[str, Any]] = []
     contradicts_links: list[dict[str, Any]] = []
+    escaped_after_links: list[dict[str, Any]] = []
+    relates_to_requirement_links: list[dict[str, Any]] = []
+    relates_to_risk_links: list[dict[str, Any]] = []
+    has_strength_links: list[dict[str, Any]] = []
 
     for edge in edges:
         kind = edge.get("kind", "")
@@ -118,6 +145,14 @@ def _build_evidence_map(
             touches_links.append(link)
         elif kind == "contradicts":
             contradicts_links.append(link)
+        elif kind == "escaped_after":
+            escaped_after_links.append(link)
+        elif kind == "relates_to_requirement":
+            relates_to_requirement_links.append(link)
+        elif kind == "relates_to_risk":
+            relates_to_risk_links.append(link)
+        elif kind == "has_strength":
+            has_strength_links.append(link)
 
     # Build gaps
     for miss in missing_executions:
@@ -127,7 +162,23 @@ def _build_evidence_map(
             "reason": miss.get("reason", ""),
         })
 
-    return {
+    links = {
+        "requires_test": requires_test_links,
+        "evidenced_by": evidenced_by_links,
+        "supports": supports_links,
+        "touches": touches_links,
+        "contradicts": contradicts_links,
+    }
+    if escaped_defects_list:
+        links.update({
+            "escaped_after": escaped_after_links,
+            "relates_to_requirement": relates_to_requirement_links,
+            "relates_to_risk": relates_to_risk_links,
+        })
+    if evidence_strength_list:
+        links["has_strength"] = has_strength_links
+
+    evidence_map = {
         "schema_version": SCHEMA_VERSION,
         "run_id": run_id,
         "run_attempt": run_attempt,
@@ -138,13 +189,7 @@ def _build_evidence_map(
         "findings": findings_list,
         "contracts": contracts_list,
         "mutations": mutations_list,
-        "links": {
-            "requires_test": requires_test_links,
-            "evidenced_by": evidenced_by_links,
-            "supports": supports_links,
-            "touches": touches_links,
-            "contradicts": contradicts_links,
-        },
+        "links": links,
         "gaps": {
             "unsupported_claims": unsupported_claims,
             "missing_execution": missing_executions,
@@ -152,6 +197,11 @@ def _build_evidence_map(
             "unsafe_artifacts": unsafe_artifacts,
         },
     }
+    if evidence_strength_list:
+        evidence_map["evidence_strength"] = evidence_strength_list
+    if escaped_defects_list:
+        evidence_map["escaped_defects"] = escaped_defects_list
+    return evidence_map
 
 
 def _calculate_completeness(
@@ -191,6 +241,8 @@ def _calculate_completeness(
     if any(claim.get("reason") in {"required contract failed", "required contract evidence missing"} for claim in unsupported_claims):
         base -= 0.10
     if any(claim.get("reason") in {"required mutation survived", "required mutation evidence missing"} for claim in unsupported_claims):
+        base -= 0.10
+    if any(str(claim.get("reason", "")).startswith("escaped defect") for claim in unsupported_claims):
         base -= 0.10
     if unsafe_artifacts:
         base -= 0.10
