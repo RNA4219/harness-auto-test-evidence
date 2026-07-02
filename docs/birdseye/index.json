@@ -1,5 +1,5 @@
 {
-  "generated_at": "b04b68f9f7fb",
+  "generated_at": "c44ebb2ec8ee",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -7439,9 +7439,9 @@
     "src/hate/evaluation/real_repo.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evaluation.real_repo.py.json",
-      "sha256": "f69457306f42cc1fd4e386073e1397cd955ffe180054bac14817810a1ee296eb",
-      "line_count": 766,
-      "size_bytes": 29769
+      "sha256": "44c9769a6d7b568ee95ff8c01172ef1c19faefab01d42f281c03ef5dd1b2a285",
+      "line_count": 767,
+      "size_bytes": 29857
     },
     "src/hate/evaluation/regression_engine.py": {
       "role": "implementation",
@@ -9063,9 +9063,9 @@
     "tests/test_real_repo_evaluation.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_real_repo_evaluation.py.json",
-      "sha256": "e64d92e2dff641da351953377368577a105a2b900d40194213101919718f006f",
-      "line_count": 762,
-      "size_bytes": 31860
+      "sha256": "a4f770977ab4108162e332d18bb8cca7197585e7166e8f82fcb5dc88a58a0da2",
+      "line_count": 761,
+      "size_bytes": 31822
     },
     "tests/test_real_repo_platform_packets.py": {
       "role": "test",

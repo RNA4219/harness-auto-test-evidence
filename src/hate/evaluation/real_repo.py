@@ -713,9 +713,10 @@ def _safe_repo_id(value: str) -> str:
     return safe.strip("-") or "repo"
 
 
-def _normalize_command(command: list[str]) -> list[str]:
+def _normalize_command(command: list[str], os_name: str | None = None) -> list[str]:
     """Resolve Windows command shims without forcing roster authors to use .cmd."""
-    if not command or os.name != "nt":
+    current_os = os.name if os_name is None else os_name
+    if not command or current_os != "nt":
         return command
     executable = command[0]
     if Path(executable).suffix:
