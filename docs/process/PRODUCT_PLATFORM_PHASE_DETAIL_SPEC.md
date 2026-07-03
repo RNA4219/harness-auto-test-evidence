@@ -536,6 +536,8 @@ documents. The report generator must combine:
 - QEG smoke evidence, when present in the acceptance record
 - unresolved residual blockers such as owned repo holds, environment cache
   friction, or build/typecheck-only evidence constraints
+- PoC mitigation evidence, when residual friction is explicitly mitigated by
+  executable CLI behavior and non-overclaim guardrails
 
 Output status:
 
@@ -543,10 +545,19 @@ Output status:
 |---|---|
 | `no_go` | required docs or mapped implementation/test evidence is missing |
 | `conditional_go` | required docs and mapped implementation/test evidence exist, but residual operational blockers remain |
+| `poc_complete` | PoC criteria are complete and every residual blocker has mitigation evidence and non-overclaim guardrails |
 | `verified` | required docs, mapped implementation/test evidence, real-data validation, and QEG smoke pass with no residual blockers |
 
 `product_ready` remains false unless status is `verified` and a release/QEG
 approval record exists. HATE must not promote itself to final release authority.
+
+`poc_ready` is separate from `product_ready`. It may be true only when:
+
+- all product-grade areas have mapped docs, implementation refs, and test refs
+- real-data validation and QEG smoke evidence exist
+- residual operational friction is represented in `poc_completion.mitigations`
+- every mitigation maps to an implemented command, test, or documented
+  non-overclaim guardrail
 
 ### 5.1.3 Operating Runtime Closure Contract
 

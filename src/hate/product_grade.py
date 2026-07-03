@@ -153,11 +153,17 @@ def generate_product_grade_reports(
     real_data = _real_data_validation(root)
     implementation_complete = not missing_reports
     residual_blockers = real_data["residual_blockers"]
+    poc_completion = _poc_completion(root, residual_blockers)
     product_grade_status = "no_go"
     reason = "Product-grade evidence is missing required documents, implementation refs, or tests."
     if implementation_complete:
         product_grade_status = "conditional_go" if residual_blockers else "verified"
+        if residual_blockers and poc_completion["poc_ready"]:
+            product_grade_status = "poc_complete"
         reason = (
+            "PoC completion evidence is present; production release approval remains outside HATE."
+            if product_grade_status == "poc_complete"
+            else
             "Product-grade implementation evidence is present, but operational residual gaps remain."
             if residual_blockers
             else "Product-grade implementation, test, real-data, and QEG smoke evidence are present."
@@ -170,12 +176,15 @@ def generate_product_grade_reports(
         "docs_root": str(docs_root),
         "repo_root": str(root),
         "product_ready": product_grade_status == "verified",
+        "poc_ready": product_grade_status in {"poc_complete", "verified"},
+        "poc_completion_percent": poc_completion["completion_percent"] if implementation_complete else 0,
         "product_grade_implementation_status": product_grade_status,
         "reason": reason,
         "required_report_count": len(REPORT_SPECS),
         "generated_report_count": len(reports),
         "missing_or_incomplete_reports": missing_reports,
         "real_data_validation": real_data,
+        "poc_completion": poc_completion,
         "reports": reports,
     }
     _write_json(out_dir / "product-grade-evidence-summary.json", summary)
@@ -183,6 +192,8 @@ def generate_product_grade_reports(
         "generated": [item["filename"] for item in reports] + ["product-grade-evidence-summary.json"],
         "out_dir": str(out_dir),
         "product_ready": summary["product_ready"],
+        "poc_ready": summary["poc_ready"],
+        "poc_completion_percent": summary["poc_completion_percent"],
         "product_grade_implementation_status": product_grade_status,
     }
 
@@ -298,6 +309,62 @@ def _real_data_validation(repo_root: Path) -> dict[str, Any]:
         "executed_records": 12771 if "12,771" in text else 0,
         "qeg_smoke_passed": "QEG `build`, `validate`, `gate`, and `record` passed" in text,
         "residual_blockers": residual_blockers,
+        "sourceRef": str(path),
+    }
+
+
+def _poc_completion(repo_root: Path, residual_blockers: list[str]) -> dict[str, Any]:
+    path = repo_root / "docs" / "acceptance" / "POC_COMPLETION_20260703.md"
+    if not path.exists():
+        return {
+            "present": False,
+            "poc_ready": False,
+            "completion_percent": 0 if residual_blockers else 100,
+            "mitigations": [],
+            "unmitigated_blockers": residual_blockers,
+            "sourceRef": str(path),
+        }
+
+    text = path.read_text(encoding="utf-8")
+    mitigation_checks = [
+        (
+            "memx-resolver dependency setup remains unstable",
+            ["memx-resolver", "scheduler retry", "assignment queue", "owner/SLA"],
+        ),
+        (
+            "uv cache permission friction remains in combined/sandboxed runs",
+            ["uv", "cache TTL", "resume tokens", "UV_CACHE_DIR"],
+        ),
+        (
+            "build/typecheck records must stay out of executable test-oracle scoring",
+            ["build/typecheck", "oracle confidence", "total_checks", "total_tests"],
+        ),
+    ]
+    mitigations = []
+    unmitigated = []
+    for blocker in residual_blockers:
+        required_terms = next((terms for known, terms in mitigation_checks if blocker == known), [])
+        mitigated = bool(required_terms) and all(term in text for term in required_terms)
+        item = {
+            "blocker": blocker,
+            "mitigated": mitigated,
+            "sourceRef": str(path),
+        }
+        mitigations.append(item)
+        if not mitigated:
+            unmitigated.append(blocker)
+
+    poc_ready = not unmitigated and "poc_ready`: true" in text and "product_ready`: false" in text
+    completion_percent = 100 if poc_ready else round(
+        (len(mitigations) - len(unmitigated)) / len(mitigations) * 100,
+        2,
+    ) if mitigations else 100
+    return {
+        "present": True,
+        "poc_ready": poc_ready,
+        "completion_percent": completion_percent,
+        "mitigations": mitigations,
+        "unmitigated_blockers": unmitigated,
         "sourceRef": str(path),
     }
 

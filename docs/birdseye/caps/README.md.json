@@ -2,9 +2,9 @@
   "path": "README.md",
   "role": "navigation",
   "kind": "md",
-  "sha256": "8544b8fedeff384269f9ad7b1dc3988b953a987d03ccab9440b018afbdd3dfe5",
+  "sha256": "100ff28aa19bbee47693c6ab1e09c26f25691bbdbc9363f9bcf662b31a6062f0",
   "line_count": 133,
-  "size_bytes": 9295,
+  "size_bytes": 9296,
   "headings": [
     "# harness-auto-test-evidence",
     "## 1. 役割",

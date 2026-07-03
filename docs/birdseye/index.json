@@ -1,5 +1,5 @@
 {
-  "generated_at": "f744f42de4f8",
+  "generated_at": "9c144b71f968",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -12,9 +12,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "8544b8fedeff384269f9ad7b1dc3988b953a987d03ccab9440b018afbdd3dfe5",
+      "sha256": "100ff28aa19bbee47693c6ab1e09c26f25691bbdbc9363f9bcf662b31a6062f0",
       "line_count": 133,
-      "size_bytes": 9295
+      "size_bytes": 9296
     },
     "TASK.codex.md": {
       "role": "planning",
@@ -71,6 +71,13 @@
       "sha256": "334b4a0fce6dd74e6830bc4e654ee9a4f88e28835b2bf02d7c68e3b419c2d171",
       "line_count": 47,
       "size_bytes": 1608
+    },
+    "docs/acceptance/POC_COMPLETION_20260703.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.POC_COMPLETION_20260703.md.json",
+      "sha256": "67c0bed4dca3f327e2def5d7dcf766627591e680a377ee7e2aed99cabaf28482",
+      "line_count": 44,
+      "size_bytes": 2526
     },
     "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md": {
       "role": "quality",
@@ -446,9 +453,9 @@
     "docs/process/PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md.json",
-      "sha256": "3b4b08b4fbaab94ef3e8b3236472dc6e74bfd8798f908d584235e0aaed6b11e3",
-      "line_count": 929,
-      "size_bytes": 32168
+      "sha256": "61508bf093e0b3387f426d3811b9f31e681d7cd4b55f31f768896aa756037e57",
+      "line_count": 940,
+      "size_bytes": 32808
     },
     "docs/process/PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md": {
       "role": "documentation",
@@ -460,9 +467,9 @@
     "docs/process/PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md.json",
-      "sha256": "ba8e108ddebf9d3252559acee707e163d2e4cb54679772ad9ad3b5ba408e8ec4",
-      "line_count": 308,
-      "size_bytes": 25320
+      "sha256": "1bcae6482e2e7945f14eae0e9a35bcd65a11656b1eda9c0516f858773a2ccbf8",
+      "line_count": 309,
+      "size_bytes": 25548
     },
     "docs/process/PRODUCT_PLATFORM_PHASE_SPEC_AUDIT.md": {
       "role": "requirements",
@@ -8027,9 +8034,9 @@
     "src/hate/product_grade.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.product_grade.py.json",
-      "sha256": "825a5db20e51b021890bf0131094b7b40d9904127184e5a7542cf070ab87bc71",
-      "line_count": 306,
-      "size_bytes": 13199
+      "sha256": "7f5e109f5dbb2f895d0e34db4e81e9dadb674861f16d911c09b6ec96105603b3",
+      "line_count": 373,
+      "size_bytes": 15957
     },
     "src/hate/profile.py": {
       "role": "implementation",
@@ -9056,9 +9063,9 @@
     "tests/test_product_grade.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_product_grade.py.json",
-      "sha256": "5fe65b5fc829ca45eda5260d01d74706c97d4a783ea911ec9d411a6666dddbf1",
-      "line_count": 59,
-      "size_bytes": 2640
+      "sha256": "2c357edcbbdcb544eabc5277090752c16dee33aef8083db20af5fdb31bc2a011",
+      "line_count": 95,
+      "size_bytes": 4403
     },
     "tests/test_product_grade_report_contracts.py": {
       "role": "test",

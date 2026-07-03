@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "3b4b08b4fbaab94ef3e8b3236472dc6e74bfd8798f908d584235e0aaed6b11e3",
-  "line_count": 929,
-  "size_bytes": 32168,
+  "sha256": "61508bf093e0b3387f426d3811b9f31e681d7cd4b55f31f768896aa756037e57",
+  "line_count": 940,
+  "size_bytes": 32808,
   "headings": [
     "# Product Platform Phase Detail Specification",
     "## 1. Canonical Record Types",
