@@ -128,6 +128,6 @@ E2E 検収は `hate p0a -> hate export qeg -> hate trust evaluate -> hate workfl
 - platform CLI 導線: `hate platform run/history/compare/findings/debt/review/policy/report/serve` を実装済み。既存の real-repo / history / policy / read model / HTML report 導線を platform 操作面へ統合している。
 - platform operations 導線: `hate platform schedule/assign/score/plugin run` を実装済み。cache TTL、retry、resume token、owner/due-date/SLA、plugin sandbox 実行、freshness/regression/manual debt/oracle confidence の説明可能 score を扱う。
 - product-grade 実装: 13 product-grade 領域は requirement/spec、実装参照、テスト参照を再計算し、実データ検証、QEG smoke、PoC mitigation を統合して `poc_complete` まで判定する。PoC は 100% だが、release/QEG approval がない限り `product_ready` は `false` のまま維持する。
-- 現在の回帰: `uv run pytest -q` で 1501 tests pass
+- 現在の回帰: `uv run pytest -q` で 1502 tests pass
 - 現在の PoC readiness: `poc_ready=true`, `poc_completion_percent=100`, `product_ready=false`。product-ready / enterprise-ready / regulated-ready の最終主張には QEG release approval と、実データ運用摩擦の継続観測が必要。
 - 対象外: hosted SaaS runtime、実 dashboard frontend、enterprise connector runtime、QEG / Shipyard の release / publish approval 正本

@@ -1,5 +1,5 @@
 {
-  "generated_at": "9c144b71f968",
+  "generated_at": "3d94a9c0836f",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -12,7 +12,7 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "100ff28aa19bbee47693c6ab1e09c26f25691bbdbc9363f9bcf662b31a6062f0",
+      "sha256": "f6d1c91c89af49a11a72452d4daa42f25eee4d12d181e797b096a492b764ef25",
       "line_count": 133,
       "size_bytes": 9296
     },
@@ -75,9 +75,9 @@
     "docs/acceptance/POC_COMPLETION_20260703.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.POC_COMPLETION_20260703.md.json",
-      "sha256": "67c0bed4dca3f327e2def5d7dcf766627591e680a377ee7e2aed99cabaf28482",
-      "line_count": 44,
-      "size_bytes": 2526
+      "sha256": "0a728b37c3238798a7e8452cc6896125af69a051c0ce825a1a0b1097bedb2ffe",
+      "line_count": 54,
+      "size_bytes": 2896
     },
     "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md": {
       "role": "quality",
@@ -9053,6 +9053,13 @@
       "line_count": 100,
       "size_bytes": 4196
     },
+    "tests/test_poc_completion_e2e.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_poc_completion_e2e.py.json",
+      "sha256": "a01cad6a0166736291110a518e4dbc6adbdda5c05596f0bc254d0044918f521c",
+      "line_count": 133,
+      "size_bytes": 4747
+    },
     "tests/test_product_e2e.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_product_e2e.py.json",
@@ -10974,6 +10981,10 @@
     [
       "tests/test_platform_store_schema.py",
       "src/hate/platform_store_schema.py"
+    ],
+    [
+      "tests/test_poc_completion_e2e.py",
+      "src/hate/cli.py"
     ],
     [
       "tests/test_product_e2e.py",

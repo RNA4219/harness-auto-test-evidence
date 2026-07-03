@@ -2,14 +2,15 @@
   "path": "docs/acceptance/POC_COMPLETION_20260703.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "67c0bed4dca3f327e2def5d7dcf766627591e680a377ee7e2aed99cabaf28482",
-  "line_count": 44,
-  "size_bytes": 2526,
+  "sha256": "0a728b37c3238798a7e8452cc6896125af69a051c0ce825a1a0b1097bedb2ffe",
+  "line_count": 54,
+  "size_bytes": 2896,
   "headings": [
     "# HATE PoC Completion 2026-07-03",
     "## PoC Completion Criteria",
     "## Residual Friction Mitigations",
-    "## PoC Verdict"
+    "## PoC Verdict",
+    "## Verification Commands"
   ],
   "imports": [],
   "links": [],

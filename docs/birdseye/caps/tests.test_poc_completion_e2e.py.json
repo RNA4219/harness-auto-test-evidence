@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_poc_completion_e2e.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "a01cad6a0166736291110a518e4dbc6adbdda5c05596f0bc254d0044918f521c",
+  "line_count": 133,
+  "size_bytes": 4747,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.cli",
+    "json",
+    "pathlib",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "schema",
+    "store",
+    "test"
+  ]
+}

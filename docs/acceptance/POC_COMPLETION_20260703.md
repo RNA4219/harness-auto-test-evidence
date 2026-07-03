@@ -22,6 +22,7 @@ release gate.
 | Daily operator loop exists | schedule, assignment queue, score, and HTML report commands | complete |
 | Plugin runtime PoC exists | `hate platform plugin run` executes manifest-driven local subprocess plugins and validates sandbox output | complete |
 | Score model is explainable | `platform-score-report` exposes components, weights, penalties, and decision basis | complete |
+| Black-box PoC loop passes | `tests/test_poc_completion_e2e.py` runs platform run, schedule, compare, assign, score, plugin, HTML, and product-grade end to end | complete |
 
 ## Residual Friction Mitigations
 
@@ -42,3 +43,12 @@ a production release authority.
 - Reason: all known PoC blockers have executable mitigation or explicit
   non-overclaim guardrails, while production release approval remains outside
   HATE.
+
+## Verification Commands
+
+```powershell
+uv run pytest tests/test_poc_completion_e2e.py -q
+uv run pytest -q
+uv run python -m compileall src tests
+uv run python tools/codemap/update.py --check
+```
