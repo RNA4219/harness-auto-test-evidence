@@ -1851,6 +1851,20 @@
       "deprecated_fields": []
     },
     {
+      "record_type": "platform-verdict-evaluation-report",
+      "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
+      "phase": "Product-Platform",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "platform-triage-report",
+      "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
+      "phase": "Product-Platform",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
       "record_type": "platform-comparison-report",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",

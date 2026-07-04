@@ -1,0 +1,77 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "platform-expected-verdict-corpus",
+  "corpus_id": "major-oss-expected-verdicts-20260704",
+  "source_version": "major-oss-two-cycle-20260704-cache-isolated",
+  "entries": [
+    {
+      "repo_id": "click",
+      "suite_id": "pytest",
+      "expected_status": "pass",
+      "rationale": "Two cache-isolated cycles passed with 1707 parsed pytest records."
+    },
+    {
+      "repo_id": "requests",
+      "suite_id": "pytest-split",
+      "expected_status": "hold",
+      "expected_failure_kind": "test_failure",
+      "rationale": "Split execution is stable; two shards remain failing after cache isolation."
+    },
+    {
+      "repo_id": "flask",
+      "suite_id": "pytest",
+      "expected_status": "pass",
+      "rationale": "Two cache-isolated cycles passed with 491 parsed pytest records."
+    },
+    {
+      "repo_id": "fastapi",
+      "suite_id": "pytest",
+      "expected_status": "hold",
+      "expected_failure_kind": "test_failure",
+      "rationale": "Two cycles produced stable external/local pytest failures with 3311 records."
+    },
+    {
+      "repo_id": "pydantic",
+      "suite_id": "pytest",
+      "expected_status": "hold",
+      "expected_failure_kind": "test_failure",
+      "rationale": "tzdata bootstrap is resolved; two cycles produced stable pytest failure with 5712 records."
+    },
+    {
+      "repo_id": "pytest",
+      "suite_id": "compileall-smoke",
+      "expected_status": "pass",
+      "rationale": "Compile smoke remains an explicit limited self-hosted runner proof, not full-suite approval."
+    },
+    {
+      "repo_id": "starlette",
+      "suite_id": "pytest",
+      "expected_status": "hold",
+      "expected_failure_kind": "test_failure",
+      "rationale": "Two cycles produced stable external/local pytest failures with 981 records."
+    },
+    {
+      "repo_id": "express",
+      "suite_id": "npm-test",
+      "expected_status": "pass",
+      "rationale": "After cold bootstrap, two cycles passed with 1258 parsed mocha records."
+    },
+    {
+      "repo_id": "axios",
+      "suite_id": "vitest",
+      "expected_status": "hold",
+      "expected_failure_kind": "test_failure",
+      "rationale": "Bootstrap succeeds; failures are stable vitest/playwright environment or unit failures."
+    },
+    {
+      "repo_id": "lodash",
+      "suite_id": "npm-test",
+      "expected_status": "pass",
+      "rationale": "After cold bootstrap, two cycles passed with 7158 parsed lodash-test records."
+    }
+  ],
+  "sourceRefs": [
+    "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md",
+    "docs/process/real-repo-rosters/major-oss-improved-20260704.json"
+  ]
+}

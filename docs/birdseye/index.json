@@ -1,5 +1,5 @@
 {
-  "generated_at": "ae341b206938",
+  "generated_at": "8495d7d9a777",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -194,9 +194,9 @@
     "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.MAJOR_OSS_TWO_CYCLE_20260704.md.json",
-      "sha256": "7baf9e5c3c0ab9529be0c375b6b5b9bc775bb803f4cb789e7215e6ea9572f319",
-      "line_count": 134,
-      "size_bytes": 5345
+      "sha256": "03741873657be1155b0fbf553471a9e86b7a1b674dce2230d480de96d31bb55c",
+      "line_count": 167,
+      "size_bytes": 7223
     },
     "docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md": {
       "role": "documentation",
@@ -1037,6 +1037,13 @@
       "sha256": "f2610f1c0701070addc28591c4d2d039b74253f5a8606e5f1bffc042eef5ec03",
       "line_count": 274,
       "size_bytes": 14600
+    },
+    "docs/process/real-repo-verdict-corpus/major-oss-expected-verdicts-20260704.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.real-repo-verdict-corpus.major-oss-expected-verdicts-20260704.json.json",
+      "sha256": "7f4117354dd9f8beae55e642aeb94c49b59a34a8724d89639a6b7ee3bf67f437",
+      "line_count": 77,
+      "size_bytes": 2639
     },
     "docs/process/shipyard-run-evidence-full-implementation-spec.json": {
       "role": "requirements",
@@ -7845,9 +7852,9 @@
     "schemas/HATE/v1/platform-ops-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-ops-report.schema.json.json",
-      "sha256": "ae88b06f5575da4a961f487682a227896a1b2256735785a68a54e5b0bc6d5567",
-      "line_count": 28,
-      "size_bytes": 926
+      "sha256": "fc2d75103afdb8830c29a66b9d8fcb480493fbebcd4bab635232e731a7f6fdf3",
+      "line_count": 30,
+      "size_bytes": 1006
     },
     "schemas/HATE/v1/platform-plugin-sandbox-report.schema.json": {
       "role": "schema",
@@ -8216,9 +8223,9 @@
     "schemas/HATE/v1/schema-registry.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-registry.json.json",
-      "sha256": "b222401a211f25a468845835c9913a1a4a0944b11bf82b33d206d91046c84211",
-      "line_count": 2393,
-      "size_bytes": 78155
+      "sha256": "8de41abbb0e55cd5e845ee75fe8313b39736be97c0fdbea88cdf62045df7c5ec",
+      "line_count": 2407,
+      "size_bytes": 78627
     },
     "schemas/HATE/v1/schema-validation-report.schema.json": {
       "role": "schema",
@@ -8748,16 +8755,16 @@
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "1cf79099b689a114e03377dcf22c4a7a3e740728a19f44b6c13cfdad054cc6ca",
-      "line_count": 293,
-      "size_bytes": 23137
+      "sha256": "de497528bf54328379ad2fdd022f9d233b1ebd85a3205e0810fabff12e4d9d86",
+      "line_count": 302,
+      "size_bytes": 23941
     },
     "src/hate/cli_handlers.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli_handlers.py.json",
-      "sha256": "8cfd4d2abd07fff74a605701c1b018712652e319126a427fc9586687dae819b0",
-      "line_count": 535,
-      "size_bytes": 19423
+      "sha256": "310227f962beeb03dcaa07a38bd03109034e1a19cc4c7332b03227d923663626",
+      "line_count": 541,
+      "size_bytes": 19689
     },
     "src/hate/commercial/__init__.py": {
       "role": "implementation",
@@ -9581,16 +9588,16 @@
     "src/hate/platform_cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.platform_cli.py.json",
-      "sha256": "34b39eabf1442b51355db375825bae087461a81f6645e2c5aa32c0e0a7ee9f13",
-      "line_count": 429,
-      "size_bytes": 16495
+      "sha256": "970cb1e182bccf9152adc123bb70a3c44c159d78ea9d3aaceeadca032ca56011",
+      "line_count": 441,
+      "size_bytes": 16972
     },
     "src/hate/platform_ops.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.platform_ops.py.json",
-      "sha256": "5dfb59e86125e0e60eb82dbbfded0fcab00a94a68a3752165a02046a75cc2ae4",
-      "line_count": 406,
-      "size_bytes": 16461
+      "sha256": "e29499d402aeabe0e6a2f3bc38f72785a23f64a2d96f681a8a312e8138dd6434",
+      "line_count": 626,
+      "size_bytes": 25926
     },
     "src/hate/platform_rbac.py": {
       "role": "implementation",
@@ -10743,9 +10750,9 @@
     "tests/test_platform_cli.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_platform_cli.py.json",
-      "sha256": "f098e3ae38b983b59045648f57c181b3c0e9e2f8d292049600266fe582616b9c",
-      "line_count": 220,
-      "size_bytes": 7556
+      "sha256": "d534ad4a95d0316c74bf92ab5500a671e09869601b4cd75b329debb24a88c767",
+      "line_count": 261,
+      "size_bytes": 9223
     },
     "tests/test_platform_connector_sync.py": {
       "role": "test",
@@ -10771,9 +10778,9 @@
     "tests/test_platform_ops.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_platform_ops.py.json",
-      "sha256": "2011b63b5453b98d73d95285a0fcc43e3617f11d7b49360fd3498a3ec29c0fe7",
-      "line_count": 344,
-      "size_bytes": 13370
+      "sha256": "7900c8f5a4e643c88d493645c664d4325e321cf7d67c0b6ba75241e759335ebb",
+      "line_count": 503,
+      "size_bytes": 19269
     },
     "tests/test_platform_plugin_sandbox.py": {
       "role": "test",

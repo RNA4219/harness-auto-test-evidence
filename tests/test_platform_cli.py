@@ -170,6 +170,47 @@ def test_platform_cli_report_html_and_policy_explain(tmp_path: Path) -> None:
     assert explained["policy_id"] == "policy-test"
 
 
+def test_platform_cli_verdict_and_triage_commands(tmp_path: Path) -> None:
+    report = tmp_path / "reports" / "real-repo-repo-a-pytest.json"
+    manifest = tmp_path / "reports" / "real-repo-evaluation-run-report.json"
+    corpus = tmp_path / "expected.json"
+    verdict_out = tmp_path / "out" / "verdict.json"
+    triage_out = tmp_path / "out" / "triage.json"
+    _write_json(
+        report,
+        {
+            "record_type": "real-repo-evaluation-report",
+            "repo_id": "repo-a",
+            "suite_id": "pytest",
+            "overall_status": "hold",
+            "current": {"failure_kind": "test_failure", "record_count": 3, "runner_dialect": "pytest"},
+            "sourceRefs": ["repo-a"],
+        },
+    )
+    _write_json(
+        manifest,
+        {
+            "record_type": "real-repo-evaluation-run-report",
+            "generated_reports": ["real-repo-repo-a-pytest.json"],
+        },
+    )
+    _write_json(
+        corpus,
+        {
+            "record_type": "platform-expected-verdict-corpus",
+            "entries": [{"repo_id": "repo-a", "suite_id": "pytest", "expected_status": "hold", "expected_failure_kind": "test_failure"}],
+        },
+    )
+
+    assert main(["platform", "verdict", "--input", str(manifest), "--corpus", str(corpus), "--out", str(verdict_out)]) == 0
+    assert main(["platform", "triage", "--input", str(manifest), "--out", str(triage_out)]) == 0
+
+    assert json.loads(verdict_out.read_text(encoding="utf-8"))["metrics"]["recall"] == 1.0
+    triage = json.loads(triage_out.read_text(encoding="utf-8"))
+    assert triage["record_type"] == "platform-triage-report"
+    assert triage["summary"]["open_count"] == 1
+
+
 def test_platform_report_html_holds_when_operator_queue_has_high_findings(tmp_path: Path) -> None:
     report = tmp_path / "report.json"
     html = tmp_path / "report.html"

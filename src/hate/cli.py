@@ -247,6 +247,15 @@ def build_parser() -> argparse.ArgumentParser:
     platform_score.add_argument("--input", required=True, type=Path, help="Input report JSON file or directory.")
     platform_score.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
 
+    platform_verdict = platform_subparsers.add_parser("verdict", help="Evaluate reports against an expected verdict corpus.")
+    platform_verdict.add_argument("--input", required=True, type=Path, help="Input report JSON file or directory.")
+    platform_verdict.add_argument("--corpus", required=True, type=Path, help="Expected verdict corpus JSON.")
+    platform_verdict.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+
+    platform_triage = platform_subparsers.add_parser("triage", help="Build an operator triage queue from held platform reports.")
+    platform_triage.add_argument("--input", required=True, type=Path, help="Input report JSON file or directory.")
+    platform_triage.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+
     platform_baseline = platform_subparsers.add_parser("baseline", help="Operate baseline promotion workflow evidence.")
     platform_baseline_subparsers = platform_baseline.add_subparsers(dest="platform_baseline_command", required=True)
     platform_baseline_promote = platform_baseline_subparsers.add_parser("promote", help="Build a baseline promotion report from local approval events.")

@@ -104,6 +104,33 @@ Remaining holds:
 - axios: real upstream/local test failure, including missing Playwright browser
   executable in the local environment and two unit failures.
 
+## Expected Verdict Corpus And Triage Follow-Up
+
+The two-cycle result is now captured as an expected verdict corpus:
+
+- `docs\process\real-repo-verdict-corpus\major-oss-expected-verdicts-20260704.json`
+
+This corpus makes precision/recall measurable instead of relying only on a
+human reading of the run table. `hate platform verdict` compares real-repo run
+reports against the corpus and classifies each repo/suite as true positive,
+false positive, true negative, false negative, missing, or failure-kind
+mismatch. In this corpus, held repos are the positive class.
+
+Operator triage is also exposed through `hate platform triage`. It keeps the
+five stable holds visible as open triage items and additionally records the
+pytest compile smoke as a `soft_gap`, because it proves source compilation but
+does not prove the self-hosted pytest full suite.
+
+Expected operator actions:
+
+- requests: rerun failed split shards and decide whether to accept or fix the
+  two remaining external failures.
+- fastapi, pydantic, starlette: investigate external/local pytest failures and
+  decide whether to record accepted external debt.
+- axios: classify Playwright browser provisioning versus unit-test failures.
+- pytest: build a dedicated self-hosted runner recipe before claiming full
+  runner proof.
+
 ## Product Conclusion
 
 The two-cycle run improved confidence in HATE's operational precision:
@@ -132,3 +159,9 @@ The two-cycle run improved confidence in HATE's operational precision:
   - average score 77.8, blocked count 0.
 - `uv run python -m hate platform report html --input tmp\major-oss-two-cycle\cycle-2 --out tmp\major-oss-two-cycle\cycle-2\platform-report.html`
   - overall status hold, report count 11, finding count 16.
+- `uv run python -m hate platform verdict --input tmp\major-oss-two-cycle\cycle-2 --corpus docs\process\real-repo-verdict-corpus\major-oss-expected-verdicts-20260704.json --out tmp\major-oss-two-cycle\cycle-2\platform-verdict.json`
+  - expected to report 10 matched verdicts with precision, recall, and
+    accuracy at 1.0 for the frozen corpus.
+- `uv run python -m hate platform triage --input tmp\major-oss-two-cycle\cycle-2 --out tmp\major-oss-two-cycle\cycle-2\platform-triage.json`
+  - expected to report 6 open operator items: 5 holds plus 1 pytest self-hosted
+    runner soft gap.

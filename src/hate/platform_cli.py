@@ -17,6 +17,8 @@ from hate.platform_ops import (
     build_platform_assignment_report,
     build_platform_schedule_plan,
     build_platform_score_report,
+    build_platform_triage_report,
+    build_platform_verdict_report,
     run_platform_plugin,
 )
 from hate.policy_config import build_platform_policy_report
@@ -36,6 +38,8 @@ SELF_GENERATED_PLATFORM_RECORD_TYPES = {
     "platform-html-report",
     "platform-review-report",
     "platform-score-report",
+    "platform-triage-report",
+    "platform-verdict-evaluation-report",
 }
 
 
@@ -259,6 +263,14 @@ def platform_plugin_run(manifest_path: Path, out_path: Path | None = None) -> di
 
 def platform_score(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
     return build_platform_score_report(input_path, out_path)
+
+
+def platform_verdict(input_path: Path, corpus_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    return build_platform_verdict_report(input_path, corpus_path, out_path)
+
+
+def platform_triage(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    return build_platform_triage_report(input_path, out_path)
 
 
 def platform_baseline_promote(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:

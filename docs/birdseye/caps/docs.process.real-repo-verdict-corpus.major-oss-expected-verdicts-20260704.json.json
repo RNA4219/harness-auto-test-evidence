@@ -1,0 +1,17 @@
+{
+  "path": "docs/process/real-repo-verdict-corpus/major-oss-expected-verdicts-20260704.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "7f4117354dd9f8beae55e642aeb94c49b59a34a8724d89639a6b7ee3bf67f437",
+  "line_count": 77,
+  "size_bytes": 2639,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema",
+    "test"
+  ]
+}

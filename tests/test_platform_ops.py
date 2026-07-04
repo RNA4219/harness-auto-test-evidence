@@ -9,6 +9,8 @@ from hate.platform_ops import (
     build_platform_assignment_report,
     build_platform_schedule_plan,
     build_platform_score_report,
+    build_platform_triage_report,
+    build_platform_verdict_report,
     run_platform_plugin,
 )
 
@@ -263,6 +265,153 @@ def test_platform_score_penalizes_subset_reports(tmp_path: Path) -> None:
     assert score["score"] == 78.0
 
 
+def test_platform_verdict_report_computes_expected_corpus_metrics(tmp_path: Path) -> None:
+    reports_dir = tmp_path / "reports"
+    _write_json(
+        reports_dir / "real-repo-repo-a-pytest.json",
+        {
+            "record_type": "real-repo-evaluation-report",
+            "repo_id": "repo-a",
+            "suite_id": "pytest",
+            "overall_status": "pass",
+            "current": {"record_count": 10, "runner_dialect": "pytest"},
+            "sourceRefs": ["repo-a"],
+        },
+    )
+    _write_json(
+        reports_dir / "real-repo-repo-b-pytest.json",
+        {
+            "record_type": "real-repo-evaluation-report",
+            "repo_id": "repo-b",
+            "suite_id": "pytest",
+            "overall_status": "hold",
+            "current": {"record_count": 3, "runner_dialect": "pytest", "failure_kind": "test_failure"},
+            "sourceRefs": ["repo-b"],
+        },
+    )
+    _write_json(
+        reports_dir / "real-repo-evaluation-run-report.json",
+        {
+            "record_type": "real-repo-evaluation-run-report",
+            "generated_reports": [
+                "real-repo-repo-a-pytest.json",
+                "real-repo-repo-b-pytest.json",
+            ],
+        },
+    )
+    corpus = tmp_path / "expected.json"
+    _write_json(
+        corpus,
+        {
+            "record_type": "platform-expected-verdict-corpus",
+            "corpus_id": "unit-corpus",
+            "entries": [
+                {"repo_id": "repo-a", "suite_id": "pytest", "expected_status": "pass"},
+                {"repo_id": "repo-b", "suite_id": "pytest", "expected_status": "hold", "expected_failure_kind": "test_failure"},
+            ],
+        },
+    )
+
+    report = build_platform_verdict_report(reports_dir, corpus)
+
+    assert report["record_type"] == "platform-verdict-evaluation-report"
+    assert report["overall_status"] == "pass"
+    assert report["summary"]["matched_count"] == 2
+    assert report["metrics"]["precision"] == 1.0
+    assert report["metrics"]["recall"] == 1.0
+    assert report["metrics"]["accuracy"] == 1.0
+
+
+def test_platform_verdict_report_holds_on_status_or_failure_kind_mismatch(tmp_path: Path) -> None:
+    source = tmp_path / "real-repo.json"
+    _write_json(
+        source,
+        {
+            "record_type": "real-repo-evaluation-report",
+            "repo_id": "repo-a",
+            "suite_id": "pytest",
+            "overall_status": "hold",
+            "current": {"failure_kind": "bootstrap_failed", "record_count": 0},
+            "sourceRefs": ["repo-a"],
+        },
+    )
+    corpus = tmp_path / "expected.json"
+    _write_json(
+        corpus,
+        {
+            "record_type": "platform-expected-verdict-corpus",
+            "entries": [
+                {"repo_id": "repo-a", "suite_id": "pytest", "expected_status": "pass"},
+                {"repo_id": "repo-b", "suite_id": "pytest", "expected_status": "hold", "expected_failure_kind": "test_failure"},
+            ],
+        },
+    )
+
+    report = build_platform_verdict_report(source, corpus)
+
+    assert report["overall_status"] == "hold"
+    assert report["metrics"]["false_positive"] == 1
+    assert report["metrics"]["missing"] == 1
+    assert {finding["code"] for finding in report["findings"]} == {
+        "platform_verdict_status_mismatch",
+        "platform_verdict_missing_report",
+    }
+
+
+def test_platform_triage_surfaces_holds_and_subset_limited_self_hosted_runner_gap(tmp_path: Path) -> None:
+    reports_dir = tmp_path / "reports"
+    _write_json(
+        reports_dir / "real-repo-requests-pytest-split.json",
+        {
+            "record_type": "real-repo-evaluation-report",
+            "repo_id": "requests",
+            "suite_id": "pytest-split",
+            "overall_status": "hold",
+            "current": {
+                "failure_kind": "test_failure",
+                "record_count": 605,
+                "runner_dialect": "pytest",
+                "split_execution": {"configured": True},
+            },
+            "sourceRefs": ["requests"],
+        },
+    )
+    _write_json(
+        reports_dir / "real-repo-pytest-compileall-smoke.json",
+        {
+            "record_type": "real-repo-evaluation-report",
+            "repo_id": "pytest",
+            "suite_id": "compileall-smoke",
+            "overall_status": "pass",
+            "current": {"record_count": 1, "runner_dialect": "compileall"},
+            "subset": {"is_subset": True, "proves_full_suite": False},
+            "sourceRefs": ["pytest"],
+        },
+    )
+    _write_json(
+        reports_dir / "real-repo-evaluation-run-report.json",
+        {
+            "record_type": "real-repo-evaluation-run-report",
+            "generated_reports": [
+                "real-repo-requests-pytest-split.json",
+                "real-repo-pytest-compileall-smoke.json",
+            ],
+        },
+    )
+
+    report = build_platform_triage_report(reports_dir)
+    by_repo = {item["repo_id"]: item for item in report["items"]}
+
+    assert report["record_type"] == "platform-triage-report"
+    assert report["overall_status"] == "hold"
+    assert by_repo["requests"]["recommended_action"] == "rerun_failed_split_shards"
+    assert by_repo["requests"]["readiness_effect"] == "hold"
+    assert by_repo["pytest"]["recommended_action"] == "build_dedicated_self_hosted_runner_recipe"
+    assert by_repo["pytest"]["readiness_effect"] == "soft_gap"
+    assert by_repo["pytest"]["subset_limited"] is True
+    assert report["summary"]["missing_owner_count"] == 2
+
+
 def test_platform_cli_ops_and_daily_html(tmp_path: Path) -> None:
     report = tmp_path / "report.json"
     html = tmp_path / "daily.html"
@@ -295,6 +444,7 @@ def test_platform_ops_record_types_are_registered_and_schema_compatible(tmp_path
     roster = tmp_path / "roster.json"
     history = tmp_path / "store" / "run_history.jsonl"
     source = tmp_path / "report.json"
+    expected = tmp_path / "expected.json"
     manifest = tmp_path / "plugin.json"
     _write_json(roster, {"repositories": [{"repo_id": "repo-a", "suites": [{"suite_id": "unit"}]}]})
     history.parent.mkdir(parents=True)
@@ -310,6 +460,13 @@ def test_platform_ops_record_types_are_registered_and_schema_compatible(tmp_path
             "current": {"record_count": 1, "runner_dialect": "pytest"},
             "findings": [{"code": "ok", "severity": "medium", "owner": "team", "due_date": "2026-07-10T00:00:00Z"}],
             "sourceRefs": ["report"],
+        },
+    )
+    _write_json(
+        expected,
+        {
+            "record_type": "platform-expected-verdict-corpus",
+            "entries": [{"repo_id": "repo-a", "suite_id": "unit", "expected_status": "pass"}],
         },
     )
     _write_json(
@@ -331,6 +488,8 @@ def test_platform_ops_record_types_are_registered_and_schema_compatible(tmp_path
         build_platform_schedule_plan(roster, history.parent),
         build_platform_assignment_report(source),
         build_platform_score_report(source),
+        build_platform_verdict_report(source, expected),
+        build_platform_triage_report(source),
         run_platform_plugin(manifest),
     ]
     registry = json.loads((ROOT / "schemas" / "HATE" / "v1" / "schema-registry.json").read_text(encoding="utf-8"))

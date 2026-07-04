@@ -203,6 +203,139 @@ def build_platform_score_report(input_path: Path, out_path: Path | None = None) 
     return report
 
 
+def build_platform_verdict_report(input_path: Path, corpus_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    reports = _load_score_reports(input_path)
+    corpus = _read_json(corpus_path)
+    expectations = _expected_verdicts(corpus)
+    by_key = {(str(report.get("repo_id") or ""), str(report.get("suite_id") or "default")): report for report in reports}
+    entries = []
+    findings = []
+    counts = {
+        "true_positive": 0,
+        "false_positive": 0,
+        "true_negative": 0,
+        "false_negative": 0,
+        "missing": 0,
+        "kind_mismatch": 0,
+    }
+    for expected in expectations:
+        key = (expected["repo_id"], expected["suite_id"])
+        report = by_key.get(key)
+        if report is None:
+            counts["missing"] += 1
+            findings.append(_verdict_finding("platform_verdict_missing_report", expected, "Expected repo/suite report was not present."))
+            entries.append({**expected, "actual_status": "missing", "actual_failure_kind": "", "classification": "missing", "matched": False})
+            continue
+        actual_status = _status_class(report)
+        expected_status = expected["expected_status"]
+        actual_positive = actual_status == "hold"
+        expected_positive = expected_status == "hold"
+        if expected_positive and actual_positive:
+            classification = "true_positive"
+        elif not expected_positive and actual_positive:
+            classification = "false_positive"
+        elif expected_positive and not actual_positive:
+            classification = "false_negative"
+        else:
+            classification = "true_negative"
+        counts[classification] += 1
+        actual_kind = str((report.get("current") or {}).get("failure_kind") or "")
+        expected_kind = expected.get("expected_failure_kind", "")
+        kind_matches = not expected_kind or actual_kind == expected_kind
+        if classification in {"false_positive", "false_negative"}:
+            findings.append(_verdict_finding("platform_verdict_status_mismatch", expected, f"Expected {expected_status}, observed {actual_status}."))
+        if expected_kind and not kind_matches:
+            counts["kind_mismatch"] += 1
+            findings.append(_verdict_finding("platform_verdict_failure_kind_mismatch", expected, f"Expected failure_kind {expected_kind}, observed {actual_kind or 'none'}."))
+        entries.append({
+            **expected,
+            "actual_status": actual_status,
+            "actual_failure_kind": actual_kind,
+            "actual_record_count": int((report.get("current") or {}).get("record_count") or 0),
+            "classification": classification,
+            "matched": classification in {"true_positive", "true_negative"} and kind_matches,
+            "sourceRefs": _source_refs(report),
+        })
+    precision_denominator = counts["true_positive"] + counts["false_positive"]
+    recall_denominator = counts["true_positive"] + counts["false_negative"]
+    specificity_denominator = counts["true_negative"] + counts["false_positive"]
+    accuracy_denominator = counts["true_positive"] + counts["false_positive"] + counts["true_negative"] + counts["false_negative"]
+    report = {
+        "schema_version": "HATE/v1",
+        "record_type": "platform-verdict-evaluation-report",
+        "overall_status": "hold" if findings else "pass",
+        "corpus_id": str(corpus.get("corpus_id") or corpus.get("report_id") or corpus_path.stem),
+        "entries": entries,
+        "findings": findings,
+        "metrics": {
+            **counts,
+            "precision": _ratio(counts["true_positive"], precision_denominator),
+            "recall": _ratio(counts["true_positive"], recall_denominator),
+            "specificity": _ratio(counts["true_negative"], specificity_denominator),
+            "accuracy": _ratio(counts["true_positive"] + counts["true_negative"], accuracy_denominator),
+        },
+        "summary": {
+            "expected_count": len(expectations),
+            "matched_count": sum(1 for entry in entries if entry["matched"]),
+            "finding_count": len(findings),
+        },
+        "sourceRefs": [str(input_path), str(corpus_path)],
+    }
+    if out_path is not None:
+        _write_json(out_path, report)
+    return report
+
+
+def build_platform_triage_report(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    reports = _load_score_reports(input_path)
+    items = []
+    findings = []
+    for report in reports:
+        is_hold = str(report.get("overall_status") or "").lower() == "hold"
+        is_subset_gap = _is_subset_limited(report)
+        if not is_hold and not is_subset_gap:
+            continue
+        current = dict(report.get("current") or {})
+        repo_id = str(report.get("repo_id") or "")
+        suite_id = str(report.get("suite_id") or "default")
+        failure_kind = str(current.get("failure_kind") or "")
+        action = _triage_action(report)
+        item = {
+            "triage_id": f"{repo_id}:{suite_id}",
+            "repo_id": repo_id,
+            "suite_id": suite_id,
+            "status": "open",
+            "failure_kind": failure_kind,
+            "readiness_effect": "hold" if is_hold else "soft_gap",
+            "recommended_action": action,
+            "owner": str(report.get("owner") or ""),
+            "due_date": str(report.get("due_date") or ""),
+            "record_count": int(current.get("record_count") or 0),
+            "runner_dialect": str(current.get("runner_dialect") or ""),
+            "subset_limited": is_subset_gap,
+            "sourceRefs": _source_refs(report),
+        }
+        if not item["owner"]:
+            findings.append(_triage_finding("platform_triage_missing_owner", item, "Triage item has no owner."))
+        items.append(item)
+    report = {
+        "schema_version": "HATE/v1",
+        "record_type": "platform-triage-report",
+        "overall_status": "hold" if items else "pass",
+        "items": items,
+        "findings": findings,
+        "summary": {
+            "open_count": len(items),
+            "missing_owner_count": len(findings),
+            "by_action": _count_by(items, "recommended_action"),
+        },
+        "sourceRefs": [str(input_path)],
+    }
+    if out_path is not None:
+        _write_json(out_path, report)
+    return report
+
+
 def _score_input_from_report(report: dict[str, Any]) -> dict[str, Any]:
     findings = list(report.get("findings", []) or [])
     regressions = list(report.get("regressions", []) or [])
@@ -236,6 +369,93 @@ def _score_input_from_report(report: dict[str, Any]) -> dict[str, Any]:
         },
         "sourceRefs": _source_refs(report),
     }
+
+
+def _expected_verdicts(corpus: dict[str, Any]) -> list[dict[str, Any]]:
+    raw_entries = corpus.get("entries") or corpus.get("expected_verdicts") or []
+    entries = []
+    for item in raw_entries:
+        if not isinstance(item, dict):
+            continue
+        repo_id = str(item.get("repo_id") or "")
+        suite_id = str(item.get("suite_id") or "default")
+        expected_status = _normalize_expected_status(str(item.get("expected_status") or item.get("expected_verdict") or ""))
+        if not repo_id or expected_status not in {"pass", "hold"}:
+            continue
+        entries.append({
+            "repo_id": repo_id,
+            "suite_id": suite_id,
+            "expected_status": expected_status,
+            "expected_failure_kind": str(item.get("expected_failure_kind") or ""),
+            "rationale": str(item.get("rationale") or ""),
+        })
+    return entries
+
+
+def _normalize_expected_status(value: str) -> str:
+    normalized = value.lower()
+    if normalized in {"pass", "go", "ready"}:
+        return "pass"
+    if normalized in {"hold", "blocked", "no_go", "fail"}:
+        return "hold"
+    return normalized
+
+
+def _status_class(report: dict[str, Any]) -> str:
+    status = str(report.get("overall_status") or report.get("status") or "").lower()
+    return "pass" if status == "pass" else "hold"
+
+
+def _ratio(numerator: int, denominator: int) -> float:
+    return round(numerator / denominator, 4) if denominator else 0.0
+
+
+def _verdict_finding(code: str, expected: dict[str, Any], message: str) -> dict[str, Any]:
+    return {
+        "code": code,
+        "severity": "high",
+        "readiness_effect": "hold",
+        "message": message,
+        "sourceRefs": [f"expected:{expected['repo_id']}:{expected['suite_id']}"],
+    }
+
+
+def _triage_action(report: dict[str, Any]) -> str:
+    repo_id = str(report.get("repo_id") or "")
+    suite_id = str(report.get("suite_id") or "")
+    current = dict(report.get("current") or {})
+    failure_kind = str(current.get("failure_kind") or "")
+    split = dict(current.get("split_execution") or {})
+    subset = report.get("subset")
+    if split.get("configured"):
+        return "rerun_failed_split_shards"
+    if failure_kind == "bootstrap_failed":
+        return "repair_bootstrap_recipe"
+    if repo_id == "axios":
+        return "classify_playwright_browser_or_unit_failure"
+    if repo_id == "pytest" or (isinstance(subset, dict) and subset.get("is_subset")) or "compileall" in suite_id:
+        return "build_dedicated_self_hosted_runner_recipe"
+    if failure_kind == "test_failure":
+        return "investigate_external_test_failure"
+    return "manual_review_required"
+
+
+def _triage_finding(code: str, item: dict[str, Any], message: str) -> dict[str, Any]:
+    return {
+        "code": code,
+        "severity": "medium",
+        "readiness_effect": "hold",
+        "message": message,
+        "sourceRefs": item.get("sourceRefs", []),
+    }
+
+
+def _count_by(items: list[dict[str, Any]], key: str) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for item in items:
+        value = str(item.get(key) or "")
+        counts[value] = counts.get(value, 0) + 1
+    return counts
 
 
 def _load_score_reports(input_path: Path) -> list[dict[str, Any]]:

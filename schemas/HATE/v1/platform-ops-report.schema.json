@@ -13,6 +13,8 @@
         "platform-assignment-report",
         "platform-plugin-run-report",
         "platform-score-report",
+        "platform-verdict-evaluation-report",
+        "platform-triage-report",
         "platform-comparison-report",
         "platform-html-report",
         "platform-dashboard-view-model"

@@ -32,6 +32,8 @@ from .platform_cli import (
     platform_schedule,
     platform_score,
     platform_serve,
+    platform_triage,
+    platform_verdict,
 )
 from .product_grade import ProductGradeError, generate_product_grade_reports
 from .release import RELEASE_PACK_REQUIRED_REPORT_TYPES, assemble_release_candidate_pack
@@ -451,6 +453,10 @@ def _dispatch_platform(args: argparse.Namespace) -> dict[str, Any] | None:
         return platform_assign(args.input, out_path=args.out)
     if args.platform_command == "score":
         return platform_score(args.input, out_path=args.out)
+    if args.platform_command == "verdict":
+        return platform_verdict(args.input, args.corpus, out_path=args.out)
+    if args.platform_command == "triage":
+        return platform_triage(args.input, out_path=args.out)
     if args.platform_command == "baseline" and args.platform_baseline_command == "promote":
         return platform_baseline_promote(args.input, out_path=args.out)
     if args.platform_command == "plugin" and args.platform_plugin_command == "run":
