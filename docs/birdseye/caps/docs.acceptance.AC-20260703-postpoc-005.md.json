@@ -1,0 +1,29 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-005.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "4dd5d661ca9ce6ce1252ac693179128a145cb826c0b6278f8017e38a82597071",
+  "line_count": 77,
+  "size_bytes": 2879,
+  "headings": [
+    "# AC-20260703-postpoc-005 Real-Repo Roster Maintenance Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

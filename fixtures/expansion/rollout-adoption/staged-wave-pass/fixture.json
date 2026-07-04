@@ -10,16 +10,24 @@
           "owner": "platform-admin",
           "policy_template": "team-ga-default",
           "entry_criteria": "p0-p1-green",
-          "exit_criteria": "two-week-stable"
+          "exit_criteria": "two-week-stable",
+          "entry_criteria_ref": "criteria:entry-001",
+          "exit_criteria_ref": "criteria:exit-001",
+          "order": 1,
+          "sourceRef": "wave:001"
         }
       ],
       "repo_statuses": [
-        {"repo": "repo-a", "status": "active"},
-        {"repo": "repo-b", "status": "bootstrapping"}
+        {"repo": "repo-a", "status": "active", "previous_status": "bootstrapping", "owner": "team-a", "wave_id": "wave-001", "sourceRef": "repo:repo-a"},
+        {"repo": "repo-b", "status": "bootstrapping", "previous_status": "planned", "owner": "team-b", "wave_id": "wave-001", "sourceRef": "repo:repo-b"}
       ],
       "exceptions": [
-        {"exception_id": "ex-001", "owner": "platform-admin", "scope": "repo-b:coverage", "expired": false}
+        {"exception_id": "ex-001", "owner": "platform-admin", "scope": "repo-b:coverage", "expiry": "2026-08-01", "reviewer": "qa-lead", "sourceRef": "exception:001", "expired": false}
       ],
+      "portfolio_metrics": [
+        {"metric_id": "rollout-coverage", "aggregate_only": true, "contains_raw_repo_name": false, "contains_test_name": false}
+      ],
+      "rollback_plan": {"owner": "platform-admin", "tested_at": "2026-07-01", "drill_ref": "rollback:drill-001", "sourceRef": "rollback:001"},
       "portfolio_metrics_safe": true,
       "rollback_plan_present": true,
       "illegal_status_transition_detected": false

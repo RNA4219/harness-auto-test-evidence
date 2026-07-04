@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_post_poc_plugin_distribution.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "69287baf01cd1c630231b4dd9ac42423cf20ebadc313a08f8d9567b6b00764af",
+  "line_count": 326,
+  "size_bytes": 14154,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.plugin_distribution",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/plugin_distribution.py"
+  ],
+  "tags": [
+    "api",
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

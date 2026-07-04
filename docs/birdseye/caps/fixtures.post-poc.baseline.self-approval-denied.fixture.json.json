@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/baseline/self-approval-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "770569e4323724359f23ff859e3cff9a64ca5c2f43a1d543d9186cce0533d679",
+  "line_count": 28,
+  "size_bytes": 814,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

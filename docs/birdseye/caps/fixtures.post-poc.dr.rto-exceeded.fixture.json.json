@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/dr/rto-exceeded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "699ebac8aa47a2238d9318acc6116eeb037f0eb866b9f72fe2d666de660bd395",
+  "line_count": 22,
+  "size_bytes": 694,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

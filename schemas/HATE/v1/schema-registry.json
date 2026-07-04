@@ -799,6 +799,1574 @@
       "phase": "P3",
       "unknown_field_policy": "warn",
       "deprecated_fields": []
+    },
+    {
+      "record_type": "docs-freshness-ci-report",
+      "schema": "schemas/HATE/v1/docs-freshness-ci-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-scheduler-runtime-report",
+      "schema": "schemas/HATE/v1/hosted-scheduler-runtime-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-scheduler-worker-state",
+      "schema": "schemas/HATE/v1/hosted-scheduler-worker-state.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-scheduler-lease-event",
+      "schema": "schemas/HATE/v1/hosted-scheduler-lease-event.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-scheduler-job-result",
+      "schema": "schemas/HATE/v1/hosted-scheduler-job-result.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-scheduler-dispatch-manifest",
+      "schema": "schemas/HATE/v1/hosted-scheduler-dispatch-manifest.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "real-repo-roster-maintenance-report",
+      "schema": "schemas/HATE/v1/real-repo-roster-maintenance-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "real-repo-roster-maintenance-plan",
+      "schema": "schemas/HATE/v1/real-repo-roster-maintenance-plan.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "real-repo-environment-recipe",
+      "schema": "schemas/HATE/v1/real-repo-environment-recipe.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "real-repo-quarantine-event",
+      "schema": "schemas/HATE/v1/real-repo-quarantine-event.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "real-repo-roster-execution-manifest",
+      "schema": "schemas/HATE/v1/real-repo-roster-execution-manifest.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "baseline-promotion-report",
+      "schema": "schemas/HATE/v1/baseline-promotion-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "baseline-state",
+      "schema": "schemas/HATE/v1/baseline-state.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "baseline-promotion-request",
+      "schema": "schemas/HATE/v1/baseline-promotion-request.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "baseline-promotion-decision",
+      "schema": "schemas/HATE/v1/baseline-promotion-decision.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "baseline-immutability-event",
+      "schema": "schemas/HATE/v1/baseline-immutability-event.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "baseline-review-packet",
+      "schema": "schemas/HATE/v1/baseline-review-packet.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "baseline-review-comparison",
+      "schema": "schemas/HATE/v1/baseline-review-comparison.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "baseline-review-item",
+      "schema": "schemas/HATE/v1/baseline-review-item.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "history-analytics-report",
+      "schema": "schemas/HATE/v1/history-analytics-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "history-analytics-query",
+      "schema": "schemas/HATE/v1/history-analytics-query.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "history-trend-window",
+      "schema": "schemas/HATE/v1/history-trend-window.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "history-analytics-result",
+      "schema": "schemas/HATE/v1/history-analytics-result.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "history-incremental-materialization",
+      "schema": "schemas/HATE/v1/history-incremental-materialization.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "history-materialization-entry",
+      "schema": "schemas/HATE/v1/history-materialization-entry.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "history-materialization-manifest",
+      "schema": "schemas/HATE/v1/history-materialization-manifest.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "human-review-workflow-report",
+      "schema": "schemas/HATE/v1/human-review-workflow-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "human-review-workflow-state",
+      "schema": "schemas/HATE/v1/human-review-workflow-state.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "human-review-workflow-request",
+      "schema": "schemas/HATE/v1/human-review-workflow-request.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "human-review-workflow-decision",
+      "schema": "schemas/HATE/v1/human-review-workflow-decision.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "human-review-evidence-attachment",
+      "schema": "schemas/HATE/v1/human-review-evidence-attachment.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "human-review-queue-packet",
+      "schema": "schemas/HATE/v1/human-review-queue-packet.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "human-review-queue-item",
+      "schema": "schemas/HATE/v1/human-review-queue-item.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-delivery-report",
+      "schema": "schemas/HATE/v1/notification-delivery-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-delivery-plan",
+      "schema": "schemas/HATE/v1/notification-delivery-plan.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-delivery-attempt",
+      "schema": "schemas/HATE/v1/notification-delivery-attempt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-dead-letter-event",
+      "schema": "schemas/HATE/v1/notification-dead-letter-event.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-audit-event",
+      "schema": "schemas/HATE/v1/notification-audit-event.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-routing-plan",
+      "schema": "schemas/HATE/v1/notification-routing-plan.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-operating-record",
+      "schema": "schemas/HATE/v1/notification-operating-record.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-subscriber",
+      "schema": "schemas/HATE/v1/notification-subscriber.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-routing-entry",
+      "schema": "schemas/HATE/v1/notification-routing-entry.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-routing-manifest",
+      "schema": "schemas/HATE/v1/notification-routing-manifest.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "incident-response-packet",
+      "schema": "schemas/HATE/v1/incident-response-packet.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "incident-response-action",
+      "schema": "schemas/HATE/v1/incident-response-action.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "plugin-distribution-report",
+      "schema": "schemas/HATE/v1/plugin-distribution-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "plugin-package-manifest",
+      "schema": "schemas/HATE/v1/plugin-package-manifest.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "plugin-signature-verification",
+      "schema": "schemas/HATE/v1/plugin-signature-verification.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "plugin-distribution-index",
+      "schema": "schemas/HATE/v1/plugin-distribution-index.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "plugin-revocation-event",
+      "schema": "schemas/HATE/v1/plugin-revocation-event.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "plugin-install-entry",
+      "schema": "schemas/HATE/v1/plugin-install-entry.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "plugin-install-manifest",
+      "schema": "schemas/HATE/v1/plugin-install-manifest.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "connector-runtime-report",
+      "schema": "schemas/HATE/v1/connector-runtime-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "connector-runtime-plan",
+      "schema": "schemas/HATE/v1/connector-runtime-plan.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "connector-runtime-attempt",
+      "schema": "schemas/HATE/v1/connector-runtime-attempt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "connector-idempotency-record",
+      "schema": "schemas/HATE/v1/connector-idempotency-record.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "connector-rollback-visibility-record",
+      "schema": "schemas/HATE/v1/connector-rollback-visibility-record.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "connector-execution-plan",
+      "schema": "schemas/HATE/v1/connector-execution-plan.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "connector-execution-manifest",
+      "schema": "schemas/HATE/v1/connector-execution-manifest.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "dashboard-interaction-report",
+      "schema": "schemas/HATE/v1/dashboard-interaction-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-api-report",
+      "schema": "schemas/HATE/v1/hosted-api-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-api-request-record",
+      "schema": "schemas/HATE/v1/hosted-api-request-record.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-authz-decision-record",
+      "schema": "schemas/HATE/v1/hosted-authz-decision-record.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-rate-limit-event",
+      "schema": "schemas/HATE/v1/hosted-rate-limit-event.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-api-route-contract",
+      "schema": "schemas/HATE/v1/hosted-api-route-contract.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-api-route-manifest",
+      "schema": "schemas/HATE/v1/hosted-api-route-manifest.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "store-dr-report",
+      "schema": "schemas/HATE/v1/store-dr-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "store-backup-operation",
+      "schema": "schemas/HATE/v1/store-backup-operation.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "store-restore-operation",
+      "schema": "schemas/HATE/v1/store-restore-operation.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "store-dr-drill-result",
+      "schema": "schemas/HATE/v1/store-dr-drill-result.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "store-dr-runbook",
+      "schema": "schemas/HATE/v1/store-dr-runbook.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "capacity-report",
+      "schema": "schemas/HATE/v1/capacity-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "capacity-degradation-mode-report",
+      "schema": "schemas/HATE/v1/capacity-degradation-mode-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "capacity-regression-packet",
+      "schema": "schemas/HATE/v1/capacity-regression-packet.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "compliance-report",
+      "schema": "schemas/HATE/v1/compliance-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "observability-report",
+      "schema": "schemas/HATE/v1/observability-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "runtime-telemetry-event",
+      "schema": "schemas/HATE/v1/runtime-telemetry-event.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "slo-burn-rate-report",
+      "schema": "schemas/HATE/v1/slo-burn-rate-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "incident-lifecycle-record",
+      "schema": "schemas/HATE/v1/incident-lifecycle-record.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "post-incident-evidence-pack",
+      "schema": "schemas/HATE/v1/post-incident-evidence-pack.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "release-handoff-report",
+      "schema": "schemas/HATE/v1/release-handoff-report.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "post-poc-artifact-receipt",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "connector-execution-step",
+      "schema": "schemas/HATE/v1/connector-execution-step.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "store-dr-runbook-step",
+      "schema": "schemas/HATE/v1/store-dr-runbook-step.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "baseline-review-packet-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "capacity-regression-packet-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "connector-execution-manifest-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "dashboard-static-html-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "history-materialization-manifest-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-api-openapi-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-scheduler-dispatch-manifest-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "human-review-queue-packet-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "incident-response-packet-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "notification-routing-manifest-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "plugin-install-manifest-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "real-repo-roster-execution-manifest-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "store-dr-runbook-artifact",
+      "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "capacity-baseline-record",
+      "schema": "schemas/HATE/v1/capacity-baseline-record.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "capacity-benchmark-run",
+      "schema": "schemas/HATE/v1/capacity-benchmark-run.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "capacity-regression-comparison",
+      "schema": "schemas/HATE/v1/capacity-regression-comparison.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "compliance-evidence-pack",
+      "schema": "schemas/HATE/v1/compliance-evidence-pack.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "compliance-review-decision",
+      "schema": "schemas/HATE/v1/compliance-review-decision.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "control-claim-record",
+      "schema": "schemas/HATE/v1/control-claim-record.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "dashboard-action-intent",
+      "schema": "schemas/HATE/v1/dashboard-action-intent.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "dashboard-route-state",
+      "schema": "schemas/HATE/v1/dashboard-route-state.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "dashboard-session-view",
+      "schema": "schemas/HATE/v1/dashboard-session-view.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "external-approval-reference",
+      "schema": "schemas/HATE/v1/external-approval-reference.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "external-release-handoff-request",
+      "schema": "schemas/HATE/v1/external-release-handoff-request.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "external-release-handoff-result",
+      "schema": "schemas/HATE/v1/external-release-handoff-result.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "history-materialization-plan",
+      "schema": "schemas/HATE/v1/history-materialization-plan.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-scheduler-dispatch-entry",
+      "schema": "schemas/HATE/v1/hosted-scheduler-dispatch-entry.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted-scheduler-dispatch-plan",
+      "schema": "schemas/HATE/v1/hosted-scheduler-dispatch-plan.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "procurement-questionnaire-export",
+      "schema": "schemas/HATE/v1/procurement-questionnaire-export.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "real-repo-roster-execution-entry",
+      "schema": "schemas/HATE/v1/real-repo-roster-execution-entry.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "adapter_conformance_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "api_contract_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "dashboard_uat_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "security_quarantine_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "enterprise_control_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "scale_performance_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "migration_compatibility_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "commercial_truthfulness_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "support_ops_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "release_candidate_pack",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_evidence_summary",
+      "schema": "schemas/HATE/v1/product-grade-evidence-summary.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_adapter_conformance_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_schema_validation_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_store_replay_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_api_contract_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_dashboard_uat_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_test_integrity_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_security_quarantine_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_enterprise_control_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_scale_performance_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_migration_compatibility_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_commercial_truthfulness_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_support_ops_report",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_grade_release_candidate_pack",
+      "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
+      "phase": "Product-Grade",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "run-overview-view-model",
+      "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
+      "phase": "P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "artifact-safety-view-model",
+      "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
+      "phase": "P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "manual-review-queue-view-model",
+      "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
+      "phase": "P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "risk-coverage-view-model",
+      "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
+      "phase": "P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "dashboard-view-model",
+      "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
+      "phase": "P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "redaction-report",
+      "schema": "schemas/HATE/v1/artifact-safety-filter-report.schema.json",
+      "phase": "P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "export-filter-report",
+      "schema": "schemas/HATE/v1/artifact-safety-filter-report.schema.json",
+      "phase": "P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "summary-filter-report",
+      "schema": "schemas/HATE/v1/artifact-safety-filter-report.schema.json",
+      "phase": "P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "platform-schedule-plan",
+      "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
+      "phase": "Product-Platform",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "platform-assignment-report",
+      "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
+      "phase": "Product-Platform",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "platform-plugin-run-report",
+      "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
+      "phase": "Product-Platform",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "platform-score-report",
+      "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
+      "phase": "Product-Platform",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "platform-comparison-report",
+      "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
+      "phase": "Product-Platform",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "platform-html-report",
+      "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
+      "phase": "Product-Platform",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "platform-dashboard-view-model",
+      "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
+      "phase": "Product-Platform",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "artifact_budget_report",
+      "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "attestation_report",
+      "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "audit_event_log",
+      "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "commercial_contract_report",
+      "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "audit_assurance_pack",
+      "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "audit_fixture_manifest",
+      "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_readiness_report",
+      "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_metrics_report",
+      "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "product_error_catalog",
+      "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "pr_annotation_export",
+      "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "enterprise_risk_debt_register",
+      "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "privacy_quarantine_report",
+      "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "external_export_report",
+      "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hosted_read_model_index",
+      "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "local_store_manifest",
+      "schema": "schemas/HATE/v1/local-store-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "local_store_history_index",
+      "schema": "schemas/HATE/v1/local-store-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "local_store_query",
+      "schema": "schemas/HATE/v1/local-store-runtime-report.schema.json",
+      "phase": "P2/P3",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "workflow_task_seed",
+      "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
+      "phase": "P1b",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "workflow_acceptance",
+      "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
+      "phase": "P1b",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "workflow_evidence",
+      "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
+      "phase": "P1b",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "workflow_docs_stale",
+      "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
+      "phase": "P1b",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "workflow_birdseye_map",
+      "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
+      "phase": "P1b",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "workflow_cookbook_evidence_map",
+      "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
+      "phase": "P1b",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "shipyard_run_evidence",
+      "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
+      "phase": "P1b",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "ci-docs-freshness-gate",
+      "schema": "schemas/HATE/v1/ci-docs-freshness-gate.schema.json",
+      "phase": "Post-PoC",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "accessibility_localization_report",
+      "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "adoption_health_report",
+      "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "compare_report",
+      "schema": "schemas/HATE/v1/trust-advisory-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "customer_docs_index",
+      "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "dashboard_view_model",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "enterprise-audit-validation",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "enterprise_connector_report",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "enterprise_domain_model",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "entitlement_usage_report",
+      "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "expansion-run-report",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "expansion-uat-report",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "explain_report",
+      "schema": "schemas/HATE/v1/trust-advisory-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "gap-closure-report",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "gap-closure-uat-report",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "hard_dq_finding",
+      "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "human_record_expiry_report",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "identity_connector_report",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "import_bundle_result",
+      "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "incident_slo_report",
+      "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "integrity_verification",
+      "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "manual_bb_bridge_request",
+      "schema": "schemas/HATE/v1/workflow-alignment-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "ops_connector_report",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "ops_connector_result",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "portfolio_health_report",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "privacy_telemetry_report",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "quarantine_manifest",
+      "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "rbac_matrix_report",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "real-repo-history-index",
+      "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "recommendation_report",
+      "schema": "schemas/HATE/v1/trust-advisory-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "release_migration_report",
+      "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "replay_report",
+      "schema": "schemas/HATE/v1/trust-advisory-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "requirement_alignment",
+      "schema": "schemas/HATE/v1/workflow-alignment-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "residency_deployment_report",
+      "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "retention_governance_report",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "roadmap_decision_record",
+      "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "scale_fixture_manifest",
+      "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "scale_validation_result",
+      "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "scim_diff",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "scim_diff_result",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "security_trust_packet",
+      "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "sso_mapping",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "sso_mapping_result",
+      "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "support-error-catalog-report",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "support-error-record",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "support_diagnostic_bundle",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
+    },
+    {
+      "record_type": "uat-state",
+      "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+      "phase": "Runtime-Strict",
+      "unknown_field_policy": "warn",
+      "deprecated_fields": []
     }
   ],
   "bundles": [

@@ -2,9 +2,9 @@
   "path": "src/hate/analysis/historical_regression.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "1d6ddbe33a12802008ef3686657ed1e02d0d0c00e7648930c93e8edbdf97da5f",
-  "line_count": 224,
-  "size_bytes": 8694,
+  "sha256": "41f6f13daa32d5f9e57ec358f85e0ebdba769bd058d71b62a406d70fa4c008f1",
+  "line_count": 405,
+  "size_bytes": 16234,
   "headings": [],
   "imports": [
     "__future__",

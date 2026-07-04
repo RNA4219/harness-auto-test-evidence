@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/dashboard/permission-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "74baf91f702884977171419c04eb87eae5d849d3e5a2d0bbe358d739b34078ba",
+  "line_count": 31,
+  "size_bytes": 992,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

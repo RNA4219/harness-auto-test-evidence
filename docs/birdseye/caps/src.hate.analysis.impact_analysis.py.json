@@ -2,9 +2,9 @@
   "path": "src/hate/analysis/impact_analysis.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "1c3d6baec0e85f5fbfb33a6ae02c9b990b1a9c9fc317adefe5b8e807648df7fe",
-  "line_count": 199,
-  "size_bytes": 7405,
+  "sha256": "c712fe3aab89763ae7078ea5033611dc5933f33d84ae10d4fdb978144a1e9687",
+  "line_count": 330,
+  "size_bytes": 13471,
   "headings": [],
   "imports": [
     "__future__",

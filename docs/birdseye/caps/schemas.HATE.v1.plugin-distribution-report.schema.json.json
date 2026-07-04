@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/plugin-distribution-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "031ac50f3d4aaa49213be4ccc83756857378d8ee2f3ea8c7f2ab705dda6c1c1d",
+  "line_count": 157,
+  "size_bytes": 3217,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

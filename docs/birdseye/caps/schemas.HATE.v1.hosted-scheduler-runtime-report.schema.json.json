@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/hosted-scheduler-runtime-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "36e3f155dd9512f57107e180c50ce4886d1a6b89af71f426517d1d63038d5cdf",
+  "line_count": 154,
+  "size_bytes": 3113,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

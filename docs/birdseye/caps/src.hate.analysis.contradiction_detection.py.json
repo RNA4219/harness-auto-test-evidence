@@ -2,9 +2,9 @@
   "path": "src/hate/analysis/contradiction_detection.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "8a21933159d9ff3c45ac56fe68e3c41b01bd6deaa1399156b2b62afe2ad41c41",
-  "line_count": 208,
-  "size_bytes": 7685,
+  "sha256": "7e7521606f95e1508d3ec3deb06966601ac003b49e8c5e4adfd2f7884028b847",
+  "line_count": 426,
+  "size_bytes": 17151,
   "headings": [],
   "imports": [
     "__future__",
@@ -14,8 +14,8 @@
   "links": [],
   "depends_on": [],
   "tags": [
-    "coverage",
     "fixture",
+    "release",
     "schema"
   ]
 }

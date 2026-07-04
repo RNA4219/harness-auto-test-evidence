@@ -1,0 +1,31 @@
+{
+  "fixture_id": "postpoc-dashboard-permission-denied",
+  "input": {
+    "session": {
+      "session_id": "sess-denied",
+      "actor": "viewer@example.com",
+      "role": "viewer",
+      "tenant_id": "tenant-a",
+      "authenticated": true,
+      "sourceRefs": ["fixture://dashboard/permission-denied#session"]
+    },
+    "routes": [
+      {
+        "route": "/dashboard/portfolio",
+        "ui_state": "loaded",
+        "read_model_ref": "read-model://portfolio/tenant-a",
+        "rbac_decision": "allowed",
+        "canonical_verdict_ref": "product-readiness-report.json",
+        "sourceRefs": ["fixture://dashboard/permission-denied#portfolio"]
+      },
+      {
+        "route": "/dashboard/audit",
+        "ui_state": "permission_denied",
+        "read_model_ref": "read-model://audit/tenant-a",
+        "rbac_decision": "denied",
+        "canonical_verdict_ref": "audit-access-decision.json",
+        "sourceRefs": ["fixture://dashboard/permission-denied#audit"]
+      }
+    ]
+  }
+}

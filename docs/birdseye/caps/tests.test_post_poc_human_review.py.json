@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_post_poc_human_review.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "3098726785afd8dd69eb495de97035ee808be2efe18fba19da681f9665d0a3e4",
+  "line_count": 278,
+  "size_bytes": 10824,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.human_review",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/human_review.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

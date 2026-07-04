@@ -1,0 +1,29 @@
+{
+  "fixture_id": "postpoc-plugin-distribution-signed-allowed",
+  "input": {
+    "profile": "release",
+    "manifest": {
+      "plugin_id": "detector.safe",
+      "plugin_version": "1.2.0",
+      "api_version": "HATE-plugin/v1",
+      "package_hash": "sha256:plugin-safe",
+      "observed_package_hash": "sha256:plugin-safe",
+      "signature_algorithm": "ed25519",
+      "signature_ref": "signature://detector.safe/1.2.0",
+      "signature_valid": true,
+      "trust_source": "org-policy",
+      "allowlist_ref": "allowlist://org/plugins/detector.safe",
+      "compatibility_status": "compatible",
+      "capabilities": ["read_evidence", "emit_findings"],
+      "resource_limits": {"timeout_ms": 30000, "max_output_bytes": 262144},
+      "migration_note_ref": ""
+    },
+    "distribution_index": {
+      "index_ref": "index://plugins/release",
+      "index_hash": "sha256:index-release",
+      "indexed_package_hash": "sha256:plugin-safe",
+      "index_stale": false,
+      "generated_at": "2026-07-03T00:00:00Z"
+    }
+  }
+}

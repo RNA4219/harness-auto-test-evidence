@@ -52,6 +52,7 @@ def _normalize_penalties(data: dict[str, Any]) -> dict[str, float]:
         "manual_debt_penalty": _bounded(data.get("manual_debt_penalty", 0.0), 0.0, 15.0),
         "expired_debt_penalty": _bounded(data.get("expired_debt_penalty", 0.0), 0.0, 50.0),
         "unsafe_artifact_penalty": _bounded(data.get("unsafe_artifact_penalty", 0.0), 0.0, 50.0),
+        "subset_penalty": _bounded(data.get("subset_penalty", 0.0), 0.0, 25.0),
     }
 
 

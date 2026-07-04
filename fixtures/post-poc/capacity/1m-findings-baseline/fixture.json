@@ -1,0 +1,10 @@
+{
+  "fixture_id": "1m-findings-baseline",
+  "input": {
+    "baseline_id": "capacity-baseline-1m-findings",
+    "machine_profile": {"profile_id": "win-dev-64g", "cpu_model": "Ryzen", "logical_cores": 16, "memory_mb": 65536, "os": "Windows"},
+    "runs": [
+      {"scenario_id": "1m-findings", "dataset_hash": "sha256:capacity-1m-findings", "repo_count": 1000, "finding_count": 1000000, "duration_ms": 260000, "peak_memory_mb": 6200, "cache_hit_rate": 0.18, "timeout_count": 0, "degradation_mode": "streamed", "runtime_budget_ms": 420000, "memory_budget_mb": 8192}
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/notification-routing-plan.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "8935568f2e7a535ff1ef35a7ba75b77c5a7aa9e6a9a60c0039ef54b4887edd0e",
+  "line_count": 45,
+  "size_bytes": 1731,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

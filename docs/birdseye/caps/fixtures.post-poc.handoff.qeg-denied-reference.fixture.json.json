@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/post-poc/handoff/qeg-denied-reference/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "198dcade026f7aad78ad334370306ac6bb16c9a32aab527a8f9b5d5b92b3ebbd",
+  "line_count": 17,
+  "size_bytes": 554,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

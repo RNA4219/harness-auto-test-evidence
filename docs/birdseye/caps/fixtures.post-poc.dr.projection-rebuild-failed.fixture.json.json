@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/dr/projection-rebuild-failed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "a1229f68331fd684d12c19d73d07f3813503f6b4784ef46e536c7d9d62577a10",
+  "line_count": 22,
+  "size_bytes": 717,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

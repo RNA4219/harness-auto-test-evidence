@@ -116,6 +116,11 @@
         "fixture_finding_count": {"type": "integer", "minimum": 0},
         "corpus_fixture_count": {"type": "integer", "minimum": 0},
         "schema_drift_detected": {"type": "boolean"},
+        "duplicate_fixture_id_count": {"type": "integer", "minimum": 0},
+        "weak_negative_count": {"type": "integer", "minimum": 0},
+        "expected_leakage_count": {"type": "integer", "minimum": 0},
+        "missing_positive_count": {"type": "integer", "minimum": 0},
+        "missing_negative_count": {"type": "integer", "minimum": 0},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
       },
@@ -124,6 +129,38 @@
     "fixture_findings": {"type": "array", "items": {"type": "object"}},
     "corpus_scope": {"type": "object"},
     "schema_drift": {"type": "object"},
+    "fixture_quality_diagnostics": {
+      "type": "object",
+      "required": [
+        "duplicate_fixture_ids",
+        "weak_negative_fixture_ids",
+        "expected_leakage_fixture_ids",
+        "fixture_type_counts",
+        "missing_fixture_types"
+      ],
+      "properties": {
+        "duplicate_fixture_ids": {"type": "array", "items": {"type": "string"}},
+        "weak_negative_fixture_ids": {"type": "array", "items": {"type": "string"}},
+        "expected_leakage_fixture_ids": {"type": "array", "items": {"type": "string"}},
+        "fixture_type_counts": {
+          "type": "object",
+          "properties": {
+            "positive": {"type": "integer", "minimum": 0},
+            "negative": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": true
+        },
+        "missing_fixture_types": {
+          "type": "object",
+          "properties": {
+            "positive": {"type": "array", "items": {"type": "string"}},
+            "negative": {"type": "array", "items": {"type": "string"}}
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
     "input_refs": {"type": "array", "items": {"type": "string"}},
     "confidence": {"type": "number", "minimum": 0, "maximum": 1},
     "limits": {

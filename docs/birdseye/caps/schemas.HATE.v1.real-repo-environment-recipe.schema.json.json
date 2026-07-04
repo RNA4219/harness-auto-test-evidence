@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/real-repo-environment-recipe.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "e4467f7740ddfdf3e8776912a007c56b241cdec0290a5e75d144d01f0a3e0862",
+  "line_count": 39,
+  "size_bytes": 1414,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

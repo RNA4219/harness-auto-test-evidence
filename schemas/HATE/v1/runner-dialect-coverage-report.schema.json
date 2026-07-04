@@ -2,14 +2,69 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "HATE runner dialect coverage report",
   "type": "object",
-  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "runner_config", "results", "findings", "summary", "sourceRefs"],
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "runner_config", "results", "runner_diagnostics", "findings", "summary", "sourceRefs"],
   "properties": {
     "schema_version": {"const": "HATE/v1"},
     "record_type": {"const": "runner-dialect-coverage-report"},
     "report_id": {"type": "string"},
     "overall_status": {"enum": ["pass", "hold"]},
     "readiness_effect": {"enum": ["none", "hold"]},
-    "runner_config": {"type": "object"},
+    "runner_config": {
+      "type": "object",
+      "required": [
+        "runner_families",
+        "dialects",
+        "required_families",
+        "required_capabilities",
+        "unsupported_capability_gap_detected",
+        "claim_without_conformance_detected",
+        "raw_log_retention_denied"
+      ],
+      "properties": {
+        "runner_families": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["family", "support_state"],
+            "properties": {
+              "family": {"type": "string"},
+              "support_state": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "dialects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["dialect", "family", "conformance_fixture_ref", "malformed_fixture_ref", "sourceRef", "capabilities", "expected_summary", "observed_summary", "parser_status"],
+            "properties": {
+              "dialect": {"type": "string"},
+              "family": {"type": "string"},
+              "conformance_fixture_ref": {"type": "string"},
+              "malformed_fixture_ref": {"type": "string"},
+              "sourceRef": {"type": "string"},
+              "capabilities": {"type": "array", "items": {"type": "string"}},
+              "unsupported_capabilities": {"type": "array", "items": {"type": "string"}},
+              "expected_summary": {"type": "object", "additionalProperties": {"type": "integer"}},
+              "observed_summary": {"type": "object", "additionalProperties": {"type": "integer"}},
+              "noise_lines": {"type": "array", "items": {"type": "string"}},
+              "ignored_noise": {"type": "array", "items": {"type": "string"}},
+              "noise_filter_ref": {"type": "string"},
+              "parser_status": {"type": "string", "enum": ["parsed", "partial", "unparsed"]},
+              "capability_gap_ref": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "required_families": {"type": "array", "items": {"type": "string"}},
+        "required_capabilities": {"type": "array", "items": {"type": "string"}},
+        "unsupported_capability_gap_detected": {"type": "boolean"},
+        "claim_without_conformance_detected": {"type": "boolean"},
+        "raw_log_retention_denied": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
     "results": {
       "type": "array",
       "items": {
@@ -25,7 +80,7 @@
               "dialect": {"type": "string"},
               "summary": {"type": "object", "additionalProperties": {"type": "integer"}},
               "ignored_noise": {"type": "array", "items": {"type": "string"}},
-              "parser_status": {"type": "string", "enum": ["parsed", "unparsed"]}
+              "parser_status": {"type": "string", "enum": ["parsed", "partial", "unparsed"]}
             },
             "additionalProperties": true
           },
@@ -34,8 +89,79 @@
         "additionalProperties": true
       }
     },
-    "findings": {"type": "array"},
-    "summary": {"type": "object"},
+    "runner_diagnostics": {
+      "type": "object",
+      "required": [
+        "duplicate_dialects",
+        "missing_capabilities_by_dialect",
+        "unsupported_capabilities_by_dialect",
+        "summary_mismatch_dialects",
+        "missing_source_ref_dialects",
+        "noisy_without_filter_dialects",
+        "partial_parse_without_gap_dialects",
+        "malformed_fixture_missing_dialects"
+      ],
+      "properties": {
+        "duplicate_dialects": {"type": "array", "items": {"type": "string"}},
+        "missing_capabilities_by_dialect": {"type": "object"},
+        "unsupported_capabilities_by_dialect": {"type": "object"},
+        "summary_mismatch_dialects": {"type": "array", "items": {"type": "string"}},
+        "missing_source_ref_dialects": {"type": "array", "items": {"type": "string"}},
+        "noisy_without_filter_dialects": {"type": "array", "items": {"type": "string"}},
+        "partial_parse_without_gap_dialects": {"type": "array", "items": {"type": "string"}},
+        "malformed_fixture_missing_dialects": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"enum": ["hold"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "runner_family_count",
+        "dialect_count",
+        "missing_required_families",
+        "required_capability_count",
+        "duplicate_dialect_count",
+        "missing_capability_dialect_count",
+        "unsupported_capability_dialect_count",
+        "summary_mismatch_count",
+        "missing_source_ref_dialect_count",
+        "noisy_without_filter_count",
+        "partial_parse_without_gap_count",
+        "malformed_fixture_missing_count",
+        "finding_count"
+      ],
+      "properties": {
+        "runner_family_count": {"type": "integer", "minimum": 0},
+        "dialect_count": {"type": "integer", "minimum": 0},
+        "missing_required_families": {"type": "array", "items": {"type": "string"}},
+        "required_capability_count": {"type": "integer", "minimum": 0},
+        "duplicate_dialect_count": {"type": "integer", "minimum": 0},
+        "missing_capability_dialect_count": {"type": "integer", "minimum": 0},
+        "unsupported_capability_dialect_count": {"type": "integer", "minimum": 0},
+        "summary_mismatch_count": {"type": "integer", "minimum": 0},
+        "missing_source_ref_dialect_count": {"type": "integer", "minimum": 0},
+        "noisy_without_filter_count": {"type": "integer", "minimum": 0},
+        "partial_parse_without_gap_count": {"type": "integer", "minimum": 0},
+        "malformed_fixture_missing_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
     "sourceRefs": {"type": "array", "items": {"type": "string"}}
   }
 }

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/dashboard/unsafe-artifact-hidden/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1f43652507388dab6b4251496477d858456843ca4c151e2ce0e349ab7414705d",
+  "line_count": 34,
+  "size_bytes": 1192,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

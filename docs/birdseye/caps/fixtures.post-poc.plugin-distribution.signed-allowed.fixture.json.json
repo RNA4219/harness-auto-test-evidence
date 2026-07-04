@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/plugin-distribution/signed-allowed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "98354ed509966b788bb9f0584d290c89c3193e39b0442acb91b09809ba6752be",
+  "line_count": 29,
+  "size_bytes": 1026,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "release"
+  ]
+}

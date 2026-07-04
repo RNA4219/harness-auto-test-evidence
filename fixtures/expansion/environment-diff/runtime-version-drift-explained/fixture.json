@@ -19,12 +19,22 @@
       {
         "attempt_id": "attempt-1",
         "environment_ref": "env:baseline",
-        "timestamp": "2024-01-01T00:00:00Z"
+        "timestamp": "2024-01-01T00:00:00Z",
+        "snapshot": {
+          "python_version": "3.10.13",
+          "os": "ubuntu-22.04",
+          "lockfile_hash": "sha256:stable-lock"
+        }
       },
       {
         "attempt_id": "attempt-2",
         "environment_ref": "env:current",
-        "timestamp": "2024-01-02T00:00:00Z"
+        "timestamp": "2024-01-02T00:00:00Z",
+        "snapshot": {
+          "python_version": "3.11.8",
+          "os": "ubuntu-22.04",
+          "lockfile_hash": "sha256:stable-lock"
+        }
       }
     ],
     "drift_classes": [

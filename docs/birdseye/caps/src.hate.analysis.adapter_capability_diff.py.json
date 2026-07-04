@@ -2,9 +2,9 @@
   "path": "src/hate/analysis/adapter_capability_diff.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "8a25edbacae483f61cc090910f7bf326cc21abcee2e05ced3e9f7b2193608acc",
-  "line_count": 178,
-  "size_bytes": 6955,
+  "sha256": "7b9694cae2090a5de32c1119d666b235cdeb00bb4e303da7f236c4a09809f297",
+  "line_count": 284,
+  "size_bytes": 11616,
   "headings": [],
   "imports": [
     "__future__",

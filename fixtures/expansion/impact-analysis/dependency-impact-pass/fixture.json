@@ -28,6 +28,26 @@
         "rationale": "Requirement traced to modified code"
       }
     ],
+    "dependency_graph": {
+      "src/hate/analysis/impact_analysis.py": [
+        "test_impact_analysis_pass"
+      ]
+    },
+    "ownership_map": {
+      "src/hate/analysis": [
+        "Team Analysis"
+      ]
+    },
+    "history_index": {
+      "src/hate/analysis/impact_analysis.py": [
+        "test_impact_analysis_pass"
+      ]
+    },
+    "requirement_map": {
+      "src/hate/analysis/impact_analysis.py": [
+        "REQ-IMPACT-001"
+      ]
+    },
     "analysis_scope": "full",
     "input_refs": ["commit:abc123"],
     "confidence": 0.92,

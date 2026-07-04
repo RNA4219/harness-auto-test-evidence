@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/dashboard/stale-read-model/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ce7dca8268d6520dccb33dfc88311929537241d7f124f447791ae2a289bbfbaa",
+  "line_count": 23,
+  "size_bytes": 671,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

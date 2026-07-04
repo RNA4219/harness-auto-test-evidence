@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/observability/alert-route-missing/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "0684fadd7bcd5fe382ec1f35e3db1683bc5c9b753b3ce2ad69ecf75fd5a0903a",
+  "line_count": 11,
+  "size_bytes": 846,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture"
+  ]
+}

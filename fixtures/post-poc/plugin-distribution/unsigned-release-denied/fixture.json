@@ -1,0 +1,26 @@
+{
+  "fixture_id": "postpoc-plugin-distribution-unsigned-release-denied",
+  "input": {
+    "profile": "release",
+    "manifest": {
+      "plugin_id": "detector.unsigned",
+      "plugin_version": "0.1.0",
+      "api_version": "HATE-plugin/v1",
+      "package_hash": "sha256:plugin-unsigned",
+      "observed_package_hash": "sha256:plugin-unsigned",
+      "signature_algorithm": "",
+      "signature_ref": "",
+      "signature_valid": false,
+      "trust_source": "",
+      "allowlist_ref": "",
+      "compatibility_status": "compatible",
+      "capabilities": ["emit_findings"],
+      "resource_limits": {"timeout_ms": 30000}
+    },
+    "distribution_index": {
+      "index_ref": "index://plugins/release",
+      "indexed_package_hash": "sha256:plugin-unsigned",
+      "index_stale": false
+    }
+  }
+}

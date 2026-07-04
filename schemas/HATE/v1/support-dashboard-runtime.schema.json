@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/support-dashboard-runtime.schema.json",
+  "title": "HATE Support and Dashboard Runtime Record",
+  "type": "object",
+  "required": ["schema_version", "record_type"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "enum": [
+        "support-error-record",
+        "support-error-catalog-report",
+        "support_diagnostic_bundle",
+        "privacy_telemetry_report",
+        "portfolio_health_report",
+        "dashboard_view_model",
+        "uat-state",
+        "human_record_expiry_report",
+        "expansion-run-report",
+        "expansion-uat-report",
+        "gap-closure-report",
+        "gap-closure-uat-report"
+      ]
+    }
+  },
+  "oneOf": [
+    {"properties": {"record_type": {"const": "support-error-record"}}, "required": ["error_code", "message"]},
+    {"properties": {"record_type": {"const": "support-error-catalog-report"}}, "required": ["errors", "summary"]},
+    {"properties": {"record_type": {"const": "support_diagnostic_bundle"}}, "required": ["run_id", "included_refs", "excluded", "safety_checks", "safe_to_share", "sanitized_command"]},
+    {"properties": {"record_type": {"const": "privacy_telemetry_report"}}, "required": ["run_id", "telemetry_mode", "allowed_signals", "prohibited_signals", "safety_check"]},
+    {"properties": {"record_type": {"const": "portfolio_health_report"}}, "required": ["run_id", "portfolio_items", "summary"]},
+    {"properties": {"record_type": {"const": "dashboard_view_model"}}, "required": ["run_id", "required_views", "source_refs", "boundaries", "cache"]},
+    {"properties": {"record_type": {"const": "uat-state"}}, "required": ["state_id", "status"]},
+    {"properties": {"record_type": {"const": "human_record_expiry_report"}}, "required": ["summary", "expired_records"]},
+    {"properties": {"record_type": {"const": "expansion-run-report"}}, "required": ["run_id", "status", "summary"]},
+    {"properties": {"record_type": {"const": "expansion-uat-report"}}, "required": ["run_id", "status", "summary"]},
+    {"properties": {"record_type": {"const": "gap-closure-report"}}, "required": ["summary", "gaps"]},
+    {"properties": {"record_type": {"const": "gap-closure-uat-report"}}, "required": ["summary", "checks"]}
+  ],
+  "additionalProperties": true
+}

@@ -2,16 +2,167 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "HATE security procurement report",
   "type": "object",
-  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "procurement_config", "findings", "summary", "sourceRefs"],
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "procurement_config", "findings", "summary", "procurement_diagnostics", "sourceRefs"],
   "properties": {
     "schema_version": {"const": "HATE/v1"},
     "record_type": {"const": "security-procurement-report"},
     "report_id": {"type": "string"},
     "overall_status": {"enum": ["pass", "hold"]},
     "readiness_effect": {"enum": ["none", "hold"]},
-    "procurement_config": {"type": "object"},
-    "findings": {"type": "array"},
-    "summary": {"type": "object"},
+    "procurement_config": {
+      "type": "object",
+      "required": ["security_review_packet", "control_claims", "vulnerability_slas", "review_decisions", "export_manifest", "procurement_export_safe", "raw_artifact_in_export", "restricted_data_in_export"],
+      "properties": {
+        "security_review_packet": {
+          "type": "object",
+          "required": ["architecture", "data_flow", "data_classes", "subprocessors", "encryption", "secrets_handling", "retention_summary"],
+          "properties": {
+            "architecture": {"type": "string"},
+            "data_flow": {"type": "string"},
+            "data_classes": {"type": "string"},
+            "subprocessors": {"type": "string"},
+            "encryption": {"type": "string"},
+            "secrets_handling": {"type": "string"},
+            "retention_summary": {"type": "string"}
+          },
+          "additionalProperties": true
+        },
+        "control_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["claim_id", "claim_class"],
+            "properties": {
+              "claim_id": {"type": "string"},
+              "claim_class": {"type": "string"},
+              "evidence_refs": {"type": "array", "items": {"type": "string"}},
+              "sourceRef": {"type": "string"},
+              "evidence_freshness": {"type": "string"},
+              "stale": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "vulnerability_slas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["severity", "overdue"],
+            "properties": {
+              "sla_id": {"type": "string"},
+              "severity": {"type": "string"},
+              "owner": {"type": "string"},
+              "due_date": {"type": "string"},
+              "sourceRef": {"type": "string"},
+              "overdue": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "review_decisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "decision_id": {"type": "string"},
+              "target_ref": {"type": "string"},
+              "reviewer": {"type": "string"},
+              "decision": {"type": "string"},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "export_manifest": {
+          "type": "object",
+          "properties": {
+            "manifest_id": {"type": "string"},
+            "redaction_profile": {"type": "string"},
+            "approved_evidence_refs": {"type": "array", "items": {"type": "string"}},
+            "contains_raw_artifacts": {"type": "boolean"},
+            "contains_restricted_data": {"type": "boolean"}
+          },
+          "additionalProperties": true
+        },
+        "procurement_export_safe": {"type": "boolean"},
+        "raw_artifact_in_export": {"type": "boolean"},
+        "restricted_data_in_export": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"enum": ["hold"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "control_claim_count",
+        "unsupported_claim_count",
+        "vulnerability_sla_count",
+        "overdue_vulnerability_sla_count",
+        "review_decision_count",
+        "procurement_export_safe",
+        "duplicate_control_claim_count",
+        "claim_evidence_gap_count",
+        "stale_control_claim_count",
+        "claim_reviewer_gap_count",
+        "vulnerability_sla_owner_due_gap_count",
+        "review_decision_source_gap_count",
+        "finding_count"
+      ],
+      "properties": {
+        "control_claim_count": {"type": "integer", "minimum": 0},
+        "unsupported_claim_count": {"type": "integer", "minimum": 0},
+        "vulnerability_sla_count": {"type": "integer", "minimum": 0},
+        "overdue_vulnerability_sla_count": {"type": "integer", "minimum": 0},
+        "review_decision_count": {"type": "integer", "minimum": 0},
+        "procurement_export_safe": {"type": "boolean"},
+        "duplicate_control_claim_count": {"type": "integer", "minimum": 0},
+        "claim_evidence_gap_count": {"type": "integer", "minimum": 0},
+        "stale_control_claim_count": {"type": "integer", "minimum": 0},
+        "claim_reviewer_gap_count": {"type": "integer", "minimum": 0},
+        "vulnerability_sla_owner_due_gap_count": {"type": "integer", "minimum": 0},
+        "review_decision_source_gap_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "procurement_diagnostics": {
+      "type": "object",
+      "required": [
+        "duplicate_control_claims",
+        "claims_missing_evidence",
+        "stale_control_claims",
+        "claims_missing_reviewer_decision",
+        "vulnerability_slas_missing_owner_due",
+        "export_manifest_missing",
+        "unsafe_export_detected",
+        "review_decisions_without_source_ref"
+      ],
+      "properties": {
+        "duplicate_control_claims": {"type": "array", "items": {"type": "string"}},
+        "claims_missing_evidence": {"type": "array", "items": {"type": "string"}},
+        "stale_control_claims": {"type": "array", "items": {"type": "string"}},
+        "claims_missing_reviewer_decision": {"type": "array", "items": {"type": "string"}},
+        "vulnerability_slas_missing_owner_due": {"type": "array", "items": {"type": "string"}},
+        "export_manifest_missing": {"type": "boolean"},
+        "unsafe_export_detected": {"type": "boolean"},
+        "review_decisions_without_source_ref": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
     "sourceRefs": {"type": "array", "items": {"type": "string"}}
   }
 }

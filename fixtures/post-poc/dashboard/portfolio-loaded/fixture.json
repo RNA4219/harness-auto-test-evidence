@@ -1,0 +1,23 @@
+{
+  "fixture_id": "postpoc-dashboard-portfolio-loaded",
+  "input": {
+    "session": {
+      "session_id": "sess-portfolio",
+      "actor": "qa@example.com",
+      "role": "qa_lead",
+      "tenant_id": "tenant-a",
+      "authenticated": true,
+      "sourceRefs": ["fixture://dashboard/portfolio-loaded#session"]
+    },
+    "routes": [
+      {
+        "route": "/dashboard/portfolio",
+        "ui_state": "loaded",
+        "read_model_ref": "read-model://portfolio/tenant-a",
+        "rbac_decision": "allowed",
+        "canonical_verdict_ref": "product-readiness-report.json",
+        "sourceRefs": ["fixture://dashboard/portfolio-loaded#route"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/post_poc/history_analytics.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1bfce28b3109bceda7435177dd07ab0c355d2a2b6b962eefacab8bacb4c4d46b",
+  "line_count": 462,
+  "size_bytes": 19605,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

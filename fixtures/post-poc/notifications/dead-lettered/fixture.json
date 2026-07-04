@@ -1,0 +1,33 @@
+{
+  "fixture_id": "postpoc-notifications-dead-lettered",
+  "input": {
+    "plan": {
+      "notification_id": "notify-dead-001",
+      "operating_record_id": "finding:OPEN-004",
+      "delivery_target": "github_comment",
+      "target_ref": "github://repo/pull/123",
+      "dedupe_key": "finding-OPEN-004-gh",
+      "payload_hash": "sha256:payload-gh-001",
+      "redaction_report_ref": "artifact://redaction/notify-dead-001.json",
+      "max_attempts": 3,
+      "operating_record_status_before": "open"
+    },
+    "attempts": [
+      {
+        "event_type": "attempt",
+        "attempt": 1,
+        "delivery_status": "retry_scheduled",
+        "error_code": "rate_limited",
+        "next_retry_at": "2026-07-03T12:00:00Z",
+        "sourceRefs": ["fixture://notifications/dead-lettered#attempt-1"]
+      },
+      {
+        "event_type": "dead_lettered",
+        "attempt": 3,
+        "delivery_status": "dead_lettered",
+        "error_code": "rate_limited",
+        "sourceRefs": ["fixture://notifications/dead-lettered#dead"]
+      }
+    ]
+  }
+}

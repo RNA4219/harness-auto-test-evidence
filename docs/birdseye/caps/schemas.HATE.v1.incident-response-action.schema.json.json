@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/incident-response-action.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "815dc6dbc3703d98745df704ae997dfee5b77ee58b43f6f625ff0c084b5ce678",
+  "line_count": 39,
+  "size_bytes": 1327,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

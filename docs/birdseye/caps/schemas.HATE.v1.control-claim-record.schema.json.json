@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/control-claim-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "4c1862eff4e2783277cdba3ee8a731213f8acbce5276d42e177e4614e5d6b5b2",
+  "line_count": 26,
+  "size_bytes": 1375,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

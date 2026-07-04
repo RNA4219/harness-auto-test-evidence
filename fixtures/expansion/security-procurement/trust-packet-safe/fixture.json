@@ -5,10 +5,32 @@
   "input": {
     "procurement_config": {
       "security_review_packet": {"architecture": "local-first-cli", "data_flow": "safe summaries only", "data_classes": "public/internal", "subprocessors": "none", "encryption": "at-rest-by-host", "secrets_handling": "redacted", "retention_summary": "policy-bound"},
-      "control_claims": [{"claim_id": "control-001", "claim_class": "implemented"}],
-      "vulnerability_slas": [{"severity": "critical", "overdue": false}],
+      "control_claims": [
+        {
+          "claim_id": "control-001",
+          "claim_class": "implemented",
+          "evidence_refs": ["evidence:control-001"],
+          "sourceRef": "control:001",
+          "evidence_freshness": "current",
+          "stale": false
+        }
+      ],
+      "vulnerability_slas": [
+        {"sla_id": "vuln-critical", "severity": "critical", "owner": "security", "due_date": "2026-07-10", "sourceRef": "sla:critical", "overdue": false}
+      ],
+      "review_decisions": [
+        {"decision_id": "review-control-001", "target_ref": "control-001", "reviewer": "security-reviewer", "decision": "accepted", "sourceRef": "review:control-001"}
+      ],
+      "export_manifest": {
+        "manifest_id": "procurement-export-001",
+        "redaction_profile": "safe-summary",
+        "approved_evidence_refs": ["evidence:control-001"],
+        "contains_raw_artifacts": false,
+        "contains_restricted_data": false
+      },
       "procurement_export_safe": true,
-      "raw_artifact_in_export": false
+      "raw_artifact_in_export": false,
+      "restricted_data_in_export": false
     }
   }
 }

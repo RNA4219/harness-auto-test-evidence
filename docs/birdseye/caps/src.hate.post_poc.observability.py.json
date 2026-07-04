@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/post_poc/observability.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "d6da85988b3238d483e46a677324d611c2c1926b1d6f7c4481b3da8199ab92fa",
+  "line_count": 302,
+  "size_bytes": 14111,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "api",
+    "fixture",
+    "schema"
+  ]
+}

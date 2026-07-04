@@ -1,0 +1,27 @@
+{
+  "fixture_id": "postpoc-baseline-revoked-baseline-denied",
+  "input": {
+    "baseline": {
+      "baseline_id": "base-revoked",
+      "repo_id": "repo-main",
+      "suite_id": "pytest",
+      "actor": "alice",
+      "reviewer": "bob",
+      "reason": "Approval was revoked after evidence drift.",
+      "candidate_run_id": "run-4001",
+      "evidence_refs": ["artifact://runs/run-4001/product-readiness.json"],
+      "policy_hash": "policy-sha256-001",
+      "expires_at": "2026-10-01T00:00:00Z",
+      "immutability_hash": "sha256:revoked-before",
+      "state": "approved",
+      "comparison_requested": true
+    },
+    "events": [
+      {
+        "event_type": "revoked",
+        "reason": "Evidence artifact was invalidated.",
+        "sourceRefs": ["fixture://baseline/revoked-baseline-denied#revoked"]
+      }
+    ]
+  }
+}

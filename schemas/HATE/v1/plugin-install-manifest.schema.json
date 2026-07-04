@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/plugin-install-manifest.schema.json",
+  "title": "HATE Plugin Install Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "manifest_id",
+    "profile",
+    "entries",
+    "findings",
+    "summary",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "plugin-install-manifest"
+    },
+    "manifest_id": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_type",
+          "plugin_id",
+          "plugin_version",
+          "api_version",
+          "package_hash",
+          "index_ref",
+          "signature_ref",
+          "allowlist_ref",
+          "compatibility_status",
+          "capabilities",
+          "resource_limits",
+          "migration_note_ref",
+          "installable",
+          "install_block_reasons"
+        ],
+        "properties": {
+          "record_type": {
+            "const": "plugin-install-entry"
+          },
+          "plugin_id": {
+            "type": "string"
+          },
+          "plugin_version": {
+            "type": "string"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "package_hash": {
+            "type": "string"
+          },
+          "index_ref": {
+            "type": "string"
+          },
+          "signature_ref": {
+            "type": "string"
+          },
+          "allowlist_ref": {
+            "type": "string"
+          },
+          "compatibility_status": {
+            "type": "string"
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "resource_limits": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "migration_note_ref": {
+            "type": "string"
+          },
+          "installable": {
+            "type": "boolean"
+          },
+          "install_block_reasons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "severity",
+          "message",
+          "sourceRef",
+          "readiness_effect"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": [
+              "hold"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "entry_count",
+        "installable_count",
+        "blocked_count",
+        "finding_count",
+        "trusted"
+      ],
+      "properties": {
+        "entry_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "installable_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "finding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "trusted": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

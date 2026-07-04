@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/hosted-scheduler-lease-event.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d8dece0fab23a0287038c2777a827e1ec97a79613ad06368c61f912f2c9a5b5a",
+  "line_count": 45,
+  "size_bytes": 1476,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

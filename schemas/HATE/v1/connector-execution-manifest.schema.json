@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/connector-execution-manifest.schema.json",
+  "title": "HATE Connector Execution Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "plan_id",
+    "connector_id",
+    "connector_type",
+    "mode",
+    "endpoint_ref",
+    "idempotency_key",
+    "payload_hash",
+    "redaction_report_ref",
+    "steps",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "connector-execution-manifest"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "connector_type": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "dry_run",
+        "live",
+        "replay",
+        "rollback_preview"
+      ]
+    },
+    "endpoint_ref": {
+      "type": "string"
+    },
+    "idempotency_key": {
+      "type": "string"
+    },
+    "payload_hash": {
+      "type": "string"
+    },
+    "redaction_report_ref": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_type",
+          "step_type",
+          "status",
+          "description",
+          "connector_id",
+          "mode",
+          "endpoint_ref"
+        ],
+        "properties": {
+          "record_type": {
+            "const": "connector-execution-step"
+          },
+          "step_type": {
+            "type": "string",
+            "enum": [
+              "validate_plan",
+              "redact_payload",
+              "reserve_idempotency",
+              "approval_gate",
+              "execute",
+              "verify_result",
+              "rollback_preview"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "blocked",
+              "skipped"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "connector_id": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "endpoint_ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

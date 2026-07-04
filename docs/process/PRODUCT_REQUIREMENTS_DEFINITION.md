@@ -36,6 +36,10 @@ next_review_due: 2026-07-29
 - `PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md`
 - `PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md`
 - `PRODUCT_PLATFORM_PHASE_SPEC_AUDIT.md`
+- `POST_POC_REQUIREMENTS_GAP_AUDIT.md`
+- `POST_POC_PRODUCTIZATION_DETAIL_SPEC.md`
+- `POST_POC_SPEC_TRACEABILITY_CHECKLIST.md`
+- `POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md`
 - `PLATFORM_STORE_SCHEMA_SPEC.md`
 - `PLATFORM_POLICY_CONFIG_SPEC.md`
 - `PLATFORM_RBAC_MATRIX_SPEC.md`
@@ -64,6 +68,15 @@ next_review_due: 2026-07-29
   `PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md` を仕様正本、
   `PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md` を実装分解正本として扱い、
   抜け漏れ監査は `PRODUCT_PLATFORM_PHASE_SPEC_AUDIT.md` に残す
+- PoC完了後に残る product / enterprise / regulated-ready の未充足要件は
+  `POST_POC_REQUIREMENTS_GAP_AUDIT.md` を正本台帳とし、PoC 100% と
+  product-ready 完了を混同しない
+- Post-PoC 要件を仕様へ落とす場合は
+  `POST_POC_PRODUCTIZATION_DETAIL_SPEC.md` を詳細仕様正本、
+  `POST_POC_SPEC_TRACEABILITY_CHECKLIST.md` を仕様突合正本として扱う
+- 仕様と実装を突合する場合は
+  `POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md` を workflow-cookbook style
+  Task Seed / 未実装チェックリスト正本として扱う
 
 ## 2. Product Problem Statement
 

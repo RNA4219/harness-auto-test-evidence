@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/capacity/1m-findings-baseline/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6917dfd809bdab363ae1c718c1c8ff84049ae240d18d4cb2d1058b43a6a624f8",
+  "line_count": 10,
+  "size_bytes": 575,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

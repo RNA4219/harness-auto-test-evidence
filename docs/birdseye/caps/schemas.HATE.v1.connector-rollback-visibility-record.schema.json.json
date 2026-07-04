@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/connector-rollback-visibility-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "e7e54bd682abbccdfb553a8eb882fe84a2f830b069d54411e3fddbfb818f48b2",
+  "line_count": 41,
+  "size_bytes": 1415,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

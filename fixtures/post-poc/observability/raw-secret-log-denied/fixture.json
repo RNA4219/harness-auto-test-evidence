@@ -1,0 +1,11 @@
+{
+  "fixture_id": "raw-secret-log-denied",
+  "input": {
+    "telemetry": [
+      {"signal": "structured_logs", "correlation_id": "corr-secret", "run_id": "run-2", "tenant_id": "tenant-a", "service_name": "hate-worker", "metric_name": "log.error", "log_message": "failed request token=plain-secret", "trace_id": "trace-2", "alert_route_ref": "route://ops", "redaction_report_ref": ""}
+    ],
+    "slo": {"slo_id": "slo-worker", "burn_rate": 0.1, "alert_status": "ok", "alert_route_ref": "route://ops"},
+    "incident": {"incident_state": "none"},
+    "support_pack": {"support_pack_id": "support-secret", "evidence_refs": ["artifact://support/raw-log"], "support_bundle_safe": false, "redaction_report_ref": ""}
+  }
+}

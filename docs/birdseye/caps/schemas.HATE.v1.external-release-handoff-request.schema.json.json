@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/external-release-handoff-request.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "c23210b0e7f47aceb43f8545ba98d9c441284d20c9a417a5f450d443bb5d52ca",
+  "line_count": 24,
+  "size_bytes": 1306,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema"
+  ]
+}

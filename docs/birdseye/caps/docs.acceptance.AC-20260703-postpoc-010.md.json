@@ -1,0 +1,32 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-010.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "f9d55acc3cd04e3812e7a931fdeaf0c4daa71e46e597bb5e251ebb35f3a853a3",
+  "line_count": 70,
+  "size_bytes": 2683,
+  "headings": [
+    "# AC-20260703-postpoc-010 Release Handoff Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

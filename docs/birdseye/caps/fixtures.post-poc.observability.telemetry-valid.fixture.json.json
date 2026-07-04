@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/observability/telemetry-valid/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "2754e079ebaf75417df44a02f09cd7f3ab1a779d13d009803d30530889ce6940",
+  "line_count": 11,
+  "size_bytes": 698,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

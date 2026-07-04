@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/history-materialization-entry.schema.json",
+  "title": "HATE History Materialization Entry",
+  "type": "object",
+  "required": [
+    "record_type",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy",
+    "sample_id",
+    "repo_id",
+    "suite_id",
+    "cache_key",
+    "sample_fingerprint",
+    "materialized_ref",
+    "sourceRefs"
+  ],
+  "properties": {
+    "record_type": {"const": "history-materialization-entry"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "system_actor": {"type": "string", "minLength": 1},
+    "decision_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "unsafe_output_policy": {"type": "string", "minLength": 1},
+    "sample_id": {"type": "string"},
+    "repo_id": {"type": "string"},
+    "suite_id": {"type": "string"},
+    "cache_key": {"type": "string"},
+    "sample_fingerprint": {"type": "string"},
+    "materialization_action": {"type": "string", "enum": ["reuse", "recompute", "drop"]},
+    "materialized_ref": {"type": "string"},
+    "sourceRef": {"type": "string"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "anyOf": [
+    {"required": ["actor"]},
+    {"required": ["system_actor"]}
+  ],
+  "additionalProperties": true
+}

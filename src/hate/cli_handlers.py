@@ -25,6 +25,7 @@ from .platform_cli import (
     platform_history,
     platform_policy_explain,
     platform_plugin_run,
+    platform_baseline_promote,
     platform_report_html,
     platform_review,
     platform_run,
@@ -450,6 +451,8 @@ def _dispatch_platform(args: argparse.Namespace) -> dict[str, Any] | None:
         return platform_assign(args.input, out_path=args.out)
     if args.platform_command == "score":
         return platform_score(args.input, out_path=args.out)
+    if args.platform_command == "baseline" and args.platform_baseline_command == "promote":
+        return platform_baseline_promote(args.input, out_path=args.out)
     if args.platform_command == "plugin" and args.platform_plugin_command == "run":
         return platform_plugin_run(args.manifest, out_path=args.out)
     if args.platform_command == "policy" and args.platform_policy_command == "explain":

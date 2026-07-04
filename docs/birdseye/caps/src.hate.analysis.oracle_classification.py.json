@@ -2,9 +2,9 @@
   "path": "src/hate/analysis/oracle_classification.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "b40ef6743179d78422a4db77209acbaea4f1fafb42a7a302a92f7211d7687c1d",
-  "line_count": 236,
-  "size_bytes": 9285,
+  "sha256": "dde1da66e61f097fbfc70f170c7e1cc99a4fd34e4b5c7791cc4c05ba5fc870c5",
+  "line_count": 408,
+  "size_bytes": 16715,
   "headings": [],
   "imports": [
     "__future__",
@@ -14,8 +14,8 @@
   "links": [],
   "depends_on": [],
   "tags": [
-    "coverage",
     "fixture",
-    "schema"
+    "schema",
+    "test"
   ]
 }

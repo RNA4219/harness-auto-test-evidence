@@ -38,6 +38,10 @@ def test_product_grade_reports_generate_required_report_set(tmp_path: Path) -> N
     assert summary["real_data_validation"]["residual_blockers"]
     assert summary["poc_completion"]["unmitigated_blockers"] == []
     assert all(item["mitigated"] for item in summary["poc_completion"]["mitigations"])
+    assert summary["post_poc_gap_audit"]["present"] is True
+    assert summary["post_poc_gap_audit"]["open_gap_count"] >= 16
+    assert summary["post_poc_gap_audit"]["readiness_effect"] == "product_ready_hold"
+    assert result["known_post_poc_gap_count"] == summary["post_poc_gap_audit"]["open_gap_count"]
 
     api_report = json.loads((out_dir / "api-contract-report.json").read_text(encoding="utf-8"))
     assert api_report["status"] == "implemented_with_evidence"
@@ -93,3 +97,28 @@ def test_product_grade_without_poc_completion_record_stays_conditional(tmp_path:
     assert summary["product_grade_implementation_status"] == "conditional_go"
     assert summary["poc_ready"] is False
     assert summary["poc_completion"]["present"] is False
+
+
+def test_product_grade_generated_record_types_are_registered_and_schema_valid(tmp_path: Path) -> None:
+    out_dir = tmp_path / "grade-reports"
+    generate_product_grade_reports(
+        docs_root=ROOT / "docs" / "process",
+        out_dir=out_dir,
+        source_version="test",
+    )
+    registry = json.loads((ROOT / "schemas" / "HATE" / "v1" / "schema-registry.json").read_text(encoding="utf-8"))
+    by_record_type = {record["record_type"]: record for record in registry["records"]}
+    generated_files = [spec.filename for spec in REPORT_SPECS] + ["product-grade-evidence-summary.json"]
+
+    for filename in generated_files:
+        report = json.loads((out_dir / filename).read_text(encoding="utf-8"))
+        record_type = report["record_type"]
+        assert record_type in by_record_type
+        schema_path = ROOT / by_record_type[record_type]["schema"]
+        assert schema_path.exists()
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        assert set(schema["required"]) <= set(report)
+        if "const" in schema["properties"]["record_type"]:
+            assert report["record_type"] == schema["properties"]["record_type"]["const"]
+        if "enum" in schema["properties"]["record_type"]:
+            assert report["record_type"] in schema["properties"]["record_type"]["enum"]

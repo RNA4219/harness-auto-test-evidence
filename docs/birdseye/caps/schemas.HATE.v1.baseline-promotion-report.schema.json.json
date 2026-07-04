@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/baseline-promotion-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "92874e77bfc12b4ca96bcd5b84262b3fcd24a12ed49db64ce096396b60eba0c2",
+  "line_count": 227,
+  "size_bytes": 4852,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "src/hate/analysis/fixture_quality.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "eaa3fecfbc4952411ffb592854c0db3bf0a425696b3bde08914cafb66920a80c",
-  "line_count": 199,
-  "size_bytes": 7516,
+  "sha256": "9e671a305ac93d9b9524482cbbbec75094a41d712557e67e0f9159a2c1660ea7",
+  "line_count": 325,
+  "size_bytes": 12951,
   "headings": [],
   "imports": [
     "__future__",

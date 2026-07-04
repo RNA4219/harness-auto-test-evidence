@@ -1,0 +1,288 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/baseline-review-packet.schema.json",
+  "title": "HATE Baseline Review Packet",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "packet_id",
+    "baseline_id",
+    "repo_id",
+    "suite_id",
+    "candidate_run_id",
+    "reviewer",
+    "promotion_report_ref",
+    "comparison",
+    "review_items",
+    "findings",
+    "summary",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "baseline-review-packet"
+    },
+    "packet_id": {
+      "type": "string"
+    },
+    "baseline_id": {
+      "type": "string"
+    },
+    "repo_id": {
+      "type": "string"
+    },
+    "suite_id": {
+      "type": "string"
+    },
+    "candidate_run_id": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "promotion_report_ref": {
+      "type": "string"
+    },
+    "comparison": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "previous_baseline_ref",
+        "previous_score",
+        "candidate_score",
+        "score_delta",
+        "previous_regression_count",
+        "candidate_regression_count",
+        "regression_count_delta",
+        "comparison_artifact_ref"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "baseline-review-comparison"
+        },
+        "previous_baseline_ref": {
+          "type": "string"
+        },
+        "previous_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "candidate_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "score_delta": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "previous_regression_count": {
+          "type": "integer"
+        },
+        "candidate_regression_count": {
+          "type": "integer"
+        },
+        "regression_count_delta": {
+          "type": "integer"
+        },
+        "comparison_artifact_ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "review_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_type",
+          "item_id",
+          "required",
+          "status",
+          "description"
+        ],
+        "properties": {
+          "record_type": {
+            "const": "baseline-review-item"
+          },
+          "item_id": {
+            "type": "string",
+            "enum": [
+              "candidate_evidence",
+              "reviewer_separation",
+              "policy_hash",
+              "expiry",
+              "immutability",
+              "comparison_artifact",
+              "regression_delta"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "satisfied",
+              "missing"
+            ]
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "severity",
+          "message",
+          "sourceRef",
+          "readiness_effect"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "baseline_review_item_missing",
+              "baseline_review_blocked_by_promotion_findings",
+              "baseline_unapproved_for_comparison"
+            ]
+          },
+          "severity": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": [
+              "hold"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "review_item_count",
+        "required_item_count",
+        "satisfied_required_count",
+        "finding_count",
+        "score_delta",
+        "regression_count_delta",
+        "ready_for_review"
+      ],
+      "properties": {
+        "review_item_count": {
+          "type": "integer"
+        },
+        "required_item_count": {
+          "type": "integer"
+        },
+        "satisfied_required_count": {
+          "type": "integer"
+        },
+        "finding_count": {
+          "type": "integer"
+        },
+        "score_delta": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "regression_count_delta": {
+          "type": "integer"
+        },
+        "ready_for_review": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/hosted-rate-limit-event.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "1dda906ad16890a9f089fc0fad3db300b85d0515ba5d679d2568ec45a89689dd",
+  "line_count": 39,
+  "size_bytes": 1331,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

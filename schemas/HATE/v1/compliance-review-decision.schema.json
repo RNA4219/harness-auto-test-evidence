@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/compliance-review-decision.schema.json",
+  "title": "HATE Compliance Review Decision",
+  "type": "object",
+  "required": ["record_type", "record_id", "created_at", "decision_basis", "readiness_effect", "unsafe_output_policy", "control_id", "reviewer", "review_status", "reviewed_at", "expires_at", "sourceRefs"],
+  "properties": {
+    "record_type": {"const": "compliance-review-decision"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "system_actor": {"type": "string", "minLength": 1},
+    "decision_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "unsafe_output_policy": {"type": "string", "minLength": 1},
+    "control_id": {"type": "string"},
+    "reviewer": {"type": "string"},
+    "review_status": {"type": "string"},
+    "reviewed_at": {"type": "string"},
+    "expires_at": {"type": "string"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "anyOf": [{"required": ["actor"]}, {"required": ["system_actor"]}],
+  "additionalProperties": true
+}

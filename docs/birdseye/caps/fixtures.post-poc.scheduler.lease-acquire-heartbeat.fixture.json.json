@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/scheduler/lease-acquire-heartbeat/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "87674bf39f774252b1eacbd1300d4512789be5f1056ac6cc3b6a164bddf15080",
+  "line_count": 34,
+  "size_bytes": 905,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

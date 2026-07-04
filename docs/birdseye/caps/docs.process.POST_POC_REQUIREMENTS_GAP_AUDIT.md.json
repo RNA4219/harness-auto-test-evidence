@@ -1,0 +1,27 @@
+{
+  "path": "docs/process/POST_POC_REQUIREMENTS_GAP_AUDIT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "6af39483cf2597e0f28be338e7fbe1446f416ed3dd07c643e528c0f42e5452a9",
+  "line_count": 88,
+  "size_bytes": 8305,
+  "headings": [
+    "# Post-PoC Requirements Gap Audit",
+    "## 1. Boundary Rule",
+    "## 2. Gap Register",
+    "## 3. Implementation Order",
+    "## 4. Product-Grade Integration Rule",
+    "## 5. Spec Traceability Checklist"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "test",
+    "workflow"
+  ]
+}

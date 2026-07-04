@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/notifications/duplicate-suppressed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "68d952cc7b414557861a7a25a1a904c5b28025399ef0fab80955f4d6c4a9bd3f",
+  "line_count": 24,
+  "size_bytes": 756,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

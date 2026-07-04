@@ -1,0 +1,30 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-016.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "074f0b739985cfe79b1f6e12402a6cb82323df8374a78a17d88b902a8c2ce5b2",
+  "line_count": 79,
+  "size_bytes": 2904,
+  "headings": [
+    "# AC-20260703-postpoc-016 Human Review Workflow Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

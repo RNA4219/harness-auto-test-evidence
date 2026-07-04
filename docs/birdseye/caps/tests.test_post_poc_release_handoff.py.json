@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_post_poc_release_handoff.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "fc83268ae41e57e4aca681a6598e8bb943efa5d8eeba2844cb3dfea34aa127c1",
+  "line_count": 127,
+  "size_bytes": 4951,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.release_handoff",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/release_handoff.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

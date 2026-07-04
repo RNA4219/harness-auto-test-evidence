@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/capacity-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "21983c9840a5405708bffa81a14b81f97af89ec6bc5b08a45b387560adc49dfe",
+  "line_count": 260,
+  "size_bytes": 5667,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

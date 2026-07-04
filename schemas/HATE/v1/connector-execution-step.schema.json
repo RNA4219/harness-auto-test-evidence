@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/connector-execution-step.schema.json",
+  "title": "HATE Connector Execution Step",
+  "type": "object",
+  "required": [
+    "record_type",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy",
+    "step_type",
+    "status",
+    "description",
+    "connector_id",
+    "mode",
+    "endpoint_ref",
+    "sourceRefs"
+  ],
+  "properties": {
+    "record_type": {"const": "connector-execution-step"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "system_actor": {"type": "string", "minLength": 1},
+    "decision_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "unsafe_output_policy": {"type": "string", "minLength": 1},
+    "step_type": {
+      "type": "string",
+      "enum": [
+        "validate_plan",
+        "redact_payload",
+        "reserve_idempotency",
+        "approval_gate",
+        "execute",
+        "verify_result",
+        "rollback_preview"
+      ]
+    },
+    "status": {"type": "string", "enum": ["ready", "blocked", "skipped"]},
+    "description": {"type": "string"},
+    "connector_id": {"type": "string"},
+    "mode": {"type": "string"},
+    "endpoint_ref": {"type": "string"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "anyOf": [
+    {"required": ["actor"]},
+    {"required": ["system_actor"]}
+  ],
+  "additionalProperties": true
+}

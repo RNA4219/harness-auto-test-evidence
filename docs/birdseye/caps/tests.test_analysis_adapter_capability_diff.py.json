@@ -2,9 +2,9 @@
   "path": "tests/test_analysis_adapter_capability_diff.py",
   "role": "test",
   "kind": "py",
-  "sha256": "f8ffbbd003eed5278e0105e0f46131914fb56c3eef9c68fb461b04bad6a7df00",
-  "line_count": 130,
-  "size_bytes": 5173,
+  "sha256": "01d35b06bad18c1aba1fbb8f21309ac293355c084c830f2314bccf310463eab1",
+  "line_count": 225,
+  "size_bytes": 9420,
   "headings": [],
   "imports": [
     "__future__",

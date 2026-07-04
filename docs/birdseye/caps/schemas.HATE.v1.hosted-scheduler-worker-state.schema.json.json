@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/hosted-scheduler-worker-state.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "e2010c9f020bf3d7ad3a2ee9529f1ccbc6ded6e0d36dbb17a93728fda2354666",
+  "line_count": 47,
+  "size_bytes": 1527,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

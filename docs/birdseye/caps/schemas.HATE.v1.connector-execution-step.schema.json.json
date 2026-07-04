@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/connector-execution-step.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "0d8d5834e9ac6c94c0fd3f241e0d50a098e9c7c3e0348b186586b80edbd4e16f",
+  "line_count": 54,
+  "size_bytes": 1664,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

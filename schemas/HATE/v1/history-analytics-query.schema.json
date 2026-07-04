@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/history-analytics-query.schema.json",
+  "title": "HATE History Analytics Query",
+  "type": "object",
+  "required": [
+    "record_type",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy",
+    "window_start",
+    "window_end",
+    "repo_filter",
+    "suite_filter",
+    "aggregation_level",
+    "performance_budget_ms",
+    "actual_runtime_ms",
+    "min_sample_count",
+    "stale_after_days",
+    "required_metrics",
+    "sourceRefs"
+  ],
+  "properties": {
+    "record_type": {"const": "history-analytics-query"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "system_actor": {"type": "string", "minLength": 1},
+    "decision_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "unsafe_output_policy": {"type": "string", "minLength": 1},
+    "window_start": {"type": "string"},
+    "window_end": {"type": "string"},
+    "repo_filter": {"type": "string"},
+    "suite_filter": {"type": "string"},
+    "aggregation_level": {"type": "string"},
+    "performance_budget_ms": {"type": "integer"},
+    "actual_runtime_ms": {"type": "integer"},
+    "min_sample_count": {"type": "integer"},
+    "stale_after_days": {"type": "integer"},
+    "required_metrics": {"type": "array", "items": {"type": "string"}},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "anyOf": [
+    {"required": ["actor"]},
+    {"required": ["system_actor"]}
+  ],
+  "additionalProperties": true
+}

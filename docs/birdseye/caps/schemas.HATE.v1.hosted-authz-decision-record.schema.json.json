@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/hosted-authz-decision-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "f15c8ca4b07e9dd99d0d53404fc04af96ce4d7f21092e919fb72329a7e4bdbc4",
+  "line_count": 53,
+  "size_bytes": 1723,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/real-repo-quarantine-event.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "3f73f30f352d568601dc723dcbe9c7744d3a65b7d0aa400137e0f1e074b51bb1",
+  "line_count": 39,
+  "size_bytes": 1371,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

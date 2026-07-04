@@ -1,0 +1,24 @@
+{
+  "fixture_id": "postpoc-human-review-revoked-decision",
+  "input": {
+    "review": {
+      "review_id": "hr-revoked-001",
+      "operating_record_id": "risk:RISK-003",
+      "required_decision": "approve_or_reject",
+      "owner": "owner@example.com",
+      "reviewer": "reviewer@example.com",
+      "decision": "approve",
+      "decision_reason": "Previously accepted.",
+      "evidence_refs": ["artifact://manual-review/hr-revoked-001/evidence.json"],
+      "decision_hash": "sha256:revoked-before",
+      "status": "approved"
+    },
+    "actions": [
+      {
+        "action": "revoke",
+        "decision_reason": "Underlying evidence was invalidated.",
+        "sourceRefs": ["fixture://human-review/revoked-decision#revoke"]
+      }
+    ]
+  }
+}

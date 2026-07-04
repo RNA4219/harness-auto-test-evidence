@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/external-release-handoff-result.schema.json",
+  "title": "HATE External Release Handoff Result",
+  "type": "object",
+  "required": ["record_type", "record_id", "created_at", "decision_basis", "readiness_effect", "unsafe_output_policy", "handoff_id", "handoff_target", "external_run_ref", "external_decision_ref", "external_status", "result_recorded", "sourceRefs"],
+  "properties": {
+    "record_type": {"const": "external-release-handoff-result"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "system_actor": {"type": "string", "minLength": 1},
+    "decision_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "unsafe_output_policy": {"type": "string", "minLength": 1},
+    "handoff_id": {"type": "string"},
+    "handoff_target": {"type": "string"},
+    "external_run_ref": {"type": "string"},
+    "external_decision_ref": {"type": "string"},
+    "external_status": {"type": "string"},
+    "result_recorded": {"type": "boolean"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "anyOf": [{"required": ["actor"]}, {"required": ["system_actor"]}],
+  "additionalProperties": true
+}

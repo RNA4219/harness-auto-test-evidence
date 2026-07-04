@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/human-review/evidence-missing-holds/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "25af43da9f1bbee3629db493a87cdae2a97dcf6832c015405f78a65465c12ccc",
+  "line_count": 26,
+  "size_bytes": 830,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

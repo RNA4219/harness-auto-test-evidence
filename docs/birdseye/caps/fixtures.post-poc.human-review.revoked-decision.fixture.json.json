@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/human-review/revoked-decision/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7f62cc61a343d50ca3c1fe0dedad6ec5f51c9d7873f68323c1cadfe540001dfc",
+  "line_count": 24,
+  "size_bytes": 752,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

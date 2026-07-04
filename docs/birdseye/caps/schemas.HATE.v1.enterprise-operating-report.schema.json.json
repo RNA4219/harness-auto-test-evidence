@@ -1,0 +1,20 @@
+{
+  "path": "schemas/HATE/v1/enterprise-operating-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d392ac2d2ae885c2fef0837a4e7c1fea6ba2b41fd79ba57c4864db9962aa31d9",
+  "line_count": 37,
+  "size_bytes": 2335,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "release",
+    "schema",
+    "security"
+  ]
+}

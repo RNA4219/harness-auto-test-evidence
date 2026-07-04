@@ -95,6 +95,10 @@
         "raw_field_count": {"type": "integer", "minimum": 0},
         "normalized_field_count": {"type": "integer", "minimum": 0},
         "lossy_transform_count": {"type": "integer", "minimum": 0},
+        "dropped_field_count": {"type": "integer", "minimum": 0},
+        "type_change_count": {"type": "integer", "minimum": 0},
+        "claim_drift_count": {"type": "integer", "minimum": 0},
+        "unsupported_feature_count": {"type": "integer", "minimum": 0},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
       },
@@ -103,6 +107,39 @@
     "raw_field_map": {"type": "object"},
     "normalized_field_map": {"type": "object"},
     "lossy_transforms": {"type": "array", "items": {"type": "object"}},
+    "capability_claims": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"}
+    },
+    "observed_capabilities": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"}
+    },
+    "capability_diagnostics": {
+      "type": "object",
+      "required": ["covered_raw_fields", "dropped_fields", "type_changes", "claim_drifts", "unsupported_features"],
+      "properties": {
+        "covered_raw_fields": {"type": "array", "items": {"type": "string"}},
+        "dropped_fields": {"type": "array", "items": {"type": "string"}},
+        "type_changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["raw_field", "normalized_field", "raw_type", "normalized_type"],
+            "properties": {
+              "raw_field": {"type": "string"},
+              "normalized_field": {"type": "string"},
+              "raw_type": {"type": "string"},
+              "normalized_type": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "claim_drifts": {"type": "array", "items": {"type": "string"}},
+        "unsupported_features": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
     "input_refs": {"type": "array", "items": {"type": "string"}},
     "confidence": {"type": "number", "minimum": 0, "maximum": 1},
     "limits": {

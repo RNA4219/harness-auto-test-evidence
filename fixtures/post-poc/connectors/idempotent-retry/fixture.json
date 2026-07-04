@@ -1,0 +1,37 @@
+{
+  "fixture_id": "postpoc-connectors-idempotent-retry",
+  "input": {
+    "plan": {
+      "connector_id": "fake-ticket",
+      "connector_type": "ticket",
+      "mode": "live",
+      "endpoint_ref": "fake-endpoint://ticket-system",
+      "endpoint_available": true,
+      "live_mode_allowed": true,
+      "idempotency_key": "ticket-retry-001",
+      "payload_hash": "sha256:ticket-retry-001",
+      "redaction_report_ref": "artifact://redaction/ticket-retry-001.json",
+      "token_ref": "secret-ref://connectors/fake-ticket",
+      "rollback_available": true,
+      "sync_status": "planned"
+    },
+    "attempts": [
+      {
+        "attempt": 1,
+        "mode": "live",
+        "sync_status": "failed",
+        "external_ref": "",
+        "side_effect_performed": false,
+        "sourceRefs": ["fixture://connectors/idempotent-retry#attempt-1"]
+      },
+      {
+        "attempt": 2,
+        "mode": "live",
+        "sync_status": "succeeded",
+        "external_ref": "fake-ticket://TICKET-RETRY-001",
+        "side_effect_performed": true,
+        "sourceRefs": ["fixture://connectors/idempotent-retry#attempt-2"]
+      }
+    ]
+  }
+}

@@ -48,7 +48,8 @@ def build_environment_diff_report(
 ) -> dict[str, Any]:
     source_refs = list(source_refs or input_data.get("sourceRefs") or ["environment-diff"])
     diff_config = _normalize_diff_config(input_data.get("diff_config", input_data))
-    findings = _findings_for(diff_config, source_refs[0])
+    diagnostics = _derive_diagnostics(diff_config)
+    findings = _findings_for(diff_config, diagnostics, source_refs[0])
     status = "hold" if findings else "pass"
     return {
         "schema_version": "HATE/v1",
@@ -62,12 +63,17 @@ def build_environment_diff_report(
             "delta_count": len(diff_config["environment_deltas"]),
             "drift_class_count": len(diff_config["drift_classes"]),
             "attempt_count": len(diff_config["attempts_compared"]),
+            "derived_delta_count": len(diagnostics["derived_deltas"]),
+            "missing_snapshot_count": len(diagnostics["missing_snapshot_attempt_ids"]),
+            "duplicate_attempt_count": len(diagnostics["duplicate_attempt_ids"]),
+            "unexplained_derived_delta_count": len(diagnostics["unexplained_derived_delta_ids"]),
             "confidence": diff_config["confidence"],
             "finding_count": len(findings),
         },
         "environment_deltas": diff_config["environment_deltas"],
         "attempts_compared": diff_config["attempts_compared"],
         "drift_classes": diff_config["drift_classes"],
+        "environment_diff_diagnostics": diagnostics,
         "analysis_scope": diff_config["analysis_scope"],
         "input_refs": diff_config["input_refs"],
         "confidence": diff_config["confidence"],
@@ -124,6 +130,7 @@ def _normalize_attempt(a: dict[str, Any]) -> dict[str, Any]:
         "attempt_id": str(a.get("attempt_id", "") or ""),
         "environment_ref": str(a.get("environment_ref", "") or ""),
         "timestamp": str(a.get("timestamp", "") or ""),
+        "snapshot": dict(a.get("snapshot", {}) or {}),
     }
 
 
@@ -145,7 +152,98 @@ def _normalize_limits(limits: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _findings_for(config: dict[str, Any], source_ref: str) -> list[EnvironmentDiffFinding]:
+def _derive_diagnostics(config: dict[str, Any]) -> dict[str, Any]:
+    attempt_ids = [a["attempt_id"] for a in config["attempts_compared"] if a["attempt_id"]]
+    seen: set[str] = set()
+    duplicate_attempt_ids: list[str] = []
+    for attempt_id in attempt_ids:
+        if attempt_id in seen and attempt_id not in duplicate_attempt_ids:
+            duplicate_attempt_ids.append(attempt_id)
+        seen.add(attempt_id)
+
+    missing_snapshot_attempt_ids = sorted(
+        a["attempt_id"] or a["environment_ref"] or "unknown"
+        for a in config["attempts_compared"]
+        if not a["snapshot"]
+    )
+    derived_deltas = _derive_snapshot_deltas(config["attempts_compared"])
+    explained_delta_keys = {
+        _delta_key(d["category"], d["delta_type"])
+        for d in config["environment_deltas"]
+        if d.get("explained")
+    }
+    unexplained_derived_delta_ids = sorted(
+        d["delta_id"]
+        for d in derived_deltas
+        if _delta_key(d["category"], d["delta_type"]) not in explained_delta_keys
+    )
+    return {
+        "derived_deltas": derived_deltas,
+        "missing_snapshot_attempt_ids": missing_snapshot_attempt_ids,
+        "duplicate_attempt_ids": sorted(duplicate_attempt_ids),
+        "unexplained_derived_delta_ids": unexplained_derived_delta_ids,
+    }
+
+
+def _derive_snapshot_deltas(attempts: list[dict[str, Any]]) -> list[dict[str, str]]:
+    attempts_with_snapshots = [a for a in attempts if a["snapshot"]]
+    if len(attempts_with_snapshots) < 2:
+        return []
+    baseline = attempts_with_snapshots[0]
+    deltas: list[dict[str, str]] = []
+    for attempt in attempts_with_snapshots[1:]:
+        for key, baseline_value in baseline["snapshot"].items():
+            if key not in attempt["snapshot"]:
+                continue
+            current_value = attempt["snapshot"][key]
+            if current_value == baseline_value:
+                continue
+            category, delta_type = _classify_snapshot_key(str(key))
+            deltas.append({
+                "delta_id": f"{baseline['attempt_id']}..{attempt['attempt_id']}:{key}",
+                "category": category,
+                "delta_type": delta_type,
+                "baseline_attempt_id": baseline["attempt_id"],
+                "current_attempt_id": attempt["attempt_id"],
+                "field": str(key),
+                "baseline_value": str(baseline_value),
+                "current_value": str(current_value),
+            })
+    return deltas
+
+
+def _classify_snapshot_key(key: str) -> tuple[str, str]:
+    lowered = key.lower()
+    if lowered in {"python", "python_version", "node", "node_version", "java", "go", "rust"}:
+        return "runtime", "runtime_version_drift"
+    if lowered in {"os", "os_version", "runner_os", "kernel"}:
+        return "os", "os_drift"
+    if "browser" in lowered:
+        return "browser", "browser_version_drift"
+    if lowered in {"container", "image", "image_digest", "docker_image"}:
+        return "container", "container_drift"
+    if "dependency" in lowered or lowered in {"lockfile_hash", "package_lock_hash", "uv_lock_hash"}:
+        return "dependency", "dependency_drift"
+    if "cache" in lowered:
+        return "cache", "cache_drift"
+    if lowered.startswith("env.") or lowered.startswith("env_"):
+        return "env", "env_var_drift"
+    if "service" in lowered:
+        return "service", "service_drift"
+    if "shard" in lowered:
+        return "shard", "shard_drift"
+    return "environment", "environment_drift"
+
+
+def _delta_key(category: str, delta_type: str) -> str:
+    return f"{category}:{delta_type}"
+
+
+def _findings_for(
+    config: dict[str, Any],
+    diagnostics: dict[str, Any],
+    source_ref: str,
+) -> list[EnvironmentDiffFinding]:
     findings: list[EnvironmentDiffFinding] = []
 
     # HATE-GAP-055 primary negative: unexplained drift
@@ -158,6 +256,27 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[EnvironmentDi
         findings.append(_finding(
             "environment_diff_unexplained_drift_hold",
             "Unexplained runtime version drift detected.",
+            source_ref,
+        ))
+
+    if diagnostics["unexplained_derived_delta_ids"]:
+        findings.append(_finding(
+            "environment_diff_unexplained_derived_drift_hold",
+            f"Derived environment drift lacks matching explained delta: {', '.join(diagnostics['unexplained_derived_delta_ids'])}.",
+            source_ref,
+        ))
+
+    if diagnostics["missing_snapshot_attempt_ids"]:
+        findings.append(_finding(
+            "environment_diff_attempt_snapshot_missing",
+            f"Environment snapshots missing for attempts: {', '.join(diagnostics['missing_snapshot_attempt_ids'])}.",
+            source_ref,
+        ))
+
+    if diagnostics["duplicate_attempt_ids"]:
+        findings.append(_finding(
+            "environment_diff_duplicate_attempt_id",
+            f"Duplicate attempt ids detected: {', '.join(diagnostics['duplicate_attempt_ids'])}.",
             source_ref,
         ))
 
@@ -187,6 +306,27 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[EnvironmentDi
                 f"Environment delta '{d.get('delta_id')}' missing sourceRef.",
                 source_ref,
             ))
+
+    if len(config["environment_deltas"]) > config["limits"]["max_deltas"]:
+        findings.append(_finding(
+            "environment_diff_delta_budget_exceeded",
+            f"Environment delta count {len(config['environment_deltas'])} exceeds limit {config['limits']['max_deltas']}.",
+            source_ref,
+        ))
+
+    if len(config["attempts_compared"]) > config["limits"]["max_attempts"]:
+        findings.append(_finding(
+            "environment_diff_attempt_budget_exceeded",
+            f"Attempt count {len(config['attempts_compared'])} exceeds limit {config['limits']['max_attempts']}.",
+            source_ref,
+        ))
+
+    if len(config["drift_classes"]) > config["limits"]["max_drift_classes"]:
+        findings.append(_finding(
+            "environment_diff_drift_class_budget_exceeded",
+            f"Drift class count {len(config['drift_classes'])} exceeds limit {config['limits']['max_drift_classes']}.",
+            source_ref,
+        ))
 
     # Confidence threshold check
     if config["confidence"] < config["limits"]["confidence_threshold"]:

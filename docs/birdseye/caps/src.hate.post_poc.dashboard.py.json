@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/post_poc/dashboard.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "60ef2ff8ca17c5a6e29437844ddaab470a71a700f1603f843deb6549e5c9ae57",
+  "line_count": 353,
+  "size_bytes": 16120,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "html",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema"
+  ]
+}

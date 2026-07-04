@@ -69,6 +69,22 @@
             "additionalProperties": true
           }
         },
+        "dependency_graph": {
+          "type": "object",
+          "additionalProperties": {"type": "array", "items": {"type": "string"}}
+        },
+        "ownership_map": {
+          "type": "object",
+          "additionalProperties": {"type": "array", "items": {"type": "string"}}
+        },
+        "history_index": {
+          "type": "object",
+          "additionalProperties": {"type": "array", "items": {"type": "string"}}
+        },
+        "requirement_map": {
+          "type": "object",
+          "additionalProperties": {"type": "array", "items": {"type": "string"}}
+        },
         "analysis_scope": {"type": "string"},
         "input_refs": {"type": "array", "items": {"type": "string"}},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
@@ -78,6 +94,7 @@
           "properties": {
             "max_affected_tests": {"type": "integer", "minimum": 0},
             "max_affected_requirements": {"type": "integer", "minimum": 0},
+            "max_changed_refs": {"type": "integer", "minimum": 0},
             "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
           },
           "additionalProperties": true
@@ -110,8 +127,32 @@
         "changed_ref_count": {"type": "integer", "minimum": 0},
         "affected_test_count": {"type": "integer", "minimum": 0},
         "affected_requirement_count": {"type": "integer", "minimum": 0},
+        "derived_test_count": {"type": "integer", "minimum": 0},
+        "derived_requirement_count": {"type": "integer", "minimum": 0},
+        "owner_count": {"type": "integer", "minimum": 0},
+        "unmapped_changed_ref_count": {"type": "integer", "minimum": 0},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "derived_affected_tests": {"type": "array", "items": {"type": "object"}},
+    "derived_affected_requirements": {"type": "array", "items": {"type": "object"}},
+    "impact_analysis_diagnostics": {
+      "type": "object",
+      "required": [
+        "derived_affected_tests",
+        "derived_affected_requirements",
+        "owners",
+        "unmapped_changed_refs",
+        "changed_refs_missing_source"
+      ],
+      "properties": {
+        "derived_affected_tests": {"type": "array", "items": {"type": "object"}},
+        "derived_affected_requirements": {"type": "array", "items": {"type": "object"}},
+        "owners": {"type": "array", "items": {"type": "string"}},
+        "unmapped_changed_refs": {"type": "array", "items": {"type": "string"}},
+        "changed_refs_missing_source": {"type": "array", "items": {"type": "string"}}
       },
       "additionalProperties": true
     },
@@ -124,6 +165,7 @@
       "properties": {
         "max_affected_tests": {"type": "integer", "minimum": 0},
         "max_affected_requirements": {"type": "integer", "minimum": 0},
+        "max_changed_refs": {"type": "integer", "minimum": 0},
         "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
       },
       "additionalProperties": true

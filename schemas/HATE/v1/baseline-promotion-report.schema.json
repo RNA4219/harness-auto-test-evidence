@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/baseline-promotion-report.schema.json",
+  "title": "HATE Baseline Promotion Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "baseline_state",
+    "promotion_requests",
+    "promotion_decisions",
+    "immutability_events",
+    "findings",
+    "summary",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "baseline-promotion-report"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "overall_status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "hold"
+      ]
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "baseline_state": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "baseline_id",
+        "repo_id",
+        "suite_id",
+        "candidate_run_id",
+        "actor",
+        "reviewer",
+        "reason",
+        "evidence_refs",
+        "policy_hash",
+        "expires_at",
+        "frozen_at",
+        "immutability_hash",
+        "previous_baseline_ref",
+        "state"
+      ],
+      "additionalProperties": true
+    },
+    "promotion_requests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_type",
+          "baseline_id",
+          "repo_id",
+          "suite_id",
+          "candidate_run_id",
+          "actor",
+          "reason",
+          "evidence_refs",
+          "policy_hash",
+          "expires_at",
+          "sourceRefs"
+        ],
+        "properties": {
+          "record_type": {
+            "const": "baseline-promotion-request"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "promotion_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_type",
+          "baseline_id",
+          "decision",
+          "actor",
+          "reviewer",
+          "reason",
+          "policy_hash",
+          "sourceRefs"
+        ],
+        "properties": {
+          "record_type": {
+            "const": "baseline-promotion-decision"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "immutability_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_type",
+          "baseline_id",
+          "event_type",
+          "before_state",
+          "after_state",
+          "before_hash",
+          "after_hash",
+          "sourceRefs"
+        ],
+        "properties": {
+          "record_type": {
+            "const": "baseline-immutability-event"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "severity",
+          "message",
+          "sourceRef",
+          "readiness_effect"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": [
+              "hold"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

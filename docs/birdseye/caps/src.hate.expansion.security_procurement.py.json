@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/expansion/security_procurement.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ff13fb2c417f1ed7def08a5fd6e24a86b3fcdc5f66fa085bebc3b593c16d92d0",
+  "line_count": 150,
+  "size_bytes": 8103,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "security"
+  ]
+}

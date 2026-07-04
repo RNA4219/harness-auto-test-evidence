@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/observability-report.schema.json",
+  "title": "HATE Observability Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "runtime_telemetry_events",
+    "slo_burn_rate_report",
+    "incident_lifecycle_record",
+    "post_incident_evidence_pack",
+    "findings",
+    "summary",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "observability-report"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "overall_status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "hold"
+      ]
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "runtime_telemetry_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "slo_burn_rate_report": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "incident_lifecycle_record": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "post_incident_evidence_pack": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "severity",
+          "message",
+          "sourceRef",
+          "readiness_effect"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": [
+              "hold"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

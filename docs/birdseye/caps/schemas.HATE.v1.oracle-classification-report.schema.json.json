@@ -2,15 +2,15 @@
   "path": "schemas/HATE/v1/oracle-classification-report.schema.json",
   "role": "schema",
   "kind": "json",
-  "sha256": "08cccc3a08fab27f9bfaa50c28911419a00253c2855e57a59352242bddf9890b",
-  "line_count": 146,
-  "size_bytes": 5830,
+  "sha256": "998e4e7261c953307072d289b6495aa8f06dbe785638f8c8edc245fcf439e0aa",
+  "line_count": 201,
+  "size_bytes": 8055,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
-    "coverage",
-    "schema"
+    "schema",
+    "test"
   ]
 }

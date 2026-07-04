@@ -1,0 +1,40 @@
+{
+  "path": "docs/process/POST_POC_PRODUCTIZATION_DETAIL_SPEC.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "3520791bd0ca9eeb2672be47ffca93559f571448eecf137da16c3eda27722b9b",
+  "line_count": 769,
+  "size_bytes": 22114,
+  "headings": [
+    "# Post-PoC Productization Detail Specification",
+    "## 1. Shared Productization Contract",
+    "## HATE-POSTPOC-GAP-001: Hosted Scheduler Runtime",
+    "## HATE-POSTPOC-GAP-002: Interactive Dashboard Frontend",
+    "## HATE-POSTPOC-GAP-003: Notification Delivery Runtime",
+    "## HATE-POSTPOC-GAP-004: Baseline Promotion Workflow",
+    "## HATE-POSTPOC-GAP-005: Real-Repo Roster Operations",
+    "## HATE-POSTPOC-GAP-006: Plugin Distribution and Trust",
+    "## HATE-POSTPOC-GAP-007: Live Connector Runtime",
+    "## HATE-POSTPOC-GAP-008: Long-Term History Analytics",
+    "## HATE-POSTPOC-GAP-009: Docs and Acceptance Freshness CI",
+    "## HATE-POSTPOC-GAP-010: QEG and Shipyard Release Handoff",
+    "## HATE-POSTPOC-GAP-011: Hosted Multi-Tenant API",
+    "## HATE-POSTPOC-GAP-012: Store Backup, Restore, and DR Operations",
+    "## HATE-POSTPOC-GAP-013: Capacity Benchmark with Measured Baselines",
+    "## HATE-POSTPOC-GAP-014: Compliance and Procurement Evidence",
+    "## HATE-POSTPOC-GAP-015: Observability and Incident Operations",
+    "## HATE-POSTPOC-GAP-016: Human Review Operating UI/CLI"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

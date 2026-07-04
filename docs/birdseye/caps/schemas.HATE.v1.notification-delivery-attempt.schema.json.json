@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/notification-delivery-attempt.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "b61ed79c09ba55dc76ade2b9b1e0f998db73a67bfa0e88e42add20a36a3bef7e",
+  "line_count": 53,
+  "size_bytes": 1823,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

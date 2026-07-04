@@ -1,0 +1,28 @@
+{
+  "fixture_id": "postpoc-connectors-token-exposure-denied",
+  "input": {
+    "plan": {
+      "connector_id": "unsafe-ticket",
+      "connector_type": "ticket",
+      "mode": "live",
+      "endpoint_ref": "fake-endpoint://ticket-system",
+      "endpoint_available": true,
+      "live_mode_allowed": true,
+      "idempotency_key": "ticket-token-001",
+      "payload_hash": "sha256:ticket-token-001",
+      "redaction_report_ref": "artifact://redaction/ticket-token-001.json",
+      "token_ref": "plain-token-value",
+      "raw_token": "should-not-appear",
+      "rollback_available": true,
+      "sync_status": "planned"
+    },
+    "attempts": [
+      {
+        "attempt": 1,
+        "mode": "live",
+        "sync_status": "rejected",
+        "sourceRefs": ["fixture://connectors/token-exposure-denied#attempt-1"]
+      }
+    ]
+  }
+}

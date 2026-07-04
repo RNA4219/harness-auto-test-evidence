@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/post_poc/scheduler.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "03e2625e37b78959e0fa59a60d745619c382d32d86a7d3c7ffd106bdd8ad012e",
+  "line_count": 367,
+  "size_bytes": 17428,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/artifact-safety-filter-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "128211e472da1c4d6cabe4996dcb91a98de3ba5381a654cd0e7f78c5e73c2943",
+  "line_count": 32,
+  "size_bytes": 993,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

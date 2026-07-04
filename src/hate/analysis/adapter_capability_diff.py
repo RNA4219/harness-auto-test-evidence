@@ -48,7 +48,8 @@ def build_adapter_capability_diff_report(
 ) -> dict[str, Any]:
     source_refs = list(source_refs or input_data.get("sourceRefs") or ["adapter-capability-diff"])
     config = _normalize_adapter_config(input_data.get("adapter_config", input_data))
-    findings = _findings_for(config, source_refs[0])
+    diagnostics = _derive_diagnostics(config)
+    findings = _findings_for(config, diagnostics, source_refs[0])
     status = "hold" if findings else "pass"
     return {
         "schema_version": "HATE/v1",
@@ -63,12 +64,19 @@ def build_adapter_capability_diff_report(
             "raw_field_count": len(config["raw_field_map"]),
             "normalized_field_count": len(config["normalized_field_map"]),
             "lossy_transform_count": len(config["lossy_transforms"]),
+            "dropped_field_count": len(diagnostics["dropped_fields"]),
+            "type_change_count": len(diagnostics["type_changes"]),
+            "claim_drift_count": len(diagnostics["claim_drifts"]),
+            "unsupported_feature_count": len(diagnostics["unsupported_features"]),
             "confidence": config["confidence"],
             "finding_count": len(findings),
         },
         "raw_field_map": config["raw_field_map"],
         "normalized_field_map": config["normalized_field_map"],
         "lossy_transforms": config["lossy_transforms"],
+        "capability_claims": config["capability_claims"],
+        "observed_capabilities": config["observed_capabilities"],
+        "capability_diagnostics": diagnostics,
         "input_refs": config["input_refs"],
         "confidence": config["confidence"],
         "limits": config["limits"],
@@ -93,6 +101,8 @@ def _normalize_adapter_config(raw_config: dict[str, Any]) -> dict[str, Any]:
         "lossy_field_drop_detected": bool(config.get("lossy_field_drop_detected", False)),
         "claim_drift_detected": bool(config.get("claim_drift_detected", False)),
         "unsupported_dialect_detected": bool(config.get("unsupported_dialect_detected", False)),
+        "capability_claims": _normalize_capability_map(config.get("capability_claims", {})),
+        "observed_capabilities": _normalize_capability_map(config.get("observed_capabilities", {})),
         "confidence": float(config.get("confidence", 0.0) or 0.0),
         "input_refs": [str(ref) for ref in config.get("input_refs", []) if str(ref)],
         "limits": _normalize_limits(config.get("limits", {})),
@@ -117,12 +127,87 @@ def _normalize_limits(limits: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _findings_for(config: dict[str, Any], source_ref: str) -> list[AdapterCapabilityDiffFinding]:
+def _normalize_capability_map(value: Any) -> dict[str, bool]:
+    if isinstance(value, dict):
+        return {str(k): bool(v) for k, v in value.items() if str(k)}
+    if isinstance(value, list):
+        return {str(item): True for item in value if str(item)}
+    return {}
+
+
+def _derive_diagnostics(config: dict[str, Any]) -> dict[str, Any]:
+    raw_fields = set(config["raw_field_map"].keys())
+    covered_fields = _covered_raw_fields(config["normalized_field_map"]) & raw_fields
+    dropped_fields = sorted(raw_fields - covered_fields)
+    type_changes = _type_changes(config["raw_field_map"], config["normalized_field_map"])
+    claim_drifts = sorted(
+        name
+        for name, claimed in config["capability_claims"].items()
+        if claimed and not config["observed_capabilities"].get(name, False)
+    )
+    unsupported_features = sorted(
+        name
+        for name, observed in config["observed_capabilities"].items()
+        if observed and config["capability_claims"].get(name) is False
+    )
+    return {
+        "covered_raw_fields": sorted(covered_fields),
+        "dropped_fields": dropped_fields,
+        "type_changes": type_changes,
+        "claim_drifts": claim_drifts,
+        "unsupported_features": unsupported_features,
+    }
+
+
+def _covered_raw_fields(normalized_field_map: dict[str, Any]) -> set[str]:
+    covered: set[str] = set()
+    for normalized_name, metadata in normalized_field_map.items():
+        covered.add(str(normalized_name))
+        if not isinstance(metadata, dict):
+            continue
+        for key in ("raw_field", "source_field"):
+            if metadata.get(key):
+                covered.add(str(metadata[key]))
+        for key in ("raw_fields", "source_fields"):
+            values = metadata.get(key)
+            if isinstance(values, list):
+                covered.update(str(value) for value in values if str(value))
+    return covered
+
+
+def _type_changes(raw_field_map: dict[str, Any], normalized_field_map: dict[str, Any]) -> list[dict[str, str]]:
+    changes: list[dict[str, str]] = []
+    for normalized_name, normalized_meta in normalized_field_map.items():
+        if not isinstance(normalized_meta, dict):
+            continue
+        raw_names = [str(normalized_name)]
+        for key in ("raw_field", "source_field"):
+            if normalized_meta.get(key):
+                raw_names.append(str(normalized_meta[key]))
+        for raw_name in dict.fromkeys(raw_names):
+            raw_meta = raw_field_map.get(raw_name)
+            if not isinstance(raw_meta, dict):
+                continue
+            raw_type = str(raw_meta.get("type", "") or "")
+            normalized_type = str(normalized_meta.get("type", "") or "")
+            if raw_type and normalized_type and raw_type != normalized_type:
+                changes.append({
+                    "raw_field": raw_name,
+                    "normalized_field": str(normalized_name),
+                    "raw_type": raw_type,
+                    "normalized_type": normalized_type,
+                })
+    return changes
+
+
+def _findings_for(
+    config: dict[str, Any],
+    diagnostics: dict[str, Any],
+    source_ref: str,
+) -> list[AdapterCapabilityDiffFinding]:
     findings: list[AdapterCapabilityDiffFinding] = []
 
-    raw_fields = set(config["raw_field_map"].keys())
-    normalized_fields = set(config["normalized_field_map"].keys())
-    dropped_fields = raw_fields - normalized_fields
+    dropped_fields = diagnostics["dropped_fields"]
 
     # HATE-GAP-060 primary negative: lossy field drop
     # Trigger: lossy_field_drop_detected, len(lossy_transforms) > 0, or dropped_fields
@@ -133,8 +218,29 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[AdapterCapabi
             source_ref,
         ))
 
+    if len(dropped_fields) > config["limits"]["max_field_drops"]:
+        findings.append(_finding(
+            "adapter_capability_diff_field_drop_budget_exceeded",
+            f"Dropped field count {len(dropped_fields)} exceeds limit {config['limits']['max_field_drops']}.",
+            source_ref,
+        ))
+
+    if len(config["lossy_transforms"]) > config["limits"]["max_transforms"]:
+        findings.append(_finding(
+            "adapter_capability_diff_transform_budget_exceeded",
+            f"Lossy transform count {len(config['lossy_transforms'])} exceeds limit {config['limits']['max_transforms']}.",
+            source_ref,
+        ))
+
+    if diagnostics["type_changes"]:
+        findings.append(_finding(
+            "adapter_capability_diff_type_degradation",
+            f"Type degradation detected for {len(diagnostics['type_changes'])} normalized fields.",
+            source_ref,
+        ))
+
     # Claim drift detection
-    if config.get("claim_drift_detected"):
+    if config.get("claim_drift_detected") or diagnostics["claim_drifts"]:
         findings.append(_finding(
             "adapter_capability_diff_claim_drift",
             "Claim drift detected in adapter normalization.",
@@ -142,7 +248,7 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[AdapterCapabi
         ))
 
     # Unsupported dialect detection
-    if config.get("unsupported_dialect_detected"):
+    if config.get("unsupported_dialect_detected") or diagnostics["unsupported_features"]:
         findings.append(_finding(
             "adapter_capability_diff_unsupported_dialect_feature",
             "Unsupported dialect feature detected in adapter.",

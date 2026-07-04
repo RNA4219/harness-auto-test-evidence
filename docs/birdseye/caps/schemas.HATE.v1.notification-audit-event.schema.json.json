@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/notification-audit-event.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "b00ae031f77ca224c4b29e0ee6babe0f8538a248562a9dfa1f47be26c691a847",
+  "line_count": 39,
+  "size_bytes": 1346,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

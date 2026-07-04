@@ -1,0 +1,35 @@
+{
+  "fixture_id": "postpoc-baseline-propose-approve-freeze",
+  "input": {
+    "baseline": {
+      "baseline_id": "base-main-pytest",
+      "repo_id": "repo-main",
+      "suite_id": "pytest",
+      "actor": "alice",
+      "reason": "Promote green run with executable oracle evidence.",
+      "policy_hash": "policy-sha256-001",
+      "expires_at": "2026-10-01T00:00:00Z",
+      "comparison_requested": true
+    },
+    "events": [
+      {
+        "event_type": "proposed",
+        "candidate_run_id": "run-1001",
+        "evidence_refs": ["artifact://runs/run-1001/product-readiness.json"],
+        "sourceRefs": ["fixture://baseline/propose-approve-freeze#proposed"]
+      },
+      {
+        "event_type": "approved",
+        "reviewer": "bob",
+        "reason": "Evidence and policy hash reviewed.",
+        "sourceRefs": ["fixture://baseline/propose-approve-freeze#approved"]
+      },
+      {
+        "event_type": "frozen",
+        "frozen_at": "2026-07-03T10:00:00Z",
+        "immutability_hash": "sha256:frozen-1001",
+        "sourceRefs": ["fixture://baseline/propose-approve-freeze#frozen"]
+      }
+    ]
+  }
+}

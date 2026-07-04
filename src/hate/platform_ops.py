@@ -172,7 +172,7 @@ def run_platform_plugin(manifest_path: Path, out_path: Path | None = None) -> di
 
 
 def build_platform_score_report(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
-    reports = _load_reports(input_path)
+    reports = _load_score_reports(input_path)
     scores = []
     for report in reports:
         score_input = _score_input_from_report(report)
@@ -219,9 +219,58 @@ def _score_input_from_report(report: dict[str, Any]) -> dict[str, Any]:
             "manual_debt_penalty": 5.0 * len(report.get("risk_debt", []) or []),
             "expired_debt_penalty": 15.0 if any("expired" in str(item.get("code", "")) for item in findings) else 0.0,
             "unsafe_artifact_penalty": 20.0 if current.get("unsafe_artifact_findings") else 0.0,
+            "subset_penalty": 12.0 if _is_subset_limited(report) else 0.0,
         },
         "sourceRefs": _source_refs(report),
     }
+
+
+def _load_score_reports(input_path: Path) -> list[dict[str, Any]]:
+    reports = _load_reports(input_path)
+    manifests = [report for report in reports if report.get("record_type") == "real-repo-evaluation-run-report"]
+    if manifests:
+        return _dedupe_score_reports(
+            report
+            for manifest in manifests
+            for report in _load_generated_reports(input_path, manifest)
+        )
+    expanded: list[dict[str, Any]] = []
+    for report in reports:
+        if report.get("record_type") == "real-repo-evaluation-report":
+            expanded.append(report)
+    return _dedupe_score_reports(expanded)
+
+
+def _load_generated_reports(input_path: Path, manifest: dict[str, Any]) -> list[dict[str, Any]]:
+    base_dir = input_path.parent if input_path.is_file() else input_path
+    reports: list[dict[str, Any]] = []
+    for name in manifest.get("generated_reports", []) or []:
+        path = base_dir / str(name)
+        if not path.exists():
+            continue
+        report = _read_json(path)
+        if report.get("record_type") == "real-repo-evaluation-report":
+            reports.append(report)
+    return reports
+
+
+def _is_subset_limited(report: dict[str, Any]) -> bool:
+    subset = report.get("subset")
+    if isinstance(subset, dict):
+        return bool(subset.get("is_subset")) and subset.get("proves_full_suite") is not True
+    return bool(subset or report.get("subset_limited"))
+
+
+def _dedupe_score_reports(reports: Any) -> list[dict[str, Any]]:
+    deduped: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for report in reports:
+        key = (
+            str(report.get("repo_id") or ""),
+            str(report.get("suite_id") or "default"),
+            str(report.get("run_id") or ""),
+        )
+        deduped[key] = report
+    return list(deduped.values())
 
 
 def _roster_entries(roster: dict[str, Any]) -> list[dict[str, str]]:

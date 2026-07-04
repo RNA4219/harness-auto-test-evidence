@@ -1,0 +1,17 @@
+{
+  "path": "src/hate/expansion/rollout_adoption.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ce238c8c12be55bf7f6dc434085133ef090a9914f8befa76693055e16f7b8867",
+  "line_count": 183,
+  "size_bytes": 9325,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

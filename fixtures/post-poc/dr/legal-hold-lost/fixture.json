@@ -1,0 +1,22 @@
+{
+  "fixture_id": "legal-hold-lost",
+  "input": {
+    "operation": {
+      "backup_id": "backup-20260703-legal-hold",
+      "backup_manifest_ref": "artifact://store/backups/backup-20260703-legal-hold/manifest.json",
+      "created_at": "2026-07-03T01:10:00Z",
+      "source_store_hash": "sha256:store-ok",
+      "backup_hash": "sha256:store-ok",
+      "restore_hash": "sha256:store-ok",
+      "legal_hold_count_before": 5,
+      "legal_hold_count_after": 3,
+      "rpo_seconds": 70,
+      "rpo_budget_seconds": 300,
+      "rto_seconds": 260,
+      "rto_budget_seconds": 900,
+      "corruption_scan_result": "pass",
+      "projection_rebuild_status": "complete",
+      "restore_status": "restored"
+    }
+  }
+}

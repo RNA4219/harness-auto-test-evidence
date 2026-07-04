@@ -2,14 +2,15 @@
   "path": "schemas/HATE/v1/security-procurement-report.schema.json",
   "role": "schema",
   "kind": "json",
-  "sha256": "7eb8f50875f0993e4e3e8d52740f04b2a17d704799b49eb6439e526bf58f11dd",
-  "line_count": 17,
-  "size_bytes": 738,
+  "sha256": "a92adc8ba25cca145537f47e8aa81b3aa2e8f9413318e2b594bb32fa89eae8a4",
+  "line_count": 168,
+  "size_bytes": 6928,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
+    "artifact",
     "schema",
     "security"
   ]

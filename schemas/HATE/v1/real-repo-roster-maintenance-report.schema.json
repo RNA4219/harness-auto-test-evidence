@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/real-repo-roster-maintenance-report.schema.json",
+  "title": "HATE Real Repo Roster Maintenance Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "generated_at",
+    "overall_status",
+    "readiness_effect",
+    "maintenance_plans",
+    "environment_recipes",
+    "quarantine_events",
+    "findings",
+    "summary",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "real-repo-roster-maintenance-report"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "overall_status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "hold"
+      ]
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "maintenance_plans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "environment_recipes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "quarantine_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

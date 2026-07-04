@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/baseline-review-packet.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a60a55899453820060c9f87cd034d241c10d83f1c1148724fd09f2f1218dd8ee",
+  "line_count": 288,
+  "size_bytes": 6364,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

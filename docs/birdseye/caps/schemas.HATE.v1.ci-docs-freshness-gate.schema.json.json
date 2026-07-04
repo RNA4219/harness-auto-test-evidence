@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/ci-docs-freshness-gate.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "2675464dcdd78d7b0a574f8f5849c3aa6321062a82f19b541df7fad7861f5821",
+  "line_count": 15,
+  "size_bytes": 697,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "src/hate/evaluation/score_model.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "655168c2176aba72d05c0ae7f90d533e49f7a70fdfc302a8111d65060b0fcf53",
-  "line_count": 121,
-  "size_bytes": 4274,
+  "sha256": "7e2f0622db4a249ff526f42356eafb522d06766bd81dc728920abfc1c739e8ea",
+  "line_count": 122,
+  "size_bytes": 4354,
   "headings": [],
   "imports": [
     "__future__",

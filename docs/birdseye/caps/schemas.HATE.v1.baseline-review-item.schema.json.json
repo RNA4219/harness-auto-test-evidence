@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/baseline-review-item.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "45681909881729be5d91b7126cfa17b659e926d9b2a3c58123e08d5f94984b67",
+  "line_count": 39,
+  "size_bytes": 1315,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

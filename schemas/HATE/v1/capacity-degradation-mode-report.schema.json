@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/capacity-degradation-mode-report.schema.json",
+  "title": "HATE Capacity Degradation Mode Report",
+  "type": "object",
+  "required": [
+    "record_type",
+    "degradation_modes",
+    "budget_exceeded_scenarios",
+    "timeout_count"
+  ],
+  "properties": {
+    "record_type": {"const": "capacity-degradation-mode-report"},
+    "degradation_modes": {"type": "array", "items": {"type": "string"}},
+    "budget_exceeded_scenarios": {"type": "array", "items": {"type": "string"}},
+    "timeout_count": {"type": "integer", "minimum": 0}
+  },
+  "additionalProperties": true
+}

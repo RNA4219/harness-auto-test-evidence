@@ -17,12 +17,81 @@
         {"family": "php", "support_state": "partial"}
       ],
       "dialects": [
-        {"dialect": "xunit", "family": "dotnet", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/dotnet-xunit-pass/fixture.json"},
-        {"dialect": "nextest", "family": "rust", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/rust-nextest/fixture.json"},
-        {"dialect": "ctest", "family": "cpp", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/ctest/fixture.json"},
-        {"dialect": "rspec", "family": "ruby", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/rspec/fixture.json"},
-        {"dialect": "phpunit", "family": "php", "conformance_fixture_ref": "fixtures/expansion/runner-dialects/phpunit/fixture.json"}
-      ]
+        {
+          "dialect": "xunit",
+          "family": "dotnet",
+          "conformance_fixture_ref": "fixtures/expansion/runner-dialects/dotnet-xunit-pass/fixture.json",
+          "malformed_fixture_ref": "fixtures/expansion/runner-dialects/dotnet-xunit-malformed/fixture.json",
+          "sourceRef": "runner:xunit",
+          "capabilities": ["summary_counts", "failure_location", "duration", "retry_attempt", "stdout_noise_filter"],
+          "expected_summary": {"passed": 12, "failed": 0, "skipped": 1},
+          "observed_summary": {"passed": 12, "failed": 0, "skipped": 1},
+          "noise_lines": ["Microsoft TestPlatform banner"],
+          "ignored_noise": ["Microsoft TestPlatform banner"],
+          "noise_filter_ref": "filter:xunit-banner",
+          "parser_status": "parsed"
+        },
+        {
+          "dialect": "nextest",
+          "family": "rust",
+          "conformance_fixture_ref": "fixtures/expansion/runner-dialects/rust-nextest/fixture.json",
+          "malformed_fixture_ref": "fixtures/expansion/runner-dialects/rust-nextest-malformed/fixture.json",
+          "sourceRef": "runner:nextest",
+          "capabilities": ["summary_counts", "failure_location", "duration", "retry_attempt", "stdout_noise_filter"],
+          "expected_summary": {"passed": 31, "failed": 0, "skipped": 0},
+          "observed_summary": {"passed": 31, "failed": 0, "skipped": 0},
+          "noise_lines": ["cargo build warning"],
+          "ignored_noise": ["cargo build warning"],
+          "noise_filter_ref": "filter:nextest-cargo-warning",
+          "parser_status": "parsed"
+        },
+        {
+          "dialect": "ctest",
+          "family": "cpp",
+          "conformance_fixture_ref": "fixtures/expansion/runner-dialects/ctest/fixture.json",
+          "malformed_fixture_ref": "fixtures/expansion/runner-dialects/ctest-malformed/fixture.json",
+          "sourceRef": "runner:ctest",
+          "capabilities": ["summary_counts", "failure_location", "duration", "retry_attempt", "stdout_noise_filter"],
+          "expected_summary": {"passed": 8, "failed": 0, "skipped": 0},
+          "observed_summary": {"passed": 8, "failed": 0, "skipped": 0},
+          "noise_lines": ["CTest timing footer"],
+          "ignored_noise": ["CTest timing footer"],
+          "noise_filter_ref": "filter:ctest-footer",
+          "parser_status": "parsed"
+        },
+        {
+          "dialect": "rspec",
+          "family": "ruby",
+          "conformance_fixture_ref": "fixtures/expansion/runner-dialects/rspec/fixture.json",
+          "malformed_fixture_ref": "fixtures/expansion/runner-dialects/rspec-malformed/fixture.json",
+          "sourceRef": "runner:rspec",
+          "capabilities": ["summary_counts", "failure_location", "duration", "retry_attempt", "stdout_noise_filter"],
+          "expected_summary": {"passed": 18, "failed": 0, "skipped": 2},
+          "observed_summary": {"passed": 18, "failed": 0, "skipped": 2},
+          "noise_lines": ["Randomized with seed"],
+          "ignored_noise": ["Randomized with seed"],
+          "noise_filter_ref": "filter:rspec-seed",
+          "parser_status": "parsed"
+        },
+        {
+          "dialect": "phpunit",
+          "family": "php",
+          "conformance_fixture_ref": "fixtures/expansion/runner-dialects/phpunit/fixture.json",
+          "malformed_fixture_ref": "fixtures/expansion/runner-dialects/phpunit-malformed/fixture.json",
+          "sourceRef": "runner:phpunit",
+          "capabilities": ["summary_counts", "failure_location", "duration", "retry_attempt", "stdout_noise_filter"],
+          "expected_summary": {"passed": 22, "failed": 0, "skipped": 0},
+          "observed_summary": {"passed": 22, "failed": 0, "skipped": 0},
+          "noise_lines": ["PHPUnit version banner"],
+          "ignored_noise": ["PHPUnit version banner"],
+          "noise_filter_ref": "filter:phpunit-banner",
+          "parser_status": "parsed"
+        }
+      ],
+      "required_capabilities": ["summary_counts", "failure_location", "duration", "retry_attempt", "stdout_noise_filter"],
+      "unsupported_capability_gap_detected": false,
+      "claim_without_conformance_detected": false,
+      "raw_log_retention_denied": false
     }
   }
 }

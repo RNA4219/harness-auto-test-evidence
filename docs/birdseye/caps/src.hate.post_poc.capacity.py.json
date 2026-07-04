@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/post_poc/capacity.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "59900cfefefb0ae7afe2e5af70b3bb65a0a1435be21954c01f2d5d1aff1878a8",
+  "line_count": 340,
+  "size_bytes": 14836,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

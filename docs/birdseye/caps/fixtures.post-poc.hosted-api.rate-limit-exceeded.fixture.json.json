@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/hosted-api/rate-limit-exceeded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "73eb1ec7c7af82c13b8a3a076dc46861af340d28ceafa2afe80ed57ad054b991",
+  "line_count": 20,
+  "size_bytes": 578,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture"
+  ]
+}

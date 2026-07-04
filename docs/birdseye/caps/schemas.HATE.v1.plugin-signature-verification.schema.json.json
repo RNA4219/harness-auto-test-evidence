@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/plugin-signature-verification.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "db8ef8ab72d1f158af4daeb9e1e97a4246188de75c6251c874cc00a3e3b8b9e7",
+  "line_count": 43,
+  "size_bytes": 1480,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

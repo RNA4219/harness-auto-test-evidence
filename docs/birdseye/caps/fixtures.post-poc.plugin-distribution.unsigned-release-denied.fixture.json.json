@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/plugin-distribution/unsigned-release-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b2aac22e471c66b6b926877f2878fee35597fa9e29121a8268cb3cdd685aa543",
+  "line_count": 26,
+  "size_bytes": 800,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "release"
+  ]
+}

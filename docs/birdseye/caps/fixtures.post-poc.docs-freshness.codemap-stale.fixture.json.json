@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/docs-freshness/codemap-stale/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "8e2cd61d555958ff0de303a694f2c9c7e5d2f4df719d0af8390e37016b0f05c5",
+  "line_count": 13,
+  "size_bytes": 339,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "fixture",
+    "schema"
+  ]
+}

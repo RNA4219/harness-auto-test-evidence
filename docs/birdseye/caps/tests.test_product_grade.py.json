@@ -2,9 +2,9 @@
   "path": "tests/test_product_grade.py",
   "role": "test",
   "kind": "py",
-  "sha256": "2c357edcbbdcb544eabc5277090752c16dee33aef8083db20af5fdb31bc2a011",
-  "line_count": 95,
-  "size_bytes": 4403,
+  "sha256": "753396e1fd38a1938c65253b45627e42106259ffe474f29a1bb2550a5bf5af28",
+  "line_count": 124,
+  "size_bytes": 6031,
   "headings": [],
   "imports": [
     "__future__",
@@ -18,7 +18,6 @@
   ],
   "tags": [
     "api",
-    "coverage",
     "qeg",
     "release",
     "test"

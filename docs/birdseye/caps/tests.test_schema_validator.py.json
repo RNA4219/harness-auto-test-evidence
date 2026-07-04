@@ -2,9 +2,9 @@
   "path": "tests/test_schema_validator.py",
   "role": "test",
   "kind": "py",
-  "sha256": "bfb757d53ebfac94dc089c126ecbaaa26070e94ad1437b83427ecde116d14301",
-  "line_count": 236,
-  "size_bytes": 8445,
+  "sha256": "fa0c66fa478a74176d87fa043cecbd9fbdb65fbc51a7c55c32c5615a243d41b9",
+  "line_count": 257,
+  "size_bytes": 9387,
   "headings": [],
   "imports": [
     "__future__",

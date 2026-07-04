@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/connectors/rollback-visibility-missing/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d3601f0d52ba2e7ae5778462da5aace8a2ef9a9f4d7e945729224652c1dc06fe",
+  "line_count": 29,
+  "size_bytes": 941,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

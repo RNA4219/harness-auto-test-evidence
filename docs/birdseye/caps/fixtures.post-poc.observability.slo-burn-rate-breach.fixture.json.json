@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/observability/slo-burn-rate-breach/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "67c90af32cea983fdfcbbc5ea110b9d4cf86b6aa6b32df03dc1d015fa6a2a538",
+  "line_count": 11,
+  "size_bytes": 882,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture"
+  ]
+}

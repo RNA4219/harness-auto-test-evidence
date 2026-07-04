@@ -103,10 +103,29 @@ def test_platform_projection_commands_collect_findings_debt_and_reviews(tmp_path
     review = platform_review(report)
 
     assert findings["record_type"] == "platform-findings-report"
+    assert findings["overall_status"] == "hold"
     assert findings["summary"]["finding_count"] == 1
     assert findings["items"][0]["sourceRefs"] == ["fixture"]
     assert debt["summary"]["debt_count"] == 1
     assert review["summary"]["review_count"] == 1
+
+
+def test_platform_findings_passes_when_only_nonblocking_items_exist(tmp_path: Path) -> None:
+    report = tmp_path / "report.json"
+    _write_json(
+        report,
+        {
+            "record_type": "test-report",
+            "report_id": "R1",
+            "findings": [{"code": "note", "severity": "low", "readiness_effect": "none"}],
+            "sourceRefs": ["fixture"],
+        },
+    )
+
+    findings = platform_findings(report)
+
+    assert findings["overall_status"] == "pass"
+    assert findings["summary"]["finding_count"] == 1
 
 
 def test_platform_cli_report_html_and_policy_explain(tmp_path: Path) -> None:

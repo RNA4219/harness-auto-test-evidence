@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "8fe4ffdfd544d003559e39026bde9e343d97a8d169385a184e44cb3e738e3a82",
-  "line_count": 736,
-  "size_bytes": 60330,
+  "sha256": "4f645c556ffc4c95db493b01cad9e925d3b2f33e5e9fabb35d205f26c2ff117a",
+  "line_count": 749,
+  "size_bytes": 61081,
   "headings": [
     "# 製品要件定義書",
     "## 1. 目的",

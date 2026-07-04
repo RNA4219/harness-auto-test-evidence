@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/capacity-regression-packet.schema.json",
+  "title": "HATE Capacity Regression Packet",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "packet_id",
+    "current_report_id",
+    "previous_report_id",
+    "comparisons",
+    "findings",
+    "summary",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "capacity-regression-packet"
+    },
+    "packet_id": {
+      "type": "string"
+    },
+    "current_report_id": {
+      "type": "string"
+    },
+    "previous_report_id": {
+      "type": "string"
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_type",
+          "scenario_id",
+          "comparison_status",
+          "runtime_delta_ratio",
+          "memory_delta_ratio",
+          "cache_hit_delta",
+          "regression_detected",
+          "regression_reasons"
+        ],
+        "properties": {
+          "record_type": {
+            "const": "capacity-regression-comparison"
+          },
+          "scenario_id": {
+            "type": "string"
+          },
+          "comparison_status": {
+            "type": "string",
+            "enum": [
+              "compared",
+              "missing_previous"
+            ]
+          },
+          "runtime_delta_ratio": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "memory_delta_ratio": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "cache_hit_delta": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "regression_detected": {
+            "type": "boolean"
+          },
+          "regression_reasons": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "capacity_previous_baseline_missing",
+                "capacity_runtime_regression",
+                "capacity_memory_regression",
+                "capacity_cache_regression",
+                "capacity_budget_status_regression"
+              ]
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "severity",
+          "message",
+          "sourceRef",
+          "readiness_effect"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "capacity_current_report_has_findings",
+              "capacity_previous_report_has_findings",
+              "capacity_previous_baseline_missing",
+              "capacity_runtime_regression",
+              "capacity_memory_regression",
+              "capacity_cache_regression",
+              "capacity_budget_status_regression"
+            ]
+          },
+          "severity": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": [
+              "hold"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "comparison_count",
+        "regression_count",
+        "missing_previous_count",
+        "finding_count",
+        "ready_for_capacity_promotion"
+      ],
+      "properties": {
+        "comparison_count": {
+          "type": "integer"
+        },
+        "regression_count": {
+          "type": "integer"
+        },
+        "missing_previous_count": {
+          "type": "integer"
+        },
+        "finding_count": {
+          "type": "integer"
+        },
+        "ready_for_capacity_promotion": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

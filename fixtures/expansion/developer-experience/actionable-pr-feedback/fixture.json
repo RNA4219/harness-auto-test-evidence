@@ -4,12 +4,38 @@
   "case_kind": "positive",
   "input": {
     "dx_config": {
-      "feedback_groups": [{"group_id": "fg-001", "fix_action": "add oracle", "risk_impact": "high", "owner": "developer", "blocking_status": "hold", "deep_link": "pr://1#comment-1"}],
+      "feedback_groups": [
+        {
+          "group_id": "fg-001",
+          "fix_action": "add oracle",
+          "risk_impact": "high",
+          "owner": "developer",
+          "blocking_status": "hold",
+          "deep_link": "pr://1#comment-1",
+          "sourceRef": "finding:missing-oracle",
+          "sourceRefs": ["finding:missing-oracle", "risk:checkout"],
+          "explain_ref": "explain:checkout-oracle-gap",
+          "replay_ref": "replay:checkout-oracle-gap"
+        }
+      ],
       "local_explain_available": true,
       "local_replay_available": true,
-      "suppression_controls": {"owner": "developer", "expiry_required": true},
+      "ide_loop_available": true,
+      "offline_safe_mode": true,
+      "suppression_controls": {
+        "owner": "developer",
+        "expiry_required": true,
+        "scope": "finding",
+        "reviewer": "qa-lead",
+        "rationale": "temporary false positive while fixture is updated",
+        "audit_ref": "audit:suppression-001"
+      },
+      "recommendation_actions": ["add_oracle", "rerun_test"],
       "recommendation_quality_score": 0.82,
       "latency_ms": 1200,
+      "latency_budget_ms": 5000,
+      "replay_command": "hate replay --case checkout-oracle-gap",
+      "explain_command": "hate explain --risk risk:checkout",
       "raw_secret_present": false,
       "broad_suppression_detected": false,
       "stable_deep_links": true

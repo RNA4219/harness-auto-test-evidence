@@ -1,0 +1,12 @@
+{
+  "fixture_id": "control-evidence-missing",
+  "input": {
+    "claims": [
+      {"control_id": "CTRL-RET-001", "claim_class": "retention", "claim_text": "Retention is configurable.", "evidence_refs": [], "expires_at": "2026-12-31T00:00:00Z"}
+    ],
+    "decisions": [
+      {"control_id": "CTRL-RET-001", "reviewer": "compliance-owner", "review_status": "approved", "reviewed_at": "2026-07-03T02:00:00Z", "expires_at": "2026-12-31T00:00:00Z"}
+    ],
+    "export": {"customer_safe_export": true, "redaction_report_ref": "artifact://redaction/retention", "restricted_data_present": false}
+  }
+}

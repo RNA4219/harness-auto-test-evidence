@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/roster/stale-repo-quarantined/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7866efaf790d385f004eb4736b1c51670f999740d3c93480f489cb2bdb93d906",
+  "line_count": 22,
+  "size_bytes": 701,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

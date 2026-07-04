@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/dashboard/manual-review-action/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6d7327375b514c0011dfba696c9811a2cc7000db68559da0acf4ef1cf9748bc5",
+  "line_count": 42,
+  "size_bytes": 1397,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "workflow"
+  ]
+}

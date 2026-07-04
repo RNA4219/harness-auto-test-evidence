@@ -1,0 +1,11 @@
+{
+  "fixture_id": "alert-route-missing",
+  "input": {
+    "telemetry": [
+      {"signal": "alerts", "correlation_id": "corr-alert", "run_id": "run-3", "tenant_id": "tenant-a", "service_name": "hate-api", "metric_name": "error.rate", "trace_id": "trace-3", "redaction_report_ref": "artifact://redaction/alert"}
+    ],
+    "slo": {"slo_id": "slo-api", "burn_rate": 1.4, "alert_status": "firing", "alert_route_ref": ""},
+    "incident": {"incident_id": "inc-alert", "incident_state": "active", "owner": "ops-owner", "severity": "high", "timeline_refs": ["artifact://incident/inc-alert/timeline"], "decision_ref": "artifact://incident/inc-alert/decision"},
+    "support_pack": {"support_pack_id": "support-alert", "evidence_refs": ["artifact://support/alert"], "support_bundle_safe": true, "redaction_report_ref": "artifact://redaction/alert"}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/roster/large-roster-100-repos/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "66547758dee254be010318321fae513bfeedda24ea7999b0905852f2f35ee236",
+  "line_count": 7,
+  "size_bytes": 137,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

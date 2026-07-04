@@ -57,7 +57,11 @@
             "properties": {
               "attempt_id": {"type": "string"},
               "environment_ref": {"type": "string"},
-              "timestamp": {"type": "string"}
+              "timestamp": {"type": "string"},
+              "snapshot": {
+                "type": "object",
+                "additionalProperties": true
+              }
             },
             "additionalProperties": true
           }
@@ -117,6 +121,10 @@
         "delta_count": {"type": "integer", "minimum": 0},
         "drift_class_count": {"type": "integer", "minimum": 0},
         "attempt_count": {"type": "integer", "minimum": 0},
+        "derived_delta_count": {"type": "integer", "minimum": 0},
+        "missing_snapshot_count": {"type": "integer", "minimum": 0},
+        "duplicate_attempt_count": {"type": "integer", "minimum": 0},
+        "unexplained_derived_delta_count": {"type": "integer", "minimum": 0},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
       },
@@ -125,6 +133,48 @@
     "environment_deltas": {"type": "array", "items": {"type": "object"}},
     "attempts_compared": {"type": "array", "items": {"type": "object"}},
     "drift_classes": {"type": "array", "items": {"type": "object"}},
+    "environment_diff_diagnostics": {
+      "type": "object",
+      "required": [
+        "derived_deltas",
+        "missing_snapshot_attempt_ids",
+        "duplicate_attempt_ids",
+        "unexplained_derived_delta_ids"
+      ],
+      "properties": {
+        "derived_deltas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "delta_id",
+              "category",
+              "delta_type",
+              "baseline_attempt_id",
+              "current_attempt_id",
+              "field",
+              "baseline_value",
+              "current_value"
+            ],
+            "properties": {
+              "delta_id": {"type": "string"},
+              "category": {"type": "string"},
+              "delta_type": {"type": "string"},
+              "baseline_attempt_id": {"type": "string"},
+              "current_attempt_id": {"type": "string"},
+              "field": {"type": "string"},
+              "baseline_value": {"type": "string"},
+              "current_value": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "missing_snapshot_attempt_ids": {"type": "array", "items": {"type": "string"}},
+        "duplicate_attempt_ids": {"type": "array", "items": {"type": "string"}},
+        "unexplained_derived_delta_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
     "analysis_scope": {"type": "string"},
     "input_refs": {"type": "array", "items": {"type": "string"}},
     "confidence": {"type": "number", "minimum": 0, "maximum": 1},

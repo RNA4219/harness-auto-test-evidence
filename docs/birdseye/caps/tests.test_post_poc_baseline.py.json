@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_post_poc_baseline.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "beb5f1d8ce5aaf036beca3c5a6508e0ab658c0de9ae4b3c0c33e96e0fcf9c7f7",
+  "line_count": 268,
+  "size_bytes": 11427,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.baseline",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/baseline.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

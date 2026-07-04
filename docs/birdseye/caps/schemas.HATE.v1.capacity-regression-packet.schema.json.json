@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/capacity-regression-packet.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6f55659f01dffe02890261c7dad7c87506feb878f167c100d2c5258e1f45cd51",
+  "line_count": 233,
+  "size_bytes": 5425,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

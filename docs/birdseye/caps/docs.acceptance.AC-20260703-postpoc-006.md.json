@@ -1,0 +1,31 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-006.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "6b8c02c87286c4e6d1a72fdc90d74face9fd766c04cf1002f531fefd8f16f5a9",
+  "line_count": 81,
+  "size_bytes": 3100,
+  "headings": [
+    "# AC-20260703-postpoc-006 Plugin Distribution Trust Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

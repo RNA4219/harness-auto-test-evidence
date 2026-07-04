@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/observability-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "2bd1f007ae54f75f61ddbab0467a36a4df72529b31c57d77b810c60e728813b3",
+  "line_count": 156,
+  "size_bytes": 3236,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

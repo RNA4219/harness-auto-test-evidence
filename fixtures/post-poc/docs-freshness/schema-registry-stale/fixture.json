@@ -1,0 +1,13 @@
+{
+  "fixture_id": "post-poc-docs-schema-registry-stale",
+  "input": {
+    "freshness": {
+      "readme_state_current": true,
+      "missing_acceptance_refs": [],
+      "codemap_current": true,
+      "schema_registry_current": false,
+      "missing_schema_refs": ["schemas/HATE/v1/missing.schema.json"],
+      "product_ready_claim": false
+    }
+  }
+}

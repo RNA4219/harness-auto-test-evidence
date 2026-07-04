@@ -1,0 +1,30 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-004.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "5419412f87efa2a6518c2489d11fd71cd56dd3b0a19c53f794469bc1e32aa504",
+  "line_count": 80,
+  "size_bytes": 2967,
+  "headings": [
+    "# AC-20260703-postpoc-004 Baseline Promotion Workflow Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "path": "tests/test_runtime_record_registry.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "915e2d569f073c6ca9332fa1e5ac888e357af4dfcce451811a08f75846d03a3b",
+  "line_count": 267,
+  "size_bytes": 11139,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.connectors",
+    "hate.p1a",
+    "hate.p1b",
+    "hate.p2p3",
+    "hate.scale",
+    "hate.store",
+    "importlib.util",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/connectors.py",
+    "src/hate/p1a.py",
+    "src/hate/p1b.py",
+    "src/hate/p2p3.py"
+  ],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "security",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

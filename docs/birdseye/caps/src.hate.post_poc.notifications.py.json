@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/post_poc/notifications.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "137a81d0e8a34037c9f666d8fcacbe721225f0e4511c63f7a899f9aaf29a2f36",
+  "line_count": 427,
+  "size_bytes": 18836,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

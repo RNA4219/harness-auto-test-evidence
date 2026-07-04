@@ -2,9 +2,9 @@
   "path": "tests/test_dashboard_view_models.py",
   "role": "test",
   "kind": "py",
-  "sha256": "a597b883c626e4ee3c7db379b6d6d71b76fd70040da4f6847605fa50affadbc1",
-  "line_count": 491,
-  "size_bytes": 18548,
+  "sha256": "e204d256073fafedb227c7c11fc1242ae52806a0689b39ad6f5f9cf73f17f4a2",
+  "line_count": 536,
+  "size_bytes": 20597,
   "headings": [
     "# Fixture paths"
   ],

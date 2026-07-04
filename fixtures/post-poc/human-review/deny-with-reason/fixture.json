@@ -1,0 +1,31 @@
+{
+  "fixture_id": "postpoc-human-review-deny-with-reason",
+  "input": {
+    "review": {
+      "review_id": "hr-deny-001",
+      "operating_record_id": "finding:FIND-001",
+      "required_decision": "approve_or_reject",
+      "owner": "owner@example.com",
+      "due_date": "2026-07-10T00:00:00Z",
+      "expiry_date": "2026-08-10T00:00:00Z"
+    },
+    "actions": [
+      {
+        "action": "assign_reviewer",
+        "reviewer": "reviewer@example.com",
+        "sourceRefs": ["fixture://human-review/deny-with-reason#assign"]
+      },
+      {
+        "action": "attach_evidence",
+        "evidence_refs": ["artifact://manual-review/hr-deny-001/evidence.json"],
+        "sourceRefs": ["fixture://human-review/deny-with-reason#evidence"]
+      },
+      {
+        "action": "deny",
+        "decision_reason": "Evidence does not support accepting the risk.",
+        "decision_hash": "sha256:deny-001",
+        "sourceRefs": ["fixture://human-review/deny-with-reason#deny"]
+      }
+    ]
+  }
+}

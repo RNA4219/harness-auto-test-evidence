@@ -1,0 +1,18 @@
+{
+  "fixture_id": "post-poc-docs-readme-current",
+  "input": {
+    "freshness": {
+      "readme_state_current": true,
+      "readme_expected_test_count": 1511,
+      "readme_observed_test_count": 1511,
+      "acceptance_refs": ["docs/acceptance/AC-20260703-postpoc-009.md"],
+      "missing_acceptance_refs": [],
+      "codemap_current": true,
+      "codemap_caps_missing": [],
+      "schema_registry_current": true,
+      "missing_schema_refs": [],
+      "product_ready_claim": false,
+      "product_ready_evidence_present": false
+    }
+  }
+}

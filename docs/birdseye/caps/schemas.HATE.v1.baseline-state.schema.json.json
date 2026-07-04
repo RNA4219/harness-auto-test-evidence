@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/baseline-state.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "8f7885732e267c348257613d769a0ec98a717baf05ed258530432c74eda3861d",
+  "line_count": 60,
+  "size_bytes": 1908,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

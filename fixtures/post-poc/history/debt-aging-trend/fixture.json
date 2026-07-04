@@ -1,0 +1,45 @@
+{
+  "fixture_id": "postpoc-history-debt-aging-trend",
+  "input": {
+    "query": {
+      "window_start": "2026-06-01T00:00:00Z",
+      "window_end": "2026-07-01T00:00:00Z",
+      "repo_filter": "repo-main",
+      "suite_filter": "*",
+      "aggregation_level": "repo",
+      "performance_budget_ms": 1200,
+      "actual_runtime_ms": 180,
+      "min_sample_count": 2
+    },
+    "samples": [
+      {
+        "run_id": "debt-1",
+        "repo_id": "repo-main",
+        "suite_id": "pytest",
+        "test_count": 80,
+        "flake_count": 1,
+        "evidence_age_days": 4,
+        "debt_age_days": 21,
+        "repo_health_score": 0.82,
+        "baseline_score": 0.84,
+        "current_score": 0.83,
+        "manual_review_latency_hours": 12,
+        "sourceRef": "fixture://history/debt-aging-trend#debt-1"
+      },
+      {
+        "run_id": "debt-2",
+        "repo_id": "repo-main",
+        "suite_id": "vitest",
+        "test_count": 120,
+        "flake_count": 1,
+        "evidence_age_days": 5,
+        "debt_age_days": 35,
+        "repo_health_score": 0.8,
+        "baseline_score": 0.84,
+        "current_score": 0.8,
+        "manual_review_latency_hours": 18,
+        "sourceRef": "fixture://history/debt-aging-trend#debt-2"
+      }
+    ]
+  }
+}

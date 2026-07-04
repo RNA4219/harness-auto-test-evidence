@@ -78,6 +78,21 @@
             "additionalProperties": true
           }
         },
+        "test_sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["test_id", "sourceRef", "text", "fixture_size_bytes", "snapshot_line_count"],
+            "properties": {
+              "test_id": {"type": "string"},
+              "sourceRef": {"type": "string"},
+              "text": {"type": "string"},
+              "fixture_size_bytes": {"type": "integer", "minimum": 0},
+              "snapshot_line_count": {"type": "integer", "minimum": 0}
+            },
+            "additionalProperties": true
+          }
+        },
         "analysis_scope": {"type": "string"},
         "input_refs": {"type": "array", "items": {"type": "string"}},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
@@ -88,7 +103,9 @@
             "max_test_patterns": {"type": "integer", "minimum": 0},
             "max_anti_patterns": {"type": "integer", "minimum": 0},
             "max_quality_metrics": {"type": "integer", "minimum": 0},
-            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+            "max_fixture_size_bytes": {"type": "integer", "minimum": 0},
+            "max_snapshot_line_count": {"type": "integer", "minimum": 0}
           },
           "additionalProperties": true
         },
@@ -120,8 +137,33 @@
         "test_pattern_count": {"type": "integer", "minimum": 0},
         "anti_pattern_count": {"type": "integer", "minimum": 0},
         "quality_metric_count": {"type": "integer", "minimum": 0},
+        "test_source_count": {"type": "integer", "minimum": 0},
+        "duplicate_test_count": {"type": "integer", "minimum": 0},
+        "source_anti_pattern_count": {"type": "integer", "minimum": 0},
+        "unverified_pattern_count": {"type": "integer", "minimum": 0},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "test_quality_diagnostics": {
+      "type": "object",
+      "required": [
+        "duplicate_test_ids",
+        "source_anti_patterns",
+        "large_fixture_test_ids",
+        "overbroad_snapshot_test_ids",
+        "unverified_pattern_ids"
+      ],
+      "properties": {
+        "duplicate_test_ids": {"type": "array", "items": {"type": "string"}},
+        "source_anti_patterns": {
+          "type": "object",
+          "additionalProperties": {"type": "array", "items": {"type": "string"}}
+        },
+        "large_fixture_test_ids": {"type": "array", "items": {"type": "string"}},
+        "overbroad_snapshot_test_ids": {"type": "array", "items": {"type": "string"}},
+        "unverified_pattern_ids": {"type": "array", "items": {"type": "string"}}
       },
       "additionalProperties": true
     },
@@ -135,7 +177,9 @@
         "max_test_patterns": {"type": "integer", "minimum": 0},
         "max_anti_patterns": {"type": "integer", "minimum": 0},
         "max_quality_metrics": {"type": "integer", "minimum": 0},
-        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "max_fixture_size_bytes": {"type": "integer", "minimum": 0},
+        "max_snapshot_line_count": {"type": "integer", "minimum": 0}
       },
       "additionalProperties": true
     },

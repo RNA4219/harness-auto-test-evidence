@@ -288,6 +288,42 @@ No-Go additions:
   manifest is not platform runtime support.
 - Score output without a component/penalty breakdown is not acceptable.
 
+## 9.2 Post-PoC Productization Gap Requirements
+
+PoC completion does not close product, enterprise, or regulated operational
+requirements. The canonical post-PoC gap register is
+`POST_POC_REQUIREMENTS_GAP_AUDIT.md`. The detail specification is
+`POST_POC_PRODUCTIZATION_DETAIL_SPEC.md`, and spec lowering is cross-checked by
+`POST_POC_SPEC_TRACEABILITY_CHECKLIST.md`.
+
+The platform phase must keep the following requirement categories visible until
+they have implementation refs, tests, fixtures or real-data evidence, and
+acceptance records:
+
+- hosted scheduler or worker runtime
+- interactive authenticated dashboard
+- notification delivery runtime
+- baseline approval and promotion workflow
+- real-repo roster maintenance and environment bootstrap
+- plugin packaging, signing, revocation, and distribution
+- live connector runtime
+- long-term history analytics
+- docs and acceptance freshness CI gate
+- QEG and Shipyard release handoff protocol
+- hosted multi-tenant API/auth enforcement
+- store backup, restore, and disaster recovery operations
+- measured capacity benchmarks
+- compliance and procurement evidence pack
+- observability and incident operations
+- human review operating workflow
+
+No-Go additions:
+
+- `poc_ready=true` must not be used as evidence that these post-PoC categories
+  are complete.
+- Product-grade summaries must expose open post-PoC gaps while they remain.
+- A gap may not be closed by documentation alone.
+
 ## 10. Traceability
 
 | Phase | Requirements | Detail spec section | Implementation packet prefix |

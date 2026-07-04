@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/platform-ops-report.schema.json",
+  "title": "HATE Platform Operations Report",
+  "type": "object",
+  "required": ["schema_version", "record_type", "sourceRefs"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "platform-schedule-plan",
+        "platform-assignment-report",
+        "platform-plugin-run-report",
+        "platform-score-report",
+        "platform-comparison-report",
+        "platform-html-report",
+        "platform-dashboard-view-model"
+      ]
+    },
+    "overall_status": {"type": "string"},
+    "readiness_effect": {"type": "string"},
+    "generated_at": {"type": "string"},
+    "summary": {"type": "object"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

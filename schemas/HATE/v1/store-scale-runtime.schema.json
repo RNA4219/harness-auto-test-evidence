@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/store-scale-runtime.schema.json",
+  "title": "HATE Store and Scale Runtime Record",
+  "type": "object",
+  "required": ["schema_version", "record_type"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "enum": [
+        "hard_dq_finding",
+        "import_bundle_result",
+        "integrity_verification",
+        "quarantine_manifest",
+        "real-repo-history-index",
+        "scale_fixture_manifest",
+        "scale_validation_result"
+      ]
+    }
+  },
+  "oneOf": [
+    {"properties": {"record_type": {"const": "hard_dq_finding"}}, "required": ["finding_id", "severity", "index_type", "referenced_key", "missing_path"]},
+    {"properties": {"record_type": {"const": "import_bundle_result"}}, "required": ["success", "run_id", "bundle_id", "manifest_path", "index_hashes", "diagnostics"]},
+    {"properties": {"record_type": {"const": "integrity_verification"}}, "required": ["run_id", "integrity_ok", "diagnostics"]},
+    {"properties": {"record_type": {"const": "quarantine_manifest"}}, "required": ["run_id", "quarantine_reason", "quarantined_at", "original_error", "quarantined_files", "diagnostic_required"]},
+    {"properties": {"record_type": {"const": "real-repo-history-index"}}, "required": ["repo_id", "runs", "summary"]},
+    {"properties": {"record_type": {"const": "scale_fixture_manifest"}}, "required": ["fixture_id", "seed", "generation_profile", "target_counts", "generated_counts", "expected_hashes"]},
+    {"properties": {"record_type": {"const": "scale_validation_result"}}, "required": ["fixture_id", "status", "findings"]}
+  ],
+  "additionalProperties": true
+}

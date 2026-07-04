@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/store-backup-operation.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "008cd4e971a617eac26010d7359330059f8fd09cda550c556e5fcae1d3c0f56e",
+  "line_count": 43,
+  "size_bytes": 1497,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

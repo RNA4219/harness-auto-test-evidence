@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/hosted-api/tenant-allowed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7e57a92c9bf4f26a4671157a122fa24a189fda1c868614ca04054d6ab1aaa43f",
+  "line_count": 20,
+  "size_bytes": 571,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture"
+  ]
+}

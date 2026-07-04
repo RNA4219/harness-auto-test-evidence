@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/post_poc/docs_freshness.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "54ad51bf06355569678205f79f79702ed6eac44cc6c67d9acc2e71b9a70418ee",
+  "line_count": 170,
+  "size_bytes": 6852,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_expansion_rollout_adoption.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "bb4d05c194d226f6f8180d0682eb903d4b056467112acba7823cc71ea6e34687",
+  "line_count": 117,
+  "size_bytes": 4329,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.portfolio_readiness",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/portfolio_readiness.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

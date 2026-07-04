@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/notifications/unsafe-payload-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "71dc3b84ab7d4cdb69e0fc98366dc0b444aec2b79a9c497695c5868361200121",
+  "line_count": 26,
+  "size_bytes": 764,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/product-grade-area-report.schema.json",
+  "title": "HATE Product Grade Area Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "generated_at",
+    "source_version",
+    "area",
+    "status",
+    "blocking",
+    "product_ready_evidence",
+    "implementation_evidence_status",
+    "required_docs",
+    "missing_required_docs",
+    "implementation_refs",
+    "test_refs",
+    "missing_implementation_refs",
+    "missing_test_refs",
+    "required_next_evidence",
+    "no_go"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/product-grade/v1"},
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "product_grade_adapter_conformance_report",
+        "product_grade_schema_validation_report",
+        "product_grade_store_replay_report",
+        "product_grade_api_contract_report",
+        "product_grade_dashboard_uat_report",
+        "product_grade_test_integrity_report",
+        "product_grade_security_quarantine_report",
+        "product_grade_enterprise_control_report",
+        "product_grade_scale_performance_report",
+        "product_grade_migration_compatibility_report",
+        "product_grade_commercial_truthfulness_report",
+        "product_grade_support_ops_report",
+        "product_grade_release_candidate_pack"
+      ]
+    },
+    "generated_at": {"type": "string", "minLength": 1},
+    "source_version": {"type": "string"},
+    "area": {"type": "string", "minLength": 1},
+    "status": {
+      "type": "string",
+      "enum": [
+        "implemented_with_evidence",
+        "missing_required_docs",
+        "missing_implementation_evidence",
+        "missing_test_evidence"
+      ]
+    },
+    "blocking": {"type": "boolean"},
+    "product_ready_evidence": {"type": "boolean"},
+    "implementation_evidence_status": {"type": "string"},
+    "required_docs": {"type": "array", "items": {"type": "object"}},
+    "missing_required_docs": {"type": "array", "items": {"type": "string"}},
+    "implementation_refs": {"type": "array", "items": {"type": "object"}},
+    "test_refs": {"type": "array", "items": {"type": "object"}},
+    "missing_implementation_refs": {"type": "array", "items": {"type": "string"}},
+    "missing_test_refs": {"type": "array", "items": {"type": "string"}},
+    "required_next_evidence": {"type": "array", "items": {"type": "string"}},
+    "no_go": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

@@ -2,16 +2,153 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "HATE value measurement report",
   "type": "object",
-  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "value_config", "findings", "summary", "sourceRefs"],
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "value_config", "findings", "summary", "value_diagnostics", "sourceRefs"],
   "properties": {
     "schema_version": {"const": "HATE/v1"},
     "record_type": {"const": "value-measurement-report"},
     "report_id": {"type": "string"},
     "overall_status": {"enum": ["pass", "hold"]},
     "readiness_effect": {"enum": ["none", "hold"]},
-    "value_config": {"type": "object"},
-    "findings": {"type": "array"},
-    "summary": {"type": "object"},
+    "value_config": {
+      "type": "object",
+      "required": [
+        "aggregate_metrics",
+        "roi_inputs",
+        "counterfactual",
+        "confidence",
+        "limitations",
+        "sample_size",
+        "minimum_sample_size",
+        "baseline_present",
+        "individual_ranking_present",
+        "noisy_signal_counts_as_value",
+        "safe_evidence_refs",
+        "privacy_aggregate_only",
+        "raw_user_metric_present"
+      ],
+      "properties": {
+        "aggregate_metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["metric_id", "delta"],
+            "properties": {
+              "metric_id": {"type": "string"},
+              "delta": {"type": "number"},
+              "confidence_interval": {"type": "array", "items": {"type": "number"}},
+              "sourceRef": {"type": "string"},
+              "evidence_refs": {"type": "array", "items": {"type": "string"}},
+              "causal_claim": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "roi_inputs": {
+          "type": "object",
+          "properties": {
+            "period": {"type": "string"},
+            "cost_basis": {"type": "string"}
+          },
+          "additionalProperties": true
+        },
+        "counterfactual": {
+          "type": "object",
+          "properties": {
+            "basis": {"type": "string"},
+            "sourceRef": {"type": "string"}
+          },
+          "additionalProperties": true
+        },
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "sample_size": {"type": "integer", "minimum": 0},
+        "minimum_sample_size": {"type": "integer", "minimum": 0},
+        "baseline_present": {"type": "boolean"},
+        "individual_ranking_present": {"type": "boolean"},
+        "noisy_signal_counts_as_value": {"type": "boolean"},
+        "safe_evidence_refs": {"type": "array", "items": {"type": "string"}},
+        "privacy_aggregate_only": {"type": "boolean"},
+        "raw_user_metric_present": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"enum": ["hold"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "aggregate_metric_count",
+        "confidence",
+        "sample_size",
+        "minimum_sample_size",
+        "baseline_present",
+        "counterfactual_present",
+        "safe_evidence_ref_count",
+        "privacy_aggregate_only",
+        "missing_required_metric_count",
+        "missing_evidence_metric_count",
+        "missing_confidence_interval_metric_count",
+        "wrong_direction_metric_count",
+        "causal_claim_without_counterfactual_count",
+        "finding_count"
+      ],
+      "properties": {
+        "aggregate_metric_count": {"type": "integer", "minimum": 0},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "sample_size": {"type": "integer", "minimum": 0},
+        "minimum_sample_size": {"type": "integer", "minimum": 0},
+        "baseline_present": {"type": "boolean"},
+        "counterfactual_present": {"type": "boolean"},
+        "safe_evidence_ref_count": {"type": "integer", "minimum": 0},
+        "privacy_aggregate_only": {"type": "boolean"},
+        "missing_required_metric_count": {"type": "integer", "minimum": 0},
+        "missing_evidence_metric_count": {"type": "integer", "minimum": 0},
+        "missing_confidence_interval_metric_count": {"type": "integer", "minimum": 0},
+        "wrong_direction_metric_count": {"type": "integer", "minimum": 0},
+        "causal_claim_without_counterfactual_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "value_diagnostics": {
+      "type": "object",
+      "required": [
+        "missing_required_metrics",
+        "missing_evidence_metrics",
+        "missing_confidence_interval_metrics",
+        "wrong_direction_metrics",
+        "causal_claim_without_counterfactual",
+        "sample_size_below_minimum",
+        "roi_inputs_missing_period_or_cost_basis",
+        "counterfactual_missing_basis",
+        "privacy_violation"
+      ],
+      "properties": {
+        "missing_required_metrics": {"type": "array", "items": {"type": "string"}},
+        "missing_evidence_metrics": {"type": "array", "items": {"type": "string"}},
+        "missing_confidence_interval_metrics": {"type": "array", "items": {"type": "string"}},
+        "wrong_direction_metrics": {"type": "array", "items": {"type": "string"}},
+        "causal_claim_without_counterfactual": {"type": "array", "items": {"type": "string"}},
+        "sample_size_below_minimum": {"type": "boolean"},
+        "roi_inputs_missing_period_or_cost_basis": {"type": "boolean"},
+        "counterfactual_missing_basis": {"type": "boolean"},
+        "privacy_violation": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
     "sourceRefs": {"type": "array", "items": {"type": "string"}}
   }
 }

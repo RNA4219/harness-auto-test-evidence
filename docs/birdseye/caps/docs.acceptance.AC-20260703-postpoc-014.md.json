@@ -1,0 +1,30 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-014.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "2338a70b3987fc66831e1369f73ca90a2cf0497f17b6ae98277c65ed28a8fa64",
+  "line_count": 70,
+  "size_bytes": 2652,
+  "headings": [
+    "# AC-20260703-postpoc-014 Compliance and Procurement Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

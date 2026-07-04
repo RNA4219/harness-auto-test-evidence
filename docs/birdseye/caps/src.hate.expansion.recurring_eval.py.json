@@ -1,0 +1,17 @@
+{
+  "path": "src/hate/expansion/recurring_eval.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "38632e1fd2cb7cc7ab9ba75af085d9529b44a707cf4d901e1c4bc04b9004c5d3",
+  "line_count": 188,
+  "size_bytes": 11096,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

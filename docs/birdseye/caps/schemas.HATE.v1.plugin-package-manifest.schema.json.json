@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/plugin-package-manifest.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "49c7c5cfa3d625ffe3ffd379f5fcc63020c19a06e7290378bc606b25c37bf13c",
+  "line_count": 61,
+  "size_bytes": 2116,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema"
+  ]
+}

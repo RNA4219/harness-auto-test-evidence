@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/docs-freshness/readme-stale/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b29cf0c3160fa4a5bb619df36f34b8efcc3e92ca2a1ed114e98c9b0c9759719c",
+  "line_count": 15,
+  "size_bytes": 428,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

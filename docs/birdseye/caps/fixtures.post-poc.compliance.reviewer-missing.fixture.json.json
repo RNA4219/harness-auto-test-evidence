@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/compliance/reviewer-missing/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c35ea0a811544a1a91b029504ebee4284426d35e8a3e142e45f8eeec45af65c2",
+  "line_count": 12,
+  "size_bytes": 611,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

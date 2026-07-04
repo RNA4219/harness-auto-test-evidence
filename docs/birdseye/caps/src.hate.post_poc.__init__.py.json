@@ -1,0 +1,13 @@
+{
+  "path": "src/hate/post_poc/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e3f7eecc77b0cb095adffa061efc7308befcab727695f6d5107db2d6857d57e1",
+  "line_count": 2,
+  "size_bytes": 43,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

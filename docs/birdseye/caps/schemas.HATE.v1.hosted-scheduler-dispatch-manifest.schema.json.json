@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/hosted-scheduler-dispatch-manifest.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "10adce56f36923db07291154fe0aa99b318546e050d2bc46818ef335d170d15b",
+  "line_count": 173,
+  "size_bytes": 3733,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

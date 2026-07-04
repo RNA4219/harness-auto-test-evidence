@@ -1,0 +1,23 @@
+{
+  "fixture_id": "postpoc-baseline-unapproved-comparison-holds",
+  "input": {
+    "baseline": {
+      "baseline_id": "base-proposed-only",
+      "repo_id": "repo-main",
+      "suite_id": "pytest",
+      "actor": "alice",
+      "reason": "Comparison attempted before approval.",
+      "policy_hash": "policy-sha256-001",
+      "expires_at": "2026-10-01T00:00:00Z",
+      "comparison_requested": true
+    },
+    "events": [
+      {
+        "event_type": "proposed",
+        "candidate_run_id": "run-5001",
+        "evidence_refs": ["artifact://runs/run-5001/product-readiness.json"],
+        "sourceRefs": ["fixture://baseline/unapproved-comparison-holds#proposed"]
+      }
+    ]
+  }
+}

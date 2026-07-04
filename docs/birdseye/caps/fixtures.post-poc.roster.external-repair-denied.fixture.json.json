@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/roster/external-repair-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "5f97aad74095b1d38f4d42070089b23ac892a2284ec90b9ea65fe5a4d3aa26ef",
+  "line_count": 24,
+  "size_bytes": 779,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

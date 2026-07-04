@@ -2,15 +2,16 @@
   "path": "schemas/HATE/v1/runner-dialect-coverage-report.schema.json",
   "role": "schema",
   "kind": "json",
-  "sha256": "faaaaff43fbf25cf8b0baffd5cfdf921a284893829716dfa43c1c9aef30510d8",
-  "line_count": 41,
-  "size_bytes": 1630,
+  "sha256": "c839d0548daced1218a50bbb287947f770af68929e6471fa8aa154989b592f1b",
+  "line_count": 167,
+  "size_bytes": 7206,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
     "coverage",
+    "fixture",
     "schema"
   ]
 }

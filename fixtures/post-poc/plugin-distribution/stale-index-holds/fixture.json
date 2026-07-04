@@ -1,0 +1,26 @@
+{
+  "fixture_id": "postpoc-plugin-distribution-stale-index-holds",
+  "input": {
+    "profile": "release",
+    "manifest": {
+      "plugin_id": "detector.stale-index",
+      "plugin_version": "1.0.1",
+      "api_version": "HATE-plugin/v1",
+      "package_hash": "sha256:plugin-current",
+      "observed_package_hash": "sha256:plugin-current",
+      "signature_algorithm": "ed25519",
+      "signature_ref": "signature://detector.stale-index/1.0.1",
+      "signature_valid": true,
+      "trust_source": "org-policy",
+      "allowlist_ref": "allowlist://org/plugins/detector.stale-index",
+      "compatibility_status": "compatible",
+      "capabilities": ["emit_findings"],
+      "resource_limits": {"timeout_ms": 30000}
+    },
+    "distribution_index": {
+      "index_ref": "index://plugins/release",
+      "indexed_package_hash": "sha256:plugin-old",
+      "index_stale": true
+    }
+  }
+}

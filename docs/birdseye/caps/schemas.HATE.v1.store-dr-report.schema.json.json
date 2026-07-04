@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/store-dr-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "b5f6468a33c4afb43c70873e6dd29c80fb70ac046bab6114d4ac7cfdb646cef4",
+  "line_count": 268,
+  "size_bytes": 5884,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

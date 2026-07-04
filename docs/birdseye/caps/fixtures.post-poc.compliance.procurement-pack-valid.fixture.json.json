@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/compliance/procurement-pack-valid/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6a014e940aa329622f7661869203f78accb409c518e08bf7ba9a964cc997a3e5",
+  "line_count": 15,
+  "size_bytes": 1122,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "security"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/compliance/restricted-export-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b38189660e73fe39a02dbf67729f7fa9ad1bb0d8358f57b884fdb8e7b21bbe60",
+  "line_count": 12,
+  "size_bytes": 613,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

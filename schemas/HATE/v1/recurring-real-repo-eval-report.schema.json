@@ -2,16 +2,197 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "HATE recurring real repository evaluation report",
   "type": "object",
-  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "evaluation_config", "findings", "summary", "sourceRefs"],
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "evaluation_config", "findings", "summary", "recurring_eval_diagnostics", "sourceRefs"],
   "properties": {
     "schema_version": {"const": "HATE/v1"},
     "record_type": {"const": "recurring-real-repo-eval-report"},
     "report_id": {"type": "string"},
     "overall_status": {"enum": ["pass", "hold"]},
     "readiness_effect": {"enum": ["none", "hold"]},
-    "evaluation_config": {"type": "object"},
-    "findings": {"type": "array"},
-    "summary": {"type": "object"},
+    "evaluation_config": {
+      "type": "object",
+      "required": [
+        "repo_roster",
+        "required_repo_classes",
+        "runs",
+        "trend_windows",
+        "retry_isolation_rules",
+        "timeout_budget_by_class",
+        "trend_privacy_safe",
+        "regression_detected",
+        "timeout_hides_missing_evidence",
+        "quarantine_policy_present"
+      ],
+      "properties": {
+        "repo_roster": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["repo", "class", "owner", "ownership", "sourceRef", "health"],
+            "properties": {
+              "repo": {"type": "string"},
+              "class": {"type": "string"},
+              "owner": {"type": "string"},
+              "ownership": {"type": "string"},
+              "sourceRef": {"type": "string"},
+              "health": {"type": "string"},
+              "external_hold_reason": {"type": "string"},
+              "stale": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "required_repo_classes": {"type": "array", "items": {"type": "string"}},
+        "runs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["run_id", "baseline_ref", "current_result_ref"],
+            "properties": {
+              "run_id": {"type": "string"},
+              "repo_class": {"type": "string"},
+              "baseline_ref": {"type": "string"},
+              "current_result_ref": {"type": "string"},
+              "baseline_profile": {"type": "string"},
+              "current_profile": {"type": "string"},
+              "duration_seconds": {"type": "integer", "minimum": 0},
+              "roster_hash": {"type": "string"},
+              "policy_hash": {"type": "string"},
+              "environment_fingerprint": {"type": "string"},
+              "privacy_fingerprint": {"type": "string"},
+              "parser_gap": {"type": "boolean"},
+              "manual_review_outcome": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "trend_windows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["window_id", "aggregate_only", "contains_raw_repo_name", "sample_size"],
+            "properties": {
+              "window_id": {"type": "string"},
+              "aggregate_only": {"type": "boolean"},
+              "contains_raw_repo_name": {"type": "boolean"},
+              "sample_size": {"type": "integer", "minimum": 0}
+            },
+            "additionalProperties": true
+          }
+        },
+        "retry_isolation_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["rule_id", "failure_class", "max_retries", "quarantine_after"],
+            "properties": {
+              "rule_id": {"type": "string"},
+              "failure_class": {"type": "string"},
+              "max_retries": {"type": "integer", "minimum": 0},
+              "quarantine_after": {"type": "integer", "minimum": 0}
+            },
+            "additionalProperties": true
+          }
+        },
+        "timeout_budget_by_class": {"type": "object"},
+        "trend_privacy_safe": {"type": "boolean"},
+        "regression_detected": {"type": "boolean"},
+        "timeout_hides_missing_evidence": {"type": "boolean"},
+        "quarantine_policy_present": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"enum": ["hold"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "repo_count",
+        "run_count",
+        "trend_window_count",
+        "retry_isolation_rule_count",
+        "missing_required_repo_classes",
+        "trend_privacy_safe",
+        "quarantine_policy_present",
+        "duplicate_repo_count",
+        "missing_owner_repo_count",
+        "external_unclassified_repo_count",
+        "stale_or_unhealthy_repo_count",
+        "run_identity_gap_count",
+        "profile_mismatch_run_count",
+        "timeout_budget_exceeded_run_count",
+        "unsafe_trend_window_count",
+        "retry_isolation_gap_count",
+        "finding_count"
+      ],
+      "properties": {
+        "repo_count": {"type": "integer", "minimum": 0},
+        "run_count": {"type": "integer", "minimum": 0},
+        "trend_window_count": {"type": "integer", "minimum": 0},
+        "retry_isolation_rule_count": {"type": "integer", "minimum": 0},
+        "missing_required_repo_classes": {"type": "array", "items": {"type": "string"}},
+        "trend_privacy_safe": {"type": "boolean"},
+        "quarantine_policy_present": {"type": "boolean"},
+        "duplicate_repo_count": {"type": "integer", "minimum": 0},
+        "missing_owner_repo_count": {"type": "integer", "minimum": 0},
+        "external_unclassified_repo_count": {"type": "integer", "minimum": 0},
+        "stale_or_unhealthy_repo_count": {"type": "integer", "minimum": 0},
+        "run_identity_gap_count": {"type": "integer", "minimum": 0},
+        "profile_mismatch_run_count": {"type": "integer", "minimum": 0},
+        "timeout_budget_exceeded_run_count": {"type": "integer", "minimum": 0},
+        "unsafe_trend_window_count": {"type": "integer", "minimum": 0},
+        "retry_isolation_gap_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "recurring_eval_diagnostics": {
+      "type": "object",
+      "required": [
+        "duplicate_repos",
+        "missing_owner_repos",
+        "missing_source_ref_repos",
+        "external_unclassified_repos",
+        "stale_or_unhealthy_repos",
+        "runs_missing_identity",
+        "runs_with_baseline_profile_mismatch",
+        "runs_with_timeout_budget_exceeded",
+        "runs_without_privacy_fingerprint",
+        "parser_gap_without_review_runs",
+        "duplicate_trend_windows",
+        "unsafe_trend_windows",
+        "retry_rules_without_isolation"
+      ],
+      "properties": {
+        "duplicate_repos": {"type": "array", "items": {"type": "string"}},
+        "missing_owner_repos": {"type": "array", "items": {"type": "string"}},
+        "missing_source_ref_repos": {"type": "array", "items": {"type": "string"}},
+        "external_unclassified_repos": {"type": "array", "items": {"type": "string"}},
+        "stale_or_unhealthy_repos": {"type": "array", "items": {"type": "string"}},
+        "runs_missing_identity": {"type": "array", "items": {"type": "string"}},
+        "runs_with_baseline_profile_mismatch": {"type": "array", "items": {"type": "string"}},
+        "runs_with_timeout_budget_exceeded": {"type": "array", "items": {"type": "string"}},
+        "runs_without_privacy_fingerprint": {"type": "array", "items": {"type": "string"}},
+        "parser_gap_without_review_runs": {"type": "array", "items": {"type": "string"}},
+        "duplicate_trend_windows": {"type": "array", "items": {"type": "string"}},
+        "unsafe_trend_windows": {"type": "array", "items": {"type": "string"}},
+        "retry_rules_without_isolation": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
     "sourceRefs": {"type": "array", "items": {"type": "string"}}
   }
 }

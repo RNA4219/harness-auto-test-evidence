@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/docs-freshness/product-ready-overclaim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "bfe2bfc4b51c440f0a28117888ebbf57bee545d18ae79dda84f8ce275f59d2ca",
+  "line_count": 13,
+  "size_bytes": 327,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

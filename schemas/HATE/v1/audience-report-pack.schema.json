@@ -13,6 +13,7 @@
     "audience_config",
     "findings",
     "summary",
+    "audience_pack_diagnostics",
     "audience_views",
     "shared_sourceRefs",
     "verdict_recomputed",
@@ -30,18 +31,21 @@
     "analysis_scope": {"type": "string"},
     "audience_config": {
       "type": "object",
-      "required": ["audience_views", "shared_sourceRefs", "verdict_recomputed"],
+      "required": ["audience_views", "shared_sourceRefs", "required_audiences", "verdict_recomputed"],
       "properties": {
         "audience_views": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["audience_id", "view_type", "verdict", "sourceRef"],
+            "required": ["audience_id", "view_type", "verdict", "sourceRef", "sourceRefs", "sections", "machine_readable"],
             "properties": {
               "audience_id": {"type": "string"},
               "view_type": {"type": "string"},
               "verdict": {"type": "string", "enum": ["pass", "hold", "fail"]},
               "sourceRef": {"type": "string"},
+              "sourceRefs": {"type": "array", "items": {"type": "string"}},
+              "sections": {"type": "array", "items": {"type": "string"}},
+              "machine_readable": {"type": "boolean"},
               "rationale": {"type": "string"}
             },
             "additionalProperties": true
@@ -51,6 +55,11 @@
           "type": "array",
           "items": {"type": "string"}
         },
+        "required_audiences": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "base_verdict": {"type": "string"},
         "verdict_recomputed": {"type": "boolean"},
         "source_ref_drift_detected": {"type": "boolean"},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
@@ -85,13 +94,61 @@
     },
     "summary": {
       "type": "object",
-      "required": ["view_count", "shared_sourceRef_count", "verdict_recomputed", "confidence", "finding_count"],
+      "required": [
+        "view_count",
+        "shared_sourceRef_count",
+        "required_audience_count",
+        "missing_audience_count",
+        "view_sourceRef_drift_count",
+        "verdict_drift_count",
+        "verdict_recomputed",
+        "confidence",
+        "finding_count"
+      ],
       "properties": {
         "view_count": {"type": "integer", "minimum": 0},
         "shared_sourceRef_count": {"type": "integer", "minimum": 0},
+        "required_audience_count": {"type": "integer", "minimum": 0},
+        "missing_audience_count": {"type": "integer", "minimum": 0},
+        "view_sourceRef_drift_count": {"type": "integer", "minimum": 0},
+        "verdict_drift_count": {"type": "integer", "minimum": 0},
         "verdict_recomputed": {"type": "boolean"},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "audience_pack_diagnostics": {
+      "type": "object",
+      "required": [
+        "missing_audiences",
+        "duplicate_audience_ids",
+        "duplicate_view_types",
+        "view_sourceRef_drift",
+        "verdict_drift_views",
+        "missing_required_sections",
+        "machine_view_missing",
+        "machine_view_not_readable",
+        "budget_exceeded"
+      ],
+      "properties": {
+        "missing_audiences": {"type": "array", "items": {"type": "string"}},
+        "duplicate_audience_ids": {"type": "array", "items": {"type": "string"}},
+        "duplicate_view_types": {"type": "array", "items": {"type": "string"}},
+        "view_sourceRef_drift": {"type": "array", "items": {"type": "string"}},
+        "verdict_drift_views": {"type": "array", "items": {"type": "string"}},
+        "missing_required_sections": {"type": "array", "items": {"type": "string"}},
+        "machine_view_missing": {"type": "boolean"},
+        "machine_view_not_readable": {"type": "boolean"},
+        "budget_exceeded": {
+          "type": "object",
+          "required": ["views", "sourceRefs"],
+          "properties": {
+            "views": {"type": "boolean"},
+            "sourceRefs": {"type": "boolean"}
+          },
+          "additionalProperties": true
+        }
       },
       "additionalProperties": true
     },

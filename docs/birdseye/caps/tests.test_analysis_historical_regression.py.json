@@ -2,9 +2,9 @@
   "path": "tests/test_analysis_historical_regression.py",
   "role": "test",
   "kind": "py",
-  "sha256": "6dc0b9f0ff211c831fb67d861d880c9da287e8295b31b3dae542b57d2e7e60e0",
-  "line_count": 138,
-  "size_bytes": 5710,
+  "sha256": "15d7c501fa259b7cacf58ca68164549c377109909b6c5d179fe64ac880c1941f",
+  "line_count": 268,
+  "size_bytes": 12478,
   "headings": [],
   "imports": [
     "__future__",

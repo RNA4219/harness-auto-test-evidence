@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/capacity/warm-cache-improves/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1f03f8e086148ee8804530db9c89a66a158f55a204d32081483852079fecaf2e",
+  "line_count": 11,
+  "size_bytes": 852,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

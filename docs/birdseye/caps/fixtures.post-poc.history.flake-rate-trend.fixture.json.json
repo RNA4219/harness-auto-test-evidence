@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/history/flake-rate-trend/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "05088a33e13cc1595d51d9b9cdfe2ebd1a2372788a13ad68e302adfffeaa2340",
+  "line_count": 45,
+  "size_bytes": 1250,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

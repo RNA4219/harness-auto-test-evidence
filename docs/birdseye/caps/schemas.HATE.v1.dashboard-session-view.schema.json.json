@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/dashboard-session-view.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6d2121ef61dc6a183003243e2d0c856c1374546c98f38cced75dcd4e187291c1",
+  "line_count": 24,
+  "size_bytes": 1244,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

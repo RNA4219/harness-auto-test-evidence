@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/human-review-workflow-decision.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "705c32634ded7c4006b12f765167564e37e97357021c5abeaffd6dc968a97b5c",
+  "line_count": 49,
+  "size_bytes": 1664,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "workflow"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/dashboard-view-model.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "c58ce2c008ef71074c66eea860a5be3f147be64620076650c7ff5289c7c84ac0",
+  "line_count": 24,
+  "size_bytes": 819,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "schema"
+  ]
+}

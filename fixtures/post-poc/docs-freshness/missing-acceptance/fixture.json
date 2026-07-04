@@ -1,0 +1,12 @@
+{
+  "fixture_id": "post-poc-docs-missing-acceptance",
+  "input": {
+    "freshness": {
+      "readme_state_current": true,
+      "missing_acceptance_refs": ["docs/acceptance/AC-missing.md"],
+      "codemap_current": true,
+      "schema_registry_current": true,
+      "product_ready_claim": false
+    }
+  }
+}

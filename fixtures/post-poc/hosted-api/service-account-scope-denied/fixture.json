@@ -1,0 +1,22 @@
+{
+  "fixture_id": "postpoc-hosted-api-service-account-scope-denied",
+  "input": {
+    "request": {
+      "request_id": "req-scope-denied",
+      "tenant_id": "tenant-a",
+      "resource_tenant_id": "tenant-a",
+      "subject_id": "svc-ci",
+      "role": "service_account",
+      "auth_method": "service_account",
+      "resource": "read-model://manual-review",
+      "action": "write",
+      "token_ref": "secret-ref://service-account/svc-ci",
+      "token_expiry": "2026-08-03T00:00:00Z",
+      "service_account_scopes": ["read:portfolio"],
+      "required_scope": "write:manual-review",
+      "rate_limit_bucket": "tenant-a:write",
+      "rate_limit_status": "ok",
+      "audit_event_present": true
+    }
+  }
+}

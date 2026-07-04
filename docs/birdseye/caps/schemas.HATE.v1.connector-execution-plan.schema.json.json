@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/connector-execution-plan.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "41fa0b01c03196ee014d65f5bfa8ed225f5cde63a366105afe1ea3a1a7026908",
+  "line_count": 59,
+  "size_bytes": 2066,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

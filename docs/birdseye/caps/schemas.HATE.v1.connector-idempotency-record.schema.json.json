@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/connector-idempotency-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d7b015c8ffa439cec5b81cce152c16ed916407d09d1605313bb8c61bda23fe17",
+  "line_count": 41,
+  "size_bytes": 1400,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

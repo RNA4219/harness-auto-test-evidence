@@ -1,0 +1,17 @@
+{
+  "fixture_id": "hate-overclaim-denied",
+  "input": {
+    "request": {
+      "handoff_id": "handoff-overclaim",
+      "release_candidate_ref": "artifact://release/rc-20260703",
+      "handoff_target": "qeg",
+      "handoff_mode": "record_only",
+      "external_run_ref": "qeg://runs/20260703-003",
+      "external_decision_ref": "qeg://decisions/20260703-003",
+      "external_status": "approved",
+      "hate_claimed_final_approval": true,
+      "verdict_overwrite_attempted": true
+    },
+    "approval_reference": {"authority_owner": "qeg"}
+  }
+}

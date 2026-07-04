@@ -1,0 +1,23 @@
+{
+  "fixture_id": "postpoc-dashboard-stale-read-model",
+  "input": {
+    "session": {
+      "session_id": "sess-stale",
+      "actor": "qa@example.com",
+      "role": "qa_lead",
+      "tenant_id": "tenant-a",
+      "authenticated": true,
+      "sourceRefs": ["fixture://dashboard/stale-read-model#session"]
+    },
+    "routes": [
+      {
+        "route": "/dashboard/portfolio",
+        "ui_state": "stale",
+        "read_model_ref": "read-model://portfolio/tenant-a?stale=true",
+        "rbac_decision": "allowed",
+        "canonical_verdict_ref": "docs-freshness-ci-report.json",
+        "sourceRefs": ["fixture://dashboard/stale-read-model#route"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_post_poc_capacity.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "c36704b808a713f3c5345f55553364fb23c16f996cb3ed801000582909b2b091",
+  "line_count": 285,
+  "size_bytes": 11944,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.capacity",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/capacity.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

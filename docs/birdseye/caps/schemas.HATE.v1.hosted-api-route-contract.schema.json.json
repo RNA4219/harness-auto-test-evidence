@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/hosted-api-route-contract.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d888bbcf715fd180d4a2ae631e3b5e4f8f93fafd04b8ead1ab96f5ad52197646",
+  "line_count": 51,
+  "size_bytes": 1677,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema"
+  ]
+}

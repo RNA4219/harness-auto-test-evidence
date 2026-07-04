@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/docs-freshness-ci-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "38db41e124b07073a4b4ff56dc84da02ba62f3277373bfe6893ced223e1348d4",
+  "line_count": 146,
+  "size_bytes": 2916,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

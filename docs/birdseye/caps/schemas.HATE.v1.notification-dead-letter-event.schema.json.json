@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/notification-dead-letter-event.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "f459725b869505b76a76c0a9733d2739c00c6a57a9a32798a45c59775d2ad5e5",
+  "line_count": 45,
+  "size_bytes": 1532,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

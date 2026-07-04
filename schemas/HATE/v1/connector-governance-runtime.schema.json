@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/connector-governance-runtime.schema.json",
+  "title": "HATE Connector Governance Runtime Record",
+  "type": "object",
+  "required": ["schema_version", "record_type"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "enum": [
+        "identity_connector_report",
+        "enterprise_connector_report",
+        "sso_mapping",
+        "sso_mapping_result",
+        "scim_diff",
+        "scim_diff_result",
+        "ops_connector_report",
+        "ops_connector_result",
+        "rbac_matrix_report",
+        "enterprise_domain_model",
+        "retention_governance_report",
+        "enterprise-audit-validation"
+      ]
+    }
+  },
+  "oneOf": [
+    {"properties": {"record_type": {"const": "identity_connector_report"}}, "required": ["run_id", "mode", "connectors", "dry_run_results", "summary", "safety"]},
+    {"properties": {"record_type": {"const": "enterprise_connector_report"}}, "required": ["run_id", "mode", "connectors", "failure_fixtures", "payload_safety", "fallback_policy", "summary"]},
+    {"properties": {"record_type": {"const": "sso_mapping"}}, "required": ["mapping_id", "provider", "groups", "roles", "claims"]},
+    {"properties": {"record_type": {"const": "sso_mapping_result"}}, "required": ["mapping_id", "status", "manual_review_required", "readiness_effect"]},
+    {"properties": {"record_type": {"const": "scim_diff"}}, "required": ["diff_id", "current_users", "desired_users", "current_groups", "desired_groups"]},
+    {"properties": {"record_type": {"const": "scim_diff_result"}}, "required": ["diff_id", "status", "readiness_effect", "simulated_actions", "denied_actions"]},
+    {"properties": {"record_type": {"const": "ops_connector_report"}}, "required": ["summary"]},
+    {"properties": {"record_type": {"const": "ops_connector_result"}}, "required": ["connector_id", "operation", "status"]},
+    {"properties": {"record_type": {"const": "rbac_matrix_report"}}, "required": ["run_id", "roles", "resources", "matrix", "read_model_mapping", "invariants"]},
+    {"properties": {"record_type": {"const": "enterprise_domain_model"}}, "required": ["entities", "relationships"]},
+    {"properties": {"record_type": {"const": "retention_governance_report"}}, "required": ["run_id", "policy_scope", "classification_policies", "artifact_actions", "legal_hold", "customer_export_delete", "summary"]},
+    {"properties": {"record_type": {"const": "enterprise-audit-validation"}}, "required": ["audit_id", "status"]}
+  ],
+  "additionalProperties": true
+}

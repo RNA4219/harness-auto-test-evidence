@@ -32,6 +32,24 @@ def _assert_report_contract(report: dict) -> None:
     assert report["record_type"] == "audience-report-pack"
     assert report["overall_status"] in {"pass", "hold", "blocked"}
     assert report["readiness_effect"] in {"none", "hold", "blocked"}
+    assert "audience_pack_diagnostics" in report
+    assert {
+        "missing_audiences",
+        "duplicate_audience_ids",
+        "duplicate_view_types",
+        "view_sourceRef_drift",
+        "verdict_drift_views",
+        "missing_required_sections",
+        "machine_view_missing",
+        "machine_view_not_readable",
+        "budget_exceeded",
+    } <= set(report["audience_pack_diagnostics"])
+    assert {
+        "required_audience_count",
+        "missing_audience_count",
+        "view_sourceRef_drift_count",
+        "verdict_drift_count",
+    } <= set(report["summary"])
     for finding in report["findings"]:
         assert {"code", "severity", "message", "sourceRef", "readiness_effect"} <= set(finding)
 
@@ -47,6 +65,15 @@ def test_shared_sourcerefs_fixture_passes() -> None:
     assert result["status"] == "pass"
     assert result["finding_code"] == ""
     assert result["readiness_effect"] == "none"
+    assert {view["view_type"] for view in result["report"]["audience_views"]} == {
+        "developer",
+        "qa",
+        "release",
+        "qeg",
+        "machine",
+    }
+    assert result["report"]["summary"]["missing_audience_count"] == 0
+    assert result["report"]["summary"]["view_sourceRef_drift_count"] == 0
     _assert_report_contract(result["report"])
 
 
@@ -127,6 +154,91 @@ def test_confidence_below_threshold_holds() -> None:
 
     assert report["overall_status"] == "hold"
     assert "audience_report_pack_verdict_recomputed_denied" in _codes(report)
+
+
+def test_required_audience_and_machine_view_contract_holds() -> None:
+    report = build_audience_report_pack({
+        "audience_views": [
+            {
+                "audience_id": "dev",
+                "view_type": "developer",
+                "verdict": "pass",
+                "sourceRef": "e:1",
+                "sourceRefs": ["e:1"],
+                "sections": ["findings", "commands"],
+            },
+            {
+                "audience_id": "machine",
+                "view_type": "machine",
+                "verdict": "pass",
+                "sourceRef": "e:1",
+                "sourceRefs": ["e:1"],
+                "sections": ["json", "schema_version"],
+                "machine_readable": False,
+            },
+        ],
+        "shared_sourceRefs": ["e:1"],
+        "required_audiences": ["developer", "qa", "release", "qeg", "machine"],
+        "base_verdict": "pass",
+        "verdict_recomputed": False,
+        "source_ref_drift_detected": False,
+        "confidence": 0.95,
+        "limits": {"confidence_threshold": 0.7, "max_views": 10, "max_sourceRefs": 50},
+    })
+
+    codes = _codes(report)
+    assert report["overall_status"] == "hold"
+    assert "audience_report_pack_view_missing" in codes
+    assert "audience_report_pack_machine_view_invalid" in codes
+    assert report["audience_pack_diagnostics"]["missing_audiences"] == ["qa", "qeg", "release"]
+    _assert_report_contract(report)
+
+
+def test_view_source_ref_and_verdict_drift_hold() -> None:
+    report = build_audience_report_pack({
+        "audience_views": [
+            {"audience_id": "dev", "view_type": "developer", "verdict": "pass", "sourceRef": "e:1", "sourceRefs": ["e:1"], "sections": ["findings", "commands"]},
+            {"audience_id": "qa", "view_type": "qa", "verdict": "hold", "sourceRef": "outside:1", "sourceRefs": ["outside:1"], "sections": ["test_cases", "risks"]},
+        ],
+        "shared_sourceRefs": ["e:1"],
+        "required_audiences": ["developer", "qa"],
+        "base_verdict": "pass",
+        "verdict_recomputed": False,
+        "source_ref_drift_detected": False,
+        "confidence": 0.95,
+        "limits": {"confidence_threshold": 0.7, "max_views": 10, "max_sourceRefs": 50},
+    })
+
+    codes = _codes(report)
+    assert report["overall_status"] == "hold"
+    assert "audience_report_pack_source_ref_drift" in codes
+    assert "audience_report_pack_verdict_drift" in codes
+    assert report["summary"]["view_sourceRef_drift_count"] == 1
+    assert report["summary"]["verdict_drift_count"] == 1
+    _assert_report_contract(report)
+
+
+def test_duplicate_view_and_budget_holds() -> None:
+    report = build_audience_report_pack({
+        "audience_views": [
+            {"audience_id": "dup", "view_type": "developer", "verdict": "pass", "sourceRef": "e:1", "sourceRefs": ["e:1"], "sections": ["findings", "commands"]},
+            {"audience_id": "dup", "view_type": "developer", "verdict": "pass", "sourceRef": "e:2", "sourceRefs": ["e:2"], "sections": ["findings", "commands"]},
+        ],
+        "shared_sourceRefs": ["e:1", "e:2"],
+        "required_audiences": ["developer"],
+        "base_verdict": "pass",
+        "verdict_recomputed": False,
+        "source_ref_drift_detected": False,
+        "confidence": 0.95,
+        "limits": {"confidence_threshold": 0.7, "max_views": 1, "max_sourceRefs": 1},
+    })
+
+    codes = _codes(report)
+    assert report["overall_status"] == "hold"
+    assert "audience_report_pack_duplicate_view" in codes
+    assert "audience_report_pack_view_budget_exceeded" in codes
+    assert "audience_report_pack_source_ref_budget_exceeded" in codes
+    _assert_report_contract(report)
 
 
 def test_audience_report_pack_schema_registered() -> None:

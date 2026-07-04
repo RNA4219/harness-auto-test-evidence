@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/artifact-safety-filter-report.schema.json",
+  "title": "HATE Artifact Safety Filter Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "readiness_effect",
+    "created_at",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "type": "string",
+      "enum": ["redaction-report", "export-filter-report", "summary-filter-report"]
+    },
+    "redaction_id": {"type": "string"},
+    "filter_id": {"type": "string"},
+    "artifact_id": {"type": "string"},
+    "surface": {"type": "string"},
+    "readiness_effect": {"type": "string", "enum": ["pass", "soft_gap", "hold", "hard_dq"]},
+    "created_at": {"type": "string", "minLength": 1},
+    "summary": {"type": "object"}
+  },
+  "anyOf": [
+    {"required": ["redaction_id"]},
+    {"required": ["filter_id"]}
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/dashboard-interaction-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "c353940a9735a0a75f1e7298dff823f07f383fa1534342d82a4085bcbb1094ea",
+  "line_count": 154,
+  "size_bytes": 3110,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

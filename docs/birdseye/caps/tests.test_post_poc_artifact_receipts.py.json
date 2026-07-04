@@ -1,0 +1,51 @@
+{
+  "path": "tests/test_post_poc_artifact_receipts.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "b3e616125a710e0481adff0048ecec28dbb18f4cd53440e03d8e926316b9a40b",
+  "line_count": 102,
+  "size_bytes": 5375,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.baseline",
+    "hate.post_poc.capacity",
+    "hate.post_poc.connectors",
+    "hate.post_poc.dashboard",
+    "hate.post_poc.history_analytics",
+    "hate.post_poc.hosted_api",
+    "hate.post_poc.human_review",
+    "hate.post_poc.notifications",
+    "hate.post_poc.observability",
+    "hate.post_poc.plugin_distribution",
+    "hate.post_poc.roster",
+    "hate.post_poc.scheduler",
+    "hate.post_poc.store_dr",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/baseline.py",
+    "src/hate/post_poc/capacity.py",
+    "src/hate/post_poc/connectors.py",
+    "src/hate/post_poc/dashboard.py",
+    "src/hate/post_poc/history_analytics.py",
+    "src/hate/post_poc/hosted_api.py",
+    "src/hate/post_poc/human_review.py",
+    "src/hate/post_poc/notifications.py",
+    "src/hate/post_poc/observability.py",
+    "src/hate/post_poc/plugin_distribution.py",
+    "src/hate/post_poc/roster.py",
+    "src/hate/post_poc/scheduler.py",
+    "src/hate/post_poc/store_dr.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

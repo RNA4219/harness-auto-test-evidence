@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_post_poc_hosted_api.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "53f247f07eb4ba21b107a2b927888577e2fda423abd957d97d7f3e1b54acc1db",
+  "line_count": 242,
+  "size_bytes": 9974,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.hosted_api",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/hosted_api.py"
+  ],
+  "tags": [
+    "api",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

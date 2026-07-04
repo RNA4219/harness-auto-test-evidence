@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/history/stale-data-holds/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "19f47826670a9ee1c6e889f8ef7f9401a0257957e0e3554a9281943edd13c8dd",
+  "line_count": 46,
+  "size_bytes": 1288,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

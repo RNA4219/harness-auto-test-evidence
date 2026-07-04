@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/trust-advisory-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "12698f66468ad51e9ccce2b705a9bd3b6a6d58701b4293542e354fd2dba82865",
+  "line_count": 34,
+  "size_bytes": 1375,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "tests/test_analysis_environment_diff.py",
   "role": "test",
   "kind": "py",
-  "sha256": "69c7177636623d932d00518f709ecfee65e15a81ed888932561c5a2e5b2235cd",
-  "line_count": 111,
-  "size_bytes": 4972,
+  "sha256": "80521d2d3a34f08a3926290f89d63483a7d72fb4922a25cc87ec8c301b407ae6",
+  "line_count": 201,
+  "size_bytes": 8999,
   "headings": [],
   "imports": [
     "__future__",

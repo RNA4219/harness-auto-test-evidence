@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/external-approval-reference.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "26c408b925f6d7bde1fd1bf79b99ed6ee9d8a8d21e45626026dcb90a8c4b3e8e",
+  "line_count": 24,
+  "size_bytes": 1309,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

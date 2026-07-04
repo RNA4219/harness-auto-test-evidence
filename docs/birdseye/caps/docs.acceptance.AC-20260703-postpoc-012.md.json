@@ -1,0 +1,31 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-012.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "18e4dbb6146a0e0fafb7b2a8142323d227d4158d2230ab6a66fba8ba415672cf",
+  "line_count": 77,
+  "size_bytes": 2941,
+  "headings": [
+    "# AC-20260703-postpoc-012 Store Backup/Restore DR Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

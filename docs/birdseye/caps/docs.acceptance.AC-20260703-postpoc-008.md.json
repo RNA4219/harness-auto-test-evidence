@@ -1,0 +1,30 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-008.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "b4f9bf53a0d255727879d4ca5051e46012844fa5188659571447b2c07328a322",
+  "line_count": 80,
+  "size_bytes": 2972,
+  "headings": [
+    "# AC-20260703-postpoc-008 Long-Term History Analytics Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

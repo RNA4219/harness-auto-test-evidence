@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/capacity-baseline-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "1cf4449acaa84a15806c3c14dc385925c6c512565b523c5a0f5c925c76996196",
+  "line_count": 25,
+  "size_bytes": 1393,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

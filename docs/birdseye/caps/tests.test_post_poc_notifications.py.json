@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_post_poc_notifications.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "236ab8a3942c02951f692a9aab04768733cec620339469c670e1de6377de573c",
+  "line_count": 324,
+  "size_bytes": 12842,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.notifications",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/notifications.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

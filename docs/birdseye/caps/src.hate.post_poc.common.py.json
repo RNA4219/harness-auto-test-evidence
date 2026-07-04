@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/post_poc/common.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "41f57858c7cdb2ba93f9516260c2bfade1c4ed1c1d418355399d88d169216aa3",
+  "line_count": 176,
+  "size_bytes": 5343,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "store"
+  ]
+}

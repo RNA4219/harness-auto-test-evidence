@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/baseline/revoked-baseline-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "30f4a4e9942b268805829bdca5ccb152e8383fe5b7d27e400c8b95a90f04b9b2",
+  "line_count": 27,
+  "size_bytes": 830,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

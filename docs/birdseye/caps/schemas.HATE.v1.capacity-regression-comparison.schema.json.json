@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/capacity-regression-comparison.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "26330c69d26f0c995c784bfbdf5447d022dc13196c63db8ebcff80e2b5cccf1d",
+  "line_count": 24,
+  "size_bytes": 1345,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

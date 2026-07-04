@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/scheduler/stale-lease-recovered/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f1c2a8d7c3f661df7ff75432bf0d3e232a3eafa25e9a77a8b817fd97ae0f7e23",
+  "line_count": 29,
+  "size_bytes": 780,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

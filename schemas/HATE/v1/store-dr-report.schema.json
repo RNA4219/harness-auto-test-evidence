@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/store-dr-report.schema.json",
+  "title": "HATE Store DR Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "report_id",
+    "overall_status",
+    "readiness_effect",
+    "backup_operation",
+    "restore_operation",
+    "dr_drill_result",
+    "findings",
+    "summary",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "store-dr-report"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "overall_status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "hold"
+      ]
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "backup_operation": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "backup_id",
+        "backup_manifest_ref",
+        "created_at",
+        "source_store_hash",
+        "backup_hash",
+        "legal_hold_count_before",
+        "corruption_scan_result"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "store-backup-operation"
+        },
+        "backup_id": {
+          "type": "string"
+        },
+        "backup_manifest_ref": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "source_store_hash": {
+          "type": "string"
+        },
+        "backup_hash": {
+          "type": "string"
+        },
+        "legal_hold_count_before": {
+          "type": "integer"
+        },
+        "corruption_scan_result": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "restore_operation": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "backup_id",
+        "restore_hash",
+        "restore_status",
+        "legal_hold_count_after",
+        "rpo_seconds",
+        "rto_seconds",
+        "projection_rebuild_status"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "store-restore-operation"
+        },
+        "backup_id": {
+          "type": "string"
+        },
+        "restore_hash": {
+          "type": "string"
+        },
+        "restore_status": {
+          "type": "string"
+        },
+        "legal_hold_count_after": {
+          "type": "integer"
+        },
+        "rpo_seconds": {
+          "type": "integer"
+        },
+        "rto_seconds": {
+          "type": "integer"
+        },
+        "projection_rebuild_status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "dr_drill_result": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "backup_id",
+        "source_store_hash",
+        "backup_hash",
+        "restore_hash",
+        "legal_hold_count_before",
+        "legal_hold_count_after",
+        "rpo_seconds",
+        "rto_seconds",
+        "corruption_scan_result",
+        "projection_rebuild_status"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "store-dr-drill-result"
+        },
+        "backup_id": {
+          "type": "string"
+        },
+        "source_store_hash": {
+          "type": "string"
+        },
+        "backup_hash": {
+          "type": "string"
+        },
+        "restore_hash": {
+          "type": "string"
+        },
+        "legal_hold_count_before": {
+          "type": "integer"
+        },
+        "legal_hold_count_after": {
+          "type": "integer"
+        },
+        "rpo_seconds": {
+          "type": "integer"
+        },
+        "rto_seconds": {
+          "type": "integer"
+        },
+        "corruption_scan_result": {
+          "type": "string"
+        },
+        "projection_rebuild_status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "severity",
+          "message",
+          "sourceRef",
+          "readiness_effect"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": [
+              "hold"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

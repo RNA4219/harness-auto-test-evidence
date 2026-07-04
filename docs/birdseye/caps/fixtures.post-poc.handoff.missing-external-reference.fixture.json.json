@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/post-poc/handoff/missing-external-reference/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "4fb63d25aa2e4952d9c4a79c7b408f8a4fd1f8c1a17cef54929918167a2879a5",
+  "line_count": 16,
+  "size_bytes": 455,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

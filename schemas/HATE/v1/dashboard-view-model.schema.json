@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/dashboard-view-model.schema.json",
+  "title": "HATE Dashboard View Model",
+  "type": "object",
+  "required": ["schema_version", "record_type", "view_id", "sourceRefs", "created_at"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "run-overview-view-model",
+        "artifact-safety-view-model",
+        "manual-review-queue-view-model",
+        "risk-coverage-view-model",
+        "dashboard-view-model"
+      ]
+    },
+    "view_id": {"type": "string", "minLength": 1},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}},
+    "created_at": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}

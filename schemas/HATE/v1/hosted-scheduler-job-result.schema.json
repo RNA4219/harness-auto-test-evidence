@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/hosted-scheduler-job-result.schema.json",
+  "title": "HATE Hosted Scheduler Job Result",
+  "type": "object",
+  "required": [
+    "record_type",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy",
+    "job_id",
+    "worker_id",
+    "queue_id",
+    "lease_id",
+    "status",
+    "cleanup_status",
+    "sourceRefs"
+  ],
+  "properties": {
+    "record_type": {"const": "hosted-scheduler-job-result"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "system_actor": {"type": "string", "minLength": 1},
+    "decision_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "unsafe_output_policy": {"type": "string", "minLength": 1},
+    "job_id": {"type": "string"},
+    "worker_id": {"type": "string"},
+    "queue_id": {"type": "string"},
+    "lease_id": {"type": "string"},
+    "status": {"type": "string"},
+    "result_hash": {"type": "string"},
+    "failure_kind": {"type": "string"},
+    "excerpt_ref": {"type": "string"},
+    "cleanup_status": {"type": "string"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "anyOf": [
+    {"required": ["actor"]},
+    {"required": ["system_actor"]}
+  ],
+  "additionalProperties": true
+}

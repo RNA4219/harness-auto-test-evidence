@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_post_poc_scheduler.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "44596588e980fd6ea06e24a8eb4c2dc8cbce82331a9e5becc2dccdf17ad12422",
+  "line_count": 213,
+  "size_bytes": 8924,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.scheduler",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/scheduler.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

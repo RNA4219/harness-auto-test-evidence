@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from hate.evaluation import query_real_repo_history, run_real_repo_roster
+from hate.post_poc.baseline import build_baseline_promotion_report
 from hate.platform_ops import (
     build_platform_assignment_report,
     build_platform_schedule_plan,
@@ -249,15 +250,34 @@ def platform_score(input_path: Path, out_path: Path | None = None) -> dict[str, 
     return build_platform_score_report(input_path, out_path)
 
 
+def platform_baseline_promote(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    data = _read_json(input_path)
+    report = build_baseline_promotion_report(
+        data.get("input", data),
+        report_id=str(data.get("fixture_id") or data.get("report_id") or "platform-baseline-promotion"),
+        source_refs=[str(input_path)],
+    )
+    if out_path is not None:
+        _write_json(out_path, report)
+    return report
+
+
 def _projection_report(record_type: str, input_path: Path, items: list[dict[str, Any]], count_key: str) -> dict[str, Any]:
+    overall_status = "hold" if any(_projection_item_holds(item) for item in items) else "pass"
     return {
         "schema_version": "HATE/v1",
         "record_type": record_type,
-        "overall_status": "pass",
+        "overall_status": overall_status,
         "items": items,
         "summary": {count_key: len(items)},
         "sourceRefs": [str(input_path)],
     }
+
+
+def _projection_item_holds(item: dict[str, Any]) -> bool:
+    effect = str(item.get("readiness_effect") or item.get("effect") or "").lower()
+    severity = str(item.get("severity") or "").lower()
+    return effect in {"hold", "blocked", "hard_dq"} or severity in {"critical", "high"}
 
 
 def _load_reports(input_path: Path) -> list[dict[str, Any]]:

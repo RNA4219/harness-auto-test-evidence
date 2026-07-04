@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/incident-lifecycle-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "790f6e50fb0f0d5994b596dfd91b9c05386eb2619387ef084143029486586178",
+  "line_count": 45,
+  "size_bytes": 1541,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

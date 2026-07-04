@@ -13,6 +13,9 @@ from hate.platform_ops import (
 )
 
 
+ROOT = Path(__file__).resolve().parents[1]
+
+
 def _write_json(path: Path, data: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -150,6 +153,87 @@ def test_platform_score_penalizes_regression_timeout_and_typecheck_oracle(tmp_pa
     assert any(item["kind"] == "penalty" for item in score["decision_basis"])
 
 
+def test_platform_score_reads_manifest_leaves_and_skips_aggregate(tmp_path: Path) -> None:
+    _write_json(
+        tmp_path / "real-repo-repo-a-pytest.json",
+        {
+            "record_type": "real-repo-evaluation-report",
+            "repo_id": "repo-a",
+            "suite_id": "pytest",
+            "overall_status": "pass",
+            "ownership_scope": "owned",
+            "current": {"record_count": 12, "runner_dialect": "pytest"},
+            "sourceRefs": ["repo-a"],
+        },
+    )
+    _write_json(
+        tmp_path / "real-repo-evaluation-run-report.json",
+        {
+            "record_type": "real-repo-evaluation-run-report",
+            "report_id": "real-repo-evaluation-run",
+            "generated_reports": ["real-repo-repo-a-pytest.json"],
+            "overall_status": "pass",
+        },
+    )
+
+    report = build_platform_score_report(tmp_path / "real-repo-evaluation-run-report.json")
+
+    assert report["summary"]["score_count"] == 1
+    assert report["scores"][0]["repo_id"] == "repo-a"
+    assert report["scores"][0]["suite_id"] == "pytest"
+
+
+def test_platform_score_directory_with_manifest_does_not_double_count_leaves(tmp_path: Path) -> None:
+    leaf = {
+        "record_type": "real-repo-evaluation-report",
+        "repo_id": "repo-a",
+        "suite_id": "pytest",
+        "overall_status": "pass",
+        "ownership_scope": "owned",
+        "current": {"record_count": 12, "runner_dialect": "pytest"},
+        "sourceRefs": ["repo-a"],
+    }
+    _write_json(tmp_path / "real-repo-repo-a-pytest.json", leaf)
+    _write_json(
+        tmp_path / "real-repo-evaluation-run-report.json",
+        {
+            "record_type": "real-repo-evaluation-run-report",
+            "report_id": "real-repo-evaluation-run",
+            "generated_reports": ["real-repo-repo-a-pytest.json"],
+            "overall_status": "pass",
+        },
+    )
+
+    report = build_platform_score_report(tmp_path)
+
+    assert report["summary"]["score_count"] == 1
+    assert [item["repo_id"] for item in report["scores"]] == ["repo-a"]
+
+
+def test_platform_score_penalizes_subset_reports(tmp_path: Path) -> None:
+    source = tmp_path / "real-repo-subset.json"
+    _write_json(
+        source,
+        {
+            "record_type": "real-repo-evaluation-report",
+            "repo_id": "repo-a",
+            "suite_id": "smoke",
+            "overall_status": "pass",
+            "ownership_scope": "owned",
+            "finished_at": "2026-07-04T00:00:00Z",
+            "current": {"record_count": 10, "runner_dialect": "pytest"},
+            "subset": {"is_subset": True, "proves_full_suite": False},
+            "sourceRefs": ["subset"],
+        },
+    )
+
+    report = build_platform_score_report(source)
+    score = report["scores"][0]
+
+    assert score["score_breakdown"]["penalties"]["subset_penalty"] == 12.0
+    assert score["score"] == 78.0
+
+
 def test_platform_cli_ops_and_daily_html(tmp_path: Path) -> None:
     report = tmp_path / "report.json"
     html = tmp_path / "daily.html"
@@ -176,3 +260,56 @@ def test_platform_cli_ops_and_daily_html(tmp_path: Path) -> None:
     assert "Risk Debt" in document
     assert "Manual Review" in document
     assert json.loads(assign_out.read_text(encoding="utf-8"))["record_type"] == "platform-assignment-report"
+
+
+def test_platform_ops_record_types_are_registered_and_schema_compatible(tmp_path: Path) -> None:
+    roster = tmp_path / "roster.json"
+    history = tmp_path / "store" / "run_history.jsonl"
+    source = tmp_path / "report.json"
+    manifest = tmp_path / "plugin.json"
+    _write_json(roster, {"repositories": [{"repo_id": "repo-a", "suites": [{"suite_id": "unit"}]}]})
+    history.parent.mkdir(parents=True)
+    history.write_text("", encoding="utf-8")
+    _write_json(
+        source,
+        {
+            "record_type": "test-report",
+            "repo_id": "repo-a",
+            "suite_id": "unit",
+            "overall_status": "pass",
+            "ownership_scope": "owned",
+            "current": {"record_count": 1, "runner_dialect": "pytest"},
+            "findings": [{"code": "ok", "severity": "medium", "owner": "team", "due_date": "2026-07-10T00:00:00Z"}],
+            "sourceRefs": ["report"],
+        },
+    )
+    _write_json(
+        manifest,
+        {
+            "profile": "default",
+            "plugin": {"plugin_id": "plugin-a", "detector_id": "det-a", "execution_mode": "subprocess_local", "signed": True},
+            "limits": {"timeout_ms": 5000, "max_output_bytes": 2000, "max_input_bytes": 2000},
+            "execution": {
+                "command": [
+                    sys.executable,
+                    "-c",
+                    "import json; print(json.dumps({'schema_version':'HATE/v1','detector_id':'det-a','sourceRefs':['plugin']}))",
+                ]
+            },
+        },
+    )
+    reports = [
+        build_platform_schedule_plan(roster, history.parent),
+        build_platform_assignment_report(source),
+        build_platform_score_report(source),
+        run_platform_plugin(manifest),
+    ]
+    registry = json.loads((ROOT / "schemas" / "HATE" / "v1" / "schema-registry.json").read_text(encoding="utf-8"))
+    by_record_type = {record["record_type"]: record for record in registry["records"]}
+
+    for report in reports:
+        assert report["record_type"] in by_record_type
+        schema_path = ROOT / by_record_type[report["record_type"]]["schema"]
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        assert set(schema["required"]) <= set(report)
+        assert report["record_type"] in schema["properties"]["record_type"]["enum"]

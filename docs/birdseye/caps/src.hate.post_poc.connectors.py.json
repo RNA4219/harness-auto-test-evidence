@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/post_poc/connectors.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "16178351983aab0c2b1db930a515cc0a9af3fed631b698552aa454d00c9463b0",
+  "line_count": 370,
+  "size_bytes": 16799,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

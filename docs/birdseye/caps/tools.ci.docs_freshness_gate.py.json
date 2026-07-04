@@ -1,0 +1,26 @@
+{
+  "path": "tools/ci/docs_freshness_gate.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "8bc1274ea60d9c2fc6775e157d69c4f94e5ba2f7192c6f336b9c48160ecd0f42",
+  "line_count": 262,
+  "size_bytes": 10517,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "json",
+    "pathlib",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "birdseye",
+    "release",
+    "schema",
+    "store",
+    "workflow"
+  ]
+}

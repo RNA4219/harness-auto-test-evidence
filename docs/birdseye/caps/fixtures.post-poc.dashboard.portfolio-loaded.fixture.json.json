@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/dashboard/portfolio-loaded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "d6d59e5675aa6cfe7f0b0d2b77d412c81e4d126cc0548244525ceb52c7c40d61",
+  "line_count": 23,
+  "size_bytes": 665,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

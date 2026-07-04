@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/human-review-queue-item.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "44092e82c6d8ec5cee8d2026fb0b4eb83874a6fa3b371da7b3892d01c5503993",
+  "line_count": 53,
+  "size_bytes": 1729,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "workflow"
+  ]
+}

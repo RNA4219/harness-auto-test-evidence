@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "fdbc81a6ce2c2c4607faf5317b84875a614085cd4e0643923c03c373d8511f4d",
+  "line_count": 41,
+  "size_bytes": 2371,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

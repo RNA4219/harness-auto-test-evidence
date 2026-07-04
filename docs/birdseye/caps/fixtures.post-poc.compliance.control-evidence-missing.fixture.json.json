@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/compliance/control-evidence-missing/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c11ec8d3775dd2218d1da387fb8e837538f4d930cffe0d228922cd78d4661ea6",
+  "line_count": 12,
+  "size_bytes": 594,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

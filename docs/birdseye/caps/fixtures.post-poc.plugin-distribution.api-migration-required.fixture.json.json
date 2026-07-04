@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/plugin-distribution/api-migration-required/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "fcbf22114e8348b29f9f009df8682dd71ffa1b2445ea6fb088afd8f13d3c0c39",
+  "line_count": 27,
+  "size_bytes": 913,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "release"
+  ]
+}

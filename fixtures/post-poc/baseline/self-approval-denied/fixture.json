@@ -1,0 +1,28 @@
+{
+  "fixture_id": "postpoc-baseline-self-approval-denied",
+  "input": {
+    "baseline": {
+      "baseline_id": "base-self-approval",
+      "repo_id": "repo-main",
+      "suite_id": "pytest",
+      "actor": "alice",
+      "reason": "Attempted self approval.",
+      "policy_hash": "policy-sha256-001",
+      "expires_at": "2026-10-01T00:00:00Z",
+      "comparison_requested": false
+    },
+    "events": [
+      {
+        "event_type": "proposed",
+        "candidate_run_id": "run-2001",
+        "evidence_refs": ["artifact://runs/run-2001/product-readiness.json"],
+        "sourceRefs": ["fixture://baseline/self-approval-denied#proposed"]
+      },
+      {
+        "event_type": "approved",
+        "reviewer": "alice",
+        "sourceRefs": ["fixture://baseline/self-approval-denied#approved"]
+      }
+    ]
+  }
+}

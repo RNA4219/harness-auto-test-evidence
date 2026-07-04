@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/baseline-immutability-event.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "843afb33763ed85b343351d069e33e81f2a4adc5c331db2832024b5176165de2",
+  "line_count": 43,
+  "size_bytes": 1439,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "fixture_id": "qeg-denied-reference",
+  "input": {
+    "request": {
+      "handoff_id": "handoff-qeg-denied",
+      "release_candidate_ref": "artifact://release/rc-20260703",
+      "handoff_target": "qeg",
+      "handoff_mode": "live_reference",
+      "external_run_ref": "qeg://runs/20260703-002",
+      "external_decision_ref": "qeg://decisions/20260703-002",
+      "external_status": "denied",
+      "hate_claimed_final_approval": false,
+      "verdict_overwrite_attempted": false
+    },
+    "approval_reference": {"authority_owner": "qeg"}
+  }
+}

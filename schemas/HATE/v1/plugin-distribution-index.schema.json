@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/plugin-distribution-index.schema.json",
+  "title": "HATE Plugin Distribution Index",
+  "type": "object",
+  "required": [
+    "record_type",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy",
+    "plugin_id",
+    "plugin_version",
+    "index_ref",
+    "index_hash",
+    "indexed_package_hash",
+    "index_stale",
+    "generated_at",
+    "sourceRefs"
+  ],
+  "properties": {
+    "record_type": {"const": "plugin-distribution-index"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "system_actor": {"type": "string", "minLength": 1},
+    "decision_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "unsafe_output_policy": {"type": "string", "minLength": 1},
+    "plugin_id": {"type": "string"},
+    "plugin_version": {"type": "string"},
+    "index_ref": {"type": "string"},
+    "index_hash": {"type": "string"},
+    "indexed_package_hash": {"type": "string"},
+    "index_stale": {"type": "boolean"},
+    "generated_at": {"type": "string"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "anyOf": [
+    {"required": ["actor"]},
+    {"required": ["system_actor"]}
+  ],
+  "additionalProperties": true
+}

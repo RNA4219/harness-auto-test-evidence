@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/workflow-runtime-record.schema.json",
+  "title": "HATE Workflow Runtime Record",
+  "type": "object",
+  "required": ["schema_version", "record_type"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "workflow_task_seed",
+        "workflow_acceptance",
+        "workflow_evidence",
+        "workflow_docs_stale",
+        "workflow_birdseye_map",
+        "workflow_cookbook_evidence_map",
+        "shipyard_run_evidence"
+      ]
+    },
+    "task_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "summary": {"type": "object"},
+    "source_refs": {"type": "array", "items": {"type": "string"}},
+    "release_gate_override": {"type": "boolean"},
+    "publish_gate_override": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

@@ -4,10 +4,50 @@
   "case_kind": "positive",
   "input": {
     "governance_config": {
-      "policy_templates": [{"template_id": "policy-001", "author": "platform", "approver": "governance", "effective_date": "2026-07-01", "review_cadence": "quarterly", "affected_repo_set": "team-ga", "rollback_owner": "platform"}],
-      "exception_requests": [{"request_id": "ex-001", "owner": "qa", "expiry": "2026-08-01", "rationale": "temporary adapter gap", "affected_risks": ["risk-001"], "compensating_evidence": ["manual-review-001"], "reviewer_decision": "accepted"}],
-      "review_packet": {"expired_exception_count": 0, "unresolved_high_risk_debt_count": 0},
-      "self_approval_detected": false
+      "policy_templates": [
+        {
+          "template_id": "policy-001",
+          "author": "platform",
+          "approver": "governance",
+          "effective_date": "2026-07-01",
+          "review_cadence": "quarterly",
+          "affected_repo_set": "team-ga",
+          "rollback_owner": "platform",
+          "policy_diff_ref": "diff:policy-001",
+          "rollback_plan_ref": "rollback:policy-001",
+          "sourceRef": "policy:001"
+        }
+      ],
+      "exception_requests": [
+        {
+          "request_id": "ex-001",
+          "owner": "qa",
+          "expiry": "2026-08-01",
+          "scope": "risk",
+          "rationale": "temporary adapter gap",
+          "affected_risks": ["risk-001"],
+          "compensating_evidence": ["manual-review-001"],
+          "reviewer_decision": "accepted",
+          "sourceRef": "exception:001"
+        }
+      ],
+      "delegations": [
+        {
+          "delegation_id": "del-001",
+          "delegator": "governance",
+          "delegate": "qa-lead",
+          "scope": "risk-exception-review",
+          "expiry": "2026-08-15",
+          "sourceRef": "delegation:001"
+        }
+      ],
+      "audit_events": [
+        {"event_id": "audit-001", "target_ref": "ex-001", "actor": "governance", "event_type": "exception.accepted", "sourceRef": "audit:001"}
+      ],
+      "review_packet": {"expired_exception_count": 0, "unresolved_high_risk_debt_count": 0, "sourceRef": "review:governance-001"},
+      "self_approval_detected": false,
+      "service_account_approval_detected": false,
+      "policy_diff_required": true
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/notification-operating-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "37adab88fc9745de8248a6987fb5a6cc8ad4370f1d444ac793944a2a8f4f8d2b",
+  "line_count": 48,
+  "size_bytes": 1597,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

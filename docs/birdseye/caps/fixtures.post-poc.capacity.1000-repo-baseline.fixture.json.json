@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/capacity/1000-repo-baseline/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f3589444f093026262e0c99869656173ad657a23c7626f623a76f365403ef84f",
+  "line_count": 10,
+  "size_bytes": 572,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

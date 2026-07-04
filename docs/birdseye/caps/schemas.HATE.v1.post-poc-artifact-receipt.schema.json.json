@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a98c8fcd0396071c02d6d2d7e8f60d0aaf6eaaa1456a5d31811ee28b5c7401a9",
+  "line_count": 54,
+  "size_bytes": 1928,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

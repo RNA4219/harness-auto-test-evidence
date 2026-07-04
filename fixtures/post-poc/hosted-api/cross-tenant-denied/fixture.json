@@ -1,0 +1,21 @@
+{
+  "fixture_id": "postpoc-hosted-api-cross-tenant-denied",
+  "input": {
+    "request": {
+      "request_id": "req-cross-tenant",
+      "tenant_id": "tenant-a",
+      "resource_tenant_id": "tenant-b",
+      "subject_id": "user-1",
+      "role": "viewer",
+      "auth_method": "oidc",
+      "resource": "read-model://portfolio/tenant-b",
+      "action": "read",
+      "token_ref": "token-ref://oidc/session-1",
+      "token_expiry": "2026-08-03T00:00:00Z",
+      "rate_limit_bucket": "tenant-a:read",
+      "rate_limit_status": "ok",
+      "audit_event_present": true,
+      "safe_denial_response": true
+    }
+  }
+}

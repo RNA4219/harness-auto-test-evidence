@@ -1,0 +1,11 @@
+{
+  "fixture_id": "telemetry-valid",
+  "input": {
+    "telemetry": [
+      {"signal": "metrics", "correlation_id": "corr-ok", "run_id": "run-1", "tenant_id": "tenant-a", "service_name": "hate-worker", "metric_name": "run.duration", "trace_id": "trace-1", "alert_route_ref": "route://ops", "redaction_report_ref": "artifact://redaction/obs-ok"}
+    ],
+    "slo": {"slo_id": "slo-worker", "burn_rate": 0.2, "alert_status": "ok", "alert_route_ref": "route://ops"},
+    "incident": {"incident_state": "none"},
+    "support_pack": {"support_pack_id": "support-ok", "evidence_refs": ["artifact://support/obs-ok"], "support_bundle_safe": true, "redaction_report_ref": "artifact://redaction/obs-ok"}
+  }
+}

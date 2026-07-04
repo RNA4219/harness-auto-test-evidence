@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/connector-runtime-plan.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "ace260f64ba117ab3836129dc9a4468fed017e3318df3abc4ff819793396552f",
+  "line_count": 60,
+  "size_bytes": 2072,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/connectors/idempotent-retry/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "27ed2728f0aa74c856ef29f025e7186b215af45e8829639fdaf6bfc653a0f57c",
+  "line_count": 37,
+  "size_bytes": 1136,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

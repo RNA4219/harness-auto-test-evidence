@@ -11,6 +11,7 @@ from hate.security.summary_filter import filter_for_summary
 
 
 FIXTURE_DIR = Path("fixtures/security/redaction")
+ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_FIXTURES = [
     "clean-no-redaction",
     "synthetic-pii-allowed",
@@ -375,6 +376,31 @@ class TestSchemaValidation:
             "summary",
         }
         assert required_fields <= set(report)
+
+    def test_safety_filter_reports_are_registered_and_schema_compatible(self) -> None:
+        artifacts = [
+            {
+                "artifact_id": "test-001",
+                "classification": "public",
+                "quarantine_status": "none",
+                "safe_for_summary": True,
+                "readiness_effect": "pass",
+            }
+        ]
+        reports = [
+            redact_artifact(load_fixture("redacted-secret-success")),
+            filter_for_export(artifacts, "summary"),
+            filter_for_summary(artifacts, "dashboard"),
+        ]
+        registry = json.loads((ROOT / "schemas" / "HATE" / "v1" / "schema-registry.json").read_text(encoding="utf-8"))
+        by_record_type = {record["record_type"]: record for record in registry["records"]}
+
+        for report in reports:
+            assert report["record_type"] in by_record_type
+            schema_path = ROOT / by_record_type[report["record_type"]]["schema"]
+            schema = json.loads(schema_path.read_text(encoding="utf-8"))
+            assert set(schema["required"]) <= set(report)
+            assert report["record_type"] in schema["properties"]["record_type"]["enum"]
 
 
 class TestProfileEffects:

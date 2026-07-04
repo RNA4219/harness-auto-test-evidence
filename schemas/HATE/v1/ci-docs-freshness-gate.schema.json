@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/ci-docs-freshness-gate.schema.json",
+  "title": "HATE CI Docs Freshness Gate",
+  "type": "object",
+  "required": ["schema_version", "record_type", "overall_status", "findings", "summary"],
+  "properties": {
+    "schema_version": {"const": "HATE/ci-docs-freshness/v1"},
+    "record_type": {"const": "ci-docs-freshness-gate"},
+    "overall_status": {"type": "string", "enum": ["pass", "hold"]},
+    "findings": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "summary": {"type": "object", "additionalProperties": true}
+  },
+  "additionalProperties": true
+}

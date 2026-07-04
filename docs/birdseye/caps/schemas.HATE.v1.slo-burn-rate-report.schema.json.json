@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/slo-burn-rate-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "3d8c0d6cef40e88b22df99a5d62baa1c774663a08acb3b0f2deb5dd02be6ab58",
+  "line_count": 49,
+  "size_bytes": 1598,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

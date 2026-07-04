@@ -1,0 +1,19 @@
+{
+  "path": "src/hate/expansion/governance.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1bf5711a1ff1c0225bc27be7fe666aaf905db479889b091159deafe3b2d882af",
+  "line_count": 173,
+  "size_bytes": 10000,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "workflow"
+  ]
+}

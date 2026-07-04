@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/handoff/shipyard-publish-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7929d1d5fb4e49a7d75eb876cc36838dabcd38079914ddb721f2ca0662fc4d1c",
+  "line_count": 17,
+  "size_bytes": 586,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/product-grade-evidence-summary.schema.json",
+  "title": "HATE Product Grade Evidence Summary",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "generated_at",
+    "source_version",
+    "docs_root",
+    "repo_root",
+    "product_ready",
+    "poc_ready",
+    "poc_completion_percent",
+    "product_grade_implementation_status",
+    "reason",
+    "required_report_count",
+    "generated_report_count",
+    "missing_or_incomplete_reports",
+    "real_data_validation",
+    "poc_completion",
+    "post_poc_gap_audit",
+    "reports"
+  ],
+  "properties": {
+    "schema_version": {"const": "HATE/product-grade/v1"},
+    "record_type": {"const": "product_grade_evidence_summary"},
+    "generated_at": {"type": "string", "minLength": 1},
+    "source_version": {"type": "string"},
+    "docs_root": {"type": "string"},
+    "repo_root": {"type": "string"},
+    "product_ready": {"type": "boolean"},
+    "poc_ready": {"type": "boolean"},
+    "poc_completion_percent": {"type": "number"},
+    "product_grade_implementation_status": {
+      "type": "string",
+      "enum": ["no_go", "conditional_go", "poc_complete", "verified"]
+    },
+    "reason": {"type": "string"},
+    "required_report_count": {"type": "integer", "minimum": 0},
+    "generated_report_count": {"type": "integer", "minimum": 0},
+    "missing_or_incomplete_reports": {"type": "array", "items": {"type": "string"}},
+    "real_data_validation": {"type": "object"},
+    "poc_completion": {"type": "object"},
+    "post_poc_gap_audit": {"type": "object"},
+    "reports": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": true
+}

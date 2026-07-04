@@ -1,0 +1,29 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-009.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "99fb95d4c0133ea67139a35c0949671891f082cbaaaac6bf6909a39cb32688e6",
+  "line_count": 77,
+  "size_bytes": 2777,
+  "headings": [
+    "# AC-20260703-postpoc-009 Docs Freshness CI Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

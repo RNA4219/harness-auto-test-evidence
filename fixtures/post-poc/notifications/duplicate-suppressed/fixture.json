@@ -1,0 +1,24 @@
+{
+  "fixture_id": "postpoc-notifications-duplicate-suppressed",
+  "input": {
+    "plan": {
+      "notification_id": "notify-dup-001",
+      "operating_record_id": "finding:OPEN-003",
+      "delivery_target": "email",
+      "target_ref": "mailto:owner@example.com",
+      "dedupe_key": "finding-OPEN-003-email",
+      "payload_hash": "sha256:payload-email-001",
+      "redaction_report_ref": "artifact://redaction/notify-dup-001.json",
+      "max_attempts": 2,
+      "operating_record_status_before": "open"
+    },
+    "attempts": [
+      {
+        "event_type": "duplicate_suppressed",
+        "attempt": 1,
+        "delivery_status": "duplicate_suppressed",
+        "sourceRefs": ["fixture://notifications/duplicate-suppressed#audit"]
+      }
+    ]
+  }
+}

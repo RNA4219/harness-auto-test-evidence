@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/compliance-evidence-pack.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "50d48dda950d6d9b0387c23978fec419d1224aeb01d226d693d9e36c857c10a8",
+  "line_count": 24,
+  "size_bytes": 1341,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

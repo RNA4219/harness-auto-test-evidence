@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/human-review/deny-with-reason/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "1c91edcdc388d37cc279a5ad46fa26c7c2bb3b37fc945e74cc70ae0f07dd9c2e",
+  "line_count": 31,
+  "size_bytes": 991,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

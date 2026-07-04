@@ -1,0 +1,18 @@
+{
+  "path": "fixtures/post-poc/handoff/hate-overclaim-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ee452ccaf925d55b9d938a570ad8dcb09d3038c73f580367aaa14392055a424c",
+  "line_count": 17,
+  "size_bytes": 551,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "release"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "fixture_id": "incident-review-missing",
+  "input": {
+    "telemetry": [
+      {"signal": "incidents", "correlation_id": "corr-review", "run_id": "run-5", "tenant_id": "tenant-a", "service_name": "hate-api", "metric_name": "incident.closed", "trace_id": "trace-5", "alert_route_ref": "route://ops", "redaction_report_ref": "artifact://redaction/review"}
+    ],
+    "slo": {"slo_id": "slo-api", "burn_rate": 0.4, "alert_status": "ok", "alert_route_ref": "route://ops"},
+    "incident": {"incident_id": "inc-review", "incident_state": "closed", "owner": "ops-owner", "severity": "medium", "timeline_refs": ["artifact://incident/inc-review/timeline"], "decision_ref": "artifact://incident/inc-review/decision", "post_incident_review_ref": ""},
+    "support_pack": {"support_pack_id": "support-review", "evidence_refs": ["artifact://support/review"], "support_bundle_safe": true, "redaction_report_ref": "artifact://redaction/review"}
+  }
+}

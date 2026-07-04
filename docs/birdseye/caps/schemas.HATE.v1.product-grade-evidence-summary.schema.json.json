@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/product-grade-evidence-summary.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d30a105b09e0148b050beac7f525d3f51f2fee6976ff207ab4a1c1b838543720",
+  "line_count": 50,
+  "size_bytes": 1744,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

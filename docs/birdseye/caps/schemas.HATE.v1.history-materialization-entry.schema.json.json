@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/history-materialization-entry.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "c6a94f5871e0f0cd9c4295ec5e430715bebc6ef00dda170108f478a561bcd4bb",
+  "line_count": 45,
+  "size_bytes": 1576,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

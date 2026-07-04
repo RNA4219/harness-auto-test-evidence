@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/store-dr-drill-result.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "7fe1b5e9202daed7624833af3a2a91d49ca91a83f20e9e66a99551c2adfa8b0e",
+  "line_count": 51,
+  "size_bytes": 1765,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/history-materialization-manifest.schema.json",
+  "title": "HATE History Materialization Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "plan_id",
+    "query_fingerprint",
+    "entries",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "history-materialization-manifest"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "query_fingerprint": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "cache_key",
+          "sample_id",
+          "repo_id",
+          "suite_id",
+          "sample_fingerprint",
+          "materialized_ref"
+        ],
+        "properties": {
+          "cache_key": {
+            "type": "string"
+          },
+          "sample_id": {
+            "type": "string"
+          },
+          "repo_id": {
+            "type": "string"
+          },
+          "suite_id": {
+            "type": "string"
+          },
+          "sample_fingerprint": {
+            "type": "string"
+          },
+          "materialized_ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

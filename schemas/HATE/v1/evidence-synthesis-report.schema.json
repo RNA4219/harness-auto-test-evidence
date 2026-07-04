@@ -119,8 +119,58 @@
         "evidence_source_count": {"type": "integer", "minimum": 0},
         "mutation_coverage_count": {"type": "integer", "minimum": 0},
         "contract_coverage_count": {"type": "integer", "minimum": 0},
+        "target_requirement_count": {"type": "integer", "minimum": 0},
+        "weak_requirement_count": {"type": "integer", "minimum": 0},
+        "unsatisfied_contract_count": {"type": "integer", "minimum": 0},
+        "survived_mutation_count": {"type": "integer", "minimum": 0},
+        "synthesized_confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "requirement_synthesis": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "source_count",
+          "verified_source_count",
+          "source_types",
+          "source_strength",
+          "mutation_strength",
+          "contract_strength",
+          "synthesized_confidence"
+        ],
+        "properties": {
+          "source_count": {"type": "integer", "minimum": 0},
+          "verified_source_count": {"type": "integer", "minimum": 0},
+          "source_types": {"type": "array", "items": {"type": "string"}},
+          "source_strength": {"type": "number", "minimum": 0, "maximum": 1},
+          "mutation_strength": {"type": "number", "minimum": 0, "maximum": 1},
+          "contract_strength": {"type": "number", "minimum": 0, "maximum": 1},
+          "synthesized_confidence": {"type": "number", "minimum": 0, "maximum": 1}
+        },
+        "additionalProperties": true
+      }
+    },
+    "evidence_synthesis_diagnostics": {
+      "type": "object",
+      "required": [
+        "requirement_synthesis",
+        "weak_requirement_refs",
+        "survived_mutation_ids",
+        "unsatisfied_contract_ids",
+        "unverified_strong_source_ids",
+        "synthesized_confidence"
+      ],
+      "properties": {
+        "requirement_synthesis": {"type": "object"},
+        "weak_requirement_refs": {"type": "array", "items": {"type": "string"}},
+        "survived_mutation_ids": {"type": "array", "items": {"type": "string"}},
+        "unsatisfied_contract_ids": {"type": "array", "items": {"type": "string"}},
+        "unverified_strong_source_ids": {"type": "array", "items": {"type": "string"}},
+        "synthesized_confidence": {"type": "number", "minimum": 0, "maximum": 1}
       },
       "additionalProperties": true
     },

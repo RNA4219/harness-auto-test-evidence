@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/human-review/replay-mismatch-holds/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6c92e052aa17116387f762e14faf1b7c0aff5f056c4ccbc75afba6f515952dc3",
+  "line_count": 24,
+  "size_bytes": 728,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

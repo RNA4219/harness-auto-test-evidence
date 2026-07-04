@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/baseline/unapproved-comparison-holds/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "244a3f79e4ed833788919c33371ffaa013489eb9714d18eb4e700edfd642157b",
+  "line_count": 23,
+  "size_bytes": 685,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

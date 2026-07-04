@@ -1,0 +1,22 @@
+{
+  "fixture_id": "post-poc-roster-owned-repo-bootstrap",
+  "input": {
+    "now": "2026-07-03T00:00:00Z",
+    "repositories": [
+      {
+        "repo_id": "owned-a",
+        "ownership_scope": "owned",
+        "repo_class": "medium",
+        "discovery_source": "manual-roster",
+        "last_seen_at": "2026-07-02T00:00:00Z",
+        "stale_after": "2026-07-10T00:00:00Z",
+        "environment_recipe_ref": "recipes/owned-a.json",
+        "dependency_bootstrap_command": ["uv", "sync"],
+        "dependency_bootstrap_status": "passed",
+        "retry_isolation_group": "owned-a-unit",
+        "expected_record_floor": 10,
+        "suites": [{"suite_id": "unit"}]
+      }
+    ]
+  }
+}

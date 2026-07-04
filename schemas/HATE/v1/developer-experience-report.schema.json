@@ -2,16 +2,155 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "HATE developer experience report",
   "type": "object",
-  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "dx_config", "findings", "summary", "sourceRefs"],
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "dx_config", "findings", "summary", "dx_diagnostics", "sourceRefs"],
   "properties": {
     "schema_version": {"const": "HATE/v1"},
     "record_type": {"const": "developer-experience-report"},
     "report_id": {"type": "string"},
     "overall_status": {"enum": ["pass", "hold"]},
     "readiness_effect": {"enum": ["none", "hold"]},
-    "dx_config": {"type": "object"},
-    "findings": {"type": "array"},
-    "summary": {"type": "object"},
+    "dx_config": {
+      "type": "object",
+      "required": [
+        "feedback_groups",
+        "local_explain_available",
+        "local_replay_available",
+        "ide_loop_available",
+        "offline_safe_mode",
+        "suppression_controls",
+        "recommendation_quality_score",
+        "latency_ms",
+        "latency_budget_ms",
+        "recommendation_actions",
+        "replay_command",
+        "explain_command",
+        "raw_secret_present",
+        "broad_suppression_detected",
+        "stable_deep_links"
+      ],
+      "properties": {
+        "feedback_groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "group_id": {"type": "string"},
+              "fix_action": {"type": "string"},
+              "risk_impact": {"type": "string"},
+              "owner": {"type": "string"},
+              "blocking_status": {"type": "string"},
+              "deep_link": {"type": "string"},
+              "sourceRef": {"type": "string"},
+              "sourceRefs": {"type": "array", "items": {"type": "string"}},
+              "explain_ref": {"type": "string"},
+              "replay_ref": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "local_explain_available": {"type": "boolean"},
+        "local_replay_available": {"type": "boolean"},
+        "ide_loop_available": {"type": "boolean"},
+        "offline_safe_mode": {"type": "boolean"},
+        "suppression_controls": {
+          "type": "object",
+          "properties": {
+            "owner": {"type": "string"},
+            "expiry_required": {"type": "boolean"},
+            "scope": {"type": "string"},
+            "reviewer": {"type": "string"},
+            "rationale": {"type": "string"},
+            "audit_ref": {"type": "string"}
+          },
+          "additionalProperties": true
+        },
+        "recommendation_quality_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "latency_ms": {"type": "integer", "minimum": 0},
+        "latency_budget_ms": {"type": "integer", "minimum": 0},
+        "recommendation_actions": {"type": "array", "items": {"type": "string"}},
+        "replay_command": {"type": "string"},
+        "explain_command": {"type": "string"},
+        "raw_secret_present": {"type": "boolean"},
+        "broad_suppression_detected": {"type": "boolean"},
+        "stable_deep_links": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"enum": ["hold"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "feedback_group_count",
+        "local_explain_available",
+        "local_replay_available",
+        "ide_loop_available",
+        "offline_safe_mode",
+        "recommendation_quality_score",
+        "latency_ms",
+        "latency_budget_ms",
+        "missing_source_ref_group_count",
+        "missing_explain_or_replay_group_count",
+        "generic_feedback_group_count",
+        "recommendation_actions_count",
+        "command_loop_complete",
+        "finding_count"
+      ],
+      "properties": {
+        "feedback_group_count": {"type": "integer", "minimum": 0},
+        "local_explain_available": {"type": "boolean"},
+        "local_replay_available": {"type": "boolean"},
+        "ide_loop_available": {"type": "boolean"},
+        "offline_safe_mode": {"type": "boolean"},
+        "recommendation_quality_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "latency_ms": {"type": "integer", "minimum": 0},
+        "latency_budget_ms": {"type": "integer", "minimum": 0},
+        "missing_source_ref_group_count": {"type": "integer", "minimum": 0},
+        "missing_explain_or_replay_group_count": {"type": "integer", "minimum": 0},
+        "generic_feedback_group_count": {"type": "integer", "minimum": 0},
+        "recommendation_actions_count": {"type": "integer", "minimum": 0},
+        "command_loop_complete": {"type": "boolean"},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "dx_diagnostics": {
+      "type": "object",
+      "required": [
+        "missing_source_ref_groups",
+        "missing_explain_or_replay_groups",
+        "generic_feedback_groups",
+        "suppression_scope",
+        "suppression_has_review_record",
+        "recommendation_actions_count",
+        "command_loop_complete",
+        "latency_budget_exceeded"
+      ],
+      "properties": {
+        "missing_source_ref_groups": {"type": "array", "items": {"type": "string"}},
+        "missing_explain_or_replay_groups": {"type": "array", "items": {"type": "string"}},
+        "generic_feedback_groups": {"type": "array", "items": {"type": "string"}},
+        "suppression_scope": {"type": "string"},
+        "suppression_has_review_record": {"type": "boolean"},
+        "recommendation_actions_count": {"type": "integer", "minimum": 0},
+        "command_loop_complete": {"type": "boolean"},
+        "latency_budget_exceeded": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
     "sourceRefs": {"type": "array", "items": {"type": "string"}}
   }
 }

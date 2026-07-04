@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/release-handoff-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6796bfd11f42a23a66108599b119bfcd401dbfddd856fbd2b20b177ef65563b5",
+  "line_count": 148,
+  "size_bytes": 3018,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema"
+  ]
+}

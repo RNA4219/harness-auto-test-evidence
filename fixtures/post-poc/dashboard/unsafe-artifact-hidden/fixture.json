@@ -1,0 +1,34 @@
+{
+  "fixture_id": "postpoc-dashboard-unsafe-artifact-hidden",
+  "input": {
+    "session": {
+      "session_id": "sess-unsafe",
+      "actor": "security@example.com",
+      "role": "security",
+      "tenant_id": "tenant-a",
+      "authenticated": true,
+      "sourceRefs": ["fixture://dashboard/unsafe-artifact-hidden#session"]
+    },
+    "routes": [
+      {
+        "route": "/dashboard/portfolio",
+        "ui_state": "loaded",
+        "read_model_ref": "read-model://portfolio/tenant-a",
+        "rbac_decision": "allowed",
+        "canonical_verdict_ref": "product-readiness-report.json",
+        "sourceRefs": ["fixture://dashboard/unsafe-artifact-hidden#portfolio"]
+      },
+      {
+        "route": "/dashboard/findings",
+        "ui_state": "unsafe_artifact_hidden",
+        "read_model_ref": "read-model://findings/unsafe-hidden",
+        "rbac_decision": "allowed",
+        "canonical_verdict_ref": "artifact-safety-report.json",
+        "hidden_reason": "unsafe artifact body quarantined",
+        "unsafe_artifact_body_visible": false,
+        "raw_connector_payload_visible": false,
+        "sourceRefs": ["fixture://dashboard/unsafe-artifact-hidden#finding"]
+      }
+    ]
+  }
+}

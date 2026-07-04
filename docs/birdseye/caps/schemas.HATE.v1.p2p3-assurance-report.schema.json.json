@@ -1,0 +1,19 @@
+{
+  "path": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "69fda766a51d7bfd54eb348cd99e2dec2cdbf0f809463b9166ef35a2529c23f8",
+  "line_count": 26,
+  "size_bytes": 793,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "test"
+  ]
+}

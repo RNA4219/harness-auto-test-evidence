@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/plugin-distribution/revoked-plugin-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "db4165e3eb6679c7713b48a5a0f05b3477ce475d52bee04ca741ee93bfcc9582",
+  "line_count": 32,
+  "size_bytes": 1121,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture"
+  ]
+}

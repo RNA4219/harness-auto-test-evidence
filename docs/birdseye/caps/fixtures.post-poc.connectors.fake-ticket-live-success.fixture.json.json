@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/connectors/fake-ticket-live-success/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "3caaff63d1159153340896496216388b31262d7ab5059aa9c37f834c270d57b2",
+  "line_count": 29,
+  "size_bytes": 908,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

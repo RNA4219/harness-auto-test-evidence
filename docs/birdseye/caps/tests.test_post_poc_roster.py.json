@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_post_poc_roster.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "2a68e6ea1b4d60f0cb29e9035fb2683ce1f612828fda98ced73d77b1fce8848f",
+  "line_count": 269,
+  "size_bytes": 11673,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.roster",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/roster.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

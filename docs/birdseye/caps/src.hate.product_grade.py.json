@@ -2,9 +2,9 @@
   "path": "src/hate/product_grade.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "7f5e109f5dbb2f895d0e34db4e81e9dadb674861f16d911c09b6ec96105603b3",
-  "line_count": 373,
-  "size_bytes": 15957,
+  "sha256": "9087b1335e8b2b869021ecd323bd3b067f1e50044cb6be4760505c1945837314",
+  "line_count": 405,
+  "size_bytes": 17130,
   "headings": [],
   "imports": [
     "__future__",
@@ -12,6 +12,7 @@
     "datetime",
     "json",
     "pathlib",
+    "re",
     "typing"
   ],
   "links": [],

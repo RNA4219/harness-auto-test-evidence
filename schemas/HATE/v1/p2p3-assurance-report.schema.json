@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/p2p3-assurance-report.schema.json",
+  "title": "HATE P2/P3 Assurance Report",
+  "type": "object",
+  "required": ["schema_version", "record_type"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "artifact_budget_report",
+        "attestation_report",
+        "audit_event_log",
+        "commercial_contract_report",
+        "audit_assurance_pack",
+        "audit_fixture_manifest"
+      ]
+    },
+    "run_id": {"type": "string"},
+    "summary": {"type": "object"},
+    "release_gate_override": {"type": "boolean"},
+    "publish_gate_override": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

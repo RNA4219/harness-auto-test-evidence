@@ -1,0 +1,13 @@
+{
+  "fixture_id": "post-poc-docs-codemap-stale",
+  "input": {
+    "freshness": {
+      "readme_state_current": true,
+      "missing_acceptance_refs": [],
+      "codemap_current": false,
+      "codemap_caps_missing": ["docs/birdseye/caps/missing.json"],
+      "schema_registry_current": true,
+      "product_ready_claim": false
+    }
+  }
+}

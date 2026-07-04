@@ -1,0 +1,26 @@
+{
+  "fixture_id": "postpoc-human-review-evidence-missing-holds",
+  "input": {
+    "review": {
+      "review_id": "hr-missing-evidence-001",
+      "operating_record_id": "risk:RISK-002",
+      "required_decision": "verify_behavior_or_accept_weakness",
+      "owner": "owner@example.com",
+      "due_date": "2026-07-10T00:00:00Z",
+      "expiry_date": "2026-08-10T00:00:00Z"
+    },
+    "actions": [
+      {
+        "action": "assign_reviewer",
+        "reviewer": "reviewer@example.com",
+        "sourceRefs": ["fixture://human-review/evidence-missing-holds#assign"]
+      },
+      {
+        "action": "approve",
+        "decision_reason": "Attempted approval without evidence.",
+        "decision_hash": "sha256:missing-evidence",
+        "sourceRefs": ["fixture://human-review/evidence-missing-holds#approve"]
+      }
+    ]
+  }
+}

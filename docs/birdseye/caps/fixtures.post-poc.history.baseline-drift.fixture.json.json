@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/history/baseline-drift/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6b071cf8883b9cac0275c20478a1b2b79b6c1cc13c4bd605512495d37a608b49",
+  "line_count": 49,
+  "size_bytes": 1393,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

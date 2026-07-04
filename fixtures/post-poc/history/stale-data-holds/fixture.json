@@ -1,0 +1,46 @@
+{
+  "fixture_id": "postpoc-history-stale-data-holds",
+  "input": {
+    "query": {
+      "window_start": "2026-05-01T00:00:00Z",
+      "window_end": "2026-07-03T00:00:00Z",
+      "repo_filter": "repo-main",
+      "suite_filter": "pytest",
+      "aggregation_level": "suite",
+      "performance_budget_ms": 1000,
+      "actual_runtime_ms": 100,
+      "min_sample_count": 2,
+      "stale_after_days": 14
+    },
+    "samples": [
+      {
+        "run_id": "stale-1",
+        "repo_id": "repo-main",
+        "suite_id": "pytest",
+        "test_count": 30,
+        "flake_count": 1,
+        "evidence_age_days": 20,
+        "debt_age_days": 7,
+        "repo_health_score": 0.7,
+        "baseline_score": 0.8,
+        "current_score": 0.7,
+        "manual_review_latency_hours": 20,
+        "sourceRef": "fixture://history/stale-data-holds#stale-1"
+      },
+      {
+        "run_id": "stale-2",
+        "repo_id": "repo-main",
+        "suite_id": "pytest",
+        "test_count": 30,
+        "flake_count": 1,
+        "evidence_age_days": 21,
+        "debt_age_days": 8,
+        "repo_health_score": 0.72,
+        "baseline_score": 0.8,
+        "current_score": 0.72,
+        "manual_review_latency_hours": 22,
+        "sourceRef": "fixture://history/stale-data-holds#stale-2"
+      }
+    ]
+  }
+}

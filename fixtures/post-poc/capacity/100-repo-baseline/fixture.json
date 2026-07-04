@@ -1,0 +1,10 @@
+{
+  "fixture_id": "100-repo-baseline",
+  "input": {
+    "baseline_id": "capacity-baseline-100-repo",
+    "machine_profile": {"profile_id": "win-dev-64g", "cpu_model": "Ryzen", "logical_cores": 16, "memory_mb": 65536, "os": "Windows"},
+    "runs": [
+      {"scenario_id": "100-repo-roster", "dataset_hash": "sha256:capacity-100-repo", "repo_count": 100, "finding_count": 12771, "duration_ms": 32000, "peak_memory_mb": 900, "cache_hit_rate": 0.12, "timeout_count": 0, "degradation_mode": "normal", "runtime_budget_ms": 90000, "memory_budget_mb": 4096}
+    ]
+  }
+}

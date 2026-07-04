@@ -1,0 +1,31 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-015.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "f1325d1b45eeee8ecd0b0a8a2611bbe36f0d80544b1f2f713c52af7a969fe542",
+  "line_count": 81,
+  "size_bytes": 3247,
+  "headings": [
+    "# AC-20260703-postpoc-015 Observability and Incident Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

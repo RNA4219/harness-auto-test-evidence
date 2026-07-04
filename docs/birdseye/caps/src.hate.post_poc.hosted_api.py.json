@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/post_poc/hosted_api.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0bc932253102790ed3bfb245bef331cebf2fdfad638e659e0a29f5deb0813b2b",
+  "line_count": 379,
+  "size_bytes": 15007,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture"
+  ]
+}

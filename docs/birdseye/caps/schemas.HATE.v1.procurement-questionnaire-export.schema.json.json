@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/procurement-questionnaire-export.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "95d40674e4c4b37252e5a345f4024a4e9d0be75720ae99a4620fcb8b7aa10f9b",
+  "line_count": 24,
+  "size_bytes": 1366,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

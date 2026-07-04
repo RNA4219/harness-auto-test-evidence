@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/baseline-review-comparison.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "074fff6488d9521e1c93c31faa7d38c718054d4dcfc9a20b709e569206aed5a3",
+  "line_count": 47,
+  "size_bytes": 1725,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

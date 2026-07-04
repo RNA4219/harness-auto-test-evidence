@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/baseline-promotion-decision.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "5450c079e72546f3cf3f083d498ea9fc5f939a5ba2d687eb596c134eba7a581c",
+  "line_count": 47,
+  "size_bytes": 1561,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

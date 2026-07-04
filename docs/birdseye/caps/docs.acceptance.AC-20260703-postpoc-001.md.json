@@ -1,0 +1,29 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-001.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "549e9c44b7544f075791ba65f410b23e4e0db00a00554d35b45515d0991312ec",
+  "line_count": 78,
+  "size_bytes": 2828,
+  "headings": [
+    "# AC-20260703-postpoc-001 Hosted Scheduler Runtime Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

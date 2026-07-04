@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/notifications/slack-delivered/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "31991d5b454a5b7e5a72c73fface720185c9e719df0ad183450ea7625dc11deb",
+  "line_count": 24,
+  "size_bytes": 731,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

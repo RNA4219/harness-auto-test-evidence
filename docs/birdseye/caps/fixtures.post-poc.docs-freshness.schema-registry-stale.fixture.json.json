@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/docs-freshness/schema-registry-stale/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c4fd00b749a61d800ccbea022ef96347bbb25d8cd42caffa8435e87fa2257026",
+  "line_count": 13,
+  "size_bytes": 350,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

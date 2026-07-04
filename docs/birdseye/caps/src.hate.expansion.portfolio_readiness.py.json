@@ -2,17 +2,28 @@
   "path": "src/hate/expansion/portfolio_readiness.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "b761d8b8cd18746840a9088694fcd9e735122567d26354fa19da8f6db609815c",
-  "line_count": 626,
-  "size_bytes": 31615,
+  "sha256": "83ac25f2997ee56bac1a14c2473c890f133350fbed522ad04d0956c5cf535521",
+  "line_count": 711,
+  "size_bytes": 37340,
   "headings": [],
   "imports": [
+    ".governance",
+    ".recurring_eval",
+    ".rollout_adoption",
+    ".security_procurement",
+    ".value_measurement",
     "__future__",
     "dataclasses",
     "typing"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/expansion/governance.py",
+    "src/hate/expansion/recurring_eval.py",
+    "src/hate/expansion/rollout_adoption.py",
+    "src/hate/expansion/security_procurement.py",
+    "src/hate/expansion/value_measurement.py"
+  ],
   "tags": [
     "coverage",
     "fixture",

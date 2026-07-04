@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/store-dr-runbook-step.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "9b35ad176c36c97c5fb8478126deb7328cb1d03c5e331e061ead969703361207",
+  "line_count": 51,
+  "size_bytes": 1577,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

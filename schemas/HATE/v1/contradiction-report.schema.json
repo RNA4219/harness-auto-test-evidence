@@ -75,6 +75,42 @@
             "additionalProperties": true
           }
         },
+        "evidence_records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {"type": "string"},
+              "record_type": {"type": "string"},
+              "status": {"type": "string"},
+              "readiness_effect": {"type": "string"},
+              "severity": {"type": "string"},
+              "finding_code": {"type": "string"},
+              "requirement_ref": {"type": "string"},
+              "claim_id": {"type": "string"},
+              "metric_type": {"type": "string"},
+              "current_value": {"type": "number"},
+              "baseline_value": {"type": "number"},
+              "schema_version": {"type": "string"},
+              "expected_schema_version": {"type": "string"},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "release_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "claim_id": {"type": "string"},
+              "status": {"type": "string"},
+              "evidence_refs": {"type": "array", "items": {"type": "string"}},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
         "pass_status_with_critical": {"type": "boolean"},
         "critical_finding_present": {"type": "boolean"},
         "coverage_mutation_aligned": {"type": "boolean"},
@@ -87,7 +123,8 @@
           "properties": {
             "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
             "max_contradictions": {"type": "integer", "minimum": 0},
-            "max_blocking_effects": {"type": "integer", "minimum": 0}
+            "max_blocking_effects": {"type": "integer", "minimum": 0},
+            "max_claim_impacts": {"type": "integer", "minimum": 0}
           },
           "additionalProperties": true
         }
@@ -116,6 +153,10 @@
         "contradiction_count": {"type": "integer", "minimum": 0},
         "blocking_effect_count": {"type": "integer", "minimum": 0},
         "claim_impact_count": {"type": "integer", "minimum": 0},
+        "evidence_record_count": {"type": "integer", "minimum": 0},
+        "derived_contradiction_count": {"type": "integer", "minimum": 0},
+        "blocked_claim_reference_count": {"type": "integer", "minimum": 0},
+        "duplicate_contradiction_count": {"type": "integer", "minimum": 0},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
       },
@@ -124,6 +165,36 @@
     "contradictions": {"type": "array", "items": {"type": "object"}},
     "blocking_effects": {"type": "array", "items": {"type": "object"}},
     "claim_impacts": {"type": "array", "items": {"type": "object"}},
+    "evidence_records": {"type": "array", "items": {"type": "object"}},
+    "release_claims": {"type": "array", "items": {"type": "object"}},
+    "contradiction_diagnostics": {
+      "type": "object",
+      "required": [
+        "derived_contradictions",
+        "blocked_claim_refs",
+        "duplicate_contradiction_ids",
+        "missing_source_ref_ids"
+      ],
+      "properties": {
+        "derived_contradictions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["contradiction_type", "subject_ref", "sourceRef"],
+            "properties": {
+              "contradiction_type": {"type": "string"},
+              "subject_ref": {"type": "string"},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "blocked_claim_refs": {"type": "array", "items": {"type": "string"}},
+        "duplicate_contradiction_ids": {"type": "array", "items": {"type": "string"}},
+        "missing_source_ref_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
     "input_refs": {"type": "array", "items": {"type": "string"}},
     "confidence": {"type": "number", "minimum": 0, "maximum": 1},
     "limits": {
@@ -132,7 +203,8 @@
       "properties": {
         "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
         "max_contradictions": {"type": "integer", "minimum": 0},
-        "max_blocking_effects": {"type": "integer", "minimum": 0}
+        "max_blocking_effects": {"type": "integer", "minimum": 0},
+        "max_claim_impacts": {"type": "integer", "minimum": 0}
       },
       "additionalProperties": true
     },

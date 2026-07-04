@@ -6,15 +6,42 @@
     "evaluation_config": {
       "required_repo_classes": ["small", "medium", "large", "monorepo", "polyglot", "flaky", "artifact-heavy", "security-heavy"],
       "repo_roster": [
-        {"repo": "small-a", "class": "small"}, {"repo": "medium-a", "class": "medium"}, {"repo": "large-a", "class": "large"},
-        {"repo": "mono-a", "class": "monorepo"}, {"repo": "poly-a", "class": "polyglot"}, {"repo": "flaky-a", "class": "flaky"},
-        {"repo": "artifact-a", "class": "artifact-heavy"}, {"repo": "security-a", "class": "security-heavy"}
+        {"repo": "small-a", "class": "small", "owner": "qa", "ownership": "owned", "sourceRef": "repo:small-a", "health": "active"},
+        {"repo": "medium-a", "class": "medium", "owner": "qa", "ownership": "owned", "sourceRef": "repo:medium-a", "health": "active"},
+        {"repo": "large-a", "class": "large", "owner": "qa", "ownership": "owned", "sourceRef": "repo:large-a", "health": "active"},
+        {"repo": "mono-a", "class": "monorepo", "owner": "qa", "ownership": "owned", "sourceRef": "repo:mono-a", "health": "active"},
+        {"repo": "poly-a", "class": "polyglot", "owner": "qa", "ownership": "owned", "sourceRef": "repo:poly-a", "health": "active"},
+        {"repo": "flaky-a", "class": "flaky", "owner": "qa", "ownership": "owned", "sourceRef": "repo:flaky-a", "health": "active"},
+        {"repo": "artifact-a", "class": "artifact-heavy", "owner": "qa", "ownership": "owned", "sourceRef": "repo:artifact-a", "health": "active"},
+        {"repo": "security-a", "class": "security-heavy", "owner": "qa", "ownership": "owned", "sourceRef": "repo:security-a", "health": "active"}
       ],
-      "runs": [{"run_id": "eval-001", "baseline_ref": "baseline-001", "current_result_ref": "current-001"}],
-      "timeout_budget_by_class": {"small": 300, "medium": 900, "large": 1800, "monorepo": 3600},
+      "runs": [
+        {
+          "run_id": "eval-001",
+          "repo_class": "small",
+          "baseline_ref": "baseline-001",
+          "current_result_ref": "current-001",
+          "baseline_profile": "release",
+          "current_profile": "release",
+          "duration_seconds": 120,
+          "roster_hash": "roster:abc",
+          "policy_hash": "policy:def",
+          "environment_fingerprint": "env:ghi",
+          "privacy_fingerprint": "trend:small-a"
+        }
+      ],
+      "trend_windows": [
+        {"window_id": "weekly-001", "aggregate_only": true, "contains_raw_repo_name": false, "sample_size": 8}
+      ],
+      "retry_isolation_rules": [
+        {"rule_id": "timeout", "failure_class": "timeout", "max_retries": 1, "quarantine_after": 2},
+        {"rule_id": "parser-gap", "failure_class": "parser_gap", "max_retries": 0, "quarantine_after": 1}
+      ],
+      "timeout_budget_by_class": {"small": 300, "medium": 900, "large": 1800, "monorepo": 3600, "polyglot": 2400, "flaky": 1200, "artifact-heavy": 1800, "security-heavy": 1800},
       "trend_privacy_safe": true,
       "regression_detected": false,
-      "timeout_hides_missing_evidence": false
+      "timeout_hides_missing_evidence": false,
+      "quarantine_policy_present": true
     }
   }
 }

@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/baseline/propose-approve-freeze/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "f2d32d34741699e1310936bd2fd5a557295684da61e9eb00bf9c6cdf1627d076",
+  "line_count": 35,
+  "size_bytes": 1117,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

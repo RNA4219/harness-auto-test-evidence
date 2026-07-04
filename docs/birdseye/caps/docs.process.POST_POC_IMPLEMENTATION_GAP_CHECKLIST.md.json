@@ -1,0 +1,28 @@
+{
+  "path": "docs/process/POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "d69d3787cd6560d1569a106eb64e9699967833f53afde8885e090a46b10f7cfb",
+  "line_count": 117,
+  "size_bytes": 16205,
+  "headings": [
+    "# Post-PoC Implementation Gap Checklist",
+    "## 1. Workflow-Cookbook Rules Applied",
+    "## 2. Spec-to-Implementation Gap Matrix",
+    "## 3. Workflow Task Seeds",
+    "## 4. Dispatch Order",
+    "## 5. Acceptance Placeholders"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "birdseye",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

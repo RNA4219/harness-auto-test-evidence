@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/hosted-api/cross-tenant-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "75904d57d8bb484925bee7b2be1913aa8030bc363b4f4a0258bf41fd592de8a5",
+  "line_count": 21,
+  "size_bytes": 615,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture"
+  ]
+}

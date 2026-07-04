@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/capacity-degradation-mode-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "61b1585ab483eb35a77855fbaeab0374455c5e0ca4cdb1870f1d335e2f036489",
+  "line_count": 19,
+  "size_bytes": 676,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/post_poc/plugin_distribution.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "d928287d502e7ba385ab2e39f9a5f2785493beb34a474434c7267df66db22ff9",
+  "line_count": 313,
+  "size_bytes": 14587,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "hate.plugins.sandbox",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/plugins/sandbox.py",
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

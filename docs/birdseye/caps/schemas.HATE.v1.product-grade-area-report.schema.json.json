@@ -1,0 +1,22 @@
+{
+  "path": "schemas/HATE/v1/product-grade-area-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "4c9d636b6681779ee374abcc055ef8a69c8a9856cfa5071ed02e9468458959eb",
+  "line_count": 70,
+  "size_bytes": 2542,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "enterprise",
+    "release",
+    "schema",
+    "security",
+    "store",
+    "test"
+  ]
+}

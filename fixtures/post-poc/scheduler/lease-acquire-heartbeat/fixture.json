@@ -1,0 +1,34 @@
+{
+  "fixture_id": "post-poc-scheduler-lease-acquire-heartbeat",
+  "input": {
+    "job": {
+      "worker_id": "",
+      "queue_id": "default",
+      "lease_id": "lease-001",
+      "job_id": "job-001",
+      "job_kind": "repo_suite_run",
+      "lease_state": "available",
+      "attempt": 0,
+      "max_attempts": 2
+    },
+    "events": [
+      {
+        "event_type": "lease_acquired",
+        "worker_id": "worker-a",
+        "lease_expires_at": "2026-07-03T01:10:00Z",
+        "sourceRefs": ["scheduler.fixture#/lease_acquired"]
+      },
+      {
+        "event_type": "heartbeat_seen",
+        "heartbeat_at": "2026-07-03T01:01:00Z",
+        "sourceRefs": ["scheduler.fixture#/heartbeat_seen"]
+      },
+      {
+        "event_type": "job_completed",
+        "result_hash": "sha256:abc",
+        "cleanup_status": "complete",
+        "sourceRefs": ["scheduler.fixture#/job_completed"]
+      }
+    ]
+  }
+}

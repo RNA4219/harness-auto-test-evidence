@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/notifications/webhook-signed/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "20b2a05e66ab1f59357aa67da80cde17a248b5903aef45f91a9ae97d430420e4",
+  "line_count": 26,
+  "size_bytes": 862,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

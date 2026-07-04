@@ -7,8 +7,11 @@
   "input": {
     "recommendations": [
       {
+        "recommendation_id": "rec-001",
         "action": "add_oracle_for_missing_risk",
         "target": "test_coverage_missing_risk",
+        "risk_id": "risk-coverage-001",
+        "required_oracle_id": "oracle-coverage-001",
         "confidence": 0.95,
         "sourceRef": "analysis:recommendation-001",
         "rationale": "Missing oracle detected for coverage risk",

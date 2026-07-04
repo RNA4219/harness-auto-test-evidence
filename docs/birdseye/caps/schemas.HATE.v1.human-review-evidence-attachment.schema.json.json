@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/human-review-evidence-attachment.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "852f86923f1aefcf89c7a15fadf60bc00a5475e39bedadedea160584b11411c6",
+  "line_count": 37,
+  "size_bytes": 1326,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

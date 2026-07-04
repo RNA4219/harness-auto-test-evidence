@@ -1,0 +1,32 @@
+{
+  "fixture_id": "postpoc-plugin-distribution-revoked-plugin-denied",
+  "input": {
+    "profile": "regulated",
+    "manifest": {
+      "plugin_id": "detector.revoked",
+      "plugin_version": "1.0.0",
+      "api_version": "HATE-plugin/v1",
+      "package_hash": "sha256:plugin-revoked",
+      "observed_package_hash": "sha256:plugin-revoked",
+      "signature_algorithm": "ed25519",
+      "signature_ref": "signature://detector.revoked/1.0.0",
+      "signature_valid": true,
+      "trust_source": "org-policy",
+      "allowlist_ref": "allowlist://org/plugins/detector.revoked",
+      "revocation_ref": "revocation://plugins/detector.revoked/1.0.0",
+      "compatibility_status": "compatible",
+      "capabilities": ["emit_findings"],
+      "resource_limits": {"timeout_ms": 30000}
+    },
+    "revocation": {
+      "revoked": true,
+      "revocation_ref": "revocation://plugins/detector.revoked/1.0.0",
+      "reason": "Known unsafe behavior."
+    },
+    "distribution_index": {
+      "index_ref": "index://plugins/regulated",
+      "indexed_package_hash": "sha256:plugin-revoked",
+      "index_stale": false
+    }
+  }
+}

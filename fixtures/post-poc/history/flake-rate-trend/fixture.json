@@ -1,0 +1,45 @@
+{
+  "fixture_id": "postpoc-history-flake-rate-trend",
+  "input": {
+    "query": {
+      "window_start": "2026-07-01T00:00:00Z",
+      "window_end": "2026-07-03T00:00:00Z",
+      "repo_filter": "repo-main",
+      "suite_filter": "pytest",
+      "aggregation_level": "suite",
+      "performance_budget_ms": 1000,
+      "actual_runtime_ms": 110,
+      "min_sample_count": 2
+    },
+    "samples": [
+      {
+        "run_id": "run-1",
+        "repo_id": "repo-main",
+        "suite_id": "pytest",
+        "test_count": 100,
+        "flake_count": 2,
+        "evidence_age_days": 2,
+        "debt_age_days": 3,
+        "repo_health_score": 0.91,
+        "baseline_score": 0.9,
+        "current_score": 0.92,
+        "manual_review_latency_hours": 4,
+        "sourceRef": "fixture://history/flake-rate-trend#run-1"
+      },
+      {
+        "run_id": "run-2",
+        "repo_id": "repo-main",
+        "suite_id": "pytest",
+        "test_count": 100,
+        "flake_count": 4,
+        "evidence_age_days": 3,
+        "debt_age_days": 5,
+        "repo_health_score": 0.89,
+        "baseline_score": 0.9,
+        "current_score": 0.88,
+        "manual_review_latency_hours": 6,
+        "sourceRef": "fixture://history/flake-rate-trend#run-2"
+      }
+    ]
+  }
+}

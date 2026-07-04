@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/real-repo-roster-maintenance-plan.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "746a2fcfc4c29e6cb329be65a8b59ce981295455e38dafb6197e12aac637bf64",
+  "line_count": 51,
+  "size_bytes": 1813,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

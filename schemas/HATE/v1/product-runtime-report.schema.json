@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/product-runtime-report.schema.json",
+  "title": "HATE Product Runtime Report",
+  "type": "object",
+  "required": ["schema_version", "record_type"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "product_readiness_report",
+        "product_metrics_report",
+        "product_error_catalog",
+        "pr_annotation_export",
+        "enterprise_risk_debt_register",
+        "privacy_quarantine_report",
+        "external_export_report",
+        "hosted_read_model_index"
+      ]
+    },
+    "run_id": {"type": "string"},
+    "summary": {"type": "object"},
+    "release_gate_override": {"type": "boolean"},
+    "publish_gate_override": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

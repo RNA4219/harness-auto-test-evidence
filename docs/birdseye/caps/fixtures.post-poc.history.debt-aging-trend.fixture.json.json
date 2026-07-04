@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/history/debt-aging-trend/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c1f9acf41663396cfe630adf2c0efc780b91e6fc6b1d51870a586954ef4a28f6",
+  "line_count": 45,
+  "size_bytes": 1251,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

@@ -5,18 +5,50 @@
   "input": {
     "audience_views": [
       {
-        "audience_id": "aud-1",
-        "view_type": "technical",
+        "audience_id": "aud-developer",
+        "view_type": "developer",
         "verdict": "pass",
-        "sourceRef": "view:1",
-        "rationale": "Technical review passed"
+        "sourceRef": "evidence:1",
+        "sourceRefs": ["evidence:1", "evidence:2"],
+        "sections": ["findings", "commands"],
+        "rationale": "Developer view reuses shared findings and commands"
       },
       {
-        "audience_id": "aud-2",
-        "view_type": "management",
+        "audience_id": "aud-qa",
+        "view_type": "qa",
         "verdict": "pass",
-        "sourceRef": "view:2",
-        "rationale": "Management review passed"
+        "sourceRef": "evidence:2",
+        "sourceRefs": ["evidence:1", "evidence:2"],
+        "sections": ["test_cases", "risks"],
+        "rationale": "QA view reuses shared test cases and risks"
+      },
+      {
+        "audience_id": "aud-release",
+        "view_type": "release",
+        "verdict": "pass",
+        "sourceRef": "evidence:3",
+        "sourceRefs": ["evidence:1", "evidence:3"],
+        "sections": ["decision", "open_risks"],
+        "rationale": "Release view summarizes decision without recomputing verdict"
+      },
+      {
+        "audience_id": "aud-qeg",
+        "view_type": "qeg",
+        "verdict": "pass",
+        "sourceRef": "evidence:1",
+        "sourceRefs": ["evidence:1", "evidence:2", "evidence:3"],
+        "sections": ["sourceRefs", "external_refs"],
+        "rationale": "QEG handoff view preserves source references"
+      },
+      {
+        "audience_id": "aud-machine",
+        "view_type": "machine",
+        "verdict": "pass",
+        "sourceRef": "evidence:1",
+        "sourceRefs": ["evidence:1", "evidence:2", "evidence:3"],
+        "sections": ["json", "schema_version"],
+        "machine_readable": true,
+        "rationale": "Machine view exposes schema-valid JSON only"
       }
     ],
     "shared_sourceRefs": [
@@ -24,6 +56,8 @@
       "evidence:2",
       "evidence:3"
     ],
+    "required_audiences": ["developer", "qa", "release", "qeg", "machine"],
+    "base_verdict": "pass",
     "verdict_recomputed": false,
     "source_ref_drift_detected": false,
     "confidence": 0.95,

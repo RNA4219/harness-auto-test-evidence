@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/scheduler/cancel-requested/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b419fb294606f66baf47b2e9ad6915b3da5cf171db41f3f34f2c34bde40cc524",
+  "line_count": 23,
+  "size_bytes": 510,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

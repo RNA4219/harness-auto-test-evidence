@@ -32,6 +32,15 @@ def _assert_report_contract(report: dict) -> None:
     assert report["record_type"] == "evidence-synthesis-report"
     assert report["overall_status"] in {"pass", "hold", "blocked"}
     assert report["readiness_effect"] in {"none", "hold", "blocked"}
+    assert "requirement_synthesis" in report
+    assert "evidence_synthesis_diagnostics" in report
+    assert {
+        "target_requirement_count",
+        "weak_requirement_count",
+        "unsatisfied_contract_count",
+        "survived_mutation_count",
+        "synthesized_confidence",
+    } <= set(report["summary"])
     for finding in report["findings"]:
         assert {"code", "severity", "message", "sourceRef", "readiness_effect"} <= set(finding)
 
@@ -154,6 +163,104 @@ def test_contract_without_source_ref_holds() -> None:
 
     assert report["overall_status"] == "hold"
     assert "evidence_synthesis_contract_coverage_missing" in _codes(report)
+
+
+def test_requirement_level_weak_synthesis_holds() -> None:
+    report = build_evidence_synthesis_report({
+        "evidence_sources": [
+            {
+                "source_id": "es1",
+                "source_type": "coverage",
+                "target_requirement": "REQ-weak",
+                "confidence": 0.55,
+                "sourceRef": "es:1",
+                "rationale": "Coverage only",
+                "verified": True,
+            }
+        ],
+        "mutation_coverage": [{"mutation_id": "mc1", "mutation_type": "operator", "killed": True, "confidence": 0.9, "sourceRef": "mc:1", "rationale": "r"}],
+        "contract_coverage": [{"contract_id": "cc1", "contract_type": "postcondition", "satisfied": True, "confidence": 0.9, "sourceRef": "cc:1", "rationale": "r"}],
+        "mutation_evidence_available": True,
+        "contract_evidence_available": True,
+        "strong_evidence_threshold": 0.8,
+        "confidence": 0.9,
+        "limits": {"confidence_threshold": 0.7},
+    })
+
+    assert report["overall_status"] == "hold"
+    assert "evidence_synthesis_requirement_confidence_below_threshold" in _codes(report)
+    assert report["summary"]["weak_requirement_count"] == 1
+    assert "REQ-weak" in report["requirement_synthesis"]
+
+
+def test_survived_mutation_and_unsatisfied_contract_hold() -> None:
+    report = build_evidence_synthesis_report({
+        "evidence_sources": [
+            {"source_id": "es1", "source_type": "mutation", "target_requirement": "REQ-1", "confidence": 0.95, "sourceRef": "es:1", "rationale": "r", "verified": True},
+            {"source_id": "es2", "source_type": "contract", "target_requirement": "REQ-1", "confidence": 0.95, "sourceRef": "es:2", "rationale": "r", "verified": True},
+        ],
+        "mutation_coverage": [{"mutation_id": "mc-survived", "mutation_type": "operator", "killed": False, "confidence": 0.95, "sourceRef": "mc:1", "rationale": "r"}],
+        "contract_coverage": [{"contract_id": "cc-unsatisfied", "contract_type": "postcondition", "satisfied": False, "confidence": 0.95, "sourceRef": "cc:1", "rationale": "r"}],
+        "mutation_evidence_available": True,
+        "contract_evidence_available": True,
+        "strong_evidence_threshold": 0.8,
+        "confidence": 0.9,
+        "limits": {"confidence_threshold": 0.7},
+    })
+
+    assert report["overall_status"] == "hold"
+    assert "evidence_synthesis_survived_mutation_hold" in _codes(report)
+    assert "evidence_synthesis_unsatisfied_contract_hold" in _codes(report)
+    assert report["summary"]["survived_mutation_count"] == 1
+    assert report["summary"]["unsatisfied_contract_count"] == 1
+
+
+def test_unverified_strong_source_holds() -> None:
+    report = build_evidence_synthesis_report({
+        "evidence_sources": [{"source_id": "es-strong", "source_type": "contract", "target_requirement": "REQ-1", "confidence": 0.95, "sourceRef": "es:1", "rationale": "r", "verified": False}],
+        "mutation_coverage": [{"mutation_id": "mc1", "mutation_type": "operator", "killed": True, "confidence": 0.95, "sourceRef": "mc:1", "rationale": "r"}],
+        "contract_coverage": [{"contract_id": "cc1", "contract_type": "postcondition", "satisfied": True, "confidence": 0.95, "sourceRef": "cc:1", "rationale": "r"}],
+        "mutation_evidence_available": True,
+        "contract_evidence_available": True,
+        "strong_evidence_threshold": 0.8,
+        "confidence": 0.9,
+        "limits": {"confidence_threshold": 0.7},
+    })
+
+    assert report["overall_status"] == "hold"
+    assert "evidence_synthesis_unverified_strong_source_hold" in _codes(report)
+
+
+def test_synthesis_budget_excess_holds() -> None:
+    report = build_evidence_synthesis_report({
+        "evidence_sources": [
+            {"source_id": "es1", "source_type": "mutation", "target_requirement": "REQ-1", "confidence": 0.95, "sourceRef": "es:1", "rationale": "r", "verified": True},
+            {"source_id": "es2", "source_type": "contract", "target_requirement": "REQ-1", "confidence": 0.95, "sourceRef": "es:2", "rationale": "r", "verified": True},
+        ],
+        "mutation_coverage": [
+            {"mutation_id": "mc1", "mutation_type": "operator", "killed": True, "confidence": 0.95, "sourceRef": "mc:1", "rationale": "r"},
+            {"mutation_id": "mc2", "mutation_type": "operator", "killed": True, "confidence": 0.95, "sourceRef": "mc:2", "rationale": "r"},
+        ],
+        "contract_coverage": [
+            {"contract_id": "cc1", "contract_type": "postcondition", "satisfied": True, "confidence": 0.95, "sourceRef": "cc:1", "rationale": "r"},
+            {"contract_id": "cc2", "contract_type": "postcondition", "satisfied": True, "confidence": 0.95, "sourceRef": "cc:2", "rationale": "r"},
+        ],
+        "mutation_evidence_available": True,
+        "contract_evidence_available": True,
+        "strong_evidence_threshold": 0.8,
+        "confidence": 0.9,
+        "limits": {
+            "confidence_threshold": 0.7,
+            "max_evidence_sources": 1,
+            "max_mutation_coverage": 1,
+            "max_contract_coverage": 1,
+        },
+    })
+
+    assert report["overall_status"] == "hold"
+    assert "evidence_synthesis_source_budget_exceeded" in _codes(report)
+    assert "evidence_synthesis_mutation_budget_exceeded" in _codes(report)
+    assert "evidence_synthesis_contract_budget_exceeded" in _codes(report)
 
 
 def test_evidence_synthesis_schema_registered() -> None:

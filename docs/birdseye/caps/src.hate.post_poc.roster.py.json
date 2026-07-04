@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/post_poc/roster.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8a2b41c3b3e7c6a5c7751bb6f2a2e16fd3dcd98f6f2aa2be9eeaad45c8560994",
+  "line_count": 356,
+  "size_bytes": 16522,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

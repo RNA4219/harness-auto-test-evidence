@@ -1,0 +1,19 @@
+{
+  "path": "src/hate/expansion/value_measurement.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "b8f980c64fd16b0cd46e0e4d0c8494bd495165a1f4259cb3e07ae44b5cf0c8be",
+  "line_count": 161,
+  "size_bytes": 8462,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "fixture_id": "slo-burn-rate-breach",
+  "input": {
+    "telemetry": [
+      {"signal": "metrics", "correlation_id": "corr-slo", "run_id": "run-4", "tenant_id": "tenant-a", "service_name": "hate-api", "metric_name": "latency.p95", "trace_id": "trace-4", "alert_route_ref": "route://ops", "redaction_report_ref": "artifact://redaction/slo"}
+    ],
+    "slo": {"slo_id": "slo-latency", "burn_rate": 2.2, "alert_status": "firing", "alert_route_ref": "route://ops"},
+    "incident": {"incident_id": "inc-slo", "incident_state": "active", "owner": "ops-owner", "severity": "high", "timeline_refs": ["artifact://incident/inc-slo/timeline"], "decision_ref": "artifact://incident/inc-slo/decision"},
+    "support_pack": {"support_pack_id": "support-slo", "evidence_refs": ["artifact://support/slo"], "support_bundle_safe": true, "redaction_report_ref": "artifact://redaction/slo"}
+  }
+}

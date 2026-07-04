@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_post_poc_observability.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "dc2711be775cf6d957f9a7c50c753a92a592c50872194a7f4a417c71b7618243",
+  "line_count": 217,
+  "size_bytes": 10489,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.observability",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/observability.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

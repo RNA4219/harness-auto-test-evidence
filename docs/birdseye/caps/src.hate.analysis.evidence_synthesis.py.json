@@ -2,9 +2,9 @@
   "path": "src/hate/analysis/evidence_synthesis.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "1410c88f4a9d0239b173ebba799ab3a23c63e343f0af4dc7e892d3a384192580",
-  "line_count": 219,
-  "size_bytes": 8577,
+  "sha256": "cc0b392fcc77bad8b81fe96af877beabe5cc374f8b35603f9d2fd3902c523326",
+  "line_count": 348,
+  "size_bytes": 14514,
   "headings": [],
   "imports": [
     "__future__",

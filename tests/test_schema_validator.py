@@ -114,6 +114,27 @@ def test_registry_entries_define_unknown_and_deprecated_field_policy() -> None:
         assert isinstance(entry["deprecated_fields"], list)
 
 
+def test_schema_registry_record_types_are_unique() -> None:
+    registry = json.loads((ROOT / "schemas/HATE/v1/schema-registry.json").read_text(encoding="utf-8"))
+    record_types = [entry["record_type"] for entry in registry["records"]]
+
+    assert len(record_types) == len(set(record_types))
+
+
+def test_schema_registry_schema_refs_exist_and_parse() -> None:
+    registry = json.loads((ROOT / "schemas/HATE/v1/schema-registry.json").read_text(encoding="utf-8"))
+
+    for entry in registry["records"]:
+        schema_ref = entry.get("schema")
+        if not schema_ref:
+            continue
+        schema_path = ROOT / schema_ref
+        assert schema_path.is_file(), f"{entry['record_type']} schema missing: {schema_ref}"
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        assert schema.get("$schema") or schema.get("$id")
+        assert any(key in schema for key in ("type", "allOf", "oneOf", "anyOf", "$ref"))
+
+
 def test_unknown_field_warn_policy_preserves_record_with_warning(tmp_path: Path) -> None:
     record = copy.deepcopy(load_fixture("valid-test-result"))
     record["unexpected_vendor_field"] = "kept for forward compatibility"

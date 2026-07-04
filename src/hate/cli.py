@@ -247,6 +247,12 @@ def build_parser() -> argparse.ArgumentParser:
     platform_score.add_argument("--input", required=True, type=Path, help="Input report JSON file or directory.")
     platform_score.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
 
+    platform_baseline = platform_subparsers.add_parser("baseline", help="Operate baseline promotion workflow evidence.")
+    platform_baseline_subparsers = platform_baseline.add_subparsers(dest="platform_baseline_command", required=True)
+    platform_baseline_promote = platform_baseline_subparsers.add_parser("promote", help="Build a baseline promotion report from local approval events.")
+    platform_baseline_promote.add_argument("--input", required=True, type=Path, help="Baseline promotion input JSON.")
+    platform_baseline_promote.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+
     platform_plugin = platform_subparsers.add_parser("plugin", help="Run and isolate platform detector plugins.")
     platform_plugin_subparsers = platform_plugin.add_subparsers(dest="platform_plugin_command", required=True)
     platform_plugin_run = platform_plugin_subparsers.add_parser("run", help="Execute a plugin manifest under platform isolation checks.")

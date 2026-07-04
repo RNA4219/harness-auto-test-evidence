@@ -12,6 +12,8 @@
     "recommendation_config",
     "findings",
     "summary",
+    "derived_recommendations",
+    "test_recommendation_diagnostics",
     "analysis_scope",
     "input_refs",
     "confidence",
@@ -26,16 +28,19 @@
     "readiness_effect": {"type": "string", "enum": ["none", "hold", "blocked"]},
     "recommendation_config": {
       "type": "object",
-      "required": ["recommendations", "required_oracles", "verification_commands"],
+      "required": ["recommendations", "required_oracles", "verification_commands", "signals"],
       "properties": {
         "recommendations": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["action", "target", "confidence", "sourceRef", "rationale", "actionable"],
+            "required": ["recommendation_id", "action", "target", "risk_id", "required_oracle_id", "confidence", "sourceRef", "rationale", "actionable"],
             "properties": {
+              "recommendation_id": {"type": "string"},
               "action": {"type": "string"},
               "target": {"type": "string"},
+              "risk_id": {"type": "string"},
+              "required_oracle_id": {"type": "string"},
               "confidence": {"type": "number", "minimum": 0, "maximum": 1},
               "sourceRef": {"type": "string"},
               "rationale": {"type": "string"},
@@ -76,15 +81,34 @@
             "additionalProperties": true
           }
         },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["signal_id", "signal_type", "risk_id", "test_id", "requirement_id", "severity", "readiness_effect", "sourceRef"],
+            "properties": {
+              "signal_id": {"type": "string"},
+              "signal_type": {"type": "string"},
+              "risk_id": {"type": "string"},
+              "test_id": {"type": "string"},
+              "requirement_id": {"type": "string"},
+              "severity": {"type": "string"},
+              "readiness_effect": {"type": "string"},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
         "analysis_scope": {"type": "string"},
         "input_refs": {"type": "array", "items": {"type": "string"}},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "limits": {
           "type": "object",
-          "required": ["max_recommendations", "max_oracles", "confidence_threshold"],
+          "required": ["max_recommendations", "max_oracles", "max_commands", "confidence_threshold"],
           "properties": {
             "max_recommendations": {"type": "integer", "minimum": 0},
             "max_oracles": {"type": "integer", "minimum": 0},
+            "max_commands": {"type": "integer", "minimum": 0},
             "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
           },
           "additionalProperties": true
@@ -112,13 +136,63 @@
     },
     "summary": {
       "type": "object",
-      "required": ["recommendation_count", "required_oracle_count", "verification_command_count", "confidence", "finding_count"],
+      "required": [
+        "recommendation_count",
+        "required_oracle_count",
+        "verification_command_count",
+        "signal_count",
+        "derived_recommendation_count",
+        "missing_command_count",
+        "missing_oracle_count",
+        "confidence",
+        "finding_count"
+      ],
       "properties": {
         "recommendation_count": {"type": "integer", "minimum": 0},
         "required_oracle_count": {"type": "integer", "minimum": 0},
         "verification_command_count": {"type": "integer", "minimum": 0},
+        "signal_count": {"type": "integer", "minimum": 0},
+        "derived_recommendation_count": {"type": "integer", "minimum": 0},
+        "missing_command_count": {"type": "integer", "minimum": 0},
+        "missing_oracle_count": {"type": "integer", "minimum": 0},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "derived_recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["recommendation_id", "action", "target", "risk_id", "required_oracle", "verification_command", "confidence", "sourceRef"],
+        "properties": {
+          "recommendation_id": {"type": "string"},
+          "action": {"type": "string"},
+          "target": {"type": "string"},
+          "risk_id": {"type": "string"},
+          "required_oracle": {"type": "string"},
+          "verification_command": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "sourceRef": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "test_recommendation_diagnostics": {
+      "type": "object",
+      "required": [
+        "derived_recommendations",
+        "recommendations_missing_command",
+        "recommendations_missing_oracle",
+        "missing_source_ref_ids",
+        "stale_or_generic_recommendation_ids"
+      ],
+      "properties": {
+        "derived_recommendations": {"type": "array"},
+        "recommendations_missing_command": {"type": "array", "items": {"type": "string"}},
+        "recommendations_missing_oracle": {"type": "array", "items": {"type": "string"}},
+        "missing_source_ref_ids": {"type": "array", "items": {"type": "string"}},
+        "stale_or_generic_recommendation_ids": {"type": "array", "items": {"type": "string"}}
       },
       "additionalProperties": true
     },
@@ -127,10 +201,11 @@
     "confidence": {"type": "number", "minimum": 0, "maximum": 1},
     "limits": {
       "type": "object",
-      "required": ["max_recommendations", "max_oracles", "confidence_threshold"],
+      "required": ["max_recommendations", "max_oracles", "max_commands", "confidence_threshold"],
       "properties": {
         "max_recommendations": {"type": "integer", "minimum": 0},
         "max_oracles": {"type": "integer", "minimum": 0},
+        "max_commands": {"type": "integer", "minimum": 0},
         "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
       },
       "additionalProperties": true

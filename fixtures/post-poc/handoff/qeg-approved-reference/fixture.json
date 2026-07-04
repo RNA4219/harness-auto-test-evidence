@@ -1,0 +1,17 @@
+{
+  "fixture_id": "qeg-approved-reference",
+  "input": {
+    "request": {
+      "handoff_id": "handoff-qeg-ok",
+      "release_candidate_ref": "artifact://release/rc-20260703",
+      "handoff_target": "qeg",
+      "handoff_mode": "live_reference",
+      "external_run_ref": "qeg://runs/20260703-001",
+      "external_decision_ref": "qeg://decisions/20260703-001",
+      "external_status": "approved",
+      "hate_claimed_final_approval": false,
+      "verdict_overwrite_attempted": false
+    },
+    "approval_reference": {"authority_owner": "qeg"}
+  }
+}

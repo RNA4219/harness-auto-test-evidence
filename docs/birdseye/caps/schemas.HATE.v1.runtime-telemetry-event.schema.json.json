@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/runtime-telemetry-event.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "77979c683fe2873ac996299a19724b401457b9372a94be740342cf045f9260a9",
+  "line_count": 51,
+  "size_bytes": 1665,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

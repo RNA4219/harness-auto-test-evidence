@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/incident-lifecycle-record.schema.json",
+  "title": "HATE Incident Lifecycle Record",
+  "type": "object",
+  "required": [
+    "record_type",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy",
+    "incident_id",
+    "incident_state",
+    "owner",
+    "severity",
+    "timeline_refs",
+    "decision_ref",
+    "post_incident_review_ref",
+    "sourceRefs"
+  ],
+  "properties": {
+    "record_type": {"const": "incident-lifecycle-record"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "system_actor": {"type": "string", "minLength": 1},
+    "decision_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "unsafe_output_policy": {"type": "string", "minLength": 1},
+    "incident_id": {"type": "string"},
+    "incident_state": {"type": "string"},
+    "owner": {"type": "string"},
+    "severity": {"type": "string"},
+    "timeline_refs": {"type": "array", "items": {"type": "string"}},
+    "decision_ref": {"type": "string"},
+    "post_incident_review_ref": {"type": "string"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "anyOf": [
+    {"required": ["actor"]},
+    {"required": ["system_actor"]}
+  ],
+  "additionalProperties": true
+}

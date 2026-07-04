@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/compliance/stale-control-claim/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "05cb65e3149df36a0d80162444f54e969189fa49961c007e8b5f6db6235d18de",
+  "line_count": 12,
+  "size_bytes": 624,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

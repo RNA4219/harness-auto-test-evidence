@@ -2,9 +2,9 @@
   "path": "fixtures/expansion/recurring-real-repo-eval/baseline-trend-pass/fixture.json",
   "role": "fixture",
   "kind": "json",
-  "sha256": "ebe27110f8755fbf36bb86438e1b92ba83c631d4032942694b1f753f9616e74e",
-  "line_count": 20,
-  "size_bytes": 1000,
+  "sha256": "7236902c17a7f4d13f9debe72c46709858337cc7016346962b154930dd3dba66",
+  "line_count": 47,
+  "size_bytes": 2630,
   "headings": [],
   "imports": [],
   "links": [],
@@ -12,6 +12,7 @@
   "tags": [
     "artifact",
     "fixture",
+    "release",
     "schema",
     "security"
   ]

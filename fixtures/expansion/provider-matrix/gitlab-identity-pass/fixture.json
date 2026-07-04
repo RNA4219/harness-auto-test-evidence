@@ -15,9 +15,50 @@
         {"provider": "buildkite", "support_state": "partial", "commit_identity": "commit", "review_identity": "pull_request", "run_attempt": "build_attempt", "artifact_lifetime": "artifact-policy", "annotation_target": "annotation", "rerun_semantics": "rebuild"},
         {"provider": "local-import", "support_state": "supported", "commit_identity": "source_sha", "review_identity": "local_ref", "run_attempt": "import_id", "artifact_lifetime": "local-policy", "annotation_target": "local-report", "rerun_semantics": "new-import"}
       ],
+      "permission_matrix": [
+        {"provider": "github", "scope": "checks:write", "sourceRef": "perm:github"},
+        {"provider": "gitlab", "scope": "api:read_repository+mr_notes", "sourceRef": "perm:gitlab"},
+        {"provider": "azure-devops", "scope": "build:read+code_status:write", "sourceRef": "perm:azure-devops"},
+        {"provider": "jenkins", "scope": "job:read+artifact:read", "sourceRef": "perm:jenkins"},
+        {"provider": "circleci", "scope": "pipeline:read+rerun", "sourceRef": "perm:circleci"},
+        {"provider": "bitbucket", "scope": "pipeline:read+report:write", "sourceRef": "perm:bitbucket"},
+        {"provider": "buildkite", "scope": "build:read+annotation:write", "sourceRef": "perm:buildkite"},
+        {"provider": "local-import", "scope": "local-readonly", "sourceRef": "perm:local-import"}
+      ],
+      "artifact_policies": [
+        {"provider": "github", "retention_days": 90, "redaction": true, "allows_raw_logs": false},
+        {"provider": "gitlab", "retention_days": 30, "redaction": true, "allows_raw_logs": false},
+        {"provider": "azure-devops", "retention_days": 30, "redaction": true, "allows_raw_logs": false},
+        {"provider": "jenkins", "retention_days": 14, "redaction": true, "allows_raw_logs": false},
+        {"provider": "circleci", "retention_days": 30, "redaction": true, "allows_raw_logs": false},
+        {"provider": "bitbucket", "retention_days": 30, "redaction": true, "allows_raw_logs": false},
+        {"provider": "buildkite", "retention_days": 30, "redaction": true, "allows_raw_logs": false},
+        {"provider": "local-import", "retention_days": 7, "redaction": true, "allows_raw_logs": false}
+      ],
+      "annotation_policies": [
+        {"provider": "github", "stable_target": true, "sourceRef": "annotation:github", "can_post_secret": false},
+        {"provider": "gitlab", "stable_target": true, "sourceRef": "annotation:gitlab", "can_post_secret": false},
+        {"provider": "azure-devops", "stable_target": true, "sourceRef": "annotation:azure-devops", "can_post_secret": false},
+        {"provider": "jenkins", "stable_target": true, "sourceRef": "annotation:jenkins", "can_post_secret": false},
+        {"provider": "circleci", "stable_target": true, "sourceRef": "annotation:circleci", "can_post_secret": false},
+        {"provider": "bitbucket", "stable_target": true, "sourceRef": "annotation:bitbucket", "can_post_secret": false},
+        {"provider": "buildkite", "stable_target": true, "sourceRef": "annotation:buildkite", "can_post_secret": false},
+        {"provider": "local-import", "stable_target": true, "sourceRef": "annotation:local-import", "can_post_secret": false}
+      ],
+      "rerun_policies": [
+        {"provider": "github", "attempt_identity": "run_attempt", "idempotency_key": "run_id:attempt", "preserves_previous_attempt": true},
+        {"provider": "gitlab", "attempt_identity": "pipeline_attempt", "idempotency_key": "pipeline_id:attempt", "preserves_previous_attempt": true},
+        {"provider": "azure-devops", "attempt_identity": "attempt", "idempotency_key": "build_id:attempt", "preserves_previous_attempt": true},
+        {"provider": "jenkins", "attempt_identity": "build_number", "idempotency_key": "job:build_number", "preserves_previous_attempt": true},
+        {"provider": "circleci", "attempt_identity": "workflow_job", "idempotency_key": "workflow_id:job_number", "preserves_previous_attempt": true},
+        {"provider": "bitbucket", "attempt_identity": "build_number", "idempotency_key": "pipeline_uuid:build_number", "preserves_previous_attempt": true},
+        {"provider": "buildkite", "attempt_identity": "build_attempt", "idempotency_key": "build_id:attempt", "preserves_previous_attempt": true},
+        {"provider": "local-import", "attempt_identity": "import_id", "idempotency_key": "source_sha:import_id", "preserves_previous_attempt": true}
+      ],
       "minimum_permissions_declared": true,
       "ambiguous_identity_detected": false,
-      "overbroad_permission_detected": false
+      "overbroad_permission_detected": false,
+      "raw_token_present": false
     }
   }
 }

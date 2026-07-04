@@ -1,0 +1,27 @@
+{
+  "fixture_id": "postpoc-plugin-distribution-api-migration-required",
+  "input": {
+    "profile": "release",
+    "manifest": {
+      "plugin_id": "detector.old-api",
+      "plugin_version": "0.9.0",
+      "api_version": "HATE-plugin/v0",
+      "package_hash": "sha256:plugin-old",
+      "observed_package_hash": "sha256:plugin-old",
+      "signature_algorithm": "ed25519",
+      "signature_ref": "signature://detector.old-api/0.9.0",
+      "signature_valid": true,
+      "trust_source": "org-policy",
+      "allowlist_ref": "allowlist://org/plugins/detector.old-api",
+      "compatibility_status": "migration_required",
+      "capabilities": ["emit_findings"],
+      "resource_limits": {"timeout_ms": 30000},
+      "migration_note_ref": ""
+    },
+    "distribution_index": {
+      "index_ref": "index://plugins/release",
+      "indexed_package_hash": "sha256:plugin-old",
+      "index_stale": false
+    }
+  }
+}

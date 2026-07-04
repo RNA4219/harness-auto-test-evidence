@@ -1,0 +1,11 @@
+{
+  "fixture_id": "warm-cache-improves",
+  "input": {
+    "baseline_id": "capacity-baseline-cache",
+    "machine_profile": {"profile_id": "win-dev-64g", "cpu_model": "Ryzen", "logical_cores": 16, "memory_mb": 65536, "os": "Windows"},
+    "runs": [
+      {"scenario_id": "cold-cache", "dataset_hash": "sha256:capacity-cache", "repo_count": 100, "finding_count": 100000, "duration_ms": 60000, "peak_memory_mb": 1800, "cache_hit_rate": 0.05, "timeout_count": 0, "degradation_mode": "normal", "runtime_budget_ms": 120000, "memory_budget_mb": 4096},
+      {"scenario_id": "warm-cache", "dataset_hash": "sha256:capacity-cache", "repo_count": 100, "finding_count": 100000, "duration_ms": 22000, "peak_memory_mb": 1200, "cache_hit_rate": 0.9, "timeout_count": 0, "degradation_mode": "normal", "runtime_budget_ms": 120000, "memory_budget_mb": 4096}
+    ]
+  }
+}

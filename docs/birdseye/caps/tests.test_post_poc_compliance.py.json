@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_post_poc_compliance.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "92001ed29abd0767166dc21c44eb30be0df41c2f2bfcd84a8704d4c875952817",
+  "line_count": 151,
+  "size_bytes": 5887,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.compliance",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/compliance.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

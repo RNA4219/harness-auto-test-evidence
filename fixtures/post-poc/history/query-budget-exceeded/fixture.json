@@ -1,0 +1,45 @@
+{
+  "fixture_id": "postpoc-history-query-budget-exceeded",
+  "input": {
+    "query": {
+      "window_start": "2026-07-01T00:00:00Z",
+      "window_end": "2026-07-03T00:00:00Z",
+      "repo_filter": "*",
+      "suite_filter": "*",
+      "aggregation_level": "portfolio",
+      "performance_budget_ms": 50,
+      "actual_runtime_ms": 250,
+      "min_sample_count": 2
+    },
+    "samples": [
+      {
+        "run_id": "budget-1",
+        "repo_id": "repo-a",
+        "suite_id": "pytest",
+        "test_count": 40,
+        "flake_count": 0,
+        "evidence_age_days": 1,
+        "debt_age_days": 1,
+        "repo_health_score": 0.94,
+        "baseline_score": 0.95,
+        "current_score": 0.94,
+        "manual_review_latency_hours": 2,
+        "sourceRef": "fixture://history/query-budget-exceeded#budget-1"
+      },
+      {
+        "run_id": "budget-2",
+        "repo_id": "repo-b",
+        "suite_id": "vitest",
+        "test_count": 60,
+        "flake_count": 0,
+        "evidence_age_days": 1,
+        "debt_age_days": 1,
+        "repo_health_score": 0.93,
+        "baseline_score": 0.95,
+        "current_score": 0.93,
+        "manual_review_latency_hours": 3,
+        "sourceRef": "fixture://history/query-budget-exceeded#budget-2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/notifications/dead-lettered/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "56f7f3fed2599f05fb8502c791cf76205acab1db154b03111ba860f5f5125cb4",
+  "line_count": 33,
+  "size_bytes": 1047,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

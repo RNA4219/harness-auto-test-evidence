@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/workflow-alignment-runtime.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "d6e74f2411ee94a95d2b51fe0785f02fdcef0738518a747a4cbf8b9ce1ae65c7",
+  "line_count": 24,
+  "size_bytes": 937,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

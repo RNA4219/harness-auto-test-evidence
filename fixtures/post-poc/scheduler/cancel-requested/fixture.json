@@ -1,0 +1,23 @@
+{
+  "fixture_id": "post-poc-scheduler-cancel-requested",
+  "input": {
+    "job": {
+      "worker_id": "worker-a",
+      "queue_id": "default",
+      "lease_id": "lease-003",
+      "job_id": "job-003",
+      "job_kind": "repo_suite_run",
+      "lease_state": "leased",
+      "attempt": 0,
+      "max_attempts": 1
+    },
+    "events": [
+      {
+        "event_type": "cancel_requested",
+        "actor": "",
+        "reason": "",
+        "sourceRefs": ["scheduler.fixture#/cancel_requested"]
+      }
+    ]
+  }
+}

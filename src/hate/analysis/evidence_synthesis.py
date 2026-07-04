@@ -48,7 +48,8 @@ def build_evidence_synthesis_report(
 ) -> dict[str, Any]:
     source_refs = list(source_refs or input_data.get("sourceRefs") or ["evidence-synthesis"])
     synthesis_config = _normalize_synthesis_config(input_data.get("synthesis_config", input_data))
-    findings = _findings_for(synthesis_config, source_refs[0])
+    diagnostics = _derive_diagnostics(synthesis_config)
+    findings = _findings_for(synthesis_config, diagnostics, source_refs[0])
     status = "hold" if findings else "pass"
     return {
         "schema_version": "HATE/v1",
@@ -62,9 +63,16 @@ def build_evidence_synthesis_report(
             "evidence_source_count": len(synthesis_config["evidence_sources"]),
             "mutation_coverage_count": len(synthesis_config["mutation_coverage"]),
             "contract_coverage_count": len(synthesis_config["contract_coverage"]),
+            "target_requirement_count": len(diagnostics["requirement_synthesis"]),
+            "weak_requirement_count": len(diagnostics["weak_requirement_refs"]),
+            "unsatisfied_contract_count": len(diagnostics["unsatisfied_contract_ids"]),
+            "survived_mutation_count": len(diagnostics["survived_mutation_ids"]),
+            "synthesized_confidence": diagnostics["synthesized_confidence"],
             "confidence": synthesis_config["confidence"],
             "finding_count": len(findings),
         },
+        "requirement_synthesis": diagnostics["requirement_synthesis"],
+        "evidence_synthesis_diagnostics": diagnostics,
         "analysis_scope": synthesis_config["analysis_scope"],
         "input_refs": synthesis_config["input_refs"],
         "confidence": synthesis_config["confidence"],
@@ -147,7 +155,79 @@ def _normalize_limits(limits: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _findings_for(config: dict[str, Any], source_ref: str) -> list[EvidenceSynthesisFinding]:
+def _derive_diagnostics(config: dict[str, Any]) -> dict[str, Any]:
+    requirement_synthesis = _synthesize_requirements(config)
+    weak_requirement_refs = sorted(
+        req
+        for req, data in requirement_synthesis.items()
+        if data["synthesized_confidence"] < config["strong_evidence_threshold"]
+    )
+    survived_mutation_ids = sorted(
+        mc["mutation_id"] for mc in config["mutation_coverage"] if mc["mutation_id"] and not mc["killed"]
+    )
+    unsatisfied_contract_ids = sorted(
+        cc["contract_id"] for cc in config["contract_coverage"] if cc["contract_id"] and not cc["satisfied"]
+    )
+    unverified_strong_source_ids = sorted(
+        es["source_id"]
+        for es in config["evidence_sources"]
+        if es["source_id"] and es["confidence"] >= config["strong_evidence_threshold"] and not es["verified"]
+    )
+    synthesized_confidence = _average(
+        [data["synthesized_confidence"] for data in requirement_synthesis.values()]
+    )
+    return {
+        "requirement_synthesis": requirement_synthesis,
+        "weak_requirement_refs": weak_requirement_refs,
+        "survived_mutation_ids": survived_mutation_ids,
+        "unsatisfied_contract_ids": unsatisfied_contract_ids,
+        "unverified_strong_source_ids": unverified_strong_source_ids,
+        "synthesized_confidence": synthesized_confidence,
+    }
+
+
+def _synthesize_requirements(config: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for es in config["evidence_sources"]:
+        req = es["target_requirement"] or "_unscoped"
+        grouped.setdefault(req, []).append(es)
+
+    mutation_strength = _average([mc["confidence"] for mc in config["mutation_coverage"] if mc["killed"]])
+    contract_strength = _average([cc["confidence"] for cc in config["contract_coverage"] if cc["satisfied"]])
+    result: dict[str, dict[str, Any]] = {}
+    for requirement_ref, sources in grouped.items():
+        verified_sources = [s for s in sources if s["verified"]]
+        source_strength = _average([s["confidence"] for s in verified_sources])
+        source_types = sorted({s["source_type"] for s in sources if s["source_type"]})
+        synthesis_inputs = [source_strength]
+        if any(s["source_type"] == "mutation" for s in sources):
+            synthesis_inputs.append(mutation_strength)
+        if any(s["source_type"] == "contract" for s in sources):
+            synthesis_inputs.append(contract_strength)
+        result[requirement_ref] = {
+            "source_count": len(sources),
+            "verified_source_count": len(verified_sources),
+            "source_types": source_types,
+            "source_strength": source_strength,
+            "mutation_strength": mutation_strength,
+            "contract_strength": contract_strength,
+            "synthesized_confidence": _average(synthesis_inputs),
+        }
+    return result
+
+
+def _average(values: list[float]) -> float:
+    values = [v for v in values if v is not None]
+    if not values:
+        return 0.0
+    return round(sum(values) / len(values), 4)
+
+
+def _findings_for(
+    config: dict[str, Any],
+    diagnostics: dict[str, Any],
+    source_ref: str,
+) -> list[EvidenceSynthesisFinding]:
     findings: list[EvidenceSynthesisFinding] = []
 
     # HATE-GAP-053 primary negative: weak-evidence-inflation-denied
@@ -158,6 +238,34 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[EvidenceSynth
         findings.append(_finding(
             "evidence_synthesis_weak_evidence_inflation_denied",
             "Evidence synthesis cannot inflate readiness from weak evidence.",
+            source_ref,
+        ))
+
+    if diagnostics["weak_requirement_refs"]:
+        findings.append(_finding(
+            "evidence_synthesis_requirement_confidence_below_threshold",
+            f"Requirement synthesis below threshold: {', '.join(diagnostics['weak_requirement_refs'])}.",
+            source_ref,
+        ))
+
+    if diagnostics["survived_mutation_ids"]:
+        findings.append(_finding(
+            "evidence_synthesis_survived_mutation_hold",
+            f"Mutation coverage contains survived mutations: {', '.join(diagnostics['survived_mutation_ids'])}.",
+            source_ref,
+        ))
+
+    if diagnostics["unsatisfied_contract_ids"]:
+        findings.append(_finding(
+            "evidence_synthesis_unsatisfied_contract_hold",
+            f"Contract coverage contains unsatisfied contracts: {', '.join(diagnostics['unsatisfied_contract_ids'])}.",
+            source_ref,
+        ))
+
+    if diagnostics["unverified_strong_source_ids"]:
+        findings.append(_finding(
+            "evidence_synthesis_unverified_strong_source_hold",
+            f"Strong evidence sources are not verified: {', '.join(diagnostics['unverified_strong_source_ids'])}.",
             source_ref,
         ))
 
@@ -199,6 +307,27 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[EvidenceSynth
                 f"Contract coverage '{cc.get('contract_id')}' missing sourceRef.",
                 source_ref,
             ))
+
+    if len(config["evidence_sources"]) > config["limits"]["max_evidence_sources"]:
+        findings.append(_finding(
+            "evidence_synthesis_source_budget_exceeded",
+            f"Evidence source count {len(config['evidence_sources'])} exceeds limit {config['limits']['max_evidence_sources']}.",
+            source_ref,
+        ))
+
+    if len(config["mutation_coverage"]) > config["limits"]["max_mutation_coverage"]:
+        findings.append(_finding(
+            "evidence_synthesis_mutation_budget_exceeded",
+            f"Mutation coverage count {len(config['mutation_coverage'])} exceeds limit {config['limits']['max_mutation_coverage']}.",
+            source_ref,
+        ))
+
+    if len(config["contract_coverage"]) > config["limits"]["max_contract_coverage"]:
+        findings.append(_finding(
+            "evidence_synthesis_contract_budget_exceeded",
+            f"Contract coverage count {len(config['contract_coverage'])} exceeds limit {config['limits']['max_contract_coverage']}.",
+            source_ref,
+        ))
 
     if config["confidence"] < config["limits"]["confidence_threshold"]:
         findings.append(_finding(

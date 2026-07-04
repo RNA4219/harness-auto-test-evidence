@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/capacity-benchmark-run.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "606d4a2bc89da6fc5dd25e49b84cc109a79f2694dfd60bff7012e7be20f7c7cd",
+  "line_count": 29,
+  "size_bytes": 1619,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

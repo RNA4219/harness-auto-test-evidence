@@ -1,0 +1,24 @@
+{
+  "fixture_id": "post-poc-roster-external-repair-denied",
+  "input": {
+    "now": "2026-07-03T00:00:00Z",
+    "repositories": [
+      {
+        "repo_id": "external-lib",
+        "ownership_scope": "external",
+        "repo_class": "small",
+        "discovery_source": "bulk-validation",
+        "last_seen_at": "2026-07-02T00:00:00Z",
+        "stale_after": "2026-07-10T00:00:00Z",
+        "environment_recipe_ref": "recipes/external-lib.json",
+        "dependency_bootstrap_command": ["npm", "ci"],
+        "dependency_bootstrap_status": "passed",
+        "retry_isolation_group": "external-lib-unit",
+        "expected_record_floor": 3,
+        "repair_requested": true,
+        "external_repair_allowed": false,
+        "suites": [{"suite_id": "unit"}]
+      }
+    ]
+  }
+}

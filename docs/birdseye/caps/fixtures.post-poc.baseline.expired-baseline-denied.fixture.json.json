@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/baseline/expired-baseline-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "18a125463537fe00491d928e38b03750525b5046a339f8b2caa454704c3020f3",
+  "line_count": 26,
+  "size_bytes": 776,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "schemas/HATE/v1/hosted-api-request-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "7769b0dc98779a41a976367bbece733e52ac7656398f3bc8e243d71876f498ec",
+  "line_count": 65,
+  "size_bytes": 2193,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema"
+  ]
+}

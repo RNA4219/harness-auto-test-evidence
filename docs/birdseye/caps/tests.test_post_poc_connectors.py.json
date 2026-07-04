@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_post_poc_connectors.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "33d35f2c7051a5d95c22087260631d5aa34d9d3f9241940b7914c0bca0770cf7",
+  "line_count": 247,
+  "size_bytes": 10495,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.connectors",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/connectors.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

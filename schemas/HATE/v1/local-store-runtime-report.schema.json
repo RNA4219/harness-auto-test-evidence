@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/local-store-runtime-report.schema.json",
+  "title": "HATE Local Store Runtime Report",
+  "type": "object",
+  "required": ["schema_version", "record_type"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "local_store_manifest",
+        "local_store_history_index",
+        "local_store_query"
+      ]
+    },
+    "run_id": {"type": "string"},
+    "summary": {"type": "object"},
+    "resource": {"type": "string"},
+    "data": {"type": "object"},
+    "release_gate_override": {"type": "boolean"},
+    "publish_gate_override": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

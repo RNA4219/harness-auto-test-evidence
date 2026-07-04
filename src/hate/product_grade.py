@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
@@ -154,6 +155,7 @@ def generate_product_grade_reports(
     implementation_complete = not missing_reports
     residual_blockers = real_data["residual_blockers"]
     poc_completion = _poc_completion(root, residual_blockers)
+    post_poc_gap_audit = _post_poc_gap_audit(root)
     product_grade_status = "no_go"
     reason = "Product-grade evidence is missing required documents, implementation refs, or tests."
     if implementation_complete:
@@ -185,6 +187,7 @@ def generate_product_grade_reports(
         "missing_or_incomplete_reports": missing_reports,
         "real_data_validation": real_data,
         "poc_completion": poc_completion,
+        "post_poc_gap_audit": post_poc_gap_audit,
         "reports": reports,
     }
     _write_json(out_dir / "product-grade-evidence-summary.json", summary)
@@ -195,6 +198,7 @@ def generate_product_grade_reports(
         "poc_ready": summary["poc_ready"],
         "poc_completion_percent": summary["poc_completion_percent"],
         "product_grade_implementation_status": product_grade_status,
+        "known_post_poc_gap_count": post_poc_gap_audit["open_gap_count"],
     }
 
 
@@ -226,7 +230,7 @@ def _build_report(
 
     return {
         "schema_version": "HATE/product-grade/v1",
-        "record_type": spec.filename.removesuffix(".json").replace("-", "_"),
+        "record_type": f"product_grade_{spec.filename.removesuffix('.json').replace('-', '_')}",
         "generated_at": generated_at,
         "source_version": source_version or "unknown",
         "area": spec.area,
@@ -366,6 +370,34 @@ def _poc_completion(repo_root: Path, residual_blockers: list[str]) -> dict[str, 
         "mitigations": mitigations,
         "unmitigated_blockers": unmitigated,
         "sourceRef": str(path),
+    }
+
+
+def _post_poc_gap_audit(repo_root: Path) -> dict[str, Any]:
+    path = repo_root / "docs" / "process" / "POST_POC_REQUIREMENTS_GAP_AUDIT.md"
+    if not path.exists():
+        return {
+            "present": False,
+            "open_gap_count": 0,
+            "gap_ids": [],
+            "sourceRef": str(path),
+            "readiness_effect": "hold",
+            "reason": "post-PoC requirements gap audit missing",
+        }
+
+    text = path.read_text(encoding="utf-8")
+    gap_ids = sorted(set(re.findall(r"HATE-POSTPOC-GAP-\d{3}", text)))
+    return {
+        "present": True,
+        "open_gap_count": len(gap_ids),
+        "gap_ids": gap_ids,
+        "sourceRef": str(path),
+        "readiness_effect": "product_ready_hold" if gap_ids else "pass",
+        "reason": (
+            "PoC completion does not close product, enterprise, or regulated operational requirements."
+            if gap_ids
+            else "No open post-PoC gaps recorded."
+        ),
     }
 
 

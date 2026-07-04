@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/product-runtime-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "fedf3d8abe9f9abd7d664bc0e4814e91224290199d5b66247bd0dc6b0038c6e1",
+  "line_count": 28,
+  "size_bytes": 881,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "release",
+    "schema"
+  ]
+}

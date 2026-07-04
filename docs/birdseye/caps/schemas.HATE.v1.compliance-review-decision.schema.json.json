@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/compliance-review-decision.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "3a58dd4d8edc79a03d99715d475ba48052abfbed0e75de0b89a1ccb2da6a6170",
+  "line_count": 25,
+  "size_bytes": 1310,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

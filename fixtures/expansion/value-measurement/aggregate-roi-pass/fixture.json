@@ -5,20 +5,24 @@
   "input": {
     "value_config": {
       "aggregate_metrics": [
-        {"metric_id": "review_time_saved", "delta": 12},
-        {"metric_id": "risk_debt_burn_down", "delta": 8},
-        {"metric_id": "release_blocker_lead_time", "delta": -2},
-        {"metric_id": "repeat_finding_rate", "delta": -0.1},
-        {"metric_id": "avoided_unsupported_claims", "delta": 3}
+        {"metric_id": "review_time_saved", "delta": 12, "confidence_interval": [8, 16], "sourceRef": "value-evidence-001", "evidence_refs": ["value-evidence-001"]},
+        {"metric_id": "risk_debt_burn_down", "delta": 8, "confidence_interval": [5, 10], "sourceRef": "value-evidence-002", "evidence_refs": ["value-evidence-002"]},
+        {"metric_id": "release_blocker_lead_time", "delta": -2, "confidence_interval": [-3, -1], "sourceRef": "value-evidence-003", "evidence_refs": ["value-evidence-003"]},
+        {"metric_id": "repeat_finding_rate", "delta": -0.1, "confidence_interval": [-0.15, -0.05], "sourceRef": "value-evidence-004", "evidence_refs": ["value-evidence-004"]},
+        {"metric_id": "avoided_unsupported_claims", "delta": 3, "confidence_interval": [1, 4], "sourceRef": "value-evidence-005", "evidence_refs": ["value-evidence-005"], "causal_claim": true}
       ],
-      "roi_inputs": {"period": "monthly"},
+      "roi_inputs": {"period": "monthly", "cost_basis": "review-hours"},
+      "counterfactual": {"basis": "previous monthly baseline", "sourceRef": "baseline:value-001"},
       "confidence": 0.75,
       "limitations": ["sample is internal repositories only"],
       "sample_size": 12,
+      "minimum_sample_size": 10,
       "baseline_present": true,
       "individual_ranking_present": false,
       "noisy_signal_counts_as_value": false,
-      "safe_evidence_refs": ["value-evidence-001"]
+      "safe_evidence_refs": ["value-evidence-001", "value-evidence-002", "value-evidence-003", "value-evidence-004", "value-evidence-005"],
+      "privacy_aggregate_only": true,
+      "raw_user_metric_present": false
     }
   }
 }

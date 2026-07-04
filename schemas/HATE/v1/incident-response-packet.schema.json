@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/incident-response-packet.schema.json",
+  "title": "HATE Incident Response Packet",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "packet_id",
+    "incident_id",
+    "correlation_id",
+    "owner",
+    "severity",
+    "actions",
+    "support_pack",
+    "findings",
+    "summary",
+    "sourceRefs",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE/v1"
+    },
+    "record_type": {
+      "const": "incident-response-packet"
+    },
+    "packet_id": {
+      "type": "string"
+    },
+    "incident_id": {
+      "type": "string"
+    },
+    "correlation_id": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_type",
+          "action_id",
+          "status",
+          "description",
+          "required"
+        ],
+        "properties": {
+          "record_type": {
+            "const": "incident-response-action"
+          },
+          "action_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "blocked"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "support_pack": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "evidence_refs",
+        "support_bundle_safe",
+        "redaction_report_ref"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "post-incident-evidence-pack"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "support_bundle_safe": {
+          "type": "boolean"
+        },
+        "redaction_report_ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "severity",
+          "message",
+          "sourceRef",
+          "readiness_effect"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "readiness_effect": {
+            "type": "string",
+            "enum": [
+              "hold"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "action_count",
+        "blocked_action_count",
+        "finding_count",
+        "support_bundle_safe",
+        "ready_for_response"
+      ],
+      "properties": {
+        "action_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_action_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "finding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "support_bundle_safe": {
+          "type": "boolean"
+        },
+        "ready_for_response": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "readiness_effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold"
+      ]
+    },
+    "unsafe_output_policy": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "actor"
+      ]
+    },
+    {
+      "required": [
+        "system_actor"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/hosted-api/expired-token-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "7e72981e1c42b459a99e9df99709e21b159cf3af6a98fa0eebadd13ed0258f79",
+  "line_count": 20,
+  "size_bytes": 584,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture"
+  ]
+}

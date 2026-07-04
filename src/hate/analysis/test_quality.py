@@ -48,7 +48,8 @@ def build_test_quality_report(
 ) -> dict[str, Any]:
     source_refs = list(source_refs or input_data.get("sourceRefs") or ["test-quality"])
     quality_config = _normalize_quality_config(input_data.get("quality_config", input_data))
-    findings = _findings_for(quality_config, source_refs[0])
+    diagnostics = _derive_diagnostics(quality_config)
+    findings = _findings_for(quality_config, diagnostics, source_refs[0])
     status = "hold" if findings else "pass"
     return {
         "schema_version": "HATE/v1",
@@ -62,9 +63,14 @@ def build_test_quality_report(
             "test_pattern_count": len(quality_config["test_patterns"]),
             "anti_pattern_count": len(quality_config["anti_patterns"]),
             "quality_metric_count": len(quality_config["quality_metrics"]),
+            "test_source_count": len(quality_config["test_sources"]),
+            "duplicate_test_count": len(diagnostics["duplicate_test_ids"]),
+            "source_anti_pattern_count": sum(len(v) for v in diagnostics["source_anti_patterns"].values()),
+            "unverified_pattern_count": len(diagnostics["unverified_pattern_ids"]),
             "confidence": quality_config["confidence"],
             "finding_count": len(findings),
         },
+        "test_quality_diagnostics": diagnostics,
         "analysis_scope": quality_config["analysis_scope"],
         "input_refs": quality_config["input_refs"],
         "confidence": quality_config["confidence"],
@@ -90,10 +96,16 @@ def _normalize_quality_config(raw_config: dict[str, Any]) -> dict[str, Any]:
         for qm in config.get("quality_metrics", [])
         if isinstance(qm, dict)
     ]
+    test_sources = [
+        _normalize_test_source(ts)
+        for ts in config.get("test_sources", [])
+        if isinstance(ts, dict)
+    ]
     return {
         "test_patterns": test_patterns,
         "anti_patterns": anti_patterns,
         "quality_metrics": quality_metrics,
+        "test_sources": test_sources,
         "analysis_scope": str(config.get("analysis_scope", "") or ""),
         "input_refs": [str(ref) for ref in config.get("input_refs", []) if str(ref)],
         "confidence": float(config.get("confidence", 0.0) or 0.0),
@@ -139,16 +151,81 @@ def _normalize_quality_metric(qm: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _normalize_test_source(ts: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "test_id": str(ts.get("test_id", "") or ""),
+        "sourceRef": str(ts.get("sourceRef", "") or ""),
+        "text": str(ts.get("text", "") or ""),
+        "fixture_size_bytes": int(ts.get("fixture_size_bytes", 0) or 0),
+        "snapshot_line_count": int(ts.get("snapshot_line_count", 0) or 0),
+    }
+
+
 def _normalize_limits(limits: dict[str, Any]) -> dict[str, Any]:
     return {
         "max_test_patterns": int(limits.get("max_test_patterns", 100) or 100),
         "max_anti_patterns": int(limits.get("max_anti_patterns", 100) or 100),
         "max_quality_metrics": int(limits.get("max_quality_metrics", 100) or 100),
         "confidence_threshold": float(limits.get("confidence_threshold", 0.7) or 0.7),
+        "max_fixture_size_bytes": int(limits.get("max_fixture_size_bytes", 1_000_000) or 1_000_000),
+        "max_snapshot_line_count": int(limits.get("max_snapshot_line_count", 250) or 250),
     }
 
 
-def _findings_for(config: dict[str, Any], source_ref: str) -> list[TestQualityFinding]:
+def _derive_diagnostics(config: dict[str, Any]) -> dict[str, Any]:
+    test_ids = [source["test_id"] for source in config["test_sources"] if source["test_id"]]
+    seen: set[str] = set()
+    duplicate_ids: list[str] = []
+    for test_id in test_ids:
+        if test_id in seen and test_id not in duplicate_ids:
+            duplicate_ids.append(test_id)
+        seen.add(test_id)
+
+    source_anti_patterns: dict[str, list[str]] = {}
+    large_fixture_ids: list[str] = []
+    overbroad_snapshot_ids: list[str] = []
+    for source in config["test_sources"]:
+        source_id = source["test_id"] or source["sourceRef"] or "unknown"
+        detected = _detect_source_anti_patterns(source)
+        if detected:
+            source_anti_patterns[source_id] = detected
+        if source["fixture_size_bytes"] > config["limits"]["max_fixture_size_bytes"]:
+            large_fixture_ids.append(source_id)
+        if source["snapshot_line_count"] > config["limits"]["max_snapshot_line_count"]:
+            overbroad_snapshot_ids.append(source_id)
+
+    return {
+        "duplicate_test_ids": sorted(duplicate_ids),
+        "source_anti_patterns": source_anti_patterns,
+        "large_fixture_test_ids": sorted(large_fixture_ids),
+        "overbroad_snapshot_test_ids": sorted(overbroad_snapshot_ids),
+        "unverified_pattern_ids": sorted(
+            tp["pattern_id"] for tp in config["test_patterns"] if tp["pattern_id"] and not tp["verified"]
+        ),
+    }
+
+
+def _detect_source_anti_patterns(source: dict[str, Any]) -> list[str]:
+    text = source["text"].lower()
+    patterns = {
+        "sleep_based": ("sleep(", "time.sleep", "settimeout(", "setinterval("),
+        "random_usage": ("random.", "math.random", "uuid.uuid4", "faker.", "date.now("),
+        "network_usage": ("requests.", "httpx.", "fetch(", "urllib.", "axios.", "socket."),
+        "order_dependence": ("depends on previous", "run after", "test_order", "pytest-order", "shared_state"),
+        "filesystem_temp_leak": ("tempfile.gettempdir()", "/tmp/", "c:\\\\temp", "global tmp"),
+    }
+    detected: list[str] = []
+    for anti_pattern, needles in patterns.items():
+        if any(needle in text for needle in needles):
+            detected.append(anti_pattern)
+    return detected
+
+
+def _findings_for(
+    config: dict[str, Any],
+    diagnostics: dict[str, Any],
+    source_ref: str,
+) -> list[TestQualityFinding]:
     findings: list[TestQualityFinding] = []
 
     # HATE-GAP-054 primary negative: sleep-based-test-hold
@@ -158,6 +235,51 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[TestQualityFi
         findings.append(_finding(
             "test_quality_sleep_based_test_hold",
             "Sleep-based test anti-pattern detected.",
+            source_ref,
+        ))
+
+    if "sleep_based" in {p for patterns in diagnostics["source_anti_patterns"].values() for p in patterns}:
+        findings.append(_finding(
+            "test_quality_sleep_based_test_hold",
+            "Sleep-based test anti-pattern inferred from test source text.",
+            source_ref,
+        ))
+
+    if diagnostics["duplicate_test_ids"]:
+        findings.append(_finding(
+            "test_quality_duplicate_test_detected",
+            f"Duplicate test ids detected: {', '.join(diagnostics['duplicate_test_ids'])}.",
+            source_ref,
+        ))
+
+    source_flags = {p for patterns in diagnostics["source_anti_patterns"].values() for p in patterns}
+    for flag, code in {
+        "random_usage": "test_quality_random_usage_hold",
+        "network_usage": "test_quality_network_usage_hold",
+        "order_dependence": "test_quality_order_dependence_hold",
+        "filesystem_temp_leak": "test_quality_filesystem_temp_leak_hold",
+    }.items():
+        if flag in source_flags:
+            findings.append(_finding(code, f"Test source anti-pattern detected: {flag}.", source_ref))
+
+    if diagnostics["large_fixture_test_ids"]:
+        findings.append(_finding(
+            "test_quality_huge_fixture_hold",
+            f"Huge fixture usage detected in tests: {', '.join(diagnostics['large_fixture_test_ids'])}.",
+            source_ref,
+        ))
+
+    if diagnostics["overbroad_snapshot_test_ids"]:
+        findings.append(_finding(
+            "test_quality_overbroad_snapshot_hold",
+            f"Overbroad snapshot usage detected in tests: {', '.join(diagnostics['overbroad_snapshot_test_ids'])}.",
+            source_ref,
+        ))
+
+    if diagnostics["unverified_pattern_ids"]:
+        findings.append(_finding(
+            "test_quality_unverified_pattern_hold",
+            f"Test patterns are not verified: {', '.join(diagnostics['unverified_pattern_ids'])}.",
             source_ref,
         ))
 
@@ -190,6 +312,27 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[TestQualityFi
                 f"Anti-pattern '{ap.get('anti_pattern_id')}' with critical severity not mitigated.",
                 source_ref,
             ))
+
+    if len(config["test_patterns"]) > config["limits"]["max_test_patterns"]:
+        findings.append(_finding(
+            "test_quality_pattern_budget_exceeded",
+            f"Test pattern count {len(config['test_patterns'])} exceeds limit {config['limits']['max_test_patterns']}.",
+            source_ref,
+        ))
+
+    if len(config["anti_patterns"]) > config["limits"]["max_anti_patterns"]:
+        findings.append(_finding(
+            "test_quality_anti_pattern_budget_exceeded",
+            f"Anti-pattern count {len(config['anti_patterns'])} exceeds limit {config['limits']['max_anti_patterns']}.",
+            source_ref,
+        ))
+
+    if len(config["quality_metrics"]) > config["limits"]["max_quality_metrics"]:
+        findings.append(_finding(
+            "test_quality_metric_budget_exceeded",
+            f"Quality metric count {len(config['quality_metrics'])} exceeds limit {config['limits']['max_quality_metrics']}.",
+            source_ref,
+        ))
 
     for tp in config["test_patterns"]:
         if not tp.get("sourceRef"):

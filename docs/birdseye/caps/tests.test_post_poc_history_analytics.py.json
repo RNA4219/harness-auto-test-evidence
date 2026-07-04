@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_post_poc_history_analytics.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "d1a747c65df585af5b545d928f3afb8c537767f17c0121bc41dc1a53f43794b0",
+  "line_count": 302,
+  "size_bytes": 12035,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.post_poc.history_analytics",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/history_analytics.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

@@ -26,6 +26,7 @@ from hate.dashboard.view_models import (
 
 # Fixture paths
 FIXTURE_DIR = Path("fixtures/dashboard/view-models")
+ROOT = Path(__file__).resolve().parents[1]
 READY_RUN_FIXTURE = FIXTURE_DIR / "ready-run" / "fixture.json"
 HOLD_ORACLE_FIXTURE = FIXTURE_DIR / "hold-risk-without-oracle" / "fixture.json"
 QUARANTINED_FIXTURE = FIXTURE_DIR / "quarantined-artifact" / "fixture.json"
@@ -386,6 +387,50 @@ class TestDashboardViewModel:
         expected = fixture["expected"]
         assert dashboard.run_overview.overall_status == expected["overall_status"]
         assert dashboard.run_overview.is_ready() == expected["is_ready"]
+
+    def test_view_model_record_types_are_registered_and_schema_compatible(self) -> None:
+        """All emitted dashboard view-model records are registered with schema coverage."""
+        fixture = load_fixture(READY_RUN_FIXTURE)
+        input_data = fixture["input"]
+        dashboard = build_dashboard_view_model(
+            readiness_report=input_data["readiness_report"],
+            run_id=input_data["run_id"],
+            profile=input_data["profile"],
+            artifact_safety_reports=input_data.get("artifact_safety_reports"),
+            manual_review_requests=input_data.get("manual_review_requests"),
+            missing_reports=input_data.get("missing_reports"),
+        ).to_dict()
+        manual_queue = ManualReviewQueueViewModel(
+            pending_reviews=[],
+            total_count=0,
+            overdue_count=0,
+            sourceRefs=["manual-review://empty"],
+        ).to_dict()
+        risk_coverage = RiskCoverageViewModel(
+            risk_count=0,
+            covered_count=0,
+            uncovered_count=0,
+            oracle_missing_count=0,
+            coverage_only_count=0,
+            high_severity_uncovered=[],
+            sourceRefs=["risk://empty"],
+        ).to_dict()
+        records = [
+            dashboard,
+            dashboard["run_overview"],
+            *dashboard["artifact_safety"],
+            manual_queue,
+            risk_coverage,
+        ]
+        registry = json.loads((ROOT / "schemas" / "HATE" / "v1" / "schema-registry.json").read_text(encoding="utf-8"))
+        by_record_type = {record["record_type"]: record for record in registry["records"]}
+
+        for record in records:
+            assert record["record_type"] in by_record_type
+            schema_path = ROOT / by_record_type[record["record_type"]]["schema"]
+            schema = json.loads(schema_path.read_text(encoding="utf-8"))
+            assert set(schema["required"]) <= set(record)
+            assert record["record_type"] in schema["properties"]["record_type"]["enum"]
 
 
 class TestNoIndependentVerdictComputation:

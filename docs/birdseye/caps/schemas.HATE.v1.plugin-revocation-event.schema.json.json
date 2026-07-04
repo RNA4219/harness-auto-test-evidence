@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/plugin-revocation-event.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "6bfd45673eb95c81249a275dca288a2a6bdf170df80b583c9fa7ce58dc6b9f1b",
+  "line_count": 41,
+  "size_bytes": 1362,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

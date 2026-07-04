@@ -1,0 +1,25 @@
+{
+  "path": "docs/process/POST_POC_SPEC_TRACEABILITY_CHECKLIST.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "09f95de6e36b7c9b9b486063752d8355ff202bd560f4bb06c9fc4d0ab6f021f0",
+  "line_count": 87,
+  "size_bytes": 7829,
+  "headings": [
+    "# Post-PoC Spec Traceability Checklist",
+    "## 1. Checklist Rule",
+    "## 2. Gap-by-Gap Spec Traceability",
+    "## 3. Spec Closure Checklist",
+    "## 4. Current Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

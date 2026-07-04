@@ -79,6 +79,23 @@
             "additionalProperties": true
           }
         },
+        "time_series": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["point_id", "timestamp", "metric_type", "value", "failure_pattern", "status", "sourceRef"],
+            "properties": {
+              "point_id": {"type": "string"},
+              "timestamp": {"type": "string"},
+              "metric_type": {"type": "string"},
+              "value": {"type": "number"},
+              "failure_pattern": {"type": "string"},
+              "status": {"type": "string"},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
         "parser_regression_detected": {"type": "boolean"},
         "recurring_failure_pattern": {"type": "boolean"},
         "risk_debt_burn_rate": {"type": "number", "minimum": 0},
@@ -91,8 +108,11 @@
           "properties": {
             "max_trend_metrics": {"type": "integer", "minimum": 0},
             "max_recurrences": {"type": "integer", "minimum": 0},
+            "max_time_series_points": {"type": "integer", "minimum": 0},
             "risk_debt_threshold": {"type": "number", "minimum": 0},
-            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+            "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+            "min_baseline_window_days": {"type": "integer", "minimum": 0},
+            "max_baseline_window_days": {"type": "integer", "minimum": 0}
           },
           "additionalProperties": true
         }
@@ -120,7 +140,12 @@
       "properties": {
         "trend_metric_count": {"type": "integer", "minimum": 0},
         "recurrence_count": {"type": "integer", "minimum": 0},
+        "time_series_count": {"type": "integer", "minimum": 0},
         "baseline_window_days": {"type": "integer", "minimum": 0},
+        "derived_recurrence_count": {"type": "integer", "minimum": 0},
+        "regressing_metric_count": {"type": "integer", "minimum": 0},
+        "invalid_window": {"type": "boolean"},
+        "stale_window": {"type": "boolean"},
         "confidence": {"type": "number", "minimum": 0, "maximum": 1},
         "finding_count": {"type": "integer", "minimum": 0}
       },
@@ -129,6 +154,41 @@
     "baseline_window": {"type": "object"},
     "trend_metrics": {"type": "array", "items": {"type": "object"}},
     "recurrences": {"type": "array", "items": {"type": "object"}},
+    "time_series": {"type": "array", "items": {"type": "object"}},
+    "historical_regression_diagnostics": {
+      "type": "object",
+      "required": [
+        "regressing_metric_ids",
+        "derived_recurrences",
+        "duplicate_recurrence_ids",
+        "missing_source_ref_ids",
+        "invalid_window",
+        "stale_window",
+        "too_short_window"
+      ],
+      "properties": {
+        "regressing_metric_ids": {"type": "array", "items": {"type": "string"}},
+        "derived_recurrences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["failure_pattern", "occurrence_count", "sourceRef"],
+            "properties": {
+              "failure_pattern": {"type": "string"},
+              "occurrence_count": {"type": "integer", "minimum": 0},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "duplicate_recurrence_ids": {"type": "array", "items": {"type": "string"}},
+        "missing_source_ref_ids": {"type": "array", "items": {"type": "string"}},
+        "invalid_window": {"type": "boolean"},
+        "stale_window": {"type": "boolean"},
+        "too_short_window": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
     "analysis_scope": {"type": "string"},
     "input_refs": {"type": "array", "items": {"type": "string"}},
     "confidence": {"type": "number", "minimum": 0, "maximum": 1},
@@ -138,8 +198,11 @@
       "properties": {
         "max_trend_metrics": {"type": "integer", "minimum": 0},
         "max_recurrences": {"type": "integer", "minimum": 0},
+        "max_time_series_points": {"type": "integer", "minimum": 0},
         "risk_debt_threshold": {"type": "number", "minimum": 0},
-        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+        "confidence_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "min_baseline_window_days": {"type": "integer", "minimum": 0},
+        "max_baseline_window_days": {"type": "integer", "minimum": 0}
       },
       "additionalProperties": true
     },

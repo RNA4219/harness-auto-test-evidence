@@ -1,0 +1,29 @@
+{
+  "fixture_id": "postpoc-connectors-dry-run-no-side-effect",
+  "input": {
+    "plan": {
+      "connector_id": "fake-ticket",
+      "connector_type": "ticket",
+      "mode": "dry_run",
+      "endpoint_ref": "fake-endpoint://ticket-system",
+      "endpoint_available": true,
+      "live_mode_allowed": false,
+      "idempotency_key": "ticket-dry-001",
+      "payload_hash": "sha256:ticket-dry-001",
+      "redaction_report_ref": "artifact://redaction/ticket-dry-001.json",
+      "token_ref": "secret-ref://connectors/fake-ticket",
+      "rollback_available": true,
+      "sync_status": "planned"
+    },
+    "attempts": [
+      {
+        "attempt": 1,
+        "mode": "dry_run",
+        "sync_status": "previewed",
+        "external_ref": "",
+        "side_effect_performed": false,
+        "sourceRefs": ["fixture://connectors/dry-run-no-side-effect#attempt-1"]
+      }
+    ]
+  }
+}

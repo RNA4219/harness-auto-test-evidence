@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/connectors/dry-run-no-side-effect/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "e473baa127e5ed5e44bf00d3e2702841ec9f5e973647c5c0e2a194640a7f7bf2",
+  "line_count": 29,
+  "size_bytes": 882,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

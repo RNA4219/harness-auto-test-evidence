@@ -1,0 +1,30 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-003.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "932a5ee188305842b5c02a516f61690a71272639bcbf0a3052c5c410bf85828d",
+  "line_count": 77,
+  "size_bytes": 2860,
+  "headings": [
+    "# AC-20260703-postpoc-003 Notification Delivery Runtime Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

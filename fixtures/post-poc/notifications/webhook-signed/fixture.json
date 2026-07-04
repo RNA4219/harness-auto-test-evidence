@@ -1,0 +1,26 @@
+{
+  "fixture_id": "postpoc-notifications-webhook-signed",
+  "input": {
+    "plan": {
+      "notification_id": "notify-webhook-001",
+      "operating_record_id": "finding:OPEN-002",
+      "delivery_target": "webhook",
+      "target_ref": "webhook://customer/system-a",
+      "dedupe_key": "finding-OPEN-002-webhook",
+      "payload_hash": "sha256:payload-webhook-001",
+      "signature_ref": "secret-ref://signing-key/webhook-a",
+      "redaction_report_ref": "artifact://redaction/notify-webhook-001.json",
+      "max_attempts": 3,
+      "operating_record_status_before": "open"
+    },
+    "attempts": [
+      {
+        "event_type": "sent",
+        "attempt": 1,
+        "delivery_status": "delivered",
+        "signature_ref": "secret-ref://signing-key/webhook-a",
+        "sourceRefs": ["fixture://notifications/webhook-signed#attempt-1"]
+      }
+    ]
+  }
+}

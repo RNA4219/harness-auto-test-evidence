@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_expansion_security_procurement.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "371fa242d11ce0ad8b3fd3be3ecff2a4bd7b4a3ea2891229777d071b9be3788b",
+  "line_count": 118,
+  "size_bytes": 4928,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.expansion.portfolio_readiness",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/expansion/portfolio_readiness.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "security",
+    "test"
+  ]
+}

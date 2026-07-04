@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/scheduler/resume-token-missing/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "07b084258db55167386e827c8d889c9aba9ce6f8a19d7c18cbb78c4b4a26cdda",
+  "line_count": 24,
+  "size_bytes": 623,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

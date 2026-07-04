@@ -2,15 +2,15 @@
   "path": "schemas/HATE/v1/contradiction-report.schema.json",
   "role": "schema",
   "kind": "json",
-  "sha256": "dc7a907c24fefd390ef90c4b875290809c15fb19ca555353a93ddfbf6e5ed077",
-  "line_count": 142,
-  "size_bytes": 5403,
+  "sha256": "1ba6e1fdc1ed572843c0e60eb649224275e3b6aeff2eadd820e1c03fd260dac6",
+  "line_count": 214,
+  "size_bytes": 8305,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
-    "coverage",
+    "release",
     "schema"
   ]
 }

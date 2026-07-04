@@ -1,0 +1,24 @@
+{
+  "fixture_id": "post-poc-scheduler-resume-token-missing",
+  "input": {
+    "job": {
+      "worker_id": "worker-a",
+      "queue_id": "default",
+      "lease_id": "lease-005",
+      "job_id": "job-005",
+      "job_kind": "repo_suite_run",
+      "lease_state": "expired",
+      "attempt": 0,
+      "max_attempts": 2,
+      "partial_result_ref": "partial/job-005.json"
+    },
+    "events": [
+      {
+        "event_type": "retry_scheduled",
+        "retry_after": "2026-07-03T01:10:00Z",
+        "partial_result_ref": "partial/job-005.json",
+        "sourceRefs": ["scheduler.fixture#/retry_scheduled"]
+      }
+    ]
+  }
+}

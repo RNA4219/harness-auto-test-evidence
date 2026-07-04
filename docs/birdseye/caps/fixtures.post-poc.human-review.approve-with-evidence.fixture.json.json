@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/human-review/approve-with-evidence/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "54e8b0dc892b4edc38a43c87d8c4f4d51e63921fa18134904a84a007bd61af29",
+  "line_count": 36,
+  "size_bytes": 1204,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

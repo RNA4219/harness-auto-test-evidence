@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/post-incident-evidence-pack.schema.json",
+  "title": "HATE Post Incident Evidence Pack",
+  "type": "object",
+  "required": [
+    "record_type",
+    "record_id",
+    "created_at",
+    "decision_basis",
+    "readiness_effect",
+    "unsafe_output_policy",
+    "support_pack_id",
+    "incident_id",
+    "evidence_refs",
+    "support_bundle_safe",
+    "redaction_report_ref",
+    "sourceRefs"
+  ],
+  "properties": {
+    "record_type": {"const": "post-incident-evidence-pack"},
+    "record_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "system_actor": {"type": "string", "minLength": 1},
+    "decision_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "readiness_effect": {"type": "string", "enum": ["none", "hold"]},
+    "unsafe_output_policy": {"type": "string", "minLength": 1},
+    "support_pack_id": {"type": "string"},
+    "incident_id": {"type": "string"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "support_bundle_safe": {"type": "boolean"},
+    "redaction_report_ref": {"type": "string"},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "anyOf": [
+    {"required": ["actor"]},
+    {"required": ["system_actor"]}
+  ],
+  "additionalProperties": true
+}

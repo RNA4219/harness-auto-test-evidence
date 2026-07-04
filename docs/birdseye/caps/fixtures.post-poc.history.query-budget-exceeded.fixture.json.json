@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/history/query-budget-exceeded/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "51467b6b5a622d13c7c8e843a561ca30c31d71e92b45ba4d301ea53d5ab14c6e",
+  "line_count": 45,
+  "size_bytes": 1260,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

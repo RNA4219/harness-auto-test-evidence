@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/local-store-runtime-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "902f189d111bd17b9fa659b21c81eea04a5ca8b29ed027d255a5c4270d114832",
+  "line_count": 25,
+  "size_bytes": 773,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema",
+    "store"
+  ]
+}

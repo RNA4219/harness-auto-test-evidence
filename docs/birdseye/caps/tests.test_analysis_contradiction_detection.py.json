@@ -2,9 +2,9 @@
   "path": "tests/test_analysis_contradiction_detection.py",
   "role": "test",
   "kind": "py",
-  "sha256": "6ca0b754b0e589b113270a679218368d6b2a678533af11a62496d6466c8cf203",
-  "line_count": 134,
-  "size_bytes": 5381,
+  "sha256": "21123ef8f2a76e545bf66296a64f1f5df991996f0b21d68035fe5107728503ef",
+  "line_count": 309,
+  "size_bytes": 12176,
   "headings": [],
   "imports": [
     "__future__",

@@ -1,0 +1,26 @@
+{
+  "fixture_id": "postpoc-notifications-unsafe-payload-denied",
+  "input": {
+    "plan": {
+      "notification_id": "notify-unsafe-001",
+      "operating_record_id": "finding:OPEN-005",
+      "delivery_target": "slack_dm",
+      "target_ref": "slack://user/U123",
+      "dedupe_key": "finding-OPEN-005-slack",
+      "payload_hash": "sha256:payload-unsafe-001",
+      "payload_safe": false,
+      "redaction_report_ref": "",
+      "max_attempts": 1,
+      "operating_record_status_before": "open"
+    },
+    "attempts": [
+      {
+        "event_type": "attempt",
+        "attempt": 1,
+        "delivery_status": "failed",
+        "error_code": "unsafe_payload",
+        "sourceRefs": ["fixture://notifications/unsafe-payload-denied#attempt-1"]
+      }
+    ]
+  }
+}

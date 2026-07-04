@@ -1,0 +1,7 @@
+{
+  "fixture_id": "post-poc-roster-large-roster-100-repos",
+  "input": {
+    "now": "2026-07-03T00:00:00Z",
+    "repositories": []
+  }
+}

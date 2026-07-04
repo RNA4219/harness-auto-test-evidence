@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/dr/backup-restore-success/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "b8c9cb6ce249cc20d8bda2d9f9510fd8e7f5cc59c8abe032f2f93d691a6d045f",
+  "line_count": 22,
+  "size_bytes": 702,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

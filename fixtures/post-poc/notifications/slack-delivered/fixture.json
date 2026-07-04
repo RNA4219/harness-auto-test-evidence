@@ -1,0 +1,24 @@
+{
+  "fixture_id": "postpoc-notifications-slack-delivered",
+  "input": {
+    "plan": {
+      "notification_id": "notify-slack-001",
+      "operating_record_id": "finding:OPEN-001",
+      "delivery_target": "slack_channel",
+      "target_ref": "slack://channel/C123",
+      "dedupe_key": "finding-OPEN-001-slack",
+      "payload_hash": "sha256:payload-slack-001",
+      "redaction_report_ref": "artifact://redaction/notify-slack-001.json",
+      "max_attempts": 3,
+      "operating_record_status_before": "open"
+    },
+    "attempts": [
+      {
+        "event_type": "sent",
+        "attempt": 1,
+        "delivery_status": "delivered",
+        "sourceRefs": ["fixture://notifications/slack-delivered#attempt-1"]
+      }
+    ]
+  }
+}

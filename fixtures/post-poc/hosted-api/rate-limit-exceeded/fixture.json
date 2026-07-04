@@ -1,0 +1,20 @@
+{
+  "fixture_id": "postpoc-hosted-api-rate-limit-exceeded",
+  "input": {
+    "request": {
+      "request_id": "req-rate-limit",
+      "tenant_id": "tenant-a",
+      "resource_tenant_id": "tenant-a",
+      "subject_id": "user-1",
+      "role": "maintainer",
+      "auth_method": "oidc",
+      "resource": "read-model://portfolio",
+      "action": "read",
+      "token_ref": "token-ref://oidc/session-1",
+      "token_expiry": "2026-08-03T00:00:00Z",
+      "rate_limit_bucket": "tenant-a:read",
+      "rate_limit_status": "exceeded",
+      "audit_event_present": true
+    }
+  }
+}

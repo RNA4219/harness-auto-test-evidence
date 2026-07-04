@@ -1,0 +1,13 @@
+{
+  "fixture_id": "post-poc-docs-product-ready-overclaim",
+  "input": {
+    "freshness": {
+      "readme_state_current": true,
+      "missing_acceptance_refs": [],
+      "codemap_current": true,
+      "schema_registry_current": true,
+      "product_ready_claim": true,
+      "product_ready_evidence_present": false
+    }
+  }
+}

@@ -2,15 +2,18 @@
   "path": "fixtures/expansion/audience-report-pack/shared-sourcerefs-pass/fixture.json",
   "role": "fixture",
   "kind": "json",
-  "sha256": "7ba2db3573b66d672d512da8a5c4e339ea6b4f1d7976a2024975edb0d2d10670",
-  "line_count": 43,
-  "size_bytes": 1056,
+  "sha256": "ec4ff0b05588c9518602a233ae3411c22793d53b1c3e3f58671cd527c9d91b31",
+  "line_count": 77,
+  "size_bytes": 2434,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
     "fixture",
-    "schema"
+    "qeg",
+    "release",
+    "schema",
+    "test"
   ]
 }

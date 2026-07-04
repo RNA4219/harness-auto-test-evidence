@@ -1,0 +1,15 @@
+{
+  "fixture_id": "procurement-pack-valid",
+  "input": {
+    "pack_id": "compliance-pack-20260703",
+    "claims": [
+      {"control_id": "CTRL-ENC-001", "claim_class": "encryption", "claim_text": "Artifacts are encrypted at rest.", "evidence_refs": ["evidence://security/encryption-at-rest"], "expires_at": "2026-12-31T00:00:00Z"},
+      {"control_id": "CTRL-INC-001", "claim_class": "incident_response", "claim_text": "Incident response evidence is retained.", "evidence_refs": ["evidence://ops/incident-response"], "expires_at": "2026-12-31T00:00:00Z"}
+    ],
+    "decisions": [
+      {"control_id": "CTRL-ENC-001", "reviewer": "security-owner", "review_status": "approved", "reviewed_at": "2026-07-03T02:00:00Z", "expires_at": "2026-12-31T00:00:00Z"},
+      {"control_id": "CTRL-INC-001", "reviewer": "ops-owner", "review_status": "approved", "reviewed_at": "2026-07-03T02:00:00Z", "expires_at": "2026-12-31T00:00:00Z"}
+    ],
+    "export": {"export_id": "procurement-export-valid", "customer_safe_export": true, "redaction_report_ref": "artifact://redaction/procurement-valid", "restricted_data_present": false}
+  }
+}

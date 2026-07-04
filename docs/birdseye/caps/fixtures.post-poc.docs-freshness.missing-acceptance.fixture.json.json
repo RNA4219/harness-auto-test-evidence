@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/docs-freshness/missing-acceptance/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "540606b518ace87c31a7598ec23b036f5df12eb318f00766e9a088c92932ceaf",
+  "line_count": 12,
+  "size_bytes": 307,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

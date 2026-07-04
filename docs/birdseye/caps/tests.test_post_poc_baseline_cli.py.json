@@ -1,0 +1,23 @@
+{
+  "path": "tests/test_post_poc_baseline_cli.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "9a87da8a8346da088cc97030bc2460f336827a11c0c379ce24ff9f5ff9be7361",
+  "line_count": 61,
+  "size_bytes": 2220,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.cli",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "artifact",
+    "test"
+  ]
+}

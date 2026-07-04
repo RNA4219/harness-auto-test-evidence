@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/dr/legal-hold-lost/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "ee6b16602c5389a506f58f09acd3a460d16582effe289c8138c5ac0f231a027d",
+  "line_count": 22,
+  "size_bytes": 709,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "src/hate/platform_cli.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "be0913567fcacbfbb64d47783bbaec7b30d912b07e0ca9a672635a6695f5839b",
-  "line_count": 390,
-  "size_bytes": 14887,
+  "sha256": "861e545919eb70b3ba5d711875dbcf1dfb5f29951c2316942452aa37515e55e8",
+  "line_count": 410,
+  "size_bytes": 15790,
   "headings": [],
   "imports": [
     "__future__",
@@ -12,6 +12,7 @@
     "hate.p2p3",
     "hate.platform_ops",
     "hate.policy_config",
+    "hate.post_poc.baseline",
     "html",
     "json",
     "pathlib",
@@ -21,7 +22,8 @@
   "depends_on": [
     "src/hate/p2p3.py",
     "src/hate/platform_ops.py",
-    "src/hate/policy_config.py"
+    "src/hate/policy_config.py",
+    "src/hate/post_poc/baseline.py"
   ],
   "tags": [
     "release",

@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/capacity/budget-exceeded-holds/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "06b8bafd89b7f98f2296064dda80cd31f4daa9f4aaa826000b4eb378770c4331",
+  "line_count": 10,
+  "size_bytes": 594,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

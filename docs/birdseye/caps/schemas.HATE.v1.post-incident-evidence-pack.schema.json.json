@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/post-incident-evidence-pack.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "86a445b1955df8e137f0031ca52f81e1f82ad568c595184336dbc681830354e2",
+  "line_count": 41,
+  "size_bytes": 1458,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

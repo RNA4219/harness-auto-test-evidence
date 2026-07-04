@@ -1,0 +1,22 @@
+{
+  "fixture_id": "post-poc-scheduler-retry-budget-exhausted",
+  "input": {
+    "job": {
+      "worker_id": "worker-a",
+      "queue_id": "default",
+      "lease_id": "lease-004",
+      "job_id": "job-004",
+      "job_kind": "repo_suite_run",
+      "lease_state": "expired",
+      "attempt": 1,
+      "max_attempts": 1
+    },
+    "events": [
+      {
+        "event_type": "retry_scheduled",
+        "retry_after": "2026-07-03T01:10:00Z",
+        "sourceRefs": ["scheduler.fixture#/retry_scheduled"]
+      }
+    ]
+  }
+}

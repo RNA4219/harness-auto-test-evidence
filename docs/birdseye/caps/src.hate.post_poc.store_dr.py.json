@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/post_poc/store_dr.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "3ced629daf1e649307653e87fbfd69862a0cd9f6bf0110bcbb1e10c7b2b0f507",
+  "line_count": 282,
+  "size_bytes": 13408,
+  "headings": [],
+  "imports": [
+    ".common",
+    "__future__",
+    "dataclasses",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/post_poc/common.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

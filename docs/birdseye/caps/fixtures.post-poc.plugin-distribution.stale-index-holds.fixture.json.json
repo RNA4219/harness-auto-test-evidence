@@ -1,0 +1,17 @@
+{
+  "path": "fixtures/post-poc/plugin-distribution/stale-index-holds/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "c11b3332ba2fc7faf4757ad22a17a67f741994e689849ac55813d30e12d8d1b4",
+  "line_count": 26,
+  "size_bytes": 887,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "release"
+  ]
+}

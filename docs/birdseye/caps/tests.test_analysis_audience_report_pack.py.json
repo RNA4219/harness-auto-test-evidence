@@ -2,9 +2,9 @@
   "path": "tests/test_analysis_audience_report_pack.py",
   "role": "test",
   "kind": "py",
-  "sha256": "4c2061b86ccd648c47438878b3da9e70845349947ab260d92b0b7dff0c064f79",
-  "line_count": 136,
-  "size_bytes": 5407,
+  "sha256": "1c91d813e104e6ed449ea2bbb6d3084c58a4c97ef85061c41af2fb3d0024f732",
+  "line_count": 248,
+  "size_bytes": 9968,
   "headings": [],
   "imports": [
     "__future__",
@@ -18,6 +18,8 @@
   ],
   "tags": [
     "fixture",
+    "qeg",
+    "release",
     "schema",
     "test"
   ]

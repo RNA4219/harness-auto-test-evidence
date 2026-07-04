@@ -1,0 +1,26 @@
+{
+  "fixture_id": "postpoc-baseline-expired-baseline-denied",
+  "input": {
+    "baseline": {
+      "baseline_id": "base-expired",
+      "repo_id": "repo-main",
+      "suite_id": "pytest",
+      "actor": "alice",
+      "reviewer": "bob",
+      "reason": "Previously approved baseline reached expiry.",
+      "candidate_run_id": "run-3001",
+      "evidence_refs": ["artifact://runs/run-3001/product-readiness.json"],
+      "policy_hash": "policy-sha256-001",
+      "expires_at": "2026-01-01T00:00:00Z",
+      "immutability_hash": "sha256:expired-before",
+      "state": "approved",
+      "comparison_requested": true
+    },
+    "events": [
+      {
+        "event_type": "expired",
+        "sourceRefs": ["fixture://baseline/expired-baseline-denied#expired"]
+      }
+    ]
+  }
+}

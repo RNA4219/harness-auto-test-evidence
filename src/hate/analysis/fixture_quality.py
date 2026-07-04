@@ -48,7 +48,8 @@ def build_fixture_quality_report(
 ) -> dict[str, Any]:
     source_refs = list(source_refs or input_data.get("sourceRefs") or ["fixture-quality"])
     config = _normalize_fixture_quality_config(input_data.get("fixture_quality_config", input_data))
-    findings = _findings_for(config, source_refs[0])
+    diagnostics = _derive_diagnostics(config)
+    findings = _findings_for(config, diagnostics, source_refs[0])
     status = "hold" if findings else "pass"
     return {
         "schema_version": "HATE/v1",
@@ -63,12 +64,18 @@ def build_fixture_quality_report(
             "fixture_finding_count": len(config["fixture_findings"]),
             "corpus_fixture_count": config["corpus_scope"]["fixture_count"],
             "schema_drift_detected": config["schema_drift"]["drift_detected"],
+            "duplicate_fixture_id_count": len(diagnostics["duplicate_fixture_ids"]),
+            "weak_negative_count": len(diagnostics["weak_negative_fixture_ids"]),
+            "expected_leakage_count": len(diagnostics["expected_leakage_fixture_ids"]),
+            "missing_positive_count": len(diagnostics["missing_fixture_types"]["positive"]),
+            "missing_negative_count": len(diagnostics["missing_fixture_types"]["negative"]),
             "confidence": config["confidence"],
             "finding_count": len(findings),
         },
         "fixture_findings": config["fixture_findings"],
         "corpus_scope": config["corpus_scope"],
         "schema_drift": config["schema_drift"],
+        "fixture_quality_diagnostics": diagnostics,
         "input_refs": config["input_refs"],
         "confidence": config["confidence"],
         "limits": config["limits"],
@@ -103,6 +110,8 @@ def _normalize_fixture_finding(f: dict[str, Any]) -> dict[str, Any]:
         "fixture_id": str(f.get("fixture_id", "") or ""),
         "fixture_type": str(f.get("fixture_type", "") or ""),
         "quality_metrics": dict(f.get("quality_metrics", {}) or {}),
+        "expected": dict(f.get("expected", {}) or {}),
+        "input": dict(f.get("input", {}) or {}),
         "sourceRef": str(f.get("sourceRef", "") or ""),
         "rationale": str(f.get("rationale", "") or ""),
     }
@@ -131,10 +140,90 @@ def _normalize_limits(limits: dict[str, Any]) -> dict[str, Any]:
         "confidence_threshold": float(limits.get("confidence_threshold", 0.7) or 0.7),
         "max_fixture_findings": int(limits.get("max_fixture_findings", 50) or 50),
         "coverage_threshold": float(limits.get("coverage_threshold", 0.8) or 0.8),
+        "min_positive_fixtures": int(limits.get("min_positive_fixtures", 1) or 1),
+        "min_negative_fixtures": int(limits.get("min_negative_fixtures", 1) or 1),
     }
 
 
-def _findings_for(config: dict[str, Any], source_ref: str) -> list[FixtureQualityFinding]:
+def _derive_diagnostics(config: dict[str, Any]) -> dict[str, Any]:
+    fixture_findings = config["fixture_findings"]
+    fixture_ids = [f["fixture_id"] for f in fixture_findings if f["fixture_id"]]
+    seen: set[str] = set()
+    duplicates: list[str] = []
+    for fixture_id in fixture_ids:
+        if fixture_id in seen and fixture_id not in duplicates:
+            duplicates.append(fixture_id)
+        seen.add(fixture_id)
+
+    by_type = {"positive": [], "negative": []}
+    for f in fixture_findings:
+        if f["fixture_type"] in by_type:
+            by_type[f["fixture_type"]].append(f["fixture_id"])
+
+    weak_negative_ids = sorted({
+        f["fixture_id"]
+        for f in fixture_findings
+        if f["fixture_type"] == "negative" and _is_weak_negative(f)
+    })
+    expected_leakage_ids = sorted({
+        f["fixture_id"]
+        for f in fixture_findings
+        if _has_expected_leakage(f)
+    })
+    missing_types = {
+        "positive": [] if len(by_type["positive"]) >= config["limits"]["min_positive_fixtures"] else ["positive"],
+        "negative": [] if len(by_type["negative"]) >= config["limits"]["min_negative_fixtures"] else ["negative"],
+    }
+    return {
+        "duplicate_fixture_ids": sorted(duplicates),
+        "weak_negative_fixture_ids": weak_negative_ids,
+        "expected_leakage_fixture_ids": expected_leakage_ids,
+        "fixture_type_counts": {key: len(value) for key, value in by_type.items()},
+        "missing_fixture_types": missing_types,
+    }
+
+
+def _is_weak_negative(finding: dict[str, Any]) -> bool:
+    metrics = finding["quality_metrics"]
+    expected = finding["expected"]
+    rationale = finding["rationale"].lower()
+    if expected.get("status") in {"hold", "blocked"} or expected.get("readiness_effect") in {"hold", "blocked"}:
+        return False
+    if metrics.get("asserts_finding_code") is True or metrics.get("negative_oracle") is True:
+        return False
+    return "negative" in rationale and "finding" not in rationale and "hold" not in rationale
+
+
+def _has_expected_leakage(finding: dict[str, Any]) -> bool:
+    combined = {
+        "input": finding["input"],
+        "quality_metrics": finding["quality_metrics"],
+    }
+    leakage_terms = ("expected", "golden", "fixture_name", "case_name", "expected_status", "expected_code")
+    return _contains_leakage_term(combined, leakage_terms)
+
+
+def _contains_leakage_term(value: Any, terms: tuple[str, ...]) -> bool:
+    if isinstance(value, dict):
+        for key, child in value.items():
+            key_lower = str(key).lower()
+            if any(term in key_lower for term in terms):
+                return True
+            if _contains_leakage_term(child, terms):
+                return True
+    elif isinstance(value, list):
+        return any(_contains_leakage_term(child, terms) for child in value)
+    elif isinstance(value, str):
+        lower = value.lower()
+        return any(term in lower for term in terms)
+    return False
+
+
+def _findings_for(
+    config: dict[str, Any],
+    diagnostics: dict[str, Any],
+    source_ref: str,
+) -> list[FixtureQualityFinding]:
     findings: list[FixtureQualityFinding] = []
 
     # HATE-GAP-059 primary negative: fixture name behavior coupled
@@ -150,6 +239,43 @@ def _findings_for(config: dict[str, Any], source_ref: str) -> list[FixtureQualit
         findings.append(_finding(
             "fixture_quality_expected_output_leakage",
             "Expected output exposed in fixture.",
+            source_ref,
+        ))
+
+    if diagnostics["expected_leakage_fixture_ids"]:
+        findings.append(_finding(
+            "fixture_quality_expected_output_leakage",
+            f"Expected output leakage indicators found in fixtures: {', '.join(diagnostics['expected_leakage_fixture_ids'])}.",
+            source_ref,
+        ))
+
+    if diagnostics["duplicate_fixture_ids"]:
+        findings.append(_finding(
+            "fixture_quality_duplicate_fixture_id",
+            f"Duplicate fixture ids detected: {', '.join(diagnostics['duplicate_fixture_ids'])}.",
+            source_ref,
+        ))
+
+    if len(config["fixture_findings"]) > config["limits"]["max_fixture_findings"]:
+        findings.append(_finding(
+            "fixture_quality_finding_budget_exceeded",
+            f"Fixture finding count {len(config['fixture_findings'])} exceeds limit {config['limits']['max_fixture_findings']}.",
+            source_ref,
+        ))
+
+    if diagnostics["weak_negative_fixture_ids"]:
+        findings.append(_finding(
+            "fixture_quality_weak_negative_oracle",
+            f"Negative fixtures lack explicit hold/block oracle: {', '.join(diagnostics['weak_negative_fixture_ids'])}.",
+            source_ref,
+        ))
+
+    missing_types = diagnostics["missing_fixture_types"]
+    if missing_types["positive"] or missing_types["negative"]:
+        missing = sorted(missing_types["positive"] + missing_types["negative"])
+        findings.append(_finding(
+            "fixture_quality_fixture_matrix_incomplete",
+            f"Fixture matrix missing required fixture types: {', '.join(missing)}.",
             source_ref,
         ))
 

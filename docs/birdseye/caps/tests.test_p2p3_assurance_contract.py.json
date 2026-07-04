@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_p2p3_assurance_contract.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "d911a176c3c2bc9aebfe140075439553f4ae7f3b913e48437c37fa436690ee78",
+  "line_count": 39,
+  "size_bytes": 1780,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p2p3",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p2p3.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

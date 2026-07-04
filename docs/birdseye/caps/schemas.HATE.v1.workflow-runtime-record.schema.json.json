@@ -1,0 +1,18 @@
+{
+  "path": "schemas/HATE/v1/workflow-runtime-record.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "b426c18893a12a2efefc60074d5a9e7f3d8744de08bdcfb5ed62744480084904",
+  "line_count": 29,
+  "size_bytes": 932,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

@@ -14,6 +14,23 @@
         },
         "sourceRef": "fixture:1",
         "rationale": "High quality fixture with proper coverage"
+      },
+      {
+        "fixture_id": "fixture-2",
+        "fixture_type": "negative",
+        "quality_metrics": {
+          "coverage": 0.92,
+          "completeness": 0.88,
+          "consistency": 0.96,
+          "negative_oracle": true,
+          "asserts_finding_code": true
+        },
+        "expected": {
+          "status": "hold",
+          "finding_code": "fixture_quality_expected_output_leakage"
+        },
+        "sourceRef": "fixture:2",
+        "rationale": "Negative fixture asserts a specific finding code and readiness effect"
       }
     ],
     "corpus_scope": {

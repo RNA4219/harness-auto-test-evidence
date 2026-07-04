@@ -1,0 +1,16 @@
+{
+  "path": "fixtures/post-poc/connectors/token-exposure-denied/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "6e27188efe3af3c3291bb0d7a0a9569b8759d421295956742b900fb93929b97c",
+  "line_count": 28,
+  "size_bytes": 834,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

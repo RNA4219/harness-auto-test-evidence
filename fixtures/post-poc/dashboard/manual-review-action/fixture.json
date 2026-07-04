@@ -1,0 +1,42 @@
+{
+  "fixture_id": "postpoc-dashboard-manual-review-action",
+  "input": {
+    "session": {
+      "session_id": "sess-action",
+      "actor": "qa@example.com",
+      "role": "qa_lead",
+      "tenant_id": "tenant-a",
+      "authenticated": true,
+      "sourceRefs": ["fixture://dashboard/manual-review-action#session"]
+    },
+    "routes": [
+      {
+        "route": "/dashboard/portfolio",
+        "ui_state": "loaded",
+        "read_model_ref": "read-model://portfolio/tenant-a",
+        "rbac_decision": "allowed",
+        "canonical_verdict_ref": "product-readiness-report.json",
+        "sourceRefs": ["fixture://dashboard/manual-review-action#portfolio"]
+      },
+      {
+        "route": "/dashboard/manual-review",
+        "ui_state": "action_pending",
+        "read_model_ref": "read-model://manual-review/tenant-a",
+        "rbac_decision": "allowed",
+        "canonical_verdict_ref": "manual-review-workflow-report.json",
+        "sourceRefs": ["fixture://dashboard/manual-review-action#route"]
+      }
+    ],
+    "actions": [
+      {
+        "intent_id": "intent-manual-review-001",
+        "action_type": "request_manual_review",
+        "actor": "qa@example.com",
+        "target_ref": "risk:RISK-001",
+        "idempotency_key": "manual-review-risk-001",
+        "intent_status": "pending",
+        "sourceRefs": ["fixture://dashboard/manual-review-action#intent"]
+      }
+    ]
+  }
+}

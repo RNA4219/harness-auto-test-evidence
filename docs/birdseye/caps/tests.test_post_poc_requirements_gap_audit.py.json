@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_post_poc_requirements_gap_audit.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "43479c7b2878eab71dccd8992b4cc73b5e8348dd49d461025095cb413229c3d1",
+  "line_count": 173,
+  "size_bytes": 6794,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "pathlib",
+    "re"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

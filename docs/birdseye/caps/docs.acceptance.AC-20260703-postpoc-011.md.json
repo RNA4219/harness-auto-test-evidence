@@ -1,0 +1,31 @@
+{
+  "path": "docs/acceptance/AC-20260703-postpoc-011.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "a31523f667de1fa8d2450a0a7d9d58542e5eeaa17edd2926f38257957e7b9f7f",
+  "line_count": 80,
+  "size_bytes": 2962,
+  "headings": [
+    "# AC-20260703-postpoc-011 Hosted Multi-Tenant API Evidence",
+    "## Scope",
+    "## Requirements",
+    "## Acceptance Criteria",
+    "## Verification",
+    "## Verification Result",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

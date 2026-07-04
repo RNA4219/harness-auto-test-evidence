@@ -1,0 +1,15 @@
+{
+  "path": "fixtures/post-poc/scheduler/retry-budget-exhausted/fixture.json",
+  "role": "fixture",
+  "kind": "json",
+  "sha256": "9d70c21a7fbb3f06d1ade657f433c4381d5ff18be198590353fb9c2f5a713d1d",
+  "line_count": 22,
+  "size_bytes": 519,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

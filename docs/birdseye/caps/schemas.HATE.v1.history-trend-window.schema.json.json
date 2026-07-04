@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/history-trend-window.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "a097dee519b7568a872e415f193feac2ba4685598490482d58b23209be010fdb",
+  "line_count": 49,
+  "size_bytes": 1679,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

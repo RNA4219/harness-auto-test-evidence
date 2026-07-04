@@ -1,0 +1,22 @@
+{
+  "fixture_id": "post-poc-roster-stale-repo-quarantined",
+  "input": {
+    "now": "2026-07-03T00:00:00Z",
+    "repositories": [
+      {
+        "repo_id": "stale-owned",
+        "ownership_scope": "owned",
+        "repo_class": "large",
+        "discovery_source": "local-folder-scan",
+        "last_seen_at": "2026-06-01T00:00:00Z",
+        "stale_after": "2026-06-15T00:00:00Z",
+        "environment_recipe_ref": "recipes/stale-owned.json",
+        "dependency_bootstrap_command": ["uv", "sync"],
+        "dependency_bootstrap_status": "passed",
+        "retry_isolation_group": "stale-owned-unit",
+        "expected_record_floor": 20,
+        "suites": [{"suite_id": "unit"}]
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE/v1/history-analytics-report.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "99471ab296eeb0d3bddb42a2e873eeea0f31c3442eda8a27cdd5855f51dc7697",
+  "line_count": 193,
+  "size_bytes": 4018,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

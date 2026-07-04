@@ -2,16 +2,195 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "HATE provider integration report",
   "type": "object",
-  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "provider_config", "findings", "summary", "sourceRefs"],
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "provider_config", "findings", "summary", "provider_diagnostics", "sourceRefs"],
   "properties": {
     "schema_version": {"const": "HATE/v1"},
     "record_type": {"const": "provider-integration-report"},
     "report_id": {"type": "string"},
     "overall_status": {"enum": ["pass", "hold"]},
     "readiness_effect": {"enum": ["none", "hold"]},
-    "provider_config": {"type": "object"},
-    "findings": {"type": "array"},
-    "summary": {"type": "object"},
+    "provider_config": {
+      "type": "object",
+      "required": [
+        "providers",
+        "required_providers",
+        "permission_matrix",
+        "artifact_policies",
+        "annotation_policies",
+        "rerun_policies",
+        "minimum_permissions_declared",
+        "ambiguous_identity_detected",
+        "overbroad_permission_detected",
+        "raw_token_present"
+      ],
+      "properties": {
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["provider", "support_state", "commit_identity", "review_identity", "run_attempt", "artifact_lifetime", "annotation_target", "rerun_semantics"],
+            "properties": {
+              "provider": {"type": "string"},
+              "support_state": {"type": "string"},
+              "commit_identity": {"type": "string"},
+              "review_identity": {"type": "string"},
+              "run_attempt": {"type": "string"},
+              "artifact_lifetime": {"type": "string"},
+              "annotation_target": {"type": "string"},
+              "rerun_semantics": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "required_providers": {"type": "array", "items": {"type": "string"}},
+        "permission_matrix": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["provider", "scope", "sourceRef"],
+            "properties": {
+              "provider": {"type": "string"},
+              "scope": {"type": "string"},
+              "sourceRef": {"type": "string"},
+              "write_repository": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "artifact_policies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["provider", "retention_days", "redaction", "allows_raw_logs"],
+            "properties": {
+              "provider": {"type": "string"},
+              "retention_days": {"type": "integer", "minimum": 0},
+              "redaction": {"type": "boolean"},
+              "allows_raw_logs": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "annotation_policies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["provider", "stable_target", "sourceRef", "can_post_secret"],
+            "properties": {
+              "provider": {"type": "string"},
+              "stable_target": {"type": "boolean"},
+              "sourceRef": {"type": "string"},
+              "can_post_secret": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "rerun_policies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["provider", "attempt_identity", "idempotency_key", "preserves_previous_attempt"],
+            "properties": {
+              "provider": {"type": "string"},
+              "attempt_identity": {"type": "string"},
+              "idempotency_key": {"type": "string"},
+              "preserves_previous_attempt": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "minimum_permissions_declared": {"type": "boolean"},
+        "ambiguous_identity_detected": {"type": "boolean"},
+        "overbroad_permission_detected": {"type": "boolean"},
+        "raw_token_present": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"enum": ["hold"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "provider_count",
+        "required_provider_count",
+        "missing_required_providers",
+        "minimum_permissions_declared",
+        "permission_rule_count",
+        "artifact_policy_count",
+        "annotation_policy_count",
+        "rerun_policy_count",
+        "duplicate_provider_count",
+        "missing_permission_policy_count",
+        "missing_artifact_policy_count",
+        "missing_annotation_policy_count",
+        "missing_rerun_policy_count",
+        "unsafe_artifact_policy_count",
+        "unsafe_annotation_policy_count",
+        "nondeterministic_rerun_count",
+        "finding_count"
+      ],
+      "properties": {
+        "provider_count": {"type": "integer", "minimum": 0},
+        "required_provider_count": {"type": "integer", "minimum": 0},
+        "missing_required_providers": {"type": "array", "items": {"type": "string"}},
+        "minimum_permissions_declared": {"type": "boolean"},
+        "permission_rule_count": {"type": "integer", "minimum": 0},
+        "artifact_policy_count": {"type": "integer", "minimum": 0},
+        "annotation_policy_count": {"type": "integer", "minimum": 0},
+        "rerun_policy_count": {"type": "integer", "minimum": 0},
+        "duplicate_provider_count": {"type": "integer", "minimum": 0},
+        "missing_permission_policy_count": {"type": "integer", "minimum": 0},
+        "missing_artifact_policy_count": {"type": "integer", "minimum": 0},
+        "missing_annotation_policy_count": {"type": "integer", "minimum": 0},
+        "missing_rerun_policy_count": {"type": "integer", "minimum": 0},
+        "unsafe_artifact_policy_count": {"type": "integer", "minimum": 0},
+        "unsafe_annotation_policy_count": {"type": "integer", "minimum": 0},
+        "nondeterministic_rerun_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "provider_diagnostics": {
+      "type": "object",
+      "required": [
+        "duplicate_providers",
+        "providers_missing_permission_policy",
+        "providers_missing_artifact_policy",
+        "providers_missing_annotation_policy",
+        "providers_missing_rerun_policy",
+        "overbroad_permission_providers",
+        "permission_source_ref_missing_providers",
+        "unsafe_artifact_policy_providers",
+        "unsafe_annotation_policy_providers",
+        "nondeterministic_rerun_providers"
+      ],
+      "properties": {
+        "duplicate_providers": {"type": "array", "items": {"type": "string"}},
+        "providers_missing_permission_policy": {"type": "array", "items": {"type": "string"}},
+        "providers_missing_artifact_policy": {"type": "array", "items": {"type": "string"}},
+        "providers_missing_annotation_policy": {"type": "array", "items": {"type": "string"}},
+        "providers_missing_rerun_policy": {"type": "array", "items": {"type": "string"}},
+        "overbroad_permission_providers": {"type": "array", "items": {"type": "string"}},
+        "permission_source_ref_missing_providers": {"type": "array", "items": {"type": "string"}},
+        "unsafe_artifact_policy_providers": {"type": "array", "items": {"type": "string"}},
+        "unsafe_annotation_policy_providers": {"type": "array", "items": {"type": "string"}},
+        "nondeterministic_rerun_providers": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
     "sourceRefs": {"type": "array", "items": {"type": "string"}}
   }
 }

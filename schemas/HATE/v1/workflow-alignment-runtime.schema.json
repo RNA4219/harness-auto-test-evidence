@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.local/schemas/HATE/v1/workflow-alignment-runtime.schema.json",
+  "title": "HATE Workflow Alignment Runtime Record",
+  "type": "object",
+  "required": ["schema_version", "record_type"],
+  "properties": {
+    "schema_version": {"const": "HATE/v1"},
+    "record_type": {"enum": ["requirement_alignment", "manual_bb_bridge_request"]},
+    "release_gate_override": {"type": "boolean"},
+    "publish_gate_override": {"type": "boolean"}
+  },
+  "oneOf": [
+    {
+      "properties": {"record_type": {"const": "requirement_alignment"}},
+      "required": ["run_id", "run_attempt", "requirements", "summary", "boundary", "source_refs"]
+    },
+    {
+      "properties": {"record_type": {"const": "manual_bb_bridge_request"}},
+      "required": ["bridge_id", "risk_id", "reason", "required_manual_layer", "source_refs"]
+    }
+  ],
+  "additionalProperties": true
+}

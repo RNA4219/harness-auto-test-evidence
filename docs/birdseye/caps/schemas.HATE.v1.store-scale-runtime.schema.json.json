@@ -1,0 +1,17 @@
+{
+  "path": "schemas/HATE/v1/store-scale-runtime.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "1560ccc8407b8d0d877d8f8f0862bf9cce1a72ec153f76f0f80fc696864f33c1",
+  "line_count": 31,
+  "size_bytes": 1736,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "store"
+  ]
+}

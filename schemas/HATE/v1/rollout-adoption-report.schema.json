@@ -2,16 +2,182 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "HATE rollout adoption report",
   "type": "object",
-  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "rollout_config", "findings", "summary", "sourceRefs"],
+  "required": ["schema_version", "record_type", "report_id", "overall_status", "readiness_effect", "rollout_config", "findings", "summary", "rollout_diagnostics", "sourceRefs"],
   "properties": {
     "schema_version": {"const": "HATE/v1"},
     "record_type": {"const": "rollout-adoption-report"},
     "report_id": {"type": "string"},
     "overall_status": {"enum": ["pass", "hold"]},
     "readiness_effect": {"enum": ["none", "hold"]},
-    "rollout_config": {"type": "object"},
-    "findings": {"type": "array"},
-    "summary": {"type": "object"},
+    "rollout_config": {
+      "type": "object",
+      "required": ["waves", "repo_statuses", "exceptions", "portfolio_metrics", "rollback_plan", "portfolio_metrics_safe", "rollback_plan_present", "illegal_status_transition_detected"],
+      "properties": {
+        "waves": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["wave_id", "owner", "policy_template", "entry_criteria", "exit_criteria"],
+            "properties": {
+              "wave_id": {"type": "string"},
+              "owner": {"type": "string"},
+              "policy_template": {"type": "string"},
+              "entry_criteria": {"type": "string"},
+              "exit_criteria": {"type": "string"},
+              "entry_criteria_ref": {"type": "string"},
+              "exit_criteria_ref": {"type": "string"},
+              "order": {"type": "integer"},
+              "sourceRef": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "repo_statuses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["repo", "status"],
+            "properties": {
+              "repo": {"type": "string"},
+              "status": {"type": "string"},
+              "previous_status": {"type": "string"},
+              "owner": {"type": "string"},
+              "wave_id": {"type": "string"},
+              "sourceRef": {"type": "string"},
+              "adoption_gap": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["exception_id", "owner", "scope"],
+            "properties": {
+              "exception_id": {"type": "string"},
+              "owner": {"type": "string"},
+              "scope": {"type": "string"},
+              "expiry": {"type": "string"},
+              "reviewer": {"type": "string"},
+              "sourceRef": {"type": "string"},
+              "expired": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "portfolio_metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "metric_id": {"type": "string"},
+              "aggregate_only": {"type": "boolean"},
+              "contains_raw_repo_name": {"type": "boolean"},
+              "contains_test_name": {"type": "boolean"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "rollback_plan": {
+          "type": "object",
+          "properties": {
+            "owner": {"type": "string"},
+            "tested_at": {"type": "string"},
+            "drill_ref": {"type": "string"},
+            "sourceRef": {"type": "string"}
+          },
+          "additionalProperties": true
+        },
+        "portfolio_metrics_safe": {"type": "boolean"},
+        "rollback_plan_present": {"type": "boolean"},
+        "illegal_status_transition_detected": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "sourceRef", "readiness_effect"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"type": "string"},
+          "message": {"type": "string"},
+          "sourceRef": {"type": "string"},
+          "readiness_effect": {"enum": ["hold"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "wave_count",
+        "repo_status_count",
+        "exception_count",
+        "expired_exception_count",
+        "portfolio_metric_count",
+        "portfolio_metrics_safe",
+        "rollback_plan_present",
+        "duplicate_wave_count",
+        "duplicate_repo_count",
+        "wave_source_ref_gap_count",
+        "invalid_status_transition_count",
+        "adoption_gap_count",
+        "exception_review_gap_count",
+        "unsafe_portfolio_metric_count",
+        "finding_count"
+      ],
+      "properties": {
+        "wave_count": {"type": "integer", "minimum": 0},
+        "repo_status_count": {"type": "integer", "minimum": 0},
+        "exception_count": {"type": "integer", "minimum": 0},
+        "expired_exception_count": {"type": "integer", "minimum": 0},
+        "portfolio_metric_count": {"type": "integer", "minimum": 0},
+        "portfolio_metrics_safe": {"type": "boolean"},
+        "rollback_plan_present": {"type": "boolean"},
+        "duplicate_wave_count": {"type": "integer", "minimum": 0},
+        "duplicate_repo_count": {"type": "integer", "minimum": 0},
+        "wave_source_ref_gap_count": {"type": "integer", "minimum": 0},
+        "invalid_status_transition_count": {"type": "integer", "minimum": 0},
+        "adoption_gap_count": {"type": "integer", "minimum": 0},
+        "exception_review_gap_count": {"type": "integer", "minimum": 0},
+        "unsafe_portfolio_metric_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "rollout_diagnostics": {
+      "type": "object",
+      "required": [
+        "duplicate_waves",
+        "duplicate_repos",
+        "waves_missing_source_ref",
+        "waves_without_order",
+        "invalid_status_transition_repos",
+        "adoption_gap_repos",
+        "missing_repo_metadata",
+        "exceptions_missing_expiry_or_review",
+        "broad_exceptions",
+        "unsafe_portfolio_metrics",
+        "rollback_plan_incomplete"
+      ],
+      "properties": {
+        "duplicate_waves": {"type": "array", "items": {"type": "string"}},
+        "duplicate_repos": {"type": "array", "items": {"type": "string"}},
+        "waves_missing_source_ref": {"type": "array", "items": {"type": "string"}},
+        "waves_without_order": {"type": "array", "items": {"type": "string"}},
+        "invalid_status_transition_repos": {"type": "array", "items": {"type": "string"}},
+        "adoption_gap_repos": {"type": "array", "items": {"type": "string"}},
+        "missing_repo_metadata": {"type": "array", "items": {"type": "string"}},
+        "exceptions_missing_expiry_or_review": {"type": "array", "items": {"type": "string"}},
+        "broad_exceptions": {"type": "array", "items": {"type": "string"}},
+        "unsafe_portfolio_metrics": {"type": "array", "items": {"type": "string"}},
+        "rollback_plan_incomplete": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
     "sourceRefs": {"type": "array", "items": {"type": "string"}}
   }
 }

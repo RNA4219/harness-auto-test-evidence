@@ -1,0 +1,49 @@
+{
+  "fixture_id": "postpoc-history-baseline-drift",
+  "input": {
+    "query": {
+      "window_start": "2026-06-15T00:00:00Z",
+      "window_end": "2026-07-03T00:00:00Z",
+      "repo_filter": "*",
+      "suite_filter": "*",
+      "aggregation_level": "portfolio",
+      "performance_budget_ms": 1500,
+      "actual_runtime_ms": 210,
+      "min_sample_count": 2
+    },
+    "samples": [
+      {
+        "run_id": "drift-1",
+        "repo_id": "repo-a",
+        "suite_id": "pytest",
+        "test_count": 50,
+        "flake_count": 0,
+        "evidence_age_days": 1,
+        "debt_age_days": 1,
+        "repo_health_score": 0.95,
+        "baseline_score": 0.95,
+        "current_score": 0.93,
+        "regression_clusters": 1,
+        "unexplained_regression_clusters": 0,
+        "manual_review_latency_hours": 2,
+        "sourceRef": "fixture://history/baseline-drift#drift-1"
+      },
+      {
+        "run_id": "drift-2",
+        "repo_id": "repo-b",
+        "suite_id": "jest",
+        "test_count": 70,
+        "flake_count": 1,
+        "evidence_age_days": 2,
+        "debt_age_days": 2,
+        "repo_health_score": 0.9,
+        "baseline_score": 0.9,
+        "current_score": 0.85,
+        "regression_clusters": 1,
+        "unexplained_regression_clusters": 0,
+        "manual_review_latency_hours": 3,
+        "sourceRef": "fixture://history/baseline-drift#drift-2"
+      }
+    ]
+  }
+}
