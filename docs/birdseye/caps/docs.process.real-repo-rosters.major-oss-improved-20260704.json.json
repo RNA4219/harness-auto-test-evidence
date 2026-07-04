@@ -1,0 +1,18 @@
+{
+  "path": "docs/process/real-repo-rosters/major-oss-improved-20260704.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "3a7455d5c6d1c148384633e65c9fc255a52bd3d3114b7be544ab9752b3baf0f9",
+  "line_count": 142,
+  "size_bytes": 6492,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "schema",
+    "test"
+  ]
+}

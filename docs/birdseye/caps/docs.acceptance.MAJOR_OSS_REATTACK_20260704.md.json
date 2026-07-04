@@ -2,15 +2,16 @@
   "path": "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "b64c1968b4b1888b789d70f9bcf4cf7d18bbc71cb572533291c48d6c971555ae",
-  "line_count": 109,
-  "size_bytes": 3827,
+  "sha256": "f472727562ae65355129087c6a20b5149a5f35926f260ea141741c3a643bd936",
+  "line_count": 221,
+  "size_bytes": 9017,
   "headings": [
     "# Major OSS Re-Attack - 2026-07-04",
     "## Scope",
     "## Same-Roster Result",
     "## Bootstrap Re-Attack",
     "## Remaining Product/Operational Findings",
+    "## Improved Roster Re-Attack",
     "## Verification"
   ],
   "imports": [],
@@ -18,6 +19,7 @@
   "depends_on": [],
   "tags": [
     "api",
+    "coverage",
     "test"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "ef6052c7bf16",
+  "generated_at": "b395eeeaa5a8",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -187,9 +187,9 @@
     "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.MAJOR_OSS_REATTACK_20260704.md.json",
-      "sha256": "b64c1968b4b1888b789d70f9bcf4cf7d18bbc71cb572533291c48d6c971555ae",
-      "line_count": 109,
-      "size_bytes": 3827
+      "sha256": "f472727562ae65355129087c6a20b5149a5f35926f260ea141741c3a643bd936",
+      "line_count": 221,
+      "size_bytes": 9017
     },
     "docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md": {
       "role": "documentation",
@@ -1016,6 +1016,13 @@
       "sha256": "a7a1eef4ef93cd5d069088ba11e9a31b6bc466374b747e2d8ba2dcd858e5d8ae",
       "line_count": 140,
       "size_bytes": 3689
+    },
+    "docs/process/real-repo-rosters/major-oss-improved-20260704.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.real-repo-rosters.major-oss-improved-20260704.json.json",
+      "sha256": "3a7455d5c6d1c148384633e65c9fc255a52bd3d3114b7be544ab9752b3baf0f9",
+      "line_count": 142,
+      "size_bytes": 6492
     },
     "docs/process/real-repo-rosters/opencode-package-tests.json": {
       "role": "documentation",

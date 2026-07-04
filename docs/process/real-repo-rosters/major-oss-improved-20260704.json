@@ -1,0 +1,142 @@
+{
+  "schema_version": "HATE/v1",
+  "record_type": "real-repo-roster-v2",
+  "roster_id": "major-oss-hate-validation-improved-20260704",
+  "source_version": "major-oss-hate-validation-improved-20260704",
+  "default_policy_ref": "local:hate-major-oss-validation-improved",
+  "repositories": [
+    {
+      "repo_id": "click",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/click",
+      "ownership_scope": "external",
+      "repo_class": "medium",
+      "tags": ["python", "oss", "pallets"],
+      "suites": [
+        {"suite_id": "pytest", "suite_kind": "unit", "command": ["uv", "run", "--group", "tests", "pytest", "-q"], "timeout_ms": 180000, "subset": false}
+      ]
+    },
+    {
+      "repo_id": "requests",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/requests",
+      "ownership_scope": "external",
+      "repo_class": "medium",
+      "tags": ["python", "oss", "psf", "split"],
+      "suites": [
+        {
+          "suite_id": "pytest-split",
+          "suite_kind": "unit",
+          "command": ["uv", "run", "--group", "test", "pytest", "-q"],
+          "resume_token": "requests-pytest-split-20260704",
+          "split_commands": [
+            ["uv", "run", "--group", "test", "pytest", "-q", "tests/test_structures.py", "tests/test_utils.py"],
+            ["uv", "run", "--group", "test", "pytest", "-q", "tests/test_adapters.py", "tests/test_hooks.py", "tests/test_lowlevel.py", "tests/test_packages.py", "tests/test_help.py"],
+            ["uv", "run", "--group", "test", "pytest", "-q", "tests/test_testserver.py"],
+            ["uv", "run", "--group", "test", "pytest", "-q", "tests/test_requests.py", "-k", "TestRequests and not errors and not proxy and not DIGEST and not certificate and not pyopenssl and not timeout"],
+            ["uv", "run", "--group", "test", "pytest", "-q", "tests/test_requests.py", "-k", "not TestRequests and not TestCaseInsensitiveDict and not TestMorselToCookieExpires and not TestMorselToCookieMaxAge and not TestTimeout and not TestPreparingURLs"],
+            ["uv", "run", "--group", "test", "pytest", "-q", "tests/test_requests.py", "-k", "TestCaseInsensitiveDict"],
+            ["uv", "run", "--group", "test", "pytest", "-q", "tests/test_requests.py", "-k", "TestMorselToCookieExpires or TestMorselToCookieMaxAge"],
+            ["uv", "run", "--group", "test", "pytest", "-q", "tests/test_requests.py", "-k", "TestPreparingURLs"],
+            ["uv", "run", "--group", "test", "pytest", "-q", "tests/test_requests.py", "-k", "TestTimeout"]
+          ],
+          "timeout_ms": 90000,
+          "subset": false
+        }
+      ]
+    },
+    {
+      "repo_id": "flask",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/flask",
+      "ownership_scope": "external",
+      "repo_class": "medium",
+      "tags": ["python", "oss", "pallets"],
+      "suites": [
+        {"suite_id": "pytest", "suite_kind": "unit", "command": ["uv", "run", "--group", "tests", "pytest", "-q"], "timeout_ms": 180000, "subset": false}
+      ]
+    },
+    {
+      "repo_id": "fastapi",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/fastapi",
+      "ownership_scope": "external",
+      "repo_class": "large",
+      "tags": ["python", "oss", "api"],
+      "suites": [
+        {"suite_id": "pytest", "suite_kind": "unit", "command": ["uv", "run", "pytest", "-q"], "timeout_ms": 180000, "subset": false}
+      ]
+    },
+    {
+      "repo_id": "pydantic",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/pydantic",
+      "ownership_scope": "external",
+      "repo_class": "large",
+      "tags": ["python", "oss", "validation", "bootstrap"],
+      "suites": [
+        {
+          "suite_id": "pytest",
+          "suite_kind": "unit",
+          "bootstrap_command": ["uv", "pip", "install", "--python", ".venv/Scripts/python.exe", "tzdata"],
+          "bootstrap_timeout_ms": 180000,
+          "command": ["uv", "run", "pytest", "-q"],
+          "timeout_ms": 240000,
+          "subset": false
+        }
+      ]
+    },
+    {
+      "repo_id": "pytest",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/pytest",
+      "ownership_scope": "external",
+      "repo_class": "large",
+      "tags": ["python", "oss", "test-runner", "runner-isolation"],
+      "suites": [
+        {
+          "suite_id": "compileall-smoke",
+          "suite_kind": "smoke",
+          "command": ["uv", "run", "python", "-m", "compileall", "-q", "src", "testing"],
+          "timeout_ms": 180000,
+          "subset": true,
+          "subset_label": "pytest source compile smoke because in-repo pytest runner self-hosting mismatches the local pytest minversion"
+        }
+      ]
+    },
+    {
+      "repo_id": "starlette",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/starlette",
+      "ownership_scope": "external",
+      "repo_class": "medium",
+      "tags": ["python", "oss", "asgi"],
+      "suites": [
+        {"suite_id": "pytest", "suite_kind": "unit", "command": ["uv", "run", "pytest", "-q"], "timeout_ms": 180000, "subset": false}
+      ]
+    },
+    {
+      "repo_id": "express",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/express",
+      "ownership_scope": "external",
+      "repo_class": "medium",
+      "tags": ["node", "oss", "web", "bootstrap"],
+      "suites": [
+        {"suite_id": "npm-test", "suite_kind": "unit", "bootstrap_command": ["npm", "install", "--ignore-scripts"], "bootstrap_timeout_ms": 300000, "command": ["npm", "test"], "timeout_ms": 180000, "subset": false}
+      ]
+    },
+    {
+      "repo_id": "axios",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/axios",
+      "ownership_scope": "external",
+      "repo_class": "medium",
+      "tags": ["node", "oss", "http", "bootstrap"],
+      "suites": [
+        {"suite_id": "vitest", "suite_kind": "unit", "bootstrap_command": ["npm", "install", "--ignore-scripts"], "bootstrap_timeout_ms": 300000, "command": ["npm", "test"], "timeout_ms": 180000, "subset": false}
+      ]
+    },
+    {
+      "repo_id": "lodash",
+      "path": "C:/Users/ryo-n/Codex_dev/external/hate-oss-corpus/lodash",
+      "ownership_scope": "external",
+      "repo_class": "medium",
+      "tags": ["node", "oss", "utility", "bootstrap"],
+      "suites": [
+        {"suite_id": "npm-test", "suite_kind": "unit", "bootstrap_command": ["npm", "install", "--ignore-scripts"], "bootstrap_timeout_ms": 300000, "command": ["npm", "test"], "timeout_ms": 180000, "subset": false}
+      ]
+    }
+  ]
+}
