@@ -12,6 +12,8 @@ def parse_runner_summary(stdout: str, stderr: str = "") -> dict[str, Any]:
     for dialect, parser in (
         ("vitest", _parse_vitest_summary),
         ("bun", _parse_bun_test_summary),
+        ("mocha", _parse_mocha_summary),
+        ("lodash-test", _parse_lodash_test_summary),
         ("cargo-test", _parse_cargo_test_summary),
         ("nextjs-build", _parse_nextjs_build_summary),
         ("astro-build", _parse_astro_build_summary),
@@ -204,6 +206,54 @@ def _parse_bun_test_summary(text: str) -> dict[str, int]:
                 counts["total_tests"] = total
                 return {key: value for key, value in counts.items() if value}
     return {}
+
+
+def _parse_mocha_summary(text: str) -> dict[str, int]:
+    counts = {
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0,
+    }
+    matched = False
+    plain = re.sub(r"\x1b\[[0-9;]*m", "", text)
+    for count, label in re.findall(
+        r"^\s*(\d+)\s+(passing|failing|pending)(?:\s|\()",
+        plain,
+        flags=re.IGNORECASE | re.MULTILINE,
+    ):
+        matched = True
+        key = {
+            "passing": "passed",
+            "failing": "failed",
+            "pending": "skipped",
+        }[label.lower()]
+        counts[key] += int(count)
+    total = sum(counts.values())
+    if not matched or total == 0:
+        return {}
+    counts["total_tests"] = total
+    return {key: value for key, value in counts.items() if value}
+
+
+def _parse_lodash_test_summary(text: str) -> dict[str, int]:
+    counts = {
+        "passed": 0,
+        "failed": 0,
+    }
+    matched = False
+    plain = re.sub(r"\x1b\[[0-9;]*m", "", text)
+    for passed, failed, total in re.findall(
+        r"PASS:\s*(\d+)\s+FAIL:\s*(\d+)\s+TOTAL:\s*(\d+)",
+        plain,
+        flags=re.IGNORECASE,
+    ):
+        matched = True
+        counts["passed"] += int(passed)
+        counts["failed"] += int(failed)
+        counts["total_tests"] = int(counts.get("total_tests", 0)) + int(total)
+    if not matched:
+        return {}
+    return {key: value for key, value in counts.items() if value}
 
 
 def _parse_cargo_test_summary(text: str) -> dict[str, int]:

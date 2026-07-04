@@ -60,6 +60,39 @@ def test_pytest_partial_progress_is_preserved_without_total_count() -> None:
     }
 
 
+def test_mocha_summary_is_parsed_from_express_output() -> None:
+    parsed = parse_runner_summary(
+        "  app.listen()\n"
+        "    √ should wrap with an HTTP server\n\n"
+        "  554 passing (16s)\n"
+        "  2 pending\n"
+    )
+
+    assert parsed["dialect"] == "mocha"
+    assert parsed["parser_status"] == "parsed"
+    assert parsed["summary"] == {
+        "passed": 554,
+        "skipped": 2,
+        "total_tests": 556,
+    }
+
+
+def test_lodash_custom_summary_is_aggregated() -> None:
+    parsed = parse_runner_summary(
+        "Running lodash tests.\n"
+        "    PASS: 6831  FAIL: 0  TOTAL: 6831\n"
+        "Running lodash/fp tests.\n"
+        "    PASS: 327  FAIL: 0  TOTAL: 327\n"
+    )
+
+    assert parsed["dialect"] == "lodash-test"
+    assert parsed["parser_status"] == "parsed"
+    assert parsed["summary"] == {
+        "passed": 7158,
+        "total_tests": 7158,
+    }
+
+
 def test_partial_runner_progress_finding_is_visible() -> None:
     report = build_real_repo_evaluation_report({
         "repo_id": "timeout-with-progress",

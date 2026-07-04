@@ -2,9 +2,9 @@
   "path": "src/hate/evaluation/runner_dialects.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "b60bfcb3aa6a84d8730b22364bfb9145843a72fb7a5d42599defa8d1349f13c6",
-  "line_count": 312,
-  "size_bytes": 10616,
+  "sha256": "6b76513f5ca57e753868d14c06ceeaf6e338522a022d810134a4ba80d5494999",
+  "line_count": 362,
+  "size_bytes": 12099,
   "headings": [],
   "imports": [
     "__future__",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "63ee0b9d49bd",
+  "generated_at": "ef6052c7bf16",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -166,9 +166,9 @@
     "docs/acceptance/INDEX.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.INDEX.md.json",
-      "sha256": "df0e0ed5438b8bf11a33bf19cf5deffdcc639fa1e79878a2be4c94120cef997d",
-      "line_count": 29,
-      "size_bytes": 3351
+      "sha256": "e0663b2042722b64a8ff859fd93bcdf48b6609e8e450274a74a4a724343d1c82",
+      "line_count": 30,
+      "size_bytes": 3534
     },
     "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md": {
       "role": "documentation",
@@ -183,6 +183,13 @@
       "sha256": "6199e2bd4f8eca15e7c17d263c3f7766675223fd29822d3db55526cc37433f5e",
       "line_count": 109,
       "size_bytes": 3875
+    },
+    "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.MAJOR_OSS_REATTACK_20260704.md.json",
+      "sha256": "b64c1968b4b1888b789d70f9bcf4cf7d18bbc71cb572533291c48d6c971555ae",
+      "line_count": 109,
+      "size_bytes": 3827
     },
     "docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md": {
       "role": "documentation",
@@ -9014,9 +9021,9 @@
     "src/hate/evaluation/runner_dialects.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evaluation.runner_dialects.py.json",
-      "sha256": "b60bfcb3aa6a84d8730b22364bfb9145843a72fb7a5d42599defa8d1349f13c6",
-      "line_count": 312,
-      "size_bytes": 10616
+      "sha256": "6b76513f5ca57e753868d14c06ceeaf6e338522a022d810134a4ba80d5494999",
+      "line_count": 362,
+      "size_bytes": 12099
     },
     "src/hate/evaluation/score_model.py": {
       "role": "implementation",
@@ -10974,9 +10981,9 @@
     "tests/test_real_repo_operational_oss.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_real_repo_operational_oss.py.json",
-      "sha256": "847a44201135e2166507bffeb0e2362f0a812de46087f43687905e4c5032a1ca",
-      "line_count": 275,
-      "size_bytes": 11292
+      "sha256": "240355010b008a2c185eac189f3de9f316d35479478243f9e07f0ec4d904df15",
+      "line_count": 308,
+      "size_bytes": 12190
     },
     "tests/test_real_repo_platform_packets.py": {
       "role": "test",
@@ -11431,6 +11438,10 @@
     [
       "docs/acceptance/INDEX.md",
       "docs/acceptance/MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md"
+    ],
+    [
+      "docs/acceptance/INDEX.md",
+      "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md"
     ],
     [
       "docs/acceptance/INDEX.md",
