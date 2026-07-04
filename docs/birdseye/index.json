@@ -1,5 +1,5 @@
 {
-  "generated_at": "b395eeeaa5a8",
+  "generated_at": "ae341b206938",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -166,9 +166,9 @@
     "docs/acceptance/INDEX.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.INDEX.md.json",
-      "sha256": "e0663b2042722b64a8ff859fd93bcdf48b6609e8e450274a74a4a724343d1c82",
-      "line_count": 30,
-      "size_bytes": 3534
+      "sha256": "b6755f13eaea6c3b7b4913980b1ac9c38150ca5295269b0e9dd5a26a47d386e2",
+      "line_count": 31,
+      "size_bytes": 3740
     },
     "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md": {
       "role": "documentation",
@@ -187,9 +187,16 @@
     "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.MAJOR_OSS_REATTACK_20260704.md.json",
-      "sha256": "f472727562ae65355129087c6a20b5149a5f35926f260ea141741c3a643bd936",
-      "line_count": 221,
-      "size_bytes": 9017
+      "sha256": "d6b14503755240317c16fc5a9e8a2204e7c5b5665acc330e70f8951887d4542c",
+      "line_count": 230,
+      "size_bytes": 9407
+    },
+    "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.MAJOR_OSS_TWO_CYCLE_20260704.md.json",
+      "sha256": "7baf9e5c3c0ab9529be0c375b6b5b9bc775bb803f4cb789e7215e6ea9572f319",
+      "line_count": 134,
+      "size_bytes": 5345
     },
     "docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md": {
       "role": "documentation",
@@ -1020,9 +1027,9 @@
     "docs/process/real-repo-rosters/major-oss-improved-20260704.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.real-repo-rosters.major-oss-improved-20260704.json.json",
-      "sha256": "3a7455d5c6d1c148384633e65c9fc255a52bd3d3114b7be544ab9752b3baf0f9",
+      "sha256": "1938eb8540c66bb79f870517c1ebfa4228255982c997e0201e0c44300e0d2407",
       "line_count": 142,
-      "size_bytes": 6492
+      "size_bytes": 7035
     },
     "docs/process/real-repo-rosters/opencode-package-tests.json": {
       "role": "documentation",
@@ -11449,6 +11456,10 @@
     [
       "docs/acceptance/INDEX.md",
       "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md"
+    ],
+    [
+      "docs/acceptance/INDEX.md",
+      "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md"
     ],
     [
       "docs/acceptance/INDEX.md",

@@ -1,0 +1,25 @@
+{
+  "path": "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "7baf9e5c3c0ab9529be0c375b6b5b9bc775bb803f4cb789e7215e6ea9572f319",
+  "line_count": 134,
+  "size_bytes": 5345,
+  "headings": [
+    "# Major OSS Two-Cycle Stability Validation - 2026-07-04",
+    "## Scope",
+    "## Hardening Found During The Run",
+    "## Final Two-Cycle Result",
+    "## Product Conclusion",
+    "## Verification Commands"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "store",
+    "test"
+  ]
+}

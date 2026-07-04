@@ -2,9 +2,9 @@
   "path": "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "f472727562ae65355129087c6a20b5149a5f35926f260ea141741c3a643bd936",
-  "line_count": 221,
-  "size_bytes": 9017,
+  "sha256": "d6b14503755240317c16fc5a9e8a2204e7c5b5665acc330e70f8951887d4542c",
+  "line_count": 230,
+  "size_bytes": 9407,
   "headings": [
     "# Major OSS Re-Attack - 2026-07-04",
     "## Scope",
@@ -19,7 +19,6 @@
   "depends_on": [],
   "tags": [
     "api",
-    "coverage",
     "test"
   ]
 }

@@ -110,6 +110,15 @@ Added a reproducible improved roster:
 
 - `docs\process\real-repo-rosters\major-oss-improved-20260704.json`
 
+Follow-up note:
+
+- The later two-cycle stability run found and fixed pytest cache permission
+  noise by adding `-p no:cacheprovider` to Python pytest commands.
+- The later two-cycle stability run also changed Node bootstrap commands to add
+  `--no-audit --no-fund --package-lock=false`.
+- See `docs\acceptance\MAJOR_OSS_TWO_CYCLE_20260704.md` for the superseding
+  repeated-cycle metrics.
+
 Re-attack output:
 
 - `C:\tmp\hate-major-oss-eval-20260704-improved-roster`

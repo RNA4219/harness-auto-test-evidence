@@ -2,9 +2,9 @@
   "path": "docs/acceptance/INDEX.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "e0663b2042722b64a8ff859fd93bcdf48b6609e8e450274a74a4a724343d1c82",
-  "line_count": 30,
-  "size_bytes": 3534,
+  "sha256": "b6755f13eaea6c3b7b4913980b1ac9c38150ca5295269b0e9dd5a26a47d386e2",
+  "line_count": 31,
+  "size_bytes": 3740,
   "headings": [
     "# Acceptance Index",
     "## Generation Policy"
@@ -17,6 +17,7 @@
     "MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md",
     "MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md",
     "MAJOR_OSS_REATTACK_20260704.md",
+    "MAJOR_OSS_TWO_CYCLE_20260704.md",
     "QEG_HARDENING_CYCLE_ACCEPTANCE.md"
   ],
   "depends_on": [
@@ -26,11 +27,13 @@
     "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md",
     "docs/acceptance/MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md",
     "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md",
+    "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md",
     "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md"
   ],
   "tags": [
     "coverage",
     "qeg",
+    "test",
     "workflow"
   ]
 }
