@@ -2,9 +2,9 @@
   "path": "tests/test_platform_cli.py",
   "role": "test",
   "kind": "py",
-  "sha256": "cbddb2b6c8721380e3bdf27d0ff989361eae351804974e748bef64004b0dee5b",
-  "line_count": 170,
-  "size_bytes": 5923,
+  "sha256": "f098e3ae38b983b59045648f57c181b3c0e9e2f8d292049600266fe582616b9c",
+  "line_count": 220,
+  "size_bytes": 7556,
   "headings": [],
   "imports": [
     "__future__",

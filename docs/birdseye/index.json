@@ -1,5 +1,5 @@
 {
-  "generated_at": "25b9d7b7b3ad",
+  "generated_at": "4a93727df197",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -166,9 +166,16 @@
     "docs/acceptance/INDEX.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.INDEX.md.json",
-      "sha256": "ab724644ae09a64df9830f4e47f95f6b505a768d34fc6569928d7845da911832",
-      "line_count": 27,
-      "size_bytes": 2856
+      "sha256": "f7ad8aef93a44fd62c6bed305b4917bafdc21a8728e00d323b0e62929aa96eee",
+      "line_count": 28,
+      "size_bytes": 3101
+    },
+    "docs/acceptance/MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md.json",
+      "sha256": "6199e2bd4f8eca15e7c17d263c3f7766675223fd29822d3db55526cc37433f5e",
+      "line_count": 109,
+      "size_bytes": 3875
     },
     "docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md": {
       "role": "documentation",
@@ -8979,23 +8986,23 @@
     "src/hate/evaluation/real_repo.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evaluation.real_repo.py.json",
-      "sha256": "44c9769a6d7b568ee95ff8c01172ef1c19faefab01d42f281c03ef5dd1b2a285",
-      "line_count": 767,
-      "size_bytes": 29857
+      "sha256": "29916be43745152805a6af5d4d185db5a055a5b7a01dc940472278cc3f406a40",
+      "line_count": 814,
+      "size_bytes": 31773
     },
     "src/hate/evaluation/regression_engine.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evaluation.regression_engine.py.json",
-      "sha256": "6a62fdf33584d0daeb7dc39c0ee19f5085a6cecfed87868073402ee98cadb022",
-      "line_count": 131,
-      "size_bytes": 5368
+      "sha256": "c18b09098e20d397c847e0c0a622d86496099484e1b3da38df7d199e9707a7c1",
+      "line_count": 140,
+      "size_bytes": 5690
     },
     "src/hate/evaluation/runner_dialects.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.evaluation.runner_dialects.py.json",
-      "sha256": "542d7943c5b1684ba5ec54856d473915b3c858199b14da520da399d8a61af2b3",
-      "line_count": 290,
-      "size_bytes": 9969
+      "sha256": "b60bfcb3aa6a84d8730b22364bfb9145843a72fb7a5d42599defa8d1349f13c6",
+      "line_count": 312,
+      "size_bytes": 10616
     },
     "src/hate/evaluation/score_model.py": {
       "role": "implementation",
@@ -9539,16 +9546,16 @@
     "src/hate/platform_cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.platform_cli.py.json",
-      "sha256": "861e545919eb70b3ba5d711875dbcf1dfb5f29951c2316942452aa37515e55e8",
-      "line_count": 410,
-      "size_bytes": 15790
+      "sha256": "34b39eabf1442b51355db375825bae087461a81f6645e2c5aa32c0e0a7ee9f13",
+      "line_count": 429,
+      "size_bytes": 16495
     },
     "src/hate/platform_ops.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.platform_ops.py.json",
-      "sha256": "3b09a728f4c36dbd9ef491e0c74621bda6fd58c9a9d641b275d2783d6f9c7e1c",
-      "line_count": 377,
-      "size_bytes": 15160
+      "sha256": "783a31555fde46dd04dddb3cd2cd0743496844e196d153f53969fe5ef86640b6",
+      "line_count": 381,
+      "size_bytes": 15349
     },
     "src/hate/platform_rbac.py": {
       "role": "implementation",
@@ -9588,9 +9595,9 @@
     "src/hate/post_poc/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.post_poc.__init__.py.json",
-      "sha256": "e3f7eecc77b0cb095adffa061efc7308befcab727695f6d5107db2d6857d57e1",
-      "line_count": 2,
-      "size_bytes": 43
+      "sha256": "12bcfd45d866cda4943c35c564e44f255338089eff509203cad216665d55dff8",
+      "line_count": 1,
+      "size_bytes": 42
     },
     "src/hate/post_poc/baseline.py": {
       "role": "implementation",
@@ -10701,9 +10708,9 @@
     "tests/test_platform_cli.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_platform_cli.py.json",
-      "sha256": "cbddb2b6c8721380e3bdf27d0ff989361eae351804974e748bef64004b0dee5b",
-      "line_count": 170,
-      "size_bytes": 5923
+      "sha256": "f098e3ae38b983b59045648f57c181b3c0e9e2f8d292049600266fe582616b9c",
+      "line_count": 220,
+      "size_bytes": 7556
     },
     "tests/test_platform_connector_sync.py": {
       "role": "test",
@@ -10729,9 +10736,9 @@
     "tests/test_platform_ops.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_platform_ops.py.json",
-      "sha256": "60a408de6466f1329d27dc21297f3a4e26a99116d4a2198c61aaddea9d4f1601",
-      "line_count": 315,
-      "size_bytes": 11972
+      "sha256": "527cfd2271c35dbd5d356077e05fe8cbe4e3dad074f36715fa5c79e3bfd61356",
+      "line_count": 340,
+      "size_bytes": 12972
     },
     "tests/test_platform_plugin_sandbox.py": {
       "role": "test",
@@ -10949,6 +10956,13 @@
       "sha256": "a4f770977ab4108162e332d18bb8cca7197585e7166e8f82fcb5dc88a58a0da2",
       "line_count": 761,
       "size_bytes": 31822
+    },
+    "tests/test_real_repo_operational_oss.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_real_repo_operational_oss.py.json",
+      "sha256": "32940eca38e2e1f08a0329db351009e334d987abe7069421e36a9490c28b233b",
+      "line_count": 168,
+      "size_bytes": 6783
     },
     "tests/test_real_repo_platform_packets.py": {
       "role": "test",
@@ -11395,6 +11409,10 @@
     [
       "docs/acceptance/INDEX.md",
       "docs/acceptance/HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md"
+    ],
+    [
+      "docs/acceptance/INDEX.md",
+      "docs/acceptance/MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md"
     ],
     [
       "docs/acceptance/INDEX.md",
@@ -13195,6 +13213,14 @@
     [
       "tests/test_real_repo_evaluation.py",
       "src/hate/evaluation/real_repo.py"
+    ],
+    [
+      "tests/test_real_repo_operational_oss.py",
+      "src/hate/evaluation/real_repo.py"
+    ],
+    [
+      "tests/test_real_repo_operational_oss.py",
+      "src/hate/evaluation/runner_dialects.py"
     ],
     [
       "tests/test_real_repo_platform_packets.py",

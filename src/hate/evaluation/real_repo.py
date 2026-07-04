@@ -166,6 +166,13 @@ def build_real_repo_evaluation_report(
             "Timeout is retained as evidence and cannot be silent.",
             source_refs[0],
         ))
+    if runner_parser.get("parser_status") == "partial":
+        findings.append(_finding(
+            "real_repo_runner_partial_progress_observed",
+            "hold",
+            "Runner output contained partial progress evidence without a complete summary.",
+            source_refs[0],
+        ))
     if command_exit_code is not None and int(command_exit_code) != 0:
         findings.append(_finding(
             "real_repo_command_failed",
@@ -178,6 +185,27 @@ def build_real_repo_evaluation_report(
             "real_repo_dependency_network_blocked",
             "hold",
             "Real repository command could not resolve build dependencies because network access was blocked.",
+            source_refs[0],
+        ))
+    elif failure_kind == "missing_test_dependency":
+        findings.append(_finding(
+            "real_repo_missing_test_dependency",
+            "hold",
+            "Real repository command could not find a declared test runner or runtime dependency.",
+            source_refs[0],
+        ))
+    elif failure_kind == "runner_config_mismatch":
+        findings.append(_finding(
+            "real_repo_runner_config_mismatch",
+            "hold",
+            "Real repository command failed because the selected runner did not satisfy repository configuration.",
+            source_refs[0],
+        ))
+    elif failure_kind == "test_failure":
+        findings.append(_finding(
+            "real_repo_test_failure",
+            "hold",
+            "Real repository tests executed and reported failures.",
             source_refs[0],
         ))
     elif failure_kind == "command_launch_failed":
@@ -489,7 +517,7 @@ def _run_roster_entry(
             "environment_fingerprint": environment_fingerprint or _environment_fingerprint(),
             "started_at": started_at,
             "finished_at": _utc_now(),
-            "baseline_decision": entry.get("baseline_decision") or "pass",
+            "baseline_decision": _baseline_decision_for_entry(entry),
             "current_decision": "hold",
             "parser_status": "failed",
             "runtime_ms": 0,
@@ -530,7 +558,7 @@ def _run_roster_entry(
         "environment_fingerprint": environment_fingerprint or _environment_fingerprint(),
         "started_at": started_at,
         "finished_at": _utc_now(),
-        "baseline_decision": entry.get("baseline_decision") or "pass",
+        "baseline_decision": _baseline_decision_for_entry(entry),
         "current_decision": current_decision,
         "baseline_record_count": entry.get("baseline_record_count"),
         "current_record_count": entry.get("current_record_count", inferred_record_count),
@@ -659,6 +687,14 @@ def _timeout_ms_for_entry(entry: dict[str, Any]) -> int:
     return REPO_CLASS_TIMEOUT_MS.get(repo_class, DEFAULT_TIMEOUT_MS)
 
 
+def _baseline_decision_for_entry(entry: dict[str, Any]) -> str:
+    if entry.get("baseline_decision"):
+        return str(entry["baseline_decision"])
+    if str(entry.get("ownership_scope") or "").lower() == "external":
+        return ""
+    return "pass"
+
+
 def _policy_hash(roster: dict[str, Any]) -> str:
     policy_ref = roster.get("default_policy_ref") or roster.get("policy_ref") or "default"
     return _stable_id("policy", str(policy_ref))
@@ -734,6 +770,15 @@ def _classify_command_failure(stdout: str, stderr: str, timed_out: bool, parser_
         return "command_launch_failed"
     text = f"{stdout}\n{stderr}".lower()
     if (
+        "is not recognized as an internal or external command" in text
+        or "cannot find module" in text
+        or "modulenotfounderror: no module named" in text
+        or "no module named " in text
+    ):
+        return "missing_test_dependency"
+    if "minversion" in text and "requires pytest" in text and "actual pytest" in text:
+        return "runner_config_mismatch"
+    if (
         "failed to fetch" in text
         or "pypi.org/simple" in text
         or "tcp connect error" in text
@@ -747,6 +792,8 @@ def _classify_command_failure(stdout: str, stderr: str, timed_out: bool, parser_
         or "build-system.requires" in text
     ):
         return "dependency_network_blocked"
+    if " failures " in text or " failed" in text or " errors " in text or " error collecting " in text:
+        return "test_failure"
     return ""
 
 

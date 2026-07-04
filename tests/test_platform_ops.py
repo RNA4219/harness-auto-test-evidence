@@ -153,6 +153,31 @@ def test_platform_score_penalizes_regression_timeout_and_typecheck_oracle(tmp_pa
     assert any(item["kind"] == "penalty" for item in score["decision_basis"])
 
 
+def test_platform_score_does_not_treat_unbaselined_external_hold_as_regression(tmp_path: Path) -> None:
+    source = tmp_path / "external-hold.json"
+    _write_json(
+        source,
+        {
+            "record_type": "real-repo-evaluation-report",
+            "repo_id": "external-repo",
+            "suite_id": "pytest",
+            "overall_status": "hold",
+            "ownership_scope": "external",
+            "finished_at": "2026-07-04T00:00:00Z",
+            "regressions": [{"regression_class": "external_hold_detected"}],
+            "current": {"record_count": 0, "runner_dialect": "pytest"},
+            "findings": [{"code": "real_repo_external_hold_detected", "severity": "medium"}],
+            "sourceRefs": ["external-hold"],
+        },
+    )
+
+    report = build_platform_score_report(source)
+    score = report["scores"][0]
+
+    assert score["score_breakdown"]["components"]["stability_score"] == 1.0
+    assert score["score_breakdown"]["penalties"]["regression_penalty"] == 0.0
+
+
 def test_platform_score_reads_manifest_leaves_and_skips_aggregate(tmp_path: Path) -> None:
     _write_json(
         tmp_path / "real-repo-repo-a-pytest.json",

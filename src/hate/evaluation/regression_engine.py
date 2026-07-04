@@ -32,6 +32,13 @@ def classify_real_repo_regressions(data: dict[str, Any]) -> list[dict[str, Any]]
     timed_out = bool(data.get("timeout_recorded") or data.get("timed_out"))
     record_drop_ratio = float(data.get("record_drop_ratio") or DEFAULT_RECORD_DROP_RATIO)
     runtime_drift_ratio = float(data.get("runtime_drift_ratio") or DEFAULT_RUNTIME_DRIFT_RATIO)
+    has_baseline = bool(
+        baseline_decision
+        or baseline_record_count is not None
+        or baseline_runtime_ms is not None
+        or baseline_failure_kind
+    )
+    external_without_baseline = ownership_scope == "external" and not has_baseline
 
     if ownership_scope == "external" and _external_hold(current_decision, command_exit_code, timed_out, current_failure_kind):
         regressions.append(_regression(
@@ -47,6 +54,8 @@ def classify_real_repo_regressions(data: dict[str, Any]) -> list[dict[str, Any]]
                 "implementation_failure": False,
             },
         ))
+    if external_without_baseline:
+        return regressions
     if _decision_downgraded(baseline_decision, current_decision):
         regressions.append(_regression(
             "status_regression",

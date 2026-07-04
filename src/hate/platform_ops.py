@@ -197,6 +197,10 @@ def build_platform_score_report(input_path: Path, out_path: Path | None = None) 
 def _score_input_from_report(report: dict[str, Any]) -> dict[str, Any]:
     findings = list(report.get("findings", []) or [])
     regressions = list(report.get("regressions", []) or [])
+    blocking_regressions = [
+        item for item in regressions
+        if str(item.get("regression_class") or item.get("code") or "") != "external_hold_detected"
+    ]
     current = dict(report.get("current") or {})
     age_penalty = 0.0
     if _parse_time(str(report.get("finished_at") or "")) is None:
@@ -209,11 +213,11 @@ def _score_input_from_report(report: dict[str, Any]) -> dict[str, Any]:
             "coverage_confidence": 0.8 if current.get("record_count") else 0.2,
             "oracle_confidence": 0.4 if current.get("runner_dialect") in {"nextjs-build", "typescript-typecheck"} else 0.8,
             "freshness_score": max(0.0, 1.0 - age_penalty),
-            "stability_score": 1.0 if not regressions else 0.3,
+            "stability_score": 1.0 if not blocking_regressions else 0.3,
             "ownership_clarity": 1.0 if report.get("ownership_scope") == "owned" else 0.6,
         },
         "penalties": {
-            "regression_penalty": min(40.0, 15.0 * len(regressions)),
+            "regression_penalty": min(40.0, 15.0 * len(blocking_regressions)),
             "timeout_penalty": 20.0 if report.get("timeout_recorded") else 0.0,
             "record_collapse_penalty": 20.0 if any(item.get("code") == "real_repo_record_count_collapse" for item in findings) else 0.0,
             "manual_debt_penalty": 5.0 * len(report.get("risk_debt", []) or []),

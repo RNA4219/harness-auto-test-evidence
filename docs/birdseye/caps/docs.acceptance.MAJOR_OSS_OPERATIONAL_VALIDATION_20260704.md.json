@@ -1,0 +1,27 @@
+{
+  "path": "docs/acceptance/MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "6199e2bd4f8eca15e7c17d263c3f7766675223fd29822d3db55526cc37433f5e",
+  "line_count": 109,
+  "size_bytes": 3875,
+  "headings": [
+    "# Major OSS Operational Validation - 2026-07-04",
+    "## Scope",
+    "## Initial Finding",
+    "## Implemented Corrections",
+    "## Final OSS Result",
+    "## Verification",
+    "## Remaining Operational Gaps"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "release",
+    "store",
+    "test"
+  ]
+}

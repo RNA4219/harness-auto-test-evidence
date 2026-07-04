@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_real_repo_operational_oss.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "32940eca38e2e1f08a0329db351009e334d987abe7069421e36a9490c28b233b",
+  "line_count": 168,
+  "size_bytes": 6783,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.evaluation",
+    "hate.evaluation.real_repo",
+    "hate.evaluation.runner_dialects",
+    "json",
+    "pathlib",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evaluation/real_repo.py",
+    "src/hate/evaluation/runner_dialects.py"
+  ],
+  "tags": [
+    "test"
+  ]
+}

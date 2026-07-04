@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 from hate.cli import main
-from hate.platform_cli import platform_compare, platform_debt, platform_findings, platform_review
+from hate.platform_cli import platform_compare, platform_debt, platform_findings, platform_report_html, platform_review
 
 
 def _write_json(path: Path, data: dict) -> None:
@@ -168,3 +168,53 @@ def test_platform_cli_report_html_and_policy_explain(tmp_path: Path) -> None:
     explained = json.loads(policy_out.read_text(encoding="utf-8"))
     assert explained["record_type"] == "platform-policy-report"
     assert explained["policy_id"] == "policy-test"
+
+
+def test_platform_report_html_holds_when_operator_queue_has_high_findings(tmp_path: Path) -> None:
+    report = tmp_path / "report.json"
+    html = tmp_path / "report.html"
+    _write_json(
+        report,
+        {
+            "record_type": "test-report",
+            "report_id": "R1",
+            "overall_status": "hold",
+            "findings": [{"code": "real_repo_missing_test_dependency", "severity": "high"}],
+            "sourceRefs": ["fixture"],
+        },
+    )
+
+    result = platform_report_html(report, html)
+
+    assert result["overall_status"] == "hold"
+    assert result["critical_queue_count"] == 1
+    assert "real_repo_missing_test_dependency" in html.read_text(encoding="utf-8")
+
+
+def test_platform_report_html_directory_input_ignores_prior_platform_outputs(tmp_path: Path) -> None:
+    html = tmp_path / "report.html"
+    _write_json(
+        tmp_path / "real-repo.json",
+        {
+            "record_type": "real-repo-evaluation-report",
+            "report_id": "real-repo-a",
+            "overall_status": "pass",
+            "findings": [],
+            "sourceRefs": ["real-repo"],
+        },
+    )
+    _write_json(
+        tmp_path / "platform-score.json",
+        {
+            "record_type": "platform-score-report",
+            "overall_status": "pass",
+            "scores": [],
+            "findings": [{"code": "stale_self_output", "severity": "high"}],
+        },
+    )
+
+    result = platform_report_html(tmp_path, html)
+
+    assert result["report_count"] == 1
+    assert result["finding_count"] == 0
+    assert "stale_self_output" not in html.read_text(encoding="utf-8")

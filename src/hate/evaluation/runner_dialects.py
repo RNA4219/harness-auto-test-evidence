@@ -27,6 +27,14 @@ def parse_runner_summary(stdout: str, stderr: str = "") -> dict[str, Any]:
                 "ignored_noise": _noise_markers(text),
                 "parser_status": "parsed",
             }
+    partial_pytest = _parse_pytest_progress(text)
+    if partial_pytest:
+        return {
+            "dialect": "pytest",
+            "summary": partial_pytest,
+            "ignored_noise": _noise_markers(text),
+            "parser_status": "partial",
+        }
     return {
         "dialect": "unknown",
         "summary": {},
@@ -121,6 +129,20 @@ def _parse_pytest_summary(text: str) -> dict[str, int]:
         return {}
     counts["total_tests"] = total
     return {key: value for key, value in counts.items() if value}
+
+
+def _parse_pytest_progress(text: str) -> dict[str, int]:
+    percentages = [
+        int(value)
+        for value in re.findall(r"\[\s*(\d{1,3})%\]", re.sub(r"\x1b\[[0-9;]*m", "", text))
+        if 0 <= int(value) <= 100
+    ]
+    if not percentages:
+        return {}
+    return {
+        "partial_progress_percent": max(percentages),
+        "partial_progress_observed": 1,
+    }
 
 
 def _parse_vitest_summary(text: str) -> dict[str, int]:

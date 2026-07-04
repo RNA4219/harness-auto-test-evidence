@@ -29,6 +29,16 @@ class PlatformCliError(Exception):
         self.exit_code = exit_code
 
 
+SELF_GENERATED_PLATFORM_RECORD_TYPES = {
+    "platform-assignment-report",
+    "platform-debt-report",
+    "platform-findings-report",
+    "platform-html-report",
+    "platform-review-report",
+    "platform-score-report",
+}
+
+
 def platform_run(roster_path: Path, out_dir: Path, source_version: str | None = None) -> dict[str, Any]:
     return run_real_repo_roster(roster_path=roster_path, out_dir=out_dir, source_version=source_version)
 
@@ -159,6 +169,7 @@ def platform_report_html(input_path: Path, out_path: Path) -> dict[str, Any]:
     debts = platform_debt(input_path)["items"]
     reviews = platform_review(input_path)["items"]
     critical = [item for item in findings if str(item.get("severity", "")).lower() in {"critical", "high"}]
+    overall_status = "hold" if critical or any(_report_holds(report) for report in reports) else "pass"
     rows = "\n".join(
         "<tr>"
         f"<td>{html.escape(str(report.get('record_type', '')))}</td>"
@@ -205,7 +216,7 @@ th, td {{ border: 1px solid #ccc; padding: 0.4rem; text-align: left; }}
     return {
         "schema_version": "HATE/v1",
         "record_type": "platform-html-report",
-        "overall_status": "pass",
+        "overall_status": overall_status,
         "html_path": str(out_path),
         "report_count": len(reports),
         "finding_count": len(findings),
@@ -280,9 +291,15 @@ def _projection_item_holds(item: dict[str, Any]) -> bool:
     return effect in {"hold", "blocked", "hard_dq"} or severity in {"critical", "high"}
 
 
+def _report_holds(report: dict[str, Any]) -> bool:
+    status = str(report.get("overall_status") or report.get("status") or "").lower()
+    return status in {"hold", "blocked", "hard_dq", "no_go"}
+
+
 def _load_reports(input_path: Path) -> list[dict[str, Any]]:
     if not input_path.exists():
         raise PlatformCliError(f"platform input not found: {input_path}")
+    directory_input = input_path.is_dir()
     paths = [input_path] if input_path.is_file() else sorted(input_path.glob("*.json"))
     reports = []
     for path in paths:
@@ -291,6 +308,8 @@ def _load_reports(input_path: Path) -> list[dict[str, Any]]:
         except json.JSONDecodeError as exc:
             raise PlatformCliError(f"invalid JSON report: {path}") from exc
         if isinstance(value, dict):
+            if directory_input and value.get("record_type") in SELF_GENERATED_PLATFORM_RECORD_TYPES:
+                continue
             reports.append(value)
     return reports
 
