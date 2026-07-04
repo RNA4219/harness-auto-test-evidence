@@ -57,6 +57,15 @@ def build_platform_schedule_plan(
                 "limit": retry_limit,
                 "planned_attempts": retries,
             },
+            "bootstrap_required": _entry_bootstrap_required(entry),
+            "split": {
+                "configured": _entry_split_count(entry) > 0,
+                "split_count": _entry_split_count(entry),
+            },
+            "resume": {
+                "required": bool(last and last.get("partial_result_ref")),
+                "partial_result_ref": str(last.get("partial_result_ref") or "") if last else "",
+            },
             "resume_token": _resume_token(entry, last),
             "sourceRefs": [str(roster_path)],
         })
@@ -277,16 +286,16 @@ def _dedupe_score_reports(reports: Any) -> list[dict[str, Any]]:
     return list(deduped.values())
 
 
-def _roster_entries(roster: dict[str, Any]) -> list[dict[str, str]]:
+def _roster_entries(roster: dict[str, Any]) -> list[dict[str, Any]]:
     entries = []
     for repo in roster.get("repositories", []) or []:
         repo_id = str(repo.get("repo_id") or "")
         suites = repo.get("suites")
         if isinstance(suites, list) and suites:
             for suite in suites:
-                entries.append({"repo_id": repo_id, "suite_id": str(suite.get("suite_id") or "default")})
+                entries.append({**repo, **suite, "repo_id": repo_id, "suite_id": str(suite.get("suite_id") or "default")})
         else:
-            entries.append({"repo_id": repo_id, "suite_id": str(repo.get("suite_id") or "default")})
+            entries.append({**repo, "repo_id": repo_id, "suite_id": str(repo.get("suite_id") or "default")})
     return entries
 
 
@@ -316,6 +325,22 @@ def _age_hours(now: datetime, item: dict[str, Any] | None) -> float | None:
 def _resume_token(entry: dict[str, str], last: dict[str, Any] | None) -> str:
     run_id = str(last.get("run_id") or "new") if last else "new"
     return f"{entry['repo_id']}:{entry['suite_id']}:{run_id}"
+
+
+def _entry_bootstrap_required(entry: dict[str, Any]) -> bool:
+    bootstrap = entry.get("bootstrap")
+    return bool(
+        isinstance(bootstrap, dict) and bootstrap.get("command")
+        or entry.get("bootstrap_command")
+        or entry.get("dependency_bootstrap_command")
+    )
+
+
+def _entry_split_count(entry: dict[str, Any]) -> int:
+    raw = entry.get("split_execution") or entry.get("timeout_strategy") or {}
+    commands = raw.get("commands") or raw.get("split_commands") if isinstance(raw, dict) else None
+    commands = commands or entry.get("split_commands") or []
+    return sum(1 for command in commands if isinstance(command, list))
 
 
 def _load_reports(input_path: Path) -> list[dict[str, Any]]:

@@ -83,11 +83,13 @@
           "type": "object",
           "required": ["parser_status", "ignored_noise"],
           "properties": {
-            "parser_status": {"type": "string", "enum": ["parsed", "unparsed"]},
+            "parser_status": {"type": "string", "enum": ["parsed", "partial", "unparsed"]},
             "ignored_noise": {"type": "array", "items": {"type": "string"}}
           },
           "additionalProperties": true
-        }
+        },
+        "bootstrap": {"type": "object", "additionalProperties": true},
+        "split_execution": {"type": "object", "additionalProperties": true}
       },
       "additionalProperties": true
     },

@@ -9,6 +9,7 @@ from pathlib import Path
 from hate.cli import main
 from hate.evaluation import build_real_repo_evaluation_report, evaluate_real_repo_fixture
 from hate.evaluation import real_repo
+from hate.evaluation import real_repo_runtime
 from hate.evaluation.real_repo import run_real_repo_roster
 
 
@@ -754,8 +755,8 @@ def test_real_repo_manifest_sums_executed_records(tmp_path: Path) -> None:
 
 
 def test_windows_command_shim_is_resolved(monkeypatch) -> None:
-    monkeypatch.setattr(real_repo.shutil, "which", lambda name: "C:/Program Files/nodejs/npm.cmd" if name == "npm.cmd" else None)
+    monkeypatch.setattr(real_repo_runtime.shutil, "which", lambda name: "C:/Program Files/nodejs/npm.cmd" if name == "npm.cmd" else None)
 
-    command = real_repo._normalize_command(["npm", "test"], os_name="nt")
+    command = real_repo_runtime.normalize_command(["npm", "test"], os_name="nt")
 
     assert command == ["C:/Program Files/nodejs/npm.cmd", "test"]

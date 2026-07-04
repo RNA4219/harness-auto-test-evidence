@@ -10,17 +10,24 @@ import json
 import os
 import hashlib
 import platform
-import shutil
-import subprocess
 import time
-from datetime import UTC, datetime
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
 from hate.evaluation.output_safety import safe_command_output
 from hate.evaluation.regression_engine import classify_real_repo_regressions
 from hate.evaluation.runner_dialects import parse_runner_summary
+from hate.evaluation.real_repo_runtime import (
+    merge_counts as _merge_counts,
+    no_split_execution as _no_split_execution,
+    no_timeout_cleanup as _no_timeout_cleanup,
+    normalize_command as _normalize_command,
+    run_bootstrap_if_configured as _run_bootstrap_if_configured,
+    run_command as _run_command,
+    split_plan_for_entry as _split_plan_for_entry,
+)
 
 
 DEFAULT_TIMEOUT_MS = 900_000
@@ -63,17 +70,6 @@ class RealRepoEvaluationFinding:
             "message": self.message,
             "sourceRef": self.sourceRef,
         }
-
-
-@dataclass(frozen=True)
-class CommandRunResult:
-    exit_code: int
-    stdout: str
-    stderr: str
-    timed_out: bool
-    parser_status: str
-    timeout_cleanup: dict[str, Any]
-
 
 def evaluate_real_repo_fixture(payload: dict[str, Any]) -> dict[str, str]:
     """Evaluate a product gap real-repo fixture."""
@@ -122,6 +118,8 @@ def build_real_repo_evaluation_report(
     command_summary = dict(data.get("command_summary") or {})
     runner_dialect = str(data.get("runner_dialect") or "unknown")
     runner_parser = dict(data.get("runner_parser") or {"parser_status": "unparsed", "ignored_noise": []})
+    bootstrap = dict(data.get("bootstrap") or {})
+    split_execution = dict(data.get("split_execution") or {})
     command_excerpt = str(data.get("command_excerpt") or "")
     output_safety = dict(data.get("output_safety") or {})
     timeout_cleanup = dict(data.get("timeout_cleanup") or {
@@ -150,6 +148,27 @@ def build_real_repo_evaluation_report(
             "real_repo_parser_failure",
             "hold",
             "Real repository evaluation parser failed.",
+            source_refs[0],
+        ))
+    if bootstrap.get("status") == "hold":
+        findings.append(_finding(
+            "real_repo_bootstrap_failed",
+            "hold",
+            "Dependency bootstrap command failed before the real repository suite could run.",
+            source_refs[0],
+        ))
+    if split_execution.get("status") == "hold":
+        findings.append(_finding(
+            "real_repo_split_execution_failed",
+            "hold",
+            "Split or resumed execution failed and cannot prove the full suite.",
+            source_refs[0],
+        ))
+    if split_execution.get("resume_required") and not split_execution.get("resume_token"):
+        findings.append(_finding(
+            "real_repo_resume_token_missing",
+            "hold",
+            "Split execution with skipped or partial shards requires a resume token.",
             source_refs[0],
         ))
     if runtime_ms and runtime_ms > runtime_budget_ms:
@@ -267,6 +286,8 @@ def build_real_repo_evaluation_report(
             "command_summary": command_summary,
             "runner_dialect": runner_dialect,
             "runner_parser": runner_parser,
+            "bootstrap": bootstrap,
+            "split_execution": split_execution,
             "command_excerpt": command_excerpt,
             "output_safety": output_safety,
             "timeout_cleanup": timeout_cleanup,
@@ -297,6 +318,8 @@ def build_real_repo_evaluation_report(
             "timeout_recorded": bool(data.get("timeout_recorded") or data.get("timed_out")),
             "subset_limited": subset,
             "executed_record_count": current_record_count,
+            "bootstrap_status": bootstrap.get("status", "not_configured"),
+            "split_status": split_execution.get("status", "not_configured"),
         },
         "sourceRefs": source_refs,
     }
@@ -528,9 +551,65 @@ def _run_roster_entry(
             "subset": bool(entry.get("subset") or entry.get("subset_command")),
         }
     command = _normalize_command(command)
+    command_env = _isolated_command_env(entry.get("env"))
+    bootstrap = _run_bootstrap_if_configured(entry, repo_path, command_env)
+    if bootstrap["status"] == "hold":
+        return {
+            **entry,
+            "repo_id": repo_id,
+            "suite_id": suite_id,
+            "run_id": identity,
+            "source_version": source_version,
+            "roster_hash": roster_hash,
+            "policy_hash": policy_hash,
+            "environment_fingerprint": environment_fingerprint or _environment_fingerprint(),
+            "started_at": started_at,
+            "finished_at": _utc_now(),
+            "baseline_decision": _baseline_decision_for_entry(entry),
+            "current_decision": "hold",
+            "baseline_record_count": entry.get("baseline_record_count"),
+            "current_record_count": 0,
+            "parser_status": "passed",
+            "runtime_ms": int(bootstrap.get("runtime_ms") or 0),
+            "runtime_budget_ms": int(entry.get("runtime_budget_ms") or timeout_ms),
+            "timeout_ms": timeout_ms,
+            "timed_out": bool(bootstrap.get("timeout_recorded")),
+            "timeout_recorded": bool(bootstrap.get("timeout_recorded")),
+            "timeout_cleanup": bootstrap.get("timeout_cleanup", _no_timeout_cleanup()),
+            "command_exit_code": int(bootstrap.get("exit_code") or 1),
+            "failure_kind": "bootstrap_failed",
+            "command_summary": {},
+            "runner_dialect": "unknown",
+            "runner_parser": {"parser_status": "unparsed", "ignored_noise": []},
+            "bootstrap": bootstrap,
+            "split_execution": _no_split_execution(),
+            "command_excerpt": str(bootstrap.get("command_excerpt") or ""),
+            "output_safety": dict(bootstrap.get("output_safety") or {}),
+            "subset": bool(entry.get("subset") or entry.get("subset_command")),
+            "subset_label": str(entry.get("subset_label") or ""),
+        }
+
+    split_plan = _split_plan_for_entry(entry)
+    if split_plan["configured"]:
+        return _run_split_roster_entry(
+            entry,
+            repo_id=repo_id,
+            suite_id=suite_id,
+            repo_path=repo_path,
+            timeout_ms=timeout_ms,
+            command=command,
+            identity=identity,
+            started_at=started_at,
+            roster_hash=roster_hash,
+            policy_hash=policy_hash,
+            environment_fingerprint=environment_fingerprint,
+            source_version=source_version,
+            bootstrap=bootstrap,
+            split_plan=split_plan,
+        )
 
     started = time.perf_counter()
-    command_result = _run_command(command, repo_path, _isolated_command_env(entry.get("env")), timeout_ms)
+    command_result = _run_command(command, repo_path, command_env, timeout_ms)
     timed_out = command_result.timed_out
     exit_code = command_result.exit_code
     parser_status = command_result.parser_status
@@ -577,6 +656,8 @@ def _run_roster_entry(
             "parser_status": runner_parse["parser_status"],
             "ignored_noise": runner_parse["ignored_noise"],
         },
+        "bootstrap": bootstrap,
+        "split_execution": _no_split_execution(),
         "command_excerpt": safe_output["excerpt"],
         "output_safety": safe_output["metadata"],
         "subset": bool(entry.get("subset") or entry.get("subset_command")),
@@ -584,96 +665,116 @@ def _run_roster_entry(
     }
 
 
-def _run_command(command: list[str], cwd: Path, env: dict[str, str], timeout_ms: int) -> CommandRunResult:
-    try:
-        process = subprocess.Popen(
-            command,
-            cwd=cwd,
-            env=env,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-        )
-    except OSError:
-        return CommandRunResult(
-            exit_code=127,
-            stdout="",
-            stderr="",
-            timed_out=False,
-            parser_status="failed",
-            timeout_cleanup=_no_timeout_cleanup(),
-        )
-
-    try:
-        stdout, stderr = process.communicate(timeout=timeout_ms / 1000)
-        return CommandRunResult(
-            exit_code=int(process.returncode),
-            stdout=stdout or "",
-            stderr=stderr or "",
-            timed_out=False,
-            parser_status="passed",
-            timeout_cleanup=_no_timeout_cleanup(),
-        )
-    except subprocess.TimeoutExpired:
-        cleanup = _terminate_process_tree(process.pid)
-        try:
-            stdout, stderr = process.communicate(timeout=5)
-            cleanup["cleanup_completed"] = process.poll() is not None
-        except subprocess.TimeoutExpired:
-            process.kill()
-            stdout, stderr = process.communicate()
-            cleanup["cleanup_completed"] = process.poll() is not None
-            cleanup["fallback_kill_used"] = True
-        return CommandRunResult(
-            exit_code=124,
-            stdout=_decode_timeout_output(stdout),
-            stderr=_decode_timeout_output(stderr),
-            timed_out=True,
-            parser_status="passed",
-            timeout_cleanup={"timeout_reason": "command_timeout_exceeded", **cleanup},
-        )
-
-
-def _terminate_process_tree(pid: int) -> dict[str, Any]:
-    if os.name == "nt":
-        result = subprocess.run(
-            ["taskkill", "/PID", str(pid), "/T", "/F"],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            check=False,
-        )
-        return {
-            "cleanup_attempted": True,
-            "cleanup_method": "taskkill_tree",
-            "cleanup_completed": result.returncode == 0,
-            "fallback_kill_used": False,
-        }
-    try:
-        os.kill(pid, 9)
-    except OSError:
-        return {
-            "cleanup_attempted": True,
-            "cleanup_method": "os_kill",
-            "cleanup_completed": True,
-            "fallback_kill_used": False,
-        }
+def _run_split_roster_entry(
+    entry: dict[str, Any],
+    *,
+    repo_id: str,
+    suite_id: str,
+    repo_path: Path,
+    timeout_ms: int,
+    command: list[str],
+    identity: str,
+    started_at: str,
+    roster_hash: str,
+    policy_hash: str,
+    environment_fingerprint: dict[str, str] | None,
+    source_version: str,
+    bootstrap: dict[str, Any],
+    split_plan: dict[str, Any],
+) -> dict[str, Any]:
+    started = time.perf_counter()
+    split_results: list[dict[str, Any]] = []
+    aggregate_summary: dict[str, int] = {}
+    stdout_parts: list[str] = []
+    stderr_parts: list[str] = []
+    any_timeout = False
+    any_failed = False
+    skipped_count = 0
+    for index, split_command in enumerate(split_plan["commands"], start=1):
+        split_id = str(index)
+        if split_id in split_plan["completed_splits"]:
+            skipped_count += 1
+            split_results.append({
+                "split_id": split_id,
+                "status": "skipped_completed",
+                "exit_code": 0,
+                "record_count": 0,
+                "timeout_recorded": False,
+            })
+            continue
+        result = _run_command(_normalize_command(split_command), repo_path, _isolated_command_env(entry.get("env")), timeout_ms)
+        any_timeout = any_timeout or result.timed_out
+        any_failed = any_failed or result.exit_code != 0 or result.parser_status == "failed"
+        parsed = parse_runner_summary(result.stdout, result.stderr)
+        summary = parsed["summary"]
+        _merge_counts(aggregate_summary, summary)
+        stdout_parts.append(result.stdout)
+        stderr_parts.append(result.stderr)
+        split_results.append({
+            "split_id": split_id,
+            "status": "hold" if result.timed_out or result.exit_code != 0 or result.parser_status == "failed" else "pass",
+            "exit_code": result.exit_code,
+            "record_count": int(summary.get("total_tests") or (1 if result.exit_code == 0 else 0)),
+            "timeout_recorded": result.timed_out,
+            "runner_dialect": parsed["dialect"],
+            "runner_parser": {
+                "parser_status": parsed["parser_status"],
+                "ignored_noise": parsed["ignored_noise"],
+            },
+            "timeout_cleanup": result.timeout_cleanup,
+        })
+    if "total_tests" not in aggregate_summary:
+        aggregate_summary["total_tests"] = sum(int(item.get("record_count") or 0) for item in split_results)
+    runtime_ms = int((time.perf_counter() - started) * 1000)
+    combined_stdout = "\n".join(stdout_parts)
+    combined_stderr = "\n".join(stderr_parts)
+    safe_output = safe_command_output(combined_stdout, combined_stderr)
+    split_status = "hold" if any_timeout or any_failed else "pass"
+    resume_required = skipped_count > 0 or any_timeout
     return {
-        "cleanup_attempted": True,
-        "cleanup_method": "os_kill",
-        "cleanup_completed": True,
-        "fallback_kill_used": False,
-    }
-
-
-def _no_timeout_cleanup() -> dict[str, Any]:
-    return {
-        "timeout_reason": "none",
-        "cleanup_attempted": False,
-        "cleanup_method": "none",
-        "cleanup_completed": None,
-        "fallback_kill_used": False,
+        **entry,
+        "repo_id": repo_id,
+        "suite_id": suite_id,
+        "run_id": identity,
+        "source_version": source_version,
+        "roster_hash": roster_hash,
+        "policy_hash": policy_hash,
+        "environment_fingerprint": environment_fingerprint or _environment_fingerprint(),
+        "started_at": started_at,
+        "finished_at": _utc_now(),
+        "baseline_decision": _baseline_decision_for_entry(entry),
+        "current_decision": "hold" if split_status == "hold" else "pass",
+        "baseline_record_count": entry.get("baseline_record_count"),
+        "current_record_count": entry.get("current_record_count", aggregate_summary.get("total_tests", 0)),
+        "parser_status": "passed",
+        "runtime_ms": runtime_ms + int(bootstrap.get("runtime_ms") or 0),
+        "runtime_budget_ms": int(entry.get("runtime_budget_ms") or timeout_ms * max(1, len(split_plan["commands"]))),
+        "timeout_ms": timeout_ms,
+        "timed_out": any_timeout,
+        "timeout_recorded": any_timeout,
+        "timeout_cleanup": _no_timeout_cleanup() if not any_timeout else {"timeout_reason": "split_timeout_recorded", "cleanup_attempted": True, "cleanup_method": "per_split", "cleanup_completed": True, "fallback_kill_used": False},
+        "command_exit_code": 1 if any_failed or any_timeout else 0,
+        "failure_kind": "timeout" if any_timeout else "test_failure" if any_failed else "",
+        "command_summary": aggregate_summary,
+        "runner_dialect": "split",
+        "runner_parser": {"parser_status": "parsed" if aggregate_summary.get("total_tests") else "unparsed", "ignored_noise": []},
+        "bootstrap": bootstrap,
+        "split_execution": {
+            "status": split_status,
+            "mode": "split",
+            "configured": True,
+            "split_count": len(split_plan["commands"]),
+            "completed_count": sum(1 for item in split_results if item["status"] == "pass"),
+            "skipped_count": skipped_count,
+            "resume_required": resume_required,
+            "resume_token": split_plan["resume_token"],
+            "splits": split_results,
+            "original_command": command,
+        },
+        "command_excerpt": safe_output["excerpt"],
+        "output_safety": safe_output["metadata"],
+        "subset": bool(entry.get("subset") or entry.get("subset_command")),
+        "subset_label": str(entry.get("subset_label") or ""),
     }
 
 
@@ -749,20 +850,6 @@ def _safe_repo_id(value: str) -> str:
     return safe.strip("-") or "repo"
 
 
-def _normalize_command(command: list[str], os_name: str | None = None) -> list[str]:
-    """Resolve Windows command shims without forcing roster authors to use .cmd."""
-    current_os = os.name if os_name is None else os_name
-    if not command or current_os != "nt":
-        return command
-    executable = command[0]
-    if Path(executable).suffix:
-        return command
-    shim = shutil.which(f"{executable}.cmd")
-    if shim:
-        return [shim, *command[1:]]
-    return command
-
-
 def _classify_command_failure(stdout: str, stderr: str, timed_out: bool, parser_status: str) -> str:
     if timed_out:
         return "timeout"
@@ -795,14 +882,6 @@ def _classify_command_failure(stdout: str, stderr: str, timed_out: bool, parser_
     if " failures " in text or " failed" in text or " errors " in text or " error collecting " in text:
         return "test_failure"
     return ""
-
-
-def _decode_timeout_output(value: str | bytes | None) -> str:
-    if value is None:
-        return ""
-    if isinstance(value, bytes):
-        return value.decode("utf-8", errors="replace")
-    return value
 
 
 def _command_excerpt(stdout: str, stderr: str, limit: int = 2000) -> str:

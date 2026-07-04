@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/evaluation/real_repo_runtime.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "28604adf525b0d4f2f7db5c5aa0a202a51e14d4613b46ca6285e5be249f5716e",
+  "line_count": 225,
+  "size_bytes": 7603,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "hate.evaluation.output_safety",
+    "os",
+    "pathlib",
+    "shutil",
+    "subprocess",
+    "time",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/evaluation/output_safety.py"
+  ],
+  "tags": []
+}

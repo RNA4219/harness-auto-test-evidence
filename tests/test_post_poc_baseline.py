@@ -171,6 +171,59 @@ def test_approval_missing_reviewer_holds() -> None:
     assert report["baseline_state"]["state"] == "proposed"
 
 
+def test_external_oss_baseline_requires_external_refs_and_observation_floor() -> None:
+    report = build_baseline_promotion_report({
+        "baseline": {
+            "baseline_id": "base-external-thin",
+            "repo_id": "requests",
+            "suite_id": "pytest",
+            "ownership_scope": "external",
+            "actor": "alice",
+            "reviewer": "bob",
+            "candidate_run_id": "run-external-1",
+            "evidence_refs": ["artifact://runs/run-external-1/report.json"],
+            "policy_hash": "policy-sha256-oss",
+            "expires_at": "2026-08-01T00:00:00Z",
+            "observation_count": 1,
+        },
+        "events": [{"event_type": "approved", "reviewer": "bob"}],
+    })
+
+    assert report["overall_status"] == "hold"
+    assert "baseline_external_reference_missing" in _codes(report)
+    assert "baseline_external_observation_floor_missing" in _codes(report)
+    assert report["summary"]["comparison_allowed"] is False
+
+
+def test_external_oss_baseline_can_be_approved_with_refs_and_repeated_observations() -> None:
+    report = build_baseline_promotion_report({
+        "baseline": {
+            "baseline_id": "base-external-ready",
+            "repo_id": "click",
+            "suite_id": "pytest",
+            "ownership_scope": "external",
+            "actor": "alice",
+            "candidate_run_id": "run-external-2",
+            "evidence_refs": ["artifact://runs/run-external-2/report.json"],
+            "policy_hash": "policy-sha256-oss",
+            "expires_at": "2026-08-01T00:00:00Z",
+        },
+        "events": [{
+            "event_type": "approved",
+            "reviewer": "bob",
+            "external_run_ref": "https://github.com/pallets/click/actions/runs/1",
+            "external_decision_ref": "artifact://external/click/maintainer-decision.json",
+            "observation_count": 2,
+        }],
+    })
+
+    assert report["overall_status"] == "pass"
+    assert report["baseline_state"]["ownership_scope"] == "external"
+    assert report["baseline_state"]["external_run_ref"].startswith("https://github.com/")
+    assert report["baseline_state"]["observation_count"] == 2
+    assert report["promotion_decisions"][0]["external_decision_ref"] == "artifact://external/click/maintainer-decision.json"
+
+
 def test_baseline_promotion_schema_registered() -> None:
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     records = {record["record_type"]: record["schema"] for record in registry["records"]}

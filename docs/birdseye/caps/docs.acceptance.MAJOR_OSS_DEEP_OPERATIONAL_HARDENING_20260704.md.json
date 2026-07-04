@@ -1,0 +1,26 @@
+{
+  "path": "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "fe4194ca41bd81dab87150d10ddd562dccf578d9383b62018fb0a654a5d8887a",
+  "line_count": 94,
+  "size_bytes": 3015,
+  "headings": [
+    "# Major OSS Deep Operational Hardening - 2026-07-04",
+    "## Scope",
+    "## Implemented Behavior",
+    "### Dependency Bootstrap",
+    "### Split And Resume Execution",
+    "### External OSS Baseline Policy",
+    "## Verification",
+    "## Remaining Notes"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "store",
+    "test"
+  ]
+}

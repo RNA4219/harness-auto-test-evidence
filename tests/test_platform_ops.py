@@ -29,7 +29,7 @@ def test_platform_schedule_plans_cache_retry_and_resume(tmp_path: Path) -> None:
         {
             "repositories": [
                 {"repo_id": "fresh", "suites": [{"suite_id": "unit"}]},
-                {"repo_id": "held", "suites": [{"suite_id": "unit"}]},
+                {"repo_id": "held", "bootstrap_command": ["uv", "sync"], "suites": [{"suite_id": "unit", "split_commands": [["pytest", "a"], ["pytest", "b"]]}]},
                 {"repo_id": "new", "suites": [{"suite_id": "unit"}]},
             ]
         },
@@ -38,7 +38,7 @@ def test_platform_schedule_plans_cache_retry_and_resume(tmp_path: Path) -> None:
     history.write_text(
         "\n".join([
             json.dumps({"repo_id": "fresh", "suite_id": "unit", "status": "pass", "finished_at": "2026-07-03T00:00:00Z", "run_id": "run-fresh"}),
-            json.dumps({"repo_id": "held", "suite_id": "unit", "status": "hold", "finished_at": "2026-07-03T00:00:00Z", "run_id": "run-held"}),
+            json.dumps({"repo_id": "held", "suite_id": "unit", "status": "hold", "finished_at": "2026-07-03T00:00:00Z", "run_id": "run-held", "partial_result_ref": "artifact://partial/held"}),
         ])
         + "\n",
         encoding="utf-8",
@@ -58,6 +58,10 @@ def test_platform_schedule_plans_cache_retry_and_resume(tmp_path: Path) -> None:
     assert by_repo["held"]["action"] == "run"
     assert by_repo["held"]["retry"]["planned_attempts"] == 1
     assert by_repo["held"]["resume_token"] == "held:unit:run-held"
+    assert by_repo["held"]["bootstrap_required"] is True
+    assert by_repo["held"]["split"]["split_count"] == 2
+    assert by_repo["held"]["resume"]["required"] is True
+    assert by_repo["held"]["resume"]["partial_result_ref"] == "artifact://partial/held"
     assert by_repo["new"]["action"] == "run"
     assert report["summary"]["cache_hit_count"] == 1
     assert report["summary"]["run_count"] == 2

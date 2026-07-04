@@ -2,9 +2,9 @@
   "path": "tests/test_platform_ops.py",
   "role": "test",
   "kind": "py",
-  "sha256": "527cfd2271c35dbd5d356077e05fe8cbe4e3dad074f36715fa5c79e3bfd61356",
-  "line_count": 340,
-  "size_bytes": 12972,
+  "sha256": "2011b63b5453b98d73d95285a0fcc43e3617f11d7b49360fd3498a3ec29c0fe7",
+  "line_count": 344,
+  "size_bytes": 13370,
   "headings": [],
   "imports": [
     "__future__",
@@ -20,7 +20,7 @@
     "src/hate/platform_ops.py"
   ],
   "tags": [
-    "schema",
+    "artifact",
     "store",
     "test"
   ]

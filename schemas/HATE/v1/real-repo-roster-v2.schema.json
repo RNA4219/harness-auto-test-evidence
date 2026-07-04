@@ -23,6 +23,16 @@
           "tags": {"type": "array", "items": {"type": "string"}},
           "risk_profile": {"type": "string"},
           "env": {"type": "object", "additionalProperties": {"type": "string"}},
+          "bootstrap": {
+            "type": "object",
+            "properties": {
+              "command": {"type": "array", "items": {"type": "string"}},
+              "timeout_ms": {"type": "integer", "minimum": 1}
+            },
+            "additionalProperties": true
+          },
+          "bootstrap_command": {"type": "array", "items": {"type": "string"}},
+          "dependency_bootstrap_command": {"type": "array", "items": {"type": "string"}},
           "suites": {
             "type": "array",
             "items": {
@@ -40,6 +50,27 @@
                 "subset_label": {"type": "string"},
                 "expected_record_floor": {"type": "integer", "minimum": 0},
                 "baseline_ref": {"type": "string"},
+                "split_commands": {
+                  "type": "array",
+                  "items": {"type": "array", "items": {"type": "string"}}
+                },
+                "split_execution": {
+                  "type": "object",
+                  "properties": {
+                    "commands": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}},
+                    "completed_splits": {"type": "array", "items": {"type": "string"}},
+                    "resume_token": {"type": "string"}
+                  },
+                  "additionalProperties": true
+                },
+                "timeout_strategy": {
+                  "type": "object",
+                  "properties": {
+                    "commands": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}},
+                    "split_commands": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}}
+                  },
+                  "additionalProperties": true
+                },
                 "env": {"type": "object", "additionalProperties": {"type": "string"}}
               },
               "additionalProperties": true

@@ -68,6 +68,7 @@ def build_baseline_promotion_report(
             "Comparison requested against a baseline that is not approved, frozen, or superseded.",
             source_refs[0],
         ))
+    findings.extend(_external_baseline_findings(final_baseline, source_refs[0]))
 
     status = "hold" if findings else "pass"
     report = {
@@ -191,6 +192,7 @@ def _baseline_review_items(
         _review_item("immutability", bool(baseline.get("immutability_hash") or report.get("immutability_events")), "Immutable before/after state must be visible."),
         _review_item("comparison_artifact", bool(comparison.get("comparison_artifact_ref")), "Reviewer needs comparison artifact for delta inspection."),
         _review_item("regression_delta", comparison.get("regression_count_delta", 0) <= 0, "Candidate must not add unexplained regressions."),
+        _review_item("external_reference", baseline.get("ownership_scope") != "external" or bool(baseline.get("external_run_ref") and baseline.get("external_decision_ref")), "External OSS baseline requires external run and decision refs."),
     ]
 
 
@@ -239,6 +241,10 @@ def _normalize_baseline(raw: dict[str, Any]) -> dict[str, Any]:
         "frozen_at": str(baseline.get("frozen_at") or ""),
         "immutability_hash": str(baseline.get("immutability_hash") or ""),
         "previous_baseline_ref": str(baseline.get("previous_baseline_ref") or ""),
+        "ownership_scope": str(baseline.get("ownership_scope") or "owned"),
+        "external_run_ref": str(baseline.get("external_run_ref") or ""),
+        "external_decision_ref": str(baseline.get("external_decision_ref") or ""),
+        "observation_count": int(baseline.get("observation_count") or 0),
         "state": str(baseline.get("state") or "none"),
         "comparison_requested": bool(baseline.get("comparison_requested", False)),
     }
@@ -258,6 +264,10 @@ def _normalize_event(raw: dict[str, Any]) -> dict[str, Any]:
         "frozen_at": str(event.get("frozen_at") or ""),
         "immutability_hash": str(event.get("immutability_hash") or ""),
         "previous_baseline_ref": str(event.get("previous_baseline_ref") or ""),
+        "ownership_scope": str(event.get("ownership_scope") or ""),
+        "external_run_ref": str(event.get("external_run_ref") or ""),
+        "external_decision_ref": str(event.get("external_decision_ref") or ""),
+        "observation_count": int(event.get("observation_count") or 0),
         "sourceRefs": [str(item) for item in event.get("sourceRefs", [])],
     }
 
@@ -361,11 +371,35 @@ def _merge_event_fields(state: dict[str, Any], event: dict[str, Any]) -> None:
         "frozen_at",
         "immutability_hash",
         "previous_baseline_ref",
+        "ownership_scope",
+        "external_run_ref",
+        "external_decision_ref",
     ]:
         if event[key]:
             state[key] = event[key]
+    if event["observation_count"]:
+        state["observation_count"] = event["observation_count"]
     if event["evidence_refs"]:
         state["evidence_refs"] = event["evidence_refs"]
+
+
+def _external_baseline_findings(baseline: dict[str, Any], source_ref: str) -> list[BaselineFinding]:
+    if baseline.get("ownership_scope") != "external" or baseline.get("state") not in APPROVED_COMPARISON_STATES:
+        return []
+    findings: list[BaselineFinding] = []
+    if not baseline.get("external_run_ref") or not baseline.get("external_decision_ref"):
+        findings.append(_finding(
+            "baseline_external_reference_missing",
+            "External OSS baseline approval requires external_run_ref and external_decision_ref.",
+            source_ref,
+        ))
+    if int(baseline.get("observation_count") or 0) < 2:
+        findings.append(_finding(
+            "baseline_external_observation_floor_missing",
+            "External OSS baseline approval requires at least two successful observations.",
+            source_ref,
+        ))
+    return findings
 
 
 def _promotion_request(state: dict[str, Any], source_ref: str) -> dict[str, Any]:
@@ -380,6 +414,10 @@ def _promotion_request(state: dict[str, Any], source_ref: str) -> dict[str, Any]
         "evidence_refs": state["evidence_refs"],
         "policy_hash": state["policy_hash"],
         "expires_at": state["expires_at"],
+        "ownership_scope": state["ownership_scope"],
+        "external_run_ref": state["external_run_ref"],
+        "external_decision_ref": state["external_decision_ref"],
+        "observation_count": state["observation_count"],
         "sourceRefs": [source_ref],
     }
 
@@ -397,6 +435,10 @@ def _promotion_decision(state: dict[str, Any], decision: str, source_ref: str) -
         "frozen_at": state["frozen_at"],
         "immutability_hash": state["immutability_hash"],
         "previous_baseline_ref": state["previous_baseline_ref"],
+        "ownership_scope": state["ownership_scope"],
+        "external_run_ref": state["external_run_ref"],
+        "external_decision_ref": state["external_decision_ref"],
+        "observation_count": state["observation_count"],
         "sourceRefs": [source_ref],
     }
 

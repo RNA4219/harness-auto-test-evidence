@@ -2,9 +2,9 @@
   "path": "src/hate/post_poc/baseline.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "b8810ad4830a2dca4d30aae793bbb6d3f9796bbb6817c4569b815b7d3d5a1b7e",
-  "line_count": 436,
-  "size_bytes": 18737,
+  "sha256": "867d4262530054b9a4a8318819c928c7ccce2cc504782dd1a93c0fb0a9439ea7",
+  "line_count": 478,
+  "size_bytes": 21182,
   "headings": [],
   "imports": [
     ".common",

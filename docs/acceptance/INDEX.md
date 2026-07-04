@@ -18,6 +18,7 @@ closure ledger. It is intentionally small and machine-checkable.
 | [FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md](FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md) | five-tool-validation-gate evidence for provider matrix, runner coverage, and core analysis expansion | AC-HATE-GAP-042, AC-HATE-GAP-043, AC-HATE-GAP-049, AC-HATE-GAP-050, AC-HATE-GAP-051, AC-HATE-GAP-052, AC-HATE-GAP-053, AC-HATE-GAP-056, AC-HATE-GAP-058, AC-HATE-GAP-059, AC-HATE-GAP-060 |
 | [QEG_HARDENING_CYCLE_ACCEPTANCE.md](QEG_HARDENING_CYCLE_ACCEPTANCE.md) | Ten repeated QEG hardening cycles for remaining product-readiness risks | HATE-QEG-CYCLE-001, HATE-QEG-CYCLE-002, HATE-QEG-CYCLE-003, HATE-QEG-CYCLE-004, HATE-QEG-CYCLE-005, HATE-QEG-CYCLE-006, HATE-QEG-CYCLE-007, HATE-QEG-CYCLE-008, HATE-QEG-CYCLE-009, HATE-QEG-CYCLE-010 |
 | [MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md](MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md) | Major OSS corpus validation for real-repo failure classification, platform score projection, and report generation | HATE-OSS-VALIDATION-20260704 |
+| [MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md](MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md) | Deep operational hardening for bootstrap, split/resume timeout mitigation, and external OSS baseline policy | HATE-OSS-DEEP-HARDENING-20260704 |
 
 ## Generation Policy
 
