@@ -1,0 +1,118 @@
+# HATE: harness-auto-test-evidence
+
+HATE is a local-first CLI for collecting automated test and real-repository
+validation signals, normalizing them into HATE/v1 JSON evidence, and preparing
+those records for QEG and adjacent workflow tools.
+
+HATE is not the final release gate. It does not own release approval, waivers,
+immutability, retention, or the final Go/No-Go decision. Its job is to produce
+structured, inspectable evidence that downstream governance tools can evaluate.
+
+## What HATE Does
+
+- Converts automated test and coverage artifacts into HATE/v1 records
+- Exports optional evidence bundles for QEG
+- Produces trust, AETE, DQ, replay, compare, explain, recommend, and doctor reports
+- Maps evidence into RanD, Shipyard, and workflow-cookbook advisory artifacts
+- Generates product-readiness and release-candidate advisory artifacts
+- Runs real repositories from roster files and records timeouts, counts, holds, and regressions
+- Provides a platform CLI for findings, risk debt, manual review, assignment, score, verdict, and triage workflows
+- Measures precision and recall against a frozen expected-verdict corpus for 10 major OSS repositories
+
+## Current Status
+
+- PoC complete.
+- `product_ready` remains false.
+- HATE alone is not a production release authority.
+- The final two-cycle major OSS validation stabilized at 5 pass / 5 hold with 22,171 records per cycle.
+- `hate platform verdict` reports 10/10 matched verdicts with precision, recall, and accuracy at 1.0 against the frozen corpus.
+- `hate platform triage` produces 6 operator items: 5 stable holds and 1 pytest compile-smoke subset soft gap.
+
+## Install And Run
+
+Use Python 3.11 or newer with `uv`.
+
+```powershell
+git clone https://github.com/RNA4219/harness-auto-test-evidence.git
+cd harness-auto-test-evidence
+uv run pytest -q
+```
+
+Inspect the CLI:
+
+```powershell
+uv run python -m hate --help
+uv run python -m hate platform --help
+```
+
+Run the minimal P0a golden path:
+
+```powershell
+uv run python -m hate p0a `
+  --input fixtures/golden/p0a-minimal/input `
+  --out tmp/p0a-smoke `
+  --source-version local-smoke
+```
+
+## Platform CLI
+
+`hate platform` is the operator-facing surface over canonical HATE reports.
+
+Common commands:
+
+- `run`: run a real-repo roster
+- `history`: query run history
+- `compare`: compare base/head reports
+- `schedule`: create cache, retry, and resume-aware run plans
+- `findings`: list findings
+- `debt`: list risk debt
+- `review`: list manual review requests
+- `assign`: build owner, due-date, and SLA queues
+- `score`: compute explainable readiness scores
+- `verdict`: evaluate observed reports against an expected-verdict corpus
+- `triage`: convert holds and subset gaps into operator work items
+- `plugin run`: execute manifest-driven plugins with sandbox validation
+- `policy explain`: explain effective platform policy
+- `report html`: generate an offline HTML report
+
+Major OSS corpus example:
+
+```powershell
+uv run python -m hate platform verdict `
+  --input tmp/major-oss-two-cycle/cycle-2 `
+  --corpus docs/process/real-repo-verdict-corpus/major-oss-expected-verdicts-20260704.json `
+  --out tmp/platform-verdict.json
+
+uv run python -m hate platform triage `
+  --input tmp/major-oss-two-cycle/cycle-2 `
+  --out tmp/platform-triage.json
+```
+
+## Documentation
+
+- [Agent README](../README.md): repository entrypoint for coding agents
+- [Blueprint](process/BLUEPRINT.md): scope and responsibility boundaries
+- [Specification](process/SPECIFICATION.md): HATE/v1 implementation contract
+- [Product requirements](process/PRODUCT_REQUIREMENTS_DEFINITION.md): requirements definition
+- [Product-grade implementation spec](process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md): product-grade completion criteria
+- [Runbook](process/RUNBOOK.md): operating procedures
+- [Evaluation](process/EVALUATION.md): acceptance rules
+- [PoC completion](acceptance/POC_COMPLETION_20260703.md): PoC completion evidence
+- [Major OSS two-cycle validation](acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md): real-data validation evidence
+
+## Release Checks
+
+```powershell
+uv run pytest -q
+uv run python -m compileall src tests
+uv run python tools/codemap/update.py --check
+git diff --check
+```
+
+When updating release or customer-facing claims, verify that README files,
+acceptance records, Birdseye, the schema registry, and product-grade status do
+not contradict each other.
+
+## License
+
+MIT License. See [LICENSE](../LICENSE).

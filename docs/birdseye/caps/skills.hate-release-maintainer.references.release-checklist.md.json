@@ -1,0 +1,27 @@
+{
+  "path": "skills/hate-release-maintainer/references/release-checklist.md",
+  "role": "project",
+  "kind": "md",
+  "sha256": "59246af56214aa6598884466d7f17df82b200cd8094ff9da4479382678b61396",
+  "line_count": 72,
+  "size_bytes": 1856,
+  "headings": [
+    "# HATE Release Checklist",
+    "## Evidence Sources",
+    "## Required Checks",
+    "## Product Claim Guardrails",
+    "## Major OSS Release Evidence"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "enterprise",
+    "qeg",
+    "release",
+    "test",
+    "workflow"
+  ]
+}

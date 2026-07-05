@@ -1,0 +1,27 @@
+{
+  "path": "skills/hate-release-maintainer/SKILL.md",
+  "role": "project",
+  "kind": "md",
+  "sha256": "13388d53347287f2bba6007d923c60b8102018a2b076515a56f555d99c0598e4",
+  "line_count": 89,
+  "size_bytes": 3393,
+  "headings": [
+    "# HATE Release Maintainer",
+    "## Start Here",
+    "## Claim Discipline",
+    "## Standard Release Loop",
+    "## README Rules",
+    "## Platform Evidence Rules",
+    "## Completion Criteria"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "qeg",
+    "release",
+    "test"
+  ]
+}

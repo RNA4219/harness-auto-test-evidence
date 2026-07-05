@@ -1,0 +1,4 @@
+interface:
+  display_name: "HATE Release Maintainer"
+  short_description: "Maintain HATE release docs and gates"
+  default_prompt: "Use $hate-release-maintainer to prepare HATE release docs, validation, and handoff evidence."

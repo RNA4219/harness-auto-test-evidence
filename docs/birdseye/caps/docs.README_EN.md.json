@@ -1,0 +1,50 @@
+{
+  "path": "docs/README_EN.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "035dd38f452a3511d755c80bb83b26aea3e61d2f39ecc09668b2aab64697373e",
+  "line_count": 118,
+  "size_bytes": 4411,
+  "headings": [
+    "# HATE: harness-auto-test-evidence",
+    "## What HATE Does",
+    "## Current Status",
+    "## Install And Run",
+    "## Platform CLI",
+    "## Documentation",
+    "## Release Checks",
+    "## License"
+  ],
+  "imports": [],
+  "links": [
+    "../LICENSE",
+    "../README.md",
+    "acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md",
+    "acceptance/POC_COMPLETION_20260703.md",
+    "process/BLUEPRINT.md",
+    "process/EVALUATION.md",
+    "process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md",
+    "process/PRODUCT_REQUIREMENTS_DEFINITION.md",
+    "process/RUNBOOK.md",
+    "process/SPECIFICATION.md"
+  ],
+  "depends_on": [
+    "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md",
+    "docs/acceptance/POC_COMPLETION_20260703.md",
+    "docs/process/BLUEPRINT.md",
+    "docs/process/EVALUATION.md",
+    "docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md",
+    "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md",
+    "docs/process/RUNBOOK.md",
+    "docs/process/SPECIFICATION.md"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "test",
+    "workflow"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "8495d7d9a777",
+  "generated_at": "b38851370efc",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -12,9 +12,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "1ce4c5ea4ec17e828e62875735655bebbcb0ec4506cc7a030989376ee069f60e",
-      "line_count": 138,
-      "size_bytes": 9948
+      "sha256": "92aa6e16ebf3cf1147cda4f08038c6a1f985b0b188d189c7abc964a3b2a550bb",
+      "line_count": 164,
+      "size_bytes": 6702
     },
     "TASK.codex.md": {
       "role": "planning",
@@ -22,6 +22,20 @@
       "sha256": "9bb7f339a257714c47c33696cafcc8094b4889f24031517ebf777bac79e69bd5",
       "line_count": 327,
       "size_bytes": 20384
+    },
+    "docs/README_EN.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.README_EN.md.json",
+      "sha256": "035dd38f452a3511d755c80bb83b26aea3e61d2f39ecc09668b2aab64697373e",
+      "line_count": 118,
+      "size_bytes": 4411
+    },
+    "docs/README_JA.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.README_JA.md.json",
+      "sha256": "4f4173b81e192f778dbf3368410f67b0900f8798814e8ccc4c90d693b7515e59",
+      "line_count": 118,
+      "size_bytes": 4885
     },
     "docs/acceptance/AC-20260630-01.md": {
       "role": "documentation",
@@ -8500,6 +8514,27 @@
       "line_count": 145,
       "size_bytes": 4354
     },
+    "skills/hate-release-maintainer/SKILL.md": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/skills.hate-release-maintainer.SKILL.md.json",
+      "sha256": "13388d53347287f2bba6007d923c60b8102018a2b076515a56f555d99c0598e4",
+      "line_count": 89,
+      "size_bytes": 3393
+    },
+    "skills/hate-release-maintainer/agents/openai.yaml": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/skills.hate-release-maintainer.agents.openai.yaml.json",
+      "sha256": "a9d001db516dc48b2ccb51c8e4697156e6ca3135debd84945a664be83214ac87",
+      "line_count": 4,
+      "size_bytes": 226
+    },
+    "skills/hate-release-maintainer/references/release-checklist.md": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/skills.hate-release-maintainer.references.release-checklist.md.json",
+      "sha256": "59246af56214aa6598884466d7f17df82b200cd8094ff9da4479382678b61396",
+      "line_count": 72,
+      "size_bytes": 1856
+    },
     "src/hate/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.__init__.py.json",
@@ -11234,27 +11269,23 @@
   "edges": [
     [
       "README.md",
-      "TASK.codex.md"
+      "docs/README_EN.md"
     ],
     [
       "README.md",
-      "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md"
+      "docs/README_JA.md"
     ],
     [
       "README.md",
-      "docs/process/ACCESSIBILITY_LOCALIZATION_CONTRACT.md"
+      "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md"
     ],
     [
       "README.md",
-      "docs/process/ADAPTER_SDK_CONTRACT.md"
+      "docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md"
     ],
     [
       "README.md",
-      "docs/process/API_REQUIREMENTS.md"
-    ],
-    [
-      "README.md",
-      "docs/process/AUDIT_FIXTURE_ASSURANCE_CONTRACT.md"
+      "docs/acceptance/POC_COMPLETION_20260703.md"
     ],
     [
       "README.md",
@@ -11262,31 +11293,7 @@
     ],
     [
       "README.md",
-      "docs/process/CUSTOMER_DOCUMENTATION_CONTRACT.md"
-    ],
-    [
-      "README.md",
-      "docs/process/CUSTOMER_SUCCESS_ADOPTION_CONTRACT.md"
-    ],
-    [
-      "README.md",
-      "docs/process/DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md"
-    ],
-    [
-      "README.md",
-      "docs/process/DATA_RETENTION_LEGAL_REQUIREMENTS.md"
-    ],
-    [
-      "README.md",
       "docs/process/ENTERPRISE_CONTROL_STATE_TRANSITION_SPEC.md"
-    ],
-    [
-      "README.md",
-      "docs/process/ENTERPRISE_DOMAIN_MODEL.md"
-    ],
-    [
-      "README.md",
-      "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md"
     ],
     [
       "README.md",
@@ -11294,43 +11301,7 @@
     ],
     [
       "README.md",
-      "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md"
-    ],
-    [
-      "README.md",
-      "docs/process/GLM_IMPLEMENTATION_DISPATCH_PACK.md"
-    ],
-    [
-      "README.md",
-      "docs/process/GUARDRAILS.md"
-    ],
-    [
-      "README.md",
-      "docs/process/HOSTED_READ_MODEL_API.md"
-    ],
-    [
-      "README.md",
-      "docs/process/IMPLEMENTATION_EPIC_BREAKDOWN.md"
-    ],
-    [
-      "README.md",
-      "docs/process/IMPLEMENTATION_ROADMAP_CHECKLIST.md"
-    ],
-    [
-      "README.md",
       "docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md"
-    ],
-    [
-      "README.md",
-      "docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md"
-    ],
-    [
-      "README.md",
-      "docs/process/P0A_GOLDEN_PATH.md"
-    ],
-    [
-      "README.md",
-      "docs/process/PACKAGING_ENTITLEMENT_CONTRACT.md"
     ],
     [
       "README.md",
@@ -11350,23 +11321,15 @@
     ],
     [
       "README.md",
-      "docs/process/PRIVACY_QUARANTINE_CONTRACT.md"
-    ],
-    [
-      "README.md",
-      "docs/process/PRODUCT_ERROR_TAXONOMY.md"
-    ],
-    [
-      "README.md",
-      "docs/process/PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md"
-    ],
-    [
-      "README.md",
       "docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md"
     ],
     [
       "README.md",
-      "docs/process/PRODUCT_REQUIREMENTS_500K_READINESS_AUDIT.md"
+      "docs/process/PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md"
+    ],
+    [
+      "README.md",
+      "docs/process/PRODUCT_PLATFORM_PHASE_REQUIREMENTS.md"
     ],
     [
       "README.md",
@@ -11378,10 +11341,6 @@
     ],
     [
       "README.md",
-      "docs/process/PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md"
-    ],
-    [
-      "README.md",
       "docs/process/RELEASE_CANDIDATE_PACK_VALIDATOR_SPEC.md"
     ],
     [
@@ -11390,31 +11349,7 @@
     ],
     [
       "README.md",
-      "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md"
-    ],
-    [
-      "README.md",
-      "docs/process/RISK_DEBT_REGISTER.md"
-    ],
-    [
-      "README.md",
       "docs/process/RUNBOOK.md"
-    ],
-    [
-      "README.md",
-      "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md"
-    ],
-    [
-      "README.md",
-      "docs/process/SCHEMA_REGISTRY_CONTRACT.md"
-    ],
-    [
-      "README.md",
-      "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md"
-    ],
-    [
-      "README.md",
-      "docs/process/SLO_INCIDENT_RESPONSE_CONTRACT.md"
     ],
     [
       "README.md",
@@ -11426,19 +11361,71 @@
     ],
     [
       "README.md",
-      "docs/process/UI_WORKFLOW_REQUIREMENTS.md"
+      "skills/hate-release-maintainer/SKILL.md"
     ],
     [
-      "README.md",
-      "docs/process/USER_STORY_MAP.md"
+      "docs/README_EN.md",
+      "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md"
     ],
     [
-      "README.md",
-      "docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md"
+      "docs/README_EN.md",
+      "docs/acceptance/POC_COMPLETION_20260703.md"
     ],
     [
-      "README.md",
-      "docs/research/deep-research-report.md"
+      "docs/README_EN.md",
+      "docs/process/BLUEPRINT.md"
+    ],
+    [
+      "docs/README_EN.md",
+      "docs/process/EVALUATION.md"
+    ],
+    [
+      "docs/README_EN.md",
+      "docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md"
+    ],
+    [
+      "docs/README_EN.md",
+      "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md"
+    ],
+    [
+      "docs/README_EN.md",
+      "docs/process/RUNBOOK.md"
+    ],
+    [
+      "docs/README_EN.md",
+      "docs/process/SPECIFICATION.md"
+    ],
+    [
+      "docs/README_JA.md",
+      "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md"
+    ],
+    [
+      "docs/README_JA.md",
+      "docs/acceptance/POC_COMPLETION_20260703.md"
+    ],
+    [
+      "docs/README_JA.md",
+      "docs/process/BLUEPRINT.md"
+    ],
+    [
+      "docs/README_JA.md",
+      "docs/process/EVALUATION.md"
+    ],
+    [
+      "docs/README_JA.md",
+      "docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md"
+    ],
+    [
+      "docs/README_JA.md",
+      "docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md"
+    ],
+    [
+      "docs/README_JA.md",
+      "docs/process/RUNBOOK.md"
+    ],
+    [
+      "docs/README_JA.md",
+      "docs/process/SPECIFICATION.md"
     ],
     [
       "docs/acceptance/INDEX.md",

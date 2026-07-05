@@ -1,0 +1,15 @@
+{
+  "path": "skills/hate-release-maintainer/agents/openai.yaml",
+  "role": "project",
+  "kind": "yaml",
+  "sha256": "a9d001db516dc48b2ccb51c8e4697156e6ca3135debd84945a664be83214ac87",
+  "line_count": 4,
+  "size_bytes": 226,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release"
+  ]
+}
