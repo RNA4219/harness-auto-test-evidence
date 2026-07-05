@@ -2,9 +2,9 @@
   "path": "docs/acceptance/INDEX.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "b6755f13eaea6c3b7b4913980b1ac9c38150ca5295269b0e9dd5a26a47d386e2",
-  "line_count": 31,
-  "size_bytes": 3740,
+  "sha256": "ed28993dfa585be7fbbf8c759b21bcbc460cffcc66137ba7291ae399af71497e",
+  "line_count": 32,
+  "size_bytes": 4005,
   "headings": [
     "# Acceptance Index",
     "## Generation Policy"
@@ -18,6 +18,7 @@
     "MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md",
     "MAJOR_OSS_REATTACK_20260704.md",
     "MAJOR_OSS_TWO_CYCLE_20260704.md",
+    "PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md",
     "QEG_HARDENING_CYCLE_ACCEPTANCE.md"
   ],
   "depends_on": [
@@ -28,6 +29,7 @@
     "docs/acceptance/MAJOR_OSS_OPERATIONAL_VALIDATION_20260704.md",
     "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md",
     "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md",
+    "docs/acceptance/PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md",
     "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md"
   ],
   "tags": [

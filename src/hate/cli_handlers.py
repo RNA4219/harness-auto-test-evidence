@@ -23,9 +23,14 @@ from .platform_cli import (
     platform_debt,
     platform_findings,
     platform_history,
+    platform_history_analytics,
+    platform_history_materialize,
+    platform_notify_deliver,
+    platform_notify_route,
     platform_policy_explain,
     platform_plugin_run,
     platform_baseline_promote,
+    platform_baseline_review,
     platform_report_html,
     platform_review,
     platform_run,
@@ -432,6 +437,15 @@ def _dispatch_platform(args: argparse.Namespace) -> dict[str, Any] | None:
             until=args.until,
             limit=args.limit,
         )
+    if args.platform_command == "history-analytics":
+        return platform_history_analytics(args.input, out_path=args.out)
+    if args.platform_command == "history-materialize":
+        return platform_history_materialize(
+            args.input,
+            out_path=args.out,
+            previous_manifest_path=args.previous_manifest,
+            manifest_out_path=args.manifest_out,
+        )
     if args.platform_command == "compare":
         return platform_compare(args.base, args.head, out_path=args.out)
     if args.platform_command == "schedule":
@@ -459,6 +473,12 @@ def _dispatch_platform(args: argparse.Namespace) -> dict[str, Any] | None:
         return platform_triage(args.input, out_path=args.out)
     if args.platform_command == "baseline" and args.platform_baseline_command == "promote":
         return platform_baseline_promote(args.input, out_path=args.out)
+    if args.platform_command == "baseline" and args.platform_baseline_command == "review":
+        return platform_baseline_review(args.input, out_path=args.out)
+    if args.platform_command == "notify" and args.platform_notify_command == "route":
+        return platform_notify_route(args.input, out_path=args.out)
+    if args.platform_command == "notify" and args.platform_notify_command == "deliver":
+        return platform_notify_deliver(args.input, out_path=args.out)
     if args.platform_command == "plugin" and args.platform_plugin_command == "run":
         return platform_plugin_run(args.manifest, out_path=args.out)
     if args.platform_command == "policy" and args.platform_policy_command == "explain":

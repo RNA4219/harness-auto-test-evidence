@@ -1,5 +1,5 @@
 {
-  "generated_at": "b38851370efc",
+  "generated_at": "8da54542cbf3",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -12,9 +12,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "92aa6e16ebf3cf1147cda4f08038c6a1f985b0b188d189c7abc964a3b2a550bb",
-      "line_count": 164,
-      "size_bytes": 6702
+      "sha256": "12493df10ed70b6088ded15869b653210d5c64806a938342b6f92e62e3c91936",
+      "line_count": 173,
+      "size_bytes": 7139
     },
     "TASK.codex.md": {
       "role": "planning",
@@ -26,16 +26,16 @@
     "docs/README_EN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_EN.md.json",
-      "sha256": "035dd38f452a3511d755c80bb83b26aea3e61d2f39ecc09668b2aab64697373e",
-      "line_count": 118,
-      "size_bytes": 4411
+      "sha256": "4e37c1aa568a9b1bfbb8448b8efb26a87a9df3fd541962c86315315611a84d44",
+      "line_count": 123,
+      "size_bytes": 4907
     },
     "docs/README_JA.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_JA.md.json",
-      "sha256": "4f4173b81e192f778dbf3368410f67b0900f8798814e8ccc4c90d693b7515e59",
-      "line_count": 118,
-      "size_bytes": 4885
+      "sha256": "76cf6a23e51c3a9120246f60e23e70e2c71a1c5c47fa5ce29a3462fdf8f3379c",
+      "line_count": 122,
+      "size_bytes": 5378
     },
     "docs/acceptance/AC-20260630-01.md": {
       "role": "documentation",
@@ -180,9 +180,9 @@
     "docs/acceptance/INDEX.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.INDEX.md.json",
-      "sha256": "b6755f13eaea6c3b7b4913980b1ac9c38150ca5295269b0e9dd5a26a47d386e2",
-      "line_count": 31,
-      "size_bytes": 3740
+      "sha256": "ed28993dfa585be7fbbf8c759b21bcbc460cffcc66137ba7291ae399af71497e",
+      "line_count": 32,
+      "size_bytes": 4005
     },
     "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md": {
       "role": "documentation",
@@ -218,6 +218,13 @@
       "sha256": "d1cfb4b41f5295b7274fee0e3e4b20bca5d945b2cf83934147427c48e21b8fd6",
       "line_count": 79,
       "size_bytes": 3244
+    },
+    "docs/acceptance/PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md.json",
+      "sha256": "cf08c78022dde7191fdf08137362fda8817f8254a2ad7654c3ba776f7320d121",
+      "line_count": 63,
+      "size_bytes": 2662
     },
     "docs/acceptance/PLATFORM_OPERATIONS_RUNTIME_20260703.md": {
       "role": "documentation",
@@ -8790,16 +8797,16 @@
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "de497528bf54328379ad2fdd022f9d233b1ebd85a3205e0810fabff12e4d9d86",
-      "line_count": 302,
-      "size_bytes": 23941
+      "sha256": "cf629f770675bd5ce1daebaab9bebadd717f80af299285716741c10a341abe13",
+      "line_count": 324,
+      "size_bytes": 26451
     },
     "src/hate/cli_handlers.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli_handlers.py.json",
-      "sha256": "310227f962beeb03dcaa07a38bd03109034e1a19cc4c7332b03227d923663626",
-      "line_count": 541,
-      "size_bytes": 19689
+      "sha256": "7d71b19d4d27c5f913df439de5459232f7210a8220c95d19fbbe8b651c816165",
+      "line_count": 561,
+      "size_bytes": 20714
     },
     "src/hate/commercial/__init__.py": {
       "role": "implementation",
@@ -9623,9 +9630,9 @@
     "src/hate/platform_cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.platform_cli.py.json",
-      "sha256": "970cb1e182bccf9152adc123bb70a3c44c159d78ea9d3aaceeadca032ca56011",
-      "line_count": 441,
-      "size_bytes": 16972
+      "sha256": "3936c31afc6534e1d6427266533cff6cc1be7d7f3b9f0dd589faf789bc61ebc2",
+      "line_count": 522,
+      "size_bytes": 20153
     },
     "src/hate/platform_ops.py": {
       "role": "implementation",
@@ -10785,9 +10792,9 @@
     "tests/test_platform_cli.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_platform_cli.py.json",
-      "sha256": "d534ad4a95d0316c74bf92ab5500a671e09869601b4cd75b329debb24a88c767",
-      "line_count": 261,
-      "size_bytes": 9223
+      "sha256": "2d9eb76a46eefeaa2389d24426eac824593e87da56beb7251d68ba5bc5e7d068",
+      "line_count": 421,
+      "size_bytes": 16219
     },
     "tests/test_platform_connector_sync.py": {
       "role": "test",
@@ -11454,6 +11461,10 @@
     [
       "docs/acceptance/INDEX.md",
       "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md"
+    ],
+    [
+      "docs/acceptance/INDEX.md",
+      "docs/acceptance/PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md"
     ],
     [
       "docs/acceptance/INDEX.md",
@@ -12350,6 +12361,14 @@
     [
       "src/hate/platform_cli.py",
       "src/hate/post_poc/baseline.py"
+    ],
+    [
+      "src/hate/platform_cli.py",
+      "src/hate/post_poc/history_analytics.py"
+    ],
+    [
+      "src/hate/platform_cli.py",
+      "src/hate/post_poc/notifications.py"
     ],
     [
       "src/hate/platform_ops.py",

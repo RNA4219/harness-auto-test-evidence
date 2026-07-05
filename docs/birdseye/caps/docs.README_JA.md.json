@@ -2,9 +2,9 @@
   "path": "docs/README_JA.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "4f4173b81e192f778dbf3368410f67b0900f8798814e8ccc4c90d693b7515e59",
-  "line_count": 118,
-  "size_bytes": 4885,
+  "sha256": "76cf6a23e51c3a9120246f60e23e70e2c71a1c5c47fa5ce29a3462fdf8f3379c",
+  "line_count": 122,
+  "size_bytes": 5378,
   "headings": [
     "# HATE: harness-auto-test-evidence",
     "## 何ができるか",

@@ -12,7 +12,9 @@ from pathlib import Path
 from typing import Any
 
 from hate.evaluation import query_real_repo_history, run_real_repo_roster
-from hate.post_poc.baseline import build_baseline_promotion_report
+from hate.post_poc.baseline import build_baseline_promotion_report, build_baseline_review_packet
+from hate.post_poc.history_analytics import build_history_analytics_report, build_history_materialization_plan, write_history_materialization_manifest
+from hate.post_poc.notifications import build_notification_delivery_report, build_notification_routing_plan
 from hate.platform_ops import (
     build_platform_assignment_report,
     build_platform_schedule_plan,
@@ -40,6 +42,12 @@ SELF_GENERATED_PLATFORM_RECORD_TYPES = {
     "platform-score-report",
     "platform-triage-report",
     "platform-verdict-evaluation-report",
+    "history-analytics-report",
+    "history-materialization-plan",
+    "history-materialization-manifest",
+    "notification-delivery-report",
+    "notification-routing-plan",
+    "baseline-review-packet",
 }
 
 
@@ -278,6 +286,79 @@ def platform_baseline_promote(input_path: Path, out_path: Path | None = None) ->
     report = build_baseline_promotion_report(
         data.get("input", data),
         report_id=str(data.get("fixture_id") or data.get("report_id") or "platform-baseline-promotion"),
+        source_refs=[str(input_path)],
+    )
+    if out_path is not None:
+        _write_json(out_path, report)
+    return report
+
+
+def platform_baseline_review(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    data = _read_json(input_path)
+    packet = build_baseline_review_packet(
+        data.get("input", data),
+        packet_id=str(data.get("fixture_id") or data.get("packet_id") or "platform-baseline-review"),
+        source_refs=[str(input_path)],
+    )
+    if out_path is not None:
+        _write_json(out_path, packet)
+    return packet
+
+
+def platform_history_analytics(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    data = _read_json(input_path)
+    report = build_history_analytics_report(
+        data.get("input", data),
+        report_id=str(data.get("fixture_id") or data.get("report_id") or "platform-history-analytics"),
+        source_refs=[str(input_path)],
+    )
+    if out_path is not None:
+        _write_json(out_path, report)
+    return report
+
+
+def platform_history_materialize(
+    input_path: Path,
+    out_path: Path | None = None,
+    previous_manifest_path: Path | None = None,
+    manifest_out_path: Path | None = None,
+) -> dict[str, Any]:
+    data = _read_json(input_path)
+    previous_manifest = _read_json(previous_manifest_path) if previous_manifest_path is not None else None
+    plan = build_history_materialization_plan(
+        data.get("input", data),
+        plan_id=str(data.get("fixture_id") or data.get("plan_id") or "platform-history-materialization"),
+        previous_manifest=previous_manifest,
+        source_refs=[str(input_path)],
+    )
+    if out_path is not None:
+        _write_json(out_path, plan)
+    if manifest_out_path is not None:
+        artifact = write_history_materialization_manifest(plan, manifest_out_path)
+        plan = {
+            **plan,
+            "manifest_artifact": artifact,
+        }
+    return plan
+
+
+def platform_notify_route(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    data = _read_json(input_path)
+    plan = build_notification_routing_plan(
+        data.get("input", data),
+        plan_id=str(data.get("fixture_id") or data.get("plan_id") or "platform-notification-routing"),
+        source_refs=[str(input_path)],
+    )
+    if out_path is not None:
+        _write_json(out_path, plan)
+    return plan
+
+
+def platform_notify_deliver(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:
+    data = _read_json(input_path)
+    report = build_notification_delivery_report(
+        data.get("input", data),
+        report_id=str(data.get("fixture_id") or data.get("report_id") or "platform-notification-delivery"),
         source_refs=[str(input_path)],
     )
     if out_path is not None:

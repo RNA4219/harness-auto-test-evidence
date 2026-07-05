@@ -71,6 +71,11 @@ Common commands:
 - `score`: compute explainable readiness scores
 - `verdict`: evaluate observed reports against an expected-verdict corpus
 - `triage`: convert holds and subset gaps into operator work items
+- `history-analytics`: aggregate long-term flake rate, debt age, baseline drift, and manual review latency
+- `history-materialize`: incrementally materialize history windows and emit reusable manifests
+- `notify route`: route owner, team, and SLA-breach records to notification targets and escalation subscribers
+- `notify deliver`: record notification attempts, retry, dead-letter, and payload-safety evidence
+- `baseline review`: convert baseline promotion candidates into human review packets
 - `plugin run`: execute manifest-driven plugins with sandbox validation
 - `policy explain`: explain effective platform policy
 - `report html`: generate an offline HTML report

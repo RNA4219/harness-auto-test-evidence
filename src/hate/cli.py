@@ -218,6 +218,16 @@ def build_parser() -> argparse.ArgumentParser:
     platform_history.add_argument("--until", default=None, help="Inclusive started_at upper bound.")
     platform_history.add_argument("--limit", type=int, default=100, help="Maximum returned entries.")
 
+    platform_history_analytics = platform_subparsers.add_parser("history-analytics", help="Build long-term history trend analytics from samples.")
+    platform_history_analytics.add_argument("--input", required=True, type=Path, help="History analytics input JSON.")
+    platform_history_analytics.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+
+    platform_history_materialize = platform_subparsers.add_parser("history-materialize", help="Plan incremental history materialization and optional manifest output.")
+    platform_history_materialize.add_argument("--input", required=True, type=Path, help="History materialization input JSON.")
+    platform_history_materialize.add_argument("--previous-manifest", default=None, type=Path, help="Optional previous history materialization manifest.")
+    platform_history_materialize.add_argument("--manifest-out", default=None, type=Path, help="Optional output path for reusable history materialization manifest.")
+    platform_history_materialize.add_argument("--out", default=None, type=Path, help="Optional output JSON path for the materialization plan.")
+
     platform_compare = platform_subparsers.add_parser("compare", help="Compare two platform report JSON files.")
     platform_compare.add_argument("--base", required=True, type=Path, help="Base report JSON.")
     platform_compare.add_argument("--head", required=True, type=Path, help="Head report JSON.")
@@ -261,6 +271,18 @@ def build_parser() -> argparse.ArgumentParser:
     platform_baseline_promote = platform_baseline_subparsers.add_parser("promote", help="Build a baseline promotion report from local approval events.")
     platform_baseline_promote.add_argument("--input", required=True, type=Path, help="Baseline promotion input JSON.")
     platform_baseline_promote.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+    platform_baseline_review = platform_baseline_subparsers.add_parser("review", help="Build a human baseline review packet from promotion and comparison evidence.")
+    platform_baseline_review.add_argument("--input", required=True, type=Path, help="Baseline review input JSON.")
+    platform_baseline_review.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+
+    platform_notify = platform_subparsers.add_parser("notify", help="Plan and verify operator notifications.")
+    platform_notify_subparsers = platform_notify.add_subparsers(dest="platform_notify_command", required=True)
+    platform_notify_route = platform_notify_subparsers.add_parser("route", help="Build notification routing plan from operating records and subscribers.")
+    platform_notify_route.add_argument("--input", required=True, type=Path, help="Notification routing input JSON.")
+    platform_notify_route.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+    platform_notify_deliver = platform_notify_subparsers.add_parser("deliver", help="Build notification delivery report from delivery attempts.")
+    platform_notify_deliver.add_argument("--input", required=True, type=Path, help="Notification delivery input JSON.")
+    platform_notify_deliver.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
 
     platform_plugin = platform_subparsers.add_parser("plugin", help="Run and isolate platform detector plugins.")
     platform_plugin_subparsers = platform_plugin.add_subparsers(dest="platform_plugin_command", required=True)

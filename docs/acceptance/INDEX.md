@@ -21,6 +21,7 @@ closure ledger. It is intentionally small and machine-checkable.
 | [MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md](MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md) | Deep operational hardening for bootstrap, split/resume timeout mitigation, and external OSS baseline policy | HATE-OSS-DEEP-HARDENING-20260704 |
 | [MAJOR_OSS_REATTACK_20260704.md](MAJOR_OSS_REATTACK_20260704.md) | Re-attack evidence for the 10-repo OSS corpus plus Node bootstrap parser hardening | HATE-OSS-REATTACK-20260704 |
 | [MAJOR_OSS_TWO_CYCLE_20260704.md](MAJOR_OSS_TWO_CYCLE_20260704.md) | Two repeated major OSS cycles for stability, cache isolation, and residual test-failure classification | HATE-OSS-TWO-CYCLE-20260704 |
+| [PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md](PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md) | Platform CLI UX for long-term history analytics, incremental materialization, notification routing/delivery, and baseline review | HATE-PLATFORM-LONG-OPS-UX-20260705 |
 
 ## Generation Policy
 

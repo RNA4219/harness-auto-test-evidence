@@ -1,0 +1,26 @@
+{
+  "path": "docs/acceptance/PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "cf08c78022dde7191fdf08137362fda8817f8254a2ad7654c3ba776f7320d121",
+  "line_count": 63,
+  "size_bytes": 2662,
+  "headings": [
+    "# Platform Long-Term Operations UX - 2026-07-05",
+    "## Scope",
+    "## Implemented CLI Surface",
+    "## Requirement Coverage",
+    "## Verification",
+    "## Caveat"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "coverage",
+    "qeg",
+    "release",
+    "test"
+  ]
+}

@@ -28,7 +28,7 @@ control plane.
 - PoC posture: PoC complete with explicit non-overclaim guardrails
 - Product-ready posture: `product_ready=false` until external release/QEG
   approval and remaining production-readiness gaps are closed
-- Latest local full regression observed during release prep: `1894 passed`
+- Latest local full regression observed during release prep: `1896 passed`
 - Major OSS validation corpus: 10 repositories, 22,171 records per final
   two-cycle run, 5 pass / 5 hold, expected-verdict precision and recall at 1.0
   for the frozen corpus
@@ -143,7 +143,8 @@ Primary commands:
 - `hate workflow`: map evidence to RanD, Shipyard, and workflow-cookbook
 - `hate product`: generate or query product readiness artifacts
 - `hate platform`: operate run/history/compare/schedule/findings/debt/review/
-  assign/score/verdict/triage/baseline/plugin/policy/report/serve flows
+  assign/score/verdict/triage/history-analytics/history-materialize/
+  notify/baseline/plugin/policy/report/serve flows
 - `hate real-repo`: run recurring real repository validation rosters
 - `hate release`: assemble release candidate evidence packs
 
@@ -162,3 +163,11 @@ Before calling a release task complete:
 - Any generated acceptance evidence is committed only if it is durable,
   human-readable release evidence.
 - HATE still states that QEG/release approval is external to HATE.
+
+Long-term operation checks:
+
+- `hate platform history-analytics --input <history-window.json>`
+- `hate platform history-materialize --input <history-window.json> --manifest-out <manifest.json>`
+- `hate platform notify route --input <operating-record.json>`
+- `hate platform notify deliver --input <delivery-attempts.json>`
+- `hate platform baseline review --input <baseline-review.json>`

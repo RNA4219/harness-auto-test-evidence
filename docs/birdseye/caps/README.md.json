@@ -2,9 +2,9 @@
   "path": "README.md",
   "role": "navigation",
   "kind": "md",
-  "sha256": "92aa6e16ebf3cf1147cda4f08038c6a1f985b0b188d189c7abc964a3b2a550bb",
-  "line_count": 164,
-  "size_bytes": 6702,
+  "sha256": "12493df10ed70b6088ded15869b653210d5c64806a938342b6f92e62e3c91936",
+  "line_count": 173,
+  "size_bytes": 7139,
   "headings": [
     "# HATE Agent README",
     "## Current State",
