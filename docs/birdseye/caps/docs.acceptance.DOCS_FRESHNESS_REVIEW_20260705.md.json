@@ -1,0 +1,24 @@
+{
+  "path": "docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "1dd3804a15184b4a3b7234619e608cc835bf7157a24410d42f3e243a5fb72135",
+  "line_count": 56,
+  "size_bytes": 1709,
+  "headings": [
+    "# Docs Freshness Review - 2026-07-05",
+    "## Scope",
+    "## Findings",
+    "## Verification Commands",
+    "## Update"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "qeg",
+    "release",
+    "test"
+  ]
+}

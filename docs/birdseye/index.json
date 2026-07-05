@@ -1,5 +1,5 @@
 {
-  "generated_at": "8da54542cbf3",
+  "generated_at": "de31bfb01892",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/workflows/ci.yml": {
@@ -12,9 +12,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "12493df10ed70b6088ded15869b653210d5c64806a938342b6f92e62e3c91936",
-      "line_count": 173,
-      "size_bytes": 7139
+      "sha256": "2dfeceebebcac13492409150f51ecc90e3b61e7557a4f25d5e1ffbaceebb9d0f",
+      "line_count": 175,
+      "size_bytes": 7291
     },
     "TASK.codex.md": {
       "role": "planning",
@@ -156,6 +156,13 @@
       "line_count": 79,
       "size_bytes": 2904
     },
+    "docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.DOCS_FRESHNESS_REVIEW_20260705.md.json",
+      "sha256": "1dd3804a15184b4a3b7234619e608cc835bf7157a24410d42f3e243a5fb72135",
+      "line_count": 56,
+      "size_bytes": 1709
+    },
     "docs/acceptance/FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md.json",
@@ -180,9 +187,9 @@
     "docs/acceptance/INDEX.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.INDEX.md.json",
-      "sha256": "ed28993dfa585be7fbbf8c759b21bcbc460cffcc66137ba7291ae399af71497e",
-      "line_count": 32,
-      "size_bytes": 4005
+      "sha256": "ae4eff15962ce624ece6a544cb3aa99a45ea2ffd5d60c4068a159e2e5a6b949f",
+      "line_count": 34,
+      "size_bytes": 4361
     },
     "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md": {
       "role": "documentation",
@@ -253,6 +260,13 @@
       "sha256": "bd30c708cea1bc7bd782995e9c4c9a91ce2d89d73e83f53b6a6a94b315c2fbc8",
       "line_count": 55,
       "size_bytes": 4139
+    },
+    "docs/acceptance/RELEASE_V0_1_0_20260705.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.RELEASE_V0_1_0_20260705.md.json",
+      "sha256": "2f122b68aa8947870553b2880d1bcaf8676cbbb1a5270b2000539078a6fd06ef",
+      "line_count": 96,
+      "size_bytes": 2925
     },
     "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md": {
       "role": "quality",
@@ -11284,6 +11298,10 @@
     ],
     [
       "README.md",
+      "docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md"
+    ],
+    [
+      "README.md",
       "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md"
     ],
     [
@@ -11293,6 +11311,10 @@
     [
       "README.md",
       "docs/acceptance/POC_COMPLETION_20260703.md"
+    ],
+    [
+      "README.md",
+      "docs/acceptance/RELEASE_V0_1_0_20260705.md"
     ],
     [
       "README.md",
@@ -11440,6 +11462,10 @@
     ],
     [
       "docs/acceptance/INDEX.md",
+      "docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md"
+    ],
+    [
+      "docs/acceptance/INDEX.md",
       "docs/acceptance/FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md"
     ],
     [
@@ -11469,6 +11495,10 @@
     [
       "docs/acceptance/INDEX.md",
       "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md"
+    ],
+    [
+      "docs/acceptance/INDEX.md",
+      "docs/acceptance/RELEASE_V0_1_0_20260705.md"
     ],
     [
       "src/hate/__main__.py",

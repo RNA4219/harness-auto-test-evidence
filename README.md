@@ -38,6 +38,8 @@ Important acceptance records:
 - [PoC completion](docs/acceptance/POC_COMPLETION_20260703.md)
 - [Major OSS two-cycle validation](docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md)
 - [Platform CLI and product-grade gate](docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md)
+- [Docs freshness review](docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md)
+- [v0.1.0 PoC preview release](docs/acceptance/RELEASE_V0_1_0_20260705.md)
 
 ## Agent Operating Rules
 

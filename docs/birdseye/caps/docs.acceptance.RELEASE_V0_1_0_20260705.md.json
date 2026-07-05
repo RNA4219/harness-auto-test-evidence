@@ -1,0 +1,29 @@
+{
+  "path": "docs/acceptance/RELEASE_V0_1_0_20260705.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "2f122b68aa8947870553b2880d1bcaf8676cbbb1a5270b2000539078a6fd06ef",
+  "line_count": 96,
+  "size_bytes": 2925,
+  "headings": [
+    "# HATE v0.1.0 PoC Preview Release - 2026-07-05",
+    "## Scope",
+    "## Included Capability Summary",
+    "## Release Validation",
+    "## Release Candidate Pack Check",
+    "## Release Notes"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "birdseye",
+    "coverage",
+    "enterprise",
+    "qeg",
+    "release",
+    "test",
+    "workflow"
+  ]
+}

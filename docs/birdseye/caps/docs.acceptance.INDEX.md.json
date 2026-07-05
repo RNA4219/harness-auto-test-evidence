@@ -2,9 +2,9 @@
   "path": "docs/acceptance/INDEX.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "ed28993dfa585be7fbbf8c759b21bcbc460cffcc66137ba7291ae399af71497e",
-  "line_count": 32,
-  "size_bytes": 4005,
+  "sha256": "ae4eff15962ce624ece6a544cb3aa99a45ea2ffd5d60c4068a159e2e5a6b949f",
+  "line_count": 34,
+  "size_bytes": 4361,
   "headings": [
     "# Acceptance Index",
     "## Generation Policy"
@@ -12,6 +12,7 @@
   "imports": [],
   "links": [
     "AC-20260630-01.md",
+    "DOCS_FRESHNESS_REVIEW_20260705.md",
     "FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md",
     "HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md",
     "MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md",
@@ -19,10 +20,12 @@
     "MAJOR_OSS_REATTACK_20260704.md",
     "MAJOR_OSS_TWO_CYCLE_20260704.md",
     "PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md",
-    "QEG_HARDENING_CYCLE_ACCEPTANCE.md"
+    "QEG_HARDENING_CYCLE_ACCEPTANCE.md",
+    "RELEASE_V0_1_0_20260705.md"
   ],
   "depends_on": [
     "docs/acceptance/AC-20260630-01.md",
+    "docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md",
     "docs/acceptance/FIVE_TOOL_VALIDATION_GATE_HATE_GAP_042_060.md",
     "docs/acceptance/HATE_REQUIREMENTS_EXPANSION_ACCEPTANCE.md",
     "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md",
@@ -30,11 +33,13 @@
     "docs/acceptance/MAJOR_OSS_REATTACK_20260704.md",
     "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md",
     "docs/acceptance/PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md",
-    "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md"
+    "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md",
+    "docs/acceptance/RELEASE_V0_1_0_20260705.md"
   ],
   "tags": [
     "coverage",
     "qeg",
+    "release",
     "test",
     "workflow"
   ]
