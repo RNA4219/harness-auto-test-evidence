@@ -25,6 +25,12 @@ uv run python tools/codemap/update.py --check
 git diff --check
 ```
 
+## Distribution Policy
+
+- Publish the versioned wheel and source distribution as GitHub Release assets.
+- Do not run `uv publish`: PyPI is intentionally not a HATE distribution channel.
+- Release notes and both human READMEs must state that users install the downloaded wheel with `uv tool install`.
+
 If codemap check fails, regenerate and commit the resulting `docs/birdseye`
 changes:
 

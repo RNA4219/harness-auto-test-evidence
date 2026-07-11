@@ -2,9 +2,9 @@
   "path": "README.md",
   "role": "navigation",
   "kind": "md",
-  "sha256": "087723150d69ba38e98e63ed3943cc0923f66e4c03668e8c1270d3400d489c46",
-  "line_count": 221,
-  "size_bytes": 10517,
+  "sha256": "6b4d759617568ba8a5ba550ba62009f4b07a7d9bcfbff83ab26cd7a40ee891ae",
+  "line_count": 224,
+  "size_bytes": 10698,
   "headings": [
     "# HATE Agent README",
     "## Current State",
@@ -13,7 +13,7 @@
     "## Common Commands",
     "## CLI Map",
     "## v0.3.0 Responsibility Freeze and Bridge Migration",
-    "## v0.2.0 Safety and Migration",
+    "## v0.3.0 Distribution, Safety, and Migration",
     "## Release Checklist For Agents",
     "## Responsibility Freeze (generated)"
   ],

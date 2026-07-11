@@ -37,13 +37,16 @@ Python 3.11 以上と uv を使います。ソースから開発する場合:
     uv sync --dev --frozen
     uv run python -m hate --help
 
-wheelからツールとして導入する場合:
+公式のv0.3.0 packageは
+[GitHub Release](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
+からwheelを取得し、ダウンロードしたassetをツールとして導入します:
 
-    uv build
-    uv tool install dist/harness_auto_test_evidence-0.2.0-py3-none-any.whl
+    uv tool install ./harness_auto_test_evidence-0.3.0-py3-none-any.whl
     hate --help
 
-v0.2.0ではHATE/v1 schemaがwheelへ同梱されます。v0.1.0からの主な変更は、
+package配布はGitHub Release assetだけを正式経路とし、PyPI公開は意図的に行いません。
+sourceからbuildする場合だけ `uv build` でlocal wheelを作成して導入します。v0.3.0では
+HATE/v1とHATE-bridge/v1 schemaがwheelへ同梱されます。v0.1.0からの主な変更は、
 JSON Schema制約の厳格化とlocal subprocess pluginの既定拒否です。pluginを実行する
 場合は --allow-local-exec が必要ですが、任意コード実行であることに変わりはなく、
 filesystem/network isolationは提供されません。release/regulated profileでは

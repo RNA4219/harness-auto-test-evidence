@@ -165,10 +165,13 @@ HATEの新規開発責務はP0a/P0b/P1a、schema/adapter/plugin、local evidence
 
 v0.2利用者は通常の互換動作ではcommandを変更する必要はありません。新しい外部owner連携を試す場合だけhandoffを明示してください。
 
-## v0.2.0 Safety and Migration
+## v0.3.0 Distribution, Safety, and Migration
 
-- Build a wheel with uv build, then install it with uv tool install followed by
-  the wheel path. The package includes HATE/v1 JSON schemas.
+- Official v0.3.0 packages are the wheel and source distribution attached to
+  the GitHub Release. PyPI is intentionally not a distribution channel.
+- Download the wheel from the GitHub Release, then install it with
+  `uv tool install` and the local wheel path. The package includes HATE/v1 JSON
+  schemas.
 - Local subprocess plugins are denied by default. The operator must pass
   --allow-local-exec, and the manifest must carry signed and trusted external
   evidence. Release and regulated profiles always deny local subprocess mode.

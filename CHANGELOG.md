@@ -43,3 +43,8 @@
 - P0a/P0b/P1a interfaces remain unchanged.
 - Post-P1a CLI names, options, output files, required fields, and normal exit codes remain available through v1.
 - product_ready remains false and release authority remains external.
+
+### Distribution
+
+- v0.3.0 wheel and source distribution are published as GitHub Release assets.
+- PyPI is intentionally not used as a HATE distribution channel.

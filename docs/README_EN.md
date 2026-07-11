@@ -37,14 +37,18 @@ Use Python 3.11 or newer with uv. For source development:
     uv sync --dev --frozen
     uv run python -m hate --help
 
-To install the built wheel as a tool:
+For the official v0.3.0 package, download the wheel from the
+[GitHub Release](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
+and install the downloaded asset as a tool:
 
-    uv build
-    uv tool install dist/harness_auto_test_evidence-0.2.0-py3-none-any.whl
+    uv tool install ./harness_auto_test_evidence-0.3.0-py3-none-any.whl
     hate --help
 
-v0.2.0 packages the HATE/v1 schemas. The main v0.1 migration changes are
-strict JSON Schema enforcement and default denial of local subprocess plugins.
+GitHub Release assets are the only supported package distribution channel;
+PyPI publication is intentionally not used. To build from source instead, run
+`uv build` and install the resulting local wheel. v0.3.0 packages the HATE/v1
+and HATE-bridge/v1 schemas. The main v0.1 migration changes are strict JSON
+Schema enforcement and default denial of local subprocess plugins.
 Plugin execution requires --allow-local-exec, still executes arbitrary code,
 and does not provide filesystem or network isolation. Release and regulated
 profiles deny local subprocess mode. See ../CHANGELOG.md and ../SECURITY.md.

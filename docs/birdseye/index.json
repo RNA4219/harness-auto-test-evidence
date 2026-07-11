@@ -1,5 +1,5 @@
 {
-  "generated_at": "7bffd50d4025",
+  "generated_at": "e82a6ae92728",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -47,9 +47,9 @@
     "CHANGELOG.md": {
       "role": "project",
       "caps": "docs/birdseye/caps/CHANGELOG.md.json",
-      "sha256": "4bec7a5f3133c89ec0d5af8fac0e45ed9eb182cca2f516cf8365ba2fb9eb4c23",
-      "line_count": 45,
-      "size_bytes": 1678
+      "sha256": "ae3aef911667886475fbde2dacd35796b5bbc67965fc7b7b287d472a33768450",
+      "line_count": 50,
+      "size_bytes": 1841
     },
     "CODE_OF_CONDUCT.md": {
       "role": "project",
@@ -68,9 +68,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "087723150d69ba38e98e63ed3943cc0923f66e4c03668e8c1270d3400d489c46",
-      "line_count": 221,
-      "size_bytes": 10517
+      "sha256": "6b4d759617568ba8a5ba550ba62009f4b07a7d9bcfbff83ab26cd7a40ee891ae",
+      "line_count": 224,
+      "size_bytes": 10698
     },
     "SECURITY.md": {
       "role": "project",
@@ -89,16 +89,16 @@
     "docs/README_EN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_EN.md.json",
-      "sha256": "f493c5631a7ed3f0f47ddf7dba7dcac7b86a1d840bc290e7e26e136195085512",
-      "line_count": 130,
-      "size_bytes": 6424
+      "sha256": "d5cd941a45c8a2cdce4ad5b284ec1f934639263020d4690e196a42afc2c91eb0",
+      "line_count": 134,
+      "size_bytes": 6789
     },
     "docs/README_JA.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_JA.md.json",
-      "sha256": "50b1099b922e46ef650fcf1e4e7674ac4cfecdcc498cd6ad307188eaf047ffb9",
-      "line_count": 130,
-      "size_bytes": 6905
+      "sha256": "8b40506014c6af3f96ec7d311bb7fe81edcafcd212ece6289e5b85c26e632e0a",
+      "line_count": 133,
+      "size_bytes": 7274
     },
     "docs/acceptance/AC-20260630-01.md": {
       "role": "documentation",
@@ -341,9 +341,9 @@
     "docs/acceptance/RELEASE_V0_3_0_20260711.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.RELEASE_V0_3_0_20260711.md.json",
-      "sha256": "dd6ac5b415c636adff834b1b06fa2d7a6cdf642987992db6aba5f3f6e8b3e88f",
-      "line_count": 58,
-      "size_bytes": 3329
+      "sha256": "8ff1b4b289156c651a7c86f57cdb47daa9c375e2432d2c658557da55529a8bab",
+      "line_count": 68,
+      "size_bytes": 3926
     },
     "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md": {
       "role": "quality",
@@ -8475,9 +8475,9 @@
     "skills/hate-release-maintainer/references/release-checklist.md": {
       "role": "project",
       "caps": "docs/birdseye/caps/skills.hate-release-maintainer.references.release-checklist.md.json",
-      "sha256": "59246af56214aa6598884466d7f17df82b200cd8094ff9da4479382678b61396",
-      "line_count": 72,
-      "size_bytes": 1856
+      "sha256": "915e23478bd83fe6cfb487af09d583d0c73edcac51e60e117e1ac50b7a97db10",
+      "line_count": 78,
+      "size_bytes": 2157
     },
     "src/hate/__init__.py": {
       "role": "implementation",
