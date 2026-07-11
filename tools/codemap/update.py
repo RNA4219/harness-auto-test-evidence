@@ -35,7 +35,9 @@ class SourceFile:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate HATE local file-reference codemap index and capsules.")
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="Repository root.")
-    parser.add_argument("--out", type=Path, default=GENERATED_DIR, help="Output directory, relative to root by default.")
+    parser.add_argument(
+        "--out", type=Path, default=GENERATED_DIR, help="Output directory, relative to root by default."
+    )
     parser.add_argument("--check", action="store_true", help="Fail if generated files would change.")
     args = parser.parse_args()
 
@@ -45,7 +47,11 @@ def main() -> int:
 
     planned = render_outputs(generated, out)
     if args.check:
-        changed = [path for path, content in planned.items() if not path.exists() or path.read_text(encoding="utf-8") != content]
+        changed = [
+            path
+            for path, content in planned.items()
+            if not path.exists() or path.read_text(encoding="utf-8") != content
+        ]
         if changed:
             for path in changed:
                 print(f"would update {path.relative_to(root).as_posix()}")
@@ -116,16 +122,17 @@ def collect_sources(root: Path) -> list[SourceFile]:
             continue
         if path.suffix.lower() not in INCLUDED_SUFFIXES:
             continue
-        raw = path.read_bytes()
-        text = raw.decode("utf-8", errors="ignore")
+        decoded = path.read_bytes().decode("utf-8", errors="ignore")
+        text = decoded.replace("\r\n", "\n").replace("\r", "\n")
+        normalized = text.encode("utf-8")
         sources.append(
             SourceFile(
                 path=path,
                 rel=rel_path.as_posix(),
                 text=text,
-                sha256=hashlib.sha256(raw).hexdigest(),
+                sha256=hashlib.sha256(normalized).hexdigest(),
                 line_count=0 if not text else text.count("\n") + (0 if text.endswith("\n") else 1),
-                size_bytes=len(raw),
+                size_bytes=len(normalized),
             )
         )
     return sources

@@ -2,9 +2,9 @@
   "path": "docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_READINESS_GO.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "0a12142973750fd72fe6d67112f1699fb9564c42dbf8787359ef97808fa57129",
+  "sha256": "ef6ae8dbe6aba5e2eb44f1b34b89fa5dd20707e4ec2347a3533393c1d01f9783",
   "line_count": 51,
-  "size_bytes": 1960,
+  "size_bytes": 1909,
   "headings": [
     "# RanD Kano Mode フル実装仕様 Readiness Go",
     "## 1. 目的",

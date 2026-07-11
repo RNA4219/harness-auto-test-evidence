@@ -2,9 +2,9 @@
   "path": "fixtures/registry/conformance-runner/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "f3479fe8d23a340e0574c235d341f2852776f1066912586862a207cceaec31a8",
+  "sha256": "49d9856bbec5db1ff4ed508ad0139e1d1861f71345e3fc7adb1ccfa931ae83c4",
   "line_count": 6,
-  "size_bytes": 307,
+  "size_bytes": 301,
   "headings": [
     "# HATE-P1A-002 Adapter Conformance Runner Fixture"
   ],

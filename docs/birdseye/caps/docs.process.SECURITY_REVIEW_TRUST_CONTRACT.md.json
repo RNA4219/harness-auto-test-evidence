@@ -2,9 +2,9 @@
   "path": "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "13b36956a6b3064386fdace4989f6b48644829f7218f7d81f2fd77bb3b5143a8",
+  "sha256": "a097748f86a58a5f9ca7255e3566598153bf0e2df58528ddf11ba0840abd414e",
   "line_count": 132,
-  "size_bytes": 5974,
+  "size_bytes": 5870,
   "headings": [
     "# Security Review and Trust Contract",
     "## 1. 目的",

@@ -2,9 +2,9 @@
   "path": "docs/process/ADAPTER_SDK_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "31ba92299de8415572bc631cbc74b676f7ba573352b72b2cf6d6d82f7eff163e",
+  "sha256": "6d3b3dc2235e6e788ced0766e3583d2654d811417aedd4399908372e1d8bc66a",
   "line_count": 141,
-  "size_bytes": 4845,
+  "size_bytes": 4704,
   "headings": [
     "# Adapter SDK Contract",
     "## 1. 目的",

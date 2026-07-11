@@ -2,9 +2,9 @@
   "path": "SECURITY.md",
   "role": "project",
   "kind": "md",
-  "sha256": "04dfdbaa3a7606c8592f198f44ab0ad85a1ea7867cd64c5c9171a8b91f3b2878",
+  "sha256": "af39f8009e0c50d9e5e751dedf7d4f8803902627d103e4e77737022446893b12",
   "line_count": 24,
-  "size_bytes": 968,
+  "size_bytes": 967,
   "headings": [
     "# Security Policy",
     "## Supported versions",

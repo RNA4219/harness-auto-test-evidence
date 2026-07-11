@@ -2,9 +2,9 @@
   "path": "fixtures/golden/p0b-qeg-minimal/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "fdef8a8820babd0678638b6eb60aeb7c602c3e75e100a6d8a2c9a79267b80f62",
+  "sha256": "615f4d0072cca619b661097739f295fd46f162d990aebecde4bc10b6de9e0c96",
   "line_count": 32,
-  "size_bytes": 1144,
+  "size_bytes": 1112,
   "headings": [
     "# P0b QEG Export Minimal Fixture",
     "## Input",

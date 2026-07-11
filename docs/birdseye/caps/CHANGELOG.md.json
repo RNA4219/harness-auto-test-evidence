@@ -2,9 +2,9 @@
   "path": "CHANGELOG.md",
   "role": "project",
   "kind": "md",
-  "sha256": "cabe38e5e0f3e3ac2ffe696a21df3f3f0257de31b19f9c48d1309a49db08ef8e",
+  "sha256": "cf9ab20aff6fd1a70e75be59ca8cfdf7747c91f107bcb608e7edd5930f07c782",
   "line_count": 24,
-  "size_bytes": 852,
+  "size_bytes": 851,
   "headings": [
     "# Changelog",
     "## 0.2.0 - 2026-07-11",

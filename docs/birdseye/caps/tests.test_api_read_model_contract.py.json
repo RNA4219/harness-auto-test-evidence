@@ -2,9 +2,9 @@
   "path": "tests/test_api_read_model_contract.py",
   "role": "test",
   "kind": "py",
-  "sha256": "8cc3043b28a160ffa5a8ebea533f82f7fb8f0c0a2fa6669753bcbde5af117b27",
+  "sha256": "68650aaa3ae4d5a44825b5c2e613181d3b5cf421f6e7802168241c5a17a57d5e",
   "line_count": 882,
-  "size_bytes": 31429,
+  "size_bytes": 30547,
   "headings": [
     "# ============================================================================",
     "# Response Envelope Tests",

@@ -2,9 +2,9 @@
   "path": "tools/ci/wheel_smoke.py",
   "role": "tooling",
   "kind": "py",
-  "sha256": "d62eb5ea332ba528f481e101b008cf9bc89a57a93ef5ebde8d96a2d5c40b0f32",
+  "sha256": "dac7ffce04724ba51ef765524f6362cabf519400523bf1bf306e997ab65f0caf",
   "line_count": 62,
-  "size_bytes": 1864,
+  "size_bytes": 1863,
   "headings": [],
   "imports": [
     "__future__",

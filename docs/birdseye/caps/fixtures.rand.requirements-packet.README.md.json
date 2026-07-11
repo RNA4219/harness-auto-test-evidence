@@ -2,9 +2,9 @@
   "path": "fixtures/rand/requirements-packet/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "c3c50ab2faa7a609ecd0b9f097d28e5cf76a7a5bb3fb9a58c31fcf18090bc6e0",
+  "sha256": "8d28d45dd724b75bfabb01e08aab074194387a8387865014a7cfdfc5519df3e7",
   "line_count": 5,
-  "size_bytes": 274,
+  "size_bytes": 269,
   "headings": [
     "# HATE-P1B-001 RanD Requirements Packet Fixture"
   ],

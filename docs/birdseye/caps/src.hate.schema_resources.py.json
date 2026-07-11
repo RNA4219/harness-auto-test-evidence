@@ -2,9 +2,9 @@
   "path": "src/hate/schema_resources.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "1fe271b2085c0ce4c9eed689397965f03d9eacd291232c00f8d1a34ab8f148ac",
+  "sha256": "442829ddbf9d5777ea997e2f93af673455755f06c3e98464019e139f1d8cd75b",
   "line_count": 92,
-  "size_bytes": 3438,
+  "size_bytes": 3423,
   "headings": [],
   "imports": [
     "__future__",

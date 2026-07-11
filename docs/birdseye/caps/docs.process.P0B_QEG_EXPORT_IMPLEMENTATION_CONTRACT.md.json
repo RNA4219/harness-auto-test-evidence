@@ -2,9 +2,9 @@
   "path": "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "0da2931f20dcd022ba96967d0f17d88e817a5474ac079f912b755f9e6a7eecd6",
+  "sha256": "53d89af4b527cd0123d6183201ea5dc91230a7f35c3ea67694d59bb3a12def89",
   "line_count": 246,
-  "size_bytes": 8191,
+  "size_bytes": 7945,
   "headings": [
     "# P0b QEG Export Implementation Contract",
     "## 1. 目的",

@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-003.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "b649b8555a0c3c18b30b20c0875369ce334e1892e44406e5d1f7125882850015",
+  "sha256": "157a3fb84876c7665c13736ad549abf7b887b10ae65ced98e776ae041ed470da",
   "line_count": 79,
-  "size_bytes": 2976,
+  "size_bytes": 2974,
   "headings": [
     "# AC-20260703-postpoc-003 Notification Delivery Runtime Evidence",
     "## Scope",

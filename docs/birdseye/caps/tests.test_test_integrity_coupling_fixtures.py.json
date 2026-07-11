@@ -2,9 +2,9 @@
   "path": "tests/test_test_integrity_coupling_fixtures.py",
   "role": "test",
   "kind": "py",
-  "sha256": "a3833480f2d5e14d711cb6aaee9276ccc3d74996b14552820b36e234fac762d7",
+  "sha256": "cc6735cf53d30d9ee2849c2f1f35fd1658cae222f6161ea4072a94fe5e38d15b",
   "line_count": 233,
-  "size_bytes": 11681,
+  "size_bytes": 11448,
   "headings": [
     "# =============================================================================",
     "# Canonical Fixture Tests",

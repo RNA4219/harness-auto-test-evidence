@@ -1,90 +1,90 @@
 {
-  "generated_at": "b6d6dde36141",
+  "generated_at": "b351bb35417a",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
       "role": "project",
       "caps": "docs/birdseye/caps/github.ISSUE_TEMPLATE.bug.yml.json",
-      "sha256": "3235c5e2d1e6a263013111682e7d59e077fc97e272c8976035a50eb679d76e66",
+      "sha256": "8a49ba49d65a2030f1e2e35128f0d27cab5c72853d614fe71bf6da4a6ebdbcdf",
       "line_count": 32,
-      "size_bytes": 806
+      "size_bytes": 805
     },
     ".github/ISSUE_TEMPLATE/config.yml": {
       "role": "project",
       "caps": "docs/birdseye/caps/github.ISSUE_TEMPLATE.config.yml.json",
-      "sha256": "0c08ec17b76a46ae6c202c50b2bd74b3ce0255aca7688a97c86f1cf04bac294f",
+      "sha256": "e085e373e77b7e4013db43b3ed0860f2cd4fca35c2c9675213d7e2fd534dd77e",
       "line_count": 5,
-      "size_bytes": 209
+      "size_bytes": 208
     },
     ".github/ISSUE_TEMPLATE/feature.yml": {
       "role": "project",
       "caps": "docs/birdseye/caps/github.ISSUE_TEMPLATE.feature.yml.json",
-      "sha256": "558d16b4c4fa757fd11229a85360a1b00f1923d3d6b4b57bb0ae4d54588fc976",
+      "sha256": "3d07778f8a1de85fbeb5bebd36b3aa46229e990523349ff3af9edde2db1cf1d2",
       "line_count": 26,
-      "size_bytes": 761
+      "size_bytes": 760
     },
     ".github/dependabot.yml": {
       "role": "project",
       "caps": "docs/birdseye/caps/github.dependabot.yml.json",
-      "sha256": "875bcbb826e1443f3c9fa3342276a307ecc51cb856e6ae37f7fe7ad01cfd6f60",
+      "sha256": "c5d9cdc38cae054819e3ebc37071aafab3635a214628f6fa971fb74a87a9e3af",
       "line_count": 12,
-      "size_bytes": 258
+      "size_bytes": 257
     },
     ".github/pull_request_template.md": {
       "role": "project",
       "caps": "docs/birdseye/caps/github.pull_request_template.md.json",
-      "sha256": "a89ca920c57b25fd39c00ca03b49810cc19646627844c01dc1a5ddd2d635ef71",
+      "sha256": "6f0acc285886199a3330db4542eada361c0b25409e62587cf59415eb8e8d4080",
       "line_count": 15,
-      "size_bytes": 493
+      "size_bytes": 492
     },
     ".github/workflows/ci.yml": {
       "role": "ci",
       "caps": "docs/birdseye/caps/github.workflows.ci.yml.json",
-      "sha256": "086c13a3a5aa3979a3fd936f7b2d5491969705dfe29841be67f0848a152d3fcc",
+      "sha256": "a7aebc7cc9e4f3204116fb2116956e183ab013b03487f986b5b4e7cac58b6237",
       "line_count": 114,
-      "size_bytes": 4409
+      "size_bytes": 4408
     },
     "CHANGELOG.md": {
       "role": "project",
       "caps": "docs/birdseye/caps/CHANGELOG.md.json",
-      "sha256": "cabe38e5e0f3e3ac2ffe696a21df3f3f0257de31b19f9c48d1309a49db08ef8e",
+      "sha256": "cf9ab20aff6fd1a70e75be59ca8cfdf7747c91f107bcb608e7edd5930f07c782",
       "line_count": 24,
-      "size_bytes": 852
+      "size_bytes": 851
     },
     "CODE_OF_CONDUCT.md": {
       "role": "project",
       "caps": "docs/birdseye/caps/CODE_OF_CONDUCT.md.json",
-      "sha256": "fb305ab4269b6c67e2b0378f0a15929d1c6935400a0b79227702d6e091b85399",
+      "sha256": "8d92dfa58498801c2f5ad2023ccec586baf032d362ebbc199188cd96fa93d158",
       "line_count": 12,
-      "size_bytes": 518
+      "size_bytes": 517
     },
     "CONTRIBUTING.md": {
       "role": "project",
       "caps": "docs/birdseye/caps/CONTRIBUTING.md.json",
-      "sha256": "d9b29d3d1b9b33e9da084aa05439eebd5d2f7c53203b0a058064da2f70836789",
+      "sha256": "69ea987a4f12f52b7eb2ed393c815e42c01354f5227f7d4f6e125b170bd6ba04",
       "line_count": 18,
-      "size_bytes": 772
+      "size_bytes": 771
     },
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "0f84b74a9e3e8b16c2a96619545eafacf685aecff7c8a8c790d73b2f5d2e1c16",
+      "sha256": "8bfd13ee6691842763e266e159fe1b395a4d41ac69862f264538971ae54c73be",
       "line_count": 191,
-      "size_bytes": 8200
+      "size_bytes": 8198
     },
     "SECURITY.md": {
       "role": "project",
       "caps": "docs/birdseye/caps/SECURITY.md.json",
-      "sha256": "04dfdbaa3a7606c8592f198f44ab0ad85a1ea7867cd64c5c9171a8b91f3b2878",
+      "sha256": "af39f8009e0c50d9e5e751dedf7d4f8803902627d103e4e77737022446893b12",
       "line_count": 24,
-      "size_bytes": 968
+      "size_bytes": 967
     },
     "TASK.codex.md": {
       "role": "planning",
       "caps": "docs/birdseye/caps/TASK.codex.md.json",
-      "sha256": "9bb7f339a257714c47c33696cafcc8094b4889f24031517ebf777bac79e69bd5",
+      "sha256": "2a5ee15affef9ce3d17f0bbae02700c6837bbaf633d3296138080b0f5e8acf7b",
       "line_count": 327,
-      "size_bytes": 20384
+      "size_bytes": 20057
     },
     "docs/README_EN.md": {
       "role": "documentation",
@@ -110,114 +110,114 @@
     "docs/acceptance/AC-20260703-postpoc-001.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-001.md.json",
-      "sha256": "6bd8870f74d62855419d48b84fcd5ea78f2e4d8ac206257a8751bffdb14ec27c",
+      "sha256": "c190b2f4e98c2932956bcc8a8be13afdc189e5df681dcb8417c72a65a48d0508",
       "line_count": 80,
-      "size_bytes": 2944
+      "size_bytes": 2942
     },
     "docs/acceptance/AC-20260703-postpoc-002.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-002.md.json",
-      "sha256": "ff44d86ad6ed12acd63ee73143606eeccafec4708c299e568417c124271a8a52",
+      "sha256": "0d5e6f356214c5b7f1c7b66332f26cd5cb2719a014be0b876d0d62238e3e028b",
       "line_count": 79,
-      "size_bytes": 3031
+      "size_bytes": 3029
     },
     "docs/acceptance/AC-20260703-postpoc-003.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-003.md.json",
-      "sha256": "b649b8555a0c3c18b30b20c0875369ce334e1892e44406e5d1f7125882850015",
+      "sha256": "157a3fb84876c7665c13736ad549abf7b887b10ae65ced98e776ae041ed470da",
       "line_count": 79,
-      "size_bytes": 2976
+      "size_bytes": 2974
     },
     "docs/acceptance/AC-20260703-postpoc-004.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-004.md.json",
-      "sha256": "ec2c3f73e2a49d609865b1cd9d6290ff4066bc84d858bf3d4ba57ba7b18a98e5",
+      "sha256": "b6be92a77a25edbecf00915e8efbca07484063e75c64dbbbc1fb4379d4d90fa9",
       "line_count": 82,
-      "size_bytes": 3083
+      "size_bytes": 3081
     },
     "docs/acceptance/AC-20260703-postpoc-005.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-005.md.json",
-      "sha256": "e19ab00a211abec89b39d3207b0beabee5ba92b4fe071c069ec434048907670a",
+      "sha256": "22b0aa5abc267226b35b0a94c018a916ab7d2dd8fba5a57dc3c2b4b0b0ef0c28",
       "line_count": 79,
-      "size_bytes": 2995
+      "size_bytes": 2993
     },
     "docs/acceptance/AC-20260703-postpoc-006.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-006.md.json",
-      "sha256": "4e70d5b20ad06c9297ee3eaf374fb09ca920d721896867180e443c28b8f9c2ff",
+      "sha256": "6ea9429aea88c7bc0e2806a61f96778ca8d118f9177a2002ce37399534ec1840",
       "line_count": 83,
-      "size_bytes": 3216
+      "size_bytes": 3214
     },
     "docs/acceptance/AC-20260703-postpoc-007.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-007.md.json",
-      "sha256": "ccf739d090962e9f2188e98e32c5ff20057b8a36fd7d5ce36c2f26fa4ec677c3",
+      "sha256": "d0def53b1c9ddd1c8b00b97f755dc984c655f43f33f5aaed1ab0b4795e742dc2",
       "line_count": 83,
-      "size_bytes": 3166
+      "size_bytes": 3164
     },
     "docs/acceptance/AC-20260703-postpoc-008.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-008.md.json",
-      "sha256": "98d98201a8f8539a92c3449509481d599981cfeaf4091b1569edae27e30583cb",
+      "sha256": "e6f04513431b11e330462e441be621d25e730c5f9dacf16696bda56fc53ef0a9",
       "line_count": 82,
-      "size_bytes": 3088
+      "size_bytes": 3086
     },
     "docs/acceptance/AC-20260703-postpoc-009.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-009.md.json",
-      "sha256": "0b4689ba43ce27b55c3516db66d112ec4fd99cee5a6dd5e3b5b84c08b893fb71",
+      "sha256": "fc2fa2411ad1f1bbda25f9029f92e2c14e44cc02a2c7e91489d218227e89cbf4",
       "line_count": 79,
-      "size_bytes": 2893
+      "size_bytes": 2891
     },
     "docs/acceptance/AC-20260703-postpoc-010.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-010.md.json",
-      "sha256": "d9773900727beb40e88fe2ae191fdab86522f6d68ee01c29876433672e3ccf94",
+      "sha256": "faf19a00a197d71e7c1b85d0f369a21f05913a81cf4eb3f9e560cdf5b1ec2fc5",
       "line_count": 72,
-      "size_bytes": 2799
+      "size_bytes": 2797
     },
     "docs/acceptance/AC-20260703-postpoc-011.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-011.md.json",
-      "sha256": "3fd625072dfaa6dbfb173673b37086250b97a8cc0392b4006b0ec661114bca26",
+      "sha256": "c0e0e2c28c5af5311e1cf53125039e5477f676e0cc65b3c678ff00a1145f78c8",
       "line_count": 82,
-      "size_bytes": 3078
+      "size_bytes": 3076
     },
     "docs/acceptance/AC-20260703-postpoc-012.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-012.md.json",
-      "sha256": "914b79ecbee3c4d2690c6418982a96fc3f3ee3d991e18eb93047621c546c5245",
+      "sha256": "b1449522fa16df73d2b708324edcaa5da4cd3648ee23cc515f354382dff8f64c",
       "line_count": 79,
-      "size_bytes": 3057
+      "size_bytes": 3055
     },
     "docs/acceptance/AC-20260703-postpoc-013.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-013.md.json",
-      "sha256": "205d7e99f05a21cf49a13b36e259c2561d42de27d3a3cedf7f1a992af2cf75f9",
+      "sha256": "96399124ddbff45842f63e4f074f92a5faee6f3d88d611b695c9d1de71556455",
       "line_count": 81,
-      "size_bytes": 3282
+      "size_bytes": 3280
     },
     "docs/acceptance/AC-20260703-postpoc-014.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-014.md.json",
-      "sha256": "00c30e109963a00afcfa3604d03864991a506618bac8af3b4b44e2c4088e3438",
+      "sha256": "c2868c5764484e09339a924babd1a1439b91a2d4f5b2dbe89a78658c7ac13bf2",
       "line_count": 72,
-      "size_bytes": 2768
+      "size_bytes": 2766
     },
     "docs/acceptance/AC-20260703-postpoc-015.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-015.md.json",
-      "sha256": "32ca3810e64cabb1c4ae930250abc6035aea0f415d16df6b4734227e6c385d7d",
+      "sha256": "1bb5e5a23683b27767d99aed640d2725d873e2b1354689178ad91f2e7df86903",
       "line_count": 83,
-      "size_bytes": 3363
+      "size_bytes": 3361
     },
     "docs/acceptance/AC-20260703-postpoc-016.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-016.md.json",
-      "sha256": "8572794f9da34b14e83e45e89628fd48cc010c8d98e175432ccf84dc67e453e6",
+      "sha256": "b0edd8671db36f70e017783c52e216f732bcff04bfa256f7c917381f665c118f",
       "line_count": 81,
-      "size_bytes": 3020
+      "size_bytes": 3018
     },
     "docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md": {
       "role": "documentation",
@@ -250,9 +250,9 @@
     "docs/acceptance/INDEX.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.INDEX.md.json",
-      "sha256": "909b23091af971d1e2e183b30194a6c4a93eb2c8b081c3d27cff016520b6a50b",
+      "sha256": "9fe117091b11369749dbc207e142c8dd6c10efef0c371b1de53306389aa95b8c",
       "line_count": 35,
-      "size_bytes": 4538
+      "size_bytes": 4537
     },
     "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md": {
       "role": "documentation",
@@ -334,9 +334,9 @@
     "docs/acceptance/RELEASE_V0_2_0_20260711.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.RELEASE_V0_2_0_20260711.md.json",
-      "sha256": "3932901d023dd3a13532dc5277c00c9074d6162ecd0230ab0381c9ed3a59197f",
+      "sha256": "620c8dabb9b95a3ebaf49f693eadc1c213c92ab86e37d30fe4f294618ac5b3f0",
       "line_count": 59,
-      "size_bytes": 2578
+      "size_bytes": 2576
     },
     "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md": {
       "role": "quality",
@@ -348,9 +348,9 @@
     "docs/process/ACCESSIBILITY_LOCALIZATION_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.ACCESSIBILITY_LOCALIZATION_CONTRACT.md.json",
-      "sha256": "10c91e5e7c7eaee05001e9b922dfe7f063dc7d48aad9074cf3e8d05fcb93ff74",
+      "sha256": "6e5a7e0db810e71a95a87c2c2228ef110ad77ae07b2a3513a1bdb7dca25097b6",
       "line_count": 111,
-      "size_bytes": 4467
+      "size_bytes": 4356
     },
     "docs/process/ADAPTER_CORPUS_MANIFEST.md": {
       "role": "documentation",
@@ -369,9 +369,9 @@
     "docs/process/ADAPTER_SDK_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.ADAPTER_SDK_CONTRACT.md.json",
-      "sha256": "31ba92299de8415572bc631cbc74b676f7ba573352b72b2cf6d6d82f7eff163e",
+      "sha256": "6d3b3dc2235e6e788ced0766e3583d2654d811417aedd4399908372e1d8bc66a",
       "line_count": 141,
-      "size_bytes": 4845
+      "size_bytes": 4704
     },
     "docs/process/API_OPENAPI.yaml": {
       "role": "documentation",
@@ -390,37 +390,37 @@
     "docs/process/AUDIT_FIXTURE_ASSURANCE_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.AUDIT_FIXTURE_ASSURANCE_CONTRACT.md.json",
-      "sha256": "3a8048cf594f2d948fc3d466906c0165caa6f49f9c75eea09eea5b5abe229aca",
+      "sha256": "242946f24af7d6f78e60b4cc0c3d15f9a1ce1cdfbc3d5cf00ecde99fd271c810",
       "line_count": 101,
-      "size_bytes": 4336
+      "size_bytes": 4235
     },
     "docs/process/BLUEPRINT.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.BLUEPRINT.md.json",
-      "sha256": "f0d1156e02b7e5070fcfd938d953c9bc0fad82300d8e365f06d4313a6fc7599f",
+      "sha256": "0ee15a7c5a96dc8eb310298268170ab7b4d1a2adc4a20af1215ad5c3787f06ac",
       "line_count": 558,
-      "size_bytes": 32944
+      "size_bytes": 32390
     },
     "docs/process/CUSTOMER_DOCUMENTATION_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.CUSTOMER_DOCUMENTATION_CONTRACT.md.json",
-      "sha256": "20646124cb982fd4ccdc1ec1fc7c4383116ae1a420b64515e3ddd173e53a81fe",
+      "sha256": "0279b1d0022c3578784a6c00312d6d45a43c2b4005d68fc1efc9910596121eb3",
       "line_count": 112,
-      "size_bytes": 4456
+      "size_bytes": 4344
     },
     "docs/process/CUSTOMER_SUCCESS_ADOPTION_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.CUSTOMER_SUCCESS_ADOPTION_CONTRACT.md.json",
-      "sha256": "db73ab0fd316c0ba7de3dfbe01ebec5e110be95b12e4c3177032dea2f4d4bc66",
+      "sha256": "251629c9b51f8c03377036226248dd48de2021059246d8a1ca636c9749e387d8",
       "line_count": 128,
-      "size_bytes": 4984
+      "size_bytes": 4856
     },
     "docs/process/DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md.json",
-      "sha256": "1dfa8e96155d2f46615b9c5ef251f7386bc6b75d67e38a070ac81682ee9ccaba",
+      "sha256": "084b911f62256103825acac823a57a0c3f509dba4e2f55430e14888592ab2245",
       "line_count": 112,
-      "size_bytes": 5091
+      "size_bytes": 4979
     },
     "docs/process/DATA_RETENTION_LEGAL_REQUIREMENTS.md": {
       "role": "requirements",
@@ -439,16 +439,16 @@
     "docs/process/ENTERPRISE_DOMAIN_MODEL.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.ENTERPRISE_DOMAIN_MODEL.md.json",
-      "sha256": "87ab7f543fc6b3a90b2d7b980b5522f3674098f17d82aaa04b453afe0fe4bbe3",
+      "sha256": "58813aaa4393c6411f217ccb0daff5eff0848a83c96866f6e375bbec2ac10776",
       "line_count": 189,
-      "size_bytes": 8017
+      "size_bytes": 7828
     },
     "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.ENTERPRISE_PRODUCT_REQUIREMENTS.md.json",
-      "sha256": "e556e62e423cc5609f053ca2b922ec9da5dd8024ff79898aa4b20e827d5a5845",
+      "sha256": "3aa37ab9c5973e929431bfb681146f60ebeea647ce7adf59c631ef68645bd3ce",
       "line_count": 365,
-      "size_bytes": 26903
+      "size_bytes": 26580
     },
     "docs/process/EPIC_TASK_PACKETS.md": {
       "role": "planning",
@@ -481,9 +481,9 @@
     "docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md.json",
-      "sha256": "a5d56edca50d7fa56a3289421d2afd6944b5f1a654a07e69d211a65b102605cf",
+      "sha256": "5c76bb09c06be234d75d4f8fb913b78510c206c7ed4f9e9b9bc978dae3fa7178",
       "line_count": 88,
-      "size_bytes": 4560
+      "size_bytes": 4515
     },
     "docs/process/GITHUB_INTEGRATION_CONTRACT.md": {
       "role": "requirements",
@@ -495,9 +495,9 @@
     "docs/process/GLM5_IMPLEMENTATION_PROMPT_PLAN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.GLM5_IMPLEMENTATION_PROMPT_PLAN.md.json",
-      "sha256": "7f38a6f1cdff5629fee8baea85ce32bfd8f17c5c37719ae0f661cbab6a38304e",
+      "sha256": "b125f248099bd4a3fd6f223e43ffe66de38079d4dd506a7cf696760651b7aa88",
       "line_count": 246,
-      "size_bytes": 9262
+      "size_bytes": 9016
     },
     "docs/process/GLM_IMPLEMENTATION_DISPATCH_PACK.md": {
       "role": "documentation",
@@ -509,16 +509,16 @@
     "docs/process/GUARDRAILS.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.GUARDRAILS.md.json",
-      "sha256": "01f8a59f8fbde5965e3dd9bc87ca71bf431805a76391852c2003937f78eb8b7e",
+      "sha256": "8a36480e0b98abb266911a8de4e23e962629a2043ebfba09bc19d1103cb9ffdb",
       "line_count": 184,
-      "size_bytes": 12734
+      "size_bytes": 12550
     },
     "docs/process/HOSTED_READ_MODEL_API.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.HOSTED_READ_MODEL_API.md.json",
-      "sha256": "eb0cfc62f4b03dbe865acae80f9e3723a69129e47813df48091383b1fcd2c459",
+      "sha256": "122f73226500b63ef6054704dc6fb71d1652322db9746be0e949deddd8080607",
       "line_count": 137,
-      "size_bytes": 4695
+      "size_bytes": 4558
     },
     "docs/process/HOSTED_WORKER_RUNTIME_CONTRACT.md": {
       "role": "requirements",
@@ -558,58 +558,58 @@
     "docs/process/LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.LEGAL_COMMERCIAL_CONTRACTING_CONTRACT.md.json",
-      "sha256": "70f456fa642fafc044b938af2d9775f2069f133892f524dd7aac0e20f6187440",
+      "sha256": "bb19ff16a0dabd81ce80e455a8bb2719fcdc9fd507d2dbdbece9251183f8b044",
       "line_count": 114,
-      "size_bytes": 6085
+      "size_bytes": 5995
     },
     "docs/process/MANUAL_BB_GATE_FULL_IMPLEMENTATION.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.MANUAL_BB_GATE_FULL_IMPLEMENTATION.md.json",
-      "sha256": "25cfb16bac2bd6a4ac8e35f881adbd0cf38a44a1727a95881519a4d697b5a7d1",
+      "sha256": "ea9a1928fcebb30cb6ad42c389d123745176be7b7bb2240ebc359acbd6140206",
       "line_count": 164,
-      "size_bytes": 15191
+      "size_bytes": 15037
     },
     "docs/process/MANUAL_BB_GATE_IMPLEMENTATION.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.MANUAL_BB_GATE_IMPLEMENTATION.md.json",
-      "sha256": "d44caa0db398fd1888a1f0d1ec8948716d12c71d4d416545f522596a6b09b6a9",
+      "sha256": "d9ab9e6793b896ea405bc316c2677fa7085973361aff418db857c4db1eb3f35a",
       "line_count": 139,
-      "size_bytes": 10353
+      "size_bytes": 10214
     },
     "docs/process/MANUAL_BB_GATE_SPECIFICATION.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.MANUAL_BB_GATE_SPECIFICATION.md.json",
-      "sha256": "b83aadd22a2c389bc5e6c17cee9fd560987509d9bf278258b629c21e3a470e6d",
+      "sha256": "a47bfb85abb5007a65a44e11ac66c6b4090aa56ed2f34b21bcde5c4c74f21eb9",
       "line_count": 117,
-      "size_bytes": 10070
+      "size_bytes": 9953
     },
     "docs/process/P0A_GOLDEN_PATH.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.P0A_GOLDEN_PATH.md.json",
-      "sha256": "8d4eb9235e5434ca9b4bebe9862a7201e646234a42b77d4f15289656c139ec9c",
+      "sha256": "d96dfbe11f6bf26f6afa4064def1aeb8c978a7e891ef6d28bc108abbe2e55f79",
       "line_count": 210,
-      "size_bytes": 6965
+      "size_bytes": 6755
     },
     "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md.json",
-      "sha256": "0da2931f20dcd022ba96967d0f17d88e817a5474ac079f912b755f9e6a7eecd6",
+      "sha256": "53d89af4b527cd0123d6183201ea5dc91230a7f35c3ea67694d59bb3a12def89",
       "line_count": 246,
-      "size_bytes": 8191
+      "size_bytes": 7945
     },
     "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md.json",
-      "sha256": "9fa0a16598fc03f5a7b71c2fbe8793593abb95a3079eccce8dd7f86c8084d5ab",
+      "sha256": "ff71b5ec29ed4b1208be6fc8279944e71ec25c0244f72169958cfca70b09b64b",
       "line_count": 257,
-      "size_bytes": 8511
+      "size_bytes": 8254
     },
     "docs/process/PACKAGING_ENTITLEMENT_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PACKAGING_ENTITLEMENT_CONTRACT.md.json",
-      "sha256": "7335fd888054aecf76f2c96cc08d69dcca027a866cdaf351d4cd893a1d4b3691",
+      "sha256": "1879f8a8d9b8bb549047eaa7abb1b631de0e54df358a89f90d925154ce02ec77",
       "line_count": 122,
-      "size_bytes": 4736
+      "size_bytes": 4614
     },
     "docs/process/PLATFORM_BENCHMARK_FIXTURE_SPEC.md": {
       "role": "requirements",
@@ -635,9 +635,9 @@
     "docs/process/PLATFORM_PLUGIN_SANDBOX_SPEC.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PLATFORM_PLUGIN_SANDBOX_SPEC.md.json",
-      "sha256": "414a509233daad775c62e94b3470a3850f1eea5ed7f66360fe89b8102dafe282",
+      "sha256": "417ad270b0af08eb3b05fd87c54320fbc2a9d378e7e7257c78b97d51ab3e16aa",
       "line_count": 73,
-      "size_bytes": 3186
+      "size_bytes": 3140
     },
     "docs/process/PLATFORM_POLICY_CONFIG_SPEC.md": {
       "role": "requirements",
@@ -691,9 +691,9 @@
     "docs/process/PRIVACY_QUARANTINE_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRIVACY_QUARANTINE_CONTRACT.md.json",
-      "sha256": "41d593aa8342536b7829013630684120b672385f1d39dc7bd079ea6af24317f0",
+      "sha256": "0b6e7cc3b7e46dda8b98dc0b0cb47631463e5cc6647d52ec4d8514669e0222ec",
       "line_count": 129,
-      "size_bytes": 4484
+      "size_bytes": 4355
     },
     "docs/process/PRODUCT_E2E_UAT_CONTRACT.md": {
       "role": "requirements",
@@ -705,16 +705,16 @@
     "docs/process/PRODUCT_ERROR_TAXONOMY.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_ERROR_TAXONOMY.md.json",
-      "sha256": "ff74a81e486abc08b320f5a059f2be01006e3330e4808a5eedec68b217cd1870",
+      "sha256": "2e41a735c327d7f0af60b8c5212f8b208b15700a7d616e5c20a025defbe9eb2a",
       "line_count": 177,
-      "size_bytes": 8503
+      "size_bytes": 8346
     },
     "docs/process/PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_GOVERNANCE_ROADMAP_CONTRACT.md.json",
-      "sha256": "c6409ae482304d7b427b5f5cd5eaacc8551d995e9e4c5370487d52b286cfa184",
+      "sha256": "3b685c0493b5f1de555408ecda6c1f3894c299f0da9e7859d1e28a6722c10474",
       "line_count": 119,
-      "size_bytes": 4391
+      "size_bytes": 4272
     },
     "docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md": {
       "role": "requirements",
@@ -817,37 +817,37 @@
     "docs/process/PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PRODUCT_TELEMETRY_ANALYTICS_CONTRACT.md.json",
-      "sha256": "7ee57f04a61112725dac62e26b3e969971d8e13f7a50179157fa0aec5f29b33d",
+      "sha256": "319d5c8ac70f6ca00df4c8d375400c85030e138d8f980078ab6d75d4a9d0d60f",
       "line_count": 121,
-      "size_bytes": 4801
+      "size_bytes": 4680
     },
     "docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_AUDIT.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.RAND_KANO_MODE_FULL_IMPLEMENTATION_AUDIT.md.json",
-      "sha256": "5406b7591674f25758d2b7fc88c8d3764ae1fad97999a29da3add64c8deb3fde",
+      "sha256": "f1e65c47422f1433d333e3d89e493da85add91ac123e87762e752c8dc26fc2d6",
       "line_count": 129,
-      "size_bytes": 7222
+      "size_bytes": 7093
     },
     "docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_READINESS_GO.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.RAND_KANO_MODE_FULL_IMPLEMENTATION_READINESS_GO.md.json",
-      "sha256": "0a12142973750fd72fe6d67112f1699fb9564c42dbf8787359ef97808fa57129",
+      "sha256": "ef6ae8dbe6aba5e2eb44f1b34b89fa5dd20707e4ec2347a3533393c1d01f9783",
       "line_count": 51,
-      "size_bytes": 1960
+      "size_bytes": 1909
     },
     "docs/process/RAND_KANO_MODE_IDEA_QUALITY_AUDIT.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.RAND_KANO_MODE_IDEA_QUALITY_AUDIT.md.json",
-      "sha256": "bc733463e3624ca46d6382a53d34d53e7701186afd553394743d08637e4728c7",
+      "sha256": "f2e419001d0c00ab4c91b59ab758c938e15ceff72680b804c3be68b42f5f0418",
       "line_count": 95,
-      "size_bytes": 4702
+      "size_bytes": 4607
     },
     "docs/process/RAND_KANO_MODE_REQUIREMENTS_QUALITY_AUDIT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.RAND_KANO_MODE_REQUIREMENTS_QUALITY_AUDIT.md.json",
-      "sha256": "c0eda9e5bf1386e59ff283cfdf4e8f6079f8ff73e56504aa24787dad495a235b",
+      "sha256": "50a6642b894ce137c3d13908bcec376bdcf625e387da74d9e900a8046803af60",
       "line_count": 85,
-      "size_bytes": 4141
+      "size_bytes": 4056
     },
     "docs/process/REAL_REPO_EVALUATION.md": {
       "role": "quality",
@@ -887,16 +887,16 @@
     "docs/process/RELEASE_MIGRATION_POLICY.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.RELEASE_MIGRATION_POLICY.md.json",
-      "sha256": "d6363aef7a011e35bcc0ec26bb97e3ba2c343557b10b24021769e76cec5c340d",
+      "sha256": "eb08215c688993db7741b007a6fc142ddfcf66807ea53470ce8822625086ffff",
       "line_count": 177,
-      "size_bytes": 7611
+      "size_bytes": 7499
     },
     "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md.json",
-      "sha256": "27601cc674a54a819098481bb83dd1401dec98727baaf231bd9930897f9a1ca8",
+      "sha256": "f6c188a3ef6833c6e071ea598b93804cb104aca4a6ffb968ba91250d53f31da1",
       "line_count": 112,
-      "size_bytes": 4983
+      "size_bytes": 4871
     },
     "docs/process/REQUIREMENTS_TO_SPEC_GAP_AUDIT.md": {
       "role": "requirements",
@@ -908,9 +908,9 @@
     "docs/process/RISK_DEBT_REGISTER.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.RISK_DEBT_REGISTER.md.json",
-      "sha256": "764f823eb42299801179725d044afbb706b20591810a0f55cda5717ec8b6e613",
+      "sha256": "3193446a14c97a1c018c42f05854cabc7e2c2a8f6782b94643ed26c8e4f1c5de",
       "line_count": 149,
-      "size_bytes": 5184
+      "size_bytes": 5035
     },
     "docs/process/RUNBOOK.md": {
       "role": "operations",
@@ -936,16 +936,16 @@
     "docs/process/SECURITY_REVIEW_TRUST_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SECURITY_REVIEW_TRUST_CONTRACT.md.json",
-      "sha256": "13b36956a6b3064386fdace4989f6b48644829f7218f7d81f2fd77bb3b5143a8",
+      "sha256": "a097748f86a58a5f9ca7255e3566598153bf0e2df58528ddf11ba0840abd414e",
       "line_count": 132,
-      "size_bytes": 5974
+      "size_bytes": 5870
     },
     "docs/process/SLO_INCIDENT_RESPONSE_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SLO_INCIDENT_RESPONSE_CONTRACT.md.json",
-      "sha256": "b5d6524c2243ddcd757a38c0e4c1c202676fd72e3b8320073b662379101784b0",
+      "sha256": "280e18c678fed53ebe0db787d86d208cb56ca31e3bc24f904d3b731365bea0ba",
       "line_count": 168,
-      "size_bytes": 8508
+      "size_bytes": 8364
     },
     "docs/process/SPECIFICATION.md": {
       "role": "requirements",
@@ -957,30 +957,30 @@
     "docs/process/SPECIFICATION_COMPLETION_AUDIT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SPECIFICATION_COMPLETION_AUDIT.md.json",
-      "sha256": "a336b9b561c183b776f2b62f83fd3e22c389a977bac627b292565be9ae89d315",
+      "sha256": "72289e6a18e9b406200114556f1f7772715a1d1f5d69e8ac143cab41ceffc3d5",
       "line_count": 110,
-      "size_bytes": 6764
+      "size_bytes": 6664
     },
     "docs/process/SPECIFICATION_SHIPYARD_AUDIT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SPECIFICATION_SHIPYARD_AUDIT.md.json",
-      "sha256": "26efb31d370c796423be1f95355b439c69a1fe9237c991b5c4d2dd51e9d639ac",
+      "sha256": "c24e567739f73d922c128e5f068f49a72faf601ee92dfb748091373cdb91afa5",
       "line_count": 126,
-      "size_bytes": 13199
+      "size_bytes": 13078
     },
     "docs/process/SPECIFICATION_SHIPYARD_DRAFT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SPECIFICATION_SHIPYARD_DRAFT.md.json",
-      "sha256": "b757c5b6d37d249813b8ad3f949cdba30f5e79b2299ff9f08791ae2c63ab79cc",
+      "sha256": "49e3bffe10c71e0096cf29377ac65c084de5381a2e998d5a41308eee447dd5fe",
       "line_count": 353,
-      "size_bytes": 22240
+      "size_bytes": 21887
     },
     "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md.json",
-      "sha256": "f1435ab0ced3e1b785e02ef7a07fac775684c9463faf65b0a09a3a7f7dce20a8",
+      "sha256": "f451e979e612a5f571ff73d9fc4154ca61b365ffb542bd09d938ae4b9aa6b30f",
       "line_count": 151,
-      "size_bytes": 10374
+      "size_bytes": 10223
     },
     "docs/process/STORE_MIGRATION_INDEX_REBUILD_CONTRACT.md": {
       "role": "requirements",
@@ -1027,9 +1027,9 @@
     "docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.WORKFLOW_COOKBOOK_INTEGRATION.md.json",
-      "sha256": "cb2d7206a7aaa69910f178435bd338b14af998bd4024ed8ca3cff8c0481b2be8",
+      "sha256": "2384412749fecdc55b989e14c4155d8f316a00201d10087c7cc8ae97b0906610",
       "line_count": 242,
-      "size_bytes": 15374
+      "size_bytes": 15143
     },
     "docs/process/WORKFLOW_COOKBOOK_OPERATION_CONTRACT.md": {
       "role": "requirements",
@@ -1041,86 +1041,86 @@
     "docs/process/manual-bb-gate-full-implementation.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.manual-bb-gate-full-implementation.json.json",
-      "sha256": "adc996ad67d52de95d34935db29afd1dd60c33f50fdde04875dda71fc4e1aba2",
+      "sha256": "6bb8fa28a95c88762c1d82a667f637477d2939a778f7e829c42d550d5f813ad1",
       "line_count": 102,
-      "size_bytes": 4347
+      "size_bytes": 4268
     },
     "docs/process/manual-bb-gate-implementation.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.manual-bb-gate-implementation.json.json",
-      "sha256": "bdd12f88c94e7e498fdf3e5ae9bb6cfe244ed314eaf15f703f5d2e78c9a63e31",
+      "sha256": "0525022f406b070864cde07c3fe13e16879c31cec6f76e629af07874d5c59307",
       "line_count": 113,
-      "size_bytes": 3912
+      "size_bytes": 3799
     },
     "docs/process/manual-bb-gate-specification.json": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.manual-bb-gate-specification.json.json",
-      "sha256": "0b423465a2061cd49145942cde2d94a5da18367f69256b95116a907f78c38cac",
+      "sha256": "682b67323fc9df95ffd54a18e057d2b81f0610e7b2ed0e32faf8442ffc19880d",
       "line_count": 124,
-      "size_bytes": 5230
+      "size_bytes": 5106
     },
     "docs/process/post-poc-gap-registry.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.post-poc-gap-registry.json.json",
-      "sha256": "84eca98f7d67453d0afd5687cf514ebbcfc80010c41d34446cda9982a51e1da4",
+      "sha256": "cae6afc04676a1b201ddcc2fd19f7a8af6e38f7f7f2e2f5fa996a41855822fab",
       "line_count": 167,
-      "size_bytes": 7918
+      "size_bytes": 7917
     },
     "docs/process/rand-kano-mode-full-implementation-audit.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-full-implementation-audit.json.json",
-      "sha256": "5f475196ad299631fc3890d81adbff5c409efd489c9f299078b42103bf0d99d4",
+      "sha256": "eedcdbaf6f02cab14331392f25634a766a6c60fc4b886a6c34d96a0dfdfdae54",
       "line_count": 215,
-      "size_bytes": 9280
+      "size_bytes": 9065
     },
     "docs/process/rand-kano-mode-full-implementation-kano.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-full-implementation-kano.json.json",
-      "sha256": "f903f671b697119e8f0e75186a120f87c532293fad3a98d558c2d3605d419f90",
+      "sha256": "4d48dc290cc69fbd19cde7434466d08bf47adbfad76e1a62469ecf667df48acd",
       "line_count": 162,
-      "size_bytes": 6149
+      "size_bytes": 5987
     },
     "docs/process/rand-kano-mode-full-implementation-readiness-audit.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-full-implementation-readiness-audit.json.json",
-      "sha256": "21b2e62cc0fc978de9482822e33e7c7bd8a95540d06412c26c2fbc48205b7d61",
+      "sha256": "b78688ef0de5cb67d6991a8e493b71ec9eb2ecb07264006ea8cd776d4562df5c",
       "line_count": 226,
-      "size_bytes": 9682
+      "size_bytes": 9456
     },
     "docs/process/rand-kano-mode-full-implementation-readiness-kano.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-full-implementation-readiness-kano.json.json",
-      "sha256": "20c2a21da57629d33e4154e51858b0c0283572d673896ea9ab1e62fee64d1eb6",
+      "sha256": "1d45d4afdc49eb114e0dd2e012c50cb7d2907fcc5d60ae10d8be0c8965011289",
       "line_count": 185,
-      "size_bytes": 7129
+      "size_bytes": 6944
     },
     "docs/process/rand-kano-mode-idea-quality-audit.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-idea-quality-audit.json.json",
-      "sha256": "bf906fecb735254ad1fdcadceb496d4825245961c06601d9e02109fd43f71f1b",
+      "sha256": "2306dc86dfc0d5b96efa19d2e66278d8a9308398a36368c96fe81736864924a5",
       "line_count": 266,
-      "size_bytes": 11717
+      "size_bytes": 11451
     },
     "docs/process/rand-kano-mode-idea-quality-kano.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-idea-quality-kano.json.json",
-      "sha256": "3d0f6cdaeabe603aff1db3c0903181238fb7e3c4d103b5593b09f01830813668",
+      "sha256": "adf47c91314dc72e33ae975b0e5e29d66a13457369e8e49915dbba97e0d6be26",
       "line_count": 209,
-      "size_bytes": 7827
+      "size_bytes": 7618
     },
     "docs/process/rand-kano-mode-requirements-quality-audit.json": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-requirements-quality-audit.json.json",
-      "sha256": "da714d0b1eb1b3ebacda0c456558ec08f694f105797ab591bcf75de4ba40ca51",
+      "sha256": "2e8228e27dcf09ecc802bb5a07efabc0281c2089a8b4b0e5a5c8e5cd3ed4a189",
       "line_count": 266,
-      "size_bytes": 11437
+      "size_bytes": 11171
     },
     "docs/process/rand-kano-mode-requirements-quality-kano.json": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.rand-kano-mode-requirements-quality-kano.json.json",
-      "sha256": "0b0c3840197769f4f9acaa437716a43c2fc2fd31f8353b9a897874a383bd3d67",
+      "sha256": "73e80187dacae00fa302f45a56ad8abe61ab46ef0437e98f966de1faeb46f2a9",
       "line_count": 209,
-      "size_bytes": 7411
+      "size_bytes": 7202
     },
     "docs/process/real-repo-rosters/agent-tools-full.json": {
       "role": "documentation",
@@ -1160,65 +1160,65 @@
     "docs/process/shipyard-run-evidence-full-implementation-spec.json": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-full-implementation-spec.json.json",
-      "sha256": "37a7a8769648137eb03bebdb4b3065e7e9e9dee72eacc94c34a1902585271538",
+      "sha256": "3c4f8b9477114d76583cb3c32973db1d124e8283275747e68918bcc4efb3d464",
       "line_count": 56,
-      "size_bytes": 2209
+      "size_bytes": 2153
     },
     "docs/process/shipyard-run-evidence-p0a-cli-implementation.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p0a-cli-implementation.json.json",
-      "sha256": "129593087bb848a0f4c3326b9437f598adbf50f3e9ab64e13276558154db3cd8",
+      "sha256": "19a18cd84fa9c8ddccb2abb7dca53fc0c942aa923bf3b559eda19850bfec9fc7",
       "line_count": 83,
-      "size_bytes": 2782
+      "size_bytes": 2699
     },
     "docs/process/shipyard-run-evidence-p0a-dq-fixtures.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p0a-dq-fixtures.json.json",
-      "sha256": "05af5e80f73d723fb761e690840f864635201391e28ac57d5dd7e84751b70f5d",
+      "sha256": "a94f0341dd0d16f1e8146c6402f411d08a274cff24f70ec40e48fae1677c0734",
       "line_count": 83,
-      "size_bytes": 2690
+      "size_bytes": 2607
     },
     "docs/process/shipyard-run-evidence-p0a-schema-bootstrap.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p0a-schema-bootstrap.json.json",
-      "sha256": "f9df1abcf27fc4f7ab48b037976067ae623157d60e0c6ff5d01576c9aa0aba50",
+      "sha256": "2c406b5faa141791ce85b4ccfcdcd83f42ad50f2a0bc2a23fff5fd1dd3b22f71",
       "line_count": 81,
-      "size_bytes": 3159
+      "size_bytes": 3078
     },
     "docs/process/shipyard-run-evidence-p0b-qeg-export.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p0b-qeg-export.json.json",
-      "sha256": "1fd791936a7755f22e8fb7a620a91735f3de1c40e2a838abfd804102b57a9f6a",
+      "sha256": "b39b94a92143549d489dbd17ed025f190018114c7b63ace6b34e5db8b87eef08",
       "line_count": 111,
-      "size_bytes": 4190
+      "size_bytes": 4079
     },
     "docs/process/shipyard-run-evidence-p1a-trust-minimal.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p1a-trust-minimal.json.json",
-      "sha256": "7d20f70ba37f17d4177526c88069f733922f57a0f0f66dc11d15a6f656faf415",
+      "sha256": "8e7b7860d72aa8b53b4a8f407047f41f4e524a08ec6a672635419a996d1bf7fb",
       "line_count": 132,
-      "size_bytes": 6465
+      "size_bytes": 6333
     },
     "docs/process/shipyard-run-evidence-p1b-workflow-mapping.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p1b-workflow-mapping.json.json",
-      "sha256": "394f46280cbda6ca6b62277ecb786f592c768c71f4f77ab8991b6182d7bd8a81",
+      "sha256": "1af3d7879ed6005f836d7b025cf87fa87371e0697a269da75ffb990f675ada24",
       "line_count": 93,
-      "size_bytes": 4000
+      "size_bytes": 3907
     },
     "docs/process/shipyard-run-evidence-p2p3-product-readiness.json": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.shipyard-run-evidence-p2p3-product-readiness.json.json",
-      "sha256": "0770bd03408011521ea9b85a4b757b044ef5e96a50abeed460c163f09b616233",
+      "sha256": "1f09c3ec3ee98bf8671ac9bc90e0efad247f85babd65f66cc82c9724dbe90da9",
       "line_count": 156,
-      "size_bytes": 7763
+      "size_bytes": 7607
     },
     "docs/research/deep-research-report.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.research.deep-research-report.md.json",
-      "sha256": "ce39f2806a046360a3d705e06dc28741567d5da28f4a08e7dcb14e3c4e1e2e6a",
+      "sha256": "eb207bec36075e04e08c26d414480556b4cdd784b613c4d7a5b90172b744bf52",
       "line_count": 819,
-      "size_bytes": 67848
+      "size_bytes": 67029
     },
     "docs/tasks/HATE_GAP_CLOSURE_TASK_SEEDS.md": {
       "role": "planning",
@@ -1237,121 +1237,121 @@
     "fixtures/adapters/artifacts/archive/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.archive.github-context.json.json",
-      "sha256": "6bda43fbfbe8178d0e63b3aefa3c95d12a2072f9e8bb0746334bcaf66b20ffa6",
+      "sha256": "7d6f442590fa72d13a5c5ef362165d4b116989e15bcd3c039e585e0522e1bfeb",
       "line_count": 14,
-      "size_bytes": 427
+      "size_bytes": 413
     },
     "fixtures/adapters/artifacts/external-url/artifact-refs.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.external-url.artifact-refs.json.json",
-      "sha256": "7bda5a889b1d40cb59d32a7a0e95983bd20d9aa93f2372155b89d2f051ca16e3",
+      "sha256": "260883067a2d21334d7ac0dd99122c24051c7c1f6acf4b478fafc8d175039279",
       "line_count": 10,
-      "size_bytes": 210
+      "size_bytes": 200
     },
     "fixtures/adapters/artifacts/external-url/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.external-url.github-context.json.json",
-      "sha256": "4f6303f6ef1b50e23b86df46f081d3ac74bcc0b414bc76ce0b5319e96faf485d",
+      "sha256": "a9060a5340d13e8ae672722575aa3f6851fb44535c36a4e127bbf1deb5096b76",
       "line_count": 14,
-      "size_bytes": 427
+      "size_bytes": 413
     },
     "fixtures/adapters/artifacts/path-traversal/artifact-refs.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.path-traversal.artifact-refs.json.json",
-      "sha256": "dda215c91cd25aa90e51d3cd02ff49368edb5bab3b7555d89d6b379fa340f421",
+      "sha256": "e92286ae54a876a67a4a1dad146ca839c1ea83a0ecaebb8d39b83e9a545067ca",
       "line_count": 10,
-      "size_bytes": 184
+      "size_bytes": 174
     },
     "fixtures/adapters/artifacts/path-traversal/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.path-traversal.github-context.json.json",
-      "sha256": "89c81a1cbe9d64ab003255b70d9fbcd3a4628cfbcc870947eba34b1abe1880d9",
+      "sha256": "25b3bcf4af2e914d6f7bd46a6cba2257d5742ff7c244c2d23f91f4cdf2cc9309",
       "line_count": 14,
-      "size_bytes": 427
+      "size_bytes": 413
     },
     "fixtures/adapters/artifacts/safe/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.safe.github-context.json.json",
-      "sha256": "74489ccb711965f47d2b71b437eeeb510f1b7373615f3ed12abf60201cde814b",
+      "sha256": "1c04fafc2f41d3a9d1b298eb3f48b39220bbc98be21bd29eb1e13ca0e7fa30a2",
       "line_count": 14,
-      "size_bytes": 427
+      "size_bytes": 413
     },
     "fixtures/adapters/artifacts/secret/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.secret.github-context.json.json",
-      "sha256": "db149a1157a46d1c12ca5a59f189a5cd750eeacf8c5afb22b146546b4a3c7428",
+      "sha256": "a5b015f5c45fd9f3afeecc88cdbd9ebfac4b38cf54b54752f8f9a5be5846870c",
       "line_count": 14,
-      "size_bytes": 427
+      "size_bytes": 413
     },
     "fixtures/adapters/artifacts/symlink/artifact-refs.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.symlink.artifact-refs.json.json",
-      "sha256": "4638627ee133363c2aa280b5c62c37f113329553eb73920c6e6b822c839b220c",
+      "sha256": "b6c75dc06957a8bd567531d5bb6eb0553a17534ff573d4b49c68bf7b57337156",
       "line_count": 11,
-      "size_bytes": 217
+      "size_bytes": 206
     },
     "fixtures/adapters/artifacts/symlink/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.artifacts.symlink.github-context.json.json",
-      "sha256": "7e753e3dc85dc35d15b611d3a493875a82ec9523628d9cd4cb0f0a5eeaef6f8c",
+      "sha256": "3304c6aff3c88220e0914031d98e7b35d4e035624f933f07fd6b1e4a3c698069",
       "line_count": 14,
-      "size_bytes": 427
+      "size_bytes": 413
     },
     "fixtures/adapters/ci/generic/generic-file-name/generic-ci-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.ci.generic.generic-file-name.generic-ci-context.json.json",
-      "sha256": "64e6596981732a17a61b48e9f8bf96addb01809981b8533d66cfdc0d63e925f3",
+      "sha256": "d4fe7080c33ca211d5154a1d4492986cd64df43e7f3b51757155da4264404624",
       "line_count": 12,
-      "size_bytes": 363
+      "size_bytes": 351
     },
     "fixtures/adapters/ci/generic/generic-file-name/pytest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.ci.generic.generic-file-name.pytest-report.json.json",
-      "sha256": "9561a6ff12cff64e0232450297ee66454a0480a6baa9458df8b443cac7f22435",
+      "sha256": "dd4a342929ef9e7361b40d14733b6e928ca4c91c9ae5531b8b5784c7d14e2aee",
       "line_count": 13,
-      "size_bytes": 248
+      "size_bytes": 235
     },
     "fixtures/adapters/ci/generic/input/ci-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.ci.generic.input.ci-context.json.json",
-      "sha256": "2a804f0ef61db0572ef57528c396e2741d6650b9eafbe8578858771db9c84fd6",
+      "sha256": "be77ae8cac8048dd09afde897750ee808eb05fc3c8192e28d4f3cd246a422ffb",
       "line_count": 15,
-      "size_bytes": 495
+      "size_bytes": 480
     },
     "fixtures/adapters/ci/generic/missing-required/ci-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.ci.generic.missing-required.ci-context.json.json",
-      "sha256": "7f06902d03269835a4bd3c02504486eb358ceaf9e898ca67c4d1ae938cd739c3",
+      "sha256": "a5e70aebd0e02a2747d27d174eaf8f1ad2990791fe8ad97005868efc33a4dbef",
       "line_count": 9,
-      "size_bytes": 262
+      "size_bytes": 253
     },
     "fixtures/adapters/coverage/cobertura/input/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coverage.cobertura.input.github-context.json.json",
-      "sha256": "6fd5e972b3c393d6c335061bd2c9040ea964a4e2d2fb8e4deb4ee9776b0c717e",
+      "sha256": "d8bfaae2e4037bf820359d085b6ac0a550b2a1f6fa094916ff8a51c99d161708",
       "line_count": 14,
-      "size_bytes": 420
+      "size_bytes": 406
     },
     "fixtures/adapters/coverage/cobertura/malformed/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coverage.cobertura.malformed.github-context.json.json",
-      "sha256": "d34fbf09c22e283cb68511a124a33b7658fc7e5e8a802b5da243e3beaaed8a8f",
+      "sha256": "cb1c1fc0b3729343b8c219e8027adfddf94d4aa4f3797f43d88a659fe63aef71",
       "line_count": 14,
-      "size_bytes": 420
+      "size_bytes": 406
     },
     "fixtures/adapters/coverage/cobertura/partial/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coverage.cobertura.partial.github-context.json.json",
-      "sha256": "010c1c0096b5633da5f5ab7ef97e36959cef4202edcc390f6a3b295753c1e9dd",
+      "sha256": "f7c89bb9b4014aa8f2dc17caf65f5f8a78b0a261b59f6359b97975bd7158a1f6",
       "line_count": 14,
-      "size_bytes": 420
+      "size_bytes": 406
     },
     "fixtures/adapters/coverage/cobertura/windows-path/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coverage.cobertura.windows-path.github-context.json.json",
-      "sha256": "1ee463a7d79f60fb501334a19f54fd9eaa3075f96bbba72e163d6e798a27f70c",
+      "sha256": "fee4e627d5cf6475c2dcb7cf36cddbe2f161609e7b52f2de55ce6aa27e51a0b2",
       "line_count": 14,
-      "size_bytes": 420
+      "size_bytes": 406
     },
     "fixtures/adapters/coverage/contextless-lines/coverage.json": {
       "role": "fixture",
@@ -1377,30 +1377,30 @@
     "fixtures/adapters/coverage/jacoco/input/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coverage.jacoco.input.github-context.json.json",
-      "sha256": "6cf2f9ca62079c0c08fc7571a0124833f72618c543c4807c7a060dc4a30e0cd4",
+      "sha256": "c02da84742a956e0cb11991b1d42ad5ce8f7fd030ee34e2a11c67f9aaedcbc17",
       "line_count": 14,
-      "size_bytes": 420
+      "size_bytes": 406
     },
     "fixtures/adapters/coverage/jacoco/malformed/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coverage.jacoco.malformed.github-context.json.json",
-      "sha256": "f5e0c80b89a4c9f848099e919a5eea5ac63415d79ae90adcfc339841eb5e1f4c",
+      "sha256": "3176807f2765f5b2ef0c6e0762d5ea5498b5bdb0d7d4ab6ccd42a78b7e09d1e2",
       "line_count": 14,
-      "size_bytes": 420
+      "size_bytes": 406
     },
     "fixtures/adapters/coverage/jacoco/partial/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coverage.jacoco.partial.github-context.json.json",
-      "sha256": "c9c0c75dbae56c375747af655fbd7df455213fb4a1071117acd79c4235e9a8a4",
+      "sha256": "e98036b9b2ce8a8ccf4da5668f8fb1b5306e243c6da3b3e3355fda17006d363b",
       "line_count": 14,
-      "size_bytes": 420
+      "size_bytes": 406
     },
     "fixtures/adapters/coverage/jacoco/windows-path/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coverage.jacoco.windows-path.github-context.json.json",
-      "sha256": "d50f8a98fef498d9f2e599185fc9b9e3a50eaf76091d7c044b1ada73f265f2e8",
+      "sha256": "d7074e5caeb0c5b3e34615c36a05c005e9d5c2d33c8a527da7eefddb86304bbd",
       "line_count": 14,
-      "size_bytes": 420
+      "size_bytes": 406
     },
     "fixtures/adapters/coverage/malformed-json/coverage.json": {
       "role": "fixture",
@@ -1426,51 +1426,51 @@
     "fixtures/adapters/coveragepy/input/coverage.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.input.coverage.json.json",
-      "sha256": "421fbb72de09ef683f34b63b55f64217e0c39356e53fc40fd4f1805946628e91",
+      "sha256": "ebb4d513a90bdc7da0c745e25de81a136a0e07153b50cf9267b3fc55f00e6843",
       "line_count": 53,
-      "size_bytes": 1784
+      "size_bytes": 1732
     },
     "fixtures/adapters/coveragepy/input/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.input.github-context.json.json",
-      "sha256": "d5a6e76f0406ff8fc18ab4faa9b4260a2ebc3b3d7ccdbecbc03d4603e7a92d0c",
+      "sha256": "7fa0275d72d4bf46e16603ea9d6642e41074b9838e3ef4af8030cdd1c2e5b62c",
       "line_count": 14,
-      "size_bytes": 431
+      "size_bytes": 418
     },
     "fixtures/adapters/coveragepy/missing-context/coverage.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.missing-context.coverage.json.json",
-      "sha256": "41e3f1f8b5fb6da5354432df8281a9909491a698a9898fd36437aa53834c8e55",
+      "sha256": "02ca50caad33da26950286228c0896866225175b82cbd95228d14ab932f531d9",
       "line_count": 22,
-      "size_bytes": 423
+      "size_bytes": 402
     },
     "fixtures/adapters/coveragepy/missing-context/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.missing-context.github-context.json.json",
-      "sha256": "58d83aec5e47e9253697dca52c7d1f3fb89a5efea44fd67d08cfb395af2f4624",
+      "sha256": "7d1adeedc48bc152a83d493d4776552c0293e1cfc913fee615ce74dc06b71a5f",
       "line_count": 13,
-      "size_bytes": 377
+      "size_bytes": 365
     },
     "fixtures/adapters/coveragepy/partial/coverage.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.partial.coverage.json.json",
-      "sha256": "129bb071948fe0a184ddc814c6564f52e4541360c19c6cd2d75a81c7d3a46e88",
+      "sha256": "b028e257daba74bd1a32f6b424236219b0881c3a4e2af93e4f9ff529f670db89",
       "line_count": 24,
-      "size_bytes": 587
+      "size_bytes": 564
     },
     "fixtures/adapters/coveragepy/partial/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.partial.github-context.json.json",
-      "sha256": "1d29ac70ede80d3bc2142dce0f0118a919db4b8557882b09d741be2a5083b459",
+      "sha256": "99c06f825651950104f4ed999a7fe4a394378ef2b9d48d02b8b2bd067619ee9c",
       "line_count": 13,
-      "size_bytes": 370
+      "size_bytes": 358
     },
     "fixtures/adapters/coveragepy/partial/pytest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.coveragepy.partial.pytest-report.json.json",
-      "sha256": "e09794b2bb8c435769487922d32bd84f77697f28853584f19fd1a6c960c54f28",
+      "sha256": "ac61ae62cd1d557a8d6318ec7b38ee65b0e0f4c496075b51d0a06ed49e4058ee",
       "line_count": 28,
-      "size_bytes": 582
+      "size_bytes": 555
     },
     "fixtures/adapters/escaped-defects/missing-release-ref/escaped-defects.json": {
       "role": "fixture",
@@ -1538,16 +1538,16 @@
     "fixtures/adapters/playwright/evidence/artifact-manifest.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.playwright.evidence.artifact-manifest.json.json",
-      "sha256": "21df6316faca8d1cd66e820912ef6f03b79814d3409baa1499a48e9b7ad371f9",
+      "sha256": "11ee020eab6e92ad521d2a5c0788e176be3f807a9217af050929ee2ca0705d13",
       "line_count": 97,
-      "size_bytes": 3261
+      "size_bytes": 3164
     },
     "fixtures/adapters/risk-debt/lifecycle/risk-debt-lifecycle.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.risk-debt.lifecycle.risk-debt-lifecycle.json.json",
-      "sha256": "d655a10e9fb057ed90b2fab4fe37fe8c1acb88252fa0c7a069925884f8f704e7",
+      "sha256": "98a3b41f34d57de6b76749c9c11f758a63b552d5027bd7ab4dc76b391bca1057",
       "line_count": 41,
-      "size_bytes": 1429
+      "size_bytes": 1388
     },
     "fixtures/adapters/sdk/capability-mismatch/manifest.json": {
       "role": "fixture",
@@ -1636,170 +1636,170 @@
     "fixtures/adapters/test-results/jest/input/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.input.github-context.json.json",
-      "sha256": "1b635d9a3c201d5bd72b90e82bf6a6933b04d4676e5067542f187f466273ed3c",
+      "sha256": "328cba581c7333d47672803f65ecba2928986c8fc942dfd3948d5d3a16e47c5b",
       "line_count": 14,
-      "size_bytes": 419
+      "size_bytes": 406
     },
     "fixtures/adapters/test-results/jest/input/jest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.input.jest-report.json.json",
-      "sha256": "7d700d28fd27a891d5713466f38449eec799959feff1be007412f410f2a8a921",
+      "sha256": "caf8834bf1fb7db9e0fde8c056ca5787f04df828b7cbaaef2fb064572dee3bee",
       "line_count": 112,
-      "size_bytes": 3289
+      "size_bytes": 3178
     },
     "fixtures/adapters/test-results/jest/malformed/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.malformed.github-context.json.json",
-      "sha256": "53f4b7d3cfc79376917a9e16667be8d129e86b64a91af614b6bd3778e6f577a6",
+      "sha256": "3fd9353d91a98b117828f6b0a98100ddc4ad7344caf356cd7484e6da70e1759b",
       "line_count": 13,
-      "size_bytes": 371
+      "size_bytes": 359
     },
     "fixtures/adapters/test-results/jest/malformed/jest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.malformed.jest-report.json.json",
-      "sha256": "eda23c1060e8799d021e2d773605c6d184cf31e6c0408d7fc0eb48ff0c22c7b8",
+      "sha256": "bbb022b84264701966ebe2226752f117076a75f548e6361496f7ecd211c7681d",
       "line_count": 9,
-      "size_bytes": 151
+      "size_bytes": 143
     },
     "fixtures/adapters/test-results/jest/no-junit/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.no-junit.github-context.json.json",
-      "sha256": "1b635d9a3c201d5bd72b90e82bf6a6933b04d4676e5067542f187f466273ed3c",
+      "sha256": "328cba581c7333d47672803f65ecba2928986c8fc942dfd3948d5d3a16e47c5b",
       "line_count": 14,
-      "size_bytes": 419
+      "size_bytes": 406
     },
     "fixtures/adapters/test-results/jest/no-junit/jest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.jest.no-junit.jest-report.json.json",
-      "sha256": "7d700d28fd27a891d5713466f38449eec799959feff1be007412f410f2a8a921",
+      "sha256": "caf8834bf1fb7db9e0fde8c056ca5787f04df828b7cbaaef2fb064572dee3bee",
       "line_count": 112,
-      "size_bytes": 3289
+      "size_bytes": 3178
     },
     "fixtures/adapters/test-results/pytest/input/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.input.github-context.json.json",
-      "sha256": "0169d4008a9b686031d0953fb813e82cc4ddf193b3d2c12806de57cb0429f194",
+      "sha256": "8602c2cc566fb0e72370475ae50195d6de273ac89f3b523ea2874d573e448720",
       "line_count": 14,
-      "size_bytes": 429
+      "size_bytes": 416
     },
     "fixtures/adapters/test-results/pytest/input/pytest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.input.pytest-report.json.json",
-      "sha256": "99bb7688c9511b5ad409a05fbdbff0b66ef345ab5ebdd3a2fe62716e9d9ea5ee",
+      "sha256": "c65e84ff5bf6ef4e6a5d14bdf7484120d9a83d36f75d2a0e4c330d943b104ae0",
       "line_count": 80,
-      "size_bytes": 1901
+      "size_bytes": 1822
     },
     "fixtures/adapters/test-results/pytest/malformed/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.malformed.github-context.json.json",
-      "sha256": "169a4bb3e6297b4a6055a553d78e8c0e0f03cfd07c064fdfcdbf07641b22e3dc",
+      "sha256": "c467a661661b0408181840fda594a5ce03005a7e400f1d23d5865f0e555ea7a5",
       "line_count": 13,
-      "size_bytes": 364
+      "size_bytes": 352
     },
     "fixtures/adapters/test-results/pytest/malformed/pytest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.malformed.pytest-report.json.json",
-      "sha256": "f9edd8ac32e4456dd276116bcda0e678be26cfae58ea247fe0300cb96e3c575d",
+      "sha256": "eb1ee2e8d8d0d0d15102585e1001f71f9eaea81253d6d16f30ed325079953e74",
       "line_count": 13,
-      "size_bytes": 217
+      "size_bytes": 205
     },
     "fixtures/adapters/test-results/pytest/no-junit/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.no-junit.github-context.json.json",
-      "sha256": "0169d4008a9b686031d0953fb813e82cc4ddf193b3d2c12806de57cb0429f194",
+      "sha256": "8602c2cc566fb0e72370475ae50195d6de273ac89f3b523ea2874d573e448720",
       "line_count": 14,
-      "size_bytes": 429
+      "size_bytes": 416
     },
     "fixtures/adapters/test-results/pytest/no-junit/pytest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.no-junit.pytest-report.json.json",
-      "sha256": "99bb7688c9511b5ad409a05fbdbff0b66ef345ab5ebdd3a2fe62716e9d9ea5ee",
+      "sha256": "c65e84ff5bf6ef4e6a5d14bdf7484120d9a83d36f75d2a0e4c330d943b104ae0",
       "line_count": 80,
-      "size_bytes": 1901
+      "size_bytes": 1822
     },
     "fixtures/adapters/test-results/pytest/retry-matrix/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.retry-matrix.github-context.json.json",
-      "sha256": "2832f7a8c3352030826f6715ad7b431b445a855f782e92916efdb4e0f7ab5311",
+      "sha256": "c6c6573c85d2ae8cc3570fae937254a121def0cdc8a5d8c075395565e8c63e7d",
       "line_count": 13,
-      "size_bytes": 364
+      "size_bytes": 352
     },
     "fixtures/adapters/test-results/pytest/retry-matrix/pytest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.pytest.retry-matrix.pytest-report.json.json",
-      "sha256": "24cba12c0fbd80a5b65726135274bac5e54981a365a29261dc9f70f4d01fd72a",
+      "sha256": "ac14b1d1ac4d0077b060a18888d908ec9febd2d588e408d95c5134d872127b57",
       "line_count": 45,
-      "size_bytes": 1075
+      "size_bytes": 1031
     },
     "fixtures/adapters/test-results/vitest/input/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.input.github-context.json.json",
-      "sha256": "a2f83a62a124ae77f7c0081b93e273ad853a6b2292582b06d4ef7b99cd608311",
+      "sha256": "fb0e1ccf48daaa3747df2736faf807ba838990b2dc93b565648a23d6beeeb04e",
       "line_count": 14,
-      "size_bytes": 435
+      "size_bytes": 422
     },
     "fixtures/adapters/test-results/vitest/input/vitest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.input.vitest-report.json.json",
-      "sha256": "701f6b28a1692a9cedc06f4c0e4246b7af4bce708290f6ffc04e16d6a67d4e2d",
+      "sha256": "9d605744491300ceda10bcd88b3e75cc6f0d5dd015a18167ddae7cc901c71a5c",
       "line_count": 87,
-      "size_bytes": 2794
+      "size_bytes": 2708
     },
     "fixtures/adapters/test-results/vitest/malformed/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.malformed.github-context.json.json",
-      "sha256": "e18846caea8e022988f90cfba711fa348642cabbe908082577b367c6fe27e097",
+      "sha256": "80143346fea9cdb01c08fc5ac882347c04fce22e27cfda910400f02ad55d8470",
       "line_count": 6,
-      "size_bytes": 130
+      "size_bytes": 125
     },
     "fixtures/adapters/test-results/vitest/malformed/vitest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.malformed.vitest-report.json.json",
-      "sha256": "37caad89f7f0e38157823d7dc47ae0893db60e588022a5561a25a5905fc7d5cd",
+      "sha256": "592e9914c1483500edde35b63fd7e0100416927ea136dc861f69518395e7656a",
       "line_count": 10,
-      "size_bytes": 153
+      "size_bytes": 144
     },
     "fixtures/adapters/test-results/vitest/no-junit/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.no-junit.github-context.json.json",
-      "sha256": "a2f83a62a124ae77f7c0081b93e273ad853a6b2292582b06d4ef7b99cd608311",
+      "sha256": "fb0e1ccf48daaa3747df2736faf807ba838990b2dc93b565648a23d6beeeb04e",
       "line_count": 14,
-      "size_bytes": 435
+      "size_bytes": 422
     },
     "fixtures/adapters/test-results/vitest/no-junit/vitest-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.adapters.test-results.vitest.no-junit.vitest-report.json.json",
-      "sha256": "701f6b28a1692a9cedc06f4c0e4246b7af4bce708290f6ffc04e16d6a67d4e2d",
+      "sha256": "9d605744491300ceda10bcd88b3e75cc6f0d5dd015a18167ddae7cc901c71a5c",
       "line_count": 87,
-      "size_bytes": 2794
+      "size_bytes": 2708
     },
     "fixtures/aete/signal-based/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.aete.signal-based.README.md.json",
-      "sha256": "ef45936fb1346db38e586780aa940de9278cb509d9a853ac07c82a37933f7d9b",
+      "sha256": "1fa7bb925b31c1bc6c8536a8051897bcaca7c767b4bff8403456b870961e7758",
       "line_count": 5,
-      "size_bytes": 239
+      "size_bytes": 234
     },
     "fixtures/aete/signal-based/expected/aete-signal-report.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.aete.signal-based.expected.aete-signal-report.shape.json.json",
-      "sha256": "c242de9f9220f258230260b1aa789e230a9af0ca3d5868462147689321b9a4a1",
+      "sha256": "5fd38318b05c96567da85ed0d20aef3b51905fea9fd5be27c18e30adba5931dd",
       "line_count": 27,
-      "size_bytes": 653
+      "size_bytes": 626
     },
     "fixtures/aggregation/retry-matrix-shard/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.aggregation.retry-matrix-shard.README.md.json",
-      "sha256": "412b57cbb2259a9327225b9694f9af96ace1dada001fc8e954031bd50b1aefc1",
+      "sha256": "3ccccd8960e6799f4cae766414389398a470f1968a8a5d76d47816045036f920",
       "line_count": 5,
-      "size_bytes": 295
+      "size_bytes": 290
     },
     "fixtures/aggregation/retry-matrix-shard/expected/retry-aggregation.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.aggregation.retry-matrix-shard.expected.retry-aggregation.shape.json.json",
-      "sha256": "e159ec6278588a9dc88b008e1ecc99ccac7598973c72ea3e5159d13ec72d7454",
+      "sha256": "064ae659b68ef3852baf8ad108d6fdd2c72bbc7f44715c9b1f3367fc032152af",
       "line_count": 41,
-      "size_bytes": 823
+      "size_bytes": 782
     },
     "fixtures/api/contract/authz-leak-denied/fixture.json": {
       "role": "fixture",
@@ -2280,16 +2280,16 @@
     "fixtures/doctor/taxonomy/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.doctor.taxonomy.README.md.json",
-      "sha256": "e1d74bcf5d4a0a2fe52c96fac18f1df7a9e19cf2fa85d5f285c48d65349f70d6",
+      "sha256": "aa4b97674e535e29ac7c6f776323e35a83f18bb8461c5253988285acf1bfad92",
       "line_count": 5,
-      "size_bytes": 276
+      "size_bytes": 271
     },
     "fixtures/doctor/taxonomy/expected/doctor-report.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.doctor.taxonomy.expected.doctor-report.shape.json.json",
-      "sha256": "256a91946d5d738061fe1da85bf9178180814efe2c2f16608f960c40350ea0be",
+      "sha256": "75b886884b0ec912aa43798803a26440ffb3a034661bee210fd5bef1266f8eec",
       "line_count": 32,
-      "size_bytes": 685
+      "size_bytes": 653
     },
     "fixtures/e2e/admin-governance/fixture.json": {
       "role": "fixture",
@@ -3323,107 +3323,107 @@
     "fixtures/golden/p0a-minimal/dq-01-sha-missing/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-01-sha-missing.github-context.json.json",
-      "sha256": "f3cfe66184ccc16c7c3ce5435077f57e74520685bc5f1240a84761ff37412b1d",
+      "sha256": "be279d3642c0e065690918844c6717d7e77033290b68a7abe3576c45c0d9213e",
       "line_count": 13,
-      "size_bytes": 355
+      "size_bytes": 342
     },
     "fixtures/golden/p0a-minimal/dq-02-junit-malformed/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-02-junit-malformed.github-context.json.json",
-      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "sha256": "ac2e4c43ad77d959e6839bf49a832d84648df0f2b754fc5e620b91ec9fd0ba3a",
       "line_count": 14,
-      "size_bytes": 416
+      "size_bytes": 402
     },
     "fixtures/golden/p0a-minimal/dq-03-artifact-missing/artifact-refs.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-03-artifact-missing.artifact-refs.json.json",
-      "sha256": "f1f818dd789210f0432b6741e46b47ba6117526efd67712842b9808fc3572135",
+      "sha256": "ca62abce3ce89bf17d0bfa5a7fe99c39341deb4cecbd095f57b7db402a1997e2",
       "line_count": 10,
-      "size_bytes": 195
+      "size_bytes": 185
     },
     "fixtures/golden/p0a-minimal/dq-03-artifact-missing/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-03-artifact-missing.github-context.json.json",
-      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "sha256": "ac2e4c43ad77d959e6839bf49a832d84648df0f2b754fc5e620b91ec9fd0ba3a",
       "line_count": 14,
-      "size_bytes": 416
+      "size_bytes": 402
     },
     "fixtures/golden/p0a-minimal/dq-08-coverage-only/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-08-coverage-only.github-context.json.json",
-      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "sha256": "ac2e4c43ad77d959e6839bf49a832d84648df0f2b754fc5e620b91ec9fd0ba3a",
       "line_count": 14,
-      "size_bytes": 416
+      "size_bytes": 402
     },
     "fixtures/golden/p0a-minimal/dq-15-record-missing/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-15-record-missing.github-context.json.json",
-      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "sha256": "ac2e4c43ad77d959e6839bf49a832d84648df0f2b754fc5e620b91ec9fd0ba3a",
       "line_count": 14,
-      "size_bytes": 416
+      "size_bytes": 402
     },
     "fixtures/golden/p0a-minimal/dq-15-record-missing/record-control.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.dq-15-record-missing.record-control.json.json",
-      "sha256": "902107f96ee8eb4b890cdc8679f2f8e609eb093772a71a819b87e7b0076b0f64",
+      "sha256": "4fe4835493bf9f4efdfc3ff31f0a7a05e50ec2d1875d5341ba818cc70a19e371",
       "line_count": 3,
-      "size_bytes": 38
+      "size_bytes": 35
     },
     "fixtures/golden/p0a-minimal/expected/HATE-run.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.HATE-run.json.json",
-      "sha256": "b16a53d6ec0bec2d1b4fdfdf84cb3e458357e9f901463b5c1fc2756144f929ff",
+      "sha256": "67a2cf6c025c443e4040f89389ff3733b66926a0685f58f7324b7b01a5c9e6ca",
       "line_count": 27,
-      "size_bytes": 857
+      "size_bytes": 830
     },
     "fixtures/golden/p0a-minimal/expected/artifact-manifest.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.artifact-manifest.json.json",
-      "sha256": "db124ec4202d3f088f75f8caf1a28118e391baa69baa4006414c72b95b967437",
+      "sha256": "1cd9690805fc705732d42f7a533000f9164c3c80b75453dd4e9397dd49fb5a65",
       "line_count": 33,
-      "size_bytes": 1018
+      "size_bytes": 985
     },
     "fixtures/golden/p0a-minimal/expected/precheck-decision.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.precheck-decision.json.json",
-      "sha256": "37e2220b78f081742b41bb0c045b4b2ddd6750f731140d84c571bd2d7846b02f",
+      "sha256": "764664a872c8c914cdfd7f6af76bdc5727bdaa00fae4bbeca5b461b92d6756eb",
       "line_count": 26,
-      "size_bytes": 858
+      "size_bytes": 832
     },
     "fixtures/golden/p0a-minimal/expected/record.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.record.json.json",
-      "sha256": "92f21dc37b4382ba53bdfe5a244314e3c33a4c7794b3e26ea06838c0a7d94f68",
+      "sha256": "8f04c9d02d29c7522844fd1cc2fa0ef5315c25b1f90121e1e96ab3ed72c9f9fc",
       "line_count": 31,
-      "size_bytes": 1013
+      "size_bytes": 982
     },
     "fixtures/golden/p0a-minimal/expected/summary.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.expected.summary.md.json",
-      "sha256": "92b47b3eb5c81f2bf24a3f02b041dd4fa7133313a4e577c241cfb77847625b68",
+      "sha256": "7792e1ff2e0cb7a52655013516a385f74ab195022eabe6aa3f6c91ddbe8a4a3c",
       "line_count": 11,
-      "size_bytes": 427
+      "size_bytes": 416
     },
     "fixtures/golden/p0a-minimal/input/github-context.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0a-minimal.input.github-context.json.json",
-      "sha256": "8417dbc848a3de3a073df71e703e6929ce597de473976d1aea95f67e9294fccd",
+      "sha256": "ac2e4c43ad77d959e6839bf49a832d84648df0f2b754fc5e620b91ec9fd0ba3a",
       "line_count": 14,
-      "size_bytes": 416
+      "size_bytes": 402
     },
     "fixtures/golden/p0b-qeg-minimal/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.README.md.json",
-      "sha256": "fdef8a8820babd0678638b6eb60aeb7c602c3e75e100a6d8a2c9a79267b80f62",
+      "sha256": "615f4d0072cca619b661097739f295fd46f162d990aebecde4bc10b6de9e0c96",
       "line_count": 32,
-      "size_bytes": 1144
+      "size_bytes": 1112
     },
     "fixtures/golden/p0b-qeg-minimal/expected/diff-risk-test.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.expected.diff-risk-test.json.json",
-      "sha256": "e930067936ae46d63501186d8ea9f01acf23bfca159308855411b5a26664a3a9",
+      "sha256": "72f0053bc121717ef495bd2b9fb0c3a72efd514f6722bc1ef8e185f8c7e9ef31",
       "line_count": 81,
-      "size_bytes": 1729
+      "size_bytes": 1648
     },
     "fixtures/golden/p0b-qeg-minimal/expected/evidence-map.json": {
       "role": "fixture",
@@ -3435,9 +3435,9 @@
     "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.expected.qeg-bundle.json.json",
-      "sha256": "8541dde87928a6e0578378a0085803b4a977f86a44c12127d24d80fc3f2af3e6",
+      "sha256": "f7be6d573ed6a979fad76913498c0eca10059e5d47ffb0efb08763b75aefaa61",
       "line_count": 342,
-      "size_bytes": 8552
+      "size_bytes": 8210
     },
     "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json": {
       "role": "fixture",
@@ -3449,44 +3449,44 @@
     "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-summary.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.expected.qeg-export-summary.md.json",
-      "sha256": "ac35ce81898f52db9393ec318c7931418d481acd7aa74ecf1c953cb443e46ad0",
+      "sha256": "1e0c4ba280690362d0af9e28bb59761fc3c1c43bf1721af10e71e76e5630f518",
       "line_count": 17,
-      "size_bytes": 416
+      "size_bytes": 399
     },
     "fixtures/golden/p0b-qeg-minimal/input/diff-risk-test.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.diff-risk-test.json.json",
-      "sha256": "cb9fa07d957fe11d07eb085642d2f0e104593ed573153f1a76eb99a39d4800d0",
+      "sha256": "56280678cb034eecead96e7de84c8eac027722636c5f7ca8daabb9ea33fcaa01",
       "line_count": 59,
-      "size_bytes": 1529
+      "size_bytes": 1471
     },
     "fixtures/golden/p0b-qeg-minimal/input/p0a/HATE-run.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.p0a.HATE-run.json.json",
-      "sha256": "ee2d4d98a1e6f5f0c06e5d1ed956c9bfe36c4ad68f7c166d70df71ead6800318",
+      "sha256": "624272a2b63427d722b9c0477dbb20ba12e486a0292155229158e90ca56134bd",
       "line_count": 27,
-      "size_bytes": 855
+      "size_bytes": 829
     },
     "fixtures/golden/p0b-qeg-minimal/input/p0a/artifact-manifest.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.p0a.artifact-manifest.json.json",
-      "sha256": "5b65ce346e0b106ce0246898736981943fb0204e077f215846eff0b09d476b2d",
+      "sha256": "1affde5a7fdd2b2b11f5a909dd26d432b347a9678d2febaa16571b58b8ca4ffd",
       "line_count": 8,
-      "size_bytes": 199
+      "size_bytes": 192
     },
     "fixtures/golden/p0b-qeg-minimal/input/p0a/precheck-decision.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.p0a.precheck-decision.json.json",
-      "sha256": "4d91c348a584900d5c1e4df3df442c6309bf5aadc01067445c42a8386c77f671",
+      "sha256": "fbcb3cb19079c9ef58b0d3744656797d1f59db47295d58a240d4e06aa976055e",
       "line_count": 26,
-      "size_bytes": 818
+      "size_bytes": 793
     },
     "fixtures/golden/p0b-qeg-minimal/input/p0a/record.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.input.p0a.record.json.json",
-      "sha256": "e35bdf0708c4cbcbcb20d01d4819c26f93aa5b1b7334334d0ca44aadabbf3db0",
+      "sha256": "9f0a2b215e260bc0c6b6907a0ce6ff894629a4aac21e50a4e157547ade7164de",
       "line_count": 31,
-      "size_bytes": 1070
+      "size_bytes": 1040
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-input/diff-risk-test.json": {
       "role": "fixture",
@@ -3505,9 +3505,9 @@
     "fixtures/golden/p0b-qeg-minimal/test-missing-input/p0a/precheck-decision.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-input.p0a.precheck-decision.json.json",
-      "sha256": "4d91c348a584900d5c1e4df3df442c6309bf5aadc01067445c42a8386c77f671",
+      "sha256": "fbcb3cb19079c9ef58b0d3744656797d1f59db47295d58a240d4e06aa976055e",
       "line_count": 26,
-      "size_bytes": 818
+      "size_bytes": 793
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-input/p0a/record.json": {
       "role": "fixture",
@@ -3519,16 +3519,16 @@
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/diff-risk-test.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.diff-risk-test.json.json",
-      "sha256": "b70751bf71a68b81623dd26efa82639b29b85d65501759d9b6e43b2ed00001b6",
+      "sha256": "67942d3b9d19f3097609a1b4ff33730f56ca328418b9fe42f3c07b02cae72363",
       "line_count": 79,
-      "size_bytes": 1688
+      "size_bytes": 1610
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/HATE-run.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.HATE-run.json.json",
-      "sha256": "ee2d4d98a1e6f5f0c06e5d1ed956c9bfe36c4ad68f7c166d70df71ead6800318",
+      "sha256": "624272a2b63427d722b9c0477dbb20ba12e486a0292155229158e90ca56134bd",
       "line_count": 27,
-      "size_bytes": 855
+      "size_bytes": 829
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/artifact-manifest.json": {
       "role": "fixture",
@@ -3540,9 +3540,9 @@
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/precheck-decision.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.precheck-decision.json.json",
-      "sha256": "4d91c348a584900d5c1e4df3df442c6309bf5aadc01067445c42a8386c77f671",
+      "sha256": "fbcb3cb19079c9ef58b0d3744656797d1f59db47295d58a240d4e06aa976055e",
       "line_count": 26,
-      "size_bytes": 818
+      "size_bytes": 793
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/record.json": {
       "role": "fixture",
@@ -3554,72 +3554,72 @@
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/diff-risk-test.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.diff-risk-test.json.json",
-      "sha256": "26b5ad8542aa287bfbdde07c4a8481a84cce9cb6c75491519af2f41401280a6c",
+      "sha256": "ce98cbd239d356e7a8196439ab99762d9d655bd2134e5e2267aacf7f401ae26e",
       "line_count": 79,
-      "size_bytes": 1690
+      "size_bytes": 1611
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/evidence-map.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.evidence-map.json.json",
-      "sha256": "fb73f026bc2ada3d93195d70e64b6dc67aa08af73c0eaa243cb2b6d62a8b0b9f",
+      "sha256": "0325ea6fda383f0c39c3d3a251e1b075c360693d40ac645be763fb25cf9fe32a",
       "line_count": 87,
-      "size_bytes": 2134
+      "size_bytes": 2047
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-bundle.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.qeg-bundle.json.json",
-      "sha256": "c26c9b6877412765224d57265c2897a68fe45bf9105e5b212536ba17ecc85855",
+      "sha256": "8f5d68b5ee1623b32efe5df6e491fab4eed94a9d94dbec76baac8fa0774b8eff",
       "line_count": 283,
-      "size_bytes": 7006
+      "size_bytes": 6723
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-export-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.qeg-export-report.json.json",
-      "sha256": "3096f23b7f5cfdd2fd24607d896a8d19e23104ab75124d6fe897daaa63ede709",
+      "sha256": "46534385a744f7adf04ef48dfbf7467e54075db389bc583938899e5edf2721a3",
       "line_count": 49,
-      "size_bytes": 1309
+      "size_bytes": 1260
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-export-summary.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.qeg-export-summary.md.json",
-      "sha256": "2208c929fc4172d1b2ad6b74700564d340b2bd038b1d1b932730ff21460294cd",
+      "sha256": "be741bbe6eea7ea88a3c57900453405950d33468372ababcd6d73595f5f69e79",
       "line_count": 17,
-      "size_bytes": 416
+      "size_bytes": 399
     },
     "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/risk-debt-register.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.risk-debt-register.json.json",
-      "sha256": "c83476440fb2c91990fa6d992df118bb36f7f74e34bf8d64d420d8204cbdf3f0",
+      "sha256": "794ef5b83921bc624e045fa88f0722e84fca9149d7387b9025f9419dcd8ed5d4",
       "line_count": 17,
-      "size_bytes": 405
+      "size_bytes": 388
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/diff-risk-test.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.diff-risk-test.json.json",
-      "sha256": "2c888962a1c21c0a88865126aa89d591a93c65791cf1303321d6a42dda429524",
+      "sha256": "c0a01fcfb84b32ba8e9e3169dd8cee7ab0357f753d44a401533b78b1b75eb9ff",
       "line_count": 85,
-      "size_bytes": 1826
+      "size_bytes": 1742
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/HATE-run.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.HATE-run.json.json",
-      "sha256": "ee2d4d98a1e6f5f0c06e5d1ed956c9bfe36c4ad68f7c166d70df71ead6800318",
+      "sha256": "624272a2b63427d722b9c0477dbb20ba12e486a0292155229158e90ca56134bd",
       "line_count": 27,
-      "size_bytes": 855
+      "size_bytes": 829
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/artifact-manifest.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.artifact-manifest.json.json",
-      "sha256": "d101ca33da1909a46bc31822e28949af117f425a85d3a41280756ec8342e3ebe",
+      "sha256": "fc8ba82f951cdd15730c15ef045fdc37e683478b4bf11f066cdadd0a8d53a6f3",
       "line_count": 23,
-      "size_bytes": 668
+      "size_bytes": 646
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/precheck-decision.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.precheck-decision.json.json",
-      "sha256": "4d91c348a584900d5c1e4df3df442c6309bf5aadc01067445c42a8386c77f671",
+      "sha256": "fbcb3cb19079c9ef58b0d3744656797d1f59db47295d58a240d4e06aa976055e",
       "line_count": 26,
-      "size_bytes": 818
+      "size_bytes": 793
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/record.json": {
       "role": "fixture",
@@ -3631,485 +3631,485 @@
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/diff-risk-test.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.diff-risk-test.json.json",
-      "sha256": "60e538a6ac61bcb431175626c51a22dffc765db58ef256de326b244ee208a5f2",
+      "sha256": "554ec4592775f7a2725496351a840b1a2d1b633732d8c5d7a883fa12110968c7",
       "line_count": 85,
-      "size_bytes": 1828
+      "size_bytes": 1743
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/evidence-map.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.evidence-map.json.json",
-      "sha256": "e9121a344c6af381b491f1eed15eec01abef4687111ad5415cf3f81c75bca855",
+      "sha256": "2b48ab4739baf53a2b5881866cf700b849ae504c7cd33932ab5081aaa240813d",
       "line_count": 101,
-      "size_bytes": 2647
+      "size_bytes": 2546
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-bundle.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.qeg-bundle.json.json",
-      "sha256": "3ede2b64936ee3e47101eab541fbde20b53b43c9cbb9dc55b8d220d918b7ad2c",
+      "sha256": "da7b451635b102f7778b2b655d6d6d30b2aaa97923772f080165215ece856236",
       "line_count": 299,
-      "size_bytes": 7558
+      "size_bytes": 7259
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-export-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.qeg-export-report.json.json",
-      "sha256": "c24d3c4f6fc5133b1efe4b434eff42793765865be8e44871dfac20e39d4bfa28",
+      "sha256": "2db55079e486610003fe73b7dbe0c95282ed68c082d8df7329a9d313fee93fba",
       "line_count": 77,
-      "size_bytes": 2307
+      "size_bytes": 2230
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-export-summary.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.qeg-export-summary.md.json",
-      "sha256": "2208c929fc4172d1b2ad6b74700564d340b2bd038b1d1b932730ff21460294cd",
+      "sha256": "be741bbe6eea7ea88a3c57900453405950d33468372ababcd6d73595f5f69e79",
       "line_count": 17,
-      "size_bytes": 416
+      "size_bytes": 399
     },
     "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/risk-debt-register.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.risk-debt-register.json.json",
-      "sha256": "c83476440fb2c91990fa6d992df118bb36f7f74e34bf8d64d420d8204cbdf3f0",
+      "sha256": "794ef5b83921bc624e045fa88f0722e84fca9149d7387b9025f9419dcd8ed5d4",
       "line_count": 17,
-      "size_bytes": 405
+      "size_bytes": 388
     },
     "fixtures/golden/p1a-trust-minimal/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.README.md.json",
-      "sha256": "0e77ec48650f3c9df829d78f37ba519eec7854581b3cfdfbf521370d61f6403a",
+      "sha256": "e239ea99398b565509aa898f31bf45b4f7aefc866a5ff6b47e8fa380164ba4e0",
       "line_count": 34,
-      "size_bytes": 1670
+      "size_bytes": 1636
     },
     "fixtures/golden/p1a-trust-minimal/compare-expected/compare-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.compare-expected.compare-report.json.json",
-      "sha256": "73a4635b623937ce08bf777f519d3e2dfe89ced5098dbeb04d269100c163ccad",
+      "sha256": "e3388ed99afc1ca8b83e9d5f77662a831df30a094a231507966468501cb79b70",
       "line_count": 22,
-      "size_bytes": 676
+      "size_bytes": 654
     },
     "fixtures/golden/p1a-trust-minimal/doctor-expected/adapter-capability-manifest.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.doctor-expected.adapter-capability-manifest.json.json",
-      "sha256": "ee49cdf9fecc6114f1842760cd9cfe2c78018ec699dc3a2b141a1865ff2cc580",
+      "sha256": "24ddcffdd635ec53dab4d951bb5371d915ab940fe4cd5c95b7bcc61e60f284dd",
       "line_count": 46,
-      "size_bytes": 1078
+      "size_bytes": 1032
     },
     "fixtures/golden/p1a-trust-minimal/doctor-expected/adapter-conformance-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.doctor-expected.adapter-conformance-report.json.json",
-      "sha256": "bfeb990bdbf0b93bfa542221d29be133ee837eb5c9581a7bb5c1bd60c7e784d5",
+      "sha256": "91217117330a37a99b803c7ea7f85960f48e226fbf307365c2db82410af98b56",
       "line_count": 71,
-      "size_bytes": 1578
+      "size_bytes": 1507
     },
     "fixtures/golden/p1a-trust-minimal/doctor-expected/doctor-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.doctor-expected.doctor-report.json.json",
-      "sha256": "de8d55f5ad325902f38ff39867d55b925753be2853018629b0db7bfaf76d43e2",
+      "sha256": "34763615264fac2833eca092b9c6de50038d285a3a5ed819f11f24f90e1f481e",
       "line_count": 25,
-      "size_bytes": 556
+      "size_bytes": 531
     },
     "fixtures/golden/p1a-trust-minimal/expected/adapter-capability-manifest.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.adapter-capability-manifest.json.json",
-      "sha256": "ee49cdf9fecc6114f1842760cd9cfe2c78018ec699dc3a2b141a1865ff2cc580",
+      "sha256": "24ddcffdd635ec53dab4d951bb5371d915ab940fe4cd5c95b7bcc61e60f284dd",
       "line_count": 46,
-      "size_bytes": 1078
+      "size_bytes": 1032
     },
     "fixtures/golden/p1a-trust-minimal/expected/adapter-conformance-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.adapter-conformance-report.json.json",
-      "sha256": "d7d82d598ec221d5ab14be09ba9e8fe243f7e275b55726a38a2a500408b3e5b1",
+      "sha256": "4257f97457fb4e9a89bef3e7af9de582cadb9d2db1f2d331e358004b1641a2bf",
       "line_count": 71,
-      "size_bytes": 1575
+      "size_bytes": 1504
     },
     "fixtures/golden/p1a-trust-minimal/expected/aete-score.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.aete-score.json.json",
-      "sha256": "59f44927242661aa3e481bdb867c92c7802d3d6ef604401bcf5835fd0de9f4a3",
+      "sha256": "56760591d23c45f88b173ba742425ae9f8951005200f1bc8499566a87973437a",
       "line_count": 69,
-      "size_bytes": 1991
+      "size_bytes": 1922
     },
     "fixtures/golden/p1a-trust-minimal/expected/artifact-resolver-map.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.artifact-resolver-map.json.json",
-      "sha256": "c478b061fcb3af4e64315a83da9883301c998e0da9feeeb26a6b5c418b62a1b3",
+      "sha256": "936854dd27871cfa9dcaac6b2e9a4dfd26566b29391038a4cea7a2c90fcd0d9d",
       "line_count": 69,
-      "size_bytes": 1924
+      "size_bytes": 1855
     },
     "fixtures/golden/p1a-trust-minimal/expected/canonical-identity-index.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.canonical-identity-index.json.json",
-      "sha256": "55dbf9b2281c33bce9c10cdbe6592d78c7c2ffd5333b0afc0efb7825e4466978",
+      "sha256": "bff6f9a8b7808285f5e6891981801dc114086da88cc4d63d3895983609975350",
       "line_count": 38,
-      "size_bytes": 994
+      "size_bytes": 956
     },
     "fixtures/golden/p1a-trust-minimal/expected/doctor-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.doctor-report.json.json",
-      "sha256": "7f660560f3033d2b0afefe55f058b339e3612f3b4bdc22480148231d6ab86d6d",
+      "sha256": "c092212f1838474fd21aba56059127ab514333cb941d9bf3ae33c231f1bd631e",
       "line_count": 13,
-      "size_bytes": 281
+      "size_bytes": 268
     },
     "fixtures/golden/p1a-trust-minimal/expected/retry-aggregation.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.retry-aggregation.json.json",
-      "sha256": "269dd2673cd6b8ef5f794e010ccfe9884112d9b26143d6c0d99c8bb5dda9dc4e",
+      "sha256": "ad65a8e3ab549a6f835ac540f03dc9cff9231f21b35bcf06801ceb76d88cc387",
       "line_count": 38,
-      "size_bytes": 850
+      "size_bytes": 812
     },
     "fixtures/golden/p1a-trust-minimal/expected/trust-summary.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.expected.trust-summary.md.json",
-      "sha256": "cb8febd500ddd66f07bf034ba897ef52b879a3c3715006e51213fdac8239cd6e",
+      "sha256": "b616bbbaaf3261542e82c61fdd91292e53db085abdd2073acf949613311c388a",
       "line_count": 10,
-      "size_bytes": 275
+      "size_bytes": 265
     },
     "fixtures/golden/p1a-trust-minimal/explain-expected/explain-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.explain-expected.explain-report.json.json",
-      "sha256": "f52a4cc5c7acda9a13ae229269267650d4cc7ab842a4f63b3c00f39a18ae117b",
+      "sha256": "6c2817becb9c59ca24aad4742ed576f6381ad052f352a98b6d51e9b257ca1bb6",
       "line_count": 36,
-      "size_bytes": 1172
+      "size_bytes": 1136
     },
     "fixtures/golden/p1a-trust-minimal/recommend-expected/recommendation-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.recommend-expected.recommendation-report.json.json",
-      "sha256": "1d75c46a70a270b285a9b98cb6e35c10f558e5a5a1cae086f1f1622daadd067c",
+      "sha256": "611cd522df5c05c6f263be85c422c9bbab38c1086fc1ed7e2b5e76aafd7fd5af",
       "line_count": 37,
-      "size_bytes": 1364
+      "size_bytes": 1327
     },
     "fixtures/golden/p1a-trust-minimal/replay-expected/aete-score.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.aete-score.json.json",
-      "sha256": "6687a8112093b36319f6a5991efa386fe1a790c0f1f48469117ae2c17fe70449",
+      "sha256": "8e105d859a4e2f085b692eae8bcaf2ccd9ae232d007880eaa465ca6f9c8b3204",
       "line_count": 69,
-      "size_bytes": 2006
+      "size_bytes": 1937
     },
     "fixtures/golden/p1a-trust-minimal/replay-expected/artifact-resolver-map.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.artifact-resolver-map.json.json",
-      "sha256": "c478b061fcb3af4e64315a83da9883301c998e0da9feeeb26a6b5c418b62a1b3",
+      "sha256": "936854dd27871cfa9dcaac6b2e9a4dfd26566b29391038a4cea7a2c90fcd0d9d",
       "line_count": 69,
-      "size_bytes": 1924
+      "size_bytes": 1855
     },
     "fixtures/golden/p1a-trust-minimal/replay-expected/canonical-identity-index.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.canonical-identity-index.json.json",
-      "sha256": "f4c53ae54966969a5a5ba3f6c5f661d0e6b4b4f749df3501007eb88d45b7cda6",
+      "sha256": "f2bd8fe979663aef1cd9201c66e211b9230ea73086e61c631717ab1f703fa350",
       "line_count": 22,
-      "size_bytes": 535
+      "size_bytes": 513
     },
     "fixtures/golden/p1a-trust-minimal/replay-expected/doctor-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.doctor-report.json.json",
-      "sha256": "de8d55f5ad325902f38ff39867d55b925753be2853018629b0db7bfaf76d43e2",
+      "sha256": "34763615264fac2833eca092b9c6de50038d285a3a5ed819f11f24f90e1f481e",
       "line_count": 25,
-      "size_bytes": 556
+      "size_bytes": 531
     },
     "fixtures/golden/p1a-trust-minimal/replay-expected/replay-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.replay-report.json.json",
-      "sha256": "d4777e1f7fc02a8bdf3065e092e3890725b0e16a4f3f00fca78aba48bf4146d9",
+      "sha256": "c48259ea6b6f2ee51ed096eb7389370858ecec3011634150589b126bc19f7702",
       "line_count": 14,
-      "size_bytes": 529
+      "size_bytes": 515
     },
     "fixtures/golden/p1a-trust-minimal/replay-expected/retry-aggregation.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.retry-aggregation.json.json",
-      "sha256": "1e180466020d96b81c968ea25605b2f58ed77bd5e77e08a769ebfa9efceef224",
+      "sha256": "f6c20a10dbde5bc7fab15bb53fcce00303ead8ff01b9f91e7c36330f5baf9770",
       "line_count": 25,
-      "size_bytes": 527
+      "size_bytes": 502
     },
     "fixtures/golden/p1a-trust-minimal/replay-expected/trust-summary.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1a-trust-minimal.replay-expected.trust-summary.md.json",
-      "sha256": "4a8fd7db54809ae7cb96391589825b7fbea2584acdb817d17cf61e1bb52670b1",
+      "sha256": "44d1ec1594ac3c14b2ece0c393eac47e2c5df9b77c330a73b03c63a436b95812",
       "line_count": 10,
-      "size_bytes": 277
+      "size_bytes": 267
     },
     "fixtures/golden/p1b-workflow-minimal/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.README.md.json",
-      "sha256": "fe48c4825bd4a0e9ff28ed636521d19ed6519c243479c93ceda9d19cfe4d44fb",
+      "sha256": "2c88c4836ccc4325da6408517fdff19739ef8c3c53ce1bb58857fe080e47a2e6",
       "line_count": 9,
-      "size_bytes": 459
+      "size_bytes": 450
     },
     "fixtures/golden/p1b-workflow-minimal/expected/requirement-evidence-alignment.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.requirement-evidence-alignment.json.json",
-      "sha256": "0db92bab85de21ed93327b134da0dbbe0235f6fc82f46b7c7bb3c21f0e9e668f",
+      "sha256": "63062ea65eaae268b55ad106986b1950a08cf9ff6483f489089831b8634709e5",
       "line_count": 51,
-      "size_bytes": 1691
+      "size_bytes": 1640
     },
     "fixtures/golden/p1b-workflow-minimal/expected/shipyard-run-evidence.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.shipyard-run-evidence.json.json",
-      "sha256": "b4ee8a9bf96bb1977fc357e8cce8be5bd137b97e88d3b245c6396358f0fb4a95",
+      "sha256": "3ff18ca8ac8917fc439b94e1698fe3779d4921e4a5ed691f2cdc27378ce2e689",
       "line_count": 42,
-      "size_bytes": 1336
+      "size_bytes": 1294
     },
     "fixtures/golden/p1b-workflow-minimal/expected/workflow-acceptance-record.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.workflow-acceptance-record.json.json",
-      "sha256": "e02d19706dabc423481fb231eb1918f08f8c8fbd2af103d0fe85bf15e9a6f41a",
+      "sha256": "816b5b67beb70a06b29778950665e0e9127e33f699ddb050430240bacc6fc5c9",
       "line_count": 51,
-      "size_bytes": 1449
+      "size_bytes": 1398
     },
     "fixtures/golden/p1b-workflow-minimal/expected/workflow-birdseye-map.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.workflow-birdseye-map.json.json",
-      "sha256": "8f2f5e834057023c55912fc93609e51da34467f9579fb09231546fb5258a6f5d",
+      "sha256": "e806bc763f2c4242c7b1f43f36ef63f71f9f09bda8cdfd719d94a221e55abc12",
       "line_count": 55,
-      "size_bytes": 1285
+      "size_bytes": 1230
     },
     "fixtures/golden/p1b-workflow-minimal/expected/workflow-docs-stale.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.workflow-docs-stale.json.json",
-      "sha256": "ed7c532510a5440ed91760f5ef1eb1e5c1811bbc9f7460cc5c7a8250f5d1e67d",
+      "sha256": "ef54749a13deb08f7994fcf0575c90a7d0d6712bc2e50184062868712041e94c",
       "line_count": 44,
-      "size_bytes": 1699
+      "size_bytes": 1655
     },
     "fixtures/golden/p1b-workflow-minimal/expected/workflow-task-seed.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p1b-workflow-minimal.expected.workflow-task-seed.json.json",
-      "sha256": "957480a309618b096057c4dac364272353aceb94d10299cbeacd2e159a6c6c94",
+      "sha256": "ace7651128cf1fec3d5923a9d3ceaef55d66351ef05aff2f40f53dc544777701",
       "line_count": 34,
-      "size_bytes": 1114
+      "size_bytes": 1080
     },
     "fixtures/golden/p2p3-product-readiness-minimal/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.README.md.json",
-      "sha256": "fb98b0332f2d37dc0bfa041a5487f16e2066ed68ec07c2bf0a0aebd7631bd069",
+      "sha256": "eda2241ad5bf0645bbd39ee4ccd9f7babd7980177fe580d351ba6d9655e88583",
       "line_count": 8,
-      "size_bytes": 439
+      "size_bytes": 431
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/accessibility-localization-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.accessibility-localization-report.json.json",
-      "sha256": "5fa7bb9013d9dd3ffc7e05fee5a0a85b8f729727f238a6a2e4cefa57f9c829fa",
+      "sha256": "3c063532edb60dd894ccc13be27587b081960d09d84a0085143c9204671c84a3",
       "line_count": 28,
-      "size_bytes": 642
+      "size_bytes": 614
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/adoption-health-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.adoption-health-report.json.json",
-      "sha256": "cf6ebef029a2473808a73fce01cf153aa5a29a3a11e61a44a1d9baaa215b8deb",
+      "sha256": "873d756c1917d0a2698066d477cb80a50756d330a586c75ff944dea22e4b3641",
       "line_count": 58,
-      "size_bytes": 1445
+      "size_bytes": 1387
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/artifact-budget-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.artifact-budget-report.json.json",
-      "sha256": "0ec2ba0356c2a7b7c40625b390b3c7d772af7d6db7609f4a1aad3db0ac6ea915",
+      "sha256": "3c8221dcbda8c96d79b6c65ad286c513f27ba245a315b788de31a3cb841ec509",
       "line_count": 82,
-      "size_bytes": 2304
+      "size_bytes": 2222
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/attestation-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.attestation-report.json.json",
-      "sha256": "c820af5611cc5a53a0b995b784e2e06810ccc329c8ec1b8e8e22e3d8f8c4675e",
+      "sha256": "6bc6f5c1f0f47e7b4db59e72158e1ab7466d743acedfbcb666e3d2d00e5f4437",
       "line_count": 60,
-      "size_bytes": 2004
+      "size_bytes": 1944
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/audit-assurance-pack.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.audit-assurance-pack.json.json",
-      "sha256": "af4d21209ac31ffe4f3e9ce5ea8c2019a23282a0df55f4f181014c0eba6502da",
+      "sha256": "e7a1daed794e0cc6787e8ea6706d8413206b90dde2c77dac07b8d128c73190e1",
       "line_count": 709,
-      "size_bytes": 19771
+      "size_bytes": 19062
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/audit-event-log.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.audit-event-log.json.json",
-      "sha256": "6f9ba51da7de52c274c9fffa0df58366a28ac7450e47e43dbab9a6439bc9a03b",
+      "sha256": "d37c59a107bd52317507db554f90b5fd075c5d8d49de7a6a98360feb5e6a7a16",
       "line_count": 173,
-      "size_bytes": 5111
+      "size_bytes": 4938
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/commercial-contract-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.commercial-contract-report.json.json",
-      "sha256": "b3defd9939d3e69edba55d2896c7287cc5b97e1561af98c20b7d6bb8646d5e23",
+      "sha256": "0b09477bb04da3d63897d5d5cb9c82fd2d611a47d3554d02fb7fa2197b6025b0",
       "line_count": 246,
-      "size_bytes": 7686
+      "size_bytes": 7440
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/customer-docs-index.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.customer-docs-index.json.json",
-      "sha256": "654ae3cca155a21304928ffa37f90681baea2ad32ed89bc8b53d05e1eaf1fbbc",
+      "sha256": "704b7dc1ebb4e92759caa68b96e2b6123e53cf9631602171e5181442b5315b31",
       "line_count": 56,
-      "size_bytes": 1681
+      "size_bytes": 1625
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/dashboard-view-model.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.dashboard-view-model.json.json",
-      "sha256": "0efc8fa7e3ed7845bab1cb26934d93cbfd25ffb5e4a5aa30aa569a44541ac40e",
+      "sha256": "1f4a0472eea64e109b0543e30f5305892d4abde00de596011ef3966753332815",
       "line_count": 103,
-      "size_bytes": 2408
+      "size_bytes": 2305
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/domain-model-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.domain-model-report.json.json",
-      "sha256": "e145c6682e14a9dc58ba60b56f4ddb2c5fa0d75f3f9ad82e7522da3c745bb493",
+      "sha256": "7857239c4d27d756c8e51b8f80a853ff244111deba4b62a6fda2bffb4e8dee76",
       "line_count": 281,
-      "size_bytes": 7106
+      "size_bytes": 6825
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/enterprise-connector-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.enterprise-connector-report.json.json",
-      "sha256": "f2d633cf998c7684c2b3d9b429ddc42503269c7baa0f3a5b38127f43d2f3ba4c",
+      "sha256": "3838ecb782b204d1fcd3ea4cfd7c021b85916cf21cc8a144424b0b5d429601a5",
       "line_count": 110,
-      "size_bytes": 3505
+      "size_bytes": 3395
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/enterprise-metrics-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.enterprise-metrics-report.json.json",
-      "sha256": "a185d26e391d78e51adf99620a419300b56c7c3299725f490c8c4b23283c9569",
+      "sha256": "4b2dadc6fdd2f9728946a2dbd2a54e1cf1c5fc19ce66f7adf1bccf1a8bfda3f0",
       "line_count": 64,
-      "size_bytes": 1453
+      "size_bytes": 1389
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/enterprise-risk-debt-register.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.enterprise-risk-debt-register.json.json",
-      "sha256": "78ddd6872596c03a547c0ed4b426755caf7e9de839f0065f7fa1f09e4f5e2728",
+      "sha256": "01e8890112ba8f88ed86026aa213210e2eb3b256e8fcc4ad3dd98700d393374f",
       "line_count": 11,
-      "size_bytes": 227
+      "size_bytes": 216
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/entitlement-usage-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.entitlement-usage-report.json.json",
-      "sha256": "e1f1743c52383b9a5c572548aa58c5a7994b540eafbb9da7c49153ca8b7f4982",
+      "sha256": "a0f99d2b3b16abc5b3a7a8449aeebe2c20b02add9e18305b7ca35b23db5c3bdf",
       "line_count": 36,
-      "size_bytes": 717
+      "size_bytes": 681
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/external-export-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.external-export-report.json.json",
-      "sha256": "8da82852990a1448a4a0391124637ab5802573de9bfdba2b61cd5ba166828ed0",
+      "sha256": "2be3305ed2e2b4db37e63bcbe0106cd07fc571c6e35a9098ed8e6d5938818f96",
       "line_count": 153,
-      "size_bytes": 5042
+      "size_bytes": 4889
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/governance-portfolio-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.governance-portfolio-report.json.json",
-      "sha256": "cc6e17cdc08abddf8b05f87f815b39fb8b87646f1c227eea6bfe348e0ac665e3",
+      "sha256": "8905ddb9b1f8427f36678de004be291ccdf996351362bbfa390d63ea41c6be89",
       "line_count": 51,
-      "size_bytes": 1097
+      "size_bytes": 1046
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/hosted-read-model-index.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.hosted-read-model-index.json.json",
-      "sha256": "96e7091bd021f7e62fcfb2fc417a37a5bb292cc9a46e3afe19d37e82800068e5",
+      "sha256": "34ca0625cd06f403cb4f1e1518971230af06404a006ce482cf9d7d4c8b8661f0",
       "line_count": 46,
-      "size_bytes": 1313
+      "size_bytes": 1267
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/identity-connector-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.identity-connector-report.json.json",
-      "sha256": "68a108304bf833cb6dfa30c4ec3407db0b77e1223f69fbef42da409f6c2756c6",
+      "sha256": "5de8148b30064d6888da98b87dd6ba20d57828196d2d4cc3e4e28ae462e8e040",
       "line_count": 123,
-      "size_bytes": 3356
+      "size_bytes": 3233
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/incident-slo-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.incident-slo-report.json.json",
-      "sha256": "e3eeb2a3833fa3fc0a5ddaf5fc1d35be87d59303baba0e0be0dfc29d212aefea",
+      "sha256": "1c6663d1fe6397b6d0ffae825637e600c6abc2708d24b004ebc2cef500121a2b",
       "line_count": 43,
-      "size_bytes": 1000
+      "size_bytes": 957
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/pr-annotation-export.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.pr-annotation-export.json.json",
-      "sha256": "c950d8e1a5167f183f858d2f9477ab1d9add6c03e993eb01ac1f677eb3a87a4e",
+      "sha256": "accfc84ab2f301bbce196571319d6433b121038efc110055e408fcd0c8029314",
       "line_count": 95,
-      "size_bytes": 3155
+      "size_bytes": 3060
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/privacy-quarantine-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.privacy-quarantine-report.json.json",
-      "sha256": "2610cc99fd46f8d84ad4c1d86e7d60e292afb0062bf1d2c95b20bcf507915b87",
+      "sha256": "d2916023e0c4fb326ac35b40f06b9d3a7bf1bb5a3543d655f55f4da109ab30ff",
       "line_count": 16,
-      "size_bytes": 415
+      "size_bytes": 399
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/privacy-telemetry-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.privacy-telemetry-report.json.json",
-      "sha256": "c2a9767b6302f0280a8d66f44ac80c5d2909cebb47d90ec69b9f7941b1b2821a",
+      "sha256": "55ab96b8ef48df5d6e546581fc0ddfe221148d24d221ddf9c2af4fb4cd3839c7",
       "line_count": 22,
-      "size_bytes": 451
+      "size_bytes": 429
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/product-error-catalog.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.product-error-catalog.json.json",
-      "sha256": "ad974a279a089eb0545012b8768e7a053c95444a30564a9e6aceaad654af6062",
+      "sha256": "168df061d24bc1b2b1ab7517de6230a49e1e2ff2ba8e665ac7dc2756a9d38526",
       "line_count": 46,
-      "size_bytes": 1351
+      "size_bytes": 1305
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/product-readiness-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.product-readiness-report.json.json",
-      "sha256": "d91cd717dbad88f7108358ec04abab22545f1a97a89a6dc3e7ae3813cb9dc9db",
+      "sha256": "03981787409dc6cfa88ca8ef1446ffc507fa27d2c9ad398b20c3d6704c9e76d3",
       "line_count": 155,
-      "size_bytes": 4537
+      "size_bytes": 4382
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/rbac-matrix-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.rbac-matrix-report.json.json",
-      "sha256": "70f397f94b69aaec271abaa5540ec90b496688bfe7d2434428a3a0d1c55f47d8",
+      "sha256": "ad602b5f3b983e9d11f0bde0f743a341dc35218f7ddbe80dae7b07b80dc6f580",
       "line_count": 1209,
-      "size_bytes": 29698
+      "size_bytes": 28489
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/release-candidate-pack.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.release-candidate-pack.json.json",
-      "sha256": "fbfb91e419208a8fb43cd17e6627876d66f95c881beccaa79fc23f1624c3bc22",
+      "sha256": "e44f5eae2240d672711c5496e478fbd812a65787a9e90b7bfe9845fe9fb371b1",
       "line_count": 169,
-      "size_bytes": 4671
+      "size_bytes": 4502
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/release-migration-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.release-migration-report.json.json",
-      "sha256": "7729fcdb1667ea6344b8366b06bbfab8e9ad4906f9ab1f37a7e002791263b6c5",
+      "sha256": "0ccda4900f408e234b0014381ed039c52d96546b56ceec3cb568af4449bef01c",
       "line_count": 25,
-      "size_bytes": 620
+      "size_bytes": 595
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/residency-deployment-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.residency-deployment-report.json.json",
-      "sha256": "7dcbddff59be35c0e9948749666fb0cafc7aea51cc2681de84e77798664a72bb",
+      "sha256": "bcdc80769c1984fcaa69f7098767899abf6682b8a5aaa7a3dfd7f5af55e7bb6e",
       "line_count": 244,
-      "size_bytes": 7104
+      "size_bytes": 6860
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/retention-governance-report.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.retention-governance-report.json.json",
-      "sha256": "33957534dc2d3f903fff509a94883e96aeb2ad82687fd48714b1b6a5b3db26b9",
+      "sha256": "2d2da65a8d78f8c84e616c0c776cdd8751f9279fcd8cf50754194fb8c4566cd1",
       "line_count": 160,
-      "size_bytes": 5235
+      "size_bytes": 5075
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/roadmap-decision-record.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.roadmap-decision-record.json.json",
-      "sha256": "cc1e48f212bd3ba2c6c3cfbbd6452eddd00c6ddb93f133141455027742441f10",
+      "sha256": "0e3a7c031052ac20e4a9322ff6ed414ed843ce512d5fbccd275f02361e316ea8",
       "line_count": 37,
-      "size_bytes": 914
+      "size_bytes": 877
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/security-trust-packet.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.security-trust-packet.json.json",
-      "sha256": "e599b1beaca1ab3adb70637c1bba5121da1cee060ddf5424384053ed3ccb7f71",
+      "sha256": "189790f5c21cfbf5ab5f4df53dd8ec52c9990465f4c659e50fbd50dd0655906a",
       "line_count": 287,
-      "size_bytes": 7816
+      "size_bytes": 7529
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/shipyard-run-evidence.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.shipyard-run-evidence.json.json",
-      "sha256": "06085e7e5c1387644dc5b47c36f891e067b8aeb58688e5f32ed4c8f04b7d2e93",
+      "sha256": "5c788f2b7d95c287917d372197c22cfbac8b147d4b3e3bc35c01bf156153b2ed",
       "line_count": 56,
-      "size_bytes": 1890
+      "size_bytes": 1834
     },
     "fixtures/golden/p2p3-product-readiness-minimal/expected/support-diagnostic-bundle.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p2p3-product-readiness-minimal.expected.support-diagnostic-bundle.json.json",
-      "sha256": "ed379b478b3ea948e5aadbe3eea4910589099b6f503f94ea468ec9c093bd6dde",
+      "sha256": "edc69ea08e3b3d0c60791e905c06c09d3417098b42d0a53cdf144aaee52c1e57",
       "line_count": 108,
-      "size_bytes": 3066
+      "size_bytes": 2958
     },
     "fixtures/graph/model/contract-mutation-evidence/bundle.json": {
       "role": "fixture",
@@ -4310,30 +4310,30 @@
     "fixtures/identity/canonical/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.identity.canonical.README.md.json",
-      "sha256": "4b8f89b6a649f10ef90e84c64e5dac39af93b9738dc6466445c16465e3b8db86",
+      "sha256": "d7172595bee652d145dd13759ff4d7a5c5473c6d081dff9e15562a1fd7e53ddb",
       "line_count": 5,
-      "size_bytes": 261
+      "size_bytes": 256
     },
     "fixtures/identity/canonical/expected/canonical-identity-index.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.identity.canonical.expected.canonical-identity-index.shape.json.json",
-      "sha256": "675f59e563a682ce20560f6d8bfc77df3ceea4e1caf0c6fc70794dbffcc3c808",
+      "sha256": "3107a04f209607ae94bdc20fce5a22fb2bc1d39918e5c180791e548920f27781",
       "line_count": 34,
-      "size_bytes": 708
+      "size_bytes": 674
     },
     "fixtures/manual-bb/missing-high-risk/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.manual-bb.missing-high-risk.README.md.json",
-      "sha256": "5ef9a97ce1dce58c31c4a39426e145b7c4048faf53fd9b7645bae782ab761abe",
+      "sha256": "5624a457f40e7d31851c5306a5b322953668face189423f8a0a7b32ddcda2ae6",
       "line_count": 8,
-      "size_bytes": 409
+      "size_bytes": 401
     },
     "fixtures/manual-bb/missing-high-risk/expected/manual-supplement-request.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.manual-bb.missing-high-risk.expected.manual-supplement-request.shape.json.json",
-      "sha256": "3efdf0388c8080a27630d87625f7e6fd7c3c8849d5f5aa150b68db657fc16cec",
+      "sha256": "285d3f00ee5fd78debcdd1b4765959100f94baee706062c309caeae9f44f6289",
       "line_count": 36,
-      "size_bytes": 1090
+      "size_bytes": 1054
     },
     "fixtures/migration/compatibility/canonical-mutated/fixture.json": {
       "role": "fixture",
@@ -5521,9 +5521,9 @@
     "fixtures/profile/inheritance/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.profile.inheritance.README.md.json",
-      "sha256": "403604a02c501f9beff9e0bb52208be3fd810bf75260029c12bd753b8bfbc761",
+      "sha256": "627db0ee7834fd31ccd75bfe63f5897747e35811db8a8d156cf85dad8d2785d7",
       "line_count": 7,
-      "size_bytes": 324
+      "size_bytes": 317
     },
     "fixtures/profile/inheritance/expected/profile-report.shape.json": {
       "role": "fixture",
@@ -5535,58 +5535,58 @@
     "fixtures/rand/audit-no-overwrite/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.rand.audit-no-overwrite.README.md.json",
-      "sha256": "ecd6d976ea1417b426e76e5495a281e2cb54253d05084586413ac12c0bb63f03",
+      "sha256": "fd0d7cd5fa881fc69d93bc3df0544eaad47e400e5cc1430fffc1b702b13f3690",
       "line_count": 5,
-      "size_bytes": 266
+      "size_bytes": 261
     },
     "fixtures/rand/audit-no-overwrite/input/audit_packet.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.rand.audit-no-overwrite.input.audit_packet.json.json",
-      "sha256": "74e9960d620b95335c8765608a26b1a21886732958352cea5b1c85209800a801",
+      "sha256": "c49c6782c3c40a888418e0ce6d0cd79e31abab406971824b0ecdc36405b5b090",
       "line_count": 52,
-      "size_bytes": 1618
+      "size_bytes": 1566
     },
     "fixtures/rand/requirements-packet/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.rand.requirements-packet.README.md.json",
-      "sha256": "c3c50ab2faa7a609ecd0b9f097d28e5cf76a7a5bb3fb9a58c31fcf18090bc6e0",
+      "sha256": "8d28d45dd724b75bfabb01e08aab074194387a8387865014a7cfdfc5519df3e7",
       "line_count": 5,
-      "size_bytes": 274
+      "size_bytes": 269
     },
     "fixtures/rand/requirements-packet/input/requirements_packet.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.rand.requirements-packet.input.requirements_packet.json.json",
-      "sha256": "2f6b634c0ca12e65be43b6f34d12139878a47e0d8e76be3be9972c465b773a27",
+      "sha256": "77f258418493e9784fdb7a474cf026734fc91e926fa01b244f4bf2ccbfc70431",
       "line_count": 49,
-      "size_bytes": 1697
+      "size_bytes": 1648
     },
     "fixtures/registry/adapter-registry/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.registry.adapter-registry.README.md.json",
-      "sha256": "698a24c17948a724574150a3f365439f56fad0e3e71ba868ed3fd30172be4ef2",
+      "sha256": "8af1b30399a8b71d3212c8231c9fac02502daf59c17dab2c50acd221f6798fa8",
       "line_count": 7,
-      "size_bytes": 302
+      "size_bytes": 295
     },
     "fixtures/registry/adapter-registry/expected/adapter-registry.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.registry.adapter-registry.expected.adapter-registry.shape.json.json",
-      "sha256": "bc528f0d124a697c15030678a2b7774c054a9b93b80e921eefb3c30569c57d11",
+      "sha256": "d3499ebe9cb2de3c2aa6068f7911c4bae79634ddd1fdef06b2b11ac9aa1381a5",
       "line_count": 37,
-      "size_bytes": 879
+      "size_bytes": 842
     },
     "fixtures/registry/conformance-runner/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.registry.conformance-runner.README.md.json",
-      "sha256": "f3479fe8d23a340e0574c235d341f2852776f1066912586862a207cceaec31a8",
+      "sha256": "49d9856bbec5db1ff4ed508ad0139e1d1861f71345e3fc7adb1ccfa931ae83c4",
       "line_count": 6,
-      "size_bytes": 307
+      "size_bytes": 301
     },
     "fixtures/registry/conformance-runner/expected/adapter-conformance.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.registry.conformance-runner.expected.adapter-conformance.shape.json.json",
-      "sha256": "79c2d4e59c938f00eb6e7699b46b404cd356254819522e3f81043f01218c238f",
+      "sha256": "ec91789e440ff6c928f1b432be21c9f501d93a667d6b90fa0422c7223418ef03",
       "line_count": 25,
-      "size_bytes": 565
+      "size_bytes": 540
     },
     "fixtures/release-candidate-pack/all-required-reports-pass/fixture.json": {
       "role": "fixture",
@@ -5682,30 +5682,30 @@
     "fixtures/replay/hardening/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.replay.hardening.README.md.json",
-      "sha256": "1ac7780aad0e2b695e725100aa2d3af7d7caada6fb502773e8770f0d54534cec",
+      "sha256": "c4b4dee7671c885a5ae87fd5e4246c816aaa62b4b5b929c1097b22feb555ae03",
       "line_count": 6,
-      "size_bytes": 332
+      "size_bytes": 326
     },
     "fixtures/replay/hardening/expected/replay-compare-explain-recommend.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.replay.hardening.expected.replay-compare-explain-recommend.shape.json.json",
-      "sha256": "55c05bf59d87283618fa7d7c81f5c8353d347fd6e50802f56d5dbabd6c7c9d8c",
+      "sha256": "a5f39035daa81f3af294fb14969282d0289d4002ac8d4d83ea666f8710818a03",
       "line_count": 47,
-      "size_bytes": 1166
+      "size_bytes": 1119
     },
     "fixtures/resolver/artifact-paths/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.resolver.artifact-paths.README.md.json",
-      "sha256": "e18b21cc1984e868027f8ef61a0cf6a0444d8f2cb4cdce3d921b2d3417ceba9a",
+      "sha256": "f543e0b24b5196e20b76f214895c4a54687ee37bee939359ecf2fa03e1af9d0d",
       "line_count": 5,
-      "size_bytes": 233
+      "size_bytes": 228
     },
     "fixtures/resolver/artifact-paths/expected/artifact-resolver-map.shape.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.resolver.artifact-paths.expected.artifact-resolver-map.shape.json.json",
-      "sha256": "dfc2cb48cffe368ed31a5ec8826c2be184cc6fb631066119843577d0eff7f6a9",
+      "sha256": "c6486db46b8af6feb4e78898726c6fe88d2b3a89e55d447ee0464c0d86065baa",
       "line_count": 34,
-      "size_bytes": 651
+      "size_bytes": 617
     },
     "fixtures/runtime/worker/cancel-running/fixture.json": {
       "role": "fixture",
@@ -6277,51 +6277,51 @@
     "fixtures/shipyard/no-overwrite/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.shipyard.no-overwrite.README.md.json",
-      "sha256": "4d8af5cb0b47da6c9a66ca09a055f18130fe2e2f1bb9b0dc4ec0c43d7674b200",
+      "sha256": "b0b0edcf0ae8d8ec2763cdb081f357da8c827677487e06b8211c7a8ea338da68",
       "line_count": 5,
-      "size_bytes": 285
+      "size_bytes": 280
     },
     "fixtures/shipyard/no-overwrite/input/run_system_packet.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.shipyard.no-overwrite.input.run_system_packet.json.json",
-      "sha256": "b5e60021b3fe5e3236ffc21c4b75b49e0952a3af58f3a95146146d274a1d014e",
+      "sha256": "1db9586da3da4b31eef513e82172ecd894e09f580d114d25c2ec4b75949fffe2",
       "line_count": 81,
-      "size_bytes": 2608
+      "size_bytes": 2527
     },
     "fixtures/shipyard/no-overwrite/input/worker_result.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.shipyard.no-overwrite.input.worker_result.json.json",
-      "sha256": "54b934cb2b73e217d387d5bb447ce2017d40a725169a9acad451274c1d32817b",
+      "sha256": "479c9516a58f06c799128454ea8c62247a8bb40f8adf0da7c8ee8acf372d5fbf",
       "line_count": 36,
-      "size_bytes": 958
+      "size_bytes": 922
     },
     "fixtures/shipyard/worker-result/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.shipyard.worker-result.README.md.json",
-      "sha256": "1ef5604491dc34c0d97e4064eb9383312f0b18d93cce7170bbb6a7ccb85d1427",
+      "sha256": "81d7b65165764b8d870c56e809e0145f2ad85aaa64221de04b4a6ae8e77bfc42",
       "line_count": 5,
-      "size_bytes": 272
+      "size_bytes": 267
     },
     "fixtures/shipyard/worker-result/input/run_system_packet.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.shipyard.worker-result.input.run_system_packet.json.json",
-      "sha256": "4f67582862cca832265d90892252aec04a2a35f82883f7b16ee4f9fde000b50c",
+      "sha256": "24893acddc6757861486a470be1c06d9ef69f61e38565f024b7d8360a8e7d5ad",
       "line_count": 88,
-      "size_bytes": 3000
+      "size_bytes": 2912
     },
     "fixtures/shipyard/worker-result/input/worker_result.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.shipyard.worker-result.input.worker_result.json.json",
-      "sha256": "56e8d3be3a211e3362d908e418e9d549821db2fb681b0c7dde03b8c19f9339e5",
+      "sha256": "aa8033098de8a39c42d789472270ce574f6287c51c1c8d8b8b30bc6d87c10f93",
       "line_count": 59,
-      "size_bytes": 1604
+      "size_bytes": 1545
     },
     "fixtures/store/local-history/README.md": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.store.local-history.README.md.json",
-      "sha256": "7a17b8579a0eb945104190f29ea8a3b0567fe04a25182baab56384a2484d4dd0",
+      "sha256": "511fd574ca35aaea35870dd5acc1727c1c13deb47015d416a672c9633a44114c",
       "line_count": 13,
-      "size_bytes": 467
+      "size_bytes": 454
     },
     "fixtures/store/local/atomic-write-success/fixture.json": {
       "role": "fixture",
@@ -6935,9 +6935,9 @@
     "pyproject.toml": {
       "role": "project",
       "caps": "docs/birdseye/caps/pyproject.toml.json",
-      "sha256": "5fe1bf595f6568872eb022710e8a0d06956c6785cca1cf7b8ad874ecf482ce20",
+      "sha256": "3eaeb1af5f389f75c21caffb7af99e73ddf407ed5f1adb4444c27b3fde6b5b59",
       "line_count": 71,
-      "size_bytes": 1804
+      "size_bytes": 1803
     },
     "schemas/HATE/v1/a11y-l10n-report.schema.json": {
       "role": "schema",
@@ -7040,9 +7040,9 @@
     "schemas/HATE/v1/artifact-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.artifact-manifest.schema.json.json",
-      "sha256": "9ad600b7b76ca5f6fcc661ac5baaa7d5371e972ac9df101e4e5d775032796169",
+      "sha256": "9070bfeef4ecf17f6ba7eda5d7b158e3f54bf5a4577f13387f33d4835b74a263",
       "line_count": 49,
-      "size_bytes": 2016
+      "size_bytes": 1967
     },
     "schemas/HATE/v1/artifact-resolver-map.schema.json": {
       "role": "schema",
@@ -7075,9 +7075,9 @@
     "schemas/HATE/v1/audit-record.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.audit-record.schema.json.json",
-      "sha256": "9fe3695558429e27383333bc02fdbbc2612ecd567284d6c8ad3b33975b270a53",
+      "sha256": "537d1100f40d6058b71d92e4d5d91bfc2c6ed172a322f8af19114239498d815e",
       "line_count": 30,
-      "size_bytes": 932
+      "size_bytes": 902
     },
     "schemas/HATE/v1/baseline-immutability-event.schema.json": {
       "role": "schema",
@@ -7096,9 +7096,9 @@
     "schemas/HATE/v1/baseline-promotion-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.baseline-promotion-report.schema.json.json",
-      "sha256": "92874e77bfc12b4ca96bcd5b84262b3fcd24a12ed49db64ce096396b60eba0c2",
+      "sha256": "a84423d3757ded86756b2f48f5098ede58aa3d8e13c97d69e5610e681ea92ce2",
       "line_count": 227,
-      "size_bytes": 4852
+      "size_bytes": 4625
     },
     "schemas/HATE/v1/baseline-promotion-request.schema.json": {
       "role": "schema",
@@ -7124,9 +7124,9 @@
     "schemas/HATE/v1/baseline-review-packet.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.baseline-review-packet.schema.json.json",
-      "sha256": "a60a55899453820060c9f87cd034d241c10d83f1c1148724fd09f2f1218dd8ee",
+      "sha256": "0e60e61f6259e48eeac97a7048239aae904588420cefecf0dd4428a50a57c824",
       "line_count": 288,
-      "size_bytes": 6364
+      "size_bytes": 6076
     },
     "schemas/HATE/v1/baseline-state.schema.json": {
       "role": "schema",
@@ -7187,16 +7187,16 @@
     "schemas/HATE/v1/capacity-regression-packet.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.capacity-regression-packet.schema.json.json",
-      "sha256": "6f55659f01dffe02890261c7dad7c87506feb878f167c100d2c5258e1f45cd51",
+      "sha256": "ab234c149e1f6e212ee1e74d412c99c884db0c8b70a3c0094fbf2eddde46f6c7",
       "line_count": 233,
-      "size_bytes": 5425
+      "size_bytes": 5192
     },
     "schemas/HATE/v1/capacity-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.capacity-report.schema.json.json",
-      "sha256": "21983c9840a5405708bffa81a14b81f97af89ec6bc5b08a45b387560adc49dfe",
+      "sha256": "8b4f26debc3d97e917b9b5ef7649cc4dcf2eef0ea6e65d1be568483149531dcc",
       "line_count": 260,
-      "size_bytes": 5667
+      "size_bytes": 5407
     },
     "schemas/HATE/v1/ci-docs-freshness-gate.schema.json": {
       "role": "schema",
@@ -7215,9 +7215,9 @@
     "schemas/HATE/v1/common-envelope.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.common-envelope.schema.json.json",
-      "sha256": "7b6d8fc1d58ff3f3821b22880741eace83ca9cddc16c7e412dcc0293baffdab8",
+      "sha256": "57627dba17dda032c03a5b8d866e902f25d460b0045082e171c8ea7b4c3f6de5",
       "line_count": 37,
-      "size_bytes": 1270
+      "size_bytes": 1233
     },
     "schemas/HATE/v1/compliance-evidence-pack.schema.json": {
       "role": "schema",
@@ -7229,9 +7229,9 @@
     "schemas/HATE/v1/compliance-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.compliance-report.schema.json.json",
-      "sha256": "254692aa046569f66c476022a810d4a0ac74e206e66aad54e6817c2e9c0dfcd8",
+      "sha256": "2c4a6852a9b57eed955254eef734f8689157b2739104500914740aa613ae004f",
       "line_count": 218,
-      "size_bytes": 4677
+      "size_bytes": 4459
     },
     "schemas/HATE/v1/compliance-review-decision.schema.json": {
       "role": "schema",
@@ -7243,9 +7243,9 @@
     "schemas/HATE/v1/connector-execution-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.connector-execution-manifest.schema.json.json",
-      "sha256": "a9be08ab21bf280c404fec307399f4e7e4ea0d7bc907c50eccf63a584dc37c08",
+      "sha256": "470b9f6f33fa532264858245c9c58dc907e4bd87f0142ca3473c30d247d30875",
       "line_count": 173,
-      "size_bytes": 3589
+      "size_bytes": 3416
     },
     "schemas/HATE/v1/connector-execution-plan.schema.json": {
       "role": "schema",
@@ -7299,9 +7299,9 @@
     "schemas/HATE/v1/connector-runtime-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.connector-runtime-report.schema.json.json",
-      "sha256": "c989e982e322799b5923d852028a21e21fa474f3d2b34ccf075c4b2618b0e46d",
+      "sha256": "5ce63f1e68662b81a4ad365c3074dea6a337411f82c1b9be33578d96c9d7e4e3",
       "line_count": 162,
-      "size_bytes": 3314
+      "size_bytes": 3152
     },
     "schemas/HATE/v1/contract-evidence.schema.json": {
       "role": "schema",
@@ -7334,9 +7334,9 @@
     "schemas/HATE/v1/coverage-slice.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.coverage-slice.schema.json.json",
-      "sha256": "03aca8dc9609522a702647bc536ea84745e727a4edab43932e76007da5b0e731",
+      "sha256": "09941962c29fa948f12cefc3cb87365275143a9f5c7e5123acb9034320ca7d16",
       "line_count": 35,
-      "size_bytes": 1212
+      "size_bytes": 1177
     },
     "schemas/HATE/v1/dashboard-action-intent.schema.json": {
       "role": "schema",
@@ -7348,9 +7348,9 @@
     "schemas/HATE/v1/dashboard-interaction-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.dashboard-interaction-report.schema.json.json",
-      "sha256": "c353940a9735a0a75f1e7298dff823f07f383fa1534342d82a4085bcbb1094ea",
+      "sha256": "8a9ce9fa30f33ef3e1a8495813ab46ccc33fccb3f87fa568241bb84865268990",
       "line_count": 154,
-      "size_bytes": 3110
+      "size_bytes": 2956
     },
     "schemas/HATE/v1/dashboard-route-state.schema.json": {
       "role": "schema",
@@ -7425,9 +7425,9 @@
     "schemas/HATE/v1/docs-freshness-ci-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.docs-freshness-ci-report.schema.json.json",
-      "sha256": "38db41e124b07073a4b4ff56dc84da02ba62f3277373bfe6893ced223e1348d4",
+      "sha256": "9f44e1c67610e1d12bbf556097b1926734c9cf54c85a943de4638720a16cc989",
       "line_count": 146,
-      "size_bytes": 2916
+      "size_bytes": 2770
     },
     "schemas/HATE/v1/docs-lifecycle-report.schema.json": {
       "role": "schema",
@@ -7565,9 +7565,9 @@
     "schemas/HATE/v1/history-analytics-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.history-analytics-report.schema.json.json",
-      "sha256": "99471ab296eeb0d3bddb42a2e873eeea0f31c3442eda8a27cdd5855f51dc7697",
+      "sha256": "97db7743042695838c6807ba028ab52897967c973ef60fb2bec625d18d4a36ed",
       "line_count": 193,
-      "size_bytes": 4018
+      "size_bytes": 3825
     },
     "schemas/HATE/v1/history-analytics-result.schema.json": {
       "role": "schema",
@@ -7593,9 +7593,9 @@
     "schemas/HATE/v1/history-materialization-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.history-materialization-manifest.schema.json.json",
-      "sha256": "e6238494f8561640cf169fe7c95704d5ad0b9d2645106f071d82fb0364511027",
+      "sha256": "6cbdd69b019f180ad89612043bb28436c65e97249c4a3fcb9608c0d4cbf582e0",
       "line_count": 125,
-      "size_bytes": 2567
+      "size_bytes": 2442
     },
     "schemas/HATE/v1/history-materialization-plan.schema.json": {
       "role": "schema",
@@ -7614,9 +7614,9 @@
     "schemas/HATE/v1/hosted-api-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.hosted-api-report.schema.json.json",
-      "sha256": "e160b3c38282caa7da48c23ab232121f4ea05c1bf61edccd2381c6f57bff507d",
+      "sha256": "87900ddebc329fc512f9d06566eea2ee041f482b3d48dbc558c5986f68d1f1b1",
       "line_count": 148,
-      "size_bytes": 2979
+      "size_bytes": 2831
     },
     "schemas/HATE/v1/hosted-api-request-record.schema.json": {
       "role": "schema",
@@ -7635,9 +7635,9 @@
     "schemas/HATE/v1/hosted-api-route-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.hosted-api-route-manifest.schema.json.json",
-      "sha256": "e1e837611f0009232fc1981634f5b96c31b2215e08dcd74a83eead9ff145c58d",
+      "sha256": "d82adf09c3be45e3fd0a12c3e610acc49a4074d72d161d0255e6d35cd8433df2",
       "line_count": 183,
-      "size_bytes": 3917
+      "size_bytes": 3734
     },
     "schemas/HATE/v1/hosted-authz-decision-record.schema.json": {
       "role": "schema",
@@ -7663,9 +7663,9 @@
     "schemas/HATE/v1/hosted-scheduler-dispatch-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.hosted-scheduler-dispatch-manifest.schema.json.json",
-      "sha256": "10adce56f36923db07291154fe0aa99b318546e050d2bc46818ef335d170d15b",
+      "sha256": "d081302d864792884031cedb91fa6a62de185beb6b7f91e72ee1e54571236b71",
       "line_count": 173,
-      "size_bytes": 3733
+      "size_bytes": 3560
     },
     "schemas/HATE/v1/hosted-scheduler-dispatch-plan.schema.json": {
       "role": "schema",
@@ -7691,9 +7691,9 @@
     "schemas/HATE/v1/hosted-scheduler-runtime-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.hosted-scheduler-runtime-report.schema.json.json",
-      "sha256": "36e3f155dd9512f57107e180c50ce4886d1a6b89af71f426517d1d63038d5cdf",
+      "sha256": "29c99d0e96f047931b6b959dd9dd924bb6e6c24345f8997cc2d52ee0b4b9a51d",
       "line_count": 154,
-      "size_bytes": 3113
+      "size_bytes": 2959
     },
     "schemas/HATE/v1/hosted-scheduler-worker-state.schema.json": {
       "role": "schema",
@@ -7719,9 +7719,9 @@
     "schemas/HATE/v1/human-review-queue-packet.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.human-review-queue-packet.schema.json.json",
-      "sha256": "7c6d22556753d9e5e272e0b2cb5c75da0c1b230289c920056ece778849d992e4",
+      "sha256": "33536d904e66b529946ae6b570a5ae6bff0800b11e8d80107a11f3a09e979216",
       "line_count": 237,
-      "size_bytes": 5098
+      "size_bytes": 4861
     },
     "schemas/HATE/v1/human-review-workflow-decision.schema.json": {
       "role": "schema",
@@ -7733,9 +7733,9 @@
     "schemas/HATE/v1/human-review-workflow-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.human-review-workflow-report.schema.json.json",
-      "sha256": "acd63e59f8313b174c96a7c0548f009ea214034d126817ef858d434fd94624f4",
+      "sha256": "5404c45ae0721c5057ae8fd7a29ef68068f0f01ec4f283c8c4ff8a9f022d6ef4",
       "line_count": 162,
-      "size_bytes": 3258
+      "size_bytes": 3096
     },
     "schemas/HATE/v1/human-review-workflow-request.schema.json": {
       "role": "schema",
@@ -7775,9 +7775,9 @@
     "schemas/HATE/v1/incident-response-packet.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.incident-response-packet.schema.json.json",
-      "sha256": "c5a7613f9742175d33a3fd7d2568b566d778156f37f6369e4806223816aba06f",
+      "sha256": "13ed58315ec12feaad586807174b865a9d8fa8b74155b0173da604842f2ffa30",
       "line_count": 232,
-      "size_bytes": 4902
+      "size_bytes": 4670
     },
     "schemas/HATE/v1/local-store-runtime-report.schema.json": {
       "role": "schema",
@@ -7838,9 +7838,9 @@
     "schemas/HATE/v1/notification-delivery-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.notification-delivery-report.schema.json.json",
-      "sha256": "80f9fb8314a7107458d99fbd5ff6b32b19064c074cd2a4a4ab2ba19f5d25f482",
+      "sha256": "61860af3eedf6f5ac106303917491b1cdaa316583ccfb8f5ce402598871c1498",
       "line_count": 162,
-      "size_bytes": 3298
+      "size_bytes": 3136
     },
     "schemas/HATE/v1/notification-operating-record.schema.json": {
       "role": "schema",
@@ -7866,9 +7866,9 @@
     "schemas/HATE/v1/notification-routing-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.notification-routing-manifest.schema.json.json",
-      "sha256": "1f331c121d143be7290de90c4e764c1e7d5c28ba3a091708a845dd9968627417",
+      "sha256": "cf9dcb8e21a1866583325cd456e9951992eca1dbc921d8ea1ec8ad6e5bc184ce",
       "line_count": 156,
-      "size_bytes": 3419
+      "size_bytes": 3263
     },
     "schemas/HATE/v1/notification-routing-plan.schema.json": {
       "role": "schema",
@@ -7887,9 +7887,9 @@
     "schemas/HATE/v1/observability-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.observability-report.schema.json.json",
-      "sha256": "2bd1f007ae54f75f61ddbab0467a36a4df72529b31c57d77b810c60e728813b3",
+      "sha256": "517f6904cda4aa071e71f148ffe7c6c7abfe24129f607548de3038e8685aee39",
       "line_count": 156,
-      "size_bytes": 3236
+      "size_bytes": 3080
     },
     "schemas/HATE/v1/onboarding-report.schema.json": {
       "role": "schema",
@@ -7964,9 +7964,9 @@
     "schemas/HATE/v1/platform-ops-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-ops-report.schema.json.json",
-      "sha256": "e6cddc5f325b71d8dedaeeeda04e3a5cee3515c526b9d127406cdd8e79c9f477",
+      "sha256": "7a77344f12e3d5dfa9dbb36fc0237d98709cd8e0f9d239a0e172fdc24fb776e2",
       "line_count": 73,
-      "size_bytes": 2599
+      "size_bytes": 2555
     },
     "schemas/HATE/v1/platform-plugin-sandbox-report.schema.json": {
       "role": "schema",
@@ -8006,9 +8006,9 @@
     "schemas/HATE/v1/plugin-distribution-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.plugin-distribution-report.schema.json.json",
-      "sha256": "031ac50f3d4aaa49213be4ccc83756857378d8ee2f3ea8c7f2ab705dda6c1c1d",
+      "sha256": "b3dc11a52329d66f012af627a1fadf26753cd07cc77504165efbb319e5f7ee68",
       "line_count": 157,
-      "size_bytes": 3217
+      "size_bytes": 3060
     },
     "schemas/HATE/v1/plugin-install-entry.schema.json": {
       "role": "schema",
@@ -8020,16 +8020,16 @@
     "schemas/HATE/v1/plugin-install-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.plugin-install-manifest.schema.json.json",
-      "sha256": "12bc3e1c63667e29767dd3d9cf30f29dd3979438f736e5acfeac5d5176c0aa4e",
+      "sha256": "c840d4b080a13eaa4fde04a23cf2b557ecd1d3de6c871cd259f4a47412caeba6",
       "line_count": 232,
-      "size_bytes": 5072
+      "size_bytes": 4840
     },
     "schemas/HATE/v1/plugin-package-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.plugin-package-manifest.schema.json.json",
-      "sha256": "d9ab220f8be48b8aa249a6b18a2fb179cb1a6a5b66b406190107e0f51062d0ec",
+      "sha256": "6df7a2fa6b27da7dad51b0dd4b88011b384642ae95051e7edd60e6cd7a58981b",
       "line_count": 61,
-      "size_bytes": 2234
+      "size_bytes": 2233
     },
     "schemas/HATE/v1/plugin-revocation-event.schema.json": {
       "role": "schema",
@@ -8041,9 +8041,9 @@
     "schemas/HATE/v1/plugin-signature-verification.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.plugin-signature-verification.schema.json.json",
-      "sha256": "6622ba1403653f049c4aa6e35f97d720a4b3d29b8d80d24757fe663ef2fbb334",
+      "sha256": "c5b2e7a362d4a695001543ce1882f236cbeef76d333aeb6d945ef11eb1ff2886",
       "line_count": 43,
-      "size_bytes": 1598
+      "size_bytes": 1597
     },
     "schemas/HATE/v1/policy-simulation-report.schema.json": {
       "role": "schema",
@@ -8069,9 +8069,9 @@
     "schemas/HATE/v1/precheck-decision.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.precheck-decision.schema.json.json",
-      "sha256": "2acea629d44ee5cf3ebddb1e4b432664ef88f0f6afd61f76db267d4f716ddbeb",
+      "sha256": "c3f8fb264b00ac4d8394d239ae030c23aeef49bdfe074cbb7c64768d36ccae52",
       "line_count": 27,
-      "size_bytes": 1073
+      "size_bytes": 1046
     },
     "schemas/HATE/v1/procurement-questionnaire-export.schema.json": {
       "role": "schema",
@@ -8139,9 +8139,9 @@
     "schemas/HATE/v1/qeg-bundle.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.qeg-bundle.schema.json.json",
-      "sha256": "890195dd8f0192f23185cd3a3a07b3b77bcad89a5e51153f38cb1c3a1ea2ea00",
+      "sha256": "b3d6c73110d869c1a388eed2da94601f837a7f14a2f57544ff852f8c1103de88",
       "line_count": 94,
-      "size_bytes": 3303
+      "size_bytes": 3209
     },
     "schemas/HATE/v1/real-repo-baseline-event.schema.json": {
       "role": "schema",
@@ -8209,9 +8209,9 @@
     "schemas/HATE/v1/real-repo-roster-execution-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-roster-execution-manifest.schema.json.json",
-      "sha256": "c1e7b49eb463149911a0215430c1db79a83938e197d3c958b991aaa37959fc6c",
+      "sha256": "34ce1b94da84112bf68c8a66105e2ce6505c2b2278999bb3b9a545df1ee7d2ba",
       "line_count": 220,
-      "size_bytes": 4893
+      "size_bytes": 4673
     },
     "schemas/HATE/v1/real-repo-roster-maintenance-plan.schema.json": {
       "role": "schema",
@@ -8223,9 +8223,9 @@
     "schemas/HATE/v1/real-repo-roster-maintenance-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.real-repo-roster-maintenance-report.schema.json.json",
-      "sha256": "7730944b9bb79064632f29ce39cc1b986e469d44a7753011f8897c988d8bde1a",
+      "sha256": "5531fd80bcc4bd390f349ed9cea8fe11e7ae183962c1b035a09373bb13465048",
       "line_count": 134,
-      "size_bytes": 2693
+      "size_bytes": 2559
     },
     "schemas/HATE/v1/real-repo-roster-v2.schema.json": {
       "role": "schema",
@@ -8272,9 +8272,9 @@
     "schemas/HATE/v1/release-handoff-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.release-handoff-report.schema.json.json",
-      "sha256": "6796bfd11f42a23a66108599b119bfcd401dbfddd856fbd2b20b177ef65563b5",
+      "sha256": "4c9a11a67ba748820d42fa5eb49021ce1aa7b9ab322a328bc1e243ac21f404bc",
       "line_count": 148,
-      "size_bytes": 3018
+      "size_bytes": 2870
     },
     "schemas/HATE/v1/retry-aggregation.schema.json": {
       "role": "schema",
@@ -8300,9 +8300,9 @@
     "schemas/HATE/v1/run.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.run.schema.json.json",
-      "sha256": "152c0d6ac1482532a47783d09acad77357849657ab77076824f290ef03408eb4",
+      "sha256": "20eb214a8b438b95e65e387eebdcaf6f98a6f3eb844379b2437caa8b171fcaf8",
       "line_count": 46,
-      "size_bytes": 1624
+      "size_bytes": 1578
     },
     "schemas/HATE/v1/runner-dialect-coverage-report.schema.json": {
       "role": "schema",
@@ -8405,9 +8405,9 @@
     "schemas/HATE/v1/store-dr-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.store-dr-report.schema.json.json",
-      "sha256": "b5f6468a33c4afb43c70873e6dd29c80fb70ac046bab6114d4ac7cfdb646cef4",
+      "sha256": "a1eff2da70278de69d51816caa3d83a10cf5c2a0d3020deb6020200c0e40ab1e",
       "line_count": 268,
-      "size_bytes": 5884
+      "size_bytes": 5616
     },
     "schemas/HATE/v1/store-dr-runbook-step.schema.json": {
       "role": "schema",
@@ -8419,9 +8419,9 @@
     "schemas/HATE/v1/store-dr-runbook.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.store-dr-runbook.schema.json.json",
-      "sha256": "8bd65693e9f9151c52e135635452a4ebb274b93bf21b9c81b67477f987f96666",
+      "sha256": "d33c90401193eb486384c61d2bc949ab99cc781482ffc15577828d20f775bc89",
       "line_count": 207,
-      "size_bytes": 4440
+      "size_bytes": 4233
     },
     "schemas/HATE/v1/store-manifest.schema.json": {
       "role": "schema",
@@ -8503,9 +8503,9 @@
     "schemas/HATE/v1/test-result.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.test-result.schema.json.json",
-      "sha256": "6e4fdbc24d4faa25d9503ee41ffb0691ffe4da46df901f5f1116d388da8d665b",
+      "sha256": "9646c042c9e96a947fd8ad0191e6e1ffc79c3658e3f4a5ee1e8968cc4e2be3b9",
       "line_count": 57,
-      "size_bytes": 1979
+      "size_bytes": 1922
     },
     "schemas/HATE/v1/trust-advisory-report.schema.json": {
       "role": "schema",
@@ -8643,9 +8643,9 @@
     "src/hate/__main__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.__main__.py.json",
-      "sha256": "d220d88dd9a25cd0629c5176dd6532a2db1da40eb014a8e80796b0ddeb134918",
+      "sha256": "307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7",
       "line_count": 4,
-      "size_bytes": 83
+      "size_bytes": 79
     },
     "src/hate/adapter_registry.py": {
       "role": "implementation",
@@ -8874,16 +8874,16 @@
     "src/hate/audit.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.audit.py.json",
-      "sha256": "16e8c833e63f2e2e8b0fe5669165b6ce1793a45be10d4b57a59760556449ca5d",
+      "sha256": "743b76832d71ca2d8130115c719a75f3a573ba80a572ef86d03df5cfd6af829d",
       "line_count": 126,
-      "size_bytes": 4838
+      "size_bytes": 4712
     },
     "src/hate/authz.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.authz.py.json",
-      "sha256": "a6d4850abfa6cda4c464d04a3749f07766fb5200f2fb767e97c5c204682e2ff5",
+      "sha256": "c4300fe78b40d5c941b4c1fbcc3dd3c0068c57daf75225f841f54a48055fccac",
       "line_count": 184,
-      "size_bytes": 6445
+      "size_bytes": 6261
     },
     "src/hate/cli.py": {
       "role": "implementation",
@@ -8916,9 +8916,9 @@
     "src/hate/connectors.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.connectors.py.json",
-      "sha256": "cf063f043ce31dc9a309049cf38b0553e4766751e239a44a6c7b9eae587aadbd",
+      "sha256": "3714d90e0b6f340605001766a7e69acff6750a3e15279f499079dcf8c9800985",
       "line_count": 163,
-      "size_bytes": 6530
+      "size_bytes": 6367
     },
     "src/hate/connectors/__init__.py": {
       "role": "implementation",
@@ -9021,9 +9021,9 @@
     "src/hate/dashboard/uat_states.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.dashboard.uat_states.py.json",
-      "sha256": "d566a6d300ed7de93b3dceebf13a467fc8337d779d1949454f1e362d37e22871",
+      "sha256": "219cf678986bf7654185c5243931e8c037a69ca468c53d21a3d35d0abc4e228c",
       "line_count": 609,
-      "size_bytes": 19715
+      "size_bytes": 19714
     },
     "src/hate/dashboard/view_models.py": {
       "role": "implementation",
@@ -9056,9 +9056,9 @@
     "src/hate/domain.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.domain.py.json",
-      "sha256": "610006a02b112343488a2149f49b515ef63896d51dbfd01a7782943f3a6ea2da",
+      "sha256": "8bb579e84dd06420c9ad6f92b2b6929edf37b4b47dd09f7802420967c9439134",
       "line_count": 151,
-      "size_bytes": 7301
+      "size_bytes": 7150
     },
     "src/hate/enterprise/__init__.py": {
       "role": "implementation",
@@ -9378,9 +9378,9 @@
     "src/hate/governance.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.governance.py.json",
-      "sha256": "8d3d618f629912d54a4c9f1fff03a1319109cbd6b83e604ccbd68a24976c047c",
+      "sha256": "1d2a8006f26c04bc73406d4e2b21961cb0a1433b3a598eee5856f72f2d66fbab",
       "line_count": 129,
-      "size_bytes": 5519
+      "size_bytes": 5390
     },
     "src/hate/manual_review_bridge.py": {
       "role": "implementation",
@@ -9427,37 +9427,37 @@
     "src/hate/p0a.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a.py.json",
-      "sha256": "cca63a050d9750f1fe09f702dd97db6a5b563bfe5ed463494ec4700a7060aa2d",
+      "sha256": "4bce6c6cfce85f0aeac47e3c6ac3ab9ddefb82bf613f560036856a9ac3682f32",
       "line_count": 261,
-      "size_bytes": 11672
+      "size_bytes": 11476
     },
     "src/hate/p0a_artifacts.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_artifacts.py.json",
-      "sha256": "50f2a1138d3d1de359d62ecd3d3ce0137edeb93ae0ce80234856a22ddbd85680",
+      "sha256": "31c56ff7c89db18c90910765dc049e53e922ff4d632a5e0ded91ccb363675f07",
       "line_count": 235,
-      "size_bytes": 10531
+      "size_bytes": 10530
     },
     "src/hate/p0a_constants.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_constants.py.json",
-      "sha256": "7bca9e08faa6f3ad8e8a07e21b1905d4fe564ee6df113d2ff7b7f89390d83775",
+      "sha256": "5ed30bbb5e11c9204951ebaceaff1718015f74d9de4b3a36d81964b3a6f62630",
       "line_count": 3,
-      "size_bytes": 105
+      "size_bytes": 104
     },
     "src/hate/p0a_context.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_context.py.json",
-      "sha256": "7aa9b5dcc4478dc04f96e0b33a5160d0928b9758898ac0dca55435691c608ae8",
+      "sha256": "fc8d9d30bfae824f0b38784b40bf9f5b30726fecea4d4e9b178cfc23777f928b",
       "line_count": 84,
-      "size_bytes": 3022
+      "size_bytes": 3021
     },
     "src/hate/p0a_coverage_adapters.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_coverage_adapters.py.json",
-      "sha256": "27869e2bdd010846ab7850b325526b0a7185212b487e12fcb196dcefaf54521d",
+      "sha256": "dd1e93fbcb78d103b9b94783969e546e8fb44b8b5eabb911c53f9c39ceb5f8e6",
       "line_count": 313,
-      "size_bytes": 11683
+      "size_bytes": 11682
     },
     "src/hate/p0a_evidence_strength.py": {
       "role": "implementation",
@@ -9469,44 +9469,44 @@
     "src/hate/p0a_io.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_io.py.json",
-      "sha256": "a336fa53490314a0c7efdb89f3c804600a344f4a669a8ef745e03d5a60b6c034",
+      "sha256": "90b6c144ab0b6ce22dd98da6bd722e946a65be1ca0eab4fcf425d53abfde92fb",
       "line_count": 66,
-      "size_bytes": 2407
+      "size_bytes": 2341
     },
     "src/hate/p0a_records.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_records.py.json",
-      "sha256": "50f195cd8df56ff1b0e14e5f8a4291c39b58d5ef2011ce7aab7b70bcdec6129f",
+      "sha256": "dcd764c13e5c68835a666b696d7bc8fe478822080c7bed6db43c6bac5f0ab0a5",
       "line_count": 152,
-      "size_bytes": 6110
+      "size_bytes": 6109
     },
     "src/hate/p0a_schema.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_schema.py.json",
-      "sha256": "57a6b0bad88443ac7686db9b1d01de06c5071752efab5a57a17f8c75c5208988",
+      "sha256": "7f45c5c69fb63bed2fe9c7cd0ac65ac2cdc6254aa63f07401e8b07db9a590806",
       "line_count": 115,
-      "size_bytes": 4996
+      "size_bytes": 4995
     },
     "src/hate/p0a_static.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_static.py.json",
-      "sha256": "54204e49aa32a0291c597b2056ee4f849d168b6125b6db8d2dac8318f6e7b500",
+      "sha256": "49d662c9b6d47947c0244b73269ed28bae154daa00518168388294ee4df5b23c",
       "line_count": 48,
-      "size_bytes": 1651
+      "size_bytes": 1650
     },
     "src/hate/p0a_support.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_support.py.json",
-      "sha256": "5f05192e547772e9ea5027c457d5f600e9ea8f8fa4ab07abe5530df6521c9011",
+      "sha256": "6c07976c8626076acb12dec14fc190b6d48c40e1cde86305aa9d5752cf98c45a",
       "line_count": 90,
-      "size_bytes": 2311
+      "size_bytes": 2310
     },
     "src/hate/p0a_test_adapters.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_test_adapters.py.json",
-      "sha256": "a5980e6c8b6077617362f3301e7ba7286ceaa3696ccafc72efc83de958d237e0",
+      "sha256": "20216aae8560080f67b710fcc821d46c30c99a1e925b21a6d27a2bd1af396c5d",
       "line_count": 416,
-      "size_bytes": 16602
+      "size_bytes": 16601
     },
     "src/hate/p0b.py": {
       "role": "implementation",
@@ -9560,9 +9560,9 @@
     "src/hate/p0b_support.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0b_support.py.json",
-      "sha256": "7480d88c093193766d4559e25ff32e2a232c765698c0aa4dec392c67bbbadcfc",
+      "sha256": "dab97d849656657ad58c58458823c5715cc6e8b1f082635452b21e05c08eed6d",
       "line_count": 631,
-      "size_bytes": 26771
+      "size_bytes": 26238
     },
     "src/hate/p0b_types.py": {
       "role": "implementation",
@@ -9574,9 +9574,9 @@
     "src/hate/p1a.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a.py.json",
-      "sha256": "e02cace91c1312f9dc8824a517edb180c4017ff763f55558cf044bfa3a381780",
+      "sha256": "5468d29e30d1018e41e4316a3174739e30a46539b12ec551f802bb75f1ff694c",
       "line_count": 409,
-      "size_bytes": 17776
+      "size_bytes": 17367
     },
     "src/hate/p1a_internal/__init__.py": {
       "role": "implementation",
@@ -9644,9 +9644,9 @@
     "src/hate/p1a_io.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_io.py.json",
-      "sha256": "5a584b297cb6a6462a70278601883e1db83e96b9652d0d959336ba73d1b09eb4",
+      "sha256": "0e8c193c7d61f793e027968119b296ba9a676ccfe55e99dd82ec05dc93e462c2",
       "line_count": 61,
-      "size_bytes": 2264
+      "size_bytes": 2203
     },
     "src/hate/p1a_support.py": {
       "role": "implementation",
@@ -9658,9 +9658,9 @@
     "src/hate/p1b.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1b.py.json",
-      "sha256": "4f351f7819e4d8ff1c81f40855f3abf49967e1952b955b11eca5c4e3e65e511e",
+      "sha256": "43e3fffb6cb5e764c6a4e9fd5f69e0baa3f04d109d20215b1d21a0a2b567fc6e",
       "line_count": 469,
-      "size_bytes": 20197
+      "size_bytes": 19728
     },
     "src/hate/p1b_alignment.py": {
       "role": "implementation",
@@ -9679,30 +9679,30 @@
     "src/hate/p2p3.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p2p3.py.json",
-      "sha256": "5a6b2b7af2a5fc00834745e6abe59b65fcef48919b3f36bfb063f52559bbaf3f",
+      "sha256": "0c081f4e6b33ecb8ef4ddc6e275222f5885e01599fa4ef9ce7883165a5a3fe4f",
       "line_count": 333,
-      "size_bytes": 15889
+      "size_bytes": 15556
     },
     "src/hate/p2p3_assurance_reports.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p2p3_assurance_reports.py.json",
-      "sha256": "e6f89aae0ded625eb6c3f9803d6779fde192cff7e77a41767d005dfee6e9d6c9",
+      "sha256": "e33b0506ef9b9c7210bdbec37683f187e2e0ff42cb9dc1b13f1dd97ec815c4a4",
       "line_count": 455,
-      "size_bytes": 21539
+      "size_bytes": 21084
     },
     "src/hate/p2p3_enterprise_reports.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p2p3_enterprise_reports.py.json",
-      "sha256": "435555406b64fa23353d997eb02a660d4bb27836c073fbaa2351afb91c478f1c",
+      "sha256": "8137b60fa6d13f509d575e3e03b6551620452919d2453c80c35c41f71fc78e84",
       "line_count": 329,
-      "size_bytes": 18156
+      "size_bytes": 17827
     },
     "src/hate/p2p3_io.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p2p3_io.py.json",
-      "sha256": "be6ff22c81bcd827fe591aff00297d0630270ecc85cfac4b4c53b636e88cf856",
+      "sha256": "47403a05cccb07037f4ade0bb19da43be4c8405e32ce3d92e464f14ea848a181",
       "line_count": 93,
-      "size_bytes": 2756
+      "size_bytes": 2663
     },
     "src/hate/p2p3_readiness.py": {
       "role": "implementation",
@@ -9714,9 +9714,9 @@
     "src/hate/p2p3_reports.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p2p3_reports.py.json",
-      "sha256": "bd1a84ccb47ab2a09a2e4f8360f045ccbc2cca61850fd5b2337833dc6c49f605",
+      "sha256": "454991718160520930b122c84da4b32310a714e87fdc4de3e2c11b5d9b8806a1",
       "line_count": 430,
-      "size_bytes": 18807
+      "size_bytes": 18377
     },
     "src/hate/platform_cli.py": {
       "role": "implementation",
@@ -9728,9 +9728,9 @@
     "src/hate/platform_ops.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.platform_ops.py.json",
-      "sha256": "cb69fa2e46c8823f136727ac8ea807baaefa7b217de4912ee42ee5ea6ce0a507",
+      "sha256": "9eea2cca8bfe4eb6f50b593c8ee3aa81307b5d23876a70d1194ee86ca51deb32",
       "line_count": 583,
-      "size_bytes": 24049
+      "size_bytes": 24047
     },
     "src/hate/platform_rbac.py": {
       "role": "implementation",
@@ -9749,9 +9749,9 @@
     "src/hate/plugin_runner.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.plugin_runner.py.json",
-      "sha256": "1a78c4c84a68eeaa4ece356bb9fe22070db97c238a0eba662a30eea6d547b65e",
+      "sha256": "6737258117537102447c63f267c1010f5692156ea093f9811f173e816257458a",
       "line_count": 436,
-      "size_bytes": 16254
+      "size_bytes": 16141
     },
     "src/hate/plugins/__init__.py": {
       "role": "implementation",
@@ -10008,16 +10008,16 @@
     "src/hate/schema_resources.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.schema_resources.py.json",
-      "sha256": "1fe271b2085c0ce4c9eed689397965f03d9eacd291232c00f8d1a34ab8f148ac",
+      "sha256": "442829ddbf9d5777ea997e2f93af673455755f06c3e98464019e139f1d8cd75b",
       "line_count": 92,
-      "size_bytes": 3438
+      "size_bytes": 3423
     },
     "src/hate/schema_validator.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.schema_validator.py.json",
-      "sha256": "dbc03c7946b2c5526a9c429bdee3873567f9004fd12bdfab69a34914ae7ba398",
+      "sha256": "da844718c62c86e46bec031e2c96a3947cfabd221abecb22b28b947f90e66335",
       "line_count": 289,
-      "size_bytes": 11261
+      "size_bytes": 11249
     },
     "src/hate/security/__init__.py": {
       "role": "implementation",
@@ -10148,9 +10148,9 @@
     "src/hate/store_legacy.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store_legacy.py.json",
-      "sha256": "65655f085041ac6416736365fe5a717438a4c808067449d82034cdb52f5f2d68",
+      "sha256": "8be9f928269469b16273df35d69fba9e80ce35da531afb3c714d9fb85fc1adf7",
       "line_count": 215,
-      "size_bytes": 8255
+      "size_bytes": 8040
     },
     "src/hate/support_ops/__init__.py": {
       "role": "implementation",
@@ -10197,9 +10197,9 @@
     "src/hate/test_integrity/coupling.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.test_integrity.coupling.py.json",
-      "sha256": "cf4fd183edbde7682109fb7a8fa4b750bbe6327714fa7344a4ee6a6ad73cffa8",
+      "sha256": "b0a5500504d1f6682aff47972300683f013cbfd5b395688311de216899642937",
       "line_count": 576,
-      "size_bytes": 23352
+      "size_bytes": 22802
     },
     "src/hate/test_integrity/coupling_findings.py": {
       "role": "implementation",
@@ -10309,9 +10309,9 @@
     "tests/test_acceptance_pipeline.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_acceptance_pipeline.py.json",
-      "sha256": "ec82d577dcd710b7131bb554c2d051dba4780d6873174c54b58ef9daf5fe8251",
+      "sha256": "9dc816cdd6128b7b2e6091e97ffb38e190cde58ee7ac2ee2ee5b9088983023f6",
       "line_count": 168,
-      "size_bytes": 5727
+      "size_bytes": 5569
     },
     "tests/test_adapter_corpus_manifest.py": {
       "role": "test",
@@ -10484,16 +10484,16 @@
     "tests/test_api_read_model_contract.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_api_read_model_contract.py.json",
-      "sha256": "8cc3043b28a160ffa5a8ebea533f82f7fb8f0c0a2fa6669753bcbde5af117b27",
+      "sha256": "68650aaa3ae4d5a44825b5c2e613181d3b5cf421f6e7802168241c5a17a57d5e",
       "line_count": 882,
-      "size_bytes": 31429
+      "size_bytes": 30547
     },
     "tests/test_api_read_model_inventory.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_api_read_model_inventory.py.json",
-      "sha256": "125118f5921b7133a8176d990a50e4010868c0cfbb7b8e42be2ac640af61e0ec",
+      "sha256": "2471365dddef83415d9f7ca5e79645e9af726bce94ae93da9e47bdbbb00ee430",
       "line_count": 104,
-      "size_bytes": 3198
+      "size_bytes": 3095
     },
     "tests/test_artifact_lifecycle.py": {
       "role": "test",
@@ -10540,9 +10540,9 @@
     "tests/test_codemap_update.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_codemap_update.py.json",
-      "sha256": "3431cf143fd0f2185370e426cc44029b4a0c522ba9ef76979120e14daab4cb92",
-      "line_count": 45,
-      "size_bytes": 1898
+      "sha256": "127c7ac32b140125fe16bea999c18c1a1767777d6290232b27df5c85935b600f",
+      "line_count": 60,
+      "size_bytes": 2489
     },
     "tests/test_commercial_truthfulness.py": {
       "role": "test",
@@ -10827,9 +10827,9 @@
     "tests/test_p0a.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p0a.py.json",
-      "sha256": "2ca12d2a8f229e810df4975f47bb83d7a65576977f479ea864baed949b761beb",
+      "sha256": "982060adc84dd7d3c5c72ec0a3bdc7fbbf25e8b61a0b39e645670d955579ccd4",
       "line_count": 695,
-      "size_bytes": 34802
+      "size_bytes": 34139
     },
     "tests/test_p0b.py": {
       "role": "test",
@@ -10841,9 +10841,9 @@
     "tests/test_p1a.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p1a.py.json",
-      "sha256": "676be86b4d83f16d009670319df33f083c92c10d808e51f0fda29f2f557e3ebc",
+      "sha256": "d1e1b3ab0f992f4671b4af2e6aaed8d051ef58d2abc85ff342800de217df2ddd",
       "line_count": 615,
-      "size_bytes": 29125
+      "size_bytes": 28510
     },
     "tests/test_p1a_schema_registry_contract.py": {
       "role": "test",
@@ -10855,9 +10855,9 @@
     "tests/test_p1b.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p1b.py.json",
-      "sha256": "25e83672dac4113e270e33c30852aa5192ce56cf60e3e5f74f1236ecbe9f11a4",
+      "sha256": "accbe3adf37217294a23a4d52cce31851bed966a89cadfbc40b758710dd44713",
       "line_count": 352,
-      "size_bytes": 19027
+      "size_bytes": 18675
     },
     "tests/test_p2p3.py": {
       "role": "test",
@@ -10925,9 +10925,9 @@
     "tests/test_platform_ops.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_platform_ops.py.json",
-      "sha256": "b457ef3fb82cfd2f3f5aa74d95ee7a74006ee79af1b965ea889f856049cb5231",
+      "sha256": "785b400f975dbaf445467891b228cfa600f33a454db47cb5c074273250e9a9ca",
       "line_count": 648,
-      "size_bytes": 25185
+      "size_bytes": 25146
     },
     "tests/test_platform_plugin_sandbox.py": {
       "role": "test",
@@ -11016,9 +11016,9 @@
     "tests/test_post_poc_docs_freshness.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_post_poc_docs_freshness.py.json",
-      "sha256": "7df7937f0334db812a7c33595505d1ca0c1af8dffeebe17ffdfb3b4447d1f72e",
+      "sha256": "5d11a7a1da170d6f5c7e24795e2ca39792443e402512df968597ec0d140bc00d",
       "line_count": 487,
-      "size_bytes": 20686
+      "size_bytes": 20685
     },
     "tests/test_post_poc_history_analytics.py": {
       "role": "test",
@@ -11226,9 +11226,9 @@
     "tests/test_schema_resources.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_schema_resources.py.json",
-      "sha256": "b9a20500dbfe62bcf219b005aa97f140d6863521631bd17a7afbebe910ba900c",
+      "sha256": "17094fc0bf1c5b4a4065eec1e12ec141f40cd59262e6ba827442e6b311d8a96d",
       "line_count": 46,
-      "size_bytes": 2081
+      "size_bytes": 2035
     },
     "tests/test_schema_validator.py": {
       "role": "test",
@@ -11289,16 +11289,16 @@
     "tests/test_test_integrity_coupling.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_test_integrity_coupling.py.json",
-      "sha256": "a589e70312aa8c12de55e5dc8d1fd900f3016ef23a50d7c5f8e5c5653ee22b4f",
+      "sha256": "d8db2302a07273a0d976759b6dc12bfc39d6a6b7ffa4ff5dce15ec6b4c1219b3",
       "line_count": 754,
-      "size_bytes": 29618
+      "size_bytes": 28864
     },
     "tests/test_test_integrity_coupling_fixtures.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_test_integrity_coupling_fixtures.py.json",
-      "sha256": "a3833480f2d5e14d711cb6aaee9276ccc3d74996b14552820b36e234fac762d7",
+      "sha256": "cc6735cf53d30d9ee2849c2f1f35fd1658cae222f6161ea4072a94fe5e38d15b",
       "line_count": 233,
-      "size_bytes": 11681
+      "size_bytes": 11448
     },
     "tests/test_test_integrity_mock_assertion.py": {
       "role": "test",
@@ -11373,37 +11373,37 @@
     "tools/ci/docs_freshness_gate.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.ci.docs_freshness_gate.py.json",
-      "sha256": "0923f2fc7c23597aac5ed963664144071a1dd354c44dde9255c5a82b61f88018",
+      "sha256": "daa8f66a5b2718e6de59746d4093926667fa1429d534feaca303b0d6c7763962",
       "line_count": 235,
-      "size_bytes": 10761
+      "size_bytes": 10759
     },
     "tools/ci/schema_meta_gate.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.ci.schema_meta_gate.py.json",
-      "sha256": "1389139f0bb85d188906e4805c00c0c20db6fb3c1e6ba69aea2a2ab2f4fa6efc",
+      "sha256": "46cd81509ef2ad8c19ffd084f507849a687bb04e428837743f96aa7c74930bf6",
       "line_count": 22,
-      "size_bytes": 577
+      "size_bytes": 576
     },
     "tools/ci/wheel_smoke.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.ci.wheel_smoke.py.json",
-      "sha256": "d62eb5ea332ba528f481e101b008cf9bc89a57a93ef5ebde8d96a2d5c40b0f32",
+      "sha256": "dac7ffce04724ba51ef765524f6362cabf519400523bf1bf306e997ab65f0caf",
       "line_count": 62,
-      "size_bytes": 1864
+      "size_bytes": 1863
     },
     "tools/codemap/update.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.codemap.update.py.json",
-      "sha256": "85685af1fe037b34201a5b5b8abbd2f01cb654c868206ff87f6ae4dd80c52b2d",
-      "line_count": 310,
-      "size_bytes": 10344
+      "sha256": "2b1e4a51e46cae1101cd199d179a83f501f36841a5019d834e5e087a65276d24",
+      "line_count": 317,
+      "size_bytes": 10510
     },
     "tools/docs/render_post_poc_status.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.docs.render_post_poc_status.py.json",
-      "sha256": "3f6b9800ccd712020346c30757aa5ed4f8ea8bb32d2ec3fb56caf0c860e3f2c5",
+      "sha256": "772e91fc12e400bf660adb2a31add43cc7b95ee65d2ebdd31fe9180cdf89c6f2",
       "line_count": 112,
-      "size_bytes": 6010
+      "size_bytes": 6009
     }
   },
   "edges": [

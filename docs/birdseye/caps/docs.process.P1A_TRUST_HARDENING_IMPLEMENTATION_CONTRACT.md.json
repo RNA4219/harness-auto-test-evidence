@@ -2,9 +2,9 @@
   "path": "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "9fa0a16598fc03f5a7b71c2fbe8793593abb95a3079eccce8dd7f86c8084d5ab",
+  "sha256": "ff71b5ec29ed4b1208be6fc8279944e71ec25c0244f72169958cfca70b09b64b",
   "line_count": 257,
-  "size_bytes": 8511,
+  "size_bytes": 8254,
   "headings": [
     "# P1a Trust Hardening Implementation Contract",
     "## 1. 目的",

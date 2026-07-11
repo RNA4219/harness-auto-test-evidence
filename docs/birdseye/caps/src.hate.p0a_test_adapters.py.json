@@ -2,9 +2,9 @@
   "path": "src/hate/p0a_test_adapters.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "a5980e6c8b6077617362f3301e7ba7286ceaa3696ccafc72efc83de958d237e0",
+  "sha256": "20216aae8560080f67b710fcc821d46c30c99a1e925b21a6d27a2bd1af396c5d",
   "line_count": 416,
-  "size_bytes": 16602,
+  "size_bytes": 16601,
   "headings": [],
   "imports": [
     ".p0a_constants",

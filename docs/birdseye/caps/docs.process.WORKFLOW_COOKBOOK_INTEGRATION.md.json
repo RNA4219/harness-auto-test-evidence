@@ -2,9 +2,9 @@
   "path": "docs/process/WORKFLOW_COOKBOOK_INTEGRATION.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "cb2d7206a7aaa69910f178435bd338b14af998bd4024ed8ca3cff8c0481b2be8",
+  "sha256": "2384412749fecdc55b989e14c4155d8f316a00201d10087c7cc8ae97b0906610",
   "line_count": 242,
-  "size_bytes": 15374,
+  "size_bytes": 15143,
   "headings": [
     "# Workflow Cookbook Integration",
     "## 1. 目的",

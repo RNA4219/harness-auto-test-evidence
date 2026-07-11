@@ -2,9 +2,9 @@
   "path": "src/hate/connectors.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "cf063f043ce31dc9a309049cf38b0553e4766751e239a44a6c7b9eae587aadbd",
+  "sha256": "3714d90e0b6f340605001766a7e69acff6750a3e15279f499079dcf8c9800985",
   "line_count": 163,
-  "size_bytes": 6530,
+  "size_bytes": 6367,
   "headings": [],
   "imports": [
     "__future__",

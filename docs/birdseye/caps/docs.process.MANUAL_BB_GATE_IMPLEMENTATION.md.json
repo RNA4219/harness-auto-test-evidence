@@ -2,9 +2,9 @@
   "path": "docs/process/MANUAL_BB_GATE_IMPLEMENTATION.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "d44caa0db398fd1888a1f0d1ec8948716d12c71d4d416545f522596a6b09b6a9",
+  "sha256": "d9ab9e6793b896ea405bc316c2677fa7085973361aff418db857c4db1eb3f35a",
   "line_count": 139,
-  "size_bytes": 10353,
+  "size_bytes": 10214,
   "headings": [
     "# Manual-bb 実装ゲート確認",
     "## Intake Status",

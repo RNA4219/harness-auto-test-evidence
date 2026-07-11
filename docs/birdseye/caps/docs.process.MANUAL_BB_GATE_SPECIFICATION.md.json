@@ -2,9 +2,9 @@
   "path": "docs/process/MANUAL_BB_GATE_SPECIFICATION.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "b83aadd22a2c389bc5e6c17cee9fd560987509d9bf278258b629c21e3a470e6d",
+  "sha256": "a47bfb85abb5007a65a44e11ac66c6b4090aa56ed2f34b21bcde5c4c74f21eb9",
   "line_count": 117,
-  "size_bytes": 10070,
+  "size_bytes": 9953,
   "headings": [
     "# Manual BB Gate: HATE 仕様書",
     "## Intake Status",

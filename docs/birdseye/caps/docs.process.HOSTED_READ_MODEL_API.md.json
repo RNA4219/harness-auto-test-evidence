@@ -2,9 +2,9 @@
   "path": "docs/process/HOSTED_READ_MODEL_API.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "eb0cfc62f4b03dbe865acae80f9e3723a69129e47813df48091383b1fcd2c459",
+  "sha256": "122f73226500b63ef6054704dc6fb71d1652322db9746be0e949deddd8080607",
   "line_count": 137,
-  "size_bytes": 4695,
+  "size_bytes": 4558,
   "headings": [
     "# Hosted Read Model and API Contract",
     "## 1. 目的",

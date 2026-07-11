@@ -2,9 +2,9 @@
   "path": "docs/process/ACCESSIBILITY_LOCALIZATION_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "10c91e5e7c7eaee05001e9b922dfe7f063dc7d48aad9074cf3e8d05fcb93ff74",
+  "sha256": "6e5a7e0db810e71a95a87c2c2228ef110ad77ae07b2a3513a1bdb7dca25097b6",
   "line_count": 111,
-  "size_bytes": 4467,
+  "size_bytes": 4356,
   "headings": [
     "# Accessibility and Localization Contract",
     "## 1. 目的",

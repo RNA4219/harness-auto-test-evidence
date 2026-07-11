@@ -2,9 +2,9 @@
   "path": "docs/process/PACKAGING_ENTITLEMENT_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "7335fd888054aecf76f2c96cc08d69dcca027a866cdaf351d4cd893a1d4b3691",
+  "sha256": "1879f8a8d9b8bb549047eaa7abb1b631de0e54df358a89f90d925154ce02ec77",
   "line_count": 122,
-  "size_bytes": 4736,
+  "size_bytes": 4614,
   "headings": [
     "# Packaging and Entitlement Contract",
     "## 1. 目的",

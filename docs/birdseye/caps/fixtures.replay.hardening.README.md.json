@@ -2,9 +2,9 @@
   "path": "fixtures/replay/hardening/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "1ac7780aad0e2b695e725100aa2d3af7d7caada6fb502773e8770f0d54534cec",
+  "sha256": "c4b4dee7671c885a5ae87fd5e4246c816aaa62b4b5b929c1097b22feb555ae03",
   "line_count": 6,
-  "size_bytes": 332,
+  "size_bytes": 326,
   "headings": [
     "# HATE-P1A-008 Replay / Compare / Explain / Recommend Hardening Fixture"
   ],

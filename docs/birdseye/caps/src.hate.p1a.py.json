@@ -2,9 +2,9 @@
   "path": "src/hate/p1a.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "e02cace91c1312f9dc8824a517edb180c4017ff763f55558cf044bfa3a381780",
+  "sha256": "5468d29e30d1018e41e4316a3174739e30a46539b12ec551f802bb75f1ff694c",
   "line_count": 409,
-  "size_bytes": 17776,
+  "size_bytes": 17367,
   "headings": [],
   "imports": [
     ".",

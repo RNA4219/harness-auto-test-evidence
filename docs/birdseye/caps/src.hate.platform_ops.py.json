@@ -2,9 +2,9 @@
   "path": "src/hate/platform_ops.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "cb69fa2e46c8823f136727ac8ea807baaefa7b217de4912ee42ee5ea6ce0a507",
+  "sha256": "9eea2cca8bfe4eb6f50b593c8ee3aa81307b5d23876a70d1194ee86ca51deb32",
   "line_count": 583,
-  "size_bytes": 24049,
+  "size_bytes": 24047,
   "headings": [],
   "imports": [
     "__future__",

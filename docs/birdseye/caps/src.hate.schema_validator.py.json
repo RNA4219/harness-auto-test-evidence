@@ -2,9 +2,9 @@
   "path": "src/hate/schema_validator.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "dbc03c7946b2c5526a9c429bdee3873567f9004fd12bdfab69a34914ae7ba398",
+  "sha256": "da844718c62c86e46bec031e2c96a3947cfabd221abecb22b28b947f90e66335",
   "line_count": 289,
-  "size_bytes": 11261,
+  "size_bytes": 11249,
   "headings": [],
   "imports": [
     ".evidence_envelope",

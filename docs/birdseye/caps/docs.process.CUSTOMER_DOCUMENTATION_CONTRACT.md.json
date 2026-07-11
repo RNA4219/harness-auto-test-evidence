@@ -2,9 +2,9 @@
   "path": "docs/process/CUSTOMER_DOCUMENTATION_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "20646124cb982fd4ccdc1ec1fc7c4383116ae1a420b64515e3ddd173e53a81fe",
+  "sha256": "0279b1d0022c3578784a6c00312d6d45a43c2b4005d68fc1efc9910596121eb3",
   "line_count": 112,
-  "size_bytes": 4456,
+  "size_bytes": 4344,
   "headings": [
     "# Customer Documentation Contract",
     "## 1. 目的",

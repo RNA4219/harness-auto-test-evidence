@@ -2,9 +2,9 @@
   "path": "src/hate/p0a_io.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "a336fa53490314a0c7efdb89f3c804600a344f4a669a8ef745e03d5a60b6c034",
+  "sha256": "90b6c144ab0b6ce22dd98da6bd722e946a65be1ca0eab4fcf425d53abfde92fb",
   "line_count": 66,
-  "size_bytes": 2407,
+  "size_bytes": 2341,
   "headings": [],
   "imports": [
     "__future__",

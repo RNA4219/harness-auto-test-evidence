@@ -2,9 +2,9 @@
   "path": "tests/test_p0a.py",
   "role": "test",
   "kind": "py",
-  "sha256": "2ca12d2a8f229e810df4975f47bb83d7a65576977f479ea864baed949b761beb",
+  "sha256": "982060adc84dd7d3c5c72ec0a3bdc7fbbf25e8b61a0b39e645670d955579ccd4",
   "line_count": 695,
-  "size_bytes": 34802,
+  "size_bytes": 34139,
   "headings": [],
   "imports": [
     "__future__",

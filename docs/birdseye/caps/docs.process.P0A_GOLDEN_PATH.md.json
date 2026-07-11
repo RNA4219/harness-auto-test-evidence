@@ -2,9 +2,9 @@
   "path": "docs/process/P0A_GOLDEN_PATH.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "8d4eb9235e5434ca9b4bebe9862a7201e646234a42b77d4f15289656c139ec9c",
+  "sha256": "d96dfbe11f6bf26f6afa4064def1aeb8c978a7e891ef6d28bc108abbe2e55f79",
   "line_count": 210,
-  "size_bytes": 6965,
+  "size_bytes": 6755,
   "headings": [
     "# P0a Golden Path Contract",
     "## 1. 目的",

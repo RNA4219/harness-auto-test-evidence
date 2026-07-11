@@ -2,9 +2,9 @@
   "path": "docs/process/AUDIT_FIXTURE_ASSURANCE_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "3a8048cf594f2d948fc3d466906c0165caa6f49f9c75eea09eea5b5abe229aca",
+  "sha256": "242946f24af7d6f78e60b4cc0c3d15f9a1ce1cdfbc3d5cf00ecde99fd271c810",
   "line_count": 101,
-  "size_bytes": 4336,
+  "size_bytes": 4235,
   "headings": [
     "# Audit Fixture and Assurance Contract",
     "## 1. 目的",

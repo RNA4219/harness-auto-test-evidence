@@ -2,9 +2,9 @@
   "path": "CONTRIBUTING.md",
   "role": "project",
   "kind": "md",
-  "sha256": "d9b29d3d1b9b33e9da084aa05439eebd5d2f7c53203b0a058064da2f70836789",
+  "sha256": "69ea987a4f12f52b7eb2ed393c815e42c01354f5227f7d4f6e125b170bd6ba04",
   "line_count": 18,
-  "size_bytes": 772,
+  "size_bytes": 771,
   "headings": [
     "# Contributing to HATE",
     "## Development workflow",

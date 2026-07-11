@@ -2,9 +2,9 @@
   "path": "tests/test_schema_resources.py",
   "role": "test",
   "kind": "py",
-  "sha256": "b9a20500dbfe62bcf219b005aa97f140d6863521631bd17a7afbebe910ba900c",
+  "sha256": "17094fc0bf1c5b4a4065eec1e12ec141f40cd59262e6ba827442e6b311d8a96d",
   "line_count": 46,
-  "size_bytes": 2081,
+  "size_bytes": 2035,
   "headings": [],
   "imports": [
     "__future__",

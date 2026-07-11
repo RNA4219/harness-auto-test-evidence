@@ -2,9 +2,9 @@
   "path": "docs/process/RAND_KANO_MODE_IDEA_QUALITY_AUDIT.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "bc733463e3624ca46d6382a53d34d53e7701186afd553394743d08637e4728c7",
+  "sha256": "f2e419001d0c00ab4c91b59ab758c938e15ceff72680b804c3be68b42f5f0418",
   "line_count": 95,
-  "size_bytes": 4702,
+  "size_bytes": 4607,
   "headings": [
     "# RanD Kano Mode アイデア品質監査",
     "## 1. 目的",

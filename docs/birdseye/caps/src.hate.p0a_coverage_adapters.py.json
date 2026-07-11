@@ -2,9 +2,9 @@
   "path": "src/hate/p0a_coverage_adapters.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "27869e2bdd010846ab7850b325526b0a7185212b487e12fcb196dcefaf54521d",
+  "sha256": "dd1e93fbcb78d103b9b94783969e546e8fb44b8b5eabb911c53f9c39ceb5f8e6",
   "line_count": 313,
-  "size_bytes": 11683,
+  "size_bytes": 11682,
   "headings": [],
   "imports": [
     ".p0a_constants",

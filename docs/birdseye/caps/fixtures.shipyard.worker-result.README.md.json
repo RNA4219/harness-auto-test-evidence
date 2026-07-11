@@ -2,9 +2,9 @@
   "path": "fixtures/shipyard/worker-result/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "1ef5604491dc34c0d97e4064eb9383312f0b18d93cce7170bbb6a7ccb85d1427",
+  "sha256": "81d7b65165764b8d870c56e809e0145f2ad85aaa64221de04b4a6ae8e77bfc42",
   "line_count": 5,
-  "size_bytes": 272,
+  "size_bytes": 267,
   "headings": [
     "# HATE-P1B-004 Shipyard WorkerResult Fixture"
   ],

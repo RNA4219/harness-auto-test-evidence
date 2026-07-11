@@ -2,9 +2,9 @@
   "path": "docs/process/SPECIFICATION_SHIPYARD_DRAFT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "b757c5b6d37d249813b8ad3f949cdba30f5e79b2299ff9f08791ae2c63ab79cc",
+  "sha256": "49e3bffe10c71e0096cf29377ac65c084de5381a2e998d5a41308eee447dd5fe",
   "line_count": 353,
-  "size_bytes": 22240,
+  "size_bytes": 21887,
   "headings": [
     "# HATE 仕様書：SHIPYARD 追加ドラフト",
     "## 20. 要件定義→仕様トレーサビリティ行列",

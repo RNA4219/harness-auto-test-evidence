@@ -2,9 +2,9 @@
   "path": "docs/process/RAND_KANO_MODE_REQUIREMENTS_QUALITY_AUDIT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "c0eda9e5bf1386e59ff283cfdf4e8f6079f8ff73e56504aa24787dad495a235b",
+  "sha256": "50a6642b894ce137c3d13908bcec376bdcf625e387da74d9e900a8046803af60",
   "line_count": 85,
-  "size_bytes": 4141,
+  "size_bytes": 4056,
   "headings": [
     "# RanD Kano Mode 要件定義品質監査",
     "## 1. 目的",

@@ -2,9 +2,9 @@
   "path": "src/hate/p0a_artifacts.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "50f2a1138d3d1de359d62ecd3d3ce0137edeb93ae0ce80234856a22ddbd85680",
+  "sha256": "31c56ff7c89db18c90910765dc049e53e922ff4d632a5e0ded91ccb363675f07",
   "line_count": 235,
-  "size_bytes": 10531,
+  "size_bytes": 10530,
   "headings": [],
   "imports": [
     ".p0a_constants",

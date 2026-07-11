@@ -2,9 +2,9 @@
   "path": "src/hate/dashboard/uat_states.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "d566a6d300ed7de93b3dceebf13a467fc8337d779d1949454f1e362d37e22871",
+  "sha256": "219cf678986bf7654185c5243931e8c037a69ca468c53d21a3d35d0abc4e228c",
   "line_count": 609,
-  "size_bytes": 19715,
+  "size_bytes": 19714,
   "headings": [
     "# Builder functions - project from reports without computing verdicts"
   ],

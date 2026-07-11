@@ -2,9 +2,9 @@
   "path": "docs/process/RAND_KANO_MODE_FULL_IMPLEMENTATION_AUDIT.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "5406b7591674f25758d2b7fc88c8d3764ae1fad97999a29da3add64c8deb3fde",
+  "sha256": "f1e65c47422f1433d333e3d89e493da85add91ac123e87762e752c8dc26fc2d6",
   "line_count": 129,
-  "size_bytes": 7222,
+  "size_bytes": 7093,
   "headings": [
     "# RanD Kano Mode フル実装仕様監査",
     "## 1. 目的",

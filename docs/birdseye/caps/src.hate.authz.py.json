@@ -2,9 +2,9 @@
   "path": "src/hate/authz.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "a6d4850abfa6cda4c464d04a3749f07766fb5200f2fb767e97c5c204682e2ff5",
+  "sha256": "c4300fe78b40d5c941b4c1fbcc3dd3c0068c57daf75225f841f54a48055fccac",
   "line_count": 184,
-  "size_bytes": 6445,
+  "size_bytes": 6261,
   "headings": [],
   "imports": [
     "__future__",

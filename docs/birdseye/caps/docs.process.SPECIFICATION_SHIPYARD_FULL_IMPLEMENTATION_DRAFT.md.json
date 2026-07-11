@@ -2,9 +2,9 @@
   "path": "docs/process/SPECIFICATION_SHIPYARD_FULL_IMPLEMENTATION_DRAFT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "f1435ab0ced3e1b785e02ef7a07fac775684c9463faf65b0a09a3a7f7dce20a8",
+  "sha256": "f451e979e612a5f571ff73d9fc4154ca61b365ffb542bd09d938ae4b9aa6b30f",
   "line_count": 151,
-  "size_bytes": 10374,
+  "size_bytes": 10223,
   "headings": [
     "# HATE 仕様書: Shipyard-cp フル実装ドラフト",
     "## 1. 目的",

@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-005.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "e19ab00a211abec89b39d3207b0beabee5ba92b4fe071c069ec434048907670a",
+  "sha256": "22b0aa5abc267226b35b0a94c018a916ab7d2dd8fba5a57dc3c2b4b0b0ef0c28",
   "line_count": 79,
-  "size_bytes": 2995,
+  "size_bytes": 2993,
   "headings": [
     "# AC-20260703-postpoc-005 Real-Repo Roster Maintenance Evidence",
     "## Scope",

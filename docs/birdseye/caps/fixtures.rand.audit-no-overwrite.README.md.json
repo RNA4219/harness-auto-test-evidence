@@ -2,9 +2,9 @@
   "path": "fixtures/rand/audit-no-overwrite/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "ecd6d976ea1417b426e76e5495a281e2cb54253d05084586413ac12c0bb63f03",
+  "sha256": "fd0d7cd5fa881fc69d93bc3df0544eaad47e400e5cc1430fffc1b702b13f3690",
   "line_count": 5,
-  "size_bytes": 266,
+  "size_bytes": 261,
   "headings": [
     "# HATE-P1B-002 RanD Audit No-Overwrite Fixture"
   ],

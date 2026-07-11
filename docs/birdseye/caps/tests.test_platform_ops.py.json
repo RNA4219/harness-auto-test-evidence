@@ -2,9 +2,9 @@
   "path": "tests/test_platform_ops.py",
   "role": "test",
   "kind": "py",
-  "sha256": "b457ef3fb82cfd2f3f5aa74d95ee7a74006ee79af1b965ea889f856049cb5231",
+  "sha256": "785b400f975dbaf445467891b228cfa600f33a454db47cb5c074273250e9a9ca",
   "line_count": 648,
-  "size_bytes": 25185,
+  "size_bytes": 25146,
   "headings": [],
   "imports": [
     "__future__",

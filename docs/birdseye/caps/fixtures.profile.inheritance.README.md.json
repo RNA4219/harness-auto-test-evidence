@@ -2,9 +2,9 @@
   "path": "fixtures/profile/inheritance/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "403604a02c501f9beff9e0bb52208be3fd810bf75260029c12bd753b8bfbc761",
+  "sha256": "627db0ee7834fd31ccd75bfe63f5897747e35811db8a8d156cf85dad8d2785d7",
   "line_count": 7,
-  "size_bytes": 324,
+  "size_bytes": 317,
   "headings": [
     "# HATE-P1A-003 Profile Inheritance Fixture"
   ],

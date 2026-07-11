@@ -2,9 +2,9 @@
   "path": "docs/process/PRODUCT_ERROR_TAXONOMY.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "ff74a81e486abc08b320f5a059f2be01006e3330e4808a5eedec68b217cd1870",
+  "sha256": "2e41a735c327d7f0af60b8c5212f8b208b15700a7d616e5c20a025defbe9eb2a",
   "line_count": 177,
-  "size_bytes": 8503,
+  "size_bytes": 8346,
   "headings": [
     "# Product Error Taxonomy",
     "## 1. 目的",
@@ -25,6 +25,7 @@
     "adapter",
     "artifact",
     "enterprise",
+    "fixture",
     "qeg",
     "schema",
     "test"

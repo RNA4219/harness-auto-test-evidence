@@ -2,9 +2,9 @@
   "path": "fixtures/manual-bb/missing-high-risk/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "5ef9a97ce1dce58c31c4a39426e145b7c4048faf53fd9b7645bae782ab761abe",
+  "sha256": "5624a457f40e7d31851c5306a5b322953668face189423f8a0a7b32ddcda2ae6",
   "line_count": 8,
-  "size_bytes": 409,
+  "size_bytes": 401,
   "headings": [
     "# HATE-P0B-007 Manual BB Bridge Fixture"
   ],

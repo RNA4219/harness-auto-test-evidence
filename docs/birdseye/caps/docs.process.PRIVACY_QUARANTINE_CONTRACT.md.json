@@ -2,9 +2,9 @@
   "path": "docs/process/PRIVACY_QUARANTINE_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "41d593aa8342536b7829013630684120b672385f1d39dc7bd079ea6af24317f0",
+  "sha256": "0b6e7cc3b7e46dda8b98dc0b0cb47631463e5cc6647d52ec4d8514669e0222ec",
   "line_count": 129,
-  "size_bytes": 4484,
+  "size_bytes": 4355,
   "headings": [
     "# Privacy and Quarantine Contract",
     "## 1. 目的",

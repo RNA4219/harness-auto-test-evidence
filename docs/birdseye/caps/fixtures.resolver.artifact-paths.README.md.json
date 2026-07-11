@@ -2,9 +2,9 @@
   "path": "fixtures/resolver/artifact-paths/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "e18b21cc1984e868027f8ef61a0cf6a0444d8f2cb4cdce3d921b2d3417ceba9a",
+  "sha256": "f543e0b24b5196e20b76f214895c4a54687ee37bee939359ecf2fa03e1af9d0d",
   "line_count": 5,
-  "size_bytes": 233,
+  "size_bytes": 228,
   "headings": [
     "# HATE-P1A-007 Artifact Resolver Fixture"
   ],
