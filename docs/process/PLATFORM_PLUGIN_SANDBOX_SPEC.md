@@ -2,86 +2,72 @@
 intent_id: INT-HATE-PLATFORM-PLUGIN-SANDBOX-SPEC-001
 owner: RNA4219
 status: active
-last_reviewed_at: 2026-07-01
-next_review_due: 2026-07-15
+last_reviewed_at: 2026-07-11
+next_review_due: 2026-07-25
 ---
 
 # Platform Plugin Sandbox Specification
 
 本書は detector plugin の実行境界、resource limit、trust enforcement、
-failure isolation を定義する。
+failure isolation を定義する。v0.2.0 の local runner は fail-closed な
+process runner であり、filesystem/network を完全隔離する sandbox ではない。
 
 ## 1. Execution Modes
 
-| Mode | Purpose | Allowed In Release |
-|---|---|---:|
-| `in_process_builtin` | built-in trusted detectors | yes |
-| `subprocess_local` | workspace plugin | conditional |
-| `containerized` | hosted/enterprise plugin | yes |
-| `disabled` | denied plugin | no |
+| Mode | Purpose | Default / strict profile |
+|---|---|---|
+| `in_process_builtin` | built-in trusted detectors | local runner の対象外 |
+| `subprocess_local` | workspace plugin | default は `--allow-local-exec` 必須、release/regulated は常時拒否 |
+| `containerized` | hosted/enterprise plugin | runner evidence が別途必要 |
+| `disabled` | denied plugin | 常時未実行 |
 
-Release/regulated profile は unsigned workspace plugin を実行しない。
+実行順序は manifest/schema validation、mode/trust/revocation/compatibility/resource
+preflight、明示許可確認、process 起動、出力検証で固定する。preflight が hold/block
+を返した場合や `disabled` の場合は process を起動しない。
 
-## 2. Sandbox Inputs
+## 2. Authorization and Trust Boundary
 
-Plugin receives:
+`subprocess_local` は default profile でも `--allow-local-exec` がない限り起動しない。
+release/regulated profile はフラグの有無にかかわらず local subprocess を拒否する。
 
-- redacted canonical input bundle
-- effective policy subset
-- detector-specific config
-- temp working directory
-- read-only artifact metadata
+`signature_valid`、`signed`、`trusted` は外部検証証跡の入力値であり、HATE自身が
+暗号学的署名を検証した結果ではない。v0.2.0 の安全境界はpreflightと明示実行許可である。
 
-Plugin does not receive:
+## 3. Local Runner Controls
 
-- raw unsafe artifact body
-- secrets
-- unrestricted filesystem path
-- network access by default
+強制するcontrol:
 
-## 3. Resource Limits
+- timeout と process tree termination
+- stdout/stderr の一時ファイル収集と合計byte上限
+- 最小環境変数と明示env allowlist
+- pluginごとの一時working directory
+- crash、timeout、出力超過、invalid JSON のreport化
 
-Required controls:
+Windowsは `taskkill /T /F`、POSIXは新規process groupと `killpg` を使う。
+reportには `execution_attempted`、`execution_authorized`、
+`authorization_source`、`denial_reasons`、`enforced_controls`、
+`unenforced_controls` を記録する。
 
-- timeout_ms
-- max_output_bytes
-- max_input_bytes
-- max_memory_mb where platform supports it
-- filesystem allowlist
-- network mode: `none`, `allowlisted`, `unrestricted-denied-in-release`
+強制しないcontrol:
+
+- filesystem isolation
+- network isolation
+- portableなmemory limit
+
+したがってlocal runnerを「完全sandbox済み」と表現してはならない。release/regulated
+用途ではcontainerized runnerの独立したevidenceを要求する。
 
 ## 4. Output Contract
 
-Plugin output must be:
+Plugin outputはJSONでなければならない。malformed outputは
+`plugin_output_invalid` finding、timeoutは `plugin_timeout`、出力超過は
+`plugin_output_budget_exceeded`、非zero終了は `plugin_execution_failed`
+としてreportへ変換し、platform processをcrashさせない。
 
-- JSON
-- schema versioned
-- detector_id scoped
-- sourceRefs preserving
-- deterministic for identical input/policy
+## 5. Required Test Coverage
 
-Malformed output creates `plugin_output_invalid` finding.
-
-## 5. Failure Isolation
-
-| Failure | Finding |
-|---|---|
-| timeout | `plugin_timeout` |
-| over output budget | `plugin_output_budget_exceeded` |
-| forbidden filesystem access | `plugin_forbidden_filesystem_access` |
-| forbidden network access | `plugin_forbidden_network_access` |
-| crash | `plugin_execution_failed` |
-| trust denied | `plugin_trust_denied` |
-
-Plugin failure cannot crash the platform run unless profile explicitly marks the
-detector as required-blocking.
-
-## 6. Required Fixtures
-
-| Fixture | Expected |
-|---|---|
-| `fixtures/platform/plugin-sandbox/builtin-pass/fixture.json` | built-in detector passes |
-| `fixtures/platform/plugin-sandbox/workspace-unsigned-release-denied/fixture.json` | release trust denied |
-| `fixtures/platform/plugin-sandbox/output-budget-exceeded/fixture.json` | budget finding |
-| `fixtures/platform/plugin-sandbox/network-denied/fixture.json` | network denied finding |
-| `fixtures/platform/plugin-sandbox/crash-isolated/fixture.json` | run continues with finding |
+- denied/unsigned/untrusted/revoked/disabled pluginがsentinelを起動しない
+- default profileでは明示許可とpreflight passの両方が必要
+- release/regulatedでは明示許可があっても未実行
+- timeout、親子process、出力超過、crash、invalid JSONをreport化
+- enforced/unenforced controlと署名検証境界をreportへ保持

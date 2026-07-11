@@ -13,10 +13,10 @@ from .evidence_envelope import (
     source_refs,
     timestamp_value,
 )
-from .p0a_schema import _validate_schema_value
+from .p0a_schema import _format_jsonschema_error
+from .schema_resources import DEVELOPMENT_SCHEMA_ROOT, read_schema, validate_schema_instance
 
-
-SCHEMA_ROOT = Path(__file__).resolve().parents[2] / "schemas" / "HATE" / "v1"
+SCHEMA_ROOT = DEVELOPMENT_SCHEMA_ROOT
 
 SECRET_PATTERNS = [
     re.compile(r"\bsk-[A-Za-z0-9_-]{12,}\b"),
@@ -99,7 +99,7 @@ class SchemaValidationResult:
 
 
 def validate_record(record: dict[str, Any], *, schema_root: Path | None = None, source_ref: str = "record.json") -> SchemaValidationResult:
-    root = schema_root or SCHEMA_ROOT
+    root = schema_root
     findings: list[SchemaFinding] = []
     refs = source_refs(record)
     kind = record_kind(record) or ""
@@ -160,12 +160,13 @@ def validate_record(record: dict[str, Any], *, schema_root: Path | None = None, 
             reject("record_kind_schema_mismatch", f"{kind} payload is missing: {', '.join(missing)}")
 
     if schema_ref:
-        schema_path = root / schema_ref
-        if not schema_path.exists():
+        try:
+            schema = read_schema(schema_ref, schema_root=root)
+        except FileNotFoundError:
             reject("schema_registry_missing_file", f"registered schema file missing: {schema_ref}")
         else:
-            schema = _read_schema(schema_path)
-            for error in _validate_schema_value(record, schema, "$"):
+            for validation_error in validate_schema_instance(record, schema, schema_root=root):
+                error = _format_jsonschema_error(validation_error, "$")
                 code = "record_kind_schema_mismatch" if "record_type" in error or ".payload." in error else "schema_validation_error"
                 reject(code, error)
 
@@ -249,11 +250,11 @@ def _cross_record_section(violations: list[Any]) -> dict[str, Any]:
     }
 
 
-def _load_schema_registry(schema_root: Path) -> dict[str, Any]:
-    registry_path = schema_root / "schema-registry.json"
-    if not registry_path.exists():
-        registry_path = SCHEMA_ROOT / "schema-registry.json"
-    return _read_schema(registry_path)
+def _load_schema_registry(schema_root: Path | None) -> dict[str, Any]:
+    try:
+        return read_schema("schema-registry.json", schema_root=schema_root)
+    except FileNotFoundError:
+        return read_schema("schema-registry.json")
 
 
 def _registry_entries(registry: dict[str, Any]) -> dict[str, dict[str, Any]]:

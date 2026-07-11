@@ -1,0 +1,22 @@
+{
+  "path": ".github/pull_request_template.md",
+  "role": "project",
+  "kind": "md",
+  "sha256": "a89ca920c57b25fd39c00ca03b49810cc19646627844c01dc1a5ddd2d635ef71",
+  "line_count": 15,
+  "size_bytes": 493,
+  "headings": [
+    "## Summary",
+    "## Verification",
+    "## Safety and claims"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "release",
+    "test"
+  ]
+}

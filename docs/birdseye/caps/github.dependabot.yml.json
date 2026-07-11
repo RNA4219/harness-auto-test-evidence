@@ -1,0 +1,13 @@
+{
+  "path": ".github/dependabot.yml",
+  "role": "project",
+  "kind": "yml",
+  "sha256": "875bcbb826e1443f3c9fa3342276a307ecc51cb856e6ae37f7fe7ad01cfd6f60",
+  "line_count": 12,
+  "size_bytes": 258,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

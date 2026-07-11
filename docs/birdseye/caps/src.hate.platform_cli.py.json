@@ -2,9 +2,9 @@
   "path": "src/hate/platform_cli.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "3936c31afc6534e1d6427266533cff6cc1be7d7f3b9f0dd589faf789bc61ebc2",
-  "line_count": 522,
-  "size_bytes": 20153,
+  "sha256": "7f388e71ae27eed3b7483565615c0956dcbd6ccd690fc24150a6114bb40a66d9",
+  "line_count": 531,
+  "size_bytes": 20259,
   "headings": [],
   "imports": [
     "__future__",

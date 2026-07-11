@@ -2,9 +2,9 @@
   "path": "docs/README_JA.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "76cf6a23e51c3a9120246f60e23e70e2c71a1c5c47fa5ce29a3462fdf8f3379c",
+  "sha256": "72c1d71d1e1e3b2485f11d8fb5eca999dedc74c1354698853979ea0a7273bb5d",
   "line_count": 122,
-  "size_bytes": 5378,
+  "size_bytes": 5990,
   "headings": [
     "# HATE: harness-auto-test-evidence",
     "## 何ができるか",
@@ -40,12 +40,12 @@
   ],
   "tags": [
     "artifact",
-    "birdseye",
     "coverage",
     "fixture",
     "qeg",
     "release",
     "schema",
+    "security",
     "test",
     "workflow"
   ]

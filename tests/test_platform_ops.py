@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from pathlib import Path
+
+import pytest
 
 from hate.cli import main
 from hate.platform_ops import (
@@ -13,7 +16,6 @@ from hate.platform_ops import (
     build_platform_verdict_report,
     run_platform_plugin,
 )
-
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -95,6 +97,7 @@ def test_platform_assign_holds_missing_owner_and_sla_breach(tmp_path: Path) -> N
     }
 
 
+@pytest.mark.subprocess
 def test_platform_plugin_run_executes_and_sandbox_validates_output(tmp_path: Path) -> None:
     manifest = tmp_path / "plugin.json"
     out = tmp_path / "plugin-report.json"
@@ -107,6 +110,7 @@ def test_platform_plugin_run_executes_and_sandbox_validates_output(tmp_path: Pat
                 "detector_id": "det-a",
                 "execution_mode": "subprocess_local",
                 "signed": True,
+                "trusted": True,
             },
             "limits": {"timeout_ms": 5000, "max_output_bytes": 2000, "max_input_bytes": 2000},
             "execution": {
@@ -119,7 +123,7 @@ def test_platform_plugin_run_executes_and_sandbox_validates_output(tmp_path: Pat
         },
     )
 
-    report = run_platform_plugin(manifest, out)
+    report = run_platform_plugin(manifest, out, allow_local_exec=True)
 
     assert report["record_type"] == "platform-plugin-run-report"
     assert report["overall_status"] == "pass"
@@ -473,7 +477,7 @@ def test_platform_ops_record_types_are_registered_and_schema_compatible(tmp_path
         manifest,
         {
             "profile": "default",
-            "plugin": {"plugin_id": "plugin-a", "detector_id": "det-a", "execution_mode": "subprocess_local", "signed": True},
+            "plugin": {"plugin_id": "plugin-a", "detector_id": "det-a", "execution_mode": "subprocess_local", "signed": True, "trusted": True},
             "limits": {"timeout_ms": 5000, "max_output_bytes": 2000, "max_input_bytes": 2000},
             "execution": {
                 "command": [
@@ -490,7 +494,7 @@ def test_platform_ops_record_types_are_registered_and_schema_compatible(tmp_path
         build_platform_score_report(source),
         build_platform_verdict_report(source, expected),
         build_platform_triage_report(source),
-        run_platform_plugin(manifest),
+        run_platform_plugin(manifest, allow_local_exec=True),
     ]
     registry = json.loads((ROOT / "schemas" / "HATE" / "v1" / "schema-registry.json").read_text(encoding="utf-8"))
     by_record_type = {record["record_type"]: record for record in registry["records"]}
@@ -501,3 +505,144 @@ def test_platform_ops_record_types_are_registered_and_schema_compatible(tmp_path
         schema = json.loads(schema_path.read_text(encoding="utf-8"))
         assert set(schema["required"]) <= set(report)
         assert report["record_type"] in schema["properties"]["record_type"]["enum"]
+
+def _plugin_manifest(command: list[str], *, profile: str = "default", **plugin_overrides: object) -> dict:
+    plugin = {
+        "plugin_id": "plugin-safe",
+        "detector_id": "det-safe",
+        "execution_mode": "subprocess_local",
+        "signed": True,
+        "trusted": True,
+        "compatibility_status": "compatible",
+        **plugin_overrides,
+    }
+    return {
+        "profile": profile,
+        "plugin": plugin,
+        "limits": {
+            "timeout_ms": 5000,
+            "max_output_bytes": 4096,
+            "max_input_bytes": 4096,
+        },
+        "execution": {"command": command},
+    }
+
+
+@pytest.mark.subprocess
+def test_platform_plugin_default_deny_never_starts_process(tmp_path: Path) -> None:
+    marker = tmp_path / "should-not-exist.txt"
+    manifest = tmp_path / "plugin-default-deny.json"
+    command = [sys.executable, "-c", f"from pathlib import Path; Path({str(marker)!r}).write_text('ran')"]
+    _write_json(manifest, _plugin_manifest(command))
+
+    report = run_platform_plugin(manifest)
+
+    assert report["execution_attempted"] is False
+    assert report["execution_authorized"] is False
+    assert "plugin_local_exec_consent_required" in report["denial_reasons"]
+    assert marker.exists() is False
+
+
+@pytest.mark.subprocess
+def test_platform_plugin_preflight_denials_never_start_process(tmp_path: Path) -> None:
+    cases = [
+        ("unsigned", {"signed": False}),
+        ("untrusted", {"trusted": False}),
+        ("revoked", {"revoked": True}),
+        ("disabled", {"execution_mode": "disabled"}),
+    ]
+    for name, overrides in cases:
+        marker = tmp_path / f"{name}.txt"
+        manifest = tmp_path / f"{name}.json"
+        command = [sys.executable, "-c", f"from pathlib import Path; Path({str(marker)!r}).write_text('ran')"]
+        _write_json(manifest, _plugin_manifest(command, **overrides))
+
+        report = run_platform_plugin(manifest, allow_local_exec=True)
+
+        assert report["execution_attempted"] is False
+        assert report["overall_status"] in {"hold", "blocked"}
+        assert marker.exists() is False
+
+
+@pytest.mark.subprocess
+@pytest.mark.parametrize("profile", ["release", "regulated"])
+def test_platform_plugin_release_profile_denies_local_exec_even_with_consent(tmp_path: Path, profile: str) -> None:
+    marker = tmp_path / "release-denied.txt"
+    manifest = tmp_path / f"{profile}.json"
+    command = [sys.executable, "-c", f"from pathlib import Path; Path({str(marker)!r}).write_text('ran')"]
+    _write_json(manifest, _plugin_manifest(command, profile=profile))
+
+    report = run_platform_plugin(manifest, allow_local_exec=True)
+
+    assert report["execution_attempted"] is False
+    assert "plugin_local_exec_denied_in_strict_profile" in report["denial_reasons"]
+    assert marker.exists() is False
+
+
+@pytest.mark.subprocess
+def test_platform_plugin_timeout_becomes_finding(tmp_path: Path) -> None:
+    manifest = tmp_path / "timeout.json"
+    data = _plugin_manifest([sys.executable, "-c", "import time; time.sleep(2)"])
+    data["limits"]["timeout_ms"] = 50
+    _write_json(manifest, data)
+
+    report = run_platform_plugin(manifest, allow_local_exec=True)
+
+    assert report["execution_attempted"] is True
+    assert report["process_result"]["timed_out"] is True
+    assert report["process_result"]["cleanup"]["cleanup_attempted"] is True
+    assert "plugin_timeout" in {finding["code"] for finding in report["findings"]}
+
+
+@pytest.mark.subprocess
+def test_platform_plugin_output_limit_and_invalid_json_are_findings(tmp_path: Path) -> None:
+    output_manifest = tmp_path / "output-limit.json"
+    output_data = _plugin_manifest([sys.executable, "-c", "print('x' * 10000)"])
+    output_data["limits"]["max_output_bytes"] = 100
+    _write_json(output_manifest, output_data)
+
+    output_report = run_platform_plugin(output_manifest, allow_local_exec=True)
+
+    assert output_report["process_result"]["output_limit_exceeded"] is True
+    assert "plugin_output_budget_exceeded" in {finding["code"] for finding in output_report["findings"]}
+
+    invalid_manifest = tmp_path / "invalid-json.json"
+    _write_json(invalid_manifest, _plugin_manifest([sys.executable, "-c", "print('not-json')"]))
+
+    invalid_report = run_platform_plugin(invalid_manifest, allow_local_exec=True)
+
+    assert invalid_report["execution_attempted"] is True
+    assert "plugin_output_invalid" in {finding["code"] for finding in invalid_report["findings"]}
+@pytest.mark.subprocess
+def test_platform_plugin_timeout_terminates_child_process_tree(tmp_path: Path) -> None:
+    marker = tmp_path / "child-should-not-survive.txt"
+    child_code = (
+        "import time; from pathlib import Path; "
+        f"time.sleep(0.4); Path({str(marker)!r}).write_text('survived', encoding='utf-8')"
+    )
+    parent_code = (
+        "import subprocess, sys, time; "
+        f"subprocess.Popen([sys.executable, '-c', {child_code!r}]); "
+        "time.sleep(2)"
+    )
+    manifest = tmp_path / "timeout-tree.json"
+    data = _plugin_manifest([sys.executable, "-c", parent_code])
+    data["limits"]["timeout_ms"] = 50
+    _write_json(manifest, data)
+
+    report = run_platform_plugin(manifest, allow_local_exec=True)
+    time.sleep(0.6)
+
+    assert report["process_result"]["timed_out"] is True
+    assert marker.exists() is False
+
+
+@pytest.mark.subprocess
+def test_platform_plugin_crash_becomes_finding(tmp_path: Path) -> None:
+    manifest = tmp_path / "crash.json"
+    _write_json(manifest, _plugin_manifest([sys.executable, "-c", "raise SystemExit(7)"]))
+
+    report = run_platform_plugin(manifest, allow_local_exec=True)
+
+    assert report["process_result"]["exit_code"] == 7
+    assert "plugin_execution_failed" in {finding["code"] for finding in report["findings"]}

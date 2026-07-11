@@ -2,9 +2,9 @@
   "path": "README.md",
   "role": "navigation",
   "kind": "md",
-  "sha256": "2dfeceebebcac13492409150f51ecc90e3b61e7557a4f25d5e1ffbaceebb9d0f",
-  "line_count": 175,
-  "size_bytes": 7291,
+  "sha256": "0f84b74a9e3e8b16c2a96619545eafacf685aecff7c8a8c790d73b2f5d2e1c16",
+  "line_count": 191,
+  "size_bytes": 8200,
   "headings": [
     "# HATE Agent README",
     "## Current State",
@@ -12,6 +12,7 @@
     "## Read First",
     "## Common Commands",
     "## CLI Map",
+    "## v0.2.0 Safety and Migration",
     "## Release Checklist For Agents"
   ],
   "imports": [],
@@ -23,6 +24,7 @@
     "docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md",
     "docs/acceptance/POC_COMPLETION_20260703.md",
     "docs/acceptance/RELEASE_V0_1_0_20260705.md",
+    "docs/acceptance/RELEASE_V0_2_0_20260711.md",
     "docs/birdseye/README.md",
     "docs/process/BLUEPRINT.md",
     "docs/process/ENTERPRISE_CONTROL_STATE_TRANSITION_SPEC.md",
@@ -42,6 +44,7 @@
     "docs/process/RUNBOOK.md",
     "docs/process/SPECIFICATION.md",
     "docs/process/TEST_INTEGRITY_IMPLEMENTATION_SPEC.md",
+    "docs/process/post-poc-gap-registry.json",
     "skills/hate-release-maintainer/SKILL.md"
   ],
   "depends_on": [
@@ -52,6 +55,7 @@
     "docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md",
     "docs/acceptance/POC_COMPLETION_20260703.md",
     "docs/acceptance/RELEASE_V0_1_0_20260705.md",
+    "docs/acceptance/RELEASE_V0_2_0_20260711.md",
     "docs/process/BLUEPRINT.md",
     "docs/process/ENTERPRISE_CONTROL_STATE_TRANSITION_SPEC.md",
     "docs/process/EVALUATION.md",
@@ -70,6 +74,7 @@
     "docs/process/RUNBOOK.md",
     "docs/process/SPECIFICATION.md",
     "docs/process/TEST_INTEGRITY_IMPLEMENTATION_SPEC.md",
+    "docs/process/post-poc-gap-registry.json",
     "skills/hate-release-maintainer/SKILL.md"
   ],
   "tags": [

@@ -2,14 +2,16 @@
   "path": "pyproject.toml",
   "role": "project",
   "kind": "toml",
-  "sha256": "776c3ec187724c02ecd665d81702254056f7c83e534c8fd1d4f1e36b3c5bb259",
-  "line_count": 25,
-  "size_bytes": 504,
+  "sha256": "5fe1bf595f6568872eb022710e8a0d06956c6785cca1cf7b8ad874ecf482ce20",
+  "line_count": 71,
+  "size_bytes": 1804,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
-    "test"
+    "schema",
+    "test",
+    "workflow"
   ]
 }

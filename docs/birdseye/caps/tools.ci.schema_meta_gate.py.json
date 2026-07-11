@@ -1,0 +1,21 @@
+{
+  "path": "tools/ci/schema_meta_gate.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "1389139f0bb85d188906e4805c00c0c20db6fb3c1e6ba69aea2a2ab2f4fa6efc",
+  "line_count": 22,
+  "size_bytes": 577,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.schema_resources",
+    "json"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py"
+  ],
+  "tags": [
+    "schema"
+  ]
+}

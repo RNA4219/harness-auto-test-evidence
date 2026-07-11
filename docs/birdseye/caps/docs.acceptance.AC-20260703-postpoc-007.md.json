@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-007.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "2679ad54e0f5222a0ce594f4f799fdbd85996e91b5419ab6cac470f390b5a144",
-  "line_count": 81,
-  "size_bytes": 3050,
+  "sha256": "ccf739d090962e9f2188e98e32c5ff20057b8a36fd7d5ce36c2f26fa4ec677c3",
+  "line_count": 83,
+  "size_bytes": 3166,
   "headings": [
     "# AC-20260703-postpoc-007 Live Connector Runtime Evidence",
     "## Scope",

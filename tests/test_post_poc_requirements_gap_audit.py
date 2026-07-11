@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
@@ -10,6 +11,7 @@ CHECKLIST = ROOT / "docs" / "process" / "POST_POC_SPEC_TRACEABILITY_CHECKLIST.md
 DETAIL_SPEC = ROOT / "docs" / "process" / "POST_POC_PRODUCTIZATION_DETAIL_SPEC.md"
 PACKETS = ROOT / "docs" / "process" / "PRODUCT_PLATFORM_PHASE_IMPLEMENTATION_PACKETS.md"
 IMPLEMENTATION_CHECKLIST = ROOT / "docs" / "process" / "POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md"
+GAP_REGISTRY = ROOT / "docs" / "process" / "post-poc-gap-registry.json"
 
 
 def test_post_poc_gap_audit_exists_and_tracks_enough_product_gaps() -> None:
@@ -75,30 +77,29 @@ def test_spec_traceability_checklist_cross_checks_every_post_poc_gap() -> None:
     assert audit_gap_ids
     assert set(audit_gap_ids).issubset(set(checklist_gap_ids))
     assert "POST_POC_SPEC_TRACEABILITY_CHECKLIST.md" in audit_text
-    assert "All 16 post-PoC gaps are `accepted`" in checklist_text
+    assert "All 16 local evidence slices are accepted" in checklist_text
+    assert "All 16 product gaps remain open" in checklist_text
 
 
 def test_spec_traceability_checklist_has_required_columns_and_no_go_rule() -> None:
     text = CHECKLIST.read_text(encoding="utf-8")
     required_columns = [
-        "Requirement",
-        "Detail Spec",
-        "Packet",
-        "Runtime",
-        "Schema",
-        "Fixtures",
+        "Gap ID",
+        "Local Slice",
+        "Product Status",
+        "Implementation",
         "Tests",
         "Acceptance",
-        "Product-Grade Exposure",
-        "Blocking Spec Gaps",
+        "Remaining Work",
     ]
 
     for column in required_columns:
         assert column in text
 
     assert "Report-only or docs-only closure" in text
-    normalized = " ".join(text.split())
-    assert "Each gap now has requirement text, detail specification, implementation packet, runtime, schema, fixtures, tests, acceptance record, and product-grade exposure." in normalized
+    assert "BEGIN GENERATED:POST_POC_TRACEABILITY" in text
+    assert "local_slice_status=accepted" in text
+    assert "product_status=open" in text
 
 
 def test_post_poc_productization_detail_spec_lowers_every_gap() -> None:
@@ -171,3 +172,18 @@ def test_post_poc_implementation_gap_checklist_is_linked_from_canonical_docs() -
 
     for text in (prd, spec_checklist, gap_audit):
         assert "POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md" in text
+
+def test_post_poc_registry_is_canonical_and_separates_local_from_product_status() -> None:
+    registry = json.loads(GAP_REGISTRY.read_text(encoding="utf-8"))
+
+    assert registry["product_ready"] is False
+    assert registry["release_authority"] == "external"
+    assert len(registry["gaps"]) == 16
+    assert len({gap["gap_id"] for gap in registry["gaps"]}) == 16
+    assert {gap["local_slice_status"] for gap in registry["gaps"]} == {"accepted"}
+    assert {gap["product_status"] for gap in registry["gaps"]} == {"open"}
+    for gap in registry["gaps"]:
+        assert gap["remaining_work"]
+        assert gap["implementation_refs"]
+        assert gap["test_refs"]
+        assert (ROOT / gap["acceptance_ref"]).exists()

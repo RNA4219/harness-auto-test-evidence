@@ -2,13 +2,14 @@
   "path": "src/hate/schema_validator.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "3c7c2ccc44eac1a05a38053f317f7e4ea77077d7305c91bb188020a76d70139a",
-  "line_count": 288,
-  "size_bytes": 11145,
+  "sha256": "dbc03c7946b2c5526a9c429bdee3873567f9004fd12bdfab69a34914ae7ba398",
+  "line_count": 289,
+  "size_bytes": 11261,
   "headings": [],
   "imports": [
     ".evidence_envelope",
     ".p0a_schema",
+    ".schema_resources",
     "__future__",
     "dataclasses",
     "json",
@@ -19,7 +20,8 @@
   "links": [],
   "depends_on": [
     "src/hate/evidence_envelope.py",
-    "src/hate/p0a_schema.py"
+    "src/hate/p0a_schema.py",
+    "src/hate/schema_resources.py"
   ],
   "tags": [
     "artifact",

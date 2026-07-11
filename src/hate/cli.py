@@ -289,6 +289,7 @@ def build_parser() -> argparse.ArgumentParser:
     platform_plugin_run = platform_plugin_subparsers.add_parser("run", help="Execute a plugin manifest under platform isolation checks.")
     platform_plugin_run.add_argument("--manifest", required=True, type=Path, help="Plugin manifest JSON.")
     platform_plugin_run.add_argument("--out", default=None, type=Path, help="Optional output JSON path.")
+    platform_plugin_run.add_argument("--allow-local-exec", action="store_true", help="Explicitly authorize a trusted local subprocess plugin.")
 
     platform_policy = platform_subparsers.add_parser("policy", help="Explain effective platform policy.")
     platform_policy_subparsers = platform_policy.add_subparsers(dest="platform_policy_command", required=True)

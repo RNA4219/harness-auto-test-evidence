@@ -2,9 +2,9 @@
   "path": "docs/process/POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "d69d3787cd6560d1569a106eb64e9699967833f53afde8885e090a46b10f7cfb",
-  "line_count": 117,
-  "size_bytes": 16205,
+  "sha256": "10f27c5edee7a043dbcfb3218cb497b01854d5a694da9fb1e9e2e80baedf66d5",
+  "line_count": 121,
+  "size_bytes": 14550,
   "headings": [
     "# Post-PoC Implementation Gap Checklist",
     "## 1. Workflow-Cookbook Rules Applied",
@@ -18,10 +18,10 @@
   "depends_on": [],
   "tags": [
     "api",
-    "artifact",
     "birdseye",
     "fixture",
     "schema",
+    "store",
     "test",
     "workflow"
   ]

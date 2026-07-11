@@ -1,0 +1,16 @@
+{
+  "path": ".github/ISSUE_TEMPLATE/bug.yml",
+  "role": "project",
+  "kind": "yml",
+  "sha256": "3235c5e2d1e6a263013111682e7d59e077fc97e272c8976035a50eb679d76e66",
+  "line_count": 32,
+  "size_bytes": 806,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "security"
+  ]
+}

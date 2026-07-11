@@ -1,0 +1,167 @@
+{
+  "schema_version": "HATE/post-poc-gap-registry/v1",
+  "product_ready": false,
+  "release_authority": "external",
+  "gaps": [
+    {
+      "gap_id": "HATE-POSTPOC-GAP-001",
+      "area": "Hosted scheduler runtime",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Hosted queue/daemon wiring, durable leases, and production crash recovery remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/scheduler.py"],
+      "test_refs": ["tests/test_post_poc_scheduler.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-001.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-002",
+      "area": "Interactive dashboard frontend",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "A full interactive frontend, browser UAT, and a real authentication provider remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/dashboard.py"],
+      "test_refs": ["tests/test_post_poc_dashboard.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-002.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-003",
+      "area": "Notification delivery runtime",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Live provider writes, provider authentication, and production delivery operations remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/notifications.py"],
+      "test_refs": ["tests/test_post_poc_notifications.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-003.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-004",
+      "area": "Baseline promotion workflow",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "A browser workflow and hosted approval service remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/baseline.py"],
+      "test_refs": ["tests/test_post_poc_baseline.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-004.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-005",
+      "area": "Real-repo roster operations",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Real dependency bootstrap execution and 100+ repository operating evidence remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/roster.py"],
+      "test_refs": ["tests/test_post_poc_roster.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-005.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-006",
+      "area": "Plugin distribution and trust",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Cryptographic signing, marketplace hosting, and container isolation remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/plugin_distribution.py", "src/hate/plugin_runner.py"],
+      "test_refs": ["tests/test_post_poc_plugin_distribution.py", "tests/test_platform_ops.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-006.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-007",
+      "area": "Live connector runtime",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Real provider credentials and third-party writeback acceptance remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/connectors.py"],
+      "test_refs": ["tests/test_post_poc_connectors.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-007.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-008",
+      "area": "Long-term history analytics",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Hosted query APIs, retention services, and warehouse-scale operation remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/history_analytics.py"],
+      "test_refs": ["tests/test_post_poc_history_analytics.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-008.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-009",
+      "area": "Docs and acceptance freshness CI",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Semantic cross-document drift beyond the canonical registry remains ongoing hardening.",
+      "implementation_refs": ["src/hate/post_poc/docs_freshness.py", "tools/ci/docs_freshness_gate.py"],
+      "test_refs": ["tests/test_post_poc_docs_freshness.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-009.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-010",
+      "area": "QEG and Shipyard release handoff",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Live external approval engines and publication authority remain outside HATE.",
+      "implementation_refs": ["src/hate/post_poc/release_handoff.py"],
+      "test_refs": ["tests/test_post_poc_release_handoff.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-010.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-011",
+      "area": "Hosted multi-tenant API",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "A production server, OIDC provider, API gateway, and session store remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/hosted_api.py"],
+      "test_refs": ["tests/test_post_poc_hosted_api.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-011.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-012",
+      "area": "Store backup, restore, and DR operations",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Managed backup services and live recovery drills remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/store_dr.py"],
+      "test_refs": ["tests/test_post_poc_store_dr.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-012.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-013",
+      "area": "Capacity benchmark with measured baselines",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Long-running stress infrastructure and independently reproduced scale baselines remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/capacity.py"],
+      "test_refs": ["tests/test_post_poc_capacity.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-013.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-014",
+      "area": "Compliance and procurement evidence",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "External assessor signoff and customer-specific legal guarantees remain outside HATE.",
+      "implementation_refs": ["src/hate/post_poc/compliance.py"],
+      "test_refs": ["tests/test_post_poc_compliance.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-014.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-015",
+      "area": "Observability and incident operations",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "Hosted telemetry vendors, live alert routing, and incident drills remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/observability.py"],
+      "test_refs": ["tests/test_post_poc_observability.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-015.md"
+    },
+    {
+      "gap_id": "HATE-POSTPOC-GAP-016",
+      "area": "Human review operating UI/CLI",
+      "local_slice_status": "accepted",
+      "product_status": "open",
+      "remaining_work": "An interactive UI, notification path, and hosted approval service remain unproven.",
+      "implementation_refs": ["src/hate/post_poc/human_review.py"],
+      "test_refs": ["tests/test_post_poc_human_review.py"],
+      "acceptance_ref": "docs/acceptance/AC-20260703-postpoc-016.md"
+    }
+  ]
+}

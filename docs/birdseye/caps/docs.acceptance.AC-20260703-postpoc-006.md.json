@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-006.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "6b8c02c87286c4e6d1a72fdc90d74face9fd766c04cf1002f531fefd8f16f5a9",
-  "line_count": 81,
-  "size_bytes": 3100,
+  "sha256": "4e70d5b20ad06c9297ee3eaf374fb09ca920d721896867180e443c28b8f9c2ff",
+  "line_count": 83,
+  "size_bytes": 3216,
   "headings": [
     "# AC-20260703-postpoc-006 Plugin Distribution Trust Evidence",
     "## Scope",

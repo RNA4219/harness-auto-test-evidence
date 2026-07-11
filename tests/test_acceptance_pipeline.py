@@ -8,12 +8,15 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+import pytest
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
+@pytest.mark.e2e
 def test_hate_cli_acceptance_pipeline(tmp_path: Path) -> None:
     """Run the HATE CLI from P0a through P2/P3 and verify advisory boundaries."""
     p0a_out = tmp_path / "p0a"

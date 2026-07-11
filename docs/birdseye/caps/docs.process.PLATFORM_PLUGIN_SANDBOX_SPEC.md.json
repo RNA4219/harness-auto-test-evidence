@@ -2,26 +2,25 @@
   "path": "docs/process/PLATFORM_PLUGIN_SANDBOX_SPEC.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "b54b50f929bfee9ccf9f96f90a14c88ba4fdd7c3d2f012eda43b465b3e12619f",
-  "line_count": 87,
-  "size_bytes": 2445,
+  "sha256": "414a509233daad775c62e94b3470a3850f1eea5ed7f66360fe89b8102dafe282",
+  "line_count": 73,
+  "size_bytes": 3186,
   "headings": [
     "# Platform Plugin Sandbox Specification",
     "## 1. Execution Modes",
-    "## 2. Sandbox Inputs",
-    "## 3. Resource Limits",
+    "## 2. Authorization and Trust Boundary",
+    "## 3. Local Runner Controls",
     "## 4. Output Contract",
-    "## 5. Failure Isolation",
-    "## 6. Required Fixtures"
+    "## 5. Required Test Coverage"
   ],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
-    "artifact",
+    "coverage",
     "enterprise",
-    "fixture",
     "release",
-    "schema"
+    "schema",
+    "test"
   ]
 }

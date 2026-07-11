@@ -1,25 +1,15 @@
 from __future__ import annotations
 
-import hashlib
-import json
-import mimetypes
-import posixpath
 import re
-import xml.etree.ElementTree as ET
-from pathlib import Path
 from typing import Any
 
-from .p0a_constants import REDACTION_STATUS, SCHEMA_VERSION, SOURCE_TOOL
+from .p0a_constants import SCHEMA_VERSION
 from .p0a_io import (
-    _artifact_kind,
     _dq,
-    _file_sha256,
-    _read_optional_json,
-    _slug,
-    _stable_sha256,
-    _stable_source_ref,
-    _to_posix,
 )
+from .schema_resources import read_schema, validate_schema_instance
+
+
 def _schema_validation_hits(records: list[dict[str, Any]]) -> list[dict[str, str]]:
     hits: list[dict[str, str]] = []
     seen_hits: set[tuple[str, str, str]] = set()
@@ -80,89 +70,35 @@ def _schema_source_ref(record: dict[str, Any], schema_name: str) -> str:
     }.get(record_type, "generated-record")
 
 def _load_hate_schema(name: str) -> dict[str, Any]:
-    schema_path = Path(__file__).resolve().parents[2] / "schemas" / "HATE" / "v1" / name
-    with schema_path.open("r", encoding="utf-8") as handle:
-        data = json.load(handle)
-    if not isinstance(data, dict):
-        raise ValueError(f"{name} must be a JSON object")
-    return data
+    return read_schema(name)
 
 def _validate_schema_value(value: Any, schema: dict[str, Any], path: str, _root_schema: dict[str, Any] | None = None) -> list[str]:
-    root_schema = _root_schema or schema
-    errors: list[str] = []
-    if "$ref" in schema:
-        ref_schema = _resolve_schema_ref(str(schema["$ref"]), root_schema)
-        if ref_schema is None:
-            return [f"{path} has unsupported schema ref: {schema['$ref']}"]
-        return _validate_schema_value(value, ref_schema, path, root_schema)
-    if "allOf" in schema:
-        for item in schema["allOf"]:
-            if not isinstance(item, dict):
-                continue
-            if "$ref" in item:
-                item = _load_hate_schema(str(item["$ref"]))
-                errors.extend(_validate_schema_value(value, item, path, item))
-            else:
-                errors.extend(_validate_schema_value(value, item, path, root_schema))
-        return errors
-    if "const" in schema and value != schema["const"]:
-        errors.append(f"{path} must equal {schema['const']!r}")
-    if "enum" in schema and value not in schema["enum"]:
-        errors.append(f"{path} must be one of {schema['enum']!r}")
-    expected_type = schema.get("type")
-    if expected_type and not _schema_type_matches(value, str(expected_type)):
-        errors.append(f"{path} must be {expected_type}")
-        return errors
-    if isinstance(value, str):
-        min_length = schema.get("minLength")
-        if isinstance(min_length, int) and len(value) < min_length:
-            errors.append(f"{path} length must be at least {min_length}")
-        pattern = schema.get("pattern")
-        if isinstance(pattern, str) and not re.match(pattern, value):
-            errors.append(f"{path} must match {pattern}")
-    if isinstance(value, int) and not isinstance(value, bool):
-        minimum = schema.get("minimum")
-        if isinstance(minimum, int | float) and value < minimum:
-            errors.append(f"{path} must be >= {minimum}")
-    if isinstance(value, dict):
-        required = schema.get("required", [])
-        if isinstance(required, list):
-            for field in required:
-                if isinstance(field, str) and field not in value:
-                    errors.append(f"{path}.{field} is required")
-        properties = schema.get("properties", {})
-        if isinstance(properties, dict):
-            for field, subschema in properties.items():
-                if field in value and isinstance(subschema, dict):
-                    errors.extend(_validate_schema_value(value[field], subschema, f"{path}.{field}", root_schema))
-        additional = schema.get("additionalProperties", True)
-        if isinstance(additional, dict):
-            known = set(properties) if isinstance(properties, dict) else set()
-            for field, item in value.items():
-                if field not in known:
-                    errors.extend(_validate_schema_value(item, additional, f"{path}.{field}", root_schema))
-        elif additional is False and isinstance(properties, dict):
-            unknown = sorted(set(value).difference(properties))
-            if unknown:
-                errors.append(f"{path} has unknown fields: {', '.join(unknown)}")
-    if isinstance(value, list):
-        item_schema = schema.get("items")
-        if isinstance(item_schema, dict):
-            for index, item in enumerate(value):
-                errors.extend(_validate_schema_value(item, item_schema, f"{path}[{index}]", root_schema))
-    return errors
+    del _root_schema
+    return [_format_jsonschema_error(error, path) for error in validate_schema_instance(value, schema)]
 
-def _resolve_schema_ref(ref: str, root_schema: dict[str, Any]) -> dict[str, Any] | None:
-    if not ref.startswith("#/"):
-        return None
-    value: Any = root_schema
-    for part in ref[2:].split("/"):
-        if not isinstance(value, dict) or part not in value:
-            return None
-        value = value[part]
-    return value if isinstance(value, dict) else None
+def _format_jsonschema_error(error: Any, root_path: str) -> str:
+    suffix = "".join(f"[{part}]" if isinstance(part, int) else f".{part}" for part in error.absolute_path)
+    location = f"{root_path}{suffix}"
+    if error.validator == "required":
+        match = re.match(r"'([^']+)' is a required property", error.message)
+        if match:
+            return f"{location}.{match.group(1)} is required"
+    if error.validator == "pattern":
+        return f"{location} must match {error.validator_value}"
+    if error.validator == "enum":
+        return f"{location} must be one of {error.validator_value!r}"
+    if error.validator == "const":
+        return f"{location} must equal {error.validator_value!r}"
+    if error.validator == "type":
+        return f"{location} must be {error.validator_value}"
+    if error.validator == "minimum":
+        return f"{location} must be >= {error.validator_value}"
+    if error.validator == "maximum":
+        return f"{location} must be <= {error.validator_value}"
+    return f"{location}: {error.message}"
 
 def _schema_type_matches(value: Any, expected_type: str) -> bool:
+    """Backward-compatible helper retained for p0a_support consumers."""
     if expected_type == "object":
         return isinstance(value, dict)
     if expected_type == "array":
@@ -172,11 +108,8 @@ def _schema_type_matches(value: Any, expected_type: str) -> bool:
     if expected_type == "integer":
         return isinstance(value, int) and not isinstance(value, bool)
     if expected_type == "number":
-        return (isinstance(value, int | float)) and not isinstance(value, bool)
+        return isinstance(value, (int, float)) and not isinstance(value, bool)
     if expected_type == "boolean":
         return isinstance(value, bool)
     if expected_type == "null":
         return value is None
-    return True
-
-

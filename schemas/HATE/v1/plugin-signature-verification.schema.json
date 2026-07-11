@@ -32,7 +32,7 @@
     "signature_algorithm": {"type": "string"},
     "signature_ref": {"type": "string"},
     "trust_source": {"type": "string"},
-    "signature_valid": {"type": "boolean"},
+    "signature_valid": {"type": "boolean", "description": "External evidence assertion only; HATE v0.2.0 does not cryptographically verify plugin signatures."},
     "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
   },
   "anyOf": [

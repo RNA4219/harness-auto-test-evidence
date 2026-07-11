@@ -2,9 +2,9 @@
   "path": "docs/acceptance/INDEX.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "ae4eff15962ce624ece6a544cb3aa99a45ea2ffd5d60c4068a159e2e5a6b949f",
-  "line_count": 34,
-  "size_bytes": 4361,
+  "sha256": "909b23091af971d1e2e183b30194a6c4a93eb2c8b081c3d27cff016520b6a50b",
+  "line_count": 35,
+  "size_bytes": 4538,
   "headings": [
     "# Acceptance Index",
     "## Generation Policy"
@@ -21,7 +21,8 @@
     "MAJOR_OSS_TWO_CYCLE_20260704.md",
     "PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md",
     "QEG_HARDENING_CYCLE_ACCEPTANCE.md",
-    "RELEASE_V0_1_0_20260705.md"
+    "RELEASE_V0_1_0_20260705.md",
+    "RELEASE_V0_2_0_20260711.md"
   ],
   "depends_on": [
     "docs/acceptance/AC-20260630-01.md",
@@ -34,12 +35,14 @@
     "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md",
     "docs/acceptance/PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md",
     "docs/acceptance/QEG_HARDENING_CYCLE_ACCEPTANCE.md",
-    "docs/acceptance/RELEASE_V0_1_0_20260705.md"
+    "docs/acceptance/RELEASE_V0_1_0_20260705.md",
+    "docs/acceptance/RELEASE_V0_2_0_20260711.md"
   ],
   "tags": [
     "coverage",
     "qeg",
     "release",
+    "schema",
     "test",
     "workflow"
   ]

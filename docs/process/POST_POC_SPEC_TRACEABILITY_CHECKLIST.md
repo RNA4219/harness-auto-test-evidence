@@ -31,30 +31,28 @@ Each gap must pass every column before it can move from `open` to
 
 ## 2. Gap-by-Gap Spec Traceability
 
-Legend:
+Legend: local_slice_status=accepted proves the bounded local evidence slice; product_status=open keeps broader productization work visible. Task seeds remain in POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md.
 
-- `done`: enough evidence exists for this column.
-- `partial`: related evidence exists but does not close the post-PoC gap.
-- `missing`: required before implementation-ready.
-
-| Gap ID | Requirement | Detail Spec | Packet | Runtime | Schema | Fixtures | Tests | Acceptance | Product-Grade Exposure | Status | Blocking Spec Gaps |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| HATE-POSTPOC-GAP-001 | done | done | done | done | done | done | done | accepted | done | accepted | Local hosted scheduler lifecycle evaluator and dispatch manifest are implemented; hosted queue/daemon wiring remains later hardening. |
-| HATE-POSTPOC-GAP-002 | done | done | done | done | done | done | done | accepted | done | accepted | Dashboard route/action evaluator and read-only static HTML artifact are implemented; full SPA and real auth provider remain later hardening. |
-| HATE-POSTPOC-GAP-003 | done | done | done | done | done | done | done | accepted | done | accepted | Local notification delivery evaluator and routing/escalation manifest are implemented; live provider writes and provider-specific auth remain later hardening. |
-| HATE-POSTPOC-GAP-004 | done | done | done | done | done | done | done | accepted | done | accepted | Baseline promotion reducer, local CLI approval surface, review packet, immutable audit events, and denial fixtures are implemented; browser UI remains later hardening. |
-| HATE-POSTPOC-GAP-005 | done | done | done | done | done | done | done | accepted | done | accepted | Roster maintenance evaluator, filesystem discovery, and scheduler-facing execution manifest are implemented; real bootstrap execution remains later hardening. |
-| HATE-POSTPOC-GAP-006 | done | done | done | done | done | done | done | accepted | done | accepted | Distribution trust evaluator consumes platform sandbox execution evidence and emits install manifests; marketplace hosting remains later hardening. |
-| HATE-POSTPOC-GAP-007 | done | done | done | done | done | done | done | accepted | done | accepted | Fake endpoint connector runtime evaluator and safe execution manifest are implemented; real provider credentials and third-party writeback remain later hardening. |
-| HATE-POSTPOC-GAP-008 | done | done | done | done | done | done | done | accepted | done | accepted | Deterministic trend evaluator and incremental materialization manifest are implemented; data warehouse, retention service, and hosted query API remain later hardening. |
-| HATE-POSTPOC-GAP-009 | done | done | done | done | done | done | done | accepted | done | accepted | Local docs freshness evaluator and CI workflow gate are implemented; deeper semantic docs drift remains runtime-evaluator territory. |
-| HATE-POSTPOC-GAP-010 | done | done | done | done | done | done | done | accepted | done | accepted | Local release handoff evaluator implements external approval reference protocol, denial fixtures, and no-overwrite release authority runtime. |
-| HATE-POSTPOC-GAP-011 | done | done | done | done | done | done | done | accepted | done | accepted | Hosted API evidence evaluator and OpenAPI route-contract artifact are implemented; production server, OIDC provider integration, API gateway, and session store remain later hardening. |
-| HATE-POSTPOC-GAP-012 | done | done | done | done | done | done | done | accepted | done | accepted | Local DR evaluator and restore runbook artifact implement backup inventory, corrupt restore denial, legal-hold preservation, RTO/RPO, and projection rebuild evidence. Managed cloud backup remains later hardening. |
-| HATE-POSTPOC-GAP-013 | done | done | done | done | done | done | done | accepted | done | accepted | Local capacity evaluator and regression packet implement measured baseline artifacts, 1000 repo/1M finding budgets, memory/runtime thresholds, explicit degradation mode, and current-vs-previous scenario deltas. |
-| HATE-POSTPOC-GAP-014 | done | done | done | done | done | done | done | accepted | done | accepted | Local compliance evaluator implements generated pack schema, control claim classes, reviewer signoff, evidence links, stale control detection, unsupported answer hold, and safe export redaction. |
-| HATE-POSTPOC-GAP-015 | done | done | done | done | done | done | done | accepted | done | accepted | Local observability evaluator and incident response packet implement runtime telemetry export, alert routing, incident lifecycle, burn-rate, post-incident review, and safe support evidence. |
-| HATE-POSTPOC-GAP-016 | done | done | done | done | done | done | done | accepted | done | accepted | Local human review workflow evaluator and queue packet artifact are implemented; interactive UI and hosted approval service remain later hardening. |
+<!-- BEGIN GENERATED:POST_POC_TRACEABILITY -->
+| Gap ID | Local Slice | Product Status | Implementation | Tests | Acceptance | Remaining Work |
+|---|---|---|---|---|---|---|
+| HATE-POSTPOC-GAP-001 | accepted | open | src/hate/post_poc/scheduler.py | tests/test_post_poc_scheduler.py | docs/acceptance/AC-20260703-postpoc-001.md | Hosted queue/daemon wiring, durable leases, and production crash recovery remain unproven. |
+| HATE-POSTPOC-GAP-002 | accepted | open | src/hate/post_poc/dashboard.py | tests/test_post_poc_dashboard.py | docs/acceptance/AC-20260703-postpoc-002.md | A full interactive frontend, browser UAT, and a real authentication provider remain unproven. |
+| HATE-POSTPOC-GAP-003 | accepted | open | src/hate/post_poc/notifications.py | tests/test_post_poc_notifications.py | docs/acceptance/AC-20260703-postpoc-003.md | Live provider writes, provider authentication, and production delivery operations remain unproven. |
+| HATE-POSTPOC-GAP-004 | accepted | open | src/hate/post_poc/baseline.py | tests/test_post_poc_baseline.py | docs/acceptance/AC-20260703-postpoc-004.md | A browser workflow and hosted approval service remain unproven. |
+| HATE-POSTPOC-GAP-005 | accepted | open | src/hate/post_poc/roster.py | tests/test_post_poc_roster.py | docs/acceptance/AC-20260703-postpoc-005.md | Real dependency bootstrap execution and 100+ repository operating evidence remain unproven. |
+| HATE-POSTPOC-GAP-006 | accepted | open | src/hate/post_poc/plugin_distribution.py<br>src/hate/plugin_runner.py | tests/test_post_poc_plugin_distribution.py<br>tests/test_platform_ops.py | docs/acceptance/AC-20260703-postpoc-006.md | Cryptographic signing, marketplace hosting, and container isolation remain unproven. |
+| HATE-POSTPOC-GAP-007 | accepted | open | src/hate/post_poc/connectors.py | tests/test_post_poc_connectors.py | docs/acceptance/AC-20260703-postpoc-007.md | Real provider credentials and third-party writeback acceptance remain unproven. |
+| HATE-POSTPOC-GAP-008 | accepted | open | src/hate/post_poc/history_analytics.py | tests/test_post_poc_history_analytics.py | docs/acceptance/AC-20260703-postpoc-008.md | Hosted query APIs, retention services, and warehouse-scale operation remain unproven. |
+| HATE-POSTPOC-GAP-009 | accepted | open | src/hate/post_poc/docs_freshness.py<br>tools/ci/docs_freshness_gate.py | tests/test_post_poc_docs_freshness.py | docs/acceptance/AC-20260703-postpoc-009.md | Semantic cross-document drift beyond the canonical registry remains ongoing hardening. |
+| HATE-POSTPOC-GAP-010 | accepted | open | src/hate/post_poc/release_handoff.py | tests/test_post_poc_release_handoff.py | docs/acceptance/AC-20260703-postpoc-010.md | Live external approval engines and publication authority remain outside HATE. |
+| HATE-POSTPOC-GAP-011 | accepted | open | src/hate/post_poc/hosted_api.py | tests/test_post_poc_hosted_api.py | docs/acceptance/AC-20260703-postpoc-011.md | A production server, OIDC provider, API gateway, and session store remain unproven. |
+| HATE-POSTPOC-GAP-012 | accepted | open | src/hate/post_poc/store_dr.py | tests/test_post_poc_store_dr.py | docs/acceptance/AC-20260703-postpoc-012.md | Managed backup services and live recovery drills remain unproven. |
+| HATE-POSTPOC-GAP-013 | accepted | open | src/hate/post_poc/capacity.py | tests/test_post_poc_capacity.py | docs/acceptance/AC-20260703-postpoc-013.md | Long-running stress infrastructure and independently reproduced scale baselines remain unproven. |
+| HATE-POSTPOC-GAP-014 | accepted | open | src/hate/post_poc/compliance.py | tests/test_post_poc_compliance.py | docs/acceptance/AC-20260703-postpoc-014.md | External assessor signoff and customer-specific legal guarantees remain outside HATE. |
+| HATE-POSTPOC-GAP-015 | accepted | open | src/hate/post_poc/observability.py | tests/test_post_poc_observability.py | docs/acceptance/AC-20260703-postpoc-015.md | Hosted telemetry vendors, live alert routing, and incident drills remain unproven. |
+| HATE-POSTPOC-GAP-016 | accepted | open | src/hate/post_poc/human_review.py | tests/test_post_poc_human_review.py | docs/acceptance/AC-20260703-postpoc-016.md | An interactive UI, notification path, and hosted approval service remain unproven. |
+<!-- END GENERATED:POST_POC_TRACEABILITY -->
 
 ## 3. Spec Closure Checklist
 
@@ -74,14 +72,12 @@ Before implementation work starts for a gap, create a task packet that answers:
 
 ## 4. Current Decision
 
-All 16 post-PoC gaps are `accepted` for the first local evidence slice. Each
-gap now has requirement text, detail specification, implementation packet,
-runtime, schema, fixtures, tests, acceptance record, and product-grade
-exposure.
+All 16 local evidence slices are accepted. Each bounded slice has requirement
+text, implementation references, tests, and an acceptance record.
 
-The remaining work is tracked as later hardening in
-`POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md`: hosted services, live providers,
-interactive UI, external approval engines, managed backup, marketplace
-hosting, and long-running stress infrastructure remain outside the first local
-evidence slice. Product-ready must still stay false until those broader
-operational requirements and release authority checks are proven.
+All 16 product gaps remain open. Hosted services, live providers, interactive
+UI, external approval engines, managed backup, marketplace hosting,
+cryptographic plugin signing, and long-running stress infrastructure are not
+proven by local evidence acceptance. product_ready=false remains mandatory
+until those broader requirements and external release authority checks are
+proven.

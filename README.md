@@ -22,13 +22,13 @@ control plane.
 
 ## Current State
 
-- Package version: `0.1.0`
+- Package version: `0.2.0`
 - CLI entrypoint: `hate`
 - Runtime posture: local-first CLI and JSON/HTML artifact generator
 - PoC posture: PoC complete with explicit non-overclaim guardrails
 - Product-ready posture: `product_ready=false` until external release/QEG
   approval and remaining production-readiness gaps are closed
-- Latest local full regression observed during release prep: `1896 passed`
+- Latest local full regression observed during release prep: `1910 passed`
 - Major OSS validation corpus: 10 repositories, 22,171 records per final
   two-cycle run, 5 pass / 5 hold, expected-verdict precision and recall at 1.0
   for the frozen corpus
@@ -39,6 +39,7 @@ Important acceptance records:
 - [Major OSS two-cycle validation](docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md)
 - [Platform CLI and product-grade gate](docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md)
 - [Docs freshness review](docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md)
+- [v0.2.0 local release acceptance](docs/acceptance/RELEASE_V0_2_0_20260711.md)
 - [v0.1.0 PoC preview release](docs/acceptance/RELEASE_V0_1_0_20260705.md)
 
 ## Agent Operating Rules
@@ -81,9 +82,10 @@ For platform and release work:
 2. [Product platform detail spec](docs/process/PRODUCT_PLATFORM_PHASE_DETAIL_SPEC.md)
 3. [Release migration policy](docs/process/RELEASE_MIGRATION_POLICY.md)
 4. [Post-PoC requirements gap audit](docs/process/POST_POC_REQUIREMENTS_GAP_AUDIT.md)
-5. [Post-PoC productization detail spec](docs/process/POST_POC_PRODUCTIZATION_DETAIL_SPEC.md)
-6. [Post-PoC spec traceability checklist](docs/process/POST_POC_SPEC_TRACEABILITY_CHECKLIST.md)
-7. [Post-PoC implementation gap checklist](docs/process/POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md)
+5. [Canonical Post-PoC gap registry](docs/process/post-poc-gap-registry.json)
+6. [Post-PoC productization detail spec](docs/process/POST_POC_PRODUCTIZATION_DETAIL_SPEC.md)
+7. [Post-PoC spec traceability checklist](docs/process/POST_POC_SPEC_TRACEABILITY_CHECKLIST.md)
+8. [Post-PoC implementation gap checklist](docs/process/POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md)
 
 PoC 100% は product / enterprise / regulated 要件完了を意味しない。Post-PoC
 の残課題は上記3文書と `POST_POC_REQUIREMENTS_GAP_AUDIT.md` を正本として扱う。
@@ -149,6 +151,20 @@ Primary commands:
   notify/baseline/plugin/policy/report/serve flows
 - `hate real-repo`: run recurring real repository validation rosters
 - `hate release`: assemble release candidate evidence packs
+
+## v0.2.0 Safety and Migration
+
+- Build a wheel with uv build, then install it with uv tool install followed by
+  the wheel path. The package includes HATE/v1 JSON schemas.
+- Local subprocess plugins are denied by default. The operator must pass
+  --allow-local-exec, and the manifest must carry signed and trusted external
+  evidence. Release and regulated profiles always deny local subprocess mode.
+- signature_valid is advisory external evidence, not cryptographic verification.
+- Local subprocess mode does not provide filesystem or network isolation.
+- See CHANGELOG.md for v0.1 migration notes and SECURITY.md for the execution
+  boundary.
+- Contributor guidance is in CONTRIBUTING.md and community expectations are in
+  CODE_OF_CONDUCT.md.
 
 ## Release Checklist For Agents
 

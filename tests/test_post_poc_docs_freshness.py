@@ -209,7 +209,7 @@ def test_docs_freshness_gate_detects_malformed_acceptance_records(tmp_path: Path
     assert "docs_acceptance_record_malformed" in {finding["code"] for finding in report["findings"]}
 
 
-def test_docs_freshness_gate_detects_traceability_row_count_mismatch(tmp_path: Path) -> None:
+def test_docs_freshness_gate_requires_canonical_registry(tmp_path: Path) -> None:
     root = tmp_path / "repo"
     (root / "docs" / "acceptance").mkdir(parents=True)
     (root / "docs" / "process").mkdir(parents=True)
@@ -242,8 +242,7 @@ def test_docs_freshness_gate_detects_traceability_row_count_mismatch(tmp_path: P
     report = module.evaluate_docs_freshness_gate(root)
     codes = {finding["code"] for finding in report["findings"]}
 
-    assert "docs_post_poc_traceability_row_count_mismatch" in codes
-    assert "docs_post_poc_traceability_acceptance_mismatch" in codes
+    assert "docs_post_poc_registry_missing" in codes
 
 
 def test_docs_freshness_gate_detects_missing_schema_paths(tmp_path: Path) -> None:
@@ -413,5 +412,76 @@ def test_docs_freshness_gate_detects_stale_post_poc_traceability_decision(tmp_pa
 
     assert report["overall_status"] == "hold"
     codes = {finding["code"] for finding in report["findings"]}
-    assert "docs_post_poc_traceability_decision_stale" in codes
-    assert "docs_post_poc_traceability_decision_missing" in codes
+    assert "docs_post_poc_registry_missing" in codes
+
+def test_docs_freshness_gate_detects_canonical_registry_status_drift(tmp_path: Path) -> None:
+    root = tmp_path / "repo"
+    process = root / "docs" / "process"
+    acceptance = root / "docs" / "acceptance"
+    schemas = root / "schemas" / "HATE" / "v1"
+    birdseye = root / "docs" / "birdseye"
+    process.mkdir(parents=True)
+    acceptance.mkdir(parents=True)
+    schemas.mkdir(parents=True)
+    birdseye.mkdir(parents=True)
+
+    acceptance_ref = "docs/acceptance/AC-local.md"
+    implementation_ref = "src/hate/post_poc/example.py"
+    test_ref = "tests/test_example.py"
+    (root / implementation_ref).parent.mkdir(parents=True)
+    (root / implementation_ref).write_text("", encoding="utf-8")
+    (root / test_ref).parent.mkdir(parents=True)
+    (root / test_ref).write_text("", encoding="utf-8")
+    (root / acceptance_ref).write_text(
+        "intent_id: X\nowner: qa\nstatus: accepted\nlast_reviewed_at: 2026-07-11\n"
+        "next_review_due: 2026-07-18\n## Verification\ncommand\n## Evidence\nrefs\n"
+        "## Open Risks\nopen\n## Decision\naccepted\n",
+        encoding="utf-8",
+    )
+    registry = {
+        "product_ready": False,
+        "release_authority": "external",
+        "gaps": [{
+            "gap_id": "HATE-POSTPOC-GAP-001",
+            "area": "Example",
+            "local_slice_status": "accepted",
+            "product_status": "open",
+            "remaining_work": "Hosted runtime",
+            "implementation_refs": [implementation_ref],
+            "test_refs": [test_ref],
+            "acceptance_ref": acceptance_ref,
+        }],
+    }
+    (process / "post-poc-gap-registry.json").write_text(json.dumps(registry), encoding="utf-8")
+    (root / "README.md").write_text(
+        "POST_POC_REQUIREMENTS_GAP_AUDIT.md\nPOST_POC_PRODUCTIZATION_DETAIL_SPEC.md\n"
+        "POST_POC_SPEC_TRACEABILITY_CHECKLIST.md\nPOST_POC_IMPLEMENTATION_GAP_CHECKLIST.md\n"
+        "post-poc-gap-registry.json\nproduct_ready=false\n",
+        encoding="utf-8",
+    )
+    documents = {
+        "POST_POC_REQUIREMENTS_GAP_AUDIT.md": "POST_POC_REQUIREMENTS",
+        "POST_POC_SPEC_TRACEABILITY_CHECKLIST.md": "POST_POC_TRACEABILITY",
+        "POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md": "POST_POC_IMPLEMENTATION",
+    }
+    for name, marker in documents.items():
+        status = "closed" if name == "POST_POC_REQUIREMENTS_GAP_AUDIT.md" else "open"
+        body = (
+            f"<!-- BEGIN GENERATED:{marker} -->\n"
+            f"| HATE-POSTPOC-GAP-001 | accepted | {status} |\n"
+            f"<!-- END GENERATED:{marker} -->\n"
+        )
+        if name == "POST_POC_SPEC_TRACEABILITY_CHECKLIST.md":
+            body += "All local evidence slices are accepted. All product gaps remain open.\n"
+        (process / name).write_text(body, encoding="utf-8")
+    (schemas / "schema-registry.json").write_text(json.dumps({"records": []}), encoding="utf-8")
+    (birdseye / "index.json").write_text("{}", encoding="utf-8")
+
+    spec = importlib.util.spec_from_file_location("docs_freshness_gate", CI_GATE)
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    report = module.evaluate_docs_freshness_gate(root)
+
+    assert "docs_post_poc_generated_status_stale" in {finding["code"] for finding in report["findings"]}

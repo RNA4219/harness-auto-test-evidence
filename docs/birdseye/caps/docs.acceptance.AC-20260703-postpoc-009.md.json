@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-009.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "99fb95d4c0133ea67139a35c0949671891f082cbaaaac6bf6909a39cb32688e6",
-  "line_count": 77,
-  "size_bytes": 2777,
+  "sha256": "0b4689ba43ce27b55c3516db66d112ec4fd99cee5a6dd5e3b5b84c08b893fb71",
+  "line_count": 79,
+  "size_bytes": 2893,
   "headings": [
     "# AC-20260703-postpoc-009 Docs Freshness CI Evidence",
     "## Scope",

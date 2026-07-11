@@ -41,24 +41,28 @@ Status vocabulary:
 
 ## 2. Spec-to-Implementation Gap Matrix
 
-| Task ID | Gap ID | Packet ID | Spec Status | Runtime | Schema | Fixtures | Tests | Acceptance | Current Status | Blocking Missing Work |
-|---|---|---|---|---|---|---|---|---|---|---|
-| TASK-POSTPOC-001 | HATE-POSTPOC-GAP-001 | POSTPOC-PKT-001-hosted-scheduler-runtime | specified | done | done | done | done | accepted | accepted | Local lifecycle evaluator and dispatch manifest are implemented; hosted SaaS queue/daemon wiring remains later hardening |
-| TASK-POSTPOC-002 | HATE-POSTPOC-GAP-002 | POSTPOC-PKT-002-interactive-dashboard | specified | done | done | done | done | accepted | accepted | Read-only static HTML dashboard artifact and route/action evaluator are implemented; full SPA, Playwright screenshots, and real auth provider remain later hardening |
-| TASK-POSTPOC-003 | HATE-POSTPOC-GAP-003 | POSTPOC-PKT-003-notification-runtime | specified | done | done | done | done | accepted | accepted | Local delivery evaluator and routing/escalation manifest are implemented; live provider writes and provider-specific auth remain later hardening |
-| TASK-POSTPOC-004 | HATE-POSTPOC-GAP-004 | POSTPOC-PKT-004-baseline-promotion | specified | done | done | done | done | accepted | accepted | CLI approval surface, reducer, review packet, immutable audit events, and denial fixtures are implemented; full browser UI remains later hardening |
-| TASK-POSTPOC-005 | HATE-POSTPOC-GAP-005 | POSTPOC-PKT-005-roster-operations | specified | done | done | done | done | accepted | accepted | Filesystem discovery, evidence evaluator, and scheduler-facing execution manifest are implemented; real dependency bootstrap execution remains later hardening |
-| TASK-POSTPOC-006 | HATE-POSTPOC-GAP-006 | POSTPOC-PKT-006-plugin-distribution | specified | done | done | done | done | accepted | accepted | Distribution trust evaluator consumes platform sandbox evidence and emits install manifests; marketplace hosting remains later hardening |
-| TASK-POSTPOC-007 | HATE-POSTPOC-GAP-007 | POSTPOC-PKT-007-live-connectors | specified | done | done | done | done | accepted | accepted | Fake endpoint runtime evaluator and safe connector execution manifest are implemented; real provider credentials and third-party writeback remain later hardening |
-| TASK-POSTPOC-008 | HATE-POSTPOC-GAP-008 | POSTPOC-PKT-008-history-analytics | specified | done | done | done | done | accepted | accepted | Deterministic trend evaluator and incremental materialization manifest are implemented; data warehouse, retention service, and hosted query API remain later hardening |
-| TASK-POSTPOC-009 | HATE-POSTPOC-GAP-009 | POSTPOC-PKT-009-docs-freshness-ci | specified | done | done | done | done | accepted | accepted | CI workflow wiring and local evaluator/report are implemented; deeper semantic docs drift remains runtime-evaluator territory |
-| TASK-POSTPOC-010 | HATE-POSTPOC-GAP-010 | POSTPOC-PKT-010-release-handoff | specified | done | done | done | done | accepted | accepted | QEG/Shipyard/Agent Gate engines remain external; local handoff evaluator records external refs, preserves denial, and blocks HATE final-approval overclaim |
-| TASK-POSTPOC-011 | HATE-POSTPOC-GAP-011 | POSTPOC-PKT-011-hosted-api | specified | done | done | done | done | accepted | accepted | Hosted API evidence evaluator and OpenAPI route-contract artifact are implemented; production server, OIDC provider integration, API gateway, and session store remain later hardening |
-| TASK-POSTPOC-012 | HATE-POSTPOC-GAP-012 | POSTPOC-PKT-012-store-dr | specified | done | done | done | done | accepted | accepted | Local DR evaluator and restore runbook artifact verify backup/restore, corruption, legal hold, RTO/RPO, and projection rebuild; managed cloud backup service remains later hardening |
-| TASK-POSTPOC-013 | HATE-POSTPOC-GAP-013 | POSTPOC-PKT-013-capacity-benchmark | specified | done | done | done | done | accepted | accepted | Local capacity evaluator and regression packet record measured baselines, machine profile, budgets, dataset hashes, degradation modes, and scenario deltas; indefinite stress-test service remains later hardening |
-| TASK-POSTPOC-014 | HATE-POSTPOC-GAP-014 | POSTPOC-PKT-014-compliance-procurement | specified | done | done | done | done | accepted | accepted | Legal advice and customer-specific guarantees remain out of scope; local evaluator models evidence packs, control claims, reviewer decisions, stale claims, and safe procurement export |
-| TASK-POSTPOC-015 | HATE-POSTPOC-GAP-015 | POSTPOC-PKT-015-observability-incident | specified | done | done | done | done | accepted | accepted | Local evaluator and incident response packet model telemetry, SLO burn, alert routing, incidents, reviews, and safe support packs; hosted observability vendor integration remains later hardening |
-| TASK-POSTPOC-016 | HATE-POSTPOC-GAP-016 | POSTPOC-PKT-016-human-review-workflow | specified | done | done | done | done | accepted | accepted | Local workflow evaluator and queue packet artifact are implemented; interactive UI, notification path, and hosted approval service remain later hardening |
+Task status is generated from the canonical registry. Accepted local slices must not be interpreted as closed production gaps.
+
+<!-- BEGIN GENERATED:POST_POC_IMPLEMENTATION -->
+| Task ID | Gap ID | Local Slice | Product Status | Acceptance | Blocking Product Work |
+|---|---|---|---|---|---|
+| TASK-POSTPOC-001 | HATE-POSTPOC-GAP-001 | accepted | open | docs/acceptance/AC-20260703-postpoc-001.md | Hosted queue/daemon wiring, durable leases, and production crash recovery remain unproven. |
+| TASK-POSTPOC-002 | HATE-POSTPOC-GAP-002 | accepted | open | docs/acceptance/AC-20260703-postpoc-002.md | A full interactive frontend, browser UAT, and a real authentication provider remain unproven. |
+| TASK-POSTPOC-003 | HATE-POSTPOC-GAP-003 | accepted | open | docs/acceptance/AC-20260703-postpoc-003.md | Live provider writes, provider authentication, and production delivery operations remain unproven. |
+| TASK-POSTPOC-004 | HATE-POSTPOC-GAP-004 | accepted | open | docs/acceptance/AC-20260703-postpoc-004.md | A browser workflow and hosted approval service remain unproven. |
+| TASK-POSTPOC-005 | HATE-POSTPOC-GAP-005 | accepted | open | docs/acceptance/AC-20260703-postpoc-005.md | Real dependency bootstrap execution and 100+ repository operating evidence remain unproven. |
+| TASK-POSTPOC-006 | HATE-POSTPOC-GAP-006 | accepted | open | docs/acceptance/AC-20260703-postpoc-006.md | Cryptographic signing, marketplace hosting, and container isolation remain unproven. |
+| TASK-POSTPOC-007 | HATE-POSTPOC-GAP-007 | accepted | open | docs/acceptance/AC-20260703-postpoc-007.md | Real provider credentials and third-party writeback acceptance remain unproven. |
+| TASK-POSTPOC-008 | HATE-POSTPOC-GAP-008 | accepted | open | docs/acceptance/AC-20260703-postpoc-008.md | Hosted query APIs, retention services, and warehouse-scale operation remain unproven. |
+| TASK-POSTPOC-009 | HATE-POSTPOC-GAP-009 | accepted | open | docs/acceptance/AC-20260703-postpoc-009.md | Semantic cross-document drift beyond the canonical registry remains ongoing hardening. |
+| TASK-POSTPOC-010 | HATE-POSTPOC-GAP-010 | accepted | open | docs/acceptance/AC-20260703-postpoc-010.md | Live external approval engines and publication authority remain outside HATE. |
+| TASK-POSTPOC-011 | HATE-POSTPOC-GAP-011 | accepted | open | docs/acceptance/AC-20260703-postpoc-011.md | A production server, OIDC provider, API gateway, and session store remain unproven. |
+| TASK-POSTPOC-012 | HATE-POSTPOC-GAP-012 | accepted | open | docs/acceptance/AC-20260703-postpoc-012.md | Managed backup services and live recovery drills remain unproven. |
+| TASK-POSTPOC-013 | HATE-POSTPOC-GAP-013 | accepted | open | docs/acceptance/AC-20260703-postpoc-013.md | Long-running stress infrastructure and independently reproduced scale baselines remain unproven. |
+| TASK-POSTPOC-014 | HATE-POSTPOC-GAP-014 | accepted | open | docs/acceptance/AC-20260703-postpoc-014.md | External assessor signoff and customer-specific legal guarantees remain outside HATE. |
+| TASK-POSTPOC-015 | HATE-POSTPOC-GAP-015 | accepted | open | docs/acceptance/AC-20260703-postpoc-015.md | Hosted telemetry vendors, live alert routing, and incident drills remain unproven. |
+| TASK-POSTPOC-016 | HATE-POSTPOC-GAP-016 | accepted | open | docs/acceptance/AC-20260703-postpoc-016.md | An interactive UI, notification path, and hosted approval service remain unproven. |
+<!-- END GENERATED:POST_POC_IMPLEMENTATION -->
 
 ## 3. Workflow Task Seeds
 

@@ -30,29 +30,28 @@ structured, inspectable evidence that downstream governance tools can evaluate.
 
 ## Install And Run
 
-Use Python 3.11 or newer with `uv`.
+Use Python 3.11 or newer with uv. For source development:
 
-```powershell
-git clone https://github.com/RNA4219/harness-auto-test-evidence.git
-cd harness-auto-test-evidence
-uv run pytest -q
-```
+    git clone https://github.com/RNA4219/harness-auto-test-evidence.git
+    cd harness-auto-test-evidence
+    uv sync --dev --frozen
+    uv run python -m hate --help
 
-Inspect the CLI:
+To install the built wheel as a tool:
 
-```powershell
-uv run python -m hate --help
-uv run python -m hate platform --help
-```
+    uv build
+    uv tool install dist/harness_auto_test_evidence-0.2.0-py3-none-any.whl
+    hate --help
+
+v0.2.0 packages the HATE/v1 schemas. The main v0.1 migration changes are
+strict JSON Schema enforcement and default denial of local subprocess plugins.
+Plugin execution requires --allow-local-exec, still executes arbitrary code,
+and does not provide filesystem or network isolation. Release and regulated
+profiles deny local subprocess mode. See ../CHANGELOG.md and ../SECURITY.md.
 
 Run the minimal P0a golden path:
 
-```powershell
-uv run python -m hate p0a `
-  --input fixtures/golden/p0a-minimal/input `
-  --out tmp/p0a-smoke `
-  --source-version local-smoke
-```
+    uv run python -m hate p0a --input fixtures/golden/p0a-minimal/input --out tmp/p0a-smoke --source-version local-smoke
 
 ## Platform CLI
 
@@ -76,7 +75,7 @@ Common commands:
 - `notify route`: route owner, team, and SLA-breach records to notification targets and escalation subscribers
 - `notify deliver`: record notification attempts, retry, dead-letter, and payload-safety evidence
 - `baseline review`: convert baseline promotion candidates into human review packets
-- `plugin run`: execute manifest-driven plugins with sandbox validation
+- plugin run: default-denied execution for explicitly authorized trusted local plugins, with enforced and unenforced controls reported
 - `policy explain`: explain effective platform policy
 - `report html`: generate an offline HTML report
 

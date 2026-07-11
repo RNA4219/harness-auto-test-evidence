@@ -1,20 +1,83 @@
 {
-  "generated_at": "de31bfb01892",
+  "generated_at": "72a65041c502",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
+    ".github/ISSUE_TEMPLATE/bug.yml": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/github.ISSUE_TEMPLATE.bug.yml.json",
+      "sha256": "3235c5e2d1e6a263013111682e7d59e077fc97e272c8976035a50eb679d76e66",
+      "line_count": 32,
+      "size_bytes": 806
+    },
+    ".github/ISSUE_TEMPLATE/config.yml": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/github.ISSUE_TEMPLATE.config.yml.json",
+      "sha256": "0c08ec17b76a46ae6c202c50b2bd74b3ce0255aca7688a97c86f1cf04bac294f",
+      "line_count": 5,
+      "size_bytes": 209
+    },
+    ".github/ISSUE_TEMPLATE/feature.yml": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/github.ISSUE_TEMPLATE.feature.yml.json",
+      "sha256": "558d16b4c4fa757fd11229a85360a1b00f1923d3d6b4b57bb0ae4d54588fc976",
+      "line_count": 26,
+      "size_bytes": 761
+    },
+    ".github/dependabot.yml": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/github.dependabot.yml.json",
+      "sha256": "875bcbb826e1443f3c9fa3342276a307ecc51cb856e6ae37f7fe7ad01cfd6f60",
+      "line_count": 12,
+      "size_bytes": 258
+    },
+    ".github/pull_request_template.md": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/github.pull_request_template.md.json",
+      "sha256": "a89ca920c57b25fd39c00ca03b49810cc19646627844c01dc1a5ddd2d635ef71",
+      "line_count": 15,
+      "size_bytes": 493
+    },
     ".github/workflows/ci.yml": {
       "role": "ci",
       "caps": "docs/birdseye/caps/github.workflows.ci.yml.json",
-      "sha256": "4b399e7922f6e54c7f0c9060a1ad991a40dca79ce21e08f3d1244007592dca1b",
-      "line_count": 35,
-      "size_bytes": 793
+      "sha256": "086c13a3a5aa3979a3fd936f7b2d5491969705dfe29841be67f0848a152d3fcc",
+      "line_count": 114,
+      "size_bytes": 4409
+    },
+    "CHANGELOG.md": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/CHANGELOG.md.json",
+      "sha256": "cabe38e5e0f3e3ac2ffe696a21df3f3f0257de31b19f9c48d1309a49db08ef8e",
+      "line_count": 24,
+      "size_bytes": 852
+    },
+    "CODE_OF_CONDUCT.md": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/CODE_OF_CONDUCT.md.json",
+      "sha256": "fb305ab4269b6c67e2b0378f0a15929d1c6935400a0b79227702d6e091b85399",
+      "line_count": 12,
+      "size_bytes": 518
+    },
+    "CONTRIBUTING.md": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/CONTRIBUTING.md.json",
+      "sha256": "d9b29d3d1b9b33e9da084aa05439eebd5d2f7c53203b0a058064da2f70836789",
+      "line_count": 18,
+      "size_bytes": 772
     },
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "2dfeceebebcac13492409150f51ecc90e3b61e7557a4f25d5e1ffbaceebb9d0f",
-      "line_count": 175,
-      "size_bytes": 7291
+      "sha256": "0f84b74a9e3e8b16c2a96619545eafacf685aecff7c8a8c790d73b2f5d2e1c16",
+      "line_count": 191,
+      "size_bytes": 8200
+    },
+    "SECURITY.md": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/SECURITY.md.json",
+      "sha256": "04dfdbaa3a7606c8592f198f44ab0ad85a1ea7867cd64c5c9171a8b91f3b2878",
+      "line_count": 24,
+      "size_bytes": 968
     },
     "TASK.codex.md": {
       "role": "planning",
@@ -26,16 +89,16 @@
     "docs/README_EN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_EN.md.json",
-      "sha256": "4e37c1aa568a9b1bfbb8448b8efb26a87a9df3fd541962c86315315611a84d44",
-      "line_count": 123,
-      "size_bytes": 4907
+      "sha256": "fc9e3ccc5184250fa5aadaa6ce6478cf746cdff8e06a1c70a32d089749e1eb18",
+      "line_count": 122,
+      "size_bytes": 5422
     },
     "docs/README_JA.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_JA.md.json",
-      "sha256": "76cf6a23e51c3a9120246f60e23e70e2c71a1c5c47fa5ce29a3462fdf8f3379c",
+      "sha256": "72c1d71d1e1e3b2485f11d8fb5eca999dedc74c1354698853979ea0a7273bb5d",
       "line_count": 122,
-      "size_bytes": 5378
+      "size_bytes": 5990
     },
     "docs/acceptance/AC-20260630-01.md": {
       "role": "documentation",
@@ -47,114 +110,114 @@
     "docs/acceptance/AC-20260703-postpoc-001.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-001.md.json",
-      "sha256": "549e9c44b7544f075791ba65f410b23e4e0db00a00554d35b45515d0991312ec",
-      "line_count": 78,
-      "size_bytes": 2828
+      "sha256": "6bd8870f74d62855419d48b84fcd5ea78f2e4d8ac206257a8751bffdb14ec27c",
+      "line_count": 80,
+      "size_bytes": 2944
     },
     "docs/acceptance/AC-20260703-postpoc-002.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-002.md.json",
-      "sha256": "a7f1c5efd7f173ff56d4635bcafb505120e9216e997e5a53b6f04f7f2541dcfe",
-      "line_count": 77,
-      "size_bytes": 2915
+      "sha256": "ff44d86ad6ed12acd63ee73143606eeccafec4708c299e568417c124271a8a52",
+      "line_count": 79,
+      "size_bytes": 3031
     },
     "docs/acceptance/AC-20260703-postpoc-003.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-003.md.json",
-      "sha256": "932a5ee188305842b5c02a516f61690a71272639bcbf0a3052c5c410bf85828d",
-      "line_count": 77,
-      "size_bytes": 2860
+      "sha256": "b649b8555a0c3c18b30b20c0875369ce334e1892e44406e5d1f7125882850015",
+      "line_count": 79,
+      "size_bytes": 2976
     },
     "docs/acceptance/AC-20260703-postpoc-004.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-004.md.json",
-      "sha256": "5419412f87efa2a6518c2489d11fd71cd56dd3b0a19c53f794469bc1e32aa504",
-      "line_count": 80,
-      "size_bytes": 2967
+      "sha256": "ec2c3f73e2a49d609865b1cd9d6290ff4066bc84d858bf3d4ba57ba7b18a98e5",
+      "line_count": 82,
+      "size_bytes": 3083
     },
     "docs/acceptance/AC-20260703-postpoc-005.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-005.md.json",
-      "sha256": "4dd5d661ca9ce6ce1252ac693179128a145cb826c0b6278f8017e38a82597071",
-      "line_count": 77,
-      "size_bytes": 2879
+      "sha256": "e19ab00a211abec89b39d3207b0beabee5ba92b4fe071c069ec434048907670a",
+      "line_count": 79,
+      "size_bytes": 2995
     },
     "docs/acceptance/AC-20260703-postpoc-006.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-006.md.json",
-      "sha256": "6b8c02c87286c4e6d1a72fdc90d74face9fd766c04cf1002f531fefd8f16f5a9",
-      "line_count": 81,
-      "size_bytes": 3100
+      "sha256": "4e70d5b20ad06c9297ee3eaf374fb09ca920d721896867180e443c28b8f9c2ff",
+      "line_count": 83,
+      "size_bytes": 3216
     },
     "docs/acceptance/AC-20260703-postpoc-007.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-007.md.json",
-      "sha256": "2679ad54e0f5222a0ce594f4f799fdbd85996e91b5419ab6cac470f390b5a144",
-      "line_count": 81,
-      "size_bytes": 3050
+      "sha256": "ccf739d090962e9f2188e98e32c5ff20057b8a36fd7d5ce36c2f26fa4ec677c3",
+      "line_count": 83,
+      "size_bytes": 3166
     },
     "docs/acceptance/AC-20260703-postpoc-008.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-008.md.json",
-      "sha256": "b4f9bf53a0d255727879d4ca5051e46012844fa5188659571447b2c07328a322",
-      "line_count": 80,
-      "size_bytes": 2972
+      "sha256": "98d98201a8f8539a92c3449509481d599981cfeaf4091b1569edae27e30583cb",
+      "line_count": 82,
+      "size_bytes": 3088
     },
     "docs/acceptance/AC-20260703-postpoc-009.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-009.md.json",
-      "sha256": "99fb95d4c0133ea67139a35c0949671891f082cbaaaac6bf6909a39cb32688e6",
-      "line_count": 77,
-      "size_bytes": 2777
+      "sha256": "0b4689ba43ce27b55c3516db66d112ec4fd99cee5a6dd5e3b5b84c08b893fb71",
+      "line_count": 79,
+      "size_bytes": 2893
     },
     "docs/acceptance/AC-20260703-postpoc-010.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-010.md.json",
-      "sha256": "f9d55acc3cd04e3812e7a931fdeaf0c4daa71e46e597bb5e251ebb35f3a853a3",
-      "line_count": 70,
-      "size_bytes": 2683
+      "sha256": "d9773900727beb40e88fe2ae191fdab86522f6d68ee01c29876433672e3ccf94",
+      "line_count": 72,
+      "size_bytes": 2799
     },
     "docs/acceptance/AC-20260703-postpoc-011.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-011.md.json",
-      "sha256": "a31523f667de1fa8d2450a0a7d9d58542e5eeaa17edd2926f38257957e7b9f7f",
-      "line_count": 80,
-      "size_bytes": 2962
+      "sha256": "3fd625072dfaa6dbfb173673b37086250b97a8cc0392b4006b0ec661114bca26",
+      "line_count": 82,
+      "size_bytes": 3078
     },
     "docs/acceptance/AC-20260703-postpoc-012.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-012.md.json",
-      "sha256": "18e4dbb6146a0e0fafb7b2a8142323d227d4158d2230ab6a66fba8ba415672cf",
-      "line_count": 77,
-      "size_bytes": 2941
+      "sha256": "914b79ecbee3c4d2690c6418982a96fc3f3ee3d991e18eb93047621c546c5245",
+      "line_count": 79,
+      "size_bytes": 3057
     },
     "docs/acceptance/AC-20260703-postpoc-013.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-013.md.json",
-      "sha256": "317aa12ad1c2c12861775e8623894eb2adebb8cd64830a453349fd8a21eb3abb",
-      "line_count": 79,
-      "size_bytes": 3166
+      "sha256": "205d7e99f05a21cf49a13b36e259c2561d42de27d3a3cedf7f1a992af2cf75f9",
+      "line_count": 81,
+      "size_bytes": 3282
     },
     "docs/acceptance/AC-20260703-postpoc-014.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-014.md.json",
-      "sha256": "2338a70b3987fc66831e1369f73ca90a2cf0497f17b6ae98277c65ed28a8fa64",
-      "line_count": 70,
-      "size_bytes": 2652
+      "sha256": "00c30e109963a00afcfa3604d03864991a506618bac8af3b4b44e2c4088e3438",
+      "line_count": 72,
+      "size_bytes": 2768
     },
     "docs/acceptance/AC-20260703-postpoc-015.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-015.md.json",
-      "sha256": "f1325d1b45eeee8ecd0b0a8a2611bbe36f0d80544b1f2f713c52af7a969fe542",
-      "line_count": 81,
-      "size_bytes": 3247
+      "sha256": "32ca3810e64cabb1c4ae930250abc6035aea0f415d16df6b4734227e6c385d7d",
+      "line_count": 83,
+      "size_bytes": 3363
     },
     "docs/acceptance/AC-20260703-postpoc-016.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.AC-20260703-postpoc-016.md.json",
-      "sha256": "074f0b739985cfe79b1f6e12402a6cb82323df8374a78a17d88b902a8c2ce5b2",
-      "line_count": 79,
-      "size_bytes": 2904
+      "sha256": "8572794f9da34b14e83e45e89628fd48cc010c8d98e175432ccf84dc67e453e6",
+      "line_count": 81,
+      "size_bytes": 3020
     },
     "docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md": {
       "role": "documentation",
@@ -187,9 +250,9 @@
     "docs/acceptance/INDEX.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.acceptance.INDEX.md.json",
-      "sha256": "ae4eff15962ce624ece6a544cb3aa99a45ea2ffd5d60c4068a159e2e5a6b949f",
-      "line_count": 34,
-      "size_bytes": 4361
+      "sha256": "909b23091af971d1e2e183b30194a6c4a93eb2c8b081c3d27cff016520b6a50b",
+      "line_count": 35,
+      "size_bytes": 4538
     },
     "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md": {
       "role": "documentation",
@@ -267,6 +330,13 @@
       "sha256": "2f122b68aa8947870553b2880d1bcaf8676cbbb1a5270b2000539078a6fd06ef",
       "line_count": 96,
       "size_bytes": 2925
+    },
+    "docs/acceptance/RELEASE_V0_2_0_20260711.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.RELEASE_V0_2_0_20260711.md.json",
+      "sha256": "3932901d023dd3a13532dc5277c00c9074d6162ecd0230ab0381c9ed3a59197f",
+      "line_count": 59,
+      "size_bytes": 2578
     },
     "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md": {
       "role": "quality",
@@ -565,9 +635,9 @@
     "docs/process/PLATFORM_PLUGIN_SANDBOX_SPEC.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.PLATFORM_PLUGIN_SANDBOX_SPEC.md.json",
-      "sha256": "b54b50f929bfee9ccf9f96f90a14c88ba4fdd7c3d2f012eda43b465b3e12619f",
-      "line_count": 87,
-      "size_bytes": 2445
+      "sha256": "414a509233daad775c62e94b3470a3850f1eea5ed7f66360fe89b8102dafe282",
+      "line_count": 73,
+      "size_bytes": 3186
     },
     "docs/process/PLATFORM_POLICY_CONFIG_SPEC.md": {
       "role": "requirements",
@@ -593,9 +663,9 @@
     "docs/process/POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md.json",
-      "sha256": "d69d3787cd6560d1569a106eb64e9699967833f53afde8885e090a46b10f7cfb",
-      "line_count": 117,
-      "size_bytes": 16205
+      "sha256": "10f27c5edee7a043dbcfb3218cb497b01854d5a694da9fb1e9e2e80baedf66d5",
+      "line_count": 121,
+      "size_bytes": 14550
     },
     "docs/process/POST_POC_PRODUCTIZATION_DETAIL_SPEC.md": {
       "role": "requirements",
@@ -607,16 +677,16 @@
     "docs/process/POST_POC_REQUIREMENTS_GAP_AUDIT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.POST_POC_REQUIREMENTS_GAP_AUDIT.md.json",
-      "sha256": "6af39483cf2597e0f28be338e7fbe1446f416ed3dd07c643e528c0f42e5452a9",
-      "line_count": 88,
-      "size_bytes": 8305
+      "sha256": "bc8bca8791752b64c4711a963148960a4ad0de18e5572ecf331d26d6a9708c91",
+      "line_count": 92,
+      "size_bytes": 6636
     },
     "docs/process/POST_POC_SPEC_TRACEABILITY_CHECKLIST.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.POST_POC_SPEC_TRACEABILITY_CHECKLIST.md.json",
-      "sha256": "09f95de6e36b7c9b9b486063752d8355ff202bd560f4bb06c9fc4d0ab6f021f0",
-      "line_count": 87,
-      "size_bytes": 7829
+      "sha256": "ef2c413a48b8028fcf5cfef716c891afedb346828cad9c3ad2ad4b0379a2b506",
+      "line_count": 83,
+      "size_bytes": 7452
     },
     "docs/process/PRIVACY_QUARANTINE_CONTRACT.md": {
       "role": "requirements",
@@ -988,6 +1058,13 @@
       "sha256": "0b423465a2061cd49145942cde2d94a5da18367f69256b95116a907f78c38cac",
       "line_count": 124,
       "size_bytes": 5230
+    },
+    "docs/process/post-poc-gap-registry.json": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.post-poc-gap-registry.json.json",
+      "sha256": "84eca98f7d67453d0afd5687cf514ebbcfc80010c41d34446cda9982a51e1da4",
+      "line_count": 167,
+      "size_bytes": 7918
     },
     "docs/process/rand-kano-mode-full-implementation-audit.json": {
       "role": "documentation",
@@ -6858,9 +6935,9 @@
     "pyproject.toml": {
       "role": "project",
       "caps": "docs/birdseye/caps/pyproject.toml.json",
-      "sha256": "776c3ec187724c02ecd665d81702254056f7c83e534c8fd1d4f1e36b3c5bb259",
-      "line_count": 25,
-      "size_bytes": 504
+      "sha256": "5fe1bf595f6568872eb022710e8a0d06956c6785cca1cf7b8ad874ecf482ce20",
+      "line_count": 71,
+      "size_bytes": 1804
     },
     "schemas/HATE/v1/a11y-l10n-report.schema.json": {
       "role": "schema",
@@ -7887,9 +7964,9 @@
     "schemas/HATE/v1/platform-ops-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.platform-ops-report.schema.json.json",
-      "sha256": "fc2d75103afdb8830c29a66b9d8fcb480493fbebcd4bab635232e731a7f6fdf3",
-      "line_count": 30,
-      "size_bytes": 1006
+      "sha256": "e6cddc5f325b71d8dedaeeeda04e3a5cee3515c526b9d127406cdd8e79c9f477",
+      "line_count": 73,
+      "size_bytes": 2599
     },
     "schemas/HATE/v1/platform-plugin-sandbox-report.schema.json": {
       "role": "schema",
@@ -7950,9 +8027,9 @@
     "schemas/HATE/v1/plugin-package-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.plugin-package-manifest.schema.json.json",
-      "sha256": "49c7c5cfa3d625ffe3ffd379f5fcc63020c19a06e7290378bc606b25c37bf13c",
+      "sha256": "d9ab220f8be48b8aa249a6b18a2fb179cb1a6a5b66b406190107e0f51062d0ec",
       "line_count": 61,
-      "size_bytes": 2116
+      "size_bytes": 2234
     },
     "schemas/HATE/v1/plugin-revocation-event.schema.json": {
       "role": "schema",
@@ -7964,9 +8041,9 @@
     "schemas/HATE/v1/plugin-signature-verification.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.plugin-signature-verification.schema.json.json",
-      "sha256": "db8ef8ab72d1f158af4daeb9e1e97a4246188de75c6251c874cc00a3e3b8b9e7",
+      "sha256": "6622ba1403653f049c4aa6e35f97d720a4b3d29b8d80d24757fe663ef2fbb334",
       "line_count": 43,
-      "size_bytes": 1480
+      "size_bytes": 1598
     },
     "schemas/HATE/v1/policy-simulation-report.schema.json": {
       "role": "schema",
@@ -8811,16 +8888,16 @@
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "cf629f770675bd5ce1daebaab9bebadd717f80af299285716741c10a341abe13",
-      "line_count": 324,
-      "size_bytes": 26451
+      "sha256": "4177160a1461a6092760718801d86705e32f174a1b12fff634f170187684e6c7",
+      "line_count": 325,
+      "size_bytes": 26595
     },
     "src/hate/cli_handlers.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli_handlers.py.json",
-      "sha256": "7d71b19d4d27c5f913df439de5459232f7210a8220c95d19fbbe8b651c816165",
-      "line_count": 561,
-      "size_bytes": 20714
+      "sha256": "9283e4884146524d63ace8148500b71eec95b613862b9ebfc1a91e7cbe82311b",
+      "line_count": 566,
+      "size_bytes": 20775
     },
     "src/hate/commercial/__init__.py": {
       "role": "implementation",
@@ -9406,9 +9483,9 @@
     "src/hate/p0a_schema.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_schema.py.json",
-      "sha256": "5ff552beebd679b38ada7209fba1d77f922e172a2381c8015a9dd96aa4da1566",
-      "line_count": 182,
-      "size_bytes": 7959
+      "sha256": "57a6b0bad88443ac7686db9b1d01de06c5071752efab5a57a17f8c75c5208988",
+      "line_count": 115,
+      "size_bytes": 4996
     },
     "src/hate/p0a_static.py": {
       "role": "implementation",
@@ -9644,16 +9721,16 @@
     "src/hate/platform_cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.platform_cli.py.json",
-      "sha256": "3936c31afc6534e1d6427266533cff6cc1be7d7f3b9f0dd589faf789bc61ebc2",
-      "line_count": 522,
-      "size_bytes": 20153
+      "sha256": "7f388e71ae27eed3b7483565615c0956dcbd6ccd690fc24150a6114bb40a66d9",
+      "line_count": 531,
+      "size_bytes": 20259
     },
     "src/hate/platform_ops.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.platform_ops.py.json",
-      "sha256": "e29499d402aeabe0e6a2f3bc38f72785a23f64a2d96f681a8a312e8138dd6434",
-      "line_count": 626,
-      "size_bytes": 25926
+      "sha256": "cb69fa2e46c8823f136727ac8ea807baaefa7b217de4912ee42ee5ea6ce0a507",
+      "line_count": 583,
+      "size_bytes": 24049
     },
     "src/hate/platform_rbac.py": {
       "role": "implementation",
@@ -9668,6 +9745,13 @@
       "sha256": "1e6814c6ea6ec13131423d287610fc3fd0be81dcdb89610b940a947056b624e5",
       "line_count": 283,
       "size_bytes": 12001
+    },
+    "src/hate/plugin_runner.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.plugin_runner.py.json",
+      "sha256": "80e20fdba87dbf69439ade91959327b1183caab73093453f6825afac3c80cdc9",
+      "line_count": 431,
+      "size_bytes": 16067
     },
     "src/hate/plugins/__init__.py": {
       "role": "implementation",
@@ -9921,12 +10005,19 @@
       "line_count": 221,
       "size_bytes": 9155
     },
+    "src/hate/schema_resources.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.schema_resources.py.json",
+      "sha256": "1fe271b2085c0ce4c9eed689397965f03d9eacd291232c00f8d1a34ab8f148ac",
+      "line_count": 92,
+      "size_bytes": 3438
+    },
     "src/hate/schema_validator.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.schema_validator.py.json",
-      "sha256": "3c7c2ccc44eac1a05a38053f317f7e4ea77077d7305c91bb188020a76d70139a",
-      "line_count": 288,
-      "size_bytes": 11145
+      "sha256": "dbc03c7946b2c5526a9c429bdee3873567f9004fd12bdfab69a34914ae7ba398",
+      "line_count": 289,
+      "size_bytes": 11261
     },
     "src/hate/security/__init__.py": {
       "role": "implementation",
@@ -10218,9 +10309,9 @@
     "tests/test_acceptance_pipeline.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_acceptance_pipeline.py.json",
-      "sha256": "47541c83945cda75326d940587b7ffd236ed87cd9ed504628cbb6b18aa724d15",
-      "line_count": 165,
-      "size_bytes": 5695
+      "sha256": "ec82d577dcd710b7131bb554c2d051dba4780d6873174c54b58ef9daf5fe8251",
+      "line_count": 168,
+      "size_bytes": 5727
     },
     "tests/test_adapter_corpus_manifest.py": {
       "role": "test",
@@ -10834,9 +10925,9 @@
     "tests/test_platform_ops.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_platform_ops.py.json",
-      "sha256": "7900c8f5a4e643c88d493645c664d4325e321cf7d67c0b6ba75241e759335ebb",
-      "line_count": 503,
-      "size_bytes": 19269
+      "sha256": "b457ef3fb82cfd2f3f5aa74d95ee7a74006ee79af1b965ea889f856049cb5231",
+      "line_count": 648,
+      "size_bytes": 25185
     },
     "tests/test_platform_plugin_sandbox.py": {
       "role": "test",
@@ -10869,9 +10960,9 @@
     "tests/test_poc_completion_e2e.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_poc_completion_e2e.py.json",
-      "sha256": "a01cad6a0166736291110a518e4dbc6adbdda5c05596f0bc254d0044918f521c",
-      "line_count": 133,
-      "size_bytes": 4747
+      "sha256": "3839116e5b46e17aad9fa5e4035fab7fd26f3e57d2bc7b8601d7224e2a380ea8",
+      "line_count": 137,
+      "size_bytes": 4834
     },
     "tests/test_post_poc_artifact_receipts.py": {
       "role": "test",
@@ -10925,9 +11016,9 @@
     "tests/test_post_poc_docs_freshness.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_post_poc_docs_freshness.py.json",
-      "sha256": "597e167513c5b14d11bddfaf00aba00a946b62a574b69dfcea41e747026b0e6a",
-      "line_count": 417,
-      "size_bytes": 17536
+      "sha256": "7df7937f0334db812a7c33595505d1ca0c1af8dffeebe17ffdfb3b4447d1f72e",
+      "line_count": 487,
+      "size_bytes": 20686
     },
     "tests/test_post_poc_history_analytics.py": {
       "role": "test",
@@ -10981,9 +11072,9 @@
     "tests/test_post_poc_requirements_gap_audit.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_post_poc_requirements_gap_audit.py.json",
-      "sha256": "43479c7b2878eab71dccd8992b4cc73b5e8348dd49d461025095cb413229c3d1",
-      "line_count": 173,
-      "size_bytes": 6794
+      "sha256": "ab5142452d64648b866b9368583b9ede0bf5429f4e5c6ca4c5478b8c8b823a04",
+      "line_count": 189,
+      "size_bytes": 7525
     },
     "tests/test_post_poc_roster.py": {
       "role": "test",
@@ -11132,6 +11223,13 @@
       "line_count": 157,
       "size_bytes": 5988
     },
+    "tests/test_schema_resources.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_schema_resources.py.json",
+      "sha256": "b9a20500dbfe62bcf219b005aa97f140d6863521631bd17a7afbebe910ba900c",
+      "line_count": 46,
+      "size_bytes": 2081
+    },
     "tests/test_schema_validator.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_schema_validator.py.json",
@@ -11275,9 +11373,23 @@
     "tools/ci/docs_freshness_gate.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.ci.docs_freshness_gate.py.json",
-      "sha256": "8bc1274ea60d9c2fc6775e157d69c4f94e5ba2f7192c6f336b9c48160ecd0f42",
-      "line_count": 262,
-      "size_bytes": 10517
+      "sha256": "0923f2fc7c23597aac5ed963664144071a1dd354c44dde9255c5a82b61f88018",
+      "line_count": 235,
+      "size_bytes": 10761
+    },
+    "tools/ci/schema_meta_gate.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.ci.schema_meta_gate.py.json",
+      "sha256": "1389139f0bb85d188906e4805c00c0c20db6fb3c1e6ba69aea2a2ab2f4fa6efc",
+      "line_count": 22,
+      "size_bytes": 577
+    },
+    "tools/ci/wheel_smoke.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.ci.wheel_smoke.py.json",
+      "sha256": "d62eb5ea332ba528f481e101b008cf9bc89a57a93ef5ebde8d96a2d5c40b0f32",
+      "line_count": 62,
+      "size_bytes": 1864
     },
     "tools/codemap/update.py": {
       "role": "tooling",
@@ -11285,6 +11397,13 @@
       "sha256": "85685af1fe037b34201a5b5b8abbd2f01cb654c868206ff87f6ae4dd80c52b2d",
       "line_count": 310,
       "size_bytes": 10344
+    },
+    "tools/docs/render_post_poc_status.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.docs.render_post_poc_status.py.json",
+      "sha256": "3f6b9800ccd712020346c30757aa5ed4f8ea8bb32d2ec3fb56caf0c860e3f2c5",
+      "line_count": 112,
+      "size_bytes": 6010
     }
   },
   "edges": [
@@ -11315,6 +11434,10 @@
     [
       "README.md",
       "docs/acceptance/RELEASE_V0_1_0_20260705.md"
+    ],
+    [
+      "README.md",
+      "docs/acceptance/RELEASE_V0_2_0_20260711.md"
     ],
     [
       "README.md",
@@ -11387,6 +11510,10 @@
     [
       "README.md",
       "docs/process/TEST_INTEGRITY_IMPLEMENTATION_SPEC.md"
+    ],
+    [
+      "README.md",
+      "docs/process/post-poc-gap-registry.json"
     ],
     [
       "README.md",
@@ -11499,6 +11626,10 @@
     [
       "docs/acceptance/INDEX.md",
       "docs/acceptance/RELEASE_V0_1_0_20260705.md"
+    ],
+    [
+      "docs/acceptance/INDEX.md",
+      "docs/acceptance/RELEASE_V0_2_0_20260711.md"
     ],
     [
       "src/hate/__main__.py",
@@ -12129,6 +12260,10 @@
       "src/hate/p0a_io.py"
     ],
     [
+      "src/hate/p0a_schema.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
       "src/hate/p0a_static.py",
       "src/hate/p0a_constants.py"
     ],
@@ -12406,6 +12541,10 @@
     ],
     [
       "src/hate/platform_ops.py",
+      "src/hate/plugin_runner.py"
+    ],
+    [
+      "src/hate/plugin_runner.py",
       "src/hate/plugins/sandbox.py"
     ],
     [
@@ -12527,6 +12666,10 @@
     [
       "src/hate/schema_validator.py",
       "src/hate/p0a_schema.py"
+    ],
+    [
+      "src/hate/schema_validator.py",
+      "src/hate/schema_resources.py"
     ],
     [
       "src/hate/security/__init__.py",
@@ -13385,6 +13528,10 @@
       "src/hate/runtime_worker.py"
     ],
     [
+      "tests/test_schema_resources.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
       "tests/test_schema_validator.py",
       "src/hate/cross_record_validator.py"
     ],
@@ -13479,6 +13626,10 @@
     [
       "tests/test_workflow_task_seed.py",
       "src/hate/workflow_task_seed.py"
+    ],
+    [
+      "tools/ci/schema_meta_gate.py",
+      "src/hate/schema_resources.py"
     ]
   ]
 }

@@ -2,9 +2,9 @@
   "path": "tests/test_platform_ops.py",
   "role": "test",
   "kind": "py",
-  "sha256": "7900c8f5a4e643c88d493645c664d4325e321cf7d67c0b6ba75241e759335ebb",
-  "line_count": 503,
-  "size_bytes": 19269,
+  "sha256": "b457ef3fb82cfd2f3f5aa74d95ee7a74006ee79af1b965ea889f856049cb5231",
+  "line_count": 648,
+  "size_bytes": 25185,
   "headings": [],
   "imports": [
     "__future__",
@@ -12,7 +12,9 @@
     "hate.platform_ops",
     "json",
     "pathlib",
-    "sys"
+    "pytest",
+    "sys",
+    "time"
   ],
   "links": [],
   "depends_on": [

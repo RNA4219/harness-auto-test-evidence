@@ -8,7 +8,12 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from .evaluation import RealRepoHistoryStoreError, ingest_real_repo_history, query_real_repo_history, run_real_repo_roster
+from .evaluation import (
+    RealRepoHistoryStoreError,
+    ingest_real_repo_history,
+    query_real_repo_history,
+    run_real_repo_roster,
+)
 from .expansion_runner import ExpansionRunError, run_expansion_suite
 from .gap_closure import GapClosureError, generate_gap_closure_report
 from .p0a import PrecheckError, generate_p0a
@@ -19,6 +24,8 @@ from .p2p3 import ProductError, generate_product_readiness, query_product_read_m
 from .platform_cli import (
     PlatformCliError,
     platform_assign,
+    platform_baseline_promote,
+    platform_baseline_review,
     platform_compare,
     platform_debt,
     platform_findings,
@@ -27,10 +34,8 @@ from .platform_cli import (
     platform_history_materialize,
     platform_notify_deliver,
     platform_notify_route,
-    platform_policy_explain,
     platform_plugin_run,
-    platform_baseline_promote,
-    platform_baseline_review,
+    platform_policy_explain,
     platform_report_html,
     platform_review,
     platform_run,
@@ -480,7 +485,7 @@ def _dispatch_platform(args: argparse.Namespace) -> dict[str, Any] | None:
     if args.platform_command == "notify" and args.platform_notify_command == "deliver":
         return platform_notify_deliver(args.input, out_path=args.out)
     if args.platform_command == "plugin" and args.platform_plugin_command == "run":
-        return platform_plugin_run(args.manifest, out_path=args.out)
+        return platform_plugin_run(args.manifest, out_path=args.out, allow_local_exec=args.allow_local_exec)
     if args.platform_command == "policy" and args.platform_policy_command == "explain":
         return platform_policy_explain(args.policy, out_path=args.out, profile=args.profile)
     if args.platform_command == "report" and args.platform_report_command == "html":

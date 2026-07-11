@@ -34,24 +34,28 @@ No-Go:
 
 ## 2. Gap Register
 
-| Gap ID | Area | Current Evidence | Missing Requirement | Acceptance Evidence |
-|---|---|---|---|---|
-| HATE-POSTPOC-GAP-001 | Hosted scheduler runtime | `hate platform schedule` creates deterministic local plans. | A daemon or hosted worker model with leases, heartbeats, retry queues, cancellation, and crash recovery. | Worker lifecycle fixtures, stale lease recovery tests, and an acceptance run with interrupted/resumed jobs. |
-| HATE-POSTPOC-GAP-002 | Interactive dashboard frontend | HTML reports and dashboard view models exist. | Human-operable authenticated dashboard with portfolio, finding, debt, manual review, policy, and audit views. | Browser/UAT evidence for loading, empty, stale, denied, unsafe-hidden, and drill-down states. |
-| HATE-POSTPOC-GAP-003 | Notification delivery runtime | Assignment and SLA queue reports exist. | Delivery connectors for Slack/email/webhook/GitHub with retry, dedupe, escalation, and failure events. | Fixture-backed delivery attempts, duplicate suppression, failed delivery hold, and redacted payload evidence. |
-| HATE-POSTPOC-GAP-004 | Baseline promotion workflow | Baseline selection and invalid filename-sort detection exist. | Explicit propose/approve/freeze/expire/revoke CLI or UI with actor, reason, expiry, and immutable audit event. | Approval-path tests, denial-path tests, and replay proving regressions are not hidden by unapproved baselines. |
-| HATE-POSTPOC-GAP-005 | Real-repo roster operations | Bulk validation covered 22 repo/suites. | Roster maintenance for discovery, dependency bootstrap, environment recipes, quarantine, retry isolation, and external repo ownership boundaries. | 100+ repo dry-run roster evidence, held dependency remediation records, and stale/quarantined repo tests. |
-| HATE-POSTPOC-GAP-006 | Plugin distribution and trust | Local subprocess plugin PoC exists. | Signed package format, allowlist, revocation, compatibility matrix, resource isolation, and migration policy. | Signed/unsigned/revoked/mismatched plugin conformance fixtures and release-profile denial tests. |
-| HATE-POSTPOC-GAP-007 | Live connector runtime | Connector reports and dry-run sync projections exist. | Live writeback modes for tracker/SIEM/warehouse/SCIM/SSO with dry-run/live separation, idempotency, and rollback visibility. | Contract tests against fake endpoints, idempotency tests, denied secret/token exposure tests, and operator acceptance. |
-| HATE-POSTPOC-GAP-008 | Long-term history analytics | Local history and compare exist. | Trend analytics for flake rate, evidence freshness, debt aging, repo health, baseline drift, and regression clusters. | Multi-run synthetic and real-history tests with stable query contracts and performance budgets. |
-| HATE-POSTPOC-GAP-009 | Docs and acceptance freshness CI | Codemap freshness commands exist. | CI gate that fails stale README, acceptance ledger, codemap, schema registry, and product-grade status claims. | CI fixture or script tests that intentionally stale a referenced artifact and produce hold/no-go. |
-| HATE-POSTPOC-GAP-010 | QEG and Shipyard release handoff | HATE exports and smoke-validates QEG-compatible artifacts. | Explicit handoff protocol to QEG/Shipyard release or publish approval without claiming final authority. | Mocked external approval references, denial cases, and acceptance record proving HATE never overwrites verdict. |
-| HATE-POSTPOC-GAP-011 | Hosted multi-tenant API | RBAC and read-model contracts exist. | Hosted API/session/auth/OIDC/token enforcement with tenant-scoped request handling and negative tests. | API tests for cross-tenant denial, expired token, service account limits, audit events, and rate limits. |
-| HATE-POSTPOC-GAP-012 | Store backup, restore, and DR operations | Migration/rebuild reports exist. | Operator commands and drills for backup, restore, corruption detection, legal hold preservation, and projection rebuild. | Corrupt backup denial, successful restore, legal-hold preservation, and recovery-time evidence. |
-| HATE-POSTPOC-GAP-013 | Capacity benchmark with measured baselines | Scale fixtures and capacity models exist. | Measured benchmark runs for large repos, 1000 repo roster, 1M findings, memory, runtime, and degradation mode. | Baseline benchmark artifacts, regression thresholds, and failure-mode reports under bounded resource budgets. |
-| HATE-POSTPOC-GAP-014 | Compliance and procurement evidence | Security/trust contracts exist as docs and reports. | SOC2/ISO-style evidence pack, DPA/data residency mapping, procurement questionnaire outputs, and review workflow. | Generated compliance pack, reviewer signoff records, redaction checks, and stale-control detection. |
-| HATE-POSTPOC-GAP-015 | Observability and incident operations | Support/ops observability reports exist. | Runtime metrics, logs, traces, alert routing, incident lifecycle, SLO burn-rate, and post-incident evidence. | Incident simulation fixtures, alert delivery failure tests, SLO breach reports, and support bundle acceptance. |
-| HATE-POSTPOC-GAP-016 | Human review operating UI/CLI | Manual review requests and risk debt records exist. | Decision workflow for reviewer assignment, evidence attachment, expiry, revoke, supersede, and audit replay. | CLI/UI path tests for approve/deny/revoke/expire, missing evidence no-go, and replay-stable audit trail. |
+The JSON registry post-poc-gap-registry.json is canonical. Local evidence acceptance does not close production or hosted-operation gaps.
+
+<!-- BEGIN GENERATED:POST_POC_REQUIREMENTS -->
+| Gap ID | Area | Local Slice | Product Status | Remaining Work | Acceptance Evidence |
+|---|---|---|---|---|---|
+| HATE-POSTPOC-GAP-001 | Hosted scheduler runtime | accepted | open | Hosted queue/daemon wiring, durable leases, and production crash recovery remain unproven. | docs/acceptance/AC-20260703-postpoc-001.md |
+| HATE-POSTPOC-GAP-002 | Interactive dashboard frontend | accepted | open | A full interactive frontend, browser UAT, and a real authentication provider remain unproven. | docs/acceptance/AC-20260703-postpoc-002.md |
+| HATE-POSTPOC-GAP-003 | Notification delivery runtime | accepted | open | Live provider writes, provider authentication, and production delivery operations remain unproven. | docs/acceptance/AC-20260703-postpoc-003.md |
+| HATE-POSTPOC-GAP-004 | Baseline promotion workflow | accepted | open | A browser workflow and hosted approval service remain unproven. | docs/acceptance/AC-20260703-postpoc-004.md |
+| HATE-POSTPOC-GAP-005 | Real-repo roster operations | accepted | open | Real dependency bootstrap execution and 100+ repository operating evidence remain unproven. | docs/acceptance/AC-20260703-postpoc-005.md |
+| HATE-POSTPOC-GAP-006 | Plugin distribution and trust | accepted | open | Cryptographic signing, marketplace hosting, and container isolation remain unproven. | docs/acceptance/AC-20260703-postpoc-006.md |
+| HATE-POSTPOC-GAP-007 | Live connector runtime | accepted | open | Real provider credentials and third-party writeback acceptance remain unproven. | docs/acceptance/AC-20260703-postpoc-007.md |
+| HATE-POSTPOC-GAP-008 | Long-term history analytics | accepted | open | Hosted query APIs, retention services, and warehouse-scale operation remain unproven. | docs/acceptance/AC-20260703-postpoc-008.md |
+| HATE-POSTPOC-GAP-009 | Docs and acceptance freshness CI | accepted | open | Semantic cross-document drift beyond the canonical registry remains ongoing hardening. | docs/acceptance/AC-20260703-postpoc-009.md |
+| HATE-POSTPOC-GAP-010 | QEG and Shipyard release handoff | accepted | open | Live external approval engines and publication authority remain outside HATE. | docs/acceptance/AC-20260703-postpoc-010.md |
+| HATE-POSTPOC-GAP-011 | Hosted multi-tenant API | accepted | open | A production server, OIDC provider, API gateway, and session store remain unproven. | docs/acceptance/AC-20260703-postpoc-011.md |
+| HATE-POSTPOC-GAP-012 | Store backup, restore, and DR operations | accepted | open | Managed backup services and live recovery drills remain unproven. | docs/acceptance/AC-20260703-postpoc-012.md |
+| HATE-POSTPOC-GAP-013 | Capacity benchmark with measured baselines | accepted | open | Long-running stress infrastructure and independently reproduced scale baselines remain unproven. | docs/acceptance/AC-20260703-postpoc-013.md |
+| HATE-POSTPOC-GAP-014 | Compliance and procurement evidence | accepted | open | External assessor signoff and customer-specific legal guarantees remain outside HATE. | docs/acceptance/AC-20260703-postpoc-014.md |
+| HATE-POSTPOC-GAP-015 | Observability and incident operations | accepted | open | Hosted telemetry vendors, live alert routing, and incident drills remain unproven. | docs/acceptance/AC-20260703-postpoc-015.md |
+| HATE-POSTPOC-GAP-016 | Human review operating UI/CLI | accepted | open | An interactive UI, notification path, and hosted approval service remain unproven. | docs/acceptance/AC-20260703-postpoc-016.md |
+<!-- END GENERATED:POST_POC_REQUIREMENTS -->
 
 ## 3. Implementation Order
 

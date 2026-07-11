@@ -22,9 +22,52 @@
     },
     "overall_status": {"type": "string"},
     "readiness_effect": {"type": "string"},
-    "generated_at": {"type": "string"},
+    "generated_at": {"type": "string", "format": "date-time"},
     "summary": {"type": "object"},
+    "execution_attempted": {"type": "boolean"},
+    "execution_authorized": {"type": "boolean"},
+    "authorization_source": {"type": "string"},
+    "denial_reasons": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "enforced_controls": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "unenforced_controls": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "signature_verification": {
+      "type": "object",
+      "required": ["mode", "cryptographically_verified_by_hate"],
+      "properties": {
+        "mode": {"const": "external_evidence"},
+        "cryptographically_verified_by_hate": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "process_result": {
+      "type": ["object", "null"],
+      "properties": {
+        "exit_code": {"type": "integer"},
+        "output_bytes": {"type": "integer", "minimum": 0},
+        "timed_out": {"type": "boolean"},
+        "output_limit_exceeded": {"type": "boolean"},
+        "cleanup": {"type": "object"}
+      },
+      "additionalProperties": true
+    },
     "sourceRefs": {"type": "array", "items": {"type": "string"}}
   },
+  "allOf": [
+    {
+      "if": {"properties": {"record_type": {"const": "platform-plugin-run-report"}}},
+      "then": {
+        "required": [
+          "execution_attempted",
+          "execution_authorized",
+          "authorization_source",
+          "denial_reasons",
+          "enforced_controls",
+          "unenforced_controls",
+          "signature_verification",
+          "process_result"
+        ]
+      }
+    }
+  ],
   "additionalProperties": true
 }

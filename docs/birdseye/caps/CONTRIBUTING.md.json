@@ -1,0 +1,26 @@
+{
+  "path": "CONTRIBUTING.md",
+  "role": "project",
+  "kind": "md",
+  "sha256": "d9b29d3d1b9b33e9da084aa05439eebd5d2f7c53203b0a058064da2f70836789",
+  "line_count": 18,
+  "size_bytes": 772,
+  "headings": [
+    "# Contributing to HATE",
+    "## Development workflow",
+    "## Security-sensitive changes"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "fixture",
+    "release",
+    "schema",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

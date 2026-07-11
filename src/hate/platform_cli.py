@@ -12,9 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from hate.evaluation import query_real_repo_history, run_real_repo_roster
-from hate.post_poc.baseline import build_baseline_promotion_report, build_baseline_review_packet
-from hate.post_poc.history_analytics import build_history_analytics_report, build_history_materialization_plan, write_history_materialization_manifest
-from hate.post_poc.notifications import build_notification_delivery_report, build_notification_routing_plan
+from hate.p2p3 import serve_product_read_model
 from hate.platform_ops import (
     build_platform_assignment_report,
     build_platform_schedule_plan,
@@ -24,7 +22,13 @@ from hate.platform_ops import (
     run_platform_plugin,
 )
 from hate.policy_config import build_platform_policy_report
-from hate.p2p3 import serve_product_read_model
+from hate.post_poc.baseline import build_baseline_promotion_report, build_baseline_review_packet
+from hate.post_poc.history_analytics import (
+    build_history_analytics_report,
+    build_history_materialization_plan,
+    write_history_materialization_manifest,
+)
+from hate.post_poc.notifications import build_notification_delivery_report, build_notification_routing_plan
 
 
 class PlatformCliError(Exception):
@@ -265,8 +269,13 @@ def platform_assign(input_path: Path, out_path: Path | None = None) -> dict[str,
     return build_platform_assignment_report(input_path, out_path)
 
 
-def platform_plugin_run(manifest_path: Path, out_path: Path | None = None) -> dict[str, Any]:
-    return run_platform_plugin(manifest_path, out_path)
+def platform_plugin_run(
+    manifest_path: Path,
+    out_path: Path | None = None,
+    *,
+    allow_local_exec: bool = False,
+) -> dict[str, Any]:
+    return run_platform_plugin(manifest_path, out_path, allow_local_exec=allow_local_exec)
 
 
 def platform_score(input_path: Path, out_path: Path | None = None) -> dict[str, Any]:

@@ -4,32 +4,111 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: hate-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  acceptance:
+  static:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.11"
-
       - name: Set up uv
-        uses: astral-sh/setup-uv@v5
-
+        uses: astral-sh/setup-uv@e58605a9b6da7c637471fab8847a5e5a6b8df081 # v5
       - name: Install dependencies
         run: uv sync --dev --frozen
-
+      - name: Ruff
+        run: uv run ruff check src/hate/schema_resources.py src/hate/plugin_runner.py src/hate/p0a_schema.py src/hate/schema_validator.py src/hate/platform_cli.py src/hate/cli.py src/hate/cli_handlers.py tests/test_schema_resources.py tests/test_platform_ops.py tools/ci/schema_meta_gate.py tools/ci/wheel_smoke.py tools/ci/docs_freshness_gate.py tools/docs/render_post_poc_status.py
+      - name: Mypy critical surfaces
+        run: uv run mypy
       - name: Compile
         run: uv run python -m compileall src tests
-
-      - name: Test
-        run: uv run pytest
-
-      - name: Product-grade evidence reports
-        run: uv run python -m hate product grade-reports --docs-root docs/process --out .ci/product-grade --source-version ci
-
+      - name: Schema meta-validation
+        run: uv run python tools/ci/schema_meta_gate.py
+      - name: Post-PoC generated status
+        run: uv run python tools/docs/render_post_poc_status.py --check
+      - name: Codemap freshness
+        run: uv run python tools/codemap/update.py --check
       - name: Docs freshness gate
         run: uv run python tools/ci/docs_freshness_gate.py
+
+  unit-contract:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Set up uv
+        uses: astral-sh/setup-uv@e58605a9b6da7c637471fab8847a5e5a6b8df081 # v5
+      - name: Install dependencies
+        run: uv sync --dev --frozen
+      - name: Unit and contract tests
+        run: uv run pytest -q -m "not e2e and not subprocess and not package and not slow"
+
+  windows-process:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Set up uv
+        uses: astral-sh/setup-uv@e58605a9b6da7c637471fab8847a5e5a6b8df081 # v5
+      - name: Install dependencies
+        run: uv sync --dev --frozen
+      - name: Process, path, and plugin tests
+        run: uv run pytest -q tests/test_platform_ops.py tests/test_real_repo_operational_oss.py tests/test_adapters_coverage.py
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Set up uv
+        uses: astral-sh/setup-uv@e58605a9b6da7c637471fab8847a5e5a6b8df081 # v5
+      - name: Build distributions
+        run: uv build --out-dir dist
+      - name: Installed wheel smoke
+        run: >-
+          uv run python tools/ci/wheel_smoke.py
+          --wheel dist/harness_auto_test_evidence-0.2.0-py3-none-any.whl
+          --fixture fixtures/golden/p0a-minimal/input
+
+  e2e-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Set up uv
+        uses: astral-sh/setup-uv@e58605a9b6da7c637471fab8847a5e5a6b8df081 # v5
+      - name: Install dependencies
+        run: uv sync --dev --frozen
+      - name: Full regression
+        run: uv run pytest -q
+      - name: Product-grade evidence reports
+        run: uv run python -m hate product grade-reports --docs-root docs/process --out .ci/product-grade --source-version ci

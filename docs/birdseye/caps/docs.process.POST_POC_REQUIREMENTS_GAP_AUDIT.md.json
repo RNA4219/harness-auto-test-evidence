@@ -2,9 +2,9 @@
   "path": "docs/process/POST_POC_REQUIREMENTS_GAP_AUDIT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "6af39483cf2597e0f28be338e7fbe1446f416ed3dd07c643e528c0f42e5452a9",
-  "line_count": 88,
-  "size_bytes": 8305,
+  "sha256": "bc8bca8791752b64c4711a963148960a4ad0de18e5572ecf331d26d6a9708c91",
+  "line_count": 92,
+  "size_bytes": 6636,
   "headings": [
     "# Post-PoC Requirements Gap Audit",
     "## 1. Boundary Rule",
@@ -17,10 +17,12 @@
   "links": [],
   "depends_on": [],
   "tags": [
+    "api",
     "enterprise",
     "fixture",
     "qeg",
     "release",
+    "store",
     "test",
     "workflow"
   ]

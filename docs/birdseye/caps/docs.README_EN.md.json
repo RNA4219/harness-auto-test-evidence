@@ -2,9 +2,9 @@
   "path": "docs/README_EN.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "4e37c1aa568a9b1bfbb8448b8efb26a87a9df3fd541962c86315315611a84d44",
-  "line_count": 123,
-  "size_bytes": 4907,
+  "sha256": "fc9e3ccc5184250fa5aadaa6ce6478cf746cdff8e06a1c70a32d089749e1eb18",
+  "line_count": 122,
+  "size_bytes": 5422,
   "headings": [
     "# HATE: harness-auto-test-evidence",
     "## What HATE Does",
@@ -44,6 +44,8 @@
     "fixture",
     "qeg",
     "release",
+    "schema",
+    "security",
     "test",
     "workflow"
   ]

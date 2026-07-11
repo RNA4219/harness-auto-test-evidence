@@ -1,0 +1,25 @@
+{
+  "path": "docs/acceptance/RELEASE_V0_2_0_20260711.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "3932901d023dd3a13532dc5277c00c9074d6162ecd0230ab0381c9ed3a59197f",
+  "line_count": 59,
+  "size_bytes": 2578,
+  "headings": [
+    "# HATE v0.2.0 Local Release Acceptance",
+    "## Scope",
+    "## Verification",
+    "## Evidence",
+    "## Open Risks",
+    "## Decision"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

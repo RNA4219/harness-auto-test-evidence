@@ -1,0 +1,17 @@
+{
+  "path": "CODE_OF_CONDUCT.md",
+  "role": "project",
+  "kind": "md",
+  "sha256": "fb305ab4269b6c67e2b0378f0a15929d1c6935400a0b79227702d6e091b85399",
+  "line_count": 12,
+  "size_bytes": 518,
+  "headings": [
+    "# Code of Conduct"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "security"
+  ]
+}

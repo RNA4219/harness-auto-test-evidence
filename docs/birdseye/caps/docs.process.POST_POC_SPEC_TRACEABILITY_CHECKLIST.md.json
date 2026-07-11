@@ -2,9 +2,9 @@
   "path": "docs/process/POST_POC_SPEC_TRACEABILITY_CHECKLIST.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "09f95de6e36b7c9b9b486063752d8355ff202bd560f4bb06c9fc4d0ab6f021f0",
-  "line_count": 87,
-  "size_bytes": 7829,
+  "sha256": "ef2c413a48b8028fcf5cfef716c891afedb346828cad9c3ad2ad4b0379a2b506",
+  "line_count": 83,
+  "size_bytes": 7452,
   "headings": [
     "# Post-PoC Spec Traceability Checklist",
     "## 1. Checklist Rule",
@@ -20,6 +20,7 @@
     "artifact",
     "fixture",
     "schema",
-    "test"
+    "test",
+    "workflow"
   ]
 }

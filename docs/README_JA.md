@@ -30,29 +30,29 @@ immutability、retention、最終 Go/No-Go は QEG 側の責務です。
 
 ## インストールと実行
 
-Python 3.11 以上と `uv` を使います。
+Python 3.11 以上と uv を使います。ソースから開発する場合:
 
-```powershell
-git clone https://github.com/RNA4219/harness-auto-test-evidence.git
-cd harness-auto-test-evidence
-uv run pytest -q
-```
+    git clone https://github.com/RNA4219/harness-auto-test-evidence.git
+    cd harness-auto-test-evidence
+    uv sync --dev --frozen
+    uv run python -m hate --help
 
-CLI は次の形で実行します。
+wheelからツールとして導入する場合:
 
-```powershell
-uv run python -m hate --help
-uv run python -m hate platform --help
-```
+    uv build
+    uv tool install dist/harness_auto_test_evidence-0.2.0-py3-none-any.whl
+    hate --help
 
-P0a の最小 golden path:
+v0.2.0ではHATE/v1 schemaがwheelへ同梱されます。v0.1.0からの主な変更は、
+JSON Schema制約の厳格化とlocal subprocess pluginの既定拒否です。pluginを実行する
+場合は --allow-local-exec が必要ですが、任意コード実行であることに変わりはなく、
+filesystem/network isolationは提供されません。release/regulated profileでは
+local subprocessを実行できません。詳細は ../CHANGELOG.md と ../SECURITY.md を
+参照してください。
 
-```powershell
-uv run python -m hate p0a `
-  --input fixtures/golden/p0a-minimal/input `
-  --out tmp/p0a-smoke `
-  --source-version local-smoke
-```
+P0a の最小golden path:
+
+    uv run python -m hate p0a --input fixtures/golden/p0a-minimal/input --out tmp/p0a-smoke --source-version local-smoke
 
 ## Platform CLI
 
@@ -76,7 +76,7 @@ uv run python -m hate p0a `
 - `notify route`: owner / team / SLA breach から通知先と escalation を決める
 - `notify deliver`: 通知試行、retry、dead-letter、payload safety を証跡化する
 - `baseline review`: baseline 昇格候補を人間レビュー用packetへ変換する
-- `plugin run`: manifest-driven plugin を subprocess で実行し、sandbox report を作る
+- plugin run: 既定拒否。明示許可されたtrusted local pluginを実行し、未強制controlを含むreportを作る
 - `policy explain`: platform policy の有効設定を説明する
 - `report html`: offline HTML report を生成する
 

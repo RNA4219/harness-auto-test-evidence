@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import sys
+
+import pytest
 from pathlib import Path
 
 from hate.cli import main
@@ -15,6 +17,7 @@ def _write_json(path: Path, data: dict) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+@pytest.mark.e2e
 def test_poc_completion_platform_blackbox_loop(tmp_path: Path) -> None:
     repo = tmp_path / "repo"
     repo.mkdir()
@@ -85,6 +88,7 @@ def test_poc_completion_platform_blackbox_loop(tmp_path: Path) -> None:
                 "detector_id": "poc-detector",
                 "execution_mode": "subprocess_local",
                 "signed": True,
+                "trusted": True,
             },
             "limits": {"timeout_ms": 5000, "max_output_bytes": 2000, "max_input_bytes": 2000},
             "execution": {
@@ -96,7 +100,7 @@ def test_poc_completion_platform_blackbox_loop(tmp_path: Path) -> None:
             },
         },
     )
-    assert main(["platform", "plugin", "run", "--manifest", str(plugin_path), "--out", str(plugin_out)]) == 0
+    assert main(["platform", "plugin", "run", "--manifest", str(plugin_path), "--out", str(plugin_out), "--allow-local-exec"]) == 0
     assert main([
         "product",
         "grade-reports",

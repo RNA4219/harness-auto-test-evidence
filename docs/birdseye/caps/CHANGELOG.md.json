@@ -1,0 +1,22 @@
+{
+  "path": "CHANGELOG.md",
+  "role": "project",
+  "kind": "md",
+  "sha256": "cabe38e5e0f3e3ac2ffe696a21df3f3f0257de31b19f9c48d1309a49db08ef8e",
+  "line_count": 24,
+  "size_bytes": 852,
+  "headings": [
+    "# Changelog",
+    "## 0.2.0 - 2026-07-11",
+    "### Added",
+    "### Changed",
+    "### Known limitations"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "schema"
+  ]
+}

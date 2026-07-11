@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import json
-import subprocess
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
 from hate.evaluation.score_model import build_real_repo_score_report
-from hate.plugins.sandbox import build_plugin_sandbox_report
+from hate.plugin_runner import run_platform_plugin
+
+__all__ = ["run_platform_plugin"]
 
 
 class PlatformOpsError(Exception):
@@ -130,50 +131,6 @@ def build_platform_assignment_report(input_path: Path, out_path: Path | None = N
             "sla_breach_count": sum(1 for item in assignments if item["sla_status"] == "sla_breached"),
         },
         "sourceRefs": [str(input_path)],
-    }
-    if out_path is not None:
-        _write_json(out_path, report)
-    return report
-
-
-def run_platform_plugin(manifest_path: Path, out_path: Path | None = None) -> dict[str, Any]:
-    manifest = _read_json(manifest_path)
-    plugin = dict(manifest.get("plugin") or {})
-    execution = dict(manifest.get("execution") or {})
-    command = execution.get("command")
-    if command is not None:
-        if not isinstance(command, list) or not all(isinstance(item, str) for item in command):
-            raise PlatformOpsError("plugin execution.command must be a string list")
-        timeout_ms = int((manifest.get("limits") or {}).get("timeout_ms") or 1000)
-        result = subprocess.run(
-            command,
-            cwd=str(manifest_path.parent),
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-            timeout=timeout_ms / 1000,
-            check=False,
-        )
-        output = _json_or_empty(result.stdout)
-        execution = {
-            **execution,
-            "exit_code": result.returncode,
-            "output": output,
-            "output_bytes": len(result.stdout.encode("utf-8", errors="replace")),
-            "crashed": result.returncode != 0,
-        }
-    sandbox = build_plugin_sandbox_report({**manifest, "plugin": plugin, "execution": execution}, report_id=str(plugin.get("plugin_id") or "platform-plugin-run"))
-    report = {
-        "schema_version": "HATE/v1",
-        "record_type": "platform-plugin-run-report",
-        "overall_status": sandbox["overall_status"],
-        "readiness_effect": sandbox["readiness_effect"],
-        "plugin_id": sandbox["plugin_id"],
-        "detector_id": sandbox["detector_id"],
-        "sandbox_report": sandbox,
-        "findings": sandbox["findings"],
-        "sourceRefs": [str(manifest_path), *sandbox.get("sourceRefs", [])],
     }
     if out_path is not None:
         _write_json(out_path, report)

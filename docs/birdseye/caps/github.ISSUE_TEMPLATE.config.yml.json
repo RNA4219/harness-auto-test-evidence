@@ -1,0 +1,16 @@
+{
+  "path": ".github/ISSUE_TEMPLATE/config.yml",
+  "role": "project",
+  "kind": "yml",
+  "sha256": "0c08ec17b76a46ae6c202c50b2bd74b3ce0255aca7688a97c86f1cf04bac294f",
+  "line_count": 5,
+  "size_bytes": 209,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "security",
+    "test"
+  ]
+}

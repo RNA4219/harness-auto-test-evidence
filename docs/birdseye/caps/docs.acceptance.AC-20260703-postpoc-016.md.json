@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-016.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "074f0b739985cfe79b1f6e12402a6cb82323df8374a78a17d88b902a8c2ce5b2",
-  "line_count": 79,
-  "size_bytes": 2904,
+  "sha256": "8572794f9da34b14e83e45e89628fd48cc010c8d98e175432ccf84dc67e453e6",
+  "line_count": 81,
+  "size_bytes": 3020,
   "headings": [
     "# AC-20260703-postpoc-016 Human Review Workflow Evidence",
     "## Scope",

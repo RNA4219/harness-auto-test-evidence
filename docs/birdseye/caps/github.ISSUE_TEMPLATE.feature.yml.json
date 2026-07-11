@@ -1,0 +1,16 @@
+{
+  "path": ".github/ISSUE_TEMPLATE/feature.yml",
+  "role": "project",
+  "kind": "yml",
+  "sha256": "558d16b4c4fa757fd11229a85360a1b00f1923d3d6b4b57bb0ae4d54588fc976",
+  "line_count": 26,
+  "size_bytes": 761,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release"
+  ]
+}

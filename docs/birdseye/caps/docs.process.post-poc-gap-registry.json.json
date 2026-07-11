@@ -1,0 +1,19 @@
+{
+  "path": "docs/process/post-poc-gap-registry.json",
+  "role": "documentation",
+  "kind": "json",
+  "sha256": "84eca98f7d67453d0afd5687cf514ebbcfc80010c41d34446cda9982a51e1da4",
+  "line_count": 167,
+  "size_bytes": 7918,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

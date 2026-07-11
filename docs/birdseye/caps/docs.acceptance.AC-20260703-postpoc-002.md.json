@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-002.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "a7f1c5efd7f173ff56d4635bcafb505120e9216e997e5a53b6f04f7f2541dcfe",
-  "line_count": 77,
-  "size_bytes": 2915,
+  "sha256": "ff44d86ad6ed12acd63ee73143606eeccafec4708c299e568417c124271a8a52",
+  "line_count": 79,
+  "size_bytes": 3031,
   "headings": [
     "# AC-20260703-postpoc-002 Dashboard Interaction Evidence",
     "## Scope",

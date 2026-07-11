@@ -1,0 +1,21 @@
+{
+  "path": "SECURITY.md",
+  "role": "project",
+  "kind": "md",
+  "sha256": "04dfdbaa3a7606c8592f198f44ab0ad85a1ea7867cd64c5c9171a8b91f3b2878",
+  "line_count": 24,
+  "size_bytes": 968,
+  "headings": [
+    "# Security Policy",
+    "## Supported versions",
+    "## Reporting a vulnerability",
+    "## Plugin execution boundary"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "release",
+    "security"
+  ]
+}

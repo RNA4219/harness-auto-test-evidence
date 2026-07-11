@@ -23,6 +23,7 @@ closure ledger. It is intentionally small and machine-checkable.
 | [MAJOR_OSS_TWO_CYCLE_20260704.md](MAJOR_OSS_TWO_CYCLE_20260704.md) | Two repeated major OSS cycles for stability, cache isolation, and residual test-failure classification | HATE-OSS-TWO-CYCLE-20260704 |
 | [PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md](PLATFORM_LONG_TERM_OPERATIONS_UX_20260705.md) | Platform CLI UX for long-term history analytics, incremental materialization, notification routing/delivery, and baseline review | HATE-PLATFORM-LONG-OPS-UX-20260705 |
 | [DOCS_FRESHNESS_REVIEW_20260705.md](DOCS_FRESHNESS_REVIEW_20260705.md) | Documentation freshness review for README state, codemap, and regression count alignment | HATE-DOCS-FRESHNESS-20260705 |
+| [RELEASE_V0_2_0_20260711.md](RELEASE_V0_2_0_20260711.md) | v0.2.0 wheel、Schema、plugin fail-closed、状態台帳、CIのlocal acceptance | HATE-RELEASE-V0-2-0-20260711 |
 | [RELEASE_V0_1_0_20260705.md](RELEASE_V0_1_0_20260705.md) | v0.1.0 PoC preview release evidence and non-overclaim guardrails | HATE-RELEASE-V0-1-0-20260705 |
 
 ## Generation Policy

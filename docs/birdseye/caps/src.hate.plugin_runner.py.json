@@ -1,0 +1,31 @@
+{
+  "path": "src/hate/plugin_runner.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "80e20fdba87dbf69439ade91959327b1183caab73093453f6825afac3c80cdc9",
+  "line_count": 431,
+  "size_bytes": 16067,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "ctypes",
+    "dataclasses",
+    "hate.plugins.sandbox",
+    "json",
+    "os",
+    "pathlib",
+    "signal",
+    "subprocess",
+    "tempfile",
+    "time",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/plugins/sandbox.py"
+  ],
+  "tags": [
+    "release",
+    "schema"
+  ]
+}

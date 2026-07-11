@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/schema_resources.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1fe271b2085c0ce4c9eed689397965f03d9eacd291232c00f8d1a34ab8f148ac",
+  "line_count": 92,
+  "size_bytes": 3438,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "collections.abc",
+    "importlib",
+    "json",
+    "jsonschema",
+    "jsonschema.exceptions",
+    "pathlib",
+    "referencing",
+    "referencing.exceptions",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

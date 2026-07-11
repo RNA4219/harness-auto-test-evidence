@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-008.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "b4f9bf53a0d255727879d4ca5051e46012844fa5188659571447b2c07328a322",
-  "line_count": 80,
-  "size_bytes": 2972,
+  "sha256": "98d98201a8f8539a92c3449509481d599981cfeaf4091b1569edae27e30583cb",
+  "line_count": 82,
+  "size_bytes": 3088,
   "headings": [
     "# AC-20260703-postpoc-008 Long-Term History Analytics Evidence",
     "## Scope",

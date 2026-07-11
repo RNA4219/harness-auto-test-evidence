@@ -1,0 +1,22 @@
+{
+  "path": "tests/test_schema_resources.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "b9a20500dbfe62bcf219b005aa97f140d6863521631bd17a7afbebe910ba900c",
+  "line_count": 46,
+  "size_bytes": 2081,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.schema_resources",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py"
+  ],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}
