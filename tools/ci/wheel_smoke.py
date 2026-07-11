@@ -46,8 +46,10 @@ def main(argv: list[str] | None = None) -> int:
             [
                 str(python),
                 "-c",
+                "from hate.bridge.schemas import load_bridge_schema; "
                 "from hate.p0a_schema import _load_hate_schema; "
-                "assert _load_hate_schema('run.schema.json')['title']",
+                "assert _load_hate_schema('run.schema.json')['title']; "
+                "assert load_bridge_schema('bridge-request')['title']",
             ],
             cwd=root,
         )

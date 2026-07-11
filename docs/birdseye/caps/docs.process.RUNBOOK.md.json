@@ -2,9 +2,9 @@
   "path": "docs/process/RUNBOOK.md",
   "role": "operations",
   "kind": "md",
-  "sha256": "0ae40b1dc6aceb86dfe13ba3e816e2d6500332925861dc7da57dbf75e6ca62d4",
-  "line_count": 990,
-  "size_bytes": 69456,
+  "sha256": "11ceb90a13d54db39cbfbf09e1fd318c9d7066295158f07076edd1dd8c362216",
+  "line_count": 996,
+  "size_bytes": 69720,
   "headings": [
     "# Runbook",
     "## 0. 準備",
@@ -29,7 +29,8 @@
     "### File size guard",
     "## 5. 受理前確認",
     "## 6. ロールバック方針（文書中心）",
-    "## 7. 最新メモ"
+    "## 7. 最新メモ",
+    "## Responsibility Freeze (generated)"
   ],
   "imports": [],
   "links": [],

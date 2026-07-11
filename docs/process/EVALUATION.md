@@ -524,3 +524,20 @@ next_review_due: 2026-07-28
       evidence room / audit finding が受入条件に反映されている
 - [ ] `REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md` の tier / stage / WIP /
       dependency / portfolio health が受入条件に反映されている
+
+<!-- responsibility-freeze:start -->
+## Responsibility Freeze (generated)
+
+| 境界 | 現在値 |
+|---|---:|
+| core CLI leaf | 12 |
+| bridge CLI leaf | 33 |
+| core HATE/v1 record type | 29 |
+| compat HATE/v1 record type | 311 |
+
+- canonical owner: agent-gatefield, agent-state-gate, manual-bb-test-harness, product-ops-evidence, quality-evidence-graph, shipyard-cp, workflow-cookbook
+- P1b以降は compat-v0.2 または明示的な handoff のみ。
+- product_ready=false。QEG verdict、Go/No-Go、waiver、approval、publish authorityは外部責務。
+- deprecated since: 0.3.0; remove after: 1.0.0（v0.xでは物理削除しない）。
+- machine-readable source: governance/responsibility-registry.json
+<!-- responsibility-freeze:end -->

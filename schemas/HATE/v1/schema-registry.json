@@ -196,7 +196,12 @@
       "schema": "schemas/HATE/v1/artifact-lifecycle-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "safe-diagnostic-bundle",
@@ -210,77 +215,132 @@
       "schema": "schemas/HATE/v1/worker-runtime-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "tenant-isolation-report",
       "schema": "schemas/HATE/v1/tenant-isolation-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "api-rate-limit-report",
       "schema": "schemas/HATE/v1/api-rate-limit-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "api-contract-report",
       "schema": "schemas/HATE/v1/api-contract-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "entitlement-report",
       "schema": "schemas/HATE/v1/entitlement-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "github-integration-report",
       "schema": "schemas/HATE/v1/github-integration-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard-state-report",
       "schema": "schemas/HATE/v1/dashboard-state-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard-uat-report",
       "schema": "schemas/HATE/v1/dashboard-uat-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "deployment-topology-report",
       "schema": "schemas/HATE/v1/deployment-topology-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "adapter-conformance-report",
       "schema": "schemas/HATE/v1/adapter-conformance-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "adapter-family-report",
       "schema": "schemas/HATE/v1/adapter-family-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "store_manifest",
@@ -294,2093 +354,3588 @@
       "schema": "schemas/HATE/v1/store-migration-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "api-authz-decision",
       "schema": "schemas/api/api-authz-decision.schema.json",
       "phase": "P1",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "bundle-import-report",
       "schema": "schemas/api/bundle-import-report.schema.json",
       "phase": "P1",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "safe-export-report",
       "schema": "schemas/api/safe-export-report.schema.json",
       "phase": "P1",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "enterprise-control-report",
       "schema": "schemas/HATE/v1/enterprise-control-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "scale-performance-report",
       "schema": "schemas/HATE/v1/scale-performance-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "support-ops-report",
       "schema": "schemas/HATE/v1/support-ops-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-evaluation-report",
       "schema": "schemas/HATE/v1/real-repo-evaluation-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-evaluation-run-report",
       "schema": "schemas/HATE/v1/real-repo-evaluation-run-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-roster-v2",
       "schema": "schemas/HATE/v1/real-repo-roster-v2.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-run-history-entry",
       "schema": "schemas/HATE/v1/real-repo-run-history-entry.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-history-ingest-report",
       "schema": "schemas/HATE/v1/real-repo-history-ingest-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-history-query-report",
       "schema": "schemas/HATE/v1/real-repo-history-query-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-score-report",
       "schema": "schemas/HATE/v1/real-repo-score-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-baseline-event",
       "schema": "schemas/HATE/v1/real-repo-baseline-event.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-baseline-governance-report",
       "schema": "schemas/HATE/v1/real-repo-baseline-governance-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "operating-event-record",
       "schema": "schemas/HATE/v1/operating-event-record.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "operating-finding-record",
       "schema": "schemas/HATE/v1/operating-finding-record.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "operating-projection-report",
       "schema": "schemas/HATE/v1/operating-projection-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-connector-sync-report",
       "schema": "schemas/HATE/v1/platform-connector-sync-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-policy-report",
       "schema": "schemas/HATE/v1/platform-policy-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-plugin-sandbox-report",
       "schema": "schemas/HATE/v1/platform-plugin-sandbox-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-rbac-matrix-report",
       "schema": "schemas/HATE/v1/platform-rbac-matrix-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-store-schema-report",
       "schema": "schemas/HATE/v1/platform-store-schema-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-dashboard-wireframe-report",
       "schema": "schemas/HATE/v1/platform-dashboard-wireframe-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-benchmark-report",
       "schema": "schemas/HATE/v1/platform-benchmark-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "agent-quality-report",
       "schema": "schemas/HATE/v1/agent-quality-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "migration-compatibility-report",
       "schema": "schemas/HATE/v1/migration-compatibility-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "commercial-truthfulness-report",
       "schema": "schemas/HATE/v1/commercial-truthfulness-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "release-candidate-pack",
       "schema": "schemas/HATE/v1/release-candidate-pack.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "quality-evidence-graph",
+      "canonical_contract": "QEG/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "validation-cycle-report",
       "schema": "schemas/HATE/v1/validation-cycle-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "release-channel-report",
       "schema": "schemas/HATE/v1/release-channel-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "quality-evidence-graph",
+      "canonical_contract": "QEG/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product-e2e-uat-report",
       "schema": "schemas/HATE/v1/product-e2e-uat-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow-task-seed-report",
       "schema": "schemas/HATE/v1/workflow-task-seed-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow-acceptance-report",
       "schema": "schemas/HATE/v1/workflow-acceptance-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow-evidence-report",
       "schema": "schemas/HATE/v1/workflow-evidence-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow-birdseye-report",
       "schema": "schemas/HATE/v1/workflow-birdseye-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow-plugin-report",
       "schema": "schemas/HATE/v1/workflow-plugin-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow-completion-report",
       "schema": "schemas/HATE/v1/workflow-completion-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "onboarding-report",
       "schema": "schemas/HATE/v1/onboarding-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "policy-simulation-report",
       "schema": "schemas/HATE/v1/policy-simulation-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "bulk-portability-report",
       "schema": "schemas/HATE/v1/bulk-portability-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-report",
       "schema": "schemas/HATE/v1/notification-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "self-hosted-report",
       "schema": "schemas/HATE/v1/self-hosted-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "data-classification-report",
       "schema": "schemas/HATE/v1/data-classification-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dependency-compliance-report",
       "schema": "schemas/HATE/v1/dependency-compliance-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "adapter-marketplace-report",
       "schema": "schemas/HATE/v1/adapter-marketplace-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product-analytics-report",
       "schema": "schemas/HATE/v1/product-analytics-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "docs-lifecycle-report",
       "schema": "schemas/HATE/v1/docs-lifecycle-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "disaster-recovery-report",
       "schema": "schemas/HATE/v1/disaster-recovery-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "a11y-l10n-report",
       "schema": "schemas/HATE/v1/a11y-l10n-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "cost-governance-report",
       "schema": "schemas/HATE/v1/cost-governance-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "beta-acceptance-report",
       "schema": "schemas/HATE/v1/beta-acceptance-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "rollout-adoption-report",
       "schema": "schemas/HATE/v1/rollout-adoption-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "provider-integration-report",
       "schema": "schemas/HATE/v1/provider-integration-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "runner-dialect-coverage-report",
       "schema": "schemas/HATE/v1/runner-dialect-coverage-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "recurring-real-repo-eval-report",
       "schema": "schemas/HATE/v1/recurring-real-repo-eval-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "governance-review-report",
       "schema": "schemas/HATE/v1/governance-review-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "security-procurement-report",
       "schema": "schemas/HATE/v1/security-procurement-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "value-measurement-report",
       "schema": "schemas/HATE/v1/value-measurement-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "developer-experience-report",
       "schema": "schemas/HATE/v1/developer-experience-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "impact-analysis-report",
       "schema": "schemas/HATE/v1/impact-analysis-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "test-recommendation-report",
       "schema": "schemas/HATE/v1/test-recommendation-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "flaky-classification-report",
       "schema": "schemas/HATE/v1/flaky-classification-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "oracle-classification-report",
       "schema": "schemas/HATE/v1/oracle-classification-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "evidence-synthesis-report",
       "schema": "schemas/HATE/v1/evidence-synthesis-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "test-quality-report",
       "schema": "schemas/HATE/v1/test-quality-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "environment-diff-report",
       "schema": "schemas/HATE/v1/environment-diff-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "historical-regression-report",
       "schema": "schemas/HATE/v1/historical-regression-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "fixture-quality-report",
       "schema": "schemas/HATE/v1/fixture-quality-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "contradiction-report",
       "schema": "schemas/HATE/v1/contradiction-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "audience-report-pack",
       "schema": "schemas/HATE/v1/audience-report-pack.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "adapter-capability-diff-report",
       "schema": "schemas/HATE/v1/adapter-capability-diff-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "docs-freshness-ci-report",
       "schema": "schemas/HATE/v1/docs-freshness-ci-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-scheduler-runtime-report",
       "schema": "schemas/HATE/v1/hosted-scheduler-runtime-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-scheduler-worker-state",
       "schema": "schemas/HATE/v1/hosted-scheduler-worker-state.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-scheduler-lease-event",
       "schema": "schemas/HATE/v1/hosted-scheduler-lease-event.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-scheduler-job-result",
       "schema": "schemas/HATE/v1/hosted-scheduler-job-result.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-scheduler-dispatch-manifest",
       "schema": "schemas/HATE/v1/hosted-scheduler-dispatch-manifest.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-roster-maintenance-report",
       "schema": "schemas/HATE/v1/real-repo-roster-maintenance-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-roster-maintenance-plan",
       "schema": "schemas/HATE/v1/real-repo-roster-maintenance-plan.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-environment-recipe",
       "schema": "schemas/HATE/v1/real-repo-environment-recipe.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-quarantine-event",
       "schema": "schemas/HATE/v1/real-repo-quarantine-event.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-roster-execution-manifest",
       "schema": "schemas/HATE/v1/real-repo-roster-execution-manifest.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "baseline-promotion-report",
       "schema": "schemas/HATE/v1/baseline-promotion-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "baseline-state",
       "schema": "schemas/HATE/v1/baseline-state.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "baseline-promotion-request",
       "schema": "schemas/HATE/v1/baseline-promotion-request.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "baseline-promotion-decision",
       "schema": "schemas/HATE/v1/baseline-promotion-decision.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "baseline-immutability-event",
       "schema": "schemas/HATE/v1/baseline-immutability-event.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "baseline-review-packet",
       "schema": "schemas/HATE/v1/baseline-review-packet.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "baseline-review-comparison",
       "schema": "schemas/HATE/v1/baseline-review-comparison.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "baseline-review-item",
       "schema": "schemas/HATE/v1/baseline-review-item.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "history-analytics-report",
       "schema": "schemas/HATE/v1/history-analytics-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "history-analytics-query",
       "schema": "schemas/HATE/v1/history-analytics-query.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "history-trend-window",
       "schema": "schemas/HATE/v1/history-trend-window.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "history-analytics-result",
       "schema": "schemas/HATE/v1/history-analytics-result.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "history-incremental-materialization",
       "schema": "schemas/HATE/v1/history-incremental-materialization.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "history-materialization-entry",
       "schema": "schemas/HATE/v1/history-materialization-entry.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "history-materialization-manifest",
       "schema": "schemas/HATE/v1/history-materialization-manifest.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "human-review-workflow-report",
       "schema": "schemas/HATE/v1/human-review-workflow-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "human-review-workflow-state",
       "schema": "schemas/HATE/v1/human-review-workflow-state.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "human-review-workflow-request",
       "schema": "schemas/HATE/v1/human-review-workflow-request.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "human-review-workflow-decision",
       "schema": "schemas/HATE/v1/human-review-workflow-decision.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "human-review-evidence-attachment",
       "schema": "schemas/HATE/v1/human-review-evidence-attachment.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "human-review-queue-packet",
       "schema": "schemas/HATE/v1/human-review-queue-packet.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "human-review-queue-item",
       "schema": "schemas/HATE/v1/human-review-queue-item.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-delivery-report",
       "schema": "schemas/HATE/v1/notification-delivery-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-delivery-plan",
       "schema": "schemas/HATE/v1/notification-delivery-plan.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-delivery-attempt",
       "schema": "schemas/HATE/v1/notification-delivery-attempt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-dead-letter-event",
       "schema": "schemas/HATE/v1/notification-dead-letter-event.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-audit-event",
       "schema": "schemas/HATE/v1/notification-audit-event.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-routing-plan",
       "schema": "schemas/HATE/v1/notification-routing-plan.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-operating-record",
       "schema": "schemas/HATE/v1/notification-operating-record.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-subscriber",
       "schema": "schemas/HATE/v1/notification-subscriber.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-routing-entry",
       "schema": "schemas/HATE/v1/notification-routing-entry.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-routing-manifest",
       "schema": "schemas/HATE/v1/notification-routing-manifest.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "incident-response-packet",
       "schema": "schemas/HATE/v1/incident-response-packet.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "incident-response-action",
       "schema": "schemas/HATE/v1/incident-response-action.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "plugin-distribution-report",
       "schema": "schemas/HATE/v1/plugin-distribution-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "plugin-package-manifest",
       "schema": "schemas/HATE/v1/plugin-package-manifest.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "plugin-signature-verification",
       "schema": "schemas/HATE/v1/plugin-signature-verification.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "plugin-distribution-index",
       "schema": "schemas/HATE/v1/plugin-distribution-index.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "plugin-revocation-event",
       "schema": "schemas/HATE/v1/plugin-revocation-event.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "plugin-install-entry",
       "schema": "schemas/HATE/v1/plugin-install-entry.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "plugin-install-manifest",
       "schema": "schemas/HATE/v1/plugin-install-manifest.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "connector-runtime-report",
       "schema": "schemas/HATE/v1/connector-runtime-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "connector-runtime-plan",
       "schema": "schemas/HATE/v1/connector-runtime-plan.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "connector-runtime-attempt",
       "schema": "schemas/HATE/v1/connector-runtime-attempt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "connector-idempotency-record",
       "schema": "schemas/HATE/v1/connector-idempotency-record.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "connector-rollback-visibility-record",
       "schema": "schemas/HATE/v1/connector-rollback-visibility-record.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "connector-execution-plan",
       "schema": "schemas/HATE/v1/connector-execution-plan.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "connector-execution-manifest",
       "schema": "schemas/HATE/v1/connector-execution-manifest.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard-interaction-report",
       "schema": "schemas/HATE/v1/dashboard-interaction-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-api-report",
       "schema": "schemas/HATE/v1/hosted-api-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-api-request-record",
       "schema": "schemas/HATE/v1/hosted-api-request-record.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-authz-decision-record",
       "schema": "schemas/HATE/v1/hosted-authz-decision-record.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-rate-limit-event",
       "schema": "schemas/HATE/v1/hosted-rate-limit-event.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-api-route-contract",
       "schema": "schemas/HATE/v1/hosted-api-route-contract.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-api-route-manifest",
       "schema": "schemas/HATE/v1/hosted-api-route-manifest.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "store-dr-report",
       "schema": "schemas/HATE/v1/store-dr-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "store-backup-operation",
       "schema": "schemas/HATE/v1/store-backup-operation.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "store-restore-operation",
       "schema": "schemas/HATE/v1/store-restore-operation.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "store-dr-drill-result",
       "schema": "schemas/HATE/v1/store-dr-drill-result.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "store-dr-runbook",
       "schema": "schemas/HATE/v1/store-dr-runbook.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "capacity-report",
       "schema": "schemas/HATE/v1/capacity-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "capacity-degradation-mode-report",
       "schema": "schemas/HATE/v1/capacity-degradation-mode-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "capacity-regression-packet",
       "schema": "schemas/HATE/v1/capacity-regression-packet.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "compliance-report",
       "schema": "schemas/HATE/v1/compliance-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "observability-report",
       "schema": "schemas/HATE/v1/observability-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "runtime-telemetry-event",
       "schema": "schemas/HATE/v1/runtime-telemetry-event.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "slo-burn-rate-report",
       "schema": "schemas/HATE/v1/slo-burn-rate-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "incident-lifecycle-record",
       "schema": "schemas/HATE/v1/incident-lifecycle-record.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "post-incident-evidence-pack",
       "schema": "schemas/HATE/v1/post-incident-evidence-pack.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "release-handoff-report",
       "schema": "schemas/HATE/v1/release-handoff-report.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "quality-evidence-graph",
+      "canonical_contract": "QEG/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "post-poc-artifact-receipt",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "connector-execution-step",
       "schema": "schemas/HATE/v1/connector-execution-step.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "store-dr-runbook-step",
       "schema": "schemas/HATE/v1/store-dr-runbook-step.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "baseline-review-packet-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "capacity-regression-packet-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "connector-execution-manifest-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard-static-html-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "history-materialization-manifest-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-api-openapi-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-scheduler-dispatch-manifest-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "human-review-queue-packet-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "incident-response-packet-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "notification-routing-manifest-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "plugin-install-manifest-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-roster-execution-manifest-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "store-dr-runbook-artifact",
       "schema": "schemas/HATE/v1/post-poc-artifact-receipt.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "capacity-baseline-record",
       "schema": "schemas/HATE/v1/capacity-baseline-record.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "capacity-benchmark-run",
       "schema": "schemas/HATE/v1/capacity-benchmark-run.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "capacity-regression-comparison",
       "schema": "schemas/HATE/v1/capacity-regression-comparison.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "compliance-evidence-pack",
       "schema": "schemas/HATE/v1/compliance-evidence-pack.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "compliance-review-decision",
       "schema": "schemas/HATE/v1/compliance-review-decision.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "control-claim-record",
       "schema": "schemas/HATE/v1/control-claim-record.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard-action-intent",
       "schema": "schemas/HATE/v1/dashboard-action-intent.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard-route-state",
       "schema": "schemas/HATE/v1/dashboard-route-state.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard-session-view",
       "schema": "schemas/HATE/v1/dashboard-session-view.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "external-approval-reference",
       "schema": "schemas/HATE/v1/external-approval-reference.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "quality-evidence-graph",
+      "canonical_contract": "QEG/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "external-release-handoff-request",
       "schema": "schemas/HATE/v1/external-release-handoff-request.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "quality-evidence-graph",
+      "canonical_contract": "QEG/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "external-release-handoff-result",
       "schema": "schemas/HATE/v1/external-release-handoff-result.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "quality-evidence-graph",
+      "canonical_contract": "QEG/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "history-materialization-plan",
       "schema": "schemas/HATE/v1/history-materialization-plan.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-scheduler-dispatch-entry",
       "schema": "schemas/HATE/v1/hosted-scheduler-dispatch-entry.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted-scheduler-dispatch-plan",
       "schema": "schemas/HATE/v1/hosted-scheduler-dispatch-plan.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "procurement-questionnaire-export",
       "schema": "schemas/HATE/v1/procurement-questionnaire-export.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-roster-execution-entry",
       "schema": "schemas/HATE/v1/real-repo-roster-execution-entry.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "adapter_conformance_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "api_contract_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard_uat_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "security_quarantine_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "enterprise_control_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "scale_performance_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "migration_compatibility_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "commercial_truthfulness_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "support_ops_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "release_candidate_pack",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "quality-evidence-graph",
+      "canonical_contract": "QEG/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_evidence_summary",
       "schema": "schemas/HATE/v1/product-grade-evidence-summary.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_adapter_conformance_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_schema_validation_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_store_replay_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_api_contract_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_dashboard_uat_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_test_integrity_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_security_quarantine_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_enterprise_control_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_scale_performance_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_migration_compatibility_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_commercial_truthfulness_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_support_ops_report",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_grade_release_candidate_pack",
       "schema": "schemas/HATE/v1/product-grade-area-report.schema.json",
       "phase": "Product-Grade",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "run-overview-view-model",
       "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "artifact-safety-view-model",
       "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "manual-review-queue-view-model",
       "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "risk-coverage-view-model",
       "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard-view-model",
       "schema": "schemas/HATE/v1/dashboard-view-model.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "redaction-report",
       "schema": "schemas/HATE/v1/artifact-safety-filter-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "export-filter-report",
       "schema": "schemas/HATE/v1/artifact-safety-filter-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "summary-filter-report",
       "schema": "schemas/HATE/v1/artifact-safety-filter-report.schema.json",
       "phase": "P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-schedule-plan",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "shipyard-cp",
+      "canonical_contract": "RunSystemPacket",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-assignment-report",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-state-gate",
+      "canonical_contract": "HumanQueueItem/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-plugin-run-report",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-score-report",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-verdict-evaluation-report",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-gatefield",
+      "canonical_contract": "AgentAssessment/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-triage-report",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-state-gate",
+      "canonical_contract": "HumanQueueItem/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-comparison-report",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-html-report",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "platform-dashboard-view-model",
       "schema": "schemas/HATE/v1/platform-ops-report.schema.json",
       "phase": "Product-Platform",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "artifact_budget_report",
       "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "attestation_report",
       "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "audit_event_log",
       "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "commercial_contract_report",
       "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "audit_assurance_pack",
       "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "audit_fixture_manifest",
       "schema": "schemas/HATE/v1/p2p3-assurance-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_readiness_report",
       "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_metrics_report",
       "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "product_error_catalog",
       "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "pr_annotation_export",
       "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "enterprise_risk_debt_register",
       "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "privacy_quarantine_report",
       "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "external_export_report",
       "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hosted_read_model_index",
       "schema": "schemas/HATE/v1/product-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "local_store_manifest",
       "schema": "schemas/HATE/v1/local-store-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "local_store_history_index",
       "schema": "schemas/HATE/v1/local-store-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "local_store_query",
       "schema": "schemas/HATE/v1/local-store-runtime-report.schema.json",
       "phase": "P2/P3",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow_task_seed",
       "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
       "phase": "P1b",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow_acceptance",
       "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
       "phase": "P1b",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow_evidence",
       "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
       "phase": "P1b",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow_docs_stale",
       "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
       "phase": "P1b",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow_birdseye_map",
       "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
       "phase": "P1b",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "workflow_cookbook_evidence_map",
       "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
       "phase": "P1b",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "shipyard_run_evidence",
       "schema": "schemas/HATE/v1/workflow-runtime-record.schema.json",
       "phase": "P1b",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "agent-protocols",
+      "canonical_contract": "Evidence/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "ci-docs-freshness-gate",
       "schema": "schemas/HATE/v1/ci-docs-freshness-gate.schema.json",
       "phase": "Post-PoC",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "accessibility_localization_report",
       "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "adoption_health_report",
       "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "compare_report",
       "schema": "schemas/HATE/v1/trust-advisory-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "customer_docs_index",
       "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "dashboard_view_model",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "enterprise-audit-validation",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "enterprise_connector_report",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "enterprise_domain_model",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "entitlement_usage_report",
       "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "expansion-run-report",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "expansion-uat-report",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "explain_report",
       "schema": "schemas/HATE/v1/trust-advisory-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "gap-closure-report",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "gap-closure-uat-report",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "hard_dq_finding",
       "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "human_record_expiry_report",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "identity_connector_report",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "import_bundle_result",
       "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "incident_slo_report",
       "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "integrity_verification",
       "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "manual_bb_bridge_request",
       "schema": "schemas/HATE/v1/workflow-alignment-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "manual-bb-test-harness",
+      "canonical_contract": "manual_case_set/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "ops_connector_report",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "ops_connector_result",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "portfolio_health_report",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "privacy_telemetry_report",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "quarantine_manifest",
       "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "rbac_matrix_report",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "real-repo-history-index",
       "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "recommendation_report",
       "schema": "schemas/HATE/v1/trust-advisory-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "release_migration_report",
       "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "quality-evidence-graph",
+      "canonical_contract": "QEG/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "replay_report",
       "schema": "schemas/HATE/v1/trust-advisory-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "requirement_alignment",
       "schema": "schemas/HATE/v1/workflow-alignment-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "residency_deployment_report",
       "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "retention_governance_report",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "roadmap_decision_record",
       "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "scale_fixture_manifest",
       "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "scale_validation_result",
       "schema": "schemas/HATE/v1/store-scale-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "scim_diff",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "scim_diff_result",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "security_trust_packet",
       "schema": "schemas/HATE/v1/enterprise-operating-report.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "sso_mapping",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "sso_mapping_result",
       "schema": "schemas/HATE/v1/connector-governance-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "support-error-catalog-report",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "support-error-record",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "support_diagnostic_bundle",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "product-ops-evidence",
+      "canonical_contract": "POE/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     },
     {
       "record_type": "uat-state",
       "schema": "schemas/HATE/v1/support-dashboard-runtime.schema.json",
       "phase": "Runtime-Strict",
       "unknown_field_policy": "warn",
-      "deprecated_fields": []
+      "deprecated_fields": [],
+      "canonical_owner": "workflow-cookbook",
+      "canonical_contract": "HATE-bridge-consumer/v1",
+      "compatibility_provider": "compat-v0.2",
+      "deprecated_since": "0.3.0",
+      "remove_after": "1.0.0"
     }
   ],
   "bundles": [

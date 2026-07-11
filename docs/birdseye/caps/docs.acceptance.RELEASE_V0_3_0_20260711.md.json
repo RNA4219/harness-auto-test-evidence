@@ -1,0 +1,28 @@
+{
+  "path": "docs/acceptance/RELEASE_V0_3_0_20260711.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "d5bde9d606a06d388a8f94c827e82f96a36e5cca2d0d31ade400ff762c74735e",
+  "line_count": 58,
+  "size_bytes": 3334,
+  "headings": [
+    "# HATE v0.3.0 Responsibility Freeze Acceptance",
+    "## Metadata",
+    "## Compatibility matrix",
+    "## Verification commands",
+    "## Result",
+    "## Open risks"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

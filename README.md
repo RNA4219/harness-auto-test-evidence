@@ -22,7 +22,7 @@ control plane.
 
 ## Current State
 
-- Package version: `0.2.0`
+- Package version: 0.3.0
 - CLI entrypoint: `hate`
 - Runtime posture: local-first CLI and JSON/HTML artifact generator
 - PoC posture: PoC complete with explicit non-overclaim guardrails
@@ -39,6 +39,7 @@ Important acceptance records:
 - [Major OSS two-cycle validation](docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md)
 - [Platform CLI and product-grade gate](docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md)
 - [Docs freshness review](docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md)
+- [v0.3.0 responsibility freeze acceptance](docs/acceptance/RELEASE_V0_3_0_20260711.md)
 - [v0.2.0 local release acceptance](docs/acceptance/RELEASE_V0_2_0_20260711.md)
 - [v0.1.0 PoC preview release](docs/acceptance/RELEASE_V0_1_0_20260705.md)
 
@@ -152,6 +153,18 @@ Primary commands:
 - `hate real-repo`: run recurring real repository validation rosters
 - `hate release`: assemble release candidate evidence packs
 
+## v0.3.0 Responsibility Freeze and Bridge Migration
+
+HATEの新規開発責務はP0a/P0b/P1a、schema/adapter/plugin、local evidence history/replayへ固定されています。workflow、product、release、gap、expansion、real-repo、platform、validationの公開CLIはthin bridgeです。
+
+- 既定providerはcompat-v0.2で、v0.2のcommand/options/output files/required fields/exit codeを維持します。CLI JSON stdoutにはcompatibility_provider、canonical_owner、deprecated_since、remove_afterを追加し、stderrへprocess単位で1回warningを出します。
+- 外部handoffはleaf commandへ --bridge-provider handoff を付けます。HATE_BRIDGE_PROVIDERでも指定でき、CLI optionが優先します。handoffはprocess/networkを起動せずbridge-request.jsonだけを生成します。
+- 外部owner resultは hate bridge materialize --request REQUEST --result RESULT --out OUT で検証・materializeします。ID、owner、hash、sourceRefs、schemaが不一致ならexit 2で、legacy artifactは生成しません。
+- HATE/v1はv1まで維持します。P1b+ removal windowはdeprecated_since=0.3.0、remove_after=1.0.0です。
+- 責務の正本はgovernance/responsibility-registry.jsonです。product_ready=falseと外部release authorityは変更ありません。
+
+v0.2利用者は通常の互換動作ではcommandを変更する必要はありません。新しい外部owner連携を試す場合だけhandoffを明示してください。
+
 ## v0.2.0 Safety and Migration
 
 - Build a wheel with uv build, then install it with uv tool install followed by
@@ -189,3 +202,20 @@ Long-term operation checks:
 - `hate platform notify route --input <operating-record.json>`
 - `hate platform notify deliver --input <delivery-attempts.json>`
 - `hate platform baseline review --input <baseline-review.json>`
+
+<!-- responsibility-freeze:start -->
+## Responsibility Freeze (generated)
+
+| 境界 | 現在値 |
+|---|---:|
+| core CLI leaf | 12 |
+| bridge CLI leaf | 33 |
+| core HATE/v1 record type | 29 |
+| compat HATE/v1 record type | 311 |
+
+- canonical owner: agent-gatefield, agent-state-gate, manual-bb-test-harness, product-ops-evidence, quality-evidence-graph, shipyard-cp, workflow-cookbook
+- P1b以降は compat-v0.2 または明示的な handoff のみ。
+- product_ready=false。QEG verdict、Go/No-Go、waiver、approval、publish authorityは外部責務。
+- deprecated since: 0.3.0; remove after: 1.0.0（v0.xでは物理削除しない）。
+- machine-readable source: governance/responsibility-registry.json
+<!-- responsibility-freeze:end -->

@@ -2,9 +2,9 @@
   "path": "docs/process/BLUEPRINT.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "0ee15a7c5a96dc8eb310298268170ab7b4d1a2adc4a20af1215ad5c3787f06ac",
-  "line_count": 558,
-  "size_bytes": 32390,
+  "sha256": "037826220e08aa4235612cd43a81d7f3108fed35d290716b5711417925184787",
+  "line_count": 575,
+  "size_bytes": 33136,
   "headings": [
     "# BluePrint",
     "## 1. 背景と問題定義",
@@ -30,7 +30,8 @@
     "#### P1b（外部運用接続）",
     "### P2",
     "### P3（Enterprise product readiness）",
-    "## 7. 成果条件（実装前）"
+    "## 7. 成果条件（実装前）",
+    "## Responsibility Freeze (generated)"
   ],
   "imports": [],
   "links": [],

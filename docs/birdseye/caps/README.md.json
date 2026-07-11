@@ -2,9 +2,9 @@
   "path": "README.md",
   "role": "navigation",
   "kind": "md",
-  "sha256": "8bfd13ee6691842763e266e159fe1b395a4d41ac69862f264538971ae54c73be",
-  "line_count": 191,
-  "size_bytes": 8198,
+  "sha256": "087723150d69ba38e98e63ed3943cc0923f66e4c03668e8c1270d3400d489c46",
+  "line_count": 221,
+  "size_bytes": 10517,
   "headings": [
     "# HATE Agent README",
     "## Current State",
@@ -12,8 +12,10 @@
     "## Read First",
     "## Common Commands",
     "## CLI Map",
+    "## v0.3.0 Responsibility Freeze and Bridge Migration",
     "## v0.2.0 Safety and Migration",
-    "## Release Checklist For Agents"
+    "## Release Checklist For Agents",
+    "## Responsibility Freeze (generated)"
   ],
   "imports": [],
   "links": [
@@ -25,6 +27,7 @@
     "docs/acceptance/POC_COMPLETION_20260703.md",
     "docs/acceptance/RELEASE_V0_1_0_20260705.md",
     "docs/acceptance/RELEASE_V0_2_0_20260711.md",
+    "docs/acceptance/RELEASE_V0_3_0_20260711.md",
     "docs/birdseye/README.md",
     "docs/process/BLUEPRINT.md",
     "docs/process/ENTERPRISE_CONTROL_STATE_TRANSITION_SPEC.md",
@@ -56,6 +59,7 @@
     "docs/acceptance/POC_COMPLETION_20260703.md",
     "docs/acceptance/RELEASE_V0_1_0_20260705.md",
     "docs/acceptance/RELEASE_V0_2_0_20260711.md",
+    "docs/acceptance/RELEASE_V0_3_0_20260711.md",
     "docs/process/BLUEPRINT.md",
     "docs/process/ENTERPRISE_CONTROL_STATE_TRANSITION_SPEC.md",
     "docs/process/EVALUATION.md",

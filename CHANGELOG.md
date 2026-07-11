@@ -22,3 +22,24 @@
 - Plugin signatures are external evidence, not cryptographically verified.
 - Local subprocess mode does not provide filesystem or network isolation.
 - product_ready remains false and final release authority remains external.
+
+## 0.3.0 - 2026-07-11
+
+### Added
+
+- Machine-readable responsibility registry for every leaf CLI and HATE/v1 record type.
+- HATE-bridge/v1 request/result schemas, explicit handoff, and fail-closed materialization.
+- Scope and architecture gates for the P0a/P0b/P1a responsibility freeze.
+- product-ops-evidence and owner-side consumer contract fixtures.
+
+### Changed
+
+- Post-P1a public handlers dispatch only through the bridge router.
+- v0.2 behavior is isolated behind the frozen compat-v0.2 provider.
+- Post-P1a schema entries carry canonical owner and removal-window metadata.
+
+### Compatibility
+
+- P0a/P0b/P1a interfaces remain unchanged.
+- Post-P1a CLI names, options, output files, required fields, and normal exit codes remain available through v1.
+- product_ready remains false and release authority remains external.

@@ -2,9 +2,9 @@
   "path": "src/hate/cli.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "4177160a1461a6092760718801d86705e32f174a1b12fff634f170187684e6c7",
-  "line_count": 325,
-  "size_bytes": 26595,
+  "sha256": "a2a9bfa81d81f2041a31da39246ad43cf78cc91e45540577e4d35d4b20f095f2",
+  "line_count": 371,
+  "size_bytes": 28293,
   "headings": [],
   "imports": [
     ".cli_handlers",
@@ -23,6 +23,7 @@
     "qeg",
     "release",
     "store",
-    "test"
+    "test",
+    "workflow"
   ]
 }

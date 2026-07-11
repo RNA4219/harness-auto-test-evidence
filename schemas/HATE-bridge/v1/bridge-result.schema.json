@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.example/schemas/HATE-bridge/v1/bridge-result.schema.json",
+  "title": "HATE bridge result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "bridge_id",
+    "owner",
+    "status",
+    "output_refs",
+    "diagnostics",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE-bridge/v1"
+    },
+    "record_type": {
+      "const": "bridge_result"
+    },
+    "bridge_id": {
+      "type": "string",
+      "pattern": "^hate-bridge-[a-f0-9]{24}$"
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "hold",
+        "failed"
+      ]
+    },
+    "output_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "record_type",
+          "path",
+          "target_name",
+          "sha256"
+        ],
+        "properties": {
+          "record_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  }
+}

@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: uv sync --dev --frozen
       - name: Ruff
-        run: uv run ruff check src/hate/schema_resources.py src/hate/plugin_runner.py src/hate/p0a_schema.py src/hate/schema_validator.py src/hate/platform_cli.py src/hate/cli.py src/hate/cli_handlers.py tests/test_schema_resources.py tests/test_platform_ops.py tools/ci/schema_meta_gate.py tools/ci/wheel_smoke.py tools/ci/docs_freshness_gate.py tools/docs/render_post_poc_status.py
+        run: uv run ruff check src/hate/schema_resources.py src/hate/plugin_runner.py src/hate/p0a_schema.py src/hate/schema_validator.py src/hate/platform_cli.py src/hate/cli.py src/hate/cli_handlers.py tests/test_schema_resources.py tests/test_platform_ops.py tools/ci/schema_meta_gate.py tools/ci/wheel_smoke.py tools/ci/docs_freshness_gate.py tools/docs/render_post_poc_status.py tools/ci/responsibility_scope_gate.py tools/docs/render_responsibility_docs.py src/hate/bridge/router.py src/hate/bridge/materializer.py tests/test_bridge_router.py tests/test_responsibility_architecture.py
       - name: Mypy critical surfaces
         run: uv run mypy
       - name: Compile
@@ -39,6 +39,10 @@ jobs:
         run: uv run python tools/codemap/update.py --check
       - name: Docs freshness gate
         run: uv run python tools/ci/docs_freshness_gate.py
+      - name: Responsibility scope gate
+        run: uv run python tools/ci/responsibility_scope_gate.py
+      - name: Responsibility docs
+        run: uv run python tools/docs/render_responsibility_docs.py
 
   unit-contract:
     runs-on: ubuntu-latest
@@ -92,7 +96,7 @@ jobs:
       - name: Installed wheel smoke
         run: >-
           uv run python tools/ci/wheel_smoke.py
-          --wheel dist/harness_auto_test_evidence-0.2.0-py3-none-any.whl
+          --wheel dist/harness_auto_test_evidence-0.3.0-py3-none-any.whl
           --fixture fixtures/golden/p0a-minimal/input
 
   e2e-release:

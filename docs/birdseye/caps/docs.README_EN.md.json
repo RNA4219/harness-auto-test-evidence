@@ -2,9 +2,9 @@
   "path": "docs/README_EN.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "fc9e3ccc5184250fa5aadaa6ce6478cf746cdff8e06a1c70a32d089749e1eb18",
-  "line_count": 122,
-  "size_bytes": 5422,
+  "sha256": "f493c5631a7ed3f0f47ddf7dba7dcac7b86a1d840bc290e7e26e136195085512",
+  "line_count": 130,
+  "size_bytes": 6424,
   "headings": [
     "# HATE: harness-auto-test-evidence",
     "## What HATE Does",
@@ -13,7 +13,8 @@
     "## Platform CLI",
     "## Documentation",
     "## Release Checks",
-    "## License"
+    "## License",
+    "## v0.3.0 Responsibility Freeze and Bridge-Only Migration"
   ],
   "imports": [],
   "links": [

@@ -1,0 +1,30 @@
+{
+  "path": "tools/ci/responsibility_scope_gate.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "1e3af4afe46017116f59eb9cdd3259c7413a895f0bf07ad515c72099d3c71bd6",
+  "line_count": 127,
+  "size_bytes": 8290,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "argparse",
+    "hate.cli",
+    "json",
+    "pathlib",
+    "sys",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

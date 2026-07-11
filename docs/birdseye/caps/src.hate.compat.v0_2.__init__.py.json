@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/compat/v0_2/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0fddb7e47fd588f29fd82cc422cb5c10874c5978ec95e7525103658ff99dc959",
+  "line_count": 8,
+  "size_bytes": 215,
+  "headings": [],
+  "imports": [
+    ".handlers"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/compat/v0_2/handlers.py"
+  ],
+  "tags": [
+    "schema",
+    "security"
+  ]
+}

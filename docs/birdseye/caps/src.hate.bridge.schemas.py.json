@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/bridge/schemas.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "91f2a2dfe1f96b8c32c746ae86f8f858aa8ed6e93e5768764339e4b01f54f32a",
+  "line_count": 35,
+  "size_bytes": 1372,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "importlib.resources",
+    "json",
+    "jsonschema",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "path": "governance/responsibility-registry.json",
+  "role": "project",
+  "kind": "json",
+  "sha256": "1b3751d592e603e784140a46db2cb32449ca87edb59a416a43311064d99c4d23",
+  "line_count": 4218,
+  "size_bytes": 154327,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "qeg",
+    "release",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

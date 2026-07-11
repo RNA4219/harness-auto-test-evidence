@@ -988,3 +988,9 @@ P2/P3 minimal constraints:
 - 直近: 2026-06-28 HATE 自身の E2E 自動検収 `tests/test_acceptance_pipeline.py` と
   GitHub Actions CI `.github/workflows/ci.yml` を追加
 - 次点: 実 CI 由来の flaky baseline / SARIF / diff-risk adapter と hosted runtime は別ゲートで扱う
+
+<!-- responsibility-freeze:start -->
+## Responsibility Freeze (generated)
+core_cli=12, bridge_cli=33, core_records=29, compat_records=311
+P1b+ is bridge-only; product_ready=false; external release authority; remove_after=1.0.0.
+<!-- responsibility-freeze:end -->

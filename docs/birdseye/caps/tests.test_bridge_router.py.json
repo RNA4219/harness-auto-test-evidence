@@ -1,0 +1,31 @@
+{
+  "path": "tests/test_bridge_router.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "79b7aee882231cc24a966362e045fc1158207909bcc772e5223785f0f7fc2519",
+  "line_count": 134,
+  "size_bytes": 5272,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "argparse",
+    "hashlib",
+    "hate.bridge.materializer",
+    "hate.bridge.router",
+    "hate.cli",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/materializer.py",
+    "src/hate/bridge/router.py",
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

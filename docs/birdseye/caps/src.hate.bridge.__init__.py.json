@@ -1,0 +1,17 @@
+{
+  "path": "src/hate/bridge/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "883807f6a9fade7559e724904ac737ac069aaff5cf6d3918d9e69367d50be12d",
+  "line_count": 5,
+  "size_bytes": 173,
+  "headings": [],
+  "imports": [
+    ".router"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/router.py"
+  ],
+  "tags": []
+}

@@ -2,9 +2,9 @@
   "path": "docs/process/GUARDRAILS.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "8a36480e0b98abb266911a8de4e23e962629a2043ebfba09bc19d1103cb9ffdb",
-  "line_count": 184,
-  "size_bytes": 12550,
+  "sha256": "3ed111fdaa6e2f459631fa92b497880a686652e90e53d686e69258cf564713d1",
+  "line_count": 201,
+  "size_bytes": 13296,
   "headings": [
     "# Guardrails & 行動指針",
     "## 目的",
@@ -12,7 +12,8 @@
     "## 実装制約",
     "## 非機能ガード",
     "## 例外条件",
-    "## リマインダー"
+    "## リマインダー",
+    "## Responsibility Freeze (generated)"
   ],
   "imports": [],
   "links": [],

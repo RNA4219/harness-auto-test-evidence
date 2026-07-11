@@ -120,3 +120,11 @@ not contradict each other.
 ## License
 
 MIT License. See [LICENSE](../LICENSE).
+
+## v0.3.0 Responsibility Freeze and Bridge-Only Migration
+
+New HATE development is frozen to P0a/P0b/P1a plus schemas, adapters/plugins, and local evidence history/replay. Existing post-P1a commands are thin bridges. The default compat-v0.2 provider preserves the v0.2 command, option, output-file, required-field, and exit-code contracts.
+
+Pass --bridge-provider handoff on a leaf command to create bridge-request.json without starting an external process or network call. HATE_BRIDGE_PROVIDER is also supported, with the CLI option taking precedence. Use hate bridge materialize for external results; schema, bridge ID, owner, SHA-256, or sourceRefs mismatches fail closed with exit 2 and no partial legacy output.
+
+HATE/v1 remains available through v1. Post-P1a compatibility surfaces are deprecated since 0.3.0 and have a removal window after 1.0.0. HATE remains an advisory evidence producer: product_ready is false and verdict, Go/No-Go, waiver, approval, and publish authority remain external.

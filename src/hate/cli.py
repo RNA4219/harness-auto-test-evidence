@@ -5,6 +5,40 @@ from pathlib import Path
 
 from .cli_handlers import dispatch_cli
 
+BRIDGE_ROOT_COMMANDS = {
+    "workflow",
+    "product",
+    "release",
+    "gap",
+    "expansion",
+    "real-repo",
+    "platform",
+    "validation",
+}
+
+
+def _add_bridge_provider_options(subparsers: argparse._SubParsersAction) -> None:
+    def visit(command_parser: argparse.ArgumentParser) -> None:
+        nested = [
+            action
+            for action in command_parser._actions
+            if isinstance(action, argparse._SubParsersAction)
+        ]
+        if nested:
+            for action in nested:
+                for child in action.choices.values():
+                    visit(child)
+            return
+        command_parser.add_argument(
+            "--bridge-provider",
+            choices=["compat-v0.2", "handoff"],
+            default=None,
+            help="Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+        )
+
+    for name in BRIDGE_ROOT_COMMANDS:
+        visit(subparsers.choices[name])
+
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -315,6 +349,18 @@ def build_parser() -> argparse.ArgumentParser:
     validation_cycles = validation_subparsers.add_parser("cycles", help="Evaluate ten QEG hardening cycles.")
     validation_cycles.add_argument("--fixture", required=True, type=Path, help="Validation cycle fixture JSON.")
     validation_cycles.add_argument("--out", required=True, type=Path, help="Output directory for validation-cycle-report.json.")
+
+    bridge = subparsers.add_parser("bridge", help="Validate and materialize external bridge results.")
+    bridge_subparsers = bridge.add_subparsers(dest="bridge_command", required=True)
+    bridge_materialize = bridge_subparsers.add_parser(
+        "materialize",
+        help="Validate a HATE-bridge result and atomically map it to legacy HATE/v1 files.",
+    )
+    bridge_materialize.add_argument("--request", required=True, type=Path, help="HATE-bridge/v1 request JSON.")
+    bridge_materialize.add_argument("--result", required=True, type=Path, help="HATE-bridge/v1 result JSON.")
+    bridge_materialize.add_argument("--out", required=True, type=Path, help="Legacy artifact output directory.")
+
+    _add_bridge_provider_options(subparsers)
 
     return parser
 

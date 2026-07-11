@@ -1,5 +1,5 @@
 {
-  "generated_at": "74741a1057c7",
+  "generated_at": "c0a5773ce0bc",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -40,16 +40,16 @@
     ".github/workflows/ci.yml": {
       "role": "ci",
       "caps": "docs/birdseye/caps/github.workflows.ci.yml.json",
-      "sha256": "ea98c80ba8b7503304f1a35dd247b10e82202edfcabebc7a4760f6a054678e8f",
-      "line_count": 114,
-      "size_bytes": 4603
+      "sha256": "a0c61c640efdff5813f799aa34bc4906c8eb6b79ccbe40a317158374b1dfaf09",
+      "line_count": 118,
+      "size_bytes": 5017
     },
     "CHANGELOG.md": {
       "role": "project",
       "caps": "docs/birdseye/caps/CHANGELOG.md.json",
-      "sha256": "cf9ab20aff6fd1a70e75be59ca8cfdf7747c91f107bcb608e7edd5930f07c782",
-      "line_count": 24,
-      "size_bytes": 851
+      "sha256": "4bec7a5f3133c89ec0d5af8fac0e45ed9eb182cca2f516cf8365ba2fb9eb4c23",
+      "line_count": 45,
+      "size_bytes": 1678
     },
     "CODE_OF_CONDUCT.md": {
       "role": "project",
@@ -68,9 +68,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "8bfd13ee6691842763e266e159fe1b395a4d41ac69862f264538971ae54c73be",
-      "line_count": 191,
-      "size_bytes": 8198
+      "sha256": "087723150d69ba38e98e63ed3943cc0923f66e4c03668e8c1270d3400d489c46",
+      "line_count": 221,
+      "size_bytes": 10517
     },
     "SECURITY.md": {
       "role": "project",
@@ -89,16 +89,16 @@
     "docs/README_EN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_EN.md.json",
-      "sha256": "fc9e3ccc5184250fa5aadaa6ce6478cf746cdff8e06a1c70a32d089749e1eb18",
-      "line_count": 122,
-      "size_bytes": 5422
+      "sha256": "f493c5631a7ed3f0f47ddf7dba7dcac7b86a1d840bc290e7e26e136195085512",
+      "line_count": 130,
+      "size_bytes": 6424
     },
     "docs/README_JA.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_JA.md.json",
-      "sha256": "72c1d71d1e1e3b2485f11d8fb5eca999dedc74c1354698853979ea0a7273bb5d",
-      "line_count": 122,
-      "size_bytes": 5990
+      "sha256": "50b1099b922e46ef650fcf1e4e7674ac4cfecdcc498cd6ad307188eaf047ffb9",
+      "line_count": 130,
+      "size_bytes": 6905
     },
     "docs/acceptance/AC-20260630-01.md": {
       "role": "documentation",
@@ -338,6 +338,13 @@
       "line_count": 59,
       "size_bytes": 2576
     },
+    "docs/acceptance/RELEASE_V0_3_0_20260711.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.RELEASE_V0_3_0_20260711.md.json",
+      "sha256": "d5bde9d606a06d388a8f94c827e82f96a36e5cca2d0d31ade400ff762c74735e",
+      "line_count": 58,
+      "size_bytes": 3334
+    },
     "docs/process/ACCEPTANCE_CRITERIA_MATRIX.md": {
       "role": "quality",
       "caps": "docs/birdseye/caps/docs.process.ACCEPTANCE_CRITERIA_MATRIX.md.json",
@@ -397,9 +404,9 @@
     "docs/process/BLUEPRINT.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.BLUEPRINT.md.json",
-      "sha256": "0ee15a7c5a96dc8eb310298268170ab7b4d1a2adc4a20af1215ad5c3787f06ac",
-      "line_count": 558,
-      "size_bytes": 32390
+      "sha256": "037826220e08aa4235612cd43a81d7f3108fed35d290716b5711417925184787",
+      "line_count": 575,
+      "size_bytes": 33136
     },
     "docs/process/CUSTOMER_DOCUMENTATION_CONTRACT.md": {
       "role": "requirements",
@@ -467,9 +474,9 @@
     "docs/process/EVALUATION.md": {
       "role": "quality",
       "caps": "docs/birdseye/caps/docs.process.EVALUATION.md.json",
-      "sha256": "a5952f73787603b71297e5ce3d6a1f09d3a4bbce6a4ef9f92210256b2653c9b8",
-      "line_count": 526,
-      "size_bytes": 39308
+      "sha256": "81d49e6520bc7640dc4640ffbe755b66f3d125f5d964e259bf373d452c5694f9",
+      "line_count": 543,
+      "size_bytes": 40054
     },
     "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md": {
       "role": "requirements",
@@ -509,9 +516,9 @@
     "docs/process/GUARDRAILS.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.GUARDRAILS.md.json",
-      "sha256": "8a36480e0b98abb266911a8de4e23e962629a2043ebfba09bc19d1103cb9ffdb",
-      "line_count": 184,
-      "size_bytes": 12550
+      "sha256": "3ed111fdaa6e2f459631fa92b497880a686652e90e53d686e69258cf564713d1",
+      "line_count": 201,
+      "size_bytes": 13296
     },
     "docs/process/HOSTED_READ_MODEL_API.md": {
       "role": "documentation",
@@ -887,9 +894,9 @@
     "docs/process/RELEASE_MIGRATION_POLICY.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.RELEASE_MIGRATION_POLICY.md.json",
-      "sha256": "eb08215c688993db7741b007a6fc142ddfcf66807ea53470ce8822625086ffff",
-      "line_count": 177,
-      "size_bytes": 7499
+      "sha256": "3a47de308c16813dce26e429a5e351bee119f7b237609a0182f2690ffcce18e4",
+      "line_count": 194,
+      "size_bytes": 8245
     },
     "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md": {
       "role": "requirements",
@@ -915,9 +922,9 @@
     "docs/process/RUNBOOK.md": {
       "role": "operations",
       "caps": "docs/birdseye/caps/docs.process.RUNBOOK.md.json",
-      "sha256": "0ae40b1dc6aceb86dfe13ba3e816e2d6500332925861dc7da57dbf75e6ca62d4",
-      "line_count": 990,
-      "size_bytes": 69456
+      "sha256": "11ceb90a13d54db39cbfbf09e1fd318c9d7066295158f07076edd1dd8c362216",
+      "line_count": 996,
+      "size_bytes": 69720
     },
     "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md": {
       "role": "requirements",
@@ -6750,12 +6757,33 @@
       "line_count": 29,
       "size_bytes": 988
     },
+    "governance/responsibility-registry.json": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/governance.responsibility-registry.json.json",
+      "sha256": "1b3751d592e603e784140a46db2cb32449ca87edb59a416a43311064d99c4d23",
+      "line_count": 4218,
+      "size_bytes": 154327
+    },
     "pyproject.toml": {
       "role": "project",
       "caps": "docs/birdseye/caps/pyproject.toml.json",
-      "sha256": "3eaeb1af5f389f75c21caffb7af99e73ddf407ed5f1adb4444c27b3fde6b5b59",
-      "line_count": 71,
-      "size_bytes": 1803
+      "sha256": "43644df44f6f86807bb25b160be5da169095f63fe520d767b83613d9e89167d6",
+      "line_count": 74,
+      "size_bytes": 1933
+    },
+    "schemas/HATE-bridge/v1/bridge-request.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE-bridge.v1.bridge-request.schema.json.json",
+      "sha256": "8f65e104a1e7055cb47b2302720a9db46735e75cc17a87505cefc938bfc02f93",
+      "line_count": 96,
+      "size_bytes": 2001
+    },
+    "schemas/HATE-bridge/v1/bridge-result.schema.json": {
+      "role": "schema",
+      "caps": "docs/birdseye/caps/schemas.HATE-bridge.v1.bridge-result.schema.json.json",
+      "sha256": "305288a449b03f4420fe76c7413660bafe1630b12c84e99a27c6a54aac5847ad",
+      "line_count": 106,
+      "size_bytes": 2192
     },
     "schemas/HATE/v1/a11y-l10n-report.schema.json": {
       "role": "schema",
@@ -8153,9 +8181,9 @@
     "schemas/HATE/v1/schema-registry.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.schema-registry.json.json",
-      "sha256": "8de41abbb0e55cd5e845ee75fe8313b39736be97c0fdbea88cdf62045df7c5ec",
-      "line_count": 2407,
-      "size_bytes": 78627
+      "sha256": "508df0e66f5ae009f28ae264cedc6034377083f1b22aae66042617b241b1b222",
+      "line_count": 3962,
+      "size_bytes": 143692
     },
     "schemas/HATE/v1/schema-validation-report.schema.json": {
       "role": "schema",
@@ -8454,7 +8482,7 @@
     "src/hate/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.__init__.py.json",
-      "sha256": "b38002c7f6c6b11859f054f9c9223f4ccf6d697a268bc404f6a95688e977b224",
+      "sha256": "cf492378936e5923504143cb1750b9646f04639197befc4afbcf728126e3bf1d",
       "line_count": 5,
       "size_bytes": 98
     },
@@ -8703,19 +8731,54 @@
       "line_count": 184,
       "size_bytes": 6261
     },
+    "src/hate/bridge/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.bridge.__init__.py.json",
+      "sha256": "883807f6a9fade7559e724904ac737ac069aaff5cf6d3918d9e69367d50be12d",
+      "line_count": 5,
+      "size_bytes": 173
+    },
+    "src/hate/bridge/materializer.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.bridge.materializer.py.json",
+      "sha256": "1969745825177dea48bc4bfe3402bd4b57c873b621d681d8c3f6371ab20f7298",
+      "line_count": 96,
+      "size_bytes": 3667
+    },
+    "src/hate/bridge/protocol.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.bridge.protocol.py.json",
+      "sha256": "c63731388d1491f70f3566a671992eac35e8fb110fcfa8909c608c9e9269e222",
+      "line_count": 28,
+      "size_bytes": 598
+    },
+    "src/hate/bridge/router.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.bridge.router.py.json",
+      "sha256": "e945c9f8fd13aefd0be77e024887fb11c9b1cf9ca34cb34e7b97f11f2bd19740",
+      "line_count": 238,
+      "size_bytes": 8520
+    },
+    "src/hate/bridge/schemas.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.bridge.schemas.py.json",
+      "sha256": "91f2a2dfe1f96b8c32c746ae86f8f858aa8ed6e93e5768764339e4b01f54f32a",
+      "line_count": 35,
+      "size_bytes": 1372
+    },
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "4177160a1461a6092760718801d86705e32f174a1b12fff634f170187684e6c7",
-      "line_count": 325,
-      "size_bytes": 26595
+      "sha256": "a2a9bfa81d81f2041a31da39246ad43cf78cc91e45540577e4d35d4b20f095f2",
+      "line_count": 371,
+      "size_bytes": 28293
     },
     "src/hate/cli_handlers.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli_handlers.py.json",
-      "sha256": "9283e4884146524d63ace8148500b71eec95b613862b9ebfc1a91e7cbe82311b",
-      "line_count": 566,
-      "size_bytes": 20775
+      "sha256": "7503ef5575f7b9cd1a87a54bd8ae5d3e0fbdfae87d173445d232f4f1329c62a0",
+      "line_count": 163,
+      "size_bytes": 5908
     },
     "src/hate/commercial/__init__.py": {
       "role": "implementation",
@@ -8730,6 +8793,27 @@
       "sha256": "0cc1671a614d98b2de549299be085c6326a45f8ccaa1e276e66b34f6fa1ed078",
       "line_count": 287,
       "size_bytes": 11936
+    },
+    "src/hate/compat/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.compat.__init__.py.json",
+      "sha256": "42ecc5ad5771c205f2ff158704032a1dea87733637d2228e4f997103def63abd",
+      "line_count": 1,
+      "size_bytes": 38
+    },
+    "src/hate/compat/v0_2/__init__.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.compat.v0_2.__init__.py.json",
+      "sha256": "0fddb7e47fd588f29fd82cc422cb5c10874c5978ec95e7525103658ff99dc959",
+      "line_count": 8,
+      "size_bytes": 215
+    },
+    "src/hate/compat/v0_2/handlers.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.compat.v0_2.handlers.py.json",
+      "sha256": "6281155395dee3aef9782891a15ecdf0ee4aca1e8771a98828d0f392b3862c63",
+      "line_count": 566,
+      "size_bytes": 20808
     },
     "src/hate/connectors.py": {
       "role": "implementation",
@@ -10341,6 +10425,13 @@
       "line_count": 114,
       "size_bytes": 4088
     },
+    "tests/test_bridge_router.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_bridge_router.py.json",
+      "sha256": "79b7aee882231cc24a966362e045fc1158207909bcc772e5223785f0f7fc2519",
+      "line_count": 134,
+      "size_bytes": 5272
+    },
     "tests/test_check_file_size.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_check_file_size.py.json",
@@ -11013,6 +11104,13 @@
       "line_count": 93,
       "size_bytes": 2864
     },
+    "tests/test_responsibility_architecture.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_responsibility_architecture.py.json",
+      "sha256": "9c7c82777101339560d3620b8b3021ed81b5cee553ae4a6307131363e99507c4",
+      "line_count": 61,
+      "size_bytes": 2522
+    },
     "tests/test_risk_matrix.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_risk_matrix.py.json",
@@ -11195,19 +11293,26 @@
       "line_count": 235,
       "size_bytes": 10759
     },
+    "tools/ci/responsibility_scope_gate.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.ci.responsibility_scope_gate.py.json",
+      "sha256": "1e3af4afe46017116f59eb9cdd3259c7413a895f0bf07ad515c72099d3c71bd6",
+      "line_count": 127,
+      "size_bytes": 8290
+    },
     "tools/ci/schema_meta_gate.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.ci.schema_meta_gate.py.json",
-      "sha256": "46cd81509ef2ad8c19ffd084f507849a687bb04e428837743f96aa7c74930bf6",
-      "line_count": 22,
-      "size_bytes": 576
+      "sha256": "846a590a80eb2e1456fc28eb0914dfdadd312e9bb4233359abc2c98bdfc25d5b",
+      "line_count": 30,
+      "size_bytes": 902
     },
     "tools/ci/wheel_smoke.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.ci.wheel_smoke.py.json",
-      "sha256": "dac7ffce04724ba51ef765524f6362cabf519400523bf1bf306e997ab65f0caf",
-      "line_count": 62,
-      "size_bytes": 1863
+      "sha256": "e6c8f8a8f47bf0b7a3b2531ec153bfa0f03db1b4def9a26430f7f2733fd58bf7",
+      "line_count": 64,
+      "size_bytes": 2007
     },
     "tools/codemap/update.py": {
       "role": "tooling",
@@ -11222,6 +11327,13 @@
       "sha256": "772e91fc12e400bf660adb2a31add43cc7b95ee65d2ebdd31fe9180cdf89c6f2",
       "line_count": 112,
       "size_bytes": 6009
+    },
+    "tools/docs/render_responsibility_docs.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.docs.render_responsibility_docs.py.json",
+      "sha256": "ed292bbaaea5ec5b2e056d9b680668cd180058d74a63be0274c16c23ce4e8f8c",
+      "line_count": 53,
+      "size_bytes": 3277
     }
   },
   "edges": [
@@ -11256,6 +11368,10 @@
     [
       "README.md",
       "docs/acceptance/RELEASE_V0_2_0_20260711.md"
+    ],
+    [
+      "README.md",
+      "docs/acceptance/RELEASE_V0_3_0_20260711.md"
     ],
     [
       "README.md",
@@ -11518,16 +11634,32 @@
       "src/hate/p2p3_io.py"
     ],
     [
+      "src/hate/bridge/__init__.py",
+      "src/hate/bridge/router.py"
+    ],
+    [
+      "src/hate/bridge/materializer.py",
+      "src/hate/bridge/schemas.py"
+    ],
+    [
+      "src/hate/bridge/router.py",
+      "src/hate/bridge/protocol.py"
+    ],
+    [
+      "src/hate/bridge/router.py",
+      "src/hate/bridge/schemas.py"
+    ],
+    [
       "src/hate/cli.py",
       "src/hate/cli_handlers.py"
     ],
     [
       "src/hate/cli_handlers.py",
-      "src/hate/expansion_runner.py"
+      "src/hate/bridge/materializer.py"
     ],
     [
       "src/hate/cli_handlers.py",
-      "src/hate/gap_closure.py"
+      "src/hate/bridge/router.py"
     ],
     [
       "src/hate/cli_handlers.py",
@@ -11543,35 +11675,15 @@
     ],
     [
       "src/hate/cli_handlers.py",
-      "src/hate/p1b.py"
-    ],
-    [
-      "src/hate/cli_handlers.py",
-      "src/hate/p2p3.py"
-    ],
-    [
-      "src/hate/cli_handlers.py",
-      "src/hate/platform_cli.py"
-    ],
-    [
-      "src/hate/cli_handlers.py",
-      "src/hate/product_grade.py"
-    ],
-    [
-      "src/hate/cli_handlers.py",
-      "src/hate/release.py"
-    ],
-    [
-      "src/hate/cli_handlers.py",
       "src/hate/store_legacy.py"
-    ],
-    [
-      "src/hate/cli_handlers.py",
-      "src/hate/validation_cycles.py"
     ],
     [
       "src/hate/commercial/__init__.py",
       "src/hate/commercial/truthfulness.py"
+    ],
+    [
+      "src/hate/compat/v0_2/__init__.py",
+      "src/hate/compat/v0_2/handlers.py"
     ],
     [
       "src/hate/connectors/__init__.py",
@@ -12778,6 +12890,18 @@
       "src/hate/security/artifact_safety.py"
     ],
     [
+      "tests/test_bridge_router.py",
+      "src/hate/bridge/materializer.py"
+    ],
+    [
+      "tests/test_bridge_router.py",
+      "src/hate/bridge/router.py"
+    ],
+    [
+      "tests/test_bridge_router.py",
+      "src/hate/cli.py"
+    ],
+    [
       "tests/test_cli_release_candidate.py",
       "src/hate/cli.py"
     ],
@@ -13444,6 +13568,14 @@
     [
       "tests/test_workflow_task_seed.py",
       "src/hate/workflow_task_seed.py"
+    ],
+    [
+      "tools/ci/responsibility_scope_gate.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tools/ci/schema_meta_gate.py",
+      "src/hate/bridge/schemas.py"
     ],
     [
       "tools/ci/schema_meta_gate.py",

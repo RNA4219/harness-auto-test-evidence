@@ -2,51 +2,34 @@
   "path": "src/hate/cli_handlers.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "9283e4884146524d63ace8148500b71eec95b613862b9ebfc1a91e7cbe82311b",
-  "line_count": 566,
-  "size_bytes": 20775,
+  "sha256": "7503ef5575f7b9cd1a87a54bd8ae5d3e0fbdfae87d173445d232f4f1329c62a0",
+  "line_count": 163,
+  "size_bytes": 5908,
   "headings": [],
   "imports": [
-    ".evaluation",
-    ".expansion_runner",
-    ".gap_closure",
+    ".bridge.materializer",
+    ".bridge.router",
     ".p0a",
     ".p0b",
     ".p1a",
-    ".p1b",
-    ".p2p3",
-    ".platform_cli",
-    ".product_grade",
-    ".release",
     ".store_legacy",
-    ".validation_cycles",
     "__future__",
     "argparse",
     "json",
-    "pathlib",
-    "sys",
-    "typing"
+    "sys"
   ],
   "links": [],
   "depends_on": [
-    "src/hate/expansion_runner.py",
-    "src/hate/gap_closure.py",
+    "src/hate/bridge/materializer.py",
+    "src/hate/bridge/router.py",
     "src/hate/p0a.py",
     "src/hate/p0b.py",
     "src/hate/p1a.py",
-    "src/hate/p1b.py",
-    "src/hate/p2p3.py",
-    "src/hate/platform_cli.py",
-    "src/hate/product_grade.py",
-    "src/hate/release.py",
-    "src/hate/store_legacy.py",
-    "src/hate/validation_cycles.py"
+    "src/hate/store_legacy.py"
   ],
   "tags": [
     "fixture",
     "qeg",
-    "release",
-    "store",
-    "workflow"
+    "store"
   ]
 }

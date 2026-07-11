@@ -2,9 +2,9 @@
   "path": "docs/process/RELEASE_MIGRATION_POLICY.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "eb08215c688993db7741b007a6fc142ddfcf66807ea53470ce8822625086ffff",
-  "line_count": 177,
-  "size_bytes": 7499,
+  "sha256": "3a47de308c16813dce26e429a5e351bee119f7b237609a0182f2690ffcce18e4",
+  "line_count": 194,
+  "size_bytes": 8245,
   "headings": [
     "# Release and Migration Policy",
     "## 1. 目的",
@@ -20,7 +20,8 @@
     "## 11. Retention / Legal Hold Migration Guard",
     "## 12. Migration Compatibility Report",
     "## 13. Legal Hold Transition Evidence",
-    "## 14. Release Candidate Pack"
+    "## 14. Release Candidate Pack",
+    "## Responsibility Freeze (generated)"
   ],
   "imports": [],
   "links": [],

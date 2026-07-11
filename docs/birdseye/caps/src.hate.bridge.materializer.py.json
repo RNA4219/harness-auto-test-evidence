@@ -1,0 +1,28 @@
+{
+  "path": "src/hate/bridge/materializer.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1969745825177dea48bc4bfe3402bd4b57c873b621d681d8c3f6371ab20f7298",
+  "line_count": 96,
+  "size_bytes": 3667,
+  "headings": [],
+  "imports": [
+    ".schemas",
+    "__future__",
+    "hashlib",
+    "json",
+    "os",
+    "pathlib",
+    "shutil",
+    "sys",
+    "tempfile",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/schemas.py"
+  ],
+  "tags": [
+    "schema"
+  ]
+}
