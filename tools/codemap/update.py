@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import re
+import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -114,7 +115,7 @@ def build_birdseye(root: Path) -> dict[str, Any]:
 
 def collect_sources(root: Path) -> list[SourceFile]:
     sources: list[SourceFile] = []
-    for path in sorted(root.rglob("*")):
+    for path in _candidate_paths(root):
         if not path.is_file():
             continue
         rel_path = path.relative_to(root)
@@ -136,6 +137,19 @@ def collect_sources(root: Path) -> list[SourceFile]:
             )
         )
     return sources
+
+
+def _candidate_paths(root: Path) -> list[Path]:
+    result = subprocess.run(
+        ["git", "-C", str(root), "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    if result.returncode == 0:
+        paths = [root / item.decode("utf-8", errors="surrogateescape") for item in result.stdout.split(b"\0") if item]
+        return sorted(paths, key=lambda path: path.relative_to(root).as_posix())
+    return sorted(root.rglob("*"))
 
 
 def should_exclude(rel_path: Path) -> bool:

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -58,3 +59,16 @@ def test_codemap_hash_is_stable_across_line_endings(tmp_path: Path) -> None:
     assert crlf_source.size_bytes == lf_source.size_bytes
     assert crlf_source.line_count == lf_source.line_count
     assert crlf_source.text == lf_source.text
+
+
+def test_codemap_excludes_gitignored_generated_files(tmp_path: Path) -> None:
+    subprocess.run(["git", "init", "--quiet"], cwd=tmp_path, check=True)
+    (tmp_path / ".gitignore").write_text("ignored/\n", encoding="utf-8")
+    (tmp_path / "kept.md").write_text("# Kept\n", encoding="utf-8")
+    (tmp_path / "ignored").mkdir()
+    (tmp_path / "ignored/generated.md").write_text("# Generated\n", encoding="utf-8")
+
+    generated = build_birdseye(tmp_path)
+
+    assert "kept.md" in generated["nodes"]
+    assert "ignored/generated.md" not in generated["nodes"]

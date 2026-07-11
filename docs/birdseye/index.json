@@ -1,5 +1,5 @@
 {
-  "generated_at": "b351bb35417a",
+  "generated_at": "6d530d7e8a69",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -3487,188 +3487,6 @@
       "sha256": "9f0a2b215e260bc0c6b6907a0ce6ff894629a4aac21e50a4e157547ade7164de",
       "line_count": 31,
       "size_bytes": 1040
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-input/diff-risk-test.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-input.diff-risk-test.json.json",
-      "sha256": "56280678cb034eecead96e7de84c8eac027722636c5f7ca8daabb9ea33fcaa01",
-      "line_count": 59,
-      "size_bytes": 1471
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-input/p0a/artifact-manifest.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-input.p0a.artifact-manifest.json.json",
-      "sha256": "1affde5a7fdd2b2b11f5a909dd26d432b347a9678d2febaa16571b58b8ca4ffd",
-      "line_count": 8,
-      "size_bytes": 192
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-input/p0a/precheck-decision.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-input.p0a.precheck-decision.json.json",
-      "sha256": "fbcb3cb19079c9ef58b0d3744656797d1f59db47295d58a240d4e06aa976055e",
-      "line_count": 26,
-      "size_bytes": 793
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-input/p0a/record.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-input.p0a.record.json.json",
-      "sha256": "9f0a2b215e260bc0c6b6907a0ce6ff894629a4aac21e50a4e157547ade7164de",
-      "line_count": 31,
-      "size_bytes": 1040
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/diff-risk-test.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.diff-risk-test.json.json",
-      "sha256": "67942d3b9d19f3097609a1b4ff33730f56ca328418b9fe42f3c07b02cae72363",
-      "line_count": 79,
-      "size_bytes": 1610
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/HATE-run.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.HATE-run.json.json",
-      "sha256": "624272a2b63427d722b9c0477dbb20ba12e486a0292155229158e90ca56134bd",
-      "line_count": 27,
-      "size_bytes": 829
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/artifact-manifest.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.artifact-manifest.json.json",
-      "sha256": "1affde5a7fdd2b2b11f5a909dd26d432b347a9678d2febaa16571b58b8ca4ffd",
-      "line_count": 8,
-      "size_bytes": 192
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/precheck-decision.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.precheck-decision.json.json",
-      "sha256": "fbcb3cb19079c9ef58b0d3744656797d1f59db47295d58a240d4e06aa976055e",
-      "line_count": 26,
-      "size_bytes": 793
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-input/p0a/record.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-input.p0a.record.json.json",
-      "sha256": "9f0a2b215e260bc0c6b6907a0ce6ff894629a4aac21e50a4e157547ade7164de",
-      "line_count": 31,
-      "size_bytes": 1040
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/diff-risk-test.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.diff-risk-test.json.json",
-      "sha256": "ce98cbd239d356e7a8196439ab99762d9d655bd2134e5e2267aacf7f401ae26e",
-      "line_count": 79,
-      "size_bytes": 1611
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/evidence-map.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.evidence-map.json.json",
-      "sha256": "0325ea6fda383f0c39c3d3a251e1b075c360693d40ac645be763fb25cf9fe32a",
-      "line_count": 87,
-      "size_bytes": 2047
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-bundle.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.qeg-bundle.json.json",
-      "sha256": "8f5d68b5ee1623b32efe5df6e491fab4eed94a9d94dbec76baac8fa0774b8eff",
-      "line_count": 283,
-      "size_bytes": 6723
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-export-report.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.qeg-export-report.json.json",
-      "sha256": "46534385a744f7adf04ef48dfbf7467e54075db389bc583938899e5edf2721a3",
-      "line_count": 49,
-      "size_bytes": 1260
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/qeg-export-summary.md": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.qeg-export-summary.md.json",
-      "sha256": "be741bbe6eea7ea88a3c57900453405950d33468372ababcd6d73595f5f69e79",
-      "line_count": 17,
-      "size_bytes": 399
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-missing-source-ref-output/risk-debt-register.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-missing-source-ref-output.risk-debt-register.json.json",
-      "sha256": "794ef5b83921bc624e045fa88f0722e84fca9149d7387b9025f9419dcd8ed5d4",
-      "line_count": 17,
-      "size_bytes": 388
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/diff-risk-test.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.diff-risk-test.json.json",
-      "sha256": "c0a01fcfb84b32ba8e9e3169dd8cee7ab0357f753d44a401533b78b1b75eb9ff",
-      "line_count": 85,
-      "size_bytes": 1742
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/HATE-run.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.HATE-run.json.json",
-      "sha256": "624272a2b63427d722b9c0477dbb20ba12e486a0292155229158e90ca56134bd",
-      "line_count": 27,
-      "size_bytes": 829
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/artifact-manifest.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.artifact-manifest.json.json",
-      "sha256": "fc8ba82f951cdd15730c15ef045fdc37e683478b4bf11f066cdadd0a8d53a6f3",
-      "line_count": 23,
-      "size_bytes": 646
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/precheck-decision.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.precheck-decision.json.json",
-      "sha256": "fbcb3cb19079c9ef58b0d3744656797d1f59db47295d58a240d4e06aa976055e",
-      "line_count": 26,
-      "size_bytes": 793
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-input/p0a/record.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-input.p0a.record.json.json",
-      "sha256": "9f0a2b215e260bc0c6b6907a0ce6ff894629a4aac21e50a4e157547ade7164de",
-      "line_count": 31,
-      "size_bytes": 1040
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/diff-risk-test.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.diff-risk-test.json.json",
-      "sha256": "554ec4592775f7a2725496351a840b1a2d1b633732d8c5d7a883fa12110968c7",
-      "line_count": 85,
-      "size_bytes": 1743
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/evidence-map.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.evidence-map.json.json",
-      "sha256": "2b48ab4739baf53a2b5881866cf700b849ae504c7cd33932ab5081aaa240813d",
-      "line_count": 101,
-      "size_bytes": 2546
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-bundle.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.qeg-bundle.json.json",
-      "sha256": "da7b451635b102f7778b2b655d6d6d30b2aaa97923772f080165215ece856236",
-      "line_count": 299,
-      "size_bytes": 7259
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-export-report.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.qeg-export-report.json.json",
-      "sha256": "2db55079e486610003fe73b7dbe0c95282ed68c082d8df7329a9d313fee93fba",
-      "line_count": 77,
-      "size_bytes": 2230
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/qeg-export-summary.md": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.qeg-export-summary.md.json",
-      "sha256": "be741bbe6eea7ea88a3c57900453405950d33468372ababcd6d73595f5f69e79",
-      "line_count": 17,
-      "size_bytes": 399
-    },
-    "fixtures/golden/p0b-qeg-minimal/test-unsafe-artifact-output/risk-debt-register.json": {
-      "role": "fixture",
-      "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.test-unsafe-artifact-output.risk-debt-register.json.json",
-      "sha256": "794ef5b83921bc624e045fa88f0722e84fca9149d7387b9025f9419dcd8ed5d4",
-      "line_count": 17,
-      "size_bytes": 388
     },
     "fixtures/golden/p1a-trust-minimal/README.md": {
       "role": "fixture",
@@ -10540,9 +10358,9 @@
     "tests/test_codemap_update.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_codemap_update.py.json",
-      "sha256": "127c7ac32b140125fe16bea999c18c1a1767777d6290232b27df5c85935b600f",
-      "line_count": 60,
-      "size_bytes": 2489
+      "sha256": "337d0e5d97b4f07a74e68dc85fbdb58dda04f2d7eec4a7b781fa12428897baf1",
+      "line_count": 74,
+      "size_bytes": 3068
     },
     "tests/test_commercial_truthfulness.py": {
       "role": "test",
@@ -11394,9 +11212,9 @@
     "tools/codemap/update.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.codemap.update.py.json",
-      "sha256": "2b1e4a51e46cae1101cd199d179a83f501f36841a5019d834e5e087a65276d24",
-      "line_count": 317,
-      "size_bytes": 10510
+      "sha256": "e60221b5c8231a74236c0e16c699033d325a102d8a5d972c7347156ebc4182ed",
+      "line_count": 331,
+      "size_bytes": 11064
     },
     "tools/docs/render_post_poc_status.py": {
       "role": "tooling",
