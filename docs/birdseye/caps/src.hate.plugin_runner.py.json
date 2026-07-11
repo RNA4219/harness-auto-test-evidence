@@ -2,9 +2,9 @@
   "path": "src/hate/plugin_runner.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "80e20fdba87dbf69439ade91959327b1183caab73093453f6825afac3c80cdc9",
-  "line_count": 431,
-  "size_bytes": 16067,
+  "sha256": "1a78c4c84a68eeaa4ece356bb9fe22070db97c238a0eba662a30eea6d547b65e",
+  "line_count": 436,
+  "size_bytes": 16254,
   "headings": [],
   "imports": [
     "__future__",

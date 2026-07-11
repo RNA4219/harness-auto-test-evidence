@@ -1,5 +1,5 @@
 {
-  "generated_at": "72a65041c502",
+  "generated_at": "b6d6dde36141",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -9749,9 +9749,9 @@
     "src/hate/plugin_runner.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.plugin_runner.py.json",
-      "sha256": "80e20fdba87dbf69439ade91959327b1183caab73093453f6825afac3c80cdc9",
-      "line_count": 431,
-      "size_bytes": 16067
+      "sha256": "1a78c4c84a68eeaa4ece356bb9fe22070db97c238a0eba662a30eea6d547b65e",
+      "line_count": 436,
+      "size_bytes": 16254
     },
     "src/hate/plugins/__init__.py": {
       "role": "implementation",
