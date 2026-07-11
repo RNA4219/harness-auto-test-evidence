@@ -58,4 +58,3 @@ def test_scope_gate_rejects_unregistered_record_type() -> None:
     )
     findings = _check(registry, modified_schemas)
     assert any("record registry mismatch" in finding for finding in findings)
-

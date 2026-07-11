@@ -2,9 +2,9 @@
   "path": "tests/test_responsibility_architecture.py",
   "role": "test",
   "kind": "py",
-  "sha256": "9c7c82777101339560d3620b8b3021ed81b5cee553ae4a6307131363e99507c4",
-  "line_count": 61,
-  "size_bytes": 2522,
+  "sha256": "5caa6633d151f53db073a8a59afccfed7f3ca0e2a0385e2e4b7f7c22a09c5d35",
+  "line_count": 60,
+  "size_bytes": 2521,
   "headings": [],
   "imports": [
     "copy",
