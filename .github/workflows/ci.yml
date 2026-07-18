@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Set up uv
-        uses: astral-sh/setup-uv@e06108dd0aef18192324c70427afc47652e63a82 # v7.6.0 (node24)
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v7.6.0 (node24)
       - name: Install dependencies
         run: uv sync --dev --frozen
       - name: Ruff
@@ -58,7 +58,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Set up uv
-        uses: astral-sh/setup-uv@e06108dd0aef18192324c70427afc47652e63a82 # v7.6.0 (node24)
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v7.6.0 (node24)
       - name: Install dependencies
         run: uv sync --dev --frozen
       - name: Unit and contract tests
@@ -74,7 +74,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Set up uv
-        uses: astral-sh/setup-uv@e06108dd0aef18192324c70427afc47652e63a82 # v7.6.0 (node24)
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v7.6.0 (node24)
       - name: Install dependencies
         run: uv sync --dev --frozen
       - name: Process, path, and plugin tests
@@ -90,7 +90,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Set up uv
-        uses: astral-sh/setup-uv@e06108dd0aef18192324c70427afc47652e63a82 # v7.6.0 (node24)
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v7.6.0 (node24)
       - name: Build distributions
         run: uv build --out-dir dist
       - name: Installed wheel smoke
@@ -109,7 +109,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Set up uv
-        uses: astral-sh/setup-uv@e06108dd0aef18192324c70427afc47652e63a82 # v7.6.0 (node24)
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v7.6.0 (node24)
       - name: Install dependencies
         run: uv sync --dev --frozen
       - name: Full regression
