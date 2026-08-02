@@ -2,27 +2,26 @@
   "path": "src/hate/security/redaction.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "59a26439e6ded600b49d38ce39f2a5a0970efef128f9932b933f12e90d035a4f",
-  "line_count": 376,
-  "size_bytes": 13659,
-  "headings": [
-    "# Re-use patterns from artifact_safety.py"
-  ],
+  "sha256": "78e8f2f9431181a52a3afaa64a237f20f40da5bb6d7e58d8c5521debb4299bcf",
+  "line_count": 308,
+  "size_bytes": 11570,
+  "headings": [],
   "imports": [
+    ".patterns",
     "__future__",
     "datetime",
     "hashlib",
     "json",
-    "pathlib",
     "re",
     "typing",
     "urllib.parse",
     "uuid"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/security/patterns.py"
+  ],
   "tags": [
-    "api",
     "artifact",
     "fixture",
     "security",

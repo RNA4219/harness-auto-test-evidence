@@ -1,5 +1,5 @@
 {
-  "generated_at": "e82a6ae92728",
+  "generated_at": "0317688f7ae9",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -9945,9 +9945,9 @@
     "src/hate/security/artifact_safety.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.artifact_safety.py.json",
-      "sha256": "563b0328454179ee5296da41ffc0e16b1de1b5a9fc15fda5516d6898716cb2a7",
-      "line_count": 628,
-      "size_bytes": 22602
+      "sha256": "4acba092e67c77a760af95e6d7a07768db5e8f14963a088cc9cdbe79af6048ab",
+      "line_count": 563,
+      "size_bytes": 20371
     },
     "src/hate/security/export_filter.py": {
       "role": "implementation",
@@ -9963,6 +9963,13 @@
       "line_count": 399,
       "size_bytes": 15389
     },
+    "src/hate/security/patterns.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.security.patterns.py.json",
+      "sha256": "997e31a910d8537e1226bc6ccd3da060278d920e182b1c54cb482912820173e6",
+      "line_count": 117,
+      "size_bytes": 3610
+    },
     "src/hate/security/quarantine_report.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.quarantine_report.py.json",
@@ -9973,9 +9980,9 @@
     "src/hate/security/redaction.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.redaction.py.json",
-      "sha256": "59a26439e6ded600b49d38ce39f2a5a0970efef128f9932b933f12e90d035a4f",
-      "line_count": 376,
-      "size_bytes": 13659
+      "sha256": "78e8f2f9431181a52a3afaa64a237f20f40da5bb6d7e58d8c5521debb4299bcf",
+      "line_count": 308,
+      "size_bytes": 11570
     },
     "src/hate/security/summary_filter.py": {
       "role": "implementation",
@@ -11152,6 +11159,13 @@
       "sha256": "fa0c66fa478a74176d87fa043cecbd9fbdb65fbc51a7c55c32c5615a243d41b9",
       "line_count": 257,
       "size_bytes": 9387
+    },
+    "tests/test_security_pattern_contract.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_security_pattern_contract.py.json",
+      "sha256": "39b282cac00d55224361d153c4931eca009f10cee3f563d24ccf9b18132bd005",
+      "line_count": 72,
+      "size_bytes": 3451
     },
     "tests/test_security_quarantine_report.py": {
       "role": "test",
@@ -12626,12 +12640,20 @@
       "src/hate/security/artifact_archive.py"
     ],
     [
+      "src/hate/security/artifact_safety.py",
+      "src/hate/security/patterns.py"
+    ],
+    [
       "src/hate/security/quarantine_report.py",
       "src/hate/security/export_filter.py"
     ],
     [
       "src/hate/security/quarantine_report.py",
       "src/hate/security/summary_filter.py"
+    ],
+    [
+      "src/hate/security/redaction.py",
+      "src/hate/security/patterns.py"
     ],
     [
       "src/hate/store/__init__.py",
