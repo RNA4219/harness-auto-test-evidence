@@ -2,9 +2,9 @@
   "path": "src/hate/dashboard/view_models.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "9fb41bb9fade551de1a58a3a096e899571bbf9757393b51da7948fb3b0880de6",
-  "line_count": 545,
-  "size_bytes": 19349,
+  "sha256": "5ea97d5fa6dcf9068496c8a8db6b88e00950c64771c364db940b032d8588d5fe",
+  "line_count": 551,
+  "size_bytes": 19498,
   "headings": [
     "# Builder functions - project from reports, never compute verdicts"
   ],

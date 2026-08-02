@@ -463,9 +463,15 @@ def build_manual_review_pending_state(
     manual_review_requests: list[dict[str, Any]],
     run_id: str,
     profile: str,
+    *,
+    now: str | None = None,
 ) -> ManualReviewPendingState:
     """Build ManualReviewPendingState from review requests."""
-    now = datetime.now(UTC)
+    current_time = (
+        datetime.fromisoformat(now.replace("Z", "+00:00"))
+        if now
+        else datetime.now(UTC)
+    )
 
     pending_reviews = []
     overdue_count = 0
@@ -485,7 +491,7 @@ def build_manual_review_pending_state(
         expires_at_str = request.get("expires_at")
         if expires_at_str:
             expires_at = datetime.fromisoformat(expires_at_str.replace("Z", "+00:00"))
-            if now > expires_at:
+            if current_time > expires_at:
                 review["is_overdue"] = True
                 overdue_count += 1
 

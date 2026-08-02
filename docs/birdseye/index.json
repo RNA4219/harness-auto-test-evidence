@@ -1,5 +1,5 @@
 {
-  "generated_at": "0317688f7ae9",
+  "generated_at": "f08e1d599ddf",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -2182,9 +2182,9 @@
     "fixtures/dashboard/uat-states/manual-review-pending/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.manual-review-pending.fixture.json.json",
-      "sha256": "71033f9ecdc32249a1f98c4e239277d25425f8d1a8ce8475a52ca1aeaea3449e",
-      "line_count": 42,
-      "size_bytes": 1306
+      "sha256": "ec61f59f2707f6dd14f150732db623347b2a7d0c6bb8b430f3c7c3f0165c3bd1",
+      "line_count": 43,
+      "size_bytes": 1342
     },
     "fixtures/dashboard/uat-states/missing-oracle/fixture.json": {
       "role": "fixture",
@@ -2231,9 +2231,9 @@
     "fixtures/dashboard/view-models/manual-review-pending/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.dashboard.view-models.manual-review-pending.fixture.json.json",
-      "sha256": "e203f143a29fad6cd9705e0391c204c1b3a12e92f6b12f3ef4927a89cf4da08e",
-      "line_count": 33,
-      "size_bytes": 995
+      "sha256": "b701cf07dfc902f665a6b8ec5eafe05476a8a3225419f82d84d77890aaf84f42",
+      "line_count": 34,
+      "size_bytes": 1031
     },
     "fixtures/dashboard/view-models/missing-report/fixture.json": {
       "role": "fixture",
@@ -8923,16 +8923,16 @@
     "src/hate/dashboard/uat_states.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.dashboard.uat_states.py.json",
-      "sha256": "219cf678986bf7654185c5243931e8c037a69ca468c53d21a3d35d0abc4e228c",
-      "line_count": 609,
-      "size_bytes": 19714
+      "sha256": "28dffa006f07eab33465845ca86182bbfa92664d71de574a3a8a9aa240c08bc8",
+      "line_count": 615,
+      "size_bytes": 19862
     },
     "src/hate/dashboard/view_models.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.dashboard.view_models.py.json",
-      "sha256": "9fb41bb9fade551de1a58a3a096e899571bbf9757393b51da7948fb3b0880de6",
-      "line_count": 545,
-      "size_bytes": 19349
+      "sha256": "5ea97d5fa6dcf9068496c8a8db6b88e00950c64771c364db940b032d8588d5fe",
+      "line_count": 551,
+      "size_bytes": 19498
     },
     "src/hate/dashboard/wireframe.py": {
       "role": "implementation",
@@ -10505,16 +10505,16 @@
     "tests/test_dashboard_uat_states.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_dashboard_uat_states.py.json",
-      "sha256": "2ca9b0066dff745587497277f9f0c71f6732a98ad3917b06dbdf866567a65a56",
-      "line_count": 511,
-      "size_bytes": 18696
+      "sha256": "4868f0dd736b12d688d3bb50271212c9acf3292afb6235416c59641ed2ef2412",
+      "line_count": 512,
+      "size_bytes": 18732
     },
     "tests/test_dashboard_view_models.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_dashboard_view_models.py.json",
-      "sha256": "e204d256073fafedb227c7c11fc1242ae52806a0689b39ad6f5f9cf73f17f4a2",
-      "line_count": 536,
-      "size_bytes": 20597
+      "sha256": "686c164d6eaf47e1190a036d18667a8b3b479fd0b064d2f197d104bcac51063a",
+      "line_count": 539,
+      "size_bytes": 20655
     },
     "tests/test_deployment_topology.py": {
       "role": "test",
