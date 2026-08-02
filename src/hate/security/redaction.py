@@ -11,74 +11,18 @@ import json
 import re
 import uuid
 from datetime import UTC, datetime
-from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
-
-# Re-use patterns from artifact_safety.py
-SECRET_PATTERNS = [
-    (
-        "api_key_like",
-        re.compile(r"(?i)\b(?:api[_-]?key|access[_-]?key|secret[_-]?key|api_secret)\s*[:=]\s*['\"]([A-Za-z0-9_]{20,})['\"]"),
-    ),
-    (
-        "github_token_like",
-        re.compile(r"(?i)\b(?:ghp_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{22}_[A-Za-z0-9]{24})\b"),
-    ),
-    ("aws_access_key_like", re.compile(r"(?i)\bAKIA[0-9A-Z]{16}\b")),
-    ("openai_like", re.compile(r"(?i)\bsk-[A-Za-z0-9_-]{40,}\b")),
-    ("password_like", re.compile(r"(?i)\b(?:password|passwd|credential)\s*[:=]\s*['\"][^'\"\\s]{8,}['\"]")),
-]
-
-PRIVATE_KEY_PATTERNS = [
-    ("pem_private_key", re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----")),
-]
-
-PII_PATTERNS = [
-    ("pii_email", re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")),
-    ("pii_phone", re.compile(r"\b\+?\d{1,3}[-.\s]?(?:\d{1,4}[-.\s])?\d{2,4}[-.\s]\d{2,4}[-.\s]\d{3,4}\b")),
-    ("pii_user_id", re.compile(r"(?i)\b(?:user[_-]?id|customer[_-]?id)\s*[:=]\s*['\"][^'\"]+['\"]")),
-    ("pii_name", re.compile(r"(?i)\b(?:full[_-]?name|name)\s*[:=]\s*['\"][A-Za-z]+ [A-Za-z]+['\"]")),
-]
-
-PATH_PATTERNS = [
-    (
-        re.compile(r"[A-Za-z]:\\(?:Users|\\[Ss]hared|Program Files|ProgramData)\\[^\\\"'\\s]+"),
-        "Windows user/path",
-    ),
-    (
-        re.compile(r"/home/[A-Za-z0-9._-]+/[^\s\"']+"),
-        "Unix home path",
-    ),
-    (
-        re.compile(r"(?:^|\s)(/etc|/var/(?:tmp|log|private))/[^\s\"']+"),
-        "Absolute/private filesystem path",
-    ),
-    (
-        re.compile(r"\.\./\.\.?|\.\\\.\.\\", re.IGNORECASE),
-        "Path traversal",
-    ),
-]
-
-URL_PATTERN = re.compile(r"https?://[^\s\"'<>`]+")
-ALLOWLIST_URL_DOMAINS = {
-    "docs.python.org",
-    "readthedocs.io",
-    "pypi.org",
-    "github.com",
-}
-SUSPICIOUS_URL_HINTS = (
-    "x-amz-signature",
-    "x-amz-meta",
-    "signature=",
-    "signed_url",
-    "exp=",
-    "token=",
-    "oauth_token",
-    "access_token",
-    "bearer=",
-    "secret=",
+from .patterns import (
+    PATH_PATTERNS,
+    PII_PATTERNS,
+    PRIVATE_KEY_PATTERNS,
+    SECRET_PATTERNS,
+    URL_PATTERN,
+    classify_url,
+    has_secret_allowlist_marker,
+    has_synthetic_pii_marker,
 )
 
 CLASSIFICATION_ORDER = {
@@ -100,29 +44,30 @@ def _redaction_id() -> str:
     return f"redaction-{uuid.uuid4().hex[:12]}"
 
 
-def _is_url_allowlisted(url: str) -> bool:
-    host = urlparse(url).hostname or ""
-    return any(host == domain or host.endswith(f".{domain}") for domain in ALLOWLIST_URL_DOMAINS)
-
-
-def _is_url_suspicious(url: str) -> bool:
-    lower = url.lower()
-    return any(token in lower for token in SUSPICIOUS_URL_HINTS)
-
-
-def _is_synthetic_pii_allowed(content: str) -> bool:
-    return bool(re.search(r"(?i)synthetic|@allowlist|sample[_-]?pii|fake[_-]?pii", content))
-
-
-def _is_test_secret_allowed(content: str) -> bool:
-    return bool(re.search(r"(?i)@allowlist|allowlist[_-]?fixture|test[_-]?secret|fake[_-]?secret", content))
-
-
 def _compute_proof_hash(original: str, redacted: str, redaction_log: list[dict]) -> str:
     """Compute non-reversible proof hash for redaction verification."""
     log_json = json.dumps(redaction_log, sort_keys=True)
     combined = f"{original}\n{redacted}\n{log_json}"
     return hashlib.sha256(combined.encode("utf-8")).hexdigest()
+
+
+def _coalesce_replacements(
+    replacements: list[tuple[int, int, str]],
+) -> list[tuple[int, int, str]]:
+    """Coalesce overlapping spans before applying offset-based replacements."""
+    ordered = sorted(replacements, key=lambda item: (item[0], -item[1]))
+    coalesced: list[tuple[int, int, str]] = []
+
+    for start, end, marker in ordered:
+        if not coalesced or start >= coalesced[-1][1]:
+            coalesced.append((start, end, marker))
+            continue
+
+        previous_start, previous_end, previous_marker = coalesced[-1]
+        if end > previous_end:
+            coalesced[-1] = (previous_start, end, previous_marker)
+
+    return coalesced
 
 
 def _classify_redaction_effect(effect: str) -> str:
@@ -179,7 +124,7 @@ def redact_artifact(fixture: dict[str, Any]) -> dict[str, Any]:
     for pattern_name, pattern in SECRET_PATTERNS:
         for match in pattern.finditer(original_content):
             # Check if content has test/allowlist markers
-            if _is_test_secret_allowed(original_content):
+            if has_secret_allowlist_marker(original_content):
                 continue  # Skip all secrets in test fixtures
 
             start, end = match.start(), match.end()
@@ -231,7 +176,7 @@ def redact_artifact(fixture: dict[str, Any]) -> dict[str, Any]:
     for pattern_name, pattern in PII_PATTERNS:
         for match in pattern.finditer(original_content):
             # Check if content has synthetic/allowlist markers
-            if _is_synthetic_pii_allowed(original_content):
+            if has_synthetic_pii_marker(original_content):
                 continue  # Skip all PII in synthetic/test content
 
             start, end = match.start(), match.end()
@@ -282,30 +227,30 @@ def redact_artifact(fixture: dict[str, Any]) -> dict[str, Any]:
     # Detect and redact private URLs
     for match in URL_PATTERN.finditer(original_content):
         url = match.group(0)
-        if _is_url_allowlisted(url):
-            continue  # Skip allowlisted URLs
+        url_policy = classify_url(url)
+        if url_policy != "suspicious":
+            continue
 
-        if _is_url_suspicious(url):
-            start, end = match.start(), match.end()
-            line_num = original_content[:start].count("\n") + 1
+        start, end = match.start(), match.end()
+        line_num = original_content[:start].count("\n") + 1
 
-            replacements.append((start, end, REDACTION_MARKERS["url"]))
+        replacements.append((start, end, REDACTION_MARKERS["url"]))
 
-            redaction_log.append({
-                "type": "url",
-                "url_domain": urlparse(url).hostname or "unknown",
-                "line": line_num,
-                "span": {"start": start, "end": end},
-                "marker": REDACTION_MARKERS["url"],
-                "reason": "suspicious_url_pattern",
-            })
+        redaction_log.append({
+            "type": "url",
+            "url_domain": urlparse(url).hostname or "unknown",
+            "line": line_num,
+            "span": {"start": start, "end": end},
+            "marker": REDACTION_MARKERS["url"],
+            "reason": "suspicious_url_pattern",
+        })
 
-            source_ref = f"{artifact_path}:{line_num}"
-            source_refs.append(source_ref)
-            readiness_effects.append("hard_dq")
-            classifications.append("restricted")
+        source_ref = f"{artifact_path}:{line_num}"
+        source_refs.append(source_ref)
+        readiness_effects.append("hard_dq")
+        classifications.append("restricted")
 
-    for start, end, marker in sorted(replacements, key=lambda item: item[0], reverse=True):
+    for start, end, marker in reversed(_coalesce_replacements(replacements)):
         redacted_content = redacted_content[:start] + marker + redacted_content[end:]
 
     # Compute proof hash
@@ -316,7 +261,7 @@ def redact_artifact(fixture: dict[str, Any]) -> dict[str, Any]:
         redaction_status = "not_required"
         final_readiness = "pass"
         # Allowlisted content gets internal classification (test fixtures)
-        if _is_test_secret_allowed(original_content) or _is_synthetic_pii_allowed(original_content):
+        if has_secret_allowlist_marker(original_content) or has_synthetic_pii_marker(original_content):
             final_classification = "internal"
         else:
             final_classification = "public"
@@ -337,15 +282,21 @@ def redact_artifact(fixture: dict[str, Any]) -> dict[str, Any]:
 
     # Check for failed redaction (marker leakage)
     if redaction_status == "redacted":
-        remaining_patterns = [
-            re.compile(r"(?i)\b(?:api[_-]?key|access[_-]?key|secret[_-]?key)\s*[:=]\s*['\"][^'\"]{20,}['\"]"),
-            re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"),
-        ]
-        for pattern in remaining_patterns:
-            if pattern.search(redacted_content):
-                redaction_status = "failed"
-                final_readiness = "hard_dq"
-                break
+        remaining_patterns = [pattern for _, pattern in PRIVATE_KEY_PATTERNS]
+        if not has_secret_allowlist_marker(original_content):
+            remaining_patterns.extend(pattern for _, pattern in SECRET_PATTERNS)
+        if not has_synthetic_pii_marker(original_content):
+            remaining_patterns.extend(pattern for _, pattern in PII_PATTERNS)
+        remaining_patterns.extend(pattern for pattern, _ in PATH_PATTERNS)
+
+        sensitive_value_remains = any(pattern.search(redacted_content) for pattern in remaining_patterns)
+        unsafe_url_remains = any(
+            classify_url(match.group(0)) == "suspicious"
+            for match in URL_PATTERN.finditer(redacted_content)
+        )
+        if sensitive_value_remains or unsafe_url_remains:
+            redaction_status = "failed"
+            final_readiness = "hard_dq"
 
     report = {
         "schema_version": "HATE/v1",

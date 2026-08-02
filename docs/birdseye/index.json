@@ -1,5 +1,5 @@
 {
-  "generated_at": "e82a6ae92728",
+  "generated_at": "fa065b7bd56a",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -2182,9 +2182,9 @@
     "fixtures/dashboard/uat-states/manual-review-pending/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.dashboard.uat-states.manual-review-pending.fixture.json.json",
-      "sha256": "71033f9ecdc32249a1f98c4e239277d25425f8d1a8ce8475a52ca1aeaea3449e",
-      "line_count": 42,
-      "size_bytes": 1306
+      "sha256": "ec61f59f2707f6dd14f150732db623347b2a7d0c6bb8b430f3c7c3f0165c3bd1",
+      "line_count": 43,
+      "size_bytes": 1342
     },
     "fixtures/dashboard/uat-states/missing-oracle/fixture.json": {
       "role": "fixture",
@@ -2231,9 +2231,9 @@
     "fixtures/dashboard/view-models/manual-review-pending/fixture.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.dashboard.view-models.manual-review-pending.fixture.json.json",
-      "sha256": "e203f143a29fad6cd9705e0391c204c1b3a12e92f6b12f3ef4927a89cf4da08e",
-      "line_count": 33,
-      "size_bytes": 995
+      "sha256": "b701cf07dfc902f665a6b8ec5eafe05476a8a3225419f82d84d77890aaf84f42",
+      "line_count": 34,
+      "size_bytes": 1031
     },
     "fixtures/dashboard/view-models/missing-report/fixture.json": {
       "role": "fixture",
@@ -8923,16 +8923,16 @@
     "src/hate/dashboard/uat_states.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.dashboard.uat_states.py.json",
-      "sha256": "219cf678986bf7654185c5243931e8c037a69ca468c53d21a3d35d0abc4e228c",
-      "line_count": 609,
-      "size_bytes": 19714
+      "sha256": "28dffa006f07eab33465845ca86182bbfa92664d71de574a3a8a9aa240c08bc8",
+      "line_count": 615,
+      "size_bytes": 19862
     },
     "src/hate/dashboard/view_models.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.dashboard.view_models.py.json",
-      "sha256": "9fb41bb9fade551de1a58a3a096e899571bbf9757393b51da7948fb3b0880de6",
-      "line_count": 545,
-      "size_bytes": 19349
+      "sha256": "5ea97d5fa6dcf9068496c8a8db6b88e00950c64771c364db940b032d8588d5fe",
+      "line_count": 551,
+      "size_bytes": 19498
     },
     "src/hate/dashboard/wireframe.py": {
       "role": "implementation",
@@ -9945,9 +9945,9 @@
     "src/hate/security/artifact_safety.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.artifact_safety.py.json",
-      "sha256": "563b0328454179ee5296da41ffc0e16b1de1b5a9fc15fda5516d6898716cb2a7",
-      "line_count": 628,
-      "size_bytes": 22602
+      "sha256": "4acba092e67c77a760af95e6d7a07768db5e8f14963a088cc9cdbe79af6048ab",
+      "line_count": 563,
+      "size_bytes": 20371
     },
     "src/hate/security/export_filter.py": {
       "role": "implementation",
@@ -9963,6 +9963,13 @@
       "line_count": 399,
       "size_bytes": 15389
     },
+    "src/hate/security/patterns.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.security.patterns.py.json",
+      "sha256": "997e31a910d8537e1226bc6ccd3da060278d920e182b1c54cb482912820173e6",
+      "line_count": 117,
+      "size_bytes": 3610
+    },
     "src/hate/security/quarantine_report.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.quarantine_report.py.json",
@@ -9973,9 +9980,9 @@
     "src/hate/security/redaction.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.redaction.py.json",
-      "sha256": "59a26439e6ded600b49d38ce39f2a5a0970efef128f9932b933f12e90d035a4f",
-      "line_count": 376,
-      "size_bytes": 13659
+      "sha256": "363691ae4e873593cf415779782edb62dc6cc1eecc52956ecb5654caa6cd1c27",
+      "line_count": 327,
+      "size_bytes": 12223
     },
     "src/hate/security/summary_filter.py": {
       "role": "implementation",
@@ -10407,9 +10414,9 @@
     "tests/test_artifact_redaction.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_artifact_redaction.py.json",
-      "sha256": "ca2a1255e7148bccba82741be3322a108de3c57ebd68a2bf3b5ccf5cf89751e8",
-      "line_count": 421,
-      "size_bytes": 16951
+      "sha256": "2c85e878c4b405ab90664e615af9c5800e293eafad682f9aa67d483c44408d40",
+      "line_count": 437,
+      "size_bytes": 17637
     },
     "tests/test_artifact_safety.py": {
       "role": "test",
@@ -10498,16 +10505,16 @@
     "tests/test_dashboard_uat_states.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_dashboard_uat_states.py.json",
-      "sha256": "2ca9b0066dff745587497277f9f0c71f6732a98ad3917b06dbdf866567a65a56",
-      "line_count": 511,
-      "size_bytes": 18696
+      "sha256": "4868f0dd736b12d688d3bb50271212c9acf3292afb6235416c59641ed2ef2412",
+      "line_count": 512,
+      "size_bytes": 18732
     },
     "tests/test_dashboard_view_models.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_dashboard_view_models.py.json",
-      "sha256": "e204d256073fafedb227c7c11fc1242ae52806a0689b39ad6f5f9cf73f17f4a2",
-      "line_count": 536,
-      "size_bytes": 20597
+      "sha256": "686c164d6eaf47e1190a036d18667a8b3b479fd0b064d2f197d104bcac51063a",
+      "line_count": 539,
+      "size_bytes": 20655
     },
     "tests/test_deployment_topology.py": {
       "role": "test",
@@ -11152,6 +11159,13 @@
       "sha256": "fa0c66fa478a74176d87fa043cecbd9fbdb65fbc51a7c55c32c5615a243d41b9",
       "line_count": 257,
       "size_bytes": 9387
+    },
+    "tests/test_security_pattern_contract.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_security_pattern_contract.py.json",
+      "sha256": "39b282cac00d55224361d153c4931eca009f10cee3f563d24ccf9b18132bd005",
+      "line_count": 72,
+      "size_bytes": 3451
     },
     "tests/test_security_quarantine_report.py": {
       "role": "test",
@@ -12626,12 +12640,20 @@
       "src/hate/security/artifact_archive.py"
     ],
     [
+      "src/hate/security/artifact_safety.py",
+      "src/hate/security/patterns.py"
+    ],
+    [
       "src/hate/security/quarantine_report.py",
       "src/hate/security/export_filter.py"
     ],
     [
       "src/hate/security/quarantine_report.py",
       "src/hate/security/summary_filter.py"
+    ],
+    [
+      "src/hate/security/redaction.py",
+      "src/hate/security/patterns.py"
     ],
     [
       "src/hate/store/__init__.py",

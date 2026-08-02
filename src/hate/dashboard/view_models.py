@@ -403,6 +403,8 @@ def build_artifact_safety_view_model(
 
 def build_manual_review_queue_view_model(
     manual_review_requests: list[dict[str, Any]],
+    *,
+    now: str | None = None,
 ) -> ManualReviewQueueViewModel:
     """Build manual review queue view model.
 
@@ -411,7 +413,11 @@ def build_manual_review_queue_view_model(
     pending_reviews = []
     overdue_count = 0
 
-    now = datetime.now(UTC)
+    current_time = (
+        datetime.fromisoformat(now.replace("Z", "+00:00"))
+        if now
+        else datetime.now(UTC)
+    )
 
     for request in manual_review_requests:
         review_id = request.get("request_id", "")
@@ -424,7 +430,7 @@ def build_manual_review_queue_view_model(
         if expires_at and status == "pending":
             try:
                 expiry_dt = datetime.fromisoformat(expires_at.replace("Z", "+00:00"))
-                is_overdue = now > expiry_dt
+                is_overdue = current_time > expiry_dt
                 if is_overdue:
                     overdue_count += 1
             except (ValueError, TypeError):

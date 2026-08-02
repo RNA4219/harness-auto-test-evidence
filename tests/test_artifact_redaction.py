@@ -164,6 +164,22 @@ class TestRedactionFilter:
         assert_redaction_marker_present(report["redacted_content"], "[REDACTED_URL]")
         assert_no_remaining_pattern(report["redacted_content"], "url")
 
+    def test_overlapping_url_and_path_redactions_do_not_leak_suffix(self) -> None:
+        token = "abcdefghijklmnopqrst"
+        fixture = {
+            "artifact_id": "overlapping-url-path",
+            "artifact_path": "logs/overlapping-url-path.log",
+            "profile": "release",
+            "content": f"request=https://x.test/../secret?token={token}",
+        }
+
+        report = redact_artifact(fixture)
+
+        assert report["redaction_status"] == "redacted"
+        assert report["redacted_content"] == "request=[REDACTED_URL]"
+        assert token not in report["redacted_content"]
+        assert {entry["type"] for entry in report["redaction_log"]} >= {"path", "url"}
+
     def test_path_traversal_redaction(self) -> None:
         fixture = load_fixture("path-traversal-redacted")
         report = redact_artifact(fixture)

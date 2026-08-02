@@ -259,6 +259,7 @@ class TestManualReviewPendingState:
             manual_review_requests=input_data["manual_review_requests"],
             run_id=input_data["run_id"],
             profile=input_data["profile"],
+            now=input_data["now"],
         )
 
         expected = fixture["expected"]
