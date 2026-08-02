@@ -1,5 +1,5 @@
 {
-  "generated_at": "f08e1d599ddf",
+  "generated_at": "fa065b7bd56a",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -9980,9 +9980,9 @@
     "src/hate/security/redaction.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.security.redaction.py.json",
-      "sha256": "78e8f2f9431181a52a3afaa64a237f20f40da5bb6d7e58d8c5521debb4299bcf",
-      "line_count": 308,
-      "size_bytes": 11570
+      "sha256": "363691ae4e873593cf415779782edb62dc6cc1eecc52956ecb5654caa6cd1c27",
+      "line_count": 327,
+      "size_bytes": 12223
     },
     "src/hate/security/summary_filter.py": {
       "role": "implementation",
@@ -10414,9 +10414,9 @@
     "tests/test_artifact_redaction.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_artifact_redaction.py.json",
-      "sha256": "ca2a1255e7148bccba82741be3322a108de3c57ebd68a2bf3b5ccf5cf89751e8",
-      "line_count": 421,
-      "size_bytes": 16951
+      "sha256": "2c85e878c4b405ab90664e615af9c5800e293eafad682f9aa67d483c44408d40",
+      "line_count": 437,
+      "size_bytes": 17637
     },
     "tests/test_artifact_safety.py": {
       "role": "test",

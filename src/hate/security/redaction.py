@@ -51,6 +51,25 @@ def _compute_proof_hash(original: str, redacted: str, redaction_log: list[dict])
     return hashlib.sha256(combined.encode("utf-8")).hexdigest()
 
 
+def _coalesce_replacements(
+    replacements: list[tuple[int, int, str]],
+) -> list[tuple[int, int, str]]:
+    """Coalesce overlapping spans before applying offset-based replacements."""
+    ordered = sorted(replacements, key=lambda item: (item[0], -item[1]))
+    coalesced: list[tuple[int, int, str]] = []
+
+    for start, end, marker in ordered:
+        if not coalesced or start >= coalesced[-1][1]:
+            coalesced.append((start, end, marker))
+            continue
+
+        previous_start, previous_end, previous_marker = coalesced[-1]
+        if end > previous_end:
+            coalesced[-1] = (previous_start, end, previous_marker)
+
+    return coalesced
+
+
 def _classify_redaction_effect(effect: str) -> str:
     """Map readiness effect to classification."""
     if effect in {"hard_dq", "hold"}:
@@ -231,7 +250,7 @@ def redact_artifact(fixture: dict[str, Any]) -> dict[str, Any]:
         readiness_effects.append("hard_dq")
         classifications.append("restricted")
 
-    for start, end, marker in sorted(replacements, key=lambda item: item[0], reverse=True):
+    for start, end, marker in reversed(_coalesce_replacements(replacements)):
         redacted_content = redacted_content[:start] + marker + redacted_content[end:]
 
     # Compute proof hash
