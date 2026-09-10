@@ -2,11 +2,13 @@
   "path": "CHANGELOG.md",
   "role": "project",
   "kind": "md",
-  "sha256": "ae3aef911667886475fbde2dacd35796b5bbc67965fc7b7b287d472a33768450",
-  "line_count": 50,
-  "size_bytes": 1841,
+  "sha256": "aaab7b0028fd5df8df05345c38678614c01a838b26e22e2d577e1f5ed5e33fb7",
+  "line_count": 150,
+  "size_bytes": 15267,
   "headings": [
     "# Changelog",
+    "## Unreleased",
+    "### Fixed",
     "## 0.2.0 - 2026-07-11",
     "### Added",
     "### Changed",
@@ -18,11 +20,20 @@
     "### Distribution"
   ],
   "imports": [],
-  "links": [],
-  "depends_on": [],
+  "links": [
+    "docs/process/BRIDGE_REQUEST_CONTRACT.md",
+    "docs/process/LOCAL_STORE_IO_CONTRACT.md"
+  ],
+  "depends_on": [
+    "docs/process/BRIDGE_REQUEST_CONTRACT.md",
+    "docs/process/LOCAL_STORE_IO_CONTRACT.md"
+  ],
   "tags": [
-    "fixture",
+    "adapter",
+    "artifact",
+    "qeg",
     "release",
-    "schema"
+    "store",
+    "test"
   ]
 }

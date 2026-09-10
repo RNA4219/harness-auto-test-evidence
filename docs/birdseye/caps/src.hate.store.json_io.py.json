@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/store/json_io.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "51ac741eea47fd3a512d31562a850b8908333899892164fad32002ff46d14868",
+  "line_count": 48,
+  "size_bytes": 1630,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "json",
+    "math",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "store"
+  ]
+}

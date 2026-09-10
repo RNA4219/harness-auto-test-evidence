@@ -2,14 +2,15 @@
   "path": "schemas/HATE/v1/aete-score.schema.json",
   "role": "schema",
   "kind": "json",
-  "sha256": "477b3a8c1904dbca9d94a3a6161db48d993c90f15fde3d35332069852b983434",
-  "line_count": 45,
-  "size_bytes": 1376,
+  "sha256": "6c03eeae900841f008154ce77dd8f0581c8709240f2fd2b4b652fca6cf813f7f",
+  "line_count": 56,
+  "size_bytes": 1762,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
+    "coverage",
     "release",
     "schema"
   ]

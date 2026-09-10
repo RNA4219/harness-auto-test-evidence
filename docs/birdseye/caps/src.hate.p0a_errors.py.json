@@ -1,0 +1,18 @@
+{
+  "path": "src/hate/p0a_errors.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "575638c8b295e38fa7c2ebc28f8d9f8f089335ba0c7700554fd69b2904631b9b",
+  "line_count": 18,
+  "size_bytes": 401,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

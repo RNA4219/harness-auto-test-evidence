@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_store_bundle_input.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "7d141c965c49569146e07a849d15e05f9cd089dce2cf4286ae0ed6ebca1ebbaf",
+  "line_count": 161,
+  "size_bytes": 6824,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.atomic_write",
+    "hate.store.doctor",
+    "hate.store.replay",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "coverage",
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

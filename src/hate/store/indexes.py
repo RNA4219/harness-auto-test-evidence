@@ -17,10 +17,20 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
+import stat
+from collections.abc import Iterator
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
+
+from .atomic_write import atomic_write_bytes
+from .json_io import strict_json_loads
+
+
+def _display_text(value: object) -> str:
+    return str(value).encode("utf-8", errors="backslashreplace").decode("utf-8")
 
 
 @dataclass
@@ -37,20 +47,20 @@ class HardDQFinding(Exception):
     diagnostics: list[dict[str, Any]] = field(default_factory=list)
 
     def __str__(self) -> str:
-        return f"HardDQ({self.index_type}): {self.message} - missing {self.missing_path}"
+        return _display_text(f"HardDQ({self.index_type}): {self.message} - missing {self.missing_path}")
 
     def to_record(self) -> dict[str, Any]:
         """Convert finding to HATE record format."""
         return {
             "schema_version": "HATE/v1",
             "record_type": "hard_dq_finding",
-            "finding_id": f"dq-{hashlib.sha256(self.message.encode()).hexdigest()[:16]}",
+            "finding_id": f"dq-{hashlib.sha256(_display_text(self.message).encode()).hexdigest()[:16]}",
             "severity": "hard_block",
             "index_type": self.index_type,
-            "referenced_key": self.referenced_key,
-            "missing_path": self.missing_path,
+            "referenced_key": _display_text(self.referenced_key),
+            "missing_path": _display_text(self.missing_path),
             "diagnostics": self.diagnostics,
-            "created_at": datetime.now(timezone.utc).isoformat(),
+            "created_at": datetime.now(UTC).isoformat(),
         }
 
 
@@ -73,23 +83,45 @@ class IndexEntry:
 
     def to_jsonl(self) -> str:
         """Serialize entry to JSONL format."""
+        self.validate()
         return json.dumps({
             "key": self.key,
             "value": self.value,
             "hash": self.hash,
             "metadata": self.metadata,
-        }, ensure_ascii=False, sort_keys=True)
+        }, ensure_ascii=False, sort_keys=True, allow_nan=False)
+
+    def validate(self) -> None:
+        for name in ("key", "value", "hash"):
+            value = getattr(self, name)
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(f"index entry requires a non-blank string: {name}")
+            value.encode("utf-8")
+        if re.fullmatch(r"sha256:[a-fA-F0-9]{64}", self.hash) is None:
+            raise ValueError("index hash must be a SHA256 digest")
+        if not isinstance(self.metadata, dict):
+            raise ValueError("index metadata must be an object")
+        json.dumps(self.metadata, ensure_ascii=False, allow_nan=False).encode("utf-8")
 
     @classmethod
-    def from_jsonl(cls, line: str) -> "IndexEntry":
+    def from_jsonl(cls, line: str) -> IndexEntry:
         """Deserialize entry from JSONL format."""
-        data = json.loads(line)
-        return cls(
+        data = strict_json_loads(line)
+        if not isinstance(data, dict):
+            raise ValueError("index entry must be an object")
+        for name in ("key", "value", "hash"):
+            if not isinstance(data.get(name), str) or not data[name]:
+                raise ValueError(f"index entry requires a non-empty string: {name}")
+        if not isinstance(data.get("metadata", {}), dict):
+            raise ValueError("index metadata must be an object")
+        entry = cls(
             key=data["key"],
             value=data["value"],
             hash=data["hash"],
             metadata=data.get("metadata", {}),
         )
+        entry.validate()
+        return entry
 
 
 @dataclass
@@ -97,7 +129,8 @@ class StoreIndex:
     """Multi-dimensional index for store lookup.
 
     Each index is a JSONL file with entries for one lookup dimension.
-    Indexes are append-only for completed bundles.
+    Index files are unique-key snapshots. Completed bundle files remain append-only;
+    run and bundle keys may point to newer copies after a successful import.
     """
     index_type: str  # "runs", "bundles", "evidence", "risks", "artifacts"
     index_path: Path
@@ -106,24 +139,34 @@ class StoreIndex:
 
     def load(self) -> None:
         """Load existing index entries from JSONL file."""
-        if not self.index_path.exists():
-            self.entries = {}
-            return
-
+        loaded: dict[str, IndexEntry] = {}
+        first_lines: dict[str, int] = {}
+        line_number = 0
         try:
             with self.index_path.open("r", encoding="utf-8") as f:
                 for line in f:
+                    line_number += 1
                     line = line.strip()
                     if line:
                         entry = IndexEntry.from_jsonl(line)
-                        self.entries[entry.key] = entry
-        except json.JSONDecodeError as e:
+                        self._entry_path(entry.key, entry)
+                        if entry.key in loaded:
+                            raise IndexLookupError(
+                                "Duplicate key in index snapshot", self.index_type, entry.key,
+                                [{"issue": "duplicate_index_key", "first_line": first_lines[entry.key], "line_number": line_number}],
+                            )
+                        loaded[entry.key] = entry
+                        first_lines[entry.key] = line_number
+        except FileNotFoundError:
+            loaded = {}
+        except (OSError, ValueError, TypeError, KeyError, HardDQFinding) as e:
             raise IndexLookupError(
                 message=f"Index file corrupted: {e}",
                 index_type=self.index_type,
                 key="",
-                diagnostics=[{"error": str(e), "line": line if line else "EOF"}],
-            )
+                diagnostics=[{"error": str(e), "line_number": line_number}],
+            ) from e
+        self.entries = loaded
 
     def save(self) -> str:
         """Save index entries to JSONL file atomically.
@@ -135,14 +178,19 @@ class StoreIndex:
         sorted_entries = sorted(self.entries.items(), key=lambda x: x[0])
 
         # Write JSONL content
-        lines = [entry.to_jsonl() for _, entry in sorted_entries]
+        lines = []
+        for key, entry in sorted_entries:
+            if key != entry.key:
+                raise IndexLookupError("Index mapping key differs from entry key", self.index_type, key)
+            try:
+                self._entry_path(key, entry)
+                lines.append(entry.to_jsonl())
+            except (ValueError, TypeError, HardDQFinding) as exc:
+                raise IndexLookupError("Invalid index entry", self.index_type, key, [{"error": str(exc)}]) from exc
         content = "\n".join(lines) + "\n" if lines else ""
 
         # Atomic write
-        self.index_path.parent.mkdir(parents=True, exist_ok=True)
-        temp_path = self.index_path.with_suffix(".tmp")
-        temp_path.write_text(content, encoding="utf-8")
-        temp_path.replace(self.index_path)
+        atomic_write_bytes(self.index_path, content.encode("utf-8"), self.store_root)
 
         # Compute hash
         sha256 = hashlib.sha256(content.encode("utf-8")).hexdigest()
@@ -179,11 +227,17 @@ class StoreIndex:
                 diagnostics=[{"issue": "invalid_key", "key": str(key)}],
             )
 
+        entry = IndexEntry(key, value, record_hash, {} if metadata is None else metadata)
+        try:
+            entry.validate()
+        except (ValueError, TypeError) as exc:
+            raise HardDQFinding("Invalid index entry", self.index_type, key, value, [{"error": str(exc)}]) from exc
+
         # Validate path traversal
         resolved_value = (self.store_root / value).resolve()
         try:
             resolved_value.relative_to(self.store_root.resolve())
-        except ValueError:
+        except ValueError as exc:
             raise HardDQFinding(
                 message="Path traversal in index value rejected",
                 index_type=self.index_type,
@@ -196,14 +250,9 @@ class StoreIndex:
                         "store_root": str(self.store_root.resolve()),
                     }
                 ],
-            )
+            ) from exc
 
-        entry = IndexEntry(
-            key=key,
-            value=value,
-            hash=record_hash,
-            metadata=metadata or {},
-        )
+        self._entry_path(key, entry)
         self.entries[key] = entry
         return entry
 
@@ -221,7 +270,7 @@ class StoreIndex:
             IndexLookupError: If key not found
             HardDQFinding: If record missing or hash mismatch (when verify_record=True)
         """
-        if key not in self.entries:
+        if not isinstance(key, str) or not key.strip() or key not in self.entries:
             raise IndexLookupError(
                 message=f"Key not found in index: {key}",
                 index_type=self.index_type,
@@ -229,48 +278,48 @@ class StoreIndex:
             )
 
         entry = self.entries[key]
+        record_path = self._entry_path(key, entry)
 
         if verify_record:
-            record_path = self.store_root / entry.value
-
-            # Check record exists
-            if not record_path.exists():
-                raise HardDQFinding(
-                    message="Index references missing record",
-                    index_type=self.index_type,
-                    referenced_key=key,
-                    missing_path=str(record_path),
-                    diagnostics=[
-                        {
-                            "issue": "missing_record",
-                            "index_entry": entry.to_jsonl(),
-                            "expected_path": str(record_path),
-                        }
-                    ],
-                )
-
-            # Verify hash
-            if record_path.suffix == ".json":
-                actual_hash = self._compute_record_hash(record_path)
-                if actual_hash != entry.hash:
+            try:
+                if not stat.S_ISREG(record_path.stat().st_mode):
                     raise HardDQFinding(
-                        message="Index hash mismatch with record",
-                        index_type=self.index_type,
-                        referenced_key=key,
-                        missing_path=str(record_path),
-                        diagnostics=[
-                            {
-                                "issue": "hash_mismatch",
-                                "expected_hash": entry.hash,
-                                "actual_hash": actual_hash,
-                            }
-                        ],
+                        "Index record is not a file", self.index_type, key, str(record_path),
+                        [{"issue": "record_not_file", "expected_path": str(record_path)}],
                     )
+                actual_hash = self._compute_record_hash(record_path)
+            except OSError as exc:
+                issue = "missing_record" if isinstance(exc, FileNotFoundError) else "record_unreadable"
+                raise HardDQFinding(
+                    "Index record is missing or unreadable", self.index_type, key, str(record_path),
+                    [{"issue": issue, "expected_path": str(record_path), "error": str(exc)}],
+                ) from exc
+            if actual_hash.lower() != entry.hash.lower():
+                raise HardDQFinding(
+                    "Index hash mismatch with record", self.index_type, key, str(record_path),
+                    [{"issue": "hash_mismatch", "expected_hash": entry.hash, "actual_hash": actual_hash}],
+                )
 
         return entry
 
+    def _entry_path(self, key: str, entry: IndexEntry) -> Path:
+        try:
+            entry.validate()
+            if entry.key != key:
+                raise ValueError("index mapping key does not match entry key")
+            root = self.store_root.resolve()
+            path = (root / entry.value).resolve()
+            if path == root or not path.is_relative_to(root):
+                raise ValueError("index record path must stay within store")
+        except (ValueError, TypeError, OSError, RuntimeError) as exc:
+            raise HardDQFinding(
+                "Invalid index reference", self.index_type, key, str(entry.value),
+                [{"issue": "invalid_index_reference", "error": str(exc)}],
+            ) from exc
+        return path
+
     def _compute_record_hash(self, record_path: Path) -> str:
-        """Compute SHA256 hash of JSON record in write format."""
+        """拡張子によらず、参照先ファイルの実バイトからSHA256を計算する。"""
         # Read raw file content and compute hash directly
         # This matches atomic_write_json format (indent=2)
         sha256 = hashlib.sha256()
@@ -388,63 +437,7 @@ def build_indexes_for_bundle(
     bundle_dir: Path,
     manifest: dict[str, Any],
 ) -> dict[str, str]:
-    """Build indexes for a newly imported bundle.
+    """保存済みbundleの索引を検証・補完する。公開import経路を維持する。"""
+    from .indexing import build_indexes_for_bundle as build
 
-    Args:
-        store_root: Root of store
-        bundle_dir: Directory containing bundle files
-        manifest: Store manifest for the bundle
-
-    Returns:
-        Dict mapping index type to hash.
-
-    Raises:
-        HardDQFinding: If index references missing record
-    """
-    manager = MultiIndexManager(store_root)
-    manager.load_all()
-
-    run_id = manifest["run_id"]
-    bundle_id = manifest["bundle_id"]
-
-    # Relative path to bundle directory
-    rel_bundle_dir = bundle_dir.relative_to(store_root)
-
-    # Add run index entry
-    run_path = rel_bundle_dir / "run.json"
-    if (store_root / run_path).exists():
-        run_hash = manager.runs_index._compute_record_hash(store_root / run_path)
-        manager.runs_index.add_entry(
-            key=run_id,
-            value=str(run_path),
-            record_hash=run_hash,
-            metadata={"bundle_id": bundle_id},
-        )
-
-    # Add bundle index entry
-    bundle_path = rel_bundle_dir / "qeg-bundle.json"
-    if (store_root / bundle_path).exists():
-        bundle_hash = manager.bundles_index._compute_record_hash(store_root / bundle_path)
-        manager.bundles_index.add_entry(
-            key=bundle_id,
-            value=str(bundle_path),
-            record_hash=bundle_hash,
-            metadata={"run_id": run_id},
-        )
-
-    # Add artifact entries
-    for artifact_id in manifest.get("artifact_ids", []):
-        artifact_path = rel_bundle_dir / f"{artifact_id}.json"
-        if (store_root / artifact_path).exists():
-            artifact_hash = manifest.get("content_hashes", {}).get(
-                artifact_id, manager.bundles_index._compute_record_hash(store_root / artifact_path)
-            )
-            manager.artifacts_index.add_entry(
-                key=artifact_id,
-                value=str(artifact_path),
-                record_hash=artifact_hash,
-                metadata={"run_id": run_id, "bundle_id": bundle_id},
-            )
-
-    # Save all indexes
-    return manager.save_all()
+    return build(store_root, bundle_dir, manifest)

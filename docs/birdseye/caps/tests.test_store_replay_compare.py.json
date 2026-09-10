@@ -2,9 +2,9 @@
   "path": "tests/test_store_replay_compare.py",
   "role": "test",
   "kind": "py",
-  "sha256": "6d68e0395868337b2f44138403ca3b2f1680c6115910fdcb4ff2626f84345a73",
-  "line_count": 780,
-  "size_bytes": 29837,
+  "sha256": "85c6380dcc1220f3f118536399cc52f36724be30bbd95292d418ca5dd6efaf17",
+  "line_count": 736,
+  "size_bytes": 28149,
   "headings": [
     "# =============================================================================",
     "# Test fixtures",

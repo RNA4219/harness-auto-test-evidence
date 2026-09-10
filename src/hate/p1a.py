@@ -1,14 +1,14 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from typing import Any
 
 from . import __version__
+from .p1a_inputs import read_trust_inputs
 from .p1a_io import TrustError, _read_json, _stable_hash, _stable_ref, _write_json
+from .p1a_scores import AETE_WEIGHTS, AGGREGATION_METHOD, compute_weighted_score, read_score_input
 from .p1a_support import (
     AETE_DIMENSIONS,
-    PROFILE_VERSION,
     RUBRIC_VERSION,
     SCHEMA_VERSION,
     _build_adapter_capability_manifest,
@@ -24,7 +24,9 @@ from .p1a_support import (
     _score_confidence,
     _score_dimensions_with_signals,
 )
-from .profile import build_profile_report
+from .p1a_support import PROFILE_VERSION as PROFILE_VERSION
+from .profile import UnknownProfileError, build_profile_report
+
 
 def evaluate_trust(
     bundle_path: Path,
@@ -39,24 +41,24 @@ def evaluate_trust(
     if not report_path.exists():
         raise TrustError(f"QEG export report not found: {report_path}", exit_code=2)
 
-    out_dir.mkdir(parents=True, exist_ok=True)
     version = source_version or __version__
-    bundle = _read_json(bundle_path)
-    report = _read_json(report_path)
+    inputs = read_trust_inputs(bundle_path, report_path)
+    bundle, report = inputs.bundle, inputs.report
 
     metadata = bundle.get("metadata", {})
-    nodes = bundle.get("nodes", [])
-    edges = bundle.get("edges", [])
     completeness = bundle.get("completeness", {})
-    run_id = str(metadata.get("runId", report.get("run_id", "")))
-    run_attempt = int(metadata.get("runAttempt", report.get("run_attempt", 1)))
+    run_id, run_attempt = inputs.run_id, inputs.run_attempt
     commit_sha = str(report.get("commit_sha", ""))
     created_at = str(metadata.get("createdAt", report.get("created_at", "")))
-    profile_report = build_profile_report(profile, run_id, run_attempt, commit_sha, created_at)
+    try:
+        profile_report = build_profile_report(profile, run_id, run_attempt, commit_sha, created_at)
+    except UnknownProfileError as exc:
+        raise TrustError(str(exc), exit_code=1) from exc
 
-    dimensions, reason_refs, dimension_signals = _score_dimensions_with_signals(bundle, report)
-    weighted_score = round(sum(dimensions.values()) / (len(AETE_DIMENSIONS) * 5), 3)
-    score_confidence = _score_confidence(completeness, report)
+    retry_aggregation = _build_retry_aggregation(run_id, run_attempt, bundle)
+    dimensions, reason_refs, dimension_signals = _score_dimensions_with_signals(bundle, report, retry_aggregation)
+    weighted_score = compute_weighted_score(dimensions)
+    score_confidence = _score_confidence(completeness, report, bundle=bundle, retry_aggregation=retry_aggregation)
 
     aete_score = {
         "schema_version": SCHEMA_VERSION,
@@ -77,6 +79,8 @@ def evaluate_trust(
         },
         "dimensions": dimensions,
         "dimension_signals": dimension_signals,
+        "dimension_weights": dict(AETE_WEIGHTS),
+        "aggregation_method": AGGREGATION_METHOD,
         "weighted_score": weighted_score,
         "reason_refs": reason_refs,
         "source_refs": [
@@ -96,6 +100,9 @@ def evaluate_trust(
         "profile_version": profile_report["profile_version"],
         "dimensions": dimensions,
         "signals": dimension_signals,
+        "dimension_weights": dict(AETE_WEIGHTS),
+        "aggregation_method": AGGREGATION_METHOD,
+        "weighted_score": weighted_score,
         "reason_refs": reason_refs,
         "deterministic": True,
         "source_refs": ["qeg-bundle.json", "qeg-export-report.json", "profile-report.json"],
@@ -104,14 +111,14 @@ def evaluate_trust(
     }
 
     resolver_map = _build_artifact_resolver_map(run_id, bundle)
-    doctor_report = _build_doctor_report(run_id, run_attempt, bundle, report, resolver_map)
+    doctor_report = _build_doctor_report(run_id, run_attempt, bundle, report, resolver_map, retry_aggregation)
     adapter_registry = _build_adapter_registry()
     adapter_manifest = _build_adapter_capability_manifest()
     adapter_conformance = _build_adapter_conformance_report(run_id, adapter_manifest, doctor_report, resolver_map, adapter_registry)
     identity_index = _build_canonical_identity_index(run_id, bundle)
-    retry_aggregation = _build_retry_aggregation(run_id, run_attempt, bundle)
     summary = _build_summary(aete_score, doctor_report)
 
+    out_dir.mkdir(parents=True, exist_ok=True)
     _write_json(out_dir / "aete-score.json", aete_score)
     _write_json(out_dir / "aete-signal-report.json", aete_signal_report)
     _write_json(out_dir / "profile-report.json", profile_report)
@@ -215,8 +222,8 @@ def compare_trust(
     out_dir: Path,
 ) -> dict[str, Any]:
     """Compare two P1a trust artifact directories."""
-    base_aete = _read_json(base_dir / "aete-score.json")
-    head_aete = _read_json(head_dir / "aete-score.json")
+    base_aete = read_score_input(base_dir / "aete-score.json")
+    head_aete = read_score_input(head_dir / "aete-score.json")
     base_doctor = _read_json(base_dir / "doctor-report.json")
     head_doctor = _read_json(head_dir / "doctor-report.json")
     base_retry = _read_json(base_dir / "retry-aggregation.json")
@@ -286,11 +293,10 @@ def doctor_trust(
     out_dir: Path,
 ) -> dict[str, Any]:
     """Run the P1a doctor and adapter conformance matrix."""
-    bundle = _read_json(bundle_path)
-    report = _read_json(report_path)
+    inputs = read_trust_inputs(bundle_path, report_path)
+    bundle, report = inputs.bundle, inputs.report
     metadata = bundle.get("metadata", {})
-    run_id = str(metadata.get("runId", report.get("run_id", "")))
-    run_attempt = int(metadata.get("runAttempt", report.get("run_attempt", 1)))
+    run_id, run_attempt = inputs.run_id, inputs.run_attempt
     commit_sha = str(report.get("commit_sha", ""))
     created_at = str(metadata.get("createdAt", report.get("created_at", "")))
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -331,8 +337,8 @@ def explain_trust(
     """Explain soft gaps, exclusions, or score changes with source-backed reasons."""
     if mode not in {"why-soft-gap", "why-excluded", "why-score-changed"}:
         raise TrustError(f"unsupported explain mode: {mode}", exit_code=1)
-    bundle = _read_json(bundle_path)
-    report = _read_json(report_path)
+    inputs = read_trust_inputs(bundle_path, report_path)
+    bundle, report = inputs.bundle, inputs.report
     out_dir.mkdir(parents=True, exist_ok=True)
 
     reason_tree = _build_reason_tree(bundle, report, mode)
@@ -368,8 +374,8 @@ def recommend_trust(
     gap_id: str = "missing_execution",
 ) -> dict[str, Any]:
     """Recommend next evidence/test/manual actions for a visible trust gap."""
-    bundle = _read_json(bundle_path)
-    report = _read_json(report_path)
+    inputs = read_trust_inputs(bundle_path, report_path)
+    bundle, report = inputs.bundle, inputs.report
     out_dir.mkdir(parents=True, exist_ok=True)
 
     recommendations = _build_recommendations(bundle, report, gap_id)

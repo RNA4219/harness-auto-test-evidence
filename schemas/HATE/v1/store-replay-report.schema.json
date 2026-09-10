@@ -24,7 +24,6 @@
     "migration_status",
     "readiness_effect",
     "sourceRefs",
-    "replayed_at",
     "diagnostics"
   ],
   "properties": {
@@ -37,6 +36,7 @@
     "schema_compatible": {"type": "boolean"},
     "migration_hold": {"type": "boolean"},
     "legal_hold_preserved": {"type": "boolean"},
+    "integrity_ok": {"type": "boolean", "description": "Whether the selected stored bundle copy and its declared artifacts passed replay integrity checks"},
     "baseline_valid": {"type": "boolean"},
     "artifacts_replayed": {"type": "integer", "minimum": 0},
     "artifacts_missing": {"type": "integer", "minimum": 0},
@@ -88,7 +88,13 @@
           "category": {"type": "string"},
           "message": {"type": "string"},
           "path": {"type": ["string", "null"]},
-          "remediation": {"type": ["string", "null"]}
+          "remediation": {"type": ["string", "null"]},
+          "bundle_id": {"type": ["string", "null"]},
+          "run_id": {"type": ["string", "null"]},
+          "artifact_id": {"type": ["string", "null"]},
+          "expected": {},
+          "actual": {},
+          "diagnostics": {"type": "object"}
         }
       }
     },
@@ -114,7 +120,7 @@
     },
     "readiness_effect": {"enum": ["pass", "hold", "hard_dq"]},
     "sourceRefs": {"type": "array", "items": {"type": "string"}},
-    "replayed_at": {"type": "string"},
+    "replayed_at": {"type": "string", "description": "Optional execution observation; omitted from canonical output and excluded from replay_hash"},
     "diagnostics": {"type": "array", "items": {"type": "object"}}
   }
 }

@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_p0b_precheck.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "f65a44c15dad5971f2a3e8225c2626637e5c14d9533833616c557a7f2ccc3ac1",
+  "line_count": 126,
+  "size_bytes": 5744,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate",
+    "hate.p0b",
+    "json",
+    "pathlib",
+    "pytest",
+    "shutil"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0b.py"
+  ],
+  "tags": [
+    "adapter",
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

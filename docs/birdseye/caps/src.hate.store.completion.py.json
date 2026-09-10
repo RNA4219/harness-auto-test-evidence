@@ -1,0 +1,32 @@
+{
+  "path": "src/hate/store/completion.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ee12199da03d6d5b6560e0509a734c2727d21abecaef89ad3b94dc1f67734477",
+  "line_count": 57,
+  "size_bytes": 2840,
+  "headings": [],
+  "imports": [
+    ".",
+    ".compatibility",
+    ".integrity",
+    ".manifest_validation",
+    ".models",
+    ".versioning",
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/compatibility.py",
+    "src/hate/store/integrity.py",
+    "src/hate/store/manifest_validation.py",
+    "src/hate/store/models.py",
+    "src/hate/store/versioning.py"
+  ],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

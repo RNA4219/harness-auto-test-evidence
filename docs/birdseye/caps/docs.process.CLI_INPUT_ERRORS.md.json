@@ -1,0 +1,37 @@
+{
+  "path": "docs/process/CLI_INPUT_ERRORS.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "0af9b389cae5e153dcc27e8d232b4a72ee38cb60b9e4a7b745f9f80a0fdf042c",
+  "line_count": 150,
+  "size_bytes": 12710,
+  "headings": [
+    "# CLIの入力・I/O診断契約",
+    "## 入力JSON",
+    "## compareのスコア検証",
+    "## CLI境界",
+    "## run識別とprofile",
+    "## retry・shard・matrixの宣言",
+    "## 検証",
+    "## P1aのgraphと所見"
+  ],
+  "imports": [],
+  "links": [
+    "ADAPTER_DIALECT_PARSER_SPEC.md",
+    "P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md",
+    "P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md"
+  ],
+  "depends_on": [
+    "docs/process/ADAPTER_DIALECT_PARSER_SPEC.md",
+    "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md",
+    "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md"
+  ],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

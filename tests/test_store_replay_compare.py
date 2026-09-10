@@ -29,7 +29,6 @@ from hate.store import (
     StoreManifest,
     HardDQFinding,
     ReplayError,
-    ReplayReport,
     BaselineInfo,
     replay_bundle,
     select_baseline_by_timestamp,
@@ -137,48 +136,10 @@ class TestReplayPositive:
         # Import bundle
         bundle_id = _create_complete_bundle(store, bundle_path, "run-001")
 
-        # Replay bundle (note: read_manifest takes run_id, need to adjust)
-        manifest = store.read_manifest("run-001")
-
-        # Create replay report manually for now
-        # (replay_bundle expects different interface, will adjust)
-        report = ReplayReport(
-            bundle_id=bundle_id,
-            run_id="run-001",
-            replay_hash="",
-            source_bundle_hash=manifest.content_hashes.get(bundle_id, ""),
-            schema_compatible=True,
-            migration_hold=False,
-            legal_hold_preserved=True,
-            baseline_valid=True,
-            artifacts_replayed=len(manifest.artifact_ids),
-            artifacts_missing=0,
-            hash_mismatches=0,
-            replayed_at="2025-01-01T00:00:00Z",
-            diagnostics=[],
-        )
-        report.replay_hash = report.compute_hash()
-
-        # Replay twice - hashes should be identical
-        report2 = ReplayReport(
-            bundle_id=bundle_id,
-            run_id="run-001",
-            replay_hash="",
-            source_bundle_hash=manifest.content_hashes.get(bundle_id, ""),
-            schema_compatible=True,
-            migration_hold=False,
-            legal_hold_preserved=True,
-            baseline_valid=True,
-            artifacts_replayed=len(manifest.artifact_ids),
-            artifacts_missing=0,
-            hash_mismatches=0,
-            replayed_at="2025-01-01T00:00:00Z",  # Same timestamp for stability test
-            diagnostics=[],
-        )
-        report2.replay_hash = report2.compute_hash()
-
-        # Byte-stable: same content → same hash
-        assert report.replay_hash == report2.replay_hash
+        report = replay_bundle(store, bundle_id, run_id="run-001")
+        report2 = replay_bundle(store, bundle_id, run_id="run-001")
+        assert report.to_dict() == report2.to_dict()
+        assert report.replay_hash == report2.replay_hash == report.compute_hash()
 
     def test_replay_supported_schema_version(self, temp_store, sample_bundle, legal_hold_metadata):
         """Supported schema version allows direct replay."""
@@ -353,25 +314,25 @@ class TestReplayNegative:
         # Migration hold is indicated by migration_hold=True in replay
 
         # Create bundle with unsupported schema
-        bundle_dir = temp_store / "runs" / "run-schema" / "bundle-old"
+        bundle_dir = temp_store / "runs" / "run-schema" / "bundle-0000000000000000"
         bundle_dir.mkdir(parents=True)
 
         manifest_data = {
-            "schema_version": "HATE/v0.8",  # Unsupported
+            "schema_version": "HATE/v1",  # Store manifest contract
             "record_type": "store_manifest",
             "run_id": "run-schema",
-            "bundle_id": "bundle-old",
+            "bundle_id": "bundle-0000000000000000",
             "source_version": "v1",
-            "schema_versions": {"bundle": "HATE/v0.8"},  # Unsupported
+            "schema_versions": {"core": "HATE/v1", "store": "1.0.0", "bundle": "HATE/v0.8"},
             "artifact_ids": [],
             "content_hashes": {},
             "index_hashes": {},
-            "legal_hold": {"status": "none", "reason": "test", "created_at": "2025-01-01"},
+            "legal_hold": {"status": "none", "reason": "test", "held_since": "2025-01-01T00:00:00Z", "authorized_by": "test"},
             "retention_policy_id": "default",
             "created_at": "2025-01-01T00:00:00Z",
             "producer_version": "test",
             "completed": True,
-            "sourceRefs": [],
+            "sourceRefs": ["source:test"],
         }
 
         manifest_path = bundle_dir / "store-manifest.json"
@@ -460,16 +421,12 @@ class TestCompare:
 
         current_id = _create_complete_bundle(store, bundle_path2, "run-compare")
 
-        # Direct comparison - note: artifact IDs change when node content changes
-        # Since baseline node-1 (outcome=failed) and improved node-1 (outcome=passed)
-        # have different hashes, they have different artifact_ids.
-        # This means baseline artifact is "removed" and improved artifact is "new"
-        # Without semantic comparison, result is REGRESSION (any removal = regression)
+        # 同じnode-1を対応付け、失敗から成功への変化と追加証跡を比較する。
         report = compare_bundles_direct(store, current_id, baseline_id)
 
-        assert report.comparison_result == ComparisonResult.REGRESSION
-        assert report.regressions >= 1  # Baseline artifact removed
-        assert report.improvements >= 2  # Two new artifacts added
+        assert report.comparison_result == ComparisonResult.IMPROVEMENT
+        assert report.regressions == 0
+        assert report.improvements == 2
         assert report.is_filename_sort_baseline == False
 
     def test_compare_regression(self, temp_store, sample_bundle):
@@ -568,10 +525,9 @@ class TestDoctor:
         with manifest_path.open("w") as f:
             f.write("{ invalid }")
 
-        # Try to diagnose - will fail when reading manifest
-        # Doctor should handle this gracefully
-        with pytest.raises(Exception):  # HardDQFinding or LocalStoreError
-            diagnose_bundle(store, "bundle-bad")
+        report = diagnose_bundle(store, "bundle-bad", run_id="run-corrupt")
+        assert not report.healthy
+        assert any(f.category == "manifest" for f in report.findings)
 
     def test_diagnose_bundle_missing_artifact(self, temp_store, sample_bundle):
         """Diagnose bundle with missing artifact."""

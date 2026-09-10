@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/store/manifest_validation.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "2e2b7e5ca5fc077cef3592b20490588a0e8a6e9bf374035302071c0cfc6aa540",
+  "line_count": 30,
+  "size_bytes": 1116,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "functools",
+    "hate.schema_resources",
+    "json",
+    "jsonschema",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py"
+  ],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

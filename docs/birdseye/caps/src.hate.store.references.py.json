@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/store/references.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e1fdb2d71697e85d87fa854e75908860e0ab24c9fdaf0be35880548f5e43d839",
+  "line_count": 62,
+  "size_bytes": 2887,
+  "headings": [],
+  "imports": [
+    ".indexes",
+    ".local_store",
+    ".models",
+    "__future__",
+    "collections.abc",
+    "dataclasses",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/indexes.py",
+    "src/hate/store/local_store.py",
+    "src/hate/store/models.py"
+  ],
+  "tags": [
+    "artifact",
+    "qeg",
+    "store"
+  ]
+}

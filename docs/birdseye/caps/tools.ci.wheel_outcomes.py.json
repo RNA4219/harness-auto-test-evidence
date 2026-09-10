@@ -1,0 +1,24 @@
+{
+  "path": "tools/ci/wheel_outcomes.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "add8bc17791551d9ca19e98b6fc769451ca971cae4038f0fa3611f9756309490",
+  "line_count": 80,
+  "size_bytes": 4235,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "json",
+    "pathlib",
+    "shutil",
+    "subprocess",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

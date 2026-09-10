@@ -1,0 +1,33 @@
+{
+  "path": "src/hate/p1a_inputs.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "5e7101b3b83cd97582d93d3af6ee427f23e43afe7da42241c882b756a8099199",
+  "line_count": 79,
+  "size_bytes": 3445,
+  "headings": [],
+  "imports": [
+    ".input_values",
+    ".p1a_io",
+    ".p1a_precheck",
+    ".p1a_retry_inputs",
+    ".p1a_run_scope",
+    ".p1a_schema",
+    "__future__",
+    "dataclasses",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/p1a_io.py",
+    "src/hate/p1a_precheck.py",
+    "src/hate/p1a_retry_inputs.py",
+    "src/hate/p1a_run_scope.py",
+    "src/hate/p1a_schema.py"
+  ],
+  "tags": [
+    "schema"
+  ]
+}

@@ -22,7 +22,7 @@ modules or unreadable specification files.
 | Python source module | 700 lines | 900 lines | Split before adding major behavior. No hand-written source file should reach 1000 lines. |
 | Python test module | 700 lines | 900 lines | Split by feature packet, not by arbitrary helper grouping. |
 | Markdown specification | 800 lines | 1000 lines | Split into contract docs and keep root specs as indexes. |
-| JSON/YAML fixture | 1000 lines | 5000 lines | Large generated fixtures are allowed only with generator, schema, and checksum evidence. |
+| JSON/YAML fixture | 1000 lines | 1000 lines | CI規約に従い、5000行までの例外は`fixtures/golden/**/expected/*.json`だけに適用する。 |
 | Generated report fixture | 1000 lines | 5000 lines | Allowed when immutable golden evidence; must not be hand-maintained as business logic. |
 
 No-Go:
@@ -34,6 +34,8 @@ No-Go:
 - A test module grows by copy-paste instead of fixture parametrization or feature-specific split.
 
 ## 3. Current Hotspots
+
+以下は記載日時点の履歴であり、現在の未完了タスク一覧ではない。実行順1〜5の分割完了は第6節を参照する。
 
 Measured on 2026-06-30:
 
@@ -247,3 +249,7 @@ The guardrail must print path, line count, threshold, and required split target.
 Status as of 2026-06-30: implemented in `tools/check_file_size.py` with regression coverage in
 `tests/test_check_file_size.py`. The current tree passes the guard after splitting
 `tests/test_test_integrity_coupling.py` and `tests/test_api_read_model_contract.py`.
+
+2026-09-10更新: CLIで700行超のPython、800行超のMarkdown、1000行超のJSON/YAMLを警告する。
+警告だけでは失敗させず、上限超過でexit 1とする。golden expected以外のfixtureは1000行を上限とする。
+CIのstatic jobで検査を直接実行し、依存キャッシュ・一時出力・生成capsuleは探索前に除外する。

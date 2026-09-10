@@ -1,0 +1,22 @@
+{
+  "path": "tests/test_store_atomic_failures.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "768b51d2bd3188f13ef201781e779835e4bba78dd3811ba664bf8252a1429909",
+  "line_count": 110,
+  "size_bytes": 4208,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "os",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "store",
+    "test"
+  ]
+}

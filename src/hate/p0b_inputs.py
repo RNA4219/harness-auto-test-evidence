@@ -5,7 +5,11 @@ from __future__ import annotations
 from pathlib import Path
 
 from .escaped_defects import find_escaped_defects_path, load_escaped_defects
-from .p0b_support import _read_json, _read_ndjson
+from .p0b_identity import validate_input_run
+from .p0b_io import read_json as _read_json
+from .p0b_io import read_ndjson as _read_ndjson
+from .p0b_lifecycle import load_risk_debt_lifecycle
+from .p0b_test_records import read_test_records
 from .p0b_types import ExportError, P0bInputBundle
 
 
@@ -41,14 +45,14 @@ def load_input_bundle(fixture_dir: Path) -> P0bInputBundle:
             f"Missing required P0a artifacts: {', '.join(missing_artifacts)}",
             exit_code=2,
         )
-    return P0bInputBundle(
+    inputs = P0bInputBundle(
         fixture_dir=fixture_dir,
         p0a_dir=p0a_dir,
         diff_risk_path=diff_risk_path,
         risk_debt_lifecycle_path=risk_debt_lifecycle_path,
         escaped_defects_path=escaped_defects_path,
         run_record=_read_json(p0a_dir / "HATE-run.json"),
-        test_records=_read_ndjson(p0a_dir / "HATE-test-results.ndjson"),
+        test_records=read_test_records(p0a_dir / "HATE-test-results.ndjson"),
         coverage_records=_read_ndjson(p0a_dir / "HATE-coverage.ndjson"),
         contract_records=_read_ndjson(p0a_dir / "HATE-contract.ndjson")
         if (p0a_dir / "HATE-contract.ndjson").exists()
@@ -64,7 +68,9 @@ def load_input_bundle(fixture_dir: Path) -> P0bInputBundle:
         audit_record=_read_json(p0a_dir / "record.json"),
         sarif_record=_read_json(p0a_dir / "HATE-static.sarif") if (p0a_dir / "HATE-static.sarif").exists() else {},
         diff_risk_test=_read_json(diff_risk_path) if diff_risk_path.exists() else {},
-        risk_debt_lifecycle=_read_json(risk_debt_lifecycle_path) if risk_debt_lifecycle_path.exists() else {},
+        risk_debt_lifecycle=load_risk_debt_lifecycle(risk_debt_lifecycle_path),
         escaped_defects=escaped_defects,
         escaped_defect_claims=escaped_defect_claims,
     )
+    validate_input_run(inputs)
+    return inputs

@@ -1,0 +1,32 @@
+{
+  "path": "tests/test_store_replay_aggregation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "da322cb268ec54a87dd43b6da9206bf897865ea5625fe535eb5b1914dd1c03e0",
+  "line_count": 172,
+  "size_bytes": 8620,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.schema_resources",
+    "hate.store",
+    "hate.store.compare",
+    "hate.store.doctor",
+    "hate.store.replay",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py",
+    "src/hate/store/compare.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store",
+    "test"
+  ]
+}

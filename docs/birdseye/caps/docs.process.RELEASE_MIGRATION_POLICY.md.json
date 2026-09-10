@@ -2,9 +2,9 @@
   "path": "docs/process/RELEASE_MIGRATION_POLICY.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "3a47de308c16813dce26e429a5e351bee119f7b237609a0182f2690ffcce18e4",
-  "line_count": 194,
-  "size_bytes": 8245,
+  "sha256": "426c905031f851d22b3253e04ecdba0093e1c91e6bcd8e5eb4cce3b16a79babd",
+  "line_count": 201,
+  "size_bytes": 8750,
   "headings": [
     "# Release and Migration Policy",
     "## 1. 目的",
@@ -21,11 +21,16 @@
     "## 12. Migration Compatibility Report",
     "## 13. Legal Hold Transition Evidence",
     "## 14. Release Candidate Pack",
+    "## Bridge依頼の不具合修正（2026-09-10）",
     "## Responsibility Freeze (generated)"
   ],
   "imports": [],
-  "links": [],
-  "depends_on": [],
+  "links": [
+    "BRIDGE_REQUEST_CONTRACT.md"
+  ],
+  "depends_on": [
+    "docs/process/BRIDGE_REQUEST_CONTRACT.md"
+  ],
   "tags": [
     "adapter",
     "api",

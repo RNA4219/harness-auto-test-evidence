@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_bridge_materialization.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "232747b811fe62e9c7220704145dc126d065d7daca1a2db377b3e2e770ca4c36",
+  "line_count": 187,
+  "size_bytes": 7690,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hashlib",
+    "hate.bridge.materializer",
+    "json",
+    "os",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/materializer.py"
+  ],
+  "tags": [
+    "schema",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

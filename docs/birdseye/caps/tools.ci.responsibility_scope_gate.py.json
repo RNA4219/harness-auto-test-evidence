@@ -2,13 +2,14 @@
   "path": "tools/ci/responsibility_scope_gate.py",
   "role": "tooling",
   "kind": "py",
-  "sha256": "1e3af4afe46017116f59eb9cdd3259c7413a895f0bf07ad515c72099d3c71bd6",
-  "line_count": 127,
-  "size_bytes": 8290,
+  "sha256": "4487e985f1aa5a4efd4d3a78bf067eb68e02921eee0515bcf0e1deb3005ec765",
+  "line_count": 141,
+  "size_bytes": 8906,
   "headings": [],
   "imports": [
     "__future__",
     "argparse",
+    "hate.bridge.routes",
     "hate.cli",
     "json",
     "pathlib",
@@ -17,6 +18,7 @@
   ],
   "links": [],
   "depends_on": [
+    "src/hate/bridge/routes.py",
     "src/hate/cli.py"
   ],
   "tags": [

@@ -1,0 +1,32 @@
+{
+  "path": "src/hate/store/bundle_validation.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "95f27ab47e5bc603c1eb0452407f7fe1b886795b5c14f4e78fff4195afaed6d4",
+  "line_count": 104,
+  "size_bytes": 4881,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    ".models",
+    "__future__",
+    "dataclasses",
+    "functools",
+    "hate.schema_resources",
+    "jsonschema",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py",
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/models.py"
+  ],
+  "tags": [
+    "artifact",
+    "qeg",
+    "schema",
+    "store"
+  ]
+}

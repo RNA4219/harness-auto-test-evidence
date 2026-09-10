@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/p1a_scores.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "95730fbd03876948308e41e5d830c2b3e6bb6f3e6417a32cf360a29f72ed5e42",
+  "line_count": 74,
+  "size_bytes": 3165,
+  "headings": [
+    "# SPECIFICATION.md section 12。現行profileは閾値・運用方針を変え、重みは共通とする。"
+  ],
+  "imports": [
+    ".input_values",
+    ".p1a_io",
+    "__future__",
+    "collections.abc",
+    "decimal",
+    "pathlib",
+    "types",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/p1a_io.py"
+  ],
+  "tags": [
+    "coverage"
+  ]
+}

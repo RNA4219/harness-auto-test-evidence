@@ -1,47 +1,31 @@
 from __future__ import annotations
 
-import hashlib
-import json
-import mimetypes
-import posixpath
 import re
-import xml.etree.ElementTree as ET
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from .p0a_constants import REDACTION_STATUS, SCHEMA_VERSION, SOURCE_TOOL
-from .p0a_io import (
-    _artifact_kind,
-    _dq,
-    _file_sha256,
-    _read_optional_json,
-    _slug,
-    _stable_sha256,
-    _stable_source_ref,
-    _to_posix,
-)
+from .input_values import positive_run_attempt, run_identifier
+from .p0a_errors import PrecheckError as PrecheckError
+from .p0a_io import _read_json_object
 from .p0a_records import _envelope
 
-@dataclass
-class PrecheckError(Exception):
-    message: str
-    exit_code: int = 1
-    decision: dict[str, Any] | None = None
-    out_dir: Path | None = None
-    def __str__(self) -> str:
-        return self.message
+
 def _read_context(path: Path) -> dict[str, Any]:
     if not path.exists():
         raise PrecheckError(f"missing required input: {path}", exit_code=1)
-    with path.open("r", encoding="utf-8") as handle:
-        context = json.load(handle)
-    if not isinstance(context, dict):
-        raise PrecheckError(f"{path.name} must be a JSON object", exit_code=1)
+    context = _read_json_object(path, exact_run_numbers=True)
     required = ["repository", "workflow", "job", "run_id", "run_attempt", "started_at"]
     missing = [field for field in required if field not in context]
     if missing:
         raise PrecheckError(f"{path.name} missing fields: {', '.join(missing)}", exit_code=1)
+    try:
+        context["run_id"] = run_identifier(context["run_id"], allow_integer=True)
+    except ValueError as exc:
+        raise PrecheckError(f"{path.name}.run_id: {exc}", exit_code=1) from exc
+    try:
+        context["run_attempt"] = positive_run_attempt(context["run_attempt"], allow_decimal_string=True)
+    except ValueError as exc:
+        raise PrecheckError(f"{path.name}.run_attempt: {exc}", exit_code=1) from exc
     provider = _normalize_ci_provider(str(context.get("provider") or context.get("ci_provider") or ""))
     if not provider:
         provider = "github-actions" if path.name == "github-context.json" else "generic-ci"

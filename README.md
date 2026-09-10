@@ -159,9 +159,10 @@ HATEの新規開発責務はP0a/P0b/P1a、schema/adapter/plugin、local evidence
 
 - 既定providerはcompat-v0.2で、v0.2のcommand/options/output files/required fields/exit codeを維持します。CLI JSON stdoutにはcompatibility_provider、canonical_owner、deprecated_since、remove_afterを追加し、stderrへprocess単位で1回warningを出します。
 - 外部handoffはleaf commandへ --bridge-provider handoff を付けます。HATE_BRIDGE_PROVIDERでも指定でき、CLI optionが優先します。handoffはprocess/networkを起動せずbridge-request.jsonだけを生成します。
+- handoffは実行オプションをcommand_optionsに保存し、依頼IDへ反映します。旧依頼の扱いは[Bridge依頼契約](docs/process/BRIDGE_REQUEST_CONTRACT.md)を参照してください。
 - 外部owner resultは hate bridge materialize --request REQUEST --result RESULT --out OUT で検証・materializeします。ID、owner、hash、sourceRefs、schemaが不一致ならexit 2で、legacy artifactは生成しません。
 - HATE/v1はv1まで維持します。P1b+ removal windowはdeprecated_since=0.3.0、remove_after=1.0.0です。
-- 責務の正本はgovernance/responsibility-registry.jsonです。product_ready=falseと外部release authorityは変更ありません。
+- 責務の正本はgovernance/responsibility-registry.jsonです。CLI欄の生成と実行時ルーティングはsrc/hate/bridge/routes.pyの定義を共有します。product_ready=falseと外部release authorityは変更ありません。
 
 v0.2利用者は通常の互換動作ではcommandを変更する必要はありません。新しい外部owner連携を試す場合だけhandoffを明示してください。
 
@@ -216,7 +217,7 @@ Long-term operation checks:
 | core HATE/v1 record type | 29 |
 | compat HATE/v1 record type | 311 |
 
-- canonical owner: agent-gatefield, agent-state-gate, manual-bb-test-harness, product-ops-evidence, quality-evidence-graph, shipyard-cp, workflow-cookbook
+- canonical owner: agent-gatefield, agent-state-gate, harness-auto-test-evidence, manual-bb-test-harness, product-ops-evidence, quality-evidence-graph, shipyard-cp, workflow-cookbook
 - P1b以降は compat-v0.2 または明示的な handoff のみ。
 - product_ready=false。QEG verdict、Go/No-Go、waiver、approval、publish authorityは外部責務。
 - deprecated since: 0.3.0; remove after: 1.0.0（v0.xでは物理削除しない）。

@@ -1,0 +1,27 @@
+{
+  "path": "tests/test_store_doctor_inventory.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "9b57d420496b0391dedfac28365090b38252000974bb43e08cb116d0afe085f6",
+  "line_count": 116,
+  "size_bytes": 4993,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.doctor",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/doctor.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "store",
+    "test"
+  ]
+}

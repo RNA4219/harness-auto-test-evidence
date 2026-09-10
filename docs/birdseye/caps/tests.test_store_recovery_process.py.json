@@ -1,0 +1,31 @@
+{
+  "path": "tests/test_store_recovery_process.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "8b8698c72d64a10e173204748700d212c8e713d67a9a70dbc45b5cb55fb71a8e",
+  "line_count": 94,
+  "size_bytes": 3618,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "concurrent.futures",
+    "hate.store",
+    "hate.store.local_store",
+    "hate.store.locking",
+    "json",
+    "os",
+    "pathlib",
+    "pytest",
+    "subprocess",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/local_store.py",
+    "src/hate/store/locking.py"
+  ],
+  "tags": [
+    "store",
+    "test"
+  ]
+}

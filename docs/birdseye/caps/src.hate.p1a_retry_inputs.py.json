@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/p1a_retry_inputs.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "cc97ce5bf4c0c87e55a6bfe295f8100deeb67c12c5d578c9ea1e90d0cd17a0c4",
+  "line_count": 23,
+  "size_bytes": 907,
+  "headings": [],
+  "imports": [
+    ".execution_metadata",
+    ".execution_status",
+    ".p1a_io",
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/execution_metadata.py",
+    "src/hate/execution_status.py",
+    "src/hate/p1a_io.py"
+  ],
+  "tags": [
+    "test"
+  ]
+}

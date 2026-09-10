@@ -2,13 +2,15 @@
   "path": "src/hate/bridge/router.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "e945c9f8fd13aefd0be77e024887fb11c9b1cf9ca34cb34e7b97f11f2bd19740",
-  "line_count": 238,
-  "size_bytes": 8520,
+  "sha256": "4831fd1c73591131fa889239a8028caa2e572d56e82123f1292db33b9836fee1",
+  "line_count": 202,
+  "size_bytes": 7248,
   "headings": [],
   "imports": [
     "..compat.v0_2",
+    ".inputs",
     ".protocol",
+    ".routes",
     ".schemas",
     "__future__",
     "argparse",
@@ -18,18 +20,19 @@
     "json",
     "os",
     "pathlib",
-    "sys"
+    "sys",
+    "tempfile"
   ],
   "links": [],
   "depends_on": [
+    "src/hate/bridge/inputs.py",
     "src/hate/bridge/protocol.py",
+    "src/hate/bridge/routes.py",
     "src/hate/bridge/schemas.py"
   ],
   "tags": [
-    "qeg",
     "release",
     "schema",
-    "test",
     "workflow"
   ]
 }

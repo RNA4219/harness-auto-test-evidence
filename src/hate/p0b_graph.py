@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 
 def append_gate_changed_and_risk_nodes(
@@ -31,6 +32,8 @@ def append_gate_changed_and_risk_nodes(
             "exit_code": precheck_decision.get("payload", {}).get("exit_code", 0),
             "qeg_export_allowed": precheck_decision.get("payload", {}).get("qeg_export_allowed", False),
             "qeg_export_phase": precheck_decision.get("payload", {}).get("qeg_export_phase", "P0b"),
+            **{field: precheck_decision["payload"][field] for field in ("dq_hits", "soft_gaps", "reasons")
+               if field in precheck_decision.get("payload", {})},
         },
         "sourceRefs": [source_ref(p0a_dir / "precheck-decision.json")],
     })

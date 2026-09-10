@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_store_integrity.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "225375d52012b9b87efef89ae507bf43db362872ab5fbccddd5ba444c1a46f55",
+  "line_count": 96,
+  "size_bytes": 4028,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

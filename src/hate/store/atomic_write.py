@@ -16,10 +16,13 @@ import json
 import os
 import shutil
 import tempfile
+import warnings
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+
+from .manifest_validation import manifest_errors
 
 
 @dataclass
@@ -39,32 +42,7 @@ def atomic_write_json(
     content: dict[str, Any],
     store_root: Path,
 ) -> Path:
-    """Write JSON atomically with temp file, fsync, and rename.
-
-    Pattern:
-    1. Write to temp file in same directory
-    2. Fsync temp file and parent directory
-    3. Rename temp to target (atomic on same filesystem)
-    4. Fsync parent directory again
-
-    Args:
-        target_path: Final destination path
-        content: JSON content to write
-        store_root: Root of store for path traversal check
-
-    Returns:
-        Path to written file
-
-    Raises:
-        AtomicWriteError: If any phase fails
-    """
-    # Path traversal rejection
-    _validate_path_within_store(target_path, store_root)
-
-    # Ensure parent directory exists
-    target_path.parent.mkdir(parents=True, exist_ok=True)
-
-    # Validate content is a dict
+    """JSONを検証してから、UTF-8・LFの固定形式で原子的に保存する。"""
     if not isinstance(content, dict):
         raise AtomicWriteError(
             message="Content must be a JSON object (dict)",
@@ -73,67 +51,76 @@ def atomic_write_json(
             diagnostics=[{"issue": "invalid_content_type", "type": str(type(content))}],
         )
 
-    # Create temp file in same directory for atomic rename
+    try:
+        payload = (json.dumps(content, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode("utf-8")
+    except (TypeError, ValueError) as exc:
+        raise AtomicWriteError(str(exc), target_path, "write") from exc
+    return atomic_write_bytes(target_path, payload, store_root)
+
+
+def atomic_write_bytes(target_path: Path, content: bytes, store_root: Path) -> Path:
+    """全バイトの書き込みとfsync後に、既存ファイルを直接置換する。
+
+    置換前の失敗では旧ファイルを保持する。置換後のdirectory fsync失敗は
+    diagnosticsのpublished=trueで区別し、書き込み自体の巻き戻しは行わない。
+    """
+    _validate_path_within_store(target_path, store_root)
     temp_fd = None
     temp_path = None
+    phase = "write"
+    published = False
     try:
-        # Phase 1: Write to temp file
+        target_path.parent.mkdir(parents=True, exist_ok=True)
         temp_fd, temp_path = tempfile.mkstemp(
             dir=target_path.parent,
             prefix=".tmp-",
             suffix=target_path.suffix,
         )
 
-        # Write JSON content
-        payload = json.dumps(content, ensure_ascii=False, indent=2) + "\n"
-        os.write(temp_fd, payload.encode("utf-8"))
-
-        # Phase 2: Fsync temp file
+        remaining = memoryview(content)
+        while remaining:
+            written = os.write(temp_fd, remaining)
+            if written <= 0:
+                raise OSError("write made no progress")
+            remaining = remaining[written:]
+        phase = "fsync"
         os.fsync(temp_fd)
         os.close(temp_fd)
         temp_fd = None
 
-        # Phase 3: Rename (atomic on same filesystem)
-        if target_path.exists():
-            # On Windows, need to remove target first
-            if os.name == "nt":
-                # Use replace with backup for Windows atomicity
-                backup_path = target_path.with_suffix(target_path.suffix + ".bak")
-                shutil.move(str(target_path), str(backup_path))
-                shutil.move(str(temp_path), str(target_path))
-                backup_path.unlink(missing_ok=True)
-            else:
-                os.replace(temp_path, target_path)
-        else:
-            shutil.move(str(temp_path), str(target_path))
-
+        phase = "rename"
+        os.replace(temp_path, target_path)
+        published = True
         temp_path = None
-
-        # Phase 4: Fsync parent directory (Unix/Linux only)
-        # On Windows, directory fsync is not required/supported via os.open
-        if os.name != "nt":
-            parent_fd = os.open(target_path.parent, os.O_RDONLY)
-            os.fsync(parent_fd)
-            os.close(parent_fd)
-
+        phase = "fsync"
+        _sync_parent_directory(target_path.parent)
         return target_path
-
-    except Exception as e:
-        # Cleanup temp file on failure
+    except Exception as exc:
+        raise AtomicWriteError(
+            message=str(exc), path=target_path, phase=phase,
+            diagnostics=[{"exception": type(exc).__name__, "message": str(exc), "published": published}],
+        ) from exc
+    finally:
         if temp_fd is not None:
             try:
                 os.close(temp_fd)
             except OSError:
                 pass
-        if temp_path is not None and Path(temp_path).exists():
-            Path(temp_path).unlink(missing_ok=True)
+        if temp_path is not None:
+            try:
+                Path(temp_path).unlink(missing_ok=True)
+            except OSError as exc:
+                warnings.warn(f"temporary store file retained: {temp_path}: {exc}", RuntimeWarning, stacklevel=2)
 
-        raise AtomicWriteError(
-            message=str(e),
-            path=target_path,
-            phase="write",
-            diagnostics=[{"exception": type(e).__name__, "message": str(e)}],
-        ) from e
+
+def _sync_parent_directory(parent: Path) -> None:
+    if os.name == "nt":
+        return
+    parent_fd = os.open(parent, os.O_RDONLY)
+    try:
+        os.fsync(parent_fd)
+    finally:
+        os.close(parent_fd)
 
 
 def complete_manifest_write(
@@ -149,9 +136,9 @@ def complete_manifest_write(
 
     Args:
         manifest_path: Path to store-manifest.json
-        manifest_content: Manifest content (will set completed=true)
+        manifest_content: Manifest content (updated only after successful publication and sync)
         store_root: Root of store for path traversal check
-        bundle_files: List of bundle files that must exist before manifest
+        bundle_files: Caller-required files, checked in addition to the canonical bundle and artifact inventory
 
     Returns:
         Written manifest with diagnostics
@@ -159,60 +146,9 @@ def complete_manifest_write(
     Raises:
         AtomicWriteError: If verification or write fails
     """
-    # Verify all bundle files exist
-    missing_files = [f for f in bundle_files if not f.exists()]
-    if missing_files:
-        raise AtomicWriteError(
-            message="Bundle files missing before manifest completion",
-            path=manifest_path,
-            phase="manifest",
-            diagnostics=[
-                {"issue": "missing_bundle_file", "path": str(f)}
-                for f in missing_files
-            ],
-        )
+    from .completion import complete_manifest_write as complete
 
-    # Verify content hashes match
-    hash_mismatches = []
-    for file_path in bundle_files:
-        if file_path.suffix == ".json" and file_path.name != "store-manifest.json":
-            try:
-                actual_hash = compute_file_hash(file_path)
-                # Check if manifest_content has expected hash
-                expected_hash = manifest_content.get("content_hashes", {}).get(
-                    file_path.stem, None
-                )
-                if expected_hash and actual_hash != expected_hash:
-                    hash_mismatches.append({
-                        "file": str(file_path),
-                        "expected": expected_hash,
-                        "actual": actual_hash,
-                    })
-            except Exception as e:
-                hash_mismatches.append({
-                    "file": str(file_path),
-                    "error": str(e),
-                })
-
-    if hash_mismatches:
-        raise AtomicWriteError(
-            message="Content hash mismatch detected",
-            path=manifest_path,
-            phase="manifest",
-            diagnostics=hash_mismatches,
-        )
-
-    # Set completed=true
-    manifest_content["completed"] = True
-    manifest_content["import_status"] = {
-        "phase": "completed",
-        "diagnostics": [],
-    }
-
-    # Write manifest atomically
-    atomic_write_json(manifest_path, manifest_content, store_root)
-
-    return manifest_content
+    return complete(manifest_path, manifest_content, store_root, bundle_files)
 
 
 def quarantine_partial_write(
@@ -257,7 +193,7 @@ def quarantine_partial_write(
         "record_type": "quarantine_manifest",
         "run_id": run_id,
         "quarantine_reason": error.phase,
-        "quarantined_at": datetime.now(timezone.utc).isoformat(),
+        "quarantined_at": datetime.now(UTC).isoformat(),
         "original_error": {
             "message": error.message,
             "path": str(error.path),
@@ -302,7 +238,7 @@ def compute_json_hash(content: dict[str, Any]) -> str:
     Returns:
         Hash string in format "sha256:<hex>"
     """
-    payload = json.dumps(content, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    payload = json.dumps(content, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
     sha256 = hashlib.sha256(payload.encode("utf-8")).hexdigest()
     return f"sha256:{sha256}"
 
@@ -318,7 +254,7 @@ def compute_json_hash_for_write(content: dict[str, Any]) -> str:
     Returns:
         Hash string in format "sha256:<hex>"
     """
-    payload = json.dumps(content, ensure_ascii=False, indent=2) + "\n"
+    payload = json.dumps(content, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
     sha256 = hashlib.sha256(payload.encode("utf-8")).hexdigest()
     return f"sha256:{sha256}"
 
@@ -342,7 +278,7 @@ def _validate_path_within_store(path: Path, store_root: Path) -> None:
     # Check if resolved path is within store root
     try:
         resolved_path.relative_to(resolved_root)
-    except ValueError:
+    except ValueError as exc:
         raise AtomicWriteError(
             message="Path traversal attempt rejected",
             path=path,
@@ -354,7 +290,7 @@ def _validate_path_within_store(path: Path, store_root: Path) -> None:
                     "store_root": str(resolved_root),
                 }
             ],
-        )
+        ) from exc
 
 
 def is_complete_manifest(manifest_path: Path) -> bool:
@@ -364,14 +300,15 @@ def is_complete_manifest(manifest_path: Path) -> bool:
         manifest_path: Path to store-manifest.json
 
     Returns:
-        True if manifest exists and completed=true, False otherwise
+        True if the manifest is schema-valid and completed=true (file integrity is separate)
     """
     if not manifest_path.exists():
         return False
 
     try:
-        with manifest_path.open("r", encoding="utf-8") as f:
-            manifest = json.load(f)
-        return manifest.get("completed", False) is True
-    except (json.JSONDecodeError, OSError):
+        from .json_io import strict_json_loads
+
+        manifest = strict_json_loads(manifest_path.read_text(encoding="utf-8"))
+        return not manifest_errors(manifest) and manifest["completed"] is True
+    except (ValueError, OSError):
         return False
