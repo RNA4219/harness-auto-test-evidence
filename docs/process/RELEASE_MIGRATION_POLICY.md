@@ -176,6 +176,13 @@ sign-off metadata、sourceRefs、pack_hash を持つ。missing required report�
 manual review、unsupported commercial claim、dependency hard DQ、unsafe artifact
 export attempt は release_ready=false とする。
 
+## Bridge依頼の不具合修正（2026-09-10）
+
+CLI責務台帳の担当先・契約名を実行時の定義と統一する。handoffは実行オプションを
+`command_options`へ保存し、依頼IDにも含める。旧依頼は読み取り可能だが、新しく生成した
+依頼とはIDが異なるため、既存の結果を新依頼へ付け替えない。
+受信側の更新手順と互換性は[Bridge依頼契約](BRIDGE_REQUEST_CONTRACT.md)を参照する。
+
 <!-- responsibility-freeze:start -->
 ## Responsibility Freeze (generated)
 
@@ -186,7 +193,7 @@ export attempt は release_ready=false とする。
 | core HATE/v1 record type | 29 |
 | compat HATE/v1 record type | 311 |
 
-- canonical owner: agent-gatefield, agent-state-gate, manual-bb-test-harness, product-ops-evidence, quality-evidence-graph, shipyard-cp, workflow-cookbook
+- canonical owner: agent-gatefield, agent-state-gate, harness-auto-test-evidence, manual-bb-test-harness, product-ops-evidence, quality-evidence-graph, shipyard-cp, workflow-cookbook
 - P1b以降は compat-v0.2 または明示的な handoff のみ。
 - product_ready=false。QEG verdict、Go/No-Go、waiver、approval、publish authorityは外部責務。
 - deprecated since: 0.3.0; remove after: 1.0.0（v0.xでは物理削除しない）。

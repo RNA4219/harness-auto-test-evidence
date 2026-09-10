@@ -26,7 +26,70 @@ jobs:
       - name: Install dependencies
         run: uv sync --dev --frozen
       - name: Ruff
-        run: uv run ruff check src/hate/schema_resources.py src/hate/plugin_runner.py src/hate/p0a_schema.py src/hate/schema_validator.py src/hate/platform_cli.py src/hate/cli.py src/hate/cli_handlers.py tests/test_schema_resources.py tests/test_platform_ops.py tools/ci/schema_meta_gate.py tools/ci/wheel_smoke.py tools/ci/docs_freshness_gate.py tools/docs/render_post_poc_status.py tools/ci/responsibility_scope_gate.py tools/docs/render_responsibility_docs.py src/hate/bridge/router.py src/hate/bridge/materializer.py tests/test_bridge_router.py tests/test_responsibility_architecture.py
+        run: >-
+          uv run ruff check src/hate/schema_resources.py src/hate/plugin_runner.py
+          src/hate/p0a_schema.py src/hate/schema_validator.py src/hate/platform_cli.py
+          src/hate/cli.py src/hate/cli_handlers.py src/hate/bridge
+          src/hate/p0a_errors.py src/hate/p0a_context.py src/hate/p0a_io.py
+          src/hate/p0a_evidence_strength.py src/hate/p1a_io.py tests/test_cli_input_errors.py
+          src/hate/input_values.py src/hate/p1a_inputs.py src/hate/p0a.py src/hate/p1a.py src/hate/profile.py
+          tests/test_run_input_validation.py
+          src/hate/p1a_schema.py src/hate/p1a_graph.py
+          src/hate/p1a_provenance.py tests/test_p1a_provenance.py
+          src/hate/p1a_scores.py tests/test_p1a_weights.py
+          src/hate/p1a_retry_inputs.py src/hate/p1a_internal/retry_aggregation.py tests/test_p1a_retry_aggregation.py
+          src/hate/execution_metadata.py src/hate/p0b_test_records.py src/hate/p0b_test_graph.py
+          src/hate/p0a_execution.py src/hate/p0a_test_adapters.py tests/test_p0a_execution_metadata.py
+          src/hate/p0a_test_values.py tests/test_p0a_test_values.py
+          src/hate/execution_status.py src/hate/p0a_outcomes.py tests/test_execution_outcomes.py
+          src/hate/json_input.py src/hate/p0b_io.py src/hate/p0b_identity.py src/hate/p1a_run_scope.py tests/test_run_scope.py
+          src/hate/p0b_precheck.py tests/test_p0b_precheck.py
+          src/hate/p0b_graph.py src/hate/p1a_precheck.py src/hate/p1a_internal/recommendations.py tests/test_precheck_soft_gaps.py
+          tests/test_p1a_precheck_permission.py
+          src/hate/p1a_export_metadata.py tests/test_p1a_export_metadata.py
+          tests/test_p0b_output_validation.py
+          src/hate/p0b_outputs.py src/hate/p0b_lifecycle.py tests/test_p0b_output_lifecycle.py
+          src/hate/p0b_inputs.py src/hate/p0b_phases.py src/hate/p0b_exporter.py tests/test_p0b_execution_history.py
+          src/hate/p1a_internal/doctor_report.py src/hate/p1a_internal/aete_scoring.py tests/test_p1a_graph_validation.py
+          src/hate/store/atomic_write.py src/hate/store/indexes.py src/hate/store/local_store.py
+          src/hate/store/indexing.py
+          src/hate/store/references.py
+          src/hate/store/versioning.py
+          src/hate/store/completion.py
+          src/hate/store/compatibility.py
+          src/hate/store/timestamps.py
+          src/hate/store/import_identity.py
+          src/hate/store/json_io.py src/hate/store/bundle_validation.py
+          src/hate/store/models.py src/hate/store/integrity.py
+          src/hate/store/locking.py src/hate/store/transaction.py
+          src/hate/store/replay.py src/hate/store/doctor.py src/hate/store/compare.py
+          src/hate/store/replay_report.py
+          src/hate/store/report_serialization.py src/hate/store/compare_models.py src/hate/store/artifact_compare.py
+          src/hate/store/manifest_validation.py src/hate/store/doctor_types.py src/hate/store/doctor_inventory.py
+          tests/test_store_atomic_failures.py tests/test_store_index_io.py tests/test_store_integrity.py
+          tests/test_store_transactions.py tests/test_store_run_history.py tests/test_store_recovery_process.py
+          tests/test_store_manifest_validation.py tests/test_store_doctor_inventory.py
+          tests/test_store_replay_validation.py tests/test_store_replay_readiness.py
+          tests/test_store_report_determinism.py tests/test_store_compare_semantics.py tests/test_store_export_kinds.py
+          tests/test_store_index_builder.py tests/test_store_index_builder_process.py
+          tests/test_store_bundle_input.py tests/test_store_strict_json.py
+          tests/test_store_reference_validation.py
+          tests/test_store_version.py
+          tests/test_store_hold_updates.py
+          tests/test_store_completion.py
+          tests/test_store_compatibility.py
+          tests/test_store_baseline_selection.py
+          tests/test_store_doctor_reports.py
+          tests/test_store_replay_aggregation.py
+          tests/test_store_import_identity.py
+          tests/test_schema_resources.py tests/test_platform_ops.py tests/test_bridge_options.py
+          tests/test_bridge_paths.py tests/test_bridge_path_contract.py tests/test_bridge_materialization.py
+          tools/check_file_size.py tests/test_check_file_size.py
+          tools/ci/schema_meta_gate.py tools/ci/wheel_smoke.py tools/ci/wheel_outcomes.py tools/ci/docs_freshness_gate.py
+          tools/docs/render_post_poc_status.py tools/ci/responsibility_scope_gate.py
+          tools/docs/render_responsibility_docs.py tests/test_bridge_router.py tests/test_responsibility_architecture.py
+      - name: File size guard
+        run: uv run python tools/check_file_size.py
       - name: Mypy critical surfaces
         run: uv run mypy
       - name: Compile
@@ -78,7 +141,41 @@ jobs:
       - name: Install dependencies
         run: uv sync --dev --frozen
       - name: Process, path, and plugin tests
-        run: uv run pytest -q tests/test_platform_ops.py tests/test_real_repo_operational_oss.py tests/test_adapters_coverage.py
+        run: >-
+          uv run pytest -q tests/test_platform_ops.py tests/test_real_repo_operational_oss.py tests/test_adapters_coverage.py
+          tests/test_cli_input_errors.py
+          tests/test_run_input_validation.py
+          tests/test_p1a_graph_validation.py
+          tests/test_p1a_provenance.py
+          tests/test_p1a_weights.py
+          tests/test_p1a_retry_aggregation.py
+          tests/test_p0b_execution_history.py
+          tests/test_p0a_execution_metadata.py
+          tests/test_p0a_test_values.py
+          tests/test_execution_outcomes.py
+          tests/test_run_scope.py
+          tests/test_p0b_precheck.py
+          tests/test_precheck_soft_gaps.py
+          tests/test_p1a_export_metadata.py
+          tests/test_p0b_output_validation.py
+          tests/test_p0b_output_lifecycle.py
+          tests/test_p1a_precheck_permission.py
+          tests/test_store_atomic_failures.py tests/test_store_index_io.py tests/test_store_integrity.py
+          tests/test_store_transactions.py tests/test_store_run_history.py tests/test_store_recovery_process.py
+          tests/test_store_manifest_validation.py tests/test_store_doctor_inventory.py
+          tests/test_store_replay_validation.py tests/test_store_replay_readiness.py
+          tests/test_store_report_determinism.py tests/test_store_compare_semantics.py tests/test_store_export_kinds.py
+          tests/test_store_index_builder.py tests/test_store_index_builder_process.py
+          tests/test_store_bundle_input.py tests/test_store_strict_json.py
+          tests/test_store_reference_validation.py
+          tests/test_store_version.py
+          tests/test_store_hold_updates.py
+          tests/test_store_completion.py
+          tests/test_store_compatibility.py
+          tests/test_store_baseline_selection.py
+          tests/test_store_doctor_reports.py
+          tests/test_store_replay_aggregation.py
+          tests/test_store_import_identity.py
 
   package:
     runs-on: ubuntu-latest

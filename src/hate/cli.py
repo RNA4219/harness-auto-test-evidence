@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 from .cli_handlers import dispatch_cli
@@ -354,7 +355,7 @@ def build_parser() -> argparse.ArgumentParser:
     bridge_subparsers = bridge.add_subparsers(dest="bridge_command", required=True)
     bridge_materialize = bridge_subparsers.add_parser(
         "materialize",
-        help="Validate a HATE-bridge result and atomically map it to legacy HATE/v1 files.",
+        help="Validate bridge outputs and restore previous files if publication fails.",
     )
     bridge_materialize.add_argument("--request", required=True, type=Path, help="HATE-bridge/v1 request JSON.")
     bridge_materialize.add_argument("--result", required=True, type=Path, help="HATE-bridge/v1 result JSON.")
@@ -368,4 +369,8 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
-    return dispatch_cli(args, parser)
+    try:
+        return dispatch_cli(args, parser)
+    except (OSError, UnicodeError) as exc:
+        print(f"HATE-E-CLI: I/O failure: {exc}", file=sys.stderr)
+        return 1

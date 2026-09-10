@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_p1a_provenance.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "c78030e586fad28d33974e0634000cad7370ffc8d19edb02d8c0a0ef0dddb8c5",
+  "line_count": 180,
+  "size_bytes": 8641,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate",
+    "hate.p1a",
+    "hate.schema_resources",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a.py",
+    "src/hate/schema_resources.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

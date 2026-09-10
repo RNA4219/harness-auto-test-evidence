@@ -2,21 +2,26 @@
   "path": "src/hate/p0b_phases.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "cfcac3c9c89a0fc9af48a6b287306291c05c739f85c4bbd54de10c18253582b8",
-  "line_count": 624,
-  "size_bytes": 26159,
+  "sha256": "1ca76ed32de6f280c790563b17fb8d8c8d6dc589ac48d39f411d1f528b901fe1",
+  "line_count": 609,
+  "size_bytes": 26032,
   "headings": [],
   "imports": [
+    ".execution_status",
     ".p0b_sarif",
     ".p0b_support",
+    ".p0b_test_graph",
     "__future__",
+    "collections.abc",
     "pathlib",
     "typing"
   ],
   "links": [],
   "depends_on": [
+    "src/hate/execution_status.py",
     "src/hate/p0b_sarif.py",
-    "src/hate/p0b_support.py"
+    "src/hate/p0b_support.py",
+    "src/hate/p0b_test_graph.py"
   ],
   "tags": [
     "artifact",

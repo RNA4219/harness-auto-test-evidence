@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_bridge_paths.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "2e548f6dee4f482b2c9e66e025e730b126634cfcf1b2f34c430836f7996793cc",
+  "line_count": 101,
+  "size_bytes": 4592,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.bridge.router",
+    "hate.cli",
+    "json",
+    "os"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/router.py",
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "store",
+    "test",
+    "workflow"
+  ]
+}

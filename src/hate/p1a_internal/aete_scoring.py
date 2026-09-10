@@ -4,32 +4,34 @@ from __future__ import annotations
 
 from typing import Any
 
+from hate.execution_status import has_execution_result
+from hate.p1a_export_metadata import export_metadata_issues
+from hate.p1a_graph import analyze_graph, has_any_source_refs
 from hate.p1a_internal.doctor_report import _all_source_refs_non_empty
+from hate.p1a_internal.retry_aggregation import _build_retry_aggregation
+from hate.p1a_precheck import precheck_gaps, precheck_permission_issues
+from hate.p1a_provenance import analyze_provenance
+from hate.p1a_schema import bundle_schema_issues
+from hate.p1a_scores import AETE_WEIGHTS
 
-AETE_DIMENSIONS = [
-    "provenance_integrity",
-    "determinism_flakiness",
-    "traceability_lineage",
-    "oracle_strength",
-    "change_relevance",
-    "coverage_adequacy",
-    "cross_signal_corroboration",
-    "freshness_profile_conformance",
-]
+AETE_DIMENSIONS = list(AETE_WEIGHTS)
 
 RUBRIC_VERSION = "aete-rubric-2026-06-28"
 PROFILE_VERSION = "hate-profile-default-2026-06-28"
 
 
-def _score_dimensions_with_signals(bundle: dict[str, Any], report: dict[str, Any]) -> tuple[dict[str, int], list[dict[str, Any]], list[dict[str, Any]]]:
+def _score_dimensions_with_signals(
+    bundle: dict[str, Any], report: dict[str, Any], retry_aggregation: dict[str, Any] | None = None,
+) -> tuple[dict[str, int], list[dict[str, Any]], list[dict[str, Any]]]:
     nodes = bundle.get("nodes", [])
     edges = bundle.get("edges", [])
     metadata = bundle.get("metadata", {})
     completeness = bundle.get("completeness", {})
-    has_run = bool(metadata.get("runId") and metadata.get("createdAt") and report.get("commit_sha"))
+    provenance = analyze_provenance(bundle, report)
     has_source_refs = _all_source_refs_non_empty(nodes, edges)
+    graph = analyze_graph(bundle, str(metadata.get("runId", report.get("run_id", ""))))
     has_tests = any(node.get("kind") == "test" for node in nodes)
-    has_execution = any(node.get("kind") == "execution_evidence" for node in nodes)
+    has_execution = any(node.get("kind") == "execution_evidence" and has_execution_result(node.get("data", {})) for node in nodes)
     has_coverage = any(node.get("kind") == "coverage" for node in nodes)
     has_context_or_branch_coverage = any(
         node.get("kind") == "coverage"
@@ -39,20 +41,38 @@ def _score_dimensions_with_signals(bundle: dict[str, Any], report: dict[str, Any
     has_changed_code = any(node.get("kind") == "changed_code" for node in nodes)
     has_risk_edges = any(edge.get("kind") in {"touches", "requires_test"} for edge in edges)
     has_contract_or_mutation = any(node.get("kind") in {"contract_evidence", "mutation_evidence"} for node in nodes)
-    has_artifact_hash = any(node.get("kind") == "evidence_artifact" and node.get("data", {}).get("sha256") for node in nodes)
     has_unsupported = bool(completeness.get("unsupportedClaims") or report.get("unsupportedClaims"))
     missing_execution = bool(report.get("missing_execution"))
+    if retry_aggregation is None:
+        retry_aggregation = _build_retry_aggregation(
+            str(metadata.get("runId", report.get("run_id", ""))),
+            int(metadata.get("runAttempt", report.get("run_attempt", 1))), bundle,
+        )
+    aggregates = retry_aggregation["aggregates"]
+    retry_summary = retry_aggregation["summary"]
+    if not has_tests or retry_summary["flaky_count"] or retry_summary.get("declared_flaky_count", 0):
+        determinism_score = 0
+    elif missing_execution or not aggregates or retry_summary["inconclusive_count"]:
+        determinism_score = 1
+    elif all(item["aggregate_status"] == "stable_passed" and len(item["attempt_results"]) >= 2 for item in aggregates):
+        determinism_score = 5
+    else:
+        determinism_score = 3
+    lineage_score = 0 if not has_any_source_refs(nodes, edges) else 1
+    if has_source_refs and graph.valid and graph.has_risk_test_links:
+        lineage_score = 5 if graph.all_risk_tests_executed else 3
     signal_kinds = {
         node.get("kind")
         for node in nodes
         if node.get("kind") in {"execution_evidence", "coverage", "finding", "evidence_artifact", "contract_evidence", "mutation_evidence"}
+        and (node.get("kind") != "execution_evidence" or has_execution_result(node.get("data", {})))
     }
     dimensions = {
-        "provenance_integrity": 5 if has_run and has_artifact_hash else 3 if has_run else 1 if metadata.get("runId") else 0,
-        "determinism_flakiness": 3 if has_tests and has_execution and not missing_execution else 1 if has_tests else 0,
-        "traceability_lineage": 5 if has_source_refs and has_risk_edges and has_execution else 3 if has_source_refs and has_risk_edges else 1,
+        "provenance_integrity": provenance.score,
+        "determinism_flakiness": determinism_score,
+        "traceability_lineage": lineage_score,
         "oracle_strength": 5 if has_contract_or_mutation else 3 if has_tests and has_execution else 1,
-        "change_relevance": 5 if has_changed_code and has_risk_edges else 1,
+        "change_relevance": 5 if graph.has_changed_risk_links else 1,
         "coverage_adequacy": 5 if has_context_or_branch_coverage else 3 if has_coverage else 0,
         "cross_signal_corroboration": 5 if len(signal_kinds) >= 3 else 3 if has_execution and has_coverage else 1 if signal_kinds else 0,
         "freshness_profile_conformance": 3 if not has_unsupported else 1,
@@ -61,24 +81,25 @@ def _score_dimensions_with_signals(bundle: dict[str, Any], report: dict[str, Any
         _dimension_signal(
             "provenance_integrity",
             dimensions["provenance_integrity"],
-            {
-                "has_run_id": bool(metadata.get("runId")),
-                "has_created_at": bool(metadata.get("createdAt")),
-                "has_commit_sha": bool(report.get("commit_sha")),
-                "has_artifact_hash": has_artifact_hash,
-            },
+            provenance.observed(),
             ["qeg-bundle.json", "qeg-export-report.json"],
         ),
         _dimension_signal(
             "determinism_flakiness",
             dimensions["determinism_flakiness"],
-            {"has_tests": has_tests, "has_execution": has_execution, "missing_execution": missing_execution},
+            {"has_tests": has_tests, "has_execution": has_execution, "missing_execution": missing_execution,
+             "aggregate_statuses": [item["aggregate_status"] for item in aggregates],
+             "flaky_count": retry_summary["flaky_count"], "declared_flaky_count": retry_summary.get("declared_flaky_count", 0),
+             "inconclusive_count": retry_summary["inconclusive_count"]},
             ["qeg-bundle.json", "qeg-export-report.json"],
         ),
         _dimension_signal(
             "traceability_lineage",
             dimensions["traceability_lineage"],
-            {"source_refs_complete": has_source_refs, "has_risk_edges": has_risk_edges, "has_execution": has_execution},
+            {"source_refs_complete": has_source_refs, "has_risk_edges": has_risk_edges, "has_execution": has_execution,
+             "graph_integrity_ok": graph.valid, "has_risk_test_links": graph.has_risk_test_links,
+             "all_risk_tests_executed": graph.all_risk_tests_executed,
+             "unexecuted_risk_tests": graph.unexecuted_risk_tests},
             ["qeg-bundle.json", "evidence-map.json"],
         ),
         _dimension_signal(
@@ -90,7 +111,8 @@ def _score_dimensions_with_signals(bundle: dict[str, Any], report: dict[str, Any
         _dimension_signal(
             "change_relevance",
             dimensions["change_relevance"],
-            {"has_changed_code": has_changed_code, "has_risk_edges": has_risk_edges},
+            {"has_changed_code": has_changed_code, "has_risk_edges": has_risk_edges,
+             "has_changed_risk_links": graph.has_changed_risk_links},
             ["qeg-bundle.json"],
         ),
         _dimension_signal(
@@ -150,9 +172,30 @@ def _dimension_rationale(dimension: str, score: int) -> str:
     return f"{dimension} score {score}: {labels.get(score, 'profile-specific signal score')}"
 
 
-def _score_confidence(completeness: dict[str, Any], report: dict[str, Any]) -> str:
-    if report.get("missing_execution") or completeness.get("unsupportedClaims"):
+def _score_confidence(
+    completeness: dict[str, Any], report: dict[str, Any], *, bundle: dict[str, Any] | None = None,
+    retry_aggregation: dict[str, Any] | None = None,
+) -> str:
+    export_issues = export_metadata_issues(bundle or {}, report)
+    if bundle is not None and (analyze_provenance(bundle, report).issues or precheck_permission_issues(bundle)
+                               or bundle_schema_issues(bundle)):
+        return "low"
+    if any(issue["severity"] == "high" for issue in export_issues):
+        return "low"
+    if export_issues:
         return "medium"
-    if completeness.get("partial"):
+    if bundle is not None and precheck_gaps(bundle):
+        return "medium"
+    if bundle is not None and retry_aggregation is None:
+        metadata = bundle.get("metadata", {})
+        retry_aggregation = _build_retry_aggregation(
+            str(metadata.get("runId", report.get("run_id", ""))),
+            int(metadata.get("runAttempt", report.get("run_attempt", 1))), bundle,
+        )
+    if retry_aggregation is not None and retry_aggregation["summary"]["inconclusive_count"]:
+        return "medium"
+    gaps = ("partial", "unsupportedClaims", "excludedArtifacts", "parserFailures")
+    if (report.get("missing_execution") or report.get("unsupportedClaims") or report.get("excludedArtifacts")
+            or any(source.get(field) for source in (completeness, report.get("completeness", {})) for field in gaps)):
         return "medium"
     return "high"

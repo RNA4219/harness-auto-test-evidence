@@ -1,0 +1,38 @@
+{
+  "path": "src/hate/store/integrity.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c41a379be48335244392560bb63eb65fd56725fa5180a5f1f72ba6c49d3fda2b",
+  "line_count": 182,
+  "size_bytes": 9288,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    ".bundle_validation",
+    ".compatibility",
+    ".indexes",
+    ".json_io",
+    ".local_store",
+    ".models",
+    ".references",
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/bundle_validation.py",
+    "src/hate/store/compatibility.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/json_io.py",
+    "src/hate/store/local_store.py",
+    "src/hate/store/models.py",
+    "src/hate/store/references.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

@@ -2,13 +2,16 @@
   "path": "src/hate/p0b_inputs.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "9e55bbb2eea5b6bd82501912ca2fd7daf6a8aecba0923b579e3333bce622d986",
-  "line_count": 70,
-  "size_bytes": 3079,
+  "sha256": "4309ec2cef2f39000e014d3567d5ff6fdf6ce197bdcdad1c657faf811265d7ca",
+  "line_count": 76,
+  "size_bytes": 3291,
   "headings": [],
   "imports": [
     ".escaped_defects",
-    ".p0b_support",
+    ".p0b_identity",
+    ".p0b_io",
+    ".p0b_lifecycle",
+    ".p0b_test_records",
     ".p0b_types",
     "__future__",
     "pathlib"
@@ -16,7 +19,10 @@
   "links": [],
   "depends_on": [
     "src/hate/escaped_defects.py",
-    "src/hate/p0b_support.py",
+    "src/hate/p0b_identity.py",
+    "src/hate/p0b_io.py",
+    "src/hate/p0b_lifecycle.py",
+    "src/hate/p0b_test_records.py",
     "src/hate/p0b_types.py"
   ],
   "tags": [

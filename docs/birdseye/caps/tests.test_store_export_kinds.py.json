@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_store_export_kinds.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "e3d49b3d55b4d220ecbe81ff93e453dfa46aed1a38865eacc626ca7db171baa9",
+  "line_count": 43,
+  "size_bytes": 2558,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.p0b_phases",
+    "hate.store",
+    "hate.store.replay",
+    "json"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0b_phases.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "qeg",
+    "store",
+    "test"
+  ]
+}

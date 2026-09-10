@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/p0b_identity.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "53e565abc7d5eedc22123e998e0fe13b6b63b2229b80284cd137373299c1a21f",
+  "line_count": 61,
+  "size_bytes": 3239,
+  "headings": [],
+  "imports": [
+    ".input_values",
+    ".p0b_types",
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/p0b_types.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "test"
+  ]
+}

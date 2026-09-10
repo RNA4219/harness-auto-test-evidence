@@ -1,12 +1,11 @@
 from __future__ import annotations
 
-from copy import deepcopy
 import hashlib
 import json
+from copy import deepcopy
 from typing import Any
 
 from .p0a_io import _dq
-
 
 PROFILE_VERSION = "hate-profile-inheritance-2026-06-29"
 
@@ -79,9 +78,13 @@ PROFILE_POLICIES: dict[str, dict[str, str]] = {
 }
 
 
+class UnknownProfileError(ValueError):
+    """設定されたprofile名が登録されていない。"""
+
+
 def resolve_profile(profile_name: str) -> dict[str, Any]:
-    if profile_name not in PROFILES:
-        raise ValueError(f"unknown profile: {profile_name}")
+    if not isinstance(profile_name, str) or profile_name not in PROFILES:
+        raise UnknownProfileError(f"unknown profile: {profile_name}")
 
     chain: list[str] = []
     current: str | None = profile_name

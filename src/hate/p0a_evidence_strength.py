@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from .adapters.stryker import parse_stryker_file
-from .p0a_io import _slug
+from .p0a_io import _read_optional_json, _slug
 from .p0a_records import _envelope
 
 DEFAULT_RECENT_RUN_LIMIT = 10
@@ -115,15 +115,6 @@ def _evidence_strength_distribution(strength_records: list[dict[str, Any]]) -> d
     }
 
 
-def _read_optional_json(path: Path) -> dict[str, Any]:
-    if not path.exists():
-        return {}
-    data = json.loads(path.read_text(encoding="utf-8"))
-    if not isinstance(data, dict):
-        raise ValueError(f"{path.name} must contain a JSON object")
-    return data
-
-
 def _recent_run_limit(config: dict[str, Any]) -> int:
     value = config.get("recent_run_limit", config.get("recent_runs", DEFAULT_RECENT_RUN_LIMIT))
     try:
@@ -191,7 +182,7 @@ def _flake_score(statuses: list[str]) -> float | str:
     normalized = [status for status in statuses if status in {"passed", "failed"}]
     if len(normalized) < 2:
         return "unknown"
-    transitions = sum(1 for left, right in zip(normalized, normalized[1:]) if left != right)
+    transitions = sum(1 for left, right in zip(normalized, normalized[1:], strict=False) if left != right)
     return round(transitions / (len(normalized) - 1), 4)
 
 

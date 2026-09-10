@@ -2,23 +2,39 @@
   "path": "src/hate/p1a_internal/aete_scoring.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "ac9d88a86b50c9e50264517276f0b8eb1e032c3ca8d6a524ac3a22671baa123e",
-  "line_count": 158,
-  "size_bytes": 7125,
+  "sha256": "8dc8f2a655711fc9266788fe44fd670ee42e647af0cbbe4af28b710f1a491f4c",
+  "line_count": 201,
+  "size_bytes": 9763,
   "headings": [],
   "imports": [
     "__future__",
+    "hate.execution_status",
+    "hate.p1a_export_metadata",
+    "hate.p1a_graph",
     "hate.p1a_internal.doctor_report",
+    "hate.p1a_internal.retry_aggregation",
+    "hate.p1a_precheck",
+    "hate.p1a_provenance",
+    "hate.p1a_schema",
+    "hate.p1a_scores",
     "typing"
   ],
   "links": [],
   "depends_on": [
-    "src/hate/p1a_internal/doctor_report.py"
+    "src/hate/execution_status.py",
+    "src/hate/p1a_export_metadata.py",
+    "src/hate/p1a_graph.py",
+    "src/hate/p1a_internal/doctor_report.py",
+    "src/hate/p1a_internal/retry_aggregation.py",
+    "src/hate/p1a_precheck.py",
+    "src/hate/p1a_provenance.py",
+    "src/hate/p1a_schema.py",
+    "src/hate/p1a_scores.py"
   ],
   "tags": [
     "artifact",
     "coverage",
-    "qeg",
+    "schema",
     "test"
   ]
 }

@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_p1a_weights.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "ecc00ed5e5fa53e89ca1a9d52b053a319e38d1ace0937075a7bfc282d2cd3807",
+  "line_count": 199,
+  "size_bytes": 10215,
+  "headings": [
+    "# SPECIFICATION.md section 12 の独立した期待値。"
+  ],
+  "imports": [
+    "__future__",
+    "copy",
+    "hate",
+    "hate.schema_resources",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

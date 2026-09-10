@@ -1,0 +1,23 @@
+{
+  "path": "src/hate/store/timestamps.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "6d598c9715e39881dd312f7a31a0fe176506db9efe2204ff28302f6e62f3309c",
+  "line_count": 35,
+  "size_bytes": 1612,
+  "headings": [],
+  "imports": [
+    ".models",
+    "__future__",
+    "datetime",
+    "pathlib",
+    "re"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/models.py"
+  ],
+  "tags": [
+    "store"
+  ]
+}

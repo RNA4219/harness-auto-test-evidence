@@ -1,0 +1,37 @@
+{
+  "path": "tests/test_store_compatibility.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "14910f74c4522b6cf15cdc1ae0f70289e140c950bdf68ff1e69f5e3a5d4704f4",
+  "line_count": 167,
+  "size_bytes": 8476,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.schema_resources",
+    "hate.store",
+    "hate.store.atomic_write",
+    "hate.store.compare",
+    "hate.store.doctor",
+    "hate.store.indexes",
+    "hate.store.replay",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py",
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/compare.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

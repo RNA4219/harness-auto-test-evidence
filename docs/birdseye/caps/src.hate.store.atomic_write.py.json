@@ -2,11 +2,14 @@
   "path": "src/hate/store/atomic_write.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "4bf1e5d15f7ce6f0b09f6f14e184a8b755f6624c41b1abb53986e9f6e29b60f7",
-  "line_count": 377,
-  "size_bytes": 11584,
+  "sha256": "dc0cf9c6dc70f2c27135967f8f7105a0077c3dd504fedf3ff0f358479d6f729a",
+  "line_count": 314,
+  "size_bytes": 9834,
   "headings": [],
   "imports": [
+    ".completion",
+    ".json_io",
+    ".manifest_validation",
     "__future__",
     "dataclasses",
     "datetime",
@@ -16,10 +19,15 @@
     "pathlib",
     "shutil",
     "tempfile",
-    "typing"
+    "typing",
+    "warnings"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/store/completion.py",
+    "src/hate/store/json_io.py",
+    "src/hate/store/manifest_validation.py"
+  ],
   "tags": [
     "store"
   ]

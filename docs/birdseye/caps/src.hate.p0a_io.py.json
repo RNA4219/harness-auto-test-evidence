@@ -2,11 +2,14 @@
   "path": "src/hate/p0a_io.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "90b6c144ab0b6ce22dd98da6bd722e946a65be1ca0eab4fcf425d53abfde92fb",
-  "line_count": 66,
-  "size_bytes": 2341,
+  "sha256": "83d6991c978bcc7dce155eeb426c778b309c5d25cbd90c93893685e34e8b185c",
+  "line_count": 80,
+  "size_bytes": 2923,
   "headings": [],
   "imports": [
+    ".input_values",
+    ".json_input",
+    ".p0a_errors",
     "__future__",
     "hashlib",
     "json",
@@ -15,7 +18,11 @@
     "typing"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/json_input.py",
+    "src/hate/p0a_errors.py"
+  ],
   "tags": [
     "artifact",
     "fixture"

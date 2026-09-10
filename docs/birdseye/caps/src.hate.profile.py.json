@@ -2,9 +2,9 @@
   "path": "src/hate/profile.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "71efdebd2d87a568048c7ec45dce422446d9f31544deb82201dd4f16f13e7557",
-  "line_count": 298,
-  "size_bytes": 11059,
+  "sha256": "3481b4145f8d2f3b36268c193710b2af3f976e8fb2b9be2ba9ea80799c6e029d",
+  "line_count": 301,
+  "size_bytes": 11211,
   "headings": [],
   "imports": [
     ".p0a_io",

@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_p1a_export_metadata.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "a8b0d70fd8d3b7293db6f6f7b3b17042a218eec64c99ddcb8b9d01dfb7562e49",
+  "line_count": 174,
+  "size_bytes": 9461,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "path": "tests/test_cli_input_errors.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "7b20ff2b06e016180bf22ecc1400c7b926456c8e99a28420445b872043456530",
+  "line_count": 225,
+  "size_bytes": 9670,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "errno",
+    "hate",
+    "hate.p0a",
+    "hate.p1a",
+    "json",
+    "os",
+    "pathlib",
+    "pytest",
+    "shutil",
+    "subprocess",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p1a.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

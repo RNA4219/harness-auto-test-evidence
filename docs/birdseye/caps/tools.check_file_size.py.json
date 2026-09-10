@@ -2,21 +2,22 @@
   "path": "tools/check_file_size.py",
   "role": "tooling",
   "kind": "py",
-  "sha256": "b22c508657a5e5bdb155edabe839c35932db45cd9102ae1b654fdc984514027e",
-  "line_count": 121,
-  "size_bytes": 3727,
+  "sha256": "a6ec2902486ad6627ecf4c87db6e49755ce0e08c67e3e16481fbe9a4cf725071",
+  "line_count": 158,
+  "size_bytes": 5208,
   "headings": [],
   "imports": [
     "__future__",
     "argparse",
+    "collections.abc",
     "dataclasses",
+    "os",
     "pathlib"
   ],
   "links": [],
   "depends_on": [],
   "tags": [
     "birdseye",
-    "fixture",
     "test"
   ]
 }

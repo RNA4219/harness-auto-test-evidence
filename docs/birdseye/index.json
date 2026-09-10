@@ -1,5 +1,5 @@
 {
-  "generated_at": "fa065b7bd56a",
+  "generated_at": "8ca8cdf6daa2",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -40,16 +40,16 @@
     ".github/workflows/ci.yml": {
       "role": "ci",
       "caps": "docs/birdseye/caps/github.workflows.ci.yml.json",
-      "sha256": "a0c61c640efdff5813f799aa34bc4906c8eb6b79ccbe40a317158374b1dfaf09",
-      "line_count": 118,
-      "size_bytes": 5017
+      "sha256": "3ad443e5d0be920289349026087ca90abae8f4b3e0ba9a1fe20be80e321458b2",
+      "line_count": 215,
+      "size_bytes": 10998
     },
     "CHANGELOG.md": {
       "role": "project",
       "caps": "docs/birdseye/caps/CHANGELOG.md.json",
-      "sha256": "ae3aef911667886475fbde2dacd35796b5bbc67965fc7b7b287d472a33768450",
-      "line_count": 50,
-      "size_bytes": 1841
+      "sha256": "aaab7b0028fd5df8df05345c38678614c01a838b26e22e2d577e1f5ed5e33fb7",
+      "line_count": 150,
+      "size_bytes": 15267
     },
     "CODE_OF_CONDUCT.md": {
       "role": "project",
@@ -68,9 +68,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "6b4d759617568ba8a5ba550ba62009f4b07a7d9bcfbff83ab26cd7a40ee891ae",
-      "line_count": 224,
-      "size_bytes": 10698
+      "sha256": "dca25b29e9a369291866cc8c2f3d188296779c1b534c9cb9c23f0910e2439dd0",
+      "line_count": 225,
+      "size_bytes": 11037
     },
     "SECURITY.md": {
       "role": "project",
@@ -369,9 +369,9 @@
     "docs/process/ADAPTER_DIALECT_PARSER_SPEC.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.ADAPTER_DIALECT_PARSER_SPEC.md.json",
-      "sha256": "0260f5fa2a3e1db115fcb98a32f607778d67620c8412a3d98c55988fb2a803c3",
-      "line_count": 63,
-      "size_bytes": 2494
+      "sha256": "51fc31680d6d24f4237131f100067c9c98f942bcfcdffbf0001edcc8b987f20c",
+      "line_count": 155,
+      "size_bytes": 10376
     },
     "docs/process/ADAPTER_SDK_CONTRACT.md": {
       "role": "requirements",
@@ -404,9 +404,23 @@
     "docs/process/BLUEPRINT.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.BLUEPRINT.md.json",
-      "sha256": "037826220e08aa4235612cd43a81d7f3108fed35d290716b5711417925184787",
+      "sha256": "30af17b4ef5e3bf3f8418a366bc62bd5ed6ab02c773ea237d9f91e5c445abe49",
       "line_count": 575,
-      "size_bytes": 33136
+      "size_bytes": 33164
+    },
+    "docs/process/BRIDGE_REQUEST_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.BRIDGE_REQUEST_CONTRACT.md.json",
+      "sha256": "3d243574a205a236b9f167a120e9b17693d28e9862bd9a5013ea3b52362c0465",
+      "line_count": 117,
+      "size_bytes": 9052
+    },
+    "docs/process/CLI_INPUT_ERRORS.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.CLI_INPUT_ERRORS.md.json",
+      "sha256": "0af9b389cae5e153dcc27e8d232b4a72ee38cb60b9e4a7b745f9f80a0fdf042c",
+      "line_count": 150,
+      "size_bytes": 12710
     },
     "docs/process/CUSTOMER_DOCUMENTATION_CONTRACT.md": {
       "role": "requirements",
@@ -474,9 +488,9 @@
     "docs/process/EVALUATION.md": {
       "role": "quality",
       "caps": "docs/birdseye/caps/docs.process.EVALUATION.md.json",
-      "sha256": "81d49e6520bc7640dc4640ffbe755b66f3d125f5d964e259bf373d452c5694f9",
+      "sha256": "f1bf8a1d4403deef421e39c574ad691e2231deb27e2aeb13af68b4320bf86df5",
       "line_count": 543,
-      "size_bytes": 40054
+      "size_bytes": 40082
     },
     "docs/process/FULL_IMPLEMENTATION_SPEC_GAP_CLOSURE.md": {
       "role": "requirements",
@@ -516,9 +530,9 @@
     "docs/process/GUARDRAILS.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.GUARDRAILS.md.json",
-      "sha256": "3ed111fdaa6e2f459631fa92b497880a686652e90e53d686e69258cf564713d1",
+      "sha256": "ec3297464b0bf3d276bb1a81aaaa40d67422123d5f8071956875b8d1e4df210b",
       "line_count": 201,
-      "size_bytes": 13296
+      "size_bytes": 13324
     },
     "docs/process/HOSTED_READ_MODEL_API.md": {
       "role": "documentation",
@@ -569,6 +583,20 @@
       "line_count": 114,
       "size_bytes": 5995
     },
+    "docs/process/LOCAL_STORE_IO_CONTRACT.md": {
+      "role": "requirements",
+      "caps": "docs/birdseye/caps/docs.process.LOCAL_STORE_IO_CONTRACT.md.json",
+      "sha256": "47344e99ab4e3ec4f7ec201efeb21ef30b941c37932eca225e829e54cf50cd05",
+      "line_count": 457,
+      "size_bytes": 41836
+    },
+    "docs/process/MAINTENANCE_FINDINGS.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.process.MAINTENANCE_FINDINGS.md.json",
+      "sha256": "6389805225fb23d5419ad89a4baf69832f11f6835b41ad4fc1b9ac22bf92dd6e",
+      "line_count": 154,
+      "size_bytes": 35327
+    },
     "docs/process/MANUAL_BB_GATE_FULL_IMPLEMENTATION.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.MANUAL_BB_GATE_FULL_IMPLEMENTATION.md.json",
@@ -600,16 +628,16 @@
     "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md.json",
-      "sha256": "53d89af4b527cd0123d6183201ea5dc91230a7f35c3ea67694d59bb3a12def89",
-      "line_count": 246,
-      "size_bytes": 7945
+      "sha256": "f03cee4f82ef6899d16fae011a41cc14c53fad7aa0b8a5c1631824f7b5a13d14",
+      "line_count": 382,
+      "size_bytes": 19424
     },
     "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md": {
       "role": "requirements",
       "caps": "docs/birdseye/caps/docs.process.P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md.json",
-      "sha256": "ff71b5ec29ed4b1208be6fc8279944e71ec25c0244f72169958cfca70b09b64b",
-      "line_count": 257,
-      "size_bytes": 8254
+      "sha256": "1fed085951abff09ed486096521ec71b49b8b7771f04a0c6cb1351e4ad74d0f8",
+      "line_count": 486,
+      "size_bytes": 26877
     },
     "docs/process/PACKAGING_ENTITLEMENT_CONTRACT.md": {
       "role": "requirements",
@@ -880,9 +908,9 @@
     "docs/process/REFACTORING_PLAN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.REFACTORING_PLAN.md.json",
-      "sha256": "446543bfe0d411bde955ddd38922967ad8351496b9fb559837cf6717164a794b",
-      "line_count": 249,
-      "size_bytes": 13735
+      "sha256": "e01c8b567ba936e99998162d4b6d26bd39dd98868e86e9848ce06136a2e48714",
+      "line_count": 255,
+      "size_bytes": 14274
     },
     "docs/process/RELEASE_CANDIDATE_PACK_VALIDATOR_SPEC.md": {
       "role": "requirements",
@@ -894,9 +922,9 @@
     "docs/process/RELEASE_MIGRATION_POLICY.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.process.RELEASE_MIGRATION_POLICY.md.json",
-      "sha256": "3a47de308c16813dce26e429a5e351bee119f7b237609a0182f2690ffcce18e4",
-      "line_count": 194,
-      "size_bytes": 8245
+      "sha256": "426c905031f851d22b3253e04ecdba0093e1c91e6bcd8e5eb4cce3b16a79babd",
+      "line_count": 201,
+      "size_bytes": 8750
     },
     "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md": {
       "role": "requirements",
@@ -922,9 +950,9 @@
     "docs/process/RUNBOOK.md": {
       "role": "operations",
       "caps": "docs/birdseye/caps/docs.process.RUNBOOK.md.json",
-      "sha256": "11ceb90a13d54db39cbfbf09e1fd318c9d7066295158f07076edd1dd8c362216",
+      "sha256": "8d991849c6cb2a22f70550fb0c3e4846dd333eee59c299fb21477f1665cf3b73",
       "line_count": 996,
-      "size_bytes": 69720
+      "size_bytes": 69797
     },
     "docs/process/SCALE_PERFORMANCE_REQUIREMENTS.md": {
       "role": "requirements",
@@ -3442,9 +3470,9 @@
     "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json": {
       "role": "fixture",
       "caps": "docs/birdseye/caps/fixtures.golden.p0b-qeg-minimal.expected.qeg-bundle.json.json",
-      "sha256": "f7be6d573ed6a979fad76913498c0eca10059e5d47ffb0efb08763b75aefaa61",
-      "line_count": 342,
-      "size_bytes": 8210
+      "sha256": "45352577af434c055ccdcfd6ce0cc845b3184ac33a25c4074e9ab526f0d25b62",
+      "line_count": 365,
+      "size_bytes": 9220
     },
     "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-report.json": {
       "role": "fixture",
@@ -6760,23 +6788,23 @@
     "governance/responsibility-registry.json": {
       "role": "project",
       "caps": "docs/birdseye/caps/governance.responsibility-registry.json.json",
-      "sha256": "1b3751d592e603e784140a46db2cb32449ca87edb59a416a43311064d99c4d23",
+      "sha256": "249f191da8df6fc35368b84522d5e29a46e7eca633a128a3553e93e7ac0f8386",
       "line_count": 4218,
-      "size_bytes": 154327
+      "size_bytes": 154091
     },
     "pyproject.toml": {
       "role": "project",
       "caps": "docs/birdseye/caps/pyproject.toml.json",
-      "sha256": "43644df44f6f86807bb25b160be5da169095f63fe520d767b83613d9e89167d6",
-      "line_count": 74,
-      "size_bytes": 1933
+      "sha256": "2caef91b3df2b46ef27b8fc72dfbefaa5fde576ddf6b54e7ff659b16ab146ad1",
+      "line_count": 134,
+      "size_bytes": 4044
     },
     "schemas/HATE-bridge/v1/bridge-request.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE-bridge.v1.bridge-request.schema.json.json",
-      "sha256": "8f65e104a1e7055cb47b2302720a9db46735e75cc17a87505cefc938bfc02f93",
-      "line_count": 96,
-      "size_bytes": 2001
+      "sha256": "7b2555b9b19369ea9c05f7269353bb57583851e7f67e1a05253ad565376d4763",
+      "line_count": 141,
+      "size_bytes": 3901
     },
     "schemas/HATE-bridge/v1/bridge-result.schema.json": {
       "role": "schema",
@@ -6844,16 +6872,16 @@
     "schemas/HATE/v1/aete-score.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.aete-score.schema.json.json",
-      "sha256": "477b3a8c1904dbca9d94a3a6161db48d993c90f15fde3d35332069852b983434",
-      "line_count": 45,
-      "size_bytes": 1376
+      "sha256": "6c03eeae900841f008154ce77dd8f0581c8709240f2fd2b4b652fca6cf813f7f",
+      "line_count": 56,
+      "size_bytes": 1762
     },
     "schemas/HATE/v1/aete-signal-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.aete-signal-report.schema.json.json",
-      "sha256": "d4e8ef6fead684c2b9e649ede245c6b577fa8e5d757ad306b2f068ccfedbdd80",
-      "line_count": 39,
-      "size_bytes": 1171
+      "sha256": "2ecd34185a793b90716d2d03b74f9e636f0c77d5144ec4b95ec5eb2eaea180ca",
+      "line_count": 51,
+      "size_bytes": 1613
     },
     "schemas/HATE/v1/agent-quality-report.schema.json": {
       "role": "schema",
@@ -7985,9 +8013,9 @@
     "schemas/HATE/v1/qeg-bundle.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.qeg-bundle.schema.json.json",
-      "sha256": "b3d6c73110d869c1a388eed2da94601f837a7f14a2f57544ff852f8c1103de88",
-      "line_count": 94,
-      "size_bytes": 3209
+      "sha256": "871980216435d9dfc859e528d2e28b3315a742bd5eb466e6520ee5549fa3558e",
+      "line_count": 95,
+      "size_bytes": 3286
     },
     "schemas/HATE/v1/real-repo-baseline-event.schema.json": {
       "role": "schema",
@@ -8125,9 +8153,9 @@
     "schemas/HATE/v1/retry-aggregation.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.retry-aggregation.schema.json.json",
-      "sha256": "645d970e16122fe93cd2c054d47cbabf3d8dae532ffa89bbc35a81aea8cb2360",
-      "line_count": 19,
-      "size_bytes": 739
+      "sha256": "f46e219a20a6317c4211bf925ce2131c22f7d49377862edaaf2ded1c85bc916d",
+      "line_count": 45,
+      "size_bytes": 1501
     },
     "schemas/HATE/v1/risk-coverage-matrix.schema.json": {
       "role": "schema",
@@ -8272,9 +8300,9 @@
     "schemas/HATE/v1/store-manifest.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.store-manifest.schema.json.json",
-      "sha256": "f127f69e15df9f3d9e9e2b3b50ae8608dba7c7162db8eb78c19b0835e2c2b3ac",
-      "line_count": 145,
-      "size_bytes": 4561
+      "sha256": "937ff15b676a71c631a8d7c2b8fafe5034193a0c492140bc0bd6601174130acf",
+      "line_count": 162,
+      "size_bytes": 5370
     },
     "schemas/HATE/v1/store-migration-report.schema.json": {
       "role": "schema",
@@ -8286,9 +8314,9 @@
     "schemas/HATE/v1/store-replay-report.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.store-replay-report.schema.json.json",
-      "sha256": "6bfe7a85e27a85288447d3147c0ba12ec75c57b39823322089847b79869c1c92",
-      "line_count": 120,
-      "size_bytes": 3961
+      "sha256": "78f5a48a49bc05887d8f2d1ea787ec26975bc802624b2debcd18785c34185a03",
+      "line_count": 126,
+      "size_bytes": 4462
     },
     "schemas/HATE/v1/store-restore-operation.schema.json": {
       "role": "schema",
@@ -8349,9 +8377,9 @@
     "schemas/HATE/v1/test-result.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE.v1.test-result.schema.json.json",
-      "sha256": "9646c042c9e96a947fd8ad0191e6e1ffc79c3658e3f4a5ee1e8968cc4e2be3b9",
-      "line_count": 57,
-      "size_bytes": 1922
+      "sha256": "2110d233aef83a3f1f1dfb6f03a38e17d61db3530baa518a734e4d1f768dadb2",
+      "line_count": 66,
+      "size_bytes": 2453
     },
     "schemas/HATE/v1/trust-advisory-report.schema.json": {
       "role": "schema",
@@ -8738,26 +8766,40 @@
       "line_count": 5,
       "size_bytes": 173
     },
+    "src/hate/bridge/inputs.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.bridge.inputs.py.json",
+      "sha256": "5c174349ec4b16bd5f4e1b3166af7840386da8a2905ccdb2c04210ce5f5c387c",
+      "line_count": 101,
+      "size_bytes": 4168
+    },
     "src/hate/bridge/materializer.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.bridge.materializer.py.json",
-      "sha256": "1969745825177dea48bc4bfe3402bd4b57c873b621d681d8c3f6371ab20f7298",
-      "line_count": 96,
-      "size_bytes": 3667
+      "sha256": "c4e3537d76e990553c866953ba1590e1cfd2add0c9d06e2a1d81c3d54312c049",
+      "line_count": 195,
+      "size_bytes": 7921
     },
     "src/hate/bridge/protocol.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.bridge.protocol.py.json",
-      "sha256": "c63731388d1491f70f3566a671992eac35e8fb110fcfa8909c608c9e9269e222",
-      "line_count": 28,
-      "size_bytes": 598
+      "sha256": "ed6c2ccda9cf7ac6506fb8f57a036ea1875aaa97e1282c23d5931c05fa64ce9f",
+      "line_count": 32,
+      "size_bytes": 762
     },
     "src/hate/bridge/router.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.bridge.router.py.json",
-      "sha256": "e945c9f8fd13aefd0be77e024887fb11c9b1cf9ca34cb34e7b97f11f2bd19740",
-      "line_count": 238,
-      "size_bytes": 8520
+      "sha256": "4831fd1c73591131fa889239a8028caa2e572d56e82123f1292db33b9836fee1",
+      "line_count": 202,
+      "size_bytes": 7248
+    },
+    "src/hate/bridge/routes.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.bridge.routes.py.json",
+      "sha256": "ede738ebcf47066b60b272a458828668c53bcc15a00629f876e628960f2b0857",
+      "line_count": 108,
+      "size_bytes": 5267
     },
     "src/hate/bridge/schemas.py": {
       "role": "implementation",
@@ -8769,9 +8811,9 @@
     "src/hate/cli.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.cli.py.json",
-      "sha256": "a2a9bfa81d81f2041a31da39246ad43cf78cc91e45540577e4d35d4b20f095f2",
-      "line_count": 371,
-      "size_bytes": 28293
+      "sha256": "2a66b6298dda0e77e5a13385f7addd99184b5a28b63c31ad13db6560d8381253",
+      "line_count": 376,
+      "size_bytes": 28439
     },
     "src/hate/cli_handlers.py": {
       "role": "implementation",
@@ -9102,6 +9144,20 @@
       "line_count": 221,
       "size_bytes": 9604
     },
+    "src/hate/execution_metadata.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.execution_metadata.py.json",
+      "sha256": "3a22e9431fda4044359ec40a5d16ed1df4ad26ef0956d7b9fd84841a0beb95ab",
+      "line_count": 54,
+      "size_bytes": 2446
+    },
+    "src/hate/execution_status.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.execution_status.py.json",
+      "sha256": "3afe73da5ea9b0b4cda8281a844bf2e29ed4c6a93140d720f2fcbb6d49c5c815",
+      "line_count": 32,
+      "size_bytes": 1309
+    },
     "src/hate/expansion/__init__.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.expansion.__init__.py.json",
@@ -9284,6 +9340,20 @@
       "line_count": 129,
       "size_bytes": 5390
     },
+    "src/hate/input_values.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.input_values.py.json",
+      "sha256": "a3361025ecf90da1568a888caeb3f71e9c46b3004edf09b5f1293663fe605e87",
+      "line_count": 54,
+      "size_bytes": 1904
+    },
+    "src/hate/json_input.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.json_input.py.json",
+      "sha256": "dd9f1fa11e672fed2bd72127a0a0016a840d6bb1881327725e6c376d8d820e11",
+      "line_count": 14,
+      "size_bytes": 413
+    },
     "src/hate/manual_review_bridge.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.manual_review_bridge.py.json",
@@ -9329,9 +9399,9 @@
     "src/hate/p0a.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a.py.json",
-      "sha256": "4bce6c6cfce85f0aeac47e3c6ac3ab9ddefb82bf613f560036856a9ac3682f32",
-      "line_count": 261,
-      "size_bytes": 11476
+      "sha256": "466421663c3ba92dc9f5115fee72239461fb68f7980e6212fedec9f8154de7f4",
+      "line_count": 262,
+      "size_bytes": 11529
     },
     "src/hate/p0a_artifacts.py": {
       "role": "implementation",
@@ -9350,9 +9420,9 @@
     "src/hate/p0a_context.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_context.py.json",
-      "sha256": "fc8d9d30bfae824f0b38784b40bf9f5b30726fecea4d4e9b178cfc23777f928b",
-      "line_count": 84,
-      "size_bytes": 3021
+      "sha256": "9c160c4dc23cdb100315d7e12d84ae3c8f35946f08c6abfdf743c4c0ef75db18",
+      "line_count": 68,
+      "size_bytes": 2879
     },
     "src/hate/p0a_coverage_adapters.py": {
       "role": "implementation",
@@ -9361,19 +9431,40 @@
       "line_count": 313,
       "size_bytes": 11682
     },
+    "src/hate/p0a_errors.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_errors.py.json",
+      "sha256": "575638c8b295e38fa7c2ebc28f8d9f8f089335ba0c7700554fd69b2904631b9b",
+      "line_count": 18,
+      "size_bytes": 401
+    },
     "src/hate/p0a_evidence_strength.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_evidence_strength.py.json",
-      "sha256": "a35e1b320aa88d2d040c0a741014d345180c7450f5eaaf5250dc09786087d1bc",
-      "line_count": 242,
-      "size_bytes": 9794
+      "sha256": "a5ce9160cc3fce037cb759bb8ef3f0e54bff595e084a6f8644a82ec45a70fb83",
+      "line_count": 233,
+      "size_bytes": 9553
+    },
+    "src/hate/p0a_execution.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_execution.py.json",
+      "sha256": "1f951982e6e9eb63d25bcfaecbf6df3e468f88e32e70271ddf7eed27d43db63a",
+      "line_count": 105,
+      "size_bytes": 5045
     },
     "src/hate/p0a_io.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_io.py.json",
-      "sha256": "90b6c144ab0b6ce22dd98da6bd722e946a65be1ca0eab4fcf425d53abfde92fb",
-      "line_count": 66,
-      "size_bytes": 2341
+      "sha256": "83d6991c978bcc7dce155eeb426c778b309c5d25cbd90c93893685e34e8b185c",
+      "line_count": 80,
+      "size_bytes": 2923
+    },
+    "src/hate/p0a_outcomes.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_outcomes.py.json",
+      "sha256": "4b1a68296ac8c7b761515078f35f6e6c3e665cb39ee4013fcd48c5a0f6d45a6b",
+      "line_count": 45,
+      "size_bytes": 2360
     },
     "src/hate/p0a_records.py": {
       "role": "implementation",
@@ -9406,9 +9497,16 @@
     "src/hate/p0a_test_adapters.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0a_test_adapters.py.json",
-      "sha256": "20216aae8560080f67b710fcc821d46c30c99a1e925b21a6d27a2bd1af396c5d",
-      "line_count": 416,
-      "size_bytes": 16601
+      "sha256": "9892a423175b39696cf68e9cfbce17daccc4609e089ec4d3021c32e883ac29f6",
+      "line_count": 370,
+      "size_bytes": 15516
+    },
+    "src/hate/p0a_test_values.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0a_test_values.py.json",
+      "sha256": "7e22a70350ad8f54771e6269f33e3164cb5d298ea37d0a1ea283dfa0a519a4a0",
+      "line_count": 97,
+      "size_bytes": 4704
     },
     "src/hate/p0b.py": {
       "role": "implementation",
@@ -9420,37 +9518,65 @@
     "src/hate/p0b_exporter.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0b_exporter.py.json",
-      "sha256": "6c9204df2fb16ff6363a298a9637711f1190d0fa0dfe0ab6f45d2b96674ee2e8",
-      "line_count": 218,
-      "size_bytes": 7517
+      "sha256": "5baeb4160230c2fef542b8c93b68d9b30370e304abecdb89b9fec36965801e22",
+      "line_count": 214,
+      "size_bytes": 7201
     },
     "src/hate/p0b_graph.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0b_graph.py.json",
-      "sha256": "c7aa1da7de450f172e37627e0873600689281cbd71ac4e2796b7325f160a7b73",
-      "line_count": 96,
-      "size_bytes": 4140
+      "sha256": "2e103a45fac944cbbb8449f2f9ddaca708f5c95c52d1b88d2ff3eb89ece7fb5c",
+      "line_count": 99,
+      "size_bytes": 4340
+    },
+    "src/hate/p0b_identity.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0b_identity.py.json",
+      "sha256": "53e565abc7d5eedc22123e998e0fe13b6b63b2229b80284cd137373299c1a21f",
+      "line_count": 61,
+      "size_bytes": 3239
     },
     "src/hate/p0b_inputs.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0b_inputs.py.json",
-      "sha256": "9e55bbb2eea5b6bd82501912ca2fd7daf6a8aecba0923b579e3333bce622d986",
-      "line_count": 70,
-      "size_bytes": 3079
+      "sha256": "4309ec2cef2f39000e014d3567d5ff6fdf6ce197bdcdad1c657faf811265d7ca",
+      "line_count": 76,
+      "size_bytes": 3291
+    },
+    "src/hate/p0b_io.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0b_io.py.json",
+      "sha256": "cd1cadd8d3c9ed151bc9b11f43e3ff4a06f65ae2eada3cd0718ee3014fa03e65",
+      "line_count": 55,
+      "size_bytes": 2010
+    },
+    "src/hate/p0b_lifecycle.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0b_lifecycle.py.json",
+      "sha256": "1a3cc08c63f786ca76997bd3fc80df899044696d6d0a61db1c0df61183fe4945",
+      "line_count": 43,
+      "size_bytes": 1573
     },
     "src/hate/p0b_outputs.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0b_outputs.py.json",
-      "sha256": "8d32b9ae9e6c8b92f8df657c2a8198e1db50b2b8f7537720d4820b998e74c029",
-      "line_count": 232,
-      "size_bytes": 9435
+      "sha256": "cc75e0f343428de1c4c013f6e9f5a090b524bcbd287b662f4b0469597b4ca202",
+      "line_count": 257,
+      "size_bytes": 10877
     },
     "src/hate/p0b_phases.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0b_phases.py.json",
-      "sha256": "cfcac3c9c89a0fc9af48a6b287306291c05c739f85c4bbd54de10c18253582b8",
-      "line_count": 624,
-      "size_bytes": 26159
+      "sha256": "1ca76ed32de6f280c790563b17fb8d8c8d6dc589ac48d39f411d1f528b901fe1",
+      "line_count": 609,
+      "size_bytes": 26032
+    },
+    "src/hate/p0b_precheck.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0b_precheck.py.json",
+      "sha256": "5eadcfb8520212ffac70749cf6e800482c20f01a78dc70bba25ad4334d003f39",
+      "line_count": 65,
+      "size_bytes": 2932
     },
     "src/hate/p0b_sarif.py": {
       "role": "implementation",
@@ -9466,6 +9592,20 @@
       "line_count": 631,
       "size_bytes": 26238
     },
+    "src/hate/p0b_test_graph.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0b_test_graph.py.json",
+      "sha256": "5312838dc38d5664dc90840878cc8a0eb00a6addf85e55f3caf55a7259f434e8",
+      "line_count": 78,
+      "size_bytes": 3888
+    },
+    "src/hate/p0b_test_records.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p0b_test_records.py.json",
+      "sha256": "4802e83ab88f8fa050b80479fbbeaef964abd634376a6d70ea1f6fcd780d0ce7",
+      "line_count": 38,
+      "size_bytes": 1840
+    },
     "src/hate/p0b_types.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p0b_types.py.json",
@@ -9476,9 +9616,30 @@
     "src/hate/p1a.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a.py.json",
-      "sha256": "5468d29e30d1018e41e4316a3174739e30a46539b12ec551f802bb75f1ff694c",
-      "line_count": 409,
-      "size_bytes": 17367
+      "sha256": "8ee26363a2f1409346e606bc1c2c22d22a37a6104ac3881db12b63719fd165af",
+      "line_count": 415,
+      "size_bytes": 17867
+    },
+    "src/hate/p1a_export_metadata.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_export_metadata.py.json",
+      "sha256": "49af317438bfed15f4687b78d8482a4184e4f3806b841afffa37cebfae88f2b7",
+      "line_count": 51,
+      "size_bytes": 2637
+    },
+    "src/hate/p1a_graph.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_graph.py.json",
+      "sha256": "60a23f515ed02805dca6e46dc22c779674756409c8eb456a0d99b93ed176c5fb",
+      "line_count": 93,
+      "size_bytes": 4412
+    },
+    "src/hate/p1a_inputs.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_inputs.py.json",
+      "sha256": "5e7101b3b83cd97582d93d3af6ee427f23e43afe7da42241c882b756a8099199",
+      "line_count": 79,
+      "size_bytes": 3445
     },
     "src/hate/p1a_internal/__init__.py": {
       "role": "implementation",
@@ -9504,9 +9665,9 @@
     "src/hate/p1a_internal/aete_scoring.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_internal.aete_scoring.py.json",
-      "sha256": "ac9d88a86b50c9e50264517276f0b8eb1e032c3ca8d6a524ac3a22671baa123e",
-      "line_count": 158,
-      "size_bytes": 7125
+      "sha256": "8dc8f2a655711fc9266788fe44fd670ee42e647af0cbbe4af28b710f1a491f4c",
+      "line_count": 201,
+      "size_bytes": 9763
     },
     "src/hate/p1a_internal/artifact_resolver.py": {
       "role": "implementation",
@@ -9518,9 +9679,9 @@
     "src/hate/p1a_internal/doctor_report.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_internal.doctor_report.py.json",
-      "sha256": "8ff06c18d8b1d9568f4be4637c09be7e2e44889dcaa9fa91d841820db93c05dc",
-      "line_count": 105,
-      "size_bytes": 4298
+      "sha256": "319fbcf44fd437a3d12af06476135da47a76b202e0c8f24ea4f5fbca56259902",
+      "line_count": 157,
+      "size_bytes": 7322
     },
     "src/hate/p1a_internal/identity.py": {
       "role": "implementation",
@@ -9532,23 +9693,65 @@
     "src/hate/p1a_internal/recommendations.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_internal.recommendations.py.json",
-      "sha256": "b3c63bf4633302ca5f78eb6a50a1176d59415ad66454657fd2090d4b1d202115",
-      "line_count": 122,
-      "size_bytes": 5746
+      "sha256": "a1f2b58c24c7ab614ec2da77d95c0f08195a92576846a040d255ef16f41dbdb8",
+      "line_count": 198,
+      "size_bytes": 10399
     },
     "src/hate/p1a_internal/retry_aggregation.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_internal.retry_aggregation.py.json",
-      "sha256": "29dc2e1582b31ebbe820187440085f808d184a33a30344ea98f5b1e371311898",
-      "line_count": 143,
-      "size_bytes": 6009
+      "sha256": "9e973b0cc09f3f9333607760a02579e76dd574b64321681ec659f7aa436fa24e",
+      "line_count": 204,
+      "size_bytes": 11977
     },
     "src/hate/p1a_io.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.p1a_io.py.json",
-      "sha256": "0e8c193c7d61f793e027968119b296ba9a676ccfe55e99dd82ec05dc93e462c2",
-      "line_count": 61,
-      "size_bytes": 2203
+      "sha256": "8b60c68bc48d7704471c984b0986676aa90333fca4d2e7bf7cbd4adc0ca64587",
+      "line_count": 71,
+      "size_bytes": 2649
+    },
+    "src/hate/p1a_precheck.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_precheck.py.json",
+      "sha256": "dfcf36db67fae2687d1129476e0d659e75b084d106749aea1ba53c63fc22450a",
+      "line_count": 138,
+      "size_bytes": 6576
+    },
+    "src/hate/p1a_provenance.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_provenance.py.json",
+      "sha256": "c8217f5ef80b2ebaf59cba833881cff07291aa0c4455fbfab042d58ea88ab4e6",
+      "line_count": 92,
+      "size_bytes": 3915
+    },
+    "src/hate/p1a_retry_inputs.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_retry_inputs.py.json",
+      "sha256": "cc97ce5bf4c0c87e55a6bfe295f8100deeb67c12c5d578c9ea1e90d0cd17a0c4",
+      "line_count": 23,
+      "size_bytes": 907
+    },
+    "src/hate/p1a_run_scope.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_run_scope.py.json",
+      "sha256": "8cf2752e804bc50003da88b4027ba85688ce9fc3ee1140db79cce0f3535b2a67",
+      "line_count": 78,
+      "size_bytes": 3570
+    },
+    "src/hate/p1a_schema.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_schema.py.json",
+      "sha256": "a732e5837c63bb96b853bee41337b39bf412688590ceaede096985f56a7f7ca9",
+      "line_count": 71,
+      "size_bytes": 2820
+    },
+    "src/hate/p1a_scores.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.p1a_scores.py.json",
+      "sha256": "95730fbd03876948308e41e5d830c2b3e6bb6f3e6417a32cf360a29f72ed5e42",
+      "line_count": 74,
+      "size_bytes": 3165
     },
     "src/hate/p1a_support.py": {
       "role": "implementation",
@@ -9819,9 +10022,9 @@
     "src/hate/profile.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.profile.py.json",
-      "sha256": "71efdebd2d87a568048c7ec45dce422446d9f31544deb82201dd4f16f13e7557",
-      "line_count": 298,
-      "size_bytes": 11059
+      "sha256": "3481b4145f8d2f3b36268c193710b2af3f976e8fb2b9be2ba9ea80799c6e029d",
+      "line_count": 301,
+      "size_bytes": 11211
     },
     "src/hate/readiness_model.py": {
       "role": "implementation",
@@ -10005,40 +10208,131 @@
       "line_count": 128,
       "size_bytes": 3174
     },
+    "src/hate/store/artifact_compare.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.artifact_compare.py.json",
+      "sha256": "c03863be65a048a88eb69ab63a36cfdfcbc895bae052f4f7142a46bce0266bb9",
+      "line_count": 157,
+      "size_bytes": 7462
+    },
     "src/hate/store/atomic_write.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store.atomic_write.py.json",
-      "sha256": "4bf1e5d15f7ce6f0b09f6f14e184a8b755f6624c41b1abb53986e9f6e29b60f7",
-      "line_count": 377,
-      "size_bytes": 11584
+      "sha256": "dc0cf9c6dc70f2c27135967f8f7105a0077c3dd504fedf3ff0f358479d6f729a",
+      "line_count": 314,
+      "size_bytes": 9834
+    },
+    "src/hate/store/bundle_validation.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.bundle_validation.py.json",
+      "sha256": "95f27ab47e5bc603c1eb0452407f7fe1b886795b5c14f4e78fff4195afaed6d4",
+      "line_count": 104,
+      "size_bytes": 4881
     },
     "src/hate/store/compare.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store.compare.py.json",
-      "sha256": "670a6f618eb4192893360b8e8ae98b26657aa8ca90f4e055659cb2b3dcd40ef6",
-      "line_count": 497,
-      "size_bytes": 17253
+      "sha256": "351c1e88150843f509030406614789e436f58fda319bda8ee3e8513c39b94315",
+      "line_count": 140,
+      "size_bytes": 7336
+    },
+    "src/hate/store/compare_models.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.compare_models.py.json",
+      "sha256": "bc741a8ee74f53c8160418d452f74f6a0e627e80b2986a3dd769028531419c79",
+      "line_count": 102,
+      "size_bytes": 3992
+    },
+    "src/hate/store/compatibility.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.compatibility.py.json",
+      "sha256": "7acb2987193d3df84b2236af93055c338efc8abb3a1ec8a59617202bfd584d57",
+      "line_count": 28,
+      "size_bytes": 1191
+    },
+    "src/hate/store/completion.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.completion.py.json",
+      "sha256": "ee12199da03d6d5b6560e0509a734c2727d21abecaef89ad3b94dc1f67734477",
+      "line_count": 57,
+      "size_bytes": 2840
     },
     "src/hate/store/doctor.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store.doctor.py.json",
-      "sha256": "0cb81de5e37ebe92d55ed9159e327d9d8bcf99a6992f2ec23458c1bfdaa874e8",
-      "line_count": 571,
-      "size_bytes": 20578
+      "sha256": "d13f46d8ef970c0b00bcd70120ecd3841023e0b9df7d6bb43cbaf4e535257181",
+      "line_count": 136,
+      "size_bytes": 7221
+    },
+    "src/hate/store/doctor_inventory.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.doctor_inventory.py.json",
+      "sha256": "89b561dc9919ed3fe6a086c3bc4991ccfe2c7606a35d9be68232607b14acdd2c",
+      "line_count": 104,
+      "size_bytes": 5528
+    },
+    "src/hate/store/doctor_types.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.doctor_types.py.json",
+      "sha256": "c70765d08bbc807ac8ab423edb4e26f0b73a86323fb22b4b8d38d870fecf356b",
+      "line_count": 143,
+      "size_bytes": 5282
+    },
+    "src/hate/store/import_identity.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.import_identity.py.json",
+      "sha256": "e36ace6419b27bfe6bb1b426e21d6797be5eb54c1795184a4765b8f06afed009",
+      "line_count": 57,
+      "size_bytes": 3043
     },
     "src/hate/store/indexes.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store.indexes.py.json",
-      "sha256": "e8b94cd9eb3c65a24d75a6b5ffe084e0811e116930182fef099dee6928c0b89f",
-      "line_count": 450,
-      "size_bytes": 15085
+      "sha256": "849a8e7eae94a8da9ccee1883a431d8ca724fd69bed6aba0a5a77bbc34dd9ca6",
+      "line_count": 443,
+      "size_bytes": 16533
+    },
+    "src/hate/store/indexing.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.indexing.py.json",
+      "sha256": "d7bea66f208850d94cf6252f281cf44adbf66172e7051806abd992bdbef7f378",
+      "line_count": 119,
+      "size_bytes": 5500
+    },
+    "src/hate/store/integrity.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.integrity.py.json",
+      "sha256": "c41a379be48335244392560bb63eb65fd56725fa5180a5f1f72ba6c49d3fda2b",
+      "line_count": 182,
+      "size_bytes": 9288
+    },
+    "src/hate/store/json_io.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.json_io.py.json",
+      "sha256": "51ac741eea47fd3a512d31562a850b8908333899892164fad32002ff46d14868",
+      "line_count": 48,
+      "size_bytes": 1630
     },
     "src/hate/store/local_store.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store.local_store.py.json",
-      "sha256": "a428f9e2396c34d994d1680972e48474e2babe0784214ea8c5ec9ab1ffab6e39",
-      "line_count": 719,
-      "size_bytes": 25160
+      "sha256": "79b441ebed17b34907f808a921c87f008b069696f89fd2e6b70b5a11a411061e",
+      "line_count": 497,
+      "size_bytes": 20167
+    },
+    "src/hate/store/locking.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.locking.py.json",
+      "sha256": "8c0c81465e730950c805046d4b2e82ce27d8f1e4e8cd488a0e5ba60524bfc2de",
+      "line_count": 91,
+      "size_bytes": 2786
+    },
+    "src/hate/store/manifest_validation.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.manifest_validation.py.json",
+      "sha256": "2e2b7e5ca5fc077cef3592b20490588a0e8a6e9bf374035302071c0cfc6aa540",
+      "line_count": 30,
+      "size_bytes": 1116
     },
     "src/hate/store/migration_rebuild.py": {
       "role": "implementation",
@@ -10047,12 +10341,61 @@
       "line_count": 275,
       "size_bytes": 10280
     },
+    "src/hate/store/models.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.models.py.json",
+      "sha256": "3caa36b10206a3ae0edc02d686ac7416477e6a09546e2dcce88d316c11542de0",
+      "line_count": 110,
+      "size_bytes": 3921
+    },
+    "src/hate/store/references.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.references.py.json",
+      "sha256": "e1fdb2d71697e85d87fa854e75908860e0ab24c9fdaf0be35880548f5e43d839",
+      "line_count": 62,
+      "size_bytes": 2887
+    },
     "src/hate/store/replay.py": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/src.hate.store.replay.py.json",
-      "sha256": "cac598e87d2f1799b4fe985b671f937c17cde1efe717d83341a06fe8a8fdf990",
-      "line_count": 598,
-      "size_bytes": 20716
+      "sha256": "d71b99cf99d3ce649edfbfae171c0ba204fa715d9786246424fbad8c6dbc5e25",
+      "line_count": 429,
+      "size_bytes": 16658
+    },
+    "src/hate/store/replay_report.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.replay_report.py.json",
+      "sha256": "0c02ba4616687e8da8347ec8a9e64d57bc181707820428ab51dd4db632d5f4d0",
+      "line_count": 287,
+      "size_bytes": 13198
+    },
+    "src/hate/store/report_serialization.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.report_serialization.py.json",
+      "sha256": "85513147b7bef092659fd4ed2386c591568c0b61fd2dd4c33087991972bd092c",
+      "line_count": 54,
+      "size_bytes": 2068
+    },
+    "src/hate/store/timestamps.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.timestamps.py.json",
+      "sha256": "6d598c9715e39881dd312f7a31a0fe176506db9efe2204ff28302f6e62f3309c",
+      "line_count": 35,
+      "size_bytes": 1612
+    },
+    "src/hate/store/transaction.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.transaction.py.json",
+      "sha256": "343965a8a3bd5acbfafb056421eed76e0654a751e35d686d27ae9e8d28a0672b",
+      "line_count": 197,
+      "size_bytes": 9327
+    },
+    "src/hate/store/versioning.py": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/src.hate.store.versioning.py.json",
+      "sha256": "90ffd8eb7a1dc1bf1e146d0478b610ae2fe870f2d837fdb17271fc0a0555c2c2",
+      "line_count": 67,
+      "size_bytes": 3182
     },
     "src/hate/store_legacy.py": {
       "role": "implementation",
@@ -10432,6 +10775,34 @@
       "line_count": 114,
       "size_bytes": 4088
     },
+    "tests/test_bridge_materialization.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_bridge_materialization.py.json",
+      "sha256": "232747b811fe62e9c7220704145dc126d065d7daca1a2db377b3e2e770ca4c36",
+      "line_count": 187,
+      "size_bytes": 7690
+    },
+    "tests/test_bridge_options.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_bridge_options.py.json",
+      "sha256": "a9c33a57d840ccccca2efe30333a2ecace43a32ddfae21397bf8643cf4a1d3d6",
+      "line_count": 105,
+      "size_bytes": 4694
+    },
+    "tests/test_bridge_path_contract.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_bridge_path_contract.py.json",
+      "sha256": "b07fd613a72f0236a8898d98f1228a3fa216151dfcd6232a5d843b1777052fb2",
+      "line_count": 184,
+      "size_bytes": 7560
+    },
+    "tests/test_bridge_paths.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_bridge_paths.py.json",
+      "sha256": "2e548f6dee4f482b2c9e66e025e730b126634cfcf1b2f34c430836f7996793cc",
+      "line_count": 101,
+      "size_bytes": 4592
+    },
     "tests/test_bridge_router.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_bridge_router.py.json",
@@ -10442,9 +10813,16 @@
     "tests/test_check_file_size.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_check_file_size.py.json",
-      "sha256": "5f7b9c1d9b8f6f166d83bf46a3ca00fcc1b75aab6843fb1acd93f026095bdd15",
-      "line_count": 42,
-      "size_bytes": 1415
+      "sha256": "e97ccf6f6836777b396b40071c9bbc0b72c3ff0815315f61b7dc2633b82e73ff",
+      "line_count": 86,
+      "size_bytes": 3568
+    },
+    "tests/test_cli_input_errors.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_cli_input_errors.py.json",
+      "sha256": "7b20ff2b06e016180bf22ecc1400c7b926456c8e99a28420445b872043456530",
+      "line_count": 225,
+      "size_bytes": 9670
     },
     "tests/test_cli_release_candidate.py": {
       "role": "test",
@@ -10564,6 +10942,13 @@
       "sha256": "c59464387ded2f1afad8770e33f74df24076d14413993edf5ea7d1cfb1c77ae4",
       "line_count": 128,
       "size_bytes": 5376
+    },
+    "tests/test_execution_outcomes.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_execution_outcomes.py.json",
+      "sha256": "bc72238fe89a96904a65238eca2773ef5025fbe2252ec9b770fa20207db95a9f",
+      "line_count": 234,
+      "size_bytes": 13181
     },
     "tests/test_expansion_a11y_l10n.py": {
       "role": "test",
@@ -10747,6 +11132,20 @@
       "line_count": 695,
       "size_bytes": 34139
     },
+    "tests/test_p0a_execution_metadata.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p0a_execution_metadata.py.json",
+      "sha256": "d80c316048032fc9811da1bbeffe2dd85e4fc6c49cbe470bae661a79751620ad",
+      "line_count": 247,
+      "size_bytes": 13128
+    },
+    "tests/test_p0a_test_values.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p0a_test_values.py.json",
+      "sha256": "5bde3a4be9ce57692c28d5c5dc2b4c616f80cd7984a169a6667d5cae94fe724f",
+      "line_count": 225,
+      "size_bytes": 11958
+    },
     "tests/test_p0b.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p0b.py.json",
@@ -10754,12 +11153,75 @@
       "line_count": 721,
       "size_bytes": 32998
     },
+    "tests/test_p0b_execution_history.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p0b_execution_history.py.json",
+      "sha256": "8515f10acb3e828d78e3722958898bd735420c7e7305da3b2c5b3a3da29e249f",
+      "line_count": 224,
+      "size_bytes": 11352
+    },
+    "tests/test_p0b_output_lifecycle.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p0b_output_lifecycle.py.json",
+      "sha256": "8dbf8be43ba3ab3a899502ad9de37638cf3d157804d2f7771aed8d0fdda9331a",
+      "line_count": 180,
+      "size_bytes": 8429
+    },
+    "tests/test_p0b_output_validation.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p0b_output_validation.py.json",
+      "sha256": "0afedf5fbe1b7e4100ae75653c24f0797d9735d68d0dc5f35db650cb4999b932",
+      "line_count": 116,
+      "size_bytes": 4988
+    },
+    "tests/test_p0b_precheck.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p0b_precheck.py.json",
+      "sha256": "f65a44c15dad5971f2a3e8225c2626637e5c14d9533833616c557a7f2ccc3ac1",
+      "line_count": 126,
+      "size_bytes": 5744
+    },
     "tests/test_p1a.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_p1a.py.json",
-      "sha256": "d1e1b3ab0f992f4671b4af2e6aaed8d051ef58d2abc85ff342800de217df2ddd",
-      "line_count": 615,
-      "size_bytes": 28510
+      "sha256": "5bd0e839e341415e3e6f81243b7a09edd7380822fd7e3a55944796fca0468bea",
+      "line_count": 620,
+      "size_bytes": 28947
+    },
+    "tests/test_p1a_export_metadata.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p1a_export_metadata.py.json",
+      "sha256": "a8b0d70fd8d3b7293db6f6f7b3b17042a218eec64c99ddcb8b9d01dfb7562e49",
+      "line_count": 174,
+      "size_bytes": 9461
+    },
+    "tests/test_p1a_graph_validation.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p1a_graph_validation.py.json",
+      "sha256": "16d93e1610524a054bc4745f69051a9f35480e495ab142a9c69c32a263ab6b49",
+      "line_count": 249,
+      "size_bytes": 12782
+    },
+    "tests/test_p1a_precheck_permission.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p1a_precheck_permission.py.json",
+      "sha256": "bcf7eade1e2826b0ffd9e44cd014dca1bcc6daeffe49077f2064c9a2848ceead",
+      "line_count": 193,
+      "size_bytes": 10222
+    },
+    "tests/test_p1a_provenance.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p1a_provenance.py.json",
+      "sha256": "c78030e586fad28d33974e0634000cad7370ffc8d19edb02d8c0a0ef0dddb8c5",
+      "line_count": 180,
+      "size_bytes": 8641
+    },
+    "tests/test_p1a_retry_aggregation.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p1a_retry_aggregation.py.json",
+      "sha256": "6357d7102dcd52f6c01ce039a099acdd46db7893315febb63f51a8d3260ee40c",
+      "line_count": 247,
+      "size_bytes": 13349
     },
     "tests/test_p1a_schema_registry_contract.py": {
       "role": "test",
@@ -10767,6 +11229,13 @@
       "sha256": "5a8bf746c46847d3a079644378ee628389fe9fa6d724d0bcb4b85b2daaa0576d",
       "line_count": 63,
       "size_bytes": 2671
+    },
+    "tests/test_p1a_weights.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_p1a_weights.py.json",
+      "sha256": "ecc00ed5e5fa53e89ca1a9d52b053a319e38d1ace0937075a7bfc282d2cd3807",
+      "line_count": 199,
+      "size_bytes": 10215
     },
     "tests/test_p1b.py": {
       "role": "test",
@@ -11020,6 +11489,13 @@
       "line_count": 237,
       "size_bytes": 9780
     },
+    "tests/test_precheck_soft_gaps.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_precheck_soft_gaps.py.json",
+      "sha256": "aae2d6972d7a05aecb631932a76696e338bdac467467329791a37e8d0f836ee5",
+      "line_count": 217,
+      "size_bytes": 10863
+    },
     "tests/test_product_e2e.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_product_e2e.py.json",
@@ -11114,9 +11590,9 @@
     "tests/test_responsibility_architecture.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_responsibility_architecture.py.json",
-      "sha256": "5caa6633d151f53db073a8a59afccfed7f3ca0e2a0385e2e4b7f7c22a09c5d35",
-      "line_count": 60,
-      "size_bytes": 2521
+      "sha256": "9e6bfbe847cd06c24b3913420a91fe31753d05bcedd3d999b2b756b0b2c239e1",
+      "line_count": 115,
+      "size_bytes": 4928
     },
     "tests/test_risk_matrix.py": {
       "role": "test",
@@ -11124,6 +11600,20 @@
       "sha256": "d08c82222bb2910e8f8977d18e49300664dc8f4cc0e0fcabe9e39247c88842b9",
       "line_count": 269,
       "size_bytes": 9672
+    },
+    "tests/test_run_input_validation.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_run_input_validation.py.json",
+      "sha256": "0b7fe98fb3c99887adfb29e288a023201933ad373b039bc1a479806c278c7d19",
+      "line_count": 239,
+      "size_bytes": 10866
+    },
+    "tests/test_run_scope.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_run_scope.py.json",
+      "sha256": "73956a1fc8197ad58566ed393c347f3be1316a6ea6efd50b138ec7eb34c9430e",
+      "line_count": 325,
+      "size_bytes": 15603
     },
     "tests/test_runtime_record_registry.py": {
       "role": "test",
@@ -11174,12 +11664,124 @@
       "line_count": 149,
       "size_bytes": 5859
     },
+    "tests/test_store_atomic_failures.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_atomic_failures.py.json",
+      "sha256": "768b51d2bd3188f13ef201781e779835e4bba78dd3811ba664bf8252a1429909",
+      "line_count": 110,
+      "size_bytes": 4208
+    },
+    "tests/test_store_baseline_selection.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_baseline_selection.py.json",
+      "sha256": "97c7d87945475f45f840b96ae5242f647a6a85fd5571e1d0565350f60ad3eca4",
+      "line_count": 190,
+      "size_bytes": 9771
+    },
+    "tests/test_store_bundle_input.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_bundle_input.py.json",
+      "sha256": "7d141c965c49569146e07a849d15e05f9cd089dce2cf4286ae0ed6ebca1ebbaf",
+      "line_count": 161,
+      "size_bytes": 6824
+    },
+    "tests/test_store_compare_semantics.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_compare_semantics.py.json",
+      "sha256": "16995462027cb5128cfe0debf451455fc7d6ed22cb0d664bfde8eb5bca3d0451",
+      "line_count": 122,
+      "size_bytes": 6932
+    },
+    "tests/test_store_compatibility.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_compatibility.py.json",
+      "sha256": "14910f74c4522b6cf15cdc1ae0f70289e140c950bdf68ff1e69f5e3a5d4704f4",
+      "line_count": 167,
+      "size_bytes": 8476
+    },
+    "tests/test_store_completion.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_completion.py.json",
+      "sha256": "8afc7996bc02255917733d413ec70f1b1b5a68be2a7e2c792042111f94d13920",
+      "line_count": 224,
+      "size_bytes": 10102
+    },
+    "tests/test_store_doctor_inventory.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_doctor_inventory.py.json",
+      "sha256": "9b57d420496b0391dedfac28365090b38252000974bb43e08cb116d0afe085f6",
+      "line_count": 116,
+      "size_bytes": 4993
+    },
+    "tests/test_store_doctor_reports.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_doctor_reports.py.json",
+      "sha256": "5f0096a7f31e2eced2bc790b4c3e0f074264bb3317898f2453ebb009c3c8f027",
+      "line_count": 240,
+      "size_bytes": 10744
+    },
+    "tests/test_store_export_kinds.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_export_kinds.py.json",
+      "sha256": "e3d49b3d55b4d220ecbe81ff93e453dfa46aed1a38865eacc626ca7db171baa9",
+      "line_count": 43,
+      "size_bytes": 2558
+    },
+    "tests/test_store_hold_updates.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_hold_updates.py.json",
+      "sha256": "cbf51c90cc55b413f96e4a85ce7df961f5c5b55c1d7809252b15fec6d00fd370",
+      "line_count": 173,
+      "size_bytes": 7595
+    },
+    "tests/test_store_import_identity.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_import_identity.py.json",
+      "sha256": "1ead8788d9512b8bd1a5ba577736f8d407462758f874140ac958fb09599435b6",
+      "line_count": 132,
+      "size_bytes": 6570
+    },
+    "tests/test_store_index_builder.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_index_builder.py.json",
+      "sha256": "bf14f6656e506872b6b520e699ece45b916662fe7b18a5155a496825e9a82154",
+      "line_count": 223,
+      "size_bytes": 10098
+    },
+    "tests/test_store_index_builder_process.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_index_builder_process.py.json",
+      "sha256": "e5db041a116ddabb550e12dd3128f58736a2f2e77ab3b647b267bf9095071710",
+      "line_count": 95,
+      "size_bytes": 3414
+    },
+    "tests/test_store_index_io.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_index_io.py.json",
+      "sha256": "c89a8c44960f730b7e4591f14cce15605b75adfdc85857a1c1db8871089ba3f7",
+      "line_count": 133,
+      "size_bytes": 5087
+    },
+    "tests/test_store_integrity.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_integrity.py.json",
+      "sha256": "225375d52012b9b87efef89ae507bf43db362872ab5fbccddd5ba444c1a46f55",
+      "line_count": 96,
+      "size_bytes": 4028
+    },
     "tests/test_store_local.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_store_local.py.json",
       "sha256": "05a368eb42539917a641f3fa82b69126b5a6ab13fa339cbc2c166a013f30750d",
       "line_count": 643,
       "size_bytes": 20906
+    },
+    "tests/test_store_manifest_validation.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_manifest_validation.py.json",
+      "sha256": "26ce9f6e99a17a94f976b68b2c55954cd1657b0b2555d0629c8ef67ce4128558",
+      "line_count": 169,
+      "size_bytes": 7996
     },
     "tests/test_store_migration_rebuild.py": {
       "role": "test",
@@ -11188,12 +11790,82 @@
       "line_count": 171,
       "size_bytes": 6913
     },
+    "tests/test_store_recovery_process.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_recovery_process.py.json",
+      "sha256": "8b8698c72d64a10e173204748700d212c8e713d67a9a70dbc45b5cb55fb71a8e",
+      "line_count": 94,
+      "size_bytes": 3618
+    },
+    "tests/test_store_reference_validation.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_reference_validation.py.json",
+      "sha256": "fd2731eb853e5950e93c362ace9c4c36e056c807cadffb132717be9d1cdd511c",
+      "line_count": 169,
+      "size_bytes": 7630
+    },
+    "tests/test_store_replay_aggregation.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_replay_aggregation.py.json",
+      "sha256": "da322cb268ec54a87dd43b6da9206bf897865ea5625fe535eb5b1914dd1c03e0",
+      "line_count": 172,
+      "size_bytes": 8620
+    },
     "tests/test_store_replay_compare.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_store_replay_compare.py.json",
-      "sha256": "6d68e0395868337b2f44138403ca3b2f1680c6115910fdcb4ff2626f84345a73",
-      "line_count": 780,
-      "size_bytes": 29837
+      "sha256": "85c6380dcc1220f3f118536399cc52f36724be30bbd95292d418ca5dd6efaf17",
+      "line_count": 736,
+      "size_bytes": 28149
+    },
+    "tests/test_store_replay_readiness.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_replay_readiness.py.json",
+      "sha256": "f0620fc4bbde314fb795f3ac34dbac4da08f399daf42826dbb438ba68cd79afe",
+      "line_count": 77,
+      "size_bytes": 4085
+    },
+    "tests/test_store_replay_validation.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_replay_validation.py.json",
+      "sha256": "54a9e313bdd325d1b6a61560b7d85a91150de5c21cfa59c41acb3eb3a63cf729",
+      "line_count": 138,
+      "size_bytes": 6708
+    },
+    "tests/test_store_report_determinism.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_report_determinism.py.json",
+      "sha256": "2cc54d1071779ca72c3dfda08e221b0dd57ea67641593f0117118cfcb667277f",
+      "line_count": 156,
+      "size_bytes": 7718
+    },
+    "tests/test_store_run_history.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_run_history.py.json",
+      "sha256": "f20cdc82e2f6a56f89faffcd8f8bdb1c33250f837c6b84ac2b8ff98aed237b0b",
+      "line_count": 76,
+      "size_bytes": 3500
+    },
+    "tests/test_store_strict_json.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_strict_json.py.json",
+      "sha256": "5d1a5f249770e8d0126f36856ae98bd43eebf8e46a3e60768ef709a381babe37",
+      "line_count": 96,
+      "size_bytes": 4033
+    },
+    "tests/test_store_transactions.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_transactions.py.json",
+      "sha256": "46445b0b4d2af075f36b2832ca3928d88477f0cfef7ce53c795f7a84426825a3",
+      "line_count": 180,
+      "size_bytes": 7815
+    },
+    "tests/test_store_version.py": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.test_store_version.py.json",
+      "sha256": "decc95f0d251e7ae96a60988d08c1f44b7ce8ad706bfe3e1a9f0eb71410cb3d2",
+      "line_count": 210,
+      "size_bytes": 8643
     },
     "tests/test_support_ops_diagnostics.py": {
       "role": "test",
@@ -11296,9 +11968,9 @@
     "tools/check_file_size.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.check_file_size.py.json",
-      "sha256": "b22c508657a5e5bdb155edabe839c35932db45cd9102ae1b654fdc984514027e",
-      "line_count": 121,
-      "size_bytes": 3727
+      "sha256": "a6ec2902486ad6627ecf4c87db6e49755ce0e08c67e3e16481fbe9a4cf725071",
+      "line_count": 158,
+      "size_bytes": 5208
     },
     "tools/ci/docs_freshness_gate.py": {
       "role": "tooling",
@@ -11310,9 +11982,9 @@
     "tools/ci/responsibility_scope_gate.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.ci.responsibility_scope_gate.py.json",
-      "sha256": "1e3af4afe46017116f59eb9cdd3259c7413a895f0bf07ad515c72099d3c71bd6",
-      "line_count": 127,
-      "size_bytes": 8290
+      "sha256": "4487e985f1aa5a4efd4d3a78bf067eb68e02921eee0515bcf0e1deb3005ec765",
+      "line_count": 141,
+      "size_bytes": 8906
     },
     "tools/ci/schema_meta_gate.py": {
       "role": "tooling",
@@ -11321,12 +11993,19 @@
       "line_count": 30,
       "size_bytes": 902
     },
+    "tools/ci/wheel_outcomes.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.ci.wheel_outcomes.py.json",
+      "sha256": "add8bc17791551d9ca19e98b6fc769451ca971cae4038f0fa3611f9756309490",
+      "line_count": 80,
+      "size_bytes": 4235
+    },
     "tools/ci/wheel_smoke.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.ci.wheel_smoke.py.json",
-      "sha256": "e6c8f8a8f47bf0b7a3b2531ec153bfa0f03db1b4def9a26430f7f2733fd58bf7",
-      "line_count": 64,
-      "size_bytes": 2007
+      "sha256": "ede64ba4e91d8d765aca4d6762da25c1475c4478b0590ecde52cda15ff4f7803",
+      "line_count": 660,
+      "size_bytes": 44304
     },
     "tools/codemap/update.py": {
       "role": "tooling",
@@ -11351,6 +12030,14 @@
     }
   },
   "edges": [
+    [
+      "CHANGELOG.md",
+      "docs/process/BRIDGE_REQUEST_CONTRACT.md"
+    ],
+    [
+      "CHANGELOG.md",
+      "docs/process/LOCAL_STORE_IO_CONTRACT.md"
+    ],
     [
       "README.md",
       "docs/README_EN.md"
@@ -11390,6 +12077,10 @@
     [
       "README.md",
       "docs/process/BLUEPRINT.md"
+    ],
+    [
+      "README.md",
+      "docs/process/BRIDGE_REQUEST_CONTRACT.md"
     ],
     [
       "README.md",
@@ -11580,6 +12271,46 @@
       "docs/acceptance/RELEASE_V0_2_0_20260711.md"
     ],
     [
+      "docs/process/ADAPTER_DIALECT_PARSER_SPEC.md",
+      "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md"
+    ],
+    [
+      "docs/process/CLI_INPUT_ERRORS.md",
+      "docs/process/ADAPTER_DIALECT_PARSER_SPEC.md"
+    ],
+    [
+      "docs/process/CLI_INPUT_ERRORS.md",
+      "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md"
+    ],
+    [
+      "docs/process/CLI_INPUT_ERRORS.md",
+      "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md"
+    ],
+    [
+      "docs/process/LOCAL_STORE_IO_CONTRACT.md",
+      "docs/process/MAINTENANCE_FINDINGS.md"
+    ],
+    [
+      "docs/process/MAINTENANCE_FINDINGS.md",
+      "docs/process/BRIDGE_REQUEST_CONTRACT.md"
+    ],
+    [
+      "docs/process/MAINTENANCE_FINDINGS.md",
+      "docs/process/CLI_INPUT_ERRORS.md"
+    ],
+    [
+      "docs/process/MAINTENANCE_FINDINGS.md",
+      "docs/process/LOCAL_STORE_IO_CONTRACT.md"
+    ],
+    [
+      "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md",
+      "docs/process/ADAPTER_DIALECT_PARSER_SPEC.md"
+    ],
+    [
+      "docs/process/RELEASE_MIGRATION_POLICY.md",
+      "docs/process/BRIDGE_REQUEST_CONTRACT.md"
+    ],
+    [
       "src/hate/__main__.py",
       "src/hate/cli.py"
     ],
@@ -11652,8 +12383,16 @@
       "src/hate/bridge/router.py"
     ],
     [
+      "src/hate/bridge/inputs.py",
+      "src/hate/bridge/protocol.py"
+    ],
+    [
       "src/hate/bridge/materializer.py",
       "src/hate/bridge/schemas.py"
+    ],
+    [
+      "src/hate/bridge/router.py",
+      "src/hate/bridge/inputs.py"
     ],
     [
       "src/hate/bridge/router.py",
@@ -11661,7 +12400,15 @@
     ],
     [
       "src/hate/bridge/router.py",
+      "src/hate/bridge/routes.py"
+    ],
+    [
+      "src/hate/bridge/router.py",
       "src/hate/bridge/schemas.py"
+    ],
+    [
+      "src/hate/bridge/routes.py",
+      "src/hate/bridge/protocol.py"
     ],
     [
       "src/hate/cli.py",
@@ -11866,6 +12613,10 @@
     [
       "src/hate/evidence_graph.py",
       "src/hate/evidence_envelope.py"
+    ],
+    [
+      "src/hate/execution_metadata.py",
+      "src/hate/input_values.py"
     ],
     [
       "src/hate/expansion/portfolio_readiness.py",
@@ -12153,7 +12904,11 @@
     ],
     [
       "src/hate/p0a_context.py",
-      "src/hate/p0a_constants.py"
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p0a_context.py",
+      "src/hate/p0a_errors.py"
     ],
     [
       "src/hate/p0a_context.py",
@@ -12186,6 +12941,30 @@
     [
       "src/hate/p0a_evidence_strength.py",
       "src/hate/p0a_records.py"
+    ],
+    [
+      "src/hate/p0a_execution.py",
+      "src/hate/execution_metadata.py"
+    ],
+    [
+      "src/hate/p0a_execution.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p0a_io.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p0a_io.py",
+      "src/hate/json_input.py"
+    ],
+    [
+      "src/hate/p0a_io.py",
+      "src/hate/p0a_errors.py"
+    ],
+    [
+      "src/hate/p0a_outcomes.py",
+      "src/hate/p0a_test_values.py"
     ],
     [
       "src/hate/p0a_records.py",
@@ -12249,7 +13028,11 @@
     ],
     [
       "src/hate/p0a_test_adapters.py",
-      "src/hate/p0a_constants.py"
+      "src/hate/execution_metadata.py"
+    ],
+    [
+      "src/hate/p0a_test_adapters.py",
+      "src/hate/p0a_execution.py"
     ],
     [
       "src/hate/p0a_test_adapters.py",
@@ -12257,7 +13040,19 @@
     ],
     [
       "src/hate/p0a_test_adapters.py",
+      "src/hate/p0a_outcomes.py"
+    ],
+    [
+      "src/hate/p0a_test_adapters.py",
       "src/hate/p0a_records.py"
+    ],
+    [
+      "src/hate/p0a_test_adapters.py",
+      "src/hate/p0a_test_values.py"
+    ],
+    [
+      "src/hate/p0a_test_values.py",
+      "src/hate/input_values.py"
     ],
     [
       "src/hate/p0b.py",
@@ -12285,6 +13080,14 @@
     ],
     [
       "src/hate/p0b_exporter.py",
+      "src/hate/p0b_precheck.py"
+    ],
+    [
+      "src/hate/p0b_identity.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p0b_identity.py",
       "src/hate/p0b_types.py"
     ],
     [
@@ -12293,19 +13096,59 @@
     ],
     [
       "src/hate/p0b_inputs.py",
-      "src/hate/p0b_support.py"
+      "src/hate/p0b_identity.py"
+    ],
+    [
+      "src/hate/p0b_inputs.py",
+      "src/hate/p0b_io.py"
+    ],
+    [
+      "src/hate/p0b_inputs.py",
+      "src/hate/p0b_lifecycle.py"
+    ],
+    [
+      "src/hate/p0b_inputs.py",
+      "src/hate/p0b_test_records.py"
     ],
     [
       "src/hate/p0b_inputs.py",
       "src/hate/p0b_types.py"
     ],
     [
+      "src/hate/p0b_io.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p0b_io.py",
+      "src/hate/json_input.py"
+    ],
+    [
+      "src/hate/p0b_io.py",
+      "src/hate/p0b_types.py"
+    ],
+    [
+      "src/hate/p0b_lifecycle.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p0b_lifecycle.py",
+      "src/hate/p0b_io.py"
+    ],
+    [
+      "src/hate/p0b_lifecycle.py",
+      "src/hate/p0b_types.py"
+    ],
+    [
       "src/hate/p0b_outputs.py",
       "src/hate/p0b_support.py"
     ],
     [
       "src/hate/p0b_outputs.py",
       "src/hate/p0b_types.py"
+    ],
+    [
+      "src/hate/p0b_phases.py",
+      "src/hate/execution_status.py"
     ],
     [
       "src/hate/p0b_phases.py",
@@ -12316,12 +13159,68 @@
       "src/hate/p0b_support.py"
     ],
     [
+      "src/hate/p0b_phases.py",
+      "src/hate/p0b_test_graph.py"
+    ],
+    [
+      "src/hate/p0b_precheck.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p0b_precheck.py",
+      "src/hate/p0b_types.py"
+    ],
+    [
       "src/hate/p0b_support.py",
       "src/hate/p0a_support.py"
     ],
     [
+      "src/hate/p0b_test_graph.py",
+      "src/hate/execution_metadata.py"
+    ],
+    [
+      "src/hate/p0b_test_graph.py",
+      "src/hate/execution_status.py"
+    ],
+    [
+      "src/hate/p0b_test_graph.py",
+      "src/hate/p0b_support.py"
+    ],
+    [
+      "src/hate/p0b_test_graph.py",
+      "src/hate/p0b_types.py"
+    ],
+    [
+      "src/hate/p0b_test_records.py",
+      "src/hate/execution_metadata.py"
+    ],
+    [
+      "src/hate/p0b_test_records.py",
+      "src/hate/execution_status.py"
+    ],
+    [
+      "src/hate/p0b_test_records.py",
+      "src/hate/p0b_io.py"
+    ],
+    [
+      "src/hate/p0b_test_records.py",
+      "src/hate/p0b_test_graph.py"
+    ],
+    [
+      "src/hate/p0b_test_records.py",
+      "src/hate/p0b_types.py"
+    ],
+    [
+      "src/hate/p1a.py",
+      "src/hate/p1a_inputs.py"
+    ],
+    [
       "src/hate/p1a.py",
       "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a.py",
+      "src/hate/p1a_scores.py"
     ],
     [
       "src/hate/p1a.py",
@@ -12330,6 +13229,34 @@
     [
       "src/hate/p1a.py",
       "src/hate/profile.py"
+    ],
+    [
+      "src/hate/p1a_graph.py",
+      "src/hate/execution_status.py"
+    ],
+    [
+      "src/hate/p1a_inputs.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p1a_inputs.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_inputs.py",
+      "src/hate/p1a_precheck.py"
+    ],
+    [
+      "src/hate/p1a_inputs.py",
+      "src/hate/p1a_retry_inputs.py"
+    ],
+    [
+      "src/hate/p1a_inputs.py",
+      "src/hate/p1a_run_scope.py"
+    ],
+    [
+      "src/hate/p1a_inputs.py",
+      "src/hate/p1a_schema.py"
     ],
     [
       "src/hate/p1a_internal/__init__.py",
@@ -12373,15 +13300,87 @@
     ],
     [
       "src/hate/p1a_internal/aete_scoring.py",
+      "src/hate/execution_status.py"
+    ],
+    [
+      "src/hate/p1a_internal/aete_scoring.py",
+      "src/hate/p1a_export_metadata.py"
+    ],
+    [
+      "src/hate/p1a_internal/aete_scoring.py",
+      "src/hate/p1a_graph.py"
+    ],
+    [
+      "src/hate/p1a_internal/aete_scoring.py",
       "src/hate/p1a_internal/doctor_report.py"
+    ],
+    [
+      "src/hate/p1a_internal/aete_scoring.py",
+      "src/hate/p1a_internal/retry_aggregation.py"
+    ],
+    [
+      "src/hate/p1a_internal/aete_scoring.py",
+      "src/hate/p1a_precheck.py"
+    ],
+    [
+      "src/hate/p1a_internal/aete_scoring.py",
+      "src/hate/p1a_provenance.py"
+    ],
+    [
+      "src/hate/p1a_internal/aete_scoring.py",
+      "src/hate/p1a_schema.py"
+    ],
+    [
+      "src/hate/p1a_internal/aete_scoring.py",
+      "src/hate/p1a_scores.py"
     ],
     [
       "src/hate/p1a_internal/artifact_resolver.py",
       "src/hate/p1a_io.py"
     ],
     [
+      "src/hate/p1a_internal/doctor_report.py",
+      "src/hate/p1a_export_metadata.py"
+    ],
+    [
+      "src/hate/p1a_internal/doctor_report.py",
+      "src/hate/p1a_graph.py"
+    ],
+    [
+      "src/hate/p1a_internal/doctor_report.py",
+      "src/hate/p1a_internal/retry_aggregation.py"
+    ],
+    [
+      "src/hate/p1a_internal/doctor_report.py",
+      "src/hate/p1a_precheck.py"
+    ],
+    [
+      "src/hate/p1a_internal/doctor_report.py",
+      "src/hate/p1a_provenance.py"
+    ],
+    [
+      "src/hate/p1a_internal/doctor_report.py",
+      "src/hate/p1a_schema.py"
+    ],
+    [
       "src/hate/p1a_internal/identity.py",
       "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_internal/recommendations.py",
+      "src/hate/p1a_export_metadata.py"
+    ],
+    [
+      "src/hate/p1a_internal/recommendations.py",
+      "src/hate/p1a_precheck.py"
+    ],
+    [
+      "src/hate/p1a_internal/recommendations.py",
+      "src/hate/p1a_schema.py"
+    ],
+    [
+      "src/hate/p1a_internal/retry_aggregation.py",
+      "src/hate/execution_status.py"
     ],
     [
       "src/hate/p1a_internal/retry_aggregation.py",
@@ -12389,6 +13388,62 @@
     ],
     [
       "src/hate/p1a_internal/retry_aggregation.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_io.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p1a_io.py",
+      "src/hate/json_input.py"
+    ],
+    [
+      "src/hate/p1a_precheck.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p1a_precheck.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_provenance.py",
+      "src/hate/p1a_run_scope.py"
+    ],
+    [
+      "src/hate/p1a_retry_inputs.py",
+      "src/hate/execution_metadata.py"
+    ],
+    [
+      "src/hate/p1a_retry_inputs.py",
+      "src/hate/execution_status.py"
+    ],
+    [
+      "src/hate/p1a_retry_inputs.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_run_scope.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p1a_run_scope.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_schema.py",
+      "src/hate/p1a_io.py"
+    ],
+    [
+      "src/hate/p1a_schema.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "src/hate/p1a_scores.py",
+      "src/hate/input_values.py"
+    ],
+    [
+      "src/hate/p1a_scores.py",
       "src/hate/p1a_io.py"
     ],
     [
@@ -12688,8 +13743,56 @@
       "src/hate/store_legacy.py"
     ],
     [
-      "src/hate/store/compare.py",
+      "src/hate/store/artifact_compare.py",
       "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/artifact_compare.py",
+      "src/hate/store/compare_models.py"
+    ],
+    [
+      "src/hate/store/artifact_compare.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/artifact_compare.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/atomic_write.py",
+      "src/hate/store/completion.py"
+    ],
+    [
+      "src/hate/store/atomic_write.py",
+      "src/hate/store/json_io.py"
+    ],
+    [
+      "src/hate/store/atomic_write.py",
+      "src/hate/store/manifest_validation.py"
+    ],
+    [
+      "src/hate/store/bundle_validation.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "src/hate/store/bundle_validation.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/bundle_validation.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/compare.py",
+      "src/hate/store/artifact_compare.py"
+    ],
+    [
+      "src/hate/store/compare.py",
+      "src/hate/store/compare_models.py"
+    ],
+    [
+      "src/hate/store/compare.py",
+      "src/hate/store/compatibility.py"
     ],
     [
       "src/hate/store/compare.py",
@@ -12697,15 +13800,67 @@
     ],
     [
       "src/hate/store/compare.py",
+      "src/hate/store/integrity.py"
+    ],
+    [
+      "src/hate/store/compare.py",
       "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/compare.py",
+      "src/hate/store/locking.py"
     ],
     [
       "src/hate/store/compare.py",
       "src/hate/store/replay.py"
     ],
     [
+      "src/hate/store/compare.py",
+      "src/hate/store/report_serialization.py"
+    ],
+    [
+      "src/hate/store/compare_models.py",
+      "src/hate/store/report_serialization.py"
+    ],
+    [
+      "src/hate/store/compatibility.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/compatibility.py",
+      "src/hate/store/versioning.py"
+    ],
+    [
+      "src/hate/store/completion.py",
+      "src/hate/store/compatibility.py"
+    ],
+    [
+      "src/hate/store/completion.py",
+      "src/hate/store/integrity.py"
+    ],
+    [
+      "src/hate/store/completion.py",
+      "src/hate/store/manifest_validation.py"
+    ],
+    [
+      "src/hate/store/completion.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/completion.py",
+      "src/hate/store/versioning.py"
+    ],
+    [
       "src/hate/store/doctor.py",
-      "src/hate/store/atomic_write.py"
+      "src/hate/store/compatibility.py"
+    ],
+    [
+      "src/hate/store/doctor.py",
+      "src/hate/store/doctor_inventory.py"
+    ],
+    [
+      "src/hate/store/doctor.py",
+      "src/hate/store/doctor_types.py"
     ],
     [
       "src/hate/store/doctor.py",
@@ -12713,7 +13868,155 @@
     ],
     [
       "src/hate/store/doctor.py",
+      "src/hate/store/integrity.py"
+    ],
+    [
+      "src/hate/store/doctor.py",
       "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/doctor.py",
+      "src/hate/store/locking.py"
+    ],
+    [
+      "src/hate/store/doctor.py",
+      "src/hate/store/references.py"
+    ],
+    [
+      "src/hate/store/doctor.py",
+      "src/hate/store/report_serialization.py"
+    ],
+    [
+      "src/hate/store/doctor_inventory.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/doctor_inventory.py",
+      "src/hate/store/doctor_types.py"
+    ],
+    [
+      "src/hate/store/doctor_inventory.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/doctor_inventory.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/doctor_inventory.py",
+      "src/hate/store/references.py"
+    ],
+    [
+      "src/hate/store/doctor_types.py",
+      "src/hate/store/report_serialization.py"
+    ],
+    [
+      "src/hate/store/import_identity.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/import_identity.py",
+      "src/hate/store/bundle_validation.py"
+    ],
+    [
+      "src/hate/store/import_identity.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/import_identity.py",
+      "src/hate/store/json_io.py"
+    ],
+    [
+      "src/hate/store/import_identity.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/import_identity.py",
+      "src/hate/store/references.py"
+    ],
+    [
+      "src/hate/store/indexes.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/indexes.py",
+      "src/hate/store/indexing.py"
+    ],
+    [
+      "src/hate/store/indexes.py",
+      "src/hate/store/json_io.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/compatibility.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/integrity.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/locking.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/references.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/timestamps.py"
+    ],
+    [
+      "src/hate/store/indexing.py",
+      "src/hate/store/transaction.py"
+    ],
+    [
+      "src/hate/store/integrity.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/integrity.py",
+      "src/hate/store/bundle_validation.py"
+    ],
+    [
+      "src/hate/store/integrity.py",
+      "src/hate/store/compatibility.py"
+    ],
+    [
+      "src/hate/store/integrity.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/integrity.py",
+      "src/hate/store/json_io.py"
+    ],
+    [
+      "src/hate/store/integrity.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/integrity.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/integrity.py",
+      "src/hate/store/references.py"
     ],
     [
       "src/hate/store/local_store.py",
@@ -12721,7 +14024,87 @@
     ],
     [
       "src/hate/store/local_store.py",
+      "src/hate/store/bundle_validation.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/compatibility.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/import_identity.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
       "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/indexing.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/integrity.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/json_io.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/locking.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/references.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/transaction.py"
+    ],
+    [
+      "src/hate/store/local_store.py",
+      "src/hate/store/versioning.py"
+    ],
+    [
+      "src/hate/store/locking.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/locking.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/locking.py",
+      "src/hate/store/transaction.py"
+    ],
+    [
+      "src/hate/store/locking.py",
+      "src/hate/store/versioning.py"
+    ],
+    [
+      "src/hate/store/manifest_validation.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "src/hate/store/models.py",
+      "src/hate/store/manifest_validation.py"
+    ],
+    [
+      "src/hate/store/references.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/references.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/references.py",
+      "src/hate/store/models.py"
     ],
     [
       "src/hate/store/replay.py",
@@ -12729,11 +14112,79 @@
     ],
     [
       "src/hate/store/replay.py",
+      "src/hate/store/compatibility.py"
+    ],
+    [
+      "src/hate/store/replay.py",
       "src/hate/store/indexes.py"
     ],
     [
       "src/hate/store/replay.py",
+      "src/hate/store/integrity.py"
+    ],
+    [
+      "src/hate/store/replay.py",
       "src/hate/store/local_store.py"
+    ],
+    [
+      "src/hate/store/replay.py",
+      "src/hate/store/locking.py"
+    ],
+    [
+      "src/hate/store/replay.py",
+      "src/hate/store/replay_report.py"
+    ],
+    [
+      "src/hate/store/replay.py",
+      "src/hate/store/report_serialization.py"
+    ],
+    [
+      "src/hate/store/replay.py",
+      "src/hate/store/timestamps.py"
+    ],
+    [
+      "src/hate/store/replay_report.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "src/hate/store/replay_report.py",
+      "src/hate/store/report_serialization.py"
+    ],
+    [
+      "src/hate/store/report_serialization.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/timestamps.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/transaction.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "src/hate/store/transaction.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "src/hate/store/transaction.py",
+      "src/hate/store/json_io.py"
+    ],
+    [
+      "src/hate/store/transaction.py",
+      "src/hate/store/models.py"
+    ],
+    [
+      "src/hate/store/transaction.py",
+      "src/hate/store/versioning.py"
+    ],
+    [
+      "src/hate/store/versioning.py",
+      "src/hate/store/json_io.py"
+    ],
+    [
+      "src/hate/store/versioning.py",
+      "src/hate/store/models.py"
     ],
     [
       "src/hate/store_legacy.py",
@@ -12912,6 +14363,46 @@
       "src/hate/security/artifact_safety.py"
     ],
     [
+      "tests/test_bridge_materialization.py",
+      "src/hate/bridge/materializer.py"
+    ],
+    [
+      "tests/test_bridge_options.py",
+      "src/hate/bridge/router.py"
+    ],
+    [
+      "tests/test_bridge_options.py",
+      "src/hate/bridge/schemas.py"
+    ],
+    [
+      "tests/test_bridge_options.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tests/test_bridge_path_contract.py",
+      "src/hate/bridge/router.py"
+    ],
+    [
+      "tests/test_bridge_path_contract.py",
+      "src/hate/bridge/routes.py"
+    ],
+    [
+      "tests/test_bridge_path_contract.py",
+      "src/hate/bridge/schemas.py"
+    ],
+    [
+      "tests/test_bridge_path_contract.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tests/test_bridge_paths.py",
+      "src/hate/bridge/router.py"
+    ],
+    [
+      "tests/test_bridge_paths.py",
+      "src/hate/cli.py"
+    ],
+    [
       "tests/test_bridge_router.py",
       "src/hate/bridge/materializer.py"
     ],
@@ -12922,6 +14413,14 @@
     [
       "tests/test_bridge_router.py",
       "src/hate/cli.py"
+    ],
+    [
+      "tests/test_cli_input_errors.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_cli_input_errors.py",
+      "src/hate/p1a.py"
     ],
     [
       "tests/test_cli_release_candidate.py",
@@ -12969,6 +14468,14 @@
     ],
     [
       "tests/test_evidence_strength.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "tests/test_execution_outcomes.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_execution_outcomes.py",
       "src/hate/p0b.py"
     ],
     [
@@ -13084,6 +14591,38 @@
       "src/hate/p0a_support.py"
     ],
     [
+      "tests/test_p0a_execution_metadata.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_p0a_execution_metadata.py",
+      "src/hate/p0a_io.py"
+    ],
+    [
+      "tests/test_p0a_execution_metadata.py",
+      "src/hate/p0a_test_adapters.py"
+    ],
+    [
+      "tests/test_p0a_execution_metadata.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "tests/test_p0a_execution_metadata.py",
+      "src/hate/p1a.py"
+    ],
+    [
+      "tests/test_p0a_test_values.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_p0a_test_values.py",
+      "src/hate/p0a_test_adapters.py"
+    ],
+    [
+      "tests/test_p0a_test_values.py",
+      "src/hate/p0b.py"
+    ],
+    [
       "tests/test_p0b.py",
       "src/hate/p0a.py"
     ],
@@ -13096,6 +14635,30 @@
       "src/hate/p0b_support.py"
     ],
     [
+      "tests/test_p0b_execution_history.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_p0b_execution_history.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "tests/test_p0b_execution_history.py",
+      "src/hate/p1a.py"
+    ],
+    [
+      "tests/test_p0b_output_lifecycle.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "tests/test_p0b_output_validation.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "tests/test_p0b_precheck.py",
+      "src/hate/p0b.py"
+    ],
+    [
       "tests/test_p1a.py",
       "src/hate/p0b.py"
     ],
@@ -13104,8 +14667,32 @@
       "src/hate/p1a.py"
     ],
     [
+      "tests/test_p1a_graph_validation.py",
+      "src/hate/p1a.py"
+    ],
+    [
+      "tests/test_p1a_graph_validation.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_p1a_provenance.py",
+      "src/hate/p1a.py"
+    ],
+    [
+      "tests/test_p1a_provenance.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_p1a_retry_aggregation.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
       "tests/test_p1a_schema_registry_contract.py",
       "src/hate/p1a.py"
+    ],
+    [
+      "tests/test_p1a_weights.py",
+      "src/hate/schema_resources.py"
     ],
     [
       "tests/test_p1b.py",
@@ -13376,6 +14963,18 @@
       "src/hate/post_poc/store_dr.py"
     ],
     [
+      "tests/test_precheck_soft_gaps.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_precheck_soft_gaps.py",
+      "src/hate/p0b.py"
+    ],
+    [
+      "tests/test_precheck_soft_gaps.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
       "tests/test_product_e2e.py",
       "src/hate/product_e2e.py"
     ],
@@ -13460,12 +15059,36 @@
       "src/hate/release_channel.py"
     ],
     [
+      "tests/test_responsibility_architecture.py",
+      "src/hate/bridge/router.py"
+    ],
+    [
+      "tests/test_responsibility_architecture.py",
+      "src/hate/cli.py"
+    ],
+    [
       "tests/test_risk_matrix.py",
       "src/hate/evidence_graph.py"
     ],
     [
       "tests/test_risk_matrix.py",
       "src/hate/risk_matrix.py"
+    ],
+    [
+      "tests/test_run_input_validation.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_run_input_validation.py",
+      "src/hate/p1a.py"
+    ],
+    [
+      "tests/test_run_scope.py",
+      "src/hate/p0a.py"
+    ],
+    [
+      "tests/test_run_scope.py",
+      "src/hate/p0b.py"
     ],
     [
       "tests/test_runtime_record_registry.py",
@@ -13512,6 +15135,146 @@
       "src/hate/security/quarantine_report.py"
     ],
     [
+      "tests/test_store_baseline_selection.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_store_baseline_selection.py",
+      "src/hate/store/compare.py"
+    ],
+    [
+      "tests/test_store_baseline_selection.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_baseline_selection.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_bundle_input.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_bundle_input.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_bundle_input.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_compare_semantics.py",
+      "src/hate/store/compare.py"
+    ],
+    [
+      "tests/test_store_compare_semantics.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_compatibility.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_store_compatibility.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_compatibility.py",
+      "src/hate/store/compare.py"
+    ],
+    [
+      "tests/test_store_compatibility.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_compatibility.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_compatibility.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_completion.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_store_completion.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_completion.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_doctor_inventory.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_doctor_reports.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_doctor_reports.py",
+      "src/hate/store/doctor_types.py"
+    ],
+    [
+      "tests/test_store_doctor_reports.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_export_kinds.py",
+      "src/hate/p0b_phases.py"
+    ],
+    [
+      "tests/test_store_export_kinds.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_hold_updates.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_store_hold_updates.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_hold_updates.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_import_identity.py",
+      "src/hate/store/integrity.py"
+    ],
+    [
+      "tests/test_store_import_identity.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "tests/test_store_index_builder.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_index_builder.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_index_builder_process.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_index_builder_process.py",
+      "src/hate/store/locking.py"
+    ],
+    [
+      "tests/test_store_index_io.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_index_io.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
       "tests/test_store_local.py",
       "src/hate/store/atomic_write.py"
     ],
@@ -13520,8 +15283,156 @@
       "src/hate/store/indexes.py"
     ],
     [
+      "tests/test_store_manifest_validation.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_store_manifest_validation.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_recovery_process.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "tests/test_store_recovery_process.py",
+      "src/hate/store/locking.py"
+    ],
+    [
+      "tests/test_store_reference_validation.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_reference_validation.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_reference_validation.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_replay_aggregation.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_store_replay_aggregation.py",
+      "src/hate/store/compare.py"
+    ],
+    [
+      "tests/test_store_replay_aggregation.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_replay_aggregation.py",
+      "src/hate/store/replay.py"
+    ],
+    [
       "tests/test_store_replay_compare.py",
       "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_replay_readiness.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_store_replay_readiness.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_replay_validation.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_store_replay_validation.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_replay_validation.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_replay_validation.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_report_determinism.py",
+      "src/hate/schema_resources.py"
+    ],
+    [
+      "tests/test_store_report_determinism.py",
+      "src/hate/store/compare.py"
+    ],
+    [
+      "tests/test_store_report_determinism.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_report_determinism.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_run_history.py",
+      "src/hate/store/compare.py"
+    ],
+    [
+      "tests/test_store_run_history.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_run_history.py",
+      "src/hate/store/replay.py"
+    ],
+    [
+      "tests/test_store_strict_json.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_strict_json.py",
+      "src/hate/store/doctor.py"
+    ],
+    [
+      "tests/test_store_strict_json.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_strict_json.py",
+      "src/hate/store/locking.py"
+    ],
+    [
+      "tests/test_store_strict_json.py",
+      "src/hate/store/transaction.py"
+    ],
+    [
+      "tests/test_store_transactions.py",
+      "src/hate/store/atomic_write.py"
+    ],
+    [
+      "tests/test_store_transactions.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_transactions.py",
+      "src/hate/store/local_store.py"
+    ],
+    [
+      "tests/test_store_transactions.py",
+      "src/hate/store/locking.py"
+    ],
+    [
+      "tests/test_store_transactions.py",
+      "src/hate/store/transaction.py"
+    ],
+    [
+      "tests/test_store_version.py",
+      "src/hate/store/indexes.py"
+    ],
+    [
+      "tests/test_store_version.py",
+      "src/hate/store/locking.py"
+    ],
+    [
+      "tests/test_store_version.py",
+      "src/hate/store/transaction.py"
     ],
     [
       "tests/test_tenant_isolation.py",
@@ -13590,6 +15501,10 @@
     [
       "tests/test_workflow_task_seed.py",
       "src/hate/workflow_task_seed.py"
+    ],
+    [
+      "tools/ci/responsibility_scope_gate.py",
+      "src/hate/bridge/routes.py"
     ],
     [
       "tools/ci/responsibility_scope_gate.py",

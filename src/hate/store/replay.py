@@ -1,10 +1,11 @@
 """Replay Module for HATE Local Store.
 
-Produces byte-stable reports from canonical bundle contents.
-Replay is deterministic: same bundle content → same replay report.
+Verifies stored bundle contents and produces reproducible replay evidence.
+Execution time remains available as observation metadata, outside the default
+canonical report and its hash.
 
 Key invariants:
-- Replay is byte-stable (deterministic from canonical content)
+- Stored bundle and artifact corruption must not be reported as replay success
 - Unsupported schema version is migration hold, not silent pass
 - Legal hold must be preserved during replay
 - Baseline cannot be selected by filename sorting only
@@ -18,26 +19,23 @@ No-Go conditions:
 
 from __future__ import annotations
 
-import hashlib
-import json
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
-from pathlib import Path
+from datetime import UTC, datetime
 from typing import Any
 
 from .atomic_write import (
-    AtomicWriteError,
-    compute_file_hash,
-    compute_json_hash_for_write,
+    compute_json_hash,
 )
-from .indexes import HardDQFinding
-from .local_store import LocalStore, StoreManifest, LocalStoreError
-
-
-# Supported schema versions for replay
-SUPPORTED_SCHEMA_VERSIONS = {"HATE/v1"}
-# Schema versions that require migration (not direct replay)
-MIGRATION_REQUIRED_VERSIONS = {"HATE/v0.9", "HATE/v0.8"}
+from .compatibility import MIGRATION_REQUIRED_VERSIONS as MIGRATION_REQUIRED_VERSIONS
+from .compatibility import SUPPORTED_SCHEMA_VERSIONS as SUPPORTED_SCHEMA_VERSIONS
+from .compatibility import manifest_schema_findings
+from .indexes import HardDQFinding, IndexLookupError
+from .integrity import verify_bundle_copy
+from .local_store import LocalStore, LocalStoreError, StoreManifest
+from .locking import store_operation
+from .replay_report import build_store_replay_report as build_store_replay_report
+from .report_serialization import relative_diagnostics, report_data, report_hash
+from .timestamps import timestamp_key
 
 
 @dataclass
@@ -54,7 +52,7 @@ class ReplayError(Exception):
 
 @dataclass
 class ReplayReport:
-    """Byte-stable replay report."""
+    """Replay validation results and execution metadata."""
     bundle_id: str  # Non-default first
     run_id: str  # Non-default first
     schema_version: str = "HATE/v1"
@@ -70,10 +68,12 @@ class ReplayReport:
     hash_mismatches: int = 0
     replayed_at: str = ""
     diagnostics: list[dict[str, Any]] = field(default_factory=list)
+    integrity_ok: bool = True
+    baseline_resolution: dict[str, Any] | None = None
 
-    def to_dict(self) -> dict[str, Any]:
-        """Convert to dict with sorted keys for byte-stability."""
-        return {
+    def to_dict(self, *, include_observation: bool = False) -> dict[str, Any]:
+        """Convert validation results to a serializable dictionary."""
+        data = {
             "schema_version": self.schema_version,
             "record_type": self.record_type,
             "bundle_id": self.bundle_id,
@@ -89,194 +89,17 @@ class ReplayReport:
             "hash_mismatches": self.hash_mismatches,
             "replayed_at": self.replayed_at,
             "diagnostics": self.diagnostics,
+            "integrity_ok": self.integrity_ok,
         }
+        if self.baseline_resolution is not None:
+            data["baseline_resolution"] = self.baseline_resolution
+        return report_data(data, observation_field="replayed_at", include_observation=include_observation)
 
     def compute_hash(self) -> str:
         """Compute deterministic hash of replay report."""
-        return compute_json_hash_for_write(self.to_dict())
+        return report_hash(self.to_dict(), hash_field="replay_hash", observation_field="replayed_at")
 
 
-def build_store_replay_report(
-    replay_report: ReplayReport | dict[str, Any],
-    *,
-    comparison_report: Any | None = None,
-    doctor_report: Any | None = None,
-    migration_report: dict[str, Any] | None = None,
-    baseline_info: BaselineInfo | dict[str, Any] | None = None,
-) -> dict[str, Any]:
-    """Build the product-grade store-replay-report envelope.
-
-    The replay, compare, doctor, and migration modules intentionally remain
-    separate. This builder creates the evidence report required by product-grade
-    acceptance so release checks can prove replay determinism, diff behavior,
-    corruption diagnostics, migration state, and baseline selection together.
-    """
-
-    replay = replay_report.to_dict() if hasattr(replay_report, "to_dict") else dict(replay_report)
-    comparison = _to_dict_or_none(comparison_report)
-    doctor = _to_dict_or_none(doctor_report)
-    migration = dict(migration_report or {})
-    baseline = _baseline_section(baseline_info, comparison)
-    diff_entries = _diff_entries(comparison)
-    corruption_findings = _corruption_findings(doctor)
-    migration_status = _migration_status(replay, migration)
-    readiness_effect = _store_replay_readiness(replay, comparison, doctor, migration_status, baseline)
-    report = {
-        **replay,
-        "record_type": "store_replay_report",
-        "baseline_resolution": baseline,
-        "diff_entries": diff_entries,
-        "corruption_findings": corruption_findings,
-        "migration_status": migration_status,
-        "readiness_effect": readiness_effect,
-        "sourceRefs": _store_replay_source_refs(replay, comparison, doctor, migration),
-    }
-    report["replay_hash"] = compute_json_hash_for_write({key: value for key, value in report.items() if key != "replay_hash"})
-    return report
-
-
-def _to_dict_or_none(value: Any | None) -> dict[str, Any] | None:
-    if value is None:
-        return None
-    if hasattr(value, "to_dict"):
-        return value.to_dict()
-    if isinstance(value, dict):
-        return dict(value)
-    return None
-
-
-def _baseline_section(
-    baseline_info: BaselineInfo | dict[str, Any] | None,
-    comparison: dict[str, Any] | None,
-) -> dict[str, Any]:
-    if baseline_info is not None:
-        baseline = baseline_info.to_dict() if hasattr(baseline_info, "to_dict") else dict(baseline_info)
-        return {
-            "baseline_bundle_id": str(baseline.get("baseline_bundle_id") or ""),
-            "baseline_run_id": str(baseline.get("baseline_run_id") or ""),
-            "baseline_created_at": str(baseline.get("baseline_created_at") or ""),
-            "selection_method": str(baseline.get("selection_method") or "explicit_ref"),
-            "is_filename_sort": bool(baseline.get("is_filename_sort", False)),
-            "valid": not bool(baseline.get("is_filename_sort", False)),
-        }
-    if comparison:
-        is_filename_sort = bool(comparison.get("is_filename_sort_baseline", False))
-        method = str(comparison.get("baseline_selection_method") or "none")
-        return {
-            "baseline_bundle_id": str(comparison.get("baseline_bundle_id") or ""),
-            "baseline_run_id": "",
-            "baseline_created_at": "",
-            "selection_method": method,
-            "is_filename_sort": is_filename_sort,
-            "valid": bool(comparison.get("baseline_bundle_id")) and not is_filename_sort,
-        }
-    return {
-        "baseline_bundle_id": "",
-        "baseline_run_id": "",
-        "baseline_created_at": "",
-        "selection_method": "none",
-        "is_filename_sort": False,
-        "valid": True,
-    }
-
-
-def _diff_entries(comparison: dict[str, Any] | None) -> list[dict[str, Any]]:
-    if not comparison:
-        return []
-    entries: list[dict[str, Any]] = []
-    for item in comparison.get("artifact_diffs", []):
-        entries.append(
-            {
-                "artifact_id": str(item.get("artifact_id") or ""),
-                "baseline_hash": item.get("baseline_hash"),
-                "current_hash": item.get("current_hash"),
-                "result": str(item.get("result") or "incomparable"),
-                "details": dict(item.get("details") or {}),
-            }
-        )
-    return entries
-
-
-def _corruption_findings(doctor: dict[str, Any] | None) -> list[dict[str, Any]]:
-    if not doctor:
-        return []
-    findings: list[dict[str, Any]] = []
-    for item in doctor.get("findings", []):
-        findings.append(
-            {
-                "finding_id": str(item.get("finding_id") or ""),
-                "severity": str(item.get("severity") or "info"),
-                "category": str(item.get("category") or "unknown"),
-                "message": str(item.get("message") or ""),
-                "path": item.get("path"),
-                "remediation": item.get("remediation"),
-            }
-        )
-    return findings
-
-
-def _migration_status(replay: dict[str, Any], migration: dict[str, Any]) -> dict[str, Any]:
-    if migration:
-        return {
-            "schema_compatible": bool(migration.get("compatibility_class", "") == "compatible")
-            or bool(replay.get("schema_compatible", False)),
-            "migration_hold": bool(migration.get("readiness_effect") in {"hold", "hard_dq"})
-            or bool(replay.get("migration_hold", False)),
-            "compatibility_class": str(migration.get("compatibility_class") or "unknown"),
-            "rollback_plan_ref": str(migration.get("rollback_plan_ref") or migration.get("rollback_ref") or ""),
-            "checksum_before": str(migration.get("checksum_before") or ""),
-            "checksum_after": str(migration.get("checksum_after") or ""),
-        }
-    return {
-        "schema_compatible": bool(replay.get("schema_compatible", False)),
-        "migration_hold": bool(replay.get("migration_hold", False)),
-        "compatibility_class": "compatible" if replay.get("schema_compatible", False) else "migration_required",
-        "rollback_plan_ref": "",
-        "checksum_before": "",
-        "checksum_after": "",
-    }
-
-
-def _store_replay_readiness(
-    replay: dict[str, Any],
-    comparison: dict[str, Any] | None,
-    doctor: dict[str, Any] | None,
-    migration_status: dict[str, Any],
-    baseline: dict[str, Any],
-) -> str:
-    if doctor and int(doctor.get("hard_dq_count", 0) or 0) > 0:
-        return "hard_dq"
-    if int(replay.get("hash_mismatches", 0) or 0) > 0 or int(replay.get("artifacts_missing", 0) or 0) > 0:
-        return "hard_dq"
-    if not baseline["valid"]:
-        return "hard_dq"
-    if migration_status["migration_hold"]:
-        return "hold"
-    if comparison and bool(comparison.get("is_filename_sort_baseline", False)):
-        return "hard_dq"
-    if comparison and str(comparison.get("comparison_result")) == "regression":
-        return "hold"
-    return "pass"
-
-
-def _store_replay_source_refs(
-    replay: dict[str, Any],
-    comparison: dict[str, Any] | None,
-    doctor: dict[str, Any] | None,
-    migration: dict[str, Any],
-) -> list[str]:
-    refs = {
-        "src/hate/store/replay.py",
-        "docs/process/STORE_SCHEMA_REQUIREMENTS.md",
-        "docs/process/EPIC_TASK_PACKETS.md:HATE-PG-006",
-    }
-    if comparison:
-        refs.add("src/hate/store/compare.py")
-    if doctor:
-        refs.add("src/hate/store/doctor.py")
-    if migration:
-        refs.add("src/hate/store/migration_rebuild.py")
-    return sorted(refs)
 
 
 @dataclass
@@ -299,12 +122,15 @@ class BaselineInfo:
         }
 
 
+@store_operation
 def replay_bundle(
     store: LocalStore,
     bundle_id: str,
     baseline_ref: str | None = None,
+    *,
+    run_id: str | None = None,
 ) -> ReplayReport:
-    """Replay a bundle to produce byte-stable report.
+    """Replay a stored bundle with integrity and baseline validation.
 
     Args:
         store: Local store instance
@@ -312,14 +138,14 @@ def replay_bundle(
         baseline_ref: Optional explicit baseline reference (not filename sorting)
 
     Returns:
-        Byte-stable replay report
+        Replay validation report
 
     Raises:
         ReplayError: If bundle cannot be replayed
         HardDQFinding: If corruption detected
     """
     # Phase 1: Validate bundle exists and is complete
-    manifest = _validate_bundle_complete(store, bundle_id)
+    manifest = _validate_bundle_complete(store, bundle_id, run_id=run_id)
 
     # Phase 2: Check schema compatibility
     schema_compatible, migration_hold = _check_schema_compatibility(manifest)
@@ -328,14 +154,23 @@ def replay_bundle(
     legal_hold_preserved = _verify_legal_hold_preserved(manifest)
 
     # Phase 4: Validate baseline selection (if comparing)
-    baseline_valid = True
-    if baseline_ref:
-        baseline_valid = _validate_baseline_selection(store, baseline_ref)
+    baseline_resolution = None
+    baseline_diagnostics: list[dict[str, Any]] = []
+    if baseline_ref is not None:
+        baseline_resolution, baseline_diagnostics = _resolve_baseline(store, baseline_ref)
+    baseline_valid = baseline_resolution is None or baseline_resolution["valid"] is True
+    if any(item["issue"] == "baseline_store_schema_version_unsupported" for item in baseline_diagnostics):
+        schema_compatible, migration_hold = False, True
 
     # Phase 5: Replay artifacts with hash verification
     artifacts_replayed, artifacts_missing, hash_mismatches, diagnostics = _replay_artifacts(
         store, bundle_id, manifest
     )
+    integrity_ok = not diagnostics
+    diagnostics.extend({**item, "side": "current", "severity": "soft_dq"} for item in manifest_schema_findings(manifest))
+    diagnostics.extend(baseline_diagnostics)
+    if not schema_compatible:
+        artifacts_replayed = 0
 
     # Build report
     report = ReplayReport(
@@ -350,8 +185,10 @@ def replay_bundle(
         artifacts_replayed=artifacts_replayed,
         artifacts_missing=artifacts_missing,
         hash_mismatches=hash_mismatches,
-        replayed_at=datetime.now(timezone.utc).isoformat(),
-        diagnostics=diagnostics,
+        replayed_at=datetime.now(UTC).isoformat(),
+        diagnostics=relative_diagnostics(diagnostics, store.store_root),
+        integrity_ok=integrity_ok,
+        baseline_resolution=baseline_resolution,
     )
 
     # Compute deterministic hash
@@ -360,28 +197,32 @@ def replay_bundle(
     return report
 
 
-def _validate_bundle_complete(store: LocalStore, bundle_id: str) -> StoreManifest:
+def _validate_bundle_complete(store: LocalStore, bundle_id: str, *, run_id: str | None = None) -> StoreManifest:
     """Validate bundle exists and is complete.
 
     Raises HardDQFinding if bundle is incomplete or missing.
     """
     try:
-        manifest = store.read_manifest(bundle_id)
-    except LocalStoreError as e:
+        manifest = store.read_manifest_by_bundle(bundle_id, run_id=run_id)
+    except (LocalStoreError, IndexLookupError, OSError) as e:
+        path = getattr(e, "path", None) or (
+            store.store_root / "runs" / run_id / bundle_id / "store-manifest.json"
+            if run_id is not None else store.index_manager.bundles_index.index_path
+        )
         raise HardDQFinding(
             message="Bundle manifest missing or unreadable",
             index_type="bundles",
             referenced_key=bundle_id,
-            missing_path=str(store.store_root / bundle_id),
+            missing_path=str(path),
             diagnostics=[{"error": str(e)}],
-        )
+        ) from e
 
     if not manifest.completed:
         raise HardDQFinding(
             message="Bundle is incomplete (manifest not marked completed)",
             index_type="bundles",
             referenced_key=bundle_id,
-            missing_path=str(store.store_root / bundle_id / "store-manifest.json"),
+            missing_path=str(store.store_root / "runs" / manifest.run_id / bundle_id / "store-manifest.json"),
             diagnostics=[{"completed": False}],
         )
 
@@ -397,19 +238,8 @@ def _check_schema_compatibility(manifest: StoreManifest) -> tuple[bool, bool]:
     - schema_compatible=True: Direct replay possible
     - migration_hold=True: Migration required before replay
     """
-    schema_versions = manifest.schema_versions
-
-    # Check bundle schema version
-    bundle_schema = schema_versions.get("bundle", "unknown")
-
-    if bundle_schema in SUPPORTED_SCHEMA_VERSIONS:
-        return True, False
-
-    if bundle_schema in MIGRATION_REQUIRED_VERSIONS:
-        return False, True
-
-    # Unknown schema version - migration hold
-    return False, True
+    compatible = not manifest_schema_findings(manifest)
+    return compatible, not compatible
 
 
 def _verify_legal_hold_preserved(manifest: StoreManifest) -> bool:
@@ -423,7 +253,7 @@ def _verify_legal_hold_preserved(manifest: StoreManifest) -> bool:
         return False
 
     # Check required fields
-    required_fields = {"status", "reason", "held_since"}
+    required_fields = {"status", "reason", "held_since", "authorized_by"}
     if not all(f in legal_hold for f in required_fields):
         return False
 
@@ -438,17 +268,52 @@ def _validate_baseline_selection(store: LocalStore, baseline_ref: str) -> bool:
 
     Returns True if baseline selection is valid.
     """
-    # If baseline_ref looks like filename-based, it's invalid
-    if baseline_ref.startswith("sort:") or baseline_ref.startswith("filename:"):
-        return False
+    resolution, _ = _resolve_baseline(store, baseline_ref)
+    return resolution["valid"] is True
 
-    # If baseline_ref is explicit bundle_id or run_id, it's valid
-    if baseline_ref.startswith("bundle:") or baseline_ref.startswith("run:"):
-        return True
 
-    # Default: assume explicit reference is valid
-    # (actual validation would check run metadata)
-    return True
+def _resolve_baseline(store: LocalStore, baseline_ref: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    resolution: dict[str, Any] = {
+        "baseline_bundle_id": "", "baseline_run_id": "", "baseline_created_at": "",
+        "selection_method": "explicit_ref", "is_filename_sort": False, "valid": False,
+    }
+    diagnostics: list[dict[str, Any]] = []
+    if not isinstance(baseline_ref, str) or not baseline_ref.startswith(("bundle:", "run:")):
+        resolution["is_filename_sort"] = isinstance(baseline_ref, str) and baseline_ref.startswith(("filename:", "sort:"))
+        diagnostics.append({"issue": "invalid_baseline_reference", "severity": "hard_dq"})
+        return resolution, diagnostics
+    kind, identifier = baseline_ref.split(":", 1)
+    try:
+        if not identifier:
+            raise ValueError("Baseline identifier is empty")
+        if kind == "run":
+            selected = select_baseline_by_timestamp(store, identifier)
+            if selected is None:
+                raise ValueError("No completed baseline found for run")
+            manifest = store.read_manifest_by_bundle(selected.baseline_bundle_id, run_id=identifier)
+            resolution["selection_method"] = selected.selection_method
+        else:
+            manifest = store.read_manifest_by_bundle(identifier)
+        resolution.update(
+            baseline_bundle_id=manifest.bundle_id, baseline_run_id=manifest.run_id,
+            baseline_created_at=manifest.created_at,
+        )
+        bundle_dir = store.store_root / "runs" / manifest.run_id / manifest.bundle_id
+        diagnostics = [
+            {**item, "issue": "baseline_" + item["issue"], "severity": "hard_dq"}
+            for item in verify_bundle_copy(bundle_dir, manifest)
+        ]
+        resolution["valid"] = not diagnostics
+        diagnostics.extend(
+            {**item, "issue": "baseline_" + item["issue"], "side": "baseline", "severity": "soft_dq"}
+            for item in manifest_schema_findings(manifest)
+        )
+    except (LocalStoreError, IndexLookupError, HardDQFinding, OSError, ValueError) as exc:
+        diagnostics.append({
+            "issue": "baseline_unreadable", "error": str(exc), "severity": "hard_dq",
+            "validation": getattr(exc, "diagnostics", []),
+        })
+    return resolution, diagnostics
 
 
 def _replay_artifacts(
@@ -461,61 +326,29 @@ def _replay_artifacts(
     Returns:
         (artifacts_replayed, artifacts_missing, hash_mismatches, diagnostics)
     """
-    artifacts_replayed = 0
-    artifacts_missing = 0
-    hash_mismatches = 0
-    diagnostics = []
-
-    for artifact_id in manifest.artifact_ids:
-        expected_hash = manifest.content_hashes.get(artifact_id)
-
-        try:
-            artifact_path = store.store_root / bundle_id / f"{artifact_id}.json"
-            if not artifact_path.exists():
-                artifacts_missing += 1
-                diagnostics.append({
-                    "artifact_id": artifact_id,
-                    "issue": "missing_artifact",
-                    "severity": "hard_dq",
-                })
-                continue
-
-            actual_hash = compute_file_hash(artifact_path)
-
-            if expected_hash and actual_hash != expected_hash:
-                hash_mismatches += 1
-                diagnostics.append({
-                    "artifact_id": artifact_id,
-                    "issue": "hash_mismatch",
-                    "expected": expected_hash,
-                    "actual": actual_hash,
-                    "severity": "hard_dq",
-                })
-            else:
-                artifacts_replayed += 1
-
-        except Exception as e:
-            artifacts_missing += 1
-            diagnostics.append({
-                "artifact_id": artifact_id,
-                "issue": "read_error",
-                "error": str(e),
-                "severity": "hard_dq",
-            })
-
-    return artifacts_replayed, artifacts_missing, hash_mismatches, diagnostics
+    bundle_dir = store.store_root / "runs" / manifest.run_id / bundle_id
+    diagnostics = [{**item, "severity": "hard_dq"} for item in verify_bundle_copy(bundle_dir, manifest)]
+    missing = {item["artifact_id"] for item in diagnostics if item["issue"] in {"missing_artifact", "artifact_unreadable"}}
+    mismatched = {item["artifact_id"] for item in diagnostics if item["issue"] in {"hash_mismatch", "missing_artifact_hash", "unlisted_artifact_hash"}}
+    invalid = {item["artifact_id"] for item in diagnostics if "artifact_id" in item}
+    structural_failure = any("artifact_id" not in item for item in diagnostics)
+    replayed = 0 if structural_failure else len(set(manifest.artifact_ids) - invalid)
+    return replayed, len(missing), len(mismatched), diagnostics
 
 
 def _compute_manifest_hash(manifest: StoreManifest) -> str:
     """Compute hash of manifest for replay tracking."""
     manifest_dict = manifest.to_dict()
-    return compute_json_hash_for_write(manifest_dict)
+    return compute_json_hash(manifest_dict)
 
 
+@store_operation
 def select_baseline_by_timestamp(
     store: LocalStore,
     run_id: str,
     exclude_bundle_id: str | None = None,
+    *,
+    before_created_at: str | None = None,
 ) -> BaselineInfo | None:
     """Select baseline by manifest timestamp (not filename sorting).
 
@@ -526,11 +359,15 @@ def select_baseline_by_timestamp(
         store: Local store instance
         run_id: Run ID to find baseline for
         exclude_bundle_id: Bundle to exclude (current bundle being compared)
+        before_created_at: Strict upper time bound for selecting prior history
 
     Returns:
         BaselineInfo if baseline found, None otherwise
     """
-    # Find all bundles for this run
+    run_path = store.store_root / "runs" / run_id
+    limit = None if before_created_at is None else timestamp_key(
+        before_created_at, operation="select_baseline", path=run_path, field="before_created_at",
+    )
     bundle_ids = store.list_bundles_for_run(run_id)
 
     if exclude_bundle_id:
@@ -539,37 +376,31 @@ def select_baseline_by_timestamp(
     if not bundle_ids:
         return None
 
-    # Read manifests and sort by created_at timestamp (not filename)
-    manifests = []
+    candidates = []
     for bundle_id in bundle_ids:
-        try:
-            manifest = store.read_manifest_by_bundle(bundle_id)
-            manifests.append((bundle_id, manifest))
-        except LocalStoreError:
+        manifest = store.read_manifest_by_bundle(bundle_id, run_id=run_id)
+        stamp = timestamp_key(
+            manifest.created_at, operation="select_baseline", path=run_path / bundle_id / "store-manifest.json",
+        )
+        if limit is not None and stamp >= limit:
             continue
+        candidates.append((stamp, manifest))
 
-    if not manifests:
+    if not candidates:
         return None
 
-    # Sort by created_at descending (most recent first, but we want previous)
-    sorted_manifests = sorted(
-        manifests,
-        key=lambda x: x[1].created_at,
-        reverse=True,
-    )
-
-    # Get the most recent (excluding current if provided)
-    if sorted_manifests:
-        baseline_bundle_id, baseline_manifest = sorted_manifests[0]
-        return BaselineInfo(
-            baseline_bundle_id=baseline_bundle_id,
-            baseline_run_id=baseline_manifest.run_id,
-            baseline_created_at=baseline_manifest.created_at,
-            selection_method="manifest_timestamp",
-            is_filename_sort=False,
+    latest = max(stamp for stamp, _ in candidates)
+    matches = [manifest for stamp, manifest in candidates if stamp == latest]
+    if len(matches) != 1:
+        raise LocalStoreError(
+            "baseline is ambiguous: equal manifest timestamps", "select_baseline", run_path,
+            [{"issue": "ambiguous_baseline_timestamp", "candidates": [
+                {"bundle_id": manifest.bundle_id, "created_at": manifest.created_at}
+                for manifest in sorted(matches, key=lambda item: item.bundle_id)
+            ]}],
         )
-
-    return None
+    selected = matches[0]
+    return BaselineInfo(selected.bundle_id, selected.run_id, selected.created_at, "manifest_timestamp", False)
 
 
 def select_baseline_by_filename_sort(

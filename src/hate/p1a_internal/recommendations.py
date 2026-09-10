@@ -4,11 +4,44 @@ from __future__ import annotations
 
 from typing import Any
 
+from hate.p1a_export_metadata import export_metadata_issues
+from hate.p1a_precheck import precheck_gaps, precheck_permission_issues
+from hate.p1a_schema import bundle_schema_issues
+
 SCHEMA_VERSION = "HATE/v1"
 
 
 def _build_reason_tree(bundle: dict[str, Any], report: dict[str, Any], mode: str) -> list[dict[str, Any]]:
     reasons: list[dict[str, Any]] = []
+    if mode in {"why-excluded", "why-score-changed"}:
+        for index, issue in enumerate(bundle_schema_issues(bundle), start=1):
+            reasons.append({
+                "reason_id": f"reason:bundle_schema:{index}", "category": "schema", "summary": issue["message"],
+                "evidence_status": "ineligible", "blocking": True, **issue, "children": [],
+            })
+    for index, issue in enumerate(export_metadata_issues(bundle, report), start=1):
+        blocking = issue["severity"] == "high"
+        if mode != "why-score-changed" and mode != ("why-excluded" if blocking else "why-soft-gap"):
+            continue
+        reasons.append({
+            "reason_id": f"reason:export:{index}", "category": "export", "summary": issue["message"],
+            "evidence_status": "ineligible" if blocking else "soft_gap", "blocking": blocking,
+            **issue, "children": [],
+        })
+    if mode in {"why-excluded", "why-score-changed"}:
+        for index, issue in enumerate(precheck_permission_issues(bundle), start=1):
+            reasons.append({
+                "reason_id": f"reason:precheck_permission:{index}", "category": "precheck",
+                "summary": issue["message"], "evidence_status": "ineligible", "blocking": True,
+                **issue, "children": [],
+            })
+    if mode in {"why-soft-gap", "why-score-changed"}:
+        for index, gap in enumerate(precheck_gaps(bundle), start=1):
+            reasons.append({
+                "reason_id": f"reason:precheck:{index}", "category": "precheck",
+                "summary": gap["message"], "evidence_status": "soft_gap",
+                **gap, "children": [],
+            })
     if mode == "why-soft-gap":
         for index, gap in enumerate(report.get("missing_execution", []), start=1):
             reasons.append({
@@ -60,6 +93,49 @@ def _build_reason_tree(bundle: dict[str, Any], report: dict[str, Any], mode: str
 
 def _build_recommendations(bundle: dict[str, Any], report: dict[str, Any], gap_id: str) -> list[dict[str, Any]]:
     recommendations: list[dict[str, Any]] = []
+    if gap_id in {"bundle_schema", "all"}:
+        for index, issue in enumerate(bundle_schema_issues(bundle), start=1):
+            recommendations.append({
+                "recommendation_id": f"recommend:bundle_schema:{index}", "gap_id": "bundle_schema",
+                "blocking": True, **issue,
+                "recommended_actions": ["Resolve the reported bundle schema violation and regenerate the bundle from valid source inputs."],
+                "recommended_manual_layer": "spec-clarification", "related_source_refs": issue["source_refs"],
+            })
+    for index, issue in enumerate(export_metadata_issues(bundle, report), start=1):
+        if gap_id not in {"export_metadata", "all", issue["issue"]}:
+            continue
+        recommendations.append({
+            "recommendation_id": f"recommend:export:{index}", "gap_id": "export_metadata",
+            "blocking": issue["severity"] == "high", **issue,
+            "recommended_actions": [
+                "Review the original bundle purpose, export status, and schema validation evidence.",
+                "Resolve the reported restriction or evidence gap and regenerate the export from corrected inputs.",
+            ],
+            "recommended_manual_layer": "spec-clarification", "related_source_refs": issue["source_refs"],
+        })
+    if gap_id in {"precheck", "precheck_permission", "all"}:
+        for index, issue in enumerate(precheck_permission_issues(bundle), start=1):
+            recommendations.append({
+                "recommendation_id": f"recommend:precheck_permission:{index}",
+                "gap_id": "precheck_permission", "blocking": True, **issue,
+                "recommended_actions": [
+                    "Inspect the original precheck record and resolve each reported permission condition.",
+                    "Regenerate precheck and QEG export from corrected evidence; retain the original denial for diagnosis.",
+                ],
+                "recommended_manual_layer": "spec-clarification", "related_source_refs": issue["source_refs"],
+            })
+    for index, gap in enumerate(precheck_gaps(bundle), start=1):
+        declared_id = gap["gap"].get("gap_id") if gap["gap"] is not None else None
+        if gap_id not in {"precheck", "all"} and gap_id != declared_id:
+            continue
+        recommendations.append({
+            "recommendation_id": f"recommend:precheck:{index}", "gap_id": "precheck", **gap,
+            "recommended_actions": [
+                "Review the original precheck reasons and the declared gap details.",
+                "Attach the missing evidence or context, then regenerate precheck and QEG export.",
+            ],
+            "recommended_manual_layer": "spec-clarification", "related_source_refs": gap["source_refs"],
+        })
     if gap_id in {"missing_execution", "all"}:
         for index, gap in enumerate(report.get("missing_execution", []), start=1):
             recommendations.append({

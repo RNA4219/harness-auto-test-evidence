@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 from .p0b_support import (
     _build_evidence_map,
@@ -13,9 +14,10 @@ from .p0b_support import (
     _calculate_completeness,
     _dedupe_gap_dicts,
     _validate_qeg_bundle_schema,
-    _write_json,
 )
-from .p0b_types import SCHEMA_VERSION
+from .p0b_types import SCHEMA_VERSION, ExportError
+
+OPTIONAL_OUTPUTS = ("risk-debt-register.json", "manual-bb-bridge-requests.jsonl")
 
 
 def write_export_outputs(
@@ -75,6 +77,7 @@ def write_export_outputs(
             "qegVersion": "HATE/v1",
             "runId": run_id,
             "runAttempt": run_attempt,
+            "commitSha": commit_sha,
             "createdAt": created_at,
             "profile": "lean",
             "inputArtifacts": [
@@ -95,6 +98,16 @@ def write_export_outputs(
         "completeness": completeness,
     }
     qeg_schema_compatibility = _validate_qeg_bundle_schema(qeg_bundle)
+    if qeg_schema_compatibility["valid"] is not True:
+        errors = qeg_schema_compatibility["errors"]
+        diagnostic = "; ".join(errors[:8])
+        if len(errors) > 8:
+            diagnostic += f"; {len(errors) - 8} more schema errors"
+        raise ExportError(
+            f"Generated qeg-bundle.json failed schema validation: {diagnostic}",
+            exit_code=1,
+            report={"error": "generated_bundle_schema_invalid", "qeg_schema_compatibility": qeg_schema_compatibility},
+        )
     export_report = {
         "schema_version": SCHEMA_VERSION,
         "run_id": run_id,
@@ -130,12 +143,14 @@ def write_export_outputs(
     if escaped_defects or escaped_defect_gaps:
         export_report["escaped_defects"] = escaped_defects
         export_report["escaped_defect_gaps"] = escaped_defect_gaps
+    precheck_gap_count = sum(len(node["data"].get("soft_gaps", [])) for node in nodes if node["kind"] == "gate_verdict")
     summary_content = "\n".join([
         "# P0b QEG Export Summary",
         "",
         f"- Run: `{run_id}` attempt `{run_attempt}`",
         f"- Commit: `{commit_sha[:12]}`",
         f"- Precheck: `{decision}`",
+        *([f"- Precheck soft gaps: {precheck_gap_count}"] if decision == "conditional" or precheck_gap_count else []),
         f"- Nodes: {len(nodes)}",
         f"- Edges: {len(edges)}",
         f"- Completeness: `{completeness['score']:.2f}`",
@@ -152,47 +167,57 @@ def write_export_outputs(
         "HATE does not approve release. `publish_gate_override=false`.",
         "",
     ])
-    _write_json(out_dir / "qeg-bundle.json", qeg_bundle)
-    _write_json(out_dir / "evidence-map.json", evidence_map)
-    _write_json(out_dir / "qeg-export-report.json", export_report)
-    _write_json(
-        out_dir / "diff-risk-test.json",
-        diff_risk_test if diff_risk_test else {"schema_version": SCHEMA_VERSION, "changed_entities": [], "risks": [], "test_obligations": []},
-    )
-    generated = [
-        "qeg-bundle.json",
-        "evidence-map.json",
-        "diff-risk-test.json",
-        "qeg-export-report.json",
-        "qeg-export-summary.md",
-    ]
+    outputs: dict[str, Any] = {
+        "qeg-bundle.json": qeg_bundle,
+        "evidence-map.json": evidence_map,
+        "diff-risk-test.json": diff_risk_test or {"schema_version": SCHEMA_VERSION, "changed_entities": [], "risks": [], "test_obligations": []},
+        "qeg-export-report.json": export_report,
+        "qeg-export-summary.md": summary_content,
+    }
     if missing_executions:
-        _write_json(
-            out_dir / "risk-debt-register.json",
-            _build_risk_debt_register(
-                run_id,
-                run_attempt,
-                missing_executions,
-                risks=risks,
-                lifecycle=risk_debt_lifecycle,
-                created_at=created_at,
-            ),
+        outputs["risk-debt-register.json"] = _build_risk_debt_register(
+            run_id,
+            run_attempt,
+            missing_executions,
+            risks=risks,
+            lifecycle=risk_debt_lifecycle,
+            created_at=created_at,
         )
-        (out_dir / "manual-bb-bridge-requests.jsonl").write_text(
-            "\n".join(json.dumps(item, ensure_ascii=False) for item in _build_manual_bridge_requests(run_id, run_attempt, missing_executions)) + "\n",
-            encoding="utf-8",
-        )
-        generated.extend(["risk-debt-register.json", "manual-bb-bridge-requests.jsonl"])
-    (out_dir / "qeg-export-summary.md").write_text(summary_content, encoding="utf-8")
+        outputs["manual-bb-bridge-requests.jsonl"] = _build_manual_bridge_requests(run_id, run_attempt, missing_executions)
+    contents = _prepare_contents(outputs)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for name, content in contents.items():
+        (out_dir / name).write_text(content, encoding="utf-8")
+    for name in OPTIONAL_OUTPUTS:
+        if name not in contents:
+            (out_dir / name).unlink(missing_ok=True)
     return {
         "export_status": "partial" if completeness["partial"] else "success",
         "exit_code": 0 if completeness["score"] >= 0.8 else 0,
-        "generated": generated,
+        "generated": list(contents),
         "completeness": completeness,
         "missing_executions": len(missing_executions),
         "out_dir": str(out_dir),
         "publish_gate_override": False,
     }
+
+
+def _prepare_contents(outputs: dict[str, Any]) -> dict[str, str]:
+    """全成果物のJSON化とUTF-8検証を、ファイルを開く前に完了する。"""
+    contents = {}
+    for name, value in outputs.items():
+        try:
+            if name.endswith(".jsonl"):
+                content = "\n".join(json.dumps(item, ensure_ascii=False, allow_nan=False) for item in value) + "\n"
+            elif name.endswith(".json"):
+                content = json.dumps(value, ensure_ascii=False, allow_nan=False, indent=2) + "\n"
+            else:
+                content = str(value)
+            content.encode("utf-8")
+        except (TypeError, ValueError, UnicodeError) as exc:
+            raise ExportError(f"Cannot serialize {name}: {exc}", exit_code=1) from exc
+        contents[name] = content
+    return contents
 
 
 def _evidence_strength_distribution(records: list[dict[str, Any]]) -> dict[str, int]:

@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/p0b_precheck.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "5eadcfb8520212ffac70749cf6e800482c20f01a78dc70bba25ad4334d003f39",
+  "line_count": 65,
+  "size_bytes": 2932,
+  "headings": [],
+  "imports": [
+    ".input_values",
+    ".p0b_types",
+    "__future__",
+    "decimal",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/p0b_types.py"
+  ],
+  "tags": [
+    "qeg"
+  ]
+}

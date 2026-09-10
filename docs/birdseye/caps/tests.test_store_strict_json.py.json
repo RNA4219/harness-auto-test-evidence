@@ -1,0 +1,34 @@
+{
+  "path": "tests/test_store_strict_json.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "5d1a5f249770e8d0126f36856ae98bd43eebf8e46a3e60768ef709a381babe37",
+  "line_count": 96,
+  "size_bytes": 4033,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.atomic_write",
+    "hate.store.doctor",
+    "hate.store.indexes",
+    "hate.store.locking",
+    "hate.store.transaction",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/locking.py",
+    "src/hate/store/transaction.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "store",
+    "test"
+  ]
+}

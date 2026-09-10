@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_store_manifest_validation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "26ce9f6e99a17a94f976b68b2c55954cd1657b0b2555d0629c8ef67ce4128558",
+  "line_count": 169,
+  "size_bytes": 7996,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.schema_resources",
+    "hate.store",
+    "hate.store.atomic_write",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py",
+    "src/hate/store/atomic_write.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

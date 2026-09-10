@@ -2,9 +2,9 @@
   "path": "src/hate/bridge/materializer.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "1969745825177dea48bc4bfe3402bd4b57c873b621d681d8c3f6371ab20f7298",
-  "line_count": 96,
-  "size_bytes": 3667,
+  "sha256": "c4e3537d76e990553c866953ba1590e1cfd2add0c9d06e2a1d81c3d54312c049",
+  "line_count": 195,
+  "size_bytes": 7921,
   "headings": [],
   "imports": [
     ".schemas",

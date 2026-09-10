@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/store/models.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "3caa36b10206a3ae0edc02d686ac7416477e6a09546e2dcce88d316c11542de0",
+  "line_count": 110,
+  "size_bytes": 3921,
+  "headings": [],
+  "imports": [
+    ".manifest_validation",
+    "__future__",
+    "dataclasses",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/manifest_validation.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "schema",
+    "store",
+    "test"
+  ]
+}

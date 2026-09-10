@@ -1,0 +1,29 @@
+{
+  "path": "tests/test_p1a_retry_aggregation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "6357d7102dcd52f6c01ce039a099acdd46db7893315febb63f51a8d3260ee40c",
+  "line_count": 247,
+  "size_bytes": 13349,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "copy",
+    "hate",
+    "hate.schema_resources",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py"
+  ],
+  "tags": [
+    "api",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

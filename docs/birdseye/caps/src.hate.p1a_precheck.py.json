@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/p1a_precheck.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "dfcf36db67fae2687d1129476e0d659e75b084d106749aea1ba53c63fc22450a",
+  "line_count": 138,
+  "size_bytes": 6576,
+  "headings": [],
+  "imports": [
+    ".input_values",
+    ".p1a_io",
+    "__future__",
+    "collections.abc",
+    "decimal",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/p1a_io.py"
+  ],
+  "tags": [
+    "qeg"
+  ]
+}

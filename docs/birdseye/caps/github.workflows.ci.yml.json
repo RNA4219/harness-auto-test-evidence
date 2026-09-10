@@ -2,17 +2,18 @@
   "path": ".github/workflows/ci.yml",
   "role": "ci",
   "kind": "yml",
-  "sha256": "a0c61c640efdff5813f799aa34bc4906c8eb6b79ccbe40a317158374b1dfaf09",
-  "line_count": 118,
-  "size_bytes": 5017,
+  "sha256": "3ad443e5d0be920289349026087ca90abae8f4b3e0ba9a1fe20be80e321458b2",
+  "line_count": 215,
+  "size_bytes": 10998,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
     "adapter",
-    "coverage",
+    "artifact",
     "schema",
+    "store",
     "test",
     "workflow"
   ]

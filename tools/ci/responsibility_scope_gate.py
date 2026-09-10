@@ -51,8 +51,11 @@ def _leaf_commands() -> list[str]:
     return sorted(commands)
 
 def _cli_owner(command: str) -> tuple[str, str]:
-    parts = command.split()
-    return _owner_for_name(parts[1] if parts[0] == "platform" and len(parts) > 1 else command)
+    sys.path.insert(0, str(ROOT / "src"))
+    from hate.bridge.routes import route_for_command
+
+    route = route_for_command(command)
+    return route.canonical_owner, route.canonical_contract
 
 def _build_registry(schema_registry: dict[str, Any]) -> dict[str, Any]:
     cli_surfaces = []
@@ -81,6 +84,17 @@ def _check(registry: dict[str, Any], schema_registry: dict[str, Any]) -> list[st
     expected_cli, actual_cli = set(_leaf_commands()), {item["cli"] for item in registry.get("cli_surfaces", [])}
     if expected_cli != actual_cli:
         findings.append(f"CLI registry mismatch missing={sorted(expected_cli-actual_cli)} extra={sorted(actual_cli-expected_cli)}")
+    for item in registry.get("cli_surfaces", []):
+        command = str(item["cli"])
+        if command.split()[0] in CORE_COMMANDS:
+            continue
+        try:
+            expected_owner, expected_contract = _cli_owner(command)
+        except ValueError as exc:
+            findings.append(str(exc))
+            continue
+        if (item.get("owner_repo"), item.get("canonical_contract")) != (expected_owner, expected_contract):
+            findings.append(f"CLI route mismatch: {command}; expected {expected_owner}:{expected_contract}")
     expected_records = {item["record_type"] for item in schema_registry["records"]}
     actual_records = {item["record_type"] for item in registry.get("record_types", [])}
     if expected_records != actual_records:

@@ -39,6 +39,37 @@
       "type": "string",
       "minLength": 1
     },
+    "command_options": {
+      "description": "実行時の非Pathオプション。既定値・null・配列順を保持する。旧依頼では省略可能。",
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+      "additionalProperties": {
+        "anyOf": [
+          { "type": ["string", "number", "boolean", "null"] },
+          {
+            "type": "array",
+            "items": { "type": ["string", "number", "boolean", "null"] }
+          }
+        ]
+      }
+    },
+    "path_arguments": {
+      "description": "ローカル出力以外の指定Pathの用途と観測時の存在状態。未存在のパスに指紋は付けない。旧依頼では省略可能。",
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "role", "exists"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "role": { "enum": ["input", "optional-input", "destination"] },
+          "exists": { "type": "boolean" }
+        },
+        "if": { "properties": { "role": { "const": "input" } }, "required": ["role"] },
+        "then": { "properties": { "exists": { "const": true } } }
+      }
+    },
     "status": {
       "const": "handoff_required"
     },
@@ -71,6 +102,20 @@
               "file",
               "directory"
             ]
+          },
+          "excluded_paths": {
+            "description": "ディレクトリーの指紋から除外するHATE生成物。pathは入力ルートからの相対パス。",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["path", "kind"],
+              "properties": {
+                "path": {"type": "string", "minLength": 1},
+                "kind": {"enum": ["file", "directory", "temporary-files"]}
+              }
+            }
           }
         }
       }

@@ -1,0 +1,26 @@
+{
+  "path": "tests/test_p1a_precheck_permission.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "bcf7eade1e2826b0ffd9e44cd014dca1bcc6daeffe49077f2064c9a2848ceead",
+  "line_count": 193,
+  "size_bytes": 10222,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "copy",
+    "hate",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "path": "tests/test_run_input_validation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "0b7fe98fb3c99887adfb29e288a023201933ad373b039bc1a479806c278c7d19",
+  "line_count": 239,
+  "size_bytes": 10866,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate",
+    "hate.p0a",
+    "hate.p1a",
+    "json",
+    "pathlib",
+    "pytest",
+    "shutil"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p1a.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}
