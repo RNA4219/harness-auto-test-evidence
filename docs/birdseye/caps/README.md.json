@@ -2,9 +2,9 @@
   "path": "README.md",
   "role": "navigation",
   "kind": "md",
-  "sha256": "98d591cb33b99816432b69cce05376a49d51637f044f948656d3c83433390f4f",
-  "line_count": 235,
-  "size_bytes": 11807,
+  "sha256": "582094f276ae2d1ce622d57fddd055964117353f9a36f35374d9128e4a3a5ffc",
+  "line_count": 191,
+  "size_bytes": 9276,
   "headings": [
     "# HATE Agent README",
     "## Current State",
@@ -19,6 +19,10 @@
   ],
   "imports": [],
   "links": [
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
     "docs/README_EN.md",
     "docs/README_JA.md",
     "docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md",
@@ -54,6 +58,10 @@
     "skills/hate-release-maintainer/SKILL.md"
   ],
   "depends_on": [
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
     "docs/README_EN.md",
     "docs/README_JA.md",
     "docs/acceptance/DOCS_FRESHNESS_REVIEW_20260705.md",

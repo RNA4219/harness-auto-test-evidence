@@ -2,9 +2,9 @@
   "path": "docs/README_JA.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "028443f4eb4618998da88958820b9d260877af1c0ea6fd34e7616a9a01d27f07",
-  "line_count": 147,
-  "size_bytes": 8288,
+  "sha256": "1b7056e422b7fbbdfe386f4cab55621198d70c185c9f7e75ad96cdcaa032d4d3",
+  "line_count": 129,
+  "size_bytes": 6699,
   "headings": [
     "# HATE: harness-auto-test-evidence",
     "## 何ができるか",
@@ -14,13 +14,15 @@
     "## Platform CLI",
     "## 読むべき文書",
     "## リリース前チェック",
-    "## ライセンス",
-    "## v0.3.0 Responsibility Freeze / Bridge-Only"
+    "## v0.3.0 Responsibility Freeze / Bridge-Only",
+    "## ライセンス"
   ],
   "imports": [],
   "links": [
+    "../CHANGELOG.md",
     "../LICENSE",
     "../README.md",
+    "../SECURITY.md",
     "acceptance/MAINTENANCE_VALIDATION_20260911.md",
     "acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md",
     "acceptance/POC_COMPLETION_20260703.md",

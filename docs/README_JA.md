@@ -1,71 +1,53 @@
 # HATE: harness-auto-test-evidence
 
-HATE は、自動テストと実リポジトリ検証の結果を local-first に収集し、
-HATE/v1 の JSON 証跡へ正規化する CLI ツールです。JUnit、coverage、pytest、
-Vitest、Jest、real-repo 実行結果などを、人間と QEG が読める形へ変換します。
-
-HATE は「最後の承認ゲート」ではありません。HATE の役割は、QEG や周辺の
-workflow tool が判断できる材料を揃えることです。release approval、waiver、
-immutability、retention、最終 Go/No-Go は QEG 側の責務です。
+HATE はJUnit、coverage、pytest、Vitest、Jest、実リポジトリの検証結果を
+ローカルでHATE/v1 JSON証跡へ変換するCLIです。release approval、waiver、
+immutability、retention、最終Go/No-GoはQEG側の責務です。
 
 ## 何ができるか
 
 - 自動テスト結果と coverage を HATE/v1 artifact に変換する
 - QEG optional evidence bundle を生成する
 - trust / AETE / DQ / replay / compare / explain / recommend / doctor の補助証跡を出す
-- RanD、Shipyard、workflow-cookbook 向けの workflow artifact を作る
-- product readiness と release candidate pack の advisory artifact を生成する
-- 実リポジトリを roster で実行し、timeout、record count、regression、hold を保存する
-- platform CLI で findings、risk debt、manual review、assignment、score、verdict、triage を扱う
-- 主要 OSS 10本の期待 verdict corpus を使い、precision / recall を測る
+- workflow連携・product readiness・release candidateの補助証跡を生成する
+- platform CLIで実リポジトリの検証、履歴、findings、risk debt、手動レビューを扱う
 
 ## 重要な現在地
 
-- PoC は完了済みです。
-- `product_ready` は false のままです。
-- HATE 単体は production release authority ではありません。
+- PoC完了済み。`product_ready=false`です。
 - 主要 OSS 10本の二周検証では、最終 cycle が 5 pass / 5 hold、22,171 records で安定しました。
 - frozen corpus に対する `hate platform verdict` は 10/10 matched、precision / recall / accuracy が 1.0 です。
 - `hate platform triage` は 5件の Hold と、pytest compile smoke subset の 1件 soft gap を運用キューへ出します。
 
 ## 2026-09-11の不具合修正
 
-[PR #12](https://github.com/RNA4219/harness-auto-test-evidence/pull/12)で、Bridgeの入力引継ぎ、
-LocalStoreの保存・索引・復旧、P0a/P0bの入力検証と観測の保持、P1aの信頼度評価を修正しました。
-未実行やskipの記録だけで実行要件を満たさず、不足をrisk debt・補完依頼へ残します。
-元のテスト状態やretry・matrix・shardの情報も証跡へ引き継ぎます。
+Bridge、LocalStoreの保存・復旧、P0a/P0bの入力検証、P1aの信頼度評価を修正しました。
+未実行やskipは実行要件に数えず、不足をrisk debt・補完依頼へ残します。
+詳細と未調査項目は[FIX-001〜104](process/MAINTENANCE_FINDINGS.md)に記載しています。
 
-修正時の全体テストは **4,029件通過**、マージ前のGitHub CIは全14チェックが成功しました。
-対象コミットと検証範囲は[検証記録](acceptance/MAINTENANCE_VALIDATION_20260911.md)、
-各修正と未調査項目は[FIX-001〜104](process/MAINTENANCE_FINDINGS.md)を参照してください。
-
-この修正は`main`へ反映済みです。既存のv0.3.0 Release assetは再公開していないため、
-修正版を使う場合は以下のソース導入手順で`main`を取得してください。
+修正時の全体テストは**4,029件通過**、マージ前のCIは全14チェック成功。
+対象コミットとCIへのリンクは[検証記録](acceptance/MAINTENANCE_VALIDATION_20260911.md)を参照してください。
 
 ## インストールと実行
 
-Python 3.11 以上と uv を使います。ソースから開発する場合:
+Python 3.11以上とuvを使います。今回の修正は`main`にあり、既存のv0.3.0配布物は
+再公開していません。修正版をソースから導入する場合:
 
     git clone https://github.com/RNA4219/harness-auto-test-evidence.git
     cd harness-auto-test-evidence
     uv sync --dev --frozen
     uv run python -m hate --help
 
-公式のv0.3.0 packageは
-[GitHub Release](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
-からwheelを取得し、ダウンロードしたassetをツールとして導入します:
+配布済みv0.3.0は[GitHub Release](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
+のwheelをダウンロードして導入します（PyPIでは配布しません）:
 
     uv tool install ./harness_auto_test_evidence-0.3.0-py3-none-any.whl
     hate --help
 
-package配布はGitHub Release assetだけを正式経路とし、PyPI公開は意図的に行いません。
-sourceからbuildする場合だけ `uv build` でlocal wheelを作成して導入します。v0.3.0では
-HATE/v1とHATE-bridge/v1 schemaがwheelへ同梱されます。v0.1.0からの主な変更は、
-JSON Schema制約の厳格化とlocal subprocess pluginの既定拒否です。pluginを実行する
-場合は --allow-local-exec が必要ですが、任意コード実行であることに変わりはなく、
-filesystem/network isolationは提供されません。release/regulated profileでは
-local subprocessを実行できません。詳細は ../CHANGELOG.md と ../SECURITY.md を
-参照してください。
+ソースからwheelを作る場合は`uv build`を使います。HATE/v1・HATE-bridge/v1のschemaは同梱済みです。
+local subprocess pluginは既定で拒否され、実行には`--allow-local-exec`が必要です。
+任意コード実行を伴い、filesystem/network isolationは提供しません。release/regulated profileでは
+実行不可です。移行・実行境界の詳細は[CHANGELOG](../CHANGELOG.md)と[SECURITY](../SECURITY.md)を参照してください。
 
 P0a の最小golden path:
 
@@ -74,8 +56,6 @@ P0a の最小golden path:
 ## Platform CLI
 
 `hate platform` は、人間が運用しやすい形で証跡を読み直すための入口です。
-
-主なコマンド:
 
 - `run`: real-repo roster を実行する
 - `history`: run history を問い合わせる
@@ -131,17 +111,19 @@ uv run python tools/codemap/update.py --check
 git diff --check
 ```
 
-claim を更新した場合は、README、acceptance、Birdseye、schema registry、
-product-grade status が矛盾していないことを確認してください。
-
-## ライセンス
-
-MIT License。詳細は [LICENSE](../LICENSE) を参照してください。
+表明を更新した場合は、関連文書・検証記録・schema・product-grade statusとの整合を確認してください。
 
 ## v0.3.0 Responsibility Freeze / Bridge-Only
 
-HATEの新規開発責務はP0a/P0b/P1aとschema/adapter/plugin、local evidence history/replayへ固定しました。P1b以降の既存CLIはthin bridgeとなり、既定のcompat-v0.2 providerでv0.2互換動作を維持します。
+新規開発はP0a/P0b/P1a、schema/adapter/plugin、local evidence history/replayが対象です。
+P1b以降のCLIはthin bridgeで、既定のcompat-v0.2 providerがv0.2互換動作を維持します。
 
-leaf commandへ --bridge-provider handoff を指定すると、外部processやnetworkを起動せずbridge-request.jsonだけを生成します。環境変数HATE_BRIDGE_PROVIDERも利用でき、CLI optionが優先です。外部結果はhate bridge materializeで検証し、ID、owner、SHA-256、sourceRefs、schema不一致時はexit 2でfail-closedになります。
+`--bridge-provider handoff`または`HATE_BRIDGE_PROVIDER`（CLI優先）で、外部process/networkを
+起動せずbridge-request.jsonを生成します。外部結果は`hate bridge materialize`で検証し、
+ID・owner・SHA-256・sourceRefs・schemaの不一致は終了コード2で拒否します。
 
-HATE/v1はv1まで維持し、P1b+はdeprecated_since=0.3.0、remove_after=1.0.0です。HATEは引き続きadvisory evidence producerであり、product_ready=false、QEG verdict、Go/No-Go、waiver、approval、publish authorityは外部責務です。
+HATE/v1はv1まで維持し、P1b+はdeprecated_since=0.3.0、remove_after=1.0.0です。
+
+## ライセンス
+
+MIT License。[LICENSE](../LICENSE)を参照してください。
