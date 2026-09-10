@@ -1,5 +1,5 @@
 {
-  "generated_at": "8ca8cdf6daa2",
+  "generated_at": "f9ea5461906b",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -68,9 +68,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "dca25b29e9a369291866cc8c2f3d188296779c1b534c9cb9c23f0910e2439dd0",
-      "line_count": 225,
-      "size_bytes": 11037
+      "sha256": "98d591cb33b99816432b69cce05376a49d51637f044f948656d3c83433390f4f",
+      "line_count": 235,
+      "size_bytes": 11807
     },
     "SECURITY.md": {
       "role": "project",
@@ -89,16 +89,16 @@
     "docs/README_EN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_EN.md.json",
-      "sha256": "d5cd941a45c8a2cdce4ad5b284ec1f934639263020d4690e196a42afc2c91eb0",
-      "line_count": 134,
-      "size_bytes": 6789
+      "sha256": "b28e0a89ad680a46796cfa24400097016d219fefb4dfd5ea46f6d7588f34fa3c",
+      "line_count": 149,
+      "size_bytes": 7759
     },
     "docs/README_JA.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_JA.md.json",
-      "sha256": "8b40506014c6af3f96ec7d311bb7fe81edcafcd212ece6289e5b85c26e632e0a",
-      "line_count": 133,
-      "size_bytes": 7274
+      "sha256": "028443f4eb4618998da88958820b9d260877af1c0ea6fd34e7616a9a01d27f07",
+      "line_count": 147,
+      "size_bytes": 8288
     },
     "docs/acceptance/AC-20260630-01.md": {
       "role": "documentation",
@@ -253,6 +253,13 @@
       "sha256": "9fe117091b11369749dbc207e142c8dd6c10efef0c371b1de53306389aa95b8c",
       "line_count": 35,
       "size_bytes": 4537
+    },
+    "docs/acceptance/MAINTENANCE_VALIDATION_20260911.md": {
+      "role": "documentation",
+      "caps": "docs/birdseye/caps/docs.acceptance.MAINTENANCE_VALIDATION_20260911.md.json",
+      "sha256": "776700134a0aee07104f51c903beb21c900fa5cbc4db83db0c906d30d1078e27",
+      "line_count": 41,
+      "size_bytes": 2560
     },
     "docs/acceptance/MAJOR_OSS_DEEP_OPERATIONAL_HARDENING_20260704.md": {
       "role": "documentation",
@@ -12052,6 +12059,10 @@
     ],
     [
       "README.md",
+      "docs/acceptance/MAINTENANCE_VALIDATION_20260911.md"
+    ],
+    [
+      "README.md",
       "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md"
     ],
     [
@@ -12093,6 +12104,10 @@
     [
       "README.md",
       "docs/process/IMPLEMENTATION_TASK_BREAKDOWN.md"
+    ],
+    [
+      "README.md",
+      "docs/process/MAINTENANCE_FINDINGS.md"
     ],
     [
       "README.md",
@@ -12160,6 +12175,10 @@
     ],
     [
       "docs/README_EN.md",
+      "docs/acceptance/MAINTENANCE_VALIDATION_20260911.md"
+    ],
+    [
+      "docs/README_EN.md",
       "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md"
     ],
     [
@@ -12173,6 +12192,10 @@
     [
       "docs/README_EN.md",
       "docs/process/EVALUATION.md"
+    ],
+    [
+      "docs/README_EN.md",
+      "docs/process/MAINTENANCE_FINDINGS.md"
     ],
     [
       "docs/README_EN.md",
@@ -12192,6 +12215,10 @@
     ],
     [
       "docs/README_JA.md",
+      "docs/acceptance/MAINTENANCE_VALIDATION_20260911.md"
+    ],
+    [
+      "docs/README_JA.md",
       "docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md"
     ],
     [
@@ -12205,6 +12232,10 @@
     [
       "docs/README_JA.md",
       "docs/process/EVALUATION.md"
+    ],
+    [
+      "docs/README_JA.md",
+      "docs/process/MAINTENANCE_FINDINGS.md"
     ],
     [
       "docs/README_JA.md",
