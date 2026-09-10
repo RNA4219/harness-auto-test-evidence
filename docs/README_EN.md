@@ -28,6 +28,21 @@ structured, inspectable evidence that downstream governance tools can evaluate.
 - `hate platform verdict` reports 10/10 matched verdicts with precision, recall, and accuracy at 1.0 against the frozen corpus.
 - `hate platform triage` produces 6 operator items: 5 stable holds and 1 pytest compile-smoke subset soft gap.
 
+## Maintenance Fixes — 2026-09-11
+
+[PR #12](https://github.com/RNA4219/harness-auto-test-evidence/pull/12) fixes Bridge input forwarding,
+LocalStore persistence, indexing and recovery, P0a/P0b input validation and observation retention,
+and P1a trust scoring. Collection-only or skipped records do not satisfy execution requirements;
+missing evidence remains visible as risk debt and follow-up requests. Original test outcomes and
+retry, matrix and shard declarations are retained in the evidence.
+
+The maintenance snapshot passed **4,029 local tests** and all 14 GitHub CI checks before merge.
+See the [validation record](acceptance/MAINTENANCE_VALIDATION_20260911.md) for commits and coverage,
+and [FIX-001–104](process/MAINTENANCE_FINDINGS.md) for individual fixes and remaining investigations.
+
+These fixes are merged into `main`. Existing v0.3.0 release assets were not republished;
+use the source installation instructions below to get the fixes from `main`.
+
 ## Install And Run
 
 Use Python 3.11 or newer with uv. For source development:

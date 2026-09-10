@@ -28,6 +28,20 @@ immutability、retention、最終 Go/No-Go は QEG 側の責務です。
 - frozen corpus に対する `hate platform verdict` は 10/10 matched、precision / recall / accuracy が 1.0 です。
 - `hate platform triage` は 5件の Hold と、pytest compile smoke subset の 1件 soft gap を運用キューへ出します。
 
+## 2026-09-11の不具合修正
+
+[PR #12](https://github.com/RNA4219/harness-auto-test-evidence/pull/12)で、Bridgeの入力引継ぎ、
+LocalStoreの保存・索引・復旧、P0a/P0bの入力検証と観測の保持、P1aの信頼度評価を修正しました。
+未実行やskipの記録だけで実行要件を満たさず、不足をrisk debt・補完依頼へ残します。
+元のテスト状態やretry・matrix・shardの情報も証跡へ引き継ぎます。
+
+修正時の全体テストは **4,029件通過**、マージ前のGitHub CIは全14チェックが成功しました。
+対象コミットと検証範囲は[検証記録](acceptance/MAINTENANCE_VALIDATION_20260911.md)、
+各修正と未調査項目は[FIX-001〜104](process/MAINTENANCE_FINDINGS.md)を参照してください。
+
+この修正は`main`へ反映済みです。既存のv0.3.0 Release assetは再公開していないため、
+修正版を使う場合は以下のソース導入手順で`main`を取得してください。
+
 ## インストールと実行
 
 Python 3.11 以上と uv を使います。ソースから開発する場合:

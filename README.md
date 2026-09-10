@@ -2,8 +2,8 @@
 intent_id: INT-HATE-001
 owner: RNA4219
 status: active
-last_reviewed_at: 2026-07-05
-next_review_due: 2026-07-19
+last_reviewed_at: 2026-09-11
+next_review_due: 2026-09-25
 ---
 
 # HATE Agent README
@@ -28,13 +28,16 @@ control plane.
 - PoC posture: PoC complete with explicit non-overclaim guardrails
 - Product-ready posture: `product_ready=false` until external release/QEG
   approval and remaining production-readiness gaps are closed
-- Latest local full regression observed during release prep: `1910 passed`
+- Maintenance validation snapshot (2026-09-11): `4029 passed` locally;
+  all 14 PR checks passed before [PR #12](https://github.com/RNA4219/harness-auto-test-evidence/pull/12)
+  merged as `f76f1b9`. See the [validation record](docs/acceptance/MAINTENANCE_VALIDATION_20260911.md).
 - Major OSS validation corpus: 10 repositories, 22,171 records per final
   two-cycle run, 5 pass / 5 hold, expected-verdict precision and recall at 1.0
   for the frozen corpus
 
 Important acceptance records:
 
+- [Evidence integrity maintenance validation](docs/acceptance/MAINTENANCE_VALIDATION_20260911.md)
 - [PoC completion](docs/acceptance/POC_COMPLETION_20260703.md)
 - [Major OSS two-cycle validation](docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md)
 - [Platform CLI and product-grade gate](docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md)
@@ -42,6 +45,13 @@ Important acceptance records:
 - [v0.3.0 responsibility freeze acceptance](docs/acceptance/RELEASE_V0_3_0_20260711.md)
 - [v0.2.0 local release acceptance](docs/acceptance/RELEASE_V0_2_0_20260711.md)
 - [v0.1.0 PoC preview release](docs/acceptance/RELEASE_V0_1_0_20260705.md)
+
+The merged maintenance changes repair Bridge inputs, LocalStore persistence and
+recovery, P0a/P0b validation and observation retention, and P1a trust scoring.
+Collection-only or skipped records do not satisfy execution requirements. See
+[FIX-001–104 and remaining investigations](docs/process/MAINTENANCE_FINDINGS.md)
+for scope. These changes are on `main`; the existing v0.3.0 release assets were
+not republished. Build from the merged source to use these fixes.
 
 ## Agent Operating Rules
 

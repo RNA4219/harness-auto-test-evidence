@@ -1,0 +1,30 @@
+{
+  "path": "docs/acceptance/MAINTENANCE_VALIDATION_20260911.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "776700134a0aee07104f51c903beb21c900fa5cbc4db83db0c906d30d1078e27",
+  "line_count": 41,
+  "size_bytes": 2560,
+  "headings": [
+    "# 証跡整合性の修正・検証記録（2026-09-11）",
+    "## 対象",
+    "## 検証結果",
+    "## 互換性と残る範囲"
+  ],
+  "imports": [],
+  "links": [
+    "../process/BRIDGE_REQUEST_CONTRACT.md",
+    "../process/CLI_INPUT_ERRORS.md",
+    "../process/LOCAL_STORE_IO_CONTRACT.md",
+    "../process/MAINTENANCE_FINDINGS.md"
+  ],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}
