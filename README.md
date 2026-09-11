@@ -8,36 +8,27 @@ next_review_due: 2026-09-25
 
 # HATE Agent README
 
-This root README is for coding agents working inside this repository. For
-human-facing product documentation, read:
+Agent entrypoint. User documentation:
 
 - [日本語 README](docs/README_JA.md)
 - [English README](docs/README_EN.md)
 
-HATE, short for `harness-auto-test-evidence`, is a local-first evidence
-normalizer for automated test and repository validation artifacts. It prepares
-structured HATE/v1 records that can be consumed by QEG and related workflow
-tools. It is not the final release gate, approval authority, or hosted SaaS
-control plane.
+HATE normalizes local test and repository validation artifacts into HATE/v1
+evidence for QEG and related workflow tools. Final release approval is external.
 
 ## Current State
 
-- Package version: 0.3.0
-- CLI entrypoint: `hate`
-- Runtime posture: local-first CLI and JSON/HTML artifact generator
-- PoC posture: PoC complete with explicit non-overclaim guardrails
-- Product-ready posture: `product_ready=false` until external release/QEG
-  approval and remaining production-readiness gaps are closed
-- Maintenance validation snapshot (2026-09-11): `4029 passed` locally;
-  all 14 PR checks passed before [PR #12](https://github.com/RNA4219/harness-auto-test-evidence/pull/12)
-  merged as `f76f1b9`. See the [validation record](docs/acceptance/MAINTENANCE_VALIDATION_20260911.md).
+- Package: 0.3.0; CLI: `hate`.
+- PoC complete; `product_ready=false`.
+  PoC 100% は product / enterprise / regulated 要件完了を意味しない。
+- [Maintenance validation (2026-09-11)](docs/acceptance/MAINTENANCE_VALIDATION_20260911.md):
+  `4029 passed` locally and all 14 PR checks passed before merge.
 - Major OSS validation corpus: 10 repositories, 22,171 records per final
   two-cycle run, 5 pass / 5 hold, expected-verdict precision and recall at 1.0
   for the frozen corpus
 
 Important acceptance records:
 
-- [Evidence integrity maintenance validation](docs/acceptance/MAINTENANCE_VALIDATION_20260911.md)
 - [PoC completion](docs/acceptance/POC_COMPLETION_20260703.md)
 - [Major OSS two-cycle validation](docs/acceptance/MAJOR_OSS_TWO_CYCLE_20260704.md)
 - [Platform CLI and product-grade gate](docs/acceptance/PLATFORM_CLI_PRODUCT_GRADE_GATE_20260703.md)
@@ -46,23 +37,17 @@ Important acceptance records:
 - [v0.2.0 local release acceptance](docs/acceptance/RELEASE_V0_2_0_20260711.md)
 - [v0.1.0 PoC preview release](docs/acceptance/RELEASE_V0_1_0_20260705.md)
 
-The merged maintenance changes repair Bridge inputs, LocalStore persistence and
-recovery, P0a/P0b validation and observation retention, and P1a trust scoring.
-Collection-only or skipped records do not satisfy execution requirements. See
-[FIX-001–104 and remaining investigations](docs/process/MAINTENANCE_FINDINGS.md)
-for scope. These changes are on `main`; the existing v0.3.0 release assets were
-not republished. Build from the merged source to use these fixes.
+Maintenance fixes cover Bridge, LocalStore, P0a/P0b validation, and P1a scoring;
+see [FIX-001–104 and remaining investigations](docs/process/MAINTENANCE_FINDINGS.md).
+Build from `main` to use these fixes; existing v0.3.0 release assets were not republished.
 
 ## Agent Operating Rules
 
 1. Do not claim HATE is production-ready, enterprise-ready, regulated-ready, or
    a final release authority unless a current QEG release approval artifact says
    so.
-2. Treat `docs/process/PRODUCT_REQUIREMENTS_DEFINITION.md` as the high-level
-   requirement source and `docs/process/PRODUCT_GRADE_IMPLEMENTATION_SPEC.md`
-   as the product-grade implementation contract.
-3. Treat `docs/process/RUNBOOK.md` and `docs/process/EVALUATION.md` as the
-   default execution and acceptance references.
+2. Use the requirements and implementation contracts linked below.
+3. Follow the Runbook and Evaluation contract for execution and acceptance.
 4. Update `docs/birdseye` with `uv run python tools/codemap/update.py` after
    changing source, tests, schemas, fixtures, or important docs.
 5. Keep generated runtime artifacts under `tmp/` or another ignored output
@@ -98,8 +83,7 @@ For platform and release work:
 7. [Post-PoC spec traceability checklist](docs/process/POST_POC_SPEC_TRACEABILITY_CHECKLIST.md)
 8. [Post-PoC implementation gap checklist](docs/process/POST_POC_IMPLEMENTATION_GAP_CHECKLIST.md)
 
-PoC 100% は product / enterprise / regulated 要件完了を意味しない。Post-PoC
-の残課題は上記3文書と `POST_POC_REQUIREMENTS_GAP_AUDIT.md` を正本として扱う。
+Post-PoCの残課題は上記gap registryとgap auditを正本として扱う。
 
 For navigation:
 
@@ -107,14 +91,6 @@ For navigation:
 - [Agent skill: hate-release-maintainer](skills/hate-release-maintainer/SKILL.md)
 
 ## Common Commands
-
-Install/test from the repository root:
-
-```powershell
-uv run pytest -q
-uv run python -m compileall src tests
-uv run python tools/codemap/update.py --check
-```
 
 Run the P0a golden path:
 
@@ -157,9 +133,7 @@ Primary commands:
 - `hate trust`: build AETE and trust-hardening reports
 - `hate workflow`: map evidence to RanD, Shipyard, and workflow-cookbook
 - `hate product`: generate or query product readiness artifacts
-- `hate platform`: operate run/history/compare/schedule/findings/debt/review/
-  assign/score/verdict/triage/history-analytics/history-materialize/
-  notify/baseline/plugin/policy/report/serve flows
+- `hate platform`: inspect reports, findings, risk debt, and operational history
 - `hate real-repo`: run recurring real repository validation rosters
 - `hate release`: assemble release candidate evidence packs
 
@@ -168,54 +142,37 @@ Primary commands:
 HATEの新規開発責務はP0a/P0b/P1a、schema/adapter/plugin、local evidence history/replayへ固定されています。workflow、product、release、gap、expansion、real-repo、platform、validationの公開CLIはthin bridgeです。
 
 - 既定providerはcompat-v0.2で、v0.2のcommand/options/output files/required fields/exit codeを維持します。CLI JSON stdoutにはcompatibility_provider、canonical_owner、deprecated_since、remove_afterを追加し、stderrへprocess単位で1回warningを出します。
-- 外部handoffはleaf commandへ --bridge-provider handoff を付けます。HATE_BRIDGE_PROVIDERでも指定でき、CLI optionが優先します。handoffはprocess/networkを起動せずbridge-request.jsonだけを生成します。
-- handoffは実行オプションをcommand_optionsに保存し、依頼IDへ反映します。旧依頼の扱いは[Bridge依頼契約](docs/process/BRIDGE_REQUEST_CONTRACT.md)を参照してください。
+- handoffはleaf commandの --bridge-provider handoff またはHATE_BRIDGE_PROVIDERで指定し、CLI optionを優先します。外部process/networkを起動せず、実行オプションを含むbridge-request.jsonを生成します。依頼IDと旧依頼の扱いは[Bridge依頼契約](docs/process/BRIDGE_REQUEST_CONTRACT.md)を参照してください。
 - 外部owner resultは hate bridge materialize --request REQUEST --result RESULT --out OUT で検証・materializeします。ID、owner、hash、sourceRefs、schemaが不一致ならexit 2で、legacy artifactは生成しません。
-- HATE/v1はv1まで維持します。P1b+ removal windowはdeprecated_since=0.3.0、remove_after=1.0.0です。
-- 責務の正本はgovernance/responsibility-registry.jsonです。CLI欄の生成と実行時ルーティングはsrc/hate/bridge/routes.pyの定義を共有します。product_ready=falseと外部release authorityは変更ありません。
+- HATE/v1はv1まで維持します。CLI欄の生成と実行時ルーティングはsrc/hate/bridge/routes.pyを共有し、責務台帳は末尾の生成欄に示します。
 
 v0.2利用者は通常の互換動作ではcommandを変更する必要はありません。新しい外部owner連携を試す場合だけhandoffを明示してください。
 
 ## v0.3.0 Distribution, Safety, and Migration
 
-- Official v0.3.0 packages are the wheel and source distribution attached to
-  the GitHub Release. PyPI is intentionally not a distribution channel.
-- Download the wheel from the GitHub Release, then install it with
-  `uv tool install` and the local wheel path. The package includes HATE/v1 JSON
-  schemas.
+- Official packages are GitHub Release assets, not PyPI packages. Install the
+  downloaded wheel with `uv tool install <wheel-path>`; HATE/v1 schemas are included.
 - Local subprocess plugins are denied by default. The operator must pass
   --allow-local-exec, and the manifest must carry signed and trusted external
   evidence. Release and regulated profiles always deny local subprocess mode.
 - signature_valid is advisory external evidence, not cryptographic verification.
 - Local subprocess mode does not provide filesystem or network isolation.
-- See CHANGELOG.md for v0.1 migration notes and SECURITY.md for the execution
-  boundary.
-- Contributor guidance is in CONTRIBUTING.md and community expectations are in
-  CODE_OF_CONDUCT.md.
+- See [CHANGELOG](CHANGELOG.md), [SECURITY](SECURITY.md),
+  [CONTRIBUTING](CONTRIBUTING.md), and [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Release Checklist For Agents
 
-Before calling a release task complete:
+Verify README links, date test/readiness claims, and commit durable acceptance
+evidence. Run from the repository root:
 
-- README links work and route humans to both Japanese and English docs.
-- Current test count and readiness claims are refreshed or explicitly marked as
-  historical.
-- `uv run pytest -q` passes.
-- `uv run python -m compileall src tests` passes.
-- `uv run python tools/codemap/update.py --check` passes, or codemap was
-  regenerated and committed.
-- `git diff --check` is clean.
-- Any generated acceptance evidence is committed only if it is durable,
-  human-readable release evidence.
-- HATE still states that QEG/release approval is external to HATE.
+```powershell
+uv run pytest -q
+uv run python -m compileall src tests
+uv run python tools/codemap/update.py --check
+git diff --check
+```
 
-Long-term operation checks:
-
-- `hate platform history-analytics --input <history-window.json>`
-- `hate platform history-materialize --input <history-window.json> --manifest-out <manifest.json>`
-- `hate platform notify route --input <operating-record.json>`
-- `hate platform notify deliver --input <delivery-attempts.json>`
-- `hate platform baseline review --input <baseline-review.json>`
+For platform commands, see the [user reference](docs/README_EN.md#platform-cli).
 
 <!-- responsibility-freeze:start -->
 ## Responsibility Freeze (generated)
