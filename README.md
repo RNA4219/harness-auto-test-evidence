@@ -19,7 +19,8 @@ evidence for QEG and related workflow tools. Final release approval is external.
 ## Current State
 
 - Package: 0.3.0; CLI: `hate`.
-- PoC complete; `product_ready=false` pending remaining requirements and external approval.
+- PoC complete; `product_ready=false`.
+  PoC 100% は product / enterprise / regulated 要件完了を意味しない。
 - [Maintenance validation (2026-09-11)](docs/acceptance/MAINTENANCE_VALIDATION_20260911.md):
   `4029 passed` locally and all 14 PR checks passed before merge.
 - Major OSS validation corpus: 10 repositories, 22,171 records per final
