@@ -2,7 +2,7 @@
 
 HATE はJUnit、coverage、pytest、Vitest、Jest、実リポジトリの検証結果を
 ローカルでHATE/v1 JSON証跡へ変換するCLIです。release approval、waiver、
-immutability、retention、最終Go/No-GoはQEG側の責務です。
+immutability、retention、最終Go/No-Go・公開判断はQEG側の責務です。
 
 ## 何ができるか
 
@@ -118,7 +118,7 @@ git diff --check
 新規開発はP0a/P0b/P1a、schema/adapter/plugin、local evidence history/replayが対象です。
 P1b以降のCLIはthin bridgeで、既定のcompat-v0.2 providerがv0.2互換動作を維持します。
 
-`--bridge-provider handoff`または`HATE_BRIDGE_PROVIDER`（CLI優先）で、外部process/networkを
+leaf commandの`--bridge-provider handoff`または`HATE_BRIDGE_PROVIDER`（CLI優先）で、外部process/networkを
 起動せずbridge-request.jsonを生成します。外部結果は`hate bridge materialize`で検証し、
 ID・owner・SHA-256・sourceRefs・schemaの不一致は終了コード2で拒否します。
 

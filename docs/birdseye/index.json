@@ -1,5 +1,5 @@
 {
-  "generated_at": "c20a22a39f35",
+  "generated_at": "4ff6ee4d5ea1",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -89,16 +89,16 @@
     "docs/README_EN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_EN.md.json",
-      "sha256": "e966db6dc11b88d35b7a5c87643272aa66d66deb4d277d72b890a4039b560830",
+      "sha256": "b421996533a32ad1c86bd01c1371d05befa97a0e7166884aef7c7a66bceffdb9",
       "line_count": 134,
-      "size_bytes": 6289
+      "size_bytes": 6320
     },
     "docs/README_JA.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_JA.md.json",
-      "sha256": "1b7056e422b7fbbdfe386f4cab55621198d70c185c9f7e75ad96cdcaa032d4d3",
+      "sha256": "7fdad2297a91841786ecfa5ecd3405fc1afd8f684c8970b0c8857ffa9132b535",
       "line_count": 129,
-      "size_bytes": 6699
+      "size_bytes": 6729
     },
     "docs/acceptance/AC-20260630-01.md": {
       "role": "documentation",

@@ -2,7 +2,7 @@
 
 HATE converts local test and repository validation results into HATE/v1 JSON
 evidence for QEG and related workflow tools. Release approval, waivers,
-immutability, retention, and final Go/No-Go decisions belong to QEG.
+immutability, retention, final Go/No-Go, and publication decisions belong to QEG.
 
 ## What HATE Does
 
@@ -121,7 +121,7 @@ New development covers P0a/P0b/P1a, schemas, adapters/plugins, and local evidenc
 Post-P1a commands are thin bridges; the default compat-v0.2 provider preserves
 v0.2 commands, options, output files, required fields, and exit codes.
 
-Use `--bridge-provider handoff` or `HATE_BRIDGE_PROVIDER` (CLI takes precedence) to
+Use `--bridge-provider handoff` on a leaf command or `HATE_BRIDGE_PROVIDER` (CLI takes precedence) to
 generate bridge-request.json without external processes or network calls.
 `hate bridge materialize` rejects schema, ID, owner, SHA-256, or sourceRefs mismatches
 with exit 2 and no legacy output.

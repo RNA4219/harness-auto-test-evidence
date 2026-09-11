@@ -2,9 +2,9 @@
   "path": "docs/README_EN.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "e966db6dc11b88d35b7a5c87643272aa66d66deb4d277d72b890a4039b560830",
+  "sha256": "b421996533a32ad1c86bd01c1371d05befa97a0e7166884aef7c7a66bceffdb9",
   "line_count": 134,
-  "size_bytes": 6289,
+  "size_bytes": 6320,
   "headings": [
     "# HATE: harness-auto-test-evidence",
     "## What HATE Does",
