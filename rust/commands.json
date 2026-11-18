@@ -670,7 +670,7 @@
                 "docs-root"
               ],
               "help": "Directory containing product requirements/specification docs.",
-              "default": "docs\\process",
+              "default": "docs/process",
               "kind": "path"
             },
             {
@@ -953,7 +953,7 @@
                 "fixtures-root"
               ],
               "help": "Canonical expansion fixture root.",
-              "default": "fixtures\\expansion",
+              "default": "fixtures/expansion",
               "kind": "path"
             },
             {
