@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-INCLUDED_SUFFIXES = {".md", ".py", ".json", ".yaml", ".yml", ".toml"}
+INCLUDED_SUFFIXES = {".md", ".py", ".rs", ".json", ".yaml", ".yml", ".toml"}
 EXCLUDED_PARTS = {
     ".git",
     ".venv",
@@ -18,6 +18,7 @@ EXCLUDED_PARTS = {
     "__pycache__",
     "dist",
     "build",
+    "target",
     "tmp",
 }
 GENERATED_DIR = Path("docs/birdseye")
@@ -161,7 +162,7 @@ def should_exclude(rel_path: Path) -> bool:
 
 def classify_role(rel: str) -> str:
     name = Path(rel).name.lower()
-    if rel.startswith("src/"):
+    if rel.startswith(("src/", "rust/")):
         return "implementation"
     if rel.startswith("tests/"):
         return "test"
@@ -198,6 +199,13 @@ def extract_dependencies(source: SourceFile, rels: set[str]) -> set[str]:
             resolved = resolve_python_import(source.rel, module, rels)
             if resolved:
                 deps.add(resolved)
+    if source.path.suffix == ".rs":
+        path = Path(source.rel)
+        base = path.parent if path.stem in {"main", "lib", "mod"} else path.with_suffix("")
+        for name in re.findall(r"^\s*(?:pub(?:\([^)]*\))?\s+)?mod\s+(\w+)\s*;", source.text, re.MULTILINE):
+            deps.update(candidate for candidate in [
+                (base / f"{name}.rs").as_posix(), (base / name / "mod.rs").as_posix(),
+            ] if candidate in rels)
     return deps
 
 

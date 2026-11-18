@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/enterprise_control_packet.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "7e0d1d789ea6b0cce30e5ad02009a5a6957e869a934bec9a41c325d5e4f4c37c",
+  "line_count": 596,
+  "size_bytes": 20509,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise"
+  ]
+}

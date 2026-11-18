@@ -32,7 +32,7 @@ def _skip_directory(rel: Path) -> bool:
     return (
         any(part in IGNORED_DIRECTORIES for part in rel.parts)
         or rel.parts[:3] == ("docs", "birdseye", "caps")
-        or rel.parts[:1] in {("dist",), ("build",)}
+        or rel.parts[:1] in {("dist",), ("build",), ("target",)}
     )
 
 

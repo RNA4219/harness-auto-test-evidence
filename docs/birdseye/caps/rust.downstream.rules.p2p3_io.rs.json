@@ -1,0 +1,18 @@
+{
+  "path": "rust/downstream/rules/p2p3_io.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "90147fe0160cd8e9570127b75c3c8c660a2afbb86cd3e2bf80cfee39acaeb9e4",
+  "line_count": 74,
+  "size_bytes": 2317,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "release",
+    "schema"
+  ]
+}

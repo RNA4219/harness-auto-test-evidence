@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/deployment_topology.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "3dc55ed4028a49608bc18aa0d464881960492f39ee38518ea383cabee4ca705b",
+  "line_count": 606,
+  "size_bytes": 21394,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

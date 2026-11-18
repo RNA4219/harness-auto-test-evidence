@@ -1,5 +1,5 @@
 {
-  "generated_at": "4ff6ee4d5ea1",
+  "generated_at": "70cbf501ea10",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -40,9 +40,9 @@
     ".github/workflows/ci.yml": {
       "role": "ci",
       "caps": "docs/birdseye/caps/github.workflows.ci.yml.json",
-      "sha256": "3ad443e5d0be920289349026087ca90abae8f4b3e0ba9a1fe20be80e321458b2",
-      "line_count": 215,
-      "size_bytes": 10998
+      "sha256": "abe40863b13f8e087d0e0e419c3d6a2e92689472b4979fa3a6c05f78c67f910e",
+      "line_count": 237,
+      "size_bytes": 11815
     },
     "CHANGELOG.md": {
       "role": "project",
@@ -65,12 +65,19 @@
       "line_count": 18,
       "size_bytes": 771
     },
+    "Cargo.toml": {
+      "role": "project",
+      "caps": "docs/birdseye/caps/Cargo.toml.json",
+      "sha256": "d67f2f8091be321ad332373d31a58f10a0b079270e8df07a5569c3120af4dc98",
+      "line_count": 34,
+      "size_bytes": 871
+    },
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "a674e8db9db57cf43ddefbbf5b2e36af23ae1499821330a1948a1f16e8430952",
-      "line_count": 192,
-      "size_bytes": 9305
+      "sha256": "906905ecb552c416eabaae77c3479cefb0dfea34a034ae327ab127249727e2c7",
+      "line_count": 200,
+      "size_bytes": 9625
     },
     "SECURITY.md": {
       "role": "project",
@@ -89,16 +96,16 @@
     "docs/README_EN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_EN.md.json",
-      "sha256": "b421996533a32ad1c86bd01c1371d05befa97a0e7166884aef7c7a66bceffdb9",
-      "line_count": 134,
-      "size_bytes": 6320
+      "sha256": "ccee17f0997a9ada65d08fb1530207de870980c6560b5d329725d9a81f12aebc",
+      "line_count": 139,
+      "size_bytes": 6466
     },
     "docs/README_JA.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_JA.md.json",
-      "sha256": "7fdad2297a91841786ecfa5ecd3405fc1afd8f684c8970b0c8857ffa9132b535",
-      "line_count": 129,
-      "size_bytes": 6729
+      "sha256": "7f23e0d6cf7c0240ad7efe289d4ef9225b5d4b46a200ba67f7e168f2eafe400a",
+      "line_count": 134,
+      "size_bytes": 7024
     },
     "docs/acceptance/AC-20260630-01.md": {
       "role": "documentation",
@@ -6806,6 +6813,958 @@
       "line_count": 134,
       "size_bytes": 4044
     },
+    "rust/bridge.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.bridge.rs.json",
+      "sha256": "9c3c6e3cca3669f44e46fad3a8920c52b2b7d9cdca1de65e78420d6b0d31d3d2",
+      "line_count": 242,
+      "size_bytes": 8319
+    },
+    "rust/cli.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.cli.rs.json",
+      "sha256": "4f39d4915618f7fa799580b3e6cce2a80fa5bcaf2599765e48227b903c4d1954",
+      "line_count": 161,
+      "size_bytes": 4899
+    },
+    "rust/commands.json": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.commands.json.json",
+      "sha256": "799538946130c3238fc1c1c74cc5da3ba0b1b2c320bbbccfc5c6095506b1d532",
+      "line_count": 2343,
+      "size_bytes": 66378
+    },
+    "rust/downstream.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rs.json",
+      "sha256": "60075ad621dc4d0581f88cb9ee35a3673ce6abe5cd4b11e36adb9ca403c7ab4c",
+      "line_count": 135,
+      "size_bytes": 4118
+    },
+    "rust/downstream/query.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.query.rs.json",
+      "sha256": "ced3590bdf816cfd2c5a3fa9a86a3189aa6068f0d73d5e58e4a2b83109d1e27d",
+      "line_count": 228,
+      "size_bytes": 9498
+    },
+    "rust/downstream/rules/adapters_corpus_manifest.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.adapters_corpus_manifest.rs.json",
+      "sha256": "a9b771347ede20a8eac18efa4c515b5a948713a6c0282edbab4b4b8abbeac0cf",
+      "line_count": 825,
+      "size_bytes": 30364
+    },
+    "rust/downstream/rules/adapters_family_packet.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.adapters_family_packet.rs.json",
+      "sha256": "e893babf0d50b090f610532cc472ef745363d1f56ce3b0c1c4932737a3d5f8ea",
+      "line_count": 947,
+      "size_bytes": 34104
+    },
+    "rust/downstream/rules/analysis_adapter_capability_diff.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_adapter_capability_diff.rs.json",
+      "sha256": "f8acd1cac880a41c34b5ec18dee3baf5a92b66e1e9fe4fb75f1c26f8b609d85d",
+      "line_count": 819,
+      "size_bytes": 29122
+    },
+    "rust/downstream/rules/analysis_audience_report_pack.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_audience_report_pack.rs.json",
+      "sha256": "e88aeae3a41dcdfc23f5b111b6e56af3d7751c4a1761a58dfac59eb09f36e215",
+      "line_count": 988,
+      "size_bytes": 36593
+    },
+    "rust/downstream/rules/analysis_contradiction_detection.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_contradiction_detection.rs.json",
+      "sha256": "58684af1b052f669629e64754dc6fd147f6161d6dae05e3e410a4b5e89fd19cf",
+      "line_count": 1330,
+      "size_bytes": 47703
+    },
+    "rust/downstream/rules/analysis_environment_diff.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_environment_diff.rs.json",
+      "sha256": "0f88e5b474fca3dea6704ea54459c61bb6d14e8d1aa5115bb3165d1cb849ae6e",
+      "line_count": 1059,
+      "size_bytes": 36899
+    },
+    "rust/downstream/rules/analysis_evidence_synthesis.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_evidence_synthesis.rs.json",
+      "sha256": "2629d1b9b2b5d36a32a463b8da5eac92be5b35277729585704e1ab673b93292e",
+      "line_count": 1126,
+      "size_bytes": 40505
+    },
+    "rust/downstream/rules/analysis_fixture_quality.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_fixture_quality.rs.json",
+      "sha256": "40324d58cb71d14ad0a7c120a8c1d3456ab7e431c0b8ee9ba5031b7c61b1b051",
+      "line_count": 1014,
+      "size_bytes": 35439
+    },
+    "rust/downstream/rules/analysis_flaky_classification.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_flaky_classification.rs.json",
+      "sha256": "6a7b7cd6f6e6a3a8d652a4903ac58780bbf5e5946c50399393990959b1ea6a28",
+      "line_count": 1168,
+      "size_bytes": 41600
+    },
+    "rust/downstream/rules/analysis_historical_regression.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_historical_regression.rs.json",
+      "sha256": "28eea9a48105630dde18b27f4765b4f0344f0aba7aa82ceabd58eb532d106b31",
+      "line_count": 1195,
+      "size_bytes": 42638
+    },
+    "rust/downstream/rules/analysis_impact_analysis.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_impact_analysis.rs.json",
+      "sha256": "57b327fdfd2038da04ebd0a4d33614ba18fe24b2c5badabe9b234a9e71990fd3",
+      "line_count": 1021,
+      "size_bytes": 36334
+    },
+    "rust/downstream/rules/analysis_oracle_classification.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_oracle_classification.rs.json",
+      "sha256": "a26de139606741e3137d683ce18a624f98b4a35947f222efc1984f67ad5900ad",
+      "line_count": 1268,
+      "size_bytes": 46514
+    },
+    "rust/downstream/rules/analysis_test_quality.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_test_quality.rs.json",
+      "sha256": "a0269c4628df829f585713580e2dc548a5299974635070c72ae7ed3f7e5d6788",
+      "line_count": 1168,
+      "size_bytes": 41614
+    },
+    "rust/downstream/rules/analysis_test_recommendation.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.analysis_test_recommendation.rs.json",
+      "sha256": "bd78498b34d9796ec64b9487383b01d22383597a673af01d7cc5b43b3907951c",
+      "line_count": 1222,
+      "size_bytes": 44178
+    },
+    "rust/downstream/rules/api_contract_report.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.api_contract_report.rs.json",
+      "sha256": "1afb2237ef7da5fda5878a32e39d04febc01a3567dad9787d6600d162d068d0a",
+      "line_count": 429,
+      "size_bytes": 14972
+    },
+    "rust/downstream/rules/api_rate_limit.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.api_rate_limit.rs.json",
+      "sha256": "19654ebb33bf824e3447c7e12e2cee9bbf2cad824566a4d2bb9d801871cbc6cf",
+      "line_count": 512,
+      "size_bytes": 16819
+    },
+    "rust/downstream/rules/audit.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.audit.rs.json",
+      "sha256": "3ea1c5201428416fa4ca56947880f1f86287382a1c57343340df178bc48e7cb7",
+      "line_count": 307,
+      "size_bytes": 11127
+    },
+    "rust/downstream/rules/authz.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.authz.rs.json",
+      "sha256": "81cc83ec8c68f52d803482251958b4e20119fa41e3cf92b7b7a3d2b693ecd9da",
+      "line_count": 343,
+      "size_bytes": 12987
+    },
+    "rust/downstream/rules/catalog.json": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.catalog.json.json",
+      "sha256": "c242a97a11ce63948d3ffc187625a091b0933f411104d84d825dbb7758956f63",
+      "line_count": 1960,
+      "size_bytes": 55276
+    },
+    "rust/downstream/rules/compat_v0_2_handlers.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.compat_v0_2_handlers.rs.json",
+      "sha256": "65c150e2a67e328843d931dd7dd06e0c0c4502a0b92a190fb403c4854de2bb25",
+      "line_count": 147,
+      "size_bytes": 5136
+    },
+    "rust/downstream/rules/connectors_reports.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.connectors_reports.rs.json",
+      "sha256": "8796c72082efa8ea1d8da97bedf08b01c3c21293fa763633afb4e63d802969ea",
+      "line_count": 310,
+      "size_bytes": 11456
+    },
+    "rust/downstream/rules/dashboard_state_report.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.dashboard_state_report.rs.json",
+      "sha256": "e278fd3f03b8da7965fc747dc1c6e2d2f672502899b4dd41b6a4270466188d8a",
+      "line_count": 537,
+      "size_bytes": 19014
+    },
+    "rust/downstream/rules/deployment_topology.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.deployment_topology.rs.json",
+      "sha256": "3dc55ed4028a49608bc18aa0d464881960492f39ee38518ea383cabee4ca705b",
+      "line_count": 606,
+      "size_bytes": 21394
+    },
+    "rust/downstream/rules/domain.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.domain.rs.json",
+      "sha256": "1eb7bc8e0b06cde3cdf694de2b67d865780a6016041f954315c10715461bc7a7",
+      "line_count": 597,
+      "size_bytes": 19254
+    },
+    "rust/downstream/rules/enterprise_audit.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.enterprise_audit.rs.json",
+      "sha256": "ae2ab9493802a444759626346a6ae5bd75e85c47e8968c18242a38f580d8e522",
+      "line_count": 551,
+      "size_bytes": 19304
+    },
+    "rust/downstream/rules/enterprise_control_packet.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.enterprise_control_packet.rs.json",
+      "sha256": "7e0d1d789ea6b0cce30e5ad02009a5a6957e869a934bec9a41c325d5e4f4c37c",
+      "line_count": 596,
+      "size_bytes": 20509
+    },
+    "rust/downstream/rules/enterprise_rbac.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.enterprise_rbac.rs.json",
+      "sha256": "af250e8e9f7d9dc71ee80eda23178ccb1c529cd4e11cdb884ad6acf8a9c0e346",
+      "line_count": 454,
+      "size_bytes": 14524
+    },
+    "rust/downstream/rules/entitlement.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.entitlement.rs.json",
+      "sha256": "c991f604b74c7a70ee656a55b28e11ceb8afb64176a18b1f6190002bd89d2716",
+      "line_count": 404,
+      "size_bytes": 13241
+    },
+    "rust/downstream/rules/evaluation_agent_quality.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.evaluation_agent_quality.rs.json",
+      "sha256": "521552fd27775adb6e7539d2e4ea68cb7875b2b8a588c13dc7e750f551851a96",
+      "line_count": 536,
+      "size_bytes": 18159
+    },
+    "rust/downstream/rules/evaluation_real_repo.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.evaluation_real_repo.rs.json",
+      "sha256": "19642ffee11f8752c5271577927c1e9064eca2b0c176e29268a0d7bfed51d29b",
+      "line_count": 786,
+      "size_bytes": 30037
+    },
+    "rust/downstream/rules/evaluation_regression_engine.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.evaluation_regression_engine.rs.json",
+      "sha256": "c3883d6e500a849539eed80d2fd55ccaf120fbedd196540040c324772a14bf71",
+      "line_count": 364,
+      "size_bytes": 12504
+    },
+    "rust/downstream/rules/expansion_a11y_l10n.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_a11y_l10n.rs.json",
+      "sha256": "f571220b20c6115a3c8e60a96a5a81ff0b75247fcbbcbdc329723cc4e3aebc28",
+      "line_count": 342,
+      "size_bytes": 12068
+    },
+    "rust/downstream/rules/expansion_adapter_marketplace.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_adapter_marketplace.rs.json",
+      "sha256": "479fce7f0322c7d12f38f50f5df9c37454d72ade04dea8c8ac8b881ada1e7623",
+      "line_count": 393,
+      "size_bytes": 14466
+    },
+    "rust/downstream/rules/expansion_beta_acceptance.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_beta_acceptance.rs.json",
+      "sha256": "87d53e710f337e6563c8fdffe4eb28bedae0b7948ccffd0b38b6e113ebaecea1",
+      "line_count": 427,
+      "size_bytes": 14985
+    },
+    "rust/downstream/rules/expansion_bulk_portability.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_bulk_portability.rs.json",
+      "sha256": "591345852ccfad9ae0dc12cdc31c1d1e16066ce1daae93dbaeb4a02226dcd72f",
+      "line_count": 278,
+      "size_bytes": 9653
+    },
+    "rust/downstream/rules/expansion_cost_governance.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_cost_governance.rs.json",
+      "sha256": "3c63c11dbb130ee99c1f0e4852009606aadb6593793d71aef1b1bb93539505c9",
+      "line_count": 359,
+      "size_bytes": 12904
+    },
+    "rust/downstream/rules/expansion_data_classification.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_data_classification.rs.json",
+      "sha256": "b42cf84b756603e239af47c378a3ebb24739749d7ac923f9a855a632b33b91d5",
+      "line_count": 348,
+      "size_bytes": 12156
+    },
+    "rust/downstream/rules/expansion_dependency_compliance.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_dependency_compliance.rs.json",
+      "sha256": "912fe689105586748d69a07f3a7088416bd0de0ade031fb49c614f8c1b4de2ad",
+      "line_count": 541,
+      "size_bytes": 19353
+    },
+    "rust/downstream/rules/expansion_disaster_recovery.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_disaster_recovery.rs.json",
+      "sha256": "cfdc80e53ea7db4b088f2be1d28d31c093a94b65b0acaa06301e37cb08e4b0c0",
+      "line_count": 361,
+      "size_bytes": 12829
+    },
+    "rust/downstream/rules/expansion_docs_lifecycle.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_docs_lifecycle.rs.json",
+      "sha256": "7feb3e9eba759ab7fc0f10d3b109de5b025ebdcaa0f85a88700a97710302dd2e",
+      "line_count": 463,
+      "size_bytes": 16947
+    },
+    "rust/downstream/rules/expansion_governance.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_governance.rs.json",
+      "sha256": "10431560130e922ef253c81afe5677527a40b929a5edc805395a316b7d64edb7",
+      "line_count": 860,
+      "size_bytes": 30941
+    },
+    "rust/downstream/rules/expansion_notifications.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_notifications.rs.json",
+      "sha256": "36a9ac765445232d26f795b14402c1d24f5e6804c9082ddc2949dccfd704d78b",
+      "line_count": 285,
+      "size_bytes": 9736
+    },
+    "rust/downstream/rules/expansion_onboarding.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_onboarding.rs.json",
+      "sha256": "70d2647b9543bc2abb089308d53546897d07d5a7bc2c55f44d12b42231c92b12",
+      "line_count": 292,
+      "size_bytes": 9943
+    },
+    "rust/downstream/rules/expansion_policy_simulation.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_policy_simulation.rs.json",
+      "sha256": "113173852791b23fe82e29223e1a61436602eafdbd6c8a41d843aeff5831d98d",
+      "line_count": 302,
+      "size_bytes": 10179
+    },
+    "rust/downstream/rules/expansion_portfolio_readiness.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_portfolio_readiness.rs.json",
+      "sha256": "c7a5ab1178a0c19f4fedcd8c10af079ae91fedc12aea628356d23469d4b23353",
+      "line_count": 2856,
+      "size_bytes": 100157
+    },
+    "rust/downstream/rules/expansion_product_analytics.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_product_analytics.rs.json",
+      "sha256": "a3518782220baffd3d2ad44ce98c1587b8eb3cdcec3f9b0fd78fcb8c799f77b5",
+      "line_count": 382,
+      "size_bytes": 13456
+    },
+    "rust/downstream/rules/expansion_recurring_eval.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_recurring_eval.rs.json",
+      "sha256": "d9d001481dbb207a44b791ee003212fcca17906a22d2c878ce53bc1cee2df3ec",
+      "line_count": 883,
+      "size_bytes": 31844
+    },
+    "rust/downstream/rules/expansion_rollout_adoption.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_rollout_adoption.rs.json",
+      "sha256": "e20871a60ef4a92bfab1c7095acb9e7dc3246fe949607eb0e4ef69189577687e",
+      "line_count": 731,
+      "size_bytes": 26653
+    },
+    "rust/downstream/rules/expansion_runner.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_runner.rs.json",
+      "sha256": "85222f2e3a42112cb1b2e483f12cea60b5a440f9b6b61475b5c7709f3ccbc1ef",
+      "line_count": 562,
+      "size_bytes": 19748
+    },
+    "rust/downstream/rules/expansion_security_procurement.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_security_procurement.rs.json",
+      "sha256": "9614a8e5563f6213422d4cf9dc210cb5d6d29192a2f8704ccc32fe92e87501bf",
+      "line_count": 678,
+      "size_bytes": 24335
+    },
+    "rust/downstream/rules/expansion_self_hosted.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_self_hosted.rs.json",
+      "sha256": "3357cc78dd4bf3d1deef203f0791bc46bab99b916fd13f9fc1e0c5c52932cc2f",
+      "line_count": 311,
+      "size_bytes": 10760
+    },
+    "rust/downstream/rules/expansion_value_measurement.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.expansion_value_measurement.rs.json",
+      "sha256": "a91f4801166d3b7a8e5f33ff4666de1f95d44ba671af1bc844ea95154ebd5674",
+      "line_count": 664,
+      "size_bytes": 23694
+    },
+    "rust/downstream/rules/gap_closure.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.gap_closure.rs.json",
+      "sha256": "ae14378cce983720b4144d401303061a948233647b682f6de931dd2b00f26294",
+      "line_count": 2196,
+      "size_bytes": 91310
+    },
+    "rust/downstream/rules/github_integration.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.github_integration.rs.json",
+      "sha256": "900f3b7e609a38a7e423f34dcea1e5738012dff244620db7204b0d5c393064b5",
+      "line_count": 473,
+      "size_bytes": 16014
+    },
+    "rust/downstream/rules/governance.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.governance.rs.json",
+      "sha256": "b1411e406a22f31d8877e942537c6b1d97e076c45daf9fa2b9fd4a18ca972db7",
+      "line_count": 376,
+      "size_bytes": 13770
+    },
+    "rust/downstream/rules/mod.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.mod.rs.json",
+      "sha256": "399e3d1cc67a001f2bd923d9220701945b6828584cd02ee6c205d76c33a33433",
+      "line_count": 503,
+      "size_bytes": 17670
+    },
+    "rust/downstream/rules/p1b.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.p1b.rs.json",
+      "sha256": "51c13b678379368640d526fbc049334a11f628b09924b68d28250016cebfaf20",
+      "line_count": 766,
+      "size_bytes": 35990
+    },
+    "rust/downstream/rules/p1b_alignment.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.p1b_alignment.rs.json",
+      "sha256": "9df45d410cf564436e65ceba4c637eec66a582edf34cfbf135ce2a6067a9a6e6",
+      "line_count": 889,
+      "size_bytes": 36821
+    },
+    "rust/downstream/rules/p1b_evidence.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.p1b_evidence.rs.json",
+      "sha256": "21acbed4a08ee4894ac9493c57976cd2b36cd3138f42d4127ff4577999a331b9",
+      "line_count": 163,
+      "size_bytes": 6581
+    },
+    "rust/downstream/rules/p2p3.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.p2p3.rs.json",
+      "sha256": "92dba1125613747b347492cd699a6013b8b5064334913a4514ae0337afbfe746",
+      "line_count": 394,
+      "size_bytes": 14420
+    },
+    "rust/downstream/rules/p2p3_assurance_reports.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.p2p3_assurance_reports.rs.json",
+      "sha256": "61a212b84fc574d413452c27eae9a8227677453164bdecf69d3e6446bf9a3f6c",
+      "line_count": 1015,
+      "size_bytes": 52497
+    },
+    "rust/downstream/rules/p2p3_enterprise_reports.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.p2p3_enterprise_reports.rs.json",
+      "sha256": "561387d8244dcb0670271f0a2da56d33d320508265e5c0f5386d6aadbbcefce8",
+      "line_count": 1010,
+      "size_bytes": 45679
+    },
+    "rust/downstream/rules/p2p3_io.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.p2p3_io.rs.json",
+      "sha256": "90147fe0160cd8e9570127b75c3c8c660a2afbb86cd3e2bf80cfee39acaeb9e4",
+      "line_count": 74,
+      "size_bytes": 2317
+    },
+    "rust/downstream/rules/p2p3_readiness.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.p2p3_readiness.rs.json",
+      "sha256": "4cc5b6353f4f738ecbabbe04fb7779bdb00752c84830b5e49b54f3e1da01a558",
+      "line_count": 1867,
+      "size_bytes": 65110
+    },
+    "rust/downstream/rules/p2p3_reports.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.p2p3_reports.rs.json",
+      "sha256": "d167f2c1d2dcfece78077a112268425bf1110f5b9570b636abd1a752452a3700",
+      "line_count": 1345,
+      "size_bytes": 52749
+    },
+    "rust/downstream/rules/plugins_sandbox.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.plugins_sandbox.rs.json",
+      "sha256": "a10879c5b6d6195a84cc662a9b66a73f15f37c662cfb1d6c005e016619de1353",
+      "line_count": 638,
+      "size_bytes": 20947
+    },
+    "rust/downstream/rules/policy_config.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.policy_config.rs.json",
+      "sha256": "98c61de2a1596c6afaa5dde10f6e57861fe48bca5c2a0ca5df45936fc4017769",
+      "line_count": 1061,
+      "size_bytes": 35746
+    },
+    "rust/downstream/rules/product_e2e.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.product_e2e.rs.json",
+      "sha256": "e5ceeb2ceff3336b8b54be44f044a1343da00747f79b2a94a5eec3f3de72c729",
+      "line_count": 702,
+      "size_bytes": 24805
+    },
+    "rust/downstream/rules/product_grade.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.product_grade.rs.json",
+      "sha256": "d81303c63fff9bd1e12a91d974b3e73ce2f1deb9065b2b60b7ca0b1e32807c4c",
+      "line_count": 767,
+      "size_bytes": 27200
+    },
+    "rust/downstream/rules/release.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.release.rs.json",
+      "sha256": "7280b43fee061c21f37b4e391575bdab92018a25058173073a31a50a103a5eab",
+      "line_count": 1811,
+      "size_bytes": 66241
+    },
+    "rust/downstream/rules/release_channel.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.release_channel.rs.json",
+      "sha256": "b4d95f17ff95f2654aaa31dbe2220f18b65bb0ecc7be2ca222a52db1fffa93dd",
+      "line_count": 588,
+      "size_bytes": 19769
+    },
+    "rust/downstream/rules/runtime_worker.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.runtime_worker.rs.json",
+      "sha256": "3748e19db66f32bab03b8d2a1c7a3ca3c8485a4ab0e4f86323f10f68f026b762",
+      "line_count": 592,
+      "size_bytes": 19258
+    },
+    "rust/downstream/rules/scale_benchmark_catalog.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.scale_benchmark_catalog.rs.json",
+      "sha256": "25297c2b2b13ef6b8e86d1e0b61ad62b0d02aa9cdfe316b9bfb0aa74f70a8abe",
+      "line_count": 547,
+      "size_bytes": 18478
+    },
+    "rust/downstream/rules/scale_performance_budget.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.scale_performance_budget.rs.json",
+      "sha256": "b1f8b445447511a49dd9d6d04fa399fbacea1d938cbdf9632143056797ef2b30",
+      "line_count": 529,
+      "size_bytes": 18070
+    },
+    "rust/downstream/rules/security_artifact_lifecycle.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.security_artifact_lifecycle.rs.json",
+      "sha256": "1bbf7d25005889cadcc0fd5eb022c78abb3c3fa01b63d6f6910063742c58f589",
+      "line_count": 619,
+      "size_bytes": 22403
+    },
+    "rust/downstream/rules/store_migration_rebuild.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.store_migration_rebuild.rs.json",
+      "sha256": "ac48ac43342989640492532df08186f1740fc058b940c5b9e412cc37c9a003be",
+      "line_count": 614,
+      "size_bytes": 22262
+    },
+    "rust/downstream/rules/support_ops_diagnostics.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.support_ops_diagnostics.rs.json",
+      "sha256": "d9e671446e4922bebff1ff273fc3648cff3ab138c0e229f48ab2af97b131ca94",
+      "line_count": 324,
+      "size_bytes": 11196
+    },
+    "rust/downstream/rules/support_ops_observability.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.support_ops_observability.rs.json",
+      "sha256": "f4fb449d3009ce974e9bbf296157e4f0c042f4d110a074244e07d517c9f2bdbd",
+      "line_count": 444,
+      "size_bytes": 16047
+    },
+    "rust/downstream/rules/tenant_isolation.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.tenant_isolation.rs.json",
+      "sha256": "55bdced22176c38895e0192a8eaabb8d9d14dadcae399a91159495d47cc2ec7b",
+      "line_count": 363,
+      "size_bytes": 11964
+    },
+    "rust/downstream/rules/values.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.values.rs.json",
+      "sha256": "9c1aa837a63e1fb99e5dcc4e5e1b58e71408127bfd0a4d62e9686b7d618cd1be",
+      "line_count": 661,
+      "size_bytes": 21309
+    },
+    "rust/downstream/rules/workflow_acceptance.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.workflow_acceptance.rs.json",
+      "sha256": "eda7fb2d1b2ca0a7335a4119304fb42a1d3b47360a6773ecb9c60fed7dfa1e9b",
+      "line_count": 415,
+      "size_bytes": 14934
+    },
+    "rust/downstream/rules/workflow_alignment_extra.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.workflow_alignment_extra.rs.json",
+      "sha256": "db3b52278d9f15620e53c2eec7f1f983b142c69cd0b06a718085c0a9d879a01e",
+      "line_count": 322,
+      "size_bytes": 10667
+    },
+    "rust/downstream/rules/workflow_birdseye.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.workflow_birdseye.rs.json",
+      "sha256": "54cd2047652a704811c1b7a83c7d5afe70e6b36669340ce632e9aa43dbe0e6a8",
+      "line_count": 368,
+      "size_bytes": 12375
+    },
+    "rust/downstream/rules/workflow_completion.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.workflow_completion.rs.json",
+      "sha256": "146359243981b7326e025d3d346b18171b25fdccbf63fde9916c37bfba164251",
+      "line_count": 499,
+      "size_bytes": 18409
+    },
+    "rust/downstream/rules/workflow_evidence.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.workflow_evidence.rs.json",
+      "sha256": "bcf95dc5cb298e0003dba331781038d8bcbd58070a48e9d42cf7734a9d369a44",
+      "line_count": 372,
+      "size_bytes": 11922
+    },
+    "rust/downstream/rules/workflow_plugin.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.workflow_plugin.rs.json",
+      "sha256": "9e89ae0646e5726269d1f26ec1da19e4323abc9157c54f6ffad7b9639a46d570",
+      "line_count": 495,
+      "size_bytes": 16349
+    },
+    "rust/downstream/rules/workflow_task_seed.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.rules.workflow_task_seed.rs.json",
+      "sha256": "9103582ea5ee9945d4e1afb7cb4d92227a2fffddbc4dbd3c905cc42a895c0626",
+      "line_count": 597,
+      "size_bytes": 20689
+    },
+    "rust/downstream/validation.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.downstream.validation.rs.json",
+      "sha256": "48e6d1cbf796c9d1de314445dfc13c7f668ff2f0d27c64ceeef880c31e78b2a3",
+      "line_count": 179,
+      "size_bytes": 6452
+    },
+    "rust/error.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.error.rs.json",
+      "sha256": "cdf19701b4388407e80ea0ee515e9b2cceda3407e17b98cb6ed6ea3423088786",
+      "line_count": 14,
+      "size_bytes": 302
+    },
+    "rust/history.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.history.rs.json",
+      "sha256": "808a9f9d4091a49cb12555054724e35abbcd48172c5809b6bc0c06d7f018044b",
+      "line_count": 192,
+      "size_bytes": 6388
+    },
+    "rust/io.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.io.rs.json",
+      "sha256": "ddfa8dd177d98b8d79e1f87cd528f5a3e86813eab27613062e8cbf058fafa601",
+      "line_count": 139,
+      "size_bytes": 4316
+    },
+    "rust/main.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.main.rs.json",
+      "sha256": "3867325a5468bc0f4ad28f45678c082f1f511c00f68876505aa30daf5276b522",
+      "line_count": 110,
+      "size_bytes": 3726
+    },
+    "rust/materialize.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.materialize.rs.json",
+      "sha256": "30b2ece9d5e960203c602432aa5d211b15ae32311b399a1e16e2b4090e3b0ede",
+      "line_count": 155,
+      "size_bytes": 5277
+    },
+    "rust/p0a.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.p0a.rs.json",
+      "sha256": "b699e13606b9f991070414936ec15477a67a050050fd364b87fa94525e59eed5",
+      "line_count": 513,
+      "size_bytes": 17455
+    },
+    "rust/p0a/artifacts.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.p0a.artifacts.rs.json",
+      "sha256": "da4d58a8a480329c8e33bacdc37d155a77596a5cbd9395637193d8397287184c",
+      "line_count": 324,
+      "size_bytes": 12599
+    },
+    "rust/p0a/coverage.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.p0a.coverage.rs.json",
+      "sha256": "04aa2e8d90032e418bad82494cbcc6c1c3a031d268e52066c4957885e08cd30f",
+      "line_count": 279,
+      "size_bytes": 9621
+    },
+    "rust/p0a/numbers.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.p0a.numbers.rs.json",
+      "sha256": "1912a7cf8576b032a5667ecbd7368663e44f968f27301177fd7569778652e6a2",
+      "line_count": 303,
+      "size_bytes": 10437
+    },
+    "rust/p0a/profile.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.p0a.profile.rs.json",
+      "sha256": "09b9f2412d027919bffc8d8aaab74e1b635995a7a3aaacc3acf9fcd0fb208fff",
+      "line_count": 142,
+      "size_bytes": 6397
+    },
+    "rust/p0a/profiles.json": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.p0a.profiles.json.json",
+      "sha256": "43c5543f126d9875eebb48d56139f47f117496235b2a3412c1ae8777f71f406f",
+      "line_count": 67,
+      "size_bytes": 2111
+    },
+    "rust/p0a/schema.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.p0a.schema.rs.json",
+      "sha256": "0cefbb4518efbe42836dfdf76f7b28dfcfc2a31d01e994484bbab5032023b689",
+      "line_count": 106,
+      "size_bytes": 4164
+    },
+    "rust/p0a/strength.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.p0a.strength.rs.json",
+      "sha256": "775759f9fa44eb2d62e11e5bd0bb32934ab5f7c3e0bfb2ef361bc6a08e9924a4",
+      "line_count": 251,
+      "size_bytes": 9532
+    },
+    "rust/p0a/tests.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.p0a.tests.rs.json",
+      "sha256": "658acbb2c66e56a215d297939cff4d494252cf8d1eb922d8b6aeacdcddb9386c",
+      "line_count": 507,
+      "size_bytes": 18402
+    },
+    "rust/platform.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.rs.json",
+      "sha256": "f812c8f7edf35d688c880aa0be9afc12d9a29b00ab22ca612bfbeea11f59200d",
+      "line_count": 299,
+      "size_bytes": 10605
+    },
+    "rust/platform/analytics.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.analytics.rs.json",
+      "sha256": "3119f6b1f42b8ba32e433384cad272973ea7bcc4a7ede55d73ec9b90bcd4436d",
+      "line_count": 319,
+      "size_bytes": 13181
+    },
+    "rust/platform/assess.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.assess.rs.json",
+      "sha256": "cc500dcb41cbf72526240c92196fec6a2f8acb21287ea5924f19d72575d07c46",
+      "line_count": 403,
+      "size_bytes": 14947
+    },
+    "rust/platform/baseline.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.baseline.rs.json",
+      "sha256": "dfc028b54309028b1963a0b3ac25d93bd0bafad5a512c21c419a85584d6444ca",
+      "line_count": 288,
+      "size_bytes": 12596
+    },
+    "rust/platform/html.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.html.rs.json",
+      "sha256": "693f8aea6089b6b94c1442e22caeb2913fa0e682e838caa8051ace25eb10d7f1",
+      "line_count": 110,
+      "size_bytes": 3715
+    },
+    "rust/platform/notify.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.notify.rs.json",
+      "sha256": "dcd34392189619d4242d0b021c360b9d1b2034824ad414a228b897776a4f1e3e",
+      "line_count": 250,
+      "size_bytes": 10070
+    },
+    "rust/platform/operating.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.operating.rs.json",
+      "sha256": "fc5de0f9c30dcec95cb8500b9420d77fe37b75189f0b81bc124b8b8a960f56f9",
+      "line_count": 206,
+      "size_bytes": 6764
+    },
+    "rust/platform/plugin.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.plugin.rs.json",
+      "sha256": "fe1d6483e26c0c244cb8aa80b54e1b9e7e8fdc24ba2a07f60dd8704a15f62f20",
+      "line_count": 168,
+      "size_bytes": 6725
+    },
+    "rust/platform/record_defaults.json": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.record_defaults.json.json",
+      "sha256": "8b4538dcc884f54c40745cb629f7f09dc54cf9f324783eefbaeab5b0d013c207",
+      "line_count": 140,
+      "size_bytes": 3368
+    },
+    "rust/platform/schedule.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.platform.schedule.rs.json",
+      "sha256": "8577ffdfa76b0f88db0156c3007fd06d61de67a9fb22fd37ca7ab36798c5b1e1",
+      "line_count": 161,
+      "size_bytes": 7238
+    },
+    "rust/process.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.process.rs.json",
+      "sha256": "e2b9d16b0cde1cce257a57ef365771a122b7add5562e006f043ecd24ab0f2d11",
+      "line_count": 102,
+      "size_bytes": 3473
+    },
+    "rust/qeg.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.qeg.rs.json",
+      "sha256": "cdeb3dfba64b265ff5356868f991dc84ce99e4b01be2e57f087042f6ea97cb68",
+      "line_count": 384,
+      "size_bytes": 11676
+    },
+    "rust/qeg/gaps.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.qeg.gaps.rs.json",
+      "sha256": "b33833cabac72e1d898150d69a37da6da6220d57d05bb1cc9d96e4cb070a6a43",
+      "line_count": 195,
+      "size_bytes": 7971
+    },
+    "rust/qeg/graph.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.qeg.graph.rs.json",
+      "sha256": "479ef78564a17a7574e14f2a87075c043aa37549dc317e876458e239871c99e5",
+      "line_count": 470,
+      "size_bytes": 17611
+    },
+    "rust/qeg/output.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.qeg.output.rs.json",
+      "sha256": "ad467776fcd76b6f82dca15fb6c3c180a254c47ad10b38c1b79882a5bf5e6cd5",
+      "line_count": 379,
+      "size_bytes": 13465
+    },
+    "rust/qeg/sources.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.qeg.sources.rs.json",
+      "sha256": "321d35243ca2a3d30bedc29fff2b48b4af04273094f53bd78cdc193eaed61eed",
+      "line_count": 320,
+      "size_bytes": 12567
+    },
+    "rust/roster.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.roster.rs.json",
+      "sha256": "89c45e9ee3ef01f5fbc44eefad8ef15a818ef7197bf2dc0378730e4753548e6d",
+      "line_count": 293,
+      "size_bytes": 11067
+    },
+    "rust/roster/execution.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.roster.execution.rs.json",
+      "sha256": "f52684c74abebd6179aa604b7ea8206a6bea6fa4c83d84018e1937418399bb1e",
+      "line_count": 360,
+      "size_bytes": 14525
+    },
+    "rust/runner.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.runner.rs.json",
+      "sha256": "c9eeef9ac21f3648343a55a1b1d91fbdaf996108f8815edc4da2b42f4bc8b512",
+      "line_count": 262,
+      "size_bytes": 9519
+    },
+    "rust/store.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.store.rs.json",
+      "sha256": "97110ed7413b241efc448152189e6adcdb6b7ad7054dfa835b4f4e614d1d0b60",
+      "line_count": 245,
+      "size_bytes": 9171
+    },
+    "rust/trust.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.trust.rs.json",
+      "sha256": "536303d3868643284cf53f3b99e73e4bf3fa809e9920037368555f1f102acb22",
+      "line_count": 228,
+      "size_bytes": 8563
+    },
+    "rust/trust/advice.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.trust.advice.rs.json",
+      "sha256": "b814f82325b78ba99836d1f95e2b85c1aa1514d0db8350675c5b864ea695a7be",
+      "line_count": 247,
+      "size_bytes": 10330
+    },
+    "rust/trust/analysis.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.trust.analysis.rs.json",
+      "sha256": "8f8097f801e4829922c4890e5a4d68eabf99be487895b7385c7d26b0cc55e091",
+      "line_count": 499,
+      "size_bytes": 17265
+    },
+    "rust/trust/assessment.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.trust.assessment.rs.json",
+      "sha256": "7432d2ac20f8f3107d0b6e89036261c9d9b70181c494e3f7f0073b90dc970e4d",
+      "line_count": 570,
+      "size_bytes": 21307
+    },
+    "rust/trust/assessment/adapters.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.trust.assessment.adapters.rs.json",
+      "sha256": "38a971fc2fa784e869c30649a0c76eb8f870bdb332d2cb4a6e32e4f9938b4421",
+      "line_count": 224,
+      "size_bytes": 8243
+    },
+    "rust/trust/catalog.json": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.trust.catalog.json.json",
+      "sha256": "8f418d52fea8cc657dc4037be0a183a647cb61c1165f78fc57001f16a3605486",
+      "line_count": 237,
+      "size_bytes": 2961
+    },
+    "rust/trust/execution.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.trust.execution.rs.json",
+      "sha256": "1cb7512269252a37e59ee1d7d420d97573c20c81afaf1d08877c1ea8fdf8eb2a",
+      "line_count": 422,
+      "size_bytes": 14552
+    },
+    "rust/trust/inputs.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.trust.inputs.rs.json",
+      "sha256": "eb14229f6bb6cf79fa101ef4b667bec4b6fcf51ef39b2c40cda80922f9230687",
+      "line_count": 388,
+      "size_bytes": 13591
+    },
+    "rust/trust/integers.rs": {
+      "role": "implementation",
+      "caps": "docs/birdseye/caps/rust.trust.integers.rs.json",
+      "sha256": "b3374f54d70241de7b87c902f916c4d49e92e6fd00a4c478916c52c0018b45cc",
+      "line_count": 24,
+      "size_bytes": 806
+    },
     "schemas/HATE-bridge/v1/bridge-request.schema.json": {
       "role": "schema",
       "caps": "docs/birdseye/caps/schemas.HATE-bridge.v1.bridge-request.schema.json.json",
@@ -10565,6 +11524,13 @@
       "line_count": 167,
       "size_bytes": 7156
     },
+    "tests/rust_cli.rs": {
+      "role": "test",
+      "caps": "docs/birdseye/caps/tests.rust_cli.rs.json",
+      "sha256": "efc87e98469a4f6ae11d546add04f4695e4b86c7934a5b6b017d951c9422de57",
+      "line_count": 103,
+      "size_bytes": 3290
+    },
     "tests/test_acceptance_pipeline.py": {
       "role": "test",
       "caps": "docs/birdseye/caps/tests.test_acceptance_pipeline.py.json",
@@ -11975,9 +12941,51 @@
     "tools/check_file_size.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.check_file_size.py.json",
-      "sha256": "a6ec2902486ad6627ecf4c87db6e49755ce0e08c67e3e16481fbe9a4cf725071",
+      "sha256": "c059f9a923c690ef076d855141f985512197421db7a6f6721a0f411c31cf0602",
       "line_count": 158,
-      "size_bytes": 5208
+      "size_bytes": 5221
+    },
+    "tools/check_rust_bridge.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.check_rust_bridge.py.json",
+      "sha256": "5f4b0be5a979bad3085d3047a9f3387b85e4aceac1cca2fcd021ebc5a55170bd",
+      "line_count": 93,
+      "size_bytes": 4300
+    },
+    "tools/check_rust_downstream.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.check_rust_downstream.py.json",
+      "sha256": "471ea1d5f21344dc794d96080cf585945e742069499f1199e8fee6a4c832d326",
+      "line_count": 226,
+      "size_bytes": 8411
+    },
+    "tools/check_rust_operations.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.check_rust_operations.py.json",
+      "sha256": "7cccc5173e958b4bcf2128145f78097100a8df152dd14ac4241713c56bc9e8a1",
+      "line_count": 185,
+      "size_bytes": 9353
+    },
+    "tools/check_rust_p0a.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.check_rust_p0a.py.json",
+      "sha256": "063087e222fe06c6cc8e4505a6d0df93ad5eacfa67cee5eb96cc37cd83e66647",
+      "line_count": 153,
+      "size_bytes": 7016
+    },
+    "tools/check_rust_qeg_trust.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.check_rust_qeg_trust.py.json",
+      "sha256": "488724cb14cdcd831dcb222935e2c0527f2927bd883a47c848d5d2fe3725708f",
+      "line_count": 258,
+      "size_bytes": 12529
+    },
+    "tools/check_rust_roster.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.check_rust_roster.py.json",
+      "sha256": "726d6181ac77a83602f940a9e31f2db581a860d73d81a20834eb2ac55d5988db",
+      "line_count": 101,
+      "size_bytes": 4617
     },
     "tools/ci/docs_freshness_gate.py": {
       "role": "tooling",
@@ -12017,9 +13025,9 @@
     "tools/codemap/update.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.codemap.update.py.json",
-      "sha256": "e60221b5c8231a74236c0e16c699033d325a102d8a5d972c7347156ebc4182ed",
-      "line_count": 331,
-      "size_bytes": 11064
+      "sha256": "e892c7d59a6ca3e8e16a03665569bd2481274b87959e3ba4d0df897582e1dae6",
+      "line_count": 339,
+      "size_bytes": 11540
     },
     "tools/docs/render_post_poc_status.py": {
       "role": "tooling",
@@ -12034,6 +13042,27 @@
       "sha256": "ed292bbaaea5ec5b2e056d9b680668cd180058d74a63be0274c16c23ce4e8f8c",
       "line_count": 53,
       "size_bytes": 3277
+    },
+    "tools/rust_port/generate.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.rust_port.generate.py.json",
+      "sha256": "77f9ce6bbd9468250c0a261b76e191becef27381d0ea587916c2ed63c05308ea",
+      "line_count": 163,
+      "size_bytes": 8712
+    },
+    "tools/rust_port/inspect_rules.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.rust_port.inspect_rules.py.json",
+      "sha256": "0c973f0dff2c724c0dcccf3910f5b4a7b0b1dffb89d5cc9e3bdb895bf27c7d91",
+      "line_count": 87,
+      "size_bytes": 3258
+    },
+    "tools/rust_port/translate.py": {
+      "role": "tooling",
+      "caps": "docs/birdseye/caps/tools.rust_port.translate.py.json",
+      "sha256": "cce7a29a7825c084f8e0ef7a73d3496add39c8448983488834f96af4939b2b15",
+      "line_count": 766,
+      "size_bytes": 30877
     }
   },
   "edges": [
@@ -12356,6 +13385,526 @@
     [
       "docs/process/RELEASE_MIGRATION_POLICY.md",
       "docs/process/BRIDGE_REQUEST_CONTRACT.md"
+    ],
+    [
+      "rust/downstream.rs",
+      "rust/downstream/query.rs"
+    ],
+    [
+      "rust/downstream.rs",
+      "rust/downstream/rules/mod.rs"
+    ],
+    [
+      "rust/downstream.rs",
+      "rust/downstream/validation.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/adapters_corpus_manifest.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/adapters_family_packet.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_adapter_capability_diff.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_audience_report_pack.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_contradiction_detection.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_environment_diff.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_evidence_synthesis.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_fixture_quality.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_flaky_classification.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_historical_regression.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_impact_analysis.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_oracle_classification.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_test_quality.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/analysis_test_recommendation.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/api_contract_report.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/api_rate_limit.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/audit.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/authz.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/compat_v0_2_handlers.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/connectors_reports.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/dashboard_state_report.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/deployment_topology.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/domain.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/enterprise_audit.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/enterprise_control_packet.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/enterprise_rbac.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/entitlement.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/evaluation_agent_quality.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/evaluation_real_repo.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/evaluation_regression_engine.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_a11y_l10n.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_adapter_marketplace.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_beta_acceptance.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_bulk_portability.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_cost_governance.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_data_classification.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_dependency_compliance.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_disaster_recovery.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_docs_lifecycle.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_governance.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_notifications.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_onboarding.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_policy_simulation.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_portfolio_readiness.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_product_analytics.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_recurring_eval.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_rollout_adoption.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_runner.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_security_procurement.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_self_hosted.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/expansion_value_measurement.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/gap_closure.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/github_integration.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/governance.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/p1b.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/p1b_alignment.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/p1b_evidence.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/p2p3.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/p2p3_assurance_reports.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/p2p3_enterprise_reports.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/p2p3_io.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/p2p3_readiness.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/p2p3_reports.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/plugins_sandbox.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/policy_config.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/product_e2e.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/product_grade.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/release.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/release_channel.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/runtime_worker.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/scale_benchmark_catalog.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/scale_performance_budget.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/security_artifact_lifecycle.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/store_migration_rebuild.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/support_ops_diagnostics.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/support_ops_observability.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/tenant_isolation.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/values.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/workflow_acceptance.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/workflow_alignment_extra.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/workflow_birdseye.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/workflow_completion.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/workflow_evidence.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/workflow_plugin.rs"
+    ],
+    [
+      "rust/downstream/rules/mod.rs",
+      "rust/downstream/rules/workflow_task_seed.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/bridge.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/cli.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/downstream.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/error.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/history.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/io.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/materialize.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/p0a.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/platform.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/process.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/qeg.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/roster.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/runner.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/store.rs"
+    ],
+    [
+      "rust/main.rs",
+      "rust/trust.rs"
+    ],
+    [
+      "rust/p0a.rs",
+      "rust/p0a/artifacts.rs"
+    ],
+    [
+      "rust/p0a.rs",
+      "rust/p0a/coverage.rs"
+    ],
+    [
+      "rust/p0a.rs",
+      "rust/p0a/numbers.rs"
+    ],
+    [
+      "rust/p0a.rs",
+      "rust/p0a/profile.rs"
+    ],
+    [
+      "rust/p0a.rs",
+      "rust/p0a/schema.rs"
+    ],
+    [
+      "rust/p0a.rs",
+      "rust/p0a/strength.rs"
+    ],
+    [
+      "rust/p0a.rs",
+      "rust/p0a/tests.rs"
+    ],
+    [
+      "rust/platform.rs",
+      "rust/platform/analytics.rs"
+    ],
+    [
+      "rust/platform.rs",
+      "rust/platform/assess.rs"
+    ],
+    [
+      "rust/platform.rs",
+      "rust/platform/baseline.rs"
+    ],
+    [
+      "rust/platform.rs",
+      "rust/platform/html.rs"
+    ],
+    [
+      "rust/platform.rs",
+      "rust/platform/notify.rs"
+    ],
+    [
+      "rust/platform.rs",
+      "rust/platform/operating.rs"
+    ],
+    [
+      "rust/platform.rs",
+      "rust/platform/plugin.rs"
+    ],
+    [
+      "rust/platform.rs",
+      "rust/platform/schedule.rs"
+    ],
+    [
+      "rust/qeg.rs",
+      "rust/qeg/gaps.rs"
+    ],
+    [
+      "rust/qeg.rs",
+      "rust/qeg/graph.rs"
+    ],
+    [
+      "rust/qeg.rs",
+      "rust/qeg/output.rs"
+    ],
+    [
+      "rust/qeg.rs",
+      "rust/qeg/sources.rs"
+    ],
+    [
+      "rust/roster.rs",
+      "rust/roster/execution.rs"
+    ],
+    [
+      "rust/trust.rs",
+      "rust/trust/advice.rs"
+    ],
+    [
+      "rust/trust.rs",
+      "rust/trust/analysis.rs"
+    ],
+    [
+      "rust/trust.rs",
+      "rust/trust/assessment.rs"
+    ],
+    [
+      "rust/trust.rs",
+      "rust/trust/execution.rs"
+    ],
+    [
+      "rust/trust.rs",
+      "rust/trust/inputs.rs"
+    ],
+    [
+      "rust/trust.rs",
+      "rust/trust/integers.rs"
+    ],
+    [
+      "rust/trust/assessment.rs",
+      "rust/trust/assessment/adapters.rs"
     ],
     [
       "src/hate/__main__.py",
@@ -15548,6 +17097,34 @@
     [
       "tests/test_workflow_task_seed.py",
       "src/hate/workflow_task_seed.py"
+    ],
+    [
+      "tools/check_rust_bridge.py",
+      "src/hate/bridge/routes.py"
+    ],
+    [
+      "tools/check_rust_bridge.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tools/check_rust_downstream.py",
+      "src/hate/p2p3.py"
+    ],
+    [
+      "tools/check_rust_operations.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tools/check_rust_p0a.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tools/check_rust_qeg_trust.py",
+      "src/hate/cli.py"
+    ],
+    [
+      "tools/check_rust_roster.py",
+      "src/hate/cli.py"
     ],
     [
       "tools/ci/responsibility_scope_gate.py",

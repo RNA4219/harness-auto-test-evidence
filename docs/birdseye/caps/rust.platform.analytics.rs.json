@@ -1,0 +1,15 @@
+{
+  "path": "rust/platform/analytics.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "3119f6b1f42b8ba32e433384cad272973ea7bcc4a7ede55d73ec9b90bcd4436d",
+  "line_count": 319,
+  "size_bytes": 13181,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test"
+  ]
+}

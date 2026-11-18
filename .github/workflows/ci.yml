@@ -12,6 +12,28 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  rust:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@9f698171ed81b15d1823a05fc7211befd50c8ae0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: "3.11"
+      - uses: astral-sh/setup-uv@e06108dd0aef18192324c70427afc47652e63a82
+      - run: cargo build --locked
+      - run: cargo test --locked
+      - run: uv sync --dev --frozen
+      - name: Compare native commands with the Python reference
+        shell: bash
+        run: |
+          set -euo pipefail
+          binary=target/debug/hate
+          if [[ "$RUNNER_OS" == Windows ]]; then binary+=.exe; fi
+          for test in tools/check_rust_*.py; do uv run --frozen python "$test" "$binary"; done
+
   static:
     runs-on: ubuntu-latest
     steps:

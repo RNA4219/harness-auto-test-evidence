@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/analysis_oracle_classification.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "a26de139606741e3137d683ce18a624f98b4a35947f222efc1984f67ad5900ad",
+  "line_count": 1268,
+  "size_bytes": 46514,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

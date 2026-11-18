@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_bulk_portability.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "591345852ccfad9ae0dc12cdc31c1d1e16066ce1daae93dbaeb4a02226dcd72f",
+  "line_count": 278,
+  "size_bytes": 9653,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

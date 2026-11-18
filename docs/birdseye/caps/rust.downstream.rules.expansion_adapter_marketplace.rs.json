@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/expansion_adapter_marketplace.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "479fce7f0322c7d12f38f50f5df9c37454d72ade04dea8c8ac8b881ada1e7623",
+  "line_count": 393,
+  "size_bytes": 14466,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "schema"
+  ]
+}

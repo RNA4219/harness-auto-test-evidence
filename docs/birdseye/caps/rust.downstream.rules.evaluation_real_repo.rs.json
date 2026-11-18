@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/evaluation_real_repo.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "19642ffee11f8752c5271577927c1e9064eca2b0c176e29268a0d7bfed51d29b",
+  "line_count": 786,
+  "size_bytes": 30037,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

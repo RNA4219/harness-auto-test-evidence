@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/analysis_contradiction_detection.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "58684af1b052f669629e64754dc6fd147f6161d6dae05e3e410a4b5e89fd19cf",
+  "line_count": 1330,
+  "size_bytes": 47703,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

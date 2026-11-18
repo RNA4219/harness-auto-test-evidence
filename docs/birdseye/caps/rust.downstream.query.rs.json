@@ -1,0 +1,19 @@
+{
+  "path": "rust/downstream/query.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "ced3590bdf816cfd2c5a3fa9a86a3189aa6068f0d73d5e58e4a2b83109d1e27d",
+  "line_count": 228,
+  "size_bytes": 9498,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "schema",
+    "security"
+  ]
+}

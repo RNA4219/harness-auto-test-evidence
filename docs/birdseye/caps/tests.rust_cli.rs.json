@@ -1,0 +1,20 @@
+{
+  "path": "tests/rust_cli.rs",
+  "role": "test",
+  "kind": "rs",
+  "sha256": "efc87e98469a4f6ae11d546add04f4695e4b86c7934a5b6b017d951c9422de57",
+  "line_count": 103,
+  "size_bytes": 3290,
+  "headings": [
+    "#[test]",
+    "#[test]",
+    "#[test]"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "test"
+  ]
+}

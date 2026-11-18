@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/github_integration.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "900f3b7e609a38a7e423f34dcea1e5738012dff244620db7204b0d5c393064b5",
+  "line_count": 473,
+  "size_bytes": 16014,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema"
+  ]
+}

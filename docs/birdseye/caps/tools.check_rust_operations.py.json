@@ -1,0 +1,33 @@
+{
+  "path": "tools/check_rust_operations.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "7cccc5173e958b4bcf2128145f78097100a8df152dd14ac4241713c56bc9e8a1",
+  "line_count": 185,
+  "size_bytes": 9353,
+  "headings": [],
+  "imports": [
+    "check_rust_qeg_trust",
+    "contextlib",
+    "datetime",
+    "hate.cli",
+    "io",
+    "json",
+    "os",
+    "pathlib",
+    "shutil",
+    "subprocess",
+    "sys",
+    "tempfile",
+    "unittest.mock"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

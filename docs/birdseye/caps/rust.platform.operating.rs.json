@@ -1,0 +1,13 @@
+{
+  "path": "rust/platform/operating.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "fc5de0f9c30dcec95cb8500b9420d77fe37b75189f0b81bc124b8b8a960f56f9",
+  "line_count": 206,
+  "size_bytes": 6764,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

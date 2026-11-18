@@ -1,0 +1,36 @@
+{
+  "path": "tools/check_rust_bridge.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "5f4b0be5a979bad3085d3047a9f3387b85e4aceac1cca2fcd021ebc5a55170bd",
+  "line_count": 93,
+  "size_bytes": 4300,
+  "headings": [],
+  "imports": [
+    "argparse",
+    "contextlib",
+    "hashlib",
+    "hate.bridge.routes",
+    "hate.cli",
+    "io",
+    "json",
+    "os",
+    "pathlib",
+    "subprocess",
+    "sys",
+    "tempfile",
+    "unittest.mock"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/routes.py",
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

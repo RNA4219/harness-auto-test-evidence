@@ -1,0 +1,19 @@
+{
+  "path": "rust/qeg/graph.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "479ef78564a17a7574e14f2a87075c043aa37549dc317e876458e239871c99e5",
+  "line_count": 470,
+  "size_bytes": 17611,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "qeg",
+    "security",
+    "test"
+  ]
+}

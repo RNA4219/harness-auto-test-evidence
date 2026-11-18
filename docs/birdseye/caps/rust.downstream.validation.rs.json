@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/validation.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "48e6d1cbf796c9d1de314445dfc13c7f668ff2f0d27c64ceeef880c31e78b2a3",
+  "line_count": 179,
+  "size_bytes": 6452,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "release",
+    "test"
+  ]
+}

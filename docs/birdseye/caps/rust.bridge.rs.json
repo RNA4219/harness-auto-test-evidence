@@ -1,0 +1,15 @@
+{
+  "path": "rust/bridge.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "9c3c6e3cca3669f44e46fad3a8920c52b2b7d9cdca1de65e78420d6b0d31d3d2",
+  "line_count": 242,
+  "size_bytes": 8319,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

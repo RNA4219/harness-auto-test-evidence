@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_onboarding.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "70d2647b9543bc2abb089308d53546897d07d5a7bc2c55f44d12b42231c92b12",
+  "line_count": 292,
+  "size_bytes": 9943,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

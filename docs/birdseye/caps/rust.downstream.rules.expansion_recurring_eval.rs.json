@@ -1,0 +1,13 @@
+{
+  "path": "rust/downstream/rules/expansion_recurring_eval.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "d9d001481dbb207a44b791ee003212fcca17906a22d2c878ce53bc1cee2df3ec",
+  "line_count": 883,
+  "size_bytes": 31844,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

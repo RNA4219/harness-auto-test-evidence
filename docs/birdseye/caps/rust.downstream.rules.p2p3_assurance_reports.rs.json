@@ -1,0 +1,21 @@
+{
+  "path": "rust/downstream/rules/p2p3_assurance_reports.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "61a212b84fc574d413452c27eae9a8227677453164bdecf69d3e6446bf9a3f6c",
+  "line_count": 1015,
+  "size_bytes": 52497,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema",
+    "security",
+    "test"
+  ]
+}

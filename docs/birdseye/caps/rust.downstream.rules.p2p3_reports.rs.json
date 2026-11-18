@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/p2p3_reports.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "d167f2c1d2dcfece78077a112268425bf1110f5b9570b636abd1a752452a3700",
+  "line_count": 1345,
+  "size_bytes": 52749,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact"
+  ]
+}

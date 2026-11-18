@@ -1,0 +1,16 @@
+{
+  "path": "rust/platform/schedule.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "8577ffdfa76b0f88db0156c3007fd06d61de67a9fb22fd37ca7ab36798c5b1e1",
+  "line_count": 161,
+  "size_bytes": 7238,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

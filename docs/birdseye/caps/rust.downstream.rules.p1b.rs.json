@@ -1,0 +1,19 @@
+{
+  "path": "rust/downstream/rules/p1b.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "51c13b678379368640d526fbc049334a11f628b09924b68d28250016cebfaf20",
+  "line_count": 766,
+  "size_bytes": 35990,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "birdseye",
+    "release",
+    "schema",
+    "workflow"
+  ]
+}

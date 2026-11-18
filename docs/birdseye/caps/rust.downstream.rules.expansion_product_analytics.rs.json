@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_product_analytics.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "a3518782220baffd3d2ad44ce98c1587b8eb3cdcec3f9b0fd78fcb8c799f77b5",
+  "line_count": 382,
+  "size_bytes": 13456,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

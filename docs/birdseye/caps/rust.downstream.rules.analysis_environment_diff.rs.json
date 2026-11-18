@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/analysis_environment_diff.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "0f88e5b474fca3dea6704ea54459c61bb6d14e8d1aa5115bb3165d1cb849ae6e",
+  "line_count": 1059,
+  "size_bytes": 36899,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

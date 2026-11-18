@@ -1,0 +1,18 @@
+{
+  "path": "rust/trust/catalog.json",
+  "role": "implementation",
+  "kind": "json",
+  "sha256": "8f418d52fea8cc657dc4037be0a183a647cb61c1165f78fc57001f16a3605486",
+  "line_count": 237,
+  "size_bytes": 2961,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "qeg",
+    "test"
+  ]
+}

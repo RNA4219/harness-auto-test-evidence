@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/gap_closure.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "ae14378cce983720b4144d401303061a948233647b682f6de931dd2b00f26294",
+  "line_count": 2196,
+  "size_bytes": 91310,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "workflow"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "rust/downstream.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "60075ad621dc4d0581f88cb9ee35a3673ce6abe5cd4b11e36adb9ca403c7ab4c",
+  "line_count": 135,
+  "size_bytes": 4118,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [
+    "rust/downstream/query.rs",
+    "rust/downstream/rules/mod.rs",
+    "rust/downstream/validation.rs"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "release",
+    "workflow"
+  ]
+}

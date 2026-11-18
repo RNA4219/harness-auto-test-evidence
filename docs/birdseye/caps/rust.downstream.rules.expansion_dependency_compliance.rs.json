@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/expansion_dependency_compliance.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "912fe689105586748d69a07f3a7088416bd0de0ade031fb49c614f8c1b4de2ad",
+  "line_count": 541,
+  "size_bytes": 19353,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

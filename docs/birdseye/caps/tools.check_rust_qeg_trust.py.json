@@ -1,0 +1,31 @@
+{
+  "path": "tools/check_rust_qeg_trust.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "488724cb14cdcd831dcb222935e2c0527f2927bd883a47c848d5d2fe3725708f",
+  "line_count": 258,
+  "size_bytes": 12529,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "argparse",
+    "contextlib",
+    "hate.cli",
+    "io",
+    "json",
+    "os",
+    "pathlib",
+    "shutil",
+    "subprocess",
+    "tempfile"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "qeg",
+    "release",
+    "test"
+  ]
+}

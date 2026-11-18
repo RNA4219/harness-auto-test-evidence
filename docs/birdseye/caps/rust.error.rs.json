@@ -1,0 +1,15 @@
+{
+  "path": "rust/error.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "cdf19701b4388407e80ea0ee515e9b2cceda3407e17b98cb6ed6ea3423088786",
+  "line_count": 14,
+  "size_bytes": 302,
+  "headings": [
+    "#[derive(Debug)]"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

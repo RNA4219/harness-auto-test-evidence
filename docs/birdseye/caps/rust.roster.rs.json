@@ -1,0 +1,20 @@
+{
+  "path": "rust/roster.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "89c45e9ee3ef01f5fbc44eefad8ef15a818ef7197bf2dc0378730e4753548e6d",
+  "line_count": 293,
+  "size_bytes": 11067,
+  "headings": [
+    "#[cfg(windows)]",
+    "#[cfg(not(windows))]"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [
+    "rust/roster/execution.rs"
+  ],
+  "tags": [
+    "release"
+  ]
+}

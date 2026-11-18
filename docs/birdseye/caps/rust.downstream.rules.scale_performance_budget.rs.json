@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/scale_performance_budget.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "b1f8b445447511a49dd9d6d04fa399fbacea1d938cbdf9632143056797ef2b30",
+  "line_count": 529,
+  "size_bytes": 18070,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "test"
+  ]
+}

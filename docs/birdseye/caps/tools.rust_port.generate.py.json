@@ -1,0 +1,32 @@
+{
+  "path": "tools/rust_port/generate.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "77f9ce6bbd9468250c0a261b76e191becef27381d0ea587916c2ed63c05308ea",
+  "line_count": 163,
+  "size_bytes": 8712,
+  "headings": [],
+  "imports": [
+    "ast",
+    "collections",
+    "importlib",
+    "inspect",
+    "inspect_rules",
+    "json",
+    "re",
+    "subprocess",
+    "sys",
+    "translate"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "enterprise",
+    "fixture",
+    "release",
+    "workflow"
+  ]
+}

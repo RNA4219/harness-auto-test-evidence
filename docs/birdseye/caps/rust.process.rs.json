@@ -1,0 +1,13 @@
+{
+  "path": "rust/process.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "e2b9d16b0cde1cce257a57ef365771a122b7add5562e006f043ecd24ab0f2d11",
+  "line_count": 102,
+  "size_bytes": 3473,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

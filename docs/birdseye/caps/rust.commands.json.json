@@ -1,0 +1,21 @@
+{
+  "path": "rust/commands.json",
+  "role": "implementation",
+  "kind": "json",
+  "sha256": "799538946130c3238fc1c1c74cc5da3ba0b1b2c320bbbccfc5c6095506b1d532",
+  "line_count": 2343,
+  "size_bytes": 66378,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "release",
+    "store",
+    "test"
+  ]
+}

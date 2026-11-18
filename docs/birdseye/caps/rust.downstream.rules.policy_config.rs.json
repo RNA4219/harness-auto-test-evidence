@@ -1,0 +1,13 @@
+{
+  "path": "rust/downstream/rules/policy_config.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "98c61de2a1596c6afaa5dde10f6e57861fe48bca5c2a0ca5df45936fc4017769",
+  "line_count": 1061,
+  "size_bytes": 35746,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

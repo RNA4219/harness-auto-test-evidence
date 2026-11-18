@@ -1,0 +1,13 @@
+{
+  "path": "rust/downstream/rules/expansion_governance.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "10431560130e922ef253c81afe5677527a40b929a5edc805395a316b7d64edb7",
+  "line_count": 860,
+  "size_bytes": 30941,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}
