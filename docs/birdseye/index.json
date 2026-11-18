@@ -1,5 +1,5 @@
 {
-  "generated_at": "45803fea0da6",
+  "generated_at": "79c07d5609ca",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -75,9 +75,9 @@
     "README.md": {
       "role": "navigation",
       "caps": "docs/birdseye/caps/README.md.json",
-      "sha256": "906905ecb552c416eabaae77c3479cefb0dfea34a034ae327ab127249727e2c7",
-      "line_count": 200,
-      "size_bytes": 9625
+      "sha256": "49f2cdbd66ebd611c79d02de7616ad80feabb05d3625f723a387e55ea930669b",
+      "line_count": 205,
+      "size_bytes": 10111
     },
     "SECURITY.md": {
       "role": "project",
@@ -96,16 +96,16 @@
     "docs/README_EN.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_EN.md.json",
-      "sha256": "ccee17f0997a9ada65d08fb1530207de870980c6560b5d329725d9a81f12aebc",
-      "line_count": 139,
-      "size_bytes": 6466
+      "sha256": "2bf706a025497d7ac13928f8c89a048bc5088dc2c66abb94868febf055d19e67",
+      "line_count": 190,
+      "size_bytes": 8880
     },
     "docs/README_JA.md": {
       "role": "documentation",
       "caps": "docs/birdseye/caps/docs.README_JA.md.json",
-      "sha256": "7f23e0d6cf7c0240ad7efe289d4ef9225b5d4b46a200ba67f7e168f2eafe400a",
-      "line_count": 134,
-      "size_bytes": 7024
+      "sha256": "c90f376ece59adba894f22be051435d8244dd4543dd2b693c34cefb63a7e5ab1",
+      "line_count": 175,
+      "size_bytes": 9978
     },
     "docs/acceptance/AC-20260630-01.md": {
       "role": "documentation",

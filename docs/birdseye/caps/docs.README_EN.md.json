@@ -2,11 +2,12 @@
   "path": "docs/README_EN.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "ccee17f0997a9ada65d08fb1530207de870980c6560b5d329725d9a81f12aebc",
-  "line_count": 139,
-  "size_bytes": 6466,
+  "sha256": "2bf706a025497d7ac13928f8c89a048bc5088dc2c66abb94868febf055d19e67",
+  "line_count": 190,
+  "size_bytes": 8880,
   "headings": [
     "# HATE: harness-auto-test-evidence",
+    "## Display one failed E2E test",
     "## What HATE Does",
     "## Current Status",
     "## Maintenance Fixes — 2026-09-11",
@@ -47,13 +48,12 @@
     "docs/process/SPECIFICATION.md"
   ],
   "tags": [
+    "adapter",
     "artifact",
     "coverage",
     "fixture",
     "qeg",
     "release",
-    "schema",
-    "security",
     "store",
     "test",
     "workflow"

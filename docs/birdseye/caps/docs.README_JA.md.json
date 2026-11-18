@@ -2,11 +2,12 @@
   "path": "docs/README_JA.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "7f23e0d6cf7c0240ad7efe289d4ef9225b5d4b46a200ba67f7e168f2eafe400a",
-  "line_count": 134,
-  "size_bytes": 7024,
+  "sha256": "c90f376ece59adba894f22be051435d8244dd4543dd2b693c34cefb63a7e5ab1",
+  "line_count": 175,
+  "size_bytes": 9978,
   "headings": [
     "# HATE: harness-auto-test-evidence",
+    "## 失敗した E2E テストを 1 件表示する",
     "## 何ができるか",
     "## 重要な現在地",
     "## 2026-09-11の不具合修正",
@@ -47,8 +48,7 @@
     "docs/process/SPECIFICATION.md"
   ],
   "tags": [
-    "artifact",
-    "coverage",
+    "adapter",
     "fixture",
     "qeg",
     "release",

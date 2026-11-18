@@ -6,12 +6,16 @@ last_reviewed_at: 2026-09-11
 next_review_due: 2026-09-25
 ---
 
-# HATE Agent README
+# HATE
 
-Agent entrypoint. User documentation:
+HATE は CI が出力した JUnit XML などを HATE/v1 の JSON に変換する CLI です。
+自動テストや E2E テストの基盤で、テスト名、成否、所要時間を結果画面に表示するために使えます。
 
+- [失敗した E2E テストを 1 件表示する](docs/README_JA.md#失敗した-e2e-テストを-1-件表示する)
 - [日本語 README](docs/README_JA.md)
-- [English README](docs/README_EN.md)
+- [English README](docs/README_EN.md) · [Display one failed E2E test](docs/README_EN.md#display-one-failed-e2e-test)
+
+## Agent entrypoint
 
 HATE normalizes local test and repository validation artifacts into HATE/v1
 evidence for QEG and related workflow tools. Final release approval is external.
@@ -47,7 +51,8 @@ Important acceptance records:
 
 Maintenance fixes cover Bridge, LocalStore, P0a/P0b validation, and P1a scoring;
 see [FIX-001–104 and remaining investigations](docs/process/MAINTENANCE_FINDINGS.md).
-Build from `main` to use these fixes; existing v0.3.0 release assets were not republished.
+The original v0.3.0 wheel predates these fixes. The Rust CLI has its own
+[release assets](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0%2Brust.1).
 
 ## Agent Operating Rules
 

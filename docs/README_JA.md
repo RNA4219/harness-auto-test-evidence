@@ -1,12 +1,53 @@
 # HATE: harness-auto-test-evidence
 
-HATE はJUnit、coverage、pytest、Vitest、Jest、実リポジトリの検証結果を
-ローカルでHATE/v1 JSON証跡へ変換するCLIです。release approval、waiver、
-immutability、retention、最終Go/No-Go・公開判断はQEG側の責務です。
+HATE は JUnit XML、カバレッジ、リポジトリの検証結果などを HATE/v1 の JSON に変換する CLI です。
+自動テストや E2E テストの基盤で、この JSON を使って結果を保存したり画面に表示したりできます。
+外部システムの QEG が、リリース承認、要件適用の免除（waiver）、証跡の変更禁止と保持、最終的な Go/No-Go と公開判断を扱います。
+
+## 失敗した E2E テストを 1 件表示する
+
+CI では、テストランナーが結果を JUnit XML で出力するように設定します。HATE の入力はその XML と、実行 ID やコミット SHA を記録した `ci-context.json` です。
+この手順では同梱のログインテスト結果と CI 実行情報を読み込み、画面に渡す値を PowerShell に表示します。
+
+1. [Rust 版の GitHub Release](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0%2Brust.1) から `hate.exe` と `harness-auto-test-evidence-rust.zip` をダウンロードします。ZIP を展開し、`Cargo.toml` と `fixtures` があるディレクトリに `hate.exe` を置きます。すでにチェックアウト済みなら、そのディレクトリに `hate.exe` を置いて実行できます。Python や uv のインストール、PATH の変更は不要です。
+2. `Cargo.toml` があるディレクトリで PowerShell を開き、サンプルを取り込みます。
+
+   ```powershell
+   $hate = '.\hate.exe'
+   $demo = Join-Path ([IO.Path]::GetTempPath()) ("hate-demo-" + [guid]::NewGuid())
+   $inputDir = New-Item -ItemType Directory -Path (Join-Path $demo input) -Force
+   Copy-Item fixtures/adapters/ci/generic/input/ci-context.json -Destination $inputDir.FullName
+   Copy-Item fixtures/adapters/junit/surefire/junit.xml -Destination $inputDir.FullName
+
+   & $hate p0a --input $inputDir.FullName --out "$demo/out" --source-version readme-demo
+   if ($LASTEXITCODE -ne 0) { throw "HATE の終了コード: $LASTEXITCODE" }
+   ```
+
+   この例での HATE の終了コード `0` は、取り込みと出力が成功したことを示します。個々のテスト結果は `HATE-test-results.ndjson` に 1 行ずつ記録され、この例の `loginFails` は `payload.status` が `failed` です。
+
+3. NDJSON を UTF-8 で読み、失敗したテストの名前、所要時間、実行 ID を表示します。
+
+   ```powershell
+   Get-Content -Encoding UTF8 "$demo/out/HATE-test-results.ndjson" |
+     ForEach-Object { ConvertFrom-Json -InputObject $_ } |
+     Where-Object { $_.payload.status -eq 'failed' } |
+     ForEach-Object {
+       "{0} | 失敗 | {1} ms | run_id={2}" -f $_.payload.identity_components.name,
+         $_.payload.duration_ms, $_.run_id
+     }
+   ```
+
+   ```text
+   loginFails | 失敗 | 4 ms | run_id=generic-2001
+   ```
+
+自分の基盤に組み込むときは、サンプルの XML と実行情報を CI の出力に差し替えます。
+画面には `payload.status` に対応するラベルと、`payload.duration_ms` の所要時間を表示できます。
+どの実行の結果かは `run_id` で識別します。
 
 ## 何ができるか
 
-- 自動テスト結果と coverage を HATE/v1 artifact に変換する
+- JUnit、pytest、Vitest、Jest の自動テスト結果とカバレッジを HATE/v1 の証跡に変換する
 - QEG optional evidence bundle を生成する
 - trust / AETE / DQ / replay / compare / explain / recommend / doctor の補助証跡を出す
 - workflow連携・product readiness・release candidateの補助証跡を生成する
@@ -42,8 +83,8 @@ Python 実装は移植前後の出力を比較するテストに使います。
 `product grade-reports` や `gap closure` でこのプロジェクトを評価する場合は、
 ソース一式を展開し、その中の文書やフィクスチャを入力に指定します。
 
-配布済みv0.3.0は[GitHub Release](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
-のwheelをダウンロードして導入します（PyPIでは配布しません）:
+Python 版を使う場合は、[v0.3.0 の GitHub Release](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
+から wheel をダウンロードします。PyPI では配布していません。
 
     uv tool install ./harness_auto_test_evidence-0.3.0-py3-none-any.whl
     hate --help
@@ -59,7 +100,7 @@ P0a の最小golden path:
 
 ## Platform CLI
 
-`hate platform` は、人間が運用しやすい形で証跡を読み直すための入口です。
+`hate platform` では、検証結果の確認や手動レビューなど、運用に必要な操作ができます。
 
 - `run`: real-repo roster を実行する
 - `history`: run history を問い合わせる
