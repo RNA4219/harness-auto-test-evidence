@@ -1,8 +1,59 @@
 # HATE: harness-auto-test-evidence
 
-HATE converts local test and repository validation results into HATE/v1 JSON
-evidence for QEG and related workflow tools. Release approval, waivers,
-immutability, retention, final Go/No-Go, and publication decisions belong to QEG.
+HATE is a CLI that converts JUnit XML, coverage, and repository validation results
+into HATE/v1 JSON. A CI or E2E platform can use that JSON to store or display test
+results. QEG is the external system responsible for release approval, waivers,
+immutability, retention, final Go/No-Go, and publication decisions.
+
+## Display one failed E2E test
+
+Configure your test runner in CI to write its results to JUnit XML. HATE reads
+the XML and a `ci-context.json` file containing the run ID and commit SHA. This
+example uses the bundled login test results and CI metadata. PowerShell prints
+the values you can pass to a UI.
+
+1. Download `hate.exe` and `harness-auto-test-evidence-rust.zip` from the
+   [Rust GitHub release](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0%2Brust.1).
+   Extract the ZIP and place `hate.exe` in the directory containing `Cargo.toml`
+   and `fixtures`. You can also place the executable in an existing checkout.
+   The executable runs without Python, uv, or a change to PATH.
+2. Open PowerShell in that directory and import the sample files.
+
+   ```powershell
+   $hate = '.\hate.exe'
+   $demo = Join-Path ([IO.Path]::GetTempPath()) ("hate-demo-" + [guid]::NewGuid())
+   $inputDir = New-Item -ItemType Directory -Path (Join-Path $demo input) -Force
+   Copy-Item fixtures/adapters/ci/generic/input/ci-context.json -Destination $inputDir.FullName
+   Copy-Item fixtures/adapters/junit/surefire/junit.xml -Destination $inputDir.FullName
+
+   & $hate p0a --input $inputDir.FullName --out "$demo/out" --source-version readme-demo
+   if ($LASTEXITCODE -ne 0) { throw "HATE exit code: $LASTEXITCODE" }
+   ```
+
+   In this example, HATE exits with code `0` because it imported the files and
+   wrote the results successfully. `HATE-test-results.ndjson` contains one test
+   result per line, and the result for `loginFails` has `payload.status` set to
+   `failed`.
+
+3. Read the NDJSON as UTF-8 and print the failed test's name, duration, and run ID.
+
+   ```powershell
+   Get-Content -Encoding UTF8 "$demo/out/HATE-test-results.ndjson" |
+     ForEach-Object { ConvertFrom-Json -InputObject $_ } |
+     Where-Object { $_.payload.status -eq 'failed' } |
+     ForEach-Object {
+       "{0} | Failed | {1} ms | run_id={2}" -f $_.payload.identity_components.name,
+         $_.payload.duration_ms, $_.run_id
+     }
+   ```
+
+   ```text
+   loginFails | Failed | 4 ms | run_id=generic-2001
+   ```
+
+For your own pipeline, replace the sample XML and run metadata with your CI
+outputs. In the UI, use `payload.status` to choose a label, `payload.duration_ms`
+to show how long the test took, and `run_id` to identify the run.
 
 ## What HATE Does
 
@@ -43,9 +94,9 @@ in this checkout as a reference.
 To evaluate this project with `product grade-reports` or `gap closure`, supply
 the project checkout with its documentation and fixtures.
 
-For the published v0.3.0 package, download the
-[GitHub Release wheel](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
-and install it locally (packages are not published to PyPI):
+For the Python CLI, download the
+[v0.3.0 release wheel](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
+and install it locally. The wheel is distributed through GitHub Releases.
 
     uv tool install ./harness_auto_test_evidence-0.3.0-py3-none-any.whl
     hate --help
