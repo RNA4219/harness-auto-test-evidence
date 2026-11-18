@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/api_rate_limit.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "19654ebb33bf824e3447c7e12e2cee9bbf2cad824566a4d2bb9d801871cbc6cf",
+  "line_count": 512,
+  "size_bytes": 16819,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema"
+  ]
+}

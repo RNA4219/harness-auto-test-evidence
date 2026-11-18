@@ -1,0 +1,20 @@
+{
+  "path": "rust/p0a/profile.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "09b9f2412d027919bffc8d8aaab74e1b635995a7a3aaacc3acf9fcd0fb208fff",
+  "line_count": 142,
+  "size_bytes": 6397,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

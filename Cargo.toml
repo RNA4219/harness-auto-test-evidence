@@ -1,0 +1,40 @@
+[package]
+name = "harness-auto-test-evidence"
+version = "0.3.0"
+edition = "2024"
+license = "MIT"
+description = "Local test evidence normalizer and HATE bridge CLI"
+default-run = "hate"
+
+[[bin]]
+name = "hate"
+path = "rust/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["string"] }
+hex = "0.4"
+jsonschema = { version = "0.58", default-features = false, features = ["arbitrary-precision"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["raw_value", "arbitrary_precision"] }
+bigdecimal = "0.4"
+sha2 = "0.10"
+tempfile = "3"
+url = "2"
+dunce = "1"
+walkdir = "2"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+regex = "1"
+roxmltree = "0.21"
+mime_guess = "2"
+tiny_http = "0.12"
+command-group = "5"
+csv = "1"
+unicode-casefold = "0.2"
+uuid = { version = "1", features = ["v5"] }
+
+[target.'cfg(unix)'.dependencies]
+rustix = { version = "1", features = ["fs"] }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_System_Pipes"] }

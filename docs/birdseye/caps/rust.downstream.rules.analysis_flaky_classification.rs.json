@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/analysis_flaky_classification.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "6a7b7cd6f6e6a3a8d652a4903ac58780bbf5e5946c50399393990959b1ea6a28",
+  "line_count": 1168,
+  "size_bytes": 41600,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

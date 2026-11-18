@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_self_hosted.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "3357cc78dd4bf3d1deef203f0791bc46bab99b916fd13f9fc1e0c5c52932cc2f",
+  "line_count": 311,
+  "size_bytes": 10760,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

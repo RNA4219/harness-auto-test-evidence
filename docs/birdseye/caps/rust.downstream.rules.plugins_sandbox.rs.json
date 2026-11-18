@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/plugins_sandbox.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "a10879c5b6d6195a84cc662a9b66a73f15f37c662cfb1d6c005e016619de1353",
+  "line_count": 638,
+  "size_bytes": 20947,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

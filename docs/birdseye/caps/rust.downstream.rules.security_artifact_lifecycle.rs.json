@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/rules/security_artifact_lifecycle.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "1bbf7d25005889cadcc0fd5eb022c78abb3c3fa01b63d6f6910063742c58f589",
+  "line_count": 619,
+  "size_bytes": 22403,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema",
+    "security"
+  ]
+}

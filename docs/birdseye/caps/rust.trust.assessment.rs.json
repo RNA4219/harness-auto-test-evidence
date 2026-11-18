@@ -1,0 +1,21 @@
+{
+  "path": "rust/trust/assessment.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "7432d2ac20f8f3107d0b6e89036261c9d9b70181c494e3f7f0073b90dc970e4d",
+  "line_count": 570,
+  "size_bytes": 21307,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [
+    "rust/trust/assessment/adapters.rs"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

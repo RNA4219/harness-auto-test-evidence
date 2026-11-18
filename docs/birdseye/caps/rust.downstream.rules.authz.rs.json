@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/rules/authz.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "81cc83ec8c68f52d803482251958b4e20119fa41e3cf92b7b7a3d2b693ecd9da",
+  "line_count": 343,
+  "size_bytes": 12987,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "schema"
+  ]
+}

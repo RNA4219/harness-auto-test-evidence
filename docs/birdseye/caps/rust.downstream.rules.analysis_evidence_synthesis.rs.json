@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/analysis_evidence_synthesis.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "2629d1b9b2b5d36a32a463b8da5eac92be5b35277729585704e1ab673b93292e",
+  "line_count": 1126,
+  "size_bytes": 40505,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "tools/check_file_size.py",
   "role": "tooling",
   "kind": "py",
-  "sha256": "a6ec2902486ad6627ecf4c87db6e49755ce0e08c67e3e16481fbe9a4cf725071",
+  "sha256": "c059f9a923c690ef076d855141f985512197421db7a6f6721a0f411c31cf0602",
   "line_count": 158,
-  "size_bytes": 5208,
+  "size_bytes": 5221,
   "headings": [],
   "imports": [
     "__future__",

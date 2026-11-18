@@ -1,0 +1,2343 @@
+{
+  "name": "hate",
+  "help": "Generate HATE/v1 P0a evidence artifacts from local test inputs.",
+  "children": [
+    {
+      "name": "p0a",
+      "help": "Run the P0a local-first golden path.",
+      "args": [
+        {
+          "name": "input",
+          "flags": [
+            "input"
+          ],
+          "help": "Input directory containing github-context.json or ci-context.json, plus test/coverage artifacts.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "out",
+          "flags": [
+            "out"
+          ],
+          "help": "Output directory for generated HATE artifacts.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "source_version",
+          "flags": [
+            "source-version"
+          ],
+          "help": "Source version stored in generated records.",
+          "default": "0.1.0"
+        },
+        {
+          "name": "profile",
+          "flags": [
+            "profile"
+          ],
+          "help": "P0a precheck profile. This is evidence eligibility only, not QEG release Gate policy.",
+          "choices": [
+            "default",
+            "strict",
+            "release",
+            "experimental"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "fixture_path_prefix",
+          "flags": [
+            "fixture-path-prefix"
+          ],
+          "help": "Optional prefix used in artifact manifest paths, for stable golden fixture summaries."
+        }
+      ]
+    },
+    {
+      "name": "export",
+      "help": "Export optional evidence artifacts.",
+      "children": [
+        {
+          "name": "qeg",
+          "help": "Export QEG optional evidence from P0a outputs.",
+          "args": [
+            {
+              "name": "fixture",
+              "flags": [
+                "fixture"
+              ],
+              "help": "Input directory containing p0a/ subfolder and diff-risk-test.json.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for QEG bundle.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated records."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "trust",
+      "help": "Generate P1a trust-hardening artifacts.",
+      "children": [
+        {
+          "name": "evaluate",
+          "help": "Evaluate AETE trust score for a QEG bundle.",
+          "args": [
+            {
+              "name": "bundle",
+              "flags": [
+                "bundle"
+              ],
+              "help": "Input qeg-bundle.json path.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "report",
+              "flags": [
+                "report"
+              ],
+              "help": "Input qeg-export-report.json path.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for trust artifacts.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "profile",
+              "flags": [
+                "profile"
+              ],
+              "help": "AETE profile name.",
+              "default": "default"
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated records."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "replay",
+      "help": "Replay P1a trust evaluation from a frozen QEG bundle.",
+      "args": [
+        {
+          "name": "bundle",
+          "flags": [
+            "bundle"
+          ],
+          "help": "Input qeg-bundle.json path.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "report",
+          "flags": [
+            "report"
+          ],
+          "help": "Input qeg-export-report.json path.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "out",
+          "flags": [
+            "out"
+          ],
+          "help": "Output directory for replay artifacts.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "profile",
+          "flags": [
+            "profile"
+          ],
+          "help": "AETE profile name.",
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "name": "compare",
+      "help": "Compare two P1a trust artifact directories.",
+      "args": [
+        {
+          "name": "base",
+          "flags": [
+            "base"
+          ],
+          "help": "Base trust artifact directory.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "head",
+          "flags": [
+            "head"
+          ],
+          "help": "Head trust artifact directory.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "out",
+          "flags": [
+            "out"
+          ],
+          "help": "Output directory for compare artifacts.",
+          "required": true,
+          "kind": "path"
+        }
+      ]
+    },
+    {
+      "name": "explain",
+      "help": "Explain P1a trust gaps from a frozen QEG bundle.",
+      "args": [
+        {
+          "name": "bundle",
+          "flags": [
+            "bundle"
+          ],
+          "help": "Input qeg-bundle.json path.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "report",
+          "flags": [
+            "report"
+          ],
+          "help": "Input qeg-export-report.json path.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "out",
+          "flags": [
+            "out"
+          ],
+          "help": "Output directory for explain artifacts.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "mode",
+          "flags": [
+            "mode"
+          ],
+          "help": "Explanation mode.",
+          "choices": [
+            "why-soft-gap",
+            "why-excluded",
+            "why-score-changed"
+          ],
+          "default": "why-soft-gap"
+        }
+      ]
+    },
+    {
+      "name": "recommend",
+      "help": "Recommend next actions for a P1a trust gap.",
+      "args": [
+        {
+          "name": "bundle",
+          "flags": [
+            "bundle"
+          ],
+          "help": "Input qeg-bundle.json path.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "report",
+          "flags": [
+            "report"
+          ],
+          "help": "Input qeg-export-report.json path.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "out",
+          "flags": [
+            "out"
+          ],
+          "help": "Output directory for recommendation artifacts.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "gap",
+          "flags": [
+            "gap"
+          ],
+          "help": "Gap id to recommend for.",
+          "default": "missing_execution"
+        }
+      ]
+    },
+    {
+      "name": "doctor",
+      "help": "Run P1a doctor and adapter conformance checks.",
+      "args": [
+        {
+          "name": "bundle",
+          "flags": [
+            "bundle"
+          ],
+          "help": "Input qeg-bundle.json path.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "report",
+          "flags": [
+            "report"
+          ],
+          "help": "Input qeg-export-report.json path.",
+          "required": true,
+          "kind": "path"
+        },
+        {
+          "name": "out",
+          "flags": [
+            "out"
+          ],
+          "help": "Output directory for doctor artifacts.",
+          "required": true,
+          "kind": "path"
+        }
+      ]
+    },
+    {
+      "name": "workflow",
+      "help": "Generate P1b workflow and downstream advisory artifacts.",
+      "children": [
+        {
+          "name": "map",
+          "help": "Map QEG and trust artifacts to RanD, Shipyard, and workflow-cookbook outputs.",
+          "args": [
+            {
+              "name": "bundle",
+              "flags": [
+                "bundle"
+              ],
+              "help": "Input qeg-bundle.json path.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "report",
+              "flags": [
+                "report"
+              ],
+              "help": "Input qeg-export-report.json path.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "trust",
+              "flags": [
+                "trust"
+              ],
+              "help": "Input P1a trust artifact directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for P1b workflow artifacts.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "rand_requirements",
+              "flags": [
+                "rand-requirements"
+              ],
+              "help": "Optional RanD requirements_packet.json input.",
+              "kind": "path"
+            },
+            {
+              "name": "rand_audit",
+              "flags": [
+                "rand-audit"
+              ],
+              "help": "Optional RanD requirements audit packet input.",
+              "kind": "path"
+            },
+            {
+              "name": "shipyard_worker_result",
+              "flags": [
+                "shipyard-worker-result"
+              ],
+              "help": "Optional Shipyard WorkerResult JSON input.",
+              "kind": "path"
+            },
+            {
+              "name": "shipyard_run_system_packet",
+              "flags": [
+                "shipyard-run-system-packet"
+              ],
+              "help": "Optional Shipyard RunSystemPacket JSON input.",
+              "kind": "path"
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated records."
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "workflow-cookbook",
+            "contract": "agent-protocols/HATE-bridge-consumer/v1",
+            "directory_output": true,
+            "paths": {
+              "bundle": "input",
+              "report": "input",
+              "trust": "input",
+              "rand_requirements": "input",
+              "rand_audit": "input",
+              "shipyard_worker_result": "input",
+              "shipyard_run_system_packet": "input"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "product",
+      "help": "Generate P2/P3 product-readiness advisory artifacts.",
+      "children": [
+        {
+          "name": "readiness",
+          "help": "Generate product readiness and enterprise advisory artifacts.",
+          "args": [
+            {
+              "name": "bundle",
+              "flags": [
+                "bundle"
+              ],
+              "help": "Input qeg-bundle.json path.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "trust",
+              "flags": [
+                "trust"
+              ],
+              "help": "Input P1a trust artifact directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "workflow",
+              "flags": [
+                "workflow"
+              ],
+              "help": "Input P1b workflow artifact directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for P2/P3 product artifacts.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated records."
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "product-ops-evidence",
+            "contract": "POE/v1",
+            "directory_output": true,
+            "paths": {
+              "bundle": "input",
+              "trust": "input",
+              "workflow": "input"
+            }
+          }
+        },
+        {
+          "name": "query",
+          "help": "Query local product readiness artifacts with the hosted read model envelope.",
+          "args": [
+            {
+              "name": "readiness",
+              "flags": [
+                "readiness"
+              ],
+              "help": "Input P2/P3 product readiness artifact directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "resource",
+              "flags": [
+                "resource"
+              ],
+              "help": "Resource name such as runs, evidence, artifacts, risk-debt, or product-readiness.",
+              "required": true
+            },
+            {
+              "name": "request_id",
+              "flags": [
+                "request-id"
+              ],
+              "help": "Request id for the API response envelope.",
+              "default": "req_local"
+            },
+            {
+              "name": "role",
+              "flags": [
+                "role"
+              ],
+              "help": "Read model caller role: admin, maintainer, developer, auditor, or viewer.",
+              "default": "developer"
+            },
+            {
+              "name": "filter",
+              "flags": [
+                "filter"
+              ],
+              "help": "Filter in key=value form, for example status=open.",
+              "default": [],
+              "kind": "array"
+            },
+            {
+              "name": "stale_cache",
+              "flags": [
+                "stale-cache"
+              ],
+              "help": "Mark the response as a stale cache view.",
+              "default": false,
+              "kind": "flag"
+            },
+            {
+              "name": "cursor",
+              "flags": [
+                "cursor"
+              ],
+              "help": "Pagination cursor to echo as next_cursor."
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "product-ops-evidence",
+            "contract": "POE/v1",
+            "directory_output": false,
+            "paths": {
+              "readiness": "input"
+            }
+          }
+        },
+        {
+          "name": "serve",
+          "help": "Serve local product readiness artifacts as hosted read model REST envelopes.",
+          "args": [
+            {
+              "name": "readiness",
+              "flags": [
+                "readiness"
+              ],
+              "help": "Input P2/P3 product readiness artifact directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "host",
+              "flags": [
+                "host"
+              ],
+              "help": "Host to bind.",
+              "default": "127.0.0.1"
+            },
+            {
+              "name": "port",
+              "flags": [
+                "port"
+              ],
+              "help": "Port to bind.",
+              "default": 8765,
+              "kind": "int"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "product-ops-evidence",
+            "contract": "POE/v1",
+            "directory_output": false,
+            "paths": {
+              "readiness": "input"
+            }
+          }
+        },
+        {
+          "name": "grade-reports",
+          "help": "Generate product-grade evidence report skeletons from requirement docs.",
+          "args": [
+            {
+              "name": "docs_root",
+              "flags": [
+                "docs-root"
+              ],
+              "help": "Directory containing product requirements/specification docs.",
+              "default": "docs/process",
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for product-grade evidence reports.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated reports."
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "product-ops-evidence",
+            "contract": "POE/v1",
+            "directory_output": true,
+            "paths": {
+              "docs_root": "input"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "store",
+      "help": "Ingest and query the local HATE history store.",
+      "children": [
+        {
+          "name": "ingest",
+          "help": "Ingest canonical artifacts into a local .hate store.",
+          "args": [
+            {
+              "name": "store",
+              "flags": [
+                "store"
+              ],
+              "help": "Local store directory, for example .hate.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "bundle",
+              "flags": [
+                "bundle"
+              ],
+              "help": "Input qeg-bundle.json path.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "readiness",
+              "flags": [
+                "readiness"
+              ],
+              "help": "Input P2/P3 product readiness artifact directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated store records."
+            }
+          ]
+        },
+        {
+          "name": "query",
+          "help": "Query a local HATE store resource.",
+          "args": [
+            {
+              "name": "store",
+              "flags": [
+                "store"
+              ],
+              "help": "Local store directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "resource",
+              "flags": [
+                "resource"
+              ],
+              "help": "Store resource to reload.",
+              "required": true,
+              "choices": [
+                "run",
+                "bundle",
+                "risk-debt",
+                "product-readiness",
+                "manifest",
+                "history"
+              ]
+            },
+            {
+              "name": "run_id",
+              "flags": [
+                "run-id"
+              ],
+              "help": "Run id to query. Defaults to latest run."
+            }
+          ]
+        },
+        {
+          "name": "history",
+          "help": "Read the local HATE store history index.",
+          "args": [
+            {
+              "name": "store",
+              "flags": [
+                "store"
+              ],
+              "help": "Local store directory.",
+              "required": true,
+              "kind": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "release",
+      "help": "Generate release candidate pack from P2/P3 product artifacts.",
+      "children": [
+        {
+          "name": "candidate",
+          "help": "Assemble release candidate pack from readiness reports.",
+          "args": [
+            {
+              "name": "readiness",
+              "flags": [
+                "readiness"
+              ],
+              "help": "Input P2/P3 product readiness artifact directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for release candidate pack.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "release_id",
+              "flags": [
+                "release-id"
+              ],
+              "help": "Release candidate identifier."
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated records."
+            },
+            {
+              "name": "dry_run",
+              "flags": [
+                "dry-run"
+              ],
+              "help": "Generate pack without blocking on missing reports.",
+              "default": false,
+              "kind": "flag"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "quality-evidence-graph",
+            "contract": "QEG/v1",
+            "directory_output": true,
+            "paths": {
+              "readiness": "input"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "gap",
+      "help": "Generate gap closure and workflow-cookbook alignment reports.",
+      "children": [
+        {
+          "name": "closure",
+          "help": "Validate HATE-GAP-001..026 closure docs, task seeds, acceptance, and fixtures.",
+          "args": [
+            {
+              "name": "repo_root",
+              "flags": [
+                "repo-root"
+              ],
+              "help": "Repository root to validate.",
+              "default": ".",
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for gap-closure-report.json.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated report."
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "workflow-cookbook",
+            "contract": "workflow-cookbook/HATE-bridge-consumer/v1",
+            "directory_output": true,
+            "paths": {
+              "repo_root": "input"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "expansion",
+      "help": "Generate HATE expansion and analysis reports from canonical fixtures.",
+      "children": [
+        {
+          "name": "run",
+          "help": "Run HATE-GAP-027..060 expansion report and UAT builders.",
+          "args": [
+            {
+              "name": "fixtures_root",
+              "flags": [
+                "fixtures-root"
+              ],
+              "help": "Canonical expansion fixture root.",
+              "default": "fixtures/expansion",
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for generated expansion reports.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "case_kind",
+              "flags": [
+                "case-kind"
+              ],
+              "help": "Fixture case kind to run. Positive output is release-pack compatible.",
+              "choices": [
+                "positive",
+                "negative",
+                "all"
+              ],
+              "default": "positive"
+            },
+            {
+              "name": "area",
+              "flags": [
+                "area"
+              ],
+              "help": "Optional expansion area to run; repeat for multiple areas.",
+              "default": [],
+              "kind": "array"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "workflow-cookbook",
+            "contract": "workflow-cookbook/HATE-bridge-consumer/v1",
+            "directory_output": true,
+            "paths": {
+              "fixtures_root": "input"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "real-repo",
+      "help": "Run recurring real repository evaluation from a roster.",
+      "children": [
+        {
+          "name": "run",
+          "help": "Run local real-repo commands with timeout evidence.",
+          "args": [
+            {
+              "name": "roster",
+              "flags": [
+                "roster"
+              ],
+              "help": "JSON roster containing repositories[].",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for real-repo reports.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated records."
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "shipyard-cp",
+            "contract": "RunSystemPacket",
+            "directory_output": true,
+            "paths": {
+              "roster": "input"
+            }
+          }
+        },
+        {
+          "name": "history-ingest",
+          "help": "Append real-repo run history JSONL into a local store.",
+          "args": [
+            {
+              "name": "history",
+              "flags": [
+                "history"
+              ],
+              "help": "real-repo-run-history.jsonl produced by real-repo run.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "store",
+              "flags": [
+                "store"
+              ],
+              "help": "Local real-repo history store directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "shipyard-cp",
+            "contract": "RunSystemPacket",
+            "directory_output": false,
+            "paths": {
+              "history": "input",
+              "store": "destination"
+            }
+          }
+        },
+        {
+          "name": "history-query",
+          "help": "Query the local real-repo history store.",
+          "args": [
+            {
+              "name": "store",
+              "flags": [
+                "store"
+              ],
+              "help": "Local real-repo history store directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "repo_id",
+              "flags": [
+                "repo-id"
+              ],
+              "help": "Filter by repository id."
+            },
+            {
+              "name": "suite_id",
+              "flags": [
+                "suite-id"
+              ],
+              "help": "Filter by suite id."
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Filter by source version."
+            },
+            {
+              "name": "status",
+              "flags": [
+                "status"
+              ],
+              "help": "Filter by run status.",
+              "choices": [
+                "pass",
+                "hold",
+                "blocked"
+              ]
+            },
+            {
+              "name": "since",
+              "flags": [
+                "since"
+              ],
+              "help": "Inclusive started_at lower bound."
+            },
+            {
+              "name": "until",
+              "flags": [
+                "until"
+              ],
+              "help": "Inclusive started_at upper bound."
+            },
+            {
+              "name": "limit",
+              "flags": [
+                "limit"
+              ],
+              "help": "Maximum returned entries.",
+              "default": 100,
+              "kind": "int"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "shipyard-cp",
+            "contract": "RunSystemPacket",
+            "directory_output": false,
+            "paths": {
+              "store": "input"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "platform",
+      "help": "Operate HATE platform workflows from canonical reports.",
+      "children": [
+        {
+          "name": "run",
+          "help": "Run a real-repo roster through the platform entrypoint.",
+          "args": [
+            {
+              "name": "roster",
+              "flags": [
+                "roster"
+              ],
+              "help": "JSON roster containing repositories[].",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for platform run reports.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Source version for generated records."
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "shipyard-cp",
+            "contract": "RunSystemPacket",
+            "directory_output": true,
+            "paths": {
+              "roster": "input"
+            }
+          }
+        },
+        {
+          "name": "history",
+          "help": "Query the platform real-repo history store.",
+          "args": [
+            {
+              "name": "store",
+              "flags": [
+                "store"
+              ],
+              "help": "Local real-repo history store directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "repo_id",
+              "flags": [
+                "repo-id"
+              ],
+              "help": "Filter by repository id."
+            },
+            {
+              "name": "suite_id",
+              "flags": [
+                "suite-id"
+              ],
+              "help": "Filter by suite id."
+            },
+            {
+              "name": "source_version",
+              "flags": [
+                "source-version"
+              ],
+              "help": "Filter by source version."
+            },
+            {
+              "name": "status",
+              "flags": [
+                "status"
+              ],
+              "help": "Filter by run status.",
+              "choices": [
+                "pass",
+                "hold",
+                "blocked"
+              ]
+            },
+            {
+              "name": "since",
+              "flags": [
+                "since"
+              ],
+              "help": "Inclusive started_at lower bound."
+            },
+            {
+              "name": "until",
+              "flags": [
+                "until"
+              ],
+              "help": "Inclusive started_at upper bound."
+            },
+            {
+              "name": "limit",
+              "flags": [
+                "limit"
+              ],
+              "help": "Maximum returned entries.",
+              "default": 100,
+              "kind": "int"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "workflow-cookbook",
+            "contract": "HATE-evidence-export/v1",
+            "directory_output": false,
+            "paths": {
+              "store": "input"
+            }
+          }
+        },
+        {
+          "name": "history-analytics",
+          "help": "Build long-term history trend analytics from samples.",
+          "args": [
+            {
+              "name": "input",
+              "flags": [
+                "input"
+              ],
+              "help": "History analytics input JSON.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Optional output JSON path.",
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "product-ops-evidence",
+            "contract": "POE/v1",
+            "directory_output": false,
+            "paths": {
+              "input": "input"
+            }
+          }
+        },
+        {
+          "name": "history-materialize",
+          "help": "Plan incremental history materialization and optional manifest output.",
+          "args": [
+            {
+              "name": "input",
+              "flags": [
+                "input"
+              ],
+              "help": "History materialization input JSON.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "previous_manifest",
+              "flags": [
+                "previous-manifest"
+              ],
+              "help": "Optional previous history materialization manifest.",
+              "kind": "path"
+            },
+            {
+              "name": "manifest_out",
+              "flags": [
+                "manifest-out"
+              ],
+              "help": "Optional output path for reusable history materialization manifest.",
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Optional output JSON path for the materialization plan.",
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "workflow-cookbook",
+            "contract": "HATE-evidence-export/v1",
+            "directory_output": false,
+            "paths": {
+              "input": "input",
+              "previous_manifest": "input"
+            }
+          }
+        },
+        {
+          "name": "compare",
+          "help": "Compare two platform report JSON files.",
+          "args": [
+            {
+              "name": "base",
+              "flags": [
+                "base"
+              ],
+              "help": "Base report JSON.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "head",
+              "flags": [
+                "head"
+              ],
+              "help": "Head report JSON.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Optional output JSON path.",
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "agent-gatefield",
+            "contract": "AgentAssessment/v1",
+            "directory_output": false,
+            "paths": {
+              "base": "input",
+              "head": "input"
+            }
+          }
+        },
+        {
+          "name": "schedule",
+          "help": "Plan scheduled platform runs with cache, retry, and resume tokens.",
+          "args": [
+            {
+              "name": "roster",
+              "flags": [
+                "roster"
+              ],
+              "help": "JSON roster containing repositories[].",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "history_store",
+              "flags": [
+                "history-store"
+              ],
+              "help": "History store directory or run_history.jsonl path.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Optional output JSON path.",
+              "kind": "path"
+            },
+            {
+              "name": "cache_ttl_hours",
+              "flags": [
+                "cache-ttl-hours"
+              ],
+              "help": "Fresh pass cache TTL.",
+              "default": 24,
+              "kind": "int"
+            },
+            {
+              "name": "retry_limit",
+              "flags": [
+                "retry-limit"
+              ],
+              "help": "Retry attempts planned for held suites.",
+              "default": 1,
+              "kind": "int"
+            },
+            {
+              "name": "force",
+              "flags": [
+                "force"
+              ],
+              "help": "Bypass cache hits and plan all suites.",
+              "default": false,
+              "kind": "flag"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "shipyard-cp",
+            "contract": "RunSystemPacket",
+            "directory_output": false,
+            "paths": {
+              "roster": "input",
+              "history_store": "optional-input"
+            }
+          }
+        },
+        {
+          "name": "findings",
+          "help": "List findings from a platform report file or directory.",
+          "args": [
+            {
+              "name": "input",
+              "flags": [
+                "input"
+              ],
+              "help": "Input report JSON file or directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "agent-state-gate",
+            "contract": "AgentAssessment/v1",
+            "directory_output": false,
+            "paths": {
+              "input": "input"
+            }
+          }
+        },
+        {
+          "name": "debt",
+          "help": "List risk debt items from a platform report file or directory.",
+          "args": [
+            {
+              "name": "input",
+              "flags": [
+                "input"
+              ],
+              "help": "Input report JSON file or directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "agent-state-gate",
+            "contract": "AgentAssessment/v1",
+            "directory_output": false,
+            "paths": {
+              "input": "input"
+            }
+          }
+        },
+        {
+          "name": "review",
+          "help": "List manual review requests from a platform report file or directory.",
+          "args": [
+            {
+              "name": "input",
+              "flags": [
+                "input"
+              ],
+              "help": "Input report JSON file or directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "manual-bb-test-harness",
+            "contract": "manual_case_set/v1",
+            "directory_output": false,
+            "paths": {
+              "input": "input"
+            }
+          }
+        },
+        {
+          "name": "assign",
+          "help": "Build owner, due-date, and SLA assignment queue from findings.",
+          "args": [
+            {
+              "name": "input",
+              "flags": [
+                "input"
+              ],
+              "help": "Input report JSON file or directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Optional output JSON path.",
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "agent-state-gate",
+            "contract": "HumanQueueItem/v1",
+            "directory_output": false,
+            "paths": {
+              "input": "input"
+            }
+          }
+        },
+        {
+          "name": "score",
+          "help": "Compute explainable platform scores from real-repo reports.",
+          "args": [
+            {
+              "name": "input",
+              "flags": [
+                "input"
+              ],
+              "help": "Input report JSON file or directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Optional output JSON path.",
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "agent-gatefield",
+            "contract": "AgentAssessment/v1",
+            "directory_output": false,
+            "paths": {
+              "input": "input"
+            }
+          }
+        },
+        {
+          "name": "verdict",
+          "help": "Evaluate reports against an expected verdict corpus.",
+          "args": [
+            {
+              "name": "input",
+              "flags": [
+                "input"
+              ],
+              "help": "Input report JSON file or directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "corpus",
+              "flags": [
+                "corpus"
+              ],
+              "help": "Expected verdict corpus JSON.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Optional output JSON path.",
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "quality-evidence-graph",
+            "contract": "QEG/v1",
+            "directory_output": false,
+            "paths": {
+              "input": "input",
+              "corpus": "input"
+            }
+          }
+        },
+        {
+          "name": "triage",
+          "help": "Build an operator triage queue from held platform reports.",
+          "args": [
+            {
+              "name": "input",
+              "flags": [
+                "input"
+              ],
+              "help": "Input report JSON file or directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Optional output JSON path.",
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "agent-state-gate",
+            "contract": "HumanQueueItem/v1",
+            "directory_output": false,
+            "paths": {
+              "input": "input"
+            }
+          }
+        },
+        {
+          "name": "baseline",
+          "help": "Operate baseline promotion workflow evidence.",
+          "children": [
+            {
+              "name": "promote",
+              "help": "Build a baseline promotion report from local approval events.",
+              "args": [
+                {
+                  "name": "input",
+                  "flags": [
+                    "input"
+                  ],
+                  "help": "Baseline promotion input JSON.",
+                  "required": true,
+                  "kind": "path"
+                },
+                {
+                  "name": "out",
+                  "flags": [
+                    "out"
+                  ],
+                  "help": "Optional output JSON path.",
+                  "kind": "path"
+                },
+                {
+                  "name": "bridge_provider",
+                  "flags": [
+                    "bridge-provider"
+                  ],
+                  "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+                  "choices": [
+                    "compat-v0.2",
+                    "handoff"
+                  ]
+                }
+              ],
+              "route": {
+                "owner": "quality-evidence-graph",
+                "contract": "QEG/v1",
+                "directory_output": false,
+                "paths": {
+                  "input": "input"
+                }
+              }
+            },
+            {
+              "name": "review",
+              "help": "Build a human baseline review packet from promotion and comparison evidence.",
+              "args": [
+                {
+                  "name": "input",
+                  "flags": [
+                    "input"
+                  ],
+                  "help": "Baseline review input JSON.",
+                  "required": true,
+                  "kind": "path"
+                },
+                {
+                  "name": "out",
+                  "flags": [
+                    "out"
+                  ],
+                  "help": "Optional output JSON path.",
+                  "kind": "path"
+                },
+                {
+                  "name": "bridge_provider",
+                  "flags": [
+                    "bridge-provider"
+                  ],
+                  "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+                  "choices": [
+                    "compat-v0.2",
+                    "handoff"
+                  ]
+                }
+              ],
+              "route": {
+                "owner": "quality-evidence-graph",
+                "contract": "QEG/v1",
+                "directory_output": false,
+                "paths": {
+                  "input": "input"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "notify",
+          "help": "Plan and verify operator notifications.",
+          "children": [
+            {
+              "name": "route",
+              "help": "Build notification routing plan from operating records and subscribers.",
+              "args": [
+                {
+                  "name": "input",
+                  "flags": [
+                    "input"
+                  ],
+                  "help": "Notification routing input JSON.",
+                  "required": true,
+                  "kind": "path"
+                },
+                {
+                  "name": "out",
+                  "flags": [
+                    "out"
+                  ],
+                  "help": "Optional output JSON path.",
+                  "kind": "path"
+                },
+                {
+                  "name": "bridge_provider",
+                  "flags": [
+                    "bridge-provider"
+                  ],
+                  "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+                  "choices": [
+                    "compat-v0.2",
+                    "handoff"
+                  ]
+                }
+              ],
+              "route": {
+                "owner": "product-ops-evidence",
+                "contract": "POE/v1",
+                "directory_output": false,
+                "paths": {
+                  "input": "input"
+                }
+              }
+            },
+            {
+              "name": "deliver",
+              "help": "Build notification delivery report from delivery attempts.",
+              "args": [
+                {
+                  "name": "input",
+                  "flags": [
+                    "input"
+                  ],
+                  "help": "Notification delivery input JSON.",
+                  "required": true,
+                  "kind": "path"
+                },
+                {
+                  "name": "out",
+                  "flags": [
+                    "out"
+                  ],
+                  "help": "Optional output JSON path.",
+                  "kind": "path"
+                },
+                {
+                  "name": "bridge_provider",
+                  "flags": [
+                    "bridge-provider"
+                  ],
+                  "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+                  "choices": [
+                    "compat-v0.2",
+                    "handoff"
+                  ]
+                }
+              ],
+              "route": {
+                "owner": "product-ops-evidence",
+                "contract": "POE/v1",
+                "directory_output": false,
+                "paths": {
+                  "input": "input"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "plugin",
+          "help": "Run and isolate platform detector plugins.",
+          "children": [
+            {
+              "name": "run",
+              "help": "Execute a plugin manifest under platform isolation checks.",
+              "args": [
+                {
+                  "name": "manifest",
+                  "flags": [
+                    "manifest"
+                  ],
+                  "help": "Plugin manifest JSON.",
+                  "required": true,
+                  "kind": "path"
+                },
+                {
+                  "name": "out",
+                  "flags": [
+                    "out"
+                  ],
+                  "help": "Optional output JSON path.",
+                  "kind": "path"
+                },
+                {
+                  "name": "allow_local_exec",
+                  "flags": [
+                    "allow-local-exec"
+                  ],
+                  "help": "Explicitly authorize a trusted local subprocess plugin.",
+                  "default": false,
+                  "kind": "flag"
+                },
+                {
+                  "name": "bridge_provider",
+                  "flags": [
+                    "bridge-provider"
+                  ],
+                  "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+                  "choices": [
+                    "compat-v0.2",
+                    "handoff"
+                  ]
+                }
+              ],
+              "route": {
+                "owner": "harness-auto-test-evidence",
+                "contract": "HATE/v1",
+                "directory_output": false,
+                "paths": {
+                  "manifest": "input"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "policy",
+          "help": "Explain effective platform policy.",
+          "children": [
+            {
+              "name": "explain",
+              "help": "Evaluate platform policy JSON.",
+              "args": [
+                {
+                  "name": "policy",
+                  "flags": [
+                    "policy"
+                  ],
+                  "help": "Policy JSON or wrapper input.",
+                  "required": true,
+                  "kind": "path"
+                },
+                {
+                  "name": "profile",
+                  "flags": [
+                    "profile"
+                  ],
+                  "help": "Profile to evaluate when input has no profile.",
+                  "default": "default"
+                },
+                {
+                  "name": "out",
+                  "flags": [
+                    "out"
+                  ],
+                  "help": "Optional output JSON path.",
+                  "kind": "path"
+                },
+                {
+                  "name": "bridge_provider",
+                  "flags": [
+                    "bridge-provider"
+                  ],
+                  "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+                  "choices": [
+                    "compat-v0.2",
+                    "handoff"
+                  ]
+                }
+              ],
+              "route": {
+                "owner": "agent-gatefield",
+                "contract": "GatePolicy/v1",
+                "directory_output": false,
+                "paths": {
+                  "policy": "input"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "report",
+          "help": "Generate platform reports.",
+          "children": [
+            {
+              "name": "html",
+              "help": "Generate an offline HTML summary.",
+              "args": [
+                {
+                  "name": "input",
+                  "flags": [
+                    "input"
+                  ],
+                  "help": "Input report JSON file or directory.",
+                  "required": true,
+                  "kind": "path"
+                },
+                {
+                  "name": "out",
+                  "flags": [
+                    "out"
+                  ],
+                  "help": "Output HTML path.",
+                  "required": true,
+                  "kind": "path"
+                },
+                {
+                  "name": "bridge_provider",
+                  "flags": [
+                    "bridge-provider"
+                  ],
+                  "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+                  "choices": [
+                    "compat-v0.2",
+                    "handoff"
+                  ]
+                }
+              ],
+              "route": {
+                "owner": "product-ops-evidence",
+                "contract": "POE/v1",
+                "directory_output": false,
+                "paths": {
+                  "input": "input"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "serve",
+          "help": "Serve local product readiness artifacts through platform entrypoint.",
+          "args": [
+            {
+              "name": "readiness",
+              "flags": [
+                "readiness"
+              ],
+              "help": "Input P2/P3 product readiness artifact directory.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "host",
+              "flags": [
+                "host"
+              ],
+              "help": "Host to bind.",
+              "default": "127.0.0.1"
+            },
+            {
+              "name": "port",
+              "flags": [
+                "port"
+              ],
+              "help": "Port to bind.",
+              "default": 8765,
+              "kind": "int"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "product-ops-evidence",
+            "contract": "POE/v1",
+            "directory_output": false,
+            "paths": {
+              "readiness": "input"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "validation",
+      "help": "Run repeated five-tool/QEG validation cycles.",
+      "children": [
+        {
+          "name": "cycles",
+          "help": "Evaluate ten QEG hardening cycles.",
+          "args": [
+            {
+              "name": "fixture",
+              "flags": [
+                "fixture"
+              ],
+              "help": "Validation cycle fixture JSON.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Output directory for validation-cycle-report.json.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "bridge_provider",
+              "flags": [
+                "bridge-provider"
+              ],
+              "help": "Post-P1a provider. CLI overrides HATE_BRIDGE_PROVIDER; default is compat-v0.2.",
+              "choices": [
+                "compat-v0.2",
+                "handoff"
+              ]
+            }
+          ],
+          "route": {
+            "owner": "workflow-cookbook",
+            "contract": "five-tool-validation-manifest/v1",
+            "directory_output": true,
+            "paths": {
+              "fixture": "input"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "bridge",
+      "help": "Validate and materialize external bridge results.",
+      "children": [
+        {
+          "name": "materialize",
+          "help": "Validate bridge outputs and restore previous files if publication fails.",
+          "args": [
+            {
+              "name": "request",
+              "flags": [
+                "request"
+              ],
+              "help": "HATE-bridge/v1 request JSON.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "result",
+              "flags": [
+                "result"
+              ],
+              "help": "HATE-bridge/v1 result JSON.",
+              "required": true,
+              "kind": "path"
+            },
+            {
+              "name": "out",
+              "flags": [
+                "out"
+              ],
+              "help": "Legacy artifact output directory.",
+              "required": true,
+              "kind": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

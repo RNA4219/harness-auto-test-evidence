@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/analysis_historical_regression.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "28eea9a48105630dde18b27f4765b4f0344f0aba7aa82ceabd58eb532d106b31",
+  "line_count": 1195,
+  "size_bytes": 42638,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

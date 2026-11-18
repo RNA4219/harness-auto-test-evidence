@@ -1,0 +1,13 @@
+{
+  "path": "rust/downstream/rules/values.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "9c1aa837a63e1fb99e5dcc4e5e1b58e71408127bfd0a4d62e9686b7d618cd1be",
+  "line_count": 661,
+  "size_bytes": 21309,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

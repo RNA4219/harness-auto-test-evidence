@@ -1,0 +1,16 @@
+{
+  "path": "Cargo.toml",
+  "role": "project",
+  "kind": "toml",
+  "sha256": "5fd7c93ee5afe815bff9638e2f6bdf2e66d46c92ec7407670a308309091bd99b",
+  "line_count": 40,
+  "size_bytes": 1060,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

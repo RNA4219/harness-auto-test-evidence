@@ -1,0 +1,13 @@
+{
+  "path": "rust/trust/integers.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "b3374f54d70241de7b87c902f916c4d49e92e6fd00a4c478916c52c0018b45cc",
+  "line_count": 24,
+  "size_bytes": 806,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

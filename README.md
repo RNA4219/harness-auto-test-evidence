@@ -16,6 +16,14 @@ Agent entrypoint. User documentation:
 HATE normalizes local test and repository validation artifacts into HATE/v1
 evidence for QEG and related workflow tools. Final release approval is external.
 
+## Build the Rust CLI
+
+Run `cargo install --path . --locked` from this checkout, then run `hate --help`.
+The executable contains the CLI and its schemas. It runs without Python or uv.
+To build a local binary, use `cargo build --release --locked`. The result is
+`target/release/hate` on Linux and macOS or `target/release/hate.exe` on Windows.
+The Python package in this tree is the reference used by compatibility tests.
+
 ## Current State
 
 - Package: 0.3.0; CLI: `hate`.
@@ -95,7 +103,7 @@ For navigation:
 Run the P0a golden path:
 
 ```powershell
-uv run python -m hate p0a `
+hate p0a `
   --input fixtures/golden/p0a-minimal/input `
   --out tmp/readme-p0a `
   --source-version readme-smoke
@@ -104,13 +112,13 @@ uv run python -m hate p0a `
 Run the platform surface:
 
 ```powershell
-uv run python -m hate platform --help
-uv run python -m hate platform score --input tmp/major-oss-two-cycle/cycle-2 --out tmp/platform-score.json
-uv run python -m hate platform verdict `
+hate platform --help
+hate platform score --input tmp/major-oss-two-cycle/cycle-2 --out tmp/platform-score.json
+hate platform verdict `
   --input tmp/major-oss-two-cycle/cycle-2 `
   --corpus docs/process/real-repo-verdict-corpus/major-oss-expected-verdicts-20260704.json `
   --out tmp/platform-verdict.json
-uv run python -m hate platform triage `
+hate platform triage `
   --input tmp/major-oss-two-cycle/cycle-2 `
   --out tmp/platform-triage.json
 ```
@@ -118,7 +126,7 @@ uv run python -m hate platform triage `
 Generate a release candidate pack from product readiness artifacts:
 
 ```powershell
-uv run python -m hate release candidate `
+hate release candidate `
   --readiness tmp/product-readiness `
   --out tmp/release-candidate `
   --dry-run

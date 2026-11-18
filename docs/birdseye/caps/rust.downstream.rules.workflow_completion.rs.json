@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/rules/workflow_completion.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "146359243981b7326e025d3d346b18171b25fdccbf63fde9916c37bfba164251",
+  "line_count": 499,
+  "size_bytes": 18409,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

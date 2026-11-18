@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/analysis_audience_report_pack.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "e88aeae3a41dcdfc23f5b111b6e56af3d7751c4a1761a58dfac59eb09f36e215",
+  "line_count": 988,
+  "size_bytes": 36593,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

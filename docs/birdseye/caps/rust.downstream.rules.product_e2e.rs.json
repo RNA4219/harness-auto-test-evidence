@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/product_e2e.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "e5ceeb2ceff3336b8b54be44f044a1343da00747f79b2a94a5eec3f3de72c729",
+  "line_count": 702,
+  "size_bytes": 24805,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

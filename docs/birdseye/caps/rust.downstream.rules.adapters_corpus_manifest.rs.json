@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/adapters_corpus_manifest.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "a9b771347ede20a8eac18efa4c515b5a948713a6c0282edbab4b4b8abbeac0cf",
+  "line_count": 825,
+  "size_bytes": 30364,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "schema"
+  ]
+}

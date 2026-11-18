@@ -1,0 +1,15 @@
+{
+  "path": "rust/platform/assess.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "cc500dcb41cbf72526240c92196fec6a2f8acb21287ea5924f19d72575d07c46",
+  "line_count": 403,
+  "size_bytes": 14947,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage"
+  ]
+}

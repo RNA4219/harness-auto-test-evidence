@@ -1,0 +1,16 @@
+{
+  "path": "rust/qeg/sources.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "321d35243ca2a3d30bedc29fff2b48b4af04273094f53bd78cdc193eaed61eed",
+  "line_count": 320,
+  "size_bytes": 12567,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "release"
+  ]
+}

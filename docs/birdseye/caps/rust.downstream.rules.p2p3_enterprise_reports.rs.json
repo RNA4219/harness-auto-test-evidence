@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/rules/p2p3_enterprise_reports.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "561387d8244dcb0670271f0a2da56d33d320508265e5c0f5386d6aadbbcefce8",
+  "line_count": 1010,
+  "size_bytes": 45679,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise",
+    "fixture",
+    "schema"
+  ]
+}

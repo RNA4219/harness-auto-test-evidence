@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/rules/compat_v0_2_handlers.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "65c150e2a67e328843d931dd7dd06e0c0c4502a0b92a190fb403c4854de2bb25",
+  "line_count": 147,
+  "size_bytes": 5136,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "release"
+  ]
+}

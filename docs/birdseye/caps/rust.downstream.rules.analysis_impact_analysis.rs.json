@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/analysis_impact_analysis.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "57b327fdfd2038da04ebd0a4d33614ba18fe24b2c5badabe9b234a9e71990fd3",
+  "line_count": 1021,
+  "size_bytes": 36334,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

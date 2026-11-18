@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/runtime_worker.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "3748e19db66f32bab03b8d2a1c7a3ca3c8485a4ab0e4f86323f10f68f026b762",
+  "line_count": 592,
+  "size_bytes": 19258,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact"
+  ]
+}

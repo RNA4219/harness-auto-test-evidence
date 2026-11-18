@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_cost_governance.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "3c63c11dbb130ee99c1f0e4852009606aadb6593793d71aef1b1bb93539505c9",
+  "line_count": 359,
+  "size_bytes": 12904,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

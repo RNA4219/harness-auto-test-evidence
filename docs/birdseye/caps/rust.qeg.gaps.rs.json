@@ -1,0 +1,19 @@
+{
+  "path": "rust/qeg/gaps.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "b33833cabac72e1d898150d69a37da6da6220d57d05bb1cc9d96e4cb070a6a43",
+  "line_count": 195,
+  "size_bytes": 7971,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/support_ops_diagnostics.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "d9e671446e4922bebff1ff273fc3648cff3ab138c0e229f48ab2af97b131ca94",
+  "line_count": 324,
+  "size_bytes": 11196,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

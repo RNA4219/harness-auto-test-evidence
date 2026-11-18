@@ -1,0 +1,16 @@
+{
+  "path": "rust/trust/analysis.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "8f8097f801e4829922c4890e5a4d68eabf99be487895b7385c7d26b0cc55e091",
+  "line_count": 499,
+  "size_bytes": 17265,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "schema"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "rust/io.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "ddfa8dd177d98b8d79e1f87cd528f5a3e86813eab27613062e8cbf058fafa601",
+  "line_count": 139,
+  "size_bytes": 4316,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

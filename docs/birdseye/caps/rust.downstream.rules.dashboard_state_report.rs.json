@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/dashboard_state_report.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "e278fd3f03b8da7965fc747dc1c6e2d2f672502899b4dd41b6a4270466188d8a",
+  "line_count": 537,
+  "size_bytes": 19014,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

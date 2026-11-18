@@ -30,13 +30,17 @@ Bridge、LocalStoreの保存・復旧、P0a/P0bの入力検証、P1aの信頼度
 
 ## インストールと実行
 
-Python 3.11以上とuvを使います。今回の修正は`main`にあり、既存のv0.3.0配布物は
-再公開していません。修正版をソースから導入する場合:
+Rust 版のソースを展開したディレクトリで、次のコマンドを実行します。
+インストール後の `hate` は Python や uv のない環境で実行できます。
 
-    git clone https://github.com/RNA4219/harness-auto-test-evidence.git
-    cd harness-auto-test-evidence
-    uv sync --dev --frozen
-    uv run python -m hate --help
+    cargo install --path . --locked
+    hate --help
+
+`cargo build --release --locked` でビルドだけを行うこともできます。
+Windows の実行ファイルは `target/release/hate.exe` です。
+Python 実装は移植前後の出力を比較するテストに使います。
+`product grade-reports` や `gap closure` でこのプロジェクトを評価する場合は、
+ソース一式を展開し、その中の文書やフィクスチャを入力に指定します。
 
 配布済みv0.3.0は[GitHub Release](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
 のwheelをダウンロードして導入します（PyPIでは配布しません）:
@@ -51,7 +55,7 @@ local subprocess pluginは既定で拒否され、実行には`--allow-local-exe
 
 P0a の最小golden path:
 
-    uv run python -m hate p0a --input fixtures/golden/p0a-minimal/input --out tmp/p0a-smoke --source-version local-smoke
+    hate p0a --input fixtures/golden/p0a-minimal/input --out tmp/p0a-smoke --source-version local-smoke
 
 ## Platform CLI
 
@@ -80,12 +84,12 @@ P0a の最小golden path:
 主要 OSS corpus の例:
 
 ```powershell
-uv run python -m hate platform verdict `
+hate platform verdict `
   --input tmp/major-oss-two-cycle/cycle-2 `
   --corpus docs/process/real-repo-verdict-corpus/major-oss-expected-verdicts-20260704.json `
   --out tmp/platform-verdict.json
 
-uv run python -m hate platform triage `
+hate platform triage `
   --input tmp/major-oss-two-cycle/cycle-2 `
   --out tmp/platform-triage.json
 ```
@@ -105,6 +109,7 @@ uv run python -m hate platform triage `
 ## リリース前チェック
 
 ```powershell
+cargo test --locked
 uv run pytest -q
 uv run python -m compileall src tests
 uv run python tools/codemap/update.py --check

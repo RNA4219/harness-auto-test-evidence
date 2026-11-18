@@ -1,0 +1,22 @@
+{
+  "path": "rust/platform.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "f812c8f7edf35d688c880aa0be9afc12d9a29b00ab22ca612bfbeea11f59200d",
+  "line_count": 299,
+  "size_bytes": 10605,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [
+    "rust/platform/analytics.rs",
+    "rust/platform/assess.rs",
+    "rust/platform/baseline.rs",
+    "rust/platform/html.rs",
+    "rust/platform/notify.rs",
+    "rust/platform/operating.rs",
+    "rust/platform/plugin.rs",
+    "rust/platform/schedule.rs"
+  ],
+  "tags": []
+}

@@ -31,13 +31,17 @@ The [validation record](acceptance/MAINTENANCE_VALIDATION_20260911.md) links the
 
 ## Install And Run
 
-Use Python 3.11 or newer with uv. The fixes are on `main`; existing v0.3.0 release
-assets were not republished. To install the fixed source:
+Install from the directory containing the Rust source. The installed binary
+runs without Python or uv.
 
-    git clone https://github.com/RNA4219/harness-auto-test-evidence.git
-    cd harness-auto-test-evidence
-    uv sync --dev --frozen
-    uv run python -m hate --help
+    cargo install --path . --locked
+    hate --help
+
+For a local release binary, run `cargo build --release --locked`. The Windows
+binary is `target/release/hate.exe`. Compatibility tests use the Python package
+in this checkout as a reference.
+To evaluate this project with `product grade-reports` or `gap closure`, supply
+the project checkout with its documentation and fixtures.
 
 For the published v0.3.0 package, download the
 [GitHub Release wheel](https://github.com/RNA4219/harness-auto-test-evidence/releases/tag/v0.3.0)
@@ -53,7 +57,7 @@ profiles deny this mode. See [CHANGELOG](../CHANGELOG.md) and [SECURITY](../SECU
 
 Run the minimal P0a golden path:
 
-    uv run python -m hate p0a --input fixtures/golden/p0a-minimal/input --out tmp/p0a-smoke --source-version local-smoke
+    hate p0a --input fixtures/golden/p0a-minimal/input --out tmp/p0a-smoke --source-version local-smoke
 
 ## Platform CLI
 
@@ -82,12 +86,12 @@ Run the minimal P0a golden path:
 Major OSS corpus example:
 
 ```powershell
-uv run python -m hate platform verdict `
+hate platform verdict `
   --input tmp/major-oss-two-cycle/cycle-2 `
   --corpus docs/process/real-repo-verdict-corpus/major-oss-expected-verdicts-20260704.json `
   --out tmp/platform-verdict.json
 
-uv run python -m hate platform triage `
+hate platform triage `
   --input tmp/major-oss-two-cycle/cycle-2 `
   --out tmp/platform-triage.json
 ```
@@ -107,6 +111,7 @@ uv run python -m hate platform triage `
 ## Release Checks
 
 ```powershell
+cargo test --locked
 uv run pytest -q
 uv run python -m compileall src tests
 uv run python tools/codemap/update.py --check

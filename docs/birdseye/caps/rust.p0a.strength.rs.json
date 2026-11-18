@@ -1,0 +1,15 @@
+{
+  "path": "rust/p0a/strength.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "775759f9fa44eb2d62e11e5bd0bb32934ab5f7c3e0bfb2ef361bc6a08e9924a4",
+  "line_count": 251,
+  "size_bytes": 9532,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage"
+  ]
+}

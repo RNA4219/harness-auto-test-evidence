@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/rules/workflow_task_seed.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "9103582ea5ee9945d4e1afb7cb4d92227a2fffddbc4dbd3c905cc42a895c0626",
+  "line_count": 597,
+  "size_bytes": 20689,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema",
+    "workflow"
+  ]
+}

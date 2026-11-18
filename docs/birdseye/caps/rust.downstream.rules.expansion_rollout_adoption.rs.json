@@ -1,0 +1,13 @@
+{
+  "path": "rust/downstream/rules/expansion_rollout_adoption.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "e20871a60ef4a92bfab1c7095acb9e7dc3246fe949607eb0e4ef69189577687e",
+  "line_count": 731,
+  "size_bytes": 26653,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "path": "rust/downstream/rules/expansion_value_measurement.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "a91f4801166d3b7a8e5f33ff4666de1f95d44ba671af1bc844ea95154ebd5674",
+  "line_count": 664,
+  "size_bytes": 23694,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

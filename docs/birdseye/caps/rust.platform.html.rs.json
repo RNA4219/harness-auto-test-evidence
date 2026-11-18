@@ -1,0 +1,15 @@
+{
+  "path": "rust/platform/html.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "693f8aea6089b6b94c1442e22caeb2913fa0e682e838caa8051ace25eb10d7f1",
+  "line_count": 110,
+  "size_bytes": 3715,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "rust/p0a/coverage.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "04aa2e8d90032e418bad82494cbcc6c1c3a031d268e52066c4957885e08cd30f",
+  "line_count": 279,
+  "size_bytes": 9621,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "test"
+  ]
+}

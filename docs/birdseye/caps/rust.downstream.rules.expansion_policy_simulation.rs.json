@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_policy_simulation.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "113173852791b23fe82e29223e1a61436602eafdbd6c8a41d843aeff5831d98d",
+  "line_count": 302,
+  "size_bytes": 10179,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}
