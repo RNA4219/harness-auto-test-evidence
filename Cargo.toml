@@ -32,3 +32,9 @@ command-group = "5"
 csv = "1"
 unicode-casefold = "0.2"
 uuid = { version = "1", features = ["v5"] }
+
+[target.'cfg(unix)'.dependencies]
+rustix = { version = "1", features = ["fs"] }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_System_Pipes"] }

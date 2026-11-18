@@ -1,5 +1,5 @@
 {
-  "generated_at": "4391b7803c7b",
+  "generated_at": "45803fea0da6",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -68,9 +68,9 @@
     "Cargo.toml": {
       "role": "project",
       "caps": "docs/birdseye/caps/Cargo.toml.json",
-      "sha256": "d67f2f8091be321ad332373d31a58f10a0b079270e8df07a5569c3120af4dc98",
-      "line_count": 34,
-      "size_bytes": 871
+      "sha256": "5fd7c93ee5afe815bff9638e2f6bdf2e66d46c92ec7407670a308309091bd99b",
+      "line_count": 40,
+      "size_bytes": 1060
     },
     "README.md": {
       "role": "navigation",
@@ -7635,9 +7635,9 @@
     "rust/process.rs": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/rust.process.rs.json",
-      "sha256": "e2b9d16b0cde1cce257a57ef365771a122b7add5562e006f043ecd24ab0f2d11",
-      "line_count": 102,
-      "size_bytes": 3473
+      "sha256": "0d8c9c276ec0a7a12f076ee1fb93a96845d48486a60707ca15c24bd4f44855fa",
+      "line_count": 344,
+      "size_bytes": 12113
     },
     "rust/qeg.rs": {
       "role": "implementation",
@@ -7677,9 +7677,9 @@
     "rust/roster.rs": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/rust.roster.rs.json",
-      "sha256": "89c45e9ee3ef01f5fbc44eefad8ef15a818ef7197bf2dc0378730e4753548e6d",
-      "line_count": 293,
-      "size_bytes": 11067
+      "sha256": "403764a06fe1e385ace72506afc29e1f28d88b33e6ce18f25e29afa06657835e",
+      "line_count": 366,
+      "size_bytes": 13436
     },
     "rust/roster/execution.rs": {
       "role": "implementation",
@@ -12983,9 +12983,9 @@
     "tools/check_rust_roster.py": {
       "role": "tooling",
       "caps": "docs/birdseye/caps/tools.check_rust_roster.py.json",
-      "sha256": "726d6181ac77a83602f940a9e31f2db581a860d73d81a20834eb2ac55d5988db",
-      "line_count": 101,
-      "size_bytes": 4617
+      "sha256": "c0a29b02f0abe7b0eafd9129a4ce05f1b61cbd5cf6ba8f4fd1e076d3ed2409bd",
+      "line_count": 130,
+      "size_bytes": 6126
     },
     "tools/ci/docs_freshness_gate.py": {
       "role": "tooling",

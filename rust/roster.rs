@@ -45,6 +45,43 @@ fn safe_id(id: &str) -> String {
     }
 }
 
+#[cfg(any(windows, test))]
+fn windows_release_name(version: (u32, u32, u32), product_type: u8) -> Option<&'static str> {
+    // NT build numbers overlap between client and server editions.
+    let releases: &[((u32, u32, u32), &str)] = match product_type {
+        1 => &[
+            ((10, 1, 0), "post11"),
+            ((10, 0, 22000), "11"),
+            ((6, 4, 0), "10"),
+            ((6, 3, 0), "8.1"),
+            ((6, 2, 0), "8"),
+            ((6, 1, 0), "7"),
+            ((6, 0, 0), "Vista"),
+            ((5, 2, 3790), "XP64"),
+            ((5, 2, 0), "XPMedia"),
+            ((5, 1, 0), "XP"),
+            ((5, 0, 0), "2000"),
+        ],
+        2 | 3 => &[
+            ((10, 1, 0), "post2025Server"),
+            ((10, 0, 26100), "2025Server"),
+            ((10, 0, 20348), "2022Server"),
+            ((10, 0, 17763), "2019Server"),
+            ((6, 4, 0), "2016Server"),
+            ((6, 3, 0), "2012ServerR2"),
+            ((6, 2, 0), "2012Server"),
+            ((6, 1, 0), "2008ServerR2"),
+            ((6, 0, 0), "2008Server"),
+            ((5, 2, 0), "2003Server"),
+            ((5, 0, 0), "2000Server"),
+        ],
+        _ => return None,
+    };
+    releases
+        .iter()
+        .find_map(|&(minimum, release)| (version >= minimum).then_some(release))
+}
+
 #[cfg(windows)]
 fn windows_release() -> Option<String> {
     #[repr(C)]
@@ -55,6 +92,11 @@ fn windows_release() -> Option<String> {
         build: u32,
         platform: u32,
         service_pack: [u16; 128],
+        service_pack_major: u16,
+        service_pack_minor: u16,
+        suite_mask: u16,
+        product_type: u8,
+        reserved: u8,
     }
     #[link(name = "ntdll")]
     unsafe extern "system" {
@@ -67,23 +109,54 @@ fn windows_release() -> Option<String> {
         build: 0,
         platform: 0,
         service_pack: [0; 128],
+        service_pack_major: 0,
+        service_pack_minor: 0,
+        suite_mask: 0,
+        product_type: 0,
+        reserved: 0,
     };
-    // RtlGetVersion writes exactly the OSVERSIONINFOW structure described by size.
+    // The extended RTL_OSVERSIONINFOEXW layout requests wProductType as well as the build.
     let status = unsafe { RtlGetVersion(&mut version) };
     if status < 0 {
         return None;
     }
-    Some(match (version.major, version.minor, version.build) {
-        (10, _, 22000..) => "11".into(),
-        (6, 3, _) => "8.1".into(),
-        (6, 2, _) => "8".into(),
-        (6, 1, _) => "7".into(),
-        (major, _, _) => major.to_string(),
-    })
+    windows_release_name(
+        (version.major, version.minor, version.build),
+        version.product_type,
+    )
+    .map(str::to_owned)
 }
 #[cfg(not(windows))]
 fn windows_release() -> Option<String> {
     None
+}
+
+#[cfg(test)]
+mod windows_tests {
+    use super::windows_release_name;
+
+    #[test]
+    fn distinguishes_workstations_domain_controllers_and_servers_at_release_boundaries() {
+        for (build, client, server) in [
+            (17762, "10", "2016Server"),
+            (17763, "10", "2019Server"),
+            (20347, "10", "2019Server"),
+            (20348, "10", "2022Server"),
+            (21999, "10", "2022Server"),
+            (22000, "11", "2022Server"),
+            (26099, "11", "2022Server"),
+            (26100, "11", "2025Server"),
+        ] {
+            assert_eq!(windows_release_name((10, 0, build), 1), Some(client));
+            for product_type in [2, 3] {
+                assert_eq!(
+                    windows_release_name((10, 0, build), product_type),
+                    Some(server)
+                );
+            }
+        }
+        assert_eq!(windows_release_name((10, 0, 26100), 0), None);
+    }
 }
 
 fn fingerprint() -> Value {

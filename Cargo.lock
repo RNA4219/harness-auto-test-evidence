@@ -483,6 +483,7 @@ dependencies = [
  "mime_guess",
  "regex",
  "roxmltree",
+ "rustix",
  "serde",
  "serde_json",
  "sha2",
@@ -492,6 +493,7 @@ dependencies = [
  "url",
  "uuid",
  "walkdir",
+ "windows-sys",
 ]
 
 [[package]]

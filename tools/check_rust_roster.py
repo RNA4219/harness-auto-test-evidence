@@ -4,6 +4,7 @@ import contextlib
 import io
 import json
 import os
+import platform
 import shutil
 import subprocess
 import sys
@@ -21,23 +22,50 @@ def command(message, exit_code=0):
     return ["/bin/sh", "-c", 'printf "%s\\n" "$1"; exit "$2"', "suite", message, str(exit_code)]
 
 
-def stable(data):
+def legacy_windows_release():
+    # CPython 3.11 reports all NT 10.0 releases as "10". Check the actual
+    # product and build so newer clients and servers still have distinct expectations.
+    if os.name != "nt":
+        return None
+    version = sys.getwindowsversion()
+    major, minor, build = version.platform_version
+    if (major, minor) != (10, 0):
+        return None
+    if sys.version_info[:2] != (3, 11):
+        # Early 3.12/3.13 releases predate the Windows Server 2025 entry.
+        if (sys.version_info[:2] in {(3, 12), (3, 13)} and version.product_type in (2, 3)
+                and build >= 26100 and platform.release() == "2022Server"):
+            return "2022Server", "2025Server"
+        return None
+    if version.product_type == 1:
+        return "10", "11" if build >= 22000 else "10"
+    if version.product_type in (2, 3):
+        for minimum, release in ((26100, "2025Server"), (20348, "2022Server"), (17763, "2019Server")):
+            if build >= minimum:
+                return "10", release
+        return "10", "2016Server"
+    return None
+
+
+def stable(data, *, legacy_release=None):
     if isinstance(data, dict):
         result = {}
         for key, value in data.items():
             if key in {"started_at", "finished_at", "runtime_ms", "duration_ms", "python", "rust_binary_version"}:
                 continue
-            if key == "cleanup_method" and data.get("cleanup_attempted") and value != "per_split":
+            if key == "os_release" and data.get("os") == "Windows" and legacy_release and value == legacy_release[0]:
+                result[key] = legacy_release[1]
+            elif key == "cleanup_method" and data.get("cleanup_attempted") and value != "per_split":
                 result[key] = "process-tree"
             else:
-                result[key] = stable(value)
+                result[key] = stable(value, legacy_release=legacy_release)
         return result
     if isinstance(data, list):
-        return [stable(item) for item in data]
+        return [stable(item, legacy_release=legacy_release) for item in data]
     return data
 
 
-def artifacts(path):
+def artifacts(path, *, legacy_release=None):
     values = {}
     for p in path.iterdir():
         text = p.read_text(encoding="utf8")
@@ -45,7 +73,7 @@ def artifacts(path):
             values[p.name] = [json.loads(line) for line in text.splitlines()]
         else:
             values[p.name] = json.loads(text)
-    return stable(values)
+    return stable(values, legacy_release=legacy_release)
 
 
 def check(binary, root, name, roster, command_name):
@@ -64,10 +92,11 @@ def check(binary, root, name, roster, command_name):
     if code:
         assert not out.exists()
         return
-    before = stable(json.loads(captured.getvalue()))
+    legacy_release = legacy_windows_release()
+    before = stable(json.loads(captured.getvalue()), legacy_release=legacy_release)
     after = stable(json.loads(native.stdout))
     assert before == after, (name, difference(before, after))
-    expected = artifacts(reference)
+    expected = artifacts(reference, legacy_release=legacy_release)
     actual = artifacts(out)
     assert expected.keys() == actual.keys(), (name, expected.keys(), actual.keys())
     for filename, value in expected.items():

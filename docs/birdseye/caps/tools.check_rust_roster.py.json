@@ -2,9 +2,9 @@
   "path": "tools/check_rust_roster.py",
   "role": "tooling",
   "kind": "py",
-  "sha256": "726d6181ac77a83602f940a9e31f2db581a860d73d81a20834eb2ac55d5988db",
-  "line_count": 101,
-  "size_bytes": 4617,
+  "sha256": "c0a29b02f0abe7b0eafd9129a4ce05f1b61cbd5cf6ba8f4fd1e076d3ed2409bd",
+  "line_count": 130,
+  "size_bytes": 6126,
   "headings": [],
   "imports": [
     "check_rust_p0a",
@@ -14,6 +14,7 @@
     "json",
     "os",
     "pathlib",
+    "platform",
     "shutil",
     "subprocess",
     "sys",
@@ -24,6 +25,7 @@
     "src/hate/cli.py"
   ],
   "tags": [
-    "artifact"
+    "artifact",
+    "release"
   ]
 }
