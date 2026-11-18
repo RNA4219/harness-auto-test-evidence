@@ -1,5 +1,5 @@
 {
-  "generated_at": "508373d00388",
+  "generated_at": "4391b7803c7b",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -6816,9 +6816,9 @@
     "rust/bridge.rs": {
       "role": "implementation",
       "caps": "docs/birdseye/caps/rust.bridge.rs.json",
-      "sha256": "9c3c6e3cca3669f44e46fad3a8920c52b2b7d9cdca1de65e78420d6b0d31d3d2",
-      "line_count": 242,
-      "size_bytes": 8319
+      "sha256": "673c65d889c65e2104eeb9c5121ee32e0ff8e3c5bfecbc75843a48293980a6bd",
+      "line_count": 245,
+      "size_bytes": 8403
     },
     "rust/cli.rs": {
       "role": "implementation",

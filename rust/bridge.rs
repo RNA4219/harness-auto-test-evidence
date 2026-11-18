@@ -183,7 +183,10 @@ pub fn handoff(call: &Invocation, route: &Route) -> Result<Value> {
         "command_options":options,"status":"handoff_required","input_refs":refs,"path_arguments":paths,
         "expected_output_types":types,"sourceRefs":sources});
     validate(&request, REQUEST_SCHEMA, "bridge-request")?;
-    let dir = base.unwrap_or_else(|| root.join(id));
+    let dir = match base {
+        Some(base) => base,
+        None => env::current_dir()?.join(".hate").join("bridge").join(id),
+    };
     fs::create_dir_all(&dir)?;
     let destination = if dir == Path::new(".") {
         PathBuf::from("bridge-request.json")
