@@ -1,0 +1,19 @@
+{
+  "path": "rust/process.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "0d8c9c276ec0a7a12f076ee1fb93a96845d48486a60707ca15c24bd4f44855fa",
+  "line_count": 344,
+  "size_bytes": 12113,
+  "headings": [
+    "#[cfg(unix)]",
+    "#[cfg(windows)]",
+    "#[cfg(unix)]",
+    "#[cfg(windows)]",
+    "#[cfg(test)]"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

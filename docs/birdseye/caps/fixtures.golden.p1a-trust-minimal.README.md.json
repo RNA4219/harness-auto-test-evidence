@@ -2,9 +2,9 @@
   "path": "fixtures/golden/p1a-trust-minimal/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "0e77ec48650f3c9df829d78f37ba519eec7854581b3cfdfbf521370d61f6403a",
+  "sha256": "e239ea99398b565509aa898f31bf45b4f7aefc866a5ff6b47e8fa380164ba4e0",
   "line_count": 34,
-  "size_bytes": 1670,
+  "size_bytes": 1636,
   "headings": [
     "# P1a Trust Minimal Fixture"
   ],

@@ -2,9 +2,9 @@
   "path": "src/hate/p2p3_assurance_reports.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "e6f89aae0ded625eb6c3f9803d6779fde192cff7e77a41767d005dfee6e9d6c9",
+  "sha256": "e33b0506ef9b9c7210bdbec37683f187e2e0ff42cb9dc1b13f1dd97ec815c4a4",
   "line_count": 455,
-  "size_bytes": 21539,
+  "size_bytes": 21084,
   "headings": [],
   "imports": [
     ".p2p3_io",

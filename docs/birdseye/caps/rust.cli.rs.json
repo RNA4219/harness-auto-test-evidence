@@ -1,0 +1,17 @@
+{
+  "path": "rust/cli.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "4f39d4915618f7fa799580b3e6cce2a80fa5bcaf2599765e48227b903c4d1954",
+  "line_count": 161,
+  "size_bytes": 4899,
+  "headings": [
+    "#[derive(Deserialize)]",
+    "#[derive(Deserialize)]",
+    "#[derive(Deserialize)]"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-004.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "ec2c3f73e2a49d609865b1cd9d6290ff4066bc84d858bf3d4ba57ba7b18a98e5",
+  "sha256": "b6be92a77a25edbecf00915e8efbca07484063e75c64dbbbc1fb4379d4d90fa9",
   "line_count": 82,
-  "size_bytes": 3083,
+  "size_bytes": 3081,
   "headings": [
     "# AC-20260703-postpoc-004 Baseline Promotion Workflow Evidence",
     "## Scope",

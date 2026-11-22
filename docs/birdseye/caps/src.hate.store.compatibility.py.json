@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/store/compatibility.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "7acb2987193d3df84b2236af93055c338efc8abb3a1ec8a59617202bfd584d57",
+  "line_count": 28,
+  "size_bytes": 1191,
+  "headings": [],
+  "imports": [
+    ".models",
+    ".versioning",
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/models.py",
+    "src/hate/store/versioning.py"
+  ],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "path": "src/hate/bridge/protocol.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ed6c2ccda9cf7ac6506fb8f57a036ea1875aaa97e1282c23d5931c05fa64ce9f",
+  "line_count": 32,
+  "size_bytes": 762,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "argparse",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

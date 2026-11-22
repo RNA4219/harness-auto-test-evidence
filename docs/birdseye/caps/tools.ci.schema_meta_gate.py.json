@@ -2,17 +2,20 @@
   "path": "tools/ci/schema_meta_gate.py",
   "role": "tooling",
   "kind": "py",
-  "sha256": "1389139f0bb85d188906e4805c00c0c20db6fb3c1e6ba69aea2a2ab2f4fa6efc",
-  "line_count": 22,
-  "size_bytes": 577,
+  "sha256": "846a590a80eb2e1456fc28eb0914dfdadd312e9bb4233359abc2c98bdfc25d5b",
+  "line_count": 30,
+  "size_bytes": 902,
   "headings": [],
   "imports": [
     "__future__",
+    "hate.bridge.schemas",
     "hate.schema_resources",
-    "json"
+    "json",
+    "jsonschema"
   ],
   "links": [],
   "depends_on": [
+    "src/hate/bridge/schemas.py",
     "src/hate/schema_resources.py"
   ],
   "tags": [

@@ -1,0 +1,22 @@
+{
+  "path": "src/hate/store/report_serialization.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "85513147b7bef092659fd4ed2386c591568c0b61fd2dd4c33087991972bd092c",
+  "line_count": 54,
+  "size_bytes": 2068,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py"
+  ],
+  "tags": [
+    "store"
+  ]
+}

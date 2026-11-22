@@ -2,9 +2,9 @@
   "path": "docs/process/EVALUATION.md",
   "role": "quality",
   "kind": "md",
-  "sha256": "a5952f73787603b71297e5ce3d6a1f09d3a4bbce6a4ef9f92210256b2653c9b8",
-  "line_count": 526,
-  "size_bytes": 39308,
+  "sha256": "f1bf8a1d4403deef421e39c574ad691e2231deb27e2aeb13af68b4320bf86df5",
+  "line_count": 543,
+  "size_bytes": 40082,
   "headings": [
     "# Evaluation",
     "## Acceptance Criteria",
@@ -17,7 +17,8 @@
     "### P3 / Enterprise Product Readiness",
     "## KPIs",
     "## Test Outline",
-    "## 検証チェックリスト"
+    "## 検証チェックリスト",
+    "## Responsibility Freeze (generated)"
   ],
   "imports": [],
   "links": [],

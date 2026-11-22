@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-010.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "d9773900727beb40e88fe2ae191fdab86522f6d68ee01c29876433672e3ccf94",
+  "sha256": "faf19a00a197d71e7c1b85d0f369a21f05913a81cf4eb3f9e560cdf5b1ec2fc5",
   "line_count": 72,
-  "size_bytes": 2799,
+  "size_bytes": 2797,
   "headings": [
     "# AC-20260703-postpoc-010 Release Handoff Evidence",
     "## Scope",

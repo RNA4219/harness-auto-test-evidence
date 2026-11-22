@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/p1a_run_scope.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8cf2752e804bc50003da88b4027ba85688ce9fc3ee1140db79cce0f3535b2a67",
+  "line_count": 78,
+  "size_bytes": 3570,
+  "headings": [],
+  "imports": [
+    ".input_values",
+    ".p1a_io",
+    "__future__",
+    "collections.abc",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/p1a_io.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "test"
+  ]
+}

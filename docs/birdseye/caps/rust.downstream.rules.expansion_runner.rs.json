@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_runner.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "85222f2e3a42112cb1b2e483f12cea60b5a440f9b6b61475b5c7709f3ccbc1ef",
+  "line_count": 562,
+  "size_bytes": 19748,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

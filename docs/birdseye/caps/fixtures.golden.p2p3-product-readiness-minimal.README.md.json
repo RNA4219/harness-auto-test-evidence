@@ -2,9 +2,9 @@
   "path": "fixtures/golden/p2p3-product-readiness-minimal/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "fb98b0332f2d37dc0bfa041a5487f16e2066ed68ec07c2bf0a0aebd7631bd069",
+  "sha256": "eda2241ad5bf0645bbd39ee4ccd9f7babd7980177fe580d351ba6d9655e88583",
   "line_count": 8,
-  "size_bytes": 439,
+  "size_bytes": 431,
   "headings": [
     "# P2/P3 Product Readiness Minimal Fixture"
   ],

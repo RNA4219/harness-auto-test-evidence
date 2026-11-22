@@ -2,11 +2,19 @@ from __future__ import annotations
 
 import json
 
+from jsonschema import Draft202012Validator
+
+from hate.bridge.schemas import load_bridge_schema
 from hate.schema_resources import validate_all_schema_documents
 
 
 def main() -> int:
     errors = validate_all_schema_documents()
+    for name in ("bridge-request", "bridge-result"):
+        try:
+            Draft202012Validator.check_schema(load_bridge_schema(name))
+        except Exception as exc:
+            errors.append(f"HATE-bridge/v1/{name}: {exc}")
     report = {
         "record_type": "schema-meta-validation",
         "schema_version": "HATE/ci-schema-meta/v1",

@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hate.example/schemas/HATE-bridge/v1/bridge-request.schema.json",
+  "title": "HATE bridge request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "bridge_id",
+    "original_command",
+    "owner",
+    "canonical_contract",
+    "status",
+    "input_refs",
+    "expected_output_types",
+    "sourceRefs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "HATE-bridge/v1"
+    },
+    "record_type": {
+      "const": "bridge_request"
+    },
+    "bridge_id": {
+      "type": "string",
+      "pattern": "^hate-bridge-[a-f0-9]{24}$"
+    },
+    "original_command": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_contract": {
+      "type": "string",
+      "minLength": 1
+    },
+    "command_options": {
+      "description": "実行時の非Pathオプション。既定値・null・配列順を保持する。旧依頼では省略可能。",
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+      "additionalProperties": {
+        "anyOf": [
+          { "type": ["string", "number", "boolean", "null"] },
+          {
+            "type": "array",
+            "items": { "type": ["string", "number", "boolean", "null"] }
+          }
+        ]
+      }
+    },
+    "path_arguments": {
+      "description": "ローカル出力以外の指定Pathの用途と観測時の存在状態。未存在のパスに指紋は付けない。旧依頼では省略可能。",
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "role", "exists"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "role": { "enum": ["input", "optional-input", "destination"] },
+          "exists": { "type": "boolean" }
+        },
+        "if": { "properties": { "role": { "const": "input" } }, "required": ["role"] },
+        "then": { "properties": { "exists": { "const": true } } }
+      }
+    },
+    "status": {
+      "const": "handoff_required"
+    },
+    "input_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "argument",
+          "path",
+          "sha256",
+          "kind"
+        ],
+        "properties": {
+          "argument": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "directory"
+            ]
+          },
+          "excluded_paths": {
+            "description": "ディレクトリーの指紋から除外するHATE生成物。pathは入力ルートからの相対パス。",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["path", "kind"],
+              "properties": {
+                "path": {"type": "string", "minLength": 1},
+                "kind": {"enum": ["file", "directory", "temporary-files"]}
+              }
+            }
+          }
+        }
+      }
+    },
+    "expected_output_types": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  }
+}

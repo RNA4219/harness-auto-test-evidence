@@ -2,9 +2,9 @@
   "path": "docs/process/SPECIFICATION_COMPLETION_AUDIT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "a336b9b561c183b776f2b62f83fd3e22c389a977bac627b292565be9ae89d315",
+  "sha256": "72289e6a18e9b406200114556f1f7772715a1d1f5d69e8ac143cab41ceffc3d5",
   "line_count": 110,
-  "size_bytes": 6764,
+  "size_bytes": 6664,
   "headings": [
     "# HATE 仕様書完成監査",
     "## 1. 目的",
@@ -20,6 +20,7 @@
   "tags": [
     "artifact",
     "coverage",
+    "enterprise",
     "fixture",
     "qeg",
     "schema",

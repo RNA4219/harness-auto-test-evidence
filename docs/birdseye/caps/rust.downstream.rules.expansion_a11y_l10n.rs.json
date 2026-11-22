@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_a11y_l10n.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "f571220b20c6115a3c8e60a96a5a81ff0b75247fcbbcbdc329723cc4e3aebc28",
+  "line_count": 342,
+  "size_bytes": 12068,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-001.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "6bd8870f74d62855419d48b84fcd5ea78f2e4d8ac206257a8751bffdb14ec27c",
+  "sha256": "c190b2f4e98c2932956bcc8a8be13afdc189e5df681dcb8417c72a65a48d0508",
   "line_count": 80,
-  "size_bytes": 2944,
+  "size_bytes": 2942,
   "headings": [
     "# AC-20260703-postpoc-001 Hosted Scheduler Runtime Evidence",
     "## Scope",

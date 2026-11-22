@@ -1,0 +1,16 @@
+{
+  "path": "rust/platform/plugin.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "fe1d6483e26c0c244cb8aa80b54e1b9e7e8fdc24ba2a07f60dd8704a15f62f20",
+  "line_count": 168,
+  "size_bytes": 6725,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "release"
+  ]
+}

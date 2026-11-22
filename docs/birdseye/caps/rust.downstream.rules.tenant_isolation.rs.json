@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/tenant_isolation.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "55bdced22176c38895e0192a8eaabb8d9d14dadcae399a91159495d47cc2ec7b",
+  "line_count": 363,
+  "size_bytes": 11964,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

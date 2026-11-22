@@ -2,9 +2,9 @@
   "path": "tools/docs/render_post_poc_status.py",
   "role": "tooling",
   "kind": "py",
-  "sha256": "3f6b9800ccd712020346c30757aa5ed4f8ea8bb32d2ec3fb56caf0c860e3f2c5",
+  "sha256": "772e91fc12e400bf660adb2a31add43cc7b95ee65d2ebdd31fe9180cdf89c6f2",
   "line_count": 112,
-  "size_bytes": 6010,
+  "size_bytes": 6009,
   "headings": [],
   "imports": [
     "__future__",

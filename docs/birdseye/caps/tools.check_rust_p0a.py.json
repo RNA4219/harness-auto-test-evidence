@@ -1,0 +1,30 @@
+{
+  "path": "tools/check_rust_p0a.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "063087e222fe06c6cc8e4505a6d0df93ad5eacfa67cee5eb96cc37cd83e66647",
+  "line_count": 153,
+  "size_bytes": 7016,
+  "headings": [],
+  "imports": [
+    "contextlib",
+    "hate.cli",
+    "io",
+    "json",
+    "os",
+    "pathlib",
+    "shutil",
+    "subprocess",
+    "sys",
+    "tempfile"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "test"
+  ]
+}

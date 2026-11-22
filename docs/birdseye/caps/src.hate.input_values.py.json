@@ -1,0 +1,19 @@
+{
+  "path": "src/hate/input_values.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "a3361025ecf90da1568a888caeb3f71e9c46b3004edf09b5f1293663fe605e87",
+  "line_count": 54,
+  "size_bytes": 1904,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "decimal",
+    "math",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

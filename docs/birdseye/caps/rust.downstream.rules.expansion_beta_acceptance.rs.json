@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_beta_acceptance.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "87d53e710f337e6563c8fdffe4eb28bedae0b7948ccffd0b38b6e113ebaecea1",
+  "line_count": 427,
+  "size_bytes": 14985,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

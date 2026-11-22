@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/support_ops_observability.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "f4fb449d3009ce974e9bbf296157e4f0c042f4d110a074244e07d517c9f2bdbd",
+  "line_count": 444,
+  "size_bytes": 16047,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "fixtures/golden/p1b-workflow-minimal/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "fe48c4825bd4a0e9ff28ed636521d19ed6519c243479c93ceda9d19cfe4d44fb",
+  "sha256": "2c88c4836ccc4325da6408517fdff19739ef8c3c53ce1bb58857fe080e47a2e6",
   "line_count": 9,
-  "size_bytes": 459,
+  "size_bytes": 450,
   "headings": [
     "# P1b Workflow Minimal Fixture"
   ],

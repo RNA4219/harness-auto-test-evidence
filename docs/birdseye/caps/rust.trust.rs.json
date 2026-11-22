@@ -1,0 +1,23 @@
+{
+  "path": "rust/trust.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "536303d3868643284cf53f3b99e73e4bf3fa809e9920037368555f1f102acb22",
+  "line_count": 228,
+  "size_bytes": 8563,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [
+    "rust/trust/advice.rs",
+    "rust/trust/analysis.rs",
+    "rust/trust/assessment.rs",
+    "rust/trust/execution.rs",
+    "rust/trust/inputs.rs",
+    "rust/trust/integers.rs"
+  ],
+  "tags": [
+    "coverage",
+    "qeg"
+  ]
+}

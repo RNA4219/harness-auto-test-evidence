@@ -2,9 +2,9 @@
   "path": "src/hate/governance.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "8d3d618f629912d54a4c9f1fff03a1319109cbd6b83e604ccbd68a24976c047c",
+  "sha256": "1d2a8006f26c04bc73406d4e2b21961cb0a1433b3a598eee5856f72f2d66fbab",
   "line_count": 129,
-  "size_bytes": 5519,
+  "size_bytes": 5390,
   "headings": [],
   "imports": [
     "__future__",

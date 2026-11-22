@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/store/compare_models.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "bc741a8ee74f53c8160418d452f74f6a0e627e80b2986a3dd769028531419c79",
+  "line_count": 102,
+  "size_bytes": 3992,
+  "headings": [],
+  "imports": [
+    ".report_serialization",
+    "__future__",
+    "dataclasses",
+    "enum",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/report_serialization.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

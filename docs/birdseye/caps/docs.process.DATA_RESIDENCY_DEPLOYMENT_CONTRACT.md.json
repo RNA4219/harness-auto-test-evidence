@@ -2,9 +2,9 @@
   "path": "docs/process/DATA_RESIDENCY_DEPLOYMENT_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "1dfa8e96155d2f46615b9c5ef251f7386bc6b75d67e38a070ac81682ee9ccaba",
+  "sha256": "084b911f62256103825acac823a57a0c3f509dba4e2f55430e14888592ab2245",
   "line_count": 112,
-  "size_bytes": 5091,
+  "size_bytes": 4979,
   "headings": [
     "# Data Residency and Deployment Contract",
     "## 1. 目的",

@@ -2,21 +2,27 @@
   "path": "src/hate/p1a_internal/recommendations.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "b3c63bf4633302ca5f78eb6a50a1176d59415ad66454657fd2090d4b1d202115",
-  "line_count": 122,
-  "size_bytes": 5746,
+  "sha256": "a1f2b58c24c7ab614ec2da77d95c0f08195a92576846a040d255ef16f41dbdb8",
+  "line_count": 198,
+  "size_bytes": 10399,
   "headings": [],
   "imports": [
     "__future__",
+    "hate.p1a_export_metadata",
+    "hate.p1a_precheck",
+    "hate.p1a_schema",
     "typing"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/p1a_export_metadata.py",
+    "src/hate/p1a_precheck.py",
+    "src/hate/p1a_schema.py"
+  ],
   "tags": [
     "artifact",
     "qeg",
     "schema",
-    "store",
     "test"
   ]
 }

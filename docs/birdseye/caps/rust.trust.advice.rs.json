@@ -1,0 +1,18 @@
+{
+  "path": "rust/trust/advice.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "b814f82325b78ba99836d1f95e2b85c1aa1514d0db8350675c5b864ea695a7be",
+  "line_count": 247,
+  "size_bytes": 10330,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

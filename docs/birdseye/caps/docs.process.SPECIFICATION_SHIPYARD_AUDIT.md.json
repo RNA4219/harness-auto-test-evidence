@@ -2,9 +2,9 @@
   "path": "docs/process/SPECIFICATION_SHIPYARD_AUDIT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "26efb31d370c796423be1f95355b439c69a1fe9237c991b5c4d2dd51e9d639ac",
+  "sha256": "c24e567739f73d922c128e5f068f49a72faf601ee92dfb748091373cdb91afa5",
   "line_count": 126,
-  "size_bytes": 13199,
+  "size_bytes": 13078,
   "headings": [
     "# Shipyard-cp 仕様書監査記録",
     "## 1. 目的",

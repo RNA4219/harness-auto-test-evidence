@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_precheck_soft_gaps.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "aae2d6972d7a05aecb631932a76696e338bdac467467329791a37e8d0f836ee5",
+  "line_count": 217,
+  "size_bytes": 10863,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate",
+    "hate.p0a",
+    "hate.p0b",
+    "hate.schema_resources",
+    "json",
+    "pathlib",
+    "pytest",
+    "shutil"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p0b.py",
+    "src/hate/schema_resources.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

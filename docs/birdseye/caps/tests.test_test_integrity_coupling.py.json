@@ -2,9 +2,9 @@
   "path": "tests/test_test_integrity_coupling.py",
   "role": "test",
   "kind": "py",
-  "sha256": "a589e70312aa8c12de55e5dc8d1fd900f3016ef23a50d7c5f8e5c5653ee22b4f",
+  "sha256": "d8db2302a07273a0d976759b6dc12bfc39d6a6b7ffa4ff5dce15ec6b4c1219b3",
   "line_count": 754,
-  "size_bytes": 29618,
+  "size_bytes": 28864,
   "headings": [
     "# =============================================================================",
     "# Test Coupling Classification",

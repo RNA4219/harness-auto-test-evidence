@@ -2,9 +2,9 @@
   "path": "docs/process/ENTERPRISE_DOMAIN_MODEL.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "87ab7f543fc6b3a90b2d7b980b5522f3674098f17d82aaa04b453afe0fe4bbe3",
+  "sha256": "58813aaa4393c6411f217ccb0daff5eff0848a83c96866f6e375bbec2ac10776",
   "line_count": 189,
-  "size_bytes": 8017,
+  "size_bytes": 7828,
   "headings": [
     "# Enterprise Domain Model",
     "## 1. 目的",

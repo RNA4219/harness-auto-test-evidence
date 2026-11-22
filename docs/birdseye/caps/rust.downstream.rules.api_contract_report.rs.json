@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/api_contract_report.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "1afb2237ef7da5fda5878a32e39d04febc01a3567dad9787d6600d162d068d0a",
+  "line_count": 429,
+  "size_bytes": 14972,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "schema"
+  ]
+}

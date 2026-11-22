@@ -1,0 +1,28 @@
+{
+  "path": "tests/test_store_compare_semantics.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "16995462027cb5128cfe0debf451455fc7d6ed22cb0d664bfde8eb5bca3d0451",
+  "line_count": 122,
+  "size_bytes": 6932,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.compare",
+    "hate.store.replay",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/compare.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "store",
+    "test"
+  ]
+}

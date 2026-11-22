@@ -4,11 +4,12 @@ import argparse
 import hashlib
 import json
 import re
+import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-INCLUDED_SUFFIXES = {".md", ".py", ".json", ".yaml", ".yml", ".toml"}
+INCLUDED_SUFFIXES = {".md", ".py", ".rs", ".json", ".yaml", ".yml", ".toml"}
 EXCLUDED_PARTS = {
     ".git",
     ".venv",
@@ -17,6 +18,7 @@ EXCLUDED_PARTS = {
     "__pycache__",
     "dist",
     "build",
+    "target",
     "tmp",
 }
 GENERATED_DIR = Path("docs/birdseye")
@@ -35,7 +37,9 @@ class SourceFile:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate HATE local file-reference codemap index and capsules.")
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="Repository root.")
-    parser.add_argument("--out", type=Path, default=GENERATED_DIR, help="Output directory, relative to root by default.")
+    parser.add_argument(
+        "--out", type=Path, default=GENERATED_DIR, help="Output directory, relative to root by default."
+    )
     parser.add_argument("--check", action="store_true", help="Fail if generated files would change.")
     args = parser.parse_args()
 
@@ -45,7 +49,11 @@ def main() -> int:
 
     planned = render_outputs(generated, out)
     if args.check:
-        changed = [path for path, content in planned.items() if not path.exists() or path.read_text(encoding="utf-8") != content]
+        changed = [
+            path
+            for path, content in planned.items()
+            if not path.exists() or path.read_text(encoding="utf-8") != content
+        ]
         if changed:
             for path in changed:
                 print(f"would update {path.relative_to(root).as_posix()}")
@@ -108,7 +116,7 @@ def build_birdseye(root: Path) -> dict[str, Any]:
 
 def collect_sources(root: Path) -> list[SourceFile]:
     sources: list[SourceFile] = []
-    for path in sorted(root.rglob("*")):
+    for path in _candidate_paths(root):
         if not path.is_file():
             continue
         rel_path = path.relative_to(root)
@@ -116,19 +124,33 @@ def collect_sources(root: Path) -> list[SourceFile]:
             continue
         if path.suffix.lower() not in INCLUDED_SUFFIXES:
             continue
-        raw = path.read_bytes()
-        text = raw.decode("utf-8", errors="ignore")
+        decoded = path.read_bytes().decode("utf-8", errors="ignore")
+        text = decoded.replace("\r\n", "\n").replace("\r", "\n")
+        normalized = text.encode("utf-8")
         sources.append(
             SourceFile(
                 path=path,
                 rel=rel_path.as_posix(),
                 text=text,
-                sha256=hashlib.sha256(raw).hexdigest(),
+                sha256=hashlib.sha256(normalized).hexdigest(),
                 line_count=0 if not text else text.count("\n") + (0 if text.endswith("\n") else 1),
-                size_bytes=len(raw),
+                size_bytes=len(normalized),
             )
         )
     return sources
+
+
+def _candidate_paths(root: Path) -> list[Path]:
+    result = subprocess.run(
+        ["git", "-C", str(root), "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    if result.returncode == 0:
+        paths = [root / item.decode("utf-8", errors="surrogateescape") for item in result.stdout.split(b"\0") if item]
+        return sorted(paths, key=lambda path: path.relative_to(root).as_posix())
+    return sorted(root.rglob("*"))
 
 
 def should_exclude(rel_path: Path) -> bool:
@@ -140,7 +162,7 @@ def should_exclude(rel_path: Path) -> bool:
 
 def classify_role(rel: str) -> str:
     name = Path(rel).name.lower()
-    if rel.startswith("src/"):
+    if rel.startswith(("src/", "rust/")):
         return "implementation"
     if rel.startswith("tests/"):
         return "test"
@@ -177,6 +199,13 @@ def extract_dependencies(source: SourceFile, rels: set[str]) -> set[str]:
             resolved = resolve_python_import(source.rel, module, rels)
             if resolved:
                 deps.add(resolved)
+    if source.path.suffix == ".rs":
+        path = Path(source.rel)
+        base = path.parent if path.stem in {"main", "lib", "mod"} else path.with_suffix("")
+        for name in re.findall(r"^\s*(?:pub(?:\([^)]*\))?\s+)?mod\s+(\w+)\s*;", source.text, re.MULTILINE):
+            deps.update(candidate for candidate in [
+                (base / f"{name}.rs").as_posix(), (base / name / "mod.rs").as_posix(),
+            ] if candidate in rels)
     return deps
 
 

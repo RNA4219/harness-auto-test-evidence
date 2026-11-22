@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-import json
 import importlib.util
+import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -14,6 +15,7 @@ sys.modules[SPEC.name] = codemap_update
 SPEC.loader.exec_module(codemap_update)
 
 build_birdseye = codemap_update.build_birdseye
+collect_sources = codemap_update.collect_sources
 render_outputs = codemap_update.render_outputs
 
 
@@ -43,3 +45,30 @@ def test_codemap_render_outputs_are_json(tmp_path: Path) -> None:
     index = json.loads(outputs[tmp_path / "docs/birdseye/index.json"])
     assert index["nodes"]["README.md"]["caps"] == "docs/birdseye/caps/README.md.json"
     assert outputs[tmp_path / "docs/birdseye/caps/README.md.json"].endswith("\n")
+
+
+def test_codemap_hash_is_stable_across_line_endings(tmp_path: Path) -> None:
+    source_path = tmp_path / "README.md"
+    source_path.write_bytes(b"# Readme\nsecond line\n")
+    lf_source = collect_sources(tmp_path)[0]
+
+    source_path.write_bytes(b"# Readme\r\nsecond line\r\n")
+    crlf_source = collect_sources(tmp_path)[0]
+
+    assert crlf_source.sha256 == lf_source.sha256
+    assert crlf_source.size_bytes == lf_source.size_bytes
+    assert crlf_source.line_count == lf_source.line_count
+    assert crlf_source.text == lf_source.text
+
+
+def test_codemap_excludes_gitignored_generated_files(tmp_path: Path) -> None:
+    subprocess.run(["git", "init", "--quiet"], cwd=tmp_path, check=True)
+    (tmp_path / ".gitignore").write_text("ignored/\n", encoding="utf-8")
+    (tmp_path / "kept.md").write_text("# Kept\n", encoding="utf-8")
+    (tmp_path / "ignored").mkdir()
+    (tmp_path / "ignored/generated.md").write_text("# Generated\n", encoding="utf-8")
+
+    generated = build_birdseye(tmp_path)
+
+    assert "kept.md" in generated["nodes"]
+    assert "ignored/generated.md" not in generated["nodes"]

@@ -1,0 +1,19 @@
+{
+  "path": "rust/p0a/artifacts.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "da4d58a8a480329c8e33bacdc37d155a77596a5cbd9395637193d8397287184c",
+  "line_count": 324,
+  "size_bytes": 12599,
+  "headings": [
+    "#[cfg(test)]"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "security"
+  ]
+}

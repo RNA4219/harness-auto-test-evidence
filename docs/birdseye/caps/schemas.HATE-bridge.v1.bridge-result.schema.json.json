@@ -1,0 +1,15 @@
+{
+  "path": "schemas/HATE-bridge/v1/bridge-result.schema.json",
+  "role": "schema",
+  "kind": "json",
+  "sha256": "305288a449b03f4420fe76c7413660bafe1630b12c84e99a27c6a54aac5847ad",
+  "line_count": 106,
+  "size_bytes": 2192,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "docs/research/deep-research-report.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "ce39f2806a046360a3d705e06dc28741567d5da28f4a08e7dcb14e3c4e1e2e6a",
+  "sha256": "eb207bec36075e04e08c26d414480556b4cdd784b613c4d7a5b90172b744bf52",
   "line_count": 819,
-  "size_bytes": 67848,
+  "size_bytes": 67029,
   "headings": [
     "# harness-auto-test-evidence 改訂要件仕様調査報告",
     "## エグゼクティブサマリー",

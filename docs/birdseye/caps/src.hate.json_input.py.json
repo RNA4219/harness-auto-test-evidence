@@ -1,0 +1,16 @@
+{
+  "path": "src/hate/json_input.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "dd9f1fa11e672fed2bd72127a0a0016a840d6bb1881327725e6c376d8d820e11",
+  "line_count": 14,
+  "size_bytes": 413,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

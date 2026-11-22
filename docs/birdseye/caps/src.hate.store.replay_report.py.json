@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/store/replay_report.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "0c02ba4616687e8da8347ec8a9e64d57bc181707820428ab51dd4db632d5f4d0",
+  "line_count": 287,
+  "size_bytes": 13198,
+  "headings": [],
+  "imports": [
+    ".replay",
+    ".report_serialization",
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/replay.py",
+    "src/hate/store/report_serialization.py"
+  ],
+  "tags": [
+    "release",
+    "store"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "path": "rust/runner.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "c9eeef9ac21f3648343a55a1b1d91fbdaf996108f8815edc4da2b42f4bc8b512",
+  "line_count": 262,
+  "size_bytes": 9519,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test"
+  ]
+}

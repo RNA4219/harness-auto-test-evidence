@@ -1,0 +1,21 @@
+{
+  "path": "src/hate/p0a_outcomes.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "4b1a68296ac8c7b761515078f35f6e6c3e665cb39ee4013fcd48c5a0f6d45a6b",
+  "line_count": 45,
+  "size_bytes": 2360,
+  "headings": [],
+  "imports": [
+    ".p0a_test_values",
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a_test_values.py"
+  ],
+  "tags": [
+    "test"
+  ]
+}

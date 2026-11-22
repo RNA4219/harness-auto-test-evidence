@@ -2,9 +2,9 @@
   "path": "docs/process/GLM5_IMPLEMENTATION_PROMPT_PLAN.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "7f38a6f1cdff5629fee8baea85ce32bfd8f17c5c37719ae0f661cbab6a38304e",
+  "sha256": "b125f248099bd4a3fd6f223e43ffe66de38079d4dd506a7cf696760651b7aa88",
   "line_count": 246,
-  "size_bytes": 9262,
+  "size_bytes": 9016,
   "headings": [
     "# GLM5 実装プロンプトプラン",
     "## 1. 目的",

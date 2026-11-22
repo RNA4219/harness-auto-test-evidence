@@ -2,9 +2,9 @@
   "path": "docs/process/PLATFORM_PLUGIN_SANDBOX_SPEC.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "414a509233daad775c62e94b3470a3850f1eea5ed7f66360fe89b8102dafe282",
+  "sha256": "417ad270b0af08eb3b05fd87c54320fbc2a9d378e7e7257c78b97d51ab3e16aa",
   "line_count": 73,
-  "size_bytes": 3186,
+  "size_bytes": 3140,
   "headings": [
     "# Platform Plugin Sandbox Specification",
     "## 1. Execution Modes",

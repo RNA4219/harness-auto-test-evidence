@@ -2,9 +2,9 @@
   "path": "TASK.codex.md",
   "role": "planning",
   "kind": "md",
-  "sha256": "9bb7f339a257714c47c33696cafcc8094b4889f24031517ebf777bac79e69bd5",
+  "sha256": "2a5ee15affef9ce3d17f0bbae02700c6837bbaf633d3296138080b0f5e8acf7b",
   "line_count": 327,
-  "size_bytes": 20384,
+  "size_bytes": 20057,
   "headings": [
     "# HATE 実装準備 Task Seed",
     "## メタデータ",

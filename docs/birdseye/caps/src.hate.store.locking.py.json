@@ -1,0 +1,36 @@
+{
+  "path": "src/hate/store/locking.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "8c0c81465e730950c805046d4b2e82ce27d8f1e4e8cd488a0e5ba60524bfc2de",
+  "line_count": 91,
+  "size_bytes": 2786,
+  "headings": [],
+  "imports": [
+    ".local_store",
+    ".models",
+    ".transaction",
+    ".versioning",
+    "__future__",
+    "collections.abc",
+    "contextlib",
+    "fcntl",
+    "functools",
+    "msvcrt",
+    "pathlib",
+    "sys",
+    "threading",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/local_store.py",
+    "src/hate/store/models.py",
+    "src/hate/store/transaction.py",
+    "src/hate/store/versioning.py"
+  ],
+  "tags": [
+    "release",
+    "store"
+  ]
+}

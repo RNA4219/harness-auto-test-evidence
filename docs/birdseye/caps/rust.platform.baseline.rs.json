@@ -1,0 +1,13 @@
+{
+  "path": "rust/platform/baseline.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "dfc028b54309028b1963a0b3ac25d93bd0bafad5a512c21c419a85584d6444ca",
+  "line_count": 288,
+  "size_bytes": 12596,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

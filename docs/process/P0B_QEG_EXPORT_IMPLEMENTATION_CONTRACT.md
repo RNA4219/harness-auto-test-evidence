@@ -35,6 +35,129 @@ optional evidence を出すことであり、release verdict を出すことで�
 P0a `precheck-decision.payload.decision` が `hard_dq` の場合、正式な QEG import 用
 `qeg-bundle.json` は生成しない。診断用に生成する場合は `metadata.debugOnly=true` とし、
 summary に release input 不可を明記する。
+現行CLIは診断用bundleも生成せず、不許可の場合は終了コード2とする。
+`ineligible`を含む許可条件全体は2.3節に従う。
+
+### 2.1 test-resultの複数実行（FIX-083〜084）
+
+同じcanonical_test_idのrecordは1つのtest nodeへ接続する。retry・matrix・shardが異なる実行は
+別々のexecution_evidence nodeとし、各recordのstatus、duration_ms、retry_index/attempt_index、retry_count、
+matrix/matrix_values、shard_index、shard_total/shard_count、flakyを保持する。
+test nodeには共通のidentity情報を残す。同じcanonical IDでframework・file・identity_components等の
+宣言が矛盾する入力は、どちらかを採用せずExportError（終了コード1）とする。
+
+- 単一観測のtest・execution IDは従来どおり。同一testに複数観測がある場合はexecution IDへ
+  正規化recordのSHA256全体を追加する。入力順序に依存せず、同じ正規化recordの再掲は一度だけ数える。
+- record_idが同じでも内容の異なるrecordは別の実行として残す。retry/shard座標の重複はP1aが
+  inconclusiveとして診断する。各executionにsource_record_id（入力にある場合）と
+  source_record_sha256を保持する。後者はalias・整数を正規化したrecordを、sort_keys=true、
+  ensure_ascii=false、空白なしのJSONとしてUTF-8でSHA256計算した値であり、元ファイルの実バイトhashではない。
+- 複数観測のtest.statusは全観測が同じstatusならその値、異なる場合はinconclusiveとする。
+  duration_msは各executionで保持し、複数観測をまとめたtest nodeには単一実行の所要時間を置かない。
+- test-resultのJSON構文・UTF-8・record/payloadのobject形式・canonical ID・実行座標の型とaliasを
+  出力前に検証する。不備はファイル名・行番号付きExportError（終了コード1）とし、既存出力を保持する。
+  番号の数値文字列・boolean・端数を拒否し、JSONの原表記で整数を判定する。
+  matrixはobject、flakyはbooleanとする。非有限値・floatの範囲を超える数値も読み込み時に診断する。
+
+この契約はP0bに届いたrecordを対象とする。P0aの明示的な実行属性の抽出とflaky申告の解釈は
+[adapter契約](ADAPTER_DIALECT_PARSER_SPEC.md)およびP1a契約を参照する。
+
+### 2.2 現在runの識別情報（FIX-090〜092）
+
+HATE-run.jsonを基準とし、test-result、coverage、contract、mutation、evidence-strengthの各record、
+precheck-decision、audit record、artifact manifestのrun_id・run_attempt・commit_shaを照合する。
+これらは既存HATE/v1 schemaの必須項目であり、欠落を現在runの値で補わない。
+run_idは空白だけでないstring、run_attemptは原表記で1以上のJSON整数、commit_shaは7〜64文字のhexとする。
+commit比較は大文字・小文字を区別せず、短縮IDと完全IDをprefixだけで同一と推定しない。
+出力時の文字表記は元の宣言を保持し、run_attemptは整数へ正規化する。
+
+run payloadのciに同じ識別項目が宣言されていれば照合する。diff-risk-testの識別項目と、
+native SARIFのrootに追加されたHATE識別項目も、存在する場合に照合する。
+履歴資料であるrisk debt lifecycleやescaped defectsの過去runには現在runの値を要求しない。
+SARIFのnative run構造や各payloadの全属性について、同一性を検証済みとするものではない。
+
+不一致・欠落・型や形式の不正は出力前にExportError（終了コード1）とする。
+照合診断にはファイル名とrecord indexを、NDJSONの構文診断には物理行番号を含める。
+P0bのJSON/NDJSON readerは文字コード・読込・JSON object形式の失敗もExportErrorへ変換する。
+重複したJSON object keyは同じ値であっても拒否し、後の値で識別情報を隠さない。
+
+検証済みrunのcommit_shaをQEG metadata.commitShaへ、各test-resultのcommit_shaをexecution_evidenceへ
+保持する。P1aはbundle・report・現在runのnodeにある宣言を照合できる。
+これらの宣言とhashだけでは実体の検証・改ざん耐性の証明にはならない。
+
+### 2.3 precheckのexport許可（FIX-093）
+
+precheck payloadのdecision、exit_code、dq_hits、soft_gaps、reasons、qeg_export_allowedは必須とする。
+decisionは既存schemaの4値、exit_codeはJSON整数値の0または2、qeg_export_allowedはboolean、
+dq_hitsとsoft_gapsはobjectの配列、reasonsはstringの配列として検証する。
+未知のdecision、欠落、型不一致は位置付きExportError（終了コード1）とする。
+exit_codeは元のJSON十進表記で検証し、booleanや数値文字列、丸めで0・2になる端数を受け入れない。
+
+正式なexportには次のすべてを必要とする。
+
+- decisionが`eligible`または`conditional`
+- qeg_export_allowedが`true`
+- exit_codeが`0`
+- dq_hitsが空配列
+
+形式検証後、1つでも不許可条件があればExportError（終了コード2）とし、
+CLIのstderrへdecisionとreasonのJSONを返す。矛盾する許可宣言で拒否条件を打ち消さない。
+従来のhard_dq診断JSONは維持する。形式不備・不許可のどちらでも、新しい出力先を作らず、
+既存のbundle・report等の内容とファイル集合を保持する。
+conditionalのsoft_gapsは許可を取り消す条件にしない。HATEのexport許可は外部QEGのrelease承認ではない。
+
+`tests/test_p0b_precheck.py`で許可条件の全32組合せ、必須項目・型・数値原表記、
+API/CLIの診断と成果物保持を検証する。配布wheelのCLIでも不許可・不正形式を確認する。
+
+### 2.4 precheckのsoft gap引継ぎ（FIX-094）
+
+HATE precheckのgate_verdict.dataへ、元payloadのdq_hits・soft_gaps・reasonsを保持する。
+soft gap objectの拡張項目も捨てず、理由とprofile・artifact等の文脈をQEG bundleから参照できるようにする。
+summaryにはconditionalまたはgapの申告がある場合に件数を表示する。
+
+soft gapだけではexportを禁止しない。任意のgapをparser failure・missing execution・risk debtへ
+読み替えず、種類に根拠のないcompleteness減点も追加しない。P1aはbundleに残したgapを
+信頼度・doctor・説明・補完提案へ接続する。詳細はP1a契約4.1節を参照する。
+
+### 2.5 生成bundleのschema検証と保存（FIX-098）
+
+生成したqeg-bundleは、既存の公開QEG compatibility schemaに適合した場合にのみ保存する。
+検証結果がvalid=falseの場合はExportError（終了コード1）とし、正式なbundleやreportを生成しない。
+CLIはHATE-E-EXPORTと、生成bundleの項目位置・期待する型などをstderrへ返す。
+表示は先頭8件と残件数に制限し、APIのExportError.report.qeg_schema_compatibilityには全エラーを保持する。
+
+出力先のmkdirと全成果物の書込みを検証後へ移す。schema不適合を検出した場合は、新しい出力先を作らず、
+既存のbundle・evidence map・report・risk debt・manual bridge・summaryの内容とファイル集合を保持する。
+成功/partialの区分はevidence completenessの既存契約に従う。schemaに適合するpartial exportを禁止しない。
+内部validatorの予期しない例外を、入力エラーや成功結果に置き換える一律捕捉はしない。
+
+この節の保証は書込み開始前のschema不適合検出が対象である。補助成果物の生成については次節に従う。
+書込み中のI/O障害について複数成果物を一括復元する仕組みではなく、残る入力payloadの検証完了も意味しない。
+`tests/test_p0b_output_validation.py`とwheel smokeで不適合の診断・既存成果物保持・
+新規ディレクトリー未作成・有効なpartial出力・内部例外の伝播を検証する。
+
+### 2.6. 補助成果物の生成と再実行
+
+risk debtとmanual bridgeを含む全成果物の構築・JSON化・UTF-8への変換可否の検証を、
+mkdirや最初のファイル書込みより前に完了する。JSON化できない値・非有限数・UTF-8化できない文字列は、
+対象の出力ファイル名と原因を含むExportError（終了コード1）にする。構築処理の予期しない内部例外は伝播する。
+この段階で失敗した場合、既存の成果物の内容・ファイル集合を保持し、新しい出力先を作らない。
+
+任意入力risk-debt-lifecycle.jsonのitemsはobject配列とし、省略時は空配列として扱う。
+各項目のage_daysは省略可能な0以上の整数値で、未指定時の既存の既定値0を維持する。
+boolean・数字文字列・null・負数・端数を拒否し、8.0等は整数8へ正規化する。
+十進表記を使って端数や大きな整数の丸めを防ぎ、入力ファイルを書き換えない。
+不正時はファイル名と$.items[index].age_days等の位置を含むExportError（終了コード1）で止める。
+この形式検証は現在のmissing executionがない場合や過去のdebtにも適用するが、履歴のrunを現在runへ付け替えない。
+
+出力先直下のrisk-debt-register.jsonとmanual-bb-bridge-requests.jsonlは、現在のmissing executionが
+ある場合だけ生成する。再実行でmissing executionが0になった場合は、新しい成果物の書込み後に
+この2ファイルを除去する。他のgapによるpartial exportでも同じ規則とし、generatedと実際の補助成果物を一致させる。
+別名のファイル・サブディレクトリー内の履歴・入力lifecycleは除去しない。debtの解消・承認を自動判定する処理ではない。
+
+書込み・旧ファイル除去の途中のI/O障害に対する一括復元や、並行writer間の排他はこの修正の対象外である。
+成功結果を返さず診断するが、途中まで更新された出力が残り得る。
+`tests/test_p0b_output_lifecycle.py`とwheel smokeで再実行・生成失敗・型と数値原表記・出力保持を検証する。
 
 ## 3. 出力
 
@@ -244,3 +367,16 @@ RanD KanoMode can treat P0b QEG export specification as `go` when:
 - No-Go triggers are explicit
 - HATE/QEG responsibility boundary is explicit
 - implementation completion remains gated by actual generated artifacts
+
+## 12. 実行要件と観測の区別（FIX-104）
+
+expected_test_refsは明示canonical test IDで照合し、従来の無prefixなJUnit参照も受け付ける。
+frameworkを越えた同名testの推定照合はしない。対応するtest nodeが存在しても、そこへ結ばれた
+execution_evidenceにpassed/failed/error/flakyかつwouldRunがtrueでない観測が必要となる。
+skip・収集のみ・未知の状態ではmissing_executionを残し、partial・risk debt・manual bridgeへ接続する。
+testとrequires_test edge、未実行の観測自体は保持する。実行済みの観測も存在する場合は実行要件を満たす。
+failed/errorによる実行要件の充足はテスト成功を意味せず、品質の最終判断はQEGに委ねる。
+
+payloadのstatus/source_statusは宣言時に非空文字列、wouldRunはbooleanを要求する。
+不正な宣言は入力ファイル・行・項目付きExportError(1)とし、出力作成・上書き前に停止する。
+元の状態、期待失敗等の印、wouldRun、parser_diagnosticsをexecution dataへ保持する。

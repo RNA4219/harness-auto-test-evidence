@@ -2,9 +2,9 @@
   "path": "docs/process/ENTERPRISE_PRODUCT_REQUIREMENTS.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "e556e62e423cc5609f053ca2b922ec9da5dd8024ff79898aa4b20e827d5a5845",
+  "sha256": "3aa37ab9c5973e929431bfb681146f60ebeea647ce7adf59c631ef68645bd3ce",
   "line_count": 365,
-  "size_bytes": 26903,
+  "size_bytes": 26580,
   "headings": [
     "# Enterprise Product Requirements",
     "## 1. 目的",

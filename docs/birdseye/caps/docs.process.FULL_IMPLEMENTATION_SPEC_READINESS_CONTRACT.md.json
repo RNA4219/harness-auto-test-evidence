@@ -2,9 +2,9 @@
   "path": "docs/process/FULL_IMPLEMENTATION_SPEC_READINESS_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "a5d56edca50d7fa56a3289421d2afd6944b5f1a654a07e69d211a65b102605cf",
+  "sha256": "5c76bb09c06be234d75d4f8fb913b78510c206c7ed4f9e9b9bc978dae3fa7178",
   "line_count": 88,
-  "size_bytes": 4560,
+  "size_bytes": 4515,
   "headings": [
     "# Full Implementation Specification Readiness Contract",
     "## 1. 目的",

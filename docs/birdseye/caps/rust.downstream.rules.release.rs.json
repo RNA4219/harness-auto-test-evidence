@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/release.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "7280b43fee061c21f37b4e391575bdab92018a25058173073a31a50a103a5eab",
+  "line_count": 1811,
+  "size_bytes": 66241,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "release"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/rules/store_migration_rebuild.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "ac48ac43342989640492532df08186f1740fc058b940c5b9e412cc37c9a003be",
+  "line_count": 614,
+  "size_bytes": 22262,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

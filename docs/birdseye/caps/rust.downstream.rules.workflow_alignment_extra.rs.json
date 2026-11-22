@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/workflow_alignment_extra.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "db3b52278d9f15620e53c2eec7f1f983b142c69cd0b06a718085c0a9d879a01e",
+  "line_count": 322,
+  "size_bytes": 10667,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "workflow"
+  ]
+}

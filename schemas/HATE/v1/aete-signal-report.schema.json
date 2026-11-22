@@ -29,6 +29,18 @@
     "profile_version": {"type": "string"},
     "dimensions": {"type": "object"},
     "signals": {"type": "array"},
+    "dimension_weights": {"const": {
+      "provenance_integrity": 20,
+      "determinism_flakiness": 15,
+      "traceability_lineage": 15,
+      "oracle_strength": 15,
+      "change_relevance": 15,
+      "coverage_adequacy": 10,
+      "cross_signal_corroboration": 5,
+      "freshness_profile_conformance": 5
+    }},
+    "aggregation_method": {"const": "weighted_mean"},
+    "weighted_score": {"type": "number", "minimum": 0, "maximum": 1},
     "reason_refs": {"type": "array"},
     "deterministic": {"const": true},
     "source_refs": {"type": "array", "items": {"type": "string"}},

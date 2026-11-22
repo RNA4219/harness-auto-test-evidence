@@ -2,12 +2,13 @@
   "path": "src/hate/p0b_graph.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "c7aa1da7de450f172e37627e0873600689281cbd71ac4e2796b7325f160a7b73",
-  "line_count": 96,
-  "size_bytes": 4140,
+  "sha256": "2e103a45fac944cbbb8449f2f9ddaca708f5c95c52d1b88d2ff3eb89ece7fb5c",
+  "line_count": 99,
+  "size_bytes": 4340,
   "headings": [],
   "imports": [
     "__future__",
+    "collections.abc",
     "pathlib",
     "typing"
   ],

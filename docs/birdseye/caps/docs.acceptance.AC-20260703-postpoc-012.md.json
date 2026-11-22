@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-012.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "914b79ecbee3c4d2690c6418982a96fc3f3ee3d991e18eb93047621c546c5245",
+  "sha256": "b1449522fa16df73d2b708324edcaa5da4cd3648ee23cc515f354382dff8f64c",
   "line_count": 79,
-  "size_bytes": 3057,
+  "size_bytes": 3055,
   "headings": [
     "# AC-20260703-postpoc-012 Store Backup/Restore DR Evidence",
     "## Scope",

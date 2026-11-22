@@ -1,0 +1,21 @@
+{
+  "path": "rust/qeg/output.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "ad467776fcd76b6f82dca15fb6c3c180a254c47ad10b38c1b79882a5bf5e6cd5",
+  "line_count": 379,
+  "size_bytes": 13465,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "qeg",
+    "release",
+    "schema",
+    "test"
+  ]
+}

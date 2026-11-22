@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/evaluation_agent_quality.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "521552fd27775adb6e7539d2e4ea68cb7875b2b8a588c13dc7e750f551851a96",
+  "line_count": 536,
+  "size_bytes": 18159,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

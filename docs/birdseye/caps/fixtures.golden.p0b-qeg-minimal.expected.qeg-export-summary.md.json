@@ -2,9 +2,9 @@
   "path": "fixtures/golden/p0b-qeg-minimal/expected/qeg-export-summary.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "ac35ce81898f52db9393ec318c7931418d481acd7aa74ecf1c953cb443e46ad0",
+  "sha256": "1e0c4ba280690362d0af9e28bb59761fc3c1c43bf1721af10e71e76e5630f518",
   "line_count": 17,
-  "size_bytes": 416,
+  "size_bytes": 399,
   "headings": [
     "# P0b QEG Export Summary"
   ],

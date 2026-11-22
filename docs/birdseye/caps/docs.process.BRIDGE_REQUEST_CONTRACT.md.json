@@ -1,0 +1,24 @@
+{
+  "path": "docs/process/BRIDGE_REQUEST_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "3d243574a205a236b9f167a120e9b17693d28e9862bd9a5013ea3b52362c0465",
+  "line_count": 117,
+  "size_bytes": 9052,
+  "headings": [
+    "# Bridge依頼契約",
+    "## 担当先と契約名",
+    "## 実行オプション",
+    "## 旧依頼と移行",
+    "## 入力パスと依頼の保存先",
+    "## 結果の取り込みと復元",
+    "## 検証"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "store",
+    "test"
+  ]
+}

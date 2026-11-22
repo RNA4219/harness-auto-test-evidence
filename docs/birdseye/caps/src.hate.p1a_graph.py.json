@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/p1a_graph.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "60a23f515ed02805dca6e46dc22c779674756409c8eb456a0d99b93ed176c5fb",
+  "line_count": 93,
+  "size_bytes": 4412,
+  "headings": [],
+  "imports": [
+    ".execution_status",
+    "__future__",
+    "collections",
+    "dataclasses",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/execution_status.py"
+  ],
+  "tags": [
+    "artifact",
+    "qeg",
+    "test"
+  ]
+}

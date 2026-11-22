@@ -1,0 +1,42 @@
+{
+  "path": "docs/process/LOCAL_STORE_IO_CONTRACT.md",
+  "role": "requirements",
+  "kind": "md",
+  "sha256": "47344e99ab4e3ec4f7ec201efeb21ef30b941c37932eca225e829e54cf50cd05",
+  "line_count": 457,
+  "size_bytes": 41836,
+  "headings": [
+    "# ローカルストアの保存と整合性検査",
+    "## ストアの版情報",
+    "## 入力JSONとbundleの検証",
+    "## 単一ファイルの保存",
+    "## 完了manifestの公開",
+    "## 索引の再読み込み",
+    "## 取り込みの確定と復元",
+    "## 索引スナップショットの検証",
+    "## 索引参照の検証",
+    "## 保存済みbundleの索引補完",
+    "## 同一bundleのrun別履歴",
+    "## run単位の整合性検査",
+    "## manifestと再取り込みの検証",
+    "## doctorの診断と旧データ",
+    "## replayの検証と集約",
+    "## 決定的な証跡出力と観測時刻",
+    "## compareの保存実体と結果指標",
+    "## 検証と残る範囲"
+  ],
+  "imports": [],
+  "links": [
+    "MAINTENANCE_FINDINGS.md"
+  ],
+  "depends_on": [
+    "docs/process/MAINTENANCE_FINDINGS.md"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "qeg",
+    "schema",
+    "store"
+  ]
+}

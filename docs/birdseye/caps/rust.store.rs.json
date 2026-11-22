@@ -1,0 +1,21 @@
+{
+  "path": "rust/store.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "97110ed7413b241efc448152189e6adcdb6b7ad7054dfa835b4f4e614d1d0b60",
+  "line_count": 245,
+  "size_bytes": 9171,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "qeg",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "fixtures/identity/canonical/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "4b8f89b6a649f10ef90e84c64e5dac39af93b9738dc6466445c16465e3b8db86",
+  "sha256": "d7172595bee652d145dd13759ff4d7a5c5473c6d081dff9e15562a1fd7e53ddb",
   "line_count": 5,
-  "size_bytes": 261,
+  "size_bytes": 256,
   "headings": [
     "# HATE-P1A-005 Canonical Identity Fixture"
   ],

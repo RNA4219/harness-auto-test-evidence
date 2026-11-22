@@ -2,9 +2,9 @@
   "path": "fixtures/aggregation/retry-matrix-shard/README.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "412b57cbb2259a9327225b9694f9af96ace1dada001fc8e954031bd50b1aefc1",
+  "sha256": "3ccccd8960e6799f4cae766414389398a470f1968a8a5d76d47816045036f920",
   "line_count": 5,
-  "size_bytes": 295,
+  "size_bytes": 290,
   "headings": [
     "# HATE-P1A-006 Retry / Matrix / Shard Aggregation Fixture"
   ],

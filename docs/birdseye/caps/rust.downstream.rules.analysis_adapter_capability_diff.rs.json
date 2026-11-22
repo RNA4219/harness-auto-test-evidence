@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/analysis_adapter_capability_diff.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "f8acd1cac880a41c34b5ec18dee3baf5a92b66e1e9fe4fb75f1c26f8b609d85d",
+  "line_count": 819,
+  "size_bytes": 29122,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "schema"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "tests/test_api_read_model_inventory.py",
   "role": "test",
   "kind": "py",
-  "sha256": "125118f5921b7133a8176d990a50e4010868c0cfbb7b8e42be2ac640af61e0ec",
+  "sha256": "2471365dddef83415d9f7ca5e79645e9af726bce94ae93da9e47bdbbb00ee430",
   "line_count": 104,
-  "size_bytes": 3198,
+  "size_bytes": 3095,
   "headings": [
     "# ============================================================================",
     "# Comprehensive Resource Inventory Tests",

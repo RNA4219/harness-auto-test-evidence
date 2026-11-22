@@ -1,0 +1,20 @@
+{
+  "path": "src/hate/execution_metadata.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "3a22e9431fda4044359ec40a5d16ed1df4ad26ef0956d7b9fd84841a0beb95ab",
+  "line_count": 54,
+  "size_bytes": 2446,
+  "headings": [],
+  "imports": [
+    ".input_values",
+    "__future__",
+    "decimal",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py"
+  ],
+  "tags": []
+}

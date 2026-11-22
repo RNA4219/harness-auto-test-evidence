@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/rules/workflow_acceptance.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "eda7fb2d1b2ca0a7335a4119304fb42a1d3b47360a6773ecb9c60fed7dfa1e9b",
+  "line_count": 415,
+  "size_bytes": 14934,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/entitlement.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "c991f604b74c7a70ee656a55b28e11ceb8afb64176a18b1f6190002bd89d2716",
+  "line_count": 404,
+  "size_bytes": 13241,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "schema"
+  ]
+}

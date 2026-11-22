@@ -556,3 +556,20 @@ P1a は肥大化を避けるため、以下の 3 つの小フェーズに分け�
   再計算性を損なわない
 - 受入項目を `EVALUATION.md` と整合させる
 - `TASK.codex.md` で実作業タスクを完了順に並列化可能にする
+
+<!-- responsibility-freeze:start -->
+## Responsibility Freeze (generated)
+
+| 境界 | 現在値 |
+|---|---:|
+| core CLI leaf | 12 |
+| bridge CLI leaf | 33 |
+| core HATE/v1 record type | 29 |
+| compat HATE/v1 record type | 311 |
+
+- canonical owner: agent-gatefield, agent-state-gate, harness-auto-test-evidence, manual-bb-test-harness, product-ops-evidence, quality-evidence-graph, shipyard-cp, workflow-cookbook
+- P1b以降は compat-v0.2 または明示的な handoff のみ。
+- product_ready=false。QEG verdict、Go/No-Go、waiver、approval、publish authorityは外部責務。
+- deprecated since: 0.3.0; remove after: 1.0.0（v0.xでは物理削除しない）。
+- machine-readable source: governance/responsibility-registry.json
+<!-- responsibility-freeze:end -->

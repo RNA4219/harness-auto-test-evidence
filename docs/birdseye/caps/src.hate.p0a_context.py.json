@@ -2,34 +2,28 @@
   "path": "src/hate/p0a_context.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "7aa9b5dcc4478dc04f96e0b33a5160d0928b9758898ac0dca55435691c608ae8",
-  "line_count": 84,
-  "size_bytes": 3022,
+  "sha256": "9c160c4dc23cdb100315d7e12d84ae3c8f35946f08c6abfdf743c4c0ef75db18",
+  "line_count": 68,
+  "size_bytes": 2879,
   "headings": [],
   "imports": [
-    ".p0a_constants",
+    ".input_values",
+    ".p0a_errors",
     ".p0a_io",
     ".p0a_records",
     "__future__",
-    "dataclasses",
-    "hashlib",
-    "json",
-    "mimetypes",
     "pathlib",
-    "posixpath",
     "re",
-    "typing",
-    "xml.etree.ElementTree"
+    "typing"
   ],
   "links": [],
   "depends_on": [
-    "src/hate/p0a_constants.py",
+    "src/hate/input_values.py",
+    "src/hate/p0a_errors.py",
     "src/hate/p0a_io.py",
     "src/hate/p0a_records.py"
   ],
   "tags": [
-    "artifact",
-    "schema",
     "workflow"
   ]
 }

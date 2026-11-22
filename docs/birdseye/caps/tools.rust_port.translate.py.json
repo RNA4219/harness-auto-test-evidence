@@ -1,0 +1,23 @@
+{
+  "path": "tools/rust_port/translate.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "cce7a29a7825c084f8e0ef7a73d3496add39c8448983488834f96af4939b2b15",
+  "line_count": 766,
+  "size_bytes": 30877,
+  "headings": [],
+  "imports": [
+    "ast",
+    "dataclasses",
+    "inspect",
+    "inspect_rules",
+    "json",
+    "re"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "enterprise"
+  ]
+}

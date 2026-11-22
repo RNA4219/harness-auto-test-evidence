@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_store_completion.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "8afc7996bc02255917733d413ec70f1b1b5a68be2a7e2c792042111f94d13920",
+  "line_count": 224,
+  "size_bytes": 10102,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "copy",
+    "hate.schema_resources",
+    "hate.store",
+    "hate.store.doctor",
+    "hate.store.replay",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "store",
+    "test"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": ".github/pull_request_template.md",
   "role": "project",
   "kind": "md",
-  "sha256": "a89ca920c57b25fd39c00ca03b49810cc19646627844c01dc1a5ddd2d635ef71",
+  "sha256": "6f0acc285886199a3330db4542eada361c0b25409e62587cf59415eb8e8d4080",
   "line_count": 15,
-  "size_bytes": 493,
+  "size_bytes": 492,
   "headings": [
     "## Summary",
     "## Verification",

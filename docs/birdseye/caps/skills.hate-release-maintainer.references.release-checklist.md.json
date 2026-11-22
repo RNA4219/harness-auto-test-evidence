@@ -2,13 +2,14 @@
   "path": "skills/hate-release-maintainer/references/release-checklist.md",
   "role": "project",
   "kind": "md",
-  "sha256": "59246af56214aa6598884466d7f17df82b200cd8094ff9da4479382678b61396",
-  "line_count": 72,
-  "size_bytes": 1856,
+  "sha256": "915e23478bd83fe6cfb487af09d583d0c73edcac51e60e117e1ac50b7a97db10",
+  "line_count": 78,
+  "size_bytes": 2157,
   "headings": [
     "# HATE Release Checklist",
     "## Evidence Sources",
     "## Required Checks",
+    "## Distribution Policy",
     "## Product Claim Guardrails",
     "## Major OSS Release Evidence"
   ],

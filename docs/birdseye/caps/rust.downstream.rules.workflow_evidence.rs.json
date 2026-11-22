@@ -1,0 +1,18 @@
+{
+  "path": "rust/downstream/rules/workflow_evidence.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "bcf95dc5cb298e0003dba331781038d8bcbd58070a48e9d42cf7734a9d369a44",
+  "line_count": 372,
+  "size_bytes": 11922,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "tools/docs/render_responsibility_docs.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "ed292bbaaea5ec5b2e056d9b680668cd180058d74a63be0274c16c23ce4e8f8c",
+  "line_count": 53,
+  "size_bytes": 3277,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "argparse",
+    "json",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "release",
+    "store"
+  ]
+}

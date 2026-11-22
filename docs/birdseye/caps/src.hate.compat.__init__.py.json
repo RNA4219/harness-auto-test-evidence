@@ -1,0 +1,13 @@
+{
+  "path": "src/hate/compat/__init__.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "42ecc5ad5771c205f2ff158704032a1dea87733637d2228e4f997103def63abd",
+  "line_count": 1,
+  "size_bytes": 38,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

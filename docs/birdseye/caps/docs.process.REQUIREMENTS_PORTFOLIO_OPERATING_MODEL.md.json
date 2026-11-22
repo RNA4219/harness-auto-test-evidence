@@ -2,9 +2,9 @@
   "path": "docs/process/REQUIREMENTS_PORTFOLIO_OPERATING_MODEL.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "27601cc674a54a819098481bb83dd1401dec98727baaf231bd9930897f9a1ca8",
+  "sha256": "f6c188a3ef6833c6e071ea598b93804cb104aca4a6ffb968ba91250d53f31da1",
   "line_count": 112,
-  "size_bytes": 4983,
+  "size_bytes": 4871,
   "headings": [
     "# Requirements Portfolio Operating Model",
     "## 1. 目的",

@@ -2,9 +2,9 @@
   "path": "src/hate/p2p3_io.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "be6ff22c81bcd827fe591aff00297d0630270ecc85cfac4b4c53b636e88cf856",
+  "sha256": "47403a05cccb07037f4ade0bb19da43be4c8405e32ce3d92e464f14ea848a181",
   "line_count": 93,
-  "size_bytes": 2756,
+  "size_bytes": 2663,
   "headings": [],
   "imports": [
     "__future__",

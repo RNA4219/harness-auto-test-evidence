@@ -1,0 +1,29 @@
+{
+  "path": "tests/test_responsibility_architecture.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "9e6bfbe847cd06c24b3913420a91fe31753d05bcedd3d999b2b756b0b2c239e1",
+  "line_count": 115,
+  "size_bytes": 4928,
+  "headings": [],
+  "imports": [
+    "argparse",
+    "copy",
+    "hate.bridge.router",
+    "hate.cli",
+    "importlib.util",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/router.py",
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "release",
+    "schema",
+    "test"
+  ]
+}

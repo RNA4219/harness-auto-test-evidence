@@ -2,14 +2,15 @@
   "path": "schemas/HATE/v1/retry-aggregation.schema.json",
   "role": "schema",
   "kind": "json",
-  "sha256": "645d970e16122fe93cd2c054d47cbabf3d8dae532ffa89bbc35a81aea8cb2360",
-  "line_count": 19,
-  "size_bytes": 739,
+  "sha256": "f46e219a20a6317c4211bf925ce2131c22f7d49377862edaaf2ded1c85bc916d",
+  "line_count": 45,
+  "size_bytes": 1501,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
-    "schema"
+    "schema",
+    "test"
   ]
 }

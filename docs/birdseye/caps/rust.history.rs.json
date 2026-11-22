@@ -1,0 +1,17 @@
+{
+  "path": "rust/history.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "808a9f9d4091a49cb12555054724e35abbcd48172c5809b6bc0c06d7f018044b",
+  "line_count": 192,
+  "size_bytes": 6388,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "store",
+    "test"
+  ]
+}

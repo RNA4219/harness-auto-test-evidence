@@ -2,34 +2,39 @@
   "path": "src/hate/store/replay.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "cac598e87d2f1799b4fe985b671f937c17cde1efe717d83341a06fe8a8fdf990",
-  "line_count": 598,
-  "size_bytes": 20716,
-  "headings": [
-    "# Supported schema versions for replay",
-    "# Schema versions that require migration (not direct replay)"
-  ],
+  "sha256": "d71b99cf99d3ce649edfbfae171c0ba204fa715d9786246424fbad8c6dbc5e25",
+  "line_count": 429,
+  "size_bytes": 16658,
+  "headings": [],
   "imports": [
     ".atomic_write",
+    ".compatibility",
     ".indexes",
+    ".integrity",
     ".local_store",
+    ".locking",
+    ".replay_report",
+    ".report_serialization",
+    ".timestamps",
     "__future__",
     "dataclasses",
     "datetime",
-    "hashlib",
-    "json",
-    "pathlib",
     "typing"
   ],
   "links": [],
   "depends_on": [
     "src/hate/store/atomic_write.py",
+    "src/hate/store/compatibility.py",
     "src/hate/store/indexes.py",
-    "src/hate/store/local_store.py"
+    "src/hate/store/integrity.py",
+    "src/hate/store/local_store.py",
+    "src/hate/store/locking.py",
+    "src/hate/store/replay_report.py",
+    "src/hate/store/report_serialization.py",
+    "src/hate/store/timestamps.py"
   ],
   "tags": [
     "artifact",
-    "release",
     "schema",
     "store"
   ]

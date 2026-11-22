@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-011.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "3fd625072dfaa6dbfb173673b37086250b97a8cc0392b4006b0ec661114bca26",
+  "sha256": "c0e0e2c28c5af5311e1cf53125039e5477f676e0cc65b3c678ff00a1145f78c8",
   "line_count": 82,
-  "size_bytes": 3078,
+  "size_bytes": 3076,
   "headings": [
     "# AC-20260703-postpoc-011 Hosted Multi-Tenant API Evidence",
     "## Scope",

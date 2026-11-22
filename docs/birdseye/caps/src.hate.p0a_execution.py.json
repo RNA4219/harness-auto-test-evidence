@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/p0a_execution.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1f951982e6e9eb63d25bcfaecbf6df3e468f88e32e70271ddf7eed27d43db63a",
+  "line_count": 105,
+  "size_bytes": 5045,
+  "headings": [],
+  "imports": [
+    ".execution_metadata",
+    ".input_values",
+    "__future__",
+    "collections.abc",
+    "hashlib",
+    "json",
+    "math",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/execution_metadata.py",
+    "src/hate/input_values.py"
+  ],
+  "tags": [
+    "adapter",
+    "test"
+  ]
+}

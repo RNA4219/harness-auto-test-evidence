@@ -1,0 +1,29 @@
+{
+  "path": "tests/test_store_run_history.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "f20cdc82e2f6a56f89faffcd8f8bdb1c33250f837c6b84ac2b8ff98aed237b0b",
+  "line_count": 76,
+  "size_bytes": 3500,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.compare",
+    "hate.store.doctor",
+    "hate.store.replay",
+    "json"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/compare.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store",
+    "test"
+  ]
+}

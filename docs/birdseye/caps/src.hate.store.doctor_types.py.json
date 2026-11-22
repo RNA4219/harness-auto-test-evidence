@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/store/doctor_types.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c70765d08bbc807ac8ab423edb4e26f0b73a86323fb22b4b8d38d870fecf356b",
+  "line_count": 143,
+  "size_bytes": 5282,
+  "headings": [],
+  "imports": [
+    ".report_serialization",
+    "__future__",
+    "dataclasses",
+    "datetime",
+    "enum",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/report_serialization.py"
+  ],
+  "tags": [
+    "artifact",
+    "schema",
+    "store"
+  ]
+}

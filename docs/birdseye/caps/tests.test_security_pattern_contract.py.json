@@ -1,0 +1,24 @@
+{
+  "path": "tests/test_security_pattern_contract.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "39b282cac00d55224361d153c4931eca009f10cee3f563d24ccf9b18132bd005",
+  "line_count": 72,
+  "size_bytes": 3451,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.security",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "release",
+    "security",
+    "test"
+  ]
+}

@@ -187,7 +187,8 @@ def _run_local_process(command: list[str], *, limits: dict[str, Any], execution:
     timeout_ms = int(limits["timeout_ms"])
     max_output_bytes = int(limits["max_output_bytes"])
     env = _minimal_environment(execution, limits)
-    creationflags = subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0
+    subprocess_module: Any = subprocess
+    creationflags = subprocess_module.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0
     started = time.monotonic()
     timed_out = False
     output_limit_exceeded = False
@@ -313,7 +314,8 @@ def _create_windows_job(process: subprocess.Popen[Any]) -> Any | None:
             ("PeakJobMemoryUsed", ctypes.c_size_t),
         ]
 
-    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    ctypes_module: Any = ctypes
+    kernel32 = ctypes_module.WinDLL("kernel32", use_last_error=True)
     handle = kernel32.CreateJobObjectW(None, None)
     if not handle:
         return None
@@ -332,7 +334,8 @@ def _close_windows_job(handle: Any) -> bool:
         return False
     import ctypes
 
-    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    ctypes_module: Any = ctypes
+    kernel32 = ctypes_module.WinDLL("kernel32", use_last_error=True)
     kernel32.CloseHandle.argtypes = [ctypes.c_void_p]
     kernel32.CloseHandle.restype = ctypes.c_int
     return bool(kernel32.CloseHandle(handle))
@@ -372,7 +375,9 @@ def _terminate_process_tree(
             time.sleep(0.1)
             completed = result.returncode == 0 or process.poll() is not None
         else:
-            os.killpg(process.pid, signal.SIGKILL)  # type: ignore[attr-defined]
+            os_module: Any = os
+            signal_module: Any = signal
+            os_module.killpg(process.pid, signal_module.SIGKILL)
             completed = True
     except OSError:
         process.kill()

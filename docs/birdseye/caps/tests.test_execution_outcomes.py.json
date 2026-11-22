@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_execution_outcomes.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "bc72238fe89a96904a65238eca2773ef5025fbe2252ec9b770fa20207db95a9f",
+  "line_count": 234,
+  "size_bytes": 13181,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "copy",
+    "hate",
+    "hate.p0a",
+    "hate.p0b",
+    "json",
+    "pathlib",
+    "pytest",
+    "shutil"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p0b.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

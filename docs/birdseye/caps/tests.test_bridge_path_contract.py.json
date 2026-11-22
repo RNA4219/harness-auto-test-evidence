@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_bridge_path_contract.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "b07fd613a72f0236a8898d98f1228a3fa216151dfcd6232a5d843b1777052fb2",
+  "line_count": 184,
+  "size_bytes": 7560,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "argparse",
+    "hate.bridge.router",
+    "hate.bridge.routes",
+    "hate.bridge.schemas",
+    "hate.cli",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/router.py",
+    "src/hate/bridge/routes.py",
+    "src/hate/bridge/schemas.py",
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

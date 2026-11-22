@@ -2,9 +2,9 @@
   "path": "fixtures/golden/p0a-minimal/expected/summary.md",
   "role": "fixture",
   "kind": "md",
-  "sha256": "92b47b3eb5c81f2bf24a3f02b041dd4fa7133313a4e577c241cfb77847625b68",
+  "sha256": "7792e1ff2e0cb7a52655013516a385f74ab195022eabe6aa3f6c91ddbe8a4a3c",
   "line_count": 11,
-  "size_bytes": 427,
+  "size_bytes": 416,
   "headings": [
     "# P0a Minimal Evidence Summary"
   ],

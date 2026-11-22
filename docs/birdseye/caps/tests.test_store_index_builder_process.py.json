@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_store_index_builder_process.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "e5db041a116ddabb550e12dd3128f58736a2f2e77ab3b647b267bf9095071710",
+  "line_count": 95,
+  "size_bytes": 3414,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.indexes",
+    "hate.store.locking",
+    "json",
+    "os",
+    "pathlib",
+    "pytest",
+    "subprocess",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/indexes.py",
+    "src/hate/store/locking.py"
+  ],
+  "tags": [
+    "store",
+    "test"
+  ]
+}

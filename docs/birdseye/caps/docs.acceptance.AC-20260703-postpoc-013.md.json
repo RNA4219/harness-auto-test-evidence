@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-013.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "205d7e99f05a21cf49a13b36e259c2561d42de27d3a3cedf7f1a992af2cf75f9",
+  "sha256": "96399124ddbff45842f63e4f074f92a5faee6f3d88d611b695c9d1de71556455",
   "line_count": 81,
-  "size_bytes": 3282,
+  "size_bytes": 3280,
   "headings": [
     "# AC-20260703-postpoc-013 Capacity Benchmark Evidence",
     "## Scope",

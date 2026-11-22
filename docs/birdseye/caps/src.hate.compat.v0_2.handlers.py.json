@@ -1,0 +1,39 @@
+{
+  "path": "src/hate/compat/v0_2/handlers.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "6281155395dee3aef9782891a15ecdf0ee4aca1e8771a98828d0f392b3862c63",
+  "line_count": 566,
+  "size_bytes": 20808,
+  "headings": [],
+  "imports": [
+    "...evaluation",
+    "...expansion_runner",
+    "...gap_closure",
+    "...p0a",
+    "...p0b",
+    "...p1a",
+    "...p1b",
+    "...p2p3",
+    "...platform_cli",
+    "...product_grade",
+    "...release",
+    "...store_legacy",
+    "...validation_cycles",
+    "__future__",
+    "argparse",
+    "json",
+    "pathlib",
+    "sys",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "store",
+    "workflow"
+  ]
+}

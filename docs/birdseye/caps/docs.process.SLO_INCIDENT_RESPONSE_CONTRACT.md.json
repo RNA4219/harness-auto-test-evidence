@@ -2,9 +2,9 @@
   "path": "docs/process/SLO_INCIDENT_RESPONSE_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "b5d6524c2243ddcd757a38c0e4c1c202676fd72e3b8320073b662379101784b0",
+  "sha256": "280e18c678fed53ebe0db787d86d208cb56ca31e3bc24f904d3b731365bea0ba",
   "line_count": 168,
-  "size_bytes": 8508,
+  "size_bytes": 8364,
   "headings": [
     "# SLO and Incident Response Contract",
     "## 1. 目的",

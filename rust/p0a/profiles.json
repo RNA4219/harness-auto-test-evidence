@@ -1,0 +1,67 @@
+{
+  "version": "hate-profile-inheritance-2026-06-29",
+  "profiles": {
+    "default": {
+      "inherits": null,
+      "rules": {
+        "require_tests": false,
+        "require_coverage": false,
+        "unsafe_artifact_policy": "quarantine"
+      }
+    },
+    "strict": {
+      "inherits": "default",
+      "rules": {
+        "require_tests": true,
+        "require_coverage": true,
+        "unsafe_artifact_policy": "soft_gap"
+      }
+    },
+    "release": {
+      "inherits": "strict",
+      "rules": {
+        "require_tests": true,
+        "require_coverage": true,
+        "unsafe_artifact_policy": "hard_dq"
+      }
+    },
+    "experimental": {
+      "inherits": "default",
+      "rules": {
+        "require_tests": false,
+        "require_coverage": false,
+        "unsafe_artifact_policy": "observe"
+      }
+    }
+  },
+  "policies": {
+    "default": {
+      "dq_policy": "p0a_hard_dq_only",
+      "soft_gap_policy": "p1a_p1b_gaps_visible",
+      "aete_policy": "uncalibrated_allowed",
+      "manual_policy": "high_risk_gap_recommended",
+      "export_policy": "qeg_partial_allowed"
+    },
+    "strict": {
+      "dq_policy": "high_risk_missing_execution_and_unsafe_required_artifact_hard",
+      "soft_gap_policy": "weak_oracle_and_missing_context_conditional",
+      "aete_policy": "medium_confidence_recommended",
+      "manual_policy": "manual_supplement_required",
+      "export_policy": "qeg_partial_allowed_with_warning"
+    },
+    "release": {
+      "dq_policy": "strict_plus_unresolved_high_critical_static_and_open_manual_required_hard",
+      "soft_gap_policy": "uncalibrated_score_conditional",
+      "aete_policy": "calibration_status_explicit_required",
+      "manual_policy": "unresolved_manual_request_blocks_eligibility",
+      "export_policy": "qeg_export_only_without_hard_dq"
+    },
+    "experimental": {
+      "dq_policy": "required_input_failures_only",
+      "soft_gap_policy": "adapter_development_gaps_softened",
+      "aete_policy": "reference_score_only",
+      "manual_policy": "manual_supplement_recommendation",
+      "export_policy": "debug_non_release_export"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "path": "src/hate/p1a_schema.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "a732e5837c63bb96b853bee41337b39bf412688590ceaede096985f56a7f7ca9",
+  "line_count": 71,
+  "size_bytes": 2820,
+  "headings": [],
+  "imports": [
+    ".p1a_io",
+    ".schema_resources",
+    "__future__",
+    "functools",
+    "jsonschema",
+    "jsonschema.exceptions",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a_io.py",
+    "src/hate/schema_resources.py"
+  ],
+  "tags": [
+    "artifact",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_store_reference_validation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "fd2731eb853e5950e93c362ace9c4c36e056c807cadffb132717be9d1cdd511c",
+  "line_count": 169,
+  "size_bytes": 7630,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.atomic_write",
+    "hate.store.doctor",
+    "hate.store.indexes",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/indexes.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store",
+    "test"
+  ]
+}

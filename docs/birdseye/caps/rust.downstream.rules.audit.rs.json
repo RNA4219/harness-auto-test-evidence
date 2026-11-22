@@ -1,0 +1,19 @@
+{
+  "path": "rust/downstream/rules/audit.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "3ea1c5201428416fa4ca56947880f1f86287382a1c57343340df178bc48e7cb7",
+  "line_count": 307,
+  "size_bytes": 11127,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "fixture",
+    "qeg",
+    "workflow"
+  ]
+}

@@ -2,9 +2,9 @@
   "path": "tools/ci/docs_freshness_gate.py",
   "role": "tooling",
   "kind": "py",
-  "sha256": "0923f2fc7c23597aac5ed963664144071a1dd354c44dde9255c5a82b61f88018",
+  "sha256": "daa8f66a5b2718e6de59746d4093926667fa1429d534feaca303b0d6c7763962",
   "line_count": 235,
-  "size_bytes": 10761,
+  "size_bytes": 10759,
   "headings": [],
   "imports": [
     "__future__",

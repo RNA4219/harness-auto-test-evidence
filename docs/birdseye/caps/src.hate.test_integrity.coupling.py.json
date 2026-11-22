@@ -2,9 +2,9 @@
   "path": "src/hate/test_integrity/coupling.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "cf4fd183edbde7682109fb7a8fa4b750bbe6327714fa7344a4ee6a6ad73cffa8",
+  "sha256": "b0a5500504d1f6682aff47972300683f013cbfd5b395688311de216899642937",
   "line_count": 576,
-  "size_bytes": 23352,
+  "size_bytes": 22802,
   "headings": [],
   "imports": [
     ".coupling_findings",

@@ -2,9 +2,9 @@
   "path": "tests/test_acceptance_pipeline.py",
   "role": "test",
   "kind": "py",
-  "sha256": "ec82d577dcd710b7131bb554c2d051dba4780d6873174c54b58ef9daf5fe8251",
+  "sha256": "9dc816cdd6128b7b2e6091e97ffb38e190cde58ee7ac2ee2ee5b9088983023f6",
   "line_count": 168,
-  "size_bytes": 5727,
+  "size_bytes": 5569,
   "headings": [],
   "imports": [
     "__future__",
@@ -20,6 +20,7 @@
   "links": [],
   "depends_on": [],
   "tags": [
+    "adapter",
     "artifact",
     "coverage",
     "fixture",

@@ -2,9 +2,9 @@
   "path": "docs/acceptance/AC-20260703-postpoc-015.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "32ca3810e64cabb1c4ae930250abc6035aea0f415d16df6b4734227e6c385d7d",
+  "sha256": "1bb5e5a23683b27767d99aed640d2725d873e2b1354689178ad91f2e7df86903",
   "line_count": 83,
-  "size_bytes": 3363,
+  "size_bytes": 3361,
   "headings": [
     "# AC-20260703-postpoc-015 Observability and Incident Evidence",
     "## Scope",

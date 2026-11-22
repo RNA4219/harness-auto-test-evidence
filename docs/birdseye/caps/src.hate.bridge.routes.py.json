@@ -1,0 +1,29 @@
+{
+  "path": "src/hate/bridge/routes.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "ede738ebcf47066b60b272a458828668c53bcc15a00629f876e628960f2b0857",
+  "line_count": 108,
+  "size_bytes": 5267,
+  "headings": [
+    "# v0.3.0の実行時の担当先・契約名を維持し、コマンド名からの推測を排除する。",
+    "# ローカルのout/manifest_out以外は、未指定の任意引数も含めて列挙する。",
+    "# argparseのrequiredは指定の要否であり、ファイルの存在条件ではない。"
+  ],
+  "imports": [
+    ".protocol",
+    "__future__"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/protocol.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "release",
+    "store",
+    "test",
+    "workflow"
+  ]
+}

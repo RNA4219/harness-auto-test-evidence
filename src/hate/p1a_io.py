@@ -1,10 +1,16 @@
 from __future__ import annotations
+
 import hashlib
 import json
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from .input_values import ParsedFloat
+from .json_input import unique_json_object
+
+
+@dataclass
 class TrustError(Exception):
     message: str
     exit_code: int = 1
@@ -50,9 +56,13 @@ def _stable_hash(value: dict[str, Any]) -> str:
     payload = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
-def _read_json(path: Path) -> dict[str, Any]:
-    with path.open("r", encoding="utf-8") as handle:
-        data = json.load(handle)
+def _read_json(path: Path, *, exact_run_numbers: bool = False) -> dict[str, Any]:
+    try:
+        with path.open("r", encoding="utf-8") as handle:
+            data = json.load(handle, parse_float=ParsedFloat if exact_run_numbers else float,
+                             object_pairs_hook=unique_json_object if exact_run_numbers else None)
+    except (OSError, UnicodeError, ValueError) as exc:
+        raise TrustError(f"cannot read JSON input {path}: {exc}", exit_code=1) from exc
     if not isinstance(data, dict):
         raise TrustError(f"{path.name} must contain a JSON object", exit_code=1)
     return data
