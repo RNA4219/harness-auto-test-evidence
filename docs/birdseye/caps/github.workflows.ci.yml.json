@@ -2,7 +2,7 @@
   "path": ".github/workflows/ci.yml",
   "role": "ci",
   "kind": "yml",
-  "sha256": "4c18eb2584c277f212dff9450fb3ae39b36622b06eabff9183d43d4aaa64809a",
+  "sha256": "e86516c08f351d09b2a157244a4f51ddb1298c8f0a2c20e295dd87b2ddeae140",
   "line_count": 237,
   "size_bytes": 11815,
   "headings": [],

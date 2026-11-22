@@ -1,5 +1,5 @@
 {
-  "generated_at": "b53e287e8268",
+  "generated_at": "83cc5e3ed73d",
   "schema_version": "HATE-birdseye/v1",
   "nodes": {
     ".github/ISSUE_TEMPLATE/bug.yml": {
@@ -40,7 +40,7 @@
     ".github/workflows/ci.yml": {
       "role": "ci",
       "caps": "docs/birdseye/caps/github.workflows.ci.yml.json",
-      "sha256": "4c18eb2584c277f212dff9450fb3ae39b36622b06eabff9183d43d4aaa64809a",
+      "sha256": "e86516c08f351d09b2a157244a4f51ddb1298c8f0a2c20e295dd87b2ddeae140",
       "line_count": 237,
       "size_bytes": 11815
     },
