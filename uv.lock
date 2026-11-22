@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version >= '3.15'",
@@ -67,7 +67,7 @@ requires-dist = [{ name = "jsonschema", extras = ["format"], specifier = ">=4.23
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "mypy", specifier = ">=1.15,<2" },
+    { name = "mypy", specifier = ">=1.15,<3" },
     { name = "pytest", specifier = ">=8.0" },
     { name = "ruff", specifier = ">=0.12,<1" },
     { name = "types-jsonschema", specifier = ">=4.23,<5" },
