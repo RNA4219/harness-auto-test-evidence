@@ -1,0 +1,35 @@
+{
+  "path": "src/hate/store/transaction.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "343965a8a3bd5acbfafb056421eed76e0654a751e35d686d27ae9e8d28a0672b",
+  "line_count": 197,
+  "size_bytes": 9327,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    ".indexes",
+    ".json_io",
+    ".models",
+    ".versioning",
+    "__future__",
+    "os",
+    "pathlib",
+    "shutil",
+    "types",
+    "typing",
+    "uuid",
+    "warnings"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/json_io.py",
+    "src/hate/store/models.py",
+    "src/hate/store/versioning.py"
+  ],
+  "tags": [
+    "store"
+  ]
+}

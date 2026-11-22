@@ -1,0 +1,13 @@
+{
+  "path": "rust/downstream/rules/expansion_portfolio_readiness.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "c7a5ab1178a0c19f4fedcd8c10af079ae91fedc12aea628356d23469d4b23353",
+  "line_count": 2856,
+  "size_bytes": 100157,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

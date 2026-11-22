@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/p0a_test_values.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "7e22a70350ad8f54771e6269f33e3164cb5d298ea37d0a1ea283dfa0a519a4a0",
+  "line_count": 97,
+  "size_bytes": 4704,
+  "headings": [],
+  "imports": [
+    ".input_values",
+    "__future__",
+    "decimal",
+    "math",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py"
+  ],
+  "tags": [
+    "test"
+  ]
+}

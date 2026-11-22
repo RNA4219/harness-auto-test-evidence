@@ -496,10 +496,13 @@ def test_p1a_explain_and_recommend_missing_execution(tmp_path: Path) -> None:
         gap_id="missing_execution",
     )
 
-    assert explain_result["reason_count"] == 1
+    assert explain_result["reason_count"] == 2
     explain_report = json.loads((explain_dir / "explain-report.json").read_text())
-    assert explain_report["reason_tree"][0]["risk_id"] == "risk-db-high"
-    assert explain_report["reason_tree"][0]["source_refs"]
+    reasons = {reason["category"]: reason for reason in explain_report["reason_tree"]}
+    assert set(reasons) == {"export", "missing_execution"}
+    assert reasons["export"]["issue"] == "partial_export" and reasons["export"]["reported_value"] == "partial"
+    assert reasons["missing_execution"]["risk_id"] == "risk-db-high"
+    assert reasons["missing_execution"]["source_refs"]
     assert explain_report["summary"]["traceability_complete"] is True
     assert explain_report["publish_gate_override"] is False
 
@@ -532,7 +535,9 @@ def test_p1a_cli_explain_and_recommend(tmp_path: Path) -> None:
     )
     assert explain_result.returncode == 0
     explain_output = json.loads(explain_result.stdout)
-    assert explain_output["reason_count"] == 1
+    assert explain_output["reason_count"] == 2
+    explanation = json.loads((explain_dir / "explain-report.json").read_text())
+    assert {reason["category"] for reason in explanation["reason_tree"]} == {"export", "missing_execution"}
 
     recommend_result = subprocess.run(
         [

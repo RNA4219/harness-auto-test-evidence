@@ -2,9 +2,9 @@
   "path": "tests/test_artifact_redaction.py",
   "role": "test",
   "kind": "py",
-  "sha256": "ca2a1255e7148bccba82741be3322a108de3c57ebd68a2bf3b5ccf5cf89751e8",
-  "line_count": 421,
-  "size_bytes": 16951,
+  "sha256": "2c85e878c4b405ab90664e615af9c5800e293eafad682f9aa67d483c44408d40",
+  "line_count": 437,
+  "size_bytes": 17637,
   "headings": [],
   "imports": [
     "__future__",

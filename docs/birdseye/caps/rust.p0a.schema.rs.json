@@ -1,0 +1,17 @@
+{
+  "path": "rust/p0a/schema.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "0cefbb4518efbe42836dfdf76f7b28dfcfc2a31d01e994484bbab5032023b689",
+  "line_count": 106,
+  "size_bytes": 4164,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "coverage",
+    "schema",
+    "test"
+  ]
+}

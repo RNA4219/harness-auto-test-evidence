@@ -1,0 +1,16 @@
+{
+  "path": "rust/p0a/tests.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "658acbb2c66e56a215d297939cff4d494252cf8d1eb922d8b6aeacdcddb9386c",
+  "line_count": 507,
+  "size_bytes": 18402,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "test"
+  ]
+}

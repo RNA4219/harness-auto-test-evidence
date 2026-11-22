@@ -1,0 +1,31 @@
+{
+  "path": "tests/test_store_version.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "decc95f0d251e7ae96a60988d08c1f44b7ce8ad706bfe3e1a9f0eb71410cb3d2",
+  "line_count": 210,
+  "size_bytes": 8643,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "contextlib",
+    "hate.store",
+    "hate.store.indexes",
+    "hate.store.locking",
+    "hate.store.transaction",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/indexes.py",
+    "src/hate/store/locking.py",
+    "src/hate/store/transaction.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

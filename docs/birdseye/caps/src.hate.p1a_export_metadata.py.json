@@ -1,0 +1,19 @@
+{
+  "path": "src/hate/p1a_export_metadata.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "49af317438bfed15f4687b78d8482a4184e4f3806b841afffa37cebfae88f2b7",
+  "line_count": 51,
+  "size_bytes": 2637,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "qeg",
+    "schema"
+  ]
+}

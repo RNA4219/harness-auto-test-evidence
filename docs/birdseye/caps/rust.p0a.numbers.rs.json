@@ -1,0 +1,17 @@
+{
+  "path": "rust/p0a/numbers.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "1912a7cf8576b032a5667ecbd7368663e44f968f27301177fd7569778652e6a2",
+  "line_count": 303,
+  "size_bytes": 10437,
+  "headings": [
+    "#[cfg(test)]"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test"
+  ]
+}

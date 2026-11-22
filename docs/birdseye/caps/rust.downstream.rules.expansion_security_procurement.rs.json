@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/expansion_security_procurement.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "9614a8e5563f6213422d4cf9dc210cb5d6d29192a2f8704ccc32fe92e87501bf",
+  "line_count": 678,
+  "size_bytes": 24335,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "security"
+  ]
+}

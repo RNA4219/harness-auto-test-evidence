@@ -1,0 +1,31 @@
+{
+  "path": "tests/test_bridge_options.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "a9c33a57d840ccccca2efe30333a2ecace43a32ddfae21397bf8643cf4a1d3d6",
+  "line_count": 105,
+  "size_bytes": 4694,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "contextlib",
+    "hate.bridge.router",
+    "hate.bridge.schemas",
+    "hate.cli",
+    "io",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/router.py",
+    "src/hate/bridge/schemas.py",
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "schema",
+    "store",
+    "test"
+  ]
+}

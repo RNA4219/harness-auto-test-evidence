@@ -7,13 +7,22 @@ external_url_detected, archive_or_binary_risk.
 
 from __future__ import annotations
 
+import json
 import re
 import uuid
-import json
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
 
+from .patterns import (
+    PATH_PATTERNS,
+    PII_PATTERNS,
+    PRIVATE_KEY_PATTERNS,
+    SECRET_PATTERNS,
+    URL_PATTERN,
+    classify_url,
+    has_secret_allowlist_marker,
+    has_synthetic_pii_marker,
+)
 
 READINESS_LEVELS = {
     "pass": 0,
@@ -38,72 +47,9 @@ POLICY_REF_BY_DETECTOR = {
     "archive_or_binary_risk": ["FR-SEC-004"],
 }
 
-SECRET_PATTERNS = [
-    (
-        "api_key_like",
-        re.compile(r"(?i)\b(?:api[_-]?key|access[_-]?key|secret[_-]?key|api_secret)\s*[:=]\s*['\"]([A-Za-z0-9_]{20,})['\"]"),
-    ),
-    (
-        "github_token_like",
-        re.compile(r"(?i)\b(?:ghp_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{22}_[A-Za-z0-9]{24})\b"),
-    ),
-    ( "aws_access_key_like", re.compile(r"(?i)\bAKIA[0-9A-Z]{16}\b") ),
-    ( "openai_like", re.compile(r"(?i)\bsk-[A-Za-z0-9_-]{40,}\b") ),
-    ( "password_like", re.compile(r"(?i)\b(?:password|passwd|credential)\s*[:=]\s*['\"][^'\"\\s]{8,}['\"]") ),
-]
-
-PRIVATE_KEY_PATTERNS = [
-    ("pem_private_key", re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----")),
-]
-
-PII_PATTERNS = [
-    ("pii_email", re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")),
-    ("pii_phone", re.compile(r"\b\+?\d{1,3}[-.\s]?(?:\d{1,4}[-.\s])?\d{2,4}[-.\s]\d{2,4}[-.\s]\d{3,4}\b")),
-    ("pii_user_id", re.compile(r"(?i)\b(?:user[_-]?id|customer[_-]?id)\s*[:=]\s*['\"][^'\"]+['\"]")),
-    ("pii_name", re.compile(r"(?i)\b(?:full[_-]?name|name)\s*[:=]\s*['\"][A-Za-z]+ [A-Za-z]+['\"]")),
-]
-
-PATH_PATTERNS = [
-    (
-        re.compile(r"[A-Za-z]:\\(?:Users|\\[Ss]hared|Program Files|ProgramData)\\[^\\\"'\\s]+"),
-        "Windows user/path",
-    ),
-    (
-        re.compile(r"/home/[A-Za-z0-9._-]+/[^\s\"']+"),
-        "Unix home path",
-    ),
-    (
-        re.compile(r"(?:^|\\s)(/etc|/var/(?:tmp|log|private))/[^\s\"']+"),
-        "Absolute/private filesystem path",
-    ),
-    (
-        re.compile(r"\.\./\.\.?|\.\\\.?\\", re.IGNORECASE),
-        "Path traversal",
-    ),
-]
-
 ARCHIVE_EXTENSIONS = {".zip", ".tar", ".gz", ".tgz", ".7z", ".rar", ".bz2"}
 BINARY_EXTENSIONS = {".exe", ".dll", ".so", ".dylib", ".bin", ".dat"}
 
-URL_PATTERN = re.compile(r"https?://[^\s\"'<>`]+")
-ALLOWLIST_URL_DOMAINS = {
-    "docs.python.org",
-    "readthedocs.io",
-    "pypi.org",
-    "github.com",
-}
-SUSPICIOUS_URL_HINTS = (
-    "x-amz-signature",
-    "x-amz-meta",
-    "signature=",
-    "signed_url",
-    "exp=",
-    "token=",
-    "oauth_token",
-    "access_token",
-    "bearer=",
-    "secret=",
-)
 BASE64_PATTERN = re.compile(r"[A-Za-z0-9+/]{200,}={0,2}")
 BASE64_DECODED_SIZE_THRESHOLD = 4096
 ARCHIVE_SIZE_LIMIT_BYTES = 50 * 1024 * 1024
@@ -120,7 +66,7 @@ def _line_number(text: str, index: int) -> int:
 def _is_allowlisted_secret(content: str, allowlist_ref: str | None, line_number: int) -> bool:
     if allowlist_ref:
         return True
-    if re.search(r"(?i)@allowlist|allowlist[_-]?fixture|test[_-]?secret|fake[_-]?secret", content):
+    if has_secret_allowlist_marker(content):
         return True
     # keep a narrow allowlist only when the signal appears on the same/adjacent lines
     return False
@@ -129,18 +75,7 @@ def _is_allowlisted_secret(content: str, allowlist_ref: str | None, line_number:
 def _is_synthetic_pii_allowed(content: str, allowlist_ref: str | None, line_number: int) -> bool:
     if allowlist_ref:
         return True
-    marker_hit = re.search(r"(?i)synthetic|@allowlist|sample[_-]?pii|fake[_-]?pii", content)
-    return bool(marker_hit)
-
-
-def _is_url_allowlisted(url: str) -> bool:
-    host = urlparse(url).hostname or ""
-    return any(host == domain or host.endswith(f".{domain}") for domain in ALLOWLIST_URL_DOMAINS)
-
-
-def _is_url_suspicious(url: str) -> bool:
-    lower = url.lower()
-    return any(token in lower for token in SUSPICIOUS_URL_HINTS)
+    return has_synthetic_pii_marker(content)
 
 
 def _readiness_max(*levels: str) -> str:
@@ -217,7 +152,7 @@ def _findings_from_matches(
     allowlist_ref: str | None,
 ) -> list[dict[str, Any]]:
     findings: list[dict[str, Any]] = []
-    for start, end, snippet in matches:
+    for start, end, _snippet in matches:
         line_number = _line_number(content, start)
         findings.append(
             {
@@ -376,9 +311,9 @@ def _scan_urls(content: str, artifact_path: str, profile: str, allowlist_ref: st
     findings: list[dict[str, Any]] = []
     for match in URL_PATTERN.finditer(content):
         url = match.group()
-        line_number = _line_number(content, match.start())
-        allowed = allowlist_ref is not None or _is_url_allowlisted(url)
-        if _is_url_suspicious(url):
+        url_policy = classify_url(url)
+        allowed = allowlist_ref is not None or url_policy == "allowlisted"
+        if url_policy == "suspicious":
             findings.extend(
                 _findings_from_matches(
                     "external_url_detector",

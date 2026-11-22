@@ -1,0 +1,17 @@
+{
+  "path": "rust/downstream/rules/release_channel.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "b4d95f17ff95f2654aaa31dbe2220f18b65bb0ecc7be2ca222a52db1fffa93dd",
+  "line_count": 588,
+  "size_bytes": 19769,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "release",
+    "schema"
+  ]
+}

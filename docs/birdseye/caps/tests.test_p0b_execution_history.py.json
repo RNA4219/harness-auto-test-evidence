@@ -1,0 +1,32 @@
+{
+  "path": "tests/test_p0b_execution_history.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "8515f10acb3e828d78e3722958898bd735420c7e7305da3b2c5b3a3da29e249f",
+  "line_count": 224,
+  "size_bytes": 11352,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "copy",
+    "hate",
+    "hate.p0a",
+    "hate.p0b",
+    "hate.p1a",
+    "json",
+    "pathlib",
+    "pytest",
+    "shutil"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p0b.py",
+    "src/hate/p1a.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

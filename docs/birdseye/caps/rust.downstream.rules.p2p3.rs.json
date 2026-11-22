@@ -1,0 +1,22 @@
+{
+  "path": "rust/downstream/rules/p2p3.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "92dba1125613747b347492cd699a6013b8b5064334913a4514ae0337afbfe746",
+  "line_count": 394,
+  "size_bytes": 14420,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "qeg",
+    "release",
+    "security",
+    "test",
+    "workflow"
+  ]
+}

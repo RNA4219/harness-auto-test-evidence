@@ -1,0 +1,27 @@
+{
+  "path": "rust/p0a.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "b699e13606b9f991070414936ec15477a67a050050fd364b87fa94525e59eed5",
+  "line_count": 513,
+  "size_bytes": 17455,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [
+    "rust/p0a/artifacts.rs",
+    "rust/p0a/coverage.rs",
+    "rust/p0a/numbers.rs",
+    "rust/p0a/profile.rs",
+    "rust/p0a/schema.rs",
+    "rust/p0a/strength.rs",
+    "rust/p0a/tests.rs"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "schema",
+    "test",
+    "workflow"
+  ]
+}

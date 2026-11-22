@@ -1,0 +1,18 @@
+{
+  "path": "rust/downstream/rules/p2p3_readiness.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "4cc5b6353f4f738ecbabbe04fb7779bdb00752c84830b5e49b54f3e1da01a558",
+  "line_count": 1867,
+  "size_bytes": 65110,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "workflow"
+  ]
+}

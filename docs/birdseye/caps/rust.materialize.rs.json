@@ -1,0 +1,15 @@
+{
+  "path": "rust/materialize.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "30b2ece9d5e960203c602432aa5d211b15ae32311b399a1e16e2b4090e3b0ede",
+  "line_count": 155,
+  "size_bytes": 5277,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "path": "rust/main.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "3867325a5468bc0f4ad28f45678c082f1f511c00f68876505aa30daf5276b522",
+  "line_count": 110,
+  "size_bytes": 3726,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [
+    "rust/bridge.rs",
+    "rust/cli.rs",
+    "rust/downstream.rs",
+    "rust/error.rs",
+    "rust/history.rs",
+    "rust/io.rs",
+    "rust/materialize.rs",
+    "rust/p0a.rs",
+    "rust/platform.rs",
+    "rust/process.rs",
+    "rust/qeg.rs",
+    "rust/roster.rs",
+    "rust/runner.rs",
+    "rust/store.rs",
+    "rust/trust.rs"
+  ],
+  "tags": [
+    "qeg",
+    "release",
+    "store",
+    "workflow"
+  ]
+}

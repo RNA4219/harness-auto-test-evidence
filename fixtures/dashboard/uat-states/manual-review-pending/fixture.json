@@ -1,6 +1,7 @@
 {
   "description": "Manual review required and pending - owner visible",
   "input": {
+    "now": "2026-07-01T00:00:00Z",
     "manual_review_requests": [
       {
         "request_id": "review-001",

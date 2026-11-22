@@ -1,0 +1,37 @@
+{
+  "path": "tests/test_store_doctor_reports.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "5f0096a7f31e2eced2bc790b4c3e0f074264bb3317898f2453ebb009c3c8f027",
+  "line_count": 240,
+  "size_bytes": 10744,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hashlib",
+    "hate.store",
+    "hate.store.doctor",
+    "hate.store.doctor_types",
+    "hate.store.replay",
+    "json",
+    "os",
+    "pathlib",
+    "pytest",
+    "shutil",
+    "subprocess",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/doctor.py",
+    "src/hate/store/doctor_types.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store",
+    "test"
+  ]
+}

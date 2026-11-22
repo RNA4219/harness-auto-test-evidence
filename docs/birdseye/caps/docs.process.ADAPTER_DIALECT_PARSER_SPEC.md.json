@@ -2,25 +2,33 @@
   "path": "docs/process/ADAPTER_DIALECT_PARSER_SPEC.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "0260f5fa2a3e1db115fcb98a32f607778d67620c8412a3d98c55988fb2a803c3",
-  "line_count": 63,
-  "size_bytes": 2494,
+  "sha256": "51fc31680d6d24f4237131f100067c9c98f942bcfcdffbf0001edcc8b987f20c",
+  "line_count": 155,
+  "size_bytes": 10376,
   "headings": [
     "# Adapter Dialect Parser Specification",
     "## 1. Purpose",
     "## 2. Dialect Matrix",
     "## 3. Parser Output Requirements",
     "## 4. Failure Classes",
-    "## 5. Conformance Requirement"
+    "## 5. Conformance Requirement",
+    "## 6. P0aの実行座標と識別（FIX-086〜089）",
+    "## 7. テスト識別値と実行時間（FIX-101〜102）",
+    "## 8. 元の状態と未実行の保持（FIX-103〜104）"
   ],
   "imports": [],
-  "links": [],
-  "depends_on": [],
+  "links": [
+    "P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md"
+  ],
+  "depends_on": [
+    "docs/process/P1A_TRUST_HARDENING_IMPLEMENTATION_CONTRACT.md"
+  ],
   "tags": [
     "adapter",
     "artifact",
     "coverage",
     "fixture",
+    "qeg",
     "test"
   ]
 }

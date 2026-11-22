@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).resolve().parents[1]
 def _load_scope_gate():
     import importlib.util
@@ -58,3 +60,56 @@ def test_scope_gate_rejects_unregistered_record_type() -> None:
     )
     findings = _check(registry, modified_schemas)
     assert any("record registry mismatch" in finding for finding in findings)
+
+
+def test_every_bridge_leaf_matches_runtime_route() -> None:
+    import argparse
+    import json
+
+    from hate.bridge.router import _route_for
+    from hate.cli import build_parser
+
+    registry = json.loads((ROOT / "governance/responsibility-registry.json").read_text(encoding="utf-8"))
+    expected = {item["cli"]: item for item in registry["cli_surfaces"] if item["classification"] == "bridge"}
+    checked = set()
+
+    def visit(parser, selectors, parts):
+        actions = [action for action in parser._actions if isinstance(action, argparse._SubParsersAction)]
+        if not actions:
+            command = " ".join(parts)
+            if command in expected:
+                route = _route_for(argparse.Namespace(**selectors))
+                assert route.command_path == command
+                assert route.canonical_owner == expected[command]["owner_repo"], command
+                assert route.canonical_contract == expected[command]["canonical_contract"], command
+                checked.add(command)
+        for action in actions:
+            for name, child in action.choices.items():
+                visit(child, {**selectors, action.dest: name}, [*parts, name])
+
+    visit(build_parser(), {}, [])
+    assert checked == set(expected)
+
+
+@pytest.mark.parametrize("field", ["owner_repo", "canonical_contract"])
+def test_scope_gate_rejects_cli_route_metadata_drift(field) -> None:
+    import json
+
+    registry = json.loads((ROOT / "governance/responsibility-registry.json").read_text(encoding="utf-8"))
+    schemas = json.loads((ROOT / "schemas/HATE/v1/schema-registry.json").read_text(encoding="utf-8"))
+    target = next(item for item in registry["cli_surfaces"] if item["cli"] == "platform verdict")
+    target[field] = "incorrect"
+    findings = _load_scope_gate()._check(registry, schemas)
+    assert any("CLI route mismatch: platform verdict" in finding for finding in findings)
+
+
+def test_unregistered_platform_command_has_no_fallback_owner(capsys, tmp_path) -> None:
+    from argparse import Namespace
+
+    from hate.bridge.router import dispatch_bridge
+    from hate.cli import build_parser
+
+    args = Namespace(command="platform", platform_command="unregistered", bridge_provider="handoff", out=tmp_path / "out")
+    assert dispatch_bridge(args, build_parser()) == 2
+    assert "unregistered bridge command" in capsys.readouterr().err
+    assert not args.out.exists()

@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/expansion_disaster_recovery.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "cfdc80e53ea7db4b088f2be1d28d31c093a94b65b0acaa06301e37cb08e4b0c0",
+  "line_count": 361,
+  "size_bytes": 12829,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

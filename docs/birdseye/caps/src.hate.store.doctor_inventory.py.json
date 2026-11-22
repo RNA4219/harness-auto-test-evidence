@@ -1,0 +1,32 @@
+{
+  "path": "src/hate/store/doctor_inventory.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "89b561dc9919ed3fe6a086c3bc4991ccfe2c7606a35d9be68232607b14acdd2c",
+  "line_count": 104,
+  "size_bytes": 5528,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    ".doctor_types",
+    ".indexes",
+    ".models",
+    ".references",
+    "__future__",
+    "dataclasses",
+    "pathlib"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/doctor_types.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/models.py",
+    "src/hate/store/references.py"
+  ],
+  "tags": [
+    "artifact",
+    "qeg",
+    "store"
+  ]
+}

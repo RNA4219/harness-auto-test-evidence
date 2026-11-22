@@ -1,17 +1,31 @@
 from __future__ import annotations
+
 import hashlib
 import json
 import re
 from pathlib import Path
 from typing import Any
 
+from .input_values import ParsedFloat
+from .json_input import unique_json_object
+from .p0a_errors import PrecheckError
+
+
 def _read_optional_json(path: Path) -> dict[str, Any]:
     if not path.exists():
         return {}
-    with path.open("r", encoding="utf-8") as handle:
-        data = json.load(handle)
+    return _read_json_object(path)
+
+
+def _read_json_object(path: Path, *, exact_run_numbers: bool = False) -> dict[str, Any]:
+    try:
+        with path.open("r", encoding="utf-8") as handle:
+            data = json.load(handle, parse_float=ParsedFloat if exact_run_numbers else float,
+                             object_pairs_hook=unique_json_object if exact_run_numbers else None)
+    except (OSError, UnicodeError, ValueError) as exc:
+        raise PrecheckError(f"cannot read JSON input {path}: {exc}", exit_code=1) from exc
     if not isinstance(data, dict):
-        raise ValueError(f"{path.name} must contain a JSON object")
+        raise PrecheckError(f"{path.name} must contain a JSON object", exit_code=1)
     return data
 
 def _stable_sha256(value: Any) -> str:

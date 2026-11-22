@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_run_scope.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "73956a1fc8197ad58566ed393c347f3be1316a6ea6efd50b138ec7eb34c9430e",
+  "line_count": 325,
+  "size_bytes": 15603,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "copy",
+    "hate",
+    "hate.p0a",
+    "hate.p0b",
+    "json",
+    "pathlib",
+    "pytest",
+    "shutil"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p0b.py"
+  ],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

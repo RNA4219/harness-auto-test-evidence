@@ -1,0 +1,15 @@
+{
+  "path": "rust/platform/notify.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "dcd34392189619d4242d0b021c360b9d1b2034824ad414a228b897776a4f1e3e",
+  "line_count": 250,
+  "size_bytes": 10070,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import shutil
 import sys
 import tempfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 from .schemas import BridgeValidationError, validate_bridge_record
@@ -17,10 +18,14 @@ class BridgeMaterializeError(ValueError):
     pass
 
 
+class BridgeRecoveryError(BridgeMaterializeError):
+    """復元にも失敗した場合、一時領域のバックアップを保持する。"""
+
+
 def _load(path: Path) -> dict[str, Any]:
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         raise BridgeMaterializeError(f"cannot read JSON {path}: {exc}") from exc
     if not isinstance(value, dict):
         raise BridgeMaterializeError(f"JSON root must be an object: {path}")
@@ -45,40 +50,134 @@ def _validate_pair(request: dict[str, Any], result: dict[str, Any]) -> None:
         raise BridgeMaterializeError(f"bridge result is missing expected output types: {', '.join(missing)}")
 
 
+def _output_sources(result: dict[str, Any], result_path: Path, out_dir: Path) -> list[tuple[Path, str, str]]:
+    sources: list[tuple[Path, str, str]] = []
+    target_names: set[str] = set()
+    if out_dir.exists() and not out_dir.is_dir():
+        raise BridgeMaterializeError(f"output path is not a directory: {out_dir}")
+    for output in result["output_refs"]:
+        source = Path(output["path"])
+        if not source.is_absolute():
+            source = result_path.parent / source
+        target_name = output["target_name"]
+        if (
+            target_name in {"", ".", ".."}
+            or PurePosixPath(target_name).name != target_name
+            or PureWindowsPath(target_name).name != target_name
+            or any(char in target_name for char in '<>:"/\\|?*\x00')
+            or target_name.endswith((" ", "."))
+        ):
+            raise BridgeMaterializeError(f"unsafe target_name: {target_name}")
+        key = target_name.casefold()
+        if key in target_names:
+            raise BridgeMaterializeError(f"duplicate target_name: {target_name}")
+        target_names.add(key)
+        if (out_dir / target_name).is_dir():
+            raise BridgeMaterializeError(f"target conflicts with a directory: {target_name}")
+        if not source.is_file():
+            raise BridgeMaterializeError(f"bridge output does not exist: {source}")
+        sources.append((source, target_name, output["sha256"]))
+    return sources
+
+
+def _publish(stage: Path, out_dir: Path, names: list[str]) -> None:
+    backups = stage / "backups"
+    backups.mkdir()
+    existed = out_dir.exists()
+    recovery = {
+        "out_dir": str(out_dir.resolve()),
+        "directory_existed": existed,
+        "targets": [
+            {"name": name, "existed": (out_dir / name).exists() or (out_dir / name).is_symlink()}
+            for name in names
+        ],
+    }
+    (stage / "recovery.json").write_text(json.dumps(recovery, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    saved: list[str] = []
+    published: list[str] = []
+    created = False
+    try:
+        out_dir.mkdir(exist_ok=True)
+        created = not existed
+        for name in names:
+            target = out_dir / name
+            if target.is_dir():
+                raise IsADirectoryError(f"target conflicts with a directory: {target}")
+            if target.exists() or target.is_symlink():
+                os.replace(target, backups / name)
+                saved.append(name)
+            os.replace(stage / "files" / name, target)
+            published.append(name)
+    except BaseException as exc:
+        recovery_errors = []
+        for name in reversed(names):
+            try:
+                if name in saved:
+                    os.replace(backups / name, out_dir / name)
+                elif name in published:
+                    (out_dir / name).unlink()
+            except OSError as recovery_exc:
+                recovery_errors.append(f"{name}: {recovery_exc}")
+        if created and not recovery_errors:
+            try:
+                out_dir.rmdir()
+            except OSError as recovery_exc:
+                recovery_errors.append(str(recovery_exc))
+        if recovery_errors:
+            raise BridgeRecoveryError(
+                f"bridge publish failed ({exc}); rollback incomplete: {'; '.join(recovery_errors)}; "
+                f"recovery files retained at {stage}"
+            ) from exc
+        if not isinstance(exc, OSError):
+            raise
+        raise BridgeMaterializeError(f"bridge publish failed; previous outputs restored: {exc}") from exc
+
+
 def materialize_bridge_result(request_path: Path, result_path: Path, out_dir: Path) -> dict[str, Any]:
     request = _load(request_path)
     result = _load(result_path)
     _validate_pair(request, result)
-
-    verified: list[tuple[Path, str]] = []
-    for output in result["output_refs"]:
-        source = Path(output["path"])
-        target_name = output["target_name"]
-        if Path(target_name).name != target_name or target_name in {"", ".", ".."}:
-            raise BridgeMaterializeError(f"unsafe target_name: {target_name}")
-        if not source.is_file():
-            raise BridgeMaterializeError(f"bridge output does not exist: {source}")
-        import hashlib
-
-        actual_hash = hashlib.sha256(source.read_bytes()).hexdigest()
-        if actual_hash != output["sha256"]:
-            raise BridgeMaterializeError(f"bridge output hash mismatch: {source}")
-        verified.append((source, target_name))
-
-    out_dir.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix=".hate-materialize-", dir=out_dir.parent) as temp:
-        stage = Path(temp)
-        for source, target_name in verified:
-            shutil.copy2(source, stage / target_name)
-        out_dir.mkdir(parents=True, exist_ok=True)
-        for _, target_name in verified:
-            os.replace(stage / target_name, out_dir / target_name)
+    sources = _output_sources(result, result_path.resolve(), out_dir)
+    parent = out_dir.parent.resolve()
+    parent.mkdir(parents=True, exist_ok=True)
+    stage = Path(tempfile.mkdtemp(prefix=".hate-materialize-", dir=parent))
+    preserve_stage = False
+    try:
+        files = stage / "files"
+        files.mkdir()
+        for source, target_name, expected_hash in sources:
+            staged = files / target_name
+            shutil.copyfile(source, staged)
+            with staged.open("rb") as stream:
+                actual_hash = hashlib.file_digest(stream, "sha256").hexdigest()
+            if actual_hash != expected_hash:
+                raise BridgeMaterializeError(f"bridge output hash mismatch: {source}")
+        _publish(stage, out_dir, [name for _, name, _ in sources])
+    except BridgeRecoveryError:
+        preserve_stage = True
+        raise
+    except BridgeMaterializeError:
+        raise
+    except OSError as exc:
+        raise BridgeMaterializeError(f"cannot materialize bridge outputs: {exc}") from exc
+    except BaseException:
+        preserve_stage = True
+        raise
+    finally:
+        if not preserve_stage:
+            # 削除対象を、今回作成した一時領域の親と名前で確認する。
+            if stage.resolve().parent != parent or not stage.name.startswith(".hate-materialize-"):
+                raise BridgeRecoveryError(f"unexpected staging path; retained at {stage}")
+            try:
+                shutil.rmtree(stage)
+            except OSError as exc:
+                print(f"HATE-W-BRIDGE: staging cleanup failed; retained at {stage}: {exc}", file=sys.stderr)
 
     return {
         "status": "materialized",
         "bridge_id": request["bridge_id"],
         "canonical_owner": request["owner"],
-        "generated": [target for _, target in verified],
+        "generated": [target for _, target, _ in sources],
         "out_dir": str(out_dir),
     }
 

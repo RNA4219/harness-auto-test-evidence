@@ -1,0 +1,13 @@
+{
+  "path": "rust/downstream/rules/p1b_alignment.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "9df45d410cf564436e65ceba4c637eec66a582edf34cfbf135ce2a6067a9a6e6",
+  "line_count": 889,
+  "size_bytes": 36821,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

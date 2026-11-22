@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/enterprise_audit.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "ae2ab9493802a444759626346a6ae5bd75e85c47e8968c18242a38f580d8e522",
+  "line_count": 551,
+  "size_bytes": 19304,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "enterprise"
+  ]
+}

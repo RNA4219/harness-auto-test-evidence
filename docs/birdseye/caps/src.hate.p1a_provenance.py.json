@@ -1,0 +1,26 @@
+{
+  "path": "src/hate/p1a_provenance.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c8217f5ef80b2ebaf59cba833881cff07291aa0c4455fbfab042d58ea88ab4e6",
+  "line_count": 92,
+  "size_bytes": 3915,
+  "headings": [],
+  "imports": [
+    ".p1a_run_scope",
+    "__future__",
+    "dataclasses",
+    "jsonschema",
+    "re",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a_run_scope.py"
+  ],
+  "tags": [
+    "artifact",
+    "qeg",
+    "schema"
+  ]
+}

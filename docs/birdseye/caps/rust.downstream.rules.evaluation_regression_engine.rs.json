@@ -1,0 +1,13 @@
+{
+  "path": "rust/downstream/rules/evaluation_regression_engine.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "c3883d6e500a849539eed80d2fd55ccaf120fbedd196540040c324772a14bf71",
+  "line_count": 364,
+  "size_bytes": 12504,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

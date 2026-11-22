@@ -1,23 +1,25 @@
 from __future__ import annotations
+
 from pathlib import Path
 from typing import Any
-from . import __version__
+
 from .p0b_graph import append_gate_changed_and_risk_nodes
-from .p0b_inputs import load_input_bundle, source_ref as fixture_source_ref
+from .p0b_inputs import load_input_bundle
+from .p0b_inputs import source_ref as fixture_source_ref
 from .p0b_outputs import write_export_outputs
 from .p0b_phases import (
     append_artifact_nodes,
     append_contract_nodes,
     append_coverage_nodes,
-    append_evidence_strength_nodes,
     append_escaped_defect_nodes,
+    append_evidence_strength_nodes,
     append_mutation_nodes,
     append_sarif_finding_nodes,
     append_test_execution_nodes,
     append_test_obligation_edges,
     build_artifact_index,
 )
-from .p0b_types import ExportError
+from .p0b_precheck import authorize_precheck
 
 
 def export_qeg(
@@ -33,12 +35,10 @@ def export_qeg(
     Returns:
         Export result with generated artifacts and completeness
     Raises:
-        ExportError: If export fails or precheck decision is hard_dq
+        ExportError: If inputs are invalid or precheck does not permit export
     """
     inputs = load_input_bundle(fixture_dir)
     fixture_dir = inputs.fixture_dir
-    out_dir.mkdir(parents=True, exist_ok=True)
-    version = source_version or __version__
     p0a_dir = inputs.p0a_dir
     diff_risk_path = inputs.diff_risk_path
     run_record = inputs.run_record
@@ -52,17 +52,12 @@ def export_qeg(
     escaped_defects_path = inputs.escaped_defects_path
     artifact_manifest = inputs.artifact_manifest
     precheck_decision = inputs.precheck_decision
-    audit_record = inputs.audit_record
     sarif_record = inputs.sarif_record
-    source_ref = lambda path: fixture_source_ref(fixture_dir, path)
-    decision = precheck_decision.get("payload", {}).get("decision", "")
-    if decision == "hard_dq":
-        raise ExportError(
-            "P0a precheck decision is hard_dq - QEG export not allowed",
-            exit_code=2,
-            report={"decision": "hard_dq", "reason": "P0a precheck disqualified"},
-            out_dir=out_dir,
-        )
+
+    def source_ref(path: Path) -> str:
+        return fixture_source_ref(fixture_dir, path)
+
+    decision = authorize_precheck(precheck_decision, p0a_dir / "precheck-decision.json", out_dir)
     diff_risk_test = inputs.diff_risk_test
     risk_debt_lifecycle = inputs.risk_debt_lifecycle
     created_at = run_record.get("created_at", "")
@@ -170,6 +165,7 @@ def export_qeg(
         artifact_by_id=artifact_by_id,
         contract_by_id=contract_by_id,
         mutation_by_id=mutation_by_id,
+        nodes=nodes,
         edges=edges,
         unsupported_claims=unsupported_claims,
         unsafe_artifacts=unsafe_artifacts,

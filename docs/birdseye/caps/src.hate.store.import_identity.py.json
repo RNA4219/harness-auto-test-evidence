@@ -1,0 +1,33 @@
+{
+  "path": "src/hate/store/import_identity.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "e36ace6419b27bfe6bb1b426e21d6797be5eb54c1795184a4765b8f06afed009",
+  "line_count": 57,
+  "size_bytes": 3043,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    ".bundle_validation",
+    ".indexes",
+    ".json_io",
+    ".models",
+    ".references",
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/bundle_validation.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/json_io.py",
+    "src/hate/store/models.py",
+    "src/hate/store/references.py"
+  ],
+  "tags": [
+    "artifact",
+    "store"
+  ]
+}

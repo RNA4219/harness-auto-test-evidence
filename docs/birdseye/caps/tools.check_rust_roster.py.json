@@ -1,0 +1,31 @@
+{
+  "path": "tools/check_rust_roster.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "c0a29b02f0abe7b0eafd9129a4ce05f1b61cbd5cf6ba8f4fd1e076d3ed2409bd",
+  "line_count": 130,
+  "size_bytes": 6126,
+  "headings": [],
+  "imports": [
+    "check_rust_p0a",
+    "contextlib",
+    "hate.cli",
+    "io",
+    "json",
+    "os",
+    "pathlib",
+    "platform",
+    "shutil",
+    "subprocess",
+    "sys",
+    "tempfile"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/cli.py"
+  ],
+  "tags": [
+    "artifact",
+    "release"
+  ]
+}

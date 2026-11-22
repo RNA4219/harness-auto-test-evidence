@@ -1,0 +1,25 @@
+{
+  "path": "src/hate/p0b_lifecycle.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "1a3cc08c63f786ca76997bd3fc80df899044696d6d0a61db1c0df61183fe4945",
+  "line_count": 43,
+  "size_bytes": 1573,
+  "headings": [],
+  "imports": [
+    ".input_values",
+    ".p0b_io",
+    ".p0b_types",
+    "__future__",
+    "decimal",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/p0b_io.py",
+    "src/hate/p0b_types.py"
+  ],
+  "tags": []
+}

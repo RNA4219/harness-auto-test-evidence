@@ -278,7 +278,10 @@ class TestManualReviewQueueViewModel:
         fixture = load_fixture(MANUAL_REVIEW_FIXTURE)
         input_data = fixture["input"]
 
-        view = build_manual_review_queue_view_model(input_data["manual_review_requests"])
+        view = build_manual_review_queue_view_model(
+            input_data["manual_review_requests"],
+            now=input_data["now"],
+        )
 
         expected = fixture["expected"]
         assert view.total_count == expected["total_count"]

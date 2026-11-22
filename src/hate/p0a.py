@@ -1,11 +1,15 @@
 from __future__ import annotations
 
-import json
 import re
 from pathlib import Path
 from typing import Any
 
 from . import __version__
+from .p0a_evidence_strength import (
+    _build_evidence_strength_records,
+    _evidence_strength_distribution,
+    _parse_stryker_mutation,
+)
 from .p0a_support import (
     PrecheckError,
     _artifact_manifest,
@@ -13,18 +17,18 @@ from .p0a_support import (
     _dq,
     _dq_hits_from_control,
     _parse_cobertura,
+    _parse_coveragepy_json,
     _parse_jacoco,
     _parse_jest_json,
     _parse_junit,
     _parse_lcov,
     _parse_pytest_json,
     _parse_vitest_json,
-    _parse_coveragepy_json,
-    _read_sarif,
     _precheck_decision,
     _quarantine_report,
     _read_context,
     _read_optional_json,
+    _read_sarif,
     _run_record,
     _sarif_dq_hits,
     _schema_validation_hits,
@@ -32,12 +36,8 @@ from .p0a_support import (
     _write_json,
     _write_ndjson,
 )
-from .p0a_evidence_strength import (
-    _build_evidence_strength_records,
-    _evidence_strength_distribution,
-    _parse_stryker_mutation,
-)
-from .profile import evaluate_profile, resolve_profile
+from .profile import UnknownProfileError, evaluate_profile, resolve_profile
+
 
 def generate_p0a(
     input_dir: Path,
@@ -47,9 +47,11 @@ def generate_p0a(
     profile: str = "default",
 ) -> dict[str, Any]:
     input_dir = input_dir.resolve()
-    out_dir.mkdir(parents=True, exist_ok=True)
     version = source_version or __version__
-    resolve_profile(profile)
+    try:
+        resolve_profile(profile)
+    except UnknownProfileError as exc:
+        raise PrecheckError(str(exc), exit_code=1) from exc
 
     context_path = _first_existing(input_dir, ["github-context.json", "ci-context.json", "generic-ci-context.json"])
     if context_path is None:
@@ -145,10 +147,8 @@ def generate_p0a(
         except Exception as exc:  # noqa: BLE001
             sarif_error = _dq("HATE-DQ-002", f"sarif parse failure: {exc}", sarif_path.name)
 
-    # Only add test adapter errors if no test records were produced
-    # (junit.xml absence is OK if pytest/vitest/jest produces results)
-    if not test_records and test_adapter_errors:
-        dq_hits.extend(test_adapter_errors)
+    # 未指定adapterは空の結果を返す。存在する入力の解析失敗は他adapterの成功で消さない。
+    dq_hits.extend(test_adapter_errors)
     # Coverage adapter errors always count (malformed coverage is serious)
     dq_hits.extend(coverage_adapter_errors)
     dq_hits.extend(mutation_adapter_errors)
@@ -209,6 +209,7 @@ def generate_p0a(
     if mutation_records:
         outputs["HATE-mutation.ndjson"] = mutation_records
 
+    out_dir.mkdir(parents=True, exist_ok=True)
     _write_json(out_dir / "HATE-run.json", run_record)
     _write_ndjson(out_dir / "HATE-test-results.ndjson", test_records)
     _write_ndjson(out_dir / "HATE-coverage.ndjson", coverage_records)

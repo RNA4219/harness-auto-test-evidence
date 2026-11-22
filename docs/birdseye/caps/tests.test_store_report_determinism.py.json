@@ -1,0 +1,39 @@
+{
+  "path": "tests/test_store_report_determinism.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "2cc54d1071779ca72c3dfda08e221b0dd57ea67641593f0117118cfcb667277f",
+  "line_count": 156,
+  "size_bytes": 7718,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hashlib",
+    "hate.schema_resources",
+    "hate.store",
+    "hate.store.compare",
+    "hate.store.doctor",
+    "hate.store.replay",
+    "json",
+    "os",
+    "pathlib",
+    "pytest",
+    "shutil",
+    "subprocess",
+    "sys"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py",
+    "src/hate/store/compare.py",
+    "src/hate/store/doctor.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

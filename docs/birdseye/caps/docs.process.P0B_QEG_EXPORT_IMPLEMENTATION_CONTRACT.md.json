@@ -2,13 +2,19 @@
   "path": "docs/process/P0B_QEG_EXPORT_IMPLEMENTATION_CONTRACT.md",
   "role": "requirements",
   "kind": "md",
-  "sha256": "53d89af4b527cd0123d6183201ea5dc91230a7f35c3ea67694d59bb3a12def89",
-  "line_count": 246,
-  "size_bytes": 7945,
+  "sha256": "f03cee4f82ef6899d16fae011a41cc14c53fad7aa0b8a5c1631824f7b5a13d14",
+  "line_count": 382,
+  "size_bytes": 19424,
   "headings": [
     "# P0b QEG Export Implementation Contract",
     "## 1. 目的",
     "## 2. 入力",
+    "### 2.1 test-resultの複数実行（FIX-083〜084）",
+    "### 2.2 現在runの識別情報（FIX-090〜092）",
+    "### 2.3 precheckのexport許可（FIX-093）",
+    "### 2.4 precheckのsoft gap引継ぎ（FIX-094）",
+    "### 2.5 生成bundleのschema検証と保存（FIX-098）",
+    "### 2.6. 補助成果物の生成と再実行",
     "## 3. 出力",
     "## 4. `qeg-bundle.json` Contract",
     "### 4.1 Node ID Rules",
@@ -19,11 +25,16 @@
     "## 8. Fixture Contract",
     "## 9. CLI Contract",
     "## 10. Shipyard Acceptance",
-    "## 11. Go Criteria"
+    "## 11. Go Criteria",
+    "## 12. 実行要件と観測の区別（FIX-104）"
   ],
   "imports": [],
-  "links": [],
-  "depends_on": [],
+  "links": [
+    "ADAPTER_DIALECT_PARSER_SPEC.md"
+  ],
+  "depends_on": [
+    "docs/process/ADAPTER_DIALECT_PARSER_SPEC.md"
+  ],
   "tags": [
     "adapter",
     "artifact",
@@ -32,7 +43,6 @@
     "qeg",
     "release",
     "schema",
-    "test",
-    "workflow"
+    "test"
   ]
 }

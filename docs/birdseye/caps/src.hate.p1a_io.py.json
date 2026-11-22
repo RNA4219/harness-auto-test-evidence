@@ -2,11 +2,13 @@
   "path": "src/hate/p1a_io.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "0e8c193c7d61f793e027968119b296ba9a676ccfe55e99dd82ec05dc93e462c2",
-  "line_count": 61,
-  "size_bytes": 2203,
+  "sha256": "8b60c68bc48d7704471c984b0986676aa90333fca4d2e7bf7cbd4adc0ca64587",
+  "line_count": 71,
+  "size_bytes": 2649,
   "headings": [],
   "imports": [
+    ".input_values",
+    ".json_input",
     "__future__",
     "dataclasses",
     "hashlib",
@@ -15,7 +17,10 @@
     "typing"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/json_input.py"
+  ],
   "tags": [
     "artifact",
     "fixture"

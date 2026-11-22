@@ -2,14 +2,15 @@
   "path": "schemas/HATE/v1/aete-signal-report.schema.json",
   "role": "schema",
   "kind": "json",
-  "sha256": "d4e8ef6fead684c2b9e649ede245c6b577fa8e5d757ad306b2f068ccfedbdd80",
-  "line_count": 39,
-  "size_bytes": 1171,
+  "sha256": "2ecd34185a793b90716d2d03b74f9e636f0c77d5144ec4b95ec5eb2eaea180ca",
+  "line_count": 51,
+  "size_bytes": 1613,
   "headings": [],
   "imports": [],
   "links": [],
   "depends_on": [],
   "tags": [
+    "coverage",
     "release",
     "schema"
   ]

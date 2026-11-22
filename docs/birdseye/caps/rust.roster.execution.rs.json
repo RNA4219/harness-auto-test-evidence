@@ -1,0 +1,15 @@
+{
+  "path": "rust/roster/execution.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "f52684c74abebd6179aa604b7ea8206a6bea6fa4c83d84018e1937418399bb1e",
+  "line_count": 360,
+  "size_bytes": 14525,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test"
+  ]
+}

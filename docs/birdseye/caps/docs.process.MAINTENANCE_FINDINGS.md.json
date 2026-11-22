@@ -1,0 +1,34 @@
+{
+  "path": "docs/process/MAINTENANCE_FINDINGS.md",
+  "role": "documentation",
+  "kind": "md",
+  "sha256": "6389805225fb23d5419ad89a4baf69832f11f6835b41ad4fc1b9ac22bf92dd6e",
+  "line_count": 154,
+  "size_bytes": 35327,
+  "headings": [
+    "# 継続調査・修正記録",
+    "## 修正した項目",
+    "## 次の調査・修正対象",
+    "## 検証の環境"
+  ],
+  "imports": [],
+  "links": [
+    "BRIDGE_REQUEST_CONTRACT.md",
+    "CLI_INPUT_ERRORS.md",
+    "LOCAL_STORE_IO_CONTRACT.md"
+  ],
+  "depends_on": [
+    "docs/process/BRIDGE_REQUEST_CONTRACT.md",
+    "docs/process/CLI_INPUT_ERRORS.md",
+    "docs/process/LOCAL_STORE_IO_CONTRACT.md"
+  ],
+  "tags": [
+    "api",
+    "artifact",
+    "coverage",
+    "fixture",
+    "schema",
+    "store",
+    "test"
+  ]
+}

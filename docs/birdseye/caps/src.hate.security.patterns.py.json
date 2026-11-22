@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/security/patterns.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "997e31a910d8537e1226bc6ccd3da060278d920e182b1c54cb482912820173e6",
+  "line_count": 117,
+  "size_bytes": 3610,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "re",
+    "typing",
+    "urllib.parse"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "api",
+    "artifact",
+    "fixture",
+    "security",
+    "test"
+  ]
+}

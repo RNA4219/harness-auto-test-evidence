@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/p0b_io.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "cd1cadd8d3c9ed151bc9b11f43e3ff4a06f65ae2eada3cd0718ee3014fa03e65",
+  "line_count": 55,
+  "size_bytes": 2010,
+  "headings": [],
+  "imports": [
+    ".input_values",
+    ".json_input",
+    ".p0b_types",
+    "__future__",
+    "collections.abc",
+    "json",
+    "math",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/input_values.py",
+    "src/hate/json_input.py",
+    "src/hate/p0b_types.py"
+  ],
+  "tags": []
+}

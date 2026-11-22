@@ -1,0 +1,31 @@
+{
+  "path": "tests/test_p1a_graph_validation.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "16d93e1610524a054bc4745f69051a9f35480e495ab142a9c69c32a263ab6b49",
+  "line_count": 249,
+  "size_bytes": 12782,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "copy",
+    "hate",
+    "hate.p1a",
+    "hate.schema_resources",
+    "json",
+    "pathlib",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p1a.py",
+    "src/hate/schema_resources.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "schema",
+    "test"
+  ]
+}

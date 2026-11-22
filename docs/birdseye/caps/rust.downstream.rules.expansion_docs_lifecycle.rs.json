@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_docs_lifecycle.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "7feb3e9eba759ab7fc0f10d3b109de5b025ebdcaa0f85a88700a97710302dd2e",
+  "line_count": 463,
+  "size_bytes": 16947,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "path": "src/hate/bridge/inputs.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "5c174349ec4b16bd5f4e1b3166af7840386da8a2905ccdb2c04210ce5f5c387c",
+  "line_count": 101,
+  "size_bytes": 4168,
+  "headings": [],
+  "imports": [
+    ".protocol",
+    "__future__",
+    "collections.abc",
+    "hashlib",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/bridge/protocol.py"
+  ],
+  "tags": [
+    "artifact"
+  ]
+}

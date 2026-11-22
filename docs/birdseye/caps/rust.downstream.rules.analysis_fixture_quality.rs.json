@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/analysis_fixture_quality.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "40324d58cb71d14ad0a7c120a8c1d3456ab7e431c0b8ee9ba5031b7c61b1b051",
+  "line_count": 1014,
+  "size_bytes": 35439,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema"
+  ]
+}

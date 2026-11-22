@@ -1,0 +1,30 @@
+{
+  "path": "src/hate/p0b_test_graph.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "5312838dc38d5664dc90840878cc8a0eb00a6addf85e55f3caf55a7259f434e8",
+  "line_count": 78,
+  "size_bytes": 3888,
+  "headings": [],
+  "imports": [
+    ".execution_metadata",
+    ".execution_status",
+    ".p0b_support",
+    ".p0b_types",
+    "__future__",
+    "collections",
+    "hashlib",
+    "json",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/execution_metadata.py",
+    "src/hate/execution_status.py",
+    "src/hate/p0b_support.py",
+    "src/hate/p0b_types.py"
+  ],
+  "tags": [
+    "test"
+  ]
+}

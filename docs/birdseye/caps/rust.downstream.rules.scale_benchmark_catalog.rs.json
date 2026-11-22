@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/scale_benchmark_catalog.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "25297c2b2b13ef6b8e86d1e0b61ad62b0d02aa9cdfe316b9bfb0aa74f70a8abe",
+  "line_count": 547,
+  "size_bytes": 18478,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture"
+  ]
+}

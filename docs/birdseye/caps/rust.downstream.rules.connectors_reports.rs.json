@@ -1,0 +1,19 @@
+{
+  "path": "rust/downstream/rules/connectors_reports.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "8796c72082efa8ea1d8da97bedf08b01c3c21293fa763633afb4e63d802969ea",
+  "line_count": 310,
+  "size_bytes": 11456,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise",
+    "fixture",
+    "qeg",
+    "schema"
+  ]
+}

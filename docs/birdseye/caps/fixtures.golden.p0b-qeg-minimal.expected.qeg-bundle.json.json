@@ -2,9 +2,9 @@
   "path": "fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json",
   "role": "fixture",
   "kind": "json",
-  "sha256": "f7be6d573ed6a979fad76913498c0eca10059e5d47ffb0efb08763b75aefaa61",
-  "line_count": 342,
-  "size_bytes": 8210,
+  "sha256": "45352577af434c055ccdcfd6ce0cc845b3184ac33a25c4074e9ab526f0d25b62",
+  "line_count": 365,
+  "size_bytes": 9220,
   "headings": [],
   "imports": [],
   "links": [],
@@ -14,6 +14,7 @@
     "coverage",
     "fixture",
     "qeg",
+    "schema",
     "test",
     "workflow"
   ]

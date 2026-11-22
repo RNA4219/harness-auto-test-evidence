@@ -1,0 +1,29 @@
+{
+  "path": "tests/test_store_import_identity.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "1ead8788d9512b8bd1a5ba577736f8d407462758f874140ac958fb09599435b6",
+  "line_count": 132,
+  "size_bytes": 6570,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "dataclasses",
+    "hate.store",
+    "hate.store.integrity",
+    "hate.store.local_store",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/integrity.py",
+    "src/hate/store/local_store.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "store",
+    "test"
+  ]
+}

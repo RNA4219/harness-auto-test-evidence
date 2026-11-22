@@ -1,0 +1,18 @@
+{
+  "path": "rust/downstream/rules/p1b_evidence.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "21acbed4a08ee4894ac9493c57976cd2b36cd3138f42d4127ff4577999a331b9",
+  "line_count": 163,
+  "size_bytes": 6581,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "qeg",
+    "schema",
+    "workflow"
+  ]
+}

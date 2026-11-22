@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_store_transactions.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "46445b0b4d2af075f36b2832ca3928d88477f0cfef7ce53c795f7a84426825a3",
+  "line_count": 180,
+  "size_bytes": 7815,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.atomic_write",
+    "hate.store.indexes",
+    "hate.store.local_store",
+    "hate.store.locking",
+    "hate.store.transaction",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/local_store.py",
+    "src/hate/store/locking.py",
+    "src/hate/store/transaction.py"
+  ],
+  "tags": [
+    "fixture",
+    "store",
+    "test"
+  ]
+}

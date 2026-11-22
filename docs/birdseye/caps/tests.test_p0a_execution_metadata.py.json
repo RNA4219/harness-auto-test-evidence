@@ -1,0 +1,36 @@
+{
+  "path": "tests/test_p0a_execution_metadata.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "d80c316048032fc9811da1bbeffe2dd85e4fc6c49cbe470bae661a79751620ad",
+  "line_count": 247,
+  "size_bytes": 13128,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate",
+    "hate.p0a",
+    "hate.p0a_io",
+    "hate.p0a_test_adapters",
+    "hate.p0b",
+    "hate.p1a",
+    "json",
+    "pytest",
+    "shutil",
+    "xml.etree.ElementTree"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p0a.py",
+    "src/hate/p0a_io.py",
+    "src/hate/p0a_test_adapters.py",
+    "src/hate/p0b.py",
+    "src/hate/p1a.py"
+  ],
+  "tags": [
+    "adapter",
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

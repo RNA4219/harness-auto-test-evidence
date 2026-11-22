@@ -1,0 +1,15 @@
+{
+  "path": "rust/platform/record_defaults.json",
+  "role": "implementation",
+  "kind": "json",
+  "sha256": "8b4538dcc884f54c40745cb629f7f09dc54cf9f324783eefbaeab5b0d013c207",
+  "line_count": 140,
+  "size_bytes": 3368,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test"
+  ]
+}

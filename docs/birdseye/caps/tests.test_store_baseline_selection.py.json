@@ -1,0 +1,31 @@
+{
+  "path": "tests/test_store_baseline_selection.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "97c7d87945475f45f840b96ae5242f647a6a85fd5571e1d0565350f60ad3eca4",
+  "line_count": 190,
+  "size_bytes": 9771,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.schema_resources",
+    "hate.store",
+    "hate.store.compare",
+    "hate.store.indexes",
+    "hate.store.replay",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py",
+    "src/hate/store/compare.py",
+    "src/hate/store/indexes.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "schema",
+    "store",
+    "test"
+  ]
+}

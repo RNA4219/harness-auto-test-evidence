@@ -9,10 +9,36 @@
     "record_type": {"const": "retry_aggregation"},
     "run_id": {"type": "string"},
     "run_attempt": {"type": "integer", "minimum": 1},
-    "aggregates": {"type": "array"},
+    "aggregates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "declared_flaky": {"type": "boolean"},
+          "declared_retry_count": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["issue", "message", "aggregation_key", "test_node_ids"],
+        "properties": {
+          "issue": {"type": "string"},
+          "message": {"type": "string"},
+          "aggregation_key": {"type": "string"},
+          "test_node_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    },
     "summary": {
       "type": "object",
-      "required": ["aggregate_count", "flaky_count", "inconclusive_count", "matrix_group_count", "missing_shard_count"]
+      "required": ["aggregate_count", "flaky_count", "inconclusive_count", "matrix_group_count", "missing_shard_count"],
+      "properties": {
+        "declared_flaky_count": {"type": "integer", "minimum": 0}
+      }
     }
   },
   "additionalProperties": true

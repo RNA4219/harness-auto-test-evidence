@@ -1,0 +1,34 @@
+{
+  "path": "tools/check_rust_downstream.py",
+  "role": "tooling",
+  "kind": "py",
+  "sha256": "471ea1d5f21344dc794d96080cf585945e742069499f1199e8fee6a4c832d326",
+  "line_count": 226,
+  "size_bytes": 8411,
+  "headings": [],
+  "imports": [
+    "datetime",
+    "hate.p2p3",
+    "http.client",
+    "http.server",
+    "json",
+    "os",
+    "pathlib",
+    "shutil",
+    "socket",
+    "subprocess",
+    "sys",
+    "tempfile",
+    "threading",
+    "time"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/p2p3.py"
+  ],
+  "tags": [
+    "fixture",
+    "qeg",
+    "workflow"
+  ]
+}

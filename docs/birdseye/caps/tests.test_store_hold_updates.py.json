@@ -1,0 +1,33 @@
+{
+  "path": "tests/test_store_hold_updates.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "cbf51c90cc55b413f96e4a85ce7df961f5c5b55c1d7809252b15fec6d00fd370",
+  "line_count": 173,
+  "size_bytes": 7595,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "datetime",
+    "hashlib",
+    "hate.schema_resources",
+    "hate.store",
+    "hate.store.atomic_write",
+    "hate.store.replay",
+    "json",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py",
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "fixture",
+    "release",
+    "schema",
+    "store",
+    "test"
+  ]
+}

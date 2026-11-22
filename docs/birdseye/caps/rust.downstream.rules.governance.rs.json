@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/governance.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "b1411e406a22f31d8877e942537c6b1d97e076c45daf9fa2b9fd4a18ca972db7",
+  "line_count": 376,
+  "size_bytes": 13770,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "fixture"
+  ]
+}

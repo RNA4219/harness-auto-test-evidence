@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/adapters_family_packet.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "e893babf0d50b090f610532cc472ef745363d1f56ce3b0c1c4932737a3d5f8ea",
+  "line_count": 947,
+  "size_bytes": 34104,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "schema"
+  ]
+}

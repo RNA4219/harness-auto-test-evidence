@@ -1,0 +1,26 @@
+{
+  "path": "rust/qeg.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "cdeb3dfba64b265ff5356868f991dc84ce99e4b01be2e57f087042f6ea97cb68",
+  "line_count": 384,
+  "size_bytes": 11676,
+  "headings": [
+    "#[derive(Default)]"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [
+    "rust/qeg/gaps.rs",
+    "rust/qeg/graph.rs",
+    "rust/qeg/output.rs",
+    "rust/qeg/sources.rs"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "fixture",
+    "qeg",
+    "test"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/analysis_test_recommendation.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "bd78498b34d9796ec64b9487383b01d22383597a673af01d7cc5b43b3907951c",
+  "line_count": 1222,
+  "size_bytes": 44178,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

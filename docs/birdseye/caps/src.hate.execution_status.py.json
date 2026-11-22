@@ -1,0 +1,16 @@
+{
+  "path": "src/hate/execution_status.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "3afe73da5ea9b0b4cda8281a844bf2e29ed4c6a93140d720f2fcbb6d49c5c815",
+  "line_count": 32,
+  "size_bytes": 1309,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [],
+  "tags": []
+}

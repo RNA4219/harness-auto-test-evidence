@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/product_grade.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "d81303c63fff9bd1e12a91d974b3e73ce2f1deb9065b2b60b7ca0b1e32807c4c",
+  "line_count": 767,
+  "size_bytes": 27200,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "test"
+  ]
+}

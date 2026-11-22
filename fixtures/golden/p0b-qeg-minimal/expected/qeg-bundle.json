@@ -23,7 +23,8 @@
         "path": "fixture:/p0a/precheck-decision.json"
       }
     ],
-    "debugOnly": false
+    "debugOnly": false,
+    "commitSha": "0123456789abcdef0123456789abcdef01234567"
   },
   "nodes": [
     {
@@ -34,7 +35,13 @@
         "decision": "eligible",
         "exit_code": 0,
         "qeg_export_allowed": true,
-        "qeg_export_phase": "P0b"
+        "qeg_export_phase": "P0b",
+        "dq_hits": [],
+        "soft_gaps": [],
+        "reasons": [
+          "P0a minimal fixture satisfies HATE/v1 schema contracts.",
+          "QEG export is allowed as optional evidence."
+        ]
       },
       "sourceRefs": [
         "fixture:/p0a/precheck-decision.json"
@@ -126,7 +133,12 @@
         "framework": "junit",
         "status": "passed",
         "file": "tests/test_auth.py",
-        "duration_ms": 123
+        "duration_ms": 123,
+        "identity_components": {
+          "suite": "pytest",
+          "classname": "tests.test_auth",
+          "name": "test_login"
+        }
       },
       "sourceRefs": [
         "fixture:/p0a/HATE-test-results.ndjson"
@@ -140,7 +152,10 @@
         "run_id": "1001",
         "run_attempt": 1,
         "status": "passed",
-        "duration_ms": 123
+        "duration_ms": 123,
+        "source_record_id": "test-result-1001-1-login",
+        "source_record_sha256": "309bc5d7efa50251c68ed0cd105868e5eab76fc8b47baf9d88cc08d335966a85",
+        "commit_sha": "0123456789abcdef0123456789abcdef01234567"
       },
       "sourceRefs": [
         "fixture:/p0a/HATE-test-results.ndjson"
@@ -155,7 +170,12 @@
         "framework": "junit",
         "status": "passed",
         "file": "tests/test_db.py",
-        "duration_ms": 55
+        "duration_ms": 55,
+        "identity_components": {
+          "suite": "pytest",
+          "classname": "tests.test_db",
+          "name": "test_connection"
+        }
       },
       "sourceRefs": [
         "fixture:/p0a/HATE-test-results.ndjson"
@@ -169,7 +189,10 @@
         "run_id": "1001",
         "run_attempt": 1,
         "status": "passed",
-        "duration_ms": 55
+        "duration_ms": 55,
+        "source_record_id": "test-result-1001-1-connection",
+        "source_record_sha256": "2411d8d7edace4516361707c87188a9d584c61e4941eb0fe8ca6b0ab84f24efc",
+        "commit_sha": "0123456789abcdef0123456789abcdef01234567"
       },
       "sourceRefs": [
         "fixture:/p0a/HATE-test-results.ndjson"

@@ -693,9 +693,9 @@ Before adding major product-grade behavior, run:
 uv run python tools/check_file_size.py
 ```
 
-The guard follows `docs/process/REFACTORING_PLAN.md`: hand-written source and test modules above
-900 lines fail, markdown above 1000 lines fails unless it is an approved root index pending split,
-and oversized generated fixtures are allowed only in golden expected-output paths.
+`docs/process/REFACTORING_PLAN.md`に従い、Pythonは700行超、Markdownは800行超で警告する。
+Pythonは900行超、Markdownは1000行超で失敗する（承認済み索引を除く）。fixtureは1000行上限とし、
+golden expected JSONだけ5000行まで許容する。依存キャッシュは探索しない。警告だけならexit 0。
 - P2/P3 readiness golden path:
   - `uv run python -m hate product readiness --bundle fixtures/golden/p0b-qeg-minimal/expected/qeg-bundle.json --trust fixtures/golden/p1a-trust-minimal/expected --workflow fixtures/golden/p1b-workflow-minimal/expected --out fixtures/golden/p2p3-product-readiness-minimal/expected`
 - P2 local store / history index:

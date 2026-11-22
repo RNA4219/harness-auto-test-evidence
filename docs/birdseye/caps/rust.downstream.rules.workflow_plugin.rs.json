@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/workflow_plugin.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "9e89ae0646e5726269d1f26ec1da19e4323abc9157c54f6ffad7b9639a46d570",
+  "line_count": 495,
+  "size_bytes": 16349,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema",
+    "workflow"
+  ]
+}

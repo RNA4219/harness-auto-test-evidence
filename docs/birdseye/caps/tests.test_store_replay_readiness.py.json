@@ -1,0 +1,25 @@
+{
+  "path": "tests/test_store_replay_readiness.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "f0620fc4bbde314fb795f3ac34dbac4da08f399daf42826dbb438ba68cd79afe",
+  "line_count": 77,
+  "size_bytes": 4085,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.schema_resources",
+    "hate.store.replay",
+    "pytest"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/schema_resources.py",
+    "src/hate/store/replay.py"
+  ],
+  "tags": [
+    "schema",
+    "store",
+    "test"
+  ]
+}

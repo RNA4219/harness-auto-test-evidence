@@ -1,0 +1,20 @@
+{
+  "path": "rust/downstream/rules/catalog.json",
+  "role": "implementation",
+  "kind": "json",
+  "sha256": "c242a97a11ce63948d3ffc187625a091b0933f411104d84d825dbb7758956f63",
+  "line_count": 1960,
+  "size_bytes": 55276,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "api",
+    "artifact",
+    "coverage",
+    "fixture",
+    "test"
+  ]
+}

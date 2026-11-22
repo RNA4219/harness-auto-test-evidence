@@ -22,9 +22,11 @@
   ],
   "properties": {
     "schema_version": { "const": "HATE/v1" },
+    "record_type": { "const": "store_manifest" },
     "run_id": {
       "type": "string",
       "minLength": 1,
+      "pattern": "\\S",
       "description": "Unique identifier for the test run"
     },
     "bundle_id": {
@@ -35,6 +37,7 @@
     "source_version": {
       "type": "string",
       "minLength": 1,
+      "pattern": "\\S",
       "description": "Version of source system (e.g., git commit SHA)"
     },
     "schema_versions": {
@@ -45,7 +48,7 @@
         "store": { "type": "string" }
       },
       "required": ["core", "store"],
-      "additionalProperties": true
+      "additionalProperties": { "type": "string", "minLength": 1 }
     },
     "artifact_ids": {
       "type": "array",
@@ -53,11 +56,12 @@
         "type": "string",
         "pattern": "^artifact-[A-Fa-f0-9]{16}$"
       },
-      "minItems": 1,
+      "minItems": 0,
       "description": "List of content-addressed artifact identifiers"
     },
     "content_hashes": {
       "type": "object",
+      "propertyNames": { "pattern": "^artifact-[A-Fa-f0-9]{16}$" },
       "description": "SHA256 hashes for each artifact",
       "additionalProperties": {
         "type": "string",
@@ -74,7 +78,7 @@
         "risks": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" },
         "artifacts": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" }
       },
-      "additionalProperties": true
+      "additionalProperties": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" }
     },
     "legal_hold": {
       "type": "object",
@@ -85,7 +89,8 @@
         "reason": {
           "type": "string",
           "minLength": 1,
-          "description": "Reason for legal hold (empty string when status=none)"
+          "pattern": "\\S",
+          "description": "Reason for the declared hold state, including status=none"
         },
         "held_since": {
           "type": "string",
@@ -95,8 +100,10 @@
         "authorized_by": {
           "type": "string",
           "minLength": 1,
+          "pattern": "\\S",
           "description": "User or role that authorized the hold"
         },
+        "released_at": { "type": "string", "format": "date-time" },
         "release_authorization": {
           "type": "object",
           "description": "Authorization required to release the hold"
@@ -107,6 +114,7 @@
     "retention_policy_id": {
       "type": "string",
       "minLength": 1,
+      "pattern": "\\S",
       "description": "Identifier for the retention policy applied to this bundle"
     },
     "created_at": {
@@ -117,6 +125,7 @@
     "producer_version": {
       "type": "string",
       "minLength": 1,
+      "pattern": "\\S",
       "description": "Version of harness-auto-test-evidence that produced this manifest"
     },
     "completed": {
@@ -127,7 +136,8 @@
       "type": "array",
       "items": {
         "type": "string",
-        "minLength": 1
+        "minLength": 1,
+        "pattern": "\\S"
       },
       "minItems": 1,
       "description": "Source references for provenance tracking"
@@ -141,5 +151,12 @@
       }
     }
   },
+  "allOf": [
+    {
+      "if": { "properties": { "completed": { "const": true } }, "required": ["completed"] },
+      "then": { "properties": { "import_status": { "properties": { "phase": { "const": "completed" } } } } },
+      "else": { "properties": { "import_status": { "properties": { "phase": { "not": { "const": "completed" } } } } } }
+    }
+  ],
   "additionalProperties": false
 }

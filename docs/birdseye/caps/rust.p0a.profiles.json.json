@@ -1,0 +1,20 @@
+{
+  "path": "rust/p0a/profiles.json",
+  "role": "implementation",
+  "kind": "json",
+  "sha256": "43c5543f126d9875eebb48d56139f47f117496235b2a3412c1ae8777f71f406f",
+  "line_count": 67,
+  "size_bytes": 2111,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "coverage",
+    "qeg",
+    "release",
+    "test"
+  ]
+}

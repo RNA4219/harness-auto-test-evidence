@@ -1,0 +1,18 @@
+{
+  "path": "rust/downstream/rules/workflow_birdseye.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "54cd2047652a704811c1b7a83c7d5afe70e6b36669340ce632e9aa43dbe0e6a8",
+  "line_count": 368,
+  "size_bytes": 12375,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "birdseye",
+    "fixture",
+    "schema",
+    "workflow"
+  ]
+}

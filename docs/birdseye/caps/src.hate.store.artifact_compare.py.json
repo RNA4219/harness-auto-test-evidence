@@ -1,0 +1,31 @@
+{
+  "path": "src/hate/store/artifact_compare.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "c03863be65a048a88eb69ab63a36cfdfcbc895bae052f4f7142a46bce0266bb9",
+  "line_count": 157,
+  "size_bytes": 7462,
+  "headings": [],
+  "imports": [
+    ".atomic_write",
+    ".compare_models",
+    ".local_store",
+    ".models",
+    "__future__",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/compare_models.py",
+    "src/hate/store/local_store.py",
+    "src/hate/store/models.py"
+  ],
+  "tags": [
+    "artifact",
+    "coverage",
+    "store",
+    "test"
+  ]
+}

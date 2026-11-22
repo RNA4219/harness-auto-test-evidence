@@ -1,0 +1,19 @@
+{
+  "path": "rust/downstream/rules/domain.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "1eb7bc8e0b06cde3cdf694de2b67d865780a6016041f954315c10715461bc7a7",
+  "line_count": 597,
+  "size_bytes": 19254,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "adapter",
+    "artifact",
+    "enterprise",
+    "qeg",
+    "schema"
+  ]
+}

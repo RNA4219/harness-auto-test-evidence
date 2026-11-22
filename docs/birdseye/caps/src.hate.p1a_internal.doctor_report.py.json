@@ -2,23 +2,33 @@
   "path": "src/hate/p1a_internal/doctor_report.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "8ff06c18d8b1d9568f4be4637c09be7e2e44889dcaa9fa91d841820db93c05dc",
-  "line_count": 105,
-  "size_bytes": 4298,
+  "sha256": "319fbcf44fd437a3d12af06476135da47a76b202e0c8f24ea4f5fbca56259902",
+  "line_count": 157,
+  "size_bytes": 7322,
   "headings": [],
   "imports": [
     "__future__",
+    "hate.p1a_export_metadata",
+    "hate.p1a_graph",
+    "hate.p1a_internal.retry_aggregation",
+    "hate.p1a_precheck",
+    "hate.p1a_provenance",
+    "hate.p1a_schema",
     "typing"
   ],
   "links": [],
-  "depends_on": [],
+  "depends_on": [
+    "src/hate/p1a_export_metadata.py",
+    "src/hate/p1a_graph.py",
+    "src/hate/p1a_internal/retry_aggregation.py",
+    "src/hate/p1a_precheck.py",
+    "src/hate/p1a_provenance.py",
+    "src/hate/p1a_schema.py"
+  ],
   "tags": [
-    "adapter",
     "artifact",
-    "coverage",
     "fixture",
     "qeg",
-    "release",
     "schema"
   ]
 }

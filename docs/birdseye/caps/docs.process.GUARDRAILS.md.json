@@ -2,9 +2,9 @@
   "path": "docs/process/GUARDRAILS.md",
   "role": "documentation",
   "kind": "md",
-  "sha256": "3ed111fdaa6e2f459631fa92b497880a686652e90e53d686e69258cf564713d1",
+  "sha256": "ec3297464b0bf3d276bb1a81aaaa40d67422123d5f8071956875b8d1e4df210b",
   "line_count": 201,
-  "size_bytes": 13296,
+  "size_bytes": 13324,
   "headings": [
     "# Guardrails & 行動指針",
     "## 目的",

@@ -1,0 +1,27 @@
+{
+  "path": "src/hate/store/versioning.py",
+  "role": "implementation",
+  "kind": "py",
+  "sha256": "90ffd8eb7a1dc1bf1e146d0478b610ae2fe870f2d837fdb17271fc0a0555c2c2",
+  "line_count": 67,
+  "size_bytes": 3182,
+  "headings": [],
+  "imports": [
+    ".json_io",
+    ".models",
+    "__future__",
+    "datetime",
+    "jsonschema",
+    "pathlib",
+    "typing"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/json_io.py",
+    "src/hate/store/models.py"
+  ],
+  "tags": [
+    "schema",
+    "store"
+  ]
+}

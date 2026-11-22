@@ -193,7 +193,7 @@ next_review_due: 2026-07-28
 | core HATE/v1 record type | 29 |
 | compat HATE/v1 record type | 311 |
 
-- canonical owner: agent-gatefield, agent-state-gate, manual-bb-test-harness, product-ops-evidence, quality-evidence-graph, shipyard-cp, workflow-cookbook
+- canonical owner: agent-gatefield, agent-state-gate, harness-auto-test-evidence, manual-bb-test-harness, product-ops-evidence, quality-evidence-graph, shipyard-cp, workflow-cookbook
 - P1b以降は compat-v0.2 または明示的な handoff のみ。
 - product_ready=false。QEG verdict、Go/No-Go、waiver、approval、publish authorityは外部責務。
 - deprecated since: 0.3.0; remove after: 1.0.0（v0.xでは物理削除しない）。

@@ -2,35 +2,34 @@
   "path": "src/hate/p0a_test_adapters.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "20216aae8560080f67b710fcc821d46c30c99a1e925b21a6d27a2bd1af396c5d",
-  "line_count": 416,
-  "size_bytes": 16601,
+  "sha256": "9892a423175b39696cf68e9cfbce17daccc4609e089ec4d3021c32e883ac29f6",
+  "line_count": 370,
+  "size_bytes": 15516,
   "headings": [],
   "imports": [
-    ".p0a_constants",
+    ".execution_metadata",
+    ".p0a_execution",
     ".p0a_io",
+    ".p0a_outcomes",
     ".p0a_records",
+    ".p0a_test_values",
     "__future__",
-    "hashlib",
-    "json",
-    "mimetypes",
     "pathlib",
-    "posixpath",
-    "re",
     "typing",
     "xml.etree.ElementTree"
   ],
   "links": [],
   "depends_on": [
-    "src/hate/p0a_constants.py",
+    "src/hate/execution_metadata.py",
+    "src/hate/p0a_execution.py",
     "src/hate/p0a_io.py",
-    "src/hate/p0a_records.py"
+    "src/hate/p0a_outcomes.py",
+    "src/hate/p0a_records.py",
+    "src/hate/p0a_test_values.py"
   ],
   "tags": [
     "adapter",
-    "artifact",
     "fixture",
-    "schema",
     "test"
   ]
 }

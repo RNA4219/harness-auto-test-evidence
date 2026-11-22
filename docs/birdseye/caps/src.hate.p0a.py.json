@@ -2,9 +2,9 @@
   "path": "src/hate/p0a.py",
   "role": "implementation",
   "kind": "py",
-  "sha256": "4bce6c6cfce85f0aeac47e3c6ac3ab9ddefb82bf613f560036856a9ac3682f32",
-  "line_count": 261,
-  "size_bytes": 11476,
+  "sha256": "466421663c3ba92dc9f5115fee72239461fb68f7980e6212fedec9f8154de7f4",
+  "line_count": 262,
+  "size_bytes": 11529,
   "headings": [],
   "imports": [
     ".",
@@ -12,7 +12,6 @@
     ".p0a_support",
     ".profile",
     "__future__",
-    "json",
     "pathlib",
     "re",
     "typing"

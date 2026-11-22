@@ -1,0 +1,30 @@
+{
+  "path": "tests/test_store_index_builder.py",
+  "role": "test",
+  "kind": "py",
+  "sha256": "bf14f6656e506872b6b520e699ece45b916662fe7b18a5155a496825e9a82154",
+  "line_count": 223,
+  "size_bytes": 10098,
+  "headings": [],
+  "imports": [
+    "__future__",
+    "hate.store",
+    "hate.store.atomic_write",
+    "hate.store.indexes",
+    "json",
+    "pytest",
+    "shutil"
+  ],
+  "links": [],
+  "depends_on": [
+    "src/hate/store/atomic_write.py",
+    "src/hate/store/indexes.py"
+  ],
+  "tags": [
+    "artifact",
+    "fixture",
+    "qeg",
+    "store",
+    "test"
+  ]
+}

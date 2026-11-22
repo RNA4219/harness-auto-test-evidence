@@ -1,0 +1,15 @@
+{
+  "path": "rust/downstream/rules/expansion_data_classification.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "b42cf84b756603e239af47c378a3ebb24739749d7ac923f9a855a632b33b91d5",
+  "line_count": 348,
+  "size_bytes": 12156,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "schema"
+  ]
+}

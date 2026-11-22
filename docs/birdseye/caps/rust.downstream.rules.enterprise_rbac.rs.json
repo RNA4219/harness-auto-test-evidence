@@ -1,0 +1,16 @@
+{
+  "path": "rust/downstream/rules/enterprise_rbac.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "af250e8e9f7d9dc71ee80eda23178ccb1c529cd4e11cdb884ad6acf8a9c0e346",
+  "line_count": 454,
+  "size_bytes": 14524,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "artifact",
+    "enterprise"
+  ]
+}

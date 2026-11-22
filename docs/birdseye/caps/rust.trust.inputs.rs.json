@@ -1,0 +1,15 @@
+{
+  "path": "rust/trust/inputs.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "eb14229f6bb6cf79fa101ef4b667bec4b6fcf51ef39b2c40cda80922f9230687",
+  "line_count": 388,
+  "size_bytes": 13591,
+  "headings": [],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "test"
+  ]
+}

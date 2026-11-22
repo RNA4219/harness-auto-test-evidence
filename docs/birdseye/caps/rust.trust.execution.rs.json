@@ -1,0 +1,19 @@
+{
+  "path": "rust/trust/execution.rs",
+  "role": "implementation",
+  "kind": "rs",
+  "sha256": "1cb7512269252a37e59ee1d7d420d97573c20c81afaf1d08877c1ea8fdf8eb2a",
+  "line_count": 422,
+  "size_bytes": 14552,
+  "headings": [
+    "#[derive(Default)]"
+  ],
+  "imports": [],
+  "links": [],
+  "depends_on": [],
+  "tags": [
+    "fixture",
+    "schema",
+    "test"
+  ]
+}

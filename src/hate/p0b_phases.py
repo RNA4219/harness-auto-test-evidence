@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
+from .execution_status import has_execution_result
 from .p0b_sarif import (
     _contract_status,
     _line_ranges_overlap,
@@ -18,6 +20,7 @@ from .p0b_support import (
     _hash_test_id,
     _playwright_artifact_role,
 )
+from .p0b_test_graph import test_execution_groups
 
 
 def append_contract_nodes(
@@ -315,40 +318,19 @@ def append_test_execution_nodes(
     source_ref: Callable[[Path], str],
 ) -> dict[str, str]:
     test_node_ids: dict[str, str] = {}
-    for record in test_records:
-        payload = record.get("payload", {})
-        canonical_test_id = payload.get("canonical_test_id", "")
-        if not canonical_test_id:
-            continue
-        test_hash = _hash_test_id(canonical_test_id)
-        test_node_id = f"test:{test_hash}"
+    groups = test_execution_groups(test_records, run_id, run_attempt, source_ref(p0a_dir / "HATE-test-results.ndjson"))
+    observations = []
+    for test_node, executions in groups:
+        for index, (record, execution_node) in enumerate(executions):
+            observations.append((test_node if index == 0 else None, record, execution_node, test_node["id"]))
+    for test_node, record, execution_node, test_node_id in observations:
+        payload = record["payload"]
+        canonical_test_id = payload["canonical_test_id"]
         test_node_ids[canonical_test_id] = test_node_id
-        nodes.append({
-            "id": test_node_id,
-            "kind": "test",
-            "label": payload.get("name", canonical_test_id),
-            "data": {
-                "canonical_test_id": canonical_test_id,
-                "framework": payload.get("framework", "unknown"),
-                "status": payload.get("status", "unknown"),
-                "file": payload.get("file", ""),
-                "duration_ms": payload.get("duration_ms", 0),
-            },
-            "sourceRefs": [source_ref(p0a_dir / "HATE-test-results.ndjson")],
-        })
-        execution_node_id = f"execution:{run_id}:{test_hash}"
-        nodes.append({
-            "id": execution_node_id,
-            "kind": "execution_evidence",
-            "label": f"Execution: {canonical_test_id}",
-            "data": {
-                "run_id": run_id,
-                "run_attempt": run_attempt,
-                "status": payload.get("status", "unknown"),
-                "duration_ms": payload.get("duration_ms", 0),
-            },
-            "sourceRefs": [source_ref(p0a_dir / "HATE-test-results.ndjson")],
-        })
+        if test_node is not None:
+            nodes.append(test_node)
+        execution_node_id = execution_node["id"]
+        nodes.append(execution_node)
         edges.append({
             "kind": "evidenced_by",
             "from": test_node_id,
@@ -468,6 +450,7 @@ def append_test_obligation_edges(
     artifact_by_id: dict[str, dict[str, Any]],
     contract_by_id: dict[str, dict[str, Any]],
     mutation_by_id: dict[str, dict[str, Any]],
+    nodes: list[dict[str, Any]],
     edges: list[dict[str, Any]],
     unsupported_claims: list[dict[str, Any]],
     unsafe_artifacts: list[dict[str, Any]],
@@ -477,6 +460,8 @@ def append_test_obligation_edges(
     source_ref: Callable[[Path], str],
 ) -> list[dict[str, Any]]:
     test_obligations = diff_risk_test.get("test_obligations", [])
+    execution_ids = {node["id"] for node in nodes if node["kind"] == "execution_evidence" and has_execution_result(node["data"])}
+    executed_tests = {edge["from"] for edge in edges if edge["kind"] == "evidenced_by" and edge["to"] in execution_ids}
     missing_executions: list[dict[str, Any]] = []
     for obligation in test_obligations:
         risk_id = obligation.get("risk_id", "")
@@ -485,8 +470,7 @@ def append_test_obligation_edges(
         related_entities = changed_entities_by_risk.get(str(risk_id), [])
         expected_tests = obligation.get("expected_test_refs", [])
         for test_ref in expected_tests:
-            canonical_test_id = f"junit:{test_ref}"
-            test_node_id = test_node_ids.get(canonical_test_id)
+            test_node_id = test_node_ids.get(test_ref) or test_node_ids.get(f"junit:{test_ref}")
             if test_node_id:
                 edges.append({
                     "kind": "requires_test",
@@ -498,7 +482,7 @@ def append_test_obligation_edges(
                         "assumptions": [],
                     },
                 })
-            else:
+            if not test_node_id or test_node_id not in executed_tests:
                 missing_executions.append({
                     "risk_id": risk_id,
                     "risk_title": risk.get("title", ""),
@@ -517,7 +501,8 @@ def append_test_obligation_edges(
                         }
                         for entity in related_entities
                     ],
-                    "reason": "test not found in execution results",
+                    "reason": "test result does not establish execution" if test_node_id else "test not found in execution results",
+                    **({"test_node_id": test_node_id} if test_node_id else {}),
                 })
         if "artifact" in obligation.get("required_evidence_kinds", []):
             for artifact_ref in obligation.get("required_artifact_refs", []):
