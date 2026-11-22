@@ -6,7 +6,7 @@ This is not the workflow-cookbook Birdseye source of truth for analysis or imple
 It is a HATE-local navigation artifact for docs/src/tests/fixtures/schemas at large scale.
 
 - schema_version: `HATE-birdseye/v1`
-- generated_at: `e82a6ae92728`
+- generated_at: `cc71f907f82a`
 - nodes: `1619`
 - edges: `561`
 
